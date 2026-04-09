@@ -7082,6 +7082,49 @@ export namespace iam {
         value?: pulumi.Input<string>;
     }
 
+    export interface SamlProviderCertificate {
+        /**
+         * Certificate ID
+         */
+        certificateId?: pulumi.Input<string>;
+        /**
+         * Certificate Upload Time
+         */
+        createDate?: pulumi.Input<string>;
+        /**
+         * Certificate Authority
+         */
+        issuer?: pulumi.Input<string>;
+        /**
+         * Certificate Expiration Time
+         */
+        notAfter?: pulumi.Input<string>;
+        /**
+         * Certificate Validity Period
+         */
+        notBefore?: pulumi.Input<string>;
+        /**
+         * Certificate Serial Number
+         */
+        serialNumber?: pulumi.Input<string>;
+        /**
+         * Certificate Signature Algorithm
+         */
+        signatureAlgorithm?: pulumi.Input<string>;
+        /**
+         * Certificate Subject
+         */
+        subject?: pulumi.Input<string>;
+        /**
+         * Certificate Update Time
+         */
+        updateDate?: pulumi.Input<string>;
+        /**
+         * Certificate Version
+         */
+        version?: pulumi.Input<string>;
+    }
+
     export interface UserAccessKey {
         /**
          * Access key ID.
@@ -10963,6 +11006,69 @@ export namespace vke {
 }
 
 export namespace vmp {
+    export interface AlertingRuleAnnotation {
+        /**
+         * Tag or annotation key
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface AlertingRuleLabel {
+        /**
+         * Tag or annotation key
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface AlertingRuleLevel {
+        /**
+         * Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+         */
+        comparator?: pulumi.Input<string>;
+        /**
+         * Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+         */
+        for?: pulumi.Input<string>;
+        /**
+         * Alert rule severity. Currently supports P0, P1, or P2
+         */
+        level?: pulumi.Input<string>;
+        /**
+         * Alert rule threshold
+         */
+        threshold?: pulumi.Input<number>;
+    }
+
+    export interface AlertingRuleQuery {
+        /**
+         * Query statement
+         */
+        promQl?: pulumi.Input<string>;
+        /**
+         * Workspace ID
+         */
+        workspaceId?: pulumi.Input<string>;
+    }
+
+    export interface AlertingRuleTag {
+        /**
+         * Tag or annotation key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface WorkspaceInstanceType {
         /**
          * Maximum active time series count

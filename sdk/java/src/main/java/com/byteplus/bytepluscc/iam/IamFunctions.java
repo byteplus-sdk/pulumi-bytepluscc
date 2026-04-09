@@ -8,24 +8,32 @@ import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupPlainArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetOidcProviderArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetOidcProviderPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetPolicyArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetPolicyPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetProjectArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetProjectPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetRoleArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetRolePlainArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetSamlProviderArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetSamlProviderPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserPlainArgs;
 import com.byteplus.bytepluscc.iam.outputs.GetAccesskeyResult;
 import com.byteplus.bytepluscc.iam.outputs.GetAccesskeysResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupsResult;
+import com.byteplus.bytepluscc.iam.outputs.GetOidcProviderResult;
+import com.byteplus.bytepluscc.iam.outputs.GetOidcProvidersResult;
 import com.byteplus.bytepluscc.iam.outputs.GetPoliciesResult;
 import com.byteplus.bytepluscc.iam.outputs.GetPolicyResult;
 import com.byteplus.bytepluscc.iam.outputs.GetProjectResult;
 import com.byteplus.bytepluscc.iam.outputs.GetProjectsResult;
 import com.byteplus.bytepluscc.iam.outputs.GetRoleResult;
 import com.byteplus.bytepluscc.iam.outputs.GetRolesResult;
+import com.byteplus.bytepluscc.iam.outputs.GetSamlProviderResult;
+import com.byteplus.bytepluscc.iam.outputs.GetSamlProvidersResult;
 import com.byteplus.bytepluscc.iam.outputs.GetUserResult;
 import com.byteplus.bytepluscc.iam.outputs.GetUsersResult;
 import com.pulumi.core.Output;
@@ -204,6 +212,90 @@ public final class IamFunctions {
      */
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:iam/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProviderResult> getOidcProvider(GetOidcProviderArgs args) {
+        return getOidcProvider(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static CompletableFuture<GetOidcProviderResult> getOidcProviderPlain(GetOidcProviderPlainArgs args) {
+        return getOidcProviderPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProviderResult> getOidcProvider(GetOidcProviderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getOidcProvider:getOidcProvider", TypeShape.of(GetOidcProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProviderResult> getOidcProvider(GetOidcProviderArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getOidcProvider:getOidcProvider", TypeShape.of(GetOidcProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static CompletableFuture<GetOidcProviderResult> getOidcProviderPlain(GetOidcProviderPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getOidcProvider:getOidcProvider", TypeShape.of(GetOidcProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProvidersResult> getOidcProviders() {
+        return getOidcProviders(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static CompletableFuture<GetOidcProvidersResult> getOidcProvidersPlain() {
+        return getOidcProvidersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProvidersResult> getOidcProviders(InvokeArgs args) {
+        return getOidcProviders(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static CompletableFuture<GetOidcProvidersResult> getOidcProvidersPlain(InvokeArgs args) {
+        return getOidcProvidersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProvidersResult> getOidcProviders(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getOidcProviders:getOidcProviders", TypeShape.of(GetOidcProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static Output<GetOidcProvidersResult> getOidcProviders(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getOidcProviders:getOidcProviders", TypeShape.of(GetOidcProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::OidcProvider
+     * 
+     */
+    public static CompletableFuture<GetOidcProvidersResult> getOidcProvidersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getOidcProviders:getOidcProviders", TypeShape.of(GetOidcProvidersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::IAM::Policy
@@ -456,6 +548,90 @@ public final class IamFunctions {
      */
     public static CompletableFuture<GetRolesResult> getRolesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:iam/getRoles:getRoles", TypeShape.of(GetRolesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProviderResult> getSamlProvider(GetSamlProviderArgs args) {
+        return getSamlProvider(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static CompletableFuture<GetSamlProviderResult> getSamlProviderPlain(GetSamlProviderPlainArgs args) {
+        return getSamlProviderPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProviderResult> getSamlProvider(GetSamlProviderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getSamlProvider:getSamlProvider", TypeShape.of(GetSamlProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProviderResult> getSamlProvider(GetSamlProviderArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getSamlProvider:getSamlProvider", TypeShape.of(GetSamlProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static CompletableFuture<GetSamlProviderResult> getSamlProviderPlain(GetSamlProviderPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getSamlProvider:getSamlProvider", TypeShape.of(GetSamlProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProvidersResult> getSamlProviders() {
+        return getSamlProviders(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static CompletableFuture<GetSamlProvidersResult> getSamlProvidersPlain() {
+        return getSamlProvidersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProvidersResult> getSamlProviders(InvokeArgs args) {
+        return getSamlProviders(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static CompletableFuture<GetSamlProvidersResult> getSamlProvidersPlain(InvokeArgs args) {
+        return getSamlProvidersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProvidersResult> getSamlProviders(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getSamlProviders:getSamlProviders", TypeShape.of(GetSamlProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static Output<GetSamlProvidersResult> getSamlProviders(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getSamlProviders:getSamlProviders", TypeShape.of(GetSamlProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::SamlProvider
+     * 
+     */
+    public static CompletableFuture<GetSamlProvidersResult> getSamlProvidersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getSamlProviders:getSamlProviders", TypeShape.of(GetSamlProvidersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::IAM::User

@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .alerting_rule import *
+from .get_alerting_rule import *
+from .get_alerting_rules import *
 from .get_workspace import *
 from .get_workspaces import *
 from .workspace import *

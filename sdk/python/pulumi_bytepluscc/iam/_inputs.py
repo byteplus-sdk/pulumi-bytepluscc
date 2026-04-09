@@ -38,6 +38,8 @@ __all__ = [
     'RolePolicyArgsDict',
     'RoleTagArgs',
     'RoleTagArgsDict',
+    'SamlProviderCertificateArgs',
+    'SamlProviderCertificateArgsDict',
     'UserAccessKeyArgs',
     'UserAccessKeyArgsDict',
     'UserLoginProfileArgs',
@@ -574,6 +576,218 @@ class RoleTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class SamlProviderCertificateArgsDict(TypedDict):
+        certificate_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate ID
+        """
+        create_date: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Upload Time
+        """
+        issuer: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Authority
+        """
+        not_after: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Expiration Time
+        """
+        not_before: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Validity Period
+        """
+        serial_number: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Serial Number
+        """
+        signature_algorithm: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Signature Algorithm
+        """
+        subject: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Subject
+        """
+        update_date: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Update Time
+        """
+        version: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate Version
+        """
+elif False:
+    SamlProviderCertificateArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SamlProviderCertificateArgs:
+    def __init__(__self__, *,
+                 certificate_id: Optional[pulumi.Input[builtins.str]] = None,
+                 create_date: Optional[pulumi.Input[builtins.str]] = None,
+                 issuer: Optional[pulumi.Input[builtins.str]] = None,
+                 not_after: Optional[pulumi.Input[builtins.str]] = None,
+                 not_before: Optional[pulumi.Input[builtins.str]] = None,
+                 serial_number: Optional[pulumi.Input[builtins.str]] = None,
+                 signature_algorithm: Optional[pulumi.Input[builtins.str]] = None,
+                 subject: Optional[pulumi.Input[builtins.str]] = None,
+                 update_date: Optional[pulumi.Input[builtins.str]] = None,
+                 version: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID
+        :param pulumi.Input[builtins.str] create_date: Certificate Upload Time
+        :param pulumi.Input[builtins.str] issuer: Certificate Authority
+        :param pulumi.Input[builtins.str] not_after: Certificate Expiration Time
+        :param pulumi.Input[builtins.str] not_before: Certificate Validity Period
+        :param pulumi.Input[builtins.str] serial_number: Certificate Serial Number
+        :param pulumi.Input[builtins.str] signature_algorithm: Certificate Signature Algorithm
+        :param pulumi.Input[builtins.str] subject: Certificate Subject
+        :param pulumi.Input[builtins.str] update_date: Certificate Update Time
+        :param pulumi.Input[builtins.str] version: Certificate Version
+        """
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if create_date is not None:
+            pulumi.set(__self__, "create_date", create_date)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if not_after is not None:
+            pulumi.set(__self__, "not_after", not_after)
+        if not_before is not None:
+            pulumi.set(__self__, "not_before", not_before)
+        if serial_number is not None:
+            pulumi.set(__self__, "serial_number", serial_number)
+        if signature_algorithm is not None:
+            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+        if update_date is not None:
+            pulumi.set(__self__, "update_date", update_date)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate ID
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "certificate_id", value)
+
+    @property
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Upload Time
+        """
+        return pulumi.get(self, "create_date")
+
+    @create_date.setter
+    def create_date(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "create_date", value)
+
+    @property
+    @pulumi.getter
+    def issuer(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Authority
+        """
+        return pulumi.get(self, "issuer")
+
+    @issuer.setter
+    def issuer(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "issuer", value)
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Expiration Time
+        """
+        return pulumi.get(self, "not_after")
+
+    @not_after.setter
+    def not_after(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "not_after", value)
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Validity Period
+        """
+        return pulumi.get(self, "not_before")
+
+    @not_before.setter
+    def not_before(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "not_before", value)
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Serial Number
+        """
+        return pulumi.get(self, "serial_number")
+
+    @serial_number.setter
+    def serial_number(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "serial_number", value)
+
+    @property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Signature Algorithm
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @signature_algorithm.setter
+    def signature_algorithm(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "signature_algorithm", value)
+
+    @property
+    @pulumi.getter
+    def subject(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Subject
+        """
+        return pulumi.get(self, "subject")
+
+    @subject.setter
+    def subject(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subject", value)
+
+    @property
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Update Time
+        """
+        return pulumi.get(self, "update_date")
+
+    @update_date.setter
+    def update_date(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "update_date", value)
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate Version
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "version", value)
 
 
 if not MYPY:

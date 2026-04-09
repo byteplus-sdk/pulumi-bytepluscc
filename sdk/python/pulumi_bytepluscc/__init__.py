@@ -686,6 +686,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "iam/oidcProvider",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/oidcProvider:OidcProvider": "OidcProvider"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "iam/policy",
   "fqn": "pulumi_bytepluscc.iam",
   "classes": {
@@ -706,6 +714,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.iam",
   "classes": {
    "bytepluscc:iam/role:Role": "Role"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/samlProvider",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/samlProvider:SamlProvider": "SamlProvider"
   }
  },
  {
@@ -1174,6 +1190,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vefaas/timer",
+  "fqn": "pulumi_bytepluscc.vefaas",
+  "classes": {
+   "bytepluscc:vefaas/timer:Timer": "Timer"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vepfs/instance",
   "fqn": "pulumi_bytepluscc.vepfs",
   "classes": {
@@ -1226,6 +1250,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
    "bytepluscc:vke/permission:Permission": "Permission"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vmp/alertingRule",
+  "fqn": "pulumi_bytepluscc.vmp",
+  "classes": {
+   "bytepluscc:vmp/alertingRule:AlertingRule": "AlertingRule"
   }
  },
  {

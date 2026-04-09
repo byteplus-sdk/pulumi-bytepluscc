@@ -1158,6 +1158,184 @@ func (o RoleTagArrayOutput) Index(i pulumi.IntInput) RoleTagOutput {
 	}).(RoleTagOutput)
 }
 
+type SamlProviderCertificate struct {
+	// Certificate ID
+	CertificateId *string `pulumi:"certificateId"`
+	// Certificate Upload Time
+	CreateDate *string `pulumi:"createDate"`
+	// Certificate Authority
+	Issuer *string `pulumi:"issuer"`
+	// Certificate Expiration Time
+	NotAfter *string `pulumi:"notAfter"`
+	// Certificate Validity Period
+	NotBefore *string `pulumi:"notBefore"`
+	// Certificate Serial Number
+	SerialNumber *string `pulumi:"serialNumber"`
+	// Certificate Signature Algorithm
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
+	// Certificate Subject
+	Subject *string `pulumi:"subject"`
+	// Certificate Update Time
+	UpdateDate *string `pulumi:"updateDate"`
+	// Certificate Version
+	Version *string `pulumi:"version"`
+}
+
+// SamlProviderCertificateInput is an input type that accepts SamlProviderCertificateArgs and SamlProviderCertificateOutput values.
+// You can construct a concrete instance of `SamlProviderCertificateInput` via:
+//
+//	SamlProviderCertificateArgs{...}
+type SamlProviderCertificateInput interface {
+	pulumi.Input
+
+	ToSamlProviderCertificateOutput() SamlProviderCertificateOutput
+	ToSamlProviderCertificateOutputWithContext(context.Context) SamlProviderCertificateOutput
+}
+
+type SamlProviderCertificateArgs struct {
+	// Certificate ID
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
+	// Certificate Upload Time
+	CreateDate pulumi.StringPtrInput `pulumi:"createDate"`
+	// Certificate Authority
+	Issuer pulumi.StringPtrInput `pulumi:"issuer"`
+	// Certificate Expiration Time
+	NotAfter pulumi.StringPtrInput `pulumi:"notAfter"`
+	// Certificate Validity Period
+	NotBefore pulumi.StringPtrInput `pulumi:"notBefore"`
+	// Certificate Serial Number
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
+	// Certificate Signature Algorithm
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
+	// Certificate Subject
+	Subject pulumi.StringPtrInput `pulumi:"subject"`
+	// Certificate Update Time
+	UpdateDate pulumi.StringPtrInput `pulumi:"updateDate"`
+	// Certificate Version
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (SamlProviderCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SamlProviderCertificate)(nil)).Elem()
+}
+
+func (i SamlProviderCertificateArgs) ToSamlProviderCertificateOutput() SamlProviderCertificateOutput {
+	return i.ToSamlProviderCertificateOutputWithContext(context.Background())
+}
+
+func (i SamlProviderCertificateArgs) ToSamlProviderCertificateOutputWithContext(ctx context.Context) SamlProviderCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SamlProviderCertificateOutput)
+}
+
+// SamlProviderCertificateArrayInput is an input type that accepts SamlProviderCertificateArray and SamlProviderCertificateArrayOutput values.
+// You can construct a concrete instance of `SamlProviderCertificateArrayInput` via:
+//
+//	SamlProviderCertificateArray{ SamlProviderCertificateArgs{...} }
+type SamlProviderCertificateArrayInput interface {
+	pulumi.Input
+
+	ToSamlProviderCertificateArrayOutput() SamlProviderCertificateArrayOutput
+	ToSamlProviderCertificateArrayOutputWithContext(context.Context) SamlProviderCertificateArrayOutput
+}
+
+type SamlProviderCertificateArray []SamlProviderCertificateInput
+
+func (SamlProviderCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SamlProviderCertificate)(nil)).Elem()
+}
+
+func (i SamlProviderCertificateArray) ToSamlProviderCertificateArrayOutput() SamlProviderCertificateArrayOutput {
+	return i.ToSamlProviderCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i SamlProviderCertificateArray) ToSamlProviderCertificateArrayOutputWithContext(ctx context.Context) SamlProviderCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SamlProviderCertificateArrayOutput)
+}
+
+type SamlProviderCertificateOutput struct{ *pulumi.OutputState }
+
+func (SamlProviderCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SamlProviderCertificate)(nil)).Elem()
+}
+
+func (o SamlProviderCertificateOutput) ToSamlProviderCertificateOutput() SamlProviderCertificateOutput {
+	return o
+}
+
+func (o SamlProviderCertificateOutput) ToSamlProviderCertificateOutputWithContext(ctx context.Context) SamlProviderCertificateOutput {
+	return o
+}
+
+// Certificate ID
+func (o SamlProviderCertificateOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Upload Time
+func (o SamlProviderCertificateOutput) CreateDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.CreateDate }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Authority
+func (o SamlProviderCertificateOutput) Issuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.Issuer }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Expiration Time
+func (o SamlProviderCertificateOutput) NotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.NotAfter }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Validity Period
+func (o SamlProviderCertificateOutput) NotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.NotBefore }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Serial Number
+func (o SamlProviderCertificateOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Signature Algorithm
+func (o SamlProviderCertificateOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Subject
+func (o SamlProviderCertificateOutput) Subject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.Subject }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Update Time
+func (o SamlProviderCertificateOutput) UpdateDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.UpdateDate }).(pulumi.StringPtrOutput)
+}
+
+// Certificate Version
+func (o SamlProviderCertificateOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SamlProviderCertificate) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type SamlProviderCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (SamlProviderCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SamlProviderCertificate)(nil)).Elem()
+}
+
+func (o SamlProviderCertificateArrayOutput) ToSamlProviderCertificateArrayOutput() SamlProviderCertificateArrayOutput {
+	return o
+}
+
+func (o SamlProviderCertificateArrayOutput) ToSamlProviderCertificateArrayOutputWithContext(ctx context.Context) SamlProviderCertificateArrayOutput {
+	return o
+}
+
+func (o SamlProviderCertificateArrayOutput) Index(i pulumi.IntInput) SamlProviderCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SamlProviderCertificate {
+		return vs[0].([]SamlProviderCertificate)[vs[1].(int)]
+	}).(SamlProviderCertificateOutput)
+}
+
 type UserAccessKey struct {
 	// Access key ID.
 	AccessKeyId *string `pulumi:"accessKeyId"`
@@ -3517,6 +3695,184 @@ func (o GetRoleTagArrayOutput) Index(i pulumi.IntInput) GetRoleTagOutput {
 	}).(GetRoleTagOutput)
 }
 
+type GetSamlProviderCertificate struct {
+	// Certificate ID
+	CertificateId string `pulumi:"certificateId"`
+	// Certificate Upload Time
+	CreateDate string `pulumi:"createDate"`
+	// Certificate Authority
+	Issuer string `pulumi:"issuer"`
+	// Certificate Expiration Time
+	NotAfter string `pulumi:"notAfter"`
+	// Certificate Validity Period
+	NotBefore string `pulumi:"notBefore"`
+	// Certificate Serial Number
+	SerialNumber string `pulumi:"serialNumber"`
+	// Certificate Signature Algorithm
+	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	// Certificate Subject
+	Subject string `pulumi:"subject"`
+	// Certificate Update Time
+	UpdateDate string `pulumi:"updateDate"`
+	// Certificate Version
+	Version string `pulumi:"version"`
+}
+
+// GetSamlProviderCertificateInput is an input type that accepts GetSamlProviderCertificateArgs and GetSamlProviderCertificateOutput values.
+// You can construct a concrete instance of `GetSamlProviderCertificateInput` via:
+//
+//	GetSamlProviderCertificateArgs{...}
+type GetSamlProviderCertificateInput interface {
+	pulumi.Input
+
+	ToGetSamlProviderCertificateOutput() GetSamlProviderCertificateOutput
+	ToGetSamlProviderCertificateOutputWithContext(context.Context) GetSamlProviderCertificateOutput
+}
+
+type GetSamlProviderCertificateArgs struct {
+	// Certificate ID
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	// Certificate Upload Time
+	CreateDate pulumi.StringInput `pulumi:"createDate"`
+	// Certificate Authority
+	Issuer pulumi.StringInput `pulumi:"issuer"`
+	// Certificate Expiration Time
+	NotAfter pulumi.StringInput `pulumi:"notAfter"`
+	// Certificate Validity Period
+	NotBefore pulumi.StringInput `pulumi:"notBefore"`
+	// Certificate Serial Number
+	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	// Certificate Signature Algorithm
+	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	// Certificate Subject
+	Subject pulumi.StringInput `pulumi:"subject"`
+	// Certificate Update Time
+	UpdateDate pulumi.StringInput `pulumi:"updateDate"`
+	// Certificate Version
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetSamlProviderCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSamlProviderCertificate)(nil)).Elem()
+}
+
+func (i GetSamlProviderCertificateArgs) ToGetSamlProviderCertificateOutput() GetSamlProviderCertificateOutput {
+	return i.ToGetSamlProviderCertificateOutputWithContext(context.Background())
+}
+
+func (i GetSamlProviderCertificateArgs) ToGetSamlProviderCertificateOutputWithContext(ctx context.Context) GetSamlProviderCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSamlProviderCertificateOutput)
+}
+
+// GetSamlProviderCertificateArrayInput is an input type that accepts GetSamlProviderCertificateArray and GetSamlProviderCertificateArrayOutput values.
+// You can construct a concrete instance of `GetSamlProviderCertificateArrayInput` via:
+//
+//	GetSamlProviderCertificateArray{ GetSamlProviderCertificateArgs{...} }
+type GetSamlProviderCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetSamlProviderCertificateArrayOutput() GetSamlProviderCertificateArrayOutput
+	ToGetSamlProviderCertificateArrayOutputWithContext(context.Context) GetSamlProviderCertificateArrayOutput
+}
+
+type GetSamlProviderCertificateArray []GetSamlProviderCertificateInput
+
+func (GetSamlProviderCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSamlProviderCertificate)(nil)).Elem()
+}
+
+func (i GetSamlProviderCertificateArray) ToGetSamlProviderCertificateArrayOutput() GetSamlProviderCertificateArrayOutput {
+	return i.ToGetSamlProviderCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetSamlProviderCertificateArray) ToGetSamlProviderCertificateArrayOutputWithContext(ctx context.Context) GetSamlProviderCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSamlProviderCertificateArrayOutput)
+}
+
+type GetSamlProviderCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetSamlProviderCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSamlProviderCertificate)(nil)).Elem()
+}
+
+func (o GetSamlProviderCertificateOutput) ToGetSamlProviderCertificateOutput() GetSamlProviderCertificateOutput {
+	return o
+}
+
+func (o GetSamlProviderCertificateOutput) ToGetSamlProviderCertificateOutputWithContext(ctx context.Context) GetSamlProviderCertificateOutput {
+	return o
+}
+
+// Certificate ID
+func (o GetSamlProviderCertificateOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+// Certificate Upload Time
+func (o GetSamlProviderCertificateOutput) CreateDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.CreateDate }).(pulumi.StringOutput)
+}
+
+// Certificate Authority
+func (o GetSamlProviderCertificateOutput) Issuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.Issuer }).(pulumi.StringOutput)
+}
+
+// Certificate Expiration Time
+func (o GetSamlProviderCertificateOutput) NotAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.NotAfter }).(pulumi.StringOutput)
+}
+
+// Certificate Validity Period
+func (o GetSamlProviderCertificateOutput) NotBefore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.NotBefore }).(pulumi.StringOutput)
+}
+
+// Certificate Serial Number
+func (o GetSamlProviderCertificateOutput) SerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.SerialNumber }).(pulumi.StringOutput)
+}
+
+// Certificate Signature Algorithm
+func (o GetSamlProviderCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+// Certificate Subject
+func (o GetSamlProviderCertificateOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+// Certificate Update Time
+func (o GetSamlProviderCertificateOutput) UpdateDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.UpdateDate }).(pulumi.StringOutput)
+}
+
+// Certificate Version
+func (o GetSamlProviderCertificateOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlProviderCertificate) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetSamlProviderCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSamlProviderCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSamlProviderCertificate)(nil)).Elem()
+}
+
+func (o GetSamlProviderCertificateArrayOutput) ToGetSamlProviderCertificateArrayOutput() GetSamlProviderCertificateArrayOutput {
+	return o
+}
+
+func (o GetSamlProviderCertificateArrayOutput) ToGetSamlProviderCertificateArrayOutputWithContext(ctx context.Context) GetSamlProviderCertificateArrayOutput {
+	return o
+}
+
+func (o GetSamlProviderCertificateArrayOutput) Index(i pulumi.IntInput) GetSamlProviderCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSamlProviderCertificate {
+		return vs[0].([]GetSamlProviderCertificate)[vs[1].(int)]
+	}).(GetSamlProviderCertificateOutput)
+}
+
 type GetUserAccessKey struct {
 	// Access key ID.
 	AccessKeyId string `pulumi:"accessKeyId"`
@@ -4160,6 +4516,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RolePolicyArrayInput)(nil)).Elem(), RolePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RoleTagInput)(nil)).Elem(), RoleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RoleTagArrayInput)(nil)).Elem(), RoleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SamlProviderCertificateInput)(nil)).Elem(), SamlProviderCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SamlProviderCertificateArrayInput)(nil)).Elem(), SamlProviderCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserAccessKeyInput)(nil)).Elem(), UserAccessKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserAccessKeyArrayInput)(nil)).Elem(), UserAccessKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserLoginProfileInput)(nil)).Elem(), UserLoginProfileArgs{})
@@ -4192,6 +4550,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRolePolicyArrayInput)(nil)).Elem(), GetRolePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRoleTagInput)(nil)).Elem(), GetRoleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRoleTagArrayInput)(nil)).Elem(), GetRoleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSamlProviderCertificateInput)(nil)).Elem(), GetSamlProviderCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSamlProviderCertificateArrayInput)(nil)).Elem(), GetSamlProviderCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAccessKeyInput)(nil)).Elem(), GetUserAccessKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAccessKeyArrayInput)(nil)).Elem(), GetUserAccessKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserLoginProfileInput)(nil)).Elem(), GetUserLoginProfileArgs{})
@@ -4222,6 +4582,8 @@ func init() {
 	pulumi.RegisterOutputType(RolePolicyArrayOutput{})
 	pulumi.RegisterOutputType(RoleTagOutput{})
 	pulumi.RegisterOutputType(RoleTagArrayOutput{})
+	pulumi.RegisterOutputType(SamlProviderCertificateOutput{})
+	pulumi.RegisterOutputType(SamlProviderCertificateArrayOutput{})
 	pulumi.RegisterOutputType(UserAccessKeyOutput{})
 	pulumi.RegisterOutputType(UserAccessKeyArrayOutput{})
 	pulumi.RegisterOutputType(UserLoginProfileOutput{})
@@ -4254,6 +4616,8 @@ func init() {
 	pulumi.RegisterOutputType(GetRolePolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetRoleTagOutput{})
 	pulumi.RegisterOutputType(GetRoleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSamlProviderCertificateOutput{})
+	pulumi.RegisterOutputType(GetSamlProviderCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAccessKeyOutput{})
 	pulumi.RegisterOutputType(GetUserAccessKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetUserLoginProfileOutput{})

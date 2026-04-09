@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AlertingRuleArgs, AlertingRuleState } from "./alertingRule";
+export type AlertingRule = import("./alertingRule").AlertingRule;
+export const AlertingRule: typeof import("./alertingRule").AlertingRule = null as any;
+utilities.lazyLoad(exports, ["AlertingRule"], () => require("./alertingRule"));
+
+export { GetAlertingRuleArgs, GetAlertingRuleResult, GetAlertingRuleOutputArgs } from "./getAlertingRule";
+export const getAlertingRule: typeof import("./getAlertingRule").getAlertingRule = null as any;
+export const getAlertingRuleOutput: typeof import("./getAlertingRule").getAlertingRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertingRule","getAlertingRuleOutput"], () => require("./getAlertingRule"));
+
+export { GetAlertingRulesResult } from "./getAlertingRules";
+export const getAlertingRules: typeof import("./getAlertingRules").getAlertingRules = null as any;
+export const getAlertingRulesOutput: typeof import("./getAlertingRules").getAlertingRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertingRules","getAlertingRulesOutput"], () => require("./getAlertingRules"));
+
 export { GetWorkspaceArgs, GetWorkspaceResult, GetWorkspaceOutputArgs } from "./getWorkspace";
 export const getWorkspace: typeof import("./getWorkspace").getWorkspace = null as any;
 export const getWorkspaceOutput: typeof import("./getWorkspace").getWorkspaceOutput = null as any;
@@ -25,6 +40,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vmp/alertingRule:AlertingRule":
+                return new AlertingRule(name, <any>undefined, { urn })
             case "bytepluscc:vmp/workspace:Workspace":
                 return new Workspace(name, <any>undefined, { urn })
             default:
@@ -32,4 +49,5 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vmp/alertingRule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vmp/workspace", _module)
