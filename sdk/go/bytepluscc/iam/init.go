@@ -25,12 +25,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Accesskey{}
 	case "bytepluscc:iam/group:Group":
 		r = &Group{}
+	case "bytepluscc:iam/oidcProvider:OidcProvider":
+		r = &OidcProvider{}
 	case "bytepluscc:iam/policy:Policy":
 		r = &Policy{}
 	case "bytepluscc:iam/project:Project":
 		r = &Project{}
 	case "bytepluscc:iam/role:Role":
 		r = &Role{}
+	case "bytepluscc:iam/samlProvider:SamlProvider":
+		r = &SamlProvider{}
 	case "bytepluscc:iam/user:User":
 		r = &User{}
 	default:
@@ -58,6 +62,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"iam/oidcProvider",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"iam/policy",
 		&module{version},
 	)
@@ -69,6 +78,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"iam/role",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"iam/samlProvider",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

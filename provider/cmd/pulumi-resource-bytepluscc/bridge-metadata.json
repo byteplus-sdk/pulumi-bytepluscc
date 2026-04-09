@@ -1771,6 +1771,17 @@
                     }
                 }
             },
+            "bytepluscc_iam_oidc_provider": {
+                "current": "bytepluscc:iam/oidcProvider:OidcProvider",
+                "fields": {
+                    "client_ids": {
+                        "maxItemsOne": false
+                    },
+                    "thumbprints": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_iam_policy": {
                 "current": "bytepluscc:iam/policy:Policy",
                 "fields": {
@@ -1816,6 +1827,14 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_iam_saml_provider": {
+                "current": "bytepluscc:iam/samlProvider:SamlProvider",
+                "fields": {
+                    "certificates": {
                         "maxItemsOne": false
                     }
                 }
@@ -2593,6 +2612,9 @@
                     }
                 }
             },
+            "bytepluscc_vefaas_timer": {
+                "current": "bytepluscc:vefaas/timer:Timer"
+            },
             "bytepluscc_vepfs_instance": {
                 "current": "bytepluscc:vepfs/instance:Instance",
                 "fields": {
@@ -2858,6 +2880,23 @@
             },
             "bytepluscc_vke_permission": {
                 "current": "bytepluscc:vke/permission:Permission"
+            },
+            "bytepluscc_vmp_alerting_rule": {
+                "current": "bytepluscc:vmp/alertingRule:AlertingRule",
+                "fields": {
+                    "annotations": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "levels": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_vmp_workspace": {
                 "current": "bytepluscc:vmp/workspace:Workspace",
@@ -5543,6 +5582,25 @@
                     }
                 }
             },
+            "bytepluscc_iam_oidc_provider": {
+                "current": "bytepluscc:iam/getOidcProvider:getOidcProvider",
+                "fields": {
+                    "client_ids": {
+                        "maxItemsOne": false
+                    },
+                    "thumbprints": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_iam_oidc_providers": {
+                "current": "bytepluscc:iam/getOidcProviders:getOidcProviders",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_iam_policies": {
                 "current": "bytepluscc:iam/getPolicies:getPolicies",
                 "fields": {
@@ -5610,6 +5668,22 @@
             },
             "bytepluscc_iam_roles": {
                 "current": "bytepluscc:iam/getRoles:getRoles",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_iam_saml_provider": {
+                "current": "bytepluscc:iam/getSamlProvider:getSamlProvider",
+                "fields": {
+                    "certificates": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_iam_saml_providers": {
+                "current": "bytepluscc:iam/getSamlProviders:getSamlProviders",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -6853,6 +6927,17 @@
                     }
                 }
             },
+            "bytepluscc_vefaas_timer": {
+                "current": "bytepluscc:vefaas/getTimer:getTimer"
+            },
+            "bytepluscc_vefaas_timers": {
+                "current": "bytepluscc:vefaas/getTimers:getTimers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vepfs_instance": {
                 "current": "bytepluscc:vepfs/getInstance:getInstance",
                 "fields": {
@@ -7169,6 +7254,31 @@
             },
             "bytepluscc_vke_permissions": {
                 "current": "bytepluscc:vke/getPermissions:getPermissions",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vmp_alerting_rule": {
+                "current": "bytepluscc:vmp/getAlertingRule:getAlertingRule",
+                "fields": {
+                    "annotations": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "levels": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vmp_alerting_rules": {
+                "current": "bytepluscc:vmp/getAlertingRules:getAlertingRules",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

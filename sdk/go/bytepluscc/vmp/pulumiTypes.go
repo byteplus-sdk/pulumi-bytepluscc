@@ -13,6 +13,604 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AlertingRuleAnnotation struct {
+	// Tag or annotation key
+	Name *string `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value *string `pulumi:"value"`
+}
+
+// AlertingRuleAnnotationInput is an input type that accepts AlertingRuleAnnotationArgs and AlertingRuleAnnotationOutput values.
+// You can construct a concrete instance of `AlertingRuleAnnotationInput` via:
+//
+//	AlertingRuleAnnotationArgs{...}
+type AlertingRuleAnnotationInput interface {
+	pulumi.Input
+
+	ToAlertingRuleAnnotationOutput() AlertingRuleAnnotationOutput
+	ToAlertingRuleAnnotationOutputWithContext(context.Context) AlertingRuleAnnotationOutput
+}
+
+type AlertingRuleAnnotationArgs struct {
+	// Tag or annotation key
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AlertingRuleAnnotationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (i AlertingRuleAnnotationArgs) ToAlertingRuleAnnotationOutput() AlertingRuleAnnotationOutput {
+	return i.ToAlertingRuleAnnotationOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleAnnotationArgs) ToAlertingRuleAnnotationOutputWithContext(ctx context.Context) AlertingRuleAnnotationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleAnnotationOutput)
+}
+
+// AlertingRuleAnnotationArrayInput is an input type that accepts AlertingRuleAnnotationArray and AlertingRuleAnnotationArrayOutput values.
+// You can construct a concrete instance of `AlertingRuleAnnotationArrayInput` via:
+//
+//	AlertingRuleAnnotationArray{ AlertingRuleAnnotationArgs{...} }
+type AlertingRuleAnnotationArrayInput interface {
+	pulumi.Input
+
+	ToAlertingRuleAnnotationArrayOutput() AlertingRuleAnnotationArrayOutput
+	ToAlertingRuleAnnotationArrayOutputWithContext(context.Context) AlertingRuleAnnotationArrayOutput
+}
+
+type AlertingRuleAnnotationArray []AlertingRuleAnnotationInput
+
+func (AlertingRuleAnnotationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (i AlertingRuleAnnotationArray) ToAlertingRuleAnnotationArrayOutput() AlertingRuleAnnotationArrayOutput {
+	return i.ToAlertingRuleAnnotationArrayOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleAnnotationArray) ToAlertingRuleAnnotationArrayOutputWithContext(ctx context.Context) AlertingRuleAnnotationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleAnnotationArrayOutput)
+}
+
+type AlertingRuleAnnotationOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleAnnotationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (o AlertingRuleAnnotationOutput) ToAlertingRuleAnnotationOutput() AlertingRuleAnnotationOutput {
+	return o
+}
+
+func (o AlertingRuleAnnotationOutput) ToAlertingRuleAnnotationOutputWithContext(ctx context.Context) AlertingRuleAnnotationOutput {
+	return o
+}
+
+// Tag or annotation key
+func (o AlertingRuleAnnotationOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleAnnotation) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Tag or annotation value. If set to empty, the key will be deleted
+func (o AlertingRuleAnnotationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleAnnotation) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AlertingRuleAnnotationArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleAnnotationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (o AlertingRuleAnnotationArrayOutput) ToAlertingRuleAnnotationArrayOutput() AlertingRuleAnnotationArrayOutput {
+	return o
+}
+
+func (o AlertingRuleAnnotationArrayOutput) ToAlertingRuleAnnotationArrayOutputWithContext(ctx context.Context) AlertingRuleAnnotationArrayOutput {
+	return o
+}
+
+func (o AlertingRuleAnnotationArrayOutput) Index(i pulumi.IntInput) AlertingRuleAnnotationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertingRuleAnnotation {
+		return vs[0].([]AlertingRuleAnnotation)[vs[1].(int)]
+	}).(AlertingRuleAnnotationOutput)
+}
+
+type AlertingRuleLabel struct {
+	// Tag or annotation key
+	Name *string `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value *string `pulumi:"value"`
+}
+
+// AlertingRuleLabelInput is an input type that accepts AlertingRuleLabelArgs and AlertingRuleLabelOutput values.
+// You can construct a concrete instance of `AlertingRuleLabelInput` via:
+//
+//	AlertingRuleLabelArgs{...}
+type AlertingRuleLabelInput interface {
+	pulumi.Input
+
+	ToAlertingRuleLabelOutput() AlertingRuleLabelOutput
+	ToAlertingRuleLabelOutputWithContext(context.Context) AlertingRuleLabelOutput
+}
+
+type AlertingRuleLabelArgs struct {
+	// Tag or annotation key
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AlertingRuleLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleLabel)(nil)).Elem()
+}
+
+func (i AlertingRuleLabelArgs) ToAlertingRuleLabelOutput() AlertingRuleLabelOutput {
+	return i.ToAlertingRuleLabelOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleLabelArgs) ToAlertingRuleLabelOutputWithContext(ctx context.Context) AlertingRuleLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleLabelOutput)
+}
+
+// AlertingRuleLabelArrayInput is an input type that accepts AlertingRuleLabelArray and AlertingRuleLabelArrayOutput values.
+// You can construct a concrete instance of `AlertingRuleLabelArrayInput` via:
+//
+//	AlertingRuleLabelArray{ AlertingRuleLabelArgs{...} }
+type AlertingRuleLabelArrayInput interface {
+	pulumi.Input
+
+	ToAlertingRuleLabelArrayOutput() AlertingRuleLabelArrayOutput
+	ToAlertingRuleLabelArrayOutputWithContext(context.Context) AlertingRuleLabelArrayOutput
+}
+
+type AlertingRuleLabelArray []AlertingRuleLabelInput
+
+func (AlertingRuleLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleLabel)(nil)).Elem()
+}
+
+func (i AlertingRuleLabelArray) ToAlertingRuleLabelArrayOutput() AlertingRuleLabelArrayOutput {
+	return i.ToAlertingRuleLabelArrayOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleLabelArray) ToAlertingRuleLabelArrayOutputWithContext(ctx context.Context) AlertingRuleLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleLabelArrayOutput)
+}
+
+type AlertingRuleLabelOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleLabel)(nil)).Elem()
+}
+
+func (o AlertingRuleLabelOutput) ToAlertingRuleLabelOutput() AlertingRuleLabelOutput {
+	return o
+}
+
+func (o AlertingRuleLabelOutput) ToAlertingRuleLabelOutputWithContext(ctx context.Context) AlertingRuleLabelOutput {
+	return o
+}
+
+// Tag or annotation key
+func (o AlertingRuleLabelOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleLabel) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Tag or annotation value. If set to empty, the key will be deleted
+func (o AlertingRuleLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AlertingRuleLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleLabel)(nil)).Elem()
+}
+
+func (o AlertingRuleLabelArrayOutput) ToAlertingRuleLabelArrayOutput() AlertingRuleLabelArrayOutput {
+	return o
+}
+
+func (o AlertingRuleLabelArrayOutput) ToAlertingRuleLabelArrayOutputWithContext(ctx context.Context) AlertingRuleLabelArrayOutput {
+	return o
+}
+
+func (o AlertingRuleLabelArrayOutput) Index(i pulumi.IntInput) AlertingRuleLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertingRuleLabel {
+		return vs[0].([]AlertingRuleLabel)[vs[1].(int)]
+	}).(AlertingRuleLabelOutput)
+}
+
+type AlertingRuleLevel struct {
+	// Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+	Comparator *string `pulumi:"comparator"`
+	// Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+	For *string `pulumi:"for"`
+	// Alert rule severity. Currently supports P0, P1, or P2
+	Level *string `pulumi:"level"`
+	// Alert rule threshold
+	Threshold *float64 `pulumi:"threshold"`
+}
+
+// AlertingRuleLevelInput is an input type that accepts AlertingRuleLevelArgs and AlertingRuleLevelOutput values.
+// You can construct a concrete instance of `AlertingRuleLevelInput` via:
+//
+//	AlertingRuleLevelArgs{...}
+type AlertingRuleLevelInput interface {
+	pulumi.Input
+
+	ToAlertingRuleLevelOutput() AlertingRuleLevelOutput
+	ToAlertingRuleLevelOutputWithContext(context.Context) AlertingRuleLevelOutput
+}
+
+type AlertingRuleLevelArgs struct {
+	// Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
+	// Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+	For pulumi.StringPtrInput `pulumi:"for"`
+	// Alert rule severity. Currently supports P0, P1, or P2
+	Level pulumi.StringPtrInput `pulumi:"level"`
+	// Alert rule threshold
+	Threshold pulumi.Float64PtrInput `pulumi:"threshold"`
+}
+
+func (AlertingRuleLevelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleLevel)(nil)).Elem()
+}
+
+func (i AlertingRuleLevelArgs) ToAlertingRuleLevelOutput() AlertingRuleLevelOutput {
+	return i.ToAlertingRuleLevelOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleLevelArgs) ToAlertingRuleLevelOutputWithContext(ctx context.Context) AlertingRuleLevelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleLevelOutput)
+}
+
+// AlertingRuleLevelArrayInput is an input type that accepts AlertingRuleLevelArray and AlertingRuleLevelArrayOutput values.
+// You can construct a concrete instance of `AlertingRuleLevelArrayInput` via:
+//
+//	AlertingRuleLevelArray{ AlertingRuleLevelArgs{...} }
+type AlertingRuleLevelArrayInput interface {
+	pulumi.Input
+
+	ToAlertingRuleLevelArrayOutput() AlertingRuleLevelArrayOutput
+	ToAlertingRuleLevelArrayOutputWithContext(context.Context) AlertingRuleLevelArrayOutput
+}
+
+type AlertingRuleLevelArray []AlertingRuleLevelInput
+
+func (AlertingRuleLevelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleLevel)(nil)).Elem()
+}
+
+func (i AlertingRuleLevelArray) ToAlertingRuleLevelArrayOutput() AlertingRuleLevelArrayOutput {
+	return i.ToAlertingRuleLevelArrayOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleLevelArray) ToAlertingRuleLevelArrayOutputWithContext(ctx context.Context) AlertingRuleLevelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleLevelArrayOutput)
+}
+
+type AlertingRuleLevelOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleLevelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleLevel)(nil)).Elem()
+}
+
+func (o AlertingRuleLevelOutput) ToAlertingRuleLevelOutput() AlertingRuleLevelOutput {
+	return o
+}
+
+func (o AlertingRuleLevelOutput) ToAlertingRuleLevelOutputWithContext(ctx context.Context) AlertingRuleLevelOutput {
+	return o
+}
+
+// Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+func (o AlertingRuleLevelOutput) Comparator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleLevel) *string { return v.Comparator }).(pulumi.StringPtrOutput)
+}
+
+// Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+func (o AlertingRuleLevelOutput) For() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleLevel) *string { return v.For }).(pulumi.StringPtrOutput)
+}
+
+// Alert rule severity. Currently supports P0, P1, or P2
+func (o AlertingRuleLevelOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleLevel) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
+// Alert rule threshold
+func (o AlertingRuleLevelOutput) Threshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v AlertingRuleLevel) *float64 { return v.Threshold }).(pulumi.Float64PtrOutput)
+}
+
+type AlertingRuleLevelArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleLevelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleLevel)(nil)).Elem()
+}
+
+func (o AlertingRuleLevelArrayOutput) ToAlertingRuleLevelArrayOutput() AlertingRuleLevelArrayOutput {
+	return o
+}
+
+func (o AlertingRuleLevelArrayOutput) ToAlertingRuleLevelArrayOutputWithContext(ctx context.Context) AlertingRuleLevelArrayOutput {
+	return o
+}
+
+func (o AlertingRuleLevelArrayOutput) Index(i pulumi.IntInput) AlertingRuleLevelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertingRuleLevel {
+		return vs[0].([]AlertingRuleLevel)[vs[1].(int)]
+	}).(AlertingRuleLevelOutput)
+}
+
+type AlertingRuleQuery struct {
+	// Query statement
+	PromQl *string `pulumi:"promQl"`
+	// Workspace ID
+	WorkspaceId *string `pulumi:"workspaceId"`
+}
+
+// AlertingRuleQueryInput is an input type that accepts AlertingRuleQueryArgs and AlertingRuleQueryOutput values.
+// You can construct a concrete instance of `AlertingRuleQueryInput` via:
+//
+//	AlertingRuleQueryArgs{...}
+type AlertingRuleQueryInput interface {
+	pulumi.Input
+
+	ToAlertingRuleQueryOutput() AlertingRuleQueryOutput
+	ToAlertingRuleQueryOutputWithContext(context.Context) AlertingRuleQueryOutput
+}
+
+type AlertingRuleQueryArgs struct {
+	// Query statement
+	PromQl pulumi.StringPtrInput `pulumi:"promQl"`
+	// Workspace ID
+	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
+}
+
+func (AlertingRuleQueryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleQuery)(nil)).Elem()
+}
+
+func (i AlertingRuleQueryArgs) ToAlertingRuleQueryOutput() AlertingRuleQueryOutput {
+	return i.ToAlertingRuleQueryOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleQueryArgs) ToAlertingRuleQueryOutputWithContext(ctx context.Context) AlertingRuleQueryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleQueryOutput)
+}
+
+func (i AlertingRuleQueryArgs) ToAlertingRuleQueryPtrOutput() AlertingRuleQueryPtrOutput {
+	return i.ToAlertingRuleQueryPtrOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleQueryArgs) ToAlertingRuleQueryPtrOutputWithContext(ctx context.Context) AlertingRuleQueryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleQueryOutput).ToAlertingRuleQueryPtrOutputWithContext(ctx)
+}
+
+// AlertingRuleQueryPtrInput is an input type that accepts AlertingRuleQueryArgs, AlertingRuleQueryPtr and AlertingRuleQueryPtrOutput values.
+// You can construct a concrete instance of `AlertingRuleQueryPtrInput` via:
+//
+//	        AlertingRuleQueryArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlertingRuleQueryPtrInput interface {
+	pulumi.Input
+
+	ToAlertingRuleQueryPtrOutput() AlertingRuleQueryPtrOutput
+	ToAlertingRuleQueryPtrOutputWithContext(context.Context) AlertingRuleQueryPtrOutput
+}
+
+type alertingRuleQueryPtrType AlertingRuleQueryArgs
+
+func AlertingRuleQueryPtr(v *AlertingRuleQueryArgs) AlertingRuleQueryPtrInput {
+	return (*alertingRuleQueryPtrType)(v)
+}
+
+func (*alertingRuleQueryPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertingRuleQuery)(nil)).Elem()
+}
+
+func (i *alertingRuleQueryPtrType) ToAlertingRuleQueryPtrOutput() AlertingRuleQueryPtrOutput {
+	return i.ToAlertingRuleQueryPtrOutputWithContext(context.Background())
+}
+
+func (i *alertingRuleQueryPtrType) ToAlertingRuleQueryPtrOutputWithContext(ctx context.Context) AlertingRuleQueryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleQueryPtrOutput)
+}
+
+type AlertingRuleQueryOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleQueryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleQuery)(nil)).Elem()
+}
+
+func (o AlertingRuleQueryOutput) ToAlertingRuleQueryOutput() AlertingRuleQueryOutput {
+	return o
+}
+
+func (o AlertingRuleQueryOutput) ToAlertingRuleQueryOutputWithContext(ctx context.Context) AlertingRuleQueryOutput {
+	return o
+}
+
+func (o AlertingRuleQueryOutput) ToAlertingRuleQueryPtrOutput() AlertingRuleQueryPtrOutput {
+	return o.ToAlertingRuleQueryPtrOutputWithContext(context.Background())
+}
+
+func (o AlertingRuleQueryOutput) ToAlertingRuleQueryPtrOutputWithContext(ctx context.Context) AlertingRuleQueryPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlertingRuleQuery) *AlertingRuleQuery {
+		return &v
+	}).(AlertingRuleQueryPtrOutput)
+}
+
+// Query statement
+func (o AlertingRuleQueryOutput) PromQl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleQuery) *string { return v.PromQl }).(pulumi.StringPtrOutput)
+}
+
+// Workspace ID
+func (o AlertingRuleQueryOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleQuery) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
+}
+
+type AlertingRuleQueryPtrOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleQueryPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlertingRuleQuery)(nil)).Elem()
+}
+
+func (o AlertingRuleQueryPtrOutput) ToAlertingRuleQueryPtrOutput() AlertingRuleQueryPtrOutput {
+	return o
+}
+
+func (o AlertingRuleQueryPtrOutput) ToAlertingRuleQueryPtrOutputWithContext(ctx context.Context) AlertingRuleQueryPtrOutput {
+	return o
+}
+
+func (o AlertingRuleQueryPtrOutput) Elem() AlertingRuleQueryOutput {
+	return o.ApplyT(func(v *AlertingRuleQuery) AlertingRuleQuery {
+		if v != nil {
+			return *v
+		}
+		var ret AlertingRuleQuery
+		return ret
+	}).(AlertingRuleQueryOutput)
+}
+
+// Query statement
+func (o AlertingRuleQueryPtrOutput) PromQl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertingRuleQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PromQl
+	}).(pulumi.StringPtrOutput)
+}
+
+// Workspace ID
+func (o AlertingRuleQueryPtrOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlertingRuleQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WorkspaceId
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlertingRuleTag struct {
+	// Tag or annotation key
+	Key *string `pulumi:"key"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value *string `pulumi:"value"`
+}
+
+// AlertingRuleTagInput is an input type that accepts AlertingRuleTagArgs and AlertingRuleTagOutput values.
+// You can construct a concrete instance of `AlertingRuleTagInput` via:
+//
+//	AlertingRuleTagArgs{...}
+type AlertingRuleTagInput interface {
+	pulumi.Input
+
+	ToAlertingRuleTagOutput() AlertingRuleTagOutput
+	ToAlertingRuleTagOutputWithContext(context.Context) AlertingRuleTagOutput
+}
+
+type AlertingRuleTagArgs struct {
+	// Tag or annotation key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AlertingRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleTag)(nil)).Elem()
+}
+
+func (i AlertingRuleTagArgs) ToAlertingRuleTagOutput() AlertingRuleTagOutput {
+	return i.ToAlertingRuleTagOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleTagArgs) ToAlertingRuleTagOutputWithContext(ctx context.Context) AlertingRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleTagOutput)
+}
+
+// AlertingRuleTagArrayInput is an input type that accepts AlertingRuleTagArray and AlertingRuleTagArrayOutput values.
+// You can construct a concrete instance of `AlertingRuleTagArrayInput` via:
+//
+//	AlertingRuleTagArray{ AlertingRuleTagArgs{...} }
+type AlertingRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToAlertingRuleTagArrayOutput() AlertingRuleTagArrayOutput
+	ToAlertingRuleTagArrayOutputWithContext(context.Context) AlertingRuleTagArrayOutput
+}
+
+type AlertingRuleTagArray []AlertingRuleTagInput
+
+func (AlertingRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleTag)(nil)).Elem()
+}
+
+func (i AlertingRuleTagArray) ToAlertingRuleTagArrayOutput() AlertingRuleTagArrayOutput {
+	return i.ToAlertingRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i AlertingRuleTagArray) ToAlertingRuleTagArrayOutputWithContext(ctx context.Context) AlertingRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertingRuleTagArrayOutput)
+}
+
+type AlertingRuleTagOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertingRuleTag)(nil)).Elem()
+}
+
+func (o AlertingRuleTagOutput) ToAlertingRuleTagOutput() AlertingRuleTagOutput {
+	return o
+}
+
+func (o AlertingRuleTagOutput) ToAlertingRuleTagOutputWithContext(ctx context.Context) AlertingRuleTagOutput {
+	return o
+}
+
+// Tag or annotation key
+func (o AlertingRuleTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag or annotation value. If set to empty, the key will be deleted
+func (o AlertingRuleTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertingRuleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AlertingRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertingRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertingRuleTag)(nil)).Elem()
+}
+
+func (o AlertingRuleTagArrayOutput) ToAlertingRuleTagArrayOutput() AlertingRuleTagArrayOutput {
+	return o
+}
+
+func (o AlertingRuleTagArrayOutput) ToAlertingRuleTagArrayOutputWithContext(ctx context.Context) AlertingRuleTagArrayOutput {
+	return o
+}
+
+func (o AlertingRuleTagArrayOutput) Index(i pulumi.IntInput) AlertingRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertingRuleTag {
+		return vs[0].([]AlertingRuleTag)[vs[1].(int)]
+	}).(AlertingRuleTagOutput)
+}
+
 type WorkspaceInstanceType struct {
 	// Maximum active time series count
 	ActiveSeries *int `pulumi:"activeSeries"`
@@ -1071,6 +1669,509 @@ func (o WorkspaceUsagePtrOutput) IngestedSamplesPerSecond() pulumi.Float64PtrOut
 	}).(pulumi.Float64PtrOutput)
 }
 
+type GetAlertingRuleAnnotation struct {
+	// Tag or annotation key
+	Name string `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value string `pulumi:"value"`
+}
+
+// GetAlertingRuleAnnotationInput is an input type that accepts GetAlertingRuleAnnotationArgs and GetAlertingRuleAnnotationOutput values.
+// You can construct a concrete instance of `GetAlertingRuleAnnotationInput` via:
+//
+//	GetAlertingRuleAnnotationArgs{...}
+type GetAlertingRuleAnnotationInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleAnnotationOutput() GetAlertingRuleAnnotationOutput
+	ToGetAlertingRuleAnnotationOutputWithContext(context.Context) GetAlertingRuleAnnotationOutput
+}
+
+type GetAlertingRuleAnnotationArgs struct {
+	// Tag or annotation key
+	Name pulumi.StringInput `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAlertingRuleAnnotationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (i GetAlertingRuleAnnotationArgs) ToGetAlertingRuleAnnotationOutput() GetAlertingRuleAnnotationOutput {
+	return i.ToGetAlertingRuleAnnotationOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleAnnotationArgs) ToGetAlertingRuleAnnotationOutputWithContext(ctx context.Context) GetAlertingRuleAnnotationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleAnnotationOutput)
+}
+
+// GetAlertingRuleAnnotationArrayInput is an input type that accepts GetAlertingRuleAnnotationArray and GetAlertingRuleAnnotationArrayOutput values.
+// You can construct a concrete instance of `GetAlertingRuleAnnotationArrayInput` via:
+//
+//	GetAlertingRuleAnnotationArray{ GetAlertingRuleAnnotationArgs{...} }
+type GetAlertingRuleAnnotationArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleAnnotationArrayOutput() GetAlertingRuleAnnotationArrayOutput
+	ToGetAlertingRuleAnnotationArrayOutputWithContext(context.Context) GetAlertingRuleAnnotationArrayOutput
+}
+
+type GetAlertingRuleAnnotationArray []GetAlertingRuleAnnotationInput
+
+func (GetAlertingRuleAnnotationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (i GetAlertingRuleAnnotationArray) ToGetAlertingRuleAnnotationArrayOutput() GetAlertingRuleAnnotationArrayOutput {
+	return i.ToGetAlertingRuleAnnotationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleAnnotationArray) ToGetAlertingRuleAnnotationArrayOutputWithContext(ctx context.Context) GetAlertingRuleAnnotationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleAnnotationArrayOutput)
+}
+
+type GetAlertingRuleAnnotationOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleAnnotationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (o GetAlertingRuleAnnotationOutput) ToGetAlertingRuleAnnotationOutput() GetAlertingRuleAnnotationOutput {
+	return o
+}
+
+func (o GetAlertingRuleAnnotationOutput) ToGetAlertingRuleAnnotationOutputWithContext(ctx context.Context) GetAlertingRuleAnnotationOutput {
+	return o
+}
+
+// Tag or annotation key
+func (o GetAlertingRuleAnnotationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleAnnotation) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Tag or annotation value. If set to empty, the key will be deleted
+func (o GetAlertingRuleAnnotationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleAnnotation) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAlertingRuleAnnotationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleAnnotationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleAnnotation)(nil)).Elem()
+}
+
+func (o GetAlertingRuleAnnotationArrayOutput) ToGetAlertingRuleAnnotationArrayOutput() GetAlertingRuleAnnotationArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleAnnotationArrayOutput) ToGetAlertingRuleAnnotationArrayOutputWithContext(ctx context.Context) GetAlertingRuleAnnotationArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleAnnotationArrayOutput) Index(i pulumi.IntInput) GetAlertingRuleAnnotationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertingRuleAnnotation {
+		return vs[0].([]GetAlertingRuleAnnotation)[vs[1].(int)]
+	}).(GetAlertingRuleAnnotationOutput)
+}
+
+type GetAlertingRuleLabel struct {
+	// Tag or annotation key
+	Name string `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value string `pulumi:"value"`
+}
+
+// GetAlertingRuleLabelInput is an input type that accepts GetAlertingRuleLabelArgs and GetAlertingRuleLabelOutput values.
+// You can construct a concrete instance of `GetAlertingRuleLabelInput` via:
+//
+//	GetAlertingRuleLabelArgs{...}
+type GetAlertingRuleLabelInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleLabelOutput() GetAlertingRuleLabelOutput
+	ToGetAlertingRuleLabelOutputWithContext(context.Context) GetAlertingRuleLabelOutput
+}
+
+type GetAlertingRuleLabelArgs struct {
+	// Tag or annotation key
+	Name pulumi.StringInput `pulumi:"name"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAlertingRuleLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleLabel)(nil)).Elem()
+}
+
+func (i GetAlertingRuleLabelArgs) ToGetAlertingRuleLabelOutput() GetAlertingRuleLabelOutput {
+	return i.ToGetAlertingRuleLabelOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleLabelArgs) ToGetAlertingRuleLabelOutputWithContext(ctx context.Context) GetAlertingRuleLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleLabelOutput)
+}
+
+// GetAlertingRuleLabelArrayInput is an input type that accepts GetAlertingRuleLabelArray and GetAlertingRuleLabelArrayOutput values.
+// You can construct a concrete instance of `GetAlertingRuleLabelArrayInput` via:
+//
+//	GetAlertingRuleLabelArray{ GetAlertingRuleLabelArgs{...} }
+type GetAlertingRuleLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleLabelArrayOutput() GetAlertingRuleLabelArrayOutput
+	ToGetAlertingRuleLabelArrayOutputWithContext(context.Context) GetAlertingRuleLabelArrayOutput
+}
+
+type GetAlertingRuleLabelArray []GetAlertingRuleLabelInput
+
+func (GetAlertingRuleLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleLabel)(nil)).Elem()
+}
+
+func (i GetAlertingRuleLabelArray) ToGetAlertingRuleLabelArrayOutput() GetAlertingRuleLabelArrayOutput {
+	return i.ToGetAlertingRuleLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleLabelArray) ToGetAlertingRuleLabelArrayOutputWithContext(ctx context.Context) GetAlertingRuleLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleLabelArrayOutput)
+}
+
+type GetAlertingRuleLabelOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleLabel)(nil)).Elem()
+}
+
+func (o GetAlertingRuleLabelOutput) ToGetAlertingRuleLabelOutput() GetAlertingRuleLabelOutput {
+	return o
+}
+
+func (o GetAlertingRuleLabelOutput) ToGetAlertingRuleLabelOutputWithContext(ctx context.Context) GetAlertingRuleLabelOutput {
+	return o
+}
+
+// Tag or annotation key
+func (o GetAlertingRuleLabelOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleLabel) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Tag or annotation value. If set to empty, the key will be deleted
+func (o GetAlertingRuleLabelOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleLabel) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAlertingRuleLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleLabel)(nil)).Elem()
+}
+
+func (o GetAlertingRuleLabelArrayOutput) ToGetAlertingRuleLabelArrayOutput() GetAlertingRuleLabelArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleLabelArrayOutput) ToGetAlertingRuleLabelArrayOutputWithContext(ctx context.Context) GetAlertingRuleLabelArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleLabelArrayOutput) Index(i pulumi.IntInput) GetAlertingRuleLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertingRuleLabel {
+		return vs[0].([]GetAlertingRuleLabel)[vs[1].(int)]
+	}).(GetAlertingRuleLabelOutput)
+}
+
+type GetAlertingRuleLevel struct {
+	// Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+	Comparator string `pulumi:"comparator"`
+	// Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+	For string `pulumi:"for"`
+	// Alert rule severity. Currently supports P0, P1, or P2
+	Level string `pulumi:"level"`
+	// Alert rule threshold
+	Threshold float64 `pulumi:"threshold"`
+}
+
+// GetAlertingRuleLevelInput is an input type that accepts GetAlertingRuleLevelArgs and GetAlertingRuleLevelOutput values.
+// You can construct a concrete instance of `GetAlertingRuleLevelInput` via:
+//
+//	GetAlertingRuleLevelArgs{...}
+type GetAlertingRuleLevelInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleLevelOutput() GetAlertingRuleLevelOutput
+	ToGetAlertingRuleLevelOutputWithContext(context.Context) GetAlertingRuleLevelOutput
+}
+
+type GetAlertingRuleLevelArgs struct {
+	// Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+	Comparator pulumi.StringInput `pulumi:"comparator"`
+	// Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+	For pulumi.StringInput `pulumi:"for"`
+	// Alert rule severity. Currently supports P0, P1, or P2
+	Level pulumi.StringInput `pulumi:"level"`
+	// Alert rule threshold
+	Threshold pulumi.Float64Input `pulumi:"threshold"`
+}
+
+func (GetAlertingRuleLevelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleLevel)(nil)).Elem()
+}
+
+func (i GetAlertingRuleLevelArgs) ToGetAlertingRuleLevelOutput() GetAlertingRuleLevelOutput {
+	return i.ToGetAlertingRuleLevelOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleLevelArgs) ToGetAlertingRuleLevelOutputWithContext(ctx context.Context) GetAlertingRuleLevelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleLevelOutput)
+}
+
+// GetAlertingRuleLevelArrayInput is an input type that accepts GetAlertingRuleLevelArray and GetAlertingRuleLevelArrayOutput values.
+// You can construct a concrete instance of `GetAlertingRuleLevelArrayInput` via:
+//
+//	GetAlertingRuleLevelArray{ GetAlertingRuleLevelArgs{...} }
+type GetAlertingRuleLevelArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleLevelArrayOutput() GetAlertingRuleLevelArrayOutput
+	ToGetAlertingRuleLevelArrayOutputWithContext(context.Context) GetAlertingRuleLevelArrayOutput
+}
+
+type GetAlertingRuleLevelArray []GetAlertingRuleLevelInput
+
+func (GetAlertingRuleLevelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleLevel)(nil)).Elem()
+}
+
+func (i GetAlertingRuleLevelArray) ToGetAlertingRuleLevelArrayOutput() GetAlertingRuleLevelArrayOutput {
+	return i.ToGetAlertingRuleLevelArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleLevelArray) ToGetAlertingRuleLevelArrayOutputWithContext(ctx context.Context) GetAlertingRuleLevelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleLevelArrayOutput)
+}
+
+type GetAlertingRuleLevelOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleLevelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleLevel)(nil)).Elem()
+}
+
+func (o GetAlertingRuleLevelOutput) ToGetAlertingRuleLevelOutput() GetAlertingRuleLevelOutput {
+	return o
+}
+
+func (o GetAlertingRuleLevelOutput) ToGetAlertingRuleLevelOutputWithContext(ctx context.Context) GetAlertingRuleLevelOutput {
+	return o
+}
+
+// Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+func (o GetAlertingRuleLevelOutput) Comparator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleLevel) string { return v.Comparator }).(pulumi.StringOutput)
+}
+
+// Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+func (o GetAlertingRuleLevelOutput) For() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleLevel) string { return v.For }).(pulumi.StringOutput)
+}
+
+// Alert rule severity. Currently supports P0, P1, or P2
+func (o GetAlertingRuleLevelOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleLevel) string { return v.Level }).(pulumi.StringOutput)
+}
+
+// Alert rule threshold
+func (o GetAlertingRuleLevelOutput) Threshold() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAlertingRuleLevel) float64 { return v.Threshold }).(pulumi.Float64Output)
+}
+
+type GetAlertingRuleLevelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleLevelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleLevel)(nil)).Elem()
+}
+
+func (o GetAlertingRuleLevelArrayOutput) ToGetAlertingRuleLevelArrayOutput() GetAlertingRuleLevelArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleLevelArrayOutput) ToGetAlertingRuleLevelArrayOutputWithContext(ctx context.Context) GetAlertingRuleLevelArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleLevelArrayOutput) Index(i pulumi.IntInput) GetAlertingRuleLevelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertingRuleLevel {
+		return vs[0].([]GetAlertingRuleLevel)[vs[1].(int)]
+	}).(GetAlertingRuleLevelOutput)
+}
+
+type GetAlertingRuleQuery struct {
+	// Query statement
+	PromQl string `pulumi:"promQl"`
+	// Workspace ID
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetAlertingRuleQueryInput is an input type that accepts GetAlertingRuleQueryArgs and GetAlertingRuleQueryOutput values.
+// You can construct a concrete instance of `GetAlertingRuleQueryInput` via:
+//
+//	GetAlertingRuleQueryArgs{...}
+type GetAlertingRuleQueryInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleQueryOutput() GetAlertingRuleQueryOutput
+	ToGetAlertingRuleQueryOutputWithContext(context.Context) GetAlertingRuleQueryOutput
+}
+
+type GetAlertingRuleQueryArgs struct {
+	// Query statement
+	PromQl pulumi.StringInput `pulumi:"promQl"`
+	// Workspace ID
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetAlertingRuleQueryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleQuery)(nil)).Elem()
+}
+
+func (i GetAlertingRuleQueryArgs) ToGetAlertingRuleQueryOutput() GetAlertingRuleQueryOutput {
+	return i.ToGetAlertingRuleQueryOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleQueryArgs) ToGetAlertingRuleQueryOutputWithContext(ctx context.Context) GetAlertingRuleQueryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleQueryOutput)
+}
+
+type GetAlertingRuleQueryOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleQueryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleQuery)(nil)).Elem()
+}
+
+func (o GetAlertingRuleQueryOutput) ToGetAlertingRuleQueryOutput() GetAlertingRuleQueryOutput {
+	return o
+}
+
+func (o GetAlertingRuleQueryOutput) ToGetAlertingRuleQueryOutputWithContext(ctx context.Context) GetAlertingRuleQueryOutput {
+	return o
+}
+
+// Query statement
+func (o GetAlertingRuleQueryOutput) PromQl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleQuery) string { return v.PromQl }).(pulumi.StringOutput)
+}
+
+// Workspace ID
+func (o GetAlertingRuleQueryOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleQuery) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetAlertingRuleTag struct {
+	// Tag or annotation key
+	Key string `pulumi:"key"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value string `pulumi:"value"`
+}
+
+// GetAlertingRuleTagInput is an input type that accepts GetAlertingRuleTagArgs and GetAlertingRuleTagOutput values.
+// You can construct a concrete instance of `GetAlertingRuleTagInput` via:
+//
+//	GetAlertingRuleTagArgs{...}
+type GetAlertingRuleTagInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleTagOutput() GetAlertingRuleTagOutput
+	ToGetAlertingRuleTagOutputWithContext(context.Context) GetAlertingRuleTagOutput
+}
+
+type GetAlertingRuleTagArgs struct {
+	// Tag or annotation key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag or annotation value. If set to empty, the key will be deleted
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAlertingRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleTag)(nil)).Elem()
+}
+
+func (i GetAlertingRuleTagArgs) ToGetAlertingRuleTagOutput() GetAlertingRuleTagOutput {
+	return i.ToGetAlertingRuleTagOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleTagArgs) ToGetAlertingRuleTagOutputWithContext(ctx context.Context) GetAlertingRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleTagOutput)
+}
+
+// GetAlertingRuleTagArrayInput is an input type that accepts GetAlertingRuleTagArray and GetAlertingRuleTagArrayOutput values.
+// You can construct a concrete instance of `GetAlertingRuleTagArrayInput` via:
+//
+//	GetAlertingRuleTagArray{ GetAlertingRuleTagArgs{...} }
+type GetAlertingRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertingRuleTagArrayOutput() GetAlertingRuleTagArrayOutput
+	ToGetAlertingRuleTagArrayOutputWithContext(context.Context) GetAlertingRuleTagArrayOutput
+}
+
+type GetAlertingRuleTagArray []GetAlertingRuleTagInput
+
+func (GetAlertingRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleTag)(nil)).Elem()
+}
+
+func (i GetAlertingRuleTagArray) ToGetAlertingRuleTagArrayOutput() GetAlertingRuleTagArrayOutput {
+	return i.ToGetAlertingRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertingRuleTagArray) ToGetAlertingRuleTagArrayOutputWithContext(ctx context.Context) GetAlertingRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertingRuleTagArrayOutput)
+}
+
+type GetAlertingRuleTagOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertingRuleTag)(nil)).Elem()
+}
+
+func (o GetAlertingRuleTagOutput) ToGetAlertingRuleTagOutput() GetAlertingRuleTagOutput {
+	return o
+}
+
+func (o GetAlertingRuleTagOutput) ToGetAlertingRuleTagOutputWithContext(ctx context.Context) GetAlertingRuleTagOutput {
+	return o
+}
+
+// Tag or annotation key
+func (o GetAlertingRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag or annotation value. If set to empty, the key will be deleted
+func (o GetAlertingRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertingRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAlertingRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertingRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertingRuleTag)(nil)).Elem()
+}
+
+func (o GetAlertingRuleTagArrayOutput) ToGetAlertingRuleTagArrayOutput() GetAlertingRuleTagArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleTagArrayOutput) ToGetAlertingRuleTagArrayOutputWithContext(ctx context.Context) GetAlertingRuleTagArrayOutput {
+	return o
+}
+
+func (o GetAlertingRuleTagArrayOutput) Index(i pulumi.IntInput) GetAlertingRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertingRuleTag {
+		return vs[0].([]GetAlertingRuleTag)[vs[1].(int)]
+	}).(GetAlertingRuleTagOutput)
+}
+
 type GetWorkspaceInstanceType struct {
 	// Maximum active time series count
 	ActiveSeries int `pulumi:"activeSeries"`
@@ -1712,6 +2813,16 @@ func (o GetWorkspaceUsageOutput) IngestedSamplesPerSecond() pulumi.Float64Output
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleAnnotationInput)(nil)).Elem(), AlertingRuleAnnotationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleAnnotationArrayInput)(nil)).Elem(), AlertingRuleAnnotationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleLabelInput)(nil)).Elem(), AlertingRuleLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleLabelArrayInput)(nil)).Elem(), AlertingRuleLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleLevelInput)(nil)).Elem(), AlertingRuleLevelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleLevelArrayInput)(nil)).Elem(), AlertingRuleLevelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleQueryInput)(nil)).Elem(), AlertingRuleQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleQueryPtrInput)(nil)).Elem(), AlertingRuleQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleTagInput)(nil)).Elem(), AlertingRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleTagArrayInput)(nil)).Elem(), AlertingRuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeInput)(nil)).Elem(), WorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypePtrInput)(nil)).Elem(), WorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamInput)(nil)).Elem(), WorkspaceInstanceTypeCalculatePriceParamArgs{})
@@ -1724,6 +2835,15 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceTagArrayInput)(nil)).Elem(), WorkspaceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceUsageInput)(nil)).Elem(), WorkspaceUsageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceUsagePtrInput)(nil)).Elem(), WorkspaceUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleAnnotationInput)(nil)).Elem(), GetAlertingRuleAnnotationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleAnnotationArrayInput)(nil)).Elem(), GetAlertingRuleAnnotationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleLabelInput)(nil)).Elem(), GetAlertingRuleLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleLabelArrayInput)(nil)).Elem(), GetAlertingRuleLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleLevelInput)(nil)).Elem(), GetAlertingRuleLevelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleLevelArrayInput)(nil)).Elem(), GetAlertingRuleLevelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleQueryInput)(nil)).Elem(), GetAlertingRuleQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleTagInput)(nil)).Elem(), GetAlertingRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleTagArrayInput)(nil)).Elem(), GetAlertingRuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeInput)(nil)).Elem(), GetWorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamArrayInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamArray{})
@@ -1733,6 +2853,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceTagInput)(nil)).Elem(), GetWorkspaceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceTagArrayInput)(nil)).Elem(), GetWorkspaceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceUsageInput)(nil)).Elem(), GetWorkspaceUsageArgs{})
+	pulumi.RegisterOutputType(AlertingRuleAnnotationOutput{})
+	pulumi.RegisterOutputType(AlertingRuleAnnotationArrayOutput{})
+	pulumi.RegisterOutputType(AlertingRuleLabelOutput{})
+	pulumi.RegisterOutputType(AlertingRuleLabelArrayOutput{})
+	pulumi.RegisterOutputType(AlertingRuleLevelOutput{})
+	pulumi.RegisterOutputType(AlertingRuleLevelArrayOutput{})
+	pulumi.RegisterOutputType(AlertingRuleQueryOutput{})
+	pulumi.RegisterOutputType(AlertingRuleQueryPtrOutput{})
+	pulumi.RegisterOutputType(AlertingRuleTagOutput{})
+	pulumi.RegisterOutputType(AlertingRuleTagArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypeOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypePtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypeCalculatePriceParamOutput{})
@@ -1745,6 +2875,15 @@ func init() {
 	pulumi.RegisterOutputType(WorkspaceTagArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceUsageOutput{})
 	pulumi.RegisterOutputType(WorkspaceUsagePtrOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleAnnotationOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleAnnotationArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleLabelOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleLevelOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleLevelArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleQueryOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleTagOutput{})
+	pulumi.RegisterOutputType(GetAlertingRuleTagArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput{})

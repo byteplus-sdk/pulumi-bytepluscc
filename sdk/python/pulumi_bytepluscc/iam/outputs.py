@@ -28,6 +28,7 @@ __all__ = [
     'PolicyPolicyUserPolicyScope',
     'RolePolicy',
     'RoleTag',
+    'SamlProviderCertificate',
     'UserAccessKey',
     'UserLoginProfile',
     'UserPolicy',
@@ -44,6 +45,7 @@ __all__ = [
     'GetPolicyPolicyUserPolicyScopeResult',
     'GetRolePolicyResult',
     'GetRoleTagResult',
+    'GetSamlProviderCertificateResult',
     'GetUserAccessKeyResult',
     'GetUserLoginProfileResult',
     'GetUserPolicyResult',
@@ -544,6 +546,162 @@ class RoleTag(dict):
         Tag value
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SamlProviderCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateId":
+            suggest = "certificate_id"
+        elif key == "createDate":
+            suggest = "create_date"
+        elif key == "notAfter":
+            suggest = "not_after"
+        elif key == "notBefore":
+            suggest = "not_before"
+        elif key == "serialNumber":
+            suggest = "serial_number"
+        elif key == "signatureAlgorithm":
+            suggest = "signature_algorithm"
+        elif key == "updateDate":
+            suggest = "update_date"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SamlProviderCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SamlProviderCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SamlProviderCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate_id: Optional[builtins.str] = None,
+                 create_date: Optional[builtins.str] = None,
+                 issuer: Optional[builtins.str] = None,
+                 not_after: Optional[builtins.str] = None,
+                 not_before: Optional[builtins.str] = None,
+                 serial_number: Optional[builtins.str] = None,
+                 signature_algorithm: Optional[builtins.str] = None,
+                 subject: Optional[builtins.str] = None,
+                 update_date: Optional[builtins.str] = None,
+                 version: Optional[builtins.str] = None):
+        """
+        :param builtins.str certificate_id: Certificate ID
+        :param builtins.str create_date: Certificate Upload Time
+        :param builtins.str issuer: Certificate Authority
+        :param builtins.str not_after: Certificate Expiration Time
+        :param builtins.str not_before: Certificate Validity Period
+        :param builtins.str serial_number: Certificate Serial Number
+        :param builtins.str signature_algorithm: Certificate Signature Algorithm
+        :param builtins.str subject: Certificate Subject
+        :param builtins.str update_date: Certificate Update Time
+        :param builtins.str version: Certificate Version
+        """
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if create_date is not None:
+            pulumi.set(__self__, "create_date", create_date)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if not_after is not None:
+            pulumi.set(__self__, "not_after", not_after)
+        if not_before is not None:
+            pulumi.set(__self__, "not_before", not_before)
+        if serial_number is not None:
+            pulumi.set(__self__, "serial_number", serial_number)
+        if signature_algorithm is not None:
+            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+        if update_date is not None:
+            pulumi.set(__self__, "update_date", update_date)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[builtins.str]:
+        """
+        Certificate ID
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> Optional[builtins.str]:
+        """
+        Certificate Upload Time
+        """
+        return pulumi.get(self, "create_date")
+
+    @property
+    @pulumi.getter
+    def issuer(self) -> Optional[builtins.str]:
+        """
+        Certificate Authority
+        """
+        return pulumi.get(self, "issuer")
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> Optional[builtins.str]:
+        """
+        Certificate Expiration Time
+        """
+        return pulumi.get(self, "not_after")
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> Optional[builtins.str]:
+        """
+        Certificate Validity Period
+        """
+        return pulumi.get(self, "not_before")
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> Optional[builtins.str]:
+        """
+        Certificate Serial Number
+        """
+        return pulumi.get(self, "serial_number")
+
+    @property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> Optional[builtins.str]:
+        """
+        Certificate Signature Algorithm
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @property
+    @pulumi.getter
+    def subject(self) -> Optional[builtins.str]:
+        """
+        Certificate Subject
+        """
+        return pulumi.get(self, "subject")
+
+    @property
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> Optional[builtins.str]:
+        """
+        Certificate Update Time
+        """
+        return pulumi.get(self, "update_date")
+
+    @property
+    @pulumi.getter
+    def version(self) -> Optional[builtins.str]:
+        """
+        Certificate Version
+        """
+        return pulumi.get(self, "version")
 
 
 @pulumi.output_type
@@ -1663,6 +1821,123 @@ class GetRoleTagResult(dict):
         Tag value
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSamlProviderCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate_id: builtins.str,
+                 create_date: builtins.str,
+                 issuer: builtins.str,
+                 not_after: builtins.str,
+                 not_before: builtins.str,
+                 serial_number: builtins.str,
+                 signature_algorithm: builtins.str,
+                 subject: builtins.str,
+                 update_date: builtins.str,
+                 version: builtins.str):
+        """
+        :param builtins.str certificate_id: Certificate ID
+        :param builtins.str create_date: Certificate Upload Time
+        :param builtins.str issuer: Certificate Authority
+        :param builtins.str not_after: Certificate Expiration Time
+        :param builtins.str not_before: Certificate Validity Period
+        :param builtins.str serial_number: Certificate Serial Number
+        :param builtins.str signature_algorithm: Certificate Signature Algorithm
+        :param builtins.str subject: Certificate Subject
+        :param builtins.str update_date: Certificate Update Time
+        :param builtins.str version: Certificate Version
+        """
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "create_date", create_date)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "not_after", not_after)
+        pulumi.set(__self__, "not_before", not_before)
+        pulumi.set(__self__, "serial_number", serial_number)
+        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "update_date", update_date)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> builtins.str:
+        """
+        Certificate ID
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> builtins.str:
+        """
+        Certificate Upload Time
+        """
+        return pulumi.get(self, "create_date")
+
+    @property
+    @pulumi.getter
+    def issuer(self) -> builtins.str:
+        """
+        Certificate Authority
+        """
+        return pulumi.get(self, "issuer")
+
+    @property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> builtins.str:
+        """
+        Certificate Expiration Time
+        """
+        return pulumi.get(self, "not_after")
+
+    @property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> builtins.str:
+        """
+        Certificate Validity Period
+        """
+        return pulumi.get(self, "not_before")
+
+    @property
+    @pulumi.getter(name="serialNumber")
+    def serial_number(self) -> builtins.str:
+        """
+        Certificate Serial Number
+        """
+        return pulumi.get(self, "serial_number")
+
+    @property
+    @pulumi.getter(name="signatureAlgorithm")
+    def signature_algorithm(self) -> builtins.str:
+        """
+        Certificate Signature Algorithm
+        """
+        return pulumi.get(self, "signature_algorithm")
+
+    @property
+    @pulumi.getter
+    def subject(self) -> builtins.str:
+        """
+        Certificate Subject
+        """
+        return pulumi.get(self, "subject")
+
+    @property
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> builtins.str:
+        """
+        Certificate Update Time
+        """
+        return pulumi.get(self, "update_date")
+
+    @property
+    @pulumi.getter
+    def version(self) -> builtins.str:
+        """
+        Certificate Version
+        """
+        return pulumi.get(self, "version")
 
 
 @pulumi.output_type

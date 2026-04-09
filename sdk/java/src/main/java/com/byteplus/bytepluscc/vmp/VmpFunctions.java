@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.vmp;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vmp.inputs.GetAlertingRuleArgs;
+import com.byteplus.bytepluscc.vmp.inputs.GetAlertingRulePlainArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetWorkspaceArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetWorkspacePlainArgs;
+import com.byteplus.bytepluscc.vmp.outputs.GetAlertingRuleResult;
+import com.byteplus.bytepluscc.vmp.outputs.GetAlertingRulesResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetWorkspaceResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetWorkspacesResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VmpFunctions {
+    /**
+     * Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRuleResult> getAlertingRule(GetAlertingRuleArgs args) {
+        return getAlertingRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static CompletableFuture<GetAlertingRuleResult> getAlertingRulePlain(GetAlertingRulePlainArgs args) {
+        return getAlertingRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRuleResult> getAlertingRule(GetAlertingRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getAlertingRule:getAlertingRule", TypeShape.of(GetAlertingRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRuleResult> getAlertingRule(GetAlertingRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getAlertingRule:getAlertingRule", TypeShape.of(GetAlertingRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static CompletableFuture<GetAlertingRuleResult> getAlertingRulePlain(GetAlertingRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getAlertingRule:getAlertingRule", TypeShape.of(GetAlertingRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRulesResult> getAlertingRules() {
+        return getAlertingRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static CompletableFuture<GetAlertingRulesResult> getAlertingRulesPlain() {
+        return getAlertingRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRulesResult> getAlertingRules(InvokeArgs args) {
+        return getAlertingRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static CompletableFuture<GetAlertingRulesResult> getAlertingRulesPlain(InvokeArgs args) {
+        return getAlertingRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRulesResult> getAlertingRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getAlertingRules:getAlertingRules", TypeShape.of(GetAlertingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static Output<GetAlertingRulesResult> getAlertingRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getAlertingRules:getAlertingRules", TypeShape.of(GetAlertingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::AlertingRule
+     * 
+     */
+    public static CompletableFuture<GetAlertingRulesResult> getAlertingRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getAlertingRules:getAlertingRules", TypeShape.of(GetAlertingRulesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VMP::Workspace
      * 

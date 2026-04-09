@@ -10,12 +10,16 @@ import com.byteplus.bytepluscc.vefaas.inputs.GetKafkaTriggerArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetKafkaTriggerPlainArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetSandboxArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetSandboxPlainArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.GetTimerArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.GetTimerPlainArgs;
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionsResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetKafkaTriggerResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetKafkaTriggersResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxesResult;
+import com.byteplus.bytepluscc.vefaas.outputs.GetTimerResult;
+import com.byteplus.bytepluscc.vefaas.outputs.GetTimersResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -276,5 +280,89 @@ public final class VefaasFunctions {
      */
     public static CompletableFuture<GetSandboxesResult> getSandboxesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getSandboxes:getSandboxes", TypeShape.of(GetSandboxesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimerResult> getTimer(GetTimerArgs args) {
+        return getTimer(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static CompletableFuture<GetTimerResult> getTimerPlain(GetTimerPlainArgs args) {
+        return getTimerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimerResult> getTimer(GetTimerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getTimer:getTimer", TypeShape.of(GetTimerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimerResult> getTimer(GetTimerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getTimer:getTimer", TypeShape.of(GetTimerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static CompletableFuture<GetTimerResult> getTimerPlain(GetTimerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getTimer:getTimer", TypeShape.of(GetTimerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimersResult> getTimers() {
+        return getTimers(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static CompletableFuture<GetTimersResult> getTimersPlain() {
+        return getTimersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimersResult> getTimers(InvokeArgs args) {
+        return getTimers(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static CompletableFuture<GetTimersResult> getTimersPlain(InvokeArgs args) {
+        return getTimersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimersResult> getTimers(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getTimers:getTimers", TypeShape.of(GetTimersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static Output<GetTimersResult> getTimers(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getTimers:getTimers", TypeShape.of(GetTimersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Timer
+     * 
+     */
+    public static CompletableFuture<GetTimersResult> getTimersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getTimers:getTimers", TypeShape.of(GetTimersResult.class), args, Utilities.withVersion(options));
     }
 }

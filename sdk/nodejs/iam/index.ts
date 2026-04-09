@@ -30,6 +30,16 @@ export const getGroups: typeof import("./getGroups").getGroups = null as any;
 export const getGroupsOutput: typeof import("./getGroups").getGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getGroups","getGroupsOutput"], () => require("./getGroups"));
 
+export { GetOidcProviderArgs, GetOidcProviderResult, GetOidcProviderOutputArgs } from "./getOidcProvider";
+export const getOidcProvider: typeof import("./getOidcProvider").getOidcProvider = null as any;
+export const getOidcProviderOutput: typeof import("./getOidcProvider").getOidcProviderOutput = null as any;
+utilities.lazyLoad(exports, ["getOidcProvider","getOidcProviderOutput"], () => require("./getOidcProvider"));
+
+export { GetOidcProvidersResult } from "./getOidcProviders";
+export const getOidcProviders: typeof import("./getOidcProviders").getOidcProviders = null as any;
+export const getOidcProvidersOutput: typeof import("./getOidcProviders").getOidcProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getOidcProviders","getOidcProvidersOutput"], () => require("./getOidcProviders"));
+
 export { GetPoliciesResult } from "./getPolicies";
 export const getPolicies: typeof import("./getPolicies").getPolicies = null as any;
 export const getPoliciesOutput: typeof import("./getPolicies").getPoliciesOutput = null as any;
@@ -60,6 +70,16 @@ export const getRoles: typeof import("./getRoles").getRoles = null as any;
 export const getRolesOutput: typeof import("./getRoles").getRolesOutput = null as any;
 utilities.lazyLoad(exports, ["getRoles","getRolesOutput"], () => require("./getRoles"));
 
+export { GetSamlProviderArgs, GetSamlProviderResult, GetSamlProviderOutputArgs } from "./getSamlProvider";
+export const getSamlProvider: typeof import("./getSamlProvider").getSamlProvider = null as any;
+export const getSamlProviderOutput: typeof import("./getSamlProvider").getSamlProviderOutput = null as any;
+utilities.lazyLoad(exports, ["getSamlProvider","getSamlProviderOutput"], () => require("./getSamlProvider"));
+
+export { GetSamlProvidersResult } from "./getSamlProviders";
+export const getSamlProviders: typeof import("./getSamlProviders").getSamlProviders = null as any;
+export const getSamlProvidersOutput: typeof import("./getSamlProviders").getSamlProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getSamlProviders","getSamlProvidersOutput"], () => require("./getSamlProviders"));
+
 export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
 export const getUser: typeof import("./getUser").getUser = null as any;
 export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
@@ -74,6 +94,11 @@ export { GroupArgs, GroupState } from "./group";
 export type Group = import("./group").Group;
 export const Group: typeof import("./group").Group = null as any;
 utilities.lazyLoad(exports, ["Group"], () => require("./group"));
+
+export { OidcProviderArgs, OidcProviderState } from "./oidcProvider";
+export type OidcProvider = import("./oidcProvider").OidcProvider;
+export const OidcProvider: typeof import("./oidcProvider").OidcProvider = null as any;
+utilities.lazyLoad(exports, ["OidcProvider"], () => require("./oidcProvider"));
 
 export { PolicyArgs, PolicyState } from "./policy";
 export type Policy = import("./policy").Policy;
@@ -90,6 +115,11 @@ export type Role = import("./role").Role;
 export const Role: typeof import("./role").Role = null as any;
 utilities.lazyLoad(exports, ["Role"], () => require("./role"));
 
+export { SamlProviderArgs, SamlProviderState } from "./samlProvider";
+export type SamlProvider = import("./samlProvider").SamlProvider;
+export const SamlProvider: typeof import("./samlProvider").SamlProvider = null as any;
+utilities.lazyLoad(exports, ["SamlProvider"], () => require("./samlProvider"));
+
 export { UserArgs, UserState } from "./user";
 export type User = import("./user").User;
 export const User: typeof import("./user").User = null as any;
@@ -104,12 +134,16 @@ const _module = {
                 return new Accesskey(name, <any>undefined, { urn })
             case "bytepluscc:iam/group:Group":
                 return new Group(name, <any>undefined, { urn })
+            case "bytepluscc:iam/oidcProvider:OidcProvider":
+                return new OidcProvider(name, <any>undefined, { urn })
             case "bytepluscc:iam/policy:Policy":
                 return new Policy(name, <any>undefined, { urn })
             case "bytepluscc:iam/project:Project":
                 return new Project(name, <any>undefined, { urn })
             case "bytepluscc:iam/role:Role":
                 return new Role(name, <any>undefined, { urn })
+            case "bytepluscc:iam/samlProvider:SamlProvider":
+                return new SamlProvider(name, <any>undefined, { urn })
             case "bytepluscc:iam/user:User":
                 return new User(name, <any>undefined, { urn })
             default:
@@ -119,7 +153,9 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/accesskey", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/group", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "iam/oidcProvider", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/policy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/project", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/role", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "iam/samlProvider", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/user", _module)

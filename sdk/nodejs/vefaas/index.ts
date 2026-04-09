@@ -40,6 +40,16 @@ export const getSandboxes: typeof import("./getSandboxes").getSandboxes = null a
 export const getSandboxesOutput: typeof import("./getSandboxes").getSandboxesOutput = null as any;
 utilities.lazyLoad(exports, ["getSandboxes","getSandboxesOutput"], () => require("./getSandboxes"));
 
+export { GetTimerArgs, GetTimerResult, GetTimerOutputArgs } from "./getTimer";
+export const getTimer: typeof import("./getTimer").getTimer = null as any;
+export const getTimerOutput: typeof import("./getTimer").getTimerOutput = null as any;
+utilities.lazyLoad(exports, ["getTimer","getTimerOutput"], () => require("./getTimer"));
+
+export { GetTimersResult } from "./getTimers";
+export const getTimers: typeof import("./getTimers").getTimers = null as any;
+export const getTimersOutput: typeof import("./getTimers").getTimersOutput = null as any;
+utilities.lazyLoad(exports, ["getTimers","getTimersOutput"], () => require("./getTimers"));
+
 export { KafkaTriggerArgs, KafkaTriggerState } from "./kafkaTrigger";
 export type KafkaTrigger = import("./kafkaTrigger").KafkaTrigger;
 export const KafkaTrigger: typeof import("./kafkaTrigger").KafkaTrigger = null as any;
@@ -49,6 +59,11 @@ export { SandboxArgs, SandboxState } from "./sandbox";
 export type Sandbox = import("./sandbox").Sandbox;
 export const Sandbox: typeof import("./sandbox").Sandbox = null as any;
 utilities.lazyLoad(exports, ["Sandbox"], () => require("./sandbox"));
+
+export { TimerArgs, TimerState } from "./timer";
+export type Timer = import("./timer").Timer;
+export const Timer: typeof import("./timer").Timer = null as any;
+utilities.lazyLoad(exports, ["Timer"], () => require("./timer"));
 
 
 const _module = {
@@ -61,6 +76,8 @@ const _module = {
                 return new KafkaTrigger(name, <any>undefined, { urn })
             case "bytepluscc:vefaas/sandbox:Sandbox":
                 return new Sandbox(name, <any>undefined, { urn })
+            case "bytepluscc:vefaas/timer:Timer":
+                return new Timer(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -69,3 +86,4 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/function", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/kafkaTrigger", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/sandbox", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/timer", _module)

@@ -17,12 +17,22 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AlertingRuleAnnotation',
+    'AlertingRuleLabel',
+    'AlertingRuleLevel',
+    'AlertingRuleQuery',
+    'AlertingRuleTag',
     'WorkspaceInstanceType',
     'WorkspaceInstanceTypeCalculatePriceParam',
     'WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList',
     'WorkspaceQuota',
     'WorkspaceTag',
     'WorkspaceUsage',
+    'GetAlertingRuleAnnotationResult',
+    'GetAlertingRuleLabelResult',
+    'GetAlertingRuleLevelResult',
+    'GetAlertingRuleQueryResult',
+    'GetAlertingRuleTagResult',
     'GetWorkspaceInstanceTypeResult',
     'GetWorkspaceInstanceTypeCalculatePriceParamResult',
     'GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListResult',
@@ -30,6 +40,221 @@ __all__ = [
     'GetWorkspaceTagResult',
     'GetWorkspaceUsageResult',
 ]
+
+@pulumi.output_type
+class AlertingRuleAnnotation(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: Tag or annotation key
+        :param builtins.str value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AlertingRuleLabel(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: Tag or annotation key
+        :param builtins.str value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AlertingRuleLevel(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "for":
+            suggest = "for_"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertingRuleLevel. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertingRuleLevel.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertingRuleLevel.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 comparator: Optional[builtins.str] = None,
+                 for_: Optional[builtins.str] = None,
+                 level: Optional[builtins.str] = None,
+                 threshold: Optional[builtins.float] = None):
+        """
+        :param builtins.str comparator: Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        :param builtins.str for_: Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        :param builtins.str level: Alert rule severity. Currently supports P0, P1, or P2
+        :param builtins.float threshold: Alert rule threshold
+        """
+        if comparator is not None:
+            pulumi.set(__self__, "comparator", comparator)
+        if for_ is not None:
+            pulumi.set(__self__, "for_", for_)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def comparator(self) -> Optional[builtins.str]:
+        """
+        Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        """
+        return pulumi.get(self, "comparator")
+
+    @property
+    @pulumi.getter(name="for")
+    def for_(self) -> Optional[builtins.str]:
+        """
+        Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        """
+        return pulumi.get(self, "for_")
+
+    @property
+    @pulumi.getter
+    def level(self) -> Optional[builtins.str]:
+        """
+        Alert rule severity. Currently supports P0, P1, or P2
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[builtins.float]:
+        """
+        Alert rule threshold
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class AlertingRuleQuery(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "promQl":
+            suggest = "prom_ql"
+        elif key == "workspaceId":
+            suggest = "workspace_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertingRuleQuery. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertingRuleQuery.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertingRuleQuery.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 prom_ql: Optional[builtins.str] = None,
+                 workspace_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str prom_ql: Query statement
+        :param builtins.str workspace_id: Workspace ID
+        """
+        if prom_ql is not None:
+            pulumi.set(__self__, "prom_ql", prom_ql)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="promQl")
+    def prom_ql(self) -> Optional[builtins.str]:
+        """
+        Query statement
+        """
+        return pulumi.get(self, "prom_ql")
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> Optional[builtins.str]:
+        """
+        Workspace ID
+        """
+        return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class AlertingRuleTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag or annotation key
+        :param builtins.str value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class WorkspaceInstanceType(dict):
@@ -510,6 +735,173 @@ class WorkspaceUsage(dict):
         Samples written per second
         """
         return pulumi.get(self, "ingested_samples_per_second")
+
+
+@pulumi.output_type
+class GetAlertingRuleAnnotationResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: Tag or annotation key
+        :param builtins.str value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAlertingRuleLabelResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: Tag or annotation key
+        :param builtins.str value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAlertingRuleLevelResult(dict):
+    def __init__(__self__, *,
+                 comparator: builtins.str,
+                 for_: builtins.str,
+                 level: builtins.str,
+                 threshold: builtins.float):
+        """
+        :param builtins.str comparator: Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        :param builtins.str for_: Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        :param builtins.str level: Alert rule severity. Currently supports P0, P1, or P2
+        :param builtins.float threshold: Alert rule threshold
+        """
+        pulumi.set(__self__, "comparator", comparator)
+        pulumi.set(__self__, "for_", for_)
+        pulumi.set(__self__, "level", level)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def comparator(self) -> builtins.str:
+        """
+        Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        """
+        return pulumi.get(self, "comparator")
+
+    @property
+    @pulumi.getter(name="for")
+    def for_(self) -> builtins.str:
+        """
+        Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        """
+        return pulumi.get(self, "for_")
+
+    @property
+    @pulumi.getter
+    def level(self) -> builtins.str:
+        """
+        Alert rule severity. Currently supports P0, P1, or P2
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> builtins.float:
+        """
+        Alert rule threshold
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetAlertingRuleQueryResult(dict):
+    def __init__(__self__, *,
+                 prom_ql: builtins.str,
+                 workspace_id: builtins.str):
+        """
+        :param builtins.str prom_ql: Query statement
+        :param builtins.str workspace_id: Workspace ID
+        """
+        pulumi.set(__self__, "prom_ql", prom_ql)
+        pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="promQl")
+    def prom_ql(self) -> builtins.str:
+        """
+        Query statement
+        """
+        return pulumi.get(self, "prom_ql")
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> builtins.str:
+        """
+        Workspace ID
+        """
+        return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class GetAlertingRuleTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag or annotation key
+        :param builtins.str value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

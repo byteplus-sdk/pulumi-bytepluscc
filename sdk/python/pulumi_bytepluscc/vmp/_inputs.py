@@ -16,6 +16,16 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AlertingRuleAnnotationArgs',
+    'AlertingRuleAnnotationArgsDict',
+    'AlertingRuleLabelArgs',
+    'AlertingRuleLabelArgsDict',
+    'AlertingRuleLevelArgs',
+    'AlertingRuleLevelArgsDict',
+    'AlertingRuleQueryArgs',
+    'AlertingRuleQueryArgsDict',
+    'AlertingRuleTagArgs',
+    'AlertingRuleTagArgsDict',
     'WorkspaceInstanceTypeArgs',
     'WorkspaceInstanceTypeArgsDict',
     'WorkspaceInstanceTypeCalculatePriceParamArgs',
@@ -31,6 +41,306 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AlertingRuleAnnotationArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag or annotation key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+elif False:
+    AlertingRuleAnnotationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlertingRuleAnnotationArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] name: Tag or annotation key
+        :param pulumi.Input[builtins.str] value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class AlertingRuleLabelArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag or annotation key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+elif False:
+    AlertingRuleLabelArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlertingRuleLabelArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] name: Tag or annotation key
+        :param pulumi.Input[builtins.str] value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class AlertingRuleLevelArgsDict(TypedDict):
+        comparator: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        """
+        for_: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        """
+        level: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Alert rule severity. Currently supports P0, P1, or P2
+        """
+        threshold: NotRequired[pulumi.Input[builtins.float]]
+        """
+        Alert rule threshold
+        """
+elif False:
+    AlertingRuleLevelArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlertingRuleLevelArgs:
+    def __init__(__self__, *,
+                 comparator: Optional[pulumi.Input[builtins.str]] = None,
+                 for_: Optional[pulumi.Input[builtins.str]] = None,
+                 level: Optional[pulumi.Input[builtins.str]] = None,
+                 threshold: Optional[pulumi.Input[builtins.float]] = None):
+        """
+        :param pulumi.Input[builtins.str] comparator: Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        :param pulumi.Input[builtins.str] for_: Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        :param pulumi.Input[builtins.str] level: Alert rule severity. Currently supports P0, P1, or P2
+        :param pulumi.Input[builtins.float] threshold: Alert rule threshold
+        """
+        if comparator is not None:
+            pulumi.set(__self__, "comparator", comparator)
+        if for_ is not None:
+            pulumi.set(__self__, "for_", for_)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def comparator(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+        """
+        return pulumi.get(self, "comparator")
+
+    @comparator.setter
+    def comparator(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "comparator", value)
+
+    @property
+    @pulumi.getter(name="for")
+    def for_(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+        """
+        return pulumi.get(self, "for_")
+
+    @for_.setter
+    def for_(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "for_", value)
+
+    @property
+    @pulumi.getter
+    def level(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Alert rule severity. Currently supports P0, P1, or P2
+        """
+        return pulumi.get(self, "level")
+
+    @level.setter
+    def level(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "level", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        Alert rule threshold
+        """
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "threshold", value)
+
+
+if not MYPY:
+    class AlertingRuleQueryArgsDict(TypedDict):
+        prom_ql: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Query statement
+        """
+        workspace_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Workspace ID
+        """
+elif False:
+    AlertingRuleQueryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlertingRuleQueryArgs:
+    def __init__(__self__, *,
+                 prom_ql: Optional[pulumi.Input[builtins.str]] = None,
+                 workspace_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] prom_ql: Query statement
+        :param pulumi.Input[builtins.str] workspace_id: Workspace ID
+        """
+        if prom_ql is not None:
+            pulumi.set(__self__, "prom_ql", prom_ql)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="promQl")
+    def prom_ql(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Query statement
+        """
+        return pulumi.get(self, "prom_ql")
+
+    @prom_ql.setter
+    def prom_ql(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "prom_ql", value)
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Workspace ID
+        """
+        return pulumi.get(self, "workspace_id")
+
+    @workspace_id.setter
+    def workspace_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "workspace_id", value)
+
+
+if not MYPY:
+    class AlertingRuleTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag or annotation key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+elif False:
+    AlertingRuleTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlertingRuleTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag or annotation key
+        :param pulumi.Input[builtins.str] value: Tag or annotation value. If set to empty, the key will be deleted
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag or annotation key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class WorkspaceInstanceTypeArgsDict(TypedDict):

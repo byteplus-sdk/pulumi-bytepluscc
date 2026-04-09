@@ -14588,6 +14588,49 @@ export namespace iam {
         value: string;
     }
 
+    export interface GetSamlProviderCertificate {
+        /**
+         * Certificate ID
+         */
+        certificateId: string;
+        /**
+         * Certificate Upload Time
+         */
+        createDate: string;
+        /**
+         * Certificate Authority
+         */
+        issuer: string;
+        /**
+         * Certificate Expiration Time
+         */
+        notAfter: string;
+        /**
+         * Certificate Validity Period
+         */
+        notBefore: string;
+        /**
+         * Certificate Serial Number
+         */
+        serialNumber: string;
+        /**
+         * Certificate Signature Algorithm
+         */
+        signatureAlgorithm: string;
+        /**
+         * Certificate Subject
+         */
+        subject: string;
+        /**
+         * Certificate Update Time
+         */
+        updateDate: string;
+        /**
+         * Certificate Version
+         */
+        version: string;
+    }
+
     export interface GetUserAccessKey {
         /**
          * Access key ID.
@@ -14826,6 +14869,49 @@ export namespace iam {
          * Tag value
          */
         value: string;
+    }
+
+    export interface SamlProviderCertificate {
+        /**
+         * Certificate ID
+         */
+        certificateId: string;
+        /**
+         * Certificate Upload Time
+         */
+        createDate: string;
+        /**
+         * Certificate Authority
+         */
+        issuer: string;
+        /**
+         * Certificate Expiration Time
+         */
+        notAfter: string;
+        /**
+         * Certificate Validity Period
+         */
+        notBefore: string;
+        /**
+         * Certificate Serial Number
+         */
+        serialNumber: string;
+        /**
+         * Certificate Signature Algorithm
+         */
+        signatureAlgorithm: string;
+        /**
+         * Certificate Subject
+         */
+        subject: string;
+        /**
+         * Certificate Update Time
+         */
+        updateDate: string;
+        /**
+         * Certificate Version
+         */
+        version: string;
     }
 
     export interface UserAccessKey {
@@ -22737,6 +22823,132 @@ export namespace vke {
 }
 
 export namespace vmp {
+    export interface AlertingRuleAnnotation {
+        /**
+         * Tag or annotation key
+         */
+        name: string;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value: string;
+    }
+
+    export interface AlertingRuleLabel {
+        /**
+         * Tag or annotation key
+         */
+        name: string;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value: string;
+    }
+
+    export interface AlertingRuleLevel {
+        /**
+         * Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+         */
+        comparator: string;
+        /**
+         * Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+         */
+        for: string;
+        /**
+         * Alert rule severity. Currently supports P0, P1, or P2
+         */
+        level: string;
+        /**
+         * Alert rule threshold
+         */
+        threshold: number;
+    }
+
+    export interface AlertingRuleQuery {
+        /**
+         * Query statement
+         */
+        promQl: string;
+        /**
+         * Workspace ID
+         */
+        workspaceId: string;
+    }
+
+    export interface AlertingRuleTag {
+        /**
+         * Tag or annotation key
+         */
+        key: string;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value: string;
+    }
+
+    export interface GetAlertingRuleAnnotation {
+        /**
+         * Tag or annotation key
+         */
+        name: string;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value: string;
+    }
+
+    export interface GetAlertingRuleLabel {
+        /**
+         * Tag or annotation key
+         */
+        name: string;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value: string;
+    }
+
+    export interface GetAlertingRuleLevel {
+        /**
+         * Alert rule comparison condition. Options: >, >=, <, <=, ==, !=
+         */
+        comparator: string;
+        /**
+         * Alert duration. Possible values: 0s, 1m, 2m, 5m, 10m
+         */
+        for: string;
+        /**
+         * Alert rule severity. Currently supports P0, P1, or P2
+         */
+        level: string;
+        /**
+         * Alert rule threshold
+         */
+        threshold: number;
+    }
+
+    export interface GetAlertingRuleQuery {
+        /**
+         * Query statement
+         */
+        promQl: string;
+        /**
+         * Workspace ID
+         */
+        workspaceId: string;
+    }
+
+    export interface GetAlertingRuleTag {
+        /**
+         * Tag or annotation key
+         */
+        key: string;
+        /**
+         * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value: string;
+    }
+
     export interface GetWorkspaceInstanceType {
         /**
          * Maximum active time series count
