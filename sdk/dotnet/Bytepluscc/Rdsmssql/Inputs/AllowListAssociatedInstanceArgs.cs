@@ -19,6 +19,36 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Inputs
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
+        /// <summary>
+        /// Instance name
+        /// </summary>
+        [Input("instanceName")]
+        public Input<string>? InstanceName { get; set; }
+
+        /// <summary>
+        /// Instance status
+        /// </summary>
+        [Input("instanceStatus")]
+        public Input<string>? InstanceStatus { get; set; }
+
+        /// <summary>
+        /// Sync latest allowlist IP
+        /// </summary>
+        [Input("isLatest")]
+        public Input<bool>? IsLatest { get; set; }
+
+        /// <summary>
+        /// Project name of the instance
+        /// </summary>
+        [Input("projectName")]
+        public Input<string>? ProjectName { get; set; }
+
+        /// <summary>
+        /// VPC ID of the instance
+        /// </summary>
+        [Input("vpc")]
+        public Input<string>? Vpc { get; set; }
+
         public AllowListAssociatedInstanceArgs()
         {
         }

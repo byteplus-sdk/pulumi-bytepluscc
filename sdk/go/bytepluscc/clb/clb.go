@@ -60,8 +60,10 @@ type Clb struct {
 	// Dedicated cluster ID
 	ExclusiveClusterId pulumi.StringOutput `pulumi:"exclusiveClusterId"`
 	// Expiration time of the load balancer instance
-	ExpiredTime pulumi.StringOutput    `pulumi:"expiredTime"`
-	Listeners   ClbListenerArrayOutput `pulumi:"listeners"`
+	ExpiredTime pulumi.StringOutput `pulumi:"expiredTime"`
+	// IPv6 public bandwidth information for the load balancing instance
+	Ipv6AddressBandwidth ClbIpv6AddressBandwidthOutput `pulumi:"ipv6AddressBandwidth"`
+	Listeners            ClbListenerArrayOutput        `pulumi:"listeners"`
 	// CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
 	LoadBalancerBillingType pulumi.Float64Output `pulumi:"loadBalancerBillingType"`
 	// Load balancer instance ID
@@ -181,8 +183,10 @@ type clbState struct {
 	// Dedicated cluster ID
 	ExclusiveClusterId *string `pulumi:"exclusiveClusterId"`
 	// Expiration time of the load balancer instance
-	ExpiredTime *string       `pulumi:"expiredTime"`
-	Listeners   []ClbListener `pulumi:"listeners"`
+	ExpiredTime *string `pulumi:"expiredTime"`
+	// IPv6 public bandwidth information for the load balancing instance
+	Ipv6AddressBandwidth *ClbIpv6AddressBandwidth `pulumi:"ipv6AddressBandwidth"`
+	Listeners            []ClbListener            `pulumi:"listeners"`
 	// CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
 	LoadBalancerBillingType *float64 `pulumi:"loadBalancerBillingType"`
 	// Load balancer instance ID
@@ -274,7 +278,9 @@ type ClbState struct {
 	ExclusiveClusterId pulumi.StringPtrInput
 	// Expiration time of the load balancer instance
 	ExpiredTime pulumi.StringPtrInput
-	Listeners   ClbListenerArrayInput
+	// IPv6 public bandwidth information for the load balancing instance
+	Ipv6AddressBandwidth ClbIpv6AddressBandwidthPtrInput
+	Listeners            ClbListenerArrayInput
 	// CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
 	LoadBalancerBillingType pulumi.Float64PtrInput
 	// Load balancer instance ID
@@ -639,6 +645,11 @@ func (o ClbOutput) ExclusiveClusterId() pulumi.StringOutput {
 // Expiration time of the load balancer instance
 func (o ClbOutput) ExpiredTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Clb) pulumi.StringOutput { return v.ExpiredTime }).(pulumi.StringOutput)
+}
+
+// IPv6 public bandwidth information for the load balancing instance
+func (o ClbOutput) Ipv6AddressBandwidth() ClbIpv6AddressBandwidthOutput {
+	return o.ApplyT(func(v *Clb) ClbIpv6AddressBandwidthOutput { return v.Ipv6AddressBandwidth }).(ClbIpv6AddressBandwidthOutput)
 }
 
 func (o ClbOutput) Listeners() ClbListenerArrayOutput {

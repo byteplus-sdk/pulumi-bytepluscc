@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public static class GetAccesskeys
     {
         /// <summary>
-        /// Plural Data Source schema for Byteplus::IAM::AccessKey
+        /// Plural Data Source schema for Byteplus::IAM::Accesskey
         /// </summary>
         public static Task<GetAccesskeysResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccesskeysResult>("bytepluscc:iam/getAccesskeys:getAccesskeys", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Byteplus::IAM::AccessKey
+        /// Plural Data Source schema for Byteplus::IAM::Accesskey
         /// </summary>
         public static Output<GetAccesskeysResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccesskeysResult>("bytepluscc:iam/getAccesskeys:getAccesskeys", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Byteplus::IAM::AccessKey
+        /// Plural Data Source schema for Byteplus::IAM::Accesskey
         /// </summary>
         public static Output<GetAccesskeysResult> Invoke(InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccesskeysResult>("bytepluscc:iam/getAccesskeys:getAccesskeys", InvokeArgs.Empty, options.WithDefaults());

@@ -240,7 +240,7 @@ public final class GetInstanceResult {
      */
     private String vpcId;
     /**
-     * @return Availability zone ID where the instance is located.
+     * @return The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      * 
      */
     private String zoneId;
@@ -555,7 +555,7 @@ public final class GetInstanceResult {
         return this.vpcId;
     }
     /**
-     * @return Availability zone ID where the instance is located.
+     * @return The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      * 
      */
     public String zoneId() {

@@ -38,6 +38,14 @@ class AllowListAssociatedInstance(dict):
         suggest = None
         if key == "instanceId":
             suggest = "instance_id"
+        elif key == "instanceName":
+            suggest = "instance_name"
+        elif key == "instanceStatus":
+            suggest = "instance_status"
+        elif key == "isLatest":
+            suggest = "is_latest"
+        elif key == "projectName":
+            suggest = "project_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
@@ -51,12 +59,32 @@ class AllowListAssociatedInstance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_id: Optional[builtins.str] = None):
+                 instance_id: Optional[builtins.str] = None,
+                 instance_name: Optional[builtins.str] = None,
+                 instance_status: Optional[builtins.str] = None,
+                 is_latest: Optional[builtins.bool] = None,
+                 project_name: Optional[builtins.str] = None,
+                 vpc: Optional[builtins.str] = None):
         """
         :param builtins.str instance_id: Instance ID
+        :param builtins.str instance_name: Instance name
+        :param builtins.str instance_status: Instance status
+        :param builtins.bool is_latest: Sync latest allowlist IP
+        :param builtins.str project_name: Project name of the instance
+        :param builtins.str vpc: VPC ID of the instance
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if instance_status is not None:
+            pulumi.set(__self__, "instance_status", instance_status)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -65,6 +93,46 @@ class AllowListAssociatedInstance(dict):
         Instance ID
         """
         return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[builtins.str]:
+        """
+        Instance name
+        """
+        return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="instanceStatus")
+    def instance_status(self) -> Optional[builtins.str]:
+        """
+        Instance status
+        """
+        return pulumi.get(self, "instance_status")
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> Optional[builtins.bool]:
+        """
+        Sync latest allowlist IP
+        """
+        return pulumi.get(self, "is_latest")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[builtins.str]:
+        """
+        Project name of the instance
+        """
+        return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[builtins.str]:
+        """
+        VPC ID of the instance
+        """
+        return pulumi.get(self, "vpc")
 
 
 @pulumi.output_type

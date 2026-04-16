@@ -17,6 +17,36 @@ public final class ScalingGroupInstanceArgs extends com.pulumi.resources.Resourc
     public static final ScalingGroupInstanceArgs Empty = new ScalingGroupInstanceArgs();
 
     /**
+     * Time when the instance joined the scaling group
+     * 
+     */
+    @Import(name="createdTime")
+    private @Nullable Output<String> createdTime;
+
+    /**
+     * @return Time when the instance joined the scaling group
+     * 
+     */
+    public Optional<Output<String>> createdTime() {
+        return Optional.ofNullable(this.createdTime);
+    }
+
+    /**
+     * How the instance joined the scaling group (Attached / AutoCreated)
+     * 
+     */
+    @Import(name="creationType")
+    private @Nullable Output<String> creationType;
+
+    /**
+     * @return How the instance joined the scaling group (Attached / AutoCreated)
+     * 
+     */
+    public Optional<Output<String>> creationType() {
+        return Optional.ofNullable(this.creationType);
+    }
+
+    /**
      * Whether to enable managed mode for the instance when AttachInstances is performed
      * 
      */
@@ -47,6 +77,36 @@ public final class ScalingGroupInstanceArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Launch template ID used by the instance
+     * 
+     */
+    @Import(name="launchTemplateId")
+    private @Nullable Output<String> launchTemplateId;
+
+    /**
+     * @return Launch template ID used by the instance
+     * 
+     */
+    public Optional<Output<String>> launchTemplateId() {
+        return Optional.ofNullable(this.launchTemplateId);
+    }
+
+    /**
+     * Launch template version used by the instance
+     * 
+     */
+    @Import(name="launchTemplateVersion")
+    private @Nullable Output<String> launchTemplateVersion;
+
+    /**
+     * @return Launch template version used by the instance
+     * 
+     */
+    public Optional<Output<String>> launchTemplateVersion() {
+        return Optional.ofNullable(this.launchTemplateVersion);
+    }
+
+    /**
      * Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
      * 
      */
@@ -61,12 +121,80 @@ public final class ScalingGroupInstanceArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.lifecycleHook);
     }
 
+    /**
+     * Scaling configuration ID associated with the instance
+     * 
+     */
+    @Import(name="scalingConfigurationId")
+    private @Nullable Output<String> scalingConfigurationId;
+
+    /**
+     * @return Scaling configuration ID associated with the instance
+     * 
+     */
+    public Optional<Output<String>> scalingConfigurationId() {
+        return Optional.ofNullable(this.scalingConfigurationId);
+    }
+
+    /**
+     * Scaling policy ID associated with the instance
+     * 
+     */
+    @Import(name="scalingPolicyId")
+    private @Nullable Output<String> scalingPolicyId;
+
+    /**
+     * @return Scaling policy ID associated with the instance
+     * 
+     */
+    public Optional<Output<String>> scalingPolicyId() {
+        return Optional.ofNullable(this.scalingPolicyId);
+    }
+
+    /**
+     * Current status of the instance in the scaling group
+     * 
+     */
+    @Import(name="status")
+    private @Nullable Output<String> status;
+
+    /**
+     * @return Current status of the instance in the scaling group
+     * 
+     */
+    public Optional<Output<String>> status() {
+        return Optional.ofNullable(this.status);
+    }
+
+    /**
+     * Availability zone of the instance
+     * 
+     */
+    @Import(name="zoneId")
+    private @Nullable Output<String> zoneId;
+
+    /**
+     * @return Availability zone of the instance
+     * 
+     */
+    public Optional<Output<String>> zoneId() {
+        return Optional.ofNullable(this.zoneId);
+    }
+
     private ScalingGroupInstanceArgs() {}
 
     private ScalingGroupInstanceArgs(ScalingGroupInstanceArgs $) {
+        this.createdTime = $.createdTime;
+        this.creationType = $.creationType;
         this.entrusted = $.entrusted;
         this.instanceId = $.instanceId;
+        this.launchTemplateId = $.launchTemplateId;
+        this.launchTemplateVersion = $.launchTemplateVersion;
         this.lifecycleHook = $.lifecycleHook;
+        this.scalingConfigurationId = $.scalingConfigurationId;
+        this.scalingPolicyId = $.scalingPolicyId;
+        this.status = $.status;
+        this.zoneId = $.zoneId;
     }
 
     public static Builder builder() {
@@ -85,6 +213,48 @@ public final class ScalingGroupInstanceArgs extends com.pulumi.resources.Resourc
 
         public Builder(ScalingGroupInstanceArgs defaults) {
             $ = new ScalingGroupInstanceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param createdTime Time when the instance joined the scaling group
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdTime(@Nullable Output<String> createdTime) {
+            $.createdTime = createdTime;
+            return this;
+        }
+
+        /**
+         * @param createdTime Time when the instance joined the scaling group
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdTime(String createdTime) {
+            return createdTime(Output.of(createdTime));
+        }
+
+        /**
+         * @param creationType How the instance joined the scaling group (Attached / AutoCreated)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder creationType(@Nullable Output<String> creationType) {
+            $.creationType = creationType;
+            return this;
+        }
+
+        /**
+         * @param creationType How the instance joined the scaling group (Attached / AutoCreated)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder creationType(String creationType) {
+            return creationType(Output.of(creationType));
         }
 
         /**
@@ -130,6 +300,48 @@ public final class ScalingGroupInstanceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param launchTemplateId Launch template ID used by the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchTemplateId(@Nullable Output<String> launchTemplateId) {
+            $.launchTemplateId = launchTemplateId;
+            return this;
+        }
+
+        /**
+         * @param launchTemplateId Launch template ID used by the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchTemplateId(String launchTemplateId) {
+            return launchTemplateId(Output.of(launchTemplateId));
+        }
+
+        /**
+         * @param launchTemplateVersion Launch template version used by the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchTemplateVersion(@Nullable Output<String> launchTemplateVersion) {
+            $.launchTemplateVersion = launchTemplateVersion;
+            return this;
+        }
+
+        /**
+         * @param launchTemplateVersion Launch template version used by the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder launchTemplateVersion(String launchTemplateVersion) {
+            return launchTemplateVersion(Output.of(launchTemplateVersion));
+        }
+
+        /**
          * @param lifecycleHook Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
          * 
          * @return builder
@@ -148,6 +360,90 @@ public final class ScalingGroupInstanceArgs extends com.pulumi.resources.Resourc
          */
         public Builder lifecycleHook(Boolean lifecycleHook) {
             return lifecycleHook(Output.of(lifecycleHook));
+        }
+
+        /**
+         * @param scalingConfigurationId Scaling configuration ID associated with the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scalingConfigurationId(@Nullable Output<String> scalingConfigurationId) {
+            $.scalingConfigurationId = scalingConfigurationId;
+            return this;
+        }
+
+        /**
+         * @param scalingConfigurationId Scaling configuration ID associated with the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scalingConfigurationId(String scalingConfigurationId) {
+            return scalingConfigurationId(Output.of(scalingConfigurationId));
+        }
+
+        /**
+         * @param scalingPolicyId Scaling policy ID associated with the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scalingPolicyId(@Nullable Output<String> scalingPolicyId) {
+            $.scalingPolicyId = scalingPolicyId;
+            return this;
+        }
+
+        /**
+         * @param scalingPolicyId Scaling policy ID associated with the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scalingPolicyId(String scalingPolicyId) {
+            return scalingPolicyId(Output.of(scalingPolicyId));
+        }
+
+        /**
+         * @param status Current status of the instance in the scaling group
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(@Nullable Output<String> status) {
+            $.status = status;
+            return this;
+        }
+
+        /**
+         * @param status Current status of the instance in the scaling group
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(String status) {
+            return status(Output.of(status));
+        }
+
+        /**
+         * @param zoneId Availability zone of the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneId(@Nullable Output<String> zoneId) {
+            $.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * @param zoneId Availability zone of the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneId(String zoneId) {
+            return zoneId(Output.of(zoneId));
         }
 
         public ScalingGroupInstanceArgs build() {

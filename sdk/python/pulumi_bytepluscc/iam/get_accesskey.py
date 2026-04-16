@@ -173,7 +173,7 @@ class AwaitableGetAccesskeyResult(GetAccesskeyResult):
 def get_accesskey(id: Optional[builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccesskeyResult:
     """
-    Data Source schema for Byteplus::IAM::AccessKey
+    Data Source schema for Byteplus::IAM::Accesskey
 
 
     :param builtins.str id: Uniquely identifies the resource.
@@ -198,7 +198,7 @@ def get_accesskey(id: Optional[builtins.str] = None,
 def get_accesskey_output(id: Optional[pulumi.Input[builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccesskeyResult]:
     """
-    Data Source schema for Byteplus::IAM::AccessKey
+    Data Source schema for Byteplus::IAM::Accesskey
 
 
     :param builtins.str id: Uniquely identifies the resource.

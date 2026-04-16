@@ -32,6 +32,51 @@ public final class IndexKeyValueValueJsonKeyValueArgs extends com.pulumi.resourc
     }
 
     /**
+     * Whether to distinguish case. Default is false.
+     * 
+     */
+    @Import(name="caseSensitive")
+    private @Nullable Output<Boolean> caseSensitive;
+
+    /**
+     * @return Whether to distinguish case. Default is false.
+     * 
+     */
+    public Optional<Output<Boolean>> caseSensitive() {
+        return Optional.ofNullable(this.caseSensitive);
+    }
+
+    /**
+     * Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+     * 
+     */
+    @Import(name="delimiter")
+    private @Nullable Output<String> delimiter;
+
+    /**
+     * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+     * 
+     */
+    public Optional<Output<String>> delimiter() {
+        return Optional.ofNullable(this.delimiter);
+    }
+
+    /**
+     * When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+     * 
+     */
+    @Import(name="includeChinese")
+    private @Nullable Output<Boolean> includeChinese;
+
+    /**
+     * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+     * 
+     */
+    public Optional<Output<Boolean>> includeChinese() {
+        return Optional.ofNullable(this.includeChinese);
+    }
+
+    /**
      * Create indexes for all fields with text values in the JSON field.
      * 
      */
@@ -95,6 +140,9 @@ public final class IndexKeyValueValueJsonKeyValueArgs extends com.pulumi.resourc
 
     private IndexKeyValueValueJsonKeyValueArgs(IndexKeyValueValueJsonKeyValueArgs $) {
         this.autoIndexFlag = $.autoIndexFlag;
+        this.caseSensitive = $.caseSensitive;
+        this.delimiter = $.delimiter;
+        this.includeChinese = $.includeChinese;
         this.indexAll = $.indexAll;
         this.indexSqlAll = $.indexSqlAll;
         this.sqlFlag = $.sqlFlag;
@@ -138,6 +186,69 @@ public final class IndexKeyValueValueJsonKeyValueArgs extends com.pulumi.resourc
          */
         public Builder autoIndexFlag(Boolean autoIndexFlag) {
             return autoIndexFlag(Output.of(autoIndexFlag));
+        }
+
+        /**
+         * @param caseSensitive Whether to distinguish case. Default is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caseSensitive(@Nullable Output<Boolean> caseSensitive) {
+            $.caseSensitive = caseSensitive;
+            return this;
+        }
+
+        /**
+         * @param caseSensitive Whether to distinguish case. Default is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caseSensitive(Boolean caseSensitive) {
+            return caseSensitive(Output.of(caseSensitive));
+        }
+
+        /**
+         * @param delimiter Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder delimiter(@Nullable Output<String> delimiter) {
+            $.delimiter = delimiter;
+            return this;
+        }
+
+        /**
+         * @param delimiter Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder delimiter(String delimiter) {
+            return delimiter(Output.of(delimiter));
+        }
+
+        /**
+         * @param includeChinese When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeChinese(@Nullable Output<Boolean> includeChinese) {
+            $.includeChinese = includeChinese;
+            return this;
+        }
+
+        /**
+         * @param includeChinese When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeChinese(Boolean includeChinese) {
+            return includeChinese(Output.of(includeChinese));
         }
 
         /**

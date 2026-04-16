@@ -64,7 +64,7 @@ class AwaitableGetAccesskeysResult(GetAccesskeysResult):
 
 def get_accesskeys(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccesskeysResult:
     """
-    Plural Data Source schema for Byteplus::IAM::AccessKey
+    Plural Data Source schema for Byteplus::IAM::Accesskey
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -75,7 +75,7 @@ def get_accesskeys(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetA
         ids=pulumi.get(__ret__, 'ids'))
 def get_accesskeys_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccesskeysResult]:
     """
-    Plural Data Source schema for Byteplus::IAM::AccessKey
+    Plural Data Source schema for Byteplus::IAM::Accesskey
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

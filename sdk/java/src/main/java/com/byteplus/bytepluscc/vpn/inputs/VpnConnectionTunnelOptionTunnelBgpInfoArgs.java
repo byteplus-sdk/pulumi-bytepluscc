@@ -5,6 +5,8 @@ package com.byteplus.bytepluscc.vpn.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +16,36 @@ import javax.annotation.Nullable;
 public final class VpnConnectionTunnelOptionTunnelBgpInfoArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final VpnConnectionTunnelOptionTunnelBgpInfoArgs Empty = new VpnConnectionTunnelOptionTunnelBgpInfoArgs();
+
+    /**
+     * Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+     * 
+     */
+    @Import(name="enableBgp")
+    private @Nullable Output<Boolean> enableBgp;
+
+    /**
+     * @return Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+     * 
+     */
+    public Optional<Output<Boolean>> enableBgp() {
+        return Optional.ofNullable(this.enableBgp);
+    }
+
+    /**
+     * The ASN of the VPN gateway.
+     * 
+     */
+    @Import(name="localAsn")
+    private @Nullable Output<Integer> localAsn;
+
+    /**
+     * @return The ASN of the VPN gateway.
+     * 
+     */
+    public Optional<Output<Integer>> localAsn() {
+        return Optional.ofNullable(this.localAsn);
+    }
 
     /**
      * BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
@@ -28,6 +60,51 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfoArgs extends com.pulumi
      */
     public Optional<Output<String>> localBgpIp() {
         return Optional.ofNullable(this.localBgpIp);
+    }
+
+    /**
+     * ASN of the customer gateway.
+     * 
+     */
+    @Import(name="peerAsn")
+    private @Nullable Output<Integer> peerAsn;
+
+    /**
+     * @return ASN of the customer gateway.
+     * 
+     */
+    public Optional<Output<Integer>> peerAsn() {
+        return Optional.ofNullable(this.peerAsn);
+    }
+
+    /**
+     * BGP peer IP, that is, the BGP address on the customer gateway side.
+     * 
+     */
+    @Import(name="peerBgpIp")
+    private @Nullable Output<String> peerBgpIp;
+
+    /**
+     * @return BGP peer IP, that is, the BGP address on the customer gateway side.
+     * 
+     */
+    public Optional<Output<String>> peerBgpIp() {
+        return Optional.ofNullable(this.peerBgpIp);
+    }
+
+    /**
+     * Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+     * 
+     */
+    @Import(name="sessionStatus")
+    private @Nullable Output<String> sessionStatus;
+
+    /**
+     * @return Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+     * 
+     */
+    public Optional<Output<String>> sessionStatus() {
+        return Optional.ofNullable(this.sessionStatus);
     }
 
     /**
@@ -48,7 +125,12 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfoArgs extends com.pulumi
     private VpnConnectionTunnelOptionTunnelBgpInfoArgs() {}
 
     private VpnConnectionTunnelOptionTunnelBgpInfoArgs(VpnConnectionTunnelOptionTunnelBgpInfoArgs $) {
+        this.enableBgp = $.enableBgp;
+        this.localAsn = $.localAsn;
         this.localBgpIp = $.localBgpIp;
+        this.peerAsn = $.peerAsn;
+        this.peerBgpIp = $.peerBgpIp;
+        this.sessionStatus = $.sessionStatus;
         this.tunnelCidr = $.tunnelCidr;
     }
 
@@ -71,6 +153,48 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfoArgs extends com.pulumi
         }
 
         /**
+         * @param enableBgp Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableBgp(@Nullable Output<Boolean> enableBgp) {
+            $.enableBgp = enableBgp;
+            return this;
+        }
+
+        /**
+         * @param enableBgp Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableBgp(Boolean enableBgp) {
+            return enableBgp(Output.of(enableBgp));
+        }
+
+        /**
+         * @param localAsn The ASN of the VPN gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localAsn(@Nullable Output<Integer> localAsn) {
+            $.localAsn = localAsn;
+            return this;
+        }
+
+        /**
+         * @param localAsn The ASN of the VPN gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localAsn(Integer localAsn) {
+            return localAsn(Output.of(localAsn));
+        }
+
+        /**
          * @param localBgpIp BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
          * 
          * @return builder
@@ -89,6 +213,69 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfoArgs extends com.pulumi
          */
         public Builder localBgpIp(String localBgpIp) {
             return localBgpIp(Output.of(localBgpIp));
+        }
+
+        /**
+         * @param peerAsn ASN of the customer gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAsn(@Nullable Output<Integer> peerAsn) {
+            $.peerAsn = peerAsn;
+            return this;
+        }
+
+        /**
+         * @param peerAsn ASN of the customer gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAsn(Integer peerAsn) {
+            return peerAsn(Output.of(peerAsn));
+        }
+
+        /**
+         * @param peerBgpIp BGP peer IP, that is, the BGP address on the customer gateway side.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerBgpIp(@Nullable Output<String> peerBgpIp) {
+            $.peerBgpIp = peerBgpIp;
+            return this;
+        }
+
+        /**
+         * @param peerBgpIp BGP peer IP, that is, the BGP address on the customer gateway side.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerBgpIp(String peerBgpIp) {
+            return peerBgpIp(Output.of(peerBgpIp));
+        }
+
+        /**
+         * @param sessionStatus Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sessionStatus(@Nullable Output<String> sessionStatus) {
+            $.sessionStatus = sessionStatus;
+            return this;
+        }
+
+        /**
+         * @param sessionStatus Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sessionStatus(String sessionStatus) {
+            return sessionStatus(Output.of(sessionStatus));
         }
 
         /**

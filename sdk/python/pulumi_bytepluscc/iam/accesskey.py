@@ -20,33 +20,33 @@ __all__ = ['AccesskeyArgs', 'Accesskey']
 @pulumi.input_type
 class AccesskeyArgs:
     def __init__(__self__, *,
-                 secret_access_key: Optional[pulumi.Input[builtins.str]] = None,
+                 last_login_date: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Accesskey resource.
-        :param pulumi.Input[builtins.str] secret_access_key: Secret Access Key.
+        :param pulumi.Input[builtins.str] last_login_date: Last login time.
         :param pulumi.Input[builtins.str] status: Key status. active means enabled, inactive means disabled.
         :param pulumi.Input[builtins.str] user_name: User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
         """
-        if secret_access_key is not None:
-            pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if last_login_date is not None:
+            pulumi.set(__self__, "last_login_date", last_login_date)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
 
     @property
-    @pulumi.getter(name="secretAccessKey")
-    def secret_access_key(self) -> Optional[pulumi.Input[builtins.str]]:
+    @pulumi.getter(name="lastLoginDate")
+    def last_login_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Secret Access Key.
+        Last login time.
         """
-        return pulumi.get(self, "secret_access_key")
+        return pulumi.get(self, "last_login_date")
 
-    @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "secret_access_key", value)
+    @last_login_date.setter
+    def last_login_date(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "last_login_date", value)
 
     @property
     @pulumi.getter
@@ -247,7 +247,7 @@ class Accesskey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 secret_access_key: Optional[pulumi.Input[builtins.str]] = None,
+                 last_login_date: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  user_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -271,7 +271,7 @@ class Accesskey(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] secret_access_key: Secret Access Key.
+        :param pulumi.Input[builtins.str] last_login_date: Last login time.
         :param pulumi.Input[builtins.str] status: Key status. active means enabled, inactive means disabled.
         :param pulumi.Input[builtins.str] user_name: User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
         """
@@ -314,7 +314,7 @@ class Accesskey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 secret_access_key: Optional[pulumi.Input[builtins.str]] = None,
+                 last_login_date: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  user_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -326,14 +326,14 @@ class Accesskey(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AccesskeyArgs.__new__(AccesskeyArgs)
 
-            __props__.__dict__["secret_access_key"] = secret_access_key
+            __props__.__dict__["last_login_date"] = last_login_date
             __props__.__dict__["status"] = status
             __props__.__dict__["user_name"] = user_name
             __props__.__dict__["access_key_id"] = None
             __props__.__dict__["created_time"] = None
-            __props__.__dict__["last_login_date"] = None
             __props__.__dict__["region"] = None
             __props__.__dict__["request_time"] = None
+            __props__.__dict__["secret_access_key"] = None
             __props__.__dict__["service"] = None
             __props__.__dict__["updated_time"] = None
         super(Accesskey, __self__).__init__(

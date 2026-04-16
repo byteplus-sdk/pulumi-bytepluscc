@@ -46,84 +46,84 @@ import java.util.concurrent.CompletableFuture;
 
 public final class IamFunctions {
     /**
-     * Data Source schema for Byteplus::IAM::AccessKey
+     * Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeyResult> getAccesskey(GetAccesskeyArgs args) {
         return getAccesskey(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Byteplus::IAM::AccessKey
+     * Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static CompletableFuture<GetAccesskeyResult> getAccesskeyPlain(GetAccesskeyPlainArgs args) {
         return getAccesskeyPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Byteplus::IAM::AccessKey
+     * Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeyResult> getAccesskey(GetAccesskeyArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskey:getAccesskey", TypeShape.of(GetAccesskeyResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Byteplus::IAM::AccessKey
+     * Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeyResult> getAccesskey(GetAccesskeyArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskey:getAccesskey", TypeShape.of(GetAccesskeyResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Byteplus::IAM::AccessKey
+     * Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static CompletableFuture<GetAccesskeyResult> getAccesskeyPlain(GetAccesskeyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAccesskey:getAccesskey", TypeShape.of(GetAccesskeyResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeysResult> getAccesskeys() {
         return getAccesskeys(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain() {
         return getAccesskeysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeysResult> getAccesskeys(InvokeArgs args) {
         return getAccesskeys(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain(InvokeArgs args) {
         return getAccesskeysPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeysResult> getAccesskeys(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskeys:getAccesskeys", TypeShape.of(GetAccesskeysResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static Output<GetAccesskeysResult> getAccesskeys(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskeys:getAccesskeys", TypeShape.of(GetAccesskeysResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * Plural Data Source schema for Byteplus::IAM::Accesskey
      * 
      */
     public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain(InvokeArgs args, InvokeOptions options) {

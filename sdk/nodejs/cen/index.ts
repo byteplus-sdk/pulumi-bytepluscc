@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BandwidthPackageArgs, BandwidthPackageState } from "./bandwidthPackage";
+export type BandwidthPackage = import("./bandwidthPackage").BandwidthPackage;
+export const BandwidthPackage: typeof import("./bandwidthPackage").BandwidthPackage = null as any;
+utilities.lazyLoad(exports, ["BandwidthPackage"], () => require("./bandwidthPackage"));
+
 export { CenArgs, CenState } from "./cen";
 export type Cen = import("./cen").Cen;
 export const Cen: typeof import("./cen").Cen = null as any;
 utilities.lazyLoad(exports, ["Cen"], () => require("./cen"));
+
+export { GetBandwidthPackageArgs, GetBandwidthPackageResult, GetBandwidthPackageOutputArgs } from "./getBandwidthPackage";
+export const getBandwidthPackage: typeof import("./getBandwidthPackage").getBandwidthPackage = null as any;
+export const getBandwidthPackageOutput: typeof import("./getBandwidthPackage").getBandwidthPackageOutput = null as any;
+utilities.lazyLoad(exports, ["getBandwidthPackage","getBandwidthPackageOutput"], () => require("./getBandwidthPackage"));
+
+export { GetBandwidthPackagesResult } from "./getBandwidthPackages";
+export const getBandwidthPackages: typeof import("./getBandwidthPackages").getBandwidthPackages = null as any;
+export const getBandwidthPackagesOutput: typeof import("./getBandwidthPackages").getBandwidthPackagesOutput = null as any;
+utilities.lazyLoad(exports, ["getBandwidthPackages","getBandwidthPackagesOutput"], () => require("./getBandwidthPackages"));
 
 export { GetCenArgs, GetCenResult, GetCenOutputArgs } from "./getCen";
 export const getCen: typeof import("./getCen").getCen = null as any;
@@ -40,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cen/bandwidthPackage:BandwidthPackage":
+                return new BandwidthPackage(name, <any>undefined, { urn })
             case "bytepluscc:cen/cen:Cen":
                 return new Cen(name, <any>undefined, { urn })
             case "bytepluscc:cen/grantInstance:GrantInstance":
@@ -49,5 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cen/bandwidthPackage", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cen/cen", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cen/grantInstance", _module)

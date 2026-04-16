@@ -16,11 +16,44 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'BandwidthPackageTag',
     'CenInstance',
     'CenTag',
+    'GetBandwidthPackageTagResult',
     'GetCenInstanceResult',
     'GetCenTagResult',
 ]
+
+@pulumi.output_type
+class BandwidthPackageTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        :param builtins.str value: Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class CenInstance(dict):
@@ -127,6 +160,35 @@ class CenTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetBandwidthPackageTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        :param builtins.str value: Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
         """
         return pulumi.get(self, "value")
 

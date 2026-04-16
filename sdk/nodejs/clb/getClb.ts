@@ -115,6 +115,10 @@ export interface GetClbResult {
      */
     readonly id: string;
     /**
+     * IPv6 public bandwidth information for the load balancing instance
+     */
+    readonly ipv6AddressBandwidth: outputs.clb.GetClbIpv6AddressBandwidth;
+    /**
      * Listener information in the load balancer instance
      */
     readonly listeners: outputs.clb.GetClbListener[];

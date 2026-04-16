@@ -313,7 +313,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// Availability zone ID where the instance is located.
+        /// The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -526,7 +526,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// Availability zone ID where the instance is located.
+        /// The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -816,7 +816,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// Availability zone ID where the instance is located.
+        /// The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

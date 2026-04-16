@@ -651,14 +651,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.vpcId;
     }
     /**
-     * Availability zone ID where the instance is located.
+     * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return Availability zone ID where the instance is located.
+     * @return The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      * 
      */
     public Output<String> zoneId() {

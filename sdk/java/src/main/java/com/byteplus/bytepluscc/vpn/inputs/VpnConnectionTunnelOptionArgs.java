@@ -20,6 +20,21 @@ public final class VpnConnectionTunnelOptionArgs extends com.pulumi.resources.Re
     public static final VpnConnectionTunnelOptionArgs Empty = new VpnConnectionTunnelOptionArgs();
 
     /**
+     * IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+     * 
+     */
+    @Import(name="connectStatus")
+    private @Nullable Output<String> connectStatus;
+
+    /**
+     * @return IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+     * 
+     */
+    public Optional<Output<String>> connectStatus() {
+        return Optional.ofNullable(this.connectStatus);
+    }
+
+    /**
      * ID of the customer gateway associated with the IPsec connection.
      * 
      */
@@ -142,6 +157,7 @@ public final class VpnConnectionTunnelOptionArgs extends com.pulumi.resources.Re
     private VpnConnectionTunnelOptionArgs() {}
 
     private VpnConnectionTunnelOptionArgs(VpnConnectionTunnelOptionArgs $) {
+        this.connectStatus = $.connectStatus;
         this.customerGatewayId = $.customerGatewayId;
         this.dpdAction = $.dpdAction;
         this.ikeConfig = $.ikeConfig;
@@ -168,6 +184,27 @@ public final class VpnConnectionTunnelOptionArgs extends com.pulumi.resources.Re
 
         public Builder(VpnConnectionTunnelOptionArgs defaults) {
             $ = new VpnConnectionTunnelOptionArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param connectStatus IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectStatus(@Nullable Output<String> connectStatus) {
+            $.connectStatus = connectStatus;
+            return this;
+        }
+
+        /**
+         * @param connectStatus IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectStatus(String connectStatus) {
+            return connectStatus(Output.of(connectStatus));
         }
 
         /**

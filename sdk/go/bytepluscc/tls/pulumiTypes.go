@@ -13,6 +13,1991 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ImportTaskImportSourceInfo struct {
+	// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+	KafkaSourceInfo *ImportTaskImportSourceInfoKafkaSourceInfo `pulumi:"kafkaSourceInfo"`
+	// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+	TosSourceInfo *ImportTaskImportSourceInfoTosSourceInfo `pulumi:"tosSourceInfo"`
+}
+
+// ImportTaskImportSourceInfoInput is an input type that accepts ImportTaskImportSourceInfoArgs and ImportTaskImportSourceInfoOutput values.
+// You can construct a concrete instance of `ImportTaskImportSourceInfoInput` via:
+//
+//	ImportTaskImportSourceInfoArgs{...}
+type ImportTaskImportSourceInfoInput interface {
+	pulumi.Input
+
+	ToImportTaskImportSourceInfoOutput() ImportTaskImportSourceInfoOutput
+	ToImportTaskImportSourceInfoOutputWithContext(context.Context) ImportTaskImportSourceInfoOutput
+}
+
+type ImportTaskImportSourceInfoArgs struct {
+	// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+	KafkaSourceInfo ImportTaskImportSourceInfoKafkaSourceInfoPtrInput `pulumi:"kafkaSourceInfo"`
+	// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+	TosSourceInfo ImportTaskImportSourceInfoTosSourceInfoPtrInput `pulumi:"tosSourceInfo"`
+}
+
+func (ImportTaskImportSourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskImportSourceInfo)(nil)).Elem()
+}
+
+func (i ImportTaskImportSourceInfoArgs) ToImportTaskImportSourceInfoOutput() ImportTaskImportSourceInfoOutput {
+	return i.ToImportTaskImportSourceInfoOutputWithContext(context.Background())
+}
+
+func (i ImportTaskImportSourceInfoArgs) ToImportTaskImportSourceInfoOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoOutput)
+}
+
+func (i ImportTaskImportSourceInfoArgs) ToImportTaskImportSourceInfoPtrOutput() ImportTaskImportSourceInfoPtrOutput {
+	return i.ToImportTaskImportSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskImportSourceInfoArgs) ToImportTaskImportSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoOutput).ToImportTaskImportSourceInfoPtrOutputWithContext(ctx)
+}
+
+// ImportTaskImportSourceInfoPtrInput is an input type that accepts ImportTaskImportSourceInfoArgs, ImportTaskImportSourceInfoPtr and ImportTaskImportSourceInfoPtrOutput values.
+// You can construct a concrete instance of `ImportTaskImportSourceInfoPtrInput` via:
+//
+//	        ImportTaskImportSourceInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskImportSourceInfoPtrInput interface {
+	pulumi.Input
+
+	ToImportTaskImportSourceInfoPtrOutput() ImportTaskImportSourceInfoPtrOutput
+	ToImportTaskImportSourceInfoPtrOutputWithContext(context.Context) ImportTaskImportSourceInfoPtrOutput
+}
+
+type importTaskImportSourceInfoPtrType ImportTaskImportSourceInfoArgs
+
+func ImportTaskImportSourceInfoPtr(v *ImportTaskImportSourceInfoArgs) ImportTaskImportSourceInfoPtrInput {
+	return (*importTaskImportSourceInfoPtrType)(v)
+}
+
+func (*importTaskImportSourceInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskImportSourceInfo)(nil)).Elem()
+}
+
+func (i *importTaskImportSourceInfoPtrType) ToImportTaskImportSourceInfoPtrOutput() ImportTaskImportSourceInfoPtrOutput {
+	return i.ToImportTaskImportSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskImportSourceInfoPtrType) ToImportTaskImportSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoPtrOutput)
+}
+
+type ImportTaskImportSourceInfoOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskImportSourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskImportSourceInfo)(nil)).Elem()
+}
+
+func (o ImportTaskImportSourceInfoOutput) ToImportTaskImportSourceInfoOutput() ImportTaskImportSourceInfoOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoOutput) ToImportTaskImportSourceInfoOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoOutput) ToImportTaskImportSourceInfoPtrOutput() ImportTaskImportSourceInfoPtrOutput {
+	return o.ToImportTaskImportSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskImportSourceInfoOutput) ToImportTaskImportSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskImportSourceInfo) *ImportTaskImportSourceInfo {
+		return &v
+	}).(ImportTaskImportSourceInfoPtrOutput)
+}
+
+// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+func (o ImportTaskImportSourceInfoOutput) KafkaSourceInfo() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfo) *ImportTaskImportSourceInfoKafkaSourceInfo {
+		return v.KafkaSourceInfo
+	}).(ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput)
+}
+
+// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+func (o ImportTaskImportSourceInfoOutput) TosSourceInfo() ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfo) *ImportTaskImportSourceInfoTosSourceInfo { return v.TosSourceInfo }).(ImportTaskImportSourceInfoTosSourceInfoPtrOutput)
+}
+
+type ImportTaskImportSourceInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskImportSourceInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskImportSourceInfo)(nil)).Elem()
+}
+
+func (o ImportTaskImportSourceInfoPtrOutput) ToImportTaskImportSourceInfoPtrOutput() ImportTaskImportSourceInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoPtrOutput) ToImportTaskImportSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoPtrOutput) Elem() ImportTaskImportSourceInfoOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfo) ImportTaskImportSourceInfo {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskImportSourceInfo
+		return ret
+	}).(ImportTaskImportSourceInfoOutput)
+}
+
+// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+func (o ImportTaskImportSourceInfoPtrOutput) KafkaSourceInfo() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfo) *ImportTaskImportSourceInfoKafkaSourceInfo {
+		if v == nil {
+			return nil
+		}
+		return v.KafkaSourceInfo
+	}).(ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput)
+}
+
+// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+func (o ImportTaskImportSourceInfoPtrOutput) TosSourceInfo() ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfo) *ImportTaskImportSourceInfoTosSourceInfo {
+		if v == nil {
+			return nil
+		}
+		return v.TosSourceInfo
+	}).(ImportTaskImportSourceInfoTosSourceInfoPtrOutput)
+}
+
+type ImportTaskImportSourceInfoKafkaSourceInfo struct {
+	// Data encoding format. Available options: UTF-8, GBK.
+	Encode *string `pulumi:"encode"`
+	// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+	Group *string `pulumi:"group"`
+	// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+	Host *string `pulumi:"host"`
+	// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+	InitialOffset *int `pulumi:"initialOffset"`
+	// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+	InstanceId *string `pulumi:"instanceId"`
+	// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+	IsNeedAuth *bool `pulumi:"isNeedAuth"`
+	// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+	Mechanism *string `pulumi:"mechanism"`
+	// Kafka SASL user password for authentication.
+	Password *string `pulumi:"password"`
+	// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+	Protocol *string `pulumi:"protocol"`
+	// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+	TimeSourceDefault *int `pulumi:"timeSourceDefault"`
+	// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+	Topic *string `pulumi:"topic"`
+	// Kafka SASL username for authentication.
+	Username *string `pulumi:"username"`
+}
+
+// ImportTaskImportSourceInfoKafkaSourceInfoInput is an input type that accepts ImportTaskImportSourceInfoKafkaSourceInfoArgs and ImportTaskImportSourceInfoKafkaSourceInfoOutput values.
+// You can construct a concrete instance of `ImportTaskImportSourceInfoKafkaSourceInfoInput` via:
+//
+//	ImportTaskImportSourceInfoKafkaSourceInfoArgs{...}
+type ImportTaskImportSourceInfoKafkaSourceInfoInput interface {
+	pulumi.Input
+
+	ToImportTaskImportSourceInfoKafkaSourceInfoOutput() ImportTaskImportSourceInfoKafkaSourceInfoOutput
+	ToImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(context.Context) ImportTaskImportSourceInfoKafkaSourceInfoOutput
+}
+
+type ImportTaskImportSourceInfoKafkaSourceInfoArgs struct {
+	// Data encoding format. Available options: UTF-8, GBK.
+	Encode pulumi.StringPtrInput `pulumi:"encode"`
+	// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+	Group pulumi.StringPtrInput `pulumi:"group"`
+	// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+	InitialOffset pulumi.IntPtrInput `pulumi:"initialOffset"`
+	// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+	IsNeedAuth pulumi.BoolPtrInput `pulumi:"isNeedAuth"`
+	// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+	Mechanism pulumi.StringPtrInput `pulumi:"mechanism"`
+	// Kafka SASL user password for authentication.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+	TimeSourceDefault pulumi.IntPtrInput `pulumi:"timeSourceDefault"`
+	// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+	Topic pulumi.StringPtrInput `pulumi:"topic"`
+	// Kafka SASL username for authentication.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ImportTaskImportSourceInfoKafkaSourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskImportSourceInfoKafkaSourceInfo)(nil)).Elem()
+}
+
+func (i ImportTaskImportSourceInfoKafkaSourceInfoArgs) ToImportTaskImportSourceInfoKafkaSourceInfoOutput() ImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return i.ToImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(context.Background())
+}
+
+func (i ImportTaskImportSourceInfoKafkaSourceInfoArgs) ToImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoKafkaSourceInfoOutput)
+}
+
+func (i ImportTaskImportSourceInfoKafkaSourceInfoArgs) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutput() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return i.ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskImportSourceInfoKafkaSourceInfoArgs) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoKafkaSourceInfoOutput).ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(ctx)
+}
+
+// ImportTaskImportSourceInfoKafkaSourceInfoPtrInput is an input type that accepts ImportTaskImportSourceInfoKafkaSourceInfoArgs, ImportTaskImportSourceInfoKafkaSourceInfoPtr and ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput values.
+// You can construct a concrete instance of `ImportTaskImportSourceInfoKafkaSourceInfoPtrInput` via:
+//
+//	        ImportTaskImportSourceInfoKafkaSourceInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskImportSourceInfoKafkaSourceInfoPtrInput interface {
+	pulumi.Input
+
+	ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutput() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput
+	ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(context.Context) ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput
+}
+
+type importTaskImportSourceInfoKafkaSourceInfoPtrType ImportTaskImportSourceInfoKafkaSourceInfoArgs
+
+func ImportTaskImportSourceInfoKafkaSourceInfoPtr(v *ImportTaskImportSourceInfoKafkaSourceInfoArgs) ImportTaskImportSourceInfoKafkaSourceInfoPtrInput {
+	return (*importTaskImportSourceInfoKafkaSourceInfoPtrType)(v)
+}
+
+func (*importTaskImportSourceInfoKafkaSourceInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskImportSourceInfoKafkaSourceInfo)(nil)).Elem()
+}
+
+func (i *importTaskImportSourceInfoKafkaSourceInfoPtrType) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutput() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return i.ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskImportSourceInfoKafkaSourceInfoPtrType) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput)
+}
+
+type ImportTaskImportSourceInfoKafkaSourceInfoOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskImportSourceInfoKafkaSourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskImportSourceInfoKafkaSourceInfo)(nil)).Elem()
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) ToImportTaskImportSourceInfoKafkaSourceInfoOutput() ImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) ToImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutput() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return o.ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskImportSourceInfoKafkaSourceInfo) *ImportTaskImportSourceInfoKafkaSourceInfo {
+		return &v
+	}).(ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput)
+}
+
+// Data encoding format. Available options: UTF-8, GBK.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Encode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Encode }).(pulumi.StringPtrOutput)
+}
+
+// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Group }).(pulumi.StringPtrOutput)
+}
+
+// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) InitialOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *int { return v.InitialOffset }).(pulumi.IntPtrOutput)
+}
+
+// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) IsNeedAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *bool { return v.IsNeedAuth }).(pulumi.BoolPtrOutput)
+}
+
+// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Mechanism() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Mechanism }).(pulumi.StringPtrOutput)
+}
+
+// Kafka SASL user password for authentication.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) TimeSourceDefault() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *int { return v.TimeSourceDefault }).(pulumi.IntPtrOutput)
+}
+
+// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Topic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Topic }).(pulumi.StringPtrOutput)
+}
+
+// Kafka SASL username for authentication.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoKafkaSourceInfo) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskImportSourceInfoKafkaSourceInfo)(nil)).Elem()
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutput() ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) ToImportTaskImportSourceInfoKafkaSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Elem() ImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) ImportTaskImportSourceInfoKafkaSourceInfo {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskImportSourceInfoKafkaSourceInfo
+		return ret
+	}).(ImportTaskImportSourceInfoKafkaSourceInfoOutput)
+}
+
+// Data encoding format. Available options: UTF-8, GBK.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Encode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Encode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Group
+	}).(pulumi.StringPtrOutput)
+}
+
+// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) InitialOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InitialOffset
+	}).(pulumi.IntPtrOutput)
+}
+
+// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) IsNeedAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNeedAuth
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Mechanism() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Mechanism
+	}).(pulumi.StringPtrOutput)
+}
+
+// Kafka SASL user password for authentication.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) TimeSourceDefault() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TimeSourceDefault
+	}).(pulumi.IntPtrOutput)
+}
+
+// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Topic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Topic
+	}).(pulumi.StringPtrOutput)
+}
+
+// Kafka SASL username for authentication.
+func (o ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoKafkaSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskImportSourceInfoTosSourceInfo struct {
+	// TOS bucket name
+	Bucket *string `pulumi:"bucket"`
+	// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+	CompressType *string `pulumi:"compressType"`
+	// Path of the file to be imported in the TOS bucket.
+	Prefix *string `pulumi:"prefix"`
+	// Region where the TOS bucket is located. Cross-region data import is supported
+	Region *string `pulumi:"region"`
+}
+
+// ImportTaskImportSourceInfoTosSourceInfoInput is an input type that accepts ImportTaskImportSourceInfoTosSourceInfoArgs and ImportTaskImportSourceInfoTosSourceInfoOutput values.
+// You can construct a concrete instance of `ImportTaskImportSourceInfoTosSourceInfoInput` via:
+//
+//	ImportTaskImportSourceInfoTosSourceInfoArgs{...}
+type ImportTaskImportSourceInfoTosSourceInfoInput interface {
+	pulumi.Input
+
+	ToImportTaskImportSourceInfoTosSourceInfoOutput() ImportTaskImportSourceInfoTosSourceInfoOutput
+	ToImportTaskImportSourceInfoTosSourceInfoOutputWithContext(context.Context) ImportTaskImportSourceInfoTosSourceInfoOutput
+}
+
+type ImportTaskImportSourceInfoTosSourceInfoArgs struct {
+	// TOS bucket name
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+	CompressType pulumi.StringPtrInput `pulumi:"compressType"`
+	// Path of the file to be imported in the TOS bucket.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// Region where the TOS bucket is located. Cross-region data import is supported
+	Region pulumi.StringPtrInput `pulumi:"region"`
+}
+
+func (ImportTaskImportSourceInfoTosSourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskImportSourceInfoTosSourceInfo)(nil)).Elem()
+}
+
+func (i ImportTaskImportSourceInfoTosSourceInfoArgs) ToImportTaskImportSourceInfoTosSourceInfoOutput() ImportTaskImportSourceInfoTosSourceInfoOutput {
+	return i.ToImportTaskImportSourceInfoTosSourceInfoOutputWithContext(context.Background())
+}
+
+func (i ImportTaskImportSourceInfoTosSourceInfoArgs) ToImportTaskImportSourceInfoTosSourceInfoOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoTosSourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoTosSourceInfoOutput)
+}
+
+func (i ImportTaskImportSourceInfoTosSourceInfoArgs) ToImportTaskImportSourceInfoTosSourceInfoPtrOutput() ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return i.ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskImportSourceInfoTosSourceInfoArgs) ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoTosSourceInfoOutput).ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(ctx)
+}
+
+// ImportTaskImportSourceInfoTosSourceInfoPtrInput is an input type that accepts ImportTaskImportSourceInfoTosSourceInfoArgs, ImportTaskImportSourceInfoTosSourceInfoPtr and ImportTaskImportSourceInfoTosSourceInfoPtrOutput values.
+// You can construct a concrete instance of `ImportTaskImportSourceInfoTosSourceInfoPtrInput` via:
+//
+//	        ImportTaskImportSourceInfoTosSourceInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskImportSourceInfoTosSourceInfoPtrInput interface {
+	pulumi.Input
+
+	ToImportTaskImportSourceInfoTosSourceInfoPtrOutput() ImportTaskImportSourceInfoTosSourceInfoPtrOutput
+	ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(context.Context) ImportTaskImportSourceInfoTosSourceInfoPtrOutput
+}
+
+type importTaskImportSourceInfoTosSourceInfoPtrType ImportTaskImportSourceInfoTosSourceInfoArgs
+
+func ImportTaskImportSourceInfoTosSourceInfoPtr(v *ImportTaskImportSourceInfoTosSourceInfoArgs) ImportTaskImportSourceInfoTosSourceInfoPtrInput {
+	return (*importTaskImportSourceInfoTosSourceInfoPtrType)(v)
+}
+
+func (*importTaskImportSourceInfoTosSourceInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskImportSourceInfoTosSourceInfo)(nil)).Elem()
+}
+
+func (i *importTaskImportSourceInfoTosSourceInfoPtrType) ToImportTaskImportSourceInfoTosSourceInfoPtrOutput() ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return i.ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskImportSourceInfoTosSourceInfoPtrType) ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskImportSourceInfoTosSourceInfoPtrOutput)
+}
+
+type ImportTaskImportSourceInfoTosSourceInfoOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskImportSourceInfoTosSourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskImportSourceInfoTosSourceInfo)(nil)).Elem()
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) ToImportTaskImportSourceInfoTosSourceInfoOutput() ImportTaskImportSourceInfoTosSourceInfoOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) ToImportTaskImportSourceInfoTosSourceInfoOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoTosSourceInfoOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) ToImportTaskImportSourceInfoTosSourceInfoPtrOutput() ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return o.ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskImportSourceInfoTosSourceInfo) *ImportTaskImportSourceInfoTosSourceInfo {
+		return &v
+	}).(ImportTaskImportSourceInfoTosSourceInfoPtrOutput)
+}
+
+// TOS bucket name
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoTosSourceInfo) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) CompressType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoTosSourceInfo) *string { return v.CompressType }).(pulumi.StringPtrOutput)
+}
+
+// Path of the file to be imported in the TOS bucket.
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoTosSourceInfo) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+// Region where the TOS bucket is located. Cross-region data import is supported
+func (o ImportTaskImportSourceInfoTosSourceInfoOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskImportSourceInfoTosSourceInfo) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskImportSourceInfoTosSourceInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskImportSourceInfoTosSourceInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskImportSourceInfoTosSourceInfo)(nil)).Elem()
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) ToImportTaskImportSourceInfoTosSourceInfoPtrOutput() ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) ToImportTaskImportSourceInfoTosSourceInfoPtrOutputWithContext(ctx context.Context) ImportTaskImportSourceInfoTosSourceInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) Elem() ImportTaskImportSourceInfoTosSourceInfoOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoTosSourceInfo) ImportTaskImportSourceInfoTosSourceInfo {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskImportSourceInfoTosSourceInfo
+		return ret
+	}).(ImportTaskImportSourceInfoTosSourceInfoOutput)
+}
+
+// TOS bucket name
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoTosSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) CompressType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoTosSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompressType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Path of the file to be imported in the TOS bucket.
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoTosSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Region where the TOS bucket is located. Cross-region data import is supported
+func (o ImportTaskImportSourceInfoTosSourceInfoPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskImportSourceInfoTosSourceInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTargetInfo struct {
+	// Log extraction rule.
+	ExtractRule *ImportTaskTargetInfoExtractRule `pulumi:"extractRule"`
+	// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+	LogSample *string `pulumi:"logSample"`
+	// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+	LogType string `pulumi:"logType"`
+	// Region.
+	Region string `pulumi:"region"`
+}
+
+// ImportTaskTargetInfoInput is an input type that accepts ImportTaskTargetInfoArgs and ImportTaskTargetInfoOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoInput` via:
+//
+//	ImportTaskTargetInfoArgs{...}
+type ImportTaskTargetInfoInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoOutput() ImportTaskTargetInfoOutput
+	ToImportTaskTargetInfoOutputWithContext(context.Context) ImportTaskTargetInfoOutput
+}
+
+type ImportTaskTargetInfoArgs struct {
+	// Log extraction rule.
+	ExtractRule ImportTaskTargetInfoExtractRulePtrInput `pulumi:"extractRule"`
+	// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+	LogSample pulumi.StringPtrInput `pulumi:"logSample"`
+	// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+	LogType pulumi.StringInput `pulumi:"logType"`
+	// Region.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (ImportTaskTargetInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfo)(nil)).Elem()
+}
+
+func (i ImportTaskTargetInfoArgs) ToImportTaskTargetInfoOutput() ImportTaskTargetInfoOutput {
+	return i.ToImportTaskTargetInfoOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoArgs) ToImportTaskTargetInfoOutputWithContext(ctx context.Context) ImportTaskTargetInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoOutput)
+}
+
+func (i ImportTaskTargetInfoArgs) ToImportTaskTargetInfoPtrOutput() ImportTaskTargetInfoPtrOutput {
+	return i.ToImportTaskTargetInfoPtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoArgs) ToImportTaskTargetInfoPtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoOutput).ToImportTaskTargetInfoPtrOutputWithContext(ctx)
+}
+
+// ImportTaskTargetInfoPtrInput is an input type that accepts ImportTaskTargetInfoArgs, ImportTaskTargetInfoPtr and ImportTaskTargetInfoPtrOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoPtrInput` via:
+//
+//	        ImportTaskTargetInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskTargetInfoPtrInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoPtrOutput() ImportTaskTargetInfoPtrOutput
+	ToImportTaskTargetInfoPtrOutputWithContext(context.Context) ImportTaskTargetInfoPtrOutput
+}
+
+type importTaskTargetInfoPtrType ImportTaskTargetInfoArgs
+
+func ImportTaskTargetInfoPtr(v *ImportTaskTargetInfoArgs) ImportTaskTargetInfoPtrInput {
+	return (*importTaskTargetInfoPtrType)(v)
+}
+
+func (*importTaskTargetInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfo)(nil)).Elem()
+}
+
+func (i *importTaskTargetInfoPtrType) ToImportTaskTargetInfoPtrOutput() ImportTaskTargetInfoPtrOutput {
+	return i.ToImportTaskTargetInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskTargetInfoPtrType) ToImportTaskTargetInfoPtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoPtrOutput)
+}
+
+type ImportTaskTargetInfoOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfo)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoOutput) ToImportTaskTargetInfoOutput() ImportTaskTargetInfoOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoOutput) ToImportTaskTargetInfoOutputWithContext(ctx context.Context) ImportTaskTargetInfoOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoOutput) ToImportTaskTargetInfoPtrOutput() ImportTaskTargetInfoPtrOutput {
+	return o.ToImportTaskTargetInfoPtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskTargetInfoOutput) ToImportTaskTargetInfoPtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskTargetInfo) *ImportTaskTargetInfo {
+		return &v
+	}).(ImportTaskTargetInfoPtrOutput)
+}
+
+// Log extraction rule.
+func (o ImportTaskTargetInfoOutput) ExtractRule() ImportTaskTargetInfoExtractRulePtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfo) *ImportTaskTargetInfoExtractRule { return v.ExtractRule }).(ImportTaskTargetInfoExtractRulePtrOutput)
+}
+
+// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+func (o ImportTaskTargetInfoOutput) LogSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfo) *string { return v.LogSample }).(pulumi.StringPtrOutput)
+}
+
+// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+func (o ImportTaskTargetInfoOutput) LogType() pulumi.StringOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfo) string { return v.LogType }).(pulumi.StringOutput)
+}
+
+// Region.
+func (o ImportTaskTargetInfoOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfo) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type ImportTaskTargetInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfo)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoPtrOutput) ToImportTaskTargetInfoPtrOutput() ImportTaskTargetInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoPtrOutput) ToImportTaskTargetInfoPtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoPtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoPtrOutput) Elem() ImportTaskTargetInfoOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfo) ImportTaskTargetInfo {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskTargetInfo
+		return ret
+	}).(ImportTaskTargetInfoOutput)
+}
+
+// Log extraction rule.
+func (o ImportTaskTargetInfoPtrOutput) ExtractRule() ImportTaskTargetInfoExtractRulePtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfo) *ImportTaskTargetInfoExtractRule {
+		if v == nil {
+			return nil
+		}
+		return v.ExtractRule
+	}).(ImportTaskTargetInfoExtractRulePtrOutput)
+}
+
+// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+func (o ImportTaskTargetInfoPtrOutput) LogSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogSample
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+func (o ImportTaskTargetInfoPtrOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Region.
+func (o ImportTaskTargetInfoPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRule struct {
+	// Basic content of log extraction rules.
+	ExtractRule *ImportTaskTargetInfoExtractRuleExtractRule `pulumi:"extractRule"`
+	// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+	SkipLineCount *int `pulumi:"skipLineCount"`
+	// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+	TimeExtractRegex *string `pulumi:"timeExtractRegex"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+	TimeZone *string `pulumi:"timeZone"`
+}
+
+// ImportTaskTargetInfoExtractRuleInput is an input type that accepts ImportTaskTargetInfoExtractRuleArgs and ImportTaskTargetInfoExtractRuleOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleInput` via:
+//
+//	ImportTaskTargetInfoExtractRuleArgs{...}
+type ImportTaskTargetInfoExtractRuleInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleOutput() ImportTaskTargetInfoExtractRuleOutput
+	ToImportTaskTargetInfoExtractRuleOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleOutput
+}
+
+type ImportTaskTargetInfoExtractRuleArgs struct {
+	// Basic content of log extraction rules.
+	ExtractRule ImportTaskTargetInfoExtractRuleExtractRulePtrInput `pulumi:"extractRule"`
+	// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+	SkipLineCount pulumi.IntPtrInput `pulumi:"skipLineCount"`
+	// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+	TimeExtractRegex pulumi.StringPtrInput `pulumi:"timeExtractRegex"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
+}
+
+func (ImportTaskTargetInfoExtractRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRule)(nil)).Elem()
+}
+
+func (i ImportTaskTargetInfoExtractRuleArgs) ToImportTaskTargetInfoExtractRuleOutput() ImportTaskTargetInfoExtractRuleOutput {
+	return i.ToImportTaskTargetInfoExtractRuleOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleArgs) ToImportTaskTargetInfoExtractRuleOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleOutput)
+}
+
+func (i ImportTaskTargetInfoExtractRuleArgs) ToImportTaskTargetInfoExtractRulePtrOutput() ImportTaskTargetInfoExtractRulePtrOutput {
+	return i.ToImportTaskTargetInfoExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleArgs) ToImportTaskTargetInfoExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleOutput).ToImportTaskTargetInfoExtractRulePtrOutputWithContext(ctx)
+}
+
+// ImportTaskTargetInfoExtractRulePtrInput is an input type that accepts ImportTaskTargetInfoExtractRuleArgs, ImportTaskTargetInfoExtractRulePtr and ImportTaskTargetInfoExtractRulePtrOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRulePtrInput` via:
+//
+//	        ImportTaskTargetInfoExtractRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskTargetInfoExtractRulePtrInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRulePtrOutput() ImportTaskTargetInfoExtractRulePtrOutput
+	ToImportTaskTargetInfoExtractRulePtrOutputWithContext(context.Context) ImportTaskTargetInfoExtractRulePtrOutput
+}
+
+type importTaskTargetInfoExtractRulePtrType ImportTaskTargetInfoExtractRuleArgs
+
+func ImportTaskTargetInfoExtractRulePtr(v *ImportTaskTargetInfoExtractRuleArgs) ImportTaskTargetInfoExtractRulePtrInput {
+	return (*importTaskTargetInfoExtractRulePtrType)(v)
+}
+
+func (*importTaskTargetInfoExtractRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfoExtractRule)(nil)).Elem()
+}
+
+func (i *importTaskTargetInfoExtractRulePtrType) ToImportTaskTargetInfoExtractRulePtrOutput() ImportTaskTargetInfoExtractRulePtrOutput {
+	return i.ToImportTaskTargetInfoExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskTargetInfoExtractRulePtrType) ToImportTaskTargetInfoExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRulePtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRule)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleOutput) ToImportTaskTargetInfoExtractRuleOutput() ImportTaskTargetInfoExtractRuleOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleOutput) ToImportTaskTargetInfoExtractRuleOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleOutput) ToImportTaskTargetInfoExtractRulePtrOutput() ImportTaskTargetInfoExtractRulePtrOutput {
+	return o.ToImportTaskTargetInfoExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskTargetInfoExtractRuleOutput) ToImportTaskTargetInfoExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskTargetInfoExtractRule) *ImportTaskTargetInfoExtractRule {
+		return &v
+	}).(ImportTaskTargetInfoExtractRulePtrOutput)
+}
+
+// Basic content of log extraction rules.
+func (o ImportTaskTargetInfoExtractRuleOutput) ExtractRule() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRule) *ImportTaskTargetInfoExtractRuleExtractRule {
+		return v.ExtractRule
+	}).(ImportTaskTargetInfoExtractRuleExtractRulePtrOutput)
+}
+
+// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+func (o ImportTaskTargetInfoExtractRuleOutput) SkipLineCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRule) *int { return v.SkipLineCount }).(pulumi.IntPtrOutput)
+}
+
+// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+func (o ImportTaskTargetInfoExtractRuleOutput) TimeExtractRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRule) *string { return v.TimeExtractRegex }).(pulumi.StringPtrOutput)
+}
+
+// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+func (o ImportTaskTargetInfoExtractRuleOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRulePtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfoExtractRule)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRulePtrOutput) ToImportTaskTargetInfoExtractRulePtrOutput() ImportTaskTargetInfoExtractRulePtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRulePtrOutput) ToImportTaskTargetInfoExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRulePtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRulePtrOutput) Elem() ImportTaskTargetInfoExtractRuleOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRule) ImportTaskTargetInfoExtractRule {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskTargetInfoExtractRule
+		return ret
+	}).(ImportTaskTargetInfoExtractRuleOutput)
+}
+
+// Basic content of log extraction rules.
+func (o ImportTaskTargetInfoExtractRulePtrOutput) ExtractRule() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRule) *ImportTaskTargetInfoExtractRuleExtractRule {
+		if v == nil {
+			return nil
+		}
+		return v.ExtractRule
+	}).(ImportTaskTargetInfoExtractRuleExtractRulePtrOutput)
+}
+
+// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+func (o ImportTaskTargetInfoExtractRulePtrOutput) SkipLineCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRule) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SkipLineCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+func (o ImportTaskTargetInfoExtractRulePtrOutput) TimeExtractRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeExtractRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+func (o ImportTaskTargetInfoExtractRulePtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRule struct {
+	// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+	BeginRegex *string `pulumi:"beginRegex"`
+	// Delimiter. Only valid when LogType is delimiter_log.
+	Delimiter *string `pulumi:"delimiter"`
+	// Enable nanoseconds.
+	EnableNanosecond *bool                                                      `pulumi:"enableNanosecond"`
+	FilterKeyRegexes []ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex `pulumi:"filterKeyRegexes"`
+	// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+	Keys []string `pulumi:"keys"`
+	// Log regular expression
+	LogRegex *string `pulumi:"logRegex"`
+	// Log template.
+	LogTemplate *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+	Quote *string `pulumi:"quote"`
+	// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+	TimeKey *string `pulumi:"timeKey"`
+	// Time sample. Used to verify whether the entered time parsing format is correct
+	TimeSample *string `pulumi:"timeSample"`
+	// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+	UnMatchLogKey *string `pulumi:"unMatchLogKey"`
+	// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch *bool `pulumi:"unMatchUpLoadSwitch"`
+}
+
+// ImportTaskTargetInfoExtractRuleExtractRuleInput is an input type that accepts ImportTaskTargetInfoExtractRuleExtractRuleArgs and ImportTaskTargetInfoExtractRuleExtractRuleOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleExtractRuleInput` via:
+//
+//	ImportTaskTargetInfoExtractRuleExtractRuleArgs{...}
+type ImportTaskTargetInfoExtractRuleExtractRuleInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleExtractRuleOutput() ImportTaskTargetInfoExtractRuleExtractRuleOutput
+	ToImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleExtractRuleOutput
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleArgs struct {
+	// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+	BeginRegex pulumi.StringPtrInput `pulumi:"beginRegex"`
+	// Delimiter. Only valid when LogType is delimiter_log.
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// Enable nanoseconds.
+	EnableNanosecond pulumi.BoolPtrInput                                                `pulumi:"enableNanosecond"`
+	FilterKeyRegexes ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput `pulumi:"filterKeyRegexes"`
+	// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Log regular expression
+	LogRegex pulumi.StringPtrInput `pulumi:"logRegex"`
+	// Log template.
+	LogTemplate ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrInput `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+	Quote pulumi.StringPtrInput `pulumi:"quote"`
+	// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+	TimeKey pulumi.StringPtrInput `pulumi:"timeKey"`
+	// Time sample. Used to verify whether the entered time parsing format is correct
+	TimeSample pulumi.StringPtrInput `pulumi:"timeSample"`
+	// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+	UnMatchLogKey pulumi.StringPtrInput `pulumi:"unMatchLogKey"`
+	// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch pulumi.BoolPtrInput `pulumi:"unMatchUpLoadSwitch"`
+}
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRule)(nil)).Elem()
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleArgs) ToImportTaskTargetInfoExtractRuleExtractRuleOutput() ImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleArgs) ToImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleOutput)
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleArgs) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutput() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleArgs) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleOutput).ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(ctx)
+}
+
+// ImportTaskTargetInfoExtractRuleExtractRulePtrInput is an input type that accepts ImportTaskTargetInfoExtractRuleExtractRuleArgs, ImportTaskTargetInfoExtractRuleExtractRulePtr and ImportTaskTargetInfoExtractRuleExtractRulePtrOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleExtractRulePtrInput` via:
+//
+//	        ImportTaskTargetInfoExtractRuleExtractRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskTargetInfoExtractRuleExtractRulePtrInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleExtractRulePtrOutput() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput
+	ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleExtractRulePtrOutput
+}
+
+type importTaskTargetInfoExtractRuleExtractRulePtrType ImportTaskTargetInfoExtractRuleExtractRuleArgs
+
+func ImportTaskTargetInfoExtractRuleExtractRulePtr(v *ImportTaskTargetInfoExtractRuleExtractRuleArgs) ImportTaskTargetInfoExtractRuleExtractRulePtrInput {
+	return (*importTaskTargetInfoExtractRuleExtractRulePtrType)(v)
+}
+
+func (*importTaskTargetInfoExtractRuleExtractRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfoExtractRuleExtractRule)(nil)).Elem()
+}
+
+func (i *importTaskTargetInfoExtractRuleExtractRulePtrType) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutput() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskTargetInfoExtractRuleExtractRulePtrType) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRulePtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRule)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) ToImportTaskTargetInfoExtractRuleExtractRuleOutput() ImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) ToImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutput() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return o.ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskTargetInfoExtractRuleExtractRule) *ImportTaskTargetInfoExtractRuleExtractRule {
+		return &v
+	}).(ImportTaskTargetInfoExtractRuleExtractRulePtrOutput)
+}
+
+// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) BeginRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.BeginRegex }).(pulumi.StringPtrOutput)
+}
+
+// Delimiter. Only valid when LogType is delimiter_log.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// Enable nanoseconds.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) EnableNanosecond() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *bool { return v.EnableNanosecond }).(pulumi.BoolPtrOutput)
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) FilterKeyRegexes() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) []ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex {
+		return v.FilterKeyRegexes
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) []string { return v.Keys }).(pulumi.StringArrayOutput)
+}
+
+// Log regular expression
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) LogRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.LogRegex }).(pulumi.StringPtrOutput)
+}
+
+// Log template.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) LogTemplate() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate {
+		return v.LogTemplate
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput)
+}
+
+// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) Quote() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.Quote }).(pulumi.StringPtrOutput)
+}
+
+// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.TimeFormat }).(pulumi.StringPtrOutput)
+}
+
+// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) TimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.TimeKey }).(pulumi.StringPtrOutput)
+}
+
+// Time sample. Used to verify whether the entered time parsing format is correct
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) TimeSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.TimeSample }).(pulumi.StringPtrOutput)
+}
+
+// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) UnMatchLogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *string { return v.UnMatchLogKey }).(pulumi.StringPtrOutput)
+}
+
+// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleOutput) UnMatchUpLoadSwitch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRule) *bool { return v.UnMatchUpLoadSwitch }).(pulumi.BoolPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRulePtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfoExtractRuleExtractRule)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutput() ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) ToImportTaskTargetInfoExtractRuleExtractRulePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRulePtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) Elem() ImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) ImportTaskTargetInfoExtractRuleExtractRule {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskTargetInfoExtractRuleExtractRule
+		return ret
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleOutput)
+}
+
+// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) BeginRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BeginRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Delimiter. Only valid when LogType is delimiter_log.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// Enable nanoseconds.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) EnableNanosecond() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableNanosecond
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) FilterKeyRegexes() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) []ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex {
+		if v == nil {
+			return nil
+		}
+		return v.FilterKeyRegexes
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// Log regular expression
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) LogRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Log template.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) LogTemplate() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate {
+		if v == nil {
+			return nil
+		}
+		return v.LogTemplate
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput)
+}
+
+// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) Quote() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Quote
+	}).(pulumi.StringPtrOutput)
+}
+
+// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) TimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time sample. Used to verify whether the entered time parsing format is correct
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) TimeSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeSample
+	}).(pulumi.StringPtrOutput)
+}
+
+// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) UnMatchLogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UnMatchLogKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+func (o ImportTaskTargetInfoExtractRuleExtractRulePtrOutput) UnMatchUpLoadSwitch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UnMatchUpLoadSwitch
+	}).(pulumi.BoolPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Regular expression.
+	Regex *string `pulumi:"regex"`
+}
+
+// ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput is an input type that accepts ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs and ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput` via:
+//
+//	ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs{...}
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput
+	ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Regular expression.
+	Regex pulumi.StringPtrInput `pulumi:"regex"`
+}
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput)
+}
+
+// ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput is an input type that accepts ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray and ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput` via:
+//
+//	ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray{ ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs{...} }
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput
+	ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray []ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+// Key.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Regular expression.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) Regex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex) *string { return v.Regex }).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput() ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) ToImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) Index(i pulumi.IntInput) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex {
+		return vs[0].([]ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)[vs[1].(int)]
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate struct {
+	// Format.
+	Format *string `pulumi:"format"`
+	// Type
+	Type *string `pulumi:"type"`
+}
+
+// ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput is an input type that accepts ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs and ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput` via:
+//
+//	ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs{...}
+type ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput
+	ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs struct {
+	// Format.
+	Format pulumi.StringPtrInput `pulumi:"format"`
+	// Type
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput)
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput).ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(ctx)
+}
+
+// ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrInput is an input type that accepts ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs, ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtr and ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput values.
+// You can construct a concrete instance of `ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrInput` via:
+//
+//	        ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrInput interface {
+	pulumi.Input
+
+	ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput
+	ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput
+}
+
+type importTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrType ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs
+
+func ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtr(v *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrInput {
+	return (*importTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrType)(v)
+}
+
+func (*importTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (i *importTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrType) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return i.ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrType) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return o.ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate {
+		return &v
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput)
+}
+
+// Format.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) *string { return v.Format }).(pulumi.StringPtrOutput)
+}
+
+// Type
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput) ToImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput {
+	return o
+}
+
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput) Elem() ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate
+		return ret
+	}).(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput)
+}
+
+// Format.
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type
+func (o ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type ImportTaskTaskStatistics struct {
+	// Total resource bytes enumerated
+	BytesTotal *int `pulumi:"bytesTotal"`
+	// Bytes transferred.
+	BytesTransferred *int `pulumi:"bytesTransferred"`
+	// Number of resources failed to import.
+	Failed *int `pulumi:"failed"`
+	// Number of resources not found.
+	NotExist *int `pulumi:"notExist"`
+	// Number of resources skipped during import
+	Skipped *int `pulumi:"skipped"`
+	// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+	TaskStatus *string `pulumi:"taskStatus"`
+	// Total number of resources enumerated.
+	Total *int `pulumi:"total"`
+	// Number of records transferred.
+	Transferred *int `pulumi:"transferred"`
+}
+
+// ImportTaskTaskStatisticsInput is an input type that accepts ImportTaskTaskStatisticsArgs and ImportTaskTaskStatisticsOutput values.
+// You can construct a concrete instance of `ImportTaskTaskStatisticsInput` via:
+//
+//	ImportTaskTaskStatisticsArgs{...}
+type ImportTaskTaskStatisticsInput interface {
+	pulumi.Input
+
+	ToImportTaskTaskStatisticsOutput() ImportTaskTaskStatisticsOutput
+	ToImportTaskTaskStatisticsOutputWithContext(context.Context) ImportTaskTaskStatisticsOutput
+}
+
+type ImportTaskTaskStatisticsArgs struct {
+	// Total resource bytes enumerated
+	BytesTotal pulumi.IntPtrInput `pulumi:"bytesTotal"`
+	// Bytes transferred.
+	BytesTransferred pulumi.IntPtrInput `pulumi:"bytesTransferred"`
+	// Number of resources failed to import.
+	Failed pulumi.IntPtrInput `pulumi:"failed"`
+	// Number of resources not found.
+	NotExist pulumi.IntPtrInput `pulumi:"notExist"`
+	// Number of resources skipped during import
+	Skipped pulumi.IntPtrInput `pulumi:"skipped"`
+	// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+	TaskStatus pulumi.StringPtrInput `pulumi:"taskStatus"`
+	// Total number of resources enumerated.
+	Total pulumi.IntPtrInput `pulumi:"total"`
+	// Number of records transferred.
+	Transferred pulumi.IntPtrInput `pulumi:"transferred"`
+}
+
+func (ImportTaskTaskStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTaskStatistics)(nil)).Elem()
+}
+
+func (i ImportTaskTaskStatisticsArgs) ToImportTaskTaskStatisticsOutput() ImportTaskTaskStatisticsOutput {
+	return i.ToImportTaskTaskStatisticsOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTaskStatisticsArgs) ToImportTaskTaskStatisticsOutputWithContext(ctx context.Context) ImportTaskTaskStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTaskStatisticsOutput)
+}
+
+func (i ImportTaskTaskStatisticsArgs) ToImportTaskTaskStatisticsPtrOutput() ImportTaskTaskStatisticsPtrOutput {
+	return i.ToImportTaskTaskStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i ImportTaskTaskStatisticsArgs) ToImportTaskTaskStatisticsPtrOutputWithContext(ctx context.Context) ImportTaskTaskStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTaskStatisticsOutput).ToImportTaskTaskStatisticsPtrOutputWithContext(ctx)
+}
+
+// ImportTaskTaskStatisticsPtrInput is an input type that accepts ImportTaskTaskStatisticsArgs, ImportTaskTaskStatisticsPtr and ImportTaskTaskStatisticsPtrOutput values.
+// You can construct a concrete instance of `ImportTaskTaskStatisticsPtrInput` via:
+//
+//	        ImportTaskTaskStatisticsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImportTaskTaskStatisticsPtrInput interface {
+	pulumi.Input
+
+	ToImportTaskTaskStatisticsPtrOutput() ImportTaskTaskStatisticsPtrOutput
+	ToImportTaskTaskStatisticsPtrOutputWithContext(context.Context) ImportTaskTaskStatisticsPtrOutput
+}
+
+type importTaskTaskStatisticsPtrType ImportTaskTaskStatisticsArgs
+
+func ImportTaskTaskStatisticsPtr(v *ImportTaskTaskStatisticsArgs) ImportTaskTaskStatisticsPtrInput {
+	return (*importTaskTaskStatisticsPtrType)(v)
+}
+
+func (*importTaskTaskStatisticsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTaskStatistics)(nil)).Elem()
+}
+
+func (i *importTaskTaskStatisticsPtrType) ToImportTaskTaskStatisticsPtrOutput() ImportTaskTaskStatisticsPtrOutput {
+	return i.ToImportTaskTaskStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i *importTaskTaskStatisticsPtrType) ToImportTaskTaskStatisticsPtrOutputWithContext(ctx context.Context) ImportTaskTaskStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImportTaskTaskStatisticsPtrOutput)
+}
+
+type ImportTaskTaskStatisticsOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTaskStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImportTaskTaskStatistics)(nil)).Elem()
+}
+
+func (o ImportTaskTaskStatisticsOutput) ToImportTaskTaskStatisticsOutput() ImportTaskTaskStatisticsOutput {
+	return o
+}
+
+func (o ImportTaskTaskStatisticsOutput) ToImportTaskTaskStatisticsOutputWithContext(ctx context.Context) ImportTaskTaskStatisticsOutput {
+	return o
+}
+
+func (o ImportTaskTaskStatisticsOutput) ToImportTaskTaskStatisticsPtrOutput() ImportTaskTaskStatisticsPtrOutput {
+	return o.ToImportTaskTaskStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (o ImportTaskTaskStatisticsOutput) ToImportTaskTaskStatisticsPtrOutputWithContext(ctx context.Context) ImportTaskTaskStatisticsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImportTaskTaskStatistics) *ImportTaskTaskStatistics {
+		return &v
+	}).(ImportTaskTaskStatisticsPtrOutput)
+}
+
+// Total resource bytes enumerated
+func (o ImportTaskTaskStatisticsOutput) BytesTotal() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.BytesTotal }).(pulumi.IntPtrOutput)
+}
+
+// Bytes transferred.
+func (o ImportTaskTaskStatisticsOutput) BytesTransferred() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.BytesTransferred }).(pulumi.IntPtrOutput)
+}
+
+// Number of resources failed to import.
+func (o ImportTaskTaskStatisticsOutput) Failed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.Failed }).(pulumi.IntPtrOutput)
+}
+
+// Number of resources not found.
+func (o ImportTaskTaskStatisticsOutput) NotExist() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.NotExist }).(pulumi.IntPtrOutput)
+}
+
+// Number of resources skipped during import
+func (o ImportTaskTaskStatisticsOutput) Skipped() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.Skipped }).(pulumi.IntPtrOutput)
+}
+
+// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+func (o ImportTaskTaskStatisticsOutput) TaskStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *string { return v.TaskStatus }).(pulumi.StringPtrOutput)
+}
+
+// Total number of resources enumerated.
+func (o ImportTaskTaskStatisticsOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.Total }).(pulumi.IntPtrOutput)
+}
+
+// Number of records transferred.
+func (o ImportTaskTaskStatisticsOutput) Transferred() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ImportTaskTaskStatistics) *int { return v.Transferred }).(pulumi.IntPtrOutput)
+}
+
+type ImportTaskTaskStatisticsPtrOutput struct{ *pulumi.OutputState }
+
+func (ImportTaskTaskStatisticsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImportTaskTaskStatistics)(nil)).Elem()
+}
+
+func (o ImportTaskTaskStatisticsPtrOutput) ToImportTaskTaskStatisticsPtrOutput() ImportTaskTaskStatisticsPtrOutput {
+	return o
+}
+
+func (o ImportTaskTaskStatisticsPtrOutput) ToImportTaskTaskStatisticsPtrOutputWithContext(ctx context.Context) ImportTaskTaskStatisticsPtrOutput {
+	return o
+}
+
+func (o ImportTaskTaskStatisticsPtrOutput) Elem() ImportTaskTaskStatisticsOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) ImportTaskTaskStatistics {
+		if v != nil {
+			return *v
+		}
+		var ret ImportTaskTaskStatistics
+		return ret
+	}).(ImportTaskTaskStatisticsOutput)
+}
+
+// Total resource bytes enumerated
+func (o ImportTaskTaskStatisticsPtrOutput) BytesTotal() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BytesTotal
+	}).(pulumi.IntPtrOutput)
+}
+
+// Bytes transferred.
+func (o ImportTaskTaskStatisticsPtrOutput) BytesTransferred() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BytesTransferred
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of resources failed to import.
+func (o ImportTaskTaskStatisticsPtrOutput) Failed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Failed
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of resources not found.
+func (o ImportTaskTaskStatisticsPtrOutput) NotExist() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NotExist
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of resources skipped during import
+func (o ImportTaskTaskStatisticsPtrOutput) Skipped() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Skipped
+	}).(pulumi.IntPtrOutput)
+}
+
+// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+func (o ImportTaskTaskStatisticsPtrOutput) TaskStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TaskStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// Total number of resources enumerated.
+func (o ImportTaskTaskStatisticsPtrOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Total
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of records transferred.
+func (o ImportTaskTaskStatisticsPtrOutput) Transferred() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ImportTaskTaskStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Transferred
+	}).(pulumi.IntPtrOutput)
+}
+
 type IndexFullText struct {
 	// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 	CaseSensitive *bool `pulumi:"caseSensitive"`
@@ -688,6 +2673,12 @@ func (o IndexKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) IndexKeyV
 type IndexKeyValueValueJsonKeyValue struct {
 	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
+	// Whether to distinguish case. Default is false.
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+	Delimiter *string `pulumi:"delimiter"`
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+	IncludeChinese *bool `pulumi:"includeChinese"`
 	// Create indexes for all fields with text values in the JSON field.
 	IndexAll *bool `pulumi:"indexAll"`
 	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
@@ -712,6 +2703,12 @@ type IndexKeyValueValueJsonKeyValueInput interface {
 type IndexKeyValueValueJsonKeyValueArgs struct {
 	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
+	// Whether to distinguish case. Default is false.
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
 	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
 	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
@@ -804,6 +2801,21 @@ func (o IndexKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
 }
 
+// Whether to distinguish case. Default is false.
+func (o IndexKeyValueValueJsonKeyValueOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+func (o IndexKeyValueValueJsonKeyValueOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+func (o IndexKeyValueValueJsonKeyValueOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
+}
+
 // Create indexes for all fields with text values in the JSON field.
 func (o IndexKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
@@ -855,6 +2867,36 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrO
 			return nil
 		}
 		return v.AutoIndexFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to distinguish case. Default is false.
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeChinese
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -1398,6 +3440,12 @@ func (o IndexUserInnerKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) 
 type IndexUserInnerKeyValueValueJsonKeyValue struct {
 	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
+	// Whether to distinguish case. Default is false.
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+	Delimiter *string `pulumi:"delimiter"`
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+	IncludeChinese *bool `pulumi:"includeChinese"`
 	// Create indexes for all fields with text values in the JSON field.
 	IndexAll *bool `pulumi:"indexAll"`
 	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
@@ -1422,6 +3470,12 @@ type IndexUserInnerKeyValueValueJsonKeyValueInput interface {
 type IndexUserInnerKeyValueValueJsonKeyValueArgs struct {
 	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
+	// Whether to distinguish case. Default is false.
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
 	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
 	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
@@ -1514,6 +3568,21 @@ func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.Bo
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
 }
 
+// Whether to distinguish case. Default is false.
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
+}
+
 // Create indexes for all fields with text values in the JSON field.
 func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
@@ -1565,6 +3634,36 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi
 			return nil
 		}
 		return v.AutoIndexFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to distinguish case. Default is false.
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeChinese
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -2012,6 +4111,907 @@ func (o TopicTagArrayOutput) Index(i pulumi.IntInput) TopicTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TopicTag {
 		return vs[0].([]TopicTag)[vs[1].(int)]
 	}).(TopicTagOutput)
+}
+
+type GetImportTaskImportSourceInfo struct {
+	// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+	KafkaSourceInfo GetImportTaskImportSourceInfoKafkaSourceInfo `pulumi:"kafkaSourceInfo"`
+	// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+	TosSourceInfo GetImportTaskImportSourceInfoTosSourceInfo `pulumi:"tosSourceInfo"`
+}
+
+// GetImportTaskImportSourceInfoInput is an input type that accepts GetImportTaskImportSourceInfoArgs and GetImportTaskImportSourceInfoOutput values.
+// You can construct a concrete instance of `GetImportTaskImportSourceInfoInput` via:
+//
+//	GetImportTaskImportSourceInfoArgs{...}
+type GetImportTaskImportSourceInfoInput interface {
+	pulumi.Input
+
+	ToGetImportTaskImportSourceInfoOutput() GetImportTaskImportSourceInfoOutput
+	ToGetImportTaskImportSourceInfoOutputWithContext(context.Context) GetImportTaskImportSourceInfoOutput
+}
+
+type GetImportTaskImportSourceInfoArgs struct {
+	// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+	KafkaSourceInfo GetImportTaskImportSourceInfoKafkaSourceInfoInput `pulumi:"kafkaSourceInfo"`
+	// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+	TosSourceInfo GetImportTaskImportSourceInfoTosSourceInfoInput `pulumi:"tosSourceInfo"`
+}
+
+func (GetImportTaskImportSourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskImportSourceInfo)(nil)).Elem()
+}
+
+func (i GetImportTaskImportSourceInfoArgs) ToGetImportTaskImportSourceInfoOutput() GetImportTaskImportSourceInfoOutput {
+	return i.ToGetImportTaskImportSourceInfoOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskImportSourceInfoArgs) ToGetImportTaskImportSourceInfoOutputWithContext(ctx context.Context) GetImportTaskImportSourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskImportSourceInfoOutput)
+}
+
+type GetImportTaskImportSourceInfoOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskImportSourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskImportSourceInfo)(nil)).Elem()
+}
+
+func (o GetImportTaskImportSourceInfoOutput) ToGetImportTaskImportSourceInfoOutput() GetImportTaskImportSourceInfoOutput {
+	return o
+}
+
+func (o GetImportTaskImportSourceInfoOutput) ToGetImportTaskImportSourceInfoOutputWithContext(ctx context.Context) GetImportTaskImportSourceInfoOutput {
+	return o
+}
+
+// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+func (o GetImportTaskImportSourceInfoOutput) KafkaSourceInfo() GetImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfo) GetImportTaskImportSourceInfoKafkaSourceInfo {
+		return v.KafkaSourceInfo
+	}).(GetImportTaskImportSourceInfoKafkaSourceInfoOutput)
+}
+
+// TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+func (o GetImportTaskImportSourceInfoOutput) TosSourceInfo() GetImportTaskImportSourceInfoTosSourceInfoOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfo) GetImportTaskImportSourceInfoTosSourceInfo {
+		return v.TosSourceInfo
+	}).(GetImportTaskImportSourceInfoTosSourceInfoOutput)
+}
+
+type GetImportTaskImportSourceInfoKafkaSourceInfo struct {
+	// Data encoding format. Available options: UTF-8, GBK.
+	Encode string `pulumi:"encode"`
+	// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+	Group string `pulumi:"group"`
+	// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+	Host string `pulumi:"host"`
+	// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+	InitialOffset int `pulumi:"initialOffset"`
+	// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+	InstanceId string `pulumi:"instanceId"`
+	// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+	IsNeedAuth bool `pulumi:"isNeedAuth"`
+	// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+	Mechanism string `pulumi:"mechanism"`
+	// Kafka SASL user password for authentication.
+	Password string `pulumi:"password"`
+	// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+	Protocol string `pulumi:"protocol"`
+	// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+	TimeSourceDefault int `pulumi:"timeSourceDefault"`
+	// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+	Topic string `pulumi:"topic"`
+	// Kafka SASL username for authentication.
+	Username string `pulumi:"username"`
+}
+
+// GetImportTaskImportSourceInfoKafkaSourceInfoInput is an input type that accepts GetImportTaskImportSourceInfoKafkaSourceInfoArgs and GetImportTaskImportSourceInfoKafkaSourceInfoOutput values.
+// You can construct a concrete instance of `GetImportTaskImportSourceInfoKafkaSourceInfoInput` via:
+//
+//	GetImportTaskImportSourceInfoKafkaSourceInfoArgs{...}
+type GetImportTaskImportSourceInfoKafkaSourceInfoInput interface {
+	pulumi.Input
+
+	ToGetImportTaskImportSourceInfoKafkaSourceInfoOutput() GetImportTaskImportSourceInfoKafkaSourceInfoOutput
+	ToGetImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(context.Context) GetImportTaskImportSourceInfoKafkaSourceInfoOutput
+}
+
+type GetImportTaskImportSourceInfoKafkaSourceInfoArgs struct {
+	// Data encoding format. Available options: UTF-8, GBK.
+	Encode pulumi.StringInput `pulumi:"encode"`
+	// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+	Group pulumi.StringInput `pulumi:"group"`
+	// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+	Host pulumi.StringInput `pulumi:"host"`
+	// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+	InitialOffset pulumi.IntInput `pulumi:"initialOffset"`
+	// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+	IsNeedAuth pulumi.BoolInput `pulumi:"isNeedAuth"`
+	// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+	Mechanism pulumi.StringInput `pulumi:"mechanism"`
+	// Kafka SASL user password for authentication.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+	TimeSourceDefault pulumi.IntInput `pulumi:"timeSourceDefault"`
+	// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+	Topic pulumi.StringInput `pulumi:"topic"`
+	// Kafka SASL username for authentication.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetImportTaskImportSourceInfoKafkaSourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskImportSourceInfoKafkaSourceInfo)(nil)).Elem()
+}
+
+func (i GetImportTaskImportSourceInfoKafkaSourceInfoArgs) ToGetImportTaskImportSourceInfoKafkaSourceInfoOutput() GetImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return i.ToGetImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskImportSourceInfoKafkaSourceInfoArgs) ToGetImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(ctx context.Context) GetImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskImportSourceInfoKafkaSourceInfoOutput)
+}
+
+type GetImportTaskImportSourceInfoKafkaSourceInfoOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskImportSourceInfoKafkaSourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskImportSourceInfoKafkaSourceInfo)(nil)).Elem()
+}
+
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) ToGetImportTaskImportSourceInfoKafkaSourceInfoOutput() GetImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return o
+}
+
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) ToGetImportTaskImportSourceInfoKafkaSourceInfoOutputWithContext(ctx context.Context) GetImportTaskImportSourceInfoKafkaSourceInfoOutput {
+	return o
+}
+
+// Data encoding format. Available options: UTF-8, GBK.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Encode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Encode }).(pulumi.StringOutput)
+}
+
+// Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Group }).(pulumi.StringOutput)
+}
+
+// The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) InitialOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) int { return v.InitialOffset }).(pulumi.IntOutput)
+}
+
+// If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) IsNeedAuth() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) bool { return v.IsNeedAuth }).(pulumi.BoolOutput)
+}
+
+// Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Mechanism() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Mechanism }).(pulumi.StringOutput)
+}
+
+// Kafka SASL user password for authentication.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) TimeSourceDefault() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) int { return v.TimeSourceDefault }).(pulumi.IntOutput)
+}
+
+// Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Topic() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Topic }).(pulumi.StringOutput)
+}
+
+// Kafka SASL username for authentication.
+func (o GetImportTaskImportSourceInfoKafkaSourceInfoOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoKafkaSourceInfo) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetImportTaskImportSourceInfoTosSourceInfo struct {
+	// TOS bucket name
+	Bucket string `pulumi:"bucket"`
+	// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+	CompressType string `pulumi:"compressType"`
+	// Path of the file to be imported in the TOS bucket.
+	Prefix string `pulumi:"prefix"`
+	// Region where the TOS bucket is located. Cross-region data import is supported
+	Region string `pulumi:"region"`
+}
+
+// GetImportTaskImportSourceInfoTosSourceInfoInput is an input type that accepts GetImportTaskImportSourceInfoTosSourceInfoArgs and GetImportTaskImportSourceInfoTosSourceInfoOutput values.
+// You can construct a concrete instance of `GetImportTaskImportSourceInfoTosSourceInfoInput` via:
+//
+//	GetImportTaskImportSourceInfoTosSourceInfoArgs{...}
+type GetImportTaskImportSourceInfoTosSourceInfoInput interface {
+	pulumi.Input
+
+	ToGetImportTaskImportSourceInfoTosSourceInfoOutput() GetImportTaskImportSourceInfoTosSourceInfoOutput
+	ToGetImportTaskImportSourceInfoTosSourceInfoOutputWithContext(context.Context) GetImportTaskImportSourceInfoTosSourceInfoOutput
+}
+
+type GetImportTaskImportSourceInfoTosSourceInfoArgs struct {
+	// TOS bucket name
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+	CompressType pulumi.StringInput `pulumi:"compressType"`
+	// Path of the file to be imported in the TOS bucket.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// Region where the TOS bucket is located. Cross-region data import is supported
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetImportTaskImportSourceInfoTosSourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskImportSourceInfoTosSourceInfo)(nil)).Elem()
+}
+
+func (i GetImportTaskImportSourceInfoTosSourceInfoArgs) ToGetImportTaskImportSourceInfoTosSourceInfoOutput() GetImportTaskImportSourceInfoTosSourceInfoOutput {
+	return i.ToGetImportTaskImportSourceInfoTosSourceInfoOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskImportSourceInfoTosSourceInfoArgs) ToGetImportTaskImportSourceInfoTosSourceInfoOutputWithContext(ctx context.Context) GetImportTaskImportSourceInfoTosSourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskImportSourceInfoTosSourceInfoOutput)
+}
+
+type GetImportTaskImportSourceInfoTosSourceInfoOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskImportSourceInfoTosSourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskImportSourceInfoTosSourceInfo)(nil)).Elem()
+}
+
+func (o GetImportTaskImportSourceInfoTosSourceInfoOutput) ToGetImportTaskImportSourceInfoTosSourceInfoOutput() GetImportTaskImportSourceInfoTosSourceInfoOutput {
+	return o
+}
+
+func (o GetImportTaskImportSourceInfoTosSourceInfoOutput) ToGetImportTaskImportSourceInfoTosSourceInfoOutputWithContext(ctx context.Context) GetImportTaskImportSourceInfoTosSourceInfoOutput {
+	return o
+}
+
+// TOS bucket name
+func (o GetImportTaskImportSourceInfoTosSourceInfoOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoTosSourceInfo) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+func (o GetImportTaskImportSourceInfoTosSourceInfoOutput) CompressType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoTosSourceInfo) string { return v.CompressType }).(pulumi.StringOutput)
+}
+
+// Path of the file to be imported in the TOS bucket.
+func (o GetImportTaskImportSourceInfoTosSourceInfoOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoTosSourceInfo) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// Region where the TOS bucket is located. Cross-region data import is supported
+func (o GetImportTaskImportSourceInfoTosSourceInfoOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskImportSourceInfoTosSourceInfo) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetImportTaskTargetInfo struct {
+	// Log extraction rule.
+	ExtractRule GetImportTaskTargetInfoExtractRule `pulumi:"extractRule"`
+	// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+	LogSample string `pulumi:"logSample"`
+	// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+	LogType string `pulumi:"logType"`
+	// Region.
+	Region string `pulumi:"region"`
+}
+
+// GetImportTaskTargetInfoInput is an input type that accepts GetImportTaskTargetInfoArgs and GetImportTaskTargetInfoOutput values.
+// You can construct a concrete instance of `GetImportTaskTargetInfoInput` via:
+//
+//	GetImportTaskTargetInfoArgs{...}
+type GetImportTaskTargetInfoInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTargetInfoOutput() GetImportTaskTargetInfoOutput
+	ToGetImportTaskTargetInfoOutputWithContext(context.Context) GetImportTaskTargetInfoOutput
+}
+
+type GetImportTaskTargetInfoArgs struct {
+	// Log extraction rule.
+	ExtractRule GetImportTaskTargetInfoExtractRuleInput `pulumi:"extractRule"`
+	// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+	LogSample pulumi.StringInput `pulumi:"logSample"`
+	// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+	LogType pulumi.StringInput `pulumi:"logType"`
+	// Region.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetImportTaskTargetInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfo)(nil)).Elem()
+}
+
+func (i GetImportTaskTargetInfoArgs) ToGetImportTaskTargetInfoOutput() GetImportTaskTargetInfoOutput {
+	return i.ToGetImportTaskTargetInfoOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTargetInfoArgs) ToGetImportTaskTargetInfoOutputWithContext(ctx context.Context) GetImportTaskTargetInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTargetInfoOutput)
+}
+
+type GetImportTaskTargetInfoOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTargetInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfo)(nil)).Elem()
+}
+
+func (o GetImportTaskTargetInfoOutput) ToGetImportTaskTargetInfoOutput() GetImportTaskTargetInfoOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoOutput) ToGetImportTaskTargetInfoOutputWithContext(ctx context.Context) GetImportTaskTargetInfoOutput {
+	return o
+}
+
+// Log extraction rule.
+func (o GetImportTaskTargetInfoOutput) ExtractRule() GetImportTaskTargetInfoExtractRuleOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfo) GetImportTaskTargetInfoExtractRule { return v.ExtractRule }).(GetImportTaskTargetInfoExtractRuleOutput)
+}
+
+// Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+func (o GetImportTaskTargetInfoOutput) LogSample() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfo) string { return v.LogSample }).(pulumi.StringOutput)
+}
+
+// Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+func (o GetImportTaskTargetInfoOutput) LogType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfo) string { return v.LogType }).(pulumi.StringOutput)
+}
+
+// Region.
+func (o GetImportTaskTargetInfoOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfo) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetImportTaskTargetInfoExtractRule struct {
+	// Basic content of log extraction rules.
+	ExtractRule GetImportTaskTargetInfoExtractRuleExtractRule `pulumi:"extractRule"`
+	// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+	SkipLineCount int `pulumi:"skipLineCount"`
+	// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+	TimeExtractRegex string `pulumi:"timeExtractRegex"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetImportTaskTargetInfoExtractRuleInput is an input type that accepts GetImportTaskTargetInfoExtractRuleArgs and GetImportTaskTargetInfoExtractRuleOutput values.
+// You can construct a concrete instance of `GetImportTaskTargetInfoExtractRuleInput` via:
+//
+//	GetImportTaskTargetInfoExtractRuleArgs{...}
+type GetImportTaskTargetInfoExtractRuleInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTargetInfoExtractRuleOutput() GetImportTaskTargetInfoExtractRuleOutput
+	ToGetImportTaskTargetInfoExtractRuleOutputWithContext(context.Context) GetImportTaskTargetInfoExtractRuleOutput
+}
+
+type GetImportTaskTargetInfoExtractRuleArgs struct {
+	// Basic content of log extraction rules.
+	ExtractRule GetImportTaskTargetInfoExtractRuleExtractRuleInput `pulumi:"extractRule"`
+	// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+	SkipLineCount pulumi.IntInput `pulumi:"skipLineCount"`
+	// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+	TimeExtractRegex pulumi.StringInput `pulumi:"timeExtractRegex"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetImportTaskTargetInfoExtractRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRule)(nil)).Elem()
+}
+
+func (i GetImportTaskTargetInfoExtractRuleArgs) ToGetImportTaskTargetInfoExtractRuleOutput() GetImportTaskTargetInfoExtractRuleOutput {
+	return i.ToGetImportTaskTargetInfoExtractRuleOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTargetInfoExtractRuleArgs) ToGetImportTaskTargetInfoExtractRuleOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTargetInfoExtractRuleOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTargetInfoExtractRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRule)(nil)).Elem()
+}
+
+func (o GetImportTaskTargetInfoExtractRuleOutput) ToGetImportTaskTargetInfoExtractRuleOutput() GetImportTaskTargetInfoExtractRuleOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoExtractRuleOutput) ToGetImportTaskTargetInfoExtractRuleOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleOutput {
+	return o
+}
+
+// Basic content of log extraction rules.
+func (o GetImportTaskTargetInfoExtractRuleOutput) ExtractRule() GetImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRule) GetImportTaskTargetInfoExtractRuleExtractRule {
+		return v.ExtractRule
+	}).(GetImportTaskTargetInfoExtractRuleExtractRuleOutput)
+}
+
+// Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+func (o GetImportTaskTargetInfoExtractRuleOutput) SkipLineCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRule) int { return v.SkipLineCount }).(pulumi.IntOutput)
+}
+
+// Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+func (o GetImportTaskTargetInfoExtractRuleOutput) TimeExtractRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRule) string { return v.TimeExtractRegex }).(pulumi.StringOutput)
+}
+
+// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+func (o GetImportTaskTargetInfoExtractRuleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRule struct {
+	// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+	BeginRegex string `pulumi:"beginRegex"`
+	// Delimiter. Only valid when LogType is delimiter_log.
+	Delimiter string `pulumi:"delimiter"`
+	// Enable nanoseconds.
+	EnableNanosecond bool `pulumi:"enableNanosecond"`
+	// Filter key regular expression.
+	FilterKeyRegexes []GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex `pulumi:"filterKeyRegexes"`
+	// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+	Keys []string `pulumi:"keys"`
+	// Log regular expression
+	LogRegex string `pulumi:"logRegex"`
+	// Log template.
+	LogTemplate GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+	Quote string `pulumi:"quote"`
+	// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+	TimeKey string `pulumi:"timeKey"`
+	// Time sample. Used to verify whether the entered time parsing format is correct
+	TimeSample string `pulumi:"timeSample"`
+	// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+	UnMatchLogKey string `pulumi:"unMatchLogKey"`
+	// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch bool `pulumi:"unMatchUpLoadSwitch"`
+}
+
+// GetImportTaskTargetInfoExtractRuleExtractRuleInput is an input type that accepts GetImportTaskTargetInfoExtractRuleExtractRuleArgs and GetImportTaskTargetInfoExtractRuleExtractRuleOutput values.
+// You can construct a concrete instance of `GetImportTaskTargetInfoExtractRuleExtractRuleInput` via:
+//
+//	GetImportTaskTargetInfoExtractRuleExtractRuleArgs{...}
+type GetImportTaskTargetInfoExtractRuleExtractRuleInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleOutput() GetImportTaskTargetInfoExtractRuleExtractRuleOutput
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleOutput
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleArgs struct {
+	// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+	BeginRegex pulumi.StringInput `pulumi:"beginRegex"`
+	// Delimiter. Only valid when LogType is delimiter_log.
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Enable nanoseconds.
+	EnableNanosecond pulumi.BoolInput `pulumi:"enableNanosecond"`
+	// Filter key regular expression.
+	FilterKeyRegexes GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput `pulumi:"filterKeyRegexes"`
+	// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Log regular expression
+	LogRegex pulumi.StringInput `pulumi:"logRegex"`
+	// Log template.
+	LogTemplate GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+	Quote pulumi.StringInput `pulumi:"quote"`
+	// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+	TimeKey pulumi.StringInput `pulumi:"timeKey"`
+	// Time sample. Used to verify whether the entered time parsing format is correct
+	TimeSample pulumi.StringInput `pulumi:"timeSample"`
+	// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+	UnMatchLogKey pulumi.StringInput `pulumi:"unMatchLogKey"`
+	// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch pulumi.BoolInput `pulumi:"unMatchUpLoadSwitch"`
+}
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRule)(nil)).Elem()
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleArgs) ToGetImportTaskTargetInfoExtractRuleExtractRuleOutput() GetImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return i.ToGetImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleArgs) ToGetImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTargetInfoExtractRuleExtractRuleOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRule)(nil)).Elem()
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleOutput() GetImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleOutput {
+	return o
+}
+
+// Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) BeginRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.BeginRegex }).(pulumi.StringOutput)
+}
+
+// Delimiter. Only valid when LogType is delimiter_log.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// Enable nanoseconds.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) EnableNanosecond() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) bool { return v.EnableNanosecond }).(pulumi.BoolOutput)
+}
+
+// Filter key regular expression.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) FilterKeyRegexes() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) []GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex {
+		return v.FilterKeyRegexes
+	}).(GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+// List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) []string { return v.Keys }).(pulumi.StringArrayOutput)
+}
+
+// Log regular expression
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) LogRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.LogRegex }).(pulumi.StringOutput)
+}
+
+// Log template.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) LogTemplate() GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate {
+		return v.LogTemplate
+	}).(GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput)
+}
+
+// Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) Quote() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.Quote }).(pulumi.StringOutput)
+}
+
+// Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.TimeFormat }).(pulumi.StringOutput)
+}
+
+// Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) TimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.TimeKey }).(pulumi.StringOutput)
+}
+
+// Time sample. Used to verify whether the entered time parsing format is correct
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) TimeSample() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.TimeSample }).(pulumi.StringOutput)
+}
+
+// When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) UnMatchLogKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) string { return v.UnMatchLogKey }).(pulumi.StringOutput)
+}
+
+// Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleOutput) UnMatchUpLoadSwitch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRule) bool { return v.UnMatchUpLoadSwitch }).(pulumi.BoolOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Regular expression.
+	Regex string `pulumi:"regex"`
+}
+
+// GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput is an input type that accepts GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs and GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput values.
+// You can construct a concrete instance of `GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput` via:
+//
+//	GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs{...}
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Regular expression.
+	Regex pulumi.StringInput `pulumi:"regex"`
+}
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return i.ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput)
+}
+
+// GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput is an input type that accepts GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray and GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput values.
+// You can construct a concrete instance of `GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput` via:
+//
+//	GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray{ GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs{...} }
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray []GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return i.ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Regular expression.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput) Regex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex) string { return v.Regex }).(pulumi.StringOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput() GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput) Index(i pulumi.IntInput) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex {
+		return vs[0].([]GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex)[vs[1].(int)]
+	}).(GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate struct {
+	// Format.
+	Format string `pulumi:"format"`
+	// Type
+	Type string `pulumi:"type"`
+}
+
+// GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput is an input type that accepts GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs and GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput values.
+// You can construct a concrete instance of `GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput` via:
+//
+//	GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs{...}
+type GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput() GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput
+	ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs struct {
+	// Format.
+	Format pulumi.StringInput `pulumi:"format"`
+	// Type
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput() GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return i.ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs) ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput)
+}
+
+type GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput() GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) ToGetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+// Format.
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// Type
+func (o GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplate) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetImportTaskTaskStatistics struct {
+	// Total resource bytes enumerated
+	BytesTotal int `pulumi:"bytesTotal"`
+	// Bytes transferred.
+	BytesTransferred int `pulumi:"bytesTransferred"`
+	// Number of resources failed to import.
+	Failed int `pulumi:"failed"`
+	// Number of resources not found.
+	NotExist int `pulumi:"notExist"`
+	// Number of resources skipped during import
+	Skipped int `pulumi:"skipped"`
+	// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+	TaskStatus string `pulumi:"taskStatus"`
+	// Total number of resources enumerated.
+	Total int `pulumi:"total"`
+	// Number of records transferred.
+	Transferred int `pulumi:"transferred"`
+}
+
+// GetImportTaskTaskStatisticsInput is an input type that accepts GetImportTaskTaskStatisticsArgs and GetImportTaskTaskStatisticsOutput values.
+// You can construct a concrete instance of `GetImportTaskTaskStatisticsInput` via:
+//
+//	GetImportTaskTaskStatisticsArgs{...}
+type GetImportTaskTaskStatisticsInput interface {
+	pulumi.Input
+
+	ToGetImportTaskTaskStatisticsOutput() GetImportTaskTaskStatisticsOutput
+	ToGetImportTaskTaskStatisticsOutputWithContext(context.Context) GetImportTaskTaskStatisticsOutput
+}
+
+type GetImportTaskTaskStatisticsArgs struct {
+	// Total resource bytes enumerated
+	BytesTotal pulumi.IntInput `pulumi:"bytesTotal"`
+	// Bytes transferred.
+	BytesTransferred pulumi.IntInput `pulumi:"bytesTransferred"`
+	// Number of resources failed to import.
+	Failed pulumi.IntInput `pulumi:"failed"`
+	// Number of resources not found.
+	NotExist pulumi.IntInput `pulumi:"notExist"`
+	// Number of resources skipped during import
+	Skipped pulumi.IntInput `pulumi:"skipped"`
+	// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+	TaskStatus pulumi.StringInput `pulumi:"taskStatus"`
+	// Total number of resources enumerated.
+	Total pulumi.IntInput `pulumi:"total"`
+	// Number of records transferred.
+	Transferred pulumi.IntInput `pulumi:"transferred"`
+}
+
+func (GetImportTaskTaskStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTaskStatistics)(nil)).Elem()
+}
+
+func (i GetImportTaskTaskStatisticsArgs) ToGetImportTaskTaskStatisticsOutput() GetImportTaskTaskStatisticsOutput {
+	return i.ToGetImportTaskTaskStatisticsOutputWithContext(context.Background())
+}
+
+func (i GetImportTaskTaskStatisticsArgs) ToGetImportTaskTaskStatisticsOutputWithContext(ctx context.Context) GetImportTaskTaskStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportTaskTaskStatisticsOutput)
+}
+
+type GetImportTaskTaskStatisticsOutput struct{ *pulumi.OutputState }
+
+func (GetImportTaskTaskStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportTaskTaskStatistics)(nil)).Elem()
+}
+
+func (o GetImportTaskTaskStatisticsOutput) ToGetImportTaskTaskStatisticsOutput() GetImportTaskTaskStatisticsOutput {
+	return o
+}
+
+func (o GetImportTaskTaskStatisticsOutput) ToGetImportTaskTaskStatisticsOutputWithContext(ctx context.Context) GetImportTaskTaskStatisticsOutput {
+	return o
+}
+
+// Total resource bytes enumerated
+func (o GetImportTaskTaskStatisticsOutput) BytesTotal() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.BytesTotal }).(pulumi.IntOutput)
+}
+
+// Bytes transferred.
+func (o GetImportTaskTaskStatisticsOutput) BytesTransferred() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.BytesTransferred }).(pulumi.IntOutput)
+}
+
+// Number of resources failed to import.
+func (o GetImportTaskTaskStatisticsOutput) Failed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.Failed }).(pulumi.IntOutput)
+}
+
+// Number of resources not found.
+func (o GetImportTaskTaskStatisticsOutput) NotExist() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.NotExist }).(pulumi.IntOutput)
+}
+
+// Number of resources skipped during import
+func (o GetImportTaskTaskStatisticsOutput) Skipped() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.Skipped }).(pulumi.IntOutput)
+}
+
+// Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+func (o GetImportTaskTaskStatisticsOutput) TaskStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) string { return v.TaskStatus }).(pulumi.StringOutput)
+}
+
+// Total number of resources enumerated.
+func (o GetImportTaskTaskStatisticsOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.Total }).(pulumi.IntOutput)
+}
+
+// Number of records transferred.
+func (o GetImportTaskTaskStatisticsOutput) Transferred() pulumi.IntOutput {
+	return o.ApplyT(func(v GetImportTaskTaskStatistics) int { return v.Transferred }).(pulumi.IntOutput)
 }
 
 type GetIndexFullText struct {
@@ -3280,6 +6280,24 @@ func (o GetTopicTagArrayOutput) Index(i pulumi.IntInput) GetTopicTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoPtrInput)(nil)).Elem(), ImportTaskImportSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoKafkaSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoKafkaSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoKafkaSourceInfoPtrInput)(nil)).Elem(), ImportTaskImportSourceInfoKafkaSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoTosSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoTosSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoTosSourceInfoPtrInput)(nil)).Elem(), ImportTaskImportSourceInfoTosSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoInput)(nil)).Elem(), ImportTaskTargetInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoPtrInput)(nil)).Elem(), ImportTaskTargetInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRulePtrInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRulePtrInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrInput)(nil)).Elem(), ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTaskStatisticsInput)(nil)).Elem(), ImportTaskTaskStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskTaskStatisticsPtrInput)(nil)).Elem(), ImportTaskTaskStatisticsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexFullTextInput)(nil)).Elem(), IndexFullTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexFullTextPtrInput)(nil)).Elem(), IndexFullTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueInput)(nil)).Elem(), IndexKeyValueArgs{})
@@ -3304,6 +6322,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleSqlTaskRequestCyclePtrInput)(nil)).Elem(), ScheduleSqlTaskRequestCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagInput)(nil)).Elem(), TopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagArrayInput)(nil)).Elem(), TopicTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoKafkaSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoKafkaSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoTosSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoTosSourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTargetInfoInput)(nil)).Elem(), GetImportTaskTargetInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleInput)(nil)).Elem(), GetImportTaskTargetInfoExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleInput)(nil)).Elem(), GetImportTaskTargetInfoExtractRuleExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexInput)(nil)).Elem(), GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayInput)(nil)).Elem(), GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateInput)(nil)).Elem(), GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskTaskStatisticsInput)(nil)).Elem(), GetImportTaskTaskStatisticsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexFullTextInput)(nil)).Elem(), GetIndexFullTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueInput)(nil)).Elem(), GetIndexKeyValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueArrayInput)(nil)).Elem(), GetIndexKeyValueArray{})
@@ -3322,6 +6350,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleSqlTaskRequestCycleInput)(nil)).Elem(), GetScheduleSqlTaskRequestCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagInput)(nil)).Elem(), GetTopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagArrayInput)(nil)).Elem(), GetTopicTagArray{})
+	pulumi.RegisterOutputType(ImportTaskImportSourceInfoOutput{})
+	pulumi.RegisterOutputType(ImportTaskImportSourceInfoPtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskImportSourceInfoKafkaSourceInfoOutput{})
+	pulumi.RegisterOutputType(ImportTaskImportSourceInfoKafkaSourceInfoPtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskImportSourceInfoTosSourceInfoOutput{})
+	pulumi.RegisterOutputType(ImportTaskImportSourceInfoTosSourceInfoPtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoPtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRulePtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleExtractRuleOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleExtractRulePtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput{})
+	pulumi.RegisterOutputType(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplatePtrOutput{})
+	pulumi.RegisterOutputType(ImportTaskTaskStatisticsOutput{})
+	pulumi.RegisterOutputType(ImportTaskTaskStatisticsPtrOutput{})
 	pulumi.RegisterOutputType(IndexFullTextOutput{})
 	pulumi.RegisterOutputType(IndexFullTextPtrOutput{})
 	pulumi.RegisterOutputType(IndexKeyValueOutput{})
@@ -3346,6 +6392,16 @@ func init() {
 	pulumi.RegisterOutputType(ScheduleSqlTaskRequestCyclePtrOutput{})
 	pulumi.RegisterOutputType(TopicTagOutput{})
 	pulumi.RegisterOutputType(TopicTagArrayOutput{})
+	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoOutput{})
+	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoKafkaSourceInfoOutput{})
+	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoTosSourceInfoOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTargetInfoOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTargetInfoExtractRuleOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTargetInfoExtractRuleExtractRuleOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateOutput{})
+	pulumi.RegisterOutputType(GetImportTaskTaskStatisticsOutput{})
 	pulumi.RegisterOutputType(GetIndexFullTextOutput{})
 	pulumi.RegisterOutputType(GetIndexKeyValueOutput{})
 	pulumi.RegisterOutputType(GetIndexKeyValueArrayOutput{})

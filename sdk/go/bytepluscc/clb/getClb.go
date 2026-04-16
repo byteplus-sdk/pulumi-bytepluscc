@@ -72,6 +72,8 @@ type LookupClbResult struct {
 	ExpiredTime string `pulumi:"expiredTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// IPv6 public bandwidth information for the load balancing instance
+	Ipv6AddressBandwidth GetClbIpv6AddressBandwidth `pulumi:"ipv6AddressBandwidth"`
 	// Listener information in the load balancer instance
 	Listeners []GetClbListener `pulumi:"listeners"`
 	// CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
@@ -263,6 +265,11 @@ func (o LookupClbResultOutput) ExpiredTime() pulumi.StringOutput {
 // Uniquely identifies the resource.
 func (o LookupClbResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClbResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// IPv6 public bandwidth information for the load balancing instance
+func (o LookupClbResultOutput) Ipv6AddressBandwidth() GetClbIpv6AddressBandwidthOutput {
+	return o.ApplyT(func(v LookupClbResult) GetClbIpv6AddressBandwidth { return v.Ipv6AddressBandwidth }).(GetClbIpv6AddressBandwidthOutput)
 }
 
 // Listener information in the load balancer instance

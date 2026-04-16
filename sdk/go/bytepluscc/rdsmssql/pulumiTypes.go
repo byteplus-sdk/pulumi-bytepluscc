@@ -16,6 +16,16 @@ var _ = internal.GetEnvOrDefault
 type AllowListAssociatedInstance struct {
 	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
+	// Instance name
+	InstanceName *string `pulumi:"instanceName"`
+	// Instance status
+	InstanceStatus *string `pulumi:"instanceStatus"`
+	// Sync latest allowlist IP
+	IsLatest *bool `pulumi:"isLatest"`
+	// Project name of the instance
+	ProjectName *string `pulumi:"projectName"`
+	// VPC ID of the instance
+	Vpc *string `pulumi:"vpc"`
 }
 
 // AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
@@ -32,6 +42,16 @@ type AllowListAssociatedInstanceInput interface {
 type AllowListAssociatedInstanceArgs struct {
 	// Instance ID
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Instance name
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// Instance status
+	InstanceStatus pulumi.StringPtrInput `pulumi:"instanceStatus"`
+	// Sync latest allowlist IP
+	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
+	// Project name of the instance
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// VPC ID of the instance
+	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
 func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
@@ -88,6 +108,31 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 // Instance ID
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Instance name
+func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// Instance status
+func (o AllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceStatus }).(pulumi.StringPtrOutput)
+}
+
+// Sync latest allowlist IP
+func (o AllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
+}
+
+// Project name of the instance
+func (o AllowListAssociatedInstanceOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// VPC ID of the instance
+func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
 
 type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }

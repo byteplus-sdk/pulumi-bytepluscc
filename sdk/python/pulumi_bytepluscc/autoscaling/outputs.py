@@ -325,10 +325,24 @@ class ScalingGroupInstance(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "instanceId":
+        if key == "createdTime":
+            suggest = "created_time"
+        elif key == "creationType":
+            suggest = "creation_type"
+        elif key == "instanceId":
             suggest = "instance_id"
+        elif key == "launchTemplateId":
+            suggest = "launch_template_id"
+        elif key == "launchTemplateVersion":
+            suggest = "launch_template_version"
         elif key == "lifecycleHook":
             suggest = "lifecycle_hook"
+        elif key == "scalingConfigurationId":
+            suggest = "scaling_configuration_id"
+        elif key == "scalingPolicyId":
+            suggest = "scaling_policy_id"
+        elif key == "zoneId":
+            suggest = "zone_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ScalingGroupInstance. Access the value via the '{suggest}' property getter instead.")
@@ -342,20 +356,68 @@ class ScalingGroupInstance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 created_time: Optional[builtins.str] = None,
+                 creation_type: Optional[builtins.str] = None,
                  entrusted: Optional[builtins.bool] = None,
                  instance_id: Optional[builtins.str] = None,
-                 lifecycle_hook: Optional[builtins.bool] = None):
+                 launch_template_id: Optional[builtins.str] = None,
+                 launch_template_version: Optional[builtins.str] = None,
+                 lifecycle_hook: Optional[builtins.bool] = None,
+                 scaling_configuration_id: Optional[builtins.str] = None,
+                 scaling_policy_id: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None,
+                 zone_id: Optional[builtins.str] = None):
         """
+        :param builtins.str created_time: Time when the instance joined the scaling group
+        :param builtins.str creation_type: How the instance joined the scaling group (Attached / AutoCreated)
         :param builtins.bool entrusted: Whether to enable managed mode for the instance when AttachInstances is performed
         :param builtins.str instance_id: ECS instance ID, unique identifier of the subresource
+        :param builtins.str launch_template_id: Launch template ID used by the instance
+        :param builtins.str launch_template_version: Launch template version used by the instance
         :param builtins.bool lifecycle_hook: Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+        :param builtins.str scaling_configuration_id: Scaling configuration ID associated with the instance
+        :param builtins.str scaling_policy_id: Scaling policy ID associated with the instance
+        :param builtins.str status: Current status of the instance in the scaling group
+        :param builtins.str zone_id: Availability zone of the instance
         """
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if creation_type is not None:
+            pulumi.set(__self__, "creation_type", creation_type)
         if entrusted is not None:
             pulumi.set(__self__, "entrusted", entrusted)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
+        if launch_template_id is not None:
+            pulumi.set(__self__, "launch_template_id", launch_template_id)
+        if launch_template_version is not None:
+            pulumi.set(__self__, "launch_template_version", launch_template_version)
         if lifecycle_hook is not None:
             pulumi.set(__self__, "lifecycle_hook", lifecycle_hook)
+        if scaling_configuration_id is not None:
+            pulumi.set(__self__, "scaling_configuration_id", scaling_configuration_id)
+        if scaling_policy_id is not None:
+            pulumi.set(__self__, "scaling_policy_id", scaling_policy_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> Optional[builtins.str]:
+        """
+        Time when the instance joined the scaling group
+        """
+        return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter(name="creationType")
+    def creation_type(self) -> Optional[builtins.str]:
+        """
+        How the instance joined the scaling group (Attached / AutoCreated)
+        """
+        return pulumi.get(self, "creation_type")
 
     @property
     @pulumi.getter
@@ -374,12 +436,60 @@ class ScalingGroupInstance(dict):
         return pulumi.get(self, "instance_id")
 
     @property
+    @pulumi.getter(name="launchTemplateId")
+    def launch_template_id(self) -> Optional[builtins.str]:
+        """
+        Launch template ID used by the instance
+        """
+        return pulumi.get(self, "launch_template_id")
+
+    @property
+    @pulumi.getter(name="launchTemplateVersion")
+    def launch_template_version(self) -> Optional[builtins.str]:
+        """
+        Launch template version used by the instance
+        """
+        return pulumi.get(self, "launch_template_version")
+
+    @property
     @pulumi.getter(name="lifecycleHook")
     def lifecycle_hook(self) -> Optional[builtins.bool]:
         """
         Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
         """
         return pulumi.get(self, "lifecycle_hook")
+
+    @property
+    @pulumi.getter(name="scalingConfigurationId")
+    def scaling_configuration_id(self) -> Optional[builtins.str]:
+        """
+        Scaling configuration ID associated with the instance
+        """
+        return pulumi.get(self, "scaling_configuration_id")
+
+    @property
+    @pulumi.getter(name="scalingPolicyId")
+    def scaling_policy_id(self) -> Optional[builtins.str]:
+        """
+        Scaling policy ID associated with the instance
+        """
+        return pulumi.get(self, "scaling_policy_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        Current status of the instance in the scaling group
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        Availability zone of the instance
+        """
+        return pulumi.get(self, "zone_id")
 
 
 @pulumi.output_type

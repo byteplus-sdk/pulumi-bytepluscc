@@ -12,6 +12,8 @@ import com.byteplus.bytepluscc.vedbm.inputs.GetBackupArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetBackupPlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetDatabaseArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetDatabasePlainArgs;
+import com.byteplus.bytepluscc.vedbm.inputs.GetEndpointArgs;
+import com.byteplus.bytepluscc.vedbm.inputs.GetEndpointPlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.vedbm.outputs.GetAccountResult;
@@ -22,6 +24,8 @@ import com.byteplus.bytepluscc.vedbm.outputs.GetBackupResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetBackupsResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetDatabaseResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetDatabasesResult;
+import com.byteplus.bytepluscc.vedbm.outputs.GetEndpointResult;
+import com.byteplus.bytepluscc.vedbm.outputs.GetEndpointsResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetInstancesResult;
 import com.pulumi.core.Output;
@@ -368,6 +372,90 @@ public final class VedbmFunctions {
      */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args) {
+        return getEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args) {
+        return getEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints() {
+        return getEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain() {
+        return getEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args) {
+        return getEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(InvokeArgs args) {
+        return getEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VEDBM::Instance

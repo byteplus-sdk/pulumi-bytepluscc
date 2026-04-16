@@ -609,6 +609,10 @@ if not MYPY:
         """
         Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
+        display_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Metric display name.
+        """
         metric_name: NotRequired[pulumi.Input[builtins.str]]
         """
         Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -636,6 +640,7 @@ elif False:
 class RuleLevelConditionConditionArgs:
     def __init__(__self__, *,
                  comparison_operator: Optional[pulumi.Input[builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[builtins.str]] = None,
                  metric_name: Optional[pulumi.Input[builtins.str]] = None,
                  metric_unit: Optional[pulumi.Input[builtins.str]] = None,
                  period: Optional[pulumi.Input[builtins.str]] = None,
@@ -643,6 +648,7 @@ class RuleLevelConditionConditionArgs:
                  threshold: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param pulumi.Input[builtins.str] display_name: Metric display name.
         :param pulumi.Input[builtins.str] metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param pulumi.Input[builtins.str] metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param pulumi.Input[builtins.str] period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
@@ -651,6 +657,8 @@ class RuleLevelConditionConditionArgs:
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if metric_unit is not None:
@@ -673,6 +681,18 @@ class RuleLevelConditionConditionArgs:
     @comparison_operator.setter
     def comparison_operator(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "comparison_operator", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Metric display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter(name="metricName")

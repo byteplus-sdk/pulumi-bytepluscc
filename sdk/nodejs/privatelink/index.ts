@@ -20,6 +20,21 @@ export const getEndpointServices: typeof import("./getEndpointServices").getEndp
 export const getEndpointServicesOutput: typeof import("./getEndpointServices").getEndpointServicesOutput = null as any;
 utilities.lazyLoad(exports, ["getEndpointServices","getEndpointServicesOutput"], () => require("./getEndpointServices"));
 
+export { GetVpcEndpointArgs, GetVpcEndpointResult, GetVpcEndpointOutputArgs } from "./getVpcEndpoint";
+export const getVpcEndpoint: typeof import("./getVpcEndpoint").getVpcEndpoint = null as any;
+export const getVpcEndpointOutput: typeof import("./getVpcEndpoint").getVpcEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcEndpoint","getVpcEndpointOutput"], () => require("./getVpcEndpoint"));
+
+export { GetVpcEndpointsResult } from "./getVpcEndpoints";
+export const getVpcEndpoints: typeof import("./getVpcEndpoints").getVpcEndpoints = null as any;
+export const getVpcEndpointsOutput: typeof import("./getVpcEndpoints").getVpcEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcEndpoints","getVpcEndpointsOutput"], () => require("./getVpcEndpoints"));
+
+export { VpcEndpointArgs, VpcEndpointState } from "./vpcEndpoint";
+export type VpcEndpoint = import("./vpcEndpoint").VpcEndpoint;
+export const VpcEndpoint: typeof import("./vpcEndpoint").VpcEndpoint = null as any;
+utilities.lazyLoad(exports, ["VpcEndpoint"], () => require("./vpcEndpoint"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:privatelink/endpointService:EndpointService":
                 return new EndpointService(name, <any>undefined, { urn })
+            case "bytepluscc:privatelink/vpcEndpoint:VpcEndpoint":
+                return new VpcEndpoint(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/endpointService", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/vpcEndpoint", _module)

@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.vpn.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -12,10 +14,35 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VpnConnectionTunnelOptionTunnelBgpInfo {
     /**
+     * @return Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+     * 
+     */
+    private @Nullable Boolean enableBgp;
+    /**
+     * @return The ASN of the VPN gateway.
+     * 
+     */
+    private @Nullable Integer localAsn;
+    /**
      * @return BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
      * 
      */
     private @Nullable String localBgpIp;
+    /**
+     * @return ASN of the customer gateway.
+     * 
+     */
+    private @Nullable Integer peerAsn;
+    /**
+     * @return BGP peer IP, that is, the BGP address on the customer gateway side.
+     * 
+     */
+    private @Nullable String peerBgpIp;
+    /**
+     * @return Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+     * 
+     */
+    private @Nullable String sessionStatus;
     /**
      * @return The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
      * 
@@ -24,11 +51,46 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfo {
 
     private VpnConnectionTunnelOptionTunnelBgpInfo() {}
     /**
+     * @return Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+     * 
+     */
+    public Optional<Boolean> enableBgp() {
+        return Optional.ofNullable(this.enableBgp);
+    }
+    /**
+     * @return The ASN of the VPN gateway.
+     * 
+     */
+    public Optional<Integer> localAsn() {
+        return Optional.ofNullable(this.localAsn);
+    }
+    /**
      * @return BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
      * 
      */
     public Optional<String> localBgpIp() {
         return Optional.ofNullable(this.localBgpIp);
+    }
+    /**
+     * @return ASN of the customer gateway.
+     * 
+     */
+    public Optional<Integer> peerAsn() {
+        return Optional.ofNullable(this.peerAsn);
+    }
+    /**
+     * @return BGP peer IP, that is, the BGP address on the customer gateway side.
+     * 
+     */
+    public Optional<String> peerBgpIp() {
+        return Optional.ofNullable(this.peerBgpIp);
+    }
+    /**
+     * @return Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+     * 
+     */
+    public Optional<String> sessionStatus() {
+        return Optional.ofNullable(this.sessionStatus);
     }
     /**
      * @return The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
@@ -47,19 +109,59 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfo {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean enableBgp;
+        private @Nullable Integer localAsn;
         private @Nullable String localBgpIp;
+        private @Nullable Integer peerAsn;
+        private @Nullable String peerBgpIp;
+        private @Nullable String sessionStatus;
         private @Nullable String tunnelCidr;
         public Builder() {}
         public Builder(VpnConnectionTunnelOptionTunnelBgpInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.enableBgp = defaults.enableBgp;
+    	      this.localAsn = defaults.localAsn;
     	      this.localBgpIp = defaults.localBgpIp;
+    	      this.peerAsn = defaults.peerAsn;
+    	      this.peerBgpIp = defaults.peerBgpIp;
+    	      this.sessionStatus = defaults.sessionStatus;
     	      this.tunnelCidr = defaults.tunnelCidr;
         }
 
         @CustomType.Setter
+        public Builder enableBgp(@Nullable Boolean enableBgp) {
+
+            this.enableBgp = enableBgp;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localAsn(@Nullable Integer localAsn) {
+
+            this.localAsn = localAsn;
+            return this;
+        }
+        @CustomType.Setter
         public Builder localBgpIp(@Nullable String localBgpIp) {
 
             this.localBgpIp = localBgpIp;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder peerAsn(@Nullable Integer peerAsn) {
+
+            this.peerAsn = peerAsn;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder peerBgpIp(@Nullable String peerBgpIp) {
+
+            this.peerBgpIp = peerBgpIp;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sessionStatus(@Nullable String sessionStatus) {
+
+            this.sessionStatus = sessionStatus;
             return this;
         }
         @CustomType.Setter
@@ -70,7 +172,12 @@ public final class VpnConnectionTunnelOptionTunnelBgpInfo {
         }
         public VpnConnectionTunnelOptionTunnelBgpInfo build() {
             final var _resultValue = new VpnConnectionTunnelOptionTunnelBgpInfo();
+            _resultValue.enableBgp = enableBgp;
+            _resultValue.localAsn = localAsn;
             _resultValue.localBgpIp = localBgpIp;
+            _resultValue.peerAsn = peerAsn;
+            _resultValue.peerBgpIp = peerBgpIp;
+            _resultValue.sessionStatus = sessionStatus;
             _resultValue.tunnelCidr = tunnelCidr;
             return _resultValue;
         }

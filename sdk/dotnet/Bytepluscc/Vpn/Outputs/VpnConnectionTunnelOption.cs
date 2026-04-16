@@ -15,6 +15,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Outputs
     public sealed class VpnConnectionTunnelOption
     {
         /// <summary>
+        /// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+        /// </summary>
+        public readonly string? ConnectStatus;
+        /// <summary>
         /// ID of the customer gateway associated with the IPsec connection.
         /// </summary>
         public readonly string? CustomerGatewayId;
@@ -49,6 +53,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Outputs
 
         [OutputConstructor]
         private VpnConnectionTunnelOption(
+            string? connectStatus,
+
             string? customerGatewayId,
 
             string? dpdAction,
@@ -65,6 +71,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Outputs
 
             string? tunnelId)
         {
+            ConnectStatus = connectStatus;
             CustomerGatewayId = customerGatewayId;
             DpdAction = dpdAction;
             IkeConfig = ikeConfig;

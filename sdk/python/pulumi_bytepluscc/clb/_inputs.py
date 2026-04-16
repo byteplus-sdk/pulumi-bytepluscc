@@ -32,6 +32,8 @@ __all__ = [
     'ClbEniArgsDict',
     'ClbEnisArgs',
     'ClbEnisArgsDict',
+    'ClbIpv6AddressBandwidthArgs',
+    'ClbIpv6AddressBandwidthArgsDict',
     'ClbListenerArgs',
     'ClbListenerArgsDict',
     'ClbServerGroupArgs',
@@ -688,6 +690,118 @@ class ClbEnisArgs:
     @eni_id.setter
     def eni_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "eni_id", value)
+
+
+if not MYPY:
+    class ClbIpv6AddressBandwidthArgsDict(TypedDict):
+        bandwidth: NotRequired[pulumi.Input[builtins.float]]
+        """
+        Peak bandwidth of IPv6 public bandwidth, in Mbps
+        """
+        bandwidth_package_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Shared bandwidth package ID associated with IPv6 public bandwidth
+        """
+        billing_type: NotRequired[pulumi.Input[builtins.float]]
+        """
+        Billing type for IPv6 public bandwidth
+        """
+        isp: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Line type of IPv6 public bandwidth
+        """
+        network_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Network type of the load balancer instance's IPv6 address
+        """
+elif False:
+    ClbIpv6AddressBandwidthArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClbIpv6AddressBandwidthArgs:
+    def __init__(__self__, *,
+                 bandwidth: Optional[pulumi.Input[builtins.float]] = None,
+                 bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
+                 billing_type: Optional[pulumi.Input[builtins.float]] = None,
+                 isp: Optional[pulumi.Input[builtins.str]] = None,
+                 network_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.float] bandwidth: Peak bandwidth of IPv6 public bandwidth, in Mbps
+        :param pulumi.Input[builtins.str] bandwidth_package_id: Shared bandwidth package ID associated with IPv6 public bandwidth
+        :param pulumi.Input[builtins.float] billing_type: Billing type for IPv6 public bandwidth
+        :param pulumi.Input[builtins.str] isp: Line type of IPv6 public bandwidth
+        :param pulumi.Input[builtins.str] network_type: Network type of the load balancer instance's IPv6 address
+        """
+        if bandwidth is not None:
+            pulumi.set(__self__, "bandwidth", bandwidth)
+        if bandwidth_package_id is not None:
+            pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
+        if billing_type is not None:
+            pulumi.set(__self__, "billing_type", billing_type)
+        if isp is not None:
+            pulumi.set(__self__, "isp", isp)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+
+    @property
+    @pulumi.getter
+    def bandwidth(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        Peak bandwidth of IPv6 public bandwidth, in Mbps
+        """
+        return pulumi.get(self, "bandwidth")
+
+    @bandwidth.setter
+    def bandwidth(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "bandwidth", value)
+
+    @property
+    @pulumi.getter(name="bandwidthPackageId")
+    def bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Shared bandwidth package ID associated with IPv6 public bandwidth
+        """
+        return pulumi.get(self, "bandwidth_package_id")
+
+    @bandwidth_package_id.setter
+    def bandwidth_package_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bandwidth_package_id", value)
+
+    @property
+    @pulumi.getter(name="billingType")
+    def billing_type(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        Billing type for IPv6 public bandwidth
+        """
+        return pulumi.get(self, "billing_type")
+
+    @billing_type.setter
+    def billing_type(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "billing_type", value)
+
+    @property
+    @pulumi.getter
+    def isp(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Line type of IPv6 public bandwidth
+        """
+        return pulumi.get(self, "isp")
+
+    @isp.setter
+    def isp(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "isp", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Network type of the load balancer instance's IPv6 address
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "network_type", value)
 
 
 if not MYPY:

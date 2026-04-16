@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.clb.inputs.ClbAccessLogArgs;
 import com.byteplus.bytepluscc.clb.inputs.ClbEipArgs;
 import com.byteplus.bytepluscc.clb.inputs.ClbEniArgs;
 import com.byteplus.bytepluscc.clb.inputs.ClbEnisArgs;
+import com.byteplus.bytepluscc.clb.inputs.ClbIpv6AddressBandwidthArgs;
 import com.byteplus.bytepluscc.clb.inputs.ClbListenerArgs;
 import com.byteplus.bytepluscc.clb.inputs.ClbServerGroupArgs;
 import com.byteplus.bytepluscc.clb.inputs.ClbTagArgs;
@@ -323,6 +324,21 @@ public final class ClbState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
+    }
+
+    /**
+     * IPv6 public bandwidth information for the load balancing instance
+     * 
+     */
+    @Import(name="ipv6AddressBandwidth")
+    private @Nullable Output<ClbIpv6AddressBandwidthArgs> ipv6AddressBandwidth;
+
+    /**
+     * @return IPv6 public bandwidth information for the load balancing instance
+     * 
+     */
+    public Optional<Output<ClbIpv6AddressBandwidthArgs>> ipv6AddressBandwidth() {
+        return Optional.ofNullable(this.ipv6AddressBandwidth);
     }
 
     @Import(name="listeners")
@@ -714,6 +730,7 @@ public final class ClbState extends com.pulumi.resources.ResourceArgs {
         this.enis = $.enis;
         this.exclusiveClusterId = $.exclusiveClusterId;
         this.expiredTime = $.expiredTime;
+        this.ipv6AddressBandwidth = $.ipv6AddressBandwidth;
         this.listeners = $.listeners;
         this.loadBalancerBillingType = $.loadBalancerBillingType;
         this.loadBalancerId = $.loadBalancerId;
@@ -1188,6 +1205,27 @@ public final class ClbState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
+        }
+
+        /**
+         * @param ipv6AddressBandwidth IPv6 public bandwidth information for the load balancing instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6AddressBandwidth(@Nullable Output<ClbIpv6AddressBandwidthArgs> ipv6AddressBandwidth) {
+            $.ipv6AddressBandwidth = ipv6AddressBandwidth;
+            return this;
+        }
+
+        /**
+         * @param ipv6AddressBandwidth IPv6 public bandwidth information for the load balancing instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6AddressBandwidth(ClbIpv6AddressBandwidthArgs ipv6AddressBandwidth) {
+            return ipv6AddressBandwidth(Output.of(ipv6AddressBandwidth));
         }
 
         public Builder listeners(@Nullable Output<List<ClbListenerArgs>> listeners) {

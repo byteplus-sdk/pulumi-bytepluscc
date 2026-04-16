@@ -482,6 +482,1390 @@ func (o DbEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) DbEndp
 	}).(DbEndpointReadOnlyNodeWeightOutput)
 }
 
+type InstanceChargeDetail struct {
+	// Enable auto-renewal for prepaid scenarios
+	AutoRenew *bool `pulumi:"autoRenew"`
+	// Billing expiration time for yearly/monthly instances
+	ChargeEndTime *string `pulumi:"chargeEndTime"`
+	// Instance billing start time
+	ChargeStartTime *string `pulumi:"chargeStartTime"`
+	// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+	ChargeStatus *string `pulumi:"chargeStatus"`
+	// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+	ChargeType string `pulumi:"chargeType"`
+	// Estimated release time after instance suspension due to overdue payment
+	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
+	// Instance shutdown time due to overdue payment
+	OverdueTime *string `pulumi:"overdueTime"`
+	// Purchase duration for prepaid scenarios
+	Period *float64 `pulumi:"period"`
+	// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+	PeriodUnit *string `pulumi:"periodUnit"`
+	// Rollback time for temporary upgrade
+	TempModifyEndTime *string `pulumi:"tempModifyEndTime"`
+	// Start time of temporary scaling
+	TempModifyStartTime *string `pulumi:"tempModifyStartTime"`
+}
+
+// InstanceChargeDetailInput is an input type that accepts InstanceChargeDetailArgs and InstanceChargeDetailOutput values.
+// You can construct a concrete instance of `InstanceChargeDetailInput` via:
+//
+//	InstanceChargeDetailArgs{...}
+type InstanceChargeDetailInput interface {
+	pulumi.Input
+
+	ToInstanceChargeDetailOutput() InstanceChargeDetailOutput
+	ToInstanceChargeDetailOutputWithContext(context.Context) InstanceChargeDetailOutput
+}
+
+type InstanceChargeDetailArgs struct {
+	// Enable auto-renewal for prepaid scenarios
+	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
+	// Billing expiration time for yearly/monthly instances
+	ChargeEndTime pulumi.StringPtrInput `pulumi:"chargeEndTime"`
+	// Instance billing start time
+	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
+	// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
+	// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// Estimated release time after instance suspension due to overdue payment
+	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
+	// Instance shutdown time due to overdue payment
+	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
+	// Purchase duration for prepaid scenarios
+	Period pulumi.Float64PtrInput `pulumi:"period"`
+	// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
+	// Rollback time for temporary upgrade
+	TempModifyEndTime pulumi.StringPtrInput `pulumi:"tempModifyEndTime"`
+	// Start time of temporary scaling
+	TempModifyStartTime pulumi.StringPtrInput `pulumi:"tempModifyStartTime"`
+}
+
+func (InstanceChargeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceChargeDetail)(nil)).Elem()
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailOutput() InstanceChargeDetailOutput {
+	return i.ToInstanceChargeDetailOutputWithContext(context.Background())
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailOutputWithContext(ctx context.Context) InstanceChargeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeDetailOutput)
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return i.ToInstanceChargeDetailPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeDetailOutput).ToInstanceChargeDetailPtrOutputWithContext(ctx)
+}
+
+// InstanceChargeDetailPtrInput is an input type that accepts InstanceChargeDetailArgs, InstanceChargeDetailPtr and InstanceChargeDetailPtrOutput values.
+// You can construct a concrete instance of `InstanceChargeDetailPtrInput` via:
+//
+//	        InstanceChargeDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceChargeDetailPtrInput interface {
+	pulumi.Input
+
+	ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput
+	ToInstanceChargeDetailPtrOutputWithContext(context.Context) InstanceChargeDetailPtrOutput
+}
+
+type instanceChargeDetailPtrType InstanceChargeDetailArgs
+
+func InstanceChargeDetailPtr(v *InstanceChargeDetailArgs) InstanceChargeDetailPtrInput {
+	return (*instanceChargeDetailPtrType)(v)
+}
+
+func (*instanceChargeDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceChargeDetail)(nil)).Elem()
+}
+
+func (i *instanceChargeDetailPtrType) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return i.ToInstanceChargeDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceChargeDetailPtrType) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeDetailPtrOutput)
+}
+
+type InstanceChargeDetailOutput struct{ *pulumi.OutputState }
+
+func (InstanceChargeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceChargeDetail)(nil)).Elem()
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailOutput() InstanceChargeDetailOutput {
+	return o
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailOutputWithContext(ctx context.Context) InstanceChargeDetailOutput {
+	return o
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return o.ToInstanceChargeDetailPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceChargeDetail) *InstanceChargeDetail {
+		return &v
+	}).(InstanceChargeDetailPtrOutput)
+}
+
+// Enable auto-renewal for prepaid scenarios
+func (o InstanceChargeDetailOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
+}
+
+// Billing expiration time for yearly/monthly instances
+func (o InstanceChargeDetailOutput) ChargeEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeEndTime }).(pulumi.StringPtrOutput)
+}
+
+// Instance billing start time
+func (o InstanceChargeDetailOutput) ChargeStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
+}
+
+// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+func (o InstanceChargeDetailOutput) ChargeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
+}
+
+// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+func (o InstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// Estimated release time after instance suspension due to overdue payment
+func (o InstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
+}
+
+// Instance shutdown time due to overdue payment
+func (o InstanceChargeDetailOutput) OverdueTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
+}
+
+// Purchase duration for prepaid scenarios
+func (o InstanceChargeDetailOutput) Period() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *float64 { return v.Period }).(pulumi.Float64PtrOutput)
+}
+
+// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+func (o InstanceChargeDetailOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
+}
+
+// Rollback time for temporary upgrade
+func (o InstanceChargeDetailOutput) TempModifyEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.TempModifyEndTime }).(pulumi.StringPtrOutput)
+}
+
+// Start time of temporary scaling
+func (o InstanceChargeDetailOutput) TempModifyStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.TempModifyStartTime }).(pulumi.StringPtrOutput)
+}
+
+type InstanceChargeDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceChargeDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceChargeDetail)(nil)).Elem()
+}
+
+func (o InstanceChargeDetailPtrOutput) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return o
+}
+
+func (o InstanceChargeDetailPtrOutput) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return o
+}
+
+func (o InstanceChargeDetailPtrOutput) Elem() InstanceChargeDetailOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) InstanceChargeDetail {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceChargeDetail
+		return ret
+	}).(InstanceChargeDetailOutput)
+}
+
+// Enable auto-renewal for prepaid scenarios
+func (o InstanceChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenew
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Billing expiration time for yearly/monthly instances
+func (o InstanceChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Instance billing start time
+func (o InstanceChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+func (o InstanceChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+func (o InstanceChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Estimated release time after instance suspension due to overdue payment
+func (o InstanceChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverdueReclaimTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Instance shutdown time due to overdue payment
+func (o InstanceChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverdueTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Purchase duration for prepaid scenarios
+func (o InstanceChargeDetailPtrOutput) Period() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Period
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+func (o InstanceChargeDetailPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeriodUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// Rollback time for temporary upgrade
+func (o InstanceChargeDetailPtrOutput) TempModifyEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TempModifyEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Start time of temporary scaling
+func (o InstanceChargeDetailPtrOutput) TempModifyStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TempModifyStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceEndpoint struct {
+	Addresses []InstanceEndpointAddress `pulumi:"addresses"`
+	// When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+	AutoAddNewNodes *string `pulumi:"autoAddNewNodes"`
+	// Address description.
+	Description *string `pulumi:"description"`
+	// Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadOnly *string `pulumi:"enableReadOnly"`
+	// Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadWriteSplitting *string `pulumi:"enableReadWriteSplitting"`
+	// Instance connection terminal ID
+	EndpointId *string `pulumi:"endpointId"`
+	// Instance connection terminal name
+	EndpointName *string `pulumi:"endpointName"`
+	// Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+	EndpointType *string `pulumi:"endpointType"`
+	// Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
+	// Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+	// **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+	ReadOnlyNodeMaxDelayTime *float64                             `pulumi:"readOnlyNodeMaxDelayTime"`
+	ReadOnlyNodeWeights      []InstanceEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
+	// Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+	ReadWriteMode *string `pulumi:"readWriteMode"`
+	// After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+	ReadWriteProxyConnection *float64 `pulumi:"readWriteProxyConnection"`
+	// Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+	WriteNodeHaltWriting *bool `pulumi:"writeNodeHaltWriting"`
+}
+
+// InstanceEndpointInput is an input type that accepts InstanceEndpointArgs and InstanceEndpointOutput values.
+// You can construct a concrete instance of `InstanceEndpointInput` via:
+//
+//	InstanceEndpointArgs{...}
+type InstanceEndpointInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointOutput() InstanceEndpointOutput
+	ToInstanceEndpointOutputWithContext(context.Context) InstanceEndpointOutput
+}
+
+type InstanceEndpointArgs struct {
+	Addresses InstanceEndpointAddressArrayInput `pulumi:"addresses"`
+	// When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+	AutoAddNewNodes pulumi.StringPtrInput `pulumi:"autoAddNewNodes"`
+	// Address description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadOnly pulumi.StringPtrInput `pulumi:"enableReadOnly"`
+	// Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadWriteSplitting pulumi.StringPtrInput `pulumi:"enableReadWriteSplitting"`
+	// Instance connection terminal ID
+	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
+	// Instance connection terminal name
+	EndpointName pulumi.StringPtrInput `pulumi:"endpointName"`
+	// Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
+	// Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+	ReadOnlyNodeDistributionType pulumi.StringPtrInput `pulumi:"readOnlyNodeDistributionType"`
+	// Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+	// **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+	ReadOnlyNodeMaxDelayTime pulumi.Float64PtrInput                       `pulumi:"readOnlyNodeMaxDelayTime"`
+	ReadOnlyNodeWeights      InstanceEndpointReadOnlyNodeWeightArrayInput `pulumi:"readOnlyNodeWeights"`
+	// Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+	ReadWriteMode pulumi.StringPtrInput `pulumi:"readWriteMode"`
+	// After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+	ReadWriteProxyConnection pulumi.Float64PtrInput `pulumi:"readWriteProxyConnection"`
+	// Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+	WriteNodeHaltWriting pulumi.BoolPtrInput `pulumi:"writeNodeHaltWriting"`
+}
+
+func (InstanceEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpoint)(nil)).Elem()
+}
+
+func (i InstanceEndpointArgs) ToInstanceEndpointOutput() InstanceEndpointOutput {
+	return i.ToInstanceEndpointOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointArgs) ToInstanceEndpointOutputWithContext(ctx context.Context) InstanceEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointOutput)
+}
+
+// InstanceEndpointArrayInput is an input type that accepts InstanceEndpointArray and InstanceEndpointArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointArrayInput` via:
+//
+//	InstanceEndpointArray{ InstanceEndpointArgs{...} }
+type InstanceEndpointArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointArrayOutput() InstanceEndpointArrayOutput
+	ToInstanceEndpointArrayOutputWithContext(context.Context) InstanceEndpointArrayOutput
+}
+
+type InstanceEndpointArray []InstanceEndpointInput
+
+func (InstanceEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpoint)(nil)).Elem()
+}
+
+func (i InstanceEndpointArray) ToInstanceEndpointArrayOutput() InstanceEndpointArrayOutput {
+	return i.ToInstanceEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointArray) ToInstanceEndpointArrayOutputWithContext(ctx context.Context) InstanceEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointArrayOutput)
+}
+
+type InstanceEndpointOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpoint)(nil)).Elem()
+}
+
+func (o InstanceEndpointOutput) ToInstanceEndpointOutput() InstanceEndpointOutput {
+	return o
+}
+
+func (o InstanceEndpointOutput) ToInstanceEndpointOutputWithContext(ctx context.Context) InstanceEndpointOutput {
+	return o
+}
+
+func (o InstanceEndpointOutput) Addresses() InstanceEndpointAddressArrayOutput {
+	return o.ApplyT(func(v InstanceEndpoint) []InstanceEndpointAddress { return v.Addresses }).(InstanceEndpointAddressArrayOutput)
+}
+
+// When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+func (o InstanceEndpointOutput) AutoAddNewNodes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.AutoAddNewNodes }).(pulumi.StringPtrOutput)
+}
+
+// Address description.
+func (o InstanceEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+func (o InstanceEndpointOutput) EnableReadOnly() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EnableReadOnly }).(pulumi.StringPtrOutput)
+}
+
+// Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+func (o InstanceEndpointOutput) EnableReadWriteSplitting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EnableReadWriteSplitting }).(pulumi.StringPtrOutput)
+}
+
+// Instance connection terminal ID
+func (o InstanceEndpointOutput) EndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
+}
+
+// Instance connection terminal name
+func (o InstanceEndpointOutput) EndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointName }).(pulumi.StringPtrOutput)
+}
+
+// Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+func (o InstanceEndpointOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
+}
+
+// Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+func (o InstanceEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ReadOnlyNodeDistributionType }).(pulumi.StringPtrOutput)
+}
+
+// Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+// **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+func (o InstanceEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *float64 { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.Float64PtrOutput)
+}
+
+func (o InstanceEndpointOutput) ReadOnlyNodeWeights() InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o.ApplyT(func(v InstanceEndpoint) []InstanceEndpointReadOnlyNodeWeight { return v.ReadOnlyNodeWeights }).(InstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+// Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+func (o InstanceEndpointOutput) ReadWriteMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ReadWriteMode }).(pulumi.StringPtrOutput)
+}
+
+// After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+func (o InstanceEndpointOutput) ReadWriteProxyConnection() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *float64 { return v.ReadWriteProxyConnection }).(pulumi.Float64PtrOutput)
+}
+
+// Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+func (o InstanceEndpointOutput) WriteNodeHaltWriting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.WriteNodeHaltWriting }).(pulumi.BoolPtrOutput)
+}
+
+type InstanceEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpoint)(nil)).Elem()
+}
+
+func (o InstanceEndpointArrayOutput) ToInstanceEndpointArrayOutput() InstanceEndpointArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointArrayOutput) ToInstanceEndpointArrayOutputWithContext(ctx context.Context) InstanceEndpointArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointArrayOutput) Index(i pulumi.IntInput) InstanceEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpoint {
+		return vs[0].([]InstanceEndpoint)[vs[1].(int)]
+	}).(InstanceEndpointOutput)
+}
+
+type InstanceEndpointAddress struct {
+	// Private network address accessible across regions
+	CrossRegionDomain *string `pulumi:"crossRegionDomain"`
+	// Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain *string `pulumi:"domain"`
+	// Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+	DomainVisibilitySetting *string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses
+	EipId *string `pulumi:"eipId"`
+	// IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+	NetworkType *string `pulumi:"networkType"`
+	// Port.
+	Port *string `pulumi:"port"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// InstanceEndpointAddressInput is an input type that accepts InstanceEndpointAddressArgs and InstanceEndpointAddressOutput values.
+// You can construct a concrete instance of `InstanceEndpointAddressInput` via:
+//
+//	InstanceEndpointAddressArgs{...}
+type InstanceEndpointAddressInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointAddressOutput() InstanceEndpointAddressOutput
+	ToInstanceEndpointAddressOutputWithContext(context.Context) InstanceEndpointAddressOutput
+}
+
+type InstanceEndpointAddressArgs struct {
+	// Private network address accessible across regions
+	CrossRegionDomain pulumi.StringPtrInput `pulumi:"crossRegionDomain"`
+	// Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+	DomainVisibilitySetting pulumi.StringPtrInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// Port.
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (InstanceEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i InstanceEndpointAddressArgs) ToInstanceEndpointAddressOutput() InstanceEndpointAddressOutput {
+	return i.ToInstanceEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointAddressArgs) ToInstanceEndpointAddressOutputWithContext(ctx context.Context) InstanceEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointAddressOutput)
+}
+
+// InstanceEndpointAddressArrayInput is an input type that accepts InstanceEndpointAddressArray and InstanceEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointAddressArrayInput` via:
+//
+//	InstanceEndpointAddressArray{ InstanceEndpointAddressArgs{...} }
+type InstanceEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointAddressArrayOutput() InstanceEndpointAddressArrayOutput
+	ToInstanceEndpointAddressArrayOutputWithContext(context.Context) InstanceEndpointAddressArrayOutput
+}
+
+type InstanceEndpointAddressArray []InstanceEndpointAddressInput
+
+func (InstanceEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i InstanceEndpointAddressArray) ToInstanceEndpointAddressArrayOutput() InstanceEndpointAddressArrayOutput {
+	return i.ToInstanceEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointAddressArray) ToInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) InstanceEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointAddressArrayOutput)
+}
+
+type InstanceEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o InstanceEndpointAddressOutput) ToInstanceEndpointAddressOutput() InstanceEndpointAddressOutput {
+	return o
+}
+
+func (o InstanceEndpointAddressOutput) ToInstanceEndpointAddressOutputWithContext(ctx context.Context) InstanceEndpointAddressOutput {
+	return o
+}
+
+// Private network address accessible across regions
+func (o InstanceEndpointAddressOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.CrossRegionDomain }).(pulumi.StringPtrOutput)
+}
+
+// Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+func (o InstanceEndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o InstanceEndpointAddressOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+func (o InstanceEndpointAddressOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.DomainVisibilitySetting }).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses
+func (o InstanceEndpointAddressOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o InstanceEndpointAddressOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+func (o InstanceEndpointAddressOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// Port.
+func (o InstanceEndpointAddressOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o InstanceEndpointAddressOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type InstanceEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o InstanceEndpointAddressArrayOutput) ToInstanceEndpointAddressArrayOutput() InstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointAddressArrayOutput) ToInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) InstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointAddressArrayOutput) Index(i pulumi.IntInput) InstanceEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpointAddress {
+		return vs[0].([]InstanceEndpointAddress)[vs[1].(int)]
+	}).(InstanceEndpointAddressOutput)
+}
+
+type InstanceEndpointReadOnlyNodeWeight struct {
+	// Read-only nodes require NodeId
+	NodeId *string `pulumi:"nodeId"`
+	// Node type
+	NodeType *string `pulumi:"nodeType"`
+	// Node read weight, increases by 100, maximum value is 10000
+	Weight *float64 `pulumi:"weight"`
+}
+
+// InstanceEndpointReadOnlyNodeWeightInput is an input type that accepts InstanceEndpointReadOnlyNodeWeightArgs and InstanceEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `InstanceEndpointReadOnlyNodeWeightInput` via:
+//
+//	InstanceEndpointReadOnlyNodeWeightArgs{...}
+type InstanceEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointReadOnlyNodeWeightOutput() InstanceEndpointReadOnlyNodeWeightOutput
+	ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Context) InstanceEndpointReadOnlyNodeWeightOutput
+}
+
+type InstanceEndpointReadOnlyNodeWeightArgs struct {
+	// Read-only nodes require NodeId
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// Node type
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// Node read weight, increases by 100, maximum value is 10000
+	Weight pulumi.Float64PtrInput `pulumi:"weight"`
+}
+
+func (InstanceEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArgs) ToInstanceEndpointReadOnlyNodeWeightOutput() InstanceEndpointReadOnlyNodeWeightOutput {
+	return i.ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArgs) ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+// InstanceEndpointReadOnlyNodeWeightArrayInput is an input type that accepts InstanceEndpointReadOnlyNodeWeightArray and InstanceEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	InstanceEndpointReadOnlyNodeWeightArray{ InstanceEndpointReadOnlyNodeWeightArgs{...} }
+type InstanceEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointReadOnlyNodeWeightArrayOutput() InstanceEndpointReadOnlyNodeWeightArrayOutput
+	ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) InstanceEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type InstanceEndpointReadOnlyNodeWeightArray []InstanceEndpointReadOnlyNodeWeightInput
+
+func (InstanceEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArray) ToInstanceEndpointReadOnlyNodeWeightArrayOutput() InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArray) ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type InstanceEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightOutput) ToInstanceEndpointReadOnlyNodeWeightOutput() InstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightOutput) ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// Read-only nodes require NodeId
+func (o InstanceEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// Node type
+func (o InstanceEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// Node read weight, increases by 100, maximum value is 10000
+func (o InstanceEndpointReadOnlyNodeWeightOutput) Weight() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *float64 { return v.Weight }).(pulumi.Float64PtrOutput)
+}
+
+type InstanceEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) ToInstanceEndpointReadOnlyNodeWeightArrayOutput() InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) InstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpointReadOnlyNodeWeight {
+		return vs[0].([]InstanceEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(InstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+type InstanceMaintenanceWindow struct {
+	// Granularity of the maintenance cycle. Value: Week (week)
+	DayKind                   *string                                             `pulumi:"dayKind"`
+	DayOfWeekMaintenanceTimes []InstanceMaintenanceWindowDayOfWeekMaintenanceTime `pulumi:"dayOfWeekMaintenanceTimes"`
+}
+
+// InstanceMaintenanceWindowInput is an input type that accepts InstanceMaintenanceWindowArgs and InstanceMaintenanceWindowOutput values.
+// You can construct a concrete instance of `InstanceMaintenanceWindowInput` via:
+//
+//	InstanceMaintenanceWindowArgs{...}
+type InstanceMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToInstanceMaintenanceWindowOutput() InstanceMaintenanceWindowOutput
+	ToInstanceMaintenanceWindowOutputWithContext(context.Context) InstanceMaintenanceWindowOutput
+}
+
+type InstanceMaintenanceWindowArgs struct {
+	// Granularity of the maintenance cycle. Value: Week (week)
+	DayKind                   pulumi.StringPtrInput                                       `pulumi:"dayKind"`
+	DayOfWeekMaintenanceTimes InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput `pulumi:"dayOfWeekMaintenanceTimes"`
+}
+
+func (InstanceMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowOutput() InstanceMaintenanceWindowOutput {
+	return i.ToInstanceMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowOutputWithContext(ctx context.Context) InstanceMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowOutput)
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return i.ToInstanceMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowOutput).ToInstanceMaintenanceWindowPtrOutputWithContext(ctx)
+}
+
+// InstanceMaintenanceWindowPtrInput is an input type that accepts InstanceMaintenanceWindowArgs, InstanceMaintenanceWindowPtr and InstanceMaintenanceWindowPtrOutput values.
+// You can construct a concrete instance of `InstanceMaintenanceWindowPtrInput` via:
+//
+//	        InstanceMaintenanceWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceMaintenanceWindowPtrInput interface {
+	pulumi.Input
+
+	ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput
+	ToInstanceMaintenanceWindowPtrOutputWithContext(context.Context) InstanceMaintenanceWindowPtrOutput
+}
+
+type instanceMaintenanceWindowPtrType InstanceMaintenanceWindowArgs
+
+func InstanceMaintenanceWindowPtr(v *InstanceMaintenanceWindowArgs) InstanceMaintenanceWindowPtrInput {
+	return (*instanceMaintenanceWindowPtrType)(v)
+}
+
+func (*instanceMaintenanceWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (i *instanceMaintenanceWindowPtrType) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return i.ToInstanceMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceMaintenanceWindowPtrType) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowPtrOutput)
+}
+
+type InstanceMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (InstanceMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowOutput() InstanceMaintenanceWindowOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowOutputWithContext(ctx context.Context) InstanceMaintenanceWindowOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return o.ToInstanceMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceMaintenanceWindow) *InstanceMaintenanceWindow {
+		return &v
+	}).(InstanceMaintenanceWindowPtrOutput)
+}
+
+// Granularity of the maintenance cycle. Value: Week (week)
+func (o InstanceMaintenanceWindowOutput) DayKind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindow) *string { return v.DayKind }).(pulumi.StringPtrOutput)
+}
+
+func (o InstanceMaintenanceWindowOutput) DayOfWeekMaintenanceTimes() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindow) []InstanceMaintenanceWindowDayOfWeekMaintenanceTime {
+		return v.DayOfWeekMaintenanceTimes
+	}).(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput)
+}
+
+type InstanceMaintenanceWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceMaintenanceWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) Elem() InstanceMaintenanceWindowOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) InstanceMaintenanceWindow {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceMaintenanceWindow
+		return ret
+	}).(InstanceMaintenanceWindowOutput)
+}
+
+// Granularity of the maintenance cycle. Value: Week (week)
+func (o InstanceMaintenanceWindowPtrOutput) DayKind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DayKind
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) DayOfWeekMaintenanceTimes() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) []InstanceMaintenanceWindowDayOfWeekMaintenanceTime {
+		if v == nil {
+			return nil
+		}
+		return v.DayOfWeekMaintenanceTimes
+	}).(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput)
+}
+
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTime struct {
+	// Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+	DayOfWeek *string `pulumi:"dayOfWeek"`
+	// Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+	MaintenanceWindowStartTime *string `pulumi:"maintenanceWindowStartTime"`
+	// Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+	Period *int `pulumi:"period"`
+}
+
+// InstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput is an input type that accepts InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs and InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput values.
+// You can construct a concrete instance of `InstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput` via:
+//
+//	InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs{...}
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput interface {
+	pulumi.Input
+
+	ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput
+	ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(context.Context) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput
+}
+
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs struct {
+	// Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
+	// Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+	MaintenanceWindowStartTime pulumi.StringPtrInput `pulumi:"maintenanceWindowStartTime"`
+	// Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+	Period pulumi.IntPtrInput `pulumi:"period"`
+}
+
+func (InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (i InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return i.ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(context.Background())
+}
+
+func (i InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(ctx context.Context) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput)
+}
+
+// InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput is an input type that accepts InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray and InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput values.
+// You can construct a concrete instance of `InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput` via:
+//
+//	InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray{ InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs{...} }
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput interface {
+	pulumi.Input
+
+	ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput
+	ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(context.Context) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput
+}
+
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray []InstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput
+
+func (InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (i InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return i.ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(ctx context.Context) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput)
+}
+
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput struct{ *pulumi.OutputState }
+
+func (InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(ctx context.Context) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return o
+}
+
+// Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindowDayOfWeekMaintenanceTime) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
+}
+
+// Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) MaintenanceWindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindowDayOfWeekMaintenanceTime) *string { return v.MaintenanceWindowStartTime }).(pulumi.StringPtrOutput)
+}
+
+// Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindowDayOfWeekMaintenanceTime) *int { return v.Period }).(pulumi.IntPtrOutput)
+}
+
+type InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput() InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) ToInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(ctx context.Context) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) Index(i pulumi.IntInput) InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceMaintenanceWindowDayOfWeekMaintenanceTime {
+		return vs[0].([]InstanceMaintenanceWindowDayOfWeekMaintenanceTime)[vs[1].(int)]
+	}).(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput)
+}
+
+type InstanceNodeInfo struct {
+	// Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	CreateTime *string `pulumi:"createTime"`
+	// Instance ID
+	InstanceId *string `pulumi:"instanceId"`
+	// Memory size, unit: GB
+	Memory *float64 `pulumi:"memory"`
+	// Node ID
+	NodeId *string `pulumi:"nodeId"`
+	// Node specification
+	NodeSpec string `pulumi:"nodeSpec"`
+	// Node status
+	NodeStatus *string `pulumi:"nodeStatus"`
+	// Node type
+	NodeType string `pulumi:"nodeType"`
+	// Region ID
+	RegionId *string `pulumi:"regionId"`
+	// Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	UpdateTime *string `pulumi:"updateTime"`
+	// CPU size. For example: 1 means 1U
+	Vcpu *float64 `pulumi:"vcpu"`
+	// Availability zone of the node
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// InstanceNodeInfoInput is an input type that accepts InstanceNodeInfoArgs and InstanceNodeInfoOutput values.
+// You can construct a concrete instance of `InstanceNodeInfoInput` via:
+//
+//	InstanceNodeInfoArgs{...}
+type InstanceNodeInfoInput interface {
+	pulumi.Input
+
+	ToInstanceNodeInfoOutput() InstanceNodeInfoOutput
+	ToInstanceNodeInfoOutputWithContext(context.Context) InstanceNodeInfoOutput
+}
+
+type InstanceNodeInfoArgs struct {
+	// Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
+	// Instance ID
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Memory size, unit: GB
+	Memory pulumi.Float64PtrInput `pulumi:"memory"`
+	// Node ID
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// Node specification
+	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
+	// Node status
+	NodeStatus pulumi.StringPtrInput `pulumi:"nodeStatus"`
+	// Node type
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Region ID
+	RegionId pulumi.StringPtrInput `pulumi:"regionId"`
+	// Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	UpdateTime pulumi.StringPtrInput `pulumi:"updateTime"`
+	// CPU size. For example: 1 means 1U
+	Vcpu pulumi.Float64PtrInput `pulumi:"vcpu"`
+	// Availability zone of the node
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (InstanceNodeInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceNodeInfo)(nil)).Elem()
+}
+
+func (i InstanceNodeInfoArgs) ToInstanceNodeInfoOutput() InstanceNodeInfoOutput {
+	return i.ToInstanceNodeInfoOutputWithContext(context.Background())
+}
+
+func (i InstanceNodeInfoArgs) ToInstanceNodeInfoOutputWithContext(ctx context.Context) InstanceNodeInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceNodeInfoOutput)
+}
+
+// InstanceNodeInfoArrayInput is an input type that accepts InstanceNodeInfoArray and InstanceNodeInfoArrayOutput values.
+// You can construct a concrete instance of `InstanceNodeInfoArrayInput` via:
+//
+//	InstanceNodeInfoArray{ InstanceNodeInfoArgs{...} }
+type InstanceNodeInfoArrayInput interface {
+	pulumi.Input
+
+	ToInstanceNodeInfoArrayOutput() InstanceNodeInfoArrayOutput
+	ToInstanceNodeInfoArrayOutputWithContext(context.Context) InstanceNodeInfoArrayOutput
+}
+
+type InstanceNodeInfoArray []InstanceNodeInfoInput
+
+func (InstanceNodeInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceNodeInfo)(nil)).Elem()
+}
+
+func (i InstanceNodeInfoArray) ToInstanceNodeInfoArrayOutput() InstanceNodeInfoArrayOutput {
+	return i.ToInstanceNodeInfoArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceNodeInfoArray) ToInstanceNodeInfoArrayOutputWithContext(ctx context.Context) InstanceNodeInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceNodeInfoArrayOutput)
+}
+
+type InstanceNodeInfoOutput struct{ *pulumi.OutputState }
+
+func (InstanceNodeInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceNodeInfo)(nil)).Elem()
+}
+
+func (o InstanceNodeInfoOutput) ToInstanceNodeInfoOutput() InstanceNodeInfoOutput {
+	return o
+}
+
+func (o InstanceNodeInfoOutput) ToInstanceNodeInfoOutputWithContext(ctx context.Context) InstanceNodeInfoOutput {
+	return o
+}
+
+// Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+func (o InstanceNodeInfoOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
+}
+
+// Instance ID
+func (o InstanceNodeInfoOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Memory size, unit: GB
+func (o InstanceNodeInfoOutput) Memory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *float64 { return v.Memory }).(pulumi.Float64PtrOutput)
+}
+
+// Node ID
+func (o InstanceNodeInfoOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// Node specification
+func (o InstanceNodeInfoOutput) NodeSpec() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) string { return v.NodeSpec }).(pulumi.StringOutput)
+}
+
+// Node status
+func (o InstanceNodeInfoOutput) NodeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *string { return v.NodeStatus }).(pulumi.StringPtrOutput)
+}
+
+// Node type
+func (o InstanceNodeInfoOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// Region ID
+func (o InstanceNodeInfoOutput) RegionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *string { return v.RegionId }).(pulumi.StringPtrOutput)
+}
+
+// Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+func (o InstanceNodeInfoOutput) UpdateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *string { return v.UpdateTime }).(pulumi.StringPtrOutput)
+}
+
+// CPU size. For example: 1 means 1U
+func (o InstanceNodeInfoOutput) Vcpu() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) *float64 { return v.Vcpu }).(pulumi.Float64PtrOutput)
+}
+
+// Availability zone of the node
+func (o InstanceNodeInfoOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceNodeInfo) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type InstanceNodeInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceNodeInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceNodeInfo)(nil)).Elem()
+}
+
+func (o InstanceNodeInfoArrayOutput) ToInstanceNodeInfoArrayOutput() InstanceNodeInfoArrayOutput {
+	return o
+}
+
+func (o InstanceNodeInfoArrayOutput) ToInstanceNodeInfoArrayOutputWithContext(ctx context.Context) InstanceNodeInfoArrayOutput {
+	return o
+}
+
+func (o InstanceNodeInfoArrayOutput) Index(i pulumi.IntInput) InstanceNodeInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceNodeInfo {
+		return vs[0].([]InstanceNodeInfo)[vs[1].(int)]
+	}).(InstanceNodeInfoOutput)
+}
+
+type InstanceTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// InstanceTagInput is an input type that accepts InstanceTagArgs and InstanceTagOutput values.
+// You can construct a concrete instance of `InstanceTagInput` via:
+//
+//	InstanceTagArgs{...}
+type InstanceTagInput interface {
+	pulumi.Input
+
+	ToInstanceTagOutput() InstanceTagOutput
+	ToInstanceTagOutputWithContext(context.Context) InstanceTagOutput
+}
+
+type InstanceTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (InstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutput() InstanceTagOutput {
+	return i.ToInstanceTagOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagOutput)
+}
+
+// InstanceTagArrayInput is an input type that accepts InstanceTagArray and InstanceTagArrayOutput values.
+// You can construct a concrete instance of `InstanceTagArrayInput` via:
+//
+//	InstanceTagArray{ InstanceTagArgs{...} }
+type InstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToInstanceTagArrayOutput() InstanceTagArrayOutput
+	ToInstanceTagArrayOutputWithContext(context.Context) InstanceTagArrayOutput
+}
+
+type InstanceTagArray []InstanceTagInput
+
+func (InstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return i.ToInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagArrayOutput)
+}
+
+type InstanceTagOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutput() InstanceTagOutput {
+	return o
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return o
+}
+
+// Tag key
+func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type InstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTag {
+		return vs[0].([]InstanceTag)[vs[1].(int)]
+	}).(InstanceTagOutput)
+}
+
 type GetAllowListAssociatedInstance struct {
 	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
@@ -1014,6 +2398,1122 @@ func (o GetDbEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetDbEndpointReadOnlyNodeWeightOutput)
 }
 
+type GetInstanceChargeDetail struct {
+	// Enable auto-renewal for prepaid scenarios
+	AutoRenew bool `pulumi:"autoRenew"`
+	// Billing expiration time for yearly/monthly instances
+	ChargeEndTime string `pulumi:"chargeEndTime"`
+	// Instance billing start time
+	ChargeStartTime string `pulumi:"chargeStartTime"`
+	// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+	ChargeStatus string `pulumi:"chargeStatus"`
+	// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+	ChargeType string `pulumi:"chargeType"`
+	// Estimated release time after instance suspension due to overdue payment
+	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
+	// Instance shutdown time due to overdue payment
+	OverdueTime string `pulumi:"overdueTime"`
+	// Purchase duration for prepaid scenarios
+	Period float64 `pulumi:"period"`
+	// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+	PeriodUnit string `pulumi:"periodUnit"`
+	// Rollback time for temporary upgrade
+	TempModifyEndTime string `pulumi:"tempModifyEndTime"`
+	// Start time of temporary scaling
+	TempModifyStartTime string `pulumi:"tempModifyStartTime"`
+}
+
+// GetInstanceChargeDetailInput is an input type that accepts GetInstanceChargeDetailArgs and GetInstanceChargeDetailOutput values.
+// You can construct a concrete instance of `GetInstanceChargeDetailInput` via:
+//
+//	GetInstanceChargeDetailArgs{...}
+type GetInstanceChargeDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceChargeDetailOutput() GetInstanceChargeDetailOutput
+	ToGetInstanceChargeDetailOutputWithContext(context.Context) GetInstanceChargeDetailOutput
+}
+
+type GetInstanceChargeDetailArgs struct {
+	// Enable auto-renewal for prepaid scenarios
+	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
+	// Billing expiration time for yearly/monthly instances
+	ChargeEndTime pulumi.StringInput `pulumi:"chargeEndTime"`
+	// Instance billing start time
+	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
+	// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
+	// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// Estimated release time after instance suspension due to overdue payment
+	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
+	// Instance shutdown time due to overdue payment
+	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
+	// Purchase duration for prepaid scenarios
+	Period pulumi.Float64Input `pulumi:"period"`
+	// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
+	// Rollback time for temporary upgrade
+	TempModifyEndTime pulumi.StringInput `pulumi:"tempModifyEndTime"`
+	// Start time of temporary scaling
+	TempModifyStartTime pulumi.StringInput `pulumi:"tempModifyStartTime"`
+}
+
+func (GetInstanceChargeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceChargeDetail)(nil)).Elem()
+}
+
+func (i GetInstanceChargeDetailArgs) ToGetInstanceChargeDetailOutput() GetInstanceChargeDetailOutput {
+	return i.ToGetInstanceChargeDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceChargeDetailArgs) ToGetInstanceChargeDetailOutputWithContext(ctx context.Context) GetInstanceChargeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceChargeDetailOutput)
+}
+
+type GetInstanceChargeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceChargeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceChargeDetail)(nil)).Elem()
+}
+
+func (o GetInstanceChargeDetailOutput) ToGetInstanceChargeDetailOutput() GetInstanceChargeDetailOutput {
+	return o
+}
+
+func (o GetInstanceChargeDetailOutput) ToGetInstanceChargeDetailOutputWithContext(ctx context.Context) GetInstanceChargeDetailOutput {
+	return o
+}
+
+// Enable auto-renewal for prepaid scenarios
+func (o GetInstanceChargeDetailOutput) AutoRenew() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) bool { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// Billing expiration time for yearly/monthly instances
+func (o GetInstanceChargeDetailOutput) ChargeEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeEndTime }).(pulumi.StringOutput)
+}
+
+// Instance billing start time
+func (o GetInstanceChargeDetailOutput) ChargeStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStartTime }).(pulumi.StringOutput)
+}
+
+// Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+func (o GetInstanceChargeDetailOutput) ChargeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStatus }).(pulumi.StringOutput)
+}
+
+// Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+func (o GetInstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// Estimated release time after instance suspension due to overdue payment
+func (o GetInstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
+}
+
+// Instance shutdown time due to overdue payment
+func (o GetInstanceChargeDetailOutput) OverdueTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueTime }).(pulumi.StringOutput)
+}
+
+// Purchase duration for prepaid scenarios
+func (o GetInstanceChargeDetailOutput) Period() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceChargeDetail) float64 { return v.Period }).(pulumi.Float64Output)
+}
+
+// Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+func (o GetInstanceChargeDetailOutput) PeriodUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.PeriodUnit }).(pulumi.StringOutput)
+}
+
+// Rollback time for temporary upgrade
+func (o GetInstanceChargeDetailOutput) TempModifyEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.TempModifyEndTime }).(pulumi.StringOutput)
+}
+
+// Start time of temporary scaling
+func (o GetInstanceChargeDetailOutput) TempModifyStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.TempModifyStartTime }).(pulumi.StringOutput)
+}
+
+type GetInstanceEndpoint struct {
+	// Address list.
+	Addresses []GetInstanceEndpointAddress `pulumi:"addresses"`
+	// When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+	AutoAddNewNodes string `pulumi:"autoAddNewNodes"`
+	// Address description.
+	Description string `pulumi:"description"`
+	// Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadOnly string `pulumi:"enableReadOnly"`
+	// Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadWriteSplitting string `pulumi:"enableReadWriteSplitting"`
+	// Instance connection terminal ID
+	EndpointId string `pulumi:"endpointId"`
+	// Instance connection terminal name
+	EndpointName string `pulumi:"endpointName"`
+	// Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+	EndpointType string `pulumi:"endpointType"`
+	// Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+	ReadOnlyNodeDistributionType string `pulumi:"readOnlyNodeDistributionType"`
+	// Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+	// **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+	ReadOnlyNodeMaxDelayTime float64 `pulumi:"readOnlyNodeMaxDelayTime"`
+	// List of nodes configured for the endpoint and their corresponding read-only weights.
+	ReadOnlyNodeWeights []GetInstanceEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
+	// Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+	ReadWriteMode string `pulumi:"readWriteMode"`
+	// After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+	ReadWriteProxyConnection float64 `pulumi:"readWriteProxyConnection"`
+	// Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+	WriteNodeHaltWriting bool `pulumi:"writeNodeHaltWriting"`
+}
+
+// GetInstanceEndpointInput is an input type that accepts GetInstanceEndpointArgs and GetInstanceEndpointOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointInput` via:
+//
+//	GetInstanceEndpointArgs{...}
+type GetInstanceEndpointInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointOutput() GetInstanceEndpointOutput
+	ToGetInstanceEndpointOutputWithContext(context.Context) GetInstanceEndpointOutput
+}
+
+type GetInstanceEndpointArgs struct {
+	// Address list.
+	Addresses GetInstanceEndpointAddressArrayInput `pulumi:"addresses"`
+	// When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+	AutoAddNewNodes pulumi.StringInput `pulumi:"autoAddNewNodes"`
+	// Address description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadOnly pulumi.StringInput `pulumi:"enableReadOnly"`
+	// Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+	EnableReadWriteSplitting pulumi.StringInput `pulumi:"enableReadWriteSplitting"`
+	// Instance connection terminal ID
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// Instance connection terminal name
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+	// Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+	EndpointType pulumi.StringInput `pulumi:"endpointType"`
+	// Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+	ReadOnlyNodeDistributionType pulumi.StringInput `pulumi:"readOnlyNodeDistributionType"`
+	// Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+	// **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+	ReadOnlyNodeMaxDelayTime pulumi.Float64Input `pulumi:"readOnlyNodeMaxDelayTime"`
+	// List of nodes configured for the endpoint and their corresponding read-only weights.
+	ReadOnlyNodeWeights GetInstanceEndpointReadOnlyNodeWeightArrayInput `pulumi:"readOnlyNodeWeights"`
+	// Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+	ReadWriteMode pulumi.StringInput `pulumi:"readWriteMode"`
+	// After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+	ReadWriteProxyConnection pulumi.Float64Input `pulumi:"readWriteProxyConnection"`
+	// Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+	WriteNodeHaltWriting pulumi.BoolInput `pulumi:"writeNodeHaltWriting"`
+}
+
+func (GetInstanceEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointArgs) ToGetInstanceEndpointOutput() GetInstanceEndpointOutput {
+	return i.ToGetInstanceEndpointOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointArgs) ToGetInstanceEndpointOutputWithContext(ctx context.Context) GetInstanceEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointOutput)
+}
+
+// GetInstanceEndpointArrayInput is an input type that accepts GetInstanceEndpointArray and GetInstanceEndpointArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointArrayInput` via:
+//
+//	GetInstanceEndpointArray{ GetInstanceEndpointArgs{...} }
+type GetInstanceEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointArrayOutput() GetInstanceEndpointArrayOutput
+	ToGetInstanceEndpointArrayOutputWithContext(context.Context) GetInstanceEndpointArrayOutput
+}
+
+type GetInstanceEndpointArray []GetInstanceEndpointInput
+
+func (GetInstanceEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointArray) ToGetInstanceEndpointArrayOutput() GetInstanceEndpointArrayOutput {
+	return i.ToGetInstanceEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointArray) ToGetInstanceEndpointArrayOutputWithContext(ctx context.Context) GetInstanceEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointArrayOutput)
+}
+
+type GetInstanceEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutput() GetInstanceEndpointOutput {
+	return o
+}
+
+func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutputWithContext(ctx context.Context) GetInstanceEndpointOutput {
+	return o
+}
+
+// Address list.
+func (o GetInstanceEndpointOutput) Addresses() GetInstanceEndpointAddressArrayOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) []GetInstanceEndpointAddress { return v.Addresses }).(GetInstanceEndpointAddressArrayOutput)
+}
+
+// When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+func (o GetInstanceEndpointOutput) AutoAddNewNodes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.AutoAddNewNodes }).(pulumi.StringOutput)
+}
+
+// Address description.
+func (o GetInstanceEndpointOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+func (o GetInstanceEndpointOutput) EnableReadOnly() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EnableReadOnly }).(pulumi.StringOutput)
+}
+
+// Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+func (o GetInstanceEndpointOutput) EnableReadWriteSplitting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EnableReadWriteSplitting }).(pulumi.StringOutput)
+}
+
+// Instance connection terminal ID
+func (o GetInstanceEndpointOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// Instance connection terminal name
+func (o GetInstanceEndpointOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
+// Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+func (o GetInstanceEndpointOutput) EndpointType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
+}
+
+// Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+func (o GetInstanceEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ReadOnlyNodeDistributionType }).(pulumi.StringOutput)
+}
+
+// Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+// **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+func (o GetInstanceEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceEndpoint) float64 { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.Float64Output)
+}
+
+// List of nodes configured for the endpoint and their corresponding read-only weights.
+func (o GetInstanceEndpointOutput) ReadOnlyNodeWeights() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) []GetInstanceEndpointReadOnlyNodeWeight { return v.ReadOnlyNodeWeights }).(GetInstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+// Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+func (o GetInstanceEndpointOutput) ReadWriteMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ReadWriteMode }).(pulumi.StringOutput)
+}
+
+// After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+func (o GetInstanceEndpointOutput) ReadWriteProxyConnection() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceEndpoint) float64 { return v.ReadWriteProxyConnection }).(pulumi.Float64Output)
+}
+
+// Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+func (o GetInstanceEndpointOutput) WriteNodeHaltWriting() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.WriteNodeHaltWriting }).(pulumi.BoolOutput)
+}
+
+type GetInstanceEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointArrayOutput) ToGetInstanceEndpointArrayOutput() GetInstanceEndpointArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointArrayOutput) ToGetInstanceEndpointArrayOutputWithContext(ctx context.Context) GetInstanceEndpointArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpoint {
+		return vs[0].([]GetInstanceEndpoint)[vs[1].(int)]
+	}).(GetInstanceEndpointOutput)
+}
+
+type GetInstanceEndpointAddress struct {
+	// Private network address accessible across regions
+	CrossRegionDomain string `pulumi:"crossRegionDomain"`
+	// Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain string `pulumi:"domain"`
+	// Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+	DomainVisibilitySetting string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses
+	EipId string `pulumi:"eipId"`
+	// IP address
+	IpAddress string `pulumi:"ipAddress"`
+	// Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+	NetworkType string `pulumi:"networkType"`
+	// Port.
+	Port string `pulumi:"port"`
+	// Subnet ID
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstanceEndpointAddressInput is an input type that accepts GetInstanceEndpointAddressArgs and GetInstanceEndpointAddressOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointAddressInput` via:
+//
+//	GetInstanceEndpointAddressArgs{...}
+type GetInstanceEndpointAddressInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointAddressOutput() GetInstanceEndpointAddressOutput
+	ToGetInstanceEndpointAddressOutputWithContext(context.Context) GetInstanceEndpointAddressOutput
+}
+
+type GetInstanceEndpointAddressArgs struct {
+	// Private network address accessible across regions
+	CrossRegionDomain pulumi.StringInput `pulumi:"crossRegionDomain"`
+	// Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+	DomainVisibilitySetting pulumi.StringInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Port.
+	Port pulumi.StringInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstanceEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointAddressArgs) ToGetInstanceEndpointAddressOutput() GetInstanceEndpointAddressOutput {
+	return i.ToGetInstanceEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointAddressArgs) ToGetInstanceEndpointAddressOutputWithContext(ctx context.Context) GetInstanceEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointAddressOutput)
+}
+
+// GetInstanceEndpointAddressArrayInput is an input type that accepts GetInstanceEndpointAddressArray and GetInstanceEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointAddressArrayInput` via:
+//
+//	GetInstanceEndpointAddressArray{ GetInstanceEndpointAddressArgs{...} }
+type GetInstanceEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointAddressArrayOutput() GetInstanceEndpointAddressArrayOutput
+	ToGetInstanceEndpointAddressArrayOutputWithContext(context.Context) GetInstanceEndpointAddressArrayOutput
+}
+
+type GetInstanceEndpointAddressArray []GetInstanceEndpointAddressInput
+
+func (GetInstanceEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointAddressArray) ToGetInstanceEndpointAddressArrayOutput() GetInstanceEndpointAddressArrayOutput {
+	return i.ToGetInstanceEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointAddressArray) ToGetInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) GetInstanceEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointAddressArrayOutput)
+}
+
+type GetInstanceEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointAddressOutput) ToGetInstanceEndpointAddressOutput() GetInstanceEndpointAddressOutput {
+	return o
+}
+
+func (o GetInstanceEndpointAddressOutput) ToGetInstanceEndpointAddressOutputWithContext(ctx context.Context) GetInstanceEndpointAddressOutput {
+	return o
+}
+
+// Private network address accessible across regions
+func (o GetInstanceEndpointAddressOutput) CrossRegionDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
+}
+
+// Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+func (o GetInstanceEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// Connection domain name
+func (o GetInstanceEndpointAddressOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+func (o GetInstanceEndpointAddressOutput) DomainVisibilitySetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
+}
+
+// EIP ID, valid only for Public addresses
+func (o GetInstanceEndpointAddressOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o GetInstanceEndpointAddressOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+func (o GetInstanceEndpointAddressOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Port.
+func (o GetInstanceEndpointAddressOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// Subnet ID
+func (o GetInstanceEndpointAddressOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetInstanceEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointAddressArrayOutput) ToGetInstanceEndpointAddressArrayOutput() GetInstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointAddressArrayOutput) ToGetInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) GetInstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpointAddress {
+		return vs[0].([]GetInstanceEndpointAddress)[vs[1].(int)]
+	}).(GetInstanceEndpointAddressOutput)
+}
+
+type GetInstanceEndpointReadOnlyNodeWeight struct {
+	// Read-only nodes require NodeId
+	NodeId string `pulumi:"nodeId"`
+	// Node type
+	NodeType string `pulumi:"nodeType"`
+	// Node read weight, increases by 100, maximum value is 10000
+	Weight float64 `pulumi:"weight"`
+}
+
+// GetInstanceEndpointReadOnlyNodeWeightInput is an input type that accepts GetInstanceEndpointReadOnlyNodeWeightArgs and GetInstanceEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointReadOnlyNodeWeightInput` via:
+//
+//	GetInstanceEndpointReadOnlyNodeWeightArgs{...}
+type GetInstanceEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointReadOnlyNodeWeightOutput() GetInstanceEndpointReadOnlyNodeWeightOutput
+	ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Context) GetInstanceEndpointReadOnlyNodeWeightOutput
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightArgs struct {
+	// Read-only nodes require NodeId
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// Node type
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Node read weight, increases by 100, maximum value is 10000
+	Weight pulumi.Float64Input `pulumi:"weight"`
+}
+
+func (GetInstanceEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArgs) ToGetInstanceEndpointReadOnlyNodeWeightOutput() GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return i.ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArgs) ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+// GetInstanceEndpointReadOnlyNodeWeightArrayInput is an input type that accepts GetInstanceEndpointReadOnlyNodeWeightArray and GetInstanceEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	GetInstanceEndpointReadOnlyNodeWeightArray{ GetInstanceEndpointReadOnlyNodeWeightArgs{...} }
+type GetInstanceEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointReadOnlyNodeWeightArrayOutput() GetInstanceEndpointReadOnlyNodeWeightArrayOutput
+	ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) GetInstanceEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightArray []GetInstanceEndpointReadOnlyNodeWeightInput
+
+func (GetInstanceEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArray) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutput() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArray) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) ToGetInstanceEndpointReadOnlyNodeWeightOutput() GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// Read-only nodes require NodeId
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// Node type
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// Node read weight, increases by 100, maximum value is 10000
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) Weight() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) float64 { return v.Weight }).(pulumi.Float64Output)
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutput() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpointReadOnlyNodeWeight {
+		return vs[0].([]GetInstanceEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(GetInstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+type GetInstanceMaintenanceWindow struct {
+	// Granularity of the maintenance cycle. Value: Week (week)
+	DayKind string `pulumi:"dayKind"`
+	// Detailed information about the instance's maintenance window.
+	DayOfWeekMaintenanceTimes []GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime `pulumi:"dayOfWeekMaintenanceTimes"`
+}
+
+// GetInstanceMaintenanceWindowInput is an input type that accepts GetInstanceMaintenanceWindowArgs and GetInstanceMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceWindowInput` via:
+//
+//	GetInstanceMaintenanceWindowArgs{...}
+type GetInstanceMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceWindowOutput() GetInstanceMaintenanceWindowOutput
+	ToGetInstanceMaintenanceWindowOutputWithContext(context.Context) GetInstanceMaintenanceWindowOutput
+}
+
+type GetInstanceMaintenanceWindowArgs struct {
+	// Granularity of the maintenance cycle. Value: Week (week)
+	DayKind pulumi.StringInput `pulumi:"dayKind"`
+	// Detailed information about the instance's maintenance window.
+	DayOfWeekMaintenanceTimes GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput `pulumi:"dayOfWeekMaintenanceTimes"`
+}
+
+func (GetInstanceMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceWindowArgs) ToGetInstanceMaintenanceWindowOutput() GetInstanceMaintenanceWindowOutput {
+	return i.ToGetInstanceMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceWindowArgs) ToGetInstanceMaintenanceWindowOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceWindowOutput)
+}
+
+type GetInstanceMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceWindowOutput) ToGetInstanceMaintenanceWindowOutput() GetInstanceMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceWindowOutput) ToGetInstanceMaintenanceWindowOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowOutput {
+	return o
+}
+
+// Granularity of the maintenance cycle. Value: Week (week)
+func (o GetInstanceMaintenanceWindowOutput) DayKind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindow) string { return v.DayKind }).(pulumi.StringOutput)
+}
+
+// Detailed information about the instance's maintenance window.
+func (o GetInstanceMaintenanceWindowOutput) DayOfWeekMaintenanceTimes() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindow) []GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime {
+		return v.DayOfWeekMaintenanceTimes
+	}).(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput)
+}
+
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime struct {
+	// Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+	MaintenanceWindowStartTime string `pulumi:"maintenanceWindowStartTime"`
+	// Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+	Period int `pulumi:"period"`
+}
+
+// GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput is an input type that accepts GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs and GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput` via:
+//
+//	GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs{...}
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput
+	ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(context.Context) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput
+}
+
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs struct {
+	// Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+	MaintenanceWindowStartTime pulumi.StringInput `pulumi:"maintenanceWindowStartTime"`
+	// Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+	Period pulumi.IntInput `pulumi:"period"`
+}
+
+func (GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return i.ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput)
+}
+
+// GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput is an input type that accepts GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray and GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput` via:
+//
+//	GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray{ GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs{...} }
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput
+	ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(context.Context) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput
+}
+
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray []GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput
+
+func (GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return i.ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput)
+}
+
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return o
+}
+
+// Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+// Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) MaintenanceWindowStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime) string {
+		return v.MaintenanceWindowStartTime
+	}).(pulumi.StringOutput)
+}
+
+// Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput) Period() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime) int { return v.Period }).(pulumi.IntOutput)
+}
+
+type GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput() GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) ToGetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput) Index(i pulumi.IntInput) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime {
+		return vs[0].([]GetInstanceMaintenanceWindowDayOfWeekMaintenanceTime)[vs[1].(int)]
+	}).(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput)
+}
+
+type GetInstanceNodeInfo struct {
+	// Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	CreateTime string `pulumi:"createTime"`
+	// Instance ID
+	InstanceId string `pulumi:"instanceId"`
+	// Memory size, unit: GB
+	Memory float64 `pulumi:"memory"`
+	// Node ID
+	NodeId string `pulumi:"nodeId"`
+	// Node specification
+	NodeSpec string `pulumi:"nodeSpec"`
+	// Node status
+	NodeStatus string `pulumi:"nodeStatus"`
+	// Node type
+	NodeType string `pulumi:"nodeType"`
+	// Region ID
+	RegionId string `pulumi:"regionId"`
+	// Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	UpdateTime string `pulumi:"updateTime"`
+	// CPU size. For example: 1 means 1U
+	Vcpu float64 `pulumi:"vcpu"`
+	// Availability zone of the node
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetInstanceNodeInfoInput is an input type that accepts GetInstanceNodeInfoArgs and GetInstanceNodeInfoOutput values.
+// You can construct a concrete instance of `GetInstanceNodeInfoInput` via:
+//
+//	GetInstanceNodeInfoArgs{...}
+type GetInstanceNodeInfoInput interface {
+	pulumi.Input
+
+	ToGetInstanceNodeInfoOutput() GetInstanceNodeInfoOutput
+	ToGetInstanceNodeInfoOutputWithContext(context.Context) GetInstanceNodeInfoOutput
+}
+
+type GetInstanceNodeInfoArgs struct {
+	// Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// Instance ID
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Memory size, unit: GB
+	Memory pulumi.Float64Input `pulumi:"memory"`
+	// Node ID
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// Node specification
+	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
+	// Node status
+	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
+	// Node type
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Region ID
+	RegionId pulumi.StringInput `pulumi:"regionId"`
+	// Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
+	// CPU size. For example: 1 means 1U
+	Vcpu pulumi.Float64Input `pulumi:"vcpu"`
+	// Availability zone of the node
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetInstanceNodeInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceNodeInfo)(nil)).Elem()
+}
+
+func (i GetInstanceNodeInfoArgs) ToGetInstanceNodeInfoOutput() GetInstanceNodeInfoOutput {
+	return i.ToGetInstanceNodeInfoOutputWithContext(context.Background())
+}
+
+func (i GetInstanceNodeInfoArgs) ToGetInstanceNodeInfoOutputWithContext(ctx context.Context) GetInstanceNodeInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceNodeInfoOutput)
+}
+
+// GetInstanceNodeInfoArrayInput is an input type that accepts GetInstanceNodeInfoArray and GetInstanceNodeInfoArrayOutput values.
+// You can construct a concrete instance of `GetInstanceNodeInfoArrayInput` via:
+//
+//	GetInstanceNodeInfoArray{ GetInstanceNodeInfoArgs{...} }
+type GetInstanceNodeInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceNodeInfoArrayOutput() GetInstanceNodeInfoArrayOutput
+	ToGetInstanceNodeInfoArrayOutputWithContext(context.Context) GetInstanceNodeInfoArrayOutput
+}
+
+type GetInstanceNodeInfoArray []GetInstanceNodeInfoInput
+
+func (GetInstanceNodeInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceNodeInfo)(nil)).Elem()
+}
+
+func (i GetInstanceNodeInfoArray) ToGetInstanceNodeInfoArrayOutput() GetInstanceNodeInfoArrayOutput {
+	return i.ToGetInstanceNodeInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceNodeInfoArray) ToGetInstanceNodeInfoArrayOutputWithContext(ctx context.Context) GetInstanceNodeInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceNodeInfoArrayOutput)
+}
+
+type GetInstanceNodeInfoOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceNodeInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceNodeInfo)(nil)).Elem()
+}
+
+func (o GetInstanceNodeInfoOutput) ToGetInstanceNodeInfoOutput() GetInstanceNodeInfoOutput {
+	return o
+}
+
+func (o GetInstanceNodeInfoOutput) ToGetInstanceNodeInfoOutputWithContext(ctx context.Context) GetInstanceNodeInfoOutput {
+	return o
+}
+
+// Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+func (o GetInstanceNodeInfoOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// Instance ID
+func (o GetInstanceNodeInfoOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Memory size, unit: GB
+func (o GetInstanceNodeInfoOutput) Memory() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceNodeInfo) float64 { return v.Memory }).(pulumi.Float64Output)
+}
+
+// Node ID
+func (o GetInstanceNodeInfoOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// Node specification
+func (o GetInstanceNodeInfoOutput) NodeSpec() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.NodeSpec }).(pulumi.StringOutput)
+}
+
+// Node status
+func (o GetInstanceNodeInfoOutput) NodeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.NodeStatus }).(pulumi.StringOutput)
+}
+
+// Node type
+func (o GetInstanceNodeInfoOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// Region ID
+func (o GetInstanceNodeInfoOutput) RegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.RegionId }).(pulumi.StringOutput)
+}
+
+// Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+func (o GetInstanceNodeInfoOutput) UpdateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.UpdateTime }).(pulumi.StringOutput)
+}
+
+// CPU size. For example: 1 means 1U
+func (o GetInstanceNodeInfoOutput) Vcpu() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceNodeInfo) float64 { return v.Vcpu }).(pulumi.Float64Output)
+}
+
+// Availability zone of the node
+func (o GetInstanceNodeInfoOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNodeInfo) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetInstanceNodeInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceNodeInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceNodeInfo)(nil)).Elem()
+}
+
+func (o GetInstanceNodeInfoArrayOutput) ToGetInstanceNodeInfoArrayOutput() GetInstanceNodeInfoArrayOutput {
+	return o
+}
+
+func (o GetInstanceNodeInfoArrayOutput) ToGetInstanceNodeInfoArrayOutputWithContext(ctx context.Context) GetInstanceNodeInfoArrayOutput {
+	return o
+}
+
+func (o GetInstanceNodeInfoArrayOutput) Index(i pulumi.IntInput) GetInstanceNodeInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceNodeInfo {
+		return vs[0].([]GetInstanceNodeInfo)[vs[1].(int)]
+	}).(GetInstanceNodeInfoOutput)
+}
+
+type GetInstanceTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetInstanceTagInput is an input type that accepts GetInstanceTagArgs and GetInstanceTagOutput values.
+// You can construct a concrete instance of `GetInstanceTagInput` via:
+//
+//	GetInstanceTagArgs{...}
+type GetInstanceTagInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagOutput() GetInstanceTagOutput
+	ToGetInstanceTagOutputWithContext(context.Context) GetInstanceTagOutput
+}
+
+type GetInstanceTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetInstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return i.ToGetInstanceTagOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagOutput)
+}
+
+// GetInstanceTagArrayInput is an input type that accepts GetInstanceTagArray and GetInstanceTagArrayOutput values.
+// You can construct a concrete instance of `GetInstanceTagArrayInput` via:
+//
+//	GetInstanceTagArray{ GetInstanceTagArgs{...} }
+type GetInstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput
+	ToGetInstanceTagArrayOutputWithContext(context.Context) GetInstanceTagArrayOutput
+}
+
+type GetInstanceTagArray []GetInstanceTagInput
+
+func (GetInstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return i.ToGetInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagArrayOutput)
+}
+
+type GetInstanceTagOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return o
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetInstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceTag {
+		return vs[0].([]GetInstanceTag)[vs[1].(int)]
+	}).(GetInstanceTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
@@ -1023,6 +3523,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressArrayInput)(nil)).Elem(), DbEndpointAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailInput)(nil)).Elem(), InstanceChargeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailPtrInput)(nil)).Elem(), InstanceChargeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointInput)(nil)).Elem(), InstanceEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointArrayInput)(nil)).Elem(), InstanceEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointAddressInput)(nil)).Elem(), InstanceEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointAddressArrayInput)(nil)).Elem(), InstanceEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeightInput)(nil)).Elem(), InstanceEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), InstanceEndpointReadOnlyNodeWeightArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowInput)(nil)).Elem(), InstanceMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowPtrInput)(nil)).Elem(), InstanceMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput)(nil)).Elem(), InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput)(nil)).Elem(), InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeInfoInput)(nil)).Elem(), InstanceNodeInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeInfoArrayInput)(nil)).Elem(), InstanceNodeInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
@@ -1031,6 +3547,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressArrayInput)(nil)).Elem(), GetDbEndpointAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeDetailInput)(nil)).Elem(), GetInstanceChargeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointInput)(nil)).Elem(), GetInstanceEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointArrayInput)(nil)).Elem(), GetInstanceEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointAddressInput)(nil)).Elem(), GetInstanceEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointAddressArrayInput)(nil)).Elem(), GetInstanceEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetInstanceEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetInstanceEndpointReadOnlyNodeWeightArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceWindowInput)(nil)).Elem(), GetInstanceMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeInput)(nil)).Elem(), GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput)(nil)).Elem(), GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeInfoInput)(nil)).Elem(), GetInstanceNodeInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeInfoArrayInput)(nil)).Elem(), GetInstanceNodeInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
@@ -1039,6 +3569,22 @@ func init() {
 	pulumi.RegisterOutputType(DbEndpointAddressArrayOutput{})
 	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightOutput{})
 	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightArrayOutput{})
+	pulumi.RegisterOutputType(InstanceChargeDetailOutput{})
+	pulumi.RegisterOutputType(InstanceChargeDetailPtrOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointArrayOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointAddressOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointReadOnlyNodeWeightArrayOutput{})
+	pulumi.RegisterOutputType(InstanceMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(InstanceMaintenanceWindowPtrOutput{})
+	pulumi.RegisterOutputType(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput{})
+	pulumi.RegisterOutputType(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput{})
+	pulumi.RegisterOutputType(InstanceNodeInfoOutput{})
+	pulumi.RegisterOutputType(InstanceNodeInfoArrayOutput{})
+	pulumi.RegisterOutputType(InstanceTagOutput{})
+	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
@@ -1047,4 +3593,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDbEndpointAddressArrayOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceChargeDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointAddressOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointReadOnlyNodeWeightArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceNodeInfoOutput{})
+	pulumi.RegisterOutputType(GetInstanceNodeInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
 }

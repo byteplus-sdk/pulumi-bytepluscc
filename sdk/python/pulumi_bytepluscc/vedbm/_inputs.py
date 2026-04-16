@@ -20,6 +20,10 @@ __all__ = [
     'AllowListAssociatedInstanceArgsDict',
     'DatabaseDatabasesPrivilegeArgs',
     'DatabaseDatabasesPrivilegeArgsDict',
+    'EndpointPrivateAddressesArgs',
+    'EndpointPrivateAddressesArgsDict',
+    'EndpointPublicAddressesArgs',
+    'EndpointPublicAddressesArgsDict',
     'InstanceChargeDetailArgs',
     'InstanceChargeDetailArgsDict',
     'InstanceEndpointArgs',
@@ -42,18 +46,34 @@ if not MYPY:
         """
         Instance ID.
         """
+        instance_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance name.
+        """
+        vpc: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance VPC ID.
+        """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AllowListAssociatedInstanceArgs:
     def __init__(__self__, *,
-                 instance_id: Optional[pulumi.Input[builtins.str]] = None):
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] vpc: Instance VPC ID.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -66,6 +86,30 @@ class AllowListAssociatedInstanceArgs:
     @instance_id.setter
     def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance name.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance VPC ID.
+        """
+        return pulumi.get(self, "vpc")
+
+    @vpc.setter
+    def vpc(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc", value)
 
 
 if not MYPY:
@@ -138,6 +182,270 @@ class DatabaseDatabasesPrivilegeArgs:
     @account_privilege_details.setter
     def account_privilege_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "account_privilege_details", value)
+
+
+if not MYPY:
+    class EndpointPrivateAddressesArgsDict(TypedDict):
+        dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Resolution method, fixed as false
+        """
+        domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance intranet access domain name
+        """
+        eip_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Public network ID
+        """
+        ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP address
+        """
+        network_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Network type
+        """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Subnet ID
+        """
+elif False:
+    EndpointPrivateAddressesArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointPrivateAddressesArgs:
+    def __init__(__self__, *,
+                 dns_visibility: Optional[pulumi.Input[builtins.bool]] = None,
+                 domain: Optional[pulumi.Input[builtins.str]] = None,
+                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 network_type: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] dns_visibility: Resolution method, fixed as false
+        :param pulumi.Input[builtins.str] domain: Instance intranet access domain name
+        :param pulumi.Input[builtins.str] eip_id: Public network ID
+        :param pulumi.Input[builtins.str] ip_address: IP address
+        :param pulumi.Input[builtins.str] network_type: Network type
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Resolution method, fixed as false
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @dns_visibility.setter
+    def dns_visibility(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "dns_visibility", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance intranet access domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Public network ID
+        """
+        return pulumi.get(self, "eip_id")
+
+    @eip_id.setter
+    def eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eip_id", value)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+if not MYPY:
+    class EndpointPublicAddressesArgsDict(TypedDict):
+        dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Resolution method, fixed as false
+        """
+        domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance intranet access domain name
+        """
+        eip_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Public network ID
+        """
+        ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP address
+        """
+        network_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Network type
+        """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Subnet ID
+        """
+elif False:
+    EndpointPublicAddressesArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointPublicAddressesArgs:
+    def __init__(__self__, *,
+                 dns_visibility: Optional[pulumi.Input[builtins.bool]] = None,
+                 domain: Optional[pulumi.Input[builtins.str]] = None,
+                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 network_type: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] dns_visibility: Resolution method, fixed as false
+        :param pulumi.Input[builtins.str] domain: Instance intranet access domain name
+        :param pulumi.Input[builtins.str] eip_id: Public network ID
+        :param pulumi.Input[builtins.str] ip_address: IP address
+        :param pulumi.Input[builtins.str] network_type: Network type
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Resolution method, fixed as false
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @dns_visibility.setter
+    def dns_visibility(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "dns_visibility", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance intranet access domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Public network ID
+        """
+        return pulumi.get(self, "eip_id")
+
+    @eip_id.setter
+    def eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eip_id", value)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
 
 
 if not MYPY:
@@ -847,9 +1155,29 @@ if not MYPY:
         """
         Node failover priority. Range: 0~15. Higher values indicate higher priority
         """
+        memory: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Memory size, in GiB.
+        """
+        node_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Node ID
+        """
+        node_spec: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Node specification.
+        """
         node_type: NotRequired[pulumi.Input[builtins.str]]
         """
         Node type. Values: Primary: primary node. ReadOnly: read-only node.
+        """
+        v_cpu: NotRequired[pulumi.Input[builtins.int]]
+        """
+        CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        """
+        zone_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Availability zone ID
         """
 elif False:
     InstanceNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -858,15 +1186,35 @@ elif False:
 class InstanceNodeArgs:
     def __init__(__self__, *,
                  failover_priority: Optional[pulumi.Input[builtins.int]] = None,
-                 node_type: Optional[pulumi.Input[builtins.str]] = None):
+                 memory: Optional[pulumi.Input[builtins.int]] = None,
+                 node_id: Optional[pulumi.Input[builtins.str]] = None,
+                 node_spec: Optional[pulumi.Input[builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None,
+                 v_cpu: Optional[pulumi.Input[builtins.int]] = None,
+                 zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.int] failover_priority: Node failover priority. Range: 0~15. Higher values indicate higher priority
+        :param pulumi.Input[builtins.int] memory: Memory size, in GiB.
+        :param pulumi.Input[builtins.str] node_id: Node ID
+        :param pulumi.Input[builtins.str] node_spec: Node specification.
         :param pulumi.Input[builtins.str] node_type: Node type. Values: Primary: primary node. ReadOnly: read-only node.
+        :param pulumi.Input[builtins.int] v_cpu: CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID
         """
         if failover_priority is not None:
             pulumi.set(__self__, "failover_priority", failover_priority)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_spec is not None:
+            pulumi.set(__self__, "node_spec", node_spec)
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
+        if v_cpu is not None:
+            pulumi.set(__self__, "v_cpu", v_cpu)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
 
     @property
     @pulumi.getter(name="failoverPriority")
@@ -881,6 +1229,42 @@ class InstanceNodeArgs:
         pulumi.set(self, "failover_priority", value)
 
     @property
+    @pulumi.getter
+    def memory(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Memory size, in GiB.
+        """
+        return pulumi.get(self, "memory")
+
+    @memory.setter
+    def memory(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "memory", value)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Node ID
+        """
+        return pulumi.get(self, "node_id")
+
+    @node_id.setter
+    def node_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_id", value)
+
+    @property
+    @pulumi.getter(name="nodeSpec")
+    def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Node specification.
+        """
+        return pulumi.get(self, "node_spec")
+
+    @node_spec.setter
+    def node_spec(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_spec", value)
+
+    @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -891,6 +1275,30 @@ class InstanceNodeArgs:
     @node_type.setter
     def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter(name="vCpu")
+    def v_cpu(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        """
+        return pulumi.get(self, "v_cpu")
+
+    @v_cpu.setter
+    def v_cpu(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "v_cpu", value)
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Availability zone ID
+        """
+        return pulumi.get(self, "zone_id")
+
+    @zone_id.setter
+    def zone_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "zone_id", value)
 
 
 if not MYPY:

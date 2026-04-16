@@ -19,9 +19,13 @@ __all__ = [
     'EndpointServicePrivateDnsNameConfiguration',
     'EndpointServiceResource',
     'EndpointServiceTag',
+    'VpcEndpointTag',
+    'VpcEndpointZone',
     'GetEndpointServicePrivateDnsNameConfigurationResult',
     'GetEndpointServiceResourceResult',
     'GetEndpointServiceTagResult',
+    'GetVpcEndpointTagResult',
+    'GetVpcEndpointZoneResult',
 ]
 
 @pulumi.output_type
@@ -175,6 +179,115 @@ class EndpointServiceTag(dict):
 
 
 @pulumi.output_type
+class VpcEndpointTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+        :param builtins.str value: Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class VpcEndpointZone(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "privateIpAddress":
+            suggest = "private_ip_address"
+        elif key == "privateIpv6Address":
+            suggest = "private_ipv6_address"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "zoneId":
+            suggest = "zone_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VpcEndpointZone. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VpcEndpointZone.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VpcEndpointZone.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 private_ip_address: Optional[builtins.str] = None,
+                 private_ipv6_address: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None,
+                 zone_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str private_ip_address: The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+        :param builtins.str private_ipv6_address: The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+        :param builtins.str subnet_id: ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+        :param builtins.str zone_id: ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+        """
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
+        if private_ipv6_address is not None:
+            pulumi.set(__self__, "private_ipv6_address", private_ipv6_address)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[builtins.str]:
+        """
+        The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @property
+    @pulumi.getter(name="privateIpv6Address")
+    def private_ipv6_address(self) -> Optional[builtins.str]:
+        """
+        The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+        """
+        return pulumi.get(self, "private_ipv6_address")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
 class GetEndpointServicePrivateDnsNameConfigurationResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
@@ -292,5 +405,140 @@ class GetEndpointServiceTagResult(dict):
         Tag value of the endpoint service tag.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVpcEndpointTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+        :param builtins.str value: Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVpcEndpointZoneResult(dict):
+    def __init__(__self__, *,
+                 ipv6_service_status: builtins.str,
+                 network_interface_id: builtins.str,
+                 private_ip_address: builtins.str,
+                 private_ipv6_address: builtins.str,
+                 service_status: builtins.str,
+                 subnet_id: builtins.str,
+                 zone_domain: builtins.str,
+                 zone_id: builtins.str,
+                 zone_status: builtins.str):
+        """
+        :param builtins.str ipv6_service_status: Service status of the endpoint node's IPv6 address. Active: normal. Inactive: abnormal.
+        :param builtins.str network_interface_id: ID of the endpoint NIC used to connect to new service resources. If not in the process of seamless service resource replacement, this parameter returns empty.
+        :param builtins.str private_ip_address: The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+        :param builtins.str private_ipv6_address: The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+        :param builtins.str service_status: Service status of the endpoint IPv4 address. Active: Normal. Inactive: Abnormal.
+        :param builtins.str subnet_id: ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+        :param builtins.str zone_domain: Domain name of the endpoint availability zone.
+        :param builtins.str zone_id: ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+        :param builtins.str zone_status: Status of the endpoint node's availability zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed.
+        """
+        pulumi.set(__self__, "ipv6_service_status", ipv6_service_status)
+        pulumi.set(__self__, "network_interface_id", network_interface_id)
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
+        pulumi.set(__self__, "private_ipv6_address", private_ipv6_address)
+        pulumi.set(__self__, "service_status", service_status)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "zone_domain", zone_domain)
+        pulumi.set(__self__, "zone_id", zone_id)
+        pulumi.set(__self__, "zone_status", zone_status)
+
+    @property
+    @pulumi.getter(name="ipv6ServiceStatus")
+    def ipv6_service_status(self) -> builtins.str:
+        """
+        Service status of the endpoint node's IPv6 address. Active: normal. Inactive: abnormal.
+        """
+        return pulumi.get(self, "ipv6_service_status")
+
+    @property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> builtins.str:
+        """
+        ID of the endpoint NIC used to connect to new service resources. If not in the process of seamless service resource replacement, this parameter returns empty.
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> builtins.str:
+        """
+        The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @property
+    @pulumi.getter(name="privateIpv6Address")
+    def private_ipv6_address(self) -> builtins.str:
+        """
+        The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+        """
+        return pulumi.get(self, "private_ipv6_address")
+
+    @property
+    @pulumi.getter(name="serviceStatus")
+    def service_status(self) -> builtins.str:
+        """
+        Service status of the endpoint IPv4 address. Active: Normal. Inactive: Abnormal.
+        """
+        return pulumi.get(self, "service_status")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="zoneDomain")
+    def zone_domain(self) -> builtins.str:
+        """
+        Domain name of the endpoint availability zone.
+        """
+        return pulumi.get(self, "zone_domain")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+        """
+        return pulumi.get(self, "zone_id")
+
+    @property
+    @pulumi.getter(name="zoneStatus")
+    def zone_status(self) -> builtins.str:
+        """
+        Status of the endpoint node's availability zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed.
+        """
+        return pulumi.get(self, "zone_status")
 
 

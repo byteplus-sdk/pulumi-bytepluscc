@@ -19,18 +19,53 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
         /// </summary>
         public readonly int? FailoverPriority;
         /// <summary>
+        /// Memory size, in GiB.
+        /// </summary>
+        public readonly int? Memory;
+        /// <summary>
+        /// Node ID
+        /// </summary>
+        public readonly string? NodeId;
+        /// <summary>
+        /// Node specification.
+        /// </summary>
+        public readonly string? NodeSpec;
+        /// <summary>
         /// Node type. Values: Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         public readonly string? NodeType;
+        /// <summary>
+        /// CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        /// </summary>
+        public readonly int? VCpu;
+        /// <summary>
+        /// Availability zone ID
+        /// </summary>
+        public readonly string? ZoneId;
 
         [OutputConstructor]
         private InstanceNode(
             int? failoverPriority,
 
-            string? nodeType)
+            int? memory,
+
+            string? nodeId,
+
+            string? nodeSpec,
+
+            string? nodeType,
+
+            int? vCpu,
+
+            string? zoneId)
         {
             FailoverPriority = failoverPriority;
+            Memory = memory;
+            NodeId = nodeId;
+            NodeSpec = nodeSpec;
             NodeType = nodeType;
+            VCpu = vCpu;
+            ZoneId = zoneId;
         }
     }
 }

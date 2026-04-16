@@ -1469,6 +1469,12 @@ class InstanceSecondaryNetworkInterface(dict):
         suggest = None
         if key == "ipv6AddressCount":
             suggest = "ipv6_address_count"
+        elif key == "ipv6Addresses":
+            suggest = "ipv6_addresses"
+        elif key == "macAddress":
+            suggest = "mac_address"
+        elif key == "networkInterfaceId":
+            suggest = "network_interface_id"
         elif key == "primaryIpAddress":
             suggest = "primary_ip_address"
         elif key == "privateIpAddresses":
@@ -1477,6 +1483,8 @@ class InstanceSecondaryNetworkInterface(dict):
             suggest = "security_group_ids"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "vpcId":
+            suggest = "vpc_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in InstanceSecondaryNetworkInterface. Access the value via the '{suggest}' property getter instead.")
@@ -1491,19 +1499,33 @@ class InstanceSecondaryNetworkInterface(dict):
 
     def __init__(__self__, *,
                  ipv6_address_count: Optional[builtins.int] = None,
+                 ipv6_addresses: Optional[Sequence[builtins.str]] = None,
+                 mac_address: Optional[builtins.str] = None,
+                 network_interface_id: Optional[builtins.str] = None,
                  primary_ip_address: Optional[builtins.str] = None,
                  private_ip_addresses: Optional[Sequence[builtins.str]] = None,
                  security_group_ids: Optional[Sequence[builtins.str]] = None,
-                 subnet_id: Optional[builtins.str] = None):
+                 subnet_id: Optional[builtins.str] = None,
+                 vpc_id: Optional[builtins.str] = None):
         """
         :param builtins.int ipv6_address_count: The number of IPv6 addresses for the instance.
+        :param Sequence[builtins.str] ipv6_addresses: IPv6 address of the instance.
+        :param builtins.str mac_address: Instance MAC address.
+        :param builtins.str network_interface_id: The network interface ID of the instance.
         :param builtins.str primary_ip_address: Instance primary IP address
         :param Sequence[builtins.str] private_ip_addresses: Instance private IP address.
         :param Sequence[builtins.str] security_group_ids: Instance security group ID
         :param builtins.str subnet_id: Instance subnet ID.
+        :param builtins.str vpc_id: VPC ID of the instance.
         """
         if ipv6_address_count is not None:
             pulumi.set(__self__, "ipv6_address_count", ipv6_address_count)
+        if ipv6_addresses is not None:
+            pulumi.set(__self__, "ipv6_addresses", ipv6_addresses)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_id is not None:
+            pulumi.set(__self__, "network_interface_id", network_interface_id)
         if primary_ip_address is not None:
             pulumi.set(__self__, "primary_ip_address", primary_ip_address)
         if private_ip_addresses is not None:
@@ -1512,6 +1534,8 @@ class InstanceSecondaryNetworkInterface(dict):
             pulumi.set(__self__, "security_group_ids", security_group_ids)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
 
     @property
     @pulumi.getter(name="ipv6AddressCount")
@@ -1520,6 +1544,30 @@ class InstanceSecondaryNetworkInterface(dict):
         The number of IPv6 addresses for the instance.
         """
         return pulumi.get(self, "ipv6_address_count")
+
+    @property
+    @pulumi.getter(name="ipv6Addresses")
+    def ipv6_addresses(self) -> Optional[Sequence[builtins.str]]:
+        """
+        IPv6 address of the instance.
+        """
+        return pulumi.get(self, "ipv6_addresses")
+
+    @property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[builtins.str]:
+        """
+        Instance MAC address.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> Optional[builtins.str]:
+        """
+        The network interface ID of the instance.
+        """
+        return pulumi.get(self, "network_interface_id")
 
     @property
     @pulumi.getter(name="primaryIpAddress")
@@ -1552,6 +1600,14 @@ class InstanceSecondaryNetworkInterface(dict):
         Instance subnet ID.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[builtins.str]:
+        """
+        VPC ID of the instance.
+        """
+        return pulumi.get(self, "vpc_id")
 
 
 @pulumi.output_type

@@ -19,6 +19,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
+        /// <summary>
+        /// Instance name.
+        /// </summary>
+        [Input("instanceName")]
+        public Input<string>? InstanceName { get; set; }
+
+        /// <summary>
+        /// Instance VPC ID.
+        /// </summary>
+        [Input("vpc")]
+        public Input<string>? Vpc { get; set; }
+
         public AllowListAssociatedInstanceGetArgs()
         {
         }

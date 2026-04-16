@@ -16,6 +16,16 @@ public final class AllowListAssociatedInstance {
      * 
      */
     private @Nullable String instanceId;
+    /**
+     * @return Instance name.
+     * 
+     */
+    private @Nullable String instanceName;
+    /**
+     * @return Instance VPC ID.
+     * 
+     */
+    private @Nullable String vpc;
 
     private AllowListAssociatedInstance() {}
     /**
@@ -24,6 +34,20 @@ public final class AllowListAssociatedInstance {
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
+    }
+    /**
+     * @return Instance name.
+     * 
+     */
+    public Optional<String> instanceName() {
+        return Optional.ofNullable(this.instanceName);
+    }
+    /**
+     * @return Instance VPC ID.
+     * 
+     */
+    public Optional<String> vpc() {
+        return Optional.ofNullable(this.vpc);
     }
 
     public static Builder builder() {
@@ -36,10 +60,14 @@ public final class AllowListAssociatedInstance {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String instanceId;
+        private @Nullable String instanceName;
+        private @Nullable String vpc;
         public Builder() {}
         public Builder(AllowListAssociatedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceId = defaults.instanceId;
+    	      this.instanceName = defaults.instanceName;
+    	      this.vpc = defaults.vpc;
         }
 
         @CustomType.Setter
@@ -48,9 +76,23 @@ public final class AllowListAssociatedInstance {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
+        public Builder instanceName(@Nullable String instanceName) {
+
+            this.instanceName = instanceName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vpc(@Nullable String vpc) {
+
+            this.vpc = vpc;
+            return this;
+        }
         public AllowListAssociatedInstance build() {
             final var _resultValue = new AllowListAssociatedInstance();
             _resultValue.instanceId = instanceId;
+            _resultValue.instanceName = instanceName;
+            _resultValue.vpc = vpc;
             return _resultValue;
         }
     }

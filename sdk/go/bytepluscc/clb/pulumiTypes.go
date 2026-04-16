@@ -1221,6 +1221,219 @@ func (o ClbEnisPtrOutput) EniId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ClbIpv6AddressBandwidth struct {
+	// Peak bandwidth of IPv6 public bandwidth, in Mbps
+	Bandwidth *float64 `pulumi:"bandwidth"`
+	// Shared bandwidth package ID associated with IPv6 public bandwidth
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// Billing type for IPv6 public bandwidth
+	BillingType *float64 `pulumi:"billingType"`
+	// Line type of IPv6 public bandwidth
+	Isp *string `pulumi:"isp"`
+	// Network type of the load balancer instance's IPv6 address
+	NetworkType *string `pulumi:"networkType"`
+}
+
+// ClbIpv6AddressBandwidthInput is an input type that accepts ClbIpv6AddressBandwidthArgs and ClbIpv6AddressBandwidthOutput values.
+// You can construct a concrete instance of `ClbIpv6AddressBandwidthInput` via:
+//
+//	ClbIpv6AddressBandwidthArgs{...}
+type ClbIpv6AddressBandwidthInput interface {
+	pulumi.Input
+
+	ToClbIpv6AddressBandwidthOutput() ClbIpv6AddressBandwidthOutput
+	ToClbIpv6AddressBandwidthOutputWithContext(context.Context) ClbIpv6AddressBandwidthOutput
+}
+
+type ClbIpv6AddressBandwidthArgs struct {
+	// Peak bandwidth of IPv6 public bandwidth, in Mbps
+	Bandwidth pulumi.Float64PtrInput `pulumi:"bandwidth"`
+	// Shared bandwidth package ID associated with IPv6 public bandwidth
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// Billing type for IPv6 public bandwidth
+	BillingType pulumi.Float64PtrInput `pulumi:"billingType"`
+	// Line type of IPv6 public bandwidth
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// Network type of the load balancer instance's IPv6 address
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+}
+
+func (ClbIpv6AddressBandwidthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbIpv6AddressBandwidth)(nil)).Elem()
+}
+
+func (i ClbIpv6AddressBandwidthArgs) ToClbIpv6AddressBandwidthOutput() ClbIpv6AddressBandwidthOutput {
+	return i.ToClbIpv6AddressBandwidthOutputWithContext(context.Background())
+}
+
+func (i ClbIpv6AddressBandwidthArgs) ToClbIpv6AddressBandwidthOutputWithContext(ctx context.Context) ClbIpv6AddressBandwidthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbIpv6AddressBandwidthOutput)
+}
+
+func (i ClbIpv6AddressBandwidthArgs) ToClbIpv6AddressBandwidthPtrOutput() ClbIpv6AddressBandwidthPtrOutput {
+	return i.ToClbIpv6AddressBandwidthPtrOutputWithContext(context.Background())
+}
+
+func (i ClbIpv6AddressBandwidthArgs) ToClbIpv6AddressBandwidthPtrOutputWithContext(ctx context.Context) ClbIpv6AddressBandwidthPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbIpv6AddressBandwidthOutput).ToClbIpv6AddressBandwidthPtrOutputWithContext(ctx)
+}
+
+// ClbIpv6AddressBandwidthPtrInput is an input type that accepts ClbIpv6AddressBandwidthArgs, ClbIpv6AddressBandwidthPtr and ClbIpv6AddressBandwidthPtrOutput values.
+// You can construct a concrete instance of `ClbIpv6AddressBandwidthPtrInput` via:
+//
+//	        ClbIpv6AddressBandwidthArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClbIpv6AddressBandwidthPtrInput interface {
+	pulumi.Input
+
+	ToClbIpv6AddressBandwidthPtrOutput() ClbIpv6AddressBandwidthPtrOutput
+	ToClbIpv6AddressBandwidthPtrOutputWithContext(context.Context) ClbIpv6AddressBandwidthPtrOutput
+}
+
+type clbIpv6AddressBandwidthPtrType ClbIpv6AddressBandwidthArgs
+
+func ClbIpv6AddressBandwidthPtr(v *ClbIpv6AddressBandwidthArgs) ClbIpv6AddressBandwidthPtrInput {
+	return (*clbIpv6AddressBandwidthPtrType)(v)
+}
+
+func (*clbIpv6AddressBandwidthPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbIpv6AddressBandwidth)(nil)).Elem()
+}
+
+func (i *clbIpv6AddressBandwidthPtrType) ToClbIpv6AddressBandwidthPtrOutput() ClbIpv6AddressBandwidthPtrOutput {
+	return i.ToClbIpv6AddressBandwidthPtrOutputWithContext(context.Background())
+}
+
+func (i *clbIpv6AddressBandwidthPtrType) ToClbIpv6AddressBandwidthPtrOutputWithContext(ctx context.Context) ClbIpv6AddressBandwidthPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbIpv6AddressBandwidthPtrOutput)
+}
+
+type ClbIpv6AddressBandwidthOutput struct{ *pulumi.OutputState }
+
+func (ClbIpv6AddressBandwidthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbIpv6AddressBandwidth)(nil)).Elem()
+}
+
+func (o ClbIpv6AddressBandwidthOutput) ToClbIpv6AddressBandwidthOutput() ClbIpv6AddressBandwidthOutput {
+	return o
+}
+
+func (o ClbIpv6AddressBandwidthOutput) ToClbIpv6AddressBandwidthOutputWithContext(ctx context.Context) ClbIpv6AddressBandwidthOutput {
+	return o
+}
+
+func (o ClbIpv6AddressBandwidthOutput) ToClbIpv6AddressBandwidthPtrOutput() ClbIpv6AddressBandwidthPtrOutput {
+	return o.ToClbIpv6AddressBandwidthPtrOutputWithContext(context.Background())
+}
+
+func (o ClbIpv6AddressBandwidthOutput) ToClbIpv6AddressBandwidthPtrOutputWithContext(ctx context.Context) ClbIpv6AddressBandwidthPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClbIpv6AddressBandwidth) *ClbIpv6AddressBandwidth {
+		return &v
+	}).(ClbIpv6AddressBandwidthPtrOutput)
+}
+
+// Peak bandwidth of IPv6 public bandwidth, in Mbps
+func (o ClbIpv6AddressBandwidthOutput) Bandwidth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClbIpv6AddressBandwidth) *float64 { return v.Bandwidth }).(pulumi.Float64PtrOutput)
+}
+
+// Shared bandwidth package ID associated with IPv6 public bandwidth
+func (o ClbIpv6AddressBandwidthOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbIpv6AddressBandwidth) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// Billing type for IPv6 public bandwidth
+func (o ClbIpv6AddressBandwidthOutput) BillingType() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClbIpv6AddressBandwidth) *float64 { return v.BillingType }).(pulumi.Float64PtrOutput)
+}
+
+// Line type of IPv6 public bandwidth
+func (o ClbIpv6AddressBandwidthOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbIpv6AddressBandwidth) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// Network type of the load balancer instance's IPv6 address
+func (o ClbIpv6AddressBandwidthOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbIpv6AddressBandwidth) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+type ClbIpv6AddressBandwidthPtrOutput struct{ *pulumi.OutputState }
+
+func (ClbIpv6AddressBandwidthPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbIpv6AddressBandwidth)(nil)).Elem()
+}
+
+func (o ClbIpv6AddressBandwidthPtrOutput) ToClbIpv6AddressBandwidthPtrOutput() ClbIpv6AddressBandwidthPtrOutput {
+	return o
+}
+
+func (o ClbIpv6AddressBandwidthPtrOutput) ToClbIpv6AddressBandwidthPtrOutputWithContext(ctx context.Context) ClbIpv6AddressBandwidthPtrOutput {
+	return o
+}
+
+func (o ClbIpv6AddressBandwidthPtrOutput) Elem() ClbIpv6AddressBandwidthOutput {
+	return o.ApplyT(func(v *ClbIpv6AddressBandwidth) ClbIpv6AddressBandwidth {
+		if v != nil {
+			return *v
+		}
+		var ret ClbIpv6AddressBandwidth
+		return ret
+	}).(ClbIpv6AddressBandwidthOutput)
+}
+
+// Peak bandwidth of IPv6 public bandwidth, in Mbps
+func (o ClbIpv6AddressBandwidthPtrOutput) Bandwidth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClbIpv6AddressBandwidth) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Shared bandwidth package ID associated with IPv6 public bandwidth
+func (o ClbIpv6AddressBandwidthPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbIpv6AddressBandwidth) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Billing type for IPv6 public bandwidth
+func (o ClbIpv6AddressBandwidthPtrOutput) BillingType() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClbIpv6AddressBandwidth) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.BillingType
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Line type of IPv6 public bandwidth
+func (o ClbIpv6AddressBandwidthPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbIpv6AddressBandwidth) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network type of the load balancer instance's IPv6 address
+func (o ClbIpv6AddressBandwidthPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbIpv6AddressBandwidth) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
 type ClbListener struct {
 	// Listener ID
 	ListenerId *string `pulumi:"listenerId"`
@@ -4893,6 +5106,94 @@ func (o GetClbEnisOutput) EniId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEnis) string { return v.EniId }).(pulumi.StringOutput)
 }
 
+type GetClbIpv6AddressBandwidth struct {
+	// Peak bandwidth of IPv6 public bandwidth, in Mbps
+	Bandwidth float64 `pulumi:"bandwidth"`
+	// Shared bandwidth package ID associated with IPv6 public bandwidth
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// Billing type for IPv6 public bandwidth
+	BillingType float64 `pulumi:"billingType"`
+	// Line type of IPv6 public bandwidth
+	Isp string `pulumi:"isp"`
+	// Network type of the load balancer instance's IPv6 address
+	NetworkType string `pulumi:"networkType"`
+}
+
+// GetClbIpv6AddressBandwidthInput is an input type that accepts GetClbIpv6AddressBandwidthArgs and GetClbIpv6AddressBandwidthOutput values.
+// You can construct a concrete instance of `GetClbIpv6AddressBandwidthInput` via:
+//
+//	GetClbIpv6AddressBandwidthArgs{...}
+type GetClbIpv6AddressBandwidthInput interface {
+	pulumi.Input
+
+	ToGetClbIpv6AddressBandwidthOutput() GetClbIpv6AddressBandwidthOutput
+	ToGetClbIpv6AddressBandwidthOutputWithContext(context.Context) GetClbIpv6AddressBandwidthOutput
+}
+
+type GetClbIpv6AddressBandwidthArgs struct {
+	// Peak bandwidth of IPv6 public bandwidth, in Mbps
+	Bandwidth pulumi.Float64Input `pulumi:"bandwidth"`
+	// Shared bandwidth package ID associated with IPv6 public bandwidth
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// Billing type for IPv6 public bandwidth
+	BillingType pulumi.Float64Input `pulumi:"billingType"`
+	// Line type of IPv6 public bandwidth
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// Network type of the load balancer instance's IPv6 address
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+}
+
+func (GetClbIpv6AddressBandwidthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbIpv6AddressBandwidth)(nil)).Elem()
+}
+
+func (i GetClbIpv6AddressBandwidthArgs) ToGetClbIpv6AddressBandwidthOutput() GetClbIpv6AddressBandwidthOutput {
+	return i.ToGetClbIpv6AddressBandwidthOutputWithContext(context.Background())
+}
+
+func (i GetClbIpv6AddressBandwidthArgs) ToGetClbIpv6AddressBandwidthOutputWithContext(ctx context.Context) GetClbIpv6AddressBandwidthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbIpv6AddressBandwidthOutput)
+}
+
+type GetClbIpv6AddressBandwidthOutput struct{ *pulumi.OutputState }
+
+func (GetClbIpv6AddressBandwidthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbIpv6AddressBandwidth)(nil)).Elem()
+}
+
+func (o GetClbIpv6AddressBandwidthOutput) ToGetClbIpv6AddressBandwidthOutput() GetClbIpv6AddressBandwidthOutput {
+	return o
+}
+
+func (o GetClbIpv6AddressBandwidthOutput) ToGetClbIpv6AddressBandwidthOutputWithContext(ctx context.Context) GetClbIpv6AddressBandwidthOutput {
+	return o
+}
+
+// Peak bandwidth of IPv6 public bandwidth, in Mbps
+func (o GetClbIpv6AddressBandwidthOutput) Bandwidth() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClbIpv6AddressBandwidth) float64 { return v.Bandwidth }).(pulumi.Float64Output)
+}
+
+// Shared bandwidth package ID associated with IPv6 public bandwidth
+func (o GetClbIpv6AddressBandwidthOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbIpv6AddressBandwidth) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// Billing type for IPv6 public bandwidth
+func (o GetClbIpv6AddressBandwidthOutput) BillingType() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClbIpv6AddressBandwidth) float64 { return v.BillingType }).(pulumi.Float64Output)
+}
+
+// Line type of IPv6 public bandwidth
+func (o GetClbIpv6AddressBandwidthOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbIpv6AddressBandwidth) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// Network type of the load balancer instance's IPv6 address
+func (o GetClbIpv6AddressBandwidthOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbIpv6AddressBandwidth) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
 type GetClbListener struct {
 	// Listener ID
 	ListenerId string `pulumi:"listenerId"`
@@ -7212,6 +7513,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbEniPtrInput)(nil)).Elem(), ClbEniArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbEnisInput)(nil)).Elem(), ClbEnisArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbEnisPtrInput)(nil)).Elem(), ClbEnisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbIpv6AddressBandwidthInput)(nil)).Elem(), ClbIpv6AddressBandwidthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbIpv6AddressBandwidthPtrInput)(nil)).Elem(), ClbIpv6AddressBandwidthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbListenerInput)(nil)).Elem(), ClbListenerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbListenerArrayInput)(nil)).Elem(), ClbListenerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbServerGroupInput)(nil)).Elem(), ClbServerGroupArgs{})
@@ -7262,6 +7565,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbEipInput)(nil)).Elem(), GetClbEipArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbEniInput)(nil)).Elem(), GetClbEniArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbEnisInput)(nil)).Elem(), GetClbEnisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbIpv6AddressBandwidthInput)(nil)).Elem(), GetClbIpv6AddressBandwidthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbListenerInput)(nil)).Elem(), GetClbListenerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbListenerArrayInput)(nil)).Elem(), GetClbListenerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbServerGroupInput)(nil)).Elem(), GetClbServerGroupArgs{})
@@ -7312,6 +7616,8 @@ func init() {
 	pulumi.RegisterOutputType(ClbEniPtrOutput{})
 	pulumi.RegisterOutputType(ClbEnisOutput{})
 	pulumi.RegisterOutputType(ClbEnisPtrOutput{})
+	pulumi.RegisterOutputType(ClbIpv6AddressBandwidthOutput{})
+	pulumi.RegisterOutputType(ClbIpv6AddressBandwidthPtrOutput{})
 	pulumi.RegisterOutputType(ClbListenerOutput{})
 	pulumi.RegisterOutputType(ClbListenerArrayOutput{})
 	pulumi.RegisterOutputType(ClbServerGroupOutput{})
@@ -7362,6 +7668,7 @@ func init() {
 	pulumi.RegisterOutputType(GetClbEipOutput{})
 	pulumi.RegisterOutputType(GetClbEniOutput{})
 	pulumi.RegisterOutputType(GetClbEnisOutput{})
+	pulumi.RegisterOutputType(GetClbIpv6AddressBandwidthOutput{})
 	pulumi.RegisterOutputType(GetClbListenerOutput{})
 	pulumi.RegisterOutputType(GetClbListenerArrayOutput{})
 	pulumi.RegisterOutputType(GetClbServerGroupOutput{})

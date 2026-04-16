@@ -10,6 +10,7 @@ import com.byteplus.bytepluscc.clb.outputs.ClbAccessLog;
 import com.byteplus.bytepluscc.clb.outputs.ClbEip;
 import com.byteplus.bytepluscc.clb.outputs.ClbEni;
 import com.byteplus.bytepluscc.clb.outputs.ClbEnis;
+import com.byteplus.bytepluscc.clb.outputs.ClbIpv6AddressBandwidth;
 import com.byteplus.bytepluscc.clb.outputs.ClbListener;
 import com.byteplus.bytepluscc.clb.outputs.ClbServerGroup;
 import com.byteplus.bytepluscc.clb.outputs.ClbTag;
@@ -319,6 +320,20 @@ public class Clb extends com.pulumi.resources.CustomResource {
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
+    }
+    /**
+     * IPv6 public bandwidth information for the load balancing instance
+     * 
+     */
+    @Export(name="ipv6AddressBandwidth", refs={ClbIpv6AddressBandwidth.class}, tree="[0]")
+    private Output<ClbIpv6AddressBandwidth> ipv6AddressBandwidth;
+
+    /**
+     * @return IPv6 public bandwidth information for the load balancing instance
+     * 
+     */
+    public Output<ClbIpv6AddressBandwidth> ipv6AddressBandwidth() {
+        return this.ipv6AddressBandwidth;
     }
     @Export(name="listeners", refs={List.class,ClbListener.class}, tree="[0,1]")
     private Output<List<ClbListener>> listeners;

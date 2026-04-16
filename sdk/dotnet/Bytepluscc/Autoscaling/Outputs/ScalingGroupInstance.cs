@@ -15,6 +15,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
     public sealed class ScalingGroupInstance
     {
         /// <summary>
+        /// Time when the instance joined the scaling group
+        /// </summary>
+        public readonly string? CreatedTime;
+        /// <summary>
+        /// How the instance joined the scaling group (Attached / AutoCreated)
+        /// </summary>
+        public readonly string? CreationType;
+        /// <summary>
         /// Whether to enable managed mode for the instance when AttachInstances is performed
         /// </summary>
         public readonly bool? Entrusted;
@@ -23,21 +31,69 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
+        /// Launch template ID used by the instance
+        /// </summary>
+        public readonly string? LaunchTemplateId;
+        /// <summary>
+        /// Launch template version used by the instance
+        /// </summary>
+        public readonly string? LaunchTemplateVersion;
+        /// <summary>
         /// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
         /// </summary>
         public readonly bool? LifecycleHook;
+        /// <summary>
+        /// Scaling configuration ID associated with the instance
+        /// </summary>
+        public readonly string? ScalingConfigurationId;
+        /// <summary>
+        /// Scaling policy ID associated with the instance
+        /// </summary>
+        public readonly string? ScalingPolicyId;
+        /// <summary>
+        /// Current status of the instance in the scaling group
+        /// </summary>
+        public readonly string? Status;
+        /// <summary>
+        /// Availability zone of the instance
+        /// </summary>
+        public readonly string? ZoneId;
 
         [OutputConstructor]
         private ScalingGroupInstance(
+            string? createdTime,
+
+            string? creationType,
+
             bool? entrusted,
 
             string? instanceId,
 
-            bool? lifecycleHook)
+            string? launchTemplateId,
+
+            string? launchTemplateVersion,
+
+            bool? lifecycleHook,
+
+            string? scalingConfigurationId,
+
+            string? scalingPolicyId,
+
+            string? status,
+
+            string? zoneId)
         {
+            CreatedTime = createdTime;
+            CreationType = creationType;
             Entrusted = entrusted;
             InstanceId = instanceId;
+            LaunchTemplateId = launchTemplateId;
+            LaunchTemplateVersion = launchTemplateVersion;
             LifecycleHook = lifecycleHook;
+            ScalingConfigurationId = scalingConfigurationId;
+            ScalingPolicyId = scalingPolicyId;
+            Status = status;
+            ZoneId = zoneId;
         }
     }
 }

@@ -581,12 +581,28 @@ func (o ScalingConfigurationVolumeArrayOutput) Index(i pulumi.IntInput) ScalingC
 }
 
 type ScalingGroupInstance struct {
+	// Time when the instance joined the scaling group
+	CreatedTime *string `pulumi:"createdTime"`
+	// How the instance joined the scaling group (Attached / AutoCreated)
+	CreationType *string `pulumi:"creationType"`
 	// Whether to enable managed mode for the instance when AttachInstances is performed
 	Entrusted *bool `pulumi:"entrusted"`
 	// ECS instance ID, unique identifier of the subresource
 	InstanceId *string `pulumi:"instanceId"`
+	// Launch template ID used by the instance
+	LaunchTemplateId *string `pulumi:"launchTemplateId"`
+	// Launch template version used by the instance
+	LaunchTemplateVersion *string `pulumi:"launchTemplateVersion"`
 	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
 	LifecycleHook *bool `pulumi:"lifecycleHook"`
+	// Scaling configuration ID associated with the instance
+	ScalingConfigurationId *string `pulumi:"scalingConfigurationId"`
+	// Scaling policy ID associated with the instance
+	ScalingPolicyId *string `pulumi:"scalingPolicyId"`
+	// Current status of the instance in the scaling group
+	Status *string `pulumi:"status"`
+	// Availability zone of the instance
+	ZoneId *string `pulumi:"zoneId"`
 }
 
 // ScalingGroupInstanceInput is an input type that accepts ScalingGroupInstanceArgs and ScalingGroupInstanceOutput values.
@@ -601,12 +617,28 @@ type ScalingGroupInstanceInput interface {
 }
 
 type ScalingGroupInstanceArgs struct {
+	// Time when the instance joined the scaling group
+	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
+	// How the instance joined the scaling group (Attached / AutoCreated)
+	CreationType pulumi.StringPtrInput `pulumi:"creationType"`
 	// Whether to enable managed mode for the instance when AttachInstances is performed
 	Entrusted pulumi.BoolPtrInput `pulumi:"entrusted"`
 	// ECS instance ID, unique identifier of the subresource
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Launch template ID used by the instance
+	LaunchTemplateId pulumi.StringPtrInput `pulumi:"launchTemplateId"`
+	// Launch template version used by the instance
+	LaunchTemplateVersion pulumi.StringPtrInput `pulumi:"launchTemplateVersion"`
 	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
 	LifecycleHook pulumi.BoolPtrInput `pulumi:"lifecycleHook"`
+	// Scaling configuration ID associated with the instance
+	ScalingConfigurationId pulumi.StringPtrInput `pulumi:"scalingConfigurationId"`
+	// Scaling policy ID associated with the instance
+	ScalingPolicyId pulumi.StringPtrInput `pulumi:"scalingPolicyId"`
+	// Current status of the instance in the scaling group
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Availability zone of the instance
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
 func (ScalingGroupInstanceArgs) ElementType() reflect.Type {
@@ -660,6 +692,16 @@ func (o ScalingGroupInstanceOutput) ToScalingGroupInstanceOutputWithContext(ctx 
 	return o
 }
 
+// Time when the instance joined the scaling group
+func (o ScalingGroupInstanceOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// How the instance joined the scaling group (Attached / AutoCreated)
+func (o ScalingGroupInstanceOutput) CreationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.CreationType }).(pulumi.StringPtrOutput)
+}
+
 // Whether to enable managed mode for the instance when AttachInstances is performed
 func (o ScalingGroupInstanceOutput) Entrusted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstance) *bool { return v.Entrusted }).(pulumi.BoolPtrOutput)
@@ -670,9 +712,39 @@ func (o ScalingGroupInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
+// Launch template ID used by the instance
+func (o ScalingGroupInstanceOutput) LaunchTemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.LaunchTemplateId }).(pulumi.StringPtrOutput)
+}
+
+// Launch template version used by the instance
+func (o ScalingGroupInstanceOutput) LaunchTemplateVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.LaunchTemplateVersion }).(pulumi.StringPtrOutput)
+}
+
 // Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
 func (o ScalingGroupInstanceOutput) LifecycleHook() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstance) *bool { return v.LifecycleHook }).(pulumi.BoolPtrOutput)
+}
+
+// Scaling configuration ID associated with the instance
+func (o ScalingGroupInstanceOutput) ScalingConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.ScalingConfigurationId }).(pulumi.StringPtrOutput)
+}
+
+// Scaling policy ID associated with the instance
+func (o ScalingGroupInstanceOutput) ScalingPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.ScalingPolicyId }).(pulumi.StringPtrOutput)
+}
+
+// Current status of the instance in the scaling group
+func (o ScalingGroupInstanceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Availability zone of the instance
+func (o ScalingGroupInstanceOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 type ScalingGroupInstanceArrayOutput struct{ *pulumi.OutputState }

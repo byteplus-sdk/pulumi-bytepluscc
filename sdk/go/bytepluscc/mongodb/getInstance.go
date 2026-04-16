@@ -118,7 +118,7 @@ type LookupInstanceResult struct {
 	UpdatedTime string `pulumi:"updatedTime"`
 	// Private network ID.
 	VpcId string `pulumi:"vpcId"`
-	// Availability zone ID where the instance is located.
+	// The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -376,7 +376,7 @@ func (o LookupInstanceResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// Availability zone ID where the instance is located.
+// The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
 func (o LookupInstanceResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

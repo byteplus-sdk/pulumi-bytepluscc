@@ -18,10 +18,35 @@ public final class InstanceNode {
      */
     private @Nullable Integer failoverPriority;
     /**
+     * @return Memory size, in GiB.
+     * 
+     */
+    private @Nullable Integer memory;
+    /**
+     * @return Node ID
+     * 
+     */
+    private @Nullable String nodeId;
+    /**
+     * @return Node specification.
+     * 
+     */
+    private @Nullable String nodeSpec;
+    /**
      * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     private @Nullable String nodeType;
+    /**
+     * @return CPU size. For example, a value of 1 indicates a CPU size of 1U.
+     * 
+     */
+    private @Nullable Integer vCpu;
+    /**
+     * @return Availability zone ID
+     * 
+     */
+    private @Nullable String zoneId;
 
     private InstanceNode() {}
     /**
@@ -32,11 +57,46 @@ public final class InstanceNode {
         return Optional.ofNullable(this.failoverPriority);
     }
     /**
+     * @return Memory size, in GiB.
+     * 
+     */
+    public Optional<Integer> memory() {
+        return Optional.ofNullable(this.memory);
+    }
+    /**
+     * @return Node ID
+     * 
+     */
+    public Optional<String> nodeId() {
+        return Optional.ofNullable(this.nodeId);
+    }
+    /**
+     * @return Node specification.
+     * 
+     */
+    public Optional<String> nodeSpec() {
+        return Optional.ofNullable(this.nodeSpec);
+    }
+    /**
      * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     public Optional<String> nodeType() {
         return Optional.ofNullable(this.nodeType);
+    }
+    /**
+     * @return CPU size. For example, a value of 1 indicates a CPU size of 1U.
+     * 
+     */
+    public Optional<Integer> vCpu() {
+        return Optional.ofNullable(this.vCpu);
+    }
+    /**
+     * @return Availability zone ID
+     * 
+     */
+    public Optional<String> zoneId() {
+        return Optional.ofNullable(this.zoneId);
     }
 
     public static Builder builder() {
@@ -49,12 +109,22 @@ public final class InstanceNode {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer failoverPriority;
+        private @Nullable Integer memory;
+        private @Nullable String nodeId;
+        private @Nullable String nodeSpec;
         private @Nullable String nodeType;
+        private @Nullable Integer vCpu;
+        private @Nullable String zoneId;
         public Builder() {}
         public Builder(InstanceNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.failoverPriority = defaults.failoverPriority;
+    	      this.memory = defaults.memory;
+    	      this.nodeId = defaults.nodeId;
+    	      this.nodeSpec = defaults.nodeSpec;
     	      this.nodeType = defaults.nodeType;
+    	      this.vCpu = defaults.vCpu;
+    	      this.zoneId = defaults.zoneId;
         }
 
         @CustomType.Setter
@@ -64,15 +134,50 @@ public final class InstanceNode {
             return this;
         }
         @CustomType.Setter
+        public Builder memory(@Nullable Integer memory) {
+
+            this.memory = memory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nodeId(@Nullable String nodeId) {
+
+            this.nodeId = nodeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nodeSpec(@Nullable String nodeSpec) {
+
+            this.nodeSpec = nodeSpec;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodeType(@Nullable String nodeType) {
 
             this.nodeType = nodeType;
             return this;
         }
+        @CustomType.Setter
+        public Builder vCpu(@Nullable Integer vCpu) {
+
+            this.vCpu = vCpu;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder zoneId(@Nullable String zoneId) {
+
+            this.zoneId = zoneId;
+            return this;
+        }
         public InstanceNode build() {
             final var _resultValue = new InstanceNode();
             _resultValue.failoverPriority = failoverPriority;
+            _resultValue.memory = memory;
+            _resultValue.nodeId = nodeId;
+            _resultValue.nodeSpec = nodeSpec;
             _resultValue.nodeType = nodeType;
+            _resultValue.vCpu = vCpu;
+            _resultValue.zoneId = zoneId;
             return _resultValue;
         }
     }

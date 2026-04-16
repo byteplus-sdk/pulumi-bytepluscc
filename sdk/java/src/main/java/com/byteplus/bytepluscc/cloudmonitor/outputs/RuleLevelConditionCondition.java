@@ -17,6 +17,11 @@ public final class RuleLevelConditionCondition {
      */
     private @Nullable String comparisonOperator;
     /**
+     * @return Metric display name.
+     * 
+     */
+    private @Nullable String displayName;
+    /**
      * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
      * 
      */
@@ -49,6 +54,13 @@ public final class RuleLevelConditionCondition {
      */
     public Optional<String> comparisonOperator() {
         return Optional.ofNullable(this.comparisonOperator);
+    }
+    /**
+     * @return Metric display name.
+     * 
+     */
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -96,6 +108,7 @@ public final class RuleLevelConditionCondition {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String comparisonOperator;
+        private @Nullable String displayName;
         private @Nullable String metricName;
         private @Nullable String metricUnit;
         private @Nullable String period;
@@ -105,6 +118,7 @@ public final class RuleLevelConditionCondition {
         public Builder(RuleLevelConditionCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.comparisonOperator = defaults.comparisonOperator;
+    	      this.displayName = defaults.displayName;
     	      this.metricName = defaults.metricName;
     	      this.metricUnit = defaults.metricUnit;
     	      this.period = defaults.period;
@@ -116,6 +130,12 @@ public final class RuleLevelConditionCondition {
         public Builder comparisonOperator(@Nullable String comparisonOperator) {
 
             this.comparisonOperator = comparisonOperator;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(@Nullable String displayName) {
+
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -151,6 +171,7 @@ public final class RuleLevelConditionCondition {
         public RuleLevelConditionCondition build() {
             final var _resultValue = new RuleLevelConditionCondition();
             _resultValue.comparisonOperator = comparisonOperator;
+            _resultValue.displayName = displayName;
             _resultValue.metricName = metricName;
             _resultValue.metricUnit = metricUnit;
             _resultValue.period = period;

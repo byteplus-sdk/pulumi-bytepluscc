@@ -1385,6 +1385,14 @@ export namespace autoscaling {
 
     export interface ScalingGroupInstance {
         /**
+         * Time when the instance joined the scaling group
+         */
+        createdTime?: pulumi.Input<string>;
+        /**
+         * How the instance joined the scaling group (Attached / AutoCreated)
+         */
+        creationType?: pulumi.Input<string>;
+        /**
          * Whether to enable managed mode for the instance when AttachInstances is performed
          */
         entrusted?: pulumi.Input<boolean>;
@@ -1393,9 +1401,33 @@ export namespace autoscaling {
          */
         instanceId?: pulumi.Input<string>;
         /**
+         * Launch template ID used by the instance
+         */
+        launchTemplateId?: pulumi.Input<string>;
+        /**
+         * Launch template version used by the instance
+         */
+        launchTemplateVersion?: pulumi.Input<string>;
+        /**
          * Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
          */
         lifecycleHook?: pulumi.Input<boolean>;
+        /**
+         * Scaling configuration ID associated with the instance
+         */
+        scalingConfigurationId?: pulumi.Input<string>;
+        /**
+         * Scaling policy ID associated with the instance
+         */
+        scalingPolicyId?: pulumi.Input<string>;
+        /**
+         * Current status of the instance in the scaling group
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Availability zone of the instance
+         */
+        zoneId?: pulumi.Input<string>;
     }
 
     export interface ScalingGroupInstanceRemovePolicy {
@@ -4013,6 +4045,17 @@ export namespace cdn {
 }
 
 export namespace cen {
+    export interface BandwidthPackageTag {
+        /**
+         * Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface CenInstance {
         /**
          * Network instance ID
@@ -4172,6 +4215,29 @@ export namespace clb {
          * Network interface ID occupied by the load balancer instance
          */
         eniId?: pulumi.Input<string>;
+    }
+
+    export interface ClbIpv6AddressBandwidth {
+        /**
+         * Peak bandwidth of IPv6 public bandwidth, in Mbps
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * Shared bandwidth package ID associated with IPv6 public bandwidth
+         */
+        bandwidthPackageId?: pulumi.Input<string>;
+        /**
+         * Billing type for IPv6 public bandwidth
+         */
+        billingType?: pulumi.Input<number>;
+        /**
+         * Line type of IPv6 public bandwidth
+         */
+        isp?: pulumi.Input<string>;
+        /**
+         * Network type of the load balancer instance's IPv6 address
+         */
+        networkType?: pulumi.Input<string>;
     }
 
     export interface ClbListener {
@@ -4725,6 +4791,10 @@ export namespace cloudmonitor {
          * Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
          */
         comparisonOperator?: pulumi.Input<string>;
+        /**
+         * Metric display name.
+         */
+        displayName?: pulumi.Input<string>;
         /**
          * Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
          */
@@ -5280,6 +5350,18 @@ export namespace ecs {
          */
         ipv6AddressCount?: pulumi.Input<number>;
         /**
+         * IPv6 address of the instance.
+         */
+        ipv6Addresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Instance MAC address.
+         */
+        macAddress?: pulumi.Input<string>;
+        /**
+         * The network interface ID of the instance.
+         */
+        networkInterfaceId?: pulumi.Input<string>;
+        /**
          * Instance primary IP address
          */
         primaryIpAddress?: pulumi.Input<string>;
@@ -5295,6 +5377,10 @@ export namespace ecs {
          * Instance subnet ID.
          */
         subnetId?: pulumi.Input<string>;
+        /**
+         * VPC ID of the instance.
+         */
+        vpcId?: pulumi.Input<string>;
     }
 
     export interface InstanceSystemVolume {
@@ -7802,6 +7888,35 @@ export namespace privatelink {
         value?: pulumi.Input<string>;
     }
 
+    export interface VpcEndpointTag {
+        /**
+         * Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface VpcEndpointZone {
+        /**
+         * The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+         */
+        privateIpAddress?: pulumi.Input<string>;
+        /**
+         * The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+         */
+        privateIpv6Address?: pulumi.Input<string>;
+        /**
+         * ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+         */
+        zoneId?: pulumi.Input<string>;
+    }
 }
 
 export namespace privatezone {
@@ -8023,6 +8138,26 @@ export namespace rdsmssql {
          * Instance ID
          */
         instanceId?: pulumi.Input<string>;
+        /**
+         * Instance name
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * Instance status
+         */
+        instanceStatus?: pulumi.Input<string>;
+        /**
+         * Sync latest allowlist IP
+         */
+        isLatest?: pulumi.Input<boolean>;
+        /**
+         * Project name of the instance
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * VPC ID of the instance
+         */
+        vpc?: pulumi.Input<string>;
     }
 
     export interface InstanceChargeInfo {
@@ -8717,6 +8852,241 @@ export namespace rdspostgresql {
         weight?: pulumi.Input<number>;
     }
 
+    export interface InstanceChargeDetail {
+        /**
+         * Enable auto-renewal for prepaid scenarios
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * Billing expiration time for yearly/monthly instances
+         */
+        chargeEndTime?: pulumi.Input<string>;
+        /**
+         * Instance billing start time
+         */
+        chargeStartTime?: pulumi.Input<string>;
+        /**
+         * Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+         */
+        chargeStatus?: pulumi.Input<string>;
+        /**
+         * Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+         */
+        chargeType: pulumi.Input<string>;
+        /**
+         * Estimated release time after instance suspension due to overdue payment
+         */
+        overdueReclaimTime?: pulumi.Input<string>;
+        /**
+         * Instance shutdown time due to overdue payment
+         */
+        overdueTime?: pulumi.Input<string>;
+        /**
+         * Purchase duration for prepaid scenarios
+         */
+        period?: pulumi.Input<number>;
+        /**
+         * Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+         */
+        periodUnit?: pulumi.Input<string>;
+        /**
+         * Rollback time for temporary upgrade
+         */
+        tempModifyEndTime?: pulumi.Input<string>;
+        /**
+         * Start time of temporary scaling
+         */
+        tempModifyStartTime?: pulumi.Input<string>;
+    }
+
+    export interface InstanceEndpoint {
+        addresses?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceEndpointAddress>[]>;
+        /**
+         * When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+         */
+        autoAddNewNodes?: pulumi.Input<string>;
+        /**
+         * Address description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+         */
+        enableReadOnly?: pulumi.Input<string>;
+        /**
+         * Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+         */
+        enableReadWriteSplitting?: pulumi.Input<string>;
+        /**
+         * Instance connection terminal ID
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * Instance connection terminal name
+         */
+        endpointName?: pulumi.Input<string>;
+        /**
+         * Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+         */
+        endpointType?: pulumi.Input<string>;
+        /**
+         * Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+         */
+        readOnlyNodeDistributionType?: pulumi.Input<string>;
+        /**
+         * Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+         * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+         */
+        readOnlyNodeMaxDelayTime?: pulumi.Input<number>;
+        readOnlyNodeWeights?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceEndpointReadOnlyNodeWeight>[]>;
+        /**
+         * Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+         */
+        readWriteMode?: pulumi.Input<string>;
+        /**
+         * After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+         */
+        readWriteProxyConnection?: pulumi.Input<number>;
+        /**
+         * Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+         */
+        writeNodeHaltWriting?: pulumi.Input<boolean>;
+    }
+
+    export interface InstanceEndpointAddress {
+        /**
+         * Private network address accessible across regions
+         */
+        crossRegionDomain?: pulumi.Input<string>;
+        /**
+         * Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * Connection domain name
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+         */
+        domainVisibilitySetting?: pulumi.Input<string>;
+        /**
+         * EIP ID, valid only for Public addresses
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * IP address
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * Port.
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * Subnet ID
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceEndpointReadOnlyNodeWeight {
+        /**
+         * Read-only nodes require NodeId
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * Node type
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * Node read weight, increases by 100, maximum value is 10000
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface InstanceMaintenanceWindow {
+        /**
+         * Granularity of the maintenance cycle. Value: Week (week)
+         */
+        dayKind?: pulumi.Input<string>;
+        dayOfWeekMaintenanceTimes?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceMaintenanceWindowDayOfWeekMaintenanceTime>[]>;
+    }
+
+    export interface InstanceMaintenanceWindowDayOfWeekMaintenanceTime {
+        /**
+         * Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+         */
+        maintenanceWindowStartTime?: pulumi.Input<string>;
+        /**
+         * Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+         */
+        period?: pulumi.Input<number>;
+    }
+
+    export interface InstanceNodeInfo {
+        /**
+         * Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+         */
+        createTime?: pulumi.Input<string>;
+        /**
+         * Instance ID
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Memory size, unit: GB
+         */
+        memory?: pulumi.Input<number>;
+        /**
+         * Node ID
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * Node specification
+         */
+        nodeSpec: pulumi.Input<string>;
+        /**
+         * Node status
+         */
+        nodeStatus?: pulumi.Input<string>;
+        /**
+         * Node type
+         */
+        nodeType: pulumi.Input<string>;
+        /**
+         * Region ID
+         */
+        regionId?: pulumi.Input<string>;
+        /**
+         * Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+         */
+        updateTime?: pulumi.Input<string>;
+        /**
+         * CPU size. For example: 1 means 1U
+         */
+        vcpu?: pulumi.Input<number>;
+        /**
+         * Availability zone of the node
+         */
+        zoneId: pulumi.Input<string>;
+    }
+
+    export interface InstanceTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace redis {
@@ -8870,6 +9240,234 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface ImportTaskImportSourceInfo {
+        /**
+         * Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+         */
+        kafkaSourceInfo?: pulumi.Input<inputs.tls.ImportTaskImportSourceInfoKafkaSourceInfo>;
+        /**
+         * TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+         */
+        tosSourceInfo?: pulumi.Input<inputs.tls.ImportTaskImportSourceInfoTosSourceInfo>;
+    }
+
+    export interface ImportTaskImportSourceInfoKafkaSourceInfo {
+        /**
+         * Data encoding format. Available options: UTF-8, GBK.
+         */
+        encode?: pulumi.Input<string>;
+        /**
+         * Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+         */
+        group?: pulumi.Input<string>;
+        /**
+         * The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+         */
+        initialOffset?: pulumi.Input<number>;
+        /**
+         * If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+         */
+        isNeedAuth?: pulumi.Input<boolean>;
+        /**
+         * Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+         */
+        mechanism?: pulumi.Input<string>;
+        /**
+         * Kafka SASL user password for authentication.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+         */
+        timeSourceDefault?: pulumi.Input<number>;
+        /**
+         * Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+         */
+        topic?: pulumi.Input<string>;
+        /**
+         * Kafka SASL username for authentication.
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface ImportTaskImportSourceInfoTosSourceInfo {
+        /**
+         * TOS bucket name
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+         */
+        compressType?: pulumi.Input<string>;
+        /**
+         * Path of the file to be imported in the TOS bucket.
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * Region where the TOS bucket is located. Cross-region data import is supported
+         */
+        region?: pulumi.Input<string>;
+    }
+
+    export interface ImportTaskTargetInfo {
+        /**
+         * Log extraction rule.
+         */
+        extractRule?: pulumi.Input<inputs.tls.ImportTaskTargetInfoExtractRule>;
+        /**
+         * Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+         */
+        logSample?: pulumi.Input<string>;
+        /**
+         * Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+         */
+        logType: pulumi.Input<string>;
+        /**
+         * Region.
+         */
+        region: pulumi.Input<string>;
+    }
+
+    export interface ImportTaskTargetInfoExtractRule {
+        /**
+         * Basic content of log extraction rules.
+         */
+        extractRule?: pulumi.Input<inputs.tls.ImportTaskTargetInfoExtractRuleExtractRule>;
+        /**
+         * Number of skipped rows. Only valid when the log type is delimiterLog and the import type is tos.
+         */
+        skipLineCount?: pulumi.Input<number>;
+        /**
+         * Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+         */
+        timeExtractRegex?: pulumi.Input<string>;
+        /**
+         * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+         */
+        timeZone?: pulumi.Input<string>;
+    }
+
+    export interface ImportTaskTargetInfoExtractRuleExtractRule {
+        /**
+         * Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+         */
+        beginRegex?: pulumi.Input<string>;
+        /**
+         * Delimiter. Only valid when LogType is delimiter_log.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * Enable nanoseconds.
+         */
+        enableNanosecond?: pulumi.Input<boolean>;
+        filterKeyRegexes?: pulumi.Input<pulumi.Input<inputs.tls.ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex>[]>;
+        /**
+         * List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Log regular expression
+         */
+        logRegex?: pulumi.Input<string>;
+        /**
+         * Log template.
+         */
+        logTemplate?: pulumi.Input<inputs.tls.ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate>;
+        /**
+         * Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+         */
+        quote?: pulumi.Input<string>;
+        /**
+         * Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+         */
+        timeKey?: pulumi.Input<string>;
+        /**
+         * Time sample. Used to verify whether the entered time parsing format is correct
+         */
+        timeSample?: pulumi.Input<string>;
+        /**
+         * When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+         */
+        unMatchLogKey?: pulumi.Input<string>;
+        /**
+         * Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+         */
+        unMatchUpLoadSwitch?: pulumi.Input<boolean>;
+    }
+
+    export interface ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Regular expression.
+         */
+        regex?: pulumi.Input<string>;
+    }
+
+    export interface ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate {
+        /**
+         * Format.
+         */
+        format?: pulumi.Input<string>;
+        /**
+         * Type
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ImportTaskTaskStatistics {
+        /**
+         * Total resource bytes enumerated
+         */
+        bytesTotal?: pulumi.Input<number>;
+        /**
+         * Bytes transferred.
+         */
+        bytesTransferred?: pulumi.Input<number>;
+        /**
+         * Number of resources failed to import.
+         */
+        failed?: pulumi.Input<number>;
+        /**
+         * Number of resources not found.
+         */
+        notExist?: pulumi.Input<number>;
+        /**
+         * Number of resources skipped during import
+         */
+        skipped?: pulumi.Input<number>;
+        /**
+         * Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+         */
+        taskStatus?: pulumi.Input<string>;
+        /**
+         * Total number of resources enumerated.
+         */
+        total?: pulumi.Input<number>;
+        /**
+         * Number of records transferred.
+         */
+        transferred?: pulumi.Input<number>;
+    }
+
     export interface IndexFullText {
         /**
          * Case sensitivity. true: Case sensitive. false: Not case sensitive.
@@ -8948,6 +9546,18 @@ export namespace tls {
          * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
          */
         autoIndexFlag?: pulumi.Input<boolean>;
+        /**
+         * Whether to distinguish case. Default is false.
+         */
+        caseSensitive?: pulumi.Input<boolean>;
+        /**
+         * Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+         */
+        includeChinese?: pulumi.Input<boolean>;
         /**
          * Create indexes for all fields with text values in the JSON field.
          */
@@ -9029,6 +9639,18 @@ export namespace tls {
          * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
          */
         autoIndexFlag?: pulumi.Input<boolean>;
+        /**
+         * Whether to distinguish case. Default is false.
+         */
+        caseSensitive?: pulumi.Input<boolean>;
+        /**
+         * Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+         */
+        includeChinese?: pulumi.Input<boolean>;
         /**
          * Create indexes for all fields with text values in the JSON field.
          */
@@ -9239,6 +9861,14 @@ export namespace vedbm {
          * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
+        /**
+         * Instance name.
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * Instance VPC ID.
+         */
+        vpc?: pulumi.Input<string>;
     }
 
     export interface DatabaseDatabasesPrivilege {
@@ -9254,6 +9884,60 @@ export namespace vedbm {
          * Specific SQL operation permissions, separated by English commas; required for Custom type
          */
         accountPrivilegeDetails?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface EndpointPrivateAddresses {
+        /**
+         * Resolution method, fixed as false
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * Instance intranet access domain name
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * Public network ID
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * IP address
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * Network type
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * Subnet ID
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface EndpointPublicAddresses {
+        /**
+         * Resolution method, fixed as false
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * Instance intranet access domain name
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * Public network ID
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * IP address
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * Network type
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * Subnet ID
+         */
+        subnetId?: pulumi.Input<string>;
     }
 
     export interface InstanceChargeDetail {
@@ -9403,9 +10087,29 @@ export namespace vedbm {
          */
         failoverPriority?: pulumi.Input<number>;
         /**
+         * Memory size, in GiB.
+         */
+        memory?: pulumi.Input<number>;
+        /**
+         * Node ID
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * Node specification.
+         */
+        nodeSpec?: pulumi.Input<string>;
+        /**
          * Node type. Values: Primary: primary node. ReadOnly: read-only node.
          */
         nodeType?: pulumi.Input<string>;
+        /**
+         * CPU size. For example, a value of 1 indicates a CPU size of 1U.
+         */
+        vCpu?: pulumi.Input<number>;
+        /**
+         * Availability zone ID
+         */
+        zoneId?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {
@@ -12044,6 +12748,10 @@ export namespace vpn {
 
     export interface VpnConnectionTunnelOption {
         /**
+         * IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+         */
+        connectStatus?: pulumi.Input<string>;
+        /**
          * ID of the customer gateway associated with the IPsec connection.
          */
         customerGatewayId?: pulumi.Input<string>;
@@ -12137,9 +12845,29 @@ export namespace vpn {
 
     export interface VpnConnectionTunnelOptionTunnelBgpInfo {
         /**
+         * Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+         */
+        enableBgp?: pulumi.Input<boolean>;
+        /**
+         * The ASN of the VPN gateway.
+         */
+        localAsn?: pulumi.Input<number>;
+        /**
          * BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
          */
         localBgpIp?: pulumi.Input<string>;
+        /**
+         * ASN of the customer gateway.
+         */
+        peerAsn?: pulumi.Input<number>;
+        /**
+         * BGP peer IP, that is, the BGP address on the customer gateway side.
+         */
+        peerBgpIp?: pulumi.Input<string>;
+        /**
+         * Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+         */
+        sessionStatus?: pulumi.Input<string>;
         /**
          * The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
          */

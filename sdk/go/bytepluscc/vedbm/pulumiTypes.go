@@ -16,6 +16,10 @@ var _ = internal.GetEnvOrDefault
 type AllowListAssociatedInstance struct {
 	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
+	// Instance name.
+	InstanceName *string `pulumi:"instanceName"`
+	// Instance VPC ID.
+	Vpc *string `pulumi:"vpc"`
 }
 
 // AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
@@ -32,6 +36,10 @@ type AllowListAssociatedInstanceInput interface {
 type AllowListAssociatedInstanceArgs struct {
 	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Instance name.
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// Instance VPC ID.
+	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
 func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
@@ -88,6 +96,16 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 // Instance ID.
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Instance name.
+func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// Instance VPC ID.
+func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
 
 type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -223,6 +241,470 @@ func (o DatabaseDatabasesPrivilegeArrayOutput) Index(i pulumi.IntInput) Database
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseDatabasesPrivilege {
 		return vs[0].([]DatabaseDatabasesPrivilege)[vs[1].(int)]
 	}).(DatabaseDatabasesPrivilegeOutput)
+}
+
+type EndpointPrivateAddresses struct {
+	// Resolution method, fixed as false
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain *string `pulumi:"domain"`
+	// Public network ID
+	EipId *string `pulumi:"eipId"`
+	// IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network type
+	NetworkType *string `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// EndpointPrivateAddressesInput is an input type that accepts EndpointPrivateAddressesArgs and EndpointPrivateAddressesOutput values.
+// You can construct a concrete instance of `EndpointPrivateAddressesInput` via:
+//
+//	EndpointPrivateAddressesArgs{...}
+type EndpointPrivateAddressesInput interface {
+	pulumi.Input
+
+	ToEndpointPrivateAddressesOutput() EndpointPrivateAddressesOutput
+	ToEndpointPrivateAddressesOutputWithContext(context.Context) EndpointPrivateAddressesOutput
+}
+
+type EndpointPrivateAddressesArgs struct {
+	// Resolution method, fixed as false
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// Public network ID
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network type
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (EndpointPrivateAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (i EndpointPrivateAddressesArgs) ToEndpointPrivateAddressesOutput() EndpointPrivateAddressesOutput {
+	return i.ToEndpointPrivateAddressesOutputWithContext(context.Background())
+}
+
+func (i EndpointPrivateAddressesArgs) ToEndpointPrivateAddressesOutputWithContext(ctx context.Context) EndpointPrivateAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointPrivateAddressesOutput)
+}
+
+func (i EndpointPrivateAddressesArgs) ToEndpointPrivateAddressesPtrOutput() EndpointPrivateAddressesPtrOutput {
+	return i.ToEndpointPrivateAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i EndpointPrivateAddressesArgs) ToEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) EndpointPrivateAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointPrivateAddressesOutput).ToEndpointPrivateAddressesPtrOutputWithContext(ctx)
+}
+
+// EndpointPrivateAddressesPtrInput is an input type that accepts EndpointPrivateAddressesArgs, EndpointPrivateAddressesPtr and EndpointPrivateAddressesPtrOutput values.
+// You can construct a concrete instance of `EndpointPrivateAddressesPtrInput` via:
+//
+//	        EndpointPrivateAddressesArgs{...}
+//
+//	or:
+//
+//	        nil
+type EndpointPrivateAddressesPtrInput interface {
+	pulumi.Input
+
+	ToEndpointPrivateAddressesPtrOutput() EndpointPrivateAddressesPtrOutput
+	ToEndpointPrivateAddressesPtrOutputWithContext(context.Context) EndpointPrivateAddressesPtrOutput
+}
+
+type endpointPrivateAddressesPtrType EndpointPrivateAddressesArgs
+
+func EndpointPrivateAddressesPtr(v *EndpointPrivateAddressesArgs) EndpointPrivateAddressesPtrInput {
+	return (*endpointPrivateAddressesPtrType)(v)
+}
+
+func (*endpointPrivateAddressesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**EndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (i *endpointPrivateAddressesPtrType) ToEndpointPrivateAddressesPtrOutput() EndpointPrivateAddressesPtrOutput {
+	return i.ToEndpointPrivateAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i *endpointPrivateAddressesPtrType) ToEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) EndpointPrivateAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointPrivateAddressesPtrOutput)
+}
+
+type EndpointPrivateAddressesOutput struct{ *pulumi.OutputState }
+
+func (EndpointPrivateAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (o EndpointPrivateAddressesOutput) ToEndpointPrivateAddressesOutput() EndpointPrivateAddressesOutput {
+	return o
+}
+
+func (o EndpointPrivateAddressesOutput) ToEndpointPrivateAddressesOutputWithContext(ctx context.Context) EndpointPrivateAddressesOutput {
+	return o
+}
+
+func (o EndpointPrivateAddressesOutput) ToEndpointPrivateAddressesPtrOutput() EndpointPrivateAddressesPtrOutput {
+	return o.ToEndpointPrivateAddressesPtrOutputWithContext(context.Background())
+}
+
+func (o EndpointPrivateAddressesOutput) ToEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) EndpointPrivateAddressesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v EndpointPrivateAddresses) *EndpointPrivateAddresses {
+		return &v
+	}).(EndpointPrivateAddressesPtrOutput)
+}
+
+// Resolution method, fixed as false
+func (o EndpointPrivateAddressesOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v EndpointPrivateAddresses) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Instance intranet access domain name
+func (o EndpointPrivateAddressesOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPrivateAddresses) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// Public network ID
+func (o EndpointPrivateAddressesOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPrivateAddresses) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o EndpointPrivateAddressesOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPrivateAddresses) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network type
+func (o EndpointPrivateAddressesOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPrivateAddresses) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o EndpointPrivateAddressesOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPrivateAddresses) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type EndpointPrivateAddressesPtrOutput struct{ *pulumi.OutputState }
+
+func (EndpointPrivateAddressesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**EndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (o EndpointPrivateAddressesPtrOutput) ToEndpointPrivateAddressesPtrOutput() EndpointPrivateAddressesPtrOutput {
+	return o
+}
+
+func (o EndpointPrivateAddressesPtrOutput) ToEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) EndpointPrivateAddressesPtrOutput {
+	return o
+}
+
+func (o EndpointPrivateAddressesPtrOutput) Elem() EndpointPrivateAddressesOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) EndpointPrivateAddresses {
+		if v != nil {
+			return *v
+		}
+		var ret EndpointPrivateAddresses
+		return ret
+	}).(EndpointPrivateAddressesOutput)
+}
+
+// Resolution method, fixed as false
+func (o EndpointPrivateAddressesPtrOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DnsVisibility
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Instance intranet access domain name
+func (o EndpointPrivateAddressesPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Public network ID
+func (o EndpointPrivateAddressesPtrOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EipId
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o EndpointPrivateAddressesPtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network type
+func (o EndpointPrivateAddressesPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o EndpointPrivateAddressesPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type EndpointPublicAddresses struct {
+	// Resolution method, fixed as false
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain *string `pulumi:"domain"`
+	// Public network ID
+	EipId *string `pulumi:"eipId"`
+	// IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network type
+	NetworkType *string `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// EndpointPublicAddressesInput is an input type that accepts EndpointPublicAddressesArgs and EndpointPublicAddressesOutput values.
+// You can construct a concrete instance of `EndpointPublicAddressesInput` via:
+//
+//	EndpointPublicAddressesArgs{...}
+type EndpointPublicAddressesInput interface {
+	pulumi.Input
+
+	ToEndpointPublicAddressesOutput() EndpointPublicAddressesOutput
+	ToEndpointPublicAddressesOutputWithContext(context.Context) EndpointPublicAddressesOutput
+}
+
+type EndpointPublicAddressesArgs struct {
+	// Resolution method, fixed as false
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// Public network ID
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network type
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (EndpointPublicAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointPublicAddresses)(nil)).Elem()
+}
+
+func (i EndpointPublicAddressesArgs) ToEndpointPublicAddressesOutput() EndpointPublicAddressesOutput {
+	return i.ToEndpointPublicAddressesOutputWithContext(context.Background())
+}
+
+func (i EndpointPublicAddressesArgs) ToEndpointPublicAddressesOutputWithContext(ctx context.Context) EndpointPublicAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointPublicAddressesOutput)
+}
+
+func (i EndpointPublicAddressesArgs) ToEndpointPublicAddressesPtrOutput() EndpointPublicAddressesPtrOutput {
+	return i.ToEndpointPublicAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i EndpointPublicAddressesArgs) ToEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) EndpointPublicAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointPublicAddressesOutput).ToEndpointPublicAddressesPtrOutputWithContext(ctx)
+}
+
+// EndpointPublicAddressesPtrInput is an input type that accepts EndpointPublicAddressesArgs, EndpointPublicAddressesPtr and EndpointPublicAddressesPtrOutput values.
+// You can construct a concrete instance of `EndpointPublicAddressesPtrInput` via:
+//
+//	        EndpointPublicAddressesArgs{...}
+//
+//	or:
+//
+//	        nil
+type EndpointPublicAddressesPtrInput interface {
+	pulumi.Input
+
+	ToEndpointPublicAddressesPtrOutput() EndpointPublicAddressesPtrOutput
+	ToEndpointPublicAddressesPtrOutputWithContext(context.Context) EndpointPublicAddressesPtrOutput
+}
+
+type endpointPublicAddressesPtrType EndpointPublicAddressesArgs
+
+func EndpointPublicAddressesPtr(v *EndpointPublicAddressesArgs) EndpointPublicAddressesPtrInput {
+	return (*endpointPublicAddressesPtrType)(v)
+}
+
+func (*endpointPublicAddressesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**EndpointPublicAddresses)(nil)).Elem()
+}
+
+func (i *endpointPublicAddressesPtrType) ToEndpointPublicAddressesPtrOutput() EndpointPublicAddressesPtrOutput {
+	return i.ToEndpointPublicAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i *endpointPublicAddressesPtrType) ToEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) EndpointPublicAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointPublicAddressesPtrOutput)
+}
+
+type EndpointPublicAddressesOutput struct{ *pulumi.OutputState }
+
+func (EndpointPublicAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointPublicAddresses)(nil)).Elem()
+}
+
+func (o EndpointPublicAddressesOutput) ToEndpointPublicAddressesOutput() EndpointPublicAddressesOutput {
+	return o
+}
+
+func (o EndpointPublicAddressesOutput) ToEndpointPublicAddressesOutputWithContext(ctx context.Context) EndpointPublicAddressesOutput {
+	return o
+}
+
+func (o EndpointPublicAddressesOutput) ToEndpointPublicAddressesPtrOutput() EndpointPublicAddressesPtrOutput {
+	return o.ToEndpointPublicAddressesPtrOutputWithContext(context.Background())
+}
+
+func (o EndpointPublicAddressesOutput) ToEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) EndpointPublicAddressesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v EndpointPublicAddresses) *EndpointPublicAddresses {
+		return &v
+	}).(EndpointPublicAddressesPtrOutput)
+}
+
+// Resolution method, fixed as false
+func (o EndpointPublicAddressesOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v EndpointPublicAddresses) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Instance intranet access domain name
+func (o EndpointPublicAddressesOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPublicAddresses) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// Public network ID
+func (o EndpointPublicAddressesOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPublicAddresses) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o EndpointPublicAddressesOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPublicAddresses) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network type
+func (o EndpointPublicAddressesOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPublicAddresses) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o EndpointPublicAddressesOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointPublicAddresses) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type EndpointPublicAddressesPtrOutput struct{ *pulumi.OutputState }
+
+func (EndpointPublicAddressesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**EndpointPublicAddresses)(nil)).Elem()
+}
+
+func (o EndpointPublicAddressesPtrOutput) ToEndpointPublicAddressesPtrOutput() EndpointPublicAddressesPtrOutput {
+	return o
+}
+
+func (o EndpointPublicAddressesPtrOutput) ToEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) EndpointPublicAddressesPtrOutput {
+	return o
+}
+
+func (o EndpointPublicAddressesPtrOutput) Elem() EndpointPublicAddressesOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) EndpointPublicAddresses {
+		if v != nil {
+			return *v
+		}
+		var ret EndpointPublicAddresses
+		return ret
+	}).(EndpointPublicAddressesOutput)
+}
+
+// Resolution method, fixed as false
+func (o EndpointPublicAddressesPtrOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DnsVisibility
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Instance intranet access domain name
+func (o EndpointPublicAddressesPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Public network ID
+func (o EndpointPublicAddressesPtrOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EipId
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o EndpointPublicAddressesPtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network type
+func (o EndpointPublicAddressesPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o EndpointPublicAddressesPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type InstanceChargeDetail struct {
@@ -1064,8 +1546,18 @@ func (o InstanceMaintenanceWindowPtrOutput) MaintenanceTime() pulumi.StringPtrOu
 type InstanceNode struct {
 	// Node failover priority. Range: 0~15. Higher values indicate higher priority
 	FailoverPriority *int `pulumi:"failoverPriority"`
+	// Memory size, in GiB.
+	Memory *int `pulumi:"memory"`
+	// Node ID
+	NodeId *string `pulumi:"nodeId"`
+	// Node specification.
+	NodeSpec *string `pulumi:"nodeSpec"`
 	// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 	NodeType *string `pulumi:"nodeType"`
+	// CPU size. For example, a value of 1 indicates a CPU size of 1U.
+	VCpu *int `pulumi:"vCpu"`
+	// Availability zone ID
+	ZoneId *string `pulumi:"zoneId"`
 }
 
 // InstanceNodeInput is an input type that accepts InstanceNodeArgs and InstanceNodeOutput values.
@@ -1082,8 +1574,18 @@ type InstanceNodeInput interface {
 type InstanceNodeArgs struct {
 	// Node failover priority. Range: 0~15. Higher values indicate higher priority
 	FailoverPriority pulumi.IntPtrInput `pulumi:"failoverPriority"`
+	// Memory size, in GiB.
+	Memory pulumi.IntPtrInput `pulumi:"memory"`
+	// Node ID
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// Node specification.
+	NodeSpec pulumi.StringPtrInput `pulumi:"nodeSpec"`
 	// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// CPU size. For example, a value of 1 indicates a CPU size of 1U.
+	VCpu pulumi.IntPtrInput `pulumi:"vCpu"`
+	// Availability zone ID
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
 func (InstanceNodeArgs) ElementType() reflect.Type {
@@ -1142,9 +1644,34 @@ func (o InstanceNodeOutput) FailoverPriority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *int { return v.FailoverPriority }).(pulumi.IntPtrOutput)
 }
 
+// Memory size, in GiB.
+func (o InstanceNodeOutput) Memory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceNode) *int { return v.Memory }).(pulumi.IntPtrOutput)
+}
+
+// Node ID
+func (o InstanceNodeOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// Node specification.
+func (o InstanceNodeOutput) NodeSpec() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNode) *string { return v.NodeSpec }).(pulumi.StringPtrOutput)
+}
+
 // Node type. Values: Primary: primary node. ReadOnly: read-only node.
 func (o InstanceNodeOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// CPU size. For example, a value of 1 indicates a CPU size of 1U.
+func (o InstanceNodeOutput) VCpu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceNode) *int { return v.VCpu }).(pulumi.IntPtrOutput)
+}
+
+// Availability zone ID
+func (o InstanceNodeOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceNode) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 type InstanceNodeArrayOutput struct{ *pulumi.OutputState }
@@ -1501,6 +2028,200 @@ func (o GetDatabaseDatabasesPrivilegeArrayOutput) Index(i pulumi.IntInput) GetDa
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabasesPrivilege {
 		return vs[0].([]GetDatabaseDatabasesPrivilege)[vs[1].(int)]
 	}).(GetDatabaseDatabasesPrivilegeOutput)
+}
+
+type GetEndpointPrivateAddresses struct {
+	// Resolution method, fixed as false
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain string `pulumi:"domain"`
+	// Public network ID
+	EipId string `pulumi:"eipId"`
+	// IP address
+	IpAddress string `pulumi:"ipAddress"`
+	// Network type
+	NetworkType string `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetEndpointPrivateAddressesInput is an input type that accepts GetEndpointPrivateAddressesArgs and GetEndpointPrivateAddressesOutput values.
+// You can construct a concrete instance of `GetEndpointPrivateAddressesInput` via:
+//
+//	GetEndpointPrivateAddressesArgs{...}
+type GetEndpointPrivateAddressesInput interface {
+	pulumi.Input
+
+	ToGetEndpointPrivateAddressesOutput() GetEndpointPrivateAddressesOutput
+	ToGetEndpointPrivateAddressesOutputWithContext(context.Context) GetEndpointPrivateAddressesOutput
+}
+
+type GetEndpointPrivateAddressesArgs struct {
+	// Resolution method, fixed as false
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Public network ID
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetEndpointPrivateAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (i GetEndpointPrivateAddressesArgs) ToGetEndpointPrivateAddressesOutput() GetEndpointPrivateAddressesOutput {
+	return i.ToGetEndpointPrivateAddressesOutputWithContext(context.Background())
+}
+
+func (i GetEndpointPrivateAddressesArgs) ToGetEndpointPrivateAddressesOutputWithContext(ctx context.Context) GetEndpointPrivateAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointPrivateAddressesOutput)
+}
+
+type GetEndpointPrivateAddressesOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointPrivateAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (o GetEndpointPrivateAddressesOutput) ToGetEndpointPrivateAddressesOutput() GetEndpointPrivateAddressesOutput {
+	return o
+}
+
+func (o GetEndpointPrivateAddressesOutput) ToGetEndpointPrivateAddressesOutputWithContext(ctx context.Context) GetEndpointPrivateAddressesOutput {
+	return o
+}
+
+// Resolution method, fixed as false
+func (o GetEndpointPrivateAddressesOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetEndpointPrivateAddresses) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// Instance intranet access domain name
+func (o GetEndpointPrivateAddressesOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPrivateAddresses) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Public network ID
+func (o GetEndpointPrivateAddressesOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPrivateAddresses) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o GetEndpointPrivateAddressesOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPrivateAddresses) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Network type
+func (o GetEndpointPrivateAddressesOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPrivateAddresses) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Subnet ID
+func (o GetEndpointPrivateAddressesOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPrivateAddresses) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetEndpointPublicAddresses struct {
+	// Resolution method, fixed as false
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain string `pulumi:"domain"`
+	// Public network ID
+	EipId string `pulumi:"eipId"`
+	// IP address
+	IpAddress string `pulumi:"ipAddress"`
+	// Network type
+	NetworkType string `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetEndpointPublicAddressesInput is an input type that accepts GetEndpointPublicAddressesArgs and GetEndpointPublicAddressesOutput values.
+// You can construct a concrete instance of `GetEndpointPublicAddressesInput` via:
+//
+//	GetEndpointPublicAddressesArgs{...}
+type GetEndpointPublicAddressesInput interface {
+	pulumi.Input
+
+	ToGetEndpointPublicAddressesOutput() GetEndpointPublicAddressesOutput
+	ToGetEndpointPublicAddressesOutputWithContext(context.Context) GetEndpointPublicAddressesOutput
+}
+
+type GetEndpointPublicAddressesArgs struct {
+	// Resolution method, fixed as false
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// Instance intranet access domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Public network ID
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Network type
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Subnet ID
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetEndpointPublicAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (i GetEndpointPublicAddressesArgs) ToGetEndpointPublicAddressesOutput() GetEndpointPublicAddressesOutput {
+	return i.ToGetEndpointPublicAddressesOutputWithContext(context.Background())
+}
+
+func (i GetEndpointPublicAddressesArgs) ToGetEndpointPublicAddressesOutputWithContext(ctx context.Context) GetEndpointPublicAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointPublicAddressesOutput)
+}
+
+type GetEndpointPublicAddressesOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointPublicAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (o GetEndpointPublicAddressesOutput) ToGetEndpointPublicAddressesOutput() GetEndpointPublicAddressesOutput {
+	return o
+}
+
+func (o GetEndpointPublicAddressesOutput) ToGetEndpointPublicAddressesOutputWithContext(ctx context.Context) GetEndpointPublicAddressesOutput {
+	return o
+}
+
+// Resolution method, fixed as false
+func (o GetEndpointPublicAddressesOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetEndpointPublicAddresses) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// Instance intranet access domain name
+func (o GetEndpointPublicAddressesOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPublicAddresses) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Public network ID
+func (o GetEndpointPublicAddressesOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPublicAddresses) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o GetEndpointPublicAddressesOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPublicAddresses) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Network type
+func (o GetEndpointPublicAddressesOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPublicAddresses) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Subnet ID
+func (o GetEndpointPublicAddressesOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointPublicAddresses) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 type GetInstanceChargeDetail struct {
@@ -2324,6 +3045,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasesPrivilegeInput)(nil)).Elem(), DatabaseDatabasesPrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasesPrivilegeArrayInput)(nil)).Elem(), DatabaseDatabasesPrivilegeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointPrivateAddressesInput)(nil)).Elem(), EndpointPrivateAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointPrivateAddressesPtrInput)(nil)).Elem(), EndpointPrivateAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointPublicAddressesInput)(nil)).Elem(), EndpointPublicAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointPublicAddressesPtrInput)(nil)).Elem(), EndpointPublicAddressesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailInput)(nil)).Elem(), InstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailPtrInput)(nil)).Elem(), InstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointInput)(nil)).Elem(), InstanceEndpointArgs{})
@@ -2340,6 +3065,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasesPrivilegeInput)(nil)).Elem(), GetDatabaseDatabasesPrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasesPrivilegeArrayInput)(nil)).Elem(), GetDatabaseDatabasesPrivilegeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointPrivateAddressesInput)(nil)).Elem(), GetEndpointPrivateAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointPublicAddressesInput)(nil)).Elem(), GetEndpointPublicAddressesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeDetailInput)(nil)).Elem(), GetInstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointInput)(nil)).Elem(), GetInstanceEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointArrayInput)(nil)).Elem(), GetInstanceEndpointArray{})
@@ -2354,6 +3081,10 @@ func init() {
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseDatabasesPrivilegeOutput{})
 	pulumi.RegisterOutputType(DatabaseDatabasesPrivilegeArrayOutput{})
+	pulumi.RegisterOutputType(EndpointPrivateAddressesOutput{})
+	pulumi.RegisterOutputType(EndpointPrivateAddressesPtrOutput{})
+	pulumi.RegisterOutputType(EndpointPublicAddressesOutput{})
+	pulumi.RegisterOutputType(EndpointPublicAddressesPtrOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailPtrOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointOutput{})
@@ -2370,6 +3101,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabasesPrivilegeOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabasesPrivilegeArrayOutput{})
+	pulumi.RegisterOutputType(GetEndpointPrivateAddressesOutput{})
+	pulumi.RegisterOutputType(GetEndpointPublicAddressesOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointArrayOutput{})

@@ -13,6 +13,16 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScalingGroupInstance {
     /**
+     * @return Time when the instance joined the scaling group
+     * 
+     */
+    private @Nullable String createdTime;
+    /**
+     * @return How the instance joined the scaling group (Attached / AutoCreated)
+     * 
+     */
+    private @Nullable String creationType;
+    /**
      * @return Whether to enable managed mode for the instance when AttachInstances is performed
      * 
      */
@@ -23,12 +33,56 @@ public final class ScalingGroupInstance {
      */
     private @Nullable String instanceId;
     /**
+     * @return Launch template ID used by the instance
+     * 
+     */
+    private @Nullable String launchTemplateId;
+    /**
+     * @return Launch template version used by the instance
+     * 
+     */
+    private @Nullable String launchTemplateVersion;
+    /**
      * @return Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
      * 
      */
     private @Nullable Boolean lifecycleHook;
+    /**
+     * @return Scaling configuration ID associated with the instance
+     * 
+     */
+    private @Nullable String scalingConfigurationId;
+    /**
+     * @return Scaling policy ID associated with the instance
+     * 
+     */
+    private @Nullable String scalingPolicyId;
+    /**
+     * @return Current status of the instance in the scaling group
+     * 
+     */
+    private @Nullable String status;
+    /**
+     * @return Availability zone of the instance
+     * 
+     */
+    private @Nullable String zoneId;
 
     private ScalingGroupInstance() {}
+    /**
+     * @return Time when the instance joined the scaling group
+     * 
+     */
+    public Optional<String> createdTime() {
+        return Optional.ofNullable(this.createdTime);
+    }
+    /**
+     * @return How the instance joined the scaling group (Attached / AutoCreated)
+     * 
+     */
+    public Optional<String> creationType() {
+        return Optional.ofNullable(this.creationType);
+    }
     /**
      * @return Whether to enable managed mode for the instance when AttachInstances is performed
      * 
@@ -44,11 +98,53 @@ public final class ScalingGroupInstance {
         return Optional.ofNullable(this.instanceId);
     }
     /**
+     * @return Launch template ID used by the instance
+     * 
+     */
+    public Optional<String> launchTemplateId() {
+        return Optional.ofNullable(this.launchTemplateId);
+    }
+    /**
+     * @return Launch template version used by the instance
+     * 
+     */
+    public Optional<String> launchTemplateVersion() {
+        return Optional.ofNullable(this.launchTemplateVersion);
+    }
+    /**
      * @return Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
      * 
      */
     public Optional<Boolean> lifecycleHook() {
         return Optional.ofNullable(this.lifecycleHook);
+    }
+    /**
+     * @return Scaling configuration ID associated with the instance
+     * 
+     */
+    public Optional<String> scalingConfigurationId() {
+        return Optional.ofNullable(this.scalingConfigurationId);
+    }
+    /**
+     * @return Scaling policy ID associated with the instance
+     * 
+     */
+    public Optional<String> scalingPolicyId() {
+        return Optional.ofNullable(this.scalingPolicyId);
+    }
+    /**
+     * @return Current status of the instance in the scaling group
+     * 
+     */
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
+    }
+    /**
+     * @return Availability zone of the instance
+     * 
+     */
+    public Optional<String> zoneId() {
+        return Optional.ofNullable(this.zoneId);
     }
 
     public static Builder builder() {
@@ -60,17 +156,45 @@ public final class ScalingGroupInstance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String createdTime;
+        private @Nullable String creationType;
         private @Nullable Boolean entrusted;
         private @Nullable String instanceId;
+        private @Nullable String launchTemplateId;
+        private @Nullable String launchTemplateVersion;
         private @Nullable Boolean lifecycleHook;
+        private @Nullable String scalingConfigurationId;
+        private @Nullable String scalingPolicyId;
+        private @Nullable String status;
+        private @Nullable String zoneId;
         public Builder() {}
         public Builder(ScalingGroupInstance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.createdTime = defaults.createdTime;
+    	      this.creationType = defaults.creationType;
     	      this.entrusted = defaults.entrusted;
     	      this.instanceId = defaults.instanceId;
+    	      this.launchTemplateId = defaults.launchTemplateId;
+    	      this.launchTemplateVersion = defaults.launchTemplateVersion;
     	      this.lifecycleHook = defaults.lifecycleHook;
+    	      this.scalingConfigurationId = defaults.scalingConfigurationId;
+    	      this.scalingPolicyId = defaults.scalingPolicyId;
+    	      this.status = defaults.status;
+    	      this.zoneId = defaults.zoneId;
         }
 
+        @CustomType.Setter
+        public Builder createdTime(@Nullable String createdTime) {
+
+            this.createdTime = createdTime;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder creationType(@Nullable String creationType) {
+
+            this.creationType = creationType;
+            return this;
+        }
         @CustomType.Setter
         public Builder entrusted(@Nullable Boolean entrusted) {
 
@@ -84,16 +208,60 @@ public final class ScalingGroupInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder launchTemplateId(@Nullable String launchTemplateId) {
+
+            this.launchTemplateId = launchTemplateId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder launchTemplateVersion(@Nullable String launchTemplateVersion) {
+
+            this.launchTemplateVersion = launchTemplateVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleHook(@Nullable Boolean lifecycleHook) {
 
             this.lifecycleHook = lifecycleHook;
             return this;
         }
+        @CustomType.Setter
+        public Builder scalingConfigurationId(@Nullable String scalingConfigurationId) {
+
+            this.scalingConfigurationId = scalingConfigurationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scalingPolicyId(@Nullable String scalingPolicyId) {
+
+            this.scalingPolicyId = scalingPolicyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder status(@Nullable String status) {
+
+            this.status = status;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder zoneId(@Nullable String zoneId) {
+
+            this.zoneId = zoneId;
+            return this;
+        }
         public ScalingGroupInstance build() {
             final var _resultValue = new ScalingGroupInstance();
+            _resultValue.createdTime = createdTime;
+            _resultValue.creationType = creationType;
             _resultValue.entrusted = entrusted;
             _resultValue.instanceId = instanceId;
+            _resultValue.launchTemplateId = launchTemplateId;
+            _resultValue.launchTemplateVersion = launchTemplateVersion;
             _resultValue.lifecycleHook = lifecycleHook;
+            _resultValue.scalingConfigurationId = scalingConfigurationId;
+            _resultValue.scalingPolicyId = scalingPolicyId;
+            _resultValue.status = status;
+            _resultValue.zoneId = zoneId;
             return _resultValue;
         }
     }

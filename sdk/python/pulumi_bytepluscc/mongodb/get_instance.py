@@ -521,7 +521,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        Availability zone ID where the instance is located.
+        The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         return pulumi.get(self, "zone_id")
 

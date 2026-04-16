@@ -149,8 +149,8 @@ func (AccesskeyState) ElementType() reflect.Type {
 }
 
 type accesskeyArgs struct {
-	// Secret Access Key.
-	SecretAccessKey *string `pulumi:"secretAccessKey"`
+	// Last login time.
+	LastLoginDate *string `pulumi:"lastLoginDate"`
 	// Key status. active means enabled, inactive means disabled.
 	Status *string `pulumi:"status"`
 	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
@@ -159,8 +159,8 @@ type accesskeyArgs struct {
 
 // The set of arguments for constructing a Accesskey resource.
 type AccesskeyArgs struct {
-	// Secret Access Key.
-	SecretAccessKey pulumi.StringPtrInput
+	// Last login time.
+	LastLoginDate pulumi.StringPtrInput
 	// Key status. active means enabled, inactive means disabled.
 	Status pulumi.StringPtrInput
 	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.

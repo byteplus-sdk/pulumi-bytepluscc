@@ -19,6 +19,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
         /// </summary>
         public readonly string? ComparisonOperator;
         /// <summary>
+        /// Metric display name.
+        /// </summary>
+        public readonly string? DisplayName;
+        /// <summary>
         /// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         /// </summary>
         public readonly string? MetricName;
@@ -43,6 +47,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
         private RuleLevelConditionCondition(
             string? comparisonOperator,
 
+            string? displayName,
+
             string? metricName,
 
             string? metricUnit,
@@ -54,6 +60,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
             string? threshold)
         {
             ComparisonOperator = comparisonOperator;
+            DisplayName = displayName;
             MetricName = metricName;
             MetricUnit = metricUnit;
             Period = period;

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Plural Data Source schema for Byteplus::IAM::AccessKey
+// Plural Data Source schema for Byteplus::IAM::Accesskey
 func GetAccesskeys(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAccesskeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccesskeysResult
