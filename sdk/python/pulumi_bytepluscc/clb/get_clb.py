@@ -28,7 +28,7 @@ class GetClbResult:
     """
     A collection of values returned by getClb.
     """
-    def __init__(__self__, access_log=None, account_id=None, address_ip_version=None, allowed_ports=None, auto_renewal=None, business_status=None, bypass_security_group_enabled=None, create_time=None, deleted_time=None, description=None, eip=None, eip_address=None, eip_id=None, enabled=None, eni=None, eni_address_num=None, eni_ipv6_address=None, enis=None, exclusive_cluster_id=None, expired_time=None, id=None, listeners=None, load_balancer_billing_type=None, load_balancer_id=None, load_balancer_name=None, load_balancer_spec=None, lock_reason=None, master_zone_id=None, modification_protection_reason=None, modification_protection_status=None, new_arch=None, order_id=None, overdue_time=None, period=None, period_unit=None, project_name=None, server_groups=None, service_managed=None, slave_zone_id=None, status=None, subnet_id=None, tags=None, timestamp_remove_enabled=None, type=None, update_time=None, vpc_id=None, zone_type=None):
+    def __init__(__self__, access_log=None, account_id=None, address_ip_version=None, allowed_ports=None, auto_renewal=None, business_status=None, bypass_security_group_enabled=None, create_time=None, deleted_time=None, description=None, eip=None, eip_address=None, eip_id=None, enabled=None, eni=None, eni_address_num=None, eni_ipv6_address=None, enis=None, exclusive_cluster_id=None, expired_time=None, id=None, ipv6_address_bandwidth=None, listeners=None, load_balancer_billing_type=None, load_balancer_id=None, load_balancer_name=None, load_balancer_spec=None, lock_reason=None, master_zone_id=None, modification_protection_reason=None, modification_protection_status=None, new_arch=None, order_id=None, overdue_time=None, period=None, period_unit=None, project_name=None, server_groups=None, service_managed=None, slave_zone_id=None, status=None, subnet_id=None, tags=None, timestamp_remove_enabled=None, type=None, update_time=None, vpc_id=None, zone_type=None):
         if access_log and not isinstance(access_log, dict):
             raise TypeError("Expected argument 'access_log' to be a dict")
         pulumi.set(__self__, "access_log", access_log)
@@ -92,6 +92,9 @@ class GetClbResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ipv6_address_bandwidth and not isinstance(ipv6_address_bandwidth, dict):
+            raise TypeError("Expected argument 'ipv6_address_bandwidth' to be a dict")
+        pulumi.set(__self__, "ipv6_address_bandwidth", ipv6_address_bandwidth)
         if listeners and not isinstance(listeners, list):
             raise TypeError("Expected argument 'listeners' to be a list")
         pulumi.set(__self__, "listeners", listeners)
@@ -340,6 +343,14 @@ class GetClbResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="ipv6AddressBandwidth")
+    def ipv6_address_bandwidth(self) -> 'outputs.GetClbIpv6AddressBandwidthResult':
+        """
+        IPv6 public bandwidth information for the load balancing instance
+        """
+        return pulumi.get(self, "ipv6_address_bandwidth")
+
+    @property
     @pulumi.getter
     def listeners(self) -> Sequence['outputs.GetClbListenerResult']:
         """
@@ -575,6 +586,7 @@ class AwaitableGetClbResult(GetClbResult):
             exclusive_cluster_id=self.exclusive_cluster_id,
             expired_time=self.expired_time,
             id=self.id,
+            ipv6_address_bandwidth=self.ipv6_address_bandwidth,
             listeners=self.listeners,
             load_balancer_billing_type=self.load_balancer_billing_type,
             load_balancer_id=self.load_balancer_id,
@@ -638,6 +650,7 @@ def get_clb(id: Optional[builtins.str] = None,
         exclusive_cluster_id=pulumi.get(__ret__, 'exclusive_cluster_id'),
         expired_time=pulumi.get(__ret__, 'expired_time'),
         id=pulumi.get(__ret__, 'id'),
+        ipv6_address_bandwidth=pulumi.get(__ret__, 'ipv6_address_bandwidth'),
         listeners=pulumi.get(__ret__, 'listeners'),
         load_balancer_billing_type=pulumi.get(__ret__, 'load_balancer_billing_type'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
@@ -698,6 +711,7 @@ def get_clb_output(id: Optional[pulumi.Input[builtins.str]] = None,
         exclusive_cluster_id=pulumi.get(__response__, 'exclusive_cluster_id'),
         expired_time=pulumi.get(__response__, 'expired_time'),
         id=pulumi.get(__response__, 'id'),
+        ipv6_address_bandwidth=pulumi.get(__response__, 'ipv6_address_bandwidth'),
         listeners=pulumi.get(__response__, 'listeners'),
         load_balancer_billing_type=pulumi.get(__response__, 'load_balancer_billing_type'),
         load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),

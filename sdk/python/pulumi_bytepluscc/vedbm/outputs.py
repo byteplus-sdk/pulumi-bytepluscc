@@ -19,6 +19,8 @@ from . import outputs
 __all__ = [
     'AllowListAssociatedInstance',
     'DatabaseDatabasesPrivilege',
+    'EndpointPrivateAddresses',
+    'EndpointPublicAddresses',
     'InstanceChargeDetail',
     'InstanceEndpoint',
     'InstanceEndpointAddress',
@@ -27,6 +29,8 @@ __all__ = [
     'InstanceTag',
     'GetAllowListAssociatedInstanceResult',
     'GetDatabaseDatabasesPrivilegeResult',
+    'GetEndpointPrivateAddressesResult',
+    'GetEndpointPublicAddressesResult',
     'GetInstanceChargeDetailResult',
     'GetInstanceEndpointResult',
     'GetInstanceEndpointAddressResult',
@@ -42,6 +46,8 @@ class AllowListAssociatedInstance(dict):
         suggest = None
         if key == "instanceId":
             suggest = "instance_id"
+        elif key == "instanceName":
+            suggest = "instance_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
@@ -55,12 +61,20 @@ class AllowListAssociatedInstance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_id: Optional[builtins.str] = None):
+                 instance_id: Optional[builtins.str] = None,
+                 instance_name: Optional[builtins.str] = None,
+                 vpc: Optional[builtins.str] = None):
         """
         :param builtins.str instance_id: Instance ID.
+        :param builtins.str instance_name: Instance name.
+        :param builtins.str vpc: Instance VPC ID.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -69,6 +83,22 @@ class AllowListAssociatedInstance(dict):
         Instance ID.
         """
         return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[builtins.str]:
+        """
+        Instance name.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[builtins.str]:
+        """
+        Instance VPC ID.
+        """
+        return pulumi.get(self, "vpc")
 
 
 @pulumi.output_type
@@ -133,6 +163,214 @@ class DatabaseDatabasesPrivilege(dict):
         Specific SQL operation permissions, separated by English commas; required for Custom type
         """
         return pulumi.get(self, "account_privilege_details")
+
+
+@pulumi.output_type
+class EndpointPrivateAddresses(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dnsVisibility":
+            suggest = "dns_visibility"
+        elif key == "eipId":
+            suggest = "eip_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EndpointPrivateAddresses. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EndpointPrivateAddresses.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EndpointPrivateAddresses.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dns_visibility: Optional[builtins.bool] = None,
+                 domain: Optional[builtins.str] = None,
+                 eip_id: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 network_type: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool dns_visibility: Resolution method, fixed as false
+        :param builtins.str domain: Instance intranet access domain name
+        :param builtins.str eip_id: Public network ID
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network type
+        :param builtins.str subnet_id: Subnet ID
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[builtins.bool]:
+        """
+        Resolution method, fixed as false
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        Instance intranet access domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[builtins.str]:
+        """
+        Public network ID
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[builtins.str]:
+        """
+        Network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class EndpointPublicAddresses(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dnsVisibility":
+            suggest = "dns_visibility"
+        elif key == "eipId":
+            suggest = "eip_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EndpointPublicAddresses. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EndpointPublicAddresses.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EndpointPublicAddresses.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dns_visibility: Optional[builtins.bool] = None,
+                 domain: Optional[builtins.str] = None,
+                 eip_id: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 network_type: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool dns_visibility: Resolution method, fixed as false
+        :param builtins.str domain: Instance intranet access domain name
+        :param builtins.str eip_id: Public network ID
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network type
+        :param builtins.str subnet_id: Subnet ID
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[builtins.bool]:
+        """
+        Resolution method, fixed as false
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        Instance intranet access domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[builtins.str]:
+        """
+        Public network ID
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[builtins.str]:
+        """
+        Network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -678,8 +916,16 @@ class InstanceNode(dict):
         suggest = None
         if key == "failoverPriority":
             suggest = "failover_priority"
+        elif key == "nodeId":
+            suggest = "node_id"
+        elif key == "nodeSpec":
+            suggest = "node_spec"
         elif key == "nodeType":
             suggest = "node_type"
+        elif key == "vCpu":
+            suggest = "v_cpu"
+        elif key == "zoneId":
+            suggest = "zone_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in InstanceNode. Access the value via the '{suggest}' property getter instead.")
@@ -694,15 +940,35 @@ class InstanceNode(dict):
 
     def __init__(__self__, *,
                  failover_priority: Optional[builtins.int] = None,
-                 node_type: Optional[builtins.str] = None):
+                 memory: Optional[builtins.int] = None,
+                 node_id: Optional[builtins.str] = None,
+                 node_spec: Optional[builtins.str] = None,
+                 node_type: Optional[builtins.str] = None,
+                 v_cpu: Optional[builtins.int] = None,
+                 zone_id: Optional[builtins.str] = None):
         """
         :param builtins.int failover_priority: Node failover priority. Range: 0~15. Higher values indicate higher priority
+        :param builtins.int memory: Memory size, in GiB.
+        :param builtins.str node_id: Node ID
+        :param builtins.str node_spec: Node specification.
         :param builtins.str node_type: Node type. Values: Primary: primary node. ReadOnly: read-only node.
+        :param builtins.int v_cpu: CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        :param builtins.str zone_id: Availability zone ID
         """
         if failover_priority is not None:
             pulumi.set(__self__, "failover_priority", failover_priority)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_spec is not None:
+            pulumi.set(__self__, "node_spec", node_spec)
         if node_type is not None:
             pulumi.set(__self__, "node_type", node_type)
+        if v_cpu is not None:
+            pulumi.set(__self__, "v_cpu", v_cpu)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
 
     @property
     @pulumi.getter(name="failoverPriority")
@@ -713,12 +979,52 @@ class InstanceNode(dict):
         return pulumi.get(self, "failover_priority")
 
     @property
+    @pulumi.getter
+    def memory(self) -> Optional[builtins.int]:
+        """
+        Memory size, in GiB.
+        """
+        return pulumi.get(self, "memory")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[builtins.str]:
+        """
+        Node ID
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeSpec")
+    def node_spec(self) -> Optional[builtins.str]:
+        """
+        Node specification.
+        """
+        return pulumi.get(self, "node_spec")
+
+    @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[builtins.str]:
         """
         Node type. Values: Primary: primary node. ReadOnly: read-only node.
         """
         return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter(name="vCpu")
+    def v_cpu(self) -> Optional[builtins.int]:
+        """
+        CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        """
+        return pulumi.get(self, "v_cpu")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        Availability zone ID
+        """
+        return pulumi.get(self, "zone_id")
 
 
 @pulumi.output_type
@@ -830,6 +1136,152 @@ class GetDatabaseDatabasesPrivilegeResult(dict):
         Specific SQL operation permissions, separated by English commas; required for Custom type
         """
         return pulumi.get(self, "account_privilege_details")
+
+
+@pulumi.output_type
+class GetEndpointPrivateAddressesResult(dict):
+    def __init__(__self__, *,
+                 dns_visibility: builtins.bool,
+                 domain: builtins.str,
+                 eip_id: builtins.str,
+                 ip_address: builtins.str,
+                 network_type: builtins.str,
+                 subnet_id: builtins.str):
+        """
+        :param builtins.bool dns_visibility: Resolution method, fixed as false
+        :param builtins.str domain: Instance intranet access domain name
+        :param builtins.str eip_id: Public network ID
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network type
+        :param builtins.str subnet_id: Subnet ID
+        """
+        pulumi.set(__self__, "dns_visibility", dns_visibility)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "eip_id", eip_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> builtins.bool:
+        """
+        Resolution method, fixed as false
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        Instance intranet access domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> builtins.str:
+        """
+        Public network ID
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> builtins.str:
+        """
+        Network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetEndpointPublicAddressesResult(dict):
+    def __init__(__self__, *,
+                 dns_visibility: builtins.bool,
+                 domain: builtins.str,
+                 eip_id: builtins.str,
+                 ip_address: builtins.str,
+                 network_type: builtins.str,
+                 subnet_id: builtins.str):
+        """
+        :param builtins.bool dns_visibility: Resolution method, fixed as false
+        :param builtins.str domain: Instance intranet access domain name
+        :param builtins.str eip_id: Public network ID
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network type
+        :param builtins.str subnet_id: Subnet ID
+        """
+        pulumi.set(__self__, "dns_visibility", dns_visibility)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "eip_id", eip_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> builtins.bool:
+        """
+        Resolution method, fixed as false
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        Instance intranet access domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> builtins.str:
+        """
+        Public network ID
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> builtins.str:
+        """
+        Network type
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type

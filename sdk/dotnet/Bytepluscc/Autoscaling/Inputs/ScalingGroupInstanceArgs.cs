@@ -14,6 +14,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Inputs
     public sealed class ScalingGroupInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Time when the instance joined the scaling group
+        /// </summary>
+        [Input("createdTime")]
+        public Input<string>? CreatedTime { get; set; }
+
+        /// <summary>
+        /// How the instance joined the scaling group (Attached / AutoCreated)
+        /// </summary>
+        [Input("creationType")]
+        public Input<string>? CreationType { get; set; }
+
+        /// <summary>
         /// Whether to enable managed mode for the instance when AttachInstances is performed
         /// </summary>
         [Input("entrusted")]
@@ -26,10 +38,46 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Inputs
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
+        /// Launch template ID used by the instance
+        /// </summary>
+        [Input("launchTemplateId")]
+        public Input<string>? LaunchTemplateId { get; set; }
+
+        /// <summary>
+        /// Launch template version used by the instance
+        /// </summary>
+        [Input("launchTemplateVersion")]
+        public Input<string>? LaunchTemplateVersion { get; set; }
+
+        /// <summary>
         /// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
         /// </summary>
         [Input("lifecycleHook")]
         public Input<bool>? LifecycleHook { get; set; }
+
+        /// <summary>
+        /// Scaling configuration ID associated with the instance
+        /// </summary>
+        [Input("scalingConfigurationId")]
+        public Input<string>? ScalingConfigurationId { get; set; }
+
+        /// <summary>
+        /// Scaling policy ID associated with the instance
+        /// </summary>
+        [Input("scalingPolicyId")]
+        public Input<string>? ScalingPolicyId { get; set; }
+
+        /// <summary>
+        /// Current status of the instance in the scaling group
+        /// </summary>
+        [Input("status")]
+        public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// Availability zone of the instance
+        /// </summary>
+        [Input("zoneId")]
+        public Input<string>? ZoneId { get; set; }
 
         public ScalingGroupInstanceArgs()
         {

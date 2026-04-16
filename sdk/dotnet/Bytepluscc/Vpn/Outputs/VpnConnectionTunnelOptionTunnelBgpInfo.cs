@@ -15,9 +15,29 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Outputs
     public sealed class VpnConnectionTunnelOptionTunnelBgpInfo
     {
         /// <summary>
+        /// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        /// </summary>
+        public readonly bool? EnableBgp;
+        /// <summary>
+        /// The ASN of the VPN gateway.
+        /// </summary>
+        public readonly int? LocalAsn;
+        /// <summary>
         /// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
         /// </summary>
         public readonly string? LocalBgpIp;
+        /// <summary>
+        /// ASN of the customer gateway.
+        /// </summary>
+        public readonly int? PeerAsn;
+        /// <summary>
+        /// BGP peer IP, that is, the BGP address on the customer gateway side.
+        /// </summary>
+        public readonly string? PeerBgpIp;
+        /// <summary>
+        /// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+        /// </summary>
+        public readonly string? SessionStatus;
         /// <summary>
         /// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
         /// </summary>
@@ -25,11 +45,26 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Outputs
 
         [OutputConstructor]
         private VpnConnectionTunnelOptionTunnelBgpInfo(
+            bool? enableBgp,
+
+            int? localAsn,
+
             string? localBgpIp,
+
+            int? peerAsn,
+
+            string? peerBgpIp,
+
+            string? sessionStatus,
 
             string? tunnelCidr)
         {
+            EnableBgp = enableBgp;
+            LocalAsn = localAsn;
             LocalBgpIp = localBgpIp;
+            PeerAsn = peerAsn;
+            PeerBgpIp = peerBgpIp;
+            SessionStatus = sessionStatus;
             TunnelCidr = tunnelCidr;
         }
     }

@@ -31,6 +31,21 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
     }
 
     /**
+     * Metric display name.
+     * 
+     */
+    @Import(name="displayName")
+    private @Nullable Output<String> displayName;
+
+    /**
+     * @return Metric display name.
+     * 
+     */
+    public Optional<Output<String>> displayName() {
+        return Optional.ofNullable(this.displayName);
+    }
+
+    /**
      * Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
      * 
      */
@@ -109,6 +124,7 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
 
     private RuleLevelConditionConditionArgs(RuleLevelConditionConditionArgs $) {
         this.comparisonOperator = $.comparisonOperator;
+        this.displayName = $.displayName;
         this.metricName = $.metricName;
         this.metricUnit = $.metricUnit;
         this.period = $.period;
@@ -153,6 +169,27 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
          */
         public Builder comparisonOperator(String comparisonOperator) {
             return comparisonOperator(Output.of(comparisonOperator));
+        }
+
+        /**
+         * @param displayName Metric display name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder displayName(@Nullable Output<String> displayName) {
+            $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param displayName Metric display name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
         }
 
         /**

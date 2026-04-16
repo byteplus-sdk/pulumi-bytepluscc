@@ -20,6 +20,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
         public Input<string>? ComparisonOperator { get; set; }
 
         /// <summary>
+        /// Metric display name.
+        /// </summary>
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
         /// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         /// </summary>
         [Input("metricName")]

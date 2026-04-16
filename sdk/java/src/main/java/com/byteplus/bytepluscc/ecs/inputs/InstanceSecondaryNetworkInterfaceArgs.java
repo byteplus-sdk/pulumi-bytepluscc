@@ -33,6 +33,51 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
     }
 
     /**
+     * IPv6 address of the instance.
+     * 
+     */
+    @Import(name="ipv6Addresses")
+    private @Nullable Output<List<String>> ipv6Addresses;
+
+    /**
+     * @return IPv6 address of the instance.
+     * 
+     */
+    public Optional<Output<List<String>>> ipv6Addresses() {
+        return Optional.ofNullable(this.ipv6Addresses);
+    }
+
+    /**
+     * Instance MAC address.
+     * 
+     */
+    @Import(name="macAddress")
+    private @Nullable Output<String> macAddress;
+
+    /**
+     * @return Instance MAC address.
+     * 
+     */
+    public Optional<Output<String>> macAddress() {
+        return Optional.ofNullable(this.macAddress);
+    }
+
+    /**
+     * The network interface ID of the instance.
+     * 
+     */
+    @Import(name="networkInterfaceId")
+    private @Nullable Output<String> networkInterfaceId;
+
+    /**
+     * @return The network interface ID of the instance.
+     * 
+     */
+    public Optional<Output<String>> networkInterfaceId() {
+        return Optional.ofNullable(this.networkInterfaceId);
+    }
+
+    /**
      * Instance primary IP address
      * 
      */
@@ -92,14 +137,33 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * VPC ID of the instance.
+     * 
+     */
+    @Import(name="vpcId")
+    private @Nullable Output<String> vpcId;
+
+    /**
+     * @return VPC ID of the instance.
+     * 
+     */
+    public Optional<Output<String>> vpcId() {
+        return Optional.ofNullable(this.vpcId);
+    }
+
     private InstanceSecondaryNetworkInterfaceArgs() {}
 
     private InstanceSecondaryNetworkInterfaceArgs(InstanceSecondaryNetworkInterfaceArgs $) {
         this.ipv6AddressCount = $.ipv6AddressCount;
+        this.ipv6Addresses = $.ipv6Addresses;
+        this.macAddress = $.macAddress;
+        this.networkInterfaceId = $.networkInterfaceId;
         this.primaryIpAddress = $.primaryIpAddress;
         this.privateIpAddresses = $.privateIpAddresses;
         this.securityGroupIds = $.securityGroupIds;
         this.subnetId = $.subnetId;
+        this.vpcId = $.vpcId;
     }
 
     public static Builder builder() {
@@ -139,6 +203,79 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
          */
         public Builder ipv6AddressCount(Integer ipv6AddressCount) {
             return ipv6AddressCount(Output.of(ipv6AddressCount));
+        }
+
+        /**
+         * @param ipv6Addresses IPv6 address of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6Addresses(@Nullable Output<List<String>> ipv6Addresses) {
+            $.ipv6Addresses = ipv6Addresses;
+            return this;
+        }
+
+        /**
+         * @param ipv6Addresses IPv6 address of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6Addresses(List<String> ipv6Addresses) {
+            return ipv6Addresses(Output.of(ipv6Addresses));
+        }
+
+        /**
+         * @param ipv6Addresses IPv6 address of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6Addresses(String... ipv6Addresses) {
+            return ipv6Addresses(List.of(ipv6Addresses));
+        }
+
+        /**
+         * @param macAddress Instance MAC address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder macAddress(@Nullable Output<String> macAddress) {
+            $.macAddress = macAddress;
+            return this;
+        }
+
+        /**
+         * @param macAddress Instance MAC address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder macAddress(String macAddress) {
+            return macAddress(Output.of(macAddress));
+        }
+
+        /**
+         * @param networkInterfaceId The network interface ID of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkInterfaceId(@Nullable Output<String> networkInterfaceId) {
+            $.networkInterfaceId = networkInterfaceId;
+            return this;
+        }
+
+        /**
+         * @param networkInterfaceId The network interface ID of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkInterfaceId(String networkInterfaceId) {
+            return networkInterfaceId(Output.of(networkInterfaceId));
         }
 
         /**
@@ -243,6 +380,27 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param vpcId VPC ID of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcId(@Nullable Output<String> vpcId) {
+            $.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * @param vpcId VPC ID of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcId(String vpcId) {
+            return vpcId(Output.of(vpcId));
         }
 
         public InstanceSecondaryNetworkInterfaceArgs build() {

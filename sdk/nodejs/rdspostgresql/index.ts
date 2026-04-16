@@ -65,6 +65,16 @@ export const getDbEndpoints: typeof import("./getDbEndpoints").getDbEndpoints = 
 export const getDbEndpointsOutput: typeof import("./getDbEndpoints").getDbEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbEndpoints","getDbEndpointsOutput"], () => require("./getDbEndpoints"));
 
+export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
+export const getInstance: typeof import("./getInstance").getInstance = null as any;
+export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getInstance","getInstanceOutput"], () => require("./getInstance"));
+
+export { GetInstancesResult } from "./getInstances";
+export const getInstances: typeof import("./getInstances").getInstances = null as any;
+export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
+
 export { GetSchemaArgs, GetSchemaResult, GetSchemaOutputArgs } from "./getSchema";
 export const getSchema: typeof import("./getSchema").getSchema = null as any;
 export const getSchemaOutput: typeof import("./getSchema").getSchemaOutput = null as any;
@@ -74,6 +84,11 @@ export { GetSchemasResult } from "./getSchemas";
 export const getSchemas: typeof import("./getSchemas").getSchemas = null as any;
 export const getSchemasOutput: typeof import("./getSchemas").getSchemasOutput = null as any;
 utilities.lazyLoad(exports, ["getSchemas","getSchemasOutput"], () => require("./getSchemas"));
+
+export { InstanceArgs, InstanceState } from "./instance";
+export type Instance = import("./instance").Instance;
+export const Instance: typeof import("./instance").Instance = null as any;
+utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
 
 export { SchemaArgs, SchemaState } from "./schema";
 export type Schema = import("./schema").Schema;
@@ -93,6 +108,8 @@ const _module = {
                 return new DbAccount(name, <any>undefined, { urn })
             case "bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint":
                 return new DbEndpoint(name, <any>undefined, { urn })
+            case "bytepluscc:rdspostgresql/instance:Instance":
+                return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:rdspostgresql/schema:Schema":
                 return new Schema(name, <any>undefined, { urn })
             default:
@@ -104,4 +121,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/allowList", _
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/database", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/dbAccount", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/dbEndpoint", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/schema", _module)

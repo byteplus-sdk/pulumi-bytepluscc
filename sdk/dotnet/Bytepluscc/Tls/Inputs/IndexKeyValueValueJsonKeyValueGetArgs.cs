@@ -20,6 +20,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Inputs
         public Input<bool>? AutoIndexFlag { get; set; }
 
         /// <summary>
+        /// Whether to distinguish case. Default is false.
+        /// </summary>
+        [Input("caseSensitive")]
+        public Input<bool>? CaseSensitive { get; set; }
+
+        /// <summary>
+        /// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&amp;*()-_=\\"', &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        /// </summary>
+        [Input("delimiter")]
+        public Input<string>? Delimiter { get; set; }
+
+        /// <summary>
+        /// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        /// </summary>
+        [Input("includeChinese")]
+        public Input<bool>? IncludeChinese { get; set; }
+
+        /// <summary>
         /// Create indexes for all fields with text values in the JSON field.
         /// </summary>
         [Input("indexAll")]

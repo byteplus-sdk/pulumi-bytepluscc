@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.privatelink;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.privatelink.inputs.GetEndpointServiceArgs;
 import com.byteplus.bytepluscc.privatelink.inputs.GetEndpointServicePlainArgs;
+import com.byteplus.bytepluscc.privatelink.inputs.GetVpcEndpointArgs;
+import com.byteplus.bytepluscc.privatelink.inputs.GetVpcEndpointPlainArgs;
 import com.byteplus.bytepluscc.privatelink.outputs.GetEndpointServiceResult;
 import com.byteplus.bytepluscc.privatelink.outputs.GetEndpointServicesResult;
+import com.byteplus.bytepluscc.privatelink.outputs.GetVpcEndpointResult;
+import com.byteplus.bytepluscc.privatelink.outputs.GetVpcEndpointsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class PrivatelinkFunctions {
      */
     public static CompletableFuture<GetEndpointServicesResult> getEndpointServicesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:privatelink/getEndpointServices:getEndpointServices", TypeShape.of(GetEndpointServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointResult> getVpcEndpoint(GetVpcEndpointArgs args) {
+        return getVpcEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointResult> getVpcEndpointPlain(GetVpcEndpointPlainArgs args) {
+        return getVpcEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointResult> getVpcEndpoint(GetVpcEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getVpcEndpoint:getVpcEndpoint", TypeShape.of(GetVpcEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointResult> getVpcEndpoint(GetVpcEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getVpcEndpoint:getVpcEndpoint", TypeShape.of(GetVpcEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointResult> getVpcEndpointPlain(GetVpcEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatelink/getVpcEndpoint:getVpcEndpoint", TypeShape.of(GetVpcEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints() {
+        return getVpcEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointsResult> getVpcEndpointsPlain() {
+        return getVpcEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints(InvokeArgs args) {
+        return getVpcEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointsResult> getVpcEndpointsPlain(InvokeArgs args) {
+        return getVpcEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getVpcEndpoints:getVpcEndpoints", TypeShape.of(GetVpcEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getVpcEndpoints:getVpcEndpoints", TypeShape.of(GetVpcEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointsResult> getVpcEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatelink/getVpcEndpoints:getVpcEndpoints", TypeShape.of(GetVpcEndpointsResult.class), args, Utilities.withVersion(options));
     }
 }

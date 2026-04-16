@@ -576,7 +576,9 @@ class VpnConnectionTunnelOption(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "customerGatewayId":
+        if key == "connectStatus":
+            suggest = "connect_status"
+        elif key == "customerGatewayId":
             suggest = "customer_gateway_id"
         elif key == "dpdAction":
             suggest = "dpd_action"
@@ -603,6 +605,7 @@ class VpnConnectionTunnelOption(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 connect_status: Optional[builtins.str] = None,
                  customer_gateway_id: Optional[builtins.str] = None,
                  dpd_action: Optional[builtins.str] = None,
                  ike_config: Optional['outputs.VpnConnectionTunnelOptionIkeConfig'] = None,
@@ -612,6 +615,7 @@ class VpnConnectionTunnelOption(dict):
                  tunnel_bgp_info: Optional['outputs.VpnConnectionTunnelOptionTunnelBgpInfo'] = None,
                  tunnel_id: Optional[builtins.str] = None):
         """
+        :param builtins.str connect_status: IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
         :param builtins.str customer_gateway_id: ID of the customer gateway associated with the IPsec connection.
         :param builtins.str dpd_action: Status of the DPD feature.
         :param 'VpnConnectionTunnelOptionIkeConfigArgs' ike_config: IKE configuration information for the IPsec connection.
@@ -621,6 +625,8 @@ class VpnConnectionTunnelOption(dict):
         :param 'VpnConnectionTunnelOptionTunnelBgpInfoArgs' tunnel_bgp_info: BGP session information.
         :param builtins.str tunnel_id: Tunnel ID of the IPsec connection.
         """
+        if connect_status is not None:
+            pulumi.set(__self__, "connect_status", connect_status)
         if customer_gateway_id is not None:
             pulumi.set(__self__, "customer_gateway_id", customer_gateway_id)
         if dpd_action is not None:
@@ -637,6 +643,14 @@ class VpnConnectionTunnelOption(dict):
             pulumi.set(__self__, "tunnel_bgp_info", tunnel_bgp_info)
         if tunnel_id is not None:
             pulumi.set(__self__, "tunnel_id", tunnel_id)
+
+    @property
+    @pulumi.getter(name="connectStatus")
+    def connect_status(self) -> Optional[builtins.str]:
+        """
+        IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+        """
+        return pulumi.get(self, "connect_status")
 
     @property
     @pulumi.getter(name="customerGatewayId")
@@ -924,8 +938,18 @@ class VpnConnectionTunnelOptionTunnelBgpInfo(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "localBgpIp":
+        if key == "enableBgp":
+            suggest = "enable_bgp"
+        elif key == "localAsn":
+            suggest = "local_asn"
+        elif key == "localBgpIp":
             suggest = "local_bgp_ip"
+        elif key == "peerAsn":
+            suggest = "peer_asn"
+        elif key == "peerBgpIp":
+            suggest = "peer_bgp_ip"
+        elif key == "sessionStatus":
+            suggest = "session_status"
         elif key == "tunnelCidr":
             suggest = "tunnel_cidr"
 
@@ -941,16 +965,52 @@ class VpnConnectionTunnelOptionTunnelBgpInfo(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 enable_bgp: Optional[builtins.bool] = None,
+                 local_asn: Optional[builtins.int] = None,
                  local_bgp_ip: Optional[builtins.str] = None,
+                 peer_asn: Optional[builtins.int] = None,
+                 peer_bgp_ip: Optional[builtins.str] = None,
+                 session_status: Optional[builtins.str] = None,
                  tunnel_cidr: Optional[builtins.str] = None):
         """
+        :param builtins.bool enable_bgp: Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        :param builtins.int local_asn: The ASN of the VPN gateway.
         :param builtins.str local_bgp_ip: BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+        :param builtins.int peer_asn: ASN of the customer gateway.
+        :param builtins.str peer_bgp_ip: BGP peer IP, that is, the BGP address on the customer gateway side.
+        :param builtins.str session_status: Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
         :param builtins.str tunnel_cidr: The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
         """
+        if enable_bgp is not None:
+            pulumi.set(__self__, "enable_bgp", enable_bgp)
+        if local_asn is not None:
+            pulumi.set(__self__, "local_asn", local_asn)
         if local_bgp_ip is not None:
             pulumi.set(__self__, "local_bgp_ip", local_bgp_ip)
+        if peer_asn is not None:
+            pulumi.set(__self__, "peer_asn", peer_asn)
+        if peer_bgp_ip is not None:
+            pulumi.set(__self__, "peer_bgp_ip", peer_bgp_ip)
+        if session_status is not None:
+            pulumi.set(__self__, "session_status", session_status)
         if tunnel_cidr is not None:
             pulumi.set(__self__, "tunnel_cidr", tunnel_cidr)
+
+    @property
+    @pulumi.getter(name="enableBgp")
+    def enable_bgp(self) -> Optional[builtins.bool]:
+        """
+        Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        """
+        return pulumi.get(self, "enable_bgp")
+
+    @property
+    @pulumi.getter(name="localAsn")
+    def local_asn(self) -> Optional[builtins.int]:
+        """
+        The ASN of the VPN gateway.
+        """
+        return pulumi.get(self, "local_asn")
 
     @property
     @pulumi.getter(name="localBgpIp")
@@ -959,6 +1019,30 @@ class VpnConnectionTunnelOptionTunnelBgpInfo(dict):
         BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
         """
         return pulumi.get(self, "local_bgp_ip")
+
+    @property
+    @pulumi.getter(name="peerAsn")
+    def peer_asn(self) -> Optional[builtins.int]:
+        """
+        ASN of the customer gateway.
+        """
+        return pulumi.get(self, "peer_asn")
+
+    @property
+    @pulumi.getter(name="peerBgpIp")
+    def peer_bgp_ip(self) -> Optional[builtins.str]:
+        """
+        BGP peer IP, that is, the BGP address on the customer gateway side.
+        """
+        return pulumi.get(self, "peer_bgp_ip")
+
+    @property
+    @pulumi.getter(name="sessionStatus")
+    def session_status(self) -> Optional[builtins.str]:
+        """
+        Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+        """
+        return pulumi.get(self, "session_status")
 
     @property
     @pulumi.getter(name="tunnelCidr")

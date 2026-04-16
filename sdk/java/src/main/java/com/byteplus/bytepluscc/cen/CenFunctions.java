@@ -4,10 +4,14 @@
 package com.byteplus.bytepluscc.cen;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cen.inputs.GetBandwidthPackageArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetBandwidthPackagePlainArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetCenArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetCenPlainArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetGrantInstanceArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetGrantInstancePlainArgs;
+import com.byteplus.bytepluscc.cen.outputs.GetBandwidthPackageResult;
+import com.byteplus.bytepluscc.cen.outputs.GetBandwidthPackagesResult;
 import com.byteplus.bytepluscc.cen.outputs.GetCenResult;
 import com.byteplus.bytepluscc.cen.outputs.GetCensResult;
 import com.byteplus.bytepluscc.cen.outputs.GetGrantInstanceResult;
@@ -21,6 +25,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CenFunctions {
+    /**
+     * Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackageResult> getBandwidthPackage(GetBandwidthPackageArgs args) {
+        return getBandwidthPackage(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackageResult> getBandwidthPackagePlain(GetBandwidthPackagePlainArgs args) {
+        return getBandwidthPackagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackageResult> getBandwidthPackage(GetBandwidthPackageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getBandwidthPackage:getBandwidthPackage", TypeShape.of(GetBandwidthPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackageResult> getBandwidthPackage(GetBandwidthPackageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getBandwidthPackage:getBandwidthPackage", TypeShape.of(GetBandwidthPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackageResult> getBandwidthPackagePlain(GetBandwidthPackagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getBandwidthPackage:getBandwidthPackage", TypeShape.of(GetBandwidthPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages() {
+        return getBandwidthPackages(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackagesResult> getBandwidthPackagesPlain() {
+        return getBandwidthPackagesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages(InvokeArgs args) {
+        return getBandwidthPackages(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackagesResult> getBandwidthPackagesPlain(InvokeArgs args) {
+        return getBandwidthPackagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getBandwidthPackages:getBandwidthPackages", TypeShape.of(GetBandwidthPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getBandwidthPackages:getBandwidthPackages", TypeShape.of(GetBandwidthPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackagesResult> getBandwidthPackagesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getBandwidthPackages:getBandwidthPackages", TypeShape.of(GetBandwidthPackagesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CEN::CEN
      * 

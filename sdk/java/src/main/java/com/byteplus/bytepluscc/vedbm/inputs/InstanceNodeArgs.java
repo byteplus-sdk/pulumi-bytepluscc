@@ -32,6 +32,51 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Memory size, in GiB.
+     * 
+     */
+    @Import(name="memory")
+    private @Nullable Output<Integer> memory;
+
+    /**
+     * @return Memory size, in GiB.
+     * 
+     */
+    public Optional<Output<Integer>> memory() {
+        return Optional.ofNullable(this.memory);
+    }
+
+    /**
+     * Node ID
+     * 
+     */
+    @Import(name="nodeId")
+    private @Nullable Output<String> nodeId;
+
+    /**
+     * @return Node ID
+     * 
+     */
+    public Optional<Output<String>> nodeId() {
+        return Optional.ofNullable(this.nodeId);
+    }
+
+    /**
+     * Node specification.
+     * 
+     */
+    @Import(name="nodeSpec")
+    private @Nullable Output<String> nodeSpec;
+
+    /**
+     * @return Node specification.
+     * 
+     */
+    public Optional<Output<String>> nodeSpec() {
+        return Optional.ofNullable(this.nodeSpec);
+    }
+
+    /**
      * Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
@@ -46,11 +91,46 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.nodeType);
     }
 
+    /**
+     * CPU size. For example, a value of 1 indicates a CPU size of 1U.
+     * 
+     */
+    @Import(name="vCpu")
+    private @Nullable Output<Integer> vCpu;
+
+    /**
+     * @return CPU size. For example, a value of 1 indicates a CPU size of 1U.
+     * 
+     */
+    public Optional<Output<Integer>> vCpu() {
+        return Optional.ofNullable(this.vCpu);
+    }
+
+    /**
+     * Availability zone ID
+     * 
+     */
+    @Import(name="zoneId")
+    private @Nullable Output<String> zoneId;
+
+    /**
+     * @return Availability zone ID
+     * 
+     */
+    public Optional<Output<String>> zoneId() {
+        return Optional.ofNullable(this.zoneId);
+    }
+
     private InstanceNodeArgs() {}
 
     private InstanceNodeArgs(InstanceNodeArgs $) {
         this.failoverPriority = $.failoverPriority;
+        this.memory = $.memory;
+        this.nodeId = $.nodeId;
+        this.nodeSpec = $.nodeSpec;
         this.nodeType = $.nodeType;
+        this.vCpu = $.vCpu;
+        this.zoneId = $.zoneId;
     }
 
     public static Builder builder() {
@@ -93,6 +173,69 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param memory Memory size, in GiB.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memory(@Nullable Output<Integer> memory) {
+            $.memory = memory;
+            return this;
+        }
+
+        /**
+         * @param memory Memory size, in GiB.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memory(Integer memory) {
+            return memory(Output.of(memory));
+        }
+
+        /**
+         * @param nodeId Node ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeId(@Nullable Output<String> nodeId) {
+            $.nodeId = nodeId;
+            return this;
+        }
+
+        /**
+         * @param nodeId Node ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeId(String nodeId) {
+            return nodeId(Output.of(nodeId));
+        }
+
+        /**
+         * @param nodeSpec Node specification.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeSpec(@Nullable Output<String> nodeSpec) {
+            $.nodeSpec = nodeSpec;
+            return this;
+        }
+
+        /**
+         * @param nodeSpec Node specification.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeSpec(String nodeSpec) {
+            return nodeSpec(Output.of(nodeSpec));
+        }
+
+        /**
          * @param nodeType Node type. Values: Primary: primary node. ReadOnly: read-only node.
          * 
          * @return builder
@@ -111,6 +254,48 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodeType(String nodeType) {
             return nodeType(Output.of(nodeType));
+        }
+
+        /**
+         * @param vCpu CPU size. For example, a value of 1 indicates a CPU size of 1U.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vCpu(@Nullable Output<Integer> vCpu) {
+            $.vCpu = vCpu;
+            return this;
+        }
+
+        /**
+         * @param vCpu CPU size. For example, a value of 1 indicates a CPU size of 1U.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vCpu(Integer vCpu) {
+            return vCpu(Output.of(vCpu));
+        }
+
+        /**
+         * @param zoneId Availability zone ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneId(@Nullable Output<String> zoneId) {
+            $.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * @param zoneId Availability zone ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder zoneId(String zoneId) {
+            return zoneId(Output.of(zoneId));
         }
 
         public InstanceNodeArgs build() {

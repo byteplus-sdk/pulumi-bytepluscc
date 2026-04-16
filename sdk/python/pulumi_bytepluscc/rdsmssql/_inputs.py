@@ -38,18 +38,58 @@ if not MYPY:
         """
         Instance ID
         """
+        instance_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance name
+        """
+        instance_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance status
+        """
+        is_latest: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Sync latest allowlist IP
+        """
+        project_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Project name of the instance
+        """
+        vpc: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPC ID of the instance
+        """
 elif False:
     AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AllowListAssociatedInstanceArgs:
     def __init__(__self__, *,
-                 instance_id: Optional[pulumi.Input[builtins.str]] = None):
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_status: Optional[pulumi.Input[builtins.str]] = None,
+                 is_latest: Optional[pulumi.Input[builtins.bool]] = None,
+                 project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] instance_name: Instance name
+        :param pulumi.Input[builtins.str] instance_status: Instance status
+        :param pulumi.Input[builtins.bool] is_latest: Sync latest allowlist IP
+        :param pulumi.Input[builtins.str] project_name: Project name of the instance
+        :param pulumi.Input[builtins.str] vpc: VPC ID of the instance
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if instance_status is not None:
+            pulumi.set(__self__, "instance_status", instance_status)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -62,6 +102,66 @@ class AllowListAssociatedInstanceArgs:
     @instance_id.setter
     def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance name
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter(name="instanceStatus")
+    def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance status
+        """
+        return pulumi.get(self, "instance_status")
+
+    @instance_status.setter
+    def instance_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_status", value)
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Sync latest allowlist IP
+        """
+        return pulumi.get(self, "is_latest")
+
+    @is_latest.setter
+    def is_latest(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_latest", value)
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Project name of the instance
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        VPC ID of the instance
+        """
+        return pulumi.get(self, "vpc")
+
+    @vpc.setter
+    def vpc(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc", value)
 
 
 if not MYPY:

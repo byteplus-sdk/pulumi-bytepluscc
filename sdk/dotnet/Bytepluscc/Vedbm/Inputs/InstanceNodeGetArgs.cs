@@ -20,10 +20,40 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         public Input<int>? FailoverPriority { get; set; }
 
         /// <summary>
+        /// Memory size, in GiB.
+        /// </summary>
+        [Input("memory")]
+        public Input<int>? Memory { get; set; }
+
+        /// <summary>
+        /// Node ID
+        /// </summary>
+        [Input("nodeId")]
+        public Input<string>? NodeId { get; set; }
+
+        /// <summary>
+        /// Node specification.
+        /// </summary>
+        [Input("nodeSpec")]
+        public Input<string>? NodeSpec { get; set; }
+
+        /// <summary>
         /// Node type. Values: Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
+
+        /// <summary>
+        /// CPU size. For example, a value of 1 indicates a CPU size of 1U.
+        /// </summary>
+        [Input("vCpu")]
+        public Input<int>? VCpu { get; set; }
+
+        /// <summary>
+        /// Availability zone ID
+        /// </summary>
+        [Input("zoneId")]
+        public Input<string>? ZoneId { get; set; }
 
         public InstanceNodeGetArgs()
         {

@@ -19,6 +19,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Outputs
         /// </summary>
         public readonly bool? AutoIndexFlag;
         /// <summary>
+        /// Whether to distinguish case. Default is false.
+        /// </summary>
+        public readonly bool? CaseSensitive;
+        /// <summary>
+        /// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&amp;*()-_=\\"', &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        /// </summary>
+        public readonly string? Delimiter;
+        /// <summary>
+        /// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        /// </summary>
+        public readonly bool? IncludeChinese;
+        /// <summary>
         /// Create indexes for all fields with text values in the JSON field.
         /// </summary>
         public readonly bool? IndexAll;
@@ -39,6 +51,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Outputs
         private IndexKeyValueValueJsonKeyValue(
             bool? autoIndexFlag,
 
+            bool? caseSensitive,
+
+            string? delimiter,
+
+            bool? includeChinese,
+
             bool? indexAll,
 
             bool? indexSqlAll,
@@ -48,6 +66,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Outputs
             string? valueType)
         {
             AutoIndexFlag = autoIndexFlag;
+            CaseSensitive = caseSensitive;
+            Delimiter = delimiter;
+            IncludeChinese = includeChinese;
             IndexAll = indexAll;
             IndexSqlAll = indexSqlAll;
             SqlFlag = sqlFlag;

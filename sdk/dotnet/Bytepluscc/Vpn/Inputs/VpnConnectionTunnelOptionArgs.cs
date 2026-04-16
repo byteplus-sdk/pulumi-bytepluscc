@@ -14,6 +14,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Inputs
     public sealed class VpnConnectionTunnelOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+        /// </summary>
+        [Input("connectStatus")]
+        public Input<string>? ConnectStatus { get; set; }
+
+        /// <summary>
         /// ID of the customer gateway associated with the IPsec connection.
         /// </summary>
         [Input("customerGatewayId")]

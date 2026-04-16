@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'BandwidthPackageTagArgs',
+    'BandwidthPackageTagArgsDict',
     'CenInstanceArgs',
     'CenInstanceArgsDict',
     'CenTagArgs',
@@ -23,6 +25,58 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class BandwidthPackageTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+        """
+elif False:
+    BandwidthPackageTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BandwidthPackageTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        :param pulumi.Input[builtins.str] value: Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class CenInstanceArgsDict(TypedDict):

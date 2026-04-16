@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbAccount{}
 	case "bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint":
 		r = &DbEndpoint{}
+	case "bytepluscc:rdspostgresql/instance:Instance":
+		r = &Instance{}
 	case "bytepluscc:rdspostgresql/schema:Schema":
 		r = &Schema{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdspostgresql/dbEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdspostgresql/instance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

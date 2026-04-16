@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * Plural Data Source schema for Byteplus::IAM::AccessKey
+ * Plural Data Source schema for Byteplus::IAM::Accesskey
  */
 export function getAccesskeys(opts?: pulumi.InvokeOptions): Promise<GetAccesskeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -27,7 +27,7 @@ export interface GetAccesskeysResult {
     readonly ids: string[];
 }
 /**
- * Plural Data Source schema for Byteplus::IAM::AccessKey
+ * Plural Data Source schema for Byteplus::IAM::Accesskey
  */
 export function getAccesskeysOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccesskeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

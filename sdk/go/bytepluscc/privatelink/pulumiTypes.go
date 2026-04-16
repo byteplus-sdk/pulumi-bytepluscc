@@ -428,6 +428,236 @@ func (o EndpointServiceTagArrayOutput) Index(i pulumi.IntInput) EndpointServiceT
 	}).(EndpointServiceTagOutput)
 }
 
+type VpcEndpointTag struct {
+	// Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+	Key *string `pulumi:"key"`
+	// Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+	Value *string `pulumi:"value"`
+}
+
+// VpcEndpointTagInput is an input type that accepts VpcEndpointTagArgs and VpcEndpointTagOutput values.
+// You can construct a concrete instance of `VpcEndpointTagInput` via:
+//
+//	VpcEndpointTagArgs{...}
+type VpcEndpointTagInput interface {
+	pulumi.Input
+
+	ToVpcEndpointTagOutput() VpcEndpointTagOutput
+	ToVpcEndpointTagOutputWithContext(context.Context) VpcEndpointTagOutput
+}
+
+type VpcEndpointTagArgs struct {
+	// Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VpcEndpointTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointTag)(nil)).Elem()
+}
+
+func (i VpcEndpointTagArgs) ToVpcEndpointTagOutput() VpcEndpointTagOutput {
+	return i.ToVpcEndpointTagOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointTagArgs) ToVpcEndpointTagOutputWithContext(ctx context.Context) VpcEndpointTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointTagOutput)
+}
+
+// VpcEndpointTagArrayInput is an input type that accepts VpcEndpointTagArray and VpcEndpointTagArrayOutput values.
+// You can construct a concrete instance of `VpcEndpointTagArrayInput` via:
+//
+//	VpcEndpointTagArray{ VpcEndpointTagArgs{...} }
+type VpcEndpointTagArrayInput interface {
+	pulumi.Input
+
+	ToVpcEndpointTagArrayOutput() VpcEndpointTagArrayOutput
+	ToVpcEndpointTagArrayOutputWithContext(context.Context) VpcEndpointTagArrayOutput
+}
+
+type VpcEndpointTagArray []VpcEndpointTagInput
+
+func (VpcEndpointTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointTag)(nil)).Elem()
+}
+
+func (i VpcEndpointTagArray) ToVpcEndpointTagArrayOutput() VpcEndpointTagArrayOutput {
+	return i.ToVpcEndpointTagArrayOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointTagArray) ToVpcEndpointTagArrayOutputWithContext(ctx context.Context) VpcEndpointTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointTagArrayOutput)
+}
+
+type VpcEndpointTagOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointTag)(nil)).Elem()
+}
+
+func (o VpcEndpointTagOutput) ToVpcEndpointTagOutput() VpcEndpointTagOutput {
+	return o
+}
+
+func (o VpcEndpointTagOutput) ToVpcEndpointTagOutputWithContext(ctx context.Context) VpcEndpointTagOutput {
+	return o
+}
+
+// Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+func (o VpcEndpointTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+func (o VpcEndpointTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VpcEndpointTagArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointTag)(nil)).Elem()
+}
+
+func (o VpcEndpointTagArrayOutput) ToVpcEndpointTagArrayOutput() VpcEndpointTagArrayOutput {
+	return o
+}
+
+func (o VpcEndpointTagArrayOutput) ToVpcEndpointTagArrayOutputWithContext(ctx context.Context) VpcEndpointTagArrayOutput {
+	return o
+}
+
+func (o VpcEndpointTagArrayOutput) Index(i pulumi.IntInput) VpcEndpointTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcEndpointTag {
+		return vs[0].([]VpcEndpointTag)[vs[1].(int)]
+	}).(VpcEndpointTagOutput)
+}
+
+type VpcEndpointZone struct {
+	// The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
+	// The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+	PrivateIpv6Address *string `pulumi:"privateIpv6Address"`
+	// ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+	SubnetId *string `pulumi:"subnetId"`
+	// ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// VpcEndpointZoneInput is an input type that accepts VpcEndpointZoneArgs and VpcEndpointZoneOutput values.
+// You can construct a concrete instance of `VpcEndpointZoneInput` via:
+//
+//	VpcEndpointZoneArgs{...}
+type VpcEndpointZoneInput interface {
+	pulumi.Input
+
+	ToVpcEndpointZoneOutput() VpcEndpointZoneOutput
+	ToVpcEndpointZoneOutputWithContext(context.Context) VpcEndpointZoneOutput
+}
+
+type VpcEndpointZoneArgs struct {
+	// The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+	PrivateIpAddress pulumi.StringPtrInput `pulumi:"privateIpAddress"`
+	// The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+	PrivateIpv6Address pulumi.StringPtrInput `pulumi:"privateIpv6Address"`
+	// ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (VpcEndpointZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointZone)(nil)).Elem()
+}
+
+func (i VpcEndpointZoneArgs) ToVpcEndpointZoneOutput() VpcEndpointZoneOutput {
+	return i.ToVpcEndpointZoneOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointZoneArgs) ToVpcEndpointZoneOutputWithContext(ctx context.Context) VpcEndpointZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointZoneOutput)
+}
+
+// VpcEndpointZoneArrayInput is an input type that accepts VpcEndpointZoneArray and VpcEndpointZoneArrayOutput values.
+// You can construct a concrete instance of `VpcEndpointZoneArrayInput` via:
+//
+//	VpcEndpointZoneArray{ VpcEndpointZoneArgs{...} }
+type VpcEndpointZoneArrayInput interface {
+	pulumi.Input
+
+	ToVpcEndpointZoneArrayOutput() VpcEndpointZoneArrayOutput
+	ToVpcEndpointZoneArrayOutputWithContext(context.Context) VpcEndpointZoneArrayOutput
+}
+
+type VpcEndpointZoneArray []VpcEndpointZoneInput
+
+func (VpcEndpointZoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointZone)(nil)).Elem()
+}
+
+func (i VpcEndpointZoneArray) ToVpcEndpointZoneArrayOutput() VpcEndpointZoneArrayOutput {
+	return i.ToVpcEndpointZoneArrayOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointZoneArray) ToVpcEndpointZoneArrayOutputWithContext(ctx context.Context) VpcEndpointZoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointZoneArrayOutput)
+}
+
+type VpcEndpointZoneOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointZone)(nil)).Elem()
+}
+
+func (o VpcEndpointZoneOutput) ToVpcEndpointZoneOutput() VpcEndpointZoneOutput {
+	return o
+}
+
+func (o VpcEndpointZoneOutput) ToVpcEndpointZoneOutputWithContext(ctx context.Context) VpcEndpointZoneOutput {
+	return o
+}
+
+// The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+func (o VpcEndpointZoneOutput) PrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointZone) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+func (o VpcEndpointZoneOutput) PrivateIpv6Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointZone) *string { return v.PrivateIpv6Address }).(pulumi.StringPtrOutput)
+}
+
+// ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+func (o VpcEndpointZoneOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointZone) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+func (o VpcEndpointZoneOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointZone) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type VpcEndpointZoneArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointZoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointZone)(nil)).Elem()
+}
+
+func (o VpcEndpointZoneArrayOutput) ToVpcEndpointZoneArrayOutput() VpcEndpointZoneArrayOutput {
+	return o
+}
+
+func (o VpcEndpointZoneArrayOutput) ToVpcEndpointZoneArrayOutputWithContext(ctx context.Context) VpcEndpointZoneArrayOutput {
+	return o
+}
+
+func (o VpcEndpointZoneArrayOutput) Index(i pulumi.IntInput) VpcEndpointZoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcEndpointZone {
+		return vs[0].([]VpcEndpointZone)[vs[1].(int)]
+	}).(VpcEndpointZoneOutput)
+}
+
 type GetEndpointServicePrivateDnsNameConfiguration struct {
 	// Domain verification name.
 	Name string `pulumi:"name"`
@@ -728,6 +958,281 @@ func (o GetEndpointServiceTagArrayOutput) Index(i pulumi.IntInput) GetEndpointSe
 	}).(GetEndpointServiceTagOutput)
 }
 
+type GetVpcEndpointTag struct {
+	// Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+	Key string `pulumi:"key"`
+	// Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+	Value string `pulumi:"value"`
+}
+
+// GetVpcEndpointTagInput is an input type that accepts GetVpcEndpointTagArgs and GetVpcEndpointTagOutput values.
+// You can construct a concrete instance of `GetVpcEndpointTagInput` via:
+//
+//	GetVpcEndpointTagArgs{...}
+type GetVpcEndpointTagInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointTagOutput() GetVpcEndpointTagOutput
+	ToGetVpcEndpointTagOutputWithContext(context.Context) GetVpcEndpointTagOutput
+}
+
+type GetVpcEndpointTagArgs struct {
+	// Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcEndpointTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointTag)(nil)).Elem()
+}
+
+func (i GetVpcEndpointTagArgs) ToGetVpcEndpointTagOutput() GetVpcEndpointTagOutput {
+	return i.ToGetVpcEndpointTagOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointTagArgs) ToGetVpcEndpointTagOutputWithContext(ctx context.Context) GetVpcEndpointTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointTagOutput)
+}
+
+// GetVpcEndpointTagArrayInput is an input type that accepts GetVpcEndpointTagArray and GetVpcEndpointTagArrayOutput values.
+// You can construct a concrete instance of `GetVpcEndpointTagArrayInput` via:
+//
+//	GetVpcEndpointTagArray{ GetVpcEndpointTagArgs{...} }
+type GetVpcEndpointTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointTagArrayOutput() GetVpcEndpointTagArrayOutput
+	ToGetVpcEndpointTagArrayOutputWithContext(context.Context) GetVpcEndpointTagArrayOutput
+}
+
+type GetVpcEndpointTagArray []GetVpcEndpointTagInput
+
+func (GetVpcEndpointTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointTag)(nil)).Elem()
+}
+
+func (i GetVpcEndpointTagArray) ToGetVpcEndpointTagArrayOutput() GetVpcEndpointTagArrayOutput {
+	return i.ToGetVpcEndpointTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointTagArray) ToGetVpcEndpointTagArrayOutputWithContext(ctx context.Context) GetVpcEndpointTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointTagArrayOutput)
+}
+
+type GetVpcEndpointTagOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointTag)(nil)).Elem()
+}
+
+func (o GetVpcEndpointTagOutput) ToGetVpcEndpointTagOutput() GetVpcEndpointTagOutput {
+	return o
+}
+
+func (o GetVpcEndpointTagOutput) ToGetVpcEndpointTagOutputWithContext(ctx context.Context) GetVpcEndpointTagOutput {
+	return o
+}
+
+// Tag key of the endpoint user tag. Length limit: 1–128 characters. Case sensitive. Cannot start with 'or' or 'sys:' in any case combination. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @.
+func (o GetVpcEndpointTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value of the endpoint user tag. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and @
+func (o GetVpcEndpointTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcEndpointTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointTag)(nil)).Elem()
+}
+
+func (o GetVpcEndpointTagArrayOutput) ToGetVpcEndpointTagArrayOutput() GetVpcEndpointTagArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointTagArrayOutput) ToGetVpcEndpointTagArrayOutputWithContext(ctx context.Context) GetVpcEndpointTagArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointTagArrayOutput) Index(i pulumi.IntInput) GetVpcEndpointTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcEndpointTag {
+		return vs[0].([]GetVpcEndpointTag)[vs[1].(int)]
+	}).(GetVpcEndpointTagOutput)
+}
+
+type GetVpcEndpointZone struct {
+	// Service status of the endpoint node's IPv6 address. Active: normal. Inactive: abnormal.
+	Ipv6ServiceStatus string `pulumi:"ipv6ServiceStatus"`
+	// ID of the endpoint NIC used to connect to new service resources. If not in the process of seamless service resource replacement, this parameter returns empty.
+	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
+	// The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+	PrivateIpAddress string `pulumi:"privateIpAddress"`
+	// The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+	PrivateIpv6Address string `pulumi:"privateIpv6Address"`
+	// Service status of the endpoint IPv4 address. Active: Normal. Inactive: Abnormal.
+	ServiceStatus string `pulumi:"serviceStatus"`
+	// ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+	SubnetId string `pulumi:"subnetId"`
+	// Domain name of the endpoint availability zone.
+	ZoneDomain string `pulumi:"zoneDomain"`
+	// ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+	ZoneId string `pulumi:"zoneId"`
+	// Status of the endpoint node's availability zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed.
+	ZoneStatus string `pulumi:"zoneStatus"`
+}
+
+// GetVpcEndpointZoneInput is an input type that accepts GetVpcEndpointZoneArgs and GetVpcEndpointZoneOutput values.
+// You can construct a concrete instance of `GetVpcEndpointZoneInput` via:
+//
+//	GetVpcEndpointZoneArgs{...}
+type GetVpcEndpointZoneInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointZoneOutput() GetVpcEndpointZoneOutput
+	ToGetVpcEndpointZoneOutputWithContext(context.Context) GetVpcEndpointZoneOutput
+}
+
+type GetVpcEndpointZoneArgs struct {
+	// Service status of the endpoint node's IPv6 address. Active: normal. Inactive: abnormal.
+	Ipv6ServiceStatus pulumi.StringInput `pulumi:"ipv6ServiceStatus"`
+	// ID of the endpoint NIC used to connect to new service resources. If not in the process of seamless service resource replacement, this parameter returns empty.
+	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
+	// The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+	PrivateIpAddress pulumi.StringInput `pulumi:"privateIpAddress"`
+	// The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+	PrivateIpv6Address pulumi.StringInput `pulumi:"privateIpv6Address"`
+	// Service status of the endpoint IPv4 address. Active: Normal. Inactive: Abnormal.
+	ServiceStatus pulumi.StringInput `pulumi:"serviceStatus"`
+	// ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Domain name of the endpoint availability zone.
+	ZoneDomain pulumi.StringInput `pulumi:"zoneDomain"`
+	// ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+	// Status of the endpoint node's availability zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed.
+	ZoneStatus pulumi.StringInput `pulumi:"zoneStatus"`
+}
+
+func (GetVpcEndpointZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointZone)(nil)).Elem()
+}
+
+func (i GetVpcEndpointZoneArgs) ToGetVpcEndpointZoneOutput() GetVpcEndpointZoneOutput {
+	return i.ToGetVpcEndpointZoneOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointZoneArgs) ToGetVpcEndpointZoneOutputWithContext(ctx context.Context) GetVpcEndpointZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointZoneOutput)
+}
+
+// GetVpcEndpointZoneArrayInput is an input type that accepts GetVpcEndpointZoneArray and GetVpcEndpointZoneArrayOutput values.
+// You can construct a concrete instance of `GetVpcEndpointZoneArrayInput` via:
+//
+//	GetVpcEndpointZoneArray{ GetVpcEndpointZoneArgs{...} }
+type GetVpcEndpointZoneArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointZoneArrayOutput() GetVpcEndpointZoneArrayOutput
+	ToGetVpcEndpointZoneArrayOutputWithContext(context.Context) GetVpcEndpointZoneArrayOutput
+}
+
+type GetVpcEndpointZoneArray []GetVpcEndpointZoneInput
+
+func (GetVpcEndpointZoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointZone)(nil)).Elem()
+}
+
+func (i GetVpcEndpointZoneArray) ToGetVpcEndpointZoneArrayOutput() GetVpcEndpointZoneArrayOutput {
+	return i.ToGetVpcEndpointZoneArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointZoneArray) ToGetVpcEndpointZoneArrayOutputWithContext(ctx context.Context) GetVpcEndpointZoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointZoneArrayOutput)
+}
+
+type GetVpcEndpointZoneOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointZone)(nil)).Elem()
+}
+
+func (o GetVpcEndpointZoneOutput) ToGetVpcEndpointZoneOutput() GetVpcEndpointZoneOutput {
+	return o
+}
+
+func (o GetVpcEndpointZoneOutput) ToGetVpcEndpointZoneOutputWithContext(ctx context.Context) GetVpcEndpointZoneOutput {
+	return o
+}
+
+// Service status of the endpoint node's IPv6 address. Active: normal. Inactive: abnormal.
+func (o GetVpcEndpointZoneOutput) Ipv6ServiceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.Ipv6ServiceStatus }).(pulumi.StringOutput)
+}
+
+// ID of the endpoint NIC used to connect to new service resources. If not in the process of seamless service resource replacement, this parameter returns empty.
+func (o GetVpcEndpointZoneOutput) NetworkInterfaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
+}
+
+// The private IPv4 address of the endpoint node's network interface must belong to the subnet's IPv4 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv4 address, with a value range of 1–10. Use & to separate multiple private IPv4 addresses.
+func (o GetVpcEndpointZoneOutput) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
+}
+
+// The private IPv6 address of the endpoint node's network interface must belong to the subnet's IPv6 CIDR block. You can call the DescribeSubnets API to obtain the subnet's CIDR block. Parameter -N: indicates the sequence number of the private IPv6 address, with a value range of 1–10. Use & to separate multiple private IPv6 addresses. If not specified, an IPv6 address will be randomly assigned within the subnet's IPv6 CIDR block by default.
+func (o GetVpcEndpointZoneOutput) PrivateIpv6Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.PrivateIpv6Address }).(pulumi.StringOutput)
+}
+
+// Service status of the endpoint IPv4 address. Active: Normal. Inactive: Abnormal.
+func (o GetVpcEndpointZoneOutput) ServiceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.ServiceStatus }).(pulumi.StringOutput)
+}
+
+// ID of the subnet to which the NIC of the endpoint to be created belongs. You can call the DescribeSubnets API to obtain the subnet ID. Parameter -N: Indicates the sequence number of the subnet ID, value range: 1–10. Separate multiple subnet IDs with &.
+func (o GetVpcEndpointZoneOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Domain name of the endpoint availability zone.
+func (o GetVpcEndpointZoneOutput) ZoneDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.ZoneDomain }).(pulumi.StringOutput)
+}
+
+// ID of the availability zone to which the NIC of the endpoint to be created belongs. For more information about availability zones, see Regions and Availability Zones. Parameter -N: Indicates the sequence number of the availability zone, value range: 1–10. Separate multiple availability zone IDs with &.
+func (o GetVpcEndpointZoneOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+// Status of the endpoint node's availability zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed.
+func (o GetVpcEndpointZoneOutput) ZoneStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointZone) string { return v.ZoneStatus }).(pulumi.StringOutput)
+}
+
+type GetVpcEndpointZoneArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointZoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointZone)(nil)).Elem()
+}
+
+func (o GetVpcEndpointZoneArrayOutput) ToGetVpcEndpointZoneArrayOutput() GetVpcEndpointZoneArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointZoneArrayOutput) ToGetVpcEndpointZoneArrayOutputWithContext(ctx context.Context) GetVpcEndpointZoneArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointZoneArrayOutput) Index(i pulumi.IntInput) GetVpcEndpointZoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcEndpointZone {
+		return vs[0].([]GetVpcEndpointZone)[vs[1].(int)]
+	}).(GetVpcEndpointZoneOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServicePrivateDnsNameConfigurationInput)(nil)).Elem(), EndpointServicePrivateDnsNameConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServicePrivateDnsNameConfigurationPtrInput)(nil)).Elem(), EndpointServicePrivateDnsNameConfigurationArgs{})
@@ -735,20 +1240,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceResourceArrayInput)(nil)).Elem(), EndpointServiceResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceTagInput)(nil)).Elem(), EndpointServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceTagArrayInput)(nil)).Elem(), EndpointServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointTagInput)(nil)).Elem(), VpcEndpointTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointTagArrayInput)(nil)).Elem(), VpcEndpointTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointZoneInput)(nil)).Elem(), VpcEndpointZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointZoneArrayInput)(nil)).Elem(), VpcEndpointZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServicePrivateDnsNameConfigurationInput)(nil)).Elem(), GetEndpointServicePrivateDnsNameConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceResourceInput)(nil)).Elem(), GetEndpointServiceResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceResourceArrayInput)(nil)).Elem(), GetEndpointServiceResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceTagInput)(nil)).Elem(), GetEndpointServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceTagArrayInput)(nil)).Elem(), GetEndpointServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointTagInput)(nil)).Elem(), GetVpcEndpointTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointTagArrayInput)(nil)).Elem(), GetVpcEndpointTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointZoneInput)(nil)).Elem(), GetVpcEndpointZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointZoneArrayInput)(nil)).Elem(), GetVpcEndpointZoneArray{})
 	pulumi.RegisterOutputType(EndpointServicePrivateDnsNameConfigurationOutput{})
 	pulumi.RegisterOutputType(EndpointServicePrivateDnsNameConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(EndpointServiceResourceOutput{})
 	pulumi.RegisterOutputType(EndpointServiceResourceArrayOutput{})
 	pulumi.RegisterOutputType(EndpointServiceTagOutput{})
 	pulumi.RegisterOutputType(EndpointServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(VpcEndpointTagOutput{})
+	pulumi.RegisterOutputType(VpcEndpointTagArrayOutput{})
+	pulumi.RegisterOutputType(VpcEndpointZoneOutput{})
+	pulumi.RegisterOutputType(VpcEndpointZoneArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointServicePrivateDnsNameConfigurationOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceResourceOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceTagOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointTagOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointZoneOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointZoneArrayOutput{})
 }

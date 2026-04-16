@@ -3131,6 +3131,12 @@ func (o InstanceRenewInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 type InstanceSecondaryNetworkInterface struct {
 	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
+	// IPv6 address of the instance.
+	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
+	// Instance MAC address.
+	MacAddress *string `pulumi:"macAddress"`
+	// The network interface ID of the instance.
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
 	// Instance primary IP address
 	PrimaryIpAddress *string `pulumi:"primaryIpAddress"`
 	// Instance private IP address.
@@ -3139,6 +3145,8 @@ type InstanceSecondaryNetworkInterface struct {
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
 	// Instance subnet ID.
 	SubnetId *string `pulumi:"subnetId"`
+	// VPC ID of the instance.
+	VpcId *string `pulumi:"vpcId"`
 }
 
 // InstanceSecondaryNetworkInterfaceInput is an input type that accepts InstanceSecondaryNetworkInterfaceArgs and InstanceSecondaryNetworkInterfaceOutput values.
@@ -3155,6 +3163,12 @@ type InstanceSecondaryNetworkInterfaceInput interface {
 type InstanceSecondaryNetworkInterfaceArgs struct {
 	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount pulumi.IntPtrInput `pulumi:"ipv6AddressCount"`
+	// IPv6 address of the instance.
+	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
+	// Instance MAC address.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// The network interface ID of the instance.
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
 	// Instance primary IP address
 	PrimaryIpAddress pulumi.StringPtrInput `pulumi:"primaryIpAddress"`
 	// Instance private IP address.
@@ -3163,6 +3177,8 @@ type InstanceSecondaryNetworkInterfaceArgs struct {
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
 	// Instance subnet ID.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// VPC ID of the instance.
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
 
 func (InstanceSecondaryNetworkInterfaceArgs) ElementType() reflect.Type {
@@ -3221,6 +3237,21 @@ func (o InstanceSecondaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntPt
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *int { return v.Ipv6AddressCount }).(pulumi.IntPtrOutput)
 }
 
+// IPv6 address of the instance.
+func (o InstanceSecondaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
+}
+
+// Instance MAC address.
+func (o InstanceSecondaryNetworkInterfaceOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// The network interface ID of the instance.
+func (o InstanceSecondaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
 // Instance primary IP address
 func (o InstanceSecondaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.PrimaryIpAddress }).(pulumi.StringPtrOutput)
@@ -3239,6 +3270,11 @@ func (o InstanceSecondaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.Strin
 // Instance subnet ID.
 func (o InstanceSecondaryNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// VPC ID of the instance.
+func (o InstanceSecondaryNetworkInterfaceOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
 
 type InstanceSecondaryNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }

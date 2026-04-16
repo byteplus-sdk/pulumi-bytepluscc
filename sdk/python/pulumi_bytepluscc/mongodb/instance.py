@@ -54,7 +54,7 @@ class InstanceArgs:
         :param pulumi.Input[builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
         :param pulumi.Input[builtins.str] vpc_id: Private network ID.
-        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
         :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
@@ -175,7 +175,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        Availability zone ID where the instance is located.
+        The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         return pulumi.get(self, "zone_id")
 
@@ -516,7 +516,7 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         :param pulumi.Input[builtins.str] updated_time: Instance update time (UTC).
         :param pulumi.Input[builtins.str] vpc_id: Private network ID.
-        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         if allow_list_ids is not None:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -1109,7 +1109,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Availability zone ID where the instance is located.
+        The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         return pulumi.get(self, "zone_id")
 
@@ -1222,7 +1222,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
         :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         :param pulumi.Input[builtins.str] vpc_id: Private network ID.
-        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         ...
     @overload
@@ -1478,7 +1478,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         :param pulumi.Input[builtins.str] updated_time: Instance update time (UTC).
         :param pulumi.Input[builtins.str] vpc_id: Private network ID.
-        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
+        :param pulumi.Input[builtins.str] zone_id: The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1860,7 +1860,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        Availability zone ID where the instance is located.
+        The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         """
         return pulumi.get(self, "zone_id")
 

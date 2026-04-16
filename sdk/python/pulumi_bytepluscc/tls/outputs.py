@@ -17,6 +17,15 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ImportTaskImportSourceInfo',
+    'ImportTaskImportSourceInfoKafkaSourceInfo',
+    'ImportTaskImportSourceInfoTosSourceInfo',
+    'ImportTaskTargetInfo',
+    'ImportTaskTargetInfoExtractRule',
+    'ImportTaskTargetInfoExtractRuleExtractRule',
+    'ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex',
+    'ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate',
+    'ImportTaskTaskStatistics',
     'IndexFullText',
     'IndexKeyValue',
     'IndexKeyValueValue',
@@ -29,6 +38,15 @@ __all__ = [
     'ProjectTag',
     'ScheduleSqlTaskRequestCycle',
     'TopicTag',
+    'GetImportTaskImportSourceInfoResult',
+    'GetImportTaskImportSourceInfoKafkaSourceInfoResult',
+    'GetImportTaskImportSourceInfoTosSourceInfoResult',
+    'GetImportTaskTargetInfoResult',
+    'GetImportTaskTargetInfoExtractRuleResult',
+    'GetImportTaskTargetInfoExtractRuleExtractRuleResult',
+    'GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexResult',
+    'GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateResult',
+    'GetImportTaskTaskStatisticsResult',
     'GetIndexFullTextResult',
     'GetIndexKeyValueResult',
     'GetIndexKeyValueValueResult',
@@ -42,6 +60,836 @@ __all__ = [
     'GetScheduleSqlTaskRequestCycleResult',
     'GetTopicTagResult',
 ]
+
+@pulumi.output_type
+class ImportTaskImportSourceInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "kafkaSourceInfo":
+            suggest = "kafka_source_info"
+        elif key == "tosSourceInfo":
+            suggest = "tos_source_info"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskImportSourceInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskImportSourceInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskImportSourceInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 kafka_source_info: Optional['outputs.ImportTaskImportSourceInfoKafkaSourceInfo'] = None,
+                 tos_source_info: Optional['outputs.ImportTaskImportSourceInfoTosSourceInfo'] = None):
+        """
+        :param 'ImportTaskImportSourceInfoKafkaSourceInfoArgs' kafka_source_info: Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+        :param 'ImportTaskImportSourceInfoTosSourceInfoArgs' tos_source_info: TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+        """
+        if kafka_source_info is not None:
+            pulumi.set(__self__, "kafka_source_info", kafka_source_info)
+        if tos_source_info is not None:
+            pulumi.set(__self__, "tos_source_info", tos_source_info)
+
+    @property
+    @pulumi.getter(name="kafkaSourceInfo")
+    def kafka_source_info(self) -> Optional['outputs.ImportTaskImportSourceInfoKafkaSourceInfo']:
+        """
+        Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+        """
+        return pulumi.get(self, "kafka_source_info")
+
+    @property
+    @pulumi.getter(name="tosSourceInfo")
+    def tos_source_info(self) -> Optional['outputs.ImportTaskImportSourceInfoTosSourceInfo']:
+        """
+        TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+        """
+        return pulumi.get(self, "tos_source_info")
+
+
+@pulumi.output_type
+class ImportTaskImportSourceInfoKafkaSourceInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "initialOffset":
+            suggest = "initial_offset"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "isNeedAuth":
+            suggest = "is_need_auth"
+        elif key == "timeSourceDefault":
+            suggest = "time_source_default"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskImportSourceInfoKafkaSourceInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskImportSourceInfoKafkaSourceInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskImportSourceInfoKafkaSourceInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 encode: Optional[builtins.str] = None,
+                 group: Optional[builtins.str] = None,
+                 host: Optional[builtins.str] = None,
+                 initial_offset: Optional[builtins.int] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 is_need_auth: Optional[builtins.bool] = None,
+                 mechanism: Optional[builtins.str] = None,
+                 password: Optional[builtins.str] = None,
+                 protocol: Optional[builtins.str] = None,
+                 time_source_default: Optional[builtins.int] = None,
+                 topic: Optional[builtins.str] = None,
+                 username: Optional[builtins.str] = None):
+        """
+        :param builtins.str encode: Data encoding format. Available options: UTF-8, GBK.
+        :param builtins.str group: Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+        :param builtins.str host: The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+        :param builtins.int initial_offset: Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+        :param builtins.str instance_id: If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+        :param builtins.bool is_need_auth: Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+        :param builtins.str mechanism: Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+        :param builtins.str password: Kafka SASL user password for authentication.
+        :param builtins.str protocol: Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+        :param builtins.int time_source_default: Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+        :param builtins.str topic: Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+        :param builtins.str username: Kafka SASL username for authentication.
+        """
+        if encode is not None:
+            pulumi.set(__self__, "encode", encode)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if initial_offset is not None:
+            pulumi.set(__self__, "initial_offset", initial_offset)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if is_need_auth is not None:
+            pulumi.set(__self__, "is_need_auth", is_need_auth)
+        if mechanism is not None:
+            pulumi.set(__self__, "mechanism", mechanism)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if time_source_default is not None:
+            pulumi.set(__self__, "time_source_default", time_source_default)
+        if topic is not None:
+            pulumi.set(__self__, "topic", topic)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def encode(self) -> Optional[builtins.str]:
+        """
+        Data encoding format. Available options: UTF-8, GBK.
+        """
+        return pulumi.get(self, "encode")
+
+    @property
+    @pulumi.getter
+    def group(self) -> Optional[builtins.str]:
+        """
+        Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[builtins.str]:
+        """
+        The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="initialOffset")
+    def initial_offset(self) -> Optional[builtins.int]:
+        """
+        Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+        """
+        return pulumi.get(self, "initial_offset")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="isNeedAuth")
+    def is_need_auth(self) -> Optional[builtins.bool]:
+        """
+        Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+        """
+        return pulumi.get(self, "is_need_auth")
+
+    @property
+    @pulumi.getter
+    def mechanism(self) -> Optional[builtins.str]:
+        """
+        Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+        """
+        return pulumi.get(self, "mechanism")
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[builtins.str]:
+        """
+        Kafka SASL user password for authentication.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[builtins.str]:
+        """
+        Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="timeSourceDefault")
+    def time_source_default(self) -> Optional[builtins.int]:
+        """
+        Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+        """
+        return pulumi.get(self, "time_source_default")
+
+    @property
+    @pulumi.getter
+    def topic(self) -> Optional[builtins.str]:
+        """
+        Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+        """
+        return pulumi.get(self, "topic")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[builtins.str]:
+        """
+        Kafka SASL username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class ImportTaskImportSourceInfoTosSourceInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compressType":
+            suggest = "compress_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskImportSourceInfoTosSourceInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskImportSourceInfoTosSourceInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskImportSourceInfoTosSourceInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: Optional[builtins.str] = None,
+                 compress_type: Optional[builtins.str] = None,
+                 prefix: Optional[builtins.str] = None,
+                 region: Optional[builtins.str] = None):
+        """
+        :param builtins.str bucket: TOS bucket name
+        :param builtins.str compress_type: Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+        :param builtins.str prefix: Path of the file to be imported in the TOS bucket.
+        :param builtins.str region: Region where the TOS bucket is located. Cross-region data import is supported
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if compress_type is not None:
+            pulumi.set(__self__, "compress_type", compress_type)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[builtins.str]:
+        """
+        TOS bucket name
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compressType")
+    def compress_type(self) -> Optional[builtins.str]:
+        """
+        Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+        """
+        return pulumi.get(self, "compress_type")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[builtins.str]:
+        """
+        Path of the file to be imported in the TOS bucket.
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[builtins.str]:
+        """
+        Region where the TOS bucket is located. Cross-region data import is supported
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class ImportTaskTargetInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "logType":
+            suggest = "log_type"
+        elif key == "extractRule":
+            suggest = "extract_rule"
+        elif key == "logSample":
+            suggest = "log_sample"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskTargetInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskTargetInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskTargetInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 log_type: builtins.str,
+                 region: builtins.str,
+                 extract_rule: Optional['outputs.ImportTaskTargetInfoExtractRule'] = None,
+                 log_sample: Optional[builtins.str] = None):
+        """
+        :param builtins.str log_type: Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+        :param builtins.str region: Region.
+        :param 'ImportTaskTargetInfoExtractRuleArgs' extract_rule: Log extraction rule.
+        :param builtins.str log_sample: Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+        """
+        pulumi.set(__self__, "log_type", log_type)
+        pulumi.set(__self__, "region", region)
+        if extract_rule is not None:
+            pulumi.set(__self__, "extract_rule", extract_rule)
+        if log_sample is not None:
+            pulumi.set(__self__, "log_sample", log_sample)
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> builtins.str:
+        """
+        Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+        """
+        return pulumi.get(self, "log_type")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        Region.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="extractRule")
+    def extract_rule(self) -> Optional['outputs.ImportTaskTargetInfoExtractRule']:
+        """
+        Log extraction rule.
+        """
+        return pulumi.get(self, "extract_rule")
+
+    @property
+    @pulumi.getter(name="logSample")
+    def log_sample(self) -> Optional[builtins.str]:
+        """
+        Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+        """
+        return pulumi.get(self, "log_sample")
+
+
+@pulumi.output_type
+class ImportTaskTargetInfoExtractRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "extractRule":
+            suggest = "extract_rule"
+        elif key == "skipLineCount":
+            suggest = "skip_line_count"
+        elif key == "timeExtractRegex":
+            suggest = "time_extract_regex"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskTargetInfoExtractRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskTargetInfoExtractRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskTargetInfoExtractRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 extract_rule: Optional['outputs.ImportTaskTargetInfoExtractRuleExtractRule'] = None,
+                 skip_line_count: Optional[builtins.int] = None,
+                 time_extract_regex: Optional[builtins.str] = None,
+                 time_zone: Optional[builtins.str] = None):
+        """
+        :param 'ImportTaskTargetInfoExtractRuleExtractRuleArgs' extract_rule: Basic content of log extraction rules.
+        :param builtins.int skip_line_count: Number of skipped rows. Only valid when the log type is delimiter_log and the import type is tos.
+        :param builtins.str time_extract_regex: Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+        :param builtins.str time_zone: Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+        """
+        if extract_rule is not None:
+            pulumi.set(__self__, "extract_rule", extract_rule)
+        if skip_line_count is not None:
+            pulumi.set(__self__, "skip_line_count", skip_line_count)
+        if time_extract_regex is not None:
+            pulumi.set(__self__, "time_extract_regex", time_extract_regex)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="extractRule")
+    def extract_rule(self) -> Optional['outputs.ImportTaskTargetInfoExtractRuleExtractRule']:
+        """
+        Basic content of log extraction rules.
+        """
+        return pulumi.get(self, "extract_rule")
+
+    @property
+    @pulumi.getter(name="skipLineCount")
+    def skip_line_count(self) -> Optional[builtins.int]:
+        """
+        Number of skipped rows. Only valid when the log type is delimiter_log and the import type is tos.
+        """
+        return pulumi.get(self, "skip_line_count")
+
+    @property
+    @pulumi.getter(name="timeExtractRegex")
+    def time_extract_regex(self) -> Optional[builtins.str]:
+        """
+        Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+        """
+        return pulumi.get(self, "time_extract_regex")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[builtins.str]:
+        """
+        Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+        """
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class ImportTaskTargetInfoExtractRuleExtractRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "beginRegex":
+            suggest = "begin_regex"
+        elif key == "enableNanosecond":
+            suggest = "enable_nanosecond"
+        elif key == "filterKeyRegexes":
+            suggest = "filter_key_regexes"
+        elif key == "logRegex":
+            suggest = "log_regex"
+        elif key == "logTemplate":
+            suggest = "log_template"
+        elif key == "timeFormat":
+            suggest = "time_format"
+        elif key == "timeKey":
+            suggest = "time_key"
+        elif key == "timeSample":
+            suggest = "time_sample"
+        elif key == "unMatchLogKey":
+            suggest = "un_match_log_key"
+        elif key == "unMatchUpLoadSwitch":
+            suggest = "un_match_up_load_switch"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskTargetInfoExtractRuleExtractRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskTargetInfoExtractRuleExtractRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskTargetInfoExtractRuleExtractRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 begin_regex: Optional[builtins.str] = None,
+                 delimiter: Optional[builtins.str] = None,
+                 enable_nanosecond: Optional[builtins.bool] = None,
+                 filter_key_regexes: Optional[Sequence['outputs.ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex']] = None,
+                 keys: Optional[Sequence[builtins.str]] = None,
+                 log_regex: Optional[builtins.str] = None,
+                 log_template: Optional['outputs.ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate'] = None,
+                 quote: Optional[builtins.str] = None,
+                 time_format: Optional[builtins.str] = None,
+                 time_key: Optional[builtins.str] = None,
+                 time_sample: Optional[builtins.str] = None,
+                 un_match_log_key: Optional[builtins.str] = None,
+                 un_match_up_load_switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str begin_regex: Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+        :param builtins.str delimiter: Delimiter. Only valid when LogType is delimiter_log.
+        :param builtins.bool enable_nanosecond: Enable nanoseconds.
+        :param Sequence[builtins.str] keys: List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+        :param builtins.str log_regex: Log regular expression
+        :param 'ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs' log_template: Log template.
+        :param builtins.str quote: Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+        :param builtins.str time_format: Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+        :param builtins.str time_key: Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+        :param builtins.str time_sample: Time sample. Used to verify whether the entered time parsing format is correct
+        :param builtins.str un_match_log_key: When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+        :param builtins.bool un_match_up_load_switch: Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        if begin_regex is not None:
+            pulumi.set(__self__, "begin_regex", begin_regex)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if enable_nanosecond is not None:
+            pulumi.set(__self__, "enable_nanosecond", enable_nanosecond)
+        if filter_key_regexes is not None:
+            pulumi.set(__self__, "filter_key_regexes", filter_key_regexes)
+        if keys is not None:
+            pulumi.set(__self__, "keys", keys)
+        if log_regex is not None:
+            pulumi.set(__self__, "log_regex", log_regex)
+        if log_template is not None:
+            pulumi.set(__self__, "log_template", log_template)
+        if quote is not None:
+            pulumi.set(__self__, "quote", quote)
+        if time_format is not None:
+            pulumi.set(__self__, "time_format", time_format)
+        if time_key is not None:
+            pulumi.set(__self__, "time_key", time_key)
+        if time_sample is not None:
+            pulumi.set(__self__, "time_sample", time_sample)
+        if un_match_log_key is not None:
+            pulumi.set(__self__, "un_match_log_key", un_match_log_key)
+        if un_match_up_load_switch is not None:
+            pulumi.set(__self__, "un_match_up_load_switch", un_match_up_load_switch)
+
+    @property
+    @pulumi.getter(name="beginRegex")
+    def begin_regex(self) -> Optional[builtins.str]:
+        """
+        Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+        """
+        return pulumi.get(self, "begin_regex")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[builtins.str]:
+        """
+        Delimiter. Only valid when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="enableNanosecond")
+    def enable_nanosecond(self) -> Optional[builtins.bool]:
+        """
+        Enable nanoseconds.
+        """
+        return pulumi.get(self, "enable_nanosecond")
+
+    @property
+    @pulumi.getter(name="filterKeyRegexes")
+    def filter_key_regexes(self) -> Optional[Sequence['outputs.ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex']]:
+        return pulumi.get(self, "filter_key_regexes")
+
+    @property
+    @pulumi.getter
+    def keys(self) -> Optional[Sequence[builtins.str]]:
+        """
+        List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+        """
+        return pulumi.get(self, "keys")
+
+    @property
+    @pulumi.getter(name="logRegex")
+    def log_regex(self) -> Optional[builtins.str]:
+        """
+        Log regular expression
+        """
+        return pulumi.get(self, "log_regex")
+
+    @property
+    @pulumi.getter(name="logTemplate")
+    def log_template(self) -> Optional['outputs.ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate']:
+        """
+        Log template.
+        """
+        return pulumi.get(self, "log_template")
+
+    @property
+    @pulumi.getter
+    def quote(self) -> Optional[builtins.str]:
+        """
+        Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "quote")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> Optional[builtins.str]:
+        """
+        Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeKey")
+    def time_key(self) -> Optional[builtins.str]:
+        """
+        Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+        """
+        return pulumi.get(self, "time_key")
+
+    @property
+    @pulumi.getter(name="timeSample")
+    def time_sample(self) -> Optional[builtins.str]:
+        """
+        Time sample. Used to verify whether the entered time parsing format is correct
+        """
+        return pulumi.get(self, "time_sample")
+
+    @property
+    @pulumi.getter(name="unMatchLogKey")
+    def un_match_log_key(self) -> Optional[builtins.str]:
+        """
+        When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+        """
+        return pulumi.get(self, "un_match_log_key")
+
+    @property
+    @pulumi.getter(name="unMatchUpLoadSwitch")
+    def un_match_up_load_switch(self) -> Optional[builtins.bool]:
+        """
+        Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        return pulumi.get(self, "un_match_up_load_switch")
+
+
+@pulumi.output_type
+class ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 regex: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str regex: Regular expression.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.str]:
+        """
+        Regular expression.
+        """
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate(dict):
+    def __init__(__self__, *,
+                 format: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str format: Format.
+        :param builtins.str type: Type
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def format(self) -> Optional[builtins.str]:
+        """
+        Format.
+        """
+        return pulumi.get(self, "format")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Type
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ImportTaskTaskStatistics(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bytesTotal":
+            suggest = "bytes_total"
+        elif key == "bytesTransferred":
+            suggest = "bytes_transferred"
+        elif key == "notExist":
+            suggest = "not_exist"
+        elif key == "taskStatus":
+            suggest = "task_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportTaskTaskStatistics. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportTaskTaskStatistics.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportTaskTaskStatistics.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bytes_total: Optional[builtins.int] = None,
+                 bytes_transferred: Optional[builtins.int] = None,
+                 failed: Optional[builtins.int] = None,
+                 not_exist: Optional[builtins.int] = None,
+                 skipped: Optional[builtins.int] = None,
+                 task_status: Optional[builtins.str] = None,
+                 total: Optional[builtins.int] = None,
+                 transferred: Optional[builtins.int] = None):
+        """
+        :param builtins.int bytes_total: Total resource bytes enumerated
+        :param builtins.int bytes_transferred: Bytes transferred.
+        :param builtins.int failed: Number of resources failed to import.
+        :param builtins.int not_exist: Number of resources not found.
+        :param builtins.int skipped: Number of resources skipped during import
+        :param builtins.str task_status: Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+        :param builtins.int total: Total number of resources enumerated.
+        :param builtins.int transferred: Number of records transferred.
+        """
+        if bytes_total is not None:
+            pulumi.set(__self__, "bytes_total", bytes_total)
+        if bytes_transferred is not None:
+            pulumi.set(__self__, "bytes_transferred", bytes_transferred)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if not_exist is not None:
+            pulumi.set(__self__, "not_exist", not_exist)
+        if skipped is not None:
+            pulumi.set(__self__, "skipped", skipped)
+        if task_status is not None:
+            pulumi.set(__self__, "task_status", task_status)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
+        if transferred is not None:
+            pulumi.set(__self__, "transferred", transferred)
+
+    @property
+    @pulumi.getter(name="bytesTotal")
+    def bytes_total(self) -> Optional[builtins.int]:
+        """
+        Total resource bytes enumerated
+        """
+        return pulumi.get(self, "bytes_total")
+
+    @property
+    @pulumi.getter(name="bytesTransferred")
+    def bytes_transferred(self) -> Optional[builtins.int]:
+        """
+        Bytes transferred.
+        """
+        return pulumi.get(self, "bytes_transferred")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[builtins.int]:
+        """
+        Number of resources failed to import.
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter(name="notExist")
+    def not_exist(self) -> Optional[builtins.int]:
+        """
+        Number of resources not found.
+        """
+        return pulumi.get(self, "not_exist")
+
+    @property
+    @pulumi.getter
+    def skipped(self) -> Optional[builtins.int]:
+        """
+        Number of resources skipped during import
+        """
+        return pulumi.get(self, "skipped")
+
+    @property
+    @pulumi.getter(name="taskStatus")
+    def task_status(self) -> Optional[builtins.str]:
+        """
+        Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+        """
+        return pulumi.get(self, "task_status")
+
+    @property
+    @pulumi.getter
+    def total(self) -> Optional[builtins.int]:
+        """
+        Total number of resources enumerated.
+        """
+        return pulumi.get(self, "total")
+
+    @property
+    @pulumi.getter
+    def transferred(self) -> Optional[builtins.int]:
+        """
+        Number of records transferred.
+        """
+        return pulumi.get(self, "transferred")
+
 
 @pulumi.output_type
 class IndexFullText(dict):
@@ -316,6 +1164,10 @@ class IndexKeyValueValueJsonKeyValue(dict):
         suggest = None
         if key == "autoIndexFlag":
             suggest = "auto_index_flag"
+        elif key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "includeChinese":
+            suggest = "include_chinese"
         elif key == "indexAll":
             suggest = "index_all"
         elif key == "indexSqlAll":
@@ -338,12 +1190,18 @@ class IndexKeyValueValueJsonKeyValue(dict):
 
     def __init__(__self__, *,
                  auto_index_flag: Optional[builtins.bool] = None,
+                 case_sensitive: Optional[builtins.bool] = None,
+                 delimiter: Optional[builtins.str] = None,
+                 include_chinese: Optional[builtins.bool] = None,
                  index_all: Optional[builtins.bool] = None,
                  index_sql_all: Optional[builtins.bool] = None,
                  sql_flag: Optional[builtins.bool] = None,
                  value_type: Optional[builtins.str] = None):
         """
         :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
         :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
@@ -351,6 +1209,12 @@ class IndexKeyValueValueJsonKeyValue(dict):
         """
         if auto_index_flag is not None:
             pulumi.set(__self__, "auto_index_flag", auto_index_flag)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if include_chinese is not None:
+            pulumi.set(__self__, "include_chinese", include_chinese)
         if index_all is not None:
             pulumi.set(__self__, "index_all", index_all)
         if index_sql_all is not None:
@@ -367,6 +1231,30 @@ class IndexKeyValueValueJsonKeyValue(dict):
         Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[builtins.bool]:
+        """
+        Whether to distinguish case. Default is false.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[builtins.str]:
+        """
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="includeChinese")
+    def include_chinese(self) -> Optional[builtins.bool]:
+        """
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        """
+        return pulumi.get(self, "include_chinese")
 
     @property
     @pulumi.getter(name="indexAll")
@@ -612,6 +1500,10 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
         suggest = None
         if key == "autoIndexFlag":
             suggest = "auto_index_flag"
+        elif key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "includeChinese":
+            suggest = "include_chinese"
         elif key == "indexAll":
             suggest = "index_all"
         elif key == "indexSqlAll":
@@ -634,12 +1526,18 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
 
     def __init__(__self__, *,
                  auto_index_flag: Optional[builtins.bool] = None,
+                 case_sensitive: Optional[builtins.bool] = None,
+                 delimiter: Optional[builtins.str] = None,
+                 include_chinese: Optional[builtins.bool] = None,
                  index_all: Optional[builtins.bool] = None,
                  index_sql_all: Optional[builtins.bool] = None,
                  sql_flag: Optional[builtins.bool] = None,
                  value_type: Optional[builtins.str] = None):
         """
         :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
         :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
@@ -647,6 +1545,12 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
         """
         if auto_index_flag is not None:
             pulumi.set(__self__, "auto_index_flag", auto_index_flag)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if include_chinese is not None:
+            pulumi.set(__self__, "include_chinese", include_chinese)
         if index_all is not None:
             pulumi.set(__self__, "index_all", index_all)
         if index_sql_all is not None:
@@ -663,6 +1567,30 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
         Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[builtins.bool]:
+        """
+        Whether to distinguish case. Default is false.
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[builtins.str]:
+        """
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="includeChinese")
+    def include_chinese(self) -> Optional[builtins.bool]:
+        """
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        """
+        return pulumi.get(self, "include_chinese")
 
     @property
     @pulumi.getter(name="indexAll")
@@ -829,6 +1757,630 @@ class TopicTag(dict):
         User tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetImportTaskImportSourceInfoResult(dict):
+    def __init__(__self__, *,
+                 kafka_source_info: 'outputs.GetImportTaskImportSourceInfoKafkaSourceInfoResult',
+                 tos_source_info: 'outputs.GetImportTaskImportSourceInfoTosSourceInfoResult'):
+        """
+        :param 'GetImportTaskImportSourceInfoKafkaSourceInfoArgs' kafka_source_info: Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+        :param 'GetImportTaskImportSourceInfoTosSourceInfoArgs' tos_source_info: TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+        """
+        pulumi.set(__self__, "kafka_source_info", kafka_source_info)
+        pulumi.set(__self__, "tos_source_info", tos_source_info)
+
+    @property
+    @pulumi.getter(name="kafkaSourceInfo")
+    def kafka_source_info(self) -> 'outputs.GetImportTaskImportSourceInfoKafkaSourceInfoResult':
+        """
+        Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
+        """
+        return pulumi.get(self, "kafka_source_info")
+
+    @property
+    @pulumi.getter(name="tosSourceInfo")
+    def tos_source_info(self) -> 'outputs.GetImportTaskImportSourceInfoTosSourceInfoResult':
+        """
+        TOS data source information. When sourceType is tos, the TosSourceInfo field is required.
+        """
+        return pulumi.get(self, "tos_source_info")
+
+
+@pulumi.output_type
+class GetImportTaskImportSourceInfoKafkaSourceInfoResult(dict):
+    def __init__(__self__, *,
+                 encode: builtins.str,
+                 group: builtins.str,
+                 host: builtins.str,
+                 initial_offset: builtins.int,
+                 instance_id: builtins.str,
+                 is_need_auth: builtins.bool,
+                 mechanism: builtins.str,
+                 password: builtins.str,
+                 protocol: builtins.str,
+                 time_source_default: builtins.int,
+                 topic: builtins.str,
+                 username: builtins.str):
+        """
+        :param builtins.str encode: Data encoding format. Available options: UTF-8, GBK.
+        :param builtins.str group: Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+        :param builtins.str host: The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+        :param builtins.int initial_offset: Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+        :param builtins.str instance_id: If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+        :param builtins.bool is_need_auth: Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+        :param builtins.str mechanism: Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+        :param builtins.str password: Kafka SASL user password for authentication.
+        :param builtins.str protocol: Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+        :param builtins.int time_source_default: Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+        :param builtins.str topic: Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+        :param builtins.str username: Kafka SASL username for authentication.
+        """
+        pulumi.set(__self__, "encode", encode)
+        pulumi.set(__self__, "group", group)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "initial_offset", initial_offset)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "is_need_auth", is_need_auth)
+        pulumi.set(__self__, "mechanism", mechanism)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "time_source_default", time_source_default)
+        pulumi.set(__self__, "topic", topic)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def encode(self) -> builtins.str:
+        """
+        Data encoding format. Available options: UTF-8, GBK.
+        """
+        return pulumi.get(self, "encode")
+
+    @property
+    @pulumi.getter
+    def group(self) -> builtins.str:
+        """
+        Kafka consumer group. If not specified, the system will automatically create a Kafka consumer group.
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
+    def host(self) -> builtins.str:
+        """
+        The service addresses for different types of Kafka clusters vary. Details are as follows: Message Queue Kafka Edition: Use the access point of the Kafka instance. For more information, see Access Point. If the Kafka instance and the Log Service Project are in the same region, you can use private network access; otherwise, use public network access. Self-hosted Kafka clusters: Use the IP address and port number or the domain name and port number of the Kafka Broker. Only public network access is supported. Separate multiple service addresses with a comma (,).
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="initialOffset")
+    def initial_offset(self) -> builtins.int:
+        """
+        Starting position for data import. Options: 0: Earliest time, start importing from the first record in the specified Kafka Topic. 1: Latest time, start importing from the most recently generated record in the specified Kafka Topic.
+        """
+        return pulumi.get(self, "initial_offset")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        If you are using Message Queue Kafka Edition, set this to the Kafka instance ID.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="isNeedAuth")
+    def is_need_auth(self) -> builtins.bool:
+        """
+        Whether to enable authentication. If you use a public service address, it is recommended to enable authentication.
+        """
+        return pulumi.get(self, "is_need_auth")
+
+    @property
+    @pulumi.getter
+    def mechanism(self) -> builtins.str:
+        """
+        Password authentication mechanism. Available options: PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512.
+        """
+        return pulumi.get(self, "mechanism")
+
+    @property
+    @pulumi.getter
+    def password(self) -> builtins.str:
+        """
+        Kafka SASL user password for authentication.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> builtins.str:
+        """
+        Secure transmission protocol. Options include plaintext, sasl*ssl, ssl, and sasl*plaintext
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="timeSourceDefault")
+    def time_source_default(self) -> builtins.int:
+        """
+        Specify log time. Options: 0: Use Kafka message timestamp. 1: Use current system time.
+        """
+        return pulumi.get(self, "time_source_default")
+
+    @property
+    @pulumi.getter
+    def topic(self) -> builtins.str:
+        """
+        Kafka Topic name. Separate multiple Kafka Topics with commas (,).
+        """
+        return pulumi.get(self, "topic")
+
+    @property
+    @pulumi.getter
+    def username(self) -> builtins.str:
+        """
+        Kafka SASL username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetImportTaskImportSourceInfoTosSourceInfoResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 compress_type: builtins.str,
+                 prefix: builtins.str,
+                 region: builtins.str):
+        """
+        :param builtins.str bucket: TOS bucket name
+        :param builtins.str compress_type: Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+        :param builtins.str prefix: Path of the file to be imported in the TOS bucket.
+        :param builtins.str region: Region where the TOS bucket is located. Cross-region data import is supported
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compress_type", compress_type)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        TOS bucket name
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compressType")
+    def compress_type(self) -> builtins.str:
+        """
+        Compression mode for data in the TOS bucket. none: No compression. snappy: Compress using snappy. gzip: Compress using gzip. lz4: Compress using lz4.
+        """
+        return pulumi.get(self, "compress_type")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        Path of the file to be imported in the TOS bucket.
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        Region where the TOS bucket is located. Cross-region data import is supported
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetImportTaskTargetInfoResult(dict):
+    def __init__(__self__, *,
+                 extract_rule: 'outputs.GetImportTaskTargetInfoExtractRuleResult',
+                 log_sample: builtins.str,
+                 log_type: builtins.str,
+                 region: builtins.str):
+        """
+        :param 'GetImportTaskTargetInfoExtractRuleArgs' extract_rule: Log extraction rule.
+        :param builtins.str log_sample: Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+        :param builtins.str log_type: Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+        :param builtins.str region: Region.
+        """
+        pulumi.set(__self__, "extract_rule", extract_rule)
+        pulumi.set(__self__, "log_sample", log_sample)
+        pulumi.set(__self__, "log_type", log_type)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="extractRule")
+    def extract_rule(self) -> 'outputs.GetImportTaskTargetInfoExtractRuleResult':
+        """
+        Log extraction rule.
+        """
+        return pulumi.get(self, "extract_rule")
+
+    @property
+    @pulumi.getter(name="logSample")
+    def log_sample(self) -> builtins.str:
+        """
+        Log sample. When LogType is set to multiline_log, you must configure log samples. It is recommended to provide more than two log entries as examples to ensure the regular expression matches the first line of each log. Use real samples from the production environment.
+        """
+        return pulumi.get(self, "log_sample")
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> builtins.str:
+        """
+        Specify log parsing type during import. delimiter*log: CSV type. multiline*log: multiline full text type. minimalist*log: single line full text type. json*log: JSON type.
+        """
+        return pulumi.get(self, "log_type")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        Region.
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetImportTaskTargetInfoExtractRuleResult(dict):
+    def __init__(__self__, *,
+                 extract_rule: 'outputs.GetImportTaskTargetInfoExtractRuleExtractRuleResult',
+                 skip_line_count: builtins.int,
+                 time_extract_regex: builtins.str,
+                 time_zone: builtins.str):
+        """
+        :param 'GetImportTaskTargetInfoExtractRuleExtractRuleArgs' extract_rule: Basic content of log extraction rules.
+        :param builtins.int skip_line_count: Number of skipped rows. Only valid when the log type is delimiter_log and the import type is tos.
+        :param builtins.str time_extract_regex: Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+        :param builtins.str time_zone: Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+        """
+        pulumi.set(__self__, "extract_rule", extract_rule)
+        pulumi.set(__self__, "skip_line_count", skip_line_count)
+        pulumi.set(__self__, "time_extract_regex", time_extract_regex)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="extractRule")
+    def extract_rule(self) -> 'outputs.GetImportTaskTargetInfoExtractRuleExtractRuleResult':
+        """
+        Basic content of log extraction rules.
+        """
+        return pulumi.get(self, "extract_rule")
+
+    @property
+    @pulumi.getter(name="skipLineCount")
+    def skip_line_count(self) -> builtins.int:
+        """
+        Number of skipped rows. Only valid when the log type is delimiter_log and the import type is tos.
+        """
+        return pulumi.get(self, "skip_line_count")
+
+    @property
+    @pulumi.getter(name="timeExtractRegex")
+    def time_extract_regex(self) -> builtins.str:
+        """
+        Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
+        """
+        return pulumi.get(self, "time_extract_regex")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> builtins.str:
+        """
+        Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+        """
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class GetImportTaskTargetInfoExtractRuleExtractRuleResult(dict):
+    def __init__(__self__, *,
+                 begin_regex: builtins.str,
+                 delimiter: builtins.str,
+                 enable_nanosecond: builtins.bool,
+                 filter_key_regexes: Sequence['outputs.GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexResult'],
+                 keys: Sequence[builtins.str],
+                 log_regex: builtins.str,
+                 log_template: 'outputs.GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateResult',
+                 quote: builtins.str,
+                 time_format: builtins.str,
+                 time_key: builtins.str,
+                 time_sample: builtins.str,
+                 un_match_log_key: builtins.str,
+                 un_match_up_load_switch: builtins.bool):
+        """
+        :param builtins.str begin_regex: Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+        :param builtins.str delimiter: Delimiter. Only valid when LogType is delimiter_log.
+        :param builtins.bool enable_nanosecond: Enable nanoseconds.
+        :param Sequence['GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs'] filter_key_regexes: Filter key regular expression.
+        :param Sequence[builtins.str] keys: List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+        :param builtins.str log_regex: Log regular expression
+        :param 'GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs' log_template: Log template.
+        :param builtins.str quote: Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+        :param builtins.str time_format: Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+        :param builtins.str time_key: Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+        :param builtins.str time_sample: Time sample. Used to verify whether the entered time parsing format is correct
+        :param builtins.str un_match_log_key: When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+        :param builtins.bool un_match_up_load_switch: Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        pulumi.set(__self__, "begin_regex", begin_regex)
+        pulumi.set(__self__, "delimiter", delimiter)
+        pulumi.set(__self__, "enable_nanosecond", enable_nanosecond)
+        pulumi.set(__self__, "filter_key_regexes", filter_key_regexes)
+        pulumi.set(__self__, "keys", keys)
+        pulumi.set(__self__, "log_regex", log_regex)
+        pulumi.set(__self__, "log_template", log_template)
+        pulumi.set(__self__, "quote", quote)
+        pulumi.set(__self__, "time_format", time_format)
+        pulumi.set(__self__, "time_key", time_key)
+        pulumi.set(__self__, "time_sample", time_sample)
+        pulumi.set(__self__, "un_match_log_key", un_match_log_key)
+        pulumi.set(__self__, "un_match_up_load_switch", un_match_up_load_switch)
+
+    @property
+    @pulumi.getter(name="beginRegex")
+    def begin_regex(self) -> builtins.str:
+        """
+        Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
+        """
+        return pulumi.get(self, "begin_regex")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> builtins.str:
+        """
+        Delimiter. Only valid when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="enableNanosecond")
+    def enable_nanosecond(self) -> builtins.bool:
+        """
+        Enable nanoseconds.
+        """
+        return pulumi.get(self, "enable_nanosecond")
+
+    @property
+    @pulumi.getter(name="filterKeyRegexes")
+    def filter_key_regexes(self) -> Sequence['outputs.GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexResult']:
+        """
+        Filter key regular expression.
+        """
+        return pulumi.get(self, "filter_key_regexes")
+
+    @property
+    @pulumi.getter
+    def keys(self) -> Sequence[builtins.str]:
+        """
+        List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
+        """
+        return pulumi.get(self, "keys")
+
+    @property
+    @pulumi.getter(name="logRegex")
+    def log_regex(self) -> builtins.str:
+        """
+        Log regular expression
+        """
+        return pulumi.get(self, "log_regex")
+
+    @property
+    @pulumi.getter(name="logTemplate")
+    def log_template(self) -> 'outputs.GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateResult':
+        """
+        Log template.
+        """
+        return pulumi.get(self, "log_template")
+
+    @property
+    @pulumi.getter
+    def quote(self) -> builtins.str:
+        """
+        Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "quote")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> builtins.str:
+        """
+        Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeKey")
+    def time_key(self) -> builtins.str:
+        """
+        Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
+        """
+        return pulumi.get(self, "time_key")
+
+    @property
+    @pulumi.getter(name="timeSample")
+    def time_sample(self) -> builtins.str:
+        """
+        Time sample. Used to verify whether the entered time parsing format is correct
+        """
+        return pulumi.get(self, "time_sample")
+
+    @property
+    @pulumi.getter(name="unMatchLogKey")
+    def un_match_log_key(self) -> builtins.str:
+        """
+        When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
+        """
+        return pulumi.get(self, "un_match_log_key")
+
+    @property
+    @pulumi.getter(name="unMatchUpLoadSwitch")
+    def un_match_up_load_switch(self) -> builtins.bool:
+        """
+        Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        return pulumi.get(self, "un_match_up_load_switch")
+
+
+@pulumi.output_type
+class GetImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 regex: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str regex: Regular expression.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> builtins.str:
+        """
+        Regular expression.
+        """
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetImportTaskTargetInfoExtractRuleExtractRuleLogTemplateResult(dict):
+    def __init__(__self__, *,
+                 format: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str format: Format.
+        :param builtins.str type: Type
+        """
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def format(self) -> builtins.str:
+        """
+        Format.
+        """
+        return pulumi.get(self, "format")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Type
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetImportTaskTaskStatisticsResult(dict):
+    def __init__(__self__, *,
+                 bytes_total: builtins.int,
+                 bytes_transferred: builtins.int,
+                 failed: builtins.int,
+                 not_exist: builtins.int,
+                 skipped: builtins.int,
+                 task_status: builtins.str,
+                 total: builtins.int,
+                 transferred: builtins.int):
+        """
+        :param builtins.int bytes_total: Total resource bytes enumerated
+        :param builtins.int bytes_transferred: Bytes transferred.
+        :param builtins.int failed: Number of resources failed to import.
+        :param builtins.int not_exist: Number of resources not found.
+        :param builtins.int skipped: Number of resources skipped during import
+        :param builtins.str task_status: Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+        :param builtins.int total: Total number of resources enumerated.
+        :param builtins.int transferred: Number of records transferred.
+        """
+        pulumi.set(__self__, "bytes_total", bytes_total)
+        pulumi.set(__self__, "bytes_transferred", bytes_transferred)
+        pulumi.set(__self__, "failed", failed)
+        pulumi.set(__self__, "not_exist", not_exist)
+        pulumi.set(__self__, "skipped", skipped)
+        pulumi.set(__self__, "task_status", task_status)
+        pulumi.set(__self__, "total", total)
+        pulumi.set(__self__, "transferred", transferred)
+
+    @property
+    @pulumi.getter(name="bytesTotal")
+    def bytes_total(self) -> builtins.int:
+        """
+        Total resource bytes enumerated
+        """
+        return pulumi.get(self, "bytes_total")
+
+    @property
+    @pulumi.getter(name="bytesTransferred")
+    def bytes_transferred(self) -> builtins.int:
+        """
+        Bytes transferred.
+        """
+        return pulumi.get(self, "bytes_transferred")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> builtins.int:
+        """
+        Number of resources failed to import.
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter(name="notExist")
+    def not_exist(self) -> builtins.int:
+        """
+        Number of resources not found.
+        """
+        return pulumi.get(self, "not_exist")
+
+    @property
+    @pulumi.getter
+    def skipped(self) -> builtins.int:
+        """
+        Number of resources skipped during import
+        """
+        return pulumi.get(self, "skipped")
+
+    @property
+    @pulumi.getter(name="taskStatus")
+    def task_status(self) -> builtins.str:
+        """
+        Task status. Status of the import task. Preparing: Preparing for import. Importing: Importing data. Success: Import completed successfully. Failed: Import failed. Stopped: Import paused.
+        """
+        return pulumi.get(self, "task_status")
+
+    @property
+    @pulumi.getter
+    def total(self) -> builtins.int:
+        """
+        Total number of resources enumerated.
+        """
+        return pulumi.get(self, "total")
+
+    @property
+    @pulumi.getter
+    def transferred(self) -> builtins.int:
+        """
+        Number of records transferred.
+        """
+        return pulumi.get(self, "transferred")
 
 
 @pulumi.output_type

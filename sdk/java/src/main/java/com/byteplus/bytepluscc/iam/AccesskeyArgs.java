@@ -16,18 +16,18 @@ public final class AccesskeyArgs extends com.pulumi.resources.ResourceArgs {
     public static final AccesskeyArgs Empty = new AccesskeyArgs();
 
     /**
-     * Secret Access Key.
+     * Last login time.
      * 
      */
-    @Import(name="secretAccessKey")
-    private @Nullable Output<String> secretAccessKey;
+    @Import(name="lastLoginDate")
+    private @Nullable Output<String> lastLoginDate;
 
     /**
-     * @return Secret Access Key.
+     * @return Last login time.
      * 
      */
-    public Optional<Output<String>> secretAccessKey() {
-        return Optional.ofNullable(this.secretAccessKey);
+    public Optional<Output<String>> lastLoginDate() {
+        return Optional.ofNullable(this.lastLoginDate);
     }
 
     /**
@@ -63,7 +63,7 @@ public final class AccesskeyArgs extends com.pulumi.resources.ResourceArgs {
     private AccesskeyArgs() {}
 
     private AccesskeyArgs(AccesskeyArgs $) {
-        this.secretAccessKey = $.secretAccessKey;
+        this.lastLoginDate = $.lastLoginDate;
         this.status = $.status;
         this.userName = $.userName;
     }
@@ -87,24 +87,24 @@ public final class AccesskeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey Secret Access Key.
+         * @param lastLoginDate Last login time.
          * 
          * @return builder
          * 
          */
-        public Builder secretAccessKey(@Nullable Output<String> secretAccessKey) {
-            $.secretAccessKey = secretAccessKey;
+        public Builder lastLoginDate(@Nullable Output<String> lastLoginDate) {
+            $.lastLoginDate = lastLoginDate;
             return this;
         }
 
         /**
-         * @param secretAccessKey Secret Access Key.
+         * @param lastLoginDate Last login time.
          * 
          * @return builder
          * 
          */
-        public Builder secretAccessKey(String secretAccessKey) {
-            return secretAccessKey(Output.of(secretAccessKey));
+        public Builder lastLoginDate(String lastLoginDate) {
+            return lastLoginDate(Output.of(lastLoginDate));
         }
 
         /**

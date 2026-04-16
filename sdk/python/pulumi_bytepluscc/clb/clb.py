@@ -534,6 +534,7 @@ class _ClbState:
                  enis: Optional[pulumi.Input['ClbEnisArgs']] = None,
                  exclusive_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
                  expired_time: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6_address_bandwidth: Optional[pulumi.Input['ClbIpv6AddressBandwidthArgs']] = None,
                  listeners: Optional[pulumi.Input[Sequence[pulumi.Input['ClbListenerArgs']]]] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.float]] = None,
                  load_balancer_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -582,6 +583,7 @@ class _ClbState:
         :param pulumi.Input['ClbEnisArgs'] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
         :param pulumi.Input[builtins.str] expired_time: Expiration time of the load balancer instance
+        :param pulumi.Input['ClbIpv6AddressBandwidthArgs'] ipv6_address_bandwidth: IPv6 public bandwidth information for the load balancing instance
         :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
         :param pulumi.Input[builtins.str] load_balancer_id: Load balancer instance ID
         :param pulumi.Input[builtins.str] load_balancer_name: Name of the load balancer instance
@@ -646,6 +648,8 @@ class _ClbState:
             pulumi.set(__self__, "exclusive_cluster_id", exclusive_cluster_id)
         if expired_time is not None:
             pulumi.set(__self__, "expired_time", expired_time)
+        if ipv6_address_bandwidth is not None:
+            pulumi.set(__self__, "ipv6_address_bandwidth", ipv6_address_bandwidth)
         if listeners is not None:
             pulumi.set(__self__, "listeners", listeners)
         if load_balancer_billing_type is not None:
@@ -938,6 +942,18 @@ class _ClbState:
     @expired_time.setter
     def expired_time(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "expired_time", value)
+
+    @property
+    @pulumi.getter(name="ipv6AddressBandwidth")
+    def ipv6_address_bandwidth(self) -> Optional[pulumi.Input['ClbIpv6AddressBandwidthArgs']]:
+        """
+        IPv6 public bandwidth information for the load balancing instance
+        """
+        return pulumi.get(self, "ipv6_address_bandwidth")
+
+    @ipv6_address_bandwidth.setter
+    def ipv6_address_bandwidth(self, value: Optional[pulumi.Input['ClbIpv6AddressBandwidthArgs']]):
+        pulumi.set(self, "ipv6_address_bandwidth", value)
 
     @property
     @pulumi.getter
@@ -1430,6 +1446,7 @@ class Clb(pulumi.CustomResource):
             __props__.__dict__["eni"] = None
             __props__.__dict__["eni_ipv6_address"] = None
             __props__.__dict__["expired_time"] = None
+            __props__.__dict__["ipv6_address_bandwidth"] = None
             __props__.__dict__["load_balancer_id"] = None
             __props__.__dict__["lock_reason"] = None
             __props__.__dict__["overdue_time"] = None
@@ -1467,6 +1484,7 @@ class Clb(pulumi.CustomResource):
             enis: Optional[pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']]] = None,
             exclusive_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
             expired_time: Optional[pulumi.Input[builtins.str]] = None,
+            ipv6_address_bandwidth: Optional[pulumi.Input[Union['ClbIpv6AddressBandwidthArgs', 'ClbIpv6AddressBandwidthArgsDict']]] = None,
             listeners: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClbListenerArgs', 'ClbListenerArgsDict']]]]] = None,
             load_balancer_billing_type: Optional[pulumi.Input[builtins.float]] = None,
             load_balancer_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1520,6 +1538,7 @@ class Clb(pulumi.CustomResource):
         :param pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
         :param pulumi.Input[builtins.str] expired_time: Expiration time of the load balancer instance
+        :param pulumi.Input[Union['ClbIpv6AddressBandwidthArgs', 'ClbIpv6AddressBandwidthArgsDict']] ipv6_address_bandwidth: IPv6 public bandwidth information for the load balancing instance
         :param pulumi.Input[builtins.float] load_balancer_billing_type: CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
         :param pulumi.Input[builtins.str] load_balancer_id: Load balancer instance ID
         :param pulumi.Input[builtins.str] load_balancer_name: Name of the load balancer instance
@@ -1568,6 +1587,7 @@ class Clb(pulumi.CustomResource):
         __props__.__dict__["enis"] = enis
         __props__.__dict__["exclusive_cluster_id"] = exclusive_cluster_id
         __props__.__dict__["expired_time"] = expired_time
+        __props__.__dict__["ipv6_address_bandwidth"] = ipv6_address_bandwidth
         __props__.__dict__["listeners"] = listeners
         __props__.__dict__["load_balancer_billing_type"] = load_balancer_billing_type
         __props__.__dict__["load_balancer_id"] = load_balancer_id
@@ -1755,6 +1775,14 @@ class Clb(pulumi.CustomResource):
         Expiration time of the load balancer instance
         """
         return pulumi.get(self, "expired_time")
+
+    @property
+    @pulumi.getter(name="ipv6AddressBandwidth")
+    def ipv6_address_bandwidth(self) -> pulumi.Output['outputs.ClbIpv6AddressBandwidth']:
+        """
+        IPv6 public bandwidth information for the load balancing instance
+        """
+        return pulumi.get(self, "ipv6_address_bandwidth")
 
     @property
     @pulumi.getter

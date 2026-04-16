@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.rdsmssql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +17,31 @@ public final class AllowListAssociatedInstance {
      * 
      */
     private @Nullable String instanceId;
+    /**
+     * @return Instance name
+     * 
+     */
+    private @Nullable String instanceName;
+    /**
+     * @return Instance status
+     * 
+     */
+    private @Nullable String instanceStatus;
+    /**
+     * @return Sync latest allowlist IP
+     * 
+     */
+    private @Nullable Boolean isLatest;
+    /**
+     * @return Project name of the instance
+     * 
+     */
+    private @Nullable String projectName;
+    /**
+     * @return VPC ID of the instance
+     * 
+     */
+    private @Nullable String vpc;
 
     private AllowListAssociatedInstance() {}
     /**
@@ -24,6 +50,41 @@ public final class AllowListAssociatedInstance {
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
+    }
+    /**
+     * @return Instance name
+     * 
+     */
+    public Optional<String> instanceName() {
+        return Optional.ofNullable(this.instanceName);
+    }
+    /**
+     * @return Instance status
+     * 
+     */
+    public Optional<String> instanceStatus() {
+        return Optional.ofNullable(this.instanceStatus);
+    }
+    /**
+     * @return Sync latest allowlist IP
+     * 
+     */
+    public Optional<Boolean> isLatest() {
+        return Optional.ofNullable(this.isLatest);
+    }
+    /**
+     * @return Project name of the instance
+     * 
+     */
+    public Optional<String> projectName() {
+        return Optional.ofNullable(this.projectName);
+    }
+    /**
+     * @return VPC ID of the instance
+     * 
+     */
+    public Optional<String> vpc() {
+        return Optional.ofNullable(this.vpc);
     }
 
     public static Builder builder() {
@@ -36,10 +97,20 @@ public final class AllowListAssociatedInstance {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String instanceId;
+        private @Nullable String instanceName;
+        private @Nullable String instanceStatus;
+        private @Nullable Boolean isLatest;
+        private @Nullable String projectName;
+        private @Nullable String vpc;
         public Builder() {}
         public Builder(AllowListAssociatedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceId = defaults.instanceId;
+    	      this.instanceName = defaults.instanceName;
+    	      this.instanceStatus = defaults.instanceStatus;
+    	      this.isLatest = defaults.isLatest;
+    	      this.projectName = defaults.projectName;
+    	      this.vpc = defaults.vpc;
         }
 
         @CustomType.Setter
@@ -48,9 +119,44 @@ public final class AllowListAssociatedInstance {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
+        public Builder instanceName(@Nullable String instanceName) {
+
+            this.instanceName = instanceName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceStatus(@Nullable String instanceStatus) {
+
+            this.instanceStatus = instanceStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLatest(@Nullable Boolean isLatest) {
+
+            this.isLatest = isLatest;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder projectName(@Nullable String projectName) {
+
+            this.projectName = projectName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vpc(@Nullable String vpc) {
+
+            this.vpc = vpc;
+            return this;
+        }
         public AllowListAssociatedInstance build() {
             final var _resultValue = new AllowListAssociatedInstance();
             _resultValue.instanceId = instanceId;
+            _resultValue.instanceName = instanceName;
+            _resultValue.instanceStatus = instanceStatus;
+            _resultValue.isLatest = isLatest;
+            _resultValue.projectName = projectName;
+            _resultValue.vpc = vpc;
             return _resultValue;
         }
     }

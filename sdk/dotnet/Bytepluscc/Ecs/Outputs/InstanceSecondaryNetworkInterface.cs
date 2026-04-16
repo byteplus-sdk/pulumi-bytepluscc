@@ -19,6 +19,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
         /// </summary>
         public readonly int? Ipv6AddressCount;
         /// <summary>
+        /// IPv6 address of the instance.
+        /// </summary>
+        public readonly ImmutableArray<string> Ipv6Addresses;
+        /// <summary>
+        /// Instance MAC address.
+        /// </summary>
+        public readonly string? MacAddress;
+        /// <summary>
+        /// The network interface ID of the instance.
+        /// </summary>
+        public readonly string? NetworkInterfaceId;
+        /// <summary>
         /// Instance primary IP address
         /// </summary>
         public readonly string? PrimaryIpAddress;
@@ -34,10 +46,20 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
         /// Instance subnet ID.
         /// </summary>
         public readonly string? SubnetId;
+        /// <summary>
+        /// VPC ID of the instance.
+        /// </summary>
+        public readonly string? VpcId;
 
         [OutputConstructor]
         private InstanceSecondaryNetworkInterface(
             int? ipv6AddressCount,
+
+            ImmutableArray<string> ipv6Addresses,
+
+            string? macAddress,
+
+            string? networkInterfaceId,
 
             string? primaryIpAddress,
 
@@ -45,13 +67,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
 
             ImmutableArray<string> securityGroupIds,
 
-            string? subnetId)
+            string? subnetId,
+
+            string? vpcId)
         {
             Ipv6AddressCount = ipv6AddressCount;
+            Ipv6Addresses = ipv6Addresses;
+            MacAddress = macAddress;
+            NetworkInterfaceId = networkInterfaceId;
             PrimaryIpAddress = primaryIpAddress;
             PrivateIpAddresses = privateIpAddresses;
             SecurityGroupIds = securityGroupIds;
             SubnetId = subnetId;
+            VpcId = vpcId;
         }
     }
 }

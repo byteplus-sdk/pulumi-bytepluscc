@@ -326,6 +326,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cen/bandwidthPackage",
+  "fqn": "pulumi_bytepluscc.cen",
+  "classes": {
+   "bytepluscc:cen/bandwidthPackage:BandwidthPackage": "BandwidthPackage"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cen/cen",
   "fqn": "pulumi_bytepluscc.cen",
   "classes": {
@@ -854,6 +862,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "privatelink/vpcEndpoint",
+  "fqn": "pulumi_bytepluscc.privatelink",
+  "classes": {
+   "bytepluscc:privatelink/vpcEndpoint:VpcEndpoint": "VpcEndpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "privatezone/record",
   "fqn": "pulumi_bytepluscc.privatezone",
   "classes": {
@@ -1006,6 +1022,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdspostgresql/instance",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdspostgresql/schema",
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {
@@ -1050,6 +1074,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
    "bytepluscc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/consumerGroup",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/consumerGroup:ConsumerGroup": "ConsumerGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/importTask",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/importTask:ImportTask": "ImportTask"
   }
  },
  {
@@ -1154,6 +1194,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vedbm",
   "classes": {
    "bytepluscc:vedbm/database:Database": "Database"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vedbm/endpoint",
+  "fqn": "pulumi_bytepluscc.vedbm",
+  "classes": {
+   "bytepluscc:vedbm/endpoint:Endpoint": "Endpoint"
   }
  },
  {

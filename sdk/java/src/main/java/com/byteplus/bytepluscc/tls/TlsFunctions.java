@@ -4,6 +4,10 @@
 package com.byteplus.bytepluscc.tls;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetImportTaskArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetImportTaskPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetIndexArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetIndexPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectArgs;
@@ -12,6 +16,10 @@ import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetTopicArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetTopicPlainArgs;
+import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupResult;
+import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetImportTaskResult;
+import com.byteplus.bytepluscc.tls.outputs.GetImportTasksResult;
 import com.byteplus.bytepluscc.tls.outputs.GetIndexResult;
 import com.byteplus.bytepluscc.tls.outputs.GetIndicesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectResult;
@@ -29,6 +37,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class TlsFunctions {
+    /**
+     * Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupResult> getConsumerGroup(GetConsumerGroupArgs args) {
+        return getConsumerGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupResult> getConsumerGroupPlain(GetConsumerGroupPlainArgs args) {
+        return getConsumerGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupResult> getConsumerGroup(GetConsumerGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getConsumerGroup:getConsumerGroup", TypeShape.of(GetConsumerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupResult> getConsumerGroup(GetConsumerGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getConsumerGroup:getConsumerGroup", TypeShape.of(GetConsumerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupResult> getConsumerGroupPlain(GetConsumerGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getConsumerGroup:getConsumerGroup", TypeShape.of(GetConsumerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups() {
+        return getConsumerGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain() {
+        return getConsumerGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups(InvokeArgs args) {
+        return getConsumerGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain(InvokeArgs args) {
+        return getConsumerGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ConsumerGroup
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTaskResult> getImportTask(GetImportTaskArgs args) {
+        return getImportTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static CompletableFuture<GetImportTaskResult> getImportTaskPlain(GetImportTaskPlainArgs args) {
+        return getImportTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTaskResult> getImportTask(GetImportTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getImportTask:getImportTask", TypeShape.of(GetImportTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTaskResult> getImportTask(GetImportTaskArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getImportTask:getImportTask", TypeShape.of(GetImportTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static CompletableFuture<GetImportTaskResult> getImportTaskPlain(GetImportTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getImportTask:getImportTask", TypeShape.of(GetImportTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTasksResult> getImportTasks() {
+        return getImportTasks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static CompletableFuture<GetImportTasksResult> getImportTasksPlain() {
+        return getImportTasksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTasksResult> getImportTasks(InvokeArgs args) {
+        return getImportTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static CompletableFuture<GetImportTasksResult> getImportTasksPlain(InvokeArgs args) {
+        return getImportTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTasksResult> getImportTasks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getImportTasks:getImportTasks", TypeShape.of(GetImportTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static Output<GetImportTasksResult> getImportTasks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getImportTasks:getImportTasks", TypeShape.of(GetImportTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ImportTask
+     * 
+     */
+    public static CompletableFuture<GetImportTasksResult> getImportTasksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getImportTasks:getImportTasks", TypeShape.of(GetImportTasksResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::TLS::Index
      * 

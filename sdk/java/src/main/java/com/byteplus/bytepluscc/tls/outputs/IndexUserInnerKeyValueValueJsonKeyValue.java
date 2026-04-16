@@ -18,6 +18,21 @@ public final class IndexUserInnerKeyValueValueJsonKeyValue {
      */
     private @Nullable Boolean autoIndexFlag;
     /**
+     * @return Whether to distinguish case. Default is false.
+     * 
+     */
+    private @Nullable Boolean caseSensitive;
+    /**
+     * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+     * 
+     */
+    private @Nullable String delimiter;
+    /**
+     * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+     * 
+     */
+    private @Nullable Boolean includeChinese;
+    /**
      * @return Create indexes for all fields with text values in the JSON field.
      * 
      */
@@ -45,6 +60,27 @@ public final class IndexUserInnerKeyValueValueJsonKeyValue {
      */
     public Optional<Boolean> autoIndexFlag() {
         return Optional.ofNullable(this.autoIndexFlag);
+    }
+    /**
+     * @return Whether to distinguish case. Default is false.
+     * 
+     */
+    public Optional<Boolean> caseSensitive() {
+        return Optional.ofNullable(this.caseSensitive);
+    }
+    /**
+     * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+     * 
+     */
+    public Optional<String> delimiter() {
+        return Optional.ofNullable(this.delimiter);
+    }
+    /**
+     * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+     * 
+     */
+    public Optional<Boolean> includeChinese() {
+        return Optional.ofNullable(this.includeChinese);
     }
     /**
      * @return Create indexes for all fields with text values in the JSON field.
@@ -85,6 +121,9 @@ public final class IndexUserInnerKeyValueValueJsonKeyValue {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean autoIndexFlag;
+        private @Nullable Boolean caseSensitive;
+        private @Nullable String delimiter;
+        private @Nullable Boolean includeChinese;
         private @Nullable Boolean indexAll;
         private @Nullable Boolean indexSqlAll;
         private @Nullable Boolean sqlFlag;
@@ -93,6 +132,9 @@ public final class IndexUserInnerKeyValueValueJsonKeyValue {
         public Builder(IndexUserInnerKeyValueValueJsonKeyValue defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoIndexFlag = defaults.autoIndexFlag;
+    	      this.caseSensitive = defaults.caseSensitive;
+    	      this.delimiter = defaults.delimiter;
+    	      this.includeChinese = defaults.includeChinese;
     	      this.indexAll = defaults.indexAll;
     	      this.indexSqlAll = defaults.indexSqlAll;
     	      this.sqlFlag = defaults.sqlFlag;
@@ -103,6 +145,24 @@ public final class IndexUserInnerKeyValueValueJsonKeyValue {
         public Builder autoIndexFlag(@Nullable Boolean autoIndexFlag) {
 
             this.autoIndexFlag = autoIndexFlag;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder caseSensitive(@Nullable Boolean caseSensitive) {
+
+            this.caseSensitive = caseSensitive;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder delimiter(@Nullable String delimiter) {
+
+            this.delimiter = delimiter;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder includeChinese(@Nullable Boolean includeChinese) {
+
+            this.includeChinese = includeChinese;
             return this;
         }
         @CustomType.Setter
@@ -132,6 +192,9 @@ public final class IndexUserInnerKeyValueValueJsonKeyValue {
         public IndexUserInnerKeyValueValueJsonKeyValue build() {
             final var _resultValue = new IndexUserInnerKeyValueValueJsonKeyValue();
             _resultValue.autoIndexFlag = autoIndexFlag;
+            _resultValue.caseSensitive = caseSensitive;
+            _resultValue.delimiter = delimiter;
+            _resultValue.includeChinese = includeChinese;
             _resultValue.indexAll = indexAll;
             _resultValue.indexSqlAll = indexSqlAll;
             _resultValue.sqlFlag = sqlFlag;

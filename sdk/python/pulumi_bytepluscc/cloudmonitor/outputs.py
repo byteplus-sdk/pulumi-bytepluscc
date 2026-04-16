@@ -445,6 +445,8 @@ class RuleLevelConditionCondition(dict):
         suggest = None
         if key == "comparisonOperator":
             suggest = "comparison_operator"
+        elif key == "displayName":
+            suggest = "display_name"
         elif key == "metricName":
             suggest = "metric_name"
         elif key == "metricUnit":
@@ -463,6 +465,7 @@ class RuleLevelConditionCondition(dict):
 
     def __init__(__self__, *,
                  comparison_operator: Optional[builtins.str] = None,
+                 display_name: Optional[builtins.str] = None,
                  metric_name: Optional[builtins.str] = None,
                  metric_unit: Optional[builtins.str] = None,
                  period: Optional[builtins.str] = None,
@@ -470,6 +473,7 @@ class RuleLevelConditionCondition(dict):
                  threshold: Optional[builtins.str] = None):
         """
         :param builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param builtins.str display_name: Metric display name.
         :param builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
@@ -478,6 +482,8 @@ class RuleLevelConditionCondition(dict):
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if metric_unit is not None:
@@ -496,6 +502,14 @@ class RuleLevelConditionCondition(dict):
         Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
         return pulumi.get(self, "comparison_operator")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[builtins.str]:
+        """
+        Metric display name.
+        """
+        return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="metricName")

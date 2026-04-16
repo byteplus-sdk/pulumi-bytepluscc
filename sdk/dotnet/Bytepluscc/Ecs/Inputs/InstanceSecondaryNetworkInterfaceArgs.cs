@@ -19,6 +19,30 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         [Input("ipv6AddressCount")]
         public Input<int>? Ipv6AddressCount { get; set; }
 
+        [Input("ipv6Addresses")]
+        private InputList<string>? _ipv6Addresses;
+
+        /// <summary>
+        /// IPv6 address of the instance.
+        /// </summary>
+        public InputList<string> Ipv6Addresses
+        {
+            get => _ipv6Addresses ?? (_ipv6Addresses = new InputList<string>());
+            set => _ipv6Addresses = value;
+        }
+
+        /// <summary>
+        /// Instance MAC address.
+        /// </summary>
+        [Input("macAddress")]
+        public Input<string>? MacAddress { get; set; }
+
+        /// <summary>
+        /// The network interface ID of the instance.
+        /// </summary>
+        [Input("networkInterfaceId")]
+        public Input<string>? NetworkInterfaceId { get; set; }
+
         /// <summary>
         /// Instance primary IP address
         /// </summary>
@@ -54,6 +78,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// VPC ID of the instance.
+        /// </summary>
+        [Input("vpcId")]
+        public Input<string>? VpcId { get; set; }
 
         public InstanceSecondaryNetworkInterfaceArgs()
         {

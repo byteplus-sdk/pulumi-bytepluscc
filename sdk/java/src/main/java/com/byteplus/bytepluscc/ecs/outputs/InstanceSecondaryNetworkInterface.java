@@ -19,6 +19,21 @@ public final class InstanceSecondaryNetworkInterface {
      */
     private @Nullable Integer ipv6AddressCount;
     /**
+     * @return IPv6 address of the instance.
+     * 
+     */
+    private @Nullable List<String> ipv6Addresses;
+    /**
+     * @return Instance MAC address.
+     * 
+     */
+    private @Nullable String macAddress;
+    /**
+     * @return The network interface ID of the instance.
+     * 
+     */
+    private @Nullable String networkInterfaceId;
+    /**
      * @return Instance primary IP address
      * 
      */
@@ -38,6 +53,11 @@ public final class InstanceSecondaryNetworkInterface {
      * 
      */
     private @Nullable String subnetId;
+    /**
+     * @return VPC ID of the instance.
+     * 
+     */
+    private @Nullable String vpcId;
 
     private InstanceSecondaryNetworkInterface() {}
     /**
@@ -46,6 +66,27 @@ public final class InstanceSecondaryNetworkInterface {
      */
     public Optional<Integer> ipv6AddressCount() {
         return Optional.ofNullable(this.ipv6AddressCount);
+    }
+    /**
+     * @return IPv6 address of the instance.
+     * 
+     */
+    public List<String> ipv6Addresses() {
+        return this.ipv6Addresses == null ? List.of() : this.ipv6Addresses;
+    }
+    /**
+     * @return Instance MAC address.
+     * 
+     */
+    public Optional<String> macAddress() {
+        return Optional.ofNullable(this.macAddress);
+    }
+    /**
+     * @return The network interface ID of the instance.
+     * 
+     */
+    public Optional<String> networkInterfaceId() {
+        return Optional.ofNullable(this.networkInterfaceId);
     }
     /**
      * @return Instance primary IP address
@@ -75,6 +116,13 @@ public final class InstanceSecondaryNetworkInterface {
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
+    /**
+     * @return VPC ID of the instance.
+     * 
+     */
+    public Optional<String> vpcId() {
+        return Optional.ofNullable(this.vpcId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -86,24 +134,53 @@ public final class InstanceSecondaryNetworkInterface {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer ipv6AddressCount;
+        private @Nullable List<String> ipv6Addresses;
+        private @Nullable String macAddress;
+        private @Nullable String networkInterfaceId;
         private @Nullable String primaryIpAddress;
         private @Nullable List<String> privateIpAddresses;
         private @Nullable List<String> securityGroupIds;
         private @Nullable String subnetId;
+        private @Nullable String vpcId;
         public Builder() {}
         public Builder(InstanceSecondaryNetworkInterface defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipv6AddressCount = defaults.ipv6AddressCount;
+    	      this.ipv6Addresses = defaults.ipv6Addresses;
+    	      this.macAddress = defaults.macAddress;
+    	      this.networkInterfaceId = defaults.networkInterfaceId;
     	      this.primaryIpAddress = defaults.primaryIpAddress;
     	      this.privateIpAddresses = defaults.privateIpAddresses;
     	      this.securityGroupIds = defaults.securityGroupIds;
     	      this.subnetId = defaults.subnetId;
+    	      this.vpcId = defaults.vpcId;
         }
 
         @CustomType.Setter
         public Builder ipv6AddressCount(@Nullable Integer ipv6AddressCount) {
 
             this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6Addresses(@Nullable List<String> ipv6Addresses) {
+
+            this.ipv6Addresses = ipv6Addresses;
+            return this;
+        }
+        public Builder ipv6Addresses(String... ipv6Addresses) {
+            return ipv6Addresses(List.of(ipv6Addresses));
+        }
+        @CustomType.Setter
+        public Builder macAddress(@Nullable String macAddress) {
+
+            this.macAddress = macAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder networkInterfaceId(@Nullable String networkInterfaceId) {
+
+            this.networkInterfaceId = networkInterfaceId;
             return this;
         }
         @CustomType.Setter
@@ -136,13 +213,23 @@ public final class InstanceSecondaryNetworkInterface {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vpcId(@Nullable String vpcId) {
+
+            this.vpcId = vpcId;
+            return this;
+        }
         public InstanceSecondaryNetworkInterface build() {
             final var _resultValue = new InstanceSecondaryNetworkInterface();
             _resultValue.ipv6AddressCount = ipv6AddressCount;
+            _resultValue.ipv6Addresses = ipv6Addresses;
+            _resultValue.macAddress = macAddress;
+            _resultValue.networkInterfaceId = networkInterfaceId;
             _resultValue.primaryIpAddress = primaryIpAddress;
             _resultValue.privateIpAddresses = privateIpAddresses;
             _resultValue.securityGroupIds = securityGroupIds;
             _resultValue.subnetId = subnetId;
+            _resultValue.vpcId = vpcId;
             return _resultValue;
         }
     }

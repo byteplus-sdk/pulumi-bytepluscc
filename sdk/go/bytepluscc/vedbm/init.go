@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Backup{}
 	case "bytepluscc:vedbm/database:Database":
 		r = &Database{}
+	case "bytepluscc:vedbm/endpoint:Endpoint":
+		r = &Endpoint{}
 	case "bytepluscc:vedbm/instance:Instance":
 		r = &Instance{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vedbm/database",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vedbm/endpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

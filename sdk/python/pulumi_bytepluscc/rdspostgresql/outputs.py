@@ -14,16 +14,33 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'AllowListAssociatedInstance',
     'AllowListSecurityGroupBindInfo',
     'DbEndpointAddress',
     'DbEndpointReadOnlyNodeWeight',
+    'InstanceChargeDetail',
+    'InstanceEndpoint',
+    'InstanceEndpointAddress',
+    'InstanceEndpointReadOnlyNodeWeight',
+    'InstanceMaintenanceWindow',
+    'InstanceMaintenanceWindowDayOfWeekMaintenanceTime',
+    'InstanceNodeInfo',
+    'InstanceTag',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
     'GetDbEndpointAddressResult',
     'GetDbEndpointReadOnlyNodeWeightResult',
+    'GetInstanceChargeDetailResult',
+    'GetInstanceEndpointResult',
+    'GetInstanceEndpointAddressResult',
+    'GetInstanceEndpointReadOnlyNodeWeightResult',
+    'GetInstanceMaintenanceWindowResult',
+    'GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeResult',
+    'GetInstanceNodeInfoResult',
+    'GetInstanceTagResult',
 ]
 
 @pulumi.output_type
@@ -291,6 +308,901 @@ class DbEndpointReadOnlyNodeWeight(dict):
 
 
 @pulumi.output_type
+class InstanceChargeDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "chargeType":
+            suggest = "charge_type"
+        elif key == "autoRenew":
+            suggest = "auto_renew"
+        elif key == "chargeEndTime":
+            suggest = "charge_end_time"
+        elif key == "chargeStartTime":
+            suggest = "charge_start_time"
+        elif key == "chargeStatus":
+            suggest = "charge_status"
+        elif key == "overdueReclaimTime":
+            suggest = "overdue_reclaim_time"
+        elif key == "overdueTime":
+            suggest = "overdue_time"
+        elif key == "periodUnit":
+            suggest = "period_unit"
+        elif key == "tempModifyEndTime":
+            suggest = "temp_modify_end_time"
+        elif key == "tempModifyStartTime":
+            suggest = "temp_modify_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceChargeDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceChargeDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceChargeDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 charge_type: builtins.str,
+                 auto_renew: Optional[builtins.bool] = None,
+                 charge_end_time: Optional[builtins.str] = None,
+                 charge_start_time: Optional[builtins.str] = None,
+                 charge_status: Optional[builtins.str] = None,
+                 overdue_reclaim_time: Optional[builtins.str] = None,
+                 overdue_time: Optional[builtins.str] = None,
+                 period: Optional[builtins.float] = None,
+                 period_unit: Optional[builtins.str] = None,
+                 temp_modify_end_time: Optional[builtins.str] = None,
+                 temp_modify_start_time: Optional[builtins.str] = None):
+        """
+        :param builtins.str charge_type: Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+        :param builtins.bool auto_renew: Enable auto-renewal for prepaid scenarios
+        :param builtins.str charge_end_time: Billing expiration time for yearly/monthly instances
+        :param builtins.str charge_start_time: Instance billing start time
+        :param builtins.str charge_status: Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+        :param builtins.str overdue_reclaim_time: Estimated release time after instance suspension due to overdue payment
+        :param builtins.str overdue_time: Instance shutdown time due to overdue payment
+        :param builtins.float period: Purchase duration for prepaid scenarios
+        :param builtins.str period_unit: Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+        :param builtins.str temp_modify_end_time: Rollback time for temporary upgrade
+        :param builtins.str temp_modify_start_time: Start time of temporary scaling
+        """
+        pulumi.set(__self__, "charge_type", charge_type)
+        if auto_renew is not None:
+            pulumi.set(__self__, "auto_renew", auto_renew)
+        if charge_end_time is not None:
+            pulumi.set(__self__, "charge_end_time", charge_end_time)
+        if charge_start_time is not None:
+            pulumi.set(__self__, "charge_start_time", charge_start_time)
+        if charge_status is not None:
+            pulumi.set(__self__, "charge_status", charge_status)
+        if overdue_reclaim_time is not None:
+            pulumi.set(__self__, "overdue_reclaim_time", overdue_reclaim_time)
+        if overdue_time is not None:
+            pulumi.set(__self__, "overdue_time", overdue_time)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+        if period_unit is not None:
+            pulumi.set(__self__, "period_unit", period_unit)
+        if temp_modify_end_time is not None:
+            pulumi.set(__self__, "temp_modify_end_time", temp_modify_end_time)
+        if temp_modify_start_time is not None:
+            pulumi.set(__self__, "temp_modify_start_time", temp_modify_start_time)
+
+    @property
+    @pulumi.getter(name="chargeType")
+    def charge_type(self) -> builtins.str:
+        """
+        Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+        """
+        return pulumi.get(self, "charge_type")
+
+    @property
+    @pulumi.getter(name="autoRenew")
+    def auto_renew(self) -> Optional[builtins.bool]:
+        """
+        Enable auto-renewal for prepaid scenarios
+        """
+        return pulumi.get(self, "auto_renew")
+
+    @property
+    @pulumi.getter(name="chargeEndTime")
+    def charge_end_time(self) -> Optional[builtins.str]:
+        """
+        Billing expiration time for yearly/monthly instances
+        """
+        return pulumi.get(self, "charge_end_time")
+
+    @property
+    @pulumi.getter(name="chargeStartTime")
+    def charge_start_time(self) -> Optional[builtins.str]:
+        """
+        Instance billing start time
+        """
+        return pulumi.get(self, "charge_start_time")
+
+    @property
+    @pulumi.getter(name="chargeStatus")
+    def charge_status(self) -> Optional[builtins.str]:
+        """
+        Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+        """
+        return pulumi.get(self, "charge_status")
+
+    @property
+    @pulumi.getter(name="overdueReclaimTime")
+    def overdue_reclaim_time(self) -> Optional[builtins.str]:
+        """
+        Estimated release time after instance suspension due to overdue payment
+        """
+        return pulumi.get(self, "overdue_reclaim_time")
+
+    @property
+    @pulumi.getter(name="overdueTime")
+    def overdue_time(self) -> Optional[builtins.str]:
+        """
+        Instance shutdown time due to overdue payment
+        """
+        return pulumi.get(self, "overdue_time")
+
+    @property
+    @pulumi.getter
+    def period(self) -> Optional[builtins.float]:
+        """
+        Purchase duration for prepaid scenarios
+        """
+        return pulumi.get(self, "period")
+
+    @property
+    @pulumi.getter(name="periodUnit")
+    def period_unit(self) -> Optional[builtins.str]:
+        """
+        Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+        """
+        return pulumi.get(self, "period_unit")
+
+    @property
+    @pulumi.getter(name="tempModifyEndTime")
+    def temp_modify_end_time(self) -> Optional[builtins.str]:
+        """
+        Rollback time for temporary upgrade
+        """
+        return pulumi.get(self, "temp_modify_end_time")
+
+    @property
+    @pulumi.getter(name="tempModifyStartTime")
+    def temp_modify_start_time(self) -> Optional[builtins.str]:
+        """
+        Start time of temporary scaling
+        """
+        return pulumi.get(self, "temp_modify_start_time")
+
+
+@pulumi.output_type
+class InstanceEndpoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoAddNewNodes":
+            suggest = "auto_add_new_nodes"
+        elif key == "enableReadOnly":
+            suggest = "enable_read_only"
+        elif key == "enableReadWriteSplitting":
+            suggest = "enable_read_write_splitting"
+        elif key == "endpointId":
+            suggest = "endpoint_id"
+        elif key == "endpointName":
+            suggest = "endpoint_name"
+        elif key == "endpointType":
+            suggest = "endpoint_type"
+        elif key == "readOnlyNodeDistributionType":
+            suggest = "read_only_node_distribution_type"
+        elif key == "readOnlyNodeMaxDelayTime":
+            suggest = "read_only_node_max_delay_time"
+        elif key == "readOnlyNodeWeights":
+            suggest = "read_only_node_weights"
+        elif key == "readWriteMode":
+            suggest = "read_write_mode"
+        elif key == "readWriteProxyConnection":
+            suggest = "read_write_proxy_connection"
+        elif key == "writeNodeHaltWriting":
+            suggest = "write_node_halt_writing"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceEndpoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceEndpoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceEndpoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 addresses: Optional[Sequence['outputs.InstanceEndpointAddress']] = None,
+                 auto_add_new_nodes: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 enable_read_only: Optional[builtins.str] = None,
+                 enable_read_write_splitting: Optional[builtins.str] = None,
+                 endpoint_id: Optional[builtins.str] = None,
+                 endpoint_name: Optional[builtins.str] = None,
+                 endpoint_type: Optional[builtins.str] = None,
+                 read_only_node_distribution_type: Optional[builtins.str] = None,
+                 read_only_node_max_delay_time: Optional[builtins.float] = None,
+                 read_only_node_weights: Optional[Sequence['outputs.InstanceEndpointReadOnlyNodeWeight']] = None,
+                 read_write_mode: Optional[builtins.str] = None,
+                 read_write_proxy_connection: Optional[builtins.float] = None,
+                 write_node_halt_writing: Optional[builtins.bool] = None):
+        """
+        :param builtins.str auto_add_new_nodes: When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+        :param builtins.str description: Address description.
+        :param builtins.str enable_read_only: Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+        :param builtins.str enable_read_write_splitting: Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+        :param builtins.str endpoint_id: Instance connection terminal ID
+        :param builtins.str endpoint_name: Instance connection terminal name
+        :param builtins.str endpoint_type: Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+        :param builtins.str read_only_node_distribution_type: Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+        :param builtins.float read_only_node_max_delay_time: Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+               **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+        :param builtins.str read_write_mode: Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+        :param builtins.float read_write_proxy_connection: After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+        :param builtins.bool write_node_halt_writing: Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+        """
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if auto_add_new_nodes is not None:
+            pulumi.set(__self__, "auto_add_new_nodes", auto_add_new_nodes)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if enable_read_only is not None:
+            pulumi.set(__self__, "enable_read_only", enable_read_only)
+        if enable_read_write_splitting is not None:
+            pulumi.set(__self__, "enable_read_write_splitting", enable_read_write_splitting)
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_name is not None:
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
+        if endpoint_type is not None:
+            pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if read_only_node_distribution_type is not None:
+            pulumi.set(__self__, "read_only_node_distribution_type", read_only_node_distribution_type)
+        if read_only_node_max_delay_time is not None:
+            pulumi.set(__self__, "read_only_node_max_delay_time", read_only_node_max_delay_time)
+        if read_only_node_weights is not None:
+            pulumi.set(__self__, "read_only_node_weights", read_only_node_weights)
+        if read_write_mode is not None:
+            pulumi.set(__self__, "read_write_mode", read_write_mode)
+        if read_write_proxy_connection is not None:
+            pulumi.set(__self__, "read_write_proxy_connection", read_write_proxy_connection)
+        if write_node_halt_writing is not None:
+            pulumi.set(__self__, "write_node_halt_writing", write_node_halt_writing)
+
+    @property
+    @pulumi.getter
+    def addresses(self) -> Optional[Sequence['outputs.InstanceEndpointAddress']]:
+        return pulumi.get(self, "addresses")
+
+    @property
+    @pulumi.getter(name="autoAddNewNodes")
+    def auto_add_new_nodes(self) -> Optional[builtins.str]:
+        """
+        When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+        """
+        return pulumi.get(self, "auto_add_new_nodes")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Address description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="enableReadOnly")
+    def enable_read_only(self) -> Optional[builtins.str]:
+        """
+        Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+        """
+        return pulumi.get(self, "enable_read_only")
+
+    @property
+    @pulumi.getter(name="enableReadWriteSplitting")
+    def enable_read_write_splitting(self) -> Optional[builtins.str]:
+        """
+        Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+        """
+        return pulumi.get(self, "enable_read_write_splitting")
+
+    @property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> Optional[builtins.str]:
+        """
+        Instance connection terminal ID
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> Optional[builtins.str]:
+        """
+        Instance connection terminal name
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @property
+    @pulumi.getter(name="endpointType")
+    def endpoint_type(self) -> Optional[builtins.str]:
+        """
+        Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+        """
+        return pulumi.get(self, "endpoint_type")
+
+    @property
+    @pulumi.getter(name="readOnlyNodeDistributionType")
+    def read_only_node_distribution_type(self) -> Optional[builtins.str]:
+        """
+        Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+        """
+        return pulumi.get(self, "read_only_node_distribution_type")
+
+    @property
+    @pulumi.getter(name="readOnlyNodeMaxDelayTime")
+    def read_only_node_max_delay_time(self) -> Optional[builtins.float]:
+        """
+        Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+        **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+        """
+        return pulumi.get(self, "read_only_node_max_delay_time")
+
+    @property
+    @pulumi.getter(name="readOnlyNodeWeights")
+    def read_only_node_weights(self) -> Optional[Sequence['outputs.InstanceEndpointReadOnlyNodeWeight']]:
+        return pulumi.get(self, "read_only_node_weights")
+
+    @property
+    @pulumi.getter(name="readWriteMode")
+    def read_write_mode(self) -> Optional[builtins.str]:
+        """
+        Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+        """
+        return pulumi.get(self, "read_write_mode")
+
+    @property
+    @pulumi.getter(name="readWriteProxyConnection")
+    def read_write_proxy_connection(self) -> Optional[builtins.float]:
+        """
+        After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+        """
+        return pulumi.get(self, "read_write_proxy_connection")
+
+    @property
+    @pulumi.getter(name="writeNodeHaltWriting")
+    def write_node_halt_writing(self) -> Optional[builtins.bool]:
+        """
+        Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+        """
+        return pulumi.get(self, "write_node_halt_writing")
+
+
+@pulumi.output_type
+class InstanceEndpointAddress(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "crossRegionDomain":
+            suggest = "cross_region_domain"
+        elif key == "dnsVisibility":
+            suggest = "dns_visibility"
+        elif key == "domainVisibilitySetting":
+            suggest = "domain_visibility_setting"
+        elif key == "eipId":
+            suggest = "eip_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceEndpointAddress. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceEndpointAddress.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceEndpointAddress.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cross_region_domain: Optional[builtins.str] = None,
+                 dns_visibility: Optional[builtins.bool] = None,
+                 domain: Optional[builtins.str] = None,
+                 domain_visibility_setting: Optional[builtins.str] = None,
+                 eip_id: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 network_type: Optional[builtins.str] = None,
+                 port: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str cross_region_domain: Private network address accessible across regions
+        :param builtins.bool dns_visibility: Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+        :param builtins.str domain: Connection domain name
+        :param builtins.str domain_visibility_setting: Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+        :param builtins.str port: Port.
+        :param builtins.str subnet_id: Subnet ID
+        """
+        if cross_region_domain is not None:
+            pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if domain_visibility_setting is not None:
+            pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> Optional[builtins.str]:
+        """
+        Private network address accessible across regions
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[builtins.bool]:
+        """
+        Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> Optional[builtins.str]:
+        """
+        Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[builtins.str]:
+        """
+        EIP ID, valid only for Public addresses
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[builtins.str]:
+        """
+        Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.str]:
+        """
+        Port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class InstanceEndpointReadOnlyNodeWeight(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeId":
+            suggest = "node_id"
+        elif key == "nodeType":
+            suggest = "node_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceEndpointReadOnlyNodeWeight. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceEndpointReadOnlyNodeWeight.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceEndpointReadOnlyNodeWeight.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_id: Optional[builtins.str] = None,
+                 node_type: Optional[builtins.str] = None,
+                 weight: Optional[builtins.float] = None):
+        """
+        :param builtins.str node_id: Read-only nodes require NodeId
+        :param builtins.str node_type: Node type
+        :param builtins.float weight: Node read weight, increases by 100, maximum value is 10000
+        """
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[builtins.str]:
+        """
+        Read-only nodes require NodeId
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[builtins.str]:
+        """
+        Node type
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.float]:
+        """
+        Node read weight, increases by 100, maximum value is 10000
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class InstanceMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dayKind":
+            suggest = "day_kind"
+        elif key == "dayOfWeekMaintenanceTimes":
+            suggest = "day_of_week_maintenance_times"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day_kind: Optional[builtins.str] = None,
+                 day_of_week_maintenance_times: Optional[Sequence['outputs.InstanceMaintenanceWindowDayOfWeekMaintenanceTime']] = None):
+        """
+        :param builtins.str day_kind: Granularity of the maintenance cycle. Value: Week (week)
+        """
+        if day_kind is not None:
+            pulumi.set(__self__, "day_kind", day_kind)
+        if day_of_week_maintenance_times is not None:
+            pulumi.set(__self__, "day_of_week_maintenance_times", day_of_week_maintenance_times)
+
+    @property
+    @pulumi.getter(name="dayKind")
+    def day_kind(self) -> Optional[builtins.str]:
+        """
+        Granularity of the maintenance cycle. Value: Week (week)
+        """
+        return pulumi.get(self, "day_kind")
+
+    @property
+    @pulumi.getter(name="dayOfWeekMaintenanceTimes")
+    def day_of_week_maintenance_times(self) -> Optional[Sequence['outputs.InstanceMaintenanceWindowDayOfWeekMaintenanceTime']]:
+        return pulumi.get(self, "day_of_week_maintenance_times")
+
+
+@pulumi.output_type
+class InstanceMaintenanceWindowDayOfWeekMaintenanceTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dayOfWeek":
+            suggest = "day_of_week"
+        elif key == "maintenanceWindowStartTime":
+            suggest = "maintenance_window_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceMaintenanceWindowDayOfWeekMaintenanceTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceMaintenanceWindowDayOfWeekMaintenanceTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceMaintenanceWindowDayOfWeekMaintenanceTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day_of_week: Optional[builtins.str] = None,
+                 maintenance_window_start_time: Optional[builtins.str] = None,
+                 period: Optional[builtins.int] = None):
+        """
+        :param builtins.str day_of_week: Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+        :param builtins.str maintenance_window_start_time: Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+        :param builtins.int period: Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+        """
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if maintenance_window_start_time is not None:
+            pulumi.set(__self__, "maintenance_window_start_time", maintenance_window_start_time)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> Optional[builtins.str]:
+        """
+        Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowStartTime")
+    def maintenance_window_start_time(self) -> Optional[builtins.str]:
+        """
+        Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+        """
+        return pulumi.get(self, "maintenance_window_start_time")
+
+    @property
+    @pulumi.getter
+    def period(self) -> Optional[builtins.int]:
+        """
+        Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+        """
+        return pulumi.get(self, "period")
+
+
+@pulumi.output_type
+class InstanceNodeInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeSpec":
+            suggest = "node_spec"
+        elif key == "nodeType":
+            suggest = "node_type"
+        elif key == "zoneId":
+            suggest = "zone_id"
+        elif key == "createTime":
+            suggest = "create_time"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "nodeId":
+            suggest = "node_id"
+        elif key == "nodeStatus":
+            suggest = "node_status"
+        elif key == "regionId":
+            suggest = "region_id"
+        elif key == "updateTime":
+            suggest = "update_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceNodeInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceNodeInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceNodeInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_spec: builtins.str,
+                 node_type: builtins.str,
+                 zone_id: builtins.str,
+                 create_time: Optional[builtins.str] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 memory: Optional[builtins.float] = None,
+                 node_id: Optional[builtins.str] = None,
+                 node_status: Optional[builtins.str] = None,
+                 region_id: Optional[builtins.str] = None,
+                 update_time: Optional[builtins.str] = None,
+                 vcpu: Optional[builtins.float] = None):
+        """
+        :param builtins.str node_spec: Node specification
+        :param builtins.str node_type: Node type
+        :param builtins.str zone_id: Availability zone of the node
+        :param builtins.str create_time: Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        :param builtins.str instance_id: Instance ID
+        :param builtins.float memory: Memory size, unit: GB
+        :param builtins.str node_id: Node ID
+        :param builtins.str node_status: Node status
+        :param builtins.str region_id: Region ID
+        :param builtins.str update_time: Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        :param builtins.float vcpu: CPU size. For example: 1 means 1U
+        """
+        pulumi.set(__self__, "node_spec", node_spec)
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "zone_id", zone_id)
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_status is not None:
+            pulumi.set(__self__, "node_status", node_status)
+        if region_id is not None:
+            pulumi.set(__self__, "region_id", region_id)
+        if update_time is not None:
+            pulumi.set(__self__, "update_time", update_time)
+        if vcpu is not None:
+            pulumi.set(__self__, "vcpu", vcpu)
+
+    @property
+    @pulumi.getter(name="nodeSpec")
+    def node_spec(self) -> builtins.str:
+        """
+        Node specification
+        """
+        return pulumi.get(self, "node_spec")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Node type
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        Availability zone of the node
+        """
+        return pulumi.get(self, "zone_id")
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[builtins.str]:
+        """
+        Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        Instance ID
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def memory(self) -> Optional[builtins.float]:
+        """
+        Memory size, unit: GB
+        """
+        return pulumi.get(self, "memory")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[builtins.str]:
+        """
+        Node ID
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeStatus")
+    def node_status(self) -> Optional[builtins.str]:
+        """
+        Node status
+        """
+        return pulumi.get(self, "node_status")
+
+    @property
+    @pulumi.getter(name="regionId")
+    def region_id(self) -> Optional[builtins.str]:
+        """
+        Region ID
+        """
+        return pulumi.get(self, "region_id")
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> Optional[builtins.str]:
+        """
+        Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        """
+        return pulumi.get(self, "update_time")
+
+    @property
+    @pulumi.getter
+    def vcpu(self) -> Optional[builtins.float]:
+        """
+        CPU size. For example: 1 means 1U
+        """
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class InstanceTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetAllowListAssociatedInstanceResult(dict):
     def __init__(__self__, *,
                  instance_id: builtins.str,
@@ -536,5 +1448,668 @@ class GetDbEndpointReadOnlyNodeWeightResult(dict):
         Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
         """
         return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetInstanceChargeDetailResult(dict):
+    def __init__(__self__, *,
+                 auto_renew: builtins.bool,
+                 charge_end_time: builtins.str,
+                 charge_start_time: builtins.str,
+                 charge_status: builtins.str,
+                 charge_type: builtins.str,
+                 overdue_reclaim_time: builtins.str,
+                 overdue_time: builtins.str,
+                 period: builtins.float,
+                 period_unit: builtins.str,
+                 temp_modify_end_time: builtins.str,
+                 temp_modify_start_time: builtins.str):
+        """
+        :param builtins.bool auto_renew: Enable auto-renewal for prepaid scenarios
+        :param builtins.str charge_end_time: Billing expiration time for yearly/monthly instances
+        :param builtins.str charge_start_time: Instance billing start time
+        :param builtins.str charge_status: Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+        :param builtins.str charge_type: Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+        :param builtins.str overdue_reclaim_time: Estimated release time after instance suspension due to overdue payment
+        :param builtins.str overdue_time: Instance shutdown time due to overdue payment
+        :param builtins.float period: Purchase duration for prepaid scenarios
+        :param builtins.str period_unit: Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+        :param builtins.str temp_modify_end_time: Rollback time for temporary upgrade
+        :param builtins.str temp_modify_start_time: Start time of temporary scaling
+        """
+        pulumi.set(__self__, "auto_renew", auto_renew)
+        pulumi.set(__self__, "charge_end_time", charge_end_time)
+        pulumi.set(__self__, "charge_start_time", charge_start_time)
+        pulumi.set(__self__, "charge_status", charge_status)
+        pulumi.set(__self__, "charge_type", charge_type)
+        pulumi.set(__self__, "overdue_reclaim_time", overdue_reclaim_time)
+        pulumi.set(__self__, "overdue_time", overdue_time)
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "period_unit", period_unit)
+        pulumi.set(__self__, "temp_modify_end_time", temp_modify_end_time)
+        pulumi.set(__self__, "temp_modify_start_time", temp_modify_start_time)
+
+    @property
+    @pulumi.getter(name="autoRenew")
+    def auto_renew(self) -> builtins.bool:
+        """
+        Enable auto-renewal for prepaid scenarios
+        """
+        return pulumi.get(self, "auto_renew")
+
+    @property
+    @pulumi.getter(name="chargeEndTime")
+    def charge_end_time(self) -> builtins.str:
+        """
+        Billing expiration time for yearly/monthly instances
+        """
+        return pulumi.get(self, "charge_end_time")
+
+    @property
+    @pulumi.getter(name="chargeStartTime")
+    def charge_start_time(self) -> builtins.str:
+        """
+        Instance billing start time
+        """
+        return pulumi.get(self, "charge_start_time")
+
+    @property
+    @pulumi.getter(name="chargeStatus")
+    def charge_status(self) -> builtins.str:
+        """
+        Payment status. Value:   - `Normal`: Normal   - `Overdue`: Overdue and suspended   - `Unpaid`: Unpaid
+        """
+        return pulumi.get(self, "charge_status")
+
+    @property
+    @pulumi.getter(name="chargeType")
+    def charge_type(self) -> builtins.str:
+        """
+        Payment type. Value:   - `PostPaid`: Postpaid   - `PrePaid`: Prepaid
+        """
+        return pulumi.get(self, "charge_type")
+
+    @property
+    @pulumi.getter(name="overdueReclaimTime")
+    def overdue_reclaim_time(self) -> builtins.str:
+        """
+        Estimated release time after instance suspension due to overdue payment
+        """
+        return pulumi.get(self, "overdue_reclaim_time")
+
+    @property
+    @pulumi.getter(name="overdueTime")
+    def overdue_time(self) -> builtins.str:
+        """
+        Instance shutdown time due to overdue payment
+        """
+        return pulumi.get(self, "overdue_time")
+
+    @property
+    @pulumi.getter
+    def period(self) -> builtins.float:
+        """
+        Purchase duration for prepaid scenarios
+        """
+        return pulumi.get(self, "period")
+
+    @property
+    @pulumi.getter(name="periodUnit")
+    def period_unit(self) -> builtins.str:
+        """
+        Purchase period for prepaid scenarios. Values:   - `Month`: month   - `Year`: year
+        """
+        return pulumi.get(self, "period_unit")
+
+    @property
+    @pulumi.getter(name="tempModifyEndTime")
+    def temp_modify_end_time(self) -> builtins.str:
+        """
+        Rollback time for temporary upgrade
+        """
+        return pulumi.get(self, "temp_modify_end_time")
+
+    @property
+    @pulumi.getter(name="tempModifyStartTime")
+    def temp_modify_start_time(self) -> builtins.str:
+        """
+        Start time of temporary scaling
+        """
+        return pulumi.get(self, "temp_modify_start_time")
+
+
+@pulumi.output_type
+class GetInstanceEndpointResult(dict):
+    def __init__(__self__, *,
+                 addresses: Sequence['outputs.GetInstanceEndpointAddressResult'],
+                 auto_add_new_nodes: builtins.str,
+                 description: builtins.str,
+                 enable_read_only: builtins.str,
+                 enable_read_write_splitting: builtins.str,
+                 endpoint_id: builtins.str,
+                 endpoint_name: builtins.str,
+                 endpoint_type: builtins.str,
+                 read_only_node_distribution_type: builtins.str,
+                 read_only_node_max_delay_time: builtins.float,
+                 read_only_node_weights: Sequence['outputs.GetInstanceEndpointReadOnlyNodeWeightResult'],
+                 read_write_mode: builtins.str,
+                 read_write_proxy_connection: builtins.float,
+                 write_node_halt_writing: builtins.bool):
+        """
+        :param Sequence['GetInstanceEndpointAddressArgs'] addresses: Address list.
+        :param builtins.str auto_add_new_nodes: When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+        :param builtins.str description: Address description.
+        :param builtins.str enable_read_only: Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+        :param builtins.str enable_read_write_splitting: Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+        :param builtins.str endpoint_id: Instance connection terminal ID
+        :param builtins.str endpoint_name: Instance connection terminal name
+        :param builtins.str endpoint_type: Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+        :param builtins.str read_only_node_distribution_type: Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+        :param builtins.float read_only_node_max_delay_time: Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+               **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+        :param Sequence['GetInstanceEndpointReadOnlyNodeWeightArgs'] read_only_node_weights: List of nodes configured for the endpoint and their corresponding read-only weights.
+        :param builtins.str read_write_mode: Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+        :param builtins.float read_write_proxy_connection: After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+        :param builtins.bool write_node_halt_writing: Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+        """
+        pulumi.set(__self__, "addresses", addresses)
+        pulumi.set(__self__, "auto_add_new_nodes", auto_add_new_nodes)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "enable_read_only", enable_read_only)
+        pulumi.set(__self__, "enable_read_write_splitting", enable_read_write_splitting)
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+        pulumi.set(__self__, "endpoint_type", endpoint_type)
+        pulumi.set(__self__, "read_only_node_distribution_type", read_only_node_distribution_type)
+        pulumi.set(__self__, "read_only_node_max_delay_time", read_only_node_max_delay_time)
+        pulumi.set(__self__, "read_only_node_weights", read_only_node_weights)
+        pulumi.set(__self__, "read_write_mode", read_write_mode)
+        pulumi.set(__self__, "read_write_proxy_connection", read_write_proxy_connection)
+        pulumi.set(__self__, "write_node_halt_writing", write_node_halt_writing)
+
+    @property
+    @pulumi.getter
+    def addresses(self) -> Sequence['outputs.GetInstanceEndpointAddressResult']:
+        """
+        Address list.
+        """
+        return pulumi.get(self, "addresses")
+
+    @property
+    @pulumi.getter(name="autoAddNewNodes")
+    def auto_add_new_nodes(self) -> builtins.str:
+        """
+        When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
+        """
+        return pulumi.get(self, "auto_add_new_nodes")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Address description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="enableReadOnly")
+    def enable_read_only(self) -> builtins.str:
+        """
+        Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
+        """
+        return pulumi.get(self, "enable_read_only")
+
+    @property
+    @pulumi.getter(name="enableReadWriteSplitting")
+    def enable_read_write_splitting(self) -> builtins.str:
+        """
+        Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
+        """
+        return pulumi.get(self, "enable_read_write_splitting")
+
+    @property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> builtins.str:
+        """
+        Instance connection terminal ID
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> builtins.str:
+        """
+        Instance connection terminal name
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @property
+    @pulumi.getter(name="endpointType")
+    def endpoint_type(self) -> builtins.str:
+        """
+        Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
+        """
+        return pulumi.get(self, "endpoint_type")
+
+    @property
+    @pulumi.getter(name="readOnlyNodeDistributionType")
+    def read_only_node_distribution_type(self) -> builtins.str:
+        """
+        Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
+        """
+        return pulumi.get(self, "read_only_node_distribution_type")
+
+    @property
+    @pulumi.getter(name="readOnlyNodeMaxDelayTime")
+    def read_only_node_max_delay_time(self) -> builtins.float:
+        """
+        Maximum latency threshold for read-only nodes. If a read-only node's latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
+        **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
+        """
+        return pulumi.get(self, "read_only_node_max_delay_time")
+
+    @property
+    @pulumi.getter(name="readOnlyNodeWeights")
+    def read_only_node_weights(self) -> Sequence['outputs.GetInstanceEndpointReadOnlyNodeWeightResult']:
+        """
+        List of nodes configured for the endpoint and their corresponding read-only weights.
+        """
+        return pulumi.get(self, "read_only_node_weights")
+
+    @property
+    @pulumi.getter(name="readWriteMode")
+    def read_write_mode(self) -> builtins.str:
+        """
+        Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
+        """
+        return pulumi.get(self, "read_write_mode")
+
+    @property
+    @pulumi.getter(name="readWriteProxyConnection")
+    def read_write_proxy_connection(self) -> builtins.float:
+        """
+        After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance's primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
+        """
+        return pulumi.get(self, "read_write_proxy_connection")
+
+    @property
+    @pulumi.getter(name="writeNodeHaltWriting")
+    def write_node_halt_writing(self) -> builtins.bool:
+        """
+        Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+        """
+        return pulumi.get(self, "write_node_halt_writing")
+
+
+@pulumi.output_type
+class GetInstanceEndpointAddressResult(dict):
+    def __init__(__self__, *,
+                 cross_region_domain: builtins.str,
+                 dns_visibility: builtins.bool,
+                 domain: builtins.str,
+                 domain_visibility_setting: builtins.str,
+                 eip_id: builtins.str,
+                 ip_address: builtins.str,
+                 network_type: builtins.str,
+                 port: builtins.str,
+                 subnet_id: builtins.str):
+        """
+        :param builtins.str cross_region_domain: Private network address accessible across regions
+        :param builtins.bool dns_visibility: Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+        :param builtins.str domain: Connection domain name
+        :param builtins.str domain_visibility_setting: Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+        :param builtins.str port: Port.
+        :param builtins.str subnet_id: Subnet ID
+        """
+        pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        pulumi.set(__self__, "dns_visibility", dns_visibility)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        pulumi.set(__self__, "eip_id", eip_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> builtins.str:
+        """
+        Private network address accessible across regions
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> builtins.bool:
+        """
+        Enable public network resolution. Values:   - false: default, private network resolution   - true: private and public network resolution
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> builtins.str:
+        """
+        Private network address type. Values: LocalDomain: local region domain name CrossRegionDomain: cross-region accessible domain name
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> builtins.str:
+        """
+        EIP ID, valid only for Public addresses
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> builtins.str:
+        """
+        Network address type. Value:   - `Private`: Private network address   - `Public`: Public network address   - `Inner`: Public service zone address
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.str:
+        """
+        Port.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetInstanceEndpointReadOnlyNodeWeightResult(dict):
+    def __init__(__self__, *,
+                 node_id: builtins.str,
+                 node_type: builtins.str,
+                 weight: builtins.float):
+        """
+        :param builtins.str node_id: Read-only nodes require NodeId
+        :param builtins.str node_type: Node type
+        :param builtins.float weight: Node read weight, increases by 100, maximum value is 10000
+        """
+        pulumi.set(__self__, "node_id", node_id)
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> builtins.str:
+        """
+        Read-only nodes require NodeId
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Node type
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.float:
+        """
+        Node read weight, increases by 100, maximum value is 10000
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetInstanceMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 day_kind: builtins.str,
+                 day_of_week_maintenance_times: Sequence['outputs.GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeResult']):
+        """
+        :param builtins.str day_kind: Granularity of the maintenance cycle. Value: Week (week)
+        :param Sequence['GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs'] day_of_week_maintenance_times: Detailed information about the instance's maintenance window.
+        """
+        pulumi.set(__self__, "day_kind", day_kind)
+        pulumi.set(__self__, "day_of_week_maintenance_times", day_of_week_maintenance_times)
+
+    @property
+    @pulumi.getter(name="dayKind")
+    def day_kind(self) -> builtins.str:
+        """
+        Granularity of the maintenance cycle. Value: Week (week)
+        """
+        return pulumi.get(self, "day_kind")
+
+    @property
+    @pulumi.getter(name="dayOfWeekMaintenanceTimes")
+    def day_of_week_maintenance_times(self) -> Sequence['outputs.GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeResult']:
+        """
+        Detailed information about the instance's maintenance window.
+        """
+        return pulumi.get(self, "day_of_week_maintenance_times")
+
+
+@pulumi.output_type
+class GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeResult(dict):
+    def __init__(__self__, *,
+                 day_of_week: builtins.str,
+                 maintenance_window_start_time: builtins.str,
+                 period: builtins.int):
+        """
+        :param builtins.str day_of_week: Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+        :param builtins.str maintenance_window_start_time: Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+        :param builtins.int period: Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+        """
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "maintenance_window_start_time", maintenance_window_start_time)
+        pulumi.set(__self__, "period", period)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> builtins.str:
+        """
+        Specify maintenance days for the instance each week. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: If not specified or left blank, all seven days are enabled by default.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowStartTime")
+    def maintenance_window_start_time(self) -> builtins.str:
+        """
+        Start time of the maintenance window on the maintenance day. Format: HH:mmZ (UTC time). Currently, only start times between 16:00Z and 20:00Z are supported.
+        """
+        return pulumi.get(self, "maintenance_window_start_time")
+
+    @property
+    @pulumi.getter
+    def period(self) -> builtins.int:
+        """
+        Duration of the maintenance window on the maintenance day. Minimum duration is 2 hours, maximum is 6 hours.
+        """
+        return pulumi.get(self, "period")
+
+
+@pulumi.output_type
+class GetInstanceNodeInfoResult(dict):
+    def __init__(__self__, *,
+                 create_time: builtins.str,
+                 instance_id: builtins.str,
+                 memory: builtins.float,
+                 node_id: builtins.str,
+                 node_spec: builtins.str,
+                 node_status: builtins.str,
+                 node_type: builtins.str,
+                 region_id: builtins.str,
+                 update_time: builtins.str,
+                 vcpu: builtins.float,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str create_time: Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        :param builtins.str instance_id: Instance ID
+        :param builtins.float memory: Memory size, unit: GB
+        :param builtins.str node_id: Node ID
+        :param builtins.str node_spec: Node specification
+        :param builtins.str node_status: Node status
+        :param builtins.str node_type: Node type
+        :param builtins.str region_id: Region ID
+        :param builtins.str update_time: Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        :param builtins.float vcpu: CPU size. For example: 1 means 1U
+        :param builtins.str zone_id: Availability zone of the node
+        """
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "memory", memory)
+        pulumi.set(__self__, "node_id", node_id)
+        pulumi.set(__self__, "node_spec", node_spec)
+        pulumi.set(__self__, "node_status", node_status)
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "region_id", region_id)
+        pulumi.set(__self__, "update_time", update_time)
+        pulumi.set(__self__, "vcpu", vcpu)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        Node creation time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        Instance ID
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def memory(self) -> builtins.float:
+        """
+        Memory size, unit: GB
+        """
+        return pulumi.get(self, "memory")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> builtins.str:
+        """
+        Node ID
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeSpec")
+    def node_spec(self) -> builtins.str:
+        """
+        Node specification
+        """
+        return pulumi.get(self, "node_spec")
+
+    @property
+    @pulumi.getter(name="nodeStatus")
+    def node_status(self) -> builtins.str:
+        """
+        Node status
+        """
+        return pulumi.get(self, "node_status")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Node type
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter(name="regionId")
+    def region_id(self) -> builtins.str:
+        """
+        Region ID
+        """
+        return pulumi.get(self, "region_id")
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> builtins.str:
+        """
+        Node update time. Format: yyyy-MM-ddTHH:mm:ss.sssZ (UTC time)
+        """
+        return pulumi.get(self, "update_time")
+
+    @property
+    @pulumi.getter
+    def vcpu(self) -> builtins.float:
+        """
+        CPU size. For example: 1 means 1U
+        """
+        return pulumi.get(self, "vcpu")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        Availability zone of the node
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetInstanceTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
 
 

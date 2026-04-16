@@ -123,6 +123,10 @@ export class Clb extends pulumi.CustomResource {
      * Expiration time of the load balancer instance
      */
     public /*out*/ readonly expiredTime!: pulumi.Output<string>;
+    /**
+     * IPv6 public bandwidth information for the load balancing instance
+     */
+    public /*out*/ readonly ipv6AddressBandwidth!: pulumi.Output<outputs.clb.ClbIpv6AddressBandwidth>;
     public readonly listeners!: pulumi.Output<outputs.clb.ClbListener[]>;
     /**
      * CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
@@ -252,6 +256,7 @@ export class Clb extends pulumi.CustomResource {
             resourceInputs["enis"] = state ? state.enis : undefined;
             resourceInputs["exclusiveClusterId"] = state ? state.exclusiveClusterId : undefined;
             resourceInputs["expiredTime"] = state ? state.expiredTime : undefined;
+            resourceInputs["ipv6AddressBandwidth"] = state ? state.ipv6AddressBandwidth : undefined;
             resourceInputs["listeners"] = state ? state.listeners : undefined;
             resourceInputs["loadBalancerBillingType"] = state ? state.loadBalancerBillingType : undefined;
             resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
@@ -319,6 +324,7 @@ export class Clb extends pulumi.CustomResource {
             resourceInputs["eni"] = undefined /*out*/;
             resourceInputs["eniIpv6Address"] = undefined /*out*/;
             resourceInputs["expiredTime"] = undefined /*out*/;
+            resourceInputs["ipv6AddressBandwidth"] = undefined /*out*/;
             resourceInputs["loadBalancerId"] = undefined /*out*/;
             resourceInputs["lockReason"] = undefined /*out*/;
             resourceInputs["overdueTime"] = undefined /*out*/;
@@ -416,6 +422,10 @@ export interface ClbState {
      * Expiration time of the load balancer instance
      */
     expiredTime?: pulumi.Input<string>;
+    /**
+     * IPv6 public bandwidth information for the load balancing instance
+     */
+    ipv6AddressBandwidth?: pulumi.Input<inputs.clb.ClbIpv6AddressBandwidth>;
     listeners?: pulumi.Input<pulumi.Input<inputs.clb.ClbListener>[]>;
     /**
      * CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)

@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type BandwidthPackageTag struct {
+	// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+	Key *string `pulumi:"key"`
+	// Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+	Value *string `pulumi:"value"`
+}
+
+// BandwidthPackageTagInput is an input type that accepts BandwidthPackageTagArgs and BandwidthPackageTagOutput values.
+// You can construct a concrete instance of `BandwidthPackageTagInput` via:
+//
+//	BandwidthPackageTagArgs{...}
+type BandwidthPackageTagInput interface {
+	pulumi.Input
+
+	ToBandwidthPackageTagOutput() BandwidthPackageTagOutput
+	ToBandwidthPackageTagOutputWithContext(context.Context) BandwidthPackageTagOutput
+}
+
+type BandwidthPackageTagArgs struct {
+	// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (BandwidthPackageTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BandwidthPackageTag)(nil)).Elem()
+}
+
+func (i BandwidthPackageTagArgs) ToBandwidthPackageTagOutput() BandwidthPackageTagOutput {
+	return i.ToBandwidthPackageTagOutputWithContext(context.Background())
+}
+
+func (i BandwidthPackageTagArgs) ToBandwidthPackageTagOutputWithContext(ctx context.Context) BandwidthPackageTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BandwidthPackageTagOutput)
+}
+
+// BandwidthPackageTagArrayInput is an input type that accepts BandwidthPackageTagArray and BandwidthPackageTagArrayOutput values.
+// You can construct a concrete instance of `BandwidthPackageTagArrayInput` via:
+//
+//	BandwidthPackageTagArray{ BandwidthPackageTagArgs{...} }
+type BandwidthPackageTagArrayInput interface {
+	pulumi.Input
+
+	ToBandwidthPackageTagArrayOutput() BandwidthPackageTagArrayOutput
+	ToBandwidthPackageTagArrayOutputWithContext(context.Context) BandwidthPackageTagArrayOutput
+}
+
+type BandwidthPackageTagArray []BandwidthPackageTagInput
+
+func (BandwidthPackageTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BandwidthPackageTag)(nil)).Elem()
+}
+
+func (i BandwidthPackageTagArray) ToBandwidthPackageTagArrayOutput() BandwidthPackageTagArrayOutput {
+	return i.ToBandwidthPackageTagArrayOutputWithContext(context.Background())
+}
+
+func (i BandwidthPackageTagArray) ToBandwidthPackageTagArrayOutputWithContext(ctx context.Context) BandwidthPackageTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BandwidthPackageTagArrayOutput)
+}
+
+type BandwidthPackageTagOutput struct{ *pulumi.OutputState }
+
+func (BandwidthPackageTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BandwidthPackageTag)(nil)).Elem()
+}
+
+func (o BandwidthPackageTagOutput) ToBandwidthPackageTagOutput() BandwidthPackageTagOutput {
+	return o
+}
+
+func (o BandwidthPackageTagOutput) ToBandwidthPackageTagOutputWithContext(ctx context.Context) BandwidthPackageTagOutput {
+	return o
+}
+
+// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+func (o BandwidthPackageTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BandwidthPackageTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+func (o BandwidthPackageTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BandwidthPackageTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type BandwidthPackageTagArrayOutput struct{ *pulumi.OutputState }
+
+func (BandwidthPackageTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BandwidthPackageTag)(nil)).Elem()
+}
+
+func (o BandwidthPackageTagArrayOutput) ToBandwidthPackageTagArrayOutput() BandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o BandwidthPackageTagArrayOutput) ToBandwidthPackageTagArrayOutputWithContext(ctx context.Context) BandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o BandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) BandwidthPackageTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BandwidthPackageTag {
+		return vs[0].([]BandwidthPackageTag)[vs[1].(int)]
+	}).(BandwidthPackageTagOutput)
+}
+
 type CenInstance struct {
 	// Network instance ID
 	InstanceId *string `pulumi:"instanceId"`
@@ -241,6 +347,112 @@ func (o CenTagArrayOutput) Index(i pulumi.IntInput) CenTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CenTag {
 		return vs[0].([]CenTag)[vs[1].(int)]
 	}).(CenTagOutput)
+}
+
+type GetBandwidthPackageTag struct {
+	// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+	Key string `pulumi:"key"`
+	// Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+	Value string `pulumi:"value"`
+}
+
+// GetBandwidthPackageTagInput is an input type that accepts GetBandwidthPackageTagArgs and GetBandwidthPackageTagOutput values.
+// You can construct a concrete instance of `GetBandwidthPackageTagInput` via:
+//
+//	GetBandwidthPackageTagArgs{...}
+type GetBandwidthPackageTagInput interface {
+	pulumi.Input
+
+	ToGetBandwidthPackageTagOutput() GetBandwidthPackageTagOutput
+	ToGetBandwidthPackageTagOutputWithContext(context.Context) GetBandwidthPackageTagOutput
+}
+
+type GetBandwidthPackageTagArgs struct {
+	// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetBandwidthPackageTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBandwidthPackageTag)(nil)).Elem()
+}
+
+func (i GetBandwidthPackageTagArgs) ToGetBandwidthPackageTagOutput() GetBandwidthPackageTagOutput {
+	return i.ToGetBandwidthPackageTagOutputWithContext(context.Background())
+}
+
+func (i GetBandwidthPackageTagArgs) ToGetBandwidthPackageTagOutputWithContext(ctx context.Context) GetBandwidthPackageTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBandwidthPackageTagOutput)
+}
+
+// GetBandwidthPackageTagArrayInput is an input type that accepts GetBandwidthPackageTagArray and GetBandwidthPackageTagArrayOutput values.
+// You can construct a concrete instance of `GetBandwidthPackageTagArrayInput` via:
+//
+//	GetBandwidthPackageTagArray{ GetBandwidthPackageTagArgs{...} }
+type GetBandwidthPackageTagArrayInput interface {
+	pulumi.Input
+
+	ToGetBandwidthPackageTagArrayOutput() GetBandwidthPackageTagArrayOutput
+	ToGetBandwidthPackageTagArrayOutputWithContext(context.Context) GetBandwidthPackageTagArrayOutput
+}
+
+type GetBandwidthPackageTagArray []GetBandwidthPackageTagInput
+
+func (GetBandwidthPackageTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBandwidthPackageTag)(nil)).Elem()
+}
+
+func (i GetBandwidthPackageTagArray) ToGetBandwidthPackageTagArrayOutput() GetBandwidthPackageTagArrayOutput {
+	return i.ToGetBandwidthPackageTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetBandwidthPackageTagArray) ToGetBandwidthPackageTagArrayOutputWithContext(ctx context.Context) GetBandwidthPackageTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBandwidthPackageTagArrayOutput)
+}
+
+type GetBandwidthPackageTagOutput struct{ *pulumi.OutputState }
+
+func (GetBandwidthPackageTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBandwidthPackageTag)(nil)).Elem()
+}
+
+func (o GetBandwidthPackageTagOutput) ToGetBandwidthPackageTagOutput() GetBandwidthPackageTagOutput {
+	return o
+}
+
+func (o GetBandwidthPackageTagOutput) ToGetBandwidthPackageTagOutputWithContext(ctx context.Context) GetBandwidthPackageTagOutput {
+	return o
+}
+
+// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
+func (o GetBandwidthPackageTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBandwidthPackageTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value for user tags. Parameter   - N indicates the tag value index, range: 1–20. Use & to separate multiple tag values. Length range: 0–256 characters. If not specified, defaults to empty. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case-sensitive. If the tag value starts or ends with a space, the system automatically removes it.
+func (o GetBandwidthPackageTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBandwidthPackageTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetBandwidthPackageTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBandwidthPackageTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBandwidthPackageTag)(nil)).Elem()
+}
+
+func (o GetBandwidthPackageTagArrayOutput) ToGetBandwidthPackageTagArrayOutput() GetBandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o GetBandwidthPackageTagArrayOutput) ToGetBandwidthPackageTagArrayOutputWithContext(ctx context.Context) GetBandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o GetBandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) GetBandwidthPackageTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBandwidthPackageTag {
+		return vs[0].([]GetBandwidthPackageTag)[vs[1].(int)]
+	}).(GetBandwidthPackageTagOutput)
 }
 
 type GetCenInstance struct {
@@ -501,18 +713,26 @@ func (o GetCenTagArrayOutput) Index(i pulumi.IntInput) GetCenTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*BandwidthPackageTagInput)(nil)).Elem(), BandwidthPackageTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BandwidthPackageTagArrayInput)(nil)).Elem(), BandwidthPackageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenInstanceInput)(nil)).Elem(), CenInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenInstanceArrayInput)(nil)).Elem(), CenInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenTagInput)(nil)).Elem(), CenTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenTagArrayInput)(nil)).Elem(), CenTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBandwidthPackageTagInput)(nil)).Elem(), GetBandwidthPackageTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBandwidthPackageTagArrayInput)(nil)).Elem(), GetBandwidthPackageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenInstanceInput)(nil)).Elem(), GetCenInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenInstanceArrayInput)(nil)).Elem(), GetCenInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenTagInput)(nil)).Elem(), GetCenTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenTagArrayInput)(nil)).Elem(), GetCenTagArray{})
+	pulumi.RegisterOutputType(BandwidthPackageTagOutput{})
+	pulumi.RegisterOutputType(BandwidthPackageTagArrayOutput{})
 	pulumi.RegisterOutputType(CenInstanceOutput{})
 	pulumi.RegisterOutputType(CenInstanceArrayOutput{})
 	pulumi.RegisterOutputType(CenTagOutput{})
 	pulumi.RegisterOutputType(CenTagArrayOutput{})
+	pulumi.RegisterOutputType(GetBandwidthPackageTagOutput{})
+	pulumi.RegisterOutputType(GetBandwidthPackageTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCenInstanceOutput{})
 	pulumi.RegisterOutputType(GetCenInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetCenTagOutput{})

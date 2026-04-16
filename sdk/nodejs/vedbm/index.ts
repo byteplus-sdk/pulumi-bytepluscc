@@ -25,6 +25,11 @@ export type Database = import("./database").Database;
 export const Database: typeof import("./database").Database = null as any;
 utilities.lazyLoad(exports, ["Database"], () => require("./database"));
 
+export { EndpointArgs, EndpointState } from "./endpoint";
+export type Endpoint = import("./endpoint").Endpoint;
+export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
+utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
+
 export { GetAccountArgs, GetAccountResult, GetAccountOutputArgs } from "./getAccount";
 export const getAccount: typeof import("./getAccount").getAccount = null as any;
 export const getAccountOutput: typeof import("./getAccount").getAccountOutput = null as any;
@@ -65,6 +70,16 @@ export const getDatabases: typeof import("./getDatabases").getDatabases = null a
 export const getDatabasesOutput: typeof import("./getDatabases").getDatabasesOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabases","getDatabasesOutput"], () => require("./getDatabases"));
 
+export { GetEndpointArgs, GetEndpointResult, GetEndpointOutputArgs } from "./getEndpoint";
+export const getEndpoint: typeof import("./getEndpoint").getEndpoint = null as any;
+export const getEndpointOutput: typeof import("./getEndpoint").getEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpoint","getEndpointOutput"], () => require("./getEndpoint"));
+
+export { GetEndpointsResult } from "./getEndpoints";
+export const getEndpoints: typeof import("./getEndpoints").getEndpoints = null as any;
+export const getEndpointsOutput: typeof import("./getEndpoints").getEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpoints","getEndpointsOutput"], () => require("./getEndpoints"));
+
 export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
 export const getInstance: typeof import("./getInstance").getInstance = null as any;
 export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
@@ -93,6 +108,8 @@ const _module = {
                 return new Backup(name, <any>undefined, { urn })
             case "bytepluscc:vedbm/database:Database":
                 return new Database(name, <any>undefined, { urn })
+            case "bytepluscc:vedbm/endpoint:Endpoint":
+                return new Endpoint(name, <any>undefined, { urn })
             case "bytepluscc:vedbm/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             default:
@@ -104,4 +121,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/account", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/backup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/database", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/endpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/instance", _module)

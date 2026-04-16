@@ -1147,6 +1147,8 @@ func (o RuleLevelConditionArrayOutput) Index(i pulumi.IntInput) RuleLevelConditi
 type RuleLevelConditionCondition struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
+	// Metric display name.
+	DisplayName *string `pulumi:"displayName"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName *string `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -1173,6 +1175,8 @@ type RuleLevelConditionConditionInput interface {
 type RuleLevelConditionConditionArgs struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
+	// Metric display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -1239,6 +1243,11 @@ func (o RuleLevelConditionConditionOutput) ToRuleLevelConditionConditionOutputWi
 // Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 func (o RuleLevelConditionConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
+}
+
+// Metric display name.
+func (o RuleLevelConditionConditionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.

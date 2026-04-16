@@ -622,14 +622,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Availability zone ID where the instance is located.
+     * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return Availability zone ID where the instance is located.
+     * @return The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -1569,7 +1569,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId Availability zone ID where the instance is located.
+         * @param zoneId The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
          * 
          * @return builder
          * 
@@ -1580,7 +1580,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId Availability zone ID where the instance is located.
+         * @param zoneId The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
          * 
          * @return builder
          * 

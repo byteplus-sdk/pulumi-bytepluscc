@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VpnConnectionTunnelOption {
     /**
+     * @return IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+     * 
+     */
+    private @Nullable String connectStatus;
+    /**
      * @return ID of the customer gateway associated with the IPsec connection.
      * 
      */
@@ -57,6 +62,13 @@ public final class VpnConnectionTunnelOption {
     private @Nullable String tunnelId;
 
     private VpnConnectionTunnelOption() {}
+    /**
+     * @return IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+     * 
+     */
+    public Optional<String> connectStatus() {
+        return Optional.ofNullable(this.connectStatus);
+    }
     /**
      * @return ID of the customer gateway associated with the IPsec connection.
      * 
@@ -123,6 +135,7 @@ public final class VpnConnectionTunnelOption {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String connectStatus;
         private @Nullable String customerGatewayId;
         private @Nullable String dpdAction;
         private @Nullable VpnConnectionTunnelOptionIkeConfig ikeConfig;
@@ -134,6 +147,7 @@ public final class VpnConnectionTunnelOption {
         public Builder() {}
         public Builder(VpnConnectionTunnelOption defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.connectStatus = defaults.connectStatus;
     	      this.customerGatewayId = defaults.customerGatewayId;
     	      this.dpdAction = defaults.dpdAction;
     	      this.ikeConfig = defaults.ikeConfig;
@@ -144,6 +158,12 @@ public final class VpnConnectionTunnelOption {
     	      this.tunnelId = defaults.tunnelId;
         }
 
+        @CustomType.Setter
+        public Builder connectStatus(@Nullable String connectStatus) {
+
+            this.connectStatus = connectStatus;
+            return this;
+        }
         @CustomType.Setter
         public Builder customerGatewayId(@Nullable String customerGatewayId) {
 
@@ -194,6 +214,7 @@ public final class VpnConnectionTunnelOption {
         }
         public VpnConnectionTunnelOption build() {
             final var _resultValue = new VpnConnectionTunnelOption();
+            _resultValue.connectStatus = connectStatus;
             _resultValue.customerGatewayId = customerGatewayId;
             _resultValue.dpdAction = dpdAction;
             _resultValue.ikeConfig = ikeConfig;

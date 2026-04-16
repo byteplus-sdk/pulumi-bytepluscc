@@ -1120,6 +1120,8 @@ func (o VpnConnectionTagArrayOutput) Index(i pulumi.IntInput) VpnConnectionTagOu
 }
 
 type VpnConnectionTunnelOption struct {
+	// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+	ConnectStatus *string `pulumi:"connectStatus"`
 	// ID of the customer gateway associated with the IPsec connection.
 	CustomerGatewayId *string `pulumi:"customerGatewayId"`
 	// Status of the DPD feature.
@@ -1150,6 +1152,8 @@ type VpnConnectionTunnelOptionInput interface {
 }
 
 type VpnConnectionTunnelOptionArgs struct {
+	// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+	ConnectStatus pulumi.StringPtrInput `pulumi:"connectStatus"`
 	// ID of the customer gateway associated with the IPsec connection.
 	CustomerGatewayId pulumi.StringPtrInput `pulumi:"customerGatewayId"`
 	// Status of the DPD feature.
@@ -1217,6 +1221,11 @@ func (o VpnConnectionTunnelOptionOutput) ToVpnConnectionTunnelOptionOutput() Vpn
 
 func (o VpnConnectionTunnelOptionOutput) ToVpnConnectionTunnelOptionOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionOutput {
 	return o
+}
+
+// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+func (o VpnConnectionTunnelOptionOutput) ConnectStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *string { return v.ConnectStatus }).(pulumi.StringPtrOutput)
 }
 
 // ID of the customer gateway associated with the IPsec connection.
@@ -1763,8 +1772,18 @@ func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) Lifetime() pulumi.IntPtrO
 }
 
 type VpnConnectionTunnelOptionTunnelBgpInfo struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp *bool `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn *int `pulumi:"localAsn"`
 	// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
 	LocalBgpIp *string `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn *int `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp *string `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus *string `pulumi:"sessionStatus"`
 	// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
 	TunnelCidr *string `pulumi:"tunnelCidr"`
 }
@@ -1781,8 +1800,18 @@ type VpnConnectionTunnelOptionTunnelBgpInfoInput interface {
 }
 
 type VpnConnectionTunnelOptionTunnelBgpInfoArgs struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp pulumi.BoolPtrInput `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn pulumi.IntPtrInput `pulumi:"localAsn"`
 	// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
 	LocalBgpIp pulumi.StringPtrInput `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn pulumi.IntPtrInput `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp pulumi.StringPtrInput `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus pulumi.StringPtrInput `pulumi:"sessionStatus"`
 	// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
 	TunnelCidr pulumi.StringPtrInput `pulumi:"tunnelCidr"`
 }
@@ -1864,9 +1893,34 @@ func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) ToVpnConnectionTunnelOptio
 	}).(VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput)
 }
 
+// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) EnableBgp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *bool { return v.EnableBgp }).(pulumi.BoolPtrOutput)
+}
+
+// The ASN of the VPN gateway.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) LocalAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *int { return v.LocalAsn }).(pulumi.IntPtrOutput)
+}
+
 // BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
 func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) LocalBgpIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *string { return v.LocalBgpIp }).(pulumi.StringPtrOutput)
+}
+
+// ASN of the customer gateway.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) PeerAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *int { return v.PeerAsn }).(pulumi.IntPtrOutput)
+}
+
+// BGP peer IP, that is, the BGP address on the customer gateway side.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) PeerBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *string { return v.PeerBgpIp }).(pulumi.StringPtrOutput)
+}
+
+// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) SessionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *string { return v.SessionStatus }).(pulumi.StringPtrOutput)
 }
 
 // The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
@@ -1898,6 +1952,26 @@ func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) Elem() VpnConnectionTun
 	}).(VpnConnectionTunnelOptionTunnelBgpInfoOutput)
 }
 
+// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) EnableBgp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableBgp
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The ASN of the VPN gateway.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) LocalAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LocalAsn
+	}).(pulumi.IntPtrOutput)
+}
+
 // BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
 func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) LocalBgpIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *string {
@@ -1905,6 +1979,36 @@ func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) LocalBgpIp() pulumi.Str
 			return nil
 		}
 		return v.LocalBgpIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// ASN of the customer gateway.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) PeerAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PeerAsn
+	}).(pulumi.IntPtrOutput)
+}
+
+// BGP peer IP, that is, the BGP address on the customer gateway side.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) PeerBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeerBgpIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) SessionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SessionStatus
 	}).(pulumi.StringPtrOutput)
 }
 

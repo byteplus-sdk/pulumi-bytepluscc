@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:tls/consumerGroup:ConsumerGroup":
+		r = &ConsumerGroup{}
+	case "bytepluscc:tls/importTask:ImportTask":
+		r = &ImportTask{}
 	case "bytepluscc:tls/index:Index":
 		r = &Index{}
 	case "bytepluscc:tls/project:Project":
@@ -42,6 +46,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/consumerGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/importTask",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"tls/index",

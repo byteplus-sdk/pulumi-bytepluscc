@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public static class GetAccesskey
     {
         /// <summary>
-        /// Data Source schema for Byteplus::IAM::AccessKey
+        /// Data Source schema for Byteplus::IAM::Accesskey
         /// </summary>
         public static Task<GetAccesskeyResult> InvokeAsync(GetAccesskeyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccesskeyResult>("bytepluscc:iam/getAccesskey:getAccesskey", args ?? new GetAccesskeyArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::IAM::AccessKey
+        /// Data Source schema for Byteplus::IAM::Accesskey
         /// </summary>
         public static Output<GetAccesskeyResult> Invoke(GetAccesskeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccesskeyResult>("bytepluscc:iam/getAccesskey:getAccesskey", args ?? new GetAccesskeyInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::IAM::AccessKey
+        /// Data Source schema for Byteplus::IAM::Accesskey
         /// </summary>
         public static Output<GetAccesskeyResult> Invoke(GetAccesskeyInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccesskeyResult>("bytepluscc:iam/getAccesskey:getAccesskey", args ?? new GetAccesskeyInvokeArgs(), options.WithDefaults());

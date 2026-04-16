@@ -241,7 +241,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// Availability zone ID where the instance is located.
+        /// The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         /// </summary>
         public readonly string ZoneId;
 

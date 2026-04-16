@@ -14,10 +14,40 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn.Inputs
     public sealed class VpnConnectionTunnelOptionTunnelBgpInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+        /// </summary>
+        [Input("enableBgp")]
+        public Input<bool>? EnableBgp { get; set; }
+
+        /// <summary>
+        /// The ASN of the VPN gateway.
+        /// </summary>
+        [Input("localAsn")]
+        public Input<int>? LocalAsn { get; set; }
+
+        /// <summary>
         /// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
         /// </summary>
         [Input("localBgpIp")]
         public Input<string>? LocalBgpIp { get; set; }
+
+        /// <summary>
+        /// ASN of the customer gateway.
+        /// </summary>
+        [Input("peerAsn")]
+        public Input<int>? PeerAsn { get; set; }
+
+        /// <summary>
+        /// BGP peer IP, that is, the BGP address on the customer gateway side.
+        /// </summary>
+        [Input("peerBgpIp")]
+        public Input<string>? PeerBgpIp { get; set; }
+
+        /// <summary>
+        /// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+        /// </summary>
+        [Input("sessionStatus")]
+        public Input<string>? SessionStatus { get; set; }
 
         /// <summary>
         /// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.

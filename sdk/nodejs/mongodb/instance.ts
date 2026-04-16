@@ -236,7 +236,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * Availability zone ID where the instance is located.
+     * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      */
     public readonly zoneId!: pulumi.Output<string>;
 
@@ -523,7 +523,7 @@ export interface InstanceState {
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * Availability zone ID where the instance is located.
+     * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -627,7 +627,7 @@ export interface InstanceArgs {
      */
     vpcId: pulumi.Input<string>;
     /**
-     * Availability zone ID where the instance is located.
+     * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
      */
     zoneId: pulumi.Input<string>;
 }

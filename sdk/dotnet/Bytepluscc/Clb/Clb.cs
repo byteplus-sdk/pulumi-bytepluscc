@@ -142,6 +142,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         [Output("expiredTime")]
         public Output<string> ExpiredTime { get; private set; } = null!;
 
+        /// <summary>
+        /// IPv6 public bandwidth information for the load balancing instance
+        /// </summary>
+        [Output("ipv6AddressBandwidth")]
+        public Output<Outputs.ClbIpv6AddressBandwidth> Ipv6AddressBandwidth { get; private set; } = null!;
+
         [Output("listeners")]
         public Output<ImmutableArray<Outputs.ClbListener>> Listeners { get; private set; } = null!;
 
@@ -667,6 +673,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Input("expiredTime")]
         public Input<string>? ExpiredTime { get; set; }
+
+        /// <summary>
+        /// IPv6 public bandwidth information for the load balancing instance
+        /// </summary>
+        [Input("ipv6AddressBandwidth")]
+        public Input<Inputs.ClbIpv6AddressBandwidthGetArgs>? Ipv6AddressBandwidth { get; set; }
 
         [Input("listeners")]
         private InputList<Inputs.ClbListenerGetArgs>? _listeners;

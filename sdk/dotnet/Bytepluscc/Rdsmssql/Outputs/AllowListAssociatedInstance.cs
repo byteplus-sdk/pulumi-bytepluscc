@@ -18,11 +18,47 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
         /// Instance ID
         /// </summary>
         public readonly string? InstanceId;
+        /// <summary>
+        /// Instance name
+        /// </summary>
+        public readonly string? InstanceName;
+        /// <summary>
+        /// Instance status
+        /// </summary>
+        public readonly string? InstanceStatus;
+        /// <summary>
+        /// Sync latest allowlist IP
+        /// </summary>
+        public readonly bool? IsLatest;
+        /// <summary>
+        /// Project name of the instance
+        /// </summary>
+        public readonly string? ProjectName;
+        /// <summary>
+        /// VPC ID of the instance
+        /// </summary>
+        public readonly string? Vpc;
 
         [OutputConstructor]
-        private AllowListAssociatedInstance(string? instanceId)
+        private AllowListAssociatedInstance(
+            string? instanceId,
+
+            string? instanceName,
+
+            string? instanceStatus,
+
+            bool? isLatest,
+
+            string? projectName,
+
+            string? vpc)
         {
             InstanceId = instanceId;
+            InstanceName = instanceName;
+            InstanceStatus = instanceStatus;
+            IsLatest = isLatest;
+            ProjectName = projectName;
+            Vpc = vpc;
         }
     }
 }

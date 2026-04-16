@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.rdsmssql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,10 +31,90 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.instanceId);
     }
 
+    /**
+     * Instance name
+     * 
+     */
+    @Import(name="instanceName")
+    private @Nullable Output<String> instanceName;
+
+    /**
+     * @return Instance name
+     * 
+     */
+    public Optional<Output<String>> instanceName() {
+        return Optional.ofNullable(this.instanceName);
+    }
+
+    /**
+     * Instance status
+     * 
+     */
+    @Import(name="instanceStatus")
+    private @Nullable Output<String> instanceStatus;
+
+    /**
+     * @return Instance status
+     * 
+     */
+    public Optional<Output<String>> instanceStatus() {
+        return Optional.ofNullable(this.instanceStatus);
+    }
+
+    /**
+     * Sync latest allowlist IP
+     * 
+     */
+    @Import(name="isLatest")
+    private @Nullable Output<Boolean> isLatest;
+
+    /**
+     * @return Sync latest allowlist IP
+     * 
+     */
+    public Optional<Output<Boolean>> isLatest() {
+        return Optional.ofNullable(this.isLatest);
+    }
+
+    /**
+     * Project name of the instance
+     * 
+     */
+    @Import(name="projectName")
+    private @Nullable Output<String> projectName;
+
+    /**
+     * @return Project name of the instance
+     * 
+     */
+    public Optional<Output<String>> projectName() {
+        return Optional.ofNullable(this.projectName);
+    }
+
+    /**
+     * VPC ID of the instance
+     * 
+     */
+    @Import(name="vpc")
+    private @Nullable Output<String> vpc;
+
+    /**
+     * @return VPC ID of the instance
+     * 
+     */
+    public Optional<Output<String>> vpc() {
+        return Optional.ofNullable(this.vpc);
+    }
+
     private AllowListAssociatedInstanceArgs() {}
 
     private AllowListAssociatedInstanceArgs(AllowListAssociatedInstanceArgs $) {
         this.instanceId = $.instanceId;
+        this.instanceName = $.instanceName;
+        this.instanceStatus = $.instanceStatus;
+        this.isLatest = $.isLatest;
+        this.projectName = $.projectName;
+        this.vpc = $.vpc;
     }
 
     public static Builder builder() {
@@ -73,6 +154,111 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
+        }
+
+        /**
+         * @param instanceName Instance name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceName(@Nullable Output<String> instanceName) {
+            $.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * @param instanceName Instance name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceName(String instanceName) {
+            return instanceName(Output.of(instanceName));
+        }
+
+        /**
+         * @param instanceStatus Instance status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceStatus(@Nullable Output<String> instanceStatus) {
+            $.instanceStatus = instanceStatus;
+            return this;
+        }
+
+        /**
+         * @param instanceStatus Instance status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceStatus(String instanceStatus) {
+            return instanceStatus(Output.of(instanceStatus));
+        }
+
+        /**
+         * @param isLatest Sync latest allowlist IP
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatest(@Nullable Output<Boolean> isLatest) {
+            $.isLatest = isLatest;
+            return this;
+        }
+
+        /**
+         * @param isLatest Sync latest allowlist IP
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatest(Boolean isLatest) {
+            return isLatest(Output.of(isLatest));
+        }
+
+        /**
+         * @param projectName Project name of the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder projectName(@Nullable Output<String> projectName) {
+            $.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * @param projectName Project name of the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder projectName(String projectName) {
+            return projectName(Output.of(projectName));
+        }
+
+        /**
+         * @param vpc VPC ID of the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpc(@Nullable Output<String> vpc) {
+            $.vpc = vpc;
+            return this;
+        }
+
+        /**
+         * @param vpc VPC ID of the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpc(String vpc) {
+            return vpc(Output.of(vpc));
         }
 
         public AllowListAssociatedInstanceArgs build() {

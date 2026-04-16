@@ -5,6 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ConsumerGroupArgs, ConsumerGroupState } from "./consumerGroup";
+export type ConsumerGroup = import("./consumerGroup").ConsumerGroup;
+export const ConsumerGroup: typeof import("./consumerGroup").ConsumerGroup = null as any;
+utilities.lazyLoad(exports, ["ConsumerGroup"], () => require("./consumerGroup"));
+
+export { GetConsumerGroupArgs, GetConsumerGroupResult, GetConsumerGroupOutputArgs } from "./getConsumerGroup";
+export const getConsumerGroup: typeof import("./getConsumerGroup").getConsumerGroup = null as any;
+export const getConsumerGroupOutput: typeof import("./getConsumerGroup").getConsumerGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getConsumerGroup","getConsumerGroupOutput"], () => require("./getConsumerGroup"));
+
+export { GetConsumerGroupsResult } from "./getConsumerGroups";
+export const getConsumerGroups: typeof import("./getConsumerGroups").getConsumerGroups = null as any;
+export const getConsumerGroupsOutput: typeof import("./getConsumerGroups").getConsumerGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getConsumerGroups","getConsumerGroupsOutput"], () => require("./getConsumerGroups"));
+
+export { GetImportTaskArgs, GetImportTaskResult, GetImportTaskOutputArgs } from "./getImportTask";
+export const getImportTask: typeof import("./getImportTask").getImportTask = null as any;
+export const getImportTaskOutput: typeof import("./getImportTask").getImportTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getImportTask","getImportTaskOutput"], () => require("./getImportTask"));
+
+export { GetImportTasksResult } from "./getImportTasks";
+export const getImportTasks: typeof import("./getImportTasks").getImportTasks = null as any;
+export const getImportTasksOutput: typeof import("./getImportTasks").getImportTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getImportTasks","getImportTasksOutput"], () => require("./getImportTasks"));
+
 export { GetIndexArgs, GetIndexResult, GetIndexOutputArgs } from "./getIndex";
 export const getIndex: typeof import("./getIndex").getIndex = null as any;
 export const getIndexOutput: typeof import("./getIndex").getIndexOutput = null as any;
@@ -45,6 +70,11 @@ export const getTopics: typeof import("./getTopics").getTopics = null as any;
 export const getTopicsOutput: typeof import("./getTopics").getTopicsOutput = null as any;
 utilities.lazyLoad(exports, ["getTopics","getTopicsOutput"], () => require("./getTopics"));
 
+export { ImportTaskArgs, ImportTaskState } from "./importTask";
+export type ImportTask = import("./importTask").ImportTask;
+export const ImportTask: typeof import("./importTask").ImportTask = null as any;
+utilities.lazyLoad(exports, ["ImportTask"], () => require("./importTask"));
+
 export { IndexArgs, IndexState } from "./index_";
 export type Index = import("./index_").Index;
 export const Index: typeof import("./index_").Index = null as any;
@@ -70,6 +100,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:tls/consumerGroup:ConsumerGroup":
+                return new ConsumerGroup(name, <any>undefined, { urn })
+            case "bytepluscc:tls/importTask:ImportTask":
+                return new ImportTask(name, <any>undefined, { urn })
             case "bytepluscc:tls/index:Index":
                 return new Index(name, <any>undefined, { urn })
             case "bytepluscc:tls/project:Project":
@@ -83,6 +117,8 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/importTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/index", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/project", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/scheduleSqlTask", _module)

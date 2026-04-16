@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Data Source schema for Byteplus::IAM::AccessKey
+// Data Source schema for Byteplus::IAM::Accesskey
 func LookupAccesskey(ctx *pulumi.Context, args *LookupAccesskeyArgs, opts ...pulumi.InvokeOption) (*LookupAccesskeyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAccesskeyResult
