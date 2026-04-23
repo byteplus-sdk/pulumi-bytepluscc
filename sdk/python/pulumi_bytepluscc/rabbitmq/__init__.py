@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .allow_list import *
+from .get_allow_list import *
+from .get_allow_lists import *
 from .get_instance import *
 from .get_instance_plugin import *
 from .get_instance_plugins import *

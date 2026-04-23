@@ -46,6 +46,8 @@ type LookupEndpointServiceResult struct {
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer string `pulumi:"payer"`
+	// Details of authorized allowlist accounts.
+	PermitAccountIds []string `pulumi:"permitAccountIds"`
 	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled bool `pulumi:"privateDnsEnabled"`
 	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
@@ -66,7 +68,7 @@ type LookupEndpointServiceResult struct {
 	ServiceName string `pulumi:"serviceName"`
 	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged string `pulumi:"serviceNameManaged"`
-	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+	// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 	ServiceNameSuffix string `pulumi:"serviceNameSuffix"`
 	// Current service principal.
 	ServiceOwner string `pulumi:"serviceOwner"`
@@ -160,6 +162,11 @@ func (o LookupEndpointServiceResultOutput) Payer() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointServiceResult) string { return v.Payer }).(pulumi.StringOutput)
 }
 
+// Details of authorized allowlist accounts.
+func (o LookupEndpointServiceResultOutput) PermitAccountIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupEndpointServiceResult) []string { return v.PermitAccountIds }).(pulumi.StringArrayOutput)
+}
+
 // Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 func (o LookupEndpointServiceResultOutput) PrivateDnsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupEndpointServiceResult) bool { return v.PrivateDnsEnabled }).(pulumi.BoolOutput)
@@ -212,7 +219,7 @@ func (o LookupEndpointServiceResultOutput) ServiceNameManaged() pulumi.StringOut
 	return o.ApplyT(func(v LookupEndpointServiceResult) string { return v.ServiceNameManaged }).(pulumi.StringOutput)
 }
 
-// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 func (o LookupEndpointServiceResultOutput) ServiceNameSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointServiceResult) string { return v.ServiceNameSuffix }).(pulumi.StringOutput)
 }

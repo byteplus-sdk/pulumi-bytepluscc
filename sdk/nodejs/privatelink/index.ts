@@ -25,6 +25,16 @@ export const getVpcEndpoint: typeof import("./getVpcEndpoint").getVpcEndpoint = 
 export const getVpcEndpointOutput: typeof import("./getVpcEndpoint").getVpcEndpointOutput = null as any;
 utilities.lazyLoad(exports, ["getVpcEndpoint","getVpcEndpointOutput"], () => require("./getVpcEndpoint"));
 
+export { GetVpcEndpointConnectionArgs, GetVpcEndpointConnectionResult, GetVpcEndpointConnectionOutputArgs } from "./getVpcEndpointConnection";
+export const getVpcEndpointConnection: typeof import("./getVpcEndpointConnection").getVpcEndpointConnection = null as any;
+export const getVpcEndpointConnectionOutput: typeof import("./getVpcEndpointConnection").getVpcEndpointConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcEndpointConnection","getVpcEndpointConnectionOutput"], () => require("./getVpcEndpointConnection"));
+
+export { GetVpcEndpointConnectionsResult } from "./getVpcEndpointConnections";
+export const getVpcEndpointConnections: typeof import("./getVpcEndpointConnections").getVpcEndpointConnections = null as any;
+export const getVpcEndpointConnectionsOutput: typeof import("./getVpcEndpointConnections").getVpcEndpointConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcEndpointConnections","getVpcEndpointConnectionsOutput"], () => require("./getVpcEndpointConnections"));
+
 export { GetVpcEndpointsResult } from "./getVpcEndpoints";
 export const getVpcEndpoints: typeof import("./getVpcEndpoints").getVpcEndpoints = null as any;
 export const getVpcEndpointsOutput: typeof import("./getVpcEndpoints").getVpcEndpointsOutput = null as any;
@@ -35,6 +45,11 @@ export type VpcEndpoint = import("./vpcEndpoint").VpcEndpoint;
 export const VpcEndpoint: typeof import("./vpcEndpoint").VpcEndpoint = null as any;
 utilities.lazyLoad(exports, ["VpcEndpoint"], () => require("./vpcEndpoint"));
 
+export { VpcEndpointConnectionArgs, VpcEndpointConnectionState } from "./vpcEndpointConnection";
+export type VpcEndpointConnection = import("./vpcEndpointConnection").VpcEndpointConnection;
+export const VpcEndpointConnection: typeof import("./vpcEndpointConnection").VpcEndpointConnection = null as any;
+utilities.lazyLoad(exports, ["VpcEndpointConnection"], () => require("./vpcEndpointConnection"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +59,8 @@ const _module = {
                 return new EndpointService(name, <any>undefined, { urn })
             case "bytepluscc:privatelink/vpcEndpoint:VpcEndpoint":
                 return new VpcEndpoint(name, <any>undefined, { urn })
+            case "bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection":
+                return new VpcEndpointConnection(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +68,4 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/endpointService", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/vpcEndpoint", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/vpcEndpointConnection", _module)

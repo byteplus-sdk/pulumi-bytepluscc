@@ -6,7 +6,10 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .alarm_notify_group import *
 from .consumer_group import *
+from .get_alarm_notify_group import *
+from .get_alarm_notify_groups import *
 from .get_consumer_group import *
 from .get_consumer_groups import *
 from .get_import_task import *
@@ -15,14 +18,20 @@ from .get_index import *
 from .get_indices import *
 from .get_project import *
 from .get_projects import *
+from .get_rule import *
+from .get_rules import *
 from .get_schedule_sql_task import *
 from .get_schedule_sql_tasks import *
+from .get_shipper import *
+from .get_shippers import *
 from .get_topic import *
 from .get_topics import *
 from .import_task import *
 from .index import *
 from .project import *
+from .rule import *
 from .schedule_sql_task import *
+from .shipper import *
 from .topic import *
 from ._inputs import *
 from . import outputs

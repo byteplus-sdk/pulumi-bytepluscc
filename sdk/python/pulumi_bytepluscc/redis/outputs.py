@@ -17,12 +17,16 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AllowListAssociatedInstance',
+    'AllowListSecurityGroupBindInfo',
     'InstanceCapacity',
     'InstanceConfigureNode',
     'InstanceInstanceShard',
     'InstanceInstanceShardServerNode',
     'InstanceTag',
     'InstanceVisitAddr',
+    'GetAllowListAssociatedInstanceResult',
+    'GetAllowListSecurityGroupBindInfoResult',
     'GetInstanceCapacityResult',
     'GetInstanceConfigureNodeResult',
     'GetInstanceInstanceShardResult',
@@ -30,6 +34,132 @@ __all__ = [
     'GetInstanceTagResult',
     'GetInstanceVisitAddrResult',
 ]
+
+@pulumi.output_type
+class AllowListAssociatedInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "instanceName":
+            suggest = "instance_name"
+        elif key == "projectName":
+            suggest = "project_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None,
+                 instance_name: Optional[builtins.str] = None,
+                 project_name: Optional[builtins.str] = None,
+                 vpc: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: Instance ID bound to the current allowlist
+        :param builtins.str instance_name: Instance names bound to the current allowlist
+        :param builtins.str project_name: Project name associated with the instance
+        :param builtins.str vpc: Private network ID associated with the instance
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        Instance ID bound to the current allowlist
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[builtins.str]:
+        """
+        Instance names bound to the current allowlist
+        """
+        return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[builtins.str]:
+        """
+        Project name associated with the instance
+        """
+        return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[builtins.str]:
+        """
+        Private network ID associated with the instance
+        """
+        return pulumi.get(self, "vpc")
+
+
+@pulumi.output_type
+class AllowListSecurityGroupBindInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bindMode":
+            suggest = "bind_mode"
+        elif key == "securityGroupId":
+            suggest = "security_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AllowListSecurityGroupBindInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AllowListSecurityGroupBindInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AllowListSecurityGroupBindInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bind_mode: Optional[builtins.str] = None,
+                 security_group_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str bind_mode: Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        :param builtins.str security_group_id: Associated security group ID
+        """
+        if bind_mode is not None:
+            pulumi.set(__self__, "bind_mode", bind_mode)
+        if security_group_id is not None:
+            pulumi.set(__self__, "security_group_id", security_group_id)
+
+    @property
+    @pulumi.getter(name="bindMode")
+    def bind_mode(self) -> Optional[builtins.str]:
+        """
+        Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        """
+        return pulumi.get(self, "bind_mode")
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> Optional[builtins.str]:
+        """
+        Associated security group ID
+        """
+        return pulumi.get(self, "security_group_id")
+
 
 @pulumi.output_type
 class InstanceCapacity(dict):
@@ -346,6 +476,108 @@ class InstanceVisitAddr(dict):
         The IPv4 address corresponding to the connection address.
         """
         return pulumi.get(self, "vip")
+
+
+@pulumi.output_type
+class GetAllowListAssociatedInstanceResult(dict):
+    def __init__(__self__, *,
+                 instance_id: builtins.str,
+                 instance_name: builtins.str,
+                 project_name: builtins.str,
+                 vpc: builtins.str):
+        """
+        :param builtins.str instance_id: Instance ID bound to the current allowlist
+        :param builtins.str instance_name: Instance names bound to the current allowlist
+        :param builtins.str project_name: Project name associated with the instance
+        :param builtins.str vpc: Private network ID associated with the instance
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "project_name", project_name)
+        pulumi.set(__self__, "vpc", vpc)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        Instance ID bound to the current allowlist
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> builtins.str:
+        """
+        Instance names bound to the current allowlist
+        """
+        return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> builtins.str:
+        """
+        Project name associated with the instance
+        """
+        return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> builtins.str:
+        """
+        Private network ID associated with the instance
+        """
+        return pulumi.get(self, "vpc")
+
+
+@pulumi.output_type
+class GetAllowListSecurityGroupBindInfoResult(dict):
+    def __init__(__self__, *,
+                 bind_mode: builtins.str,
+                 ip_lists: Sequence[builtins.str],
+                 security_group_id: builtins.str,
+                 security_group_name: builtins.str):
+        """
+        :param builtins.str bind_mode: Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        :param Sequence[builtins.str] ip_lists: IP list of security groups associated with the allowlist
+        :param builtins.str security_group_id: Associated security group ID
+        :param builtins.str security_group_name: Name of the associated security group
+        """
+        pulumi.set(__self__, "bind_mode", bind_mode)
+        pulumi.set(__self__, "ip_lists", ip_lists)
+        pulumi.set(__self__, "security_group_id", security_group_id)
+        pulumi.set(__self__, "security_group_name", security_group_name)
+
+    @property
+    @pulumi.getter(name="bindMode")
+    def bind_mode(self) -> builtins.str:
+        """
+        Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        """
+        return pulumi.get(self, "bind_mode")
+
+    @property
+    @pulumi.getter(name="ipLists")
+    def ip_lists(self) -> Sequence[builtins.str]:
+        """
+        IP list of security groups associated with the allowlist
+        """
+        return pulumi.get(self, "ip_lists")
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> builtins.str:
+        """
+        Associated security group ID
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @property
+    @pulumi.getter(name="securityGroupName")
+    def security_group_name(self) -> builtins.str:
+        """
+        Name of the associated security group
+        """
+        return pulumi.get(self, "security_group_name")
 
 
 @pulumi.output_type

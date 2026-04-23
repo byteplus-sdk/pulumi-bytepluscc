@@ -111,6 +111,7 @@ export class Listener extends pulumi.CustomResource {
      * Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
      */
     public readonly description!: pulumi.Output<string>;
+    public readonly domainExtensions!: pulumi.Output<outputs.clb.ListenerDomainExtension[]>;
     /**
      * Enable listener. on (default): enabled. off: disabled.
      */
@@ -251,6 +252,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["cps"] = state ? state.cps : undefined;
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["domainExtensions"] = state ? state.domainExtensions : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["endPort"] = state ? state.endPort : undefined;
             resourceInputs["establishedTimeout"] = state ? state.establishedTimeout : undefined;
@@ -309,6 +311,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["cookie"] = args ? args.cookie : undefined;
             resourceInputs["cps"] = args ? args.cps : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["domainExtensions"] = args ? args.domainExtensions : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["endPort"] = args ? args.endPort : undefined;
             resourceInputs["establishedTimeout"] = args ? args.establishedTimeout : undefined;
@@ -416,6 +419,7 @@ export interface ListenerState {
      * Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
      */
     description?: pulumi.Input<string>;
+    domainExtensions?: pulumi.Input<pulumi.Input<inputs.clb.ListenerDomainExtension>[]>;
     /**
      * Enable listener. on (default): enabled. off: disabled.
      */
@@ -595,6 +599,7 @@ export interface ListenerArgs {
      * Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
      */
     description?: pulumi.Input<string>;
+    domainExtensions?: pulumi.Input<pulumi.Input<inputs.clb.ListenerDomainExtension>[]>;
     /**
      * Enable listener. on (default): enabled. off: disabled.
      */

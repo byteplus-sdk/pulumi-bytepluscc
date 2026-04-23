@@ -8,10 +8,14 @@ import com.byteplus.bytepluscc.mongodb.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.mongodb.inputs.GetSslStateArgs;
+import com.byteplus.bytepluscc.mongodb.inputs.GetSslStatePlainArgs;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.mongodb.outputs.GetSslStateResult;
+import com.byteplus.bytepluscc.mongodb.outputs.GetSslStatesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -188,5 +192,89 @@ public final class MongodbFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStateResult> getSslState(GetSslStateArgs args) {
+        return getSslState(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static CompletableFuture<GetSslStateResult> getSslStatePlain(GetSslStatePlainArgs args) {
+        return getSslStatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStateResult> getSslState(GetSslStateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getSslState:getSslState", TypeShape.of(GetSslStateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStateResult> getSslState(GetSslStateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getSslState:getSslState", TypeShape.of(GetSslStateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static CompletableFuture<GetSslStateResult> getSslStatePlain(GetSslStatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getSslState:getSslState", TypeShape.of(GetSslStateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStatesResult> getSslStates() {
+        return getSslStates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static CompletableFuture<GetSslStatesResult> getSslStatesPlain() {
+        return getSslStatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStatesResult> getSslStates(InvokeArgs args) {
+        return getSslStates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static CompletableFuture<GetSslStatesResult> getSslStatesPlain(InvokeArgs args) {
+        return getSslStatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStatesResult> getSslStates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getSslStates:getSslStates", TypeShape.of(GetSslStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static Output<GetSslStatesResult> getSslStates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getSslStates:getSslStates", TypeShape.of(GetSslStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::SSLState
+     * 
+     */
+    public static CompletableFuture<GetSslStatesResult> getSslStatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getSslStates:getSslStates", TypeShape.of(GetSslStatesResult.class), args, Utilities.withVersion(options));
     }
 }

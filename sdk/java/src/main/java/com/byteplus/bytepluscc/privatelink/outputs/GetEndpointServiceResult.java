@@ -57,6 +57,11 @@ public final class GetEndpointServiceResult {
      */
     private String payer;
     /**
+     * @return Details of authorized allowlist accounts.
+     * 
+     */
+    private List<String> permitAccountIds;
+    /**
      * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
@@ -107,7 +112,7 @@ public final class GetEndpointServiceResult {
      */
     private String serviceNameManaged;
     /**
-     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * @return Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      * 
      */
     private String serviceNameSuffix;
@@ -210,6 +215,13 @@ public final class GetEndpointServiceResult {
         return this.payer;
     }
     /**
+     * @return Details of authorized allowlist accounts.
+     * 
+     */
+    public List<String> permitAccountIds() {
+        return this.permitAccountIds;
+    }
+    /**
      * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
@@ -280,7 +292,7 @@ public final class GetEndpointServiceResult {
         return this.serviceNameManaged;
     }
     /**
-     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * @return Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      * 
      */
     public String serviceNameSuffix() {
@@ -360,6 +372,7 @@ public final class GetEndpointServiceResult {
         private String id;
         private List<String> ipAddressVersions;
         private String payer;
+        private List<String> permitAccountIds;
         private Boolean privateDnsEnabled;
         private String privateDnsName;
         private GetEndpointServicePrivateDnsNameConfiguration privateDnsNameConfiguration;
@@ -390,6 +403,7 @@ public final class GetEndpointServiceResult {
     	      this.id = defaults.id;
     	      this.ipAddressVersions = defaults.ipAddressVersions;
     	      this.payer = defaults.payer;
+    	      this.permitAccountIds = defaults.permitAccountIds;
     	      this.privateDnsEnabled = defaults.privateDnsEnabled;
     	      this.privateDnsName = defaults.privateDnsName;
     	      this.privateDnsNameConfiguration = defaults.privateDnsNameConfiguration;
@@ -477,6 +491,17 @@ public final class GetEndpointServiceResult {
             }
             this.payer = payer;
             return this;
+        }
+        @CustomType.Setter
+        public Builder permitAccountIds(List<String> permitAccountIds) {
+            if (permitAccountIds == null) {
+              throw new MissingRequiredPropertyException("GetEndpointServiceResult", "permitAccountIds");
+            }
+            this.permitAccountIds = permitAccountIds;
+            return this;
+        }
+        public Builder permitAccountIds(String... permitAccountIds) {
+            return permitAccountIds(List.of(permitAccountIds));
         }
         @CustomType.Setter
         public Builder privateDnsEnabled(Boolean privateDnsEnabled) {
@@ -649,6 +674,7 @@ public final class GetEndpointServiceResult {
             _resultValue.id = id;
             _resultValue.ipAddressVersions = ipAddressVersions;
             _resultValue.payer = payer;
+            _resultValue.permitAccountIds = permitAccountIds;
             _resultValue.privateDnsEnabled = privateDnsEnabled;
             _resultValue.privateDnsName = privateDnsName;
             _resultValue.privateDnsNameConfiguration = privateDnsNameConfiguration;

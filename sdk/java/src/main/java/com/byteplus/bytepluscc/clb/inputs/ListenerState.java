@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.clb.inputs;
 
+import com.byteplus.bytepluscc.clb.inputs.ListenerDomainExtensionArgs;
 import com.byteplus.bytepluscc.clb.inputs.ListenerHealthCheckArgs;
 import com.byteplus.bytepluscc.clb.inputs.ListenerTagArgs;
 import com.pulumi.core.Output;
@@ -272,6 +273,13 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    @Import(name="domainExtensions")
+    private @Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions;
+
+    public Optional<Output<List<ListenerDomainExtensionArgs>>> domainExtensions() {
+        return Optional.ofNullable(this.domainExtensions);
     }
 
     /**
@@ -706,6 +714,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         this.cps = $.cps;
         this.createdTime = $.createdTime;
         this.description = $.description;
+        this.domainExtensions = $.domainExtensions;
         this.enabled = $.enabled;
         this.endPort = $.endPort;
         this.establishedTimeout = $.establishedTimeout;
@@ -1119,6 +1128,19 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        public Builder domainExtensions(@Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions) {
+            $.domainExtensions = domainExtensions;
+            return this;
+        }
+
+        public Builder domainExtensions(List<ListenerDomainExtensionArgs> domainExtensions) {
+            return domainExtensions(Output.of(domainExtensions));
+        }
+
+        public Builder domainExtensions(ListenerDomainExtensionArgs... domainExtensions) {
+            return domainExtensions(List.of(domainExtensions));
         }
 
         /**

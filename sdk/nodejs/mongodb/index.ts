@@ -30,10 +30,25 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetSslStateArgs, GetSslStateResult, GetSslStateOutputArgs } from "./getSslState";
+export const getSslState: typeof import("./getSslState").getSslState = null as any;
+export const getSslStateOutput: typeof import("./getSslState").getSslStateOutput = null as any;
+utilities.lazyLoad(exports, ["getSslState","getSslStateOutput"], () => require("./getSslState"));
+
+export { GetSslStatesResult } from "./getSslStates";
+export const getSslStates: typeof import("./getSslStates").getSslStates = null as any;
+export const getSslStatesOutput: typeof import("./getSslStates").getSslStatesOutput = null as any;
+utilities.lazyLoad(exports, ["getSslStates","getSslStatesOutput"], () => require("./getSslStates"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { SslStateArgs, SslStateState } from "./sslState";
+export type SslState = import("./sslState").SslState;
+export const SslState: typeof import("./sslState").SslState = null as any;
+utilities.lazyLoad(exports, ["SslState"], () => require("./sslState"));
 
 
 const _module = {
@@ -44,6 +59,8 @@ const _module = {
                 return new AllowList(name, <any>undefined, { urn })
             case "bytepluscc:mongodb/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:mongodb/sslState:SslState":
+                return new SslState(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +68,4 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/sslState", _module)

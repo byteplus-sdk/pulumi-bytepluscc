@@ -16,6 +16,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'SnapshotGroupSnapshotArgs',
+    'SnapshotGroupSnapshotArgsDict',
+    'SnapshotGroupSnapshotTagArgs',
+    'SnapshotGroupSnapshotTagArgsDict',
+    'SnapshotGroupTagArgs',
+    'SnapshotGroupTagArgsDict',
     'SnapshotTagArgs',
     'SnapshotTagArgsDict',
     'VolumeBaselinePerformanceArgs',
@@ -29,6 +35,535 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class SnapshotGroupSnapshotArgsDict(TypedDict):
+        creation_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot creation time
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot description
+        """
+        image_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Image ID
+        """
+        instant_access: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+        """
+        progress: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Dump progress
+        """
+        project_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Project of the snapshot
+        """
+        retention_days: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Retention days for automatic snapshots
+        """
+        shared: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+        """
+        snapshot_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot consistency group ID
+        """
+        snapshot_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot ID
+        """
+        snapshot_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot name
+        """
+        snapshot_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['SnapshotGroupSnapshotTagArgsDict']]]]
+        volume_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cloud disk ID
+        """
+        volume_kind: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+        """
+        volume_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cloud disk name
+        """
+        volume_size: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Cloud disk size (GiB)
+        """
+        volume_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+        """
+        volume_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+        """
+        zone_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+        """
+elif False:
+    SnapshotGroupSnapshotArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SnapshotGroupSnapshotArgs:
+    def __init__(__self__, *,
+                 creation_time: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 image_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instant_access: Optional[pulumi.Input[builtins.bool]] = None,
+                 progress: Optional[pulumi.Input[builtins.int]] = None,
+                 project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 retention_days: Optional[pulumi.Input[builtins.int]] = None,
+                 shared: Optional[pulumi.Input[builtins.bool]] = None,
+                 snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
+                 snapshot_id: Optional[pulumi.Input[builtins.str]] = None,
+                 snapshot_name: Optional[pulumi.Input[builtins.str]] = None,
+                 snapshot_type: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['SnapshotGroupSnapshotTagArgs']]]] = None,
+                 volume_id: Optional[pulumi.Input[builtins.str]] = None,
+                 volume_kind: Optional[pulumi.Input[builtins.str]] = None,
+                 volume_name: Optional[pulumi.Input[builtins.str]] = None,
+                 volume_size: Optional[pulumi.Input[builtins.int]] = None,
+                 volume_status: Optional[pulumi.Input[builtins.str]] = None,
+                 volume_type: Optional[pulumi.Input[builtins.str]] = None,
+                 zone_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] creation_time: Snapshot creation time
+        :param pulumi.Input[builtins.str] description: Snapshot description
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.bool] instant_access: Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+        :param pulumi.Input[builtins.int] progress: Dump progress
+        :param pulumi.Input[builtins.str] project_name: Project of the snapshot
+        :param pulumi.Input[builtins.int] retention_days: Retention days for automatic snapshots
+        :param pulumi.Input[builtins.bool] shared: Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+        :param pulumi.Input[builtins.str] snapshot_group_id: Snapshot consistency group ID
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID
+        :param pulumi.Input[builtins.str] snapshot_name: Snapshot name
+        :param pulumi.Input[builtins.str] snapshot_type: Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+        :param pulumi.Input[builtins.str] status: Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+        :param pulumi.Input[builtins.str] volume_id: Cloud disk ID
+        :param pulumi.Input[builtins.str] volume_kind: Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+        :param pulumi.Input[builtins.str] volume_name: Cloud disk name
+        :param pulumi.Input[builtins.int] volume_size: Cloud disk size (GiB)
+        :param pulumi.Input[builtins.str] volume_status: Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+        :param pulumi.Input[builtins.str] volume_type: Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+        :param pulumi.Input[builtins.str] zone_id: Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+        """
+        if creation_time is not None:
+            pulumi.set(__self__, "creation_time", creation_time)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if image_id is not None:
+            pulumi.set(__self__, "image_id", image_id)
+        if instant_access is not None:
+            pulumi.set(__self__, "instant_access", instant_access)
+        if progress is not None:
+            pulumi.set(__self__, "progress", progress)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if retention_days is not None:
+            pulumi.set(__self__, "retention_days", retention_days)
+        if shared is not None:
+            pulumi.set(__self__, "shared", shared)
+        if snapshot_group_id is not None:
+            pulumi.set(__self__, "snapshot_group_id", snapshot_group_id)
+        if snapshot_id is not None:
+            pulumi.set(__self__, "snapshot_id", snapshot_id)
+        if snapshot_name is not None:
+            pulumi.set(__self__, "snapshot_name", snapshot_name)
+        if snapshot_type is not None:
+            pulumi.set(__self__, "snapshot_type", snapshot_type)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if volume_id is not None:
+            pulumi.set(__self__, "volume_id", volume_id)
+        if volume_kind is not None:
+            pulumi.set(__self__, "volume_kind", volume_kind)
+        if volume_name is not None:
+            pulumi.set(__self__, "volume_name", volume_name)
+        if volume_size is not None:
+            pulumi.set(__self__, "volume_size", volume_size)
+        if volume_status is not None:
+            pulumi.set(__self__, "volume_status", volume_status)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="creationTime")
+    def creation_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot creation time
+        """
+        return pulumi.get(self, "creation_time")
+
+    @creation_time.setter
+    def creation_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "creation_time", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="imageId")
+    def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Image ID
+        """
+        return pulumi.get(self, "image_id")
+
+    @image_id.setter
+    def image_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "image_id", value)
+
+    @property
+    @pulumi.getter(name="instantAccess")
+    def instant_access(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+        """
+        return pulumi.get(self, "instant_access")
+
+    @instant_access.setter
+    def instant_access(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "instant_access", value)
+
+    @property
+    @pulumi.getter
+    def progress(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Dump progress
+        """
+        return pulumi.get(self, "progress")
+
+    @progress.setter
+    def progress(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "progress", value)
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Project of the snapshot
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @property
+    @pulumi.getter(name="retentionDays")
+    def retention_days(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Retention days for automatic snapshots
+        """
+        return pulumi.get(self, "retention_days")
+
+    @retention_days.setter
+    def retention_days(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "retention_days", value)
+
+    @property
+    @pulumi.getter
+    def shared(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+        """
+        return pulumi.get(self, "shared")
+
+    @shared.setter
+    def shared(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "shared", value)
+
+    @property
+    @pulumi.getter(name="snapshotGroupId")
+    def snapshot_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot consistency group ID
+        """
+        return pulumi.get(self, "snapshot_group_id")
+
+    @snapshot_group_id.setter
+    def snapshot_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "snapshot_group_id", value)
+
+    @property
+    @pulumi.getter(name="snapshotId")
+    def snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot ID
+        """
+        return pulumi.get(self, "snapshot_id")
+
+    @snapshot_id.setter
+    def snapshot_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "snapshot_id", value)
+
+    @property
+    @pulumi.getter(name="snapshotName")
+    def snapshot_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot name
+        """
+        return pulumi.get(self, "snapshot_name")
+
+    @snapshot_name.setter
+    def snapshot_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "snapshot_name", value)
+
+    @property
+    @pulumi.getter(name="snapshotType")
+    def snapshot_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+        """
+        return pulumi.get(self, "snapshot_type")
+
+    @snapshot_type.setter
+    def snapshot_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "snapshot_type", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SnapshotGroupSnapshotTagArgs']]]]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SnapshotGroupSnapshotTagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
+    @property
+    @pulumi.getter(name="volumeId")
+    def volume_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cloud disk ID
+        """
+        return pulumi.get(self, "volume_id")
+
+    @volume_id.setter
+    def volume_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_id", value)
+
+    @property
+    @pulumi.getter(name="volumeKind")
+    def volume_kind(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+        """
+        return pulumi.get(self, "volume_kind")
+
+    @volume_kind.setter
+    def volume_kind(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_kind", value)
+
+    @property
+    @pulumi.getter(name="volumeName")
+    def volume_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cloud disk name
+        """
+        return pulumi.get(self, "volume_name")
+
+    @volume_name.setter
+    def volume_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_name", value)
+
+    @property
+    @pulumi.getter(name="volumeSize")
+    def volume_size(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Cloud disk size (GiB)
+        """
+        return pulumi.get(self, "volume_size")
+
+    @volume_size.setter
+    def volume_size(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "volume_size", value)
+
+    @property
+    @pulumi.getter(name="volumeStatus")
+    def volume_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+        """
+        return pulumi.get(self, "volume_status")
+
+    @volume_status.setter
+    def volume_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_status", value)
+
+    @property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_type", value)
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+        """
+        return pulumi.get(self, "zone_id")
+
+    @zone_id.setter
+    def zone_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "zone_id", value)
+
+
+if not MYPY:
+    class SnapshotGroupSnapshotTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    SnapshotGroupSnapshotTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SnapshotGroupSnapshotTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class SnapshotGroupTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    SnapshotGroupTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SnapshotGroupTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class SnapshotTagArgsDict(TypedDict):

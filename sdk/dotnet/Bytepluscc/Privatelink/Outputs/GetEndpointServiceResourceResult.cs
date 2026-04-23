@@ -15,13 +15,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Outputs
     public sealed class GetEndpointServiceResourceResult
     {
         /// <summary>
-        /// Endpoint service ID.
-        /// </summary>
-        public readonly string InstanceId;
-        /// <summary>
         /// Service resource ID to be added to the endpoint service.
         /// </summary>
         public readonly string ResourceId;
+        /// <summary>
+        /// Type of service resource.
+        /// </summary>
+        public readonly string ResourceType;
         /// <summary>
         /// Availability zone where the load balancer provides service.
         /// </summary>
@@ -29,14 +29,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Outputs
 
         [OutputConstructor]
         private GetEndpointServiceResourceResult(
-            string instanceId,
-
             string resourceId,
+
+            string resourceType,
 
             ImmutableArray<string> zoneIds)
         {
-            InstanceId = instanceId;
             ResourceId = resourceId;
+            ResourceType = resourceType;
             ZoneIds = zoneIds;
         }
     }

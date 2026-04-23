@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.clb;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.clb.ListenerArgs;
 import com.byteplus.bytepluscc.clb.inputs.ListenerState;
+import com.byteplus.bytepluscc.clb.outputs.ListenerDomainExtension;
 import com.byteplus.bytepluscc.clb.outputs.ListenerHealthCheck;
 import com.byteplus.bytepluscc.clb.outputs.ListenerTag;
 import com.pulumi.core.Output;
@@ -271,6 +272,12 @@ public class Listener extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    @Export(name="domainExtensions", refs={List.class,ListenerDomainExtension.class}, tree="[0,1]")
+    private Output<List<ListenerDomainExtension>> domainExtensions;
+
+    public Output<List<ListenerDomainExtension>> domainExtensions() {
+        return this.domainExtensions;
     }
     /**
      * Enable listener. on (default): enabled. off: disabled.

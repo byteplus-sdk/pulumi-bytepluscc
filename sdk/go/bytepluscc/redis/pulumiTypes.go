@@ -13,6 +13,236 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AllowListAssociatedInstance struct {
+	// Instance ID bound to the current allowlist
+	InstanceId *string `pulumi:"instanceId"`
+	// Instance names bound to the current allowlist
+	InstanceName *string `pulumi:"instanceName"`
+	// Project name associated with the instance
+	ProjectName *string `pulumi:"projectName"`
+	// Private network ID associated with the instance
+	Vpc *string `pulumi:"vpc"`
+}
+
+// AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
+// You can construct a concrete instance of `AllowListAssociatedInstanceInput` via:
+//
+//	AllowListAssociatedInstanceArgs{...}
+type AllowListAssociatedInstanceInput interface {
+	pulumi.Input
+
+	ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput
+	ToAllowListAssociatedInstanceOutputWithContext(context.Context) AllowListAssociatedInstanceOutput
+}
+
+type AllowListAssociatedInstanceArgs struct {
+	// Instance ID bound to the current allowlist
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Instance names bound to the current allowlist
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// Project name associated with the instance
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// Private network ID associated with the instance
+	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
+}
+
+func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i AllowListAssociatedInstanceArgs) ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput {
+	return i.ToAllowListAssociatedInstanceOutputWithContext(context.Background())
+}
+
+func (i AllowListAssociatedInstanceArgs) ToAllowListAssociatedInstanceOutputWithContext(ctx context.Context) AllowListAssociatedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListAssociatedInstanceOutput)
+}
+
+// AllowListAssociatedInstanceArrayInput is an input type that accepts AllowListAssociatedInstanceArray and AllowListAssociatedInstanceArrayOutput values.
+// You can construct a concrete instance of `AllowListAssociatedInstanceArrayInput` via:
+//
+//	AllowListAssociatedInstanceArray{ AllowListAssociatedInstanceArgs{...} }
+type AllowListAssociatedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput
+	ToAllowListAssociatedInstanceArrayOutputWithContext(context.Context) AllowListAssociatedInstanceArrayOutput
+}
+
+type AllowListAssociatedInstanceArray []AllowListAssociatedInstanceInput
+
+func (AllowListAssociatedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i AllowListAssociatedInstanceArray) ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput {
+	return i.ToAllowListAssociatedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i AllowListAssociatedInstanceArray) ToAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) AllowListAssociatedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListAssociatedInstanceArrayOutput)
+}
+
+type AllowListAssociatedInstanceOutput struct{ *pulumi.OutputState }
+
+func (AllowListAssociatedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWithContext(ctx context.Context) AllowListAssociatedInstanceOutput {
+	return o
+}
+
+// Instance ID bound to the current allowlist
+func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Instance names bound to the current allowlist
+func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// Project name associated with the instance
+func (o AllowListAssociatedInstanceOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// Private network ID associated with the instance
+func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
+}
+
+type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (AllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) ToAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) AllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowListAssociatedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowListAssociatedInstance {
+		return vs[0].([]AllowListAssociatedInstance)[vs[1].(int)]
+	}).(AllowListAssociatedInstanceOutput)
+}
+
+type AllowListSecurityGroupBindInfo struct {
+	// Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+	BindMode *string `pulumi:"bindMode"`
+	// Associated security group ID
+	SecurityGroupId *string `pulumi:"securityGroupId"`
+}
+
+// AllowListSecurityGroupBindInfoInput is an input type that accepts AllowListSecurityGroupBindInfoArgs and AllowListSecurityGroupBindInfoOutput values.
+// You can construct a concrete instance of `AllowListSecurityGroupBindInfoInput` via:
+//
+//	AllowListSecurityGroupBindInfoArgs{...}
+type AllowListSecurityGroupBindInfoInput interface {
+	pulumi.Input
+
+	ToAllowListSecurityGroupBindInfoOutput() AllowListSecurityGroupBindInfoOutput
+	ToAllowListSecurityGroupBindInfoOutputWithContext(context.Context) AllowListSecurityGroupBindInfoOutput
+}
+
+type AllowListSecurityGroupBindInfoArgs struct {
+	// Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+	BindMode pulumi.StringPtrInput `pulumi:"bindMode"`
+	// Associated security group ID
+	SecurityGroupId pulumi.StringPtrInput `pulumi:"securityGroupId"`
+}
+
+func (AllowListSecurityGroupBindInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i AllowListSecurityGroupBindInfoArgs) ToAllowListSecurityGroupBindInfoOutput() AllowListSecurityGroupBindInfoOutput {
+	return i.ToAllowListSecurityGroupBindInfoOutputWithContext(context.Background())
+}
+
+func (i AllowListSecurityGroupBindInfoArgs) ToAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListSecurityGroupBindInfoOutput)
+}
+
+// AllowListSecurityGroupBindInfoArrayInput is an input type that accepts AllowListSecurityGroupBindInfoArray and AllowListSecurityGroupBindInfoArrayOutput values.
+// You can construct a concrete instance of `AllowListSecurityGroupBindInfoArrayInput` via:
+//
+//	AllowListSecurityGroupBindInfoArray{ AllowListSecurityGroupBindInfoArgs{...} }
+type AllowListSecurityGroupBindInfoArrayInput interface {
+	pulumi.Input
+
+	ToAllowListSecurityGroupBindInfoArrayOutput() AllowListSecurityGroupBindInfoArrayOutput
+	ToAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Context) AllowListSecurityGroupBindInfoArrayOutput
+}
+
+type AllowListSecurityGroupBindInfoArray []AllowListSecurityGroupBindInfoInput
+
+func (AllowListSecurityGroupBindInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i AllowListSecurityGroupBindInfoArray) ToAllowListSecurityGroupBindInfoArrayOutput() AllowListSecurityGroupBindInfoArrayOutput {
+	return i.ToAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Background())
+}
+
+func (i AllowListSecurityGroupBindInfoArray) ToAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListSecurityGroupBindInfoArrayOutput)
+}
+
+type AllowListSecurityGroupBindInfoOutput struct{ *pulumi.OutputState }
+
+func (AllowListSecurityGroupBindInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOutput() AllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+// Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+func (o AllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.BindMode }).(pulumi.StringPtrOutput)
+}
+
+// Associated security group ID
+func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupId }).(pulumi.StringPtrOutput)
+}
+
+type AllowListSecurityGroupBindInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (AllowListSecurityGroupBindInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o AllowListSecurityGroupBindInfoArrayOutput) ToAllowListSecurityGroupBindInfoArrayOutput() AllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o AllowListSecurityGroupBindInfoArrayOutput) ToAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) AllowListSecurityGroupBindInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowListSecurityGroupBindInfo {
+		return vs[0].([]AllowListSecurityGroupBindInfo)[vs[1].(int)]
+	}).(AllowListSecurityGroupBindInfoOutput)
+}
+
 type InstanceCapacity struct {
 	// Total memory capacity of the current instance. Unit: MiB.
 	Total *int `pulumi:"total"`
@@ -750,6 +980,254 @@ func (o InstanceVisitAddrArrayOutput) Index(i pulumi.IntInput) InstanceVisitAddr
 	}).(InstanceVisitAddrOutput)
 }
 
+type GetAllowListAssociatedInstance struct {
+	// Instance ID bound to the current allowlist
+	InstanceId string `pulumi:"instanceId"`
+	// Instance names bound to the current allowlist
+	InstanceName string `pulumi:"instanceName"`
+	// Project name associated with the instance
+	ProjectName string `pulumi:"projectName"`
+	// Private network ID associated with the instance
+	Vpc string `pulumi:"vpc"`
+}
+
+// GetAllowListAssociatedInstanceInput is an input type that accepts GetAllowListAssociatedInstanceArgs and GetAllowListAssociatedInstanceOutput values.
+// You can construct a concrete instance of `GetAllowListAssociatedInstanceInput` via:
+//
+//	GetAllowListAssociatedInstanceArgs{...}
+type GetAllowListAssociatedInstanceInput interface {
+	pulumi.Input
+
+	ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput
+	ToGetAllowListAssociatedInstanceOutputWithContext(context.Context) GetAllowListAssociatedInstanceOutput
+}
+
+type GetAllowListAssociatedInstanceArgs struct {
+	// Instance ID bound to the current allowlist
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Instance names bound to the current allowlist
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// Project name associated with the instance
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// Private network ID associated with the instance
+	Vpc pulumi.StringInput `pulumi:"vpc"`
+}
+
+func (GetAllowListAssociatedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i GetAllowListAssociatedInstanceArgs) ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput {
+	return i.ToGetAllowListAssociatedInstanceOutputWithContext(context.Background())
+}
+
+func (i GetAllowListAssociatedInstanceArgs) ToGetAllowListAssociatedInstanceOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListAssociatedInstanceOutput)
+}
+
+// GetAllowListAssociatedInstanceArrayInput is an input type that accepts GetAllowListAssociatedInstanceArray and GetAllowListAssociatedInstanceArrayOutput values.
+// You can construct a concrete instance of `GetAllowListAssociatedInstanceArrayInput` via:
+//
+//	GetAllowListAssociatedInstanceArray{ GetAllowListAssociatedInstanceArgs{...} }
+type GetAllowListAssociatedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput
+	ToGetAllowListAssociatedInstanceArrayOutputWithContext(context.Context) GetAllowListAssociatedInstanceArrayOutput
+}
+
+type GetAllowListAssociatedInstanceArray []GetAllowListAssociatedInstanceInput
+
+func (GetAllowListAssociatedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i GetAllowListAssociatedInstanceArray) ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput {
+	return i.ToGetAllowListAssociatedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllowListAssociatedInstanceArray) ToGetAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListAssociatedInstanceArrayOutput)
+}
+
+type GetAllowListAssociatedInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListAssociatedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceOutput {
+	return o
+}
+
+// Instance ID bound to the current allowlist
+func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Instance names bound to the current allowlist
+func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// Project name associated with the instance
+func (o GetAllowListAssociatedInstanceOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Private network ID associated with the instance
+func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
+}
+
+type GetAllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) ToGetAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetAllowListAssociatedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllowListAssociatedInstance {
+		return vs[0].([]GetAllowListAssociatedInstance)[vs[1].(int)]
+	}).(GetAllowListAssociatedInstanceOutput)
+}
+
+type GetAllowListSecurityGroupBindInfo struct {
+	// Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+	BindMode string `pulumi:"bindMode"`
+	// IP list of security groups associated with the allowlist
+	IpLists []string `pulumi:"ipLists"`
+	// Associated security group ID
+	SecurityGroupId string `pulumi:"securityGroupId"`
+	// Name of the associated security group
+	SecurityGroupName string `pulumi:"securityGroupName"`
+}
+
+// GetAllowListSecurityGroupBindInfoInput is an input type that accepts GetAllowListSecurityGroupBindInfoArgs and GetAllowListSecurityGroupBindInfoOutput values.
+// You can construct a concrete instance of `GetAllowListSecurityGroupBindInfoInput` via:
+//
+//	GetAllowListSecurityGroupBindInfoArgs{...}
+type GetAllowListSecurityGroupBindInfoInput interface {
+	pulumi.Input
+
+	ToGetAllowListSecurityGroupBindInfoOutput() GetAllowListSecurityGroupBindInfoOutput
+	ToGetAllowListSecurityGroupBindInfoOutputWithContext(context.Context) GetAllowListSecurityGroupBindInfoOutput
+}
+
+type GetAllowListSecurityGroupBindInfoArgs struct {
+	// Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+	BindMode pulumi.StringInput `pulumi:"bindMode"`
+	// IP list of security groups associated with the allowlist
+	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
+	// Associated security group ID
+	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
+	// Name of the associated security group
+	SecurityGroupName pulumi.StringInput `pulumi:"securityGroupName"`
+}
+
+func (GetAllowListSecurityGroupBindInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i GetAllowListSecurityGroupBindInfoArgs) ToGetAllowListSecurityGroupBindInfoOutput() GetAllowListSecurityGroupBindInfoOutput {
+	return i.ToGetAllowListSecurityGroupBindInfoOutputWithContext(context.Background())
+}
+
+func (i GetAllowListSecurityGroupBindInfoArgs) ToGetAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListSecurityGroupBindInfoOutput)
+}
+
+// GetAllowListSecurityGroupBindInfoArrayInput is an input type that accepts GetAllowListSecurityGroupBindInfoArray and GetAllowListSecurityGroupBindInfoArrayOutput values.
+// You can construct a concrete instance of `GetAllowListSecurityGroupBindInfoArrayInput` via:
+//
+//	GetAllowListSecurityGroupBindInfoArray{ GetAllowListSecurityGroupBindInfoArgs{...} }
+type GetAllowListSecurityGroupBindInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetAllowListSecurityGroupBindInfoArrayOutput() GetAllowListSecurityGroupBindInfoArrayOutput
+	ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Context) GetAllowListSecurityGroupBindInfoArrayOutput
+}
+
+type GetAllowListSecurityGroupBindInfoArray []GetAllowListSecurityGroupBindInfoInput
+
+func (GetAllowListSecurityGroupBindInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i GetAllowListSecurityGroupBindInfoArray) ToGetAllowListSecurityGroupBindInfoArrayOutput() GetAllowListSecurityGroupBindInfoArrayOutput {
+	return i.ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllowListSecurityGroupBindInfoArray) ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListSecurityGroupBindInfoArrayOutput)
+}
+
+type GetAllowListSecurityGroupBindInfoOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListSecurityGroupBindInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o GetAllowListSecurityGroupBindInfoOutput) ToGetAllowListSecurityGroupBindInfoOutput() GetAllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+func (o GetAllowListSecurityGroupBindInfoOutput) ToGetAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+// Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+func (o GetAllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.BindMode }).(pulumi.StringOutput)
+}
+
+// IP list of security groups associated with the allowlist
+func (o GetAllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
+}
+
+// Associated security group ID
+func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupId }).(pulumi.StringOutput)
+}
+
+// Name of the associated security group
+func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupName }).(pulumi.StringOutput)
+}
+
+type GetAllowListSecurityGroupBindInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListSecurityGroupBindInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o GetAllowListSecurityGroupBindInfoArrayOutput) ToGetAllowListSecurityGroupBindInfoArrayOutput() GetAllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o GetAllowListSecurityGroupBindInfoArrayOutput) ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) GetAllowListSecurityGroupBindInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllowListSecurityGroupBindInfo {
+		return vs[0].([]GetAllowListSecurityGroupBindInfo)[vs[1].(int)]
+	}).(GetAllowListSecurityGroupBindInfoOutput)
+}
+
 type GetInstanceCapacity struct {
 	// Total memory capacity of the current instance. Unit: MiB.
 	Total int `pulumi:"total"`
@@ -1396,6 +1874,10 @@ func (o GetInstanceVisitAddrArrayOutput) Index(i pulumi.IntInput) GetInstanceVis
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInput)(nil)).Elem(), InstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityPtrInput)(nil)).Elem(), InstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigureNodeInput)(nil)).Elem(), InstanceConfigureNodeArgs{})
@@ -1408,6 +1890,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceVisitAddrInput)(nil)).Elem(), InstanceVisitAddrArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceVisitAddrArrayInput)(nil)).Elem(), InstanceVisitAddrArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCapacityInput)(nil)).Elem(), GetInstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigureNodeInput)(nil)).Elem(), GetInstanceConfigureNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigureNodeArrayInput)(nil)).Elem(), GetInstanceConfigureNodeArray{})
@@ -1419,6 +1905,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceVisitAddrInput)(nil)).Elem(), GetInstanceVisitAddrArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceVisitAddrArrayInput)(nil)).Elem(), GetInstanceVisitAddrArray{})
+	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
+	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
+	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityPtrOutput{})
 	pulumi.RegisterOutputType(InstanceConfigureNodeOutput{})
@@ -1431,6 +1921,10 @@ func init() {
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(InstanceVisitAddrOutput{})
 	pulumi.RegisterOutputType(InstanceVisitAddrArrayOutput{})
+	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
+	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
+	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceCapacityOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigureNodeOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigureNodeArrayOutput{})

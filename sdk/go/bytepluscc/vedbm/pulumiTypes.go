@@ -16,10 +16,6 @@ var _ = internal.GetEnvOrDefault
 type AllowListAssociatedInstance struct {
 	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// Instance name.
-	InstanceName *string `pulumi:"instanceName"`
-	// Instance VPC ID.
-	Vpc *string `pulumi:"vpc"`
 }
 
 // AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
@@ -36,10 +32,6 @@ type AllowListAssociatedInstanceInput interface {
 type AllowListAssociatedInstanceArgs struct {
 	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// Instance name.
-	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// Instance VPC ID.
-	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
 func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
@@ -96,16 +88,6 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 // Instance ID.
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
-}
-
-// Instance name.
-func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
-}
-
-// Instance VPC ID.
-func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
 
 type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }

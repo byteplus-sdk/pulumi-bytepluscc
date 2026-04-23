@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:rabbitmq/allowList:AllowList":
+		r = &AllowList{}
 	case "bytepluscc:rabbitmq/instance:Instance":
 		r = &Instance{}
 	case "bytepluscc:rabbitmq/instancePlugin:InstancePlugin":
@@ -40,6 +42,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rabbitmq/allowList",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rabbitmq/instance",

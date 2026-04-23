@@ -26,6 +26,7 @@ class EndpointServiceArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
+                 permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  private_dns_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  private_dns_name: Optional[pulumi.Input[builtins.str]] = None,
                  private_dns_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -44,12 +45,13 @@ class EndpointServiceArgs:
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
         :param pulumi.Input[builtins.bool] private_dns_enabled: Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         :param pulumi.Input[builtins.str] private_dns_name: Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         :param pulumi.Input[builtins.str] private_dns_type: Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
         :param pulumi.Input[builtins.str] project_name: Project name to which the endpoint service belongs.
         :param pulumi.Input[builtins.str] service_name_managed: Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-        :param pulumi.Input[builtins.str] service_name_suffix: Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        :param pulumi.Input[builtins.str] service_name_suffix: Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         :param pulumi.Input[builtins.str] service_owner: Current service principal.
         :param pulumi.Input[builtins.str] service_resource_type: Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         :param pulumi.Input[builtins.str] service_type: Type of the endpoint service. Interface: Interface endpoint service.
@@ -63,6 +65,8 @@ class EndpointServiceArgs:
             pulumi.set(__self__, "ip_address_versions", ip_address_versions)
         if payer is not None:
             pulumi.set(__self__, "payer", payer)
+        if permit_account_ids is not None:
+            pulumi.set(__self__, "permit_account_ids", permit_account_ids)
         if private_dns_enabled is not None:
             pulumi.set(__self__, "private_dns_enabled", private_dns_enabled)
         if private_dns_name is not None:
@@ -137,6 +141,18 @@ class EndpointServiceArgs:
         pulumi.set(self, "payer", value)
 
     @property
+    @pulumi.getter(name="permitAccountIds")
+    def permit_account_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Details of authorized allowlist accounts.
+        """
+        return pulumi.get(self, "permit_account_ids")
+
+    @permit_account_ids.setter
+    def permit_account_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "permit_account_ids", value)
+
+    @property
     @pulumi.getter(name="privateDnsEnabled")
     def private_dns_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -209,7 +225,7 @@ class EndpointServiceArgs:
     @pulumi.getter(name="serviceNameSuffix")
     def service_name_suffix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         """
         return pulumi.get(self, "service_name_suffix")
 
@@ -285,6 +301,7 @@ class _EndpointServiceState:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
+                 permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  private_dns_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  private_dns_name: Optional[pulumi.Input[builtins.str]] = None,
                  private_dns_name_configuration: Optional[pulumi.Input['EndpointServicePrivateDnsNameConfigurationArgs']] = None,
@@ -313,6 +330,7 @@ class _EndpointServiceState:
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
         :param pulumi.Input[builtins.bool] private_dns_enabled: Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         :param pulumi.Input[builtins.str] private_dns_name: Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         :param pulumi.Input['EndpointServicePrivateDnsNameConfigurationArgs'] private_dns_name_configuration: Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
@@ -322,7 +340,7 @@ class _EndpointServiceState:
         :param pulumi.Input[builtins.str] service_id: Endpoint service ID.
         :param pulumi.Input[builtins.str] service_name: Name of the endpoint service.
         :param pulumi.Input[builtins.str] service_name_managed: Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-        :param pulumi.Input[builtins.str] service_name_suffix: Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        :param pulumi.Input[builtins.str] service_name_suffix: Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         :param pulumi.Input[builtins.str] service_owner: Current service principal.
         :param pulumi.Input[builtins.str] service_resource_type: Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         :param pulumi.Input[builtins.str] service_type: Type of the endpoint service. Interface: Interface endpoint service.
@@ -345,6 +363,8 @@ class _EndpointServiceState:
             pulumi.set(__self__, "ip_address_versions", ip_address_versions)
         if payer is not None:
             pulumi.set(__self__, "payer", payer)
+        if permit_account_ids is not None:
+            pulumi.set(__self__, "permit_account_ids", permit_account_ids)
         if private_dns_enabled is not None:
             pulumi.set(__self__, "private_dns_enabled", private_dns_enabled)
         if private_dns_name is not None:
@@ -469,6 +489,18 @@ class _EndpointServiceState:
         pulumi.set(self, "payer", value)
 
     @property
+    @pulumi.getter(name="permitAccountIds")
+    def permit_account_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Details of authorized allowlist accounts.
+        """
+        return pulumi.get(self, "permit_account_ids")
+
+    @permit_account_ids.setter
+    def permit_account_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "permit_account_ids", value)
+
+    @property
     @pulumi.getter(name="privateDnsEnabled")
     def private_dns_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -589,7 +621,7 @@ class _EndpointServiceState:
     @pulumi.getter(name="serviceNameSuffix")
     def service_name_suffix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         """
         return pulumi.get(self, "service_name_suffix")
 
@@ -701,6 +733,7 @@ class EndpointService(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
+                 permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  private_dns_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  private_dns_name: Optional[pulumi.Input[builtins.str]] = None,
                  private_dns_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -729,12 +762,13 @@ class EndpointService(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
         :param pulumi.Input[builtins.bool] private_dns_enabled: Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         :param pulumi.Input[builtins.str] private_dns_name: Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         :param pulumi.Input[builtins.str] private_dns_type: Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
         :param pulumi.Input[builtins.str] project_name: Project name to which the endpoint service belongs.
         :param pulumi.Input[builtins.str] service_name_managed: Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-        :param pulumi.Input[builtins.str] service_name_suffix: Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        :param pulumi.Input[builtins.str] service_name_suffix: Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         :param pulumi.Input[builtins.str] service_owner: Current service principal.
         :param pulumi.Input[builtins.str] service_resource_type: Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         :param pulumi.Input[builtins.str] service_type: Type of the endpoint service. Interface: Interface endpoint service.
@@ -774,6 +808,7 @@ class EndpointService(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
+                 permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  private_dns_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  private_dns_name: Optional[pulumi.Input[builtins.str]] = None,
                  private_dns_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -799,6 +834,7 @@ class EndpointService(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["ip_address_versions"] = ip_address_versions
             __props__.__dict__["payer"] = payer
+            __props__.__dict__["permit_account_ids"] = permit_account_ids
             __props__.__dict__["private_dns_enabled"] = private_dns_enabled
             __props__.__dict__["private_dns_name"] = private_dns_name
             __props__.__dict__["private_dns_type"] = private_dns_type
@@ -838,6 +874,7 @@ class EndpointService(pulumi.CustomResource):
             description: Optional[pulumi.Input[builtins.str]] = None,
             ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             payer: Optional[pulumi.Input[builtins.str]] = None,
+            permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             private_dns_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             private_dns_name: Optional[pulumi.Input[builtins.str]] = None,
             private_dns_name_configuration: Optional[pulumi.Input[Union['EndpointServicePrivateDnsNameConfigurationArgs', 'EndpointServicePrivateDnsNameConfigurationArgsDict']]] = None,
@@ -871,6 +908,7 @@ class EndpointService(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
         :param pulumi.Input[builtins.bool] private_dns_enabled: Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         :param pulumi.Input[builtins.str] private_dns_name: Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         :param pulumi.Input[Union['EndpointServicePrivateDnsNameConfigurationArgs', 'EndpointServicePrivateDnsNameConfigurationArgsDict']] private_dns_name_configuration: Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
@@ -880,7 +918,7 @@ class EndpointService(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] service_id: Endpoint service ID.
         :param pulumi.Input[builtins.str] service_name: Name of the endpoint service.
         :param pulumi.Input[builtins.str] service_name_managed: Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-        :param pulumi.Input[builtins.str] service_name_suffix: Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        :param pulumi.Input[builtins.str] service_name_suffix: Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         :param pulumi.Input[builtins.str] service_owner: Current service principal.
         :param pulumi.Input[builtins.str] service_resource_type: Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         :param pulumi.Input[builtins.str] service_type: Type of the endpoint service. Interface: Interface endpoint service.
@@ -900,6 +938,7 @@ class EndpointService(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["ip_address_versions"] = ip_address_versions
         __props__.__dict__["payer"] = payer
+        __props__.__dict__["permit_account_ids"] = permit_account_ids
         __props__.__dict__["private_dns_enabled"] = private_dns_enabled
         __props__.__dict__["private_dns_name"] = private_dns_name
         __props__.__dict__["private_dns_name_configuration"] = private_dns_name_configuration
@@ -976,6 +1015,14 @@ class EndpointService(pulumi.CustomResource):
         Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         """
         return pulumi.get(self, "payer")
+
+    @property
+    @pulumi.getter(name="permitAccountIds")
+    def permit_account_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        Details of authorized allowlist accounts.
+        """
+        return pulumi.get(self, "permit_account_ids")
 
     @property
     @pulumi.getter(name="privateDnsEnabled")
@@ -1058,7 +1105,7 @@ class EndpointService(pulumi.CustomResource):
     @pulumi.getter(name="serviceNameSuffix")
     def service_name_suffix(self) -> pulumi.Output[builtins.str]:
         """
-        Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         """
         return pulumi.get(self, "service_name_suffix")
 

@@ -28,7 +28,7 @@ class GetEndpointServiceResult:
     """
     A collection of values returned by getEndpointService.
     """
-    def __init__(__self__, auto_accept_enabled=None, billing_type=None, business_status=None, create_time=None, description=None, id=None, ip_address_versions=None, payer=None, private_dns_enabled=None, private_dns_name=None, private_dns_name_configuration=None, private_dns_type=None, project_name=None, resources=None, service_domain=None, service_id=None, service_name=None, service_name_managed=None, service_name_suffix=None, service_owner=None, service_resource_type=None, service_type=None, status=None, tags=None, update_time=None, wildcard_domain_enabled=None, zone_ids=None):
+    def __init__(__self__, auto_accept_enabled=None, billing_type=None, business_status=None, create_time=None, description=None, id=None, ip_address_versions=None, payer=None, permit_account_ids=None, private_dns_enabled=None, private_dns_name=None, private_dns_name_configuration=None, private_dns_type=None, project_name=None, resources=None, service_domain=None, service_id=None, service_name=None, service_name_managed=None, service_name_suffix=None, service_owner=None, service_resource_type=None, service_type=None, status=None, tags=None, update_time=None, wildcard_domain_enabled=None, zone_ids=None):
         if auto_accept_enabled and not isinstance(auto_accept_enabled, bool):
             raise TypeError("Expected argument 'auto_accept_enabled' to be a bool")
         pulumi.set(__self__, "auto_accept_enabled", auto_accept_enabled)
@@ -53,6 +53,9 @@ class GetEndpointServiceResult:
         if payer and not isinstance(payer, str):
             raise TypeError("Expected argument 'payer' to be a str")
         pulumi.set(__self__, "payer", payer)
+        if permit_account_ids and not isinstance(permit_account_ids, list):
+            raise TypeError("Expected argument 'permit_account_ids' to be a list")
+        pulumi.set(__self__, "permit_account_ids", permit_account_ids)
         if private_dns_enabled and not isinstance(private_dns_enabled, bool):
             raise TypeError("Expected argument 'private_dns_enabled' to be a bool")
         pulumi.set(__self__, "private_dns_enabled", private_dns_enabled)
@@ -176,6 +179,14 @@ class GetEndpointServiceResult:
         return pulumi.get(self, "payer")
 
     @property
+    @pulumi.getter(name="permitAccountIds")
+    def permit_account_ids(self) -> Sequence[builtins.str]:
+        """
+        Details of authorized allowlist accounts.
+        """
+        return pulumi.get(self, "permit_account_ids")
+
+    @property
     @pulumi.getter(name="privateDnsEnabled")
     def private_dns_enabled(self) -> builtins.bool:
         """
@@ -259,7 +270,7 @@ class GetEndpointServiceResult:
     @pulumi.getter(name="serviceNameSuffix")
     def service_name_suffix(self) -> builtins.str:
         """
-        Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\\n\\n.\\n\\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         """
         return pulumi.get(self, "service_name_suffix")
 
@@ -342,6 +353,7 @@ class AwaitableGetEndpointServiceResult(GetEndpointServiceResult):
             id=self.id,
             ip_address_versions=self.ip_address_versions,
             payer=self.payer,
+            permit_account_ids=self.permit_account_ids,
             private_dns_enabled=self.private_dns_enabled,
             private_dns_name=self.private_dns_name,
             private_dns_name_configuration=self.private_dns_name_configuration,
@@ -385,6 +397,7 @@ def get_endpoint_service(id: Optional[builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         ip_address_versions=pulumi.get(__ret__, 'ip_address_versions'),
         payer=pulumi.get(__ret__, 'payer'),
+        permit_account_ids=pulumi.get(__ret__, 'permit_account_ids'),
         private_dns_enabled=pulumi.get(__ret__, 'private_dns_enabled'),
         private_dns_name=pulumi.get(__ret__, 'private_dns_name'),
         private_dns_name_configuration=pulumi.get(__ret__, 'private_dns_name_configuration'),
@@ -425,6 +438,7 @@ def get_endpoint_service_output(id: Optional[pulumi.Input[builtins.str]] = None,
         id=pulumi.get(__response__, 'id'),
         ip_address_versions=pulumi.get(__response__, 'ip_address_versions'),
         payer=pulumi.get(__response__, 'payer'),
+        permit_account_ids=pulumi.get(__response__, 'permit_account_ids'),
         private_dns_enabled=pulumi.get(__response__, 'private_dns_enabled'),
         private_dns_name=pulumi.get(__response__, 'private_dns_name'),
         private_dns_name_configuration=pulumi.get(__response__, 'private_dns_name_configuration'),

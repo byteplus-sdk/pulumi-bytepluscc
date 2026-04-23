@@ -50,6 +50,16 @@ export const getDefaultNodePools: typeof import("./getDefaultNodePools").getDefa
 export const getDefaultNodePoolsOutput: typeof import("./getDefaultNodePools").getDefaultNodePoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getDefaultNodePools","getDefaultNodePoolsOutput"], () => require("./getDefaultNodePools"));
 
+export { GetKubeconfigArgs, GetKubeconfigResult, GetKubeconfigOutputArgs } from "./getKubeconfig";
+export const getKubeconfig: typeof import("./getKubeconfig").getKubeconfig = null as any;
+export const getKubeconfigOutput: typeof import("./getKubeconfig").getKubeconfigOutput = null as any;
+utilities.lazyLoad(exports, ["getKubeconfig","getKubeconfigOutput"], () => require("./getKubeconfig"));
+
+export { GetKubeconfigsResult } from "./getKubeconfigs";
+export const getKubeconfigs: typeof import("./getKubeconfigs").getKubeconfigs = null as any;
+export const getKubeconfigsOutput: typeof import("./getKubeconfigs").getKubeconfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getKubeconfigs","getKubeconfigsOutput"], () => require("./getKubeconfigs"));
+
 export { GetNodeArgs, GetNodeResult, GetNodeOutputArgs } from "./getNode";
 export const getNode: typeof import("./getNode").getNode = null as any;
 export const getNodeOutput: typeof import("./getNode").getNodeOutput = null as any;
@@ -80,6 +90,11 @@ export const getPermissions: typeof import("./getPermissions").getPermissions = 
 export const getPermissionsOutput: typeof import("./getPermissions").getPermissionsOutput = null as any;
 utilities.lazyLoad(exports, ["getPermissions","getPermissionsOutput"], () => require("./getPermissions"));
 
+export { KubeconfigArgs, KubeconfigState } from "./kubeconfig";
+export type Kubeconfig = import("./kubeconfig").Kubeconfig;
+export const Kubeconfig: typeof import("./kubeconfig").Kubeconfig = null as any;
+utilities.lazyLoad(exports, ["Kubeconfig"], () => require("./kubeconfig"));
+
 export { NodeArgs, NodeState } from "./node";
 export type Node = import("./node").Node;
 export const Node: typeof import("./node").Node = null as any;
@@ -106,6 +121,8 @@ const _module = {
                 return new Cluster(name, <any>undefined, { urn })
             case "bytepluscc:vke/defaultNodePool:DefaultNodePool":
                 return new DefaultNodePool(name, <any>undefined, { urn })
+            case "bytepluscc:vke/kubeconfig:Kubeconfig":
+                return new Kubeconfig(name, <any>undefined, { urn })
             case "bytepluscc:vke/node:Node":
                 return new Node(name, <any>undefined, { urn })
             case "bytepluscc:vke/nodePool:NodePool":
@@ -120,6 +137,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/addon", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/cluster", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/defaultNodePool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vke/kubeconfig", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/node", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/nodePool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/permission", _module)

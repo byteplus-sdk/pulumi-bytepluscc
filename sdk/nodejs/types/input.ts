@@ -4086,6 +4086,20 @@ export namespace cen {
         value?: pulumi.Input<string>;
     }
 
+    export interface ServiceRouteEntryPublishToInstance {
+        /**
+         * Network instance ID for published cloud service access route.
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Region for published cloud service access route.
+         */
+        instanceRegionId?: pulumi.Input<string>;
+        /**
+         * Network instance type for published cloud service access route.
+         */
+        instanceType?: pulumi.Input<string>;
+    }
 }
 
 export namespace clb {
@@ -4271,6 +4285,21 @@ export namespace clb {
          * Tag value
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface ListenerDomainExtension {
+        /**
+         * Certificate ID of the extended domain name.
+         */
+        certCenterCertificateId?: pulumi.Input<string>;
+        /**
+         * Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+         */
+        certificateSource?: pulumi.Input<string>;
+        /**
+         * Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+         */
+        domain?: pulumi.Input<string>;
     }
 
     export interface ListenerHealthCheck {
@@ -7864,10 +7893,6 @@ export namespace privatelink {
 
     export interface EndpointServiceResource {
         /**
-         * Endpoint service ID.
-         */
-        instanceId?: pulumi.Input<string>;
-        /**
          * Service resource ID to be added to the endpoint service.
          */
         resourceId?: pulumi.Input<string>;
@@ -7886,6 +7911,56 @@ export namespace privatelink {
          * Tag value of the endpoint service tag.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface VpcEndpointConnectionResourcesAllocate {
+        /**
+         * Specify the service resource for the endpoint connection
+         */
+        resourceId?: pulumi.Input<string>;
+        /**
+         * Availability zone ID of the service resource to be specified
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface VpcEndpointConnectionZone {
+        /**
+         * Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+         */
+        networkInterfaceId?: pulumi.Input<string>;
+        /**
+         * The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+         */
+        networkInterfaceIp?: pulumi.Input<string>;
+        /**
+         * Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+         */
+        networkInterfaceIpv6?: pulumi.Input<string>;
+        /**
+         * Service resource ID
+         */
+        resourceId?: pulumi.Input<string>;
+        /**
+         * Status of the service resource
+         */
+        serviceStatus?: pulumi.Input<string>;
+        /**
+         * ID of the subnet to which the endpoint network interface belongs
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * The domain name of the terminal node availability zone.
+         */
+        zoneDomain?: pulumi.Input<string>;
+        /**
+         * Endpoint zone ID
+         */
+        zoneId?: pulumi.Input<string>;
+        /**
+         * Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+         */
+        zoneStatus?: pulumi.Input<string>;
     }
 
     export interface VpcEndpointTag {
@@ -7985,6 +8060,13 @@ export namespace privatezone {
 }
 
 export namespace rabbitmq {
+    export interface AllowListAssociatedInstance {
+        /**
+         * Instance ID
+         */
+        instanceId?: pulumi.Input<string>;
+    }
+
     export interface InstanceChargeDetail {
         /**
          * Whether to automatically renew the subscription instance after expiration.
@@ -9090,6 +9172,36 @@ export namespace rdspostgresql {
 }
 
 export namespace redis {
+    export interface AllowListAssociatedInstance {
+        /**
+         * Instance ID bound to the current allowlist
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Instance names bound to the current allowlist
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * Project name associated with the instance
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * Private network ID associated with the instance
+         */
+        vpc?: pulumi.Input<string>;
+    }
+
+    export interface AllowListSecurityGroupBindInfo {
+        /**
+         * Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+         */
+        bindMode?: pulumi.Input<string>;
+        /**
+         * Associated security group ID
+         */
+        securityGroupId?: pulumi.Input<string>;
+    }
+
     export interface InstanceCapacity {
         /**
          * Total memory capacity of the current instance. Unit: MiB.
@@ -9179,6 +9291,112 @@ export namespace redis {
 }
 
 export namespace storageebs {
+    export interface SnapshotGroupSnapshot {
+        /**
+         * Snapshot creation time
+         */
+        creationTime?: pulumi.Input<string>;
+        /**
+         * Snapshot description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Image ID
+         */
+        imageId?: pulumi.Input<string>;
+        /**
+         * Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+         */
+        instantAccess?: pulumi.Input<boolean>;
+        /**
+         * Dump progress
+         */
+        progress?: pulumi.Input<number>;
+        /**
+         * Project of the snapshot
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * Retention days for automatic snapshots
+         */
+        retentionDays?: pulumi.Input<number>;
+        /**
+         * Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+         */
+        shared?: pulumi.Input<boolean>;
+        /**
+         * Snapshot consistency group ID
+         */
+        snapshotGroupId?: pulumi.Input<string>;
+        /**
+         * Snapshot ID
+         */
+        snapshotId?: pulumi.Input<string>;
+        /**
+         * Snapshot name
+         */
+        snapshotName?: pulumi.Input<string>;
+        /**
+         * Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+         */
+        snapshotType?: pulumi.Input<string>;
+        /**
+         * Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+         */
+        status?: pulumi.Input<string>;
+        tags?: pulumi.Input<pulumi.Input<inputs.storageebs.SnapshotGroupSnapshotTag>[]>;
+        /**
+         * Cloud disk ID
+         */
+        volumeId?: pulumi.Input<string>;
+        /**
+         * Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+         */
+        volumeKind?: pulumi.Input<string>;
+        /**
+         * Cloud disk name
+         */
+        volumeName?: pulumi.Input<string>;
+        /**
+         * Cloud disk size (GiB)
+         */
+        volumeSize?: pulumi.Input<number>;
+        /**
+         * Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+         */
+        volumeStatus?: pulumi.Input<string>;
+        /**
+         * Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+         */
+        volumeType?: pulumi.Input<string>;
+        /**
+         * Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface SnapshotGroupSnapshotTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface SnapshotGroupTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface SnapshotTag {
         /**
          * User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
@@ -9240,6 +9458,164 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface AlarmNotifyGroupNoticeRule {
+        /**
+         * Whether there is an end node afterwards.
+         */
+        hasEndNode?: pulumi.Input<boolean>;
+        /**
+         * Condition for whether to proceed to the next level.
+         */
+        hasNext?: pulumi.Input<boolean>;
+        receiverInfos?: pulumi.Input<pulumi.Input<inputs.tls.AlarmNotifyGroupNoticeRuleReceiverInfo>[]>;
+        /**
+         * Rule node. JSON format.
+         */
+        ruleNode?: pulumi.Input<string>;
+    }
+
+    export interface AlarmNotifyGroupNoticeRuleReceiverInfo {
+        /**
+         * Alarm content template ID.
+         */
+        alarmContentTemplateId?: pulumi.Input<string>;
+        /**
+         * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtGroups?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtUsers?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Alarm webhook integration configuration ID.
+         */
+        alarmWebhookIntegrationId?: pulumi.Input<string>;
+        /**
+         * Name of the alarm Webhook integration configuration.
+         */
+        alarmWebhookIntegrationName?: pulumi.Input<string>;
+        /**
+         * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookIsAtAll?: pulumi.Input<boolean>;
+        /**
+         * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
+         */
+        endTime?: pulumi.Input<string>;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
+         */
+        generalWebhookBody?: pulumi.Input<string>;
+        generalWebhookHeaders?: pulumi.Input<pulumi.Input<inputs.tls.AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader>[]>;
+        /**
+         * Custom callback method for the interface. Only POST or PUT is supported.
+         */
+        generalWebhookMethod?: pulumi.Input<string>;
+        /**
+         * Custom callback URL for the interface.
+         */
+        generalWebhookUrl?: pulumi.Input<string>;
+        /**
+         * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
+         */
+        receiverChannels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * IAM user or user group name.
+         */
+        receiverNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
+         */
+        receiverType?: pulumi.Input<string>;
+        /**
+         * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime?: pulumi.Input<string>;
+    }
+
+    export interface AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader {
+        /**
+         * Custom request header key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Custom request header value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface AlarmNotifyGroupReceiver {
+        /**
+         * Alarm content template ID.
+         */
+        alarmContentTemplateId?: pulumi.Input<string>;
+        /**
+         * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtGroups?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtUsers?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Alarm webhook integration configuration ID.
+         */
+        alarmWebhookIntegrationId?: pulumi.Input<string>;
+        /**
+         * Name of the alarm Webhook integration configuration.
+         */
+        alarmWebhookIntegrationName?: pulumi.Input<string>;
+        /**
+         * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookIsAtAll?: pulumi.Input<boolean>;
+        /**
+         * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
+         */
+        endTime?: pulumi.Input<string>;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
+         */
+        generalWebhookBody?: pulumi.Input<string>;
+        generalWebhookHeaders?: pulumi.Input<pulumi.Input<inputs.tls.AlarmNotifyGroupReceiverGeneralWebhookHeader>[]>;
+        /**
+         * Custom callback method for the interface. Only POST or PUT is supported.
+         */
+        generalWebhookMethod?: pulumi.Input<string>;
+        /**
+         * Custom callback URL for the interface.
+         */
+        generalWebhookUrl?: pulumi.Input<string>;
+        /**
+         * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
+         */
+        receiverChannels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * IAM user or user group name.
+         */
+        receiverNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
+         */
+        receiverType?: pulumi.Input<string>;
+        /**
+         * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime?: pulumi.Input<string>;
+    }
+
+    export interface AlarmNotifyGroupReceiverGeneralWebhookHeader {
+        /**
+         * Custom request header key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Custom request header value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface ImportTaskImportSourceInfo {
         /**
          * Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
@@ -9680,6 +10056,403 @@ export namespace tls {
         value?: pulumi.Input<string>;
     }
 
+    export interface RuleContainerRule {
+        /**
+         * Container name to collect. If no container name is specified, all containers in the machine group will be collected. Supports regex matching; for example, setting the container name to ^(container-test)$ will collect all containers named container-test.
+         */
+        containerNameRegex?: pulumi.Input<string>;
+        envTags?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleEnvTag>[]>;
+        excludeContainerEnvRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleExcludeContainerEnvRegex>[]>;
+        excludeContainerLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleExcludeContainerLabelRegex>[]>;
+        includeContainerEnvRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleIncludeContainerEnvRegex>[]>;
+        includeContainerLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleIncludeContainerLabelRegex>[]>;
+        /**
+         * Kubernetes container collection rules.
+         */
+        kubernetesRule?: pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRule>;
+        /**
+         * Collection information. stdout: Collects container standard output (stdout). stderr: Collects container standard error (stderr). all: Collects both container standard output (stdout) and standard error (stderr).
+         */
+        stream?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleEnvTag {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleExcludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleExcludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleIncludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleIncludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRule {
+        annotationTags?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRuleAnnotationTag>[]>;
+        /**
+         * Whether to add all Kubernetes Labels as log tags to the original log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the logs. For example, if the Pod contains Label source=DC and destination=CS, the logs will include fields **tag**source__: DC and **tag**destination__: CS.
+         */
+        enableAllLabelTag?: pulumi.Input<boolean>;
+        excludePodAnnotationRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRuleExcludePodAnnotationRegex>[]>;
+        excludePodLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRuleExcludePodLabelRegex>[]>;
+        includePodAnnotationRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRuleIncludePodAnnotationRegex>[]>;
+        includePodLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRuleIncludePodLabelRegex>[]>;
+        labelTags?: pulumi.Input<pulumi.Input<inputs.tls.RuleContainerRuleKubernetesRuleLabelTag>[]>;
+        /**
+         * Name of the Kubernetes Namespace to collect. If no Namespace name is specified, all containers will be collected. Namespace names support regular expression matching. For example, if you set the Namespace name to ^(tcp|udp)$, it will collect all containers under the tcp and udp namespaces.
+         */
+        namespaceNameRegex?: pulumi.Input<string>;
+        /**
+         * Pod name is used to specify the Pod whose containers will be collected. If no Pod name is specified, all containers will be collected. Pod name supports regular expression matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+         */
+        podNameRegex?: pulumi.Input<string>;
+        /**
+         * Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+         */
+        workloadNameRegex?: pulumi.Input<string>;
+        /**
+         * Specify the container to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: task CronJob: scheduled task
+         */
+        workloadType?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleAnnotationTag {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleLabelTag {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleExcludePath {
+        /**
+         * Collection path type. File: File name. Path: Directory.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface RuleExtractRule {
+        /**
+         * Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
+         */
+        beginRegex?: pulumi.Input<string>;
+        /**
+         * Log delimiter. Valid only when LogType is delimiter_log.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+         */
+        enableNanosecond?: pulumi.Input<boolean>;
+        filterKeyRegexes?: pulumi.Input<pulumi.Input<inputs.tls.RuleExtractRuleFilterKeyRegex>[]>;
+        /**
+         * List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
+         */
+        logRegex?: pulumi.Input<string>;
+        /**
+         * Automatically extract log fields based on the specified log template
+         */
+        logTemplate?: pulumi.Input<inputs.tls.RuleExtractRuleLogTemplate>;
+        /**
+         * Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
+         */
+        quote?: pulumi.Input<string>;
+        /**
+         * Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
+         */
+        timeExtractRegex?: pulumi.Input<string>;
+        /**
+         * Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
+         */
+        timeKey?: pulumi.Input<string>;
+        /**
+         * Time sample. Used to check whether the entered time parsing format is correct.
+         */
+        timeSample?: pulumi.Input<string>;
+        /**
+         * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+         */
+        timeZone?: pulumi.Input<string>;
+        /**
+         * Key name for unmatched logs.
+         */
+        unMatchLogKey?: pulumi.Input<string>;
+        /**
+         * Switch for uploading unmatched logs.
+         */
+        unMatchUpLoadSwitch?: pulumi.Input<boolean>;
+    }
+
+    export interface RuleExtractRuleFilterKeyRegex {
+        /**
+         * Name of the filter field.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * The log content of the filter field must match the specified regular expression.
+         */
+        regex?: pulumi.Input<string>;
+    }
+
+    export interface RuleExtractRuleLogTemplate {
+        /**
+         * Log template format.
+         */
+        format?: pulumi.Input<string>;
+        /**
+         * Log template types. Supported types: Nginx: Nginx log template.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface RuleHostGroupInfo {
+        /**
+         * Machine group ID
+         */
+        hostGroupId?: pulumi.Input<string>;
+    }
+
+    export interface RuleUserDefineRule {
+        /**
+         * The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
+         */
+        advanced?: pulumi.Input<inputs.tls.RuleUserDefineRuleAdvanced>;
+        /**
+         * Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
+         */
+        enableHostGroupLabel?: pulumi.Input<boolean>;
+        /**
+         * Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
+         */
+        enableHostname?: pulumi.Input<boolean>;
+        /**
+         * Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+         */
+        enableRawLog?: pulumi.Input<boolean>;
+        fields?: pulumi.Input<pulumi.Input<inputs.tls.RuleUserDefineRuleField>[]>;
+        /**
+         * Field name used to store machine group label information
+         */
+        hostGroupLabelKey?: pulumi.Input<string>;
+        /**
+         * Hostname field name. Required only when EnableHostname is true.
+         */
+        hostnameKey?: pulumi.Input<string>;
+        /**
+         * Ignore log files that have not been updated for a specified period (in hours).
+         */
+        ignoreOlder?: pulumi.Input<number>;
+        /**
+         * Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
+         */
+        multiCollectsType?: pulumi.Input<string>;
+        /**
+         * Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+         */
+        parsePathRule?: pulumi.Input<inputs.tls.RuleUserDefineRuleParsePathRule>;
+        /**
+         * LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+         */
+        plugin?: pulumi.Input<inputs.tls.RuleUserDefineRulePlugin>;
+        /**
+         * Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
+         */
+        rawLogKey?: pulumi.Input<string>;
+        /**
+         * Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
+         */
+        shardHashKey?: pulumi.Input<inputs.tls.RuleUserDefineRuleShardHashKey>;
+        /**
+         * LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+         */
+        tailFiles?: pulumi.Input<boolean>;
+        /**
+         * Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
+         */
+        tailSizeKb?: pulumi.Input<number>;
+    }
+
+    export interface RuleUserDefineRuleAdvanced {
+        /**
+         * After reading to the end of the log file, choose whether to release the file handle. Default is false.
+         */
+        closeEof?: pulumi.Input<boolean>;
+        /**
+         * Wait time to release log file handle. If no new logs are written to the log file within the specified time, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+         */
+        closeInactive?: pulumi.Input<number>;
+        /**
+         * Release the file handle after the log file is removed. Default is false.
+         */
+        closeRemoved?: pulumi.Input<boolean>;
+        /**
+         * Release the file handle after the log file is renamed. Default is false.
+         */
+        closeRenamed?: pulumi.Input<boolean>;
+        /**
+         * Maximum monitoring duration for LogCollector log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration for log files. Timing starts when LogCollector begins monitoring the log file. Once the specified duration is exceeded, LogCollector immediately releases the file handle and stops monitoring, regardless of whether the log file has been fully read.
+         */
+        closeTimeout?: pulumi.Input<number>;
+        /**
+         * Maximum wait time when LogCollector does not detect a line break, in seconds. The default is 5s. Timing starts when LogCollector begins reading the log file. If no line break is detected within the specified time, LogCollector sends the logs in the buffer. If the file write interval is long, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+         */
+        noLineTerminatorEofMaxTime?: pulumi.Input<number>;
+    }
+
+    export interface RuleUserDefineRuleField {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface RuleUserDefineRuleParsePathRule {
+        /**
+         * Field name list. The log service uses a regular expression (Regex) to parse the path sample (PathSample) into multiple fields. Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Sample collection path for actual scenarios. The sample collection path must be an absolute path. Wildcards *, ?, ** are not allowed in the path sample.
+         */
+        pathSample?: pulumi.Input<string>;
+        /**
+         * Regular expression used to extract the path field. Must match the sample collection path, otherwise extraction will fail
+         */
+        regex?: pulumi.Input<string>;
+    }
+
+    export interface RuleUserDefineRulePlugin {
+        /**
+         * LogCollector plugin. For the list of supported plugins and parameter descriptions, see LogCollector plugin overview.
+         */
+        processors?: pulumi.Input<string>;
+    }
+
+    export interface RuleUserDefineRuleShardHashKey {
+        /**
+         * HashKey of the log group, used to specify the shard to which the current log group will be written. The value range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+         */
+        hashKey?: pulumi.Input<string>;
+    }
+
     export interface ScheduleSqlTaskRequestCycle {
         /**
          * Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
@@ -9697,6 +10470,109 @@ export namespace tls {
          * Scheduling period type. Options: Period, Fixed, Cron.
          */
         type: pulumi.Input<string>;
+    }
+
+    export interface ShipperContentInfo {
+        /**
+         * CSV format log content configuration.
+         */
+        csvInfo?: pulumi.Input<inputs.tls.ShipperContentInfoCsvInfo>;
+        /**
+         * Log content parsing format. Delivery to TOS supports json, jsonl, csv; delivery to Kafka supports original, json.
+         */
+        format?: pulumi.Input<string>;
+        /**
+         * JSON/JSONL format log content configuration.
+         */
+        jsonInfo?: pulumi.Input<inputs.tls.ShipperContentInfoJsonInfo>;
+    }
+
+    export interface ShipperContentInfoCsvInfo {
+        /**
+         * Delimiter. Supports comma, tab, pipe, semicolon, space.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * Escape character. When field content contains a delimiter, use an escape character to enclose it. Supports single quote, double quote, or empty character.
+         */
+        escapeChar?: pulumi.Input<string>;
+        /**
+         * Fields to be delivered. Supports letters, numbers, and _-./. Cannot start with an underscore. Length: 1–128.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Content for invalid field padding. Length: 0–128.
+         */
+        nonFieldContent?: pulumi.Input<string>;
+        /**
+         * Whether to print the key in the first row.
+         */
+        printHeader?: pulumi.Input<boolean>;
+    }
+
+    export interface ShipperContentInfoJsonInfo {
+        /**
+         * Enable flag.
+         */
+        enable?: pulumi.Input<boolean>;
+        /**
+         * Whether to enable escaping. Must be set to true.
+         */
+        escape?: pulumi.Input<boolean>;
+        /**
+         * Delivery field list; if not configured, all fields will be delivered. When delivering in JSON/JSONL format, if this parameter is not set, all fields will be delivered, including **content** (required), **source**, **path**, **time**, **image_name**, **container_name**, **pod_name**, **pod_uid**, namespace, **tag****client_ip**, and **tag****receive_time**.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ShipperKafkaShipperInfo {
+        /**
+         * Compression format; supports snappy, gzip, lz4, none.
+         */
+        compress?: pulumi.Input<string>;
+        /**
+         * Delivery end time, in milliseconds. If not set, delivery continues indefinitely. Note: Milliseconds will be truncated. For example, if 1776761323455 is entered, it will become 1776761323000; if 1776761323 is entered, it will become 1776761323000.
+         */
+        endTime?: pulumi.Input<number>;
+        /**
+         * Kafka instance.
+         */
+        instance?: pulumi.Input<string>;
+        /**
+         * Kafka topic name. All log data delivered through this configuration will be sent to this topic.
+         */
+        kafkaTopic?: pulumi.Input<string>;
+        /**
+         * Start time. If not configured, defaults to the current time. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
+         */
+        startTime?: pulumi.Input<number>;
+    }
+
+    export interface ShipperTosShipperInfo {
+        /**
+         * Select a TOS bucket. Must be in the same region as the source log topic. Can only contain numbers, hyphens (-), and letters a–z. Must start and end with a number or letter. Length: 3–63 characters.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * Compression format; supports snappy, gzip, lz4, none.
+         */
+        compress?: pulumi.Input<string>;
+        /**
+         * Delivery interval in seconds, range: 300–900.
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * Maximum raw file size per partition for delivery, in MiB. Range: 5–256.
+         */
+        maxSize?: pulumi.Input<number>;
+        /**
+         * Partition rule for log delivery. Subdirectory naming format supports strftime syntax. Default: %Y/%m/%d/%H/%M.
+         */
+        partitionFormat?: pulumi.Input<string>;
+        /**
+         * Top-level directory name for the bucket. Cannot start with / or \, and cannot use consecutive /. Cannot use .. as a folder name. Duplicate names are not allowed within the same bucket.
+         */
+        prefix?: pulumi.Input<string>;
     }
 
     export interface TopicTag {
@@ -9861,14 +10737,6 @@ export namespace vedbm {
          * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
-        /**
-         * Instance name.
-         */
-        instanceName?: pulumi.Input<string>;
-        /**
-         * Instance VPC ID.
-         */
-        vpc?: pulumi.Input<string>;
     }
 
     export interface DatabaseDatabasesPrivilege {
@@ -10414,6 +11282,40 @@ export namespace vepfs {
          * User tag value.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface MountServiceAttachFileSystem {
+        /**
+         * Account ID.
+         */
+        accountId?: pulumi.Input<string>;
+        /**
+         * User mount path.
+         */
+        customerPath?: pulumi.Input<string>;
+        /**
+         * File system ID.
+         */
+        fileSystemId?: pulumi.Input<string>;
+        /**
+         * File system name.
+         */
+        fileSystemName?: pulumi.Input<string>;
+        /**
+         * Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface MountServiceNode {
+        /**
+         * Node initial password.
+         */
+        defaultPassword?: pulumi.Input<string>;
+        /**
+         * Node instance ID.
+         */
+        nodeId?: pulumi.Input<string>;
     }
 }
 

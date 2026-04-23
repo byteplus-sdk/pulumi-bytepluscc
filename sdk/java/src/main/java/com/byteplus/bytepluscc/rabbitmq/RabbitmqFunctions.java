@@ -4,12 +4,16 @@
 package com.byteplus.bytepluscc.rabbitmq;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.rabbitmq.inputs.GetAllowListArgs;
+import com.byteplus.bytepluscc.rabbitmq.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.rabbitmq.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rabbitmq.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.rabbitmq.inputs.GetInstancePluginArgs;
 import com.byteplus.bytepluscc.rabbitmq.inputs.GetInstancePluginPlainArgs;
 import com.byteplus.bytepluscc.rabbitmq.inputs.GetPublicAddressArgs;
 import com.byteplus.bytepluscc.rabbitmq.inputs.GetPublicAddressPlainArgs;
+import com.byteplus.bytepluscc.rabbitmq.outputs.GetAllowListResult;
+import com.byteplus.bytepluscc.rabbitmq.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.rabbitmq.outputs.GetInstancePluginResult;
 import com.byteplus.bytepluscc.rabbitmq.outputs.GetInstancePluginsResult;
 import com.byteplus.bytepluscc.rabbitmq.outputs.GetInstanceResult;
@@ -25,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class RabbitmqFunctions {
+    /**
+     * Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args) {
+        return getAllowList(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args) {
+        return getAllowListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rabbitmq/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rabbitmq/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rabbitmq/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists() {
+        return getAllowLists(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain() {
+        return getAllowListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args) {
+        return getAllowLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args) {
+        return getAllowListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rabbitmq/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rabbitmq/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RabbitMQ::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rabbitmq/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::RabbitMQ::Instance
      * 

@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup":
+		r = &AlarmNotifyGroup{}
 	case "bytepluscc:tls/consumerGroup:ConsumerGroup":
 		r = &ConsumerGroup{}
 	case "bytepluscc:tls/importTask:ImportTask":
@@ -29,8 +31,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Index{}
 	case "bytepluscc:tls/project:Project":
 		r = &Project{}
+	case "bytepluscc:tls/rule:Rule":
+		r = &Rule{}
 	case "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask":
 		r = &ScheduleSqlTask{}
+	case "bytepluscc:tls/shipper:Shipper":
+		r = &Shipper{}
 	case "bytepluscc:tls/topic:Topic":
 		r = &Topic{}
 	default:
@@ -46,6 +52,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/alarmNotifyGroup",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"tls/consumerGroup",
@@ -68,7 +79,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"tls/rule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"tls/scheduleSqlTask",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/shipper",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

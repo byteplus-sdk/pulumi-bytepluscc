@@ -10,7 +10,10 @@ from .endpoint_service import *
 from .get_endpoint_service import *
 from .get_endpoint_services import *
 from .get_vpc_endpoint import *
+from .get_vpc_endpoint_connection import *
+from .get_vpc_endpoint_connections import *
 from .get_vpc_endpoints import *
 from .vpc_endpoint import *
+from .vpc_endpoint_connection import *
 from ._inputs import *
 from . import outputs

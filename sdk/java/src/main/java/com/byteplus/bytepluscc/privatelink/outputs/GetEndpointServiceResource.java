@@ -12,15 +12,15 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointServiceResource {
     /**
-     * @return Endpoint service ID.
-     * 
-     */
-    private String instanceId;
-    /**
      * @return Service resource ID to be added to the endpoint service.
      * 
      */
     private String resourceId;
+    /**
+     * @return Type of service resource.
+     * 
+     */
+    private String resourceType;
     /**
      * @return Availability zone where the load balancer provides service.
      * 
@@ -29,18 +29,18 @@ public final class GetEndpointServiceResource {
 
     private GetEndpointServiceResource() {}
     /**
-     * @return Endpoint service ID.
-     * 
-     */
-    public String instanceId() {
-        return this.instanceId;
-    }
-    /**
      * @return Service resource ID to be added to the endpoint service.
      * 
      */
     public String resourceId() {
         return this.resourceId;
+    }
+    /**
+     * @return Type of service resource.
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
     }
     /**
      * @return Availability zone where the load balancer provides service.
@@ -59,31 +59,31 @@ public final class GetEndpointServiceResource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String instanceId;
         private String resourceId;
+        private String resourceType;
         private List<String> zoneIds;
         public Builder() {}
         public Builder(GetEndpointServiceResource defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.instanceId = defaults.instanceId;
     	      this.resourceId = defaults.resourceId;
+    	      this.resourceType = defaults.resourceType;
     	      this.zoneIds = defaults.zoneIds;
         }
 
-        @CustomType.Setter
-        public Builder instanceId(String instanceId) {
-            if (instanceId == null) {
-              throw new MissingRequiredPropertyException("GetEndpointServiceResource", "instanceId");
-            }
-            this.instanceId = instanceId;
-            return this;
-        }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
             if (resourceId == null) {
               throw new MissingRequiredPropertyException("GetEndpointServiceResource", "resourceId");
             }
             this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetEndpointServiceResource", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
@@ -99,8 +99,8 @@ public final class GetEndpointServiceResource {
         }
         public GetEndpointServiceResource build() {
             final var _resultValue = new GetEndpointServiceResource();
-            _resultValue.instanceId = instanceId;
             _resultValue.resourceId = resourceId;
+            _resultValue.resourceType = resourceType;
             _resultValue.zoneIds = zoneIds;
             return _resultValue;
         }

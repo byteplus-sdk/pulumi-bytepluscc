@@ -10,12 +10,24 @@ import com.byteplus.bytepluscc.cen.inputs.GetCenArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetCenPlainArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetGrantInstanceArgs;
 import com.byteplus.bytepluscc.cen.inputs.GetGrantInstancePlainArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetInterRegionBandwidthArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetInterRegionBandwidthPlainArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetRouteEntryArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetRouteEntryPlainArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetServiceRouteEntryArgs;
+import com.byteplus.bytepluscc.cen.inputs.GetServiceRouteEntryPlainArgs;
 import com.byteplus.bytepluscc.cen.outputs.GetBandwidthPackageResult;
 import com.byteplus.bytepluscc.cen.outputs.GetBandwidthPackagesResult;
 import com.byteplus.bytepluscc.cen.outputs.GetCenResult;
 import com.byteplus.bytepluscc.cen.outputs.GetCensResult;
 import com.byteplus.bytepluscc.cen.outputs.GetGrantInstanceResult;
 import com.byteplus.bytepluscc.cen.outputs.GetGrantInstancesResult;
+import com.byteplus.bytepluscc.cen.outputs.GetInterRegionBandwidthResult;
+import com.byteplus.bytepluscc.cen.outputs.GetInterRegionBandwidthsResult;
+import com.byteplus.bytepluscc.cen.outputs.GetRouteEntriesResult;
+import com.byteplus.bytepluscc.cen.outputs.GetRouteEntryResult;
+import com.byteplus.bytepluscc.cen.outputs.GetServiceRouteEntriesResult;
+import com.byteplus.bytepluscc.cen.outputs.GetServiceRouteEntryResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -276,5 +288,257 @@ public final class CenFunctions {
      */
     public static CompletableFuture<GetGrantInstancesResult> getGrantInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:cen/getGrantInstances:getGrantInstances", TypeShape.of(GetGrantInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthResult> getInterRegionBandwidth(GetInterRegionBandwidthArgs args) {
+        return getInterRegionBandwidth(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static CompletableFuture<GetInterRegionBandwidthResult> getInterRegionBandwidthPlain(GetInterRegionBandwidthPlainArgs args) {
+        return getInterRegionBandwidthPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthResult> getInterRegionBandwidth(GetInterRegionBandwidthArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getInterRegionBandwidth:getInterRegionBandwidth", TypeShape.of(GetInterRegionBandwidthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthResult> getInterRegionBandwidth(GetInterRegionBandwidthArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getInterRegionBandwidth:getInterRegionBandwidth", TypeShape.of(GetInterRegionBandwidthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static CompletableFuture<GetInterRegionBandwidthResult> getInterRegionBandwidthPlain(GetInterRegionBandwidthPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getInterRegionBandwidth:getInterRegionBandwidth", TypeShape.of(GetInterRegionBandwidthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthsResult> getInterRegionBandwidths() {
+        return getInterRegionBandwidths(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static CompletableFuture<GetInterRegionBandwidthsResult> getInterRegionBandwidthsPlain() {
+        return getInterRegionBandwidthsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthsResult> getInterRegionBandwidths(InvokeArgs args) {
+        return getInterRegionBandwidths(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static CompletableFuture<GetInterRegionBandwidthsResult> getInterRegionBandwidthsPlain(InvokeArgs args) {
+        return getInterRegionBandwidthsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthsResult> getInterRegionBandwidths(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getInterRegionBandwidths:getInterRegionBandwidths", TypeShape.of(GetInterRegionBandwidthsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static Output<GetInterRegionBandwidthsResult> getInterRegionBandwidths(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getInterRegionBandwidths:getInterRegionBandwidths", TypeShape.of(GetInterRegionBandwidthsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::InterRegionBandwidth
+     * 
+     */
+    public static CompletableFuture<GetInterRegionBandwidthsResult> getInterRegionBandwidthsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getInterRegionBandwidths:getInterRegionBandwidths", TypeShape.of(GetInterRegionBandwidthsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntriesResult> getRouteEntries() {
+        return getRouteEntries(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static CompletableFuture<GetRouteEntriesResult> getRouteEntriesPlain() {
+        return getRouteEntriesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntriesResult> getRouteEntries(InvokeArgs args) {
+        return getRouteEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static CompletableFuture<GetRouteEntriesResult> getRouteEntriesPlain(InvokeArgs args) {
+        return getRouteEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntriesResult> getRouteEntries(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getRouteEntries:getRouteEntries", TypeShape.of(GetRouteEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntriesResult> getRouteEntries(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getRouteEntries:getRouteEntries", TypeShape.of(GetRouteEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static CompletableFuture<GetRouteEntriesResult> getRouteEntriesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getRouteEntries:getRouteEntries", TypeShape.of(GetRouteEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntryResult> getRouteEntry(GetRouteEntryArgs args) {
+        return getRouteEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static CompletableFuture<GetRouteEntryResult> getRouteEntryPlain(GetRouteEntryPlainArgs args) {
+        return getRouteEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntryResult> getRouteEntry(GetRouteEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getRouteEntry:getRouteEntry", TypeShape.of(GetRouteEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static Output<GetRouteEntryResult> getRouteEntry(GetRouteEntryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getRouteEntry:getRouteEntry", TypeShape.of(GetRouteEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::RouteEntry
+     * 
+     */
+    public static CompletableFuture<GetRouteEntryResult> getRouteEntryPlain(GetRouteEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getRouteEntry:getRouteEntry", TypeShape.of(GetRouteEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntriesResult> getServiceRouteEntries() {
+        return getServiceRouteEntries(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static CompletableFuture<GetServiceRouteEntriesResult> getServiceRouteEntriesPlain() {
+        return getServiceRouteEntriesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntriesResult> getServiceRouteEntries(InvokeArgs args) {
+        return getServiceRouteEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static CompletableFuture<GetServiceRouteEntriesResult> getServiceRouteEntriesPlain(InvokeArgs args) {
+        return getServiceRouteEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntriesResult> getServiceRouteEntries(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getServiceRouteEntries:getServiceRouteEntries", TypeShape.of(GetServiceRouteEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntriesResult> getServiceRouteEntries(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getServiceRouteEntries:getServiceRouteEntries", TypeShape.of(GetServiceRouteEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static CompletableFuture<GetServiceRouteEntriesResult> getServiceRouteEntriesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getServiceRouteEntries:getServiceRouteEntries", TypeShape.of(GetServiceRouteEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntryResult> getServiceRouteEntry(GetServiceRouteEntryArgs args) {
+        return getServiceRouteEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static CompletableFuture<GetServiceRouteEntryResult> getServiceRouteEntryPlain(GetServiceRouteEntryPlainArgs args) {
+        return getServiceRouteEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntryResult> getServiceRouteEntry(GetServiceRouteEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getServiceRouteEntry:getServiceRouteEntry", TypeShape.of(GetServiceRouteEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static Output<GetServiceRouteEntryResult> getServiceRouteEntry(GetServiceRouteEntryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cen/getServiceRouteEntry:getServiceRouteEntry", TypeShape.of(GetServiceRouteEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CEN::ServiceRouteEntry
+     * 
+     */
+    public static CompletableFuture<GetServiceRouteEntryResult> getServiceRouteEntryPlain(GetServiceRouteEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cen/getServiceRouteEntry:getServiceRouteEntry", TypeShape.of(GetServiceRouteEntryResult.class), args, Utilities.withVersion(options));
     }
 }

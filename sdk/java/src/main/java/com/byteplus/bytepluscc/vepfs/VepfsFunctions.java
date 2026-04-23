@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.vepfs;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.vepfs.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.vepfs.inputs.GetMountServiceArgs;
+import com.byteplus.bytepluscc.vepfs.inputs.GetMountServicePlainArgs;
 import com.byteplus.bytepluscc.vepfs.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.vepfs.outputs.GetMountServiceResult;
+import com.byteplus.bytepluscc.vepfs.outputs.GetMountServicesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class VepfsFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServiceResult> getMountService(GetMountServiceArgs args) {
+        return getMountService(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static CompletableFuture<GetMountServiceResult> getMountServicePlain(GetMountServicePlainArgs args) {
+        return getMountServicePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServiceResult> getMountService(GetMountServiceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getMountService:getMountService", TypeShape.of(GetMountServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServiceResult> getMountService(GetMountServiceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getMountService:getMountService", TypeShape.of(GetMountServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static CompletableFuture<GetMountServiceResult> getMountServicePlain(GetMountServicePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getMountService:getMountService", TypeShape.of(GetMountServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServicesResult> getMountServices() {
+        return getMountServices(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static CompletableFuture<GetMountServicesResult> getMountServicesPlain() {
+        return getMountServicesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServicesResult> getMountServices(InvokeArgs args) {
+        return getMountServices(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static CompletableFuture<GetMountServicesResult> getMountServicesPlain(InvokeArgs args) {
+        return getMountServicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServicesResult> getMountServices(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getMountServices:getMountServices", TypeShape.of(GetMountServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static Output<GetMountServicesResult> getMountServices(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getMountServices:getMountServices", TypeShape.of(GetMountServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::MountService
+     * 
+     */
+    public static CompletableFuture<GetMountServicesResult> getMountServicesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getMountServices:getMountServices", TypeShape.of(GetMountServicesResult.class), args, Utilities.withVersion(options));
     }
 }

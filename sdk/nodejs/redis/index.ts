@@ -10,6 +10,11 @@ export type Account = import("./account").Account;
 export const Account: typeof import("./account").Account = null as any;
 utilities.lazyLoad(exports, ["Account"], () => require("./account"));
 
+export { AllowListArgs, AllowListState } from "./allowList";
+export type AllowList = import("./allowList").AllowList;
+export const AllowList: typeof import("./allowList").AllowList = null as any;
+utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
+
 export { EndpointPublicAddressArgs, EndpointPublicAddressState } from "./endpointPublicAddress";
 export type EndpointPublicAddress = import("./endpointPublicAddress").EndpointPublicAddress;
 export const EndpointPublicAddress: typeof import("./endpointPublicAddress").EndpointPublicAddress = null as any;
@@ -24,6 +29,16 @@ export { GetAccountsResult } from "./getAccounts";
 export const getAccounts: typeof import("./getAccounts").getAccounts = null as any;
 export const getAccountsOutput: typeof import("./getAccounts").getAccountsOutput = null as any;
 utilities.lazyLoad(exports, ["getAccounts","getAccountsOutput"], () => require("./getAccounts"));
+
+export { GetAllowListArgs, GetAllowListResult, GetAllowListOutputArgs } from "./getAllowList";
+export const getAllowList: typeof import("./getAllowList").getAllowList = null as any;
+export const getAllowListOutput: typeof import("./getAllowList").getAllowListOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowList","getAllowListOutput"], () => require("./getAllowList"));
+
+export { GetAllowListsResult } from "./getAllowLists";
+export const getAllowLists: typeof import("./getAllowLists").getAllowLists = null as any;
+export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
 
 export { GetEndpointPublicAddressArgs, GetEndpointPublicAddressResult, GetEndpointPublicAddressOutputArgs } from "./getEndpointPublicAddress";
 export const getEndpointPublicAddress: typeof import("./getEndpointPublicAddress").getEndpointPublicAddress = null as any;
@@ -57,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:redis/account:Account":
                 return new Account(name, <any>undefined, { urn })
+            case "bytepluscc:redis/allowList:AllowList":
+                return new AllowList(name, <any>undefined, { urn })
             case "bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress":
                 return new EndpointPublicAddress(name, <any>undefined, { urn })
             case "bytepluscc:redis/instance:Instance":
@@ -67,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/account", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "redis/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/endpointPublicAddress", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/instance", _module)

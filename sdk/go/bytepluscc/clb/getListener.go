@@ -64,6 +64,8 @@ type LookupListenerResult struct {
 	CreatedTime string `pulumi:"createdTime"`
 	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
 	Description string `pulumi:"description"`
+	// List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+	DomainExtensions []GetListenerDomainExtension `pulumi:"domainExtensions"`
 	// Enable listener. on (default): enabled. off: disabled.
 	Enabled string `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
@@ -241,6 +243,11 @@ func (o LookupListenerResultOutput) CreatedTime() pulumi.StringOutput {
 // Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
 func (o LookupListenerResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+func (o LookupListenerResultOutput) DomainExtensions() GetListenerDomainExtensionArrayOutput {
+	return o.ApplyT(func(v LookupListenerResult) []GetListenerDomainExtension { return v.DomainExtensions }).(GetListenerDomainExtensionArrayOutput)
 }
 
 // Enable listener. on (default): enabled. off: disabled.

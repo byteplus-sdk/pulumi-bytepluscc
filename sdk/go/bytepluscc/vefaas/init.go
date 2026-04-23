@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Function{}
 	case "bytepluscc:vefaas/kafkaTrigger:KafkaTrigger":
 		r = &KafkaTrigger{}
+	case "bytepluscc:vefaas/release:Release":
+		r = &Release{}
 	case "bytepluscc:vefaas/sandbox:Sandbox":
 		r = &Sandbox{}
 	case "bytepluscc:vefaas/timer:Timer":
@@ -50,6 +52,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vefaas/kafkaTrigger",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vefaas/release",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

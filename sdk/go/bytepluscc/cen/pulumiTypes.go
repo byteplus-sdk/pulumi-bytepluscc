@@ -349,6 +349,121 @@ func (o CenTagArrayOutput) Index(i pulumi.IntInput) CenTagOutput {
 	}).(CenTagOutput)
 }
 
+type ServiceRouteEntryPublishToInstance struct {
+	// Network instance ID for published cloud service access route.
+	InstanceId *string `pulumi:"instanceId"`
+	// Region for published cloud service access route.
+	InstanceRegionId *string `pulumi:"instanceRegionId"`
+	// Network instance type for published cloud service access route.
+	InstanceType *string `pulumi:"instanceType"`
+}
+
+// ServiceRouteEntryPublishToInstanceInput is an input type that accepts ServiceRouteEntryPublishToInstanceArgs and ServiceRouteEntryPublishToInstanceOutput values.
+// You can construct a concrete instance of `ServiceRouteEntryPublishToInstanceInput` via:
+//
+//	ServiceRouteEntryPublishToInstanceArgs{...}
+type ServiceRouteEntryPublishToInstanceInput interface {
+	pulumi.Input
+
+	ToServiceRouteEntryPublishToInstanceOutput() ServiceRouteEntryPublishToInstanceOutput
+	ToServiceRouteEntryPublishToInstanceOutputWithContext(context.Context) ServiceRouteEntryPublishToInstanceOutput
+}
+
+type ServiceRouteEntryPublishToInstanceArgs struct {
+	// Network instance ID for published cloud service access route.
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Region for published cloud service access route.
+	InstanceRegionId pulumi.StringPtrInput `pulumi:"instanceRegionId"`
+	// Network instance type for published cloud service access route.
+	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
+}
+
+func (ServiceRouteEntryPublishToInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (i ServiceRouteEntryPublishToInstanceArgs) ToServiceRouteEntryPublishToInstanceOutput() ServiceRouteEntryPublishToInstanceOutput {
+	return i.ToServiceRouteEntryPublishToInstanceOutputWithContext(context.Background())
+}
+
+func (i ServiceRouteEntryPublishToInstanceArgs) ToServiceRouteEntryPublishToInstanceOutputWithContext(ctx context.Context) ServiceRouteEntryPublishToInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceRouteEntryPublishToInstanceOutput)
+}
+
+// ServiceRouteEntryPublishToInstanceArrayInput is an input type that accepts ServiceRouteEntryPublishToInstanceArray and ServiceRouteEntryPublishToInstanceArrayOutput values.
+// You can construct a concrete instance of `ServiceRouteEntryPublishToInstanceArrayInput` via:
+//
+//	ServiceRouteEntryPublishToInstanceArray{ ServiceRouteEntryPublishToInstanceArgs{...} }
+type ServiceRouteEntryPublishToInstanceArrayInput interface {
+	pulumi.Input
+
+	ToServiceRouteEntryPublishToInstanceArrayOutput() ServiceRouteEntryPublishToInstanceArrayOutput
+	ToServiceRouteEntryPublishToInstanceArrayOutputWithContext(context.Context) ServiceRouteEntryPublishToInstanceArrayOutput
+}
+
+type ServiceRouteEntryPublishToInstanceArray []ServiceRouteEntryPublishToInstanceInput
+
+func (ServiceRouteEntryPublishToInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (i ServiceRouteEntryPublishToInstanceArray) ToServiceRouteEntryPublishToInstanceArrayOutput() ServiceRouteEntryPublishToInstanceArrayOutput {
+	return i.ToServiceRouteEntryPublishToInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceRouteEntryPublishToInstanceArray) ToServiceRouteEntryPublishToInstanceArrayOutputWithContext(ctx context.Context) ServiceRouteEntryPublishToInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceRouteEntryPublishToInstanceArrayOutput)
+}
+
+type ServiceRouteEntryPublishToInstanceOutput struct{ *pulumi.OutputState }
+
+func (ServiceRouteEntryPublishToInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (o ServiceRouteEntryPublishToInstanceOutput) ToServiceRouteEntryPublishToInstanceOutput() ServiceRouteEntryPublishToInstanceOutput {
+	return o
+}
+
+func (o ServiceRouteEntryPublishToInstanceOutput) ToServiceRouteEntryPublishToInstanceOutputWithContext(ctx context.Context) ServiceRouteEntryPublishToInstanceOutput {
+	return o
+}
+
+// Network instance ID for published cloud service access route.
+func (o ServiceRouteEntryPublishToInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceRouteEntryPublishToInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Region for published cloud service access route.
+func (o ServiceRouteEntryPublishToInstanceOutput) InstanceRegionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceRouteEntryPublishToInstance) *string { return v.InstanceRegionId }).(pulumi.StringPtrOutput)
+}
+
+// Network instance type for published cloud service access route.
+func (o ServiceRouteEntryPublishToInstanceOutput) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceRouteEntryPublishToInstance) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
+}
+
+type ServiceRouteEntryPublishToInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceRouteEntryPublishToInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (o ServiceRouteEntryPublishToInstanceArrayOutput) ToServiceRouteEntryPublishToInstanceArrayOutput() ServiceRouteEntryPublishToInstanceArrayOutput {
+	return o
+}
+
+func (o ServiceRouteEntryPublishToInstanceArrayOutput) ToServiceRouteEntryPublishToInstanceArrayOutputWithContext(ctx context.Context) ServiceRouteEntryPublishToInstanceArrayOutput {
+	return o
+}
+
+func (o ServiceRouteEntryPublishToInstanceArrayOutput) Index(i pulumi.IntInput) ServiceRouteEntryPublishToInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceRouteEntryPublishToInstance {
+		return vs[0].([]ServiceRouteEntryPublishToInstance)[vs[1].(int)]
+	}).(ServiceRouteEntryPublishToInstanceOutput)
+}
+
 type GetBandwidthPackageTag struct {
 	// Tag key for user tags. Parameter   - N: indicates the tag key index, value range: 1–20. Use & to separate multiple tag keys. Cannot start with sys:, in any case. Length range: 1–128 characters. Supports all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), hyphens (-), and @ (@). If a tag key starts or ends with a space, the system automatically removes it.
 	Key string `pulumi:"key"`
@@ -712,6 +827,121 @@ func (o GetCenTagArrayOutput) Index(i pulumi.IntInput) GetCenTagOutput {
 	}).(GetCenTagOutput)
 }
 
+type GetServiceRouteEntryPublishToInstance struct {
+	// Network instance ID for published cloud service access route.
+	InstanceId string `pulumi:"instanceId"`
+	// Region for published cloud service access route.
+	InstanceRegionId string `pulumi:"instanceRegionId"`
+	// Network instance type for published cloud service access route.
+	InstanceType string `pulumi:"instanceType"`
+}
+
+// GetServiceRouteEntryPublishToInstanceInput is an input type that accepts GetServiceRouteEntryPublishToInstanceArgs and GetServiceRouteEntryPublishToInstanceOutput values.
+// You can construct a concrete instance of `GetServiceRouteEntryPublishToInstanceInput` via:
+//
+//	GetServiceRouteEntryPublishToInstanceArgs{...}
+type GetServiceRouteEntryPublishToInstanceInput interface {
+	pulumi.Input
+
+	ToGetServiceRouteEntryPublishToInstanceOutput() GetServiceRouteEntryPublishToInstanceOutput
+	ToGetServiceRouteEntryPublishToInstanceOutputWithContext(context.Context) GetServiceRouteEntryPublishToInstanceOutput
+}
+
+type GetServiceRouteEntryPublishToInstanceArgs struct {
+	// Network instance ID for published cloud service access route.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Region for published cloud service access route.
+	InstanceRegionId pulumi.StringInput `pulumi:"instanceRegionId"`
+	// Network instance type for published cloud service access route.
+	InstanceType pulumi.StringInput `pulumi:"instanceType"`
+}
+
+func (GetServiceRouteEntryPublishToInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (i GetServiceRouteEntryPublishToInstanceArgs) ToGetServiceRouteEntryPublishToInstanceOutput() GetServiceRouteEntryPublishToInstanceOutput {
+	return i.ToGetServiceRouteEntryPublishToInstanceOutputWithContext(context.Background())
+}
+
+func (i GetServiceRouteEntryPublishToInstanceArgs) ToGetServiceRouteEntryPublishToInstanceOutputWithContext(ctx context.Context) GetServiceRouteEntryPublishToInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceRouteEntryPublishToInstanceOutput)
+}
+
+// GetServiceRouteEntryPublishToInstanceArrayInput is an input type that accepts GetServiceRouteEntryPublishToInstanceArray and GetServiceRouteEntryPublishToInstanceArrayOutput values.
+// You can construct a concrete instance of `GetServiceRouteEntryPublishToInstanceArrayInput` via:
+//
+//	GetServiceRouteEntryPublishToInstanceArray{ GetServiceRouteEntryPublishToInstanceArgs{...} }
+type GetServiceRouteEntryPublishToInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceRouteEntryPublishToInstanceArrayOutput() GetServiceRouteEntryPublishToInstanceArrayOutput
+	ToGetServiceRouteEntryPublishToInstanceArrayOutputWithContext(context.Context) GetServiceRouteEntryPublishToInstanceArrayOutput
+}
+
+type GetServiceRouteEntryPublishToInstanceArray []GetServiceRouteEntryPublishToInstanceInput
+
+func (GetServiceRouteEntryPublishToInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (i GetServiceRouteEntryPublishToInstanceArray) ToGetServiceRouteEntryPublishToInstanceArrayOutput() GetServiceRouteEntryPublishToInstanceArrayOutput {
+	return i.ToGetServiceRouteEntryPublishToInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceRouteEntryPublishToInstanceArray) ToGetServiceRouteEntryPublishToInstanceArrayOutputWithContext(ctx context.Context) GetServiceRouteEntryPublishToInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceRouteEntryPublishToInstanceArrayOutput)
+}
+
+type GetServiceRouteEntryPublishToInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetServiceRouteEntryPublishToInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (o GetServiceRouteEntryPublishToInstanceOutput) ToGetServiceRouteEntryPublishToInstanceOutput() GetServiceRouteEntryPublishToInstanceOutput {
+	return o
+}
+
+func (o GetServiceRouteEntryPublishToInstanceOutput) ToGetServiceRouteEntryPublishToInstanceOutputWithContext(ctx context.Context) GetServiceRouteEntryPublishToInstanceOutput {
+	return o
+}
+
+// Network instance ID for published cloud service access route.
+func (o GetServiceRouteEntryPublishToInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceRouteEntryPublishToInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Region for published cloud service access route.
+func (o GetServiceRouteEntryPublishToInstanceOutput) InstanceRegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceRouteEntryPublishToInstance) string { return v.InstanceRegionId }).(pulumi.StringOutput)
+}
+
+// Network instance type for published cloud service access route.
+func (o GetServiceRouteEntryPublishToInstanceOutput) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceRouteEntryPublishToInstance) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+type GetServiceRouteEntryPublishToInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceRouteEntryPublishToInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceRouteEntryPublishToInstance)(nil)).Elem()
+}
+
+func (o GetServiceRouteEntryPublishToInstanceArrayOutput) ToGetServiceRouteEntryPublishToInstanceArrayOutput() GetServiceRouteEntryPublishToInstanceArrayOutput {
+	return o
+}
+
+func (o GetServiceRouteEntryPublishToInstanceArrayOutput) ToGetServiceRouteEntryPublishToInstanceArrayOutputWithContext(ctx context.Context) GetServiceRouteEntryPublishToInstanceArrayOutput {
+	return o
+}
+
+func (o GetServiceRouteEntryPublishToInstanceArrayOutput) Index(i pulumi.IntInput) GetServiceRouteEntryPublishToInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceRouteEntryPublishToInstance {
+		return vs[0].([]GetServiceRouteEntryPublishToInstance)[vs[1].(int)]
+	}).(GetServiceRouteEntryPublishToInstanceOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BandwidthPackageTagInput)(nil)).Elem(), BandwidthPackageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BandwidthPackageTagArrayInput)(nil)).Elem(), BandwidthPackageTagArray{})
@@ -719,22 +949,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CenInstanceArrayInput)(nil)).Elem(), CenInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenTagInput)(nil)).Elem(), CenTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenTagArrayInput)(nil)).Elem(), CenTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceRouteEntryPublishToInstanceInput)(nil)).Elem(), ServiceRouteEntryPublishToInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceRouteEntryPublishToInstanceArrayInput)(nil)).Elem(), ServiceRouteEntryPublishToInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBandwidthPackageTagInput)(nil)).Elem(), GetBandwidthPackageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBandwidthPackageTagArrayInput)(nil)).Elem(), GetBandwidthPackageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenInstanceInput)(nil)).Elem(), GetCenInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenInstanceArrayInput)(nil)).Elem(), GetCenInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenTagInput)(nil)).Elem(), GetCenTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenTagArrayInput)(nil)).Elem(), GetCenTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceRouteEntryPublishToInstanceInput)(nil)).Elem(), GetServiceRouteEntryPublishToInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceRouteEntryPublishToInstanceArrayInput)(nil)).Elem(), GetServiceRouteEntryPublishToInstanceArray{})
 	pulumi.RegisterOutputType(BandwidthPackageTagOutput{})
 	pulumi.RegisterOutputType(BandwidthPackageTagArrayOutput{})
 	pulumi.RegisterOutputType(CenInstanceOutput{})
 	pulumi.RegisterOutputType(CenInstanceArrayOutput{})
 	pulumi.RegisterOutputType(CenTagOutput{})
 	pulumi.RegisterOutputType(CenTagArrayOutput{})
+	pulumi.RegisterOutputType(ServiceRouteEntryPublishToInstanceOutput{})
+	pulumi.RegisterOutputType(ServiceRouteEntryPublishToInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetBandwidthPackageTagOutput{})
 	pulumi.RegisterOutputType(GetBandwidthPackageTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCenInstanceOutput{})
 	pulumi.RegisterOutputType(GetCenInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetCenTagOutput{})
 	pulumi.RegisterOutputType(GetCenTagArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceRouteEntryPublishToInstanceOutput{})
+	pulumi.RegisterOutputType(GetServiceRouteEntryPublishToInstanceArrayOutput{})
 }

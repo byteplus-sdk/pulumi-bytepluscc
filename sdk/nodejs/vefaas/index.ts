@@ -30,6 +30,16 @@ export const getKafkaTriggers: typeof import("./getKafkaTriggers").getKafkaTrigg
 export const getKafkaTriggersOutput: typeof import("./getKafkaTriggers").getKafkaTriggersOutput = null as any;
 utilities.lazyLoad(exports, ["getKafkaTriggers","getKafkaTriggersOutput"], () => require("./getKafkaTriggers"));
 
+export { GetReleaseArgs, GetReleaseResult, GetReleaseOutputArgs } from "./getRelease";
+export const getRelease: typeof import("./getRelease").getRelease = null as any;
+export const getReleaseOutput: typeof import("./getRelease").getReleaseOutput = null as any;
+utilities.lazyLoad(exports, ["getRelease","getReleaseOutput"], () => require("./getRelease"));
+
+export { GetReleasesResult } from "./getReleases";
+export const getReleases: typeof import("./getReleases").getReleases = null as any;
+export const getReleasesOutput: typeof import("./getReleases").getReleasesOutput = null as any;
+utilities.lazyLoad(exports, ["getReleases","getReleasesOutput"], () => require("./getReleases"));
+
 export { GetSandboxArgs, GetSandboxResult, GetSandboxOutputArgs } from "./getSandbox";
 export const getSandbox: typeof import("./getSandbox").getSandbox = null as any;
 export const getSandboxOutput: typeof import("./getSandbox").getSandboxOutput = null as any;
@@ -55,6 +65,11 @@ export type KafkaTrigger = import("./kafkaTrigger").KafkaTrigger;
 export const KafkaTrigger: typeof import("./kafkaTrigger").KafkaTrigger = null as any;
 utilities.lazyLoad(exports, ["KafkaTrigger"], () => require("./kafkaTrigger"));
 
+export { ReleaseArgs, ReleaseState } from "./release";
+export type Release = import("./release").Release;
+export const Release: typeof import("./release").Release = null as any;
+utilities.lazyLoad(exports, ["Release"], () => require("./release"));
+
 export { SandboxArgs, SandboxState } from "./sandbox";
 export type Sandbox = import("./sandbox").Sandbox;
 export const Sandbox: typeof import("./sandbox").Sandbox = null as any;
@@ -74,6 +89,8 @@ const _module = {
                 return new Function(name, <any>undefined, { urn })
             case "bytepluscc:vefaas/kafkaTrigger:KafkaTrigger":
                 return new KafkaTrigger(name, <any>undefined, { urn })
+            case "bytepluscc:vefaas/release:Release":
+                return new Release(name, <any>undefined, { urn })
             case "bytepluscc:vefaas/sandbox:Sandbox":
                 return new Sandbox(name, <any>undefined, { urn })
             case "bytepluscc:vefaas/timer:Timer":
@@ -85,5 +102,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/function", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/kafkaTrigger", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/release", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/sandbox", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/timer", _module)

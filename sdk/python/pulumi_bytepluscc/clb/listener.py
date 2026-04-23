@@ -42,6 +42,7 @@ class ListenerArgs:
                  cookie: Optional[pulumi.Input[builtins.str]] = None,
                  cps: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 domain_extensions: Optional[pulumi.Input[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]] = None,
                  enabled: Optional[pulumi.Input[builtins.str]] = None,
                  end_port: Optional[pulumi.Input[builtins.int]] = None,
                  established_timeout: Optional[pulumi.Input[builtins.int]] = None,
@@ -138,6 +139,8 @@ class ListenerArgs:
             pulumi.set(__self__, "cps", cps)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if domain_extensions is not None:
+            pulumi.set(__self__, "domain_extensions", domain_extensions)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
         if end_port is not None:
@@ -418,6 +421,15 @@ class ListenerArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="domainExtensions")
+    def domain_extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]]:
+        return pulumi.get(self, "domain_extensions")
+
+    @domain_extensions.setter
+    def domain_extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]]):
+        pulumi.set(self, "domain_extensions", value)
+
+    @property
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -663,6 +675,7 @@ class _ListenerState:
                  cps: Optional[pulumi.Input[builtins.int]] = None,
                  created_time: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 domain_extensions: Optional[pulumi.Input[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]] = None,
                  enabled: Optional[pulumi.Input[builtins.str]] = None,
                  end_port: Optional[pulumi.Input[builtins.int]] = None,
                  established_timeout: Optional[pulumi.Input[builtins.int]] = None,
@@ -772,6 +785,8 @@ class _ListenerState:
             pulumi.set(__self__, "created_time", created_time)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if domain_extensions is not None:
+            pulumi.set(__self__, "domain_extensions", domain_extensions)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
         if end_port is not None:
@@ -1032,6 +1047,15 @@ class _ListenerState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="domainExtensions")
+    def domain_extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]]:
+        return pulumi.get(self, "domain_extensions")
+
+    @domain_extensions.setter
+    def domain_extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]]):
+        pulumi.set(self, "domain_extensions", value)
 
     @property
     @pulumi.getter
@@ -1389,6 +1413,7 @@ class Listener(pulumi.CustomResource):
                  cookie: Optional[pulumi.Input[builtins.str]] = None,
                  cps: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 domain_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ListenerDomainExtensionArgs', 'ListenerDomainExtensionArgsDict']]]]] = None,
                  enabled: Optional[pulumi.Input[builtins.str]] = None,
                  end_port: Optional[pulumi.Input[builtins.int]] = None,
                  established_timeout: Optional[pulumi.Input[builtins.int]] = None,
@@ -1509,6 +1534,7 @@ class Listener(pulumi.CustomResource):
                  cookie: Optional[pulumi.Input[builtins.str]] = None,
                  cps: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 domain_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ListenerDomainExtensionArgs', 'ListenerDomainExtensionArgsDict']]]]] = None,
                  enabled: Optional[pulumi.Input[builtins.str]] = None,
                  end_port: Optional[pulumi.Input[builtins.int]] = None,
                  established_timeout: Optional[pulumi.Input[builtins.int]] = None,
@@ -1557,6 +1583,7 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["cookie"] = cookie
             __props__.__dict__["cps"] = cps
             __props__.__dict__["description"] = description
+            __props__.__dict__["domain_extensions"] = domain_extensions
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["end_port"] = end_port
             __props__.__dict__["established_timeout"] = established_timeout
@@ -1621,6 +1648,7 @@ class Listener(pulumi.CustomResource):
             cps: Optional[pulumi.Input[builtins.int]] = None,
             created_time: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
+            domain_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ListenerDomainExtensionArgs', 'ListenerDomainExtensionArgsDict']]]]] = None,
             enabled: Optional[pulumi.Input[builtins.str]] = None,
             end_port: Optional[pulumi.Input[builtins.int]] = None,
             established_timeout: Optional[pulumi.Input[builtins.int]] = None,
@@ -1722,6 +1750,7 @@ class Listener(pulumi.CustomResource):
         __props__.__dict__["cps"] = cps
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["description"] = description
+        __props__.__dict__["domain_extensions"] = domain_extensions
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["end_port"] = end_port
         __props__.__dict__["established_timeout"] = established_timeout
@@ -1887,6 +1916,11 @@ class Listener(pulumi.CustomResource):
         Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="domainExtensions")
+    def domain_extensions(self) -> pulumi.Output[Sequence['outputs.ListenerDomainExtension']]:
+        return pulumi.get(self, "domain_extensions")
 
     @property
     @pulumi.getter

@@ -8415,6 +8415,36 @@ export namespace cen {
         value: string;
     }
 
+    export interface GetServiceRouteEntryPublishToInstance {
+        /**
+         * Network instance ID for published cloud service access route.
+         */
+        instanceId: string;
+        /**
+         * Region for published cloud service access route.
+         */
+        instanceRegionId: string;
+        /**
+         * Network instance type for published cloud service access route.
+         */
+        instanceType: string;
+    }
+
+    export interface ServiceRouteEntryPublishToInstance {
+        /**
+         * Network instance ID for published cloud service access route.
+         */
+        instanceId: string;
+        /**
+         * Region for published cloud service access route.
+         */
+        instanceRegionId: string;
+        /**
+         * Network instance type for published cloud service access route.
+         */
+        instanceType: string;
+    }
+
 }
 
 export namespace clb {
@@ -8784,6 +8814,25 @@ export namespace clb {
          * Tag value
          */
         value: string;
+    }
+
+    export interface GetListenerDomainExtension {
+        /**
+         * Certificate ID of the extended domain name.
+         */
+        certCenterCertificateId: string;
+        /**
+         * Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+         */
+        certificateSource: string;
+        /**
+         * Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+         */
+        domain: string;
+        /**
+         * Extended domain name ID.
+         */
+        domainExtensionId: string;
     }
 
     export interface GetListenerHealthCheck {
@@ -9168,6 +9217,21 @@ export namespace clb {
          * Bound tag value information.
          */
         value: string;
+    }
+
+    export interface ListenerDomainExtension {
+        /**
+         * Certificate ID of the extended domain name.
+         */
+        certCenterCertificateId: string;
+        /**
+         * Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+         */
+        certificateSource: string;
+        /**
+         * Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+         */
+        domain: string;
     }
 
     export interface ListenerHealthCheck {
@@ -16188,10 +16252,6 @@ export namespace privatelink {
 
     export interface EndpointServiceResource {
         /**
-         * Endpoint service ID.
-         */
-        instanceId: string;
-        /**
          * Service resource ID to be added to the endpoint service.
          */
         resourceId: string;
@@ -16233,13 +16293,13 @@ export namespace privatelink {
 
     export interface GetEndpointServiceResource {
         /**
-         * Endpoint service ID.
-         */
-        instanceId: string;
-        /**
          * Service resource ID to be added to the endpoint service.
          */
         resourceId: string;
+        /**
+         * Type of service resource.
+         */
+        resourceType: string;
         /**
          * Availability zone where the load balancer provides service.
          */
@@ -16255,6 +16315,56 @@ export namespace privatelink {
          * Tag value of the endpoint service tag.
          */
         value: string;
+    }
+
+    export interface GetVpcEndpointConnectionResourcesAllocate {
+        /**
+         * Specify the service resource for the endpoint connection
+         */
+        resourceId: string;
+        /**
+         * Availability zone ID of the service resource to be specified
+         */
+        zoneId: string;
+    }
+
+    export interface GetVpcEndpointConnectionZone {
+        /**
+         * Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+         */
+        networkInterfaceId: string;
+        /**
+         * The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+         */
+        networkInterfaceIp: string;
+        /**
+         * Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+         */
+        networkInterfaceIpv6: string;
+        /**
+         * Service resource ID
+         */
+        resourceId: string;
+        /**
+         * Status of the service resource
+         */
+        serviceStatus: string;
+        /**
+         * ID of the subnet to which the endpoint network interface belongs
+         */
+        subnetId: string;
+        /**
+         * The domain name of the terminal node availability zone.
+         */
+        zoneDomain: string;
+        /**
+         * Endpoint zone ID
+         */
+        zoneId: string;
+        /**
+         * Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+         */
+        zoneStatus: string;
     }
 
     export interface GetVpcEndpointTag {
@@ -16303,6 +16413,56 @@ export namespace privatelink {
         zoneId: string;
         /**
          * Status of the endpoint node's availability zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed.
+         */
+        zoneStatus: string;
+    }
+
+    export interface VpcEndpointConnectionResourcesAllocate {
+        /**
+         * Specify the service resource for the endpoint connection
+         */
+        resourceId: string;
+        /**
+         * Availability zone ID of the service resource to be specified
+         */
+        zoneId: string;
+    }
+
+    export interface VpcEndpointConnectionZone {
+        /**
+         * Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+         */
+        networkInterfaceId: string;
+        /**
+         * The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+         */
+        networkInterfaceIp: string;
+        /**
+         * Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+         */
+        networkInterfaceIpv6: string;
+        /**
+         * Service resource ID
+         */
+        resourceId: string;
+        /**
+         * Status of the service resource
+         */
+        serviceStatus: string;
+        /**
+         * ID of the subnet to which the endpoint network interface belongs
+         */
+        subnetId: string;
+        /**
+         * The domain name of the terminal node availability zone.
+         */
+        zoneDomain: string;
+        /**
+         * Endpoint zone ID
+         */
+        zoneId: string;
+        /**
+         * Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
          */
         zoneStatus: string;
     }
@@ -16477,6 +16637,28 @@ export namespace privatezone {
 }
 
 export namespace rabbitmq {
+    export interface AllowListAssociatedInstance {
+        /**
+         * Instance ID
+         */
+        instanceId: string;
+    }
+
+    export interface GetAllowListAssociatedInstance {
+        /**
+         * Instance ID
+         */
+        instanceId: string;
+        /**
+         * Instance Name
+         */
+        instanceName: string;
+        /**
+         * VPC ID of the instance
+         */
+        vpc: string;
+    }
+
     export interface GetInstanceChargeDetail {
         /**
          * Whether to automatically renew the subscription instance after expiration.
@@ -18799,6 +18981,74 @@ export namespace rdspostgresql {
 }
 
 export namespace redis {
+    export interface AllowListAssociatedInstance {
+        /**
+         * Instance ID bound to the current allowlist
+         */
+        instanceId: string;
+        /**
+         * Instance names bound to the current allowlist
+         */
+        instanceName: string;
+        /**
+         * Project name associated with the instance
+         */
+        projectName: string;
+        /**
+         * Private network ID associated with the instance
+         */
+        vpc: string;
+    }
+
+    export interface AllowListSecurityGroupBindInfo {
+        /**
+         * Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+         */
+        bindMode: string;
+        /**
+         * Associated security group ID
+         */
+        securityGroupId: string;
+    }
+
+    export interface GetAllowListAssociatedInstance {
+        /**
+         * Instance ID bound to the current allowlist
+         */
+        instanceId: string;
+        /**
+         * Instance names bound to the current allowlist
+         */
+        instanceName: string;
+        /**
+         * Project name associated with the instance
+         */
+        projectName: string;
+        /**
+         * Private network ID associated with the instance
+         */
+        vpc: string;
+    }
+
+    export interface GetAllowListSecurityGroupBindInfo {
+        /**
+         * Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+         */
+        bindMode: string;
+        /**
+         * IP list of security groups associated with the allowlist
+         */
+        ipLists: string[];
+        /**
+         * Associated security group ID
+         */
+        securityGroupId: string;
+        /**
+         * Name of the associated security group
+         */
+        securityGroupName: string;
+    }
+
     export interface GetInstanceCapacity {
         /**
          * Total memory capacity of the current instance. Unit: MiB.
@@ -18979,6 +19229,115 @@ export namespace redis {
 }
 
 export namespace storageebs {
+    export interface GetSnapshotGroupSnapshot {
+        /**
+         * Snapshot creation time
+         */
+        creationTime: string;
+        /**
+         * Snapshot description
+         */
+        description: string;
+        /**
+         * Image ID
+         */
+        imageId: string;
+        /**
+         * Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+         */
+        instantAccess: boolean;
+        /**
+         * Dump progress
+         */
+        progress: number;
+        /**
+         * Project of the snapshot
+         */
+        projectName: string;
+        /**
+         * Retention days for automatic snapshots
+         */
+        retentionDays: number;
+        /**
+         * Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+         */
+        shared: boolean;
+        /**
+         * Snapshot consistency group ID
+         */
+        snapshotGroupId: string;
+        /**
+         * Snapshot ID
+         */
+        snapshotId: string;
+        /**
+         * Snapshot name
+         */
+        snapshotName: string;
+        /**
+         * Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+         */
+        snapshotType: string;
+        /**
+         * Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+         */
+        status: string;
+        /**
+         * Tag information
+         */
+        tags: outputs.storageebs.GetSnapshotGroupSnapshotTag[];
+        /**
+         * Cloud disk ID
+         */
+        volumeId: string;
+        /**
+         * Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+         */
+        volumeKind: string;
+        /**
+         * Cloud disk name
+         */
+        volumeName: string;
+        /**
+         * Cloud disk size (GiB)
+         */
+        volumeSize: number;
+        /**
+         * Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+         */
+        volumeStatus: string;
+        /**
+         * Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+         */
+        volumeType: string;
+        /**
+         * Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+         */
+        zoneId: string;
+    }
+
+    export interface GetSnapshotGroupSnapshotTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetSnapshotGroupTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
     export interface GetSnapshotTag {
         /**
          * User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
@@ -19036,6 +19395,112 @@ export namespace storageebs {
          * The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
          */
         throughput: number;
+    }
+
+    export interface SnapshotGroupSnapshot {
+        /**
+         * Snapshot creation time
+         */
+        creationTime: string;
+        /**
+         * Snapshot description
+         */
+        description: string;
+        /**
+         * Image ID
+         */
+        imageId: string;
+        /**
+         * Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+         */
+        instantAccess: boolean;
+        /**
+         * Dump progress
+         */
+        progress: number;
+        /**
+         * Project of the snapshot
+         */
+        projectName: string;
+        /**
+         * Retention days for automatic snapshots
+         */
+        retentionDays: number;
+        /**
+         * Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+         */
+        shared: boolean;
+        /**
+         * Snapshot consistency group ID
+         */
+        snapshotGroupId: string;
+        /**
+         * Snapshot ID
+         */
+        snapshotId: string;
+        /**
+         * Snapshot name
+         */
+        snapshotName: string;
+        /**
+         * Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+         */
+        snapshotType: string;
+        /**
+         * Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+         */
+        status: string;
+        tags: outputs.storageebs.SnapshotGroupSnapshotTag[];
+        /**
+         * Cloud disk ID
+         */
+        volumeId: string;
+        /**
+         * Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+         */
+        volumeKind: string;
+        /**
+         * Cloud disk name
+         */
+        volumeName: string;
+        /**
+         * Cloud disk size (GiB)
+         */
+        volumeSize: number;
+        /**
+         * Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+         */
+        volumeStatus: string;
+        /**
+         * Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+         */
+        volumeType: string;
+        /**
+         * Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+         */
+        zoneId: string;
+    }
+
+    export interface SnapshotGroupSnapshotTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface SnapshotGroupTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
     }
 
     export interface SnapshotTag {
@@ -19100,6 +19565,331 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface AlarmNotifyGroupNoticeRule {
+        /**
+         * Whether there is an end node afterwards.
+         */
+        hasEndNode: boolean;
+        /**
+         * Condition for whether to proceed to the next level.
+         */
+        hasNext: boolean;
+        receiverInfos: outputs.tls.AlarmNotifyGroupNoticeRuleReceiverInfo[];
+        /**
+         * Rule node. JSON format.
+         */
+        ruleNode: string;
+    }
+
+    export interface AlarmNotifyGroupNoticeRuleReceiverInfo {
+        /**
+         * Alarm content template ID.
+         */
+        alarmContentTemplateId: string;
+        /**
+         * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtGroups: string[];
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtUsers: string[];
+        /**
+         * Alarm webhook integration configuration ID.
+         */
+        alarmWebhookIntegrationId: string;
+        /**
+         * Name of the alarm Webhook integration configuration.
+         */
+        alarmWebhookIntegrationName: string;
+        /**
+         * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookIsAtAll: boolean;
+        /**
+         * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
+         */
+        endTime: string;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
+         */
+        generalWebhookBody: string;
+        generalWebhookHeaders: outputs.tls.AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader[];
+        /**
+         * Custom callback method for the interface. Only POST or PUT is supported.
+         */
+        generalWebhookMethod: string;
+        /**
+         * Custom callback URL for the interface.
+         */
+        generalWebhookUrl: string;
+        /**
+         * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
+         */
+        receiverChannels: string[];
+        /**
+         * IAM user or user group name.
+         */
+        receiverNames: string[];
+        /**
+         * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
+         */
+        receiverType: string;
+        /**
+         * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime: string;
+    }
+
+    export interface AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader {
+        /**
+         * Custom request header key.
+         */
+        key: string;
+        /**
+         * Custom request header value.
+         */
+        value: string;
+    }
+
+    export interface AlarmNotifyGroupReceiver {
+        /**
+         * Alarm content template ID.
+         */
+        alarmContentTemplateId: string;
+        /**
+         * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtGroups: string[];
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtUsers: string[];
+        /**
+         * Alarm webhook integration configuration ID.
+         */
+        alarmWebhookIntegrationId: string;
+        /**
+         * Name of the alarm Webhook integration configuration.
+         */
+        alarmWebhookIntegrationName: string;
+        /**
+         * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookIsAtAll: boolean;
+        /**
+         * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
+         */
+        endTime: string;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
+         */
+        generalWebhookBody: string;
+        generalWebhookHeaders: outputs.tls.AlarmNotifyGroupReceiverGeneralWebhookHeader[];
+        /**
+         * Custom callback method for the interface. Only POST or PUT is supported.
+         */
+        generalWebhookMethod: string;
+        /**
+         * Custom callback URL for the interface.
+         */
+        generalWebhookUrl: string;
+        /**
+         * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
+         */
+        receiverChannels: string[];
+        /**
+         * IAM user or user group name.
+         */
+        receiverNames: string[];
+        /**
+         * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
+         */
+        receiverType: string;
+        /**
+         * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime: string;
+    }
+
+    export interface AlarmNotifyGroupReceiverGeneralWebhookHeader {
+        /**
+         * Custom request header key.
+         */
+        key: string;
+        /**
+         * Custom request header value.
+         */
+        value: string;
+    }
+
+    export interface GetAlarmNotifyGroupNoticeRule {
+        /**
+         * Whether there is an end node afterwards.
+         */
+        hasEndNode: boolean;
+        /**
+         * Condition for whether to proceed to the next level.
+         */
+        hasNext: boolean;
+        /**
+         * Notification channel information.
+         */
+        receiverInfos: outputs.tls.GetAlarmNotifyGroupNoticeRuleReceiverInfo[];
+        /**
+         * Rule node. JSON format.
+         */
+        ruleNode: string;
+    }
+
+    export interface GetAlarmNotifyGroupNoticeRuleReceiverInfo {
+        /**
+         * Alarm content template ID.
+         */
+        alarmContentTemplateId: string;
+        /**
+         * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtGroups: string[];
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtUsers: string[];
+        /**
+         * Alarm webhook integration configuration ID.
+         */
+        alarmWebhookIntegrationId: string;
+        /**
+         * Name of the alarm Webhook integration configuration.
+         */
+        alarmWebhookIntegrationName: string;
+        /**
+         * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookIsAtAll: boolean;
+        /**
+         * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
+         */
+        endTime: string;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
+         */
+        generalWebhookBody: string;
+        /**
+         * Custom callback request headers for the interface.
+         */
+        generalWebhookHeaders: outputs.tls.GetAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader[];
+        /**
+         * Custom callback method for the interface. Only POST or PUT is supported.
+         */
+        generalWebhookMethod: string;
+        /**
+         * Custom callback URL for the interface.
+         */
+        generalWebhookUrl: string;
+        /**
+         * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
+         */
+        receiverChannels: string[];
+        /**
+         * IAM user or user group name.
+         */
+        receiverNames: string[];
+        /**
+         * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
+         */
+        receiverType: string;
+        /**
+         * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime: string;
+    }
+
+    export interface GetAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader {
+        /**
+         * Custom request header key.
+         */
+        key: string;
+        /**
+         * Custom request header value.
+         */
+        value: string;
+    }
+
+    export interface GetAlarmNotifyGroupReceiver {
+        /**
+         * Alarm content template ID.
+         */
+        alarmContentTemplateId: string;
+        /**
+         * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtGroups: string[];
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookAtUsers: string[];
+        /**
+         * Alarm webhook integration configuration ID.
+         */
+        alarmWebhookIntegrationId: string;
+        /**
+         * Name of the alarm Webhook integration configuration.
+         */
+        alarmWebhookIntegrationName: string;
+        /**
+         * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
+         */
+        alarmWebhookIsAtAll: boolean;
+        /**
+         * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
+         */
+        endTime: string;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
+         */
+        generalWebhookBody: string;
+        /**
+         * Custom callback request headers for the interface.
+         */
+        generalWebhookHeaders: outputs.tls.GetAlarmNotifyGroupReceiverGeneralWebhookHeader[];
+        /**
+         * Custom callback method for the interface. Only POST or PUT is supported.
+         */
+        generalWebhookMethod: string;
+        /**
+         * Custom callback URL for the interface.
+         */
+        generalWebhookUrl: string;
+        /**
+         * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
+         */
+        receiverChannels: string[];
+        /**
+         * IAM user or user group name.
+         */
+        receiverNames: string[];
+        /**
+         * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
+         */
+        receiverType: string;
+        /**
+         * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime: string;
+    }
+
+    export interface GetAlarmNotifyGroupReceiverGeneralWebhookHeader {
+        /**
+         * Custom request header key.
+         */
+        key: string;
+        /**
+         * Custom request header value.
+         */
+        value: string;
+    }
+
     export interface GetImportTaskImportSourceInfo {
         /**
          * Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
@@ -19549,6 +20339,502 @@ export namespace tls {
         value: string;
     }
 
+    export interface GetRuleContainerRule {
+        /**
+         * Container name to collect. If no container name is specified, all containers in the machine group will be collected. Supports regex matching; for example, setting the container name to ^(container-test)$ will collect all containers named container-test.
+         */
+        containerNameRegex: string;
+        /**
+         * Whether to add environment variables as log tags to the raw log data. When enabled, the log service adds container environment variable fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, the log will include the field **tag**data_source_*: DC
+         */
+        envTags: outputs.tls.GetRuleContainerRuleEnvTag[];
+        /**
+         * The container environment variable denylist specifies which containers are excluded from collection. If the denylist is not enabled, all containers are collected. When the container environment variable denylist is enabled, Key is required and Value is optional. If Value is empty, all containers whose environment variables contain the Key are excluded from collection. If Value is not empty, only containers with a matching key-value pair are excluded, meaning only containers whose environment variables contain the Key and whose value matches the Value are excluded. Value supports regular expressions. For example, if Key is set to module and Value is set to ^(tcp|udp)$, containers with environment variables module:tcp or module:udp are excluded from collection. Multiple key-value pairs are evaluated with a logical OR, so any container environment variable matching any key-value pair will be excluded from collection. When the container environment variable denylist is enabled, Keys must be unique.
+         */
+        excludeContainerEnvRegexes: outputs.tls.GetRuleContainerRuleExcludeContainerEnvRegex[];
+        /**
+         * Container label denylist specifies containers to exclude from collection. If the denylist is not enabled, all containers will be collected. If the container label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the Key in their label will be excluded. If Value is not empty, only containers matching the key-value pair will be excluded—that is, containers with the Key in their label and a Value matching the specified pattern. Value supports regex matching; for example, set Key to app and Value to ^(test1|test2)$ to exclude containers with labels app:test1 and app:test2. Multiple key-value pairs use logical OR; any container label matching any pair will be excluded from collection. When the container label denylist is enabled, Keys must not be duplicated.
+         */
+        excludeContainerLabelRegexes: outputs.tls.GetRuleContainerRuleExcludeContainerLabelRegex[];
+        /**
+         * The container environment variable allowlist specifies which containers to collect using container environment variables. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers containing the Key in their environment variables are collected. If Value is not empty, only containers with the Key in their environment variables and a Value matching the specified value are collected. Value supports regular expression matching. For example, if Key is set to module and Value is set to ^(tcp|udp)$, only containers with module:tcp or module:udp in their environment variables are collected. The logical relationship between multiple key-value pairs is OR, meaning any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
+         */
+        includeContainerEnvRegexes: outputs.tls.GetRuleContainerRuleIncludeContainerEnvRegex[];
+        /**
+         * The container label allowlist specifies which containers to collect based on container labels. If the allowlist is not enabled, all containers are collected. When the container label allowlist is enabled, you must specify key-value pairs. Key is required and Value is optional. If Value is empty, all containers whose labels contain the Key are collected. If Value is not empty, only containers whose labels contain the Key and whose value matches the Value are collected. Value supports regular expressions. For example, if Key is set to app and Value is set to ^(test1|test2)$, only containers with labels app:test1 or app:test2 are collected. Multiple key-value pairs are evaluated with a logical OR, so any container label matching any key-value pair will be included in the collection scope. When the container label allowlist is enabled, Keys must be unique.
+         */
+        includeContainerLabelRegexes: outputs.tls.GetRuleContainerRuleIncludeContainerLabelRegex[];
+        /**
+         * Kubernetes container collection rules.
+         */
+        kubernetesRule: outputs.tls.GetRuleContainerRuleKubernetesRule;
+        /**
+         * Collection information. stdout: Collects container standard output (stdout). stderr: Collects container standard error (stderr). all: Collects both container standard output (stdout) and standard error (stderr).
+         */
+        stream: string;
+    }
+
+    export interface GetRuleContainerRuleEnvTag {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleExcludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleExcludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleIncludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleIncludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRule {
+        /**
+         * Whether to add Kubernetes Annotations as log tags to the original log data. When enabled, the log service will add fields related to Kubernetes Pod Annotations to the logs. Setting multiple key-value pairs means adding multiple fields. For example, if you set Key to sink and Value to data_sink, and the Pod contains the annotation sink=ck, a new field **tag**data_sink_*: ck will be added to the log.
+         */
+        annotationTags: outputs.tls.GetRuleContainerRuleKubernetesRuleAnnotationTag[];
+        /**
+         * Whether to add all Kubernetes Labels as log tags to the original log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the logs. For example, if the Pod contains Label source=DC and destination=CS, the logs will include fields **tag**source__: DC and **tag**destination__: CS.
+         */
+        enableAllLabelTag: boolean;
+        /**
+         * Pod Annotation Denylist is used to specify containers that are not collected. If you need to set a Pod Annotation Denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the specified Key are excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the specified Value are excluded. By default, Value uses string matching, meaning it only matches when Value and the Pod Annotation value are exactly the same. If the value starts with ^ and ends with $, it is treated as a regular expression. For example, if Key is set to app and Value is set to ^(test1|test2)$, it matches containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning a Pod Annotation that matches any pair will be excluded from the collection scope. When enabling the Pod Annotation Denylist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http
+         */
+        excludePodAnnotationRegexes: outputs.tls.GetRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex[];
+        /**
+         * Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the Value in their Pod Label are excluded. Value supports regular expressions. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR. Any Pod Label matching any Key-Value pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches any string starting with http
+         */
+        excludePodLabelRegexes: outputs.tls.GetRuleContainerRuleKubernetesRuleExcludePodLabelRegex[];
+        /**
+         * Pod Annotation Allowlist is used to specify containers to be collected. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers under Pods that contain the Key in Pod Annotation will match. If Value is not empty, only containers under Pods that contain the Key and whose value matches Value in Pod Annotation will match. Value defaults to string matching, meaning only when Value and the Pod Annotation value are exactly the same will they match. If the value starts with ^ and ends with $, it is a regex match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as Pod Annotation matches any pair, it will be included in the collection scope. When enabling Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+         */
+        includePodAnnotationRegexes: outputs.tls.GetRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex[];
+        /**
+         * Pod Label Allowlist is used to specify which containers to collect. If Pod Label Allowlist is not enabled, all containers will be collected. If you need to set a Pod Label Allowlist, Key is required: if Value is empty, all containers with the Key in their Pod Label will be collected. If Value is not empty, only containers with the Key in their Pod Label and a Value matching the specified pattern will be collected; regular expression matching is supported. For example, if you set Key to module and Value to ^(tcp|udp)$, only containers with module:tcp or module:udp in their Pod Label will be collected. Note: The logical relationship between multiple key-value pairs is OR, meaning any Pod Label matching any key-value pair will be included in the collection scope. When enabling Pod Label Allowlist, Keys cannot be duplicated. For fuzzy regular expression matching, you must add .*, for example, ^(http.*)$ matches strings starting with http.
+         */
+        includePodLabelRegexes: outputs.tls.GetRuleContainerRuleKubernetesRuleIncludePodLabelRegex[];
+        /**
+         * Whether to add Kubernetes labels as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, if you set Key to source and Value to data_source, and the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+         */
+        labelTags: outputs.tls.GetRuleContainerRuleKubernetesRuleLabelTag[];
+        /**
+         * Name of the Kubernetes Namespace to collect. If no Namespace name is specified, all containers will be collected. Namespace names support regular expression matching. For example, if you set the Namespace name to ^(tcp|udp)$, it will collect all containers under the tcp and udp namespaces.
+         */
+        namespaceNameRegex: string;
+        /**
+         * Pod name is used to specify the Pod whose containers will be collected. If no Pod name is specified, all containers will be collected. Pod name supports regular expression matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+         */
+        podNameRegex: string;
+        /**
+         * Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+         */
+        workloadNameRegex: string;
+        /**
+         * Specify the container to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: task CronJob: scheduled task
+         */
+        workloadType: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRuleAnnotationTag {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleContainerRuleKubernetesRuleLabelTag {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleExcludePath {
+        /**
+         * Collection path type. File: File name. Path: Directory.
+         */
+        type: string;
+        /**
+         * Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+         */
+        value: string;
+    }
+
+    export interface GetRuleExtractRule {
+        /**
+         * Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
+         */
+        beginRegex: string;
+        /**
+         * Log delimiter. Valid only when LogType is delimiter_log.
+         */
+        delimiter: string;
+        /**
+         * Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+         */
+        enableNanosecond: boolean;
+        /**
+         * Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field's log content must be a valid regular expression and is limited to 256 characters.
+         */
+        filterKeyRegexes: outputs.tls.GetRuleExtractRuleFilterKeyRegex[];
+        /**
+         * List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
+         */
+        keys: string[];
+        /**
+         * The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
+         */
+        logRegex: string;
+        /**
+         * Automatically extract log fields based on the specified log template
+         */
+        logTemplate: outputs.tls.GetRuleExtractRuleLogTemplate;
+        /**
+         * Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
+         */
+        quote: string;
+        /**
+         * Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
+         */
+        timeExtractRegex: string;
+        /**
+         * Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
+         */
+        timeFormat: string;
+        /**
+         * Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
+         */
+        timeKey: string;
+        /**
+         * Time sample. Used to check whether the entered time parsing format is correct.
+         */
+        timeSample: string;
+        /**
+         * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+         */
+        timeZone: string;
+        /**
+         * Key name for unmatched logs.
+         */
+        unMatchLogKey: string;
+        /**
+         * Switch for uploading unmatched logs.
+         */
+        unMatchUpLoadSwitch: boolean;
+    }
+
+    export interface GetRuleExtractRuleFilterKeyRegex {
+        /**
+         * Name of the filter field.
+         */
+        key: string;
+        /**
+         * The log content of the filter field must match the specified regular expression.
+         */
+        regex: string;
+    }
+
+    export interface GetRuleExtractRuleLogTemplate {
+        /**
+         * Log template format.
+         */
+        format: string;
+        /**
+         * Log template types. Supported types: Nginx: Nginx log template.
+         */
+        type: string;
+    }
+
+    export interface GetRuleHostGroupInfo {
+        /**
+         * Number of hosts with heartbeat exceptions.
+         */
+        abnormalHeartbeatStatusCount: number;
+        /**
+         * Latest agent version.
+         */
+        agentLatestVersion: string;
+        /**
+         * Whether LogCollector installed on the machine group server has automatic upgrade enabled. true: The log service will check for upgrades during a specified time period each day. If upgrade conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector does not upgrade automatically. To use a newer version of LogCollector, refer to the LogCollector upgrade procedure.
+         */
+        autoUpdate: boolean;
+        /**
+         * Machine group creation time.
+         */
+        createTime: string;
+        /**
+         * Number of hosts.
+         */
+        hostCount: number;
+        /**
+         * Machine group ID
+         */
+        hostGroupId: string;
+        /**
+         * Name of the machine group.
+         */
+        hostGroupName: string;
+        /**
+         * Machine group type. IP: Machine IP. Label: Machine label.
+         */
+        hostGroupType: string;
+        /**
+         * Machine identifier.
+         */
+        hostIdentifier: string;
+        /**
+         * The IAM project to which the host group belongs.
+         */
+        iamProjectName: string;
+        /**
+         * Time when the machine group was modified.
+         */
+        modifyTime: string;
+        /**
+         * Number of hosts with normal heartbeat.
+         */
+        normalHeartbeatStatusCount: number;
+        /**
+         * The number of bound collection configurations.
+         */
+        ruleCount: number;
+        /**
+         * Whether to enable the Logcollector service log feature. true: enabled. false (default): disabled.
+         */
+        serviceLogging: boolean;
+        /**
+         * End time for LogCollector automatic upgrade.
+         */
+        updateEndTime: string;
+        /**
+         * LogCollector auto-update start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto-updates during off-peak hours. LogCollector may restart during the update process, but logs will not be lost.
+         */
+        updateStartTime: string;
+    }
+
+    export interface GetRuleUserDefineRule {
+        /**
+         * The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
+         */
+        advanced: outputs.tls.GetRuleUserDefineRuleAdvanced;
+        /**
+         * Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
+         */
+        enableHostGroupLabel: boolean;
+        /**
+         * Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
+         */
+        enableHostname: boolean;
+        /**
+         * Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+         */
+        enableRawLog: boolean;
+        /**
+         * Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
+         */
+        fields: outputs.tls.GetRuleUserDefineRuleField[];
+        /**
+         * Field name used to store machine group label information
+         */
+        hostGroupLabelKey: string;
+        /**
+         * Hostname field name. Required only when EnableHostname is true.
+         */
+        hostnameKey: string;
+        /**
+         * Ignore log files that have not been updated for a specified period (in hours).
+         */
+        ignoreOlder: number;
+        /**
+         * Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
+         */
+        multiCollectsType: string;
+        /**
+         * Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+         */
+        parsePathRule: outputs.tls.GetRuleUserDefineRuleParsePathRule;
+        /**
+         * LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+         */
+        plugin: outputs.tls.GetRuleUserDefineRulePlugin;
+        /**
+         * Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
+         */
+        rawLogKey: string;
+        /**
+         * Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
+         */
+        shardHashKey: outputs.tls.GetRuleUserDefineRuleShardHashKey;
+        /**
+         * LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+         */
+        tailFiles: boolean;
+        /**
+         * Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
+         */
+        tailSizeKb: number;
+    }
+
+    export interface GetRuleUserDefineRuleAdvanced {
+        /**
+         * After reading to the end of the log file, choose whether to release the file handle. Default is false.
+         */
+        closeEof: boolean;
+        /**
+         * Wait time to release log file handle. If no new logs are written to the log file within the specified time, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+         */
+        closeInactive: number;
+        /**
+         * Release the file handle after the log file is removed. Default is false.
+         */
+        closeRemoved: boolean;
+        /**
+         * Release the file handle after the log file is renamed. Default is false.
+         */
+        closeRenamed: boolean;
+        /**
+         * Maximum monitoring duration for LogCollector log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration for log files. Timing starts when LogCollector begins monitoring the log file. Once the specified duration is exceeded, LogCollector immediately releases the file handle and stops monitoring, regardless of whether the log file has been fully read.
+         */
+        closeTimeout: number;
+        /**
+         * Maximum wait time when LogCollector does not detect a line break, in seconds. The default is 5s. Timing starts when LogCollector begins reading the log file. If no line break is detected within the specified time, LogCollector sends the logs in the buffer. If the file write interval is long, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+         */
+        noLineTerminatorEofMaxTime: number;
+    }
+
+    export interface GetRuleUserDefineRuleField {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface GetRuleUserDefineRuleParsePathRule {
+        /**
+         * Field name list. The log service uses a regular expression (Regex) to parse the path sample (PathSample) into multiple fields. Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+         */
+        keys: string[];
+        /**
+         * Sample collection path for actual scenarios. The sample collection path must be an absolute path. Wildcards *, ?, ** are not allowed in the path sample.
+         */
+        pathSample: string;
+        /**
+         * Regular expression used to extract the path field. Must match the sample collection path, otherwise extraction will fail
+         */
+        regex: string;
+    }
+
+    export interface GetRuleUserDefineRulePlugin {
+        /**
+         * LogCollector plugin. For the list of supported plugins and parameter descriptions, see LogCollector plugin overview.
+         */
+        processors: string;
+    }
+
+    export interface GetRuleUserDefineRuleShardHashKey {
+        /**
+         * HashKey of the log group, used to specify the shard to which the current log group will be written. The value range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+         */
+        hashKey: string;
+    }
+
     export interface GetScheduleSqlTaskRequestCycle {
         /**
          * Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
@@ -19566,6 +20852,109 @@ export namespace tls {
          * Scheduling period type. Options: Period, Fixed, Cron.
          */
         type: string;
+    }
+
+    export interface GetShipperContentInfo {
+        /**
+         * CSV format log content configuration.
+         */
+        csvInfo: outputs.tls.GetShipperContentInfoCsvInfo;
+        /**
+         * Log content parsing format. Delivery to TOS supports json, jsonl, csv; delivery to Kafka supports original, json.
+         */
+        format: string;
+        /**
+         * JSON/JSONL format log content configuration.
+         */
+        jsonInfo: outputs.tls.GetShipperContentInfoJsonInfo;
+    }
+
+    export interface GetShipperContentInfoCsvInfo {
+        /**
+         * Delimiter. Supports comma, tab, pipe, semicolon, space.
+         */
+        delimiter: string;
+        /**
+         * Escape character. When field content contains a delimiter, use an escape character to enclose it. Supports single quote, double quote, or empty character.
+         */
+        escapeChar: string;
+        /**
+         * Fields to be delivered. Supports letters, numbers, and _-./. Cannot start with an underscore. Length: 1–128.
+         */
+        keys: string[];
+        /**
+         * Content for invalid field padding. Length: 0–128.
+         */
+        nonFieldContent: string;
+        /**
+         * Whether to print the key in the first row.
+         */
+        printHeader: boolean;
+    }
+
+    export interface GetShipperContentInfoJsonInfo {
+        /**
+         * Enable flag.
+         */
+        enable: boolean;
+        /**
+         * Whether to enable escaping. Must be set to true.
+         */
+        escape: boolean;
+        /**
+         * Delivery field list; if not configured, all fields will be delivered. When delivering in JSON/JSONL format, if this parameter is not set, all fields will be delivered, including **content** (required), **source**, **path**, **time**, **image_name**, **container_name**, **pod_name**, **pod_uid**, namespace, **tag****client_ip**, and **tag****receive_time**.
+         */
+        keys: string[];
+    }
+
+    export interface GetShipperKafkaShipperInfo {
+        /**
+         * Compression format; supports snappy, gzip, lz4, none.
+         */
+        compress: string;
+        /**
+         * Delivery end time, in milliseconds. If not set, delivery continues indefinitely. Note: Milliseconds will be truncated. For example, if 1776761323455 is entered, it will become 1776761323000; if 1776761323 is entered, it will become 1776761323000.
+         */
+        endTime: number;
+        /**
+         * Kafka instance.
+         */
+        instance: string;
+        /**
+         * Kafka topic name. All log data delivered through this configuration will be sent to this topic.
+         */
+        kafkaTopic: string;
+        /**
+         * Start time. If not configured, defaults to the current time. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
+         */
+        startTime: number;
+    }
+
+    export interface GetShipperTosShipperInfo {
+        /**
+         * Select a TOS bucket. Must be in the same region as the source log topic. Can only contain numbers, hyphens (-), and letters a–z. Must start and end with a number or letter. Length: 3–63 characters.
+         */
+        bucket: string;
+        /**
+         * Compression format; supports snappy, gzip, lz4, none.
+         */
+        compress: string;
+        /**
+         * Delivery interval in seconds, range: 300–900.
+         */
+        interval: number;
+        /**
+         * Maximum raw file size per partition for delivery, in MiB. Range: 5–256.
+         */
+        maxSize: number;
+        /**
+         * Partition rule for log delivery. Subdirectory naming format supports strftime syntax. Default: %Y/%m/%d/%H/%M.
+         */
+        partitionFormat: string;
+        /**
+         * Top-level directory name for the bucket. Cannot start with / or \, and cannot use consecutive /. Cannot use .. as a folder name. Duplicate names are not allowed within the same bucket.
+         */
+        prefix: string;
     }
 
     export interface GetTopicTag {
@@ -20019,6 +21408,403 @@ export namespace tls {
         value: string;
     }
 
+    export interface RuleContainerRule {
+        /**
+         * Container name to collect. If no container name is specified, all containers in the machine group will be collected. Supports regex matching; for example, setting the container name to ^(container-test)$ will collect all containers named container-test.
+         */
+        containerNameRegex: string;
+        envTags: outputs.tls.RuleContainerRuleEnvTag[];
+        excludeContainerEnvRegexes: outputs.tls.RuleContainerRuleExcludeContainerEnvRegex[];
+        excludeContainerLabelRegexes: outputs.tls.RuleContainerRuleExcludeContainerLabelRegex[];
+        includeContainerEnvRegexes: outputs.tls.RuleContainerRuleIncludeContainerEnvRegex[];
+        includeContainerLabelRegexes: outputs.tls.RuleContainerRuleIncludeContainerLabelRegex[];
+        /**
+         * Kubernetes container collection rules.
+         */
+        kubernetesRule: outputs.tls.RuleContainerRuleKubernetesRule;
+        /**
+         * Collection information. stdout: Collects container standard output (stdout). stderr: Collects container standard error (stderr). all: Collects both container standard output (stdout) and standard error (stderr).
+         */
+        stream: string;
+    }
+
+    export interface RuleContainerRuleEnvTag {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleExcludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleExcludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleIncludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleIncludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRule {
+        annotationTags: outputs.tls.RuleContainerRuleKubernetesRuleAnnotationTag[];
+        /**
+         * Whether to add all Kubernetes Labels as log tags to the original log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the logs. For example, if the Pod contains Label source=DC and destination=CS, the logs will include fields **tag**source__: DC and **tag**destination__: CS.
+         */
+        enableAllLabelTag: boolean;
+        excludePodAnnotationRegexes: outputs.tls.RuleContainerRuleKubernetesRuleExcludePodAnnotationRegex[];
+        excludePodLabelRegexes: outputs.tls.RuleContainerRuleKubernetesRuleExcludePodLabelRegex[];
+        includePodAnnotationRegexes: outputs.tls.RuleContainerRuleKubernetesRuleIncludePodAnnotationRegex[];
+        includePodLabelRegexes: outputs.tls.RuleContainerRuleKubernetesRuleIncludePodLabelRegex[];
+        labelTags: outputs.tls.RuleContainerRuleKubernetesRuleLabelTag[];
+        /**
+         * Name of the Kubernetes Namespace to collect. If no Namespace name is specified, all containers will be collected. Namespace names support regular expression matching. For example, if you set the Namespace name to ^(tcp|udp)$, it will collect all containers under the tcp and udp namespaces.
+         */
+        namespaceNameRegex: string;
+        /**
+         * Pod name is used to specify the Pod whose containers will be collected. If no Pod name is specified, all containers will be collected. Pod name supports regular expression matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+         */
+        podNameRegex: string;
+        /**
+         * Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+         */
+        workloadNameRegex: string;
+        /**
+         * Specify the container to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: task CronJob: scheduled task
+         */
+        workloadType: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleAnnotationTag {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleContainerRuleKubernetesRuleLabelTag {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleExcludePath {
+        /**
+         * Collection path type. File: File name. Path: Directory.
+         */
+        type: string;
+        /**
+         * Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+         */
+        value: string;
+    }
+
+    export interface RuleExtractRule {
+        /**
+         * Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
+         */
+        beginRegex: string;
+        /**
+         * Log delimiter. Valid only when LogType is delimiter_log.
+         */
+        delimiter: string;
+        /**
+         * Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+         */
+        enableNanosecond: boolean;
+        filterKeyRegexes: outputs.tls.RuleExtractRuleFilterKeyRegex[];
+        /**
+         * List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
+         */
+        keys: string[];
+        /**
+         * The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
+         */
+        logRegex: string;
+        /**
+         * Automatically extract log fields based on the specified log template
+         */
+        logTemplate: outputs.tls.RuleExtractRuleLogTemplate;
+        /**
+         * Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
+         */
+        quote: string;
+        /**
+         * Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
+         */
+        timeExtractRegex: string;
+        /**
+         * Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
+         */
+        timeFormat: string;
+        /**
+         * Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
+         */
+        timeKey: string;
+        /**
+         * Time sample. Used to check whether the entered time parsing format is correct.
+         */
+        timeSample: string;
+        /**
+         * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
+         */
+        timeZone: string;
+        /**
+         * Key name for unmatched logs.
+         */
+        unMatchLogKey: string;
+        /**
+         * Switch for uploading unmatched logs.
+         */
+        unMatchUpLoadSwitch: boolean;
+    }
+
+    export interface RuleExtractRuleFilterKeyRegex {
+        /**
+         * Name of the filter field.
+         */
+        key: string;
+        /**
+         * The log content of the filter field must match the specified regular expression.
+         */
+        regex: string;
+    }
+
+    export interface RuleExtractRuleLogTemplate {
+        /**
+         * Log template format.
+         */
+        format: string;
+        /**
+         * Log template types. Supported types: Nginx: Nginx log template.
+         */
+        type: string;
+    }
+
+    export interface RuleHostGroupInfo {
+        /**
+         * Machine group ID
+         */
+        hostGroupId: string;
+    }
+
+    export interface RuleUserDefineRule {
+        /**
+         * The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
+         */
+        advanced: outputs.tls.RuleUserDefineRuleAdvanced;
+        /**
+         * Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
+         */
+        enableHostGroupLabel: boolean;
+        /**
+         * Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
+         */
+        enableHostname: boolean;
+        /**
+         * Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+         */
+        enableRawLog: boolean;
+        fields: outputs.tls.RuleUserDefineRuleField[];
+        /**
+         * Field name used to store machine group label information
+         */
+        hostGroupLabelKey: string;
+        /**
+         * Hostname field name. Required only when EnableHostname is true.
+         */
+        hostnameKey: string;
+        /**
+         * Ignore log files that have not been updated for a specified period (in hours).
+         */
+        ignoreOlder: number;
+        /**
+         * Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
+         */
+        multiCollectsType: string;
+        /**
+         * Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+         */
+        parsePathRule: outputs.tls.RuleUserDefineRuleParsePathRule;
+        /**
+         * LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+         */
+        plugin: outputs.tls.RuleUserDefineRulePlugin;
+        /**
+         * Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
+         */
+        rawLogKey: string;
+        /**
+         * Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
+         */
+        shardHashKey: outputs.tls.RuleUserDefineRuleShardHashKey;
+        /**
+         * LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+         */
+        tailFiles: boolean;
+        /**
+         * Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
+         */
+        tailSizeKb: number;
+    }
+
+    export interface RuleUserDefineRuleAdvanced {
+        /**
+         * After reading to the end of the log file, choose whether to release the file handle. Default is false.
+         */
+        closeEof: boolean;
+        /**
+         * Wait time to release log file handle. If no new logs are written to the log file within the specified time, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+         */
+        closeInactive: number;
+        /**
+         * Release the file handle after the log file is removed. Default is false.
+         */
+        closeRemoved: boolean;
+        /**
+         * Release the file handle after the log file is renamed. Default is false.
+         */
+        closeRenamed: boolean;
+        /**
+         * Maximum monitoring duration for LogCollector log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration for log files. Timing starts when LogCollector begins monitoring the log file. Once the specified duration is exceeded, LogCollector immediately releases the file handle and stops monitoring, regardless of whether the log file has been fully read.
+         */
+        closeTimeout: number;
+        /**
+         * Maximum wait time when LogCollector does not detect a line break, in seconds. The default is 5s. Timing starts when LogCollector begins reading the log file. If no line break is detected within the specified time, LogCollector sends the logs in the buffer. If the file write interval is long, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+         */
+        noLineTerminatorEofMaxTime: number;
+    }
+
+    export interface RuleUserDefineRuleField {
+        /**
+         * Key.
+         */
+        key: string;
+        /**
+         * Value.
+         */
+        val: string;
+    }
+
+    export interface RuleUserDefineRuleParsePathRule {
+        /**
+         * Field name list. The log service uses a regular expression (Regex) to parse the path sample (PathSample) into multiple fields. Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+         */
+        keys: string[];
+        /**
+         * Sample collection path for actual scenarios. The sample collection path must be an absolute path. Wildcards *, ?, ** are not allowed in the path sample.
+         */
+        pathSample: string;
+        /**
+         * Regular expression used to extract the path field. Must match the sample collection path, otherwise extraction will fail
+         */
+        regex: string;
+    }
+
+    export interface RuleUserDefineRulePlugin {
+        /**
+         * LogCollector plugin. For the list of supported plugins and parameter descriptions, see LogCollector plugin overview.
+         */
+        processors: string;
+    }
+
+    export interface RuleUserDefineRuleShardHashKey {
+        /**
+         * HashKey of the log group, used to specify the shard to which the current log group will be written. The value range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+         */
+        hashKey: string;
+    }
+
     export interface ScheduleSqlTaskRequestCycle {
         /**
          * Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
@@ -20036,6 +21822,109 @@ export namespace tls {
          * Scheduling period type. Options: Period, Fixed, Cron.
          */
         type: string;
+    }
+
+    export interface ShipperContentInfo {
+        /**
+         * CSV format log content configuration.
+         */
+        csvInfo: outputs.tls.ShipperContentInfoCsvInfo;
+        /**
+         * Log content parsing format. Delivery to TOS supports json, jsonl, csv; delivery to Kafka supports original, json.
+         */
+        format: string;
+        /**
+         * JSON/JSONL format log content configuration.
+         */
+        jsonInfo: outputs.tls.ShipperContentInfoJsonInfo;
+    }
+
+    export interface ShipperContentInfoCsvInfo {
+        /**
+         * Delimiter. Supports comma, tab, pipe, semicolon, space.
+         */
+        delimiter: string;
+        /**
+         * Escape character. When field content contains a delimiter, use an escape character to enclose it. Supports single quote, double quote, or empty character.
+         */
+        escapeChar: string;
+        /**
+         * Fields to be delivered. Supports letters, numbers, and _-./. Cannot start with an underscore. Length: 1–128.
+         */
+        keys: string[];
+        /**
+         * Content for invalid field padding. Length: 0–128.
+         */
+        nonFieldContent: string;
+        /**
+         * Whether to print the key in the first row.
+         */
+        printHeader: boolean;
+    }
+
+    export interface ShipperContentInfoJsonInfo {
+        /**
+         * Enable flag.
+         */
+        enable: boolean;
+        /**
+         * Whether to enable escaping. Must be set to true.
+         */
+        escape: boolean;
+        /**
+         * Delivery field list; if not configured, all fields will be delivered. When delivering in JSON/JSONL format, if this parameter is not set, all fields will be delivered, including **content** (required), **source**, **path**, **time**, **image_name**, **container_name**, **pod_name**, **pod_uid**, namespace, **tag****client_ip**, and **tag****receive_time**.
+         */
+        keys: string[];
+    }
+
+    export interface ShipperKafkaShipperInfo {
+        /**
+         * Compression format; supports snappy, gzip, lz4, none.
+         */
+        compress: string;
+        /**
+         * Delivery end time, in milliseconds. If not set, delivery continues indefinitely. Note: Milliseconds will be truncated. For example, if 1776761323455 is entered, it will become 1776761323000; if 1776761323 is entered, it will become 1776761323000.
+         */
+        endTime: number;
+        /**
+         * Kafka instance.
+         */
+        instance: string;
+        /**
+         * Kafka topic name. All log data delivered through this configuration will be sent to this topic.
+         */
+        kafkaTopic: string;
+        /**
+         * Start time. If not configured, defaults to the current time. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
+         */
+        startTime: number;
+    }
+
+    export interface ShipperTosShipperInfo {
+        /**
+         * Select a TOS bucket. Must be in the same region as the source log topic. Can only contain numbers, hyphens (-), and letters a–z. Must start and end with a number or letter. Length: 3–63 characters.
+         */
+        bucket: string;
+        /**
+         * Compression format; supports snappy, gzip, lz4, none.
+         */
+        compress: string;
+        /**
+         * Delivery interval in seconds, range: 300–900.
+         */
+        interval: number;
+        /**
+         * Maximum raw file size per partition for delivery, in MiB. Range: 5–256.
+         */
+        maxSize: number;
+        /**
+         * Partition rule for log delivery. Subdirectory naming format supports strftime syntax. Default: %Y/%m/%d/%H/%M.
+         */
+        partitionFormat: string;
+        /**
+         * Top-level directory name for the bucket. Cannot start with / or \, and cannot use consecutive /. Cannot use .. as a folder name. Duplicate names are not allowed within the same bucket.
+         */
+        prefix: string;
     }
 
     export interface TopicTag {
@@ -20351,14 +22240,6 @@ export namespace vedbm {
          * Instance ID.
          */
         instanceId: string;
-        /**
-         * Instance name.
-         */
-        instanceName: string;
-        /**
-         * Instance VPC ID.
-         */
-        vpc: string;
     }
 
     export interface DatabaseDatabasesPrivilege {
@@ -21458,6 +23339,40 @@ export namespace vepfs {
         value: string;
     }
 
+    export interface GetMountServiceAttachFileSystem {
+        /**
+         * Account ID.
+         */
+        accountId: string;
+        /**
+         * User mount path.
+         */
+        customerPath: string;
+        /**
+         * File system ID.
+         */
+        fileSystemId: string;
+        /**
+         * File system name.
+         */
+        fileSystemName: string;
+        /**
+         * Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+         */
+        status: string;
+    }
+
+    export interface GetMountServiceNode {
+        /**
+         * Node initial password.
+         */
+        defaultPassword: string;
+        /**
+         * Node instance ID.
+         */
+        nodeId: string;
+    }
+
     export interface InstanceCapacityInfo {
         /**
          * Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
@@ -21478,6 +23393,40 @@ export namespace vepfs {
          * User tag value.
          */
         value: string;
+    }
+
+    export interface MountServiceAttachFileSystem {
+        /**
+         * Account ID.
+         */
+        accountId: string;
+        /**
+         * User mount path.
+         */
+        customerPath: string;
+        /**
+         * File system ID.
+         */
+        fileSystemId: string;
+        /**
+         * File system name.
+         */
+        fileSystemName: string;
+        /**
+         * Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+         */
+        status: string;
+    }
+
+    export interface MountServiceNode {
+        /**
+         * Node initial password.
+         */
+        defaultPassword: string;
+        /**
+         * Node instance ID.
+         */
+        nodeId: string;
     }
 
 }

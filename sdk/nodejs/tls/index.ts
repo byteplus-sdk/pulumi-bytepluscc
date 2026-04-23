@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AlarmNotifyGroupArgs, AlarmNotifyGroupState } from "./alarmNotifyGroup";
+export type AlarmNotifyGroup = import("./alarmNotifyGroup").AlarmNotifyGroup;
+export const AlarmNotifyGroup: typeof import("./alarmNotifyGroup").AlarmNotifyGroup = null as any;
+utilities.lazyLoad(exports, ["AlarmNotifyGroup"], () => require("./alarmNotifyGroup"));
+
 export { ConsumerGroupArgs, ConsumerGroupState } from "./consumerGroup";
 export type ConsumerGroup = import("./consumerGroup").ConsumerGroup;
 export const ConsumerGroup: typeof import("./consumerGroup").ConsumerGroup = null as any;
 utilities.lazyLoad(exports, ["ConsumerGroup"], () => require("./consumerGroup"));
+
+export { GetAlarmNotifyGroupArgs, GetAlarmNotifyGroupResult, GetAlarmNotifyGroupOutputArgs } from "./getAlarmNotifyGroup";
+export const getAlarmNotifyGroup: typeof import("./getAlarmNotifyGroup").getAlarmNotifyGroup = null as any;
+export const getAlarmNotifyGroupOutput: typeof import("./getAlarmNotifyGroup").getAlarmNotifyGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmNotifyGroup","getAlarmNotifyGroupOutput"], () => require("./getAlarmNotifyGroup"));
+
+export { GetAlarmNotifyGroupsResult } from "./getAlarmNotifyGroups";
+export const getAlarmNotifyGroups: typeof import("./getAlarmNotifyGroups").getAlarmNotifyGroups = null as any;
+export const getAlarmNotifyGroupsOutput: typeof import("./getAlarmNotifyGroups").getAlarmNotifyGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmNotifyGroups","getAlarmNotifyGroupsOutput"], () => require("./getAlarmNotifyGroups"));
 
 export { GetConsumerGroupArgs, GetConsumerGroupResult, GetConsumerGroupOutputArgs } from "./getConsumerGroup";
 export const getConsumerGroup: typeof import("./getConsumerGroup").getConsumerGroup = null as any;
@@ -50,6 +65,16 @@ export const getProjects: typeof import("./getProjects").getProjects = null as a
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
 
+export { GetRuleArgs, GetRuleResult, GetRuleOutputArgs } from "./getRule";
+export const getRule: typeof import("./getRule").getRule = null as any;
+export const getRuleOutput: typeof import("./getRule").getRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getRule","getRuleOutput"], () => require("./getRule"));
+
+export { GetRulesResult } from "./getRules";
+export const getRules: typeof import("./getRules").getRules = null as any;
+export const getRulesOutput: typeof import("./getRules").getRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getRules","getRulesOutput"], () => require("./getRules"));
+
 export { GetScheduleSqlTaskArgs, GetScheduleSqlTaskResult, GetScheduleSqlTaskOutputArgs } from "./getScheduleSqlTask";
 export const getScheduleSqlTask: typeof import("./getScheduleSqlTask").getScheduleSqlTask = null as any;
 export const getScheduleSqlTaskOutput: typeof import("./getScheduleSqlTask").getScheduleSqlTaskOutput = null as any;
@@ -59,6 +84,16 @@ export { GetScheduleSqlTasksResult } from "./getScheduleSqlTasks";
 export const getScheduleSqlTasks: typeof import("./getScheduleSqlTasks").getScheduleSqlTasks = null as any;
 export const getScheduleSqlTasksOutput: typeof import("./getScheduleSqlTasks").getScheduleSqlTasksOutput = null as any;
 utilities.lazyLoad(exports, ["getScheduleSqlTasks","getScheduleSqlTasksOutput"], () => require("./getScheduleSqlTasks"));
+
+export { GetShipperArgs, GetShipperResult, GetShipperOutputArgs } from "./getShipper";
+export const getShipper: typeof import("./getShipper").getShipper = null as any;
+export const getShipperOutput: typeof import("./getShipper").getShipperOutput = null as any;
+utilities.lazyLoad(exports, ["getShipper","getShipperOutput"], () => require("./getShipper"));
+
+export { GetShippersResult } from "./getShippers";
+export const getShippers: typeof import("./getShippers").getShippers = null as any;
+export const getShippersOutput: typeof import("./getShippers").getShippersOutput = null as any;
+utilities.lazyLoad(exports, ["getShippers","getShippersOutput"], () => require("./getShippers"));
 
 export { GetTopicArgs, GetTopicResult, GetTopicOutputArgs } from "./getTopic";
 export const getTopic: typeof import("./getTopic").getTopic = null as any;
@@ -85,10 +120,20 @@ export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
 
+export { RuleArgs, RuleState } from "./rule";
+export type Rule = import("./rule").Rule;
+export const Rule: typeof import("./rule").Rule = null as any;
+utilities.lazyLoad(exports, ["Rule"], () => require("./rule"));
+
 export { ScheduleSqlTaskArgs, ScheduleSqlTaskState } from "./scheduleSqlTask";
 export type ScheduleSqlTask = import("./scheduleSqlTask").ScheduleSqlTask;
 export const ScheduleSqlTask: typeof import("./scheduleSqlTask").ScheduleSqlTask = null as any;
 utilities.lazyLoad(exports, ["ScheduleSqlTask"], () => require("./scheduleSqlTask"));
+
+export { ShipperArgs, ShipperState } from "./shipper";
+export type Shipper = import("./shipper").Shipper;
+export const Shipper: typeof import("./shipper").Shipper = null as any;
+utilities.lazyLoad(exports, ["Shipper"], () => require("./shipper"));
 
 export { TopicArgs, TopicState } from "./topic";
 export type Topic = import("./topic").Topic;
@@ -100,6 +145,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup":
+                return new AlarmNotifyGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/consumerGroup:ConsumerGroup":
                 return new ConsumerGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/importTask:ImportTask":
@@ -108,8 +155,12 @@ const _module = {
                 return new Index(name, <any>undefined, { urn })
             case "bytepluscc:tls/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "bytepluscc:tls/rule:Rule":
+                return new Rule(name, <any>undefined, { urn })
             case "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask":
                 return new ScheduleSqlTask(name, <any>undefined, { urn })
+            case "bytepluscc:tls/shipper:Shipper":
+                return new Shipper(name, <any>undefined, { urn })
             case "bytepluscc:tls/topic:Topic":
                 return new Topic(name, <any>undefined, { urn })
             default:
@@ -117,9 +168,12 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmNotifyGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/importTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/index", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/project", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/rule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/scheduleSqlTask", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/shipper", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/topic", _module)

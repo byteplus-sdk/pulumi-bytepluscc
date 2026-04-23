@@ -13,6 +13,492 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type SnapshotGroupSnapshot struct {
+	// Snapshot creation time
+	CreationTime *string `pulumi:"creationTime"`
+	// Snapshot description
+	Description *string `pulumi:"description"`
+	// Image ID
+	ImageId *string `pulumi:"imageId"`
+	// Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+	InstantAccess *bool `pulumi:"instantAccess"`
+	// Dump progress
+	Progress *int `pulumi:"progress"`
+	// Project of the snapshot
+	ProjectName *string `pulumi:"projectName"`
+	// Retention days for automatic snapshots
+	RetentionDays *int `pulumi:"retentionDays"`
+	// Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+	Shared *bool `pulumi:"shared"`
+	// Snapshot consistency group ID
+	SnapshotGroupId *string `pulumi:"snapshotGroupId"`
+	// Snapshot ID
+	SnapshotId *string `pulumi:"snapshotId"`
+	// Snapshot name
+	SnapshotName *string `pulumi:"snapshotName"`
+	// Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+	SnapshotType *string `pulumi:"snapshotType"`
+	// Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+	Status *string                    `pulumi:"status"`
+	Tags   []SnapshotGroupSnapshotTag `pulumi:"tags"`
+	// Cloud disk ID
+	VolumeId *string `pulumi:"volumeId"`
+	// Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+	VolumeKind *string `pulumi:"volumeKind"`
+	// Cloud disk name
+	VolumeName *string `pulumi:"volumeName"`
+	// Cloud disk size (GiB)
+	VolumeSize *int `pulumi:"volumeSize"`
+	// Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+	VolumeStatus *string `pulumi:"volumeStatus"`
+	// Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+	VolumeType *string `pulumi:"volumeType"`
+	// Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// SnapshotGroupSnapshotInput is an input type that accepts SnapshotGroupSnapshotArgs and SnapshotGroupSnapshotOutput values.
+// You can construct a concrete instance of `SnapshotGroupSnapshotInput` via:
+//
+//	SnapshotGroupSnapshotArgs{...}
+type SnapshotGroupSnapshotInput interface {
+	pulumi.Input
+
+	ToSnapshotGroupSnapshotOutput() SnapshotGroupSnapshotOutput
+	ToSnapshotGroupSnapshotOutputWithContext(context.Context) SnapshotGroupSnapshotOutput
+}
+
+type SnapshotGroupSnapshotArgs struct {
+	// Snapshot creation time
+	CreationTime pulumi.StringPtrInput `pulumi:"creationTime"`
+	// Snapshot description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Image ID
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
+	// Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+	InstantAccess pulumi.BoolPtrInput `pulumi:"instantAccess"`
+	// Dump progress
+	Progress pulumi.IntPtrInput `pulumi:"progress"`
+	// Project of the snapshot
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// Retention days for automatic snapshots
+	RetentionDays pulumi.IntPtrInput `pulumi:"retentionDays"`
+	// Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+	Shared pulumi.BoolPtrInput `pulumi:"shared"`
+	// Snapshot consistency group ID
+	SnapshotGroupId pulumi.StringPtrInput `pulumi:"snapshotGroupId"`
+	// Snapshot ID
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// Snapshot name
+	SnapshotName pulumi.StringPtrInput `pulumi:"snapshotName"`
+	// Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+	SnapshotType pulumi.StringPtrInput `pulumi:"snapshotType"`
+	// Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+	Status pulumi.StringPtrInput              `pulumi:"status"`
+	Tags   SnapshotGroupSnapshotTagArrayInput `pulumi:"tags"`
+	// Cloud disk ID
+	VolumeId pulumi.StringPtrInput `pulumi:"volumeId"`
+	// Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+	VolumeKind pulumi.StringPtrInput `pulumi:"volumeKind"`
+	// Cloud disk name
+	VolumeName pulumi.StringPtrInput `pulumi:"volumeName"`
+	// Cloud disk size (GiB)
+	VolumeSize pulumi.IntPtrInput `pulumi:"volumeSize"`
+	// Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+	VolumeStatus pulumi.StringPtrInput `pulumi:"volumeStatus"`
+	// Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+	// Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (SnapshotGroupSnapshotArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (i SnapshotGroupSnapshotArgs) ToSnapshotGroupSnapshotOutput() SnapshotGroupSnapshotOutput {
+	return i.ToSnapshotGroupSnapshotOutputWithContext(context.Background())
+}
+
+func (i SnapshotGroupSnapshotArgs) ToSnapshotGroupSnapshotOutputWithContext(ctx context.Context) SnapshotGroupSnapshotOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotGroupSnapshotOutput)
+}
+
+// SnapshotGroupSnapshotArrayInput is an input type that accepts SnapshotGroupSnapshotArray and SnapshotGroupSnapshotArrayOutput values.
+// You can construct a concrete instance of `SnapshotGroupSnapshotArrayInput` via:
+//
+//	SnapshotGroupSnapshotArray{ SnapshotGroupSnapshotArgs{...} }
+type SnapshotGroupSnapshotArrayInput interface {
+	pulumi.Input
+
+	ToSnapshotGroupSnapshotArrayOutput() SnapshotGroupSnapshotArrayOutput
+	ToSnapshotGroupSnapshotArrayOutputWithContext(context.Context) SnapshotGroupSnapshotArrayOutput
+}
+
+type SnapshotGroupSnapshotArray []SnapshotGroupSnapshotInput
+
+func (SnapshotGroupSnapshotArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (i SnapshotGroupSnapshotArray) ToSnapshotGroupSnapshotArrayOutput() SnapshotGroupSnapshotArrayOutput {
+	return i.ToSnapshotGroupSnapshotArrayOutputWithContext(context.Background())
+}
+
+func (i SnapshotGroupSnapshotArray) ToSnapshotGroupSnapshotArrayOutputWithContext(ctx context.Context) SnapshotGroupSnapshotArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotGroupSnapshotArrayOutput)
+}
+
+type SnapshotGroupSnapshotOutput struct{ *pulumi.OutputState }
+
+func (SnapshotGroupSnapshotOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (o SnapshotGroupSnapshotOutput) ToSnapshotGroupSnapshotOutput() SnapshotGroupSnapshotOutput {
+	return o
+}
+
+func (o SnapshotGroupSnapshotOutput) ToSnapshotGroupSnapshotOutputWithContext(ctx context.Context) SnapshotGroupSnapshotOutput {
+	return o
+}
+
+// Snapshot creation time
+func (o SnapshotGroupSnapshotOutput) CreationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.CreationTime }).(pulumi.StringPtrOutput)
+}
+
+// Snapshot description
+func (o SnapshotGroupSnapshotOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Image ID
+func (o SnapshotGroupSnapshotOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.ImageId }).(pulumi.StringPtrOutput)
+}
+
+// Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+func (o SnapshotGroupSnapshotOutput) InstantAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *bool { return v.InstantAccess }).(pulumi.BoolPtrOutput)
+}
+
+// Dump progress
+func (o SnapshotGroupSnapshotOutput) Progress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *int { return v.Progress }).(pulumi.IntPtrOutput)
+}
+
+// Project of the snapshot
+func (o SnapshotGroupSnapshotOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// Retention days for automatic snapshots
+func (o SnapshotGroupSnapshotOutput) RetentionDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *int { return v.RetentionDays }).(pulumi.IntPtrOutput)
+}
+
+// Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+func (o SnapshotGroupSnapshotOutput) Shared() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *bool { return v.Shared }).(pulumi.BoolPtrOutput)
+}
+
+// Snapshot consistency group ID
+func (o SnapshotGroupSnapshotOutput) SnapshotGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.SnapshotGroupId }).(pulumi.StringPtrOutput)
+}
+
+// Snapshot ID
+func (o SnapshotGroupSnapshotOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// Snapshot name
+func (o SnapshotGroupSnapshotOutput) SnapshotName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.SnapshotName }).(pulumi.StringPtrOutput)
+}
+
+// Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+func (o SnapshotGroupSnapshotOutput) SnapshotType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.SnapshotType }).(pulumi.StringPtrOutput)
+}
+
+// Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+func (o SnapshotGroupSnapshotOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o SnapshotGroupSnapshotOutput) Tags() SnapshotGroupSnapshotTagArrayOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) []SnapshotGroupSnapshotTag { return v.Tags }).(SnapshotGroupSnapshotTagArrayOutput)
+}
+
+// Cloud disk ID
+func (o SnapshotGroupSnapshotOutput) VolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.VolumeId }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+func (o SnapshotGroupSnapshotOutput) VolumeKind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.VolumeKind }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk name
+func (o SnapshotGroupSnapshotOutput) VolumeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.VolumeName }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk size (GiB)
+func (o SnapshotGroupSnapshotOutput) VolumeSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *int { return v.VolumeSize }).(pulumi.IntPtrOutput)
+}
+
+// Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+func (o SnapshotGroupSnapshotOutput) VolumeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.VolumeStatus }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+func (o SnapshotGroupSnapshotOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+// Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+func (o SnapshotGroupSnapshotOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshot) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type SnapshotGroupSnapshotArrayOutput struct{ *pulumi.OutputState }
+
+func (SnapshotGroupSnapshotArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (o SnapshotGroupSnapshotArrayOutput) ToSnapshotGroupSnapshotArrayOutput() SnapshotGroupSnapshotArrayOutput {
+	return o
+}
+
+func (o SnapshotGroupSnapshotArrayOutput) ToSnapshotGroupSnapshotArrayOutputWithContext(ctx context.Context) SnapshotGroupSnapshotArrayOutput {
+	return o
+}
+
+func (o SnapshotGroupSnapshotArrayOutput) Index(i pulumi.IntInput) SnapshotGroupSnapshotOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotGroupSnapshot {
+		return vs[0].([]SnapshotGroupSnapshot)[vs[1].(int)]
+	}).(SnapshotGroupSnapshotOutput)
+}
+
+type SnapshotGroupSnapshotTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// SnapshotGroupSnapshotTagInput is an input type that accepts SnapshotGroupSnapshotTagArgs and SnapshotGroupSnapshotTagOutput values.
+// You can construct a concrete instance of `SnapshotGroupSnapshotTagInput` via:
+//
+//	SnapshotGroupSnapshotTagArgs{...}
+type SnapshotGroupSnapshotTagInput interface {
+	pulumi.Input
+
+	ToSnapshotGroupSnapshotTagOutput() SnapshotGroupSnapshotTagOutput
+	ToSnapshotGroupSnapshotTagOutputWithContext(context.Context) SnapshotGroupSnapshotTagOutput
+}
+
+type SnapshotGroupSnapshotTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SnapshotGroupSnapshotTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (i SnapshotGroupSnapshotTagArgs) ToSnapshotGroupSnapshotTagOutput() SnapshotGroupSnapshotTagOutput {
+	return i.ToSnapshotGroupSnapshotTagOutputWithContext(context.Background())
+}
+
+func (i SnapshotGroupSnapshotTagArgs) ToSnapshotGroupSnapshotTagOutputWithContext(ctx context.Context) SnapshotGroupSnapshotTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotGroupSnapshotTagOutput)
+}
+
+// SnapshotGroupSnapshotTagArrayInput is an input type that accepts SnapshotGroupSnapshotTagArray and SnapshotGroupSnapshotTagArrayOutput values.
+// You can construct a concrete instance of `SnapshotGroupSnapshotTagArrayInput` via:
+//
+//	SnapshotGroupSnapshotTagArray{ SnapshotGroupSnapshotTagArgs{...} }
+type SnapshotGroupSnapshotTagArrayInput interface {
+	pulumi.Input
+
+	ToSnapshotGroupSnapshotTagArrayOutput() SnapshotGroupSnapshotTagArrayOutput
+	ToSnapshotGroupSnapshotTagArrayOutputWithContext(context.Context) SnapshotGroupSnapshotTagArrayOutput
+}
+
+type SnapshotGroupSnapshotTagArray []SnapshotGroupSnapshotTagInput
+
+func (SnapshotGroupSnapshotTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (i SnapshotGroupSnapshotTagArray) ToSnapshotGroupSnapshotTagArrayOutput() SnapshotGroupSnapshotTagArrayOutput {
+	return i.ToSnapshotGroupSnapshotTagArrayOutputWithContext(context.Background())
+}
+
+func (i SnapshotGroupSnapshotTagArray) ToSnapshotGroupSnapshotTagArrayOutputWithContext(ctx context.Context) SnapshotGroupSnapshotTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotGroupSnapshotTagArrayOutput)
+}
+
+type SnapshotGroupSnapshotTagOutput struct{ *pulumi.OutputState }
+
+func (SnapshotGroupSnapshotTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (o SnapshotGroupSnapshotTagOutput) ToSnapshotGroupSnapshotTagOutput() SnapshotGroupSnapshotTagOutput {
+	return o
+}
+
+func (o SnapshotGroupSnapshotTagOutput) ToSnapshotGroupSnapshotTagOutputWithContext(ctx context.Context) SnapshotGroupSnapshotTagOutput {
+	return o
+}
+
+// Tag key
+func (o SnapshotGroupSnapshotTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshotTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o SnapshotGroupSnapshotTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupSnapshotTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SnapshotGroupSnapshotTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SnapshotGroupSnapshotTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (o SnapshotGroupSnapshotTagArrayOutput) ToSnapshotGroupSnapshotTagArrayOutput() SnapshotGroupSnapshotTagArrayOutput {
+	return o
+}
+
+func (o SnapshotGroupSnapshotTagArrayOutput) ToSnapshotGroupSnapshotTagArrayOutputWithContext(ctx context.Context) SnapshotGroupSnapshotTagArrayOutput {
+	return o
+}
+
+func (o SnapshotGroupSnapshotTagArrayOutput) Index(i pulumi.IntInput) SnapshotGroupSnapshotTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotGroupSnapshotTag {
+		return vs[0].([]SnapshotGroupSnapshotTag)[vs[1].(int)]
+	}).(SnapshotGroupSnapshotTagOutput)
+}
+
+type SnapshotGroupTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// SnapshotGroupTagInput is an input type that accepts SnapshotGroupTagArgs and SnapshotGroupTagOutput values.
+// You can construct a concrete instance of `SnapshotGroupTagInput` via:
+//
+//	SnapshotGroupTagArgs{...}
+type SnapshotGroupTagInput interface {
+	pulumi.Input
+
+	ToSnapshotGroupTagOutput() SnapshotGroupTagOutput
+	ToSnapshotGroupTagOutputWithContext(context.Context) SnapshotGroupTagOutput
+}
+
+type SnapshotGroupTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SnapshotGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotGroupTag)(nil)).Elem()
+}
+
+func (i SnapshotGroupTagArgs) ToSnapshotGroupTagOutput() SnapshotGroupTagOutput {
+	return i.ToSnapshotGroupTagOutputWithContext(context.Background())
+}
+
+func (i SnapshotGroupTagArgs) ToSnapshotGroupTagOutputWithContext(ctx context.Context) SnapshotGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotGroupTagOutput)
+}
+
+// SnapshotGroupTagArrayInput is an input type that accepts SnapshotGroupTagArray and SnapshotGroupTagArrayOutput values.
+// You can construct a concrete instance of `SnapshotGroupTagArrayInput` via:
+//
+//	SnapshotGroupTagArray{ SnapshotGroupTagArgs{...} }
+type SnapshotGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToSnapshotGroupTagArrayOutput() SnapshotGroupTagArrayOutput
+	ToSnapshotGroupTagArrayOutputWithContext(context.Context) SnapshotGroupTagArrayOutput
+}
+
+type SnapshotGroupTagArray []SnapshotGroupTagInput
+
+func (SnapshotGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotGroupTag)(nil)).Elem()
+}
+
+func (i SnapshotGroupTagArray) ToSnapshotGroupTagArrayOutput() SnapshotGroupTagArrayOutput {
+	return i.ToSnapshotGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i SnapshotGroupTagArray) ToSnapshotGroupTagArrayOutputWithContext(ctx context.Context) SnapshotGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotGroupTagArrayOutput)
+}
+
+type SnapshotGroupTagOutput struct{ *pulumi.OutputState }
+
+func (SnapshotGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotGroupTag)(nil)).Elem()
+}
+
+func (o SnapshotGroupTagOutput) ToSnapshotGroupTagOutput() SnapshotGroupTagOutput {
+	return o
+}
+
+func (o SnapshotGroupTagOutput) ToSnapshotGroupTagOutputWithContext(ctx context.Context) SnapshotGroupTagOutput {
+	return o
+}
+
+// Tag key
+func (o SnapshotGroupTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o SnapshotGroupTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SnapshotGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SnapshotGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotGroupTag)(nil)).Elem()
+}
+
+func (o SnapshotGroupTagArrayOutput) ToSnapshotGroupTagArrayOutput() SnapshotGroupTagArrayOutput {
+	return o
+}
+
+func (o SnapshotGroupTagArrayOutput) ToSnapshotGroupTagArrayOutputWithContext(ctx context.Context) SnapshotGroupTagArrayOutput {
+	return o
+}
+
+func (o SnapshotGroupTagArrayOutput) Index(i pulumi.IntInput) SnapshotGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotGroupTag {
+		return vs[0].([]SnapshotGroupTag)[vs[1].(int)]
+	}).(SnapshotGroupTagOutput)
+}
+
 type SnapshotTag struct {
 	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key *string `pulumi:"key"`
@@ -712,6 +1198,495 @@ func (o VolumeTotalPerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
+type GetSnapshotGroupSnapshot struct {
+	// Snapshot creation time
+	CreationTime string `pulumi:"creationTime"`
+	// Snapshot description
+	Description string `pulumi:"description"`
+	// Image ID
+	ImageId string `pulumi:"imageId"`
+	// Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+	InstantAccess bool `pulumi:"instantAccess"`
+	// Dump progress
+	Progress int `pulumi:"progress"`
+	// Project of the snapshot
+	ProjectName string `pulumi:"projectName"`
+	// Retention days for automatic snapshots
+	RetentionDays int `pulumi:"retentionDays"`
+	// Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+	Shared bool `pulumi:"shared"`
+	// Snapshot consistency group ID
+	SnapshotGroupId string `pulumi:"snapshotGroupId"`
+	// Snapshot ID
+	SnapshotId string `pulumi:"snapshotId"`
+	// Snapshot name
+	SnapshotName string `pulumi:"snapshotName"`
+	// Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+	SnapshotType string `pulumi:"snapshotType"`
+	// Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+	Status string `pulumi:"status"`
+	// Tag information
+	Tags []GetSnapshotGroupSnapshotTag `pulumi:"tags"`
+	// Cloud disk ID
+	VolumeId string `pulumi:"volumeId"`
+	// Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+	VolumeKind string `pulumi:"volumeKind"`
+	// Cloud disk name
+	VolumeName string `pulumi:"volumeName"`
+	// Cloud disk size (GiB)
+	VolumeSize int `pulumi:"volumeSize"`
+	// Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+	VolumeStatus string `pulumi:"volumeStatus"`
+	// Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+	VolumeType string `pulumi:"volumeType"`
+	// Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetSnapshotGroupSnapshotInput is an input type that accepts GetSnapshotGroupSnapshotArgs and GetSnapshotGroupSnapshotOutput values.
+// You can construct a concrete instance of `GetSnapshotGroupSnapshotInput` via:
+//
+//	GetSnapshotGroupSnapshotArgs{...}
+type GetSnapshotGroupSnapshotInput interface {
+	pulumi.Input
+
+	ToGetSnapshotGroupSnapshotOutput() GetSnapshotGroupSnapshotOutput
+	ToGetSnapshotGroupSnapshotOutputWithContext(context.Context) GetSnapshotGroupSnapshotOutput
+}
+
+type GetSnapshotGroupSnapshotArgs struct {
+	// Snapshot creation time
+	CreationTime pulumi.StringInput `pulumi:"creationTime"`
+	// Snapshot description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Image ID
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+	InstantAccess pulumi.BoolInput `pulumi:"instantAccess"`
+	// Dump progress
+	Progress pulumi.IntInput `pulumi:"progress"`
+	// Project of the snapshot
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// Retention days for automatic snapshots
+	RetentionDays pulumi.IntInput `pulumi:"retentionDays"`
+	// Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+	Shared pulumi.BoolInput `pulumi:"shared"`
+	// Snapshot consistency group ID
+	SnapshotGroupId pulumi.StringInput `pulumi:"snapshotGroupId"`
+	// Snapshot ID
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// Snapshot name
+	SnapshotName pulumi.StringInput `pulumi:"snapshotName"`
+	// Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+	SnapshotType pulumi.StringInput `pulumi:"snapshotType"`
+	// Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+	Status pulumi.StringInput `pulumi:"status"`
+	// Tag information
+	Tags GetSnapshotGroupSnapshotTagArrayInput `pulumi:"tags"`
+	// Cloud disk ID
+	VolumeId pulumi.StringInput `pulumi:"volumeId"`
+	// Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+	VolumeKind pulumi.StringInput `pulumi:"volumeKind"`
+	// Cloud disk name
+	VolumeName pulumi.StringInput `pulumi:"volumeName"`
+	// Cloud disk size (GiB)
+	VolumeSize pulumi.IntInput `pulumi:"volumeSize"`
+	// Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+	VolumeStatus pulumi.StringInput `pulumi:"volumeStatus"`
+	// Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+	// Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetSnapshotGroupSnapshotArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (i GetSnapshotGroupSnapshotArgs) ToGetSnapshotGroupSnapshotOutput() GetSnapshotGroupSnapshotOutput {
+	return i.ToGetSnapshotGroupSnapshotOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotGroupSnapshotArgs) ToGetSnapshotGroupSnapshotOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotGroupSnapshotOutput)
+}
+
+// GetSnapshotGroupSnapshotArrayInput is an input type that accepts GetSnapshotGroupSnapshotArray and GetSnapshotGroupSnapshotArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotGroupSnapshotArrayInput` via:
+//
+//	GetSnapshotGroupSnapshotArray{ GetSnapshotGroupSnapshotArgs{...} }
+type GetSnapshotGroupSnapshotArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotGroupSnapshotArrayOutput() GetSnapshotGroupSnapshotArrayOutput
+	ToGetSnapshotGroupSnapshotArrayOutputWithContext(context.Context) GetSnapshotGroupSnapshotArrayOutput
+}
+
+type GetSnapshotGroupSnapshotArray []GetSnapshotGroupSnapshotInput
+
+func (GetSnapshotGroupSnapshotArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (i GetSnapshotGroupSnapshotArray) ToGetSnapshotGroupSnapshotArrayOutput() GetSnapshotGroupSnapshotArrayOutput {
+	return i.ToGetSnapshotGroupSnapshotArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotGroupSnapshotArray) ToGetSnapshotGroupSnapshotArrayOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotGroupSnapshotArrayOutput)
+}
+
+type GetSnapshotGroupSnapshotOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotGroupSnapshotOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (o GetSnapshotGroupSnapshotOutput) ToGetSnapshotGroupSnapshotOutput() GetSnapshotGroupSnapshotOutput {
+	return o
+}
+
+func (o GetSnapshotGroupSnapshotOutput) ToGetSnapshotGroupSnapshotOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotOutput {
+	return o
+}
+
+// Snapshot creation time
+func (o GetSnapshotGroupSnapshotOutput) CreationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.CreationTime }).(pulumi.StringOutput)
+}
+
+// Snapshot description
+func (o GetSnapshotGroupSnapshotOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Image ID
+func (o GetSnapshotGroupSnapshotOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
+func (o GetSnapshotGroupSnapshotOutput) InstantAccess() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) bool { return v.InstantAccess }).(pulumi.BoolOutput)
+}
+
+// Dump progress
+func (o GetSnapshotGroupSnapshotOutput) Progress() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) int { return v.Progress }).(pulumi.IntOutput)
+}
+
+// Project of the snapshot
+func (o GetSnapshotGroupSnapshotOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Retention days for automatic snapshots
+func (o GetSnapshotGroupSnapshotOutput) RetentionDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) int { return v.RetentionDays }).(pulumi.IntOutput)
+}
+
+// Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
+func (o GetSnapshotGroupSnapshotOutput) Shared() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) bool { return v.Shared }).(pulumi.BoolOutput)
+}
+
+// Snapshot consistency group ID
+func (o GetSnapshotGroupSnapshotOutput) SnapshotGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.SnapshotGroupId }).(pulumi.StringOutput)
+}
+
+// Snapshot ID
+func (o GetSnapshotGroupSnapshotOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// Snapshot name
+func (o GetSnapshotGroupSnapshotOutput) SnapshotName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.SnapshotName }).(pulumi.StringOutput)
+}
+
+// Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
+func (o GetSnapshotGroupSnapshotOutput) SnapshotType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.SnapshotType }).(pulumi.StringOutput)
+}
+
+// Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
+func (o GetSnapshotGroupSnapshotOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Tag information
+func (o GetSnapshotGroupSnapshotOutput) Tags() GetSnapshotGroupSnapshotTagArrayOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) []GetSnapshotGroupSnapshotTag { return v.Tags }).(GetSnapshotGroupSnapshotTagArrayOutput)
+}
+
+// Cloud disk ID
+func (o GetSnapshotGroupSnapshotOutput) VolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.VolumeId }).(pulumi.StringOutput)
+}
+
+// Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
+func (o GetSnapshotGroupSnapshotOutput) VolumeKind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.VolumeKind }).(pulumi.StringOutput)
+}
+
+// Cloud disk name
+func (o GetSnapshotGroupSnapshotOutput) VolumeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.VolumeName }).(pulumi.StringOutput)
+}
+
+// Cloud disk size (GiB)
+func (o GetSnapshotGroupSnapshotOutput) VolumeSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) int { return v.VolumeSize }).(pulumi.IntOutput)
+}
+
+// Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
+func (o GetSnapshotGroupSnapshotOutput) VolumeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.VolumeStatus }).(pulumi.StringOutput)
+}
+
+// Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
+func (o GetSnapshotGroupSnapshotOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+// Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
+func (o GetSnapshotGroupSnapshotOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshot) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetSnapshotGroupSnapshotArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotGroupSnapshotArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotGroupSnapshot)(nil)).Elem()
+}
+
+func (o GetSnapshotGroupSnapshotArrayOutput) ToGetSnapshotGroupSnapshotArrayOutput() GetSnapshotGroupSnapshotArrayOutput {
+	return o
+}
+
+func (o GetSnapshotGroupSnapshotArrayOutput) ToGetSnapshotGroupSnapshotArrayOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotArrayOutput {
+	return o
+}
+
+func (o GetSnapshotGroupSnapshotArrayOutput) Index(i pulumi.IntInput) GetSnapshotGroupSnapshotOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotGroupSnapshot {
+		return vs[0].([]GetSnapshotGroupSnapshot)[vs[1].(int)]
+	}).(GetSnapshotGroupSnapshotOutput)
+}
+
+type GetSnapshotGroupSnapshotTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetSnapshotGroupSnapshotTagInput is an input type that accepts GetSnapshotGroupSnapshotTagArgs and GetSnapshotGroupSnapshotTagOutput values.
+// You can construct a concrete instance of `GetSnapshotGroupSnapshotTagInput` via:
+//
+//	GetSnapshotGroupSnapshotTagArgs{...}
+type GetSnapshotGroupSnapshotTagInput interface {
+	pulumi.Input
+
+	ToGetSnapshotGroupSnapshotTagOutput() GetSnapshotGroupSnapshotTagOutput
+	ToGetSnapshotGroupSnapshotTagOutputWithContext(context.Context) GetSnapshotGroupSnapshotTagOutput
+}
+
+type GetSnapshotGroupSnapshotTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSnapshotGroupSnapshotTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (i GetSnapshotGroupSnapshotTagArgs) ToGetSnapshotGroupSnapshotTagOutput() GetSnapshotGroupSnapshotTagOutput {
+	return i.ToGetSnapshotGroupSnapshotTagOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotGroupSnapshotTagArgs) ToGetSnapshotGroupSnapshotTagOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotGroupSnapshotTagOutput)
+}
+
+// GetSnapshotGroupSnapshotTagArrayInput is an input type that accepts GetSnapshotGroupSnapshotTagArray and GetSnapshotGroupSnapshotTagArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotGroupSnapshotTagArrayInput` via:
+//
+//	GetSnapshotGroupSnapshotTagArray{ GetSnapshotGroupSnapshotTagArgs{...} }
+type GetSnapshotGroupSnapshotTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotGroupSnapshotTagArrayOutput() GetSnapshotGroupSnapshotTagArrayOutput
+	ToGetSnapshotGroupSnapshotTagArrayOutputWithContext(context.Context) GetSnapshotGroupSnapshotTagArrayOutput
+}
+
+type GetSnapshotGroupSnapshotTagArray []GetSnapshotGroupSnapshotTagInput
+
+func (GetSnapshotGroupSnapshotTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (i GetSnapshotGroupSnapshotTagArray) ToGetSnapshotGroupSnapshotTagArrayOutput() GetSnapshotGroupSnapshotTagArrayOutput {
+	return i.ToGetSnapshotGroupSnapshotTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotGroupSnapshotTagArray) ToGetSnapshotGroupSnapshotTagArrayOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotGroupSnapshotTagArrayOutput)
+}
+
+type GetSnapshotGroupSnapshotTagOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotGroupSnapshotTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (o GetSnapshotGroupSnapshotTagOutput) ToGetSnapshotGroupSnapshotTagOutput() GetSnapshotGroupSnapshotTagOutput {
+	return o
+}
+
+func (o GetSnapshotGroupSnapshotTagOutput) ToGetSnapshotGroupSnapshotTagOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetSnapshotGroupSnapshotTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshotTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetSnapshotGroupSnapshotTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupSnapshotTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSnapshotGroupSnapshotTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotGroupSnapshotTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotGroupSnapshotTag)(nil)).Elem()
+}
+
+func (o GetSnapshotGroupSnapshotTagArrayOutput) ToGetSnapshotGroupSnapshotTagArrayOutput() GetSnapshotGroupSnapshotTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotGroupSnapshotTagArrayOutput) ToGetSnapshotGroupSnapshotTagArrayOutputWithContext(ctx context.Context) GetSnapshotGroupSnapshotTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotGroupSnapshotTagArrayOutput) Index(i pulumi.IntInput) GetSnapshotGroupSnapshotTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotGroupSnapshotTag {
+		return vs[0].([]GetSnapshotGroupSnapshotTag)[vs[1].(int)]
+	}).(GetSnapshotGroupSnapshotTagOutput)
+}
+
+type GetSnapshotGroupTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetSnapshotGroupTagInput is an input type that accepts GetSnapshotGroupTagArgs and GetSnapshotGroupTagOutput values.
+// You can construct a concrete instance of `GetSnapshotGroupTagInput` via:
+//
+//	GetSnapshotGroupTagArgs{...}
+type GetSnapshotGroupTagInput interface {
+	pulumi.Input
+
+	ToGetSnapshotGroupTagOutput() GetSnapshotGroupTagOutput
+	ToGetSnapshotGroupTagOutputWithContext(context.Context) GetSnapshotGroupTagOutput
+}
+
+type GetSnapshotGroupTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSnapshotGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotGroupTag)(nil)).Elem()
+}
+
+func (i GetSnapshotGroupTagArgs) ToGetSnapshotGroupTagOutput() GetSnapshotGroupTagOutput {
+	return i.ToGetSnapshotGroupTagOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotGroupTagArgs) ToGetSnapshotGroupTagOutputWithContext(ctx context.Context) GetSnapshotGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotGroupTagOutput)
+}
+
+// GetSnapshotGroupTagArrayInput is an input type that accepts GetSnapshotGroupTagArray and GetSnapshotGroupTagArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotGroupTagArrayInput` via:
+//
+//	GetSnapshotGroupTagArray{ GetSnapshotGroupTagArgs{...} }
+type GetSnapshotGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotGroupTagArrayOutput() GetSnapshotGroupTagArrayOutput
+	ToGetSnapshotGroupTagArrayOutputWithContext(context.Context) GetSnapshotGroupTagArrayOutput
+}
+
+type GetSnapshotGroupTagArray []GetSnapshotGroupTagInput
+
+func (GetSnapshotGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotGroupTag)(nil)).Elem()
+}
+
+func (i GetSnapshotGroupTagArray) ToGetSnapshotGroupTagArrayOutput() GetSnapshotGroupTagArrayOutput {
+	return i.ToGetSnapshotGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotGroupTagArray) ToGetSnapshotGroupTagArrayOutputWithContext(ctx context.Context) GetSnapshotGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotGroupTagArrayOutput)
+}
+
+type GetSnapshotGroupTagOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotGroupTag)(nil)).Elem()
+}
+
+func (o GetSnapshotGroupTagOutput) ToGetSnapshotGroupTagOutput() GetSnapshotGroupTagOutput {
+	return o
+}
+
+func (o GetSnapshotGroupTagOutput) ToGetSnapshotGroupTagOutputWithContext(ctx context.Context) GetSnapshotGroupTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetSnapshotGroupTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetSnapshotGroupTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotGroupTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSnapshotGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotGroupTag)(nil)).Elem()
+}
+
+func (o GetSnapshotGroupTagArrayOutput) ToGetSnapshotGroupTagArrayOutput() GetSnapshotGroupTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotGroupTagArrayOutput) ToGetSnapshotGroupTagArrayOutputWithContext(ctx context.Context) GetSnapshotGroupTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotGroupTagArrayOutput) Index(i pulumi.IntInput) GetSnapshotGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotGroupTag {
+		return vs[0].([]GetSnapshotGroupTag)[vs[1].(int)]
+	}).(GetSnapshotGroupTagOutput)
+}
+
 type GetSnapshotTag struct {
 	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key string `pulumi:"key"`
@@ -1117,6 +2092,12 @@ func (o GetVolumeTotalPerformanceOutput) Throughput() pulumi.Float64Output {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupSnapshotInput)(nil)).Elem(), SnapshotGroupSnapshotArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupSnapshotArrayInput)(nil)).Elem(), SnapshotGroupSnapshotArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupSnapshotTagInput)(nil)).Elem(), SnapshotGroupSnapshotTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupSnapshotTagArrayInput)(nil)).Elem(), SnapshotGroupSnapshotTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupTagInput)(nil)).Elem(), SnapshotGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupTagArrayInput)(nil)).Elem(), SnapshotGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotTagInput)(nil)).Elem(), SnapshotTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotTagArrayInput)(nil)).Elem(), SnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBaselinePerformanceInput)(nil)).Elem(), VolumeBaselinePerformanceArgs{})
@@ -1127,6 +2108,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeTagArrayInput)(nil)).Elem(), VolumeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeTotalPerformanceInput)(nil)).Elem(), VolumeTotalPerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeTotalPerformancePtrInput)(nil)).Elem(), VolumeTotalPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupSnapshotInput)(nil)).Elem(), GetSnapshotGroupSnapshotArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupSnapshotArrayInput)(nil)).Elem(), GetSnapshotGroupSnapshotArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupSnapshotTagInput)(nil)).Elem(), GetSnapshotGroupSnapshotTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupSnapshotTagArrayInput)(nil)).Elem(), GetSnapshotGroupSnapshotTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupTagInput)(nil)).Elem(), GetSnapshotGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupTagArrayInput)(nil)).Elem(), GetSnapshotGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotTagInput)(nil)).Elem(), GetSnapshotTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotTagArrayInput)(nil)).Elem(), GetSnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBaselinePerformanceInput)(nil)).Elem(), GetVolumeBaselinePerformanceArgs{})
@@ -1134,6 +2121,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeTagInput)(nil)).Elem(), GetVolumeTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeTagArrayInput)(nil)).Elem(), GetVolumeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeTotalPerformanceInput)(nil)).Elem(), GetVolumeTotalPerformanceArgs{})
+	pulumi.RegisterOutputType(SnapshotGroupSnapshotOutput{})
+	pulumi.RegisterOutputType(SnapshotGroupSnapshotArrayOutput{})
+	pulumi.RegisterOutputType(SnapshotGroupSnapshotTagOutput{})
+	pulumi.RegisterOutputType(SnapshotGroupSnapshotTagArrayOutput{})
+	pulumi.RegisterOutputType(SnapshotGroupTagOutput{})
+	pulumi.RegisterOutputType(SnapshotGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(SnapshotTagOutput{})
 	pulumi.RegisterOutputType(SnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(VolumeBaselinePerformanceOutput{})
@@ -1144,6 +2137,12 @@ func init() {
 	pulumi.RegisterOutputType(VolumeTagArrayOutput{})
 	pulumi.RegisterOutputType(VolumeTotalPerformanceOutput{})
 	pulumi.RegisterOutputType(VolumeTotalPerformancePtrOutput{})
+	pulumi.RegisterOutputType(GetSnapshotGroupSnapshotOutput{})
+	pulumi.RegisterOutputType(GetSnapshotGroupSnapshotArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotGroupSnapshotTagOutput{})
+	pulumi.RegisterOutputType(GetSnapshotGroupSnapshotTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotGroupTagOutput{})
+	pulumi.RegisterOutputType(GetSnapshotGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotTagOutput{})
 	pulumi.RegisterOutputType(GetSnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBaselinePerformanceOutput{})

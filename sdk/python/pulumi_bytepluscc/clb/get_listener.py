@@ -28,7 +28,7 @@ class GetListenerResult:
     """
     A collection of values returned by getListener.
     """
-    def __init__(__self__, acl_ids=None, acl_status=None, acl_type=None, bandwidth=None, ca_certificate_id=None, ca_enabled=None, cert_center_certificate_id=None, certificate_id=None, certificate_source=None, client_body_timeout=None, client_header_timeout=None, connection_drain_enabled=None, connection_drain_timeout=None, cookie=None, cps=None, created_time=None, description=None, enabled=None, end_port=None, established_timeout=None, health_check=None, http2_enabled=None, id=None, keepalive_timeout=None, listener_id=None, listener_name=None, load_balancer_id=None, max_connections=None, persistence_timeout=None, persistence_type=None, port=None, protocol=None, proxy_connect_timeout=None, proxy_protocol_type=None, proxy_read_timeout=None, proxy_send_timeout=None, rule_ids=None, scheduler=None, security_policy_id=None, send_timeout=None, server_group_id=None, start_port=None, status=None, tags=None, updated_time=None, waf_protection_enabled=None):
+    def __init__(__self__, acl_ids=None, acl_status=None, acl_type=None, bandwidth=None, ca_certificate_id=None, ca_enabled=None, cert_center_certificate_id=None, certificate_id=None, certificate_source=None, client_body_timeout=None, client_header_timeout=None, connection_drain_enabled=None, connection_drain_timeout=None, cookie=None, cps=None, created_time=None, description=None, domain_extensions=None, enabled=None, end_port=None, established_timeout=None, health_check=None, http2_enabled=None, id=None, keepalive_timeout=None, listener_id=None, listener_name=None, load_balancer_id=None, max_connections=None, persistence_timeout=None, persistence_type=None, port=None, protocol=None, proxy_connect_timeout=None, proxy_protocol_type=None, proxy_read_timeout=None, proxy_send_timeout=None, rule_ids=None, scheduler=None, security_policy_id=None, send_timeout=None, server_group_id=None, start_port=None, status=None, tags=None, updated_time=None, waf_protection_enabled=None):
         if acl_ids and not isinstance(acl_ids, list):
             raise TypeError("Expected argument 'acl_ids' to be a list")
         pulumi.set(__self__, "acl_ids", acl_ids)
@@ -80,6 +80,9 @@ class GetListenerResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if domain_extensions and not isinstance(domain_extensions, list):
+            raise TypeError("Expected argument 'domain_extensions' to be a list")
+        pulumi.set(__self__, "domain_extensions", domain_extensions)
         if enabled and not isinstance(enabled, str):
             raise TypeError("Expected argument 'enabled' to be a str")
         pulumi.set(__self__, "enabled", enabled)
@@ -303,6 +306,14 @@ class GetListenerResult:
         Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="domainExtensions")
+    def domain_extensions(self) -> Sequence['outputs.GetListenerDomainExtensionResult']:
+        """
+        List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+        """
+        return pulumi.get(self, "domain_extensions")
 
     @property
     @pulumi.getter
@@ -560,6 +571,7 @@ class AwaitableGetListenerResult(GetListenerResult):
             cps=self.cps,
             created_time=self.created_time,
             description=self.description,
+            domain_extensions=self.domain_extensions,
             enabled=self.enabled,
             end_port=self.end_port,
             established_timeout=self.established_timeout,
@@ -622,6 +634,7 @@ def get_listener(id: Optional[builtins.str] = None,
         cps=pulumi.get(__ret__, 'cps'),
         created_time=pulumi.get(__ret__, 'created_time'),
         description=pulumi.get(__ret__, 'description'),
+        domain_extensions=pulumi.get(__ret__, 'domain_extensions'),
         enabled=pulumi.get(__ret__, 'enabled'),
         end_port=pulumi.get(__ret__, 'end_port'),
         established_timeout=pulumi.get(__ret__, 'established_timeout'),
@@ -681,6 +694,7 @@ def get_listener_output(id: Optional[pulumi.Input[builtins.str]] = None,
         cps=pulumi.get(__response__, 'cps'),
         created_time=pulumi.get(__response__, 'created_time'),
         description=pulumi.get(__response__, 'description'),
+        domain_extensions=pulumi.get(__response__, 'domain_extensions'),
         enabled=pulumi.get(__response__, 'enabled'),
         end_port=pulumi.get(__response__, 'end_port'),
         established_timeout=pulumi.get(__response__, 'established_timeout'),

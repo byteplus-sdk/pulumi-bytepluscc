@@ -124,6 +124,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        [Output("domainExtensions")]
+        public Output<ImmutableArray<Outputs.ListenerDomainExtension>> DomainExtensions { get; private set; } = null!;
+
         /// <summary>
         /// Enable listener. on (default): enabled. off: disabled.
         /// </summary>
@@ -438,6 +441,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        [Input("domainExtensions")]
+        private InputList<Inputs.ListenerDomainExtensionArgs>? _domainExtensions;
+        public InputList<Inputs.ListenerDomainExtensionArgs> DomainExtensions
+        {
+            get => _domainExtensions ?? (_domainExtensions = new InputList<Inputs.ListenerDomainExtensionArgs>());
+            set => _domainExtensions = value;
+        }
+
         /// <summary>
         /// Enable listener. on (default): enabled. off: disabled.
         /// </summary>
@@ -693,6 +704,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("domainExtensions")]
+        private InputList<Inputs.ListenerDomainExtensionGetArgs>? _domainExtensions;
+        public InputList<Inputs.ListenerDomainExtensionGetArgs> DomainExtensions
+        {
+            get => _domainExtensions ?? (_domainExtensions = new InputList<Inputs.ListenerDomainExtensionGetArgs>());
+            set => _domainExtensions = value;
+        }
 
         /// <summary>
         /// Enable listener. on (default): enabled. off: disabled.

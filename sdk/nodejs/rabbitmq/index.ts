@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AllowListArgs, AllowListState } from "./allowList";
+export type AllowList = import("./allowList").AllowList;
+export const AllowList: typeof import("./allowList").AllowList = null as any;
+utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
+
+export { GetAllowListArgs, GetAllowListResult, GetAllowListOutputArgs } from "./getAllowList";
+export const getAllowList: typeof import("./getAllowList").getAllowList = null as any;
+export const getAllowListOutput: typeof import("./getAllowList").getAllowListOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowList","getAllowListOutput"], () => require("./getAllowList"));
+
+export { GetAllowListsResult } from "./getAllowLists";
+export const getAllowLists: typeof import("./getAllowLists").getAllowLists = null as any;
+export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
+
 export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
 export const getInstance: typeof import("./getInstance").getInstance = null as any;
 export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:rabbitmq/allowList:AllowList":
+                return new AllowList(name, <any>undefined, { urn })
             case "bytepluscc:rabbitmq/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:rabbitmq/instancePlugin:InstancePlugin":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "rabbitmq/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rabbitmq/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rabbitmq/instancePlugin", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rabbitmq/publicAddress", _module)

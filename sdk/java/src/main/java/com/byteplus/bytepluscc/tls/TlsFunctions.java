@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.tls;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetImportTaskArgs;
@@ -12,10 +14,16 @@ import com.byteplus.bytepluscc.tls.inputs.GetIndexArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetIndexPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetRuleArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetRulePlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetShipperArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetShipperPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetTopicArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetTopicPlainArgs;
+import com.byteplus.bytepluscc.tls.outputs.GetAlarmNotifyGroupResult;
+import com.byteplus.bytepluscc.tls.outputs.GetAlarmNotifyGroupsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetImportTaskResult;
@@ -24,8 +32,12 @@ import com.byteplus.bytepluscc.tls.outputs.GetIndexResult;
 import com.byteplus.bytepluscc.tls.outputs.GetIndicesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetRuleResult;
+import com.byteplus.bytepluscc.tls.outputs.GetRulesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetScheduleSqlTaskResult;
 import com.byteplus.bytepluscc.tls.outputs.GetScheduleSqlTasksResult;
+import com.byteplus.bytepluscc.tls.outputs.GetShipperResult;
+import com.byteplus.bytepluscc.tls.outputs.GetShippersResult;
 import com.byteplus.bytepluscc.tls.outputs.GetTopicResult;
 import com.byteplus.bytepluscc.tls.outputs.GetTopicsResult;
 import com.pulumi.core.Output;
@@ -37,6 +49,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class TlsFunctions {
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupResult> getAlarmNotifyGroup(GetAlarmNotifyGroupArgs args) {
+        return getAlarmNotifyGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static CompletableFuture<GetAlarmNotifyGroupResult> getAlarmNotifyGroupPlain(GetAlarmNotifyGroupPlainArgs args) {
+        return getAlarmNotifyGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupResult> getAlarmNotifyGroup(GetAlarmNotifyGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmNotifyGroup:getAlarmNotifyGroup", TypeShape.of(GetAlarmNotifyGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupResult> getAlarmNotifyGroup(GetAlarmNotifyGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmNotifyGroup:getAlarmNotifyGroup", TypeShape.of(GetAlarmNotifyGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static CompletableFuture<GetAlarmNotifyGroupResult> getAlarmNotifyGroupPlain(GetAlarmNotifyGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarmNotifyGroup:getAlarmNotifyGroup", TypeShape.of(GetAlarmNotifyGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupsResult> getAlarmNotifyGroups() {
+        return getAlarmNotifyGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static CompletableFuture<GetAlarmNotifyGroupsResult> getAlarmNotifyGroupsPlain() {
+        return getAlarmNotifyGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupsResult> getAlarmNotifyGroups(InvokeArgs args) {
+        return getAlarmNotifyGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static CompletableFuture<GetAlarmNotifyGroupsResult> getAlarmNotifyGroupsPlain(InvokeArgs args) {
+        return getAlarmNotifyGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupsResult> getAlarmNotifyGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmNotifyGroups:getAlarmNotifyGroups", TypeShape.of(GetAlarmNotifyGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static Output<GetAlarmNotifyGroupsResult> getAlarmNotifyGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmNotifyGroups:getAlarmNotifyGroups", TypeShape.of(GetAlarmNotifyGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmNotifyGroup
+     * 
+     */
+    public static CompletableFuture<GetAlarmNotifyGroupsResult> getAlarmNotifyGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarmNotifyGroups:getAlarmNotifyGroups", TypeShape.of(GetAlarmNotifyGroupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::TLS::ConsumerGroup
      * 
@@ -374,6 +470,90 @@ public final class TlsFunctions {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args) {
+        return getRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args) {
+        return getRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules() {
+        return getRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain() {
+        return getRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args) {
+        return getRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args) {
+        return getRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Data Source schema for Byteplus::TLS::ScheduleSqlTask
      * 
      */
@@ -456,6 +636,90 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetScheduleSqlTasksResult> getScheduleSqlTasksPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getScheduleSqlTasks:getScheduleSqlTasks", TypeShape.of(GetScheduleSqlTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShipperResult> getShipper(GetShipperArgs args) {
+        return getShipper(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static CompletableFuture<GetShipperResult> getShipperPlain(GetShipperPlainArgs args) {
+        return getShipperPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShipperResult> getShipper(GetShipperArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getShipper:getShipper", TypeShape.of(GetShipperResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShipperResult> getShipper(GetShipperArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getShipper:getShipper", TypeShape.of(GetShipperResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static CompletableFuture<GetShipperResult> getShipperPlain(GetShipperPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getShipper:getShipper", TypeShape.of(GetShipperResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShippersResult> getShippers() {
+        return getShippers(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static CompletableFuture<GetShippersResult> getShippersPlain() {
+        return getShippersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShippersResult> getShippers(InvokeArgs args) {
+        return getShippers(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static CompletableFuture<GetShippersResult> getShippersPlain(InvokeArgs args) {
+        return getShippersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShippersResult> getShippers(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getShippers:getShippers", TypeShape.of(GetShippersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static Output<GetShippersResult> getShippers(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getShippers:getShippers", TypeShape.of(GetShippersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Shipper
+     * 
+     */
+    public static CompletableFuture<GetShippersResult> getShippersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getShippers:getShippers", TypeShape.of(GetShippersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::TLS::Topic

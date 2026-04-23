@@ -16,12 +16,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AllowListAssociatedInstance',
     'InstanceChargeDetail',
     'InstanceEndpoint',
     'InstanceTag',
     'PublicAddressChargeDetail',
     'PublicAddressEndpoint',
     'PublicAddressTag',
+    'GetAllowListAssociatedInstanceResult',
     'GetInstanceChargeDetailResult',
     'GetInstanceEndpointResult',
     'GetInstanceTagResult',
@@ -29,6 +31,42 @@ __all__ = [
     'GetPublicAddressEndpointResult',
     'GetPublicAddressTagResult',
 ]
+
+@pulumi.output_type
+class AllowListAssociatedInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: Instance ID
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        Instance ID
+        """
+        return pulumi.get(self, "instance_id")
+
 
 @pulumi.output_type
 class InstanceChargeDetail(dict):
@@ -568,6 +606,46 @@ class PublicAddressTag(dict):
         Tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAllowListAssociatedInstanceResult(dict):
+    def __init__(__self__, *,
+                 instance_id: builtins.str,
+                 instance_name: builtins.str,
+                 vpc: builtins.str):
+        """
+        :param builtins.str instance_id: Instance ID
+        :param builtins.str instance_name: Instance Name
+        :param builtins.str vpc: VPC ID of the instance
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "vpc", vpc)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        Instance ID
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> builtins.str:
+        """
+        Instance Name
+        """
+        return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> builtins.str:
+        """
+        VPC ID of the instance
+        """
+        return pulumi.get(self, "vpc")
 
 
 @pulumi.output_type

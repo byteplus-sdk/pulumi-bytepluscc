@@ -17,21 +17,6 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
     public static final EndpointServiceResourceArgs Empty = new EndpointServiceResourceArgs();
 
     /**
-     * Endpoint service ID.
-     * 
-     */
-    @Import(name="instanceId")
-    private @Nullable Output<String> instanceId;
-
-    /**
-     * @return Endpoint service ID.
-     * 
-     */
-    public Optional<Output<String>> instanceId() {
-        return Optional.ofNullable(this.instanceId);
-    }
-
-    /**
      * Service resource ID to be added to the endpoint service.
      * 
      */
@@ -64,7 +49,6 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
     private EndpointServiceResourceArgs() {}
 
     private EndpointServiceResourceArgs(EndpointServiceResourceArgs $) {
-        this.instanceId = $.instanceId;
         this.resourceId = $.resourceId;
         this.zoneIds = $.zoneIds;
     }
@@ -85,27 +69,6 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
 
         public Builder(EndpointServiceResourceArgs defaults) {
             $ = new EndpointServiceResourceArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @param instanceId Endpoint service ID.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceId(@Nullable Output<String> instanceId) {
-            $.instanceId = instanceId;
-            return this;
-        }
-
-        /**
-         * @param instanceId Endpoint service ID.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceId(String instanceId) {
-            return instanceId(Output.of(instanceId));
         }
 
         /**

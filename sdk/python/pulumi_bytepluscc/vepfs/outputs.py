@@ -18,8 +18,12 @@ from .. import _utilities
 __all__ = [
     'InstanceCapacityInfo',
     'InstanceTag',
+    'MountServiceAttachFileSystem',
+    'MountServiceNode',
     'GetInstanceCapacityInfoResult',
     'GetInstanceTagResult',
+    'GetMountServiceAttachFileSystemResult',
+    'GetMountServiceNodeResult',
 ]
 
 @pulumi.output_type
@@ -104,6 +108,146 @@ class InstanceTag(dict):
 
 
 @pulumi.output_type
+class MountServiceAttachFileSystem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accountId":
+            suggest = "account_id"
+        elif key == "customerPath":
+            suggest = "customer_path"
+        elif key == "fileSystemId":
+            suggest = "file_system_id"
+        elif key == "fileSystemName":
+            suggest = "file_system_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MountServiceAttachFileSystem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MountServiceAttachFileSystem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MountServiceAttachFileSystem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 account_id: Optional[builtins.str] = None,
+                 customer_path: Optional[builtins.str] = None,
+                 file_system_id: Optional[builtins.str] = None,
+                 file_system_name: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None):
+        """
+        :param builtins.str account_id: Account ID.
+        :param builtins.str customer_path: User mount path.
+        :param builtins.str file_system_id: File system ID.
+        :param builtins.str file_system_name: File system name.
+        :param builtins.str status: Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+        """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if customer_path is not None:
+            pulumi.set(__self__, "customer_path", customer_path)
+        if file_system_id is not None:
+            pulumi.set(__self__, "file_system_id", file_system_id)
+        if file_system_name is not None:
+            pulumi.set(__self__, "file_system_name", file_system_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[builtins.str]:
+        """
+        Account ID.
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="customerPath")
+    def customer_path(self) -> Optional[builtins.str]:
+        """
+        User mount path.
+        """
+        return pulumi.get(self, "customer_path")
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> Optional[builtins.str]:
+        """
+        File system ID.
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="fileSystemName")
+    def file_system_name(self) -> Optional[builtins.str]:
+        """
+        File system name.
+        """
+        return pulumi.get(self, "file_system_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class MountServiceNode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultPassword":
+            suggest = "default_password"
+        elif key == "nodeId":
+            suggest = "node_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MountServiceNode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MountServiceNode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MountServiceNode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 default_password: Optional[builtins.str] = None,
+                 node_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str default_password: Node initial password.
+        :param builtins.str node_id: Node instance ID.
+        """
+        if default_password is not None:
+            pulumi.set(__self__, "default_password", default_password)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+
+    @property
+    @pulumi.getter(name="defaultPassword")
+    def default_password(self) -> Optional[builtins.str]:
+        """
+        Node initial password.
+        """
+        return pulumi.get(self, "default_password")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[builtins.str]:
+        """
+        Node instance ID.
+        """
+        return pulumi.get(self, "node_id")
+
+
+@pulumi.output_type
 class GetInstanceCapacityInfoResult(dict):
     def __init__(__self__, *,
                  total_ti_b: builtins.int,
@@ -170,5 +314,96 @@ class GetInstanceTagResult(dict):
         User tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMountServiceAttachFileSystemResult(dict):
+    def __init__(__self__, *,
+                 account_id: builtins.str,
+                 customer_path: builtins.str,
+                 file_system_id: builtins.str,
+                 file_system_name: builtins.str,
+                 status: builtins.str):
+        """
+        :param builtins.str account_id: Account ID.
+        :param builtins.str customer_path: User mount path.
+        :param builtins.str file_system_id: File system ID.
+        :param builtins.str file_system_name: File system name.
+        :param builtins.str status: Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "customer_path", customer_path)
+        pulumi.set(__self__, "file_system_id", file_system_id)
+        pulumi.set(__self__, "file_system_name", file_system_name)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> builtins.str:
+        """
+        Account ID.
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="customerPath")
+    def customer_path(self) -> builtins.str:
+        """
+        User mount path.
+        """
+        return pulumi.get(self, "customer_path")
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> builtins.str:
+        """
+        File system ID.
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="fileSystemName")
+    def file_system_name(self) -> builtins.str:
+        """
+        File system name.
+        """
+        return pulumi.get(self, "file_system_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetMountServiceNodeResult(dict):
+    def __init__(__self__, *,
+                 default_password: builtins.str,
+                 node_id: builtins.str):
+        """
+        :param builtins.str default_password: Node initial password.
+        :param builtins.str node_id: Node instance ID.
+        """
+        pulumi.set(__self__, "default_password", default_password)
+        pulumi.set(__self__, "node_id", node_id)
+
+    @property
+    @pulumi.getter(name="defaultPassword")
+    def default_password(self) -> builtins.str:
+        """
+        Node initial password.
+        """
+        return pulumi.get(self, "default_password")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> builtins.str:
+        """
+        Node instance ID.
+        """
+        return pulumi.get(self, "node_id")
 
 

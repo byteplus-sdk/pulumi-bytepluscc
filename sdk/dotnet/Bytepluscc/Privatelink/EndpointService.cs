@@ -65,6 +65,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Output<string> Payer { get; private set; } = null!;
 
         /// <summary>
+        /// Details of authorized allowlist accounts.
+        /// </summary>
+        [Output("permitAccountIds")]
+        public Output<ImmutableArray<string>> PermitAccountIds { get; private set; } = null!;
+
+        /// <summary>
         /// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         /// </summary>
         [Output("privateDnsEnabled")]
@@ -122,7 +128,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Output<string> ServiceNameManaged { get; private set; } = null!;
 
         /// <summary>
-        /// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        /// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         /// </summary>
         [Output("serviceNameSuffix")]
         public Output<string> ServiceNameSuffix { get; private set; } = null!;
@@ -249,6 +255,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         [Input("payer")]
         public Input<string>? Payer { get; set; }
 
+        [Input("permitAccountIds")]
+        private InputList<string>? _permitAccountIds;
+
+        /// <summary>
+        /// Details of authorized allowlist accounts.
+        /// </summary>
+        public InputList<string> PermitAccountIds
+        {
+            get => _permitAccountIds ?? (_permitAccountIds = new InputList<string>());
+            set => _permitAccountIds = value;
+        }
+
         /// <summary>
         /// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         /// </summary>
@@ -288,7 +306,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Input<string>? ServiceNameManaged { get; set; }
 
         /// <summary>
-        /// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        /// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         /// </summary>
         [Input("serviceNameSuffix")]
         public Input<string>? ServiceNameSuffix { get; set; }
@@ -381,6 +399,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         [Input("payer")]
         public Input<string>? Payer { get; set; }
 
+        [Input("permitAccountIds")]
+        private InputList<string>? _permitAccountIds;
+
+        /// <summary>
+        /// Details of authorized allowlist accounts.
+        /// </summary>
+        public InputList<string> PermitAccountIds
+        {
+            get => _permitAccountIds ?? (_permitAccountIds = new InputList<string>());
+            set => _permitAccountIds = value;
+        }
+
         /// <summary>
         /// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         /// </summary>
@@ -444,7 +474,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Input<string>? ServiceNameManaged { get; set; }
 
         /// <summary>
-        /// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+        /// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
         /// </summary>
         [Input("serviceNameSuffix")]
         public Input<string>? ServiceNameSuffix { get; set; }

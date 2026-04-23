@@ -350,6 +350,30 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cen/interRegionBandwidth",
+  "fqn": "pulumi_bytepluscc.cen",
+  "classes": {
+   "bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth": "InterRegionBandwidth"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cen/routeEntry",
+  "fqn": "pulumi_bytepluscc.cen",
+  "classes": {
+   "bytepluscc:cen/routeEntry:RouteEntry": "RouteEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cen/serviceRouteEntry",
+  "fqn": "pulumi_bytepluscc.cen",
+  "classes": {
+   "bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry": "ServiceRouteEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/acl",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -798,6 +822,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "mongodb/sslState",
+  "fqn": "pulumi_bytepluscc.mongodb",
+  "classes": {
+   "bytepluscc:mongodb/sslState:SslState": "SslState"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "natgateway/dnatentry",
   "fqn": "pulumi_bytepluscc.natgateway",
   "classes": {
@@ -870,6 +902,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "privatelink/vpcEndpointConnection",
+  "fqn": "pulumi_bytepluscc.privatelink",
+  "classes": {
+   "bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection": "VpcEndpointConnection"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "privatezone/record",
   "fqn": "pulumi_bytepluscc.privatezone",
   "classes": {
@@ -898,6 +938,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.privatezone",
   "classes": {
    "bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization": "UserVpcAuthorization"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rabbitmq/allowList",
+  "fqn": "pulumi_bytepluscc.rabbitmq",
+  "classes": {
+   "bytepluscc:rabbitmq/allowList:AllowList": "AllowList"
   }
  },
  {
@@ -1046,6 +1094,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "redis/allowList",
+  "fqn": "pulumi_bytepluscc.redis",
+  "classes": {
+   "bytepluscc:redis/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "redis/endpointPublicAddress",
   "fqn": "pulumi_bytepluscc.redis",
   "classes": {
@@ -1070,10 +1126,26 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "storageebs/snapshotGroup",
+  "fqn": "pulumi_bytepluscc.storageebs",
+  "classes": {
+   "bytepluscc:storageebs/snapshotGroup:SnapshotGroup": "SnapshotGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "storageebs/volume",
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
    "bytepluscc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/alarmNotifyGroup",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup": "AlarmNotifyGroup"
   }
  },
  {
@@ -1110,10 +1182,26 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "tls/rule",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "tls/scheduleSqlTask",
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask": "ScheduleSqlTask"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/shipper",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/shipper:Shipper": "Shipper"
   }
  },
  {
@@ -1230,6 +1318,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vefaas/release",
+  "fqn": "pulumi_bytepluscc.vefaas",
+  "classes": {
+   "bytepluscc:vefaas/release:Release": "Release"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vefaas/sandbox",
   "fqn": "pulumi_bytepluscc.vefaas",
   "classes": {
@@ -1254,6 +1350,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vepfs/mountService",
+  "fqn": "pulumi_bytepluscc.vepfs",
+  "classes": {
+   "bytepluscc:vepfs/mountService:MountService": "MountService"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vke/addon",
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
@@ -1274,6 +1378,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
    "bytepluscc:vke/defaultNodePool:DefaultNodePool": "DefaultNodePool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vke/kubeconfig",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/kubeconfig:Kubeconfig": "Kubeconfig"
   }
  },
  {
