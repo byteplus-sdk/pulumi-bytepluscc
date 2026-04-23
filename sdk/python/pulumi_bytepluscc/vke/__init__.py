@@ -15,12 +15,15 @@ from .get_cluster import *
 from .get_clusters import *
 from .get_default_node_pool import *
 from .get_default_node_pools import *
+from .get_kubeconfig import *
+from .get_kubeconfigs import *
 from .get_node import *
 from .get_node_pool import *
 from .get_node_pools import *
 from .get_nodes import *
 from .get_permission import *
 from .get_permissions import *
+from .kubeconfig import *
 from .node import *
 from .node_pool import *
 from .permission import *

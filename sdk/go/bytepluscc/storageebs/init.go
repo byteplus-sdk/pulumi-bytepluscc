@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:storageebs/snapshot:Snapshot":
 		r = &Snapshot{}
+	case "bytepluscc:storageebs/snapshotGroup:SnapshotGroup":
+		r = &SnapshotGroup{}
 	case "bytepluscc:storageebs/volume:Volume":
 		r = &Volume{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"storageebs/snapshot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"storageebs/snapshotGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

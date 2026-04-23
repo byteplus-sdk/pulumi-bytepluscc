@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Cluster{}
 	case "bytepluscc:vke/defaultNodePool:DefaultNodePool":
 		r = &DefaultNodePool{}
+	case "bytepluscc:vke/kubeconfig:Kubeconfig":
+		r = &Kubeconfig{}
 	case "bytepluscc:vke/node:Node":
 		r = &Node{}
 	case "bytepluscc:vke/nodePool:NodePool":
@@ -59,6 +61,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vke/defaultNodePool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vke/kubeconfig",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

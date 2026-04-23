@@ -133,6 +133,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetListenerDomainExtensionResult> DomainExtensions;
+        /// <summary>
         /// Enable listener. on (default): enabled. off: disabled.
         /// </summary>
         public readonly string Enabled;
@@ -285,6 +289,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 
             string description,
 
+            ImmutableArray<Outputs.GetListenerDomainExtensionResult> domainExtensions,
+
             string enabled,
 
             int endPort,
@@ -360,6 +366,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
             Cps = cps;
             CreatedTime = createdTime;
             Description = description;
+            DomainExtensions = domainExtensions;
             Enabled = enabled;
             EndPort = endPort;
             EstablishedTimeout = establishedTimeout;

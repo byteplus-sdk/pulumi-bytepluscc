@@ -46,8 +46,6 @@ class AllowListAssociatedInstance(dict):
         suggest = None
         if key == "instanceId":
             suggest = "instance_id"
-        elif key == "instanceName":
-            suggest = "instance_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
@@ -61,20 +59,12 @@ class AllowListAssociatedInstance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_id: Optional[builtins.str] = None,
-                 instance_name: Optional[builtins.str] = None,
-                 vpc: Optional[builtins.str] = None):
+                 instance_id: Optional[builtins.str] = None):
         """
         :param builtins.str instance_id: Instance ID.
-        :param builtins.str instance_name: Instance name.
-        :param builtins.str vpc: Instance VPC ID.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
-        if instance_name is not None:
-            pulumi.set(__self__, "instance_name", instance_name)
-        if vpc is not None:
-            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -83,22 +73,6 @@ class AllowListAssociatedInstance(dict):
         Instance ID.
         """
         return pulumi.get(self, "instance_id")
-
-    @property
-    @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[builtins.str]:
-        """
-        Instance name.
-        """
-        return pulumi.get(self, "instance_name")
-
-    @property
-    @pulumi.getter
-    def vpc(self) -> Optional[builtins.str]:
-        """
-        Instance VPC ID.
-        """
-        return pulumi.get(self, "vpc")
 
 
 @pulumi.output_type

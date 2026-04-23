@@ -7,10 +7,13 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_snapshot import *
+from .get_snapshot_group import *
+from .get_snapshot_groups import *
 from .get_snapshots import *
 from .get_volume import *
 from .get_volumes import *
 from .snapshot import *
+from .snapshot_group import *
 from .volume import *
 from ._inputs import *
 from . import outputs

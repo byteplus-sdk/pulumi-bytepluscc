@@ -15,10 +15,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Outputs
     public sealed class EndpointServiceResource
     {
         /// <summary>
-        /// Endpoint service ID.
-        /// </summary>
-        public readonly string? InstanceId;
-        /// <summary>
         /// Service resource ID to be added to the endpoint service.
         /// </summary>
         public readonly string? ResourceId;
@@ -29,13 +25,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Outputs
 
         [OutputConstructor]
         private EndpointServiceResource(
-            string? instanceId,
-
             string? resourceId,
 
             ImmutableArray<string> zoneIds)
         {
-            InstanceId = instanceId;
             ResourceId = resourceId;
             ZoneIds = zoneIds;
         }

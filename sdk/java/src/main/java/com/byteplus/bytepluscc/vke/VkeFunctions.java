@@ -10,6 +10,8 @@ import com.byteplus.bytepluscc.vke.inputs.GetClusterArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetClusterPlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetDefaultNodePoolArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetDefaultNodePoolPlainArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetKubeconfigArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetKubeconfigPlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodeArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePoolArgs;
@@ -22,6 +24,8 @@ import com.byteplus.bytepluscc.vke.outputs.GetClusterResult;
 import com.byteplus.bytepluscc.vke.outputs.GetClustersResult;
 import com.byteplus.bytepluscc.vke.outputs.GetDefaultNodePoolResult;
 import com.byteplus.bytepluscc.vke.outputs.GetDefaultNodePoolsResult;
+import com.byteplus.bytepluscc.vke.outputs.GetKubeconfigResult;
+import com.byteplus.bytepluscc.vke.outputs.GetKubeconfigsResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolsResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodeResult;
@@ -288,6 +292,90 @@ public final class VkeFunctions {
      */
     public static CompletableFuture<GetDefaultNodePoolsResult> getDefaultNodePoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vke/getDefaultNodePools:getDefaultNodePools", TypeShape.of(GetDefaultNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigResult> getKubeconfig(GetKubeconfigArgs args) {
+        return getKubeconfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static CompletableFuture<GetKubeconfigResult> getKubeconfigPlain(GetKubeconfigPlainArgs args) {
+        return getKubeconfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigResult> getKubeconfig(GetKubeconfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getKubeconfig:getKubeconfig", TypeShape.of(GetKubeconfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigResult> getKubeconfig(GetKubeconfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getKubeconfig:getKubeconfig", TypeShape.of(GetKubeconfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static CompletableFuture<GetKubeconfigResult> getKubeconfigPlain(GetKubeconfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getKubeconfig:getKubeconfig", TypeShape.of(GetKubeconfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigsResult> getKubeconfigs() {
+        return getKubeconfigs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static CompletableFuture<GetKubeconfigsResult> getKubeconfigsPlain() {
+        return getKubeconfigsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigsResult> getKubeconfigs(InvokeArgs args) {
+        return getKubeconfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static CompletableFuture<GetKubeconfigsResult> getKubeconfigsPlain(InvokeArgs args) {
+        return getKubeconfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigsResult> getKubeconfigs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getKubeconfigs:getKubeconfigs", TypeShape.of(GetKubeconfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static Output<GetKubeconfigsResult> getKubeconfigs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getKubeconfigs:getKubeconfigs", TypeShape.of(GetKubeconfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Kubeconfig
+     * 
+     */
+    public static CompletableFuture<GetKubeconfigsResult> getKubeconfigsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getKubeconfigs:getKubeconfigs", TypeShape.of(GetKubeconfigsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VKE::Node

@@ -1752,6 +1752,121 @@ func (o ClbTagArrayOutput) Index(i pulumi.IntInput) ClbTagOutput {
 	}).(ClbTagOutput)
 }
 
+type ListenerDomainExtension struct {
+	// Certificate ID of the extended domain name.
+	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
+	// Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+	CertificateSource *string `pulumi:"certificateSource"`
+	// Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+	Domain *string `pulumi:"domain"`
+}
+
+// ListenerDomainExtensionInput is an input type that accepts ListenerDomainExtensionArgs and ListenerDomainExtensionOutput values.
+// You can construct a concrete instance of `ListenerDomainExtensionInput` via:
+//
+//	ListenerDomainExtensionArgs{...}
+type ListenerDomainExtensionInput interface {
+	pulumi.Input
+
+	ToListenerDomainExtensionOutput() ListenerDomainExtensionOutput
+	ToListenerDomainExtensionOutputWithContext(context.Context) ListenerDomainExtensionOutput
+}
+
+type ListenerDomainExtensionArgs struct {
+	// Certificate ID of the extended domain name.
+	CertCenterCertificateId pulumi.StringPtrInput `pulumi:"certCenterCertificateId"`
+	// Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+	CertificateSource pulumi.StringPtrInput `pulumi:"certificateSource"`
+	// Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+}
+
+func (ListenerDomainExtensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ListenerDomainExtension)(nil)).Elem()
+}
+
+func (i ListenerDomainExtensionArgs) ToListenerDomainExtensionOutput() ListenerDomainExtensionOutput {
+	return i.ToListenerDomainExtensionOutputWithContext(context.Background())
+}
+
+func (i ListenerDomainExtensionArgs) ToListenerDomainExtensionOutputWithContext(ctx context.Context) ListenerDomainExtensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ListenerDomainExtensionOutput)
+}
+
+// ListenerDomainExtensionArrayInput is an input type that accepts ListenerDomainExtensionArray and ListenerDomainExtensionArrayOutput values.
+// You can construct a concrete instance of `ListenerDomainExtensionArrayInput` via:
+//
+//	ListenerDomainExtensionArray{ ListenerDomainExtensionArgs{...} }
+type ListenerDomainExtensionArrayInput interface {
+	pulumi.Input
+
+	ToListenerDomainExtensionArrayOutput() ListenerDomainExtensionArrayOutput
+	ToListenerDomainExtensionArrayOutputWithContext(context.Context) ListenerDomainExtensionArrayOutput
+}
+
+type ListenerDomainExtensionArray []ListenerDomainExtensionInput
+
+func (ListenerDomainExtensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ListenerDomainExtension)(nil)).Elem()
+}
+
+func (i ListenerDomainExtensionArray) ToListenerDomainExtensionArrayOutput() ListenerDomainExtensionArrayOutput {
+	return i.ToListenerDomainExtensionArrayOutputWithContext(context.Background())
+}
+
+func (i ListenerDomainExtensionArray) ToListenerDomainExtensionArrayOutputWithContext(ctx context.Context) ListenerDomainExtensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ListenerDomainExtensionArrayOutput)
+}
+
+type ListenerDomainExtensionOutput struct{ *pulumi.OutputState }
+
+func (ListenerDomainExtensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ListenerDomainExtension)(nil)).Elem()
+}
+
+func (o ListenerDomainExtensionOutput) ToListenerDomainExtensionOutput() ListenerDomainExtensionOutput {
+	return o
+}
+
+func (o ListenerDomainExtensionOutput) ToListenerDomainExtensionOutputWithContext(ctx context.Context) ListenerDomainExtensionOutput {
+	return o
+}
+
+// Certificate ID of the extended domain name.
+func (o ListenerDomainExtensionOutput) CertCenterCertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.CertCenterCertificateId }).(pulumi.StringPtrOutput)
+}
+
+// Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+func (o ListenerDomainExtensionOutput) CertificateSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.CertificateSource }).(pulumi.StringPtrOutput)
+}
+
+// Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+func (o ListenerDomainExtensionOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+type ListenerDomainExtensionArrayOutput struct{ *pulumi.OutputState }
+
+func (ListenerDomainExtensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ListenerDomainExtension)(nil)).Elem()
+}
+
+func (o ListenerDomainExtensionArrayOutput) ToListenerDomainExtensionArrayOutput() ListenerDomainExtensionArrayOutput {
+	return o
+}
+
+func (o ListenerDomainExtensionArrayOutput) ToListenerDomainExtensionArrayOutputWithContext(ctx context.Context) ListenerDomainExtensionArrayOutput {
+	return o
+}
+
+func (o ListenerDomainExtensionArrayOutput) Index(i pulumi.IntInput) ListenerDomainExtensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ListenerDomainExtension {
+		return vs[0].([]ListenerDomainExtension)[vs[1].(int)]
+	}).(ListenerDomainExtensionOutput)
+}
+
 type ListenerHealthCheck struct {
 	// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 	Domain *string `pulumi:"domain"`
@@ -5512,6 +5627,130 @@ func (o GetClbTagArrayOutput) Index(i pulumi.IntInput) GetClbTagOutput {
 	}).(GetClbTagOutput)
 }
 
+type GetListenerDomainExtension struct {
+	// Certificate ID of the extended domain name.
+	CertCenterCertificateId string `pulumi:"certCenterCertificateId"`
+	// Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+	CertificateSource string `pulumi:"certificateSource"`
+	// Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+	Domain string `pulumi:"domain"`
+	// Extended domain name ID.
+	DomainExtensionId string `pulumi:"domainExtensionId"`
+}
+
+// GetListenerDomainExtensionInput is an input type that accepts GetListenerDomainExtensionArgs and GetListenerDomainExtensionOutput values.
+// You can construct a concrete instance of `GetListenerDomainExtensionInput` via:
+//
+//	GetListenerDomainExtensionArgs{...}
+type GetListenerDomainExtensionInput interface {
+	pulumi.Input
+
+	ToGetListenerDomainExtensionOutput() GetListenerDomainExtensionOutput
+	ToGetListenerDomainExtensionOutputWithContext(context.Context) GetListenerDomainExtensionOutput
+}
+
+type GetListenerDomainExtensionArgs struct {
+	// Certificate ID of the extended domain name.
+	CertCenterCertificateId pulumi.StringInput `pulumi:"certCenterCertificateId"`
+	// Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+	CertificateSource pulumi.StringInput `pulumi:"certificateSource"`
+	// Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Extended domain name ID.
+	DomainExtensionId pulumi.StringInput `pulumi:"domainExtensionId"`
+}
+
+func (GetListenerDomainExtensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListenerDomainExtension)(nil)).Elem()
+}
+
+func (i GetListenerDomainExtensionArgs) ToGetListenerDomainExtensionOutput() GetListenerDomainExtensionOutput {
+	return i.ToGetListenerDomainExtensionOutputWithContext(context.Background())
+}
+
+func (i GetListenerDomainExtensionArgs) ToGetListenerDomainExtensionOutputWithContext(ctx context.Context) GetListenerDomainExtensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListenerDomainExtensionOutput)
+}
+
+// GetListenerDomainExtensionArrayInput is an input type that accepts GetListenerDomainExtensionArray and GetListenerDomainExtensionArrayOutput values.
+// You can construct a concrete instance of `GetListenerDomainExtensionArrayInput` via:
+//
+//	GetListenerDomainExtensionArray{ GetListenerDomainExtensionArgs{...} }
+type GetListenerDomainExtensionArrayInput interface {
+	pulumi.Input
+
+	ToGetListenerDomainExtensionArrayOutput() GetListenerDomainExtensionArrayOutput
+	ToGetListenerDomainExtensionArrayOutputWithContext(context.Context) GetListenerDomainExtensionArrayOutput
+}
+
+type GetListenerDomainExtensionArray []GetListenerDomainExtensionInput
+
+func (GetListenerDomainExtensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListenerDomainExtension)(nil)).Elem()
+}
+
+func (i GetListenerDomainExtensionArray) ToGetListenerDomainExtensionArrayOutput() GetListenerDomainExtensionArrayOutput {
+	return i.ToGetListenerDomainExtensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetListenerDomainExtensionArray) ToGetListenerDomainExtensionArrayOutputWithContext(ctx context.Context) GetListenerDomainExtensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListenerDomainExtensionArrayOutput)
+}
+
+type GetListenerDomainExtensionOutput struct{ *pulumi.OutputState }
+
+func (GetListenerDomainExtensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListenerDomainExtension)(nil)).Elem()
+}
+
+func (o GetListenerDomainExtensionOutput) ToGetListenerDomainExtensionOutput() GetListenerDomainExtensionOutput {
+	return o
+}
+
+func (o GetListenerDomainExtensionOutput) ToGetListenerDomainExtensionOutputWithContext(ctx context.Context) GetListenerDomainExtensionOutput {
+	return o
+}
+
+// Certificate ID of the extended domain name.
+func (o GetListenerDomainExtensionOutput) CertCenterCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.CertCenterCertificateId }).(pulumi.StringOutput)
+}
+
+// Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+func (o GetListenerDomainExtensionOutput) CertificateSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.CertificateSource }).(pulumi.StringOutput)
+}
+
+// Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+func (o GetListenerDomainExtensionOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Extended domain name ID.
+func (o GetListenerDomainExtensionOutput) DomainExtensionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.DomainExtensionId }).(pulumi.StringOutput)
+}
+
+type GetListenerDomainExtensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetListenerDomainExtensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListenerDomainExtension)(nil)).Elem()
+}
+
+func (o GetListenerDomainExtensionArrayOutput) ToGetListenerDomainExtensionArrayOutput() GetListenerDomainExtensionArrayOutput {
+	return o
+}
+
+func (o GetListenerDomainExtensionArrayOutput) ToGetListenerDomainExtensionArrayOutputWithContext(ctx context.Context) GetListenerDomainExtensionArrayOutput {
+	return o
+}
+
+func (o GetListenerDomainExtensionArrayOutput) Index(i pulumi.IntInput) GetListenerDomainExtensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerDomainExtension {
+		return vs[0].([]GetListenerDomainExtension)[vs[1].(int)]
+	}).(GetListenerDomainExtensionOutput)
+}
+
 type GetListenerHealthCheck struct {
 	// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 	Domain string `pulumi:"domain"`
@@ -7521,6 +7760,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbServerGroupArrayInput)(nil)).Elem(), ClbServerGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbTagInput)(nil)).Elem(), ClbTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClbTagArrayInput)(nil)).Elem(), ClbTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionInput)(nil)).Elem(), ListenerDomainExtensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionArrayInput)(nil)).Elem(), ListenerDomainExtensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckPtrInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
@@ -7572,6 +7813,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbServerGroupArrayInput)(nil)).Elem(), GetClbServerGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbTagInput)(nil)).Elem(), GetClbTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClbTagArrayInput)(nil)).Elem(), GetClbTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionInput)(nil)).Elem(), GetListenerDomainExtensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionArrayInput)(nil)).Elem(), GetListenerDomainExtensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerHealthCheckInput)(nil)).Elem(), GetListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
@@ -7624,6 +7867,8 @@ func init() {
 	pulumi.RegisterOutputType(ClbServerGroupArrayOutput{})
 	pulumi.RegisterOutputType(ClbTagOutput{})
 	pulumi.RegisterOutputType(ClbTagArrayOutput{})
+	pulumi.RegisterOutputType(ListenerDomainExtensionOutput{})
+	pulumi.RegisterOutputType(ListenerDomainExtensionArrayOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
@@ -7675,6 +7920,8 @@ func init() {
 	pulumi.RegisterOutputType(GetClbServerGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetClbTagOutput{})
 	pulumi.RegisterOutputType(GetClbTagArrayOutput{})
+	pulumi.RegisterOutputType(GetListenerDomainExtensionOutput{})
+	pulumi.RegisterOutputType(GetListenerDomainExtensionArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})

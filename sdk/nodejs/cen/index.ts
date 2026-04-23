@@ -45,10 +45,55 @@ export const getGrantInstances: typeof import("./getGrantInstances").getGrantIns
 export const getGrantInstancesOutput: typeof import("./getGrantInstances").getGrantInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getGrantInstances","getGrantInstancesOutput"], () => require("./getGrantInstances"));
 
+export { GetInterRegionBandwidthArgs, GetInterRegionBandwidthResult, GetInterRegionBandwidthOutputArgs } from "./getInterRegionBandwidth";
+export const getInterRegionBandwidth: typeof import("./getInterRegionBandwidth").getInterRegionBandwidth = null as any;
+export const getInterRegionBandwidthOutput: typeof import("./getInterRegionBandwidth").getInterRegionBandwidthOutput = null as any;
+utilities.lazyLoad(exports, ["getInterRegionBandwidth","getInterRegionBandwidthOutput"], () => require("./getInterRegionBandwidth"));
+
+export { GetInterRegionBandwidthsResult } from "./getInterRegionBandwidths";
+export const getInterRegionBandwidths: typeof import("./getInterRegionBandwidths").getInterRegionBandwidths = null as any;
+export const getInterRegionBandwidthsOutput: typeof import("./getInterRegionBandwidths").getInterRegionBandwidthsOutput = null as any;
+utilities.lazyLoad(exports, ["getInterRegionBandwidths","getInterRegionBandwidthsOutput"], () => require("./getInterRegionBandwidths"));
+
+export { GetRouteEntriesResult } from "./getRouteEntries";
+export const getRouteEntries: typeof import("./getRouteEntries").getRouteEntries = null as any;
+export const getRouteEntriesOutput: typeof import("./getRouteEntries").getRouteEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteEntries","getRouteEntriesOutput"], () => require("./getRouteEntries"));
+
+export { GetRouteEntryArgs, GetRouteEntryResult, GetRouteEntryOutputArgs } from "./getRouteEntry";
+export const getRouteEntry: typeof import("./getRouteEntry").getRouteEntry = null as any;
+export const getRouteEntryOutput: typeof import("./getRouteEntry").getRouteEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteEntry","getRouteEntryOutput"], () => require("./getRouteEntry"));
+
+export { GetServiceRouteEntriesResult } from "./getServiceRouteEntries";
+export const getServiceRouteEntries: typeof import("./getServiceRouteEntries").getServiceRouteEntries = null as any;
+export const getServiceRouteEntriesOutput: typeof import("./getServiceRouteEntries").getServiceRouteEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceRouteEntries","getServiceRouteEntriesOutput"], () => require("./getServiceRouteEntries"));
+
+export { GetServiceRouteEntryArgs, GetServiceRouteEntryResult, GetServiceRouteEntryOutputArgs } from "./getServiceRouteEntry";
+export const getServiceRouteEntry: typeof import("./getServiceRouteEntry").getServiceRouteEntry = null as any;
+export const getServiceRouteEntryOutput: typeof import("./getServiceRouteEntry").getServiceRouteEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceRouteEntry","getServiceRouteEntryOutput"], () => require("./getServiceRouteEntry"));
+
 export { GrantInstanceArgs, GrantInstanceState } from "./grantInstance";
 export type GrantInstance = import("./grantInstance").GrantInstance;
 export const GrantInstance: typeof import("./grantInstance").GrantInstance = null as any;
 utilities.lazyLoad(exports, ["GrantInstance"], () => require("./grantInstance"));
+
+export { InterRegionBandwidthArgs, InterRegionBandwidthState } from "./interRegionBandwidth";
+export type InterRegionBandwidth = import("./interRegionBandwidth").InterRegionBandwidth;
+export const InterRegionBandwidth: typeof import("./interRegionBandwidth").InterRegionBandwidth = null as any;
+utilities.lazyLoad(exports, ["InterRegionBandwidth"], () => require("./interRegionBandwidth"));
+
+export { RouteEntryArgs, RouteEntryState } from "./routeEntry";
+export type RouteEntry = import("./routeEntry").RouteEntry;
+export const RouteEntry: typeof import("./routeEntry").RouteEntry = null as any;
+utilities.lazyLoad(exports, ["RouteEntry"], () => require("./routeEntry"));
+
+export { ServiceRouteEntryArgs, ServiceRouteEntryState } from "./serviceRouteEntry";
+export type ServiceRouteEntry = import("./serviceRouteEntry").ServiceRouteEntry;
+export const ServiceRouteEntry: typeof import("./serviceRouteEntry").ServiceRouteEntry = null as any;
+utilities.lazyLoad(exports, ["ServiceRouteEntry"], () => require("./serviceRouteEntry"));
 
 
 const _module = {
@@ -61,6 +106,12 @@ const _module = {
                 return new Cen(name, <any>undefined, { urn })
             case "bytepluscc:cen/grantInstance:GrantInstance":
                 return new GrantInstance(name, <any>undefined, { urn })
+            case "bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth":
+                return new InterRegionBandwidth(name, <any>undefined, { urn })
+            case "bytepluscc:cen/routeEntry:RouteEntry":
+                return new RouteEntry(name, <any>undefined, { urn })
+            case "bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry":
+                return new ServiceRouteEntry(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -69,3 +120,6 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "cen/bandwidthPackage", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cen/cen", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cen/grantInstance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cen/interRegionBandwidth", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cen/routeEntry", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cen/serviceRouteEntry", _module)

@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.clb.outputs;
 
+import com.byteplus.bytepluscc.clb.outputs.GetListenerDomainExtension;
 import com.byteplus.bytepluscc.clb.outputs.GetListenerHealthCheck;
 import com.byteplus.bytepluscc.clb.outputs.GetListenerTag;
 import com.pulumi.core.annotations.CustomType;
@@ -99,6 +100,11 @@ public final class GetListenerResult {
      * 
      */
     private String description;
+    /**
+     * @return List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     * 
+     */
+    private List<GetListenerDomainExtension> domainExtensions;
     /**
      * @return Enable listener. on (default): enabled. off: disabled.
      * 
@@ -366,6 +372,13 @@ public final class GetListenerResult {
         return this.description;
     }
     /**
+     * @return List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     * 
+     */
+    public List<GetListenerDomainExtension> domainExtensions() {
+        return this.domainExtensions;
+    }
+    /**
      * @return Enable listener. on (default): enabled. off: disabled.
      * 
      */
@@ -595,6 +608,7 @@ public final class GetListenerResult {
         private Integer cps;
         private String createdTime;
         private String description;
+        private List<GetListenerDomainExtension> domainExtensions;
         private String enabled;
         private Integer endPort;
         private Integer establishedTimeout;
@@ -644,6 +658,7 @@ public final class GetListenerResult {
     	      this.cps = defaults.cps;
     	      this.createdTime = defaults.createdTime;
     	      this.description = defaults.description;
+    	      this.domainExtensions = defaults.domainExtensions;
     	      this.enabled = defaults.enabled;
     	      this.endPort = defaults.endPort;
     	      this.establishedTimeout = defaults.establishedTimeout;
@@ -813,6 +828,17 @@ public final class GetListenerResult {
             }
             this.description = description;
             return this;
+        }
+        @CustomType.Setter
+        public Builder domainExtensions(List<GetListenerDomainExtension> domainExtensions) {
+            if (domainExtensions == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "domainExtensions");
+            }
+            this.domainExtensions = domainExtensions;
+            return this;
+        }
+        public Builder domainExtensions(GetListenerDomainExtension... domainExtensions) {
+            return domainExtensions(List.of(domainExtensions));
         }
         @CustomType.Setter
         public Builder enabled(String enabled) {
@@ -1071,6 +1097,7 @@ public final class GetListenerResult {
             _resultValue.cps = cps;
             _resultValue.createdTime = createdTime;
             _resultValue.description = description;
+            _resultValue.domainExtensions = domainExtensions;
             _resultValue.enabled = enabled;
             _resultValue.endPort = endPort;
             _resultValue.establishedTimeout = establishedTimeout;

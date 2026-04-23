@@ -16,6 +16,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AllowListAssociatedInstanceArgs',
+    'AllowListAssociatedInstanceArgsDict',
+    'AllowListSecurityGroupBindInfoArgs',
+    'AllowListSecurityGroupBindInfoArgsDict',
     'InstanceCapacityArgs',
     'InstanceCapacityArgsDict',
     'InstanceConfigureNodeArgs',
@@ -31,6 +35,150 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AllowListAssociatedInstanceArgsDict(TypedDict):
+        instance_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance ID bound to the current allowlist
+        """
+        instance_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance names bound to the current allowlist
+        """
+        project_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Project name associated with the instance
+        """
+        vpc: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Private network ID associated with the instance
+        """
+elif False:
+    AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AllowListAssociatedInstanceArgs:
+    def __init__(__self__, *,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] instance_id: Instance ID bound to the current allowlist
+        :param pulumi.Input[builtins.str] instance_name: Instance names bound to the current allowlist
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the instance
+        :param pulumi.Input[builtins.str] vpc: Private network ID associated with the instance
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance ID bound to the current allowlist
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance names bound to the current allowlist
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Project name associated with the instance
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Private network ID associated with the instance
+        """
+        return pulumi.get(self, "vpc")
+
+    @vpc.setter
+    def vpc(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc", value)
+
+
+if not MYPY:
+    class AllowListSecurityGroupBindInfoArgsDict(TypedDict):
+        bind_mode: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        """
+        security_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Associated security group ID
+        """
+elif False:
+    AllowListSecurityGroupBindInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AllowListSecurityGroupBindInfoArgs:
+    def __init__(__self__, *,
+                 bind_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 security_group_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] bind_mode: Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        :param pulumi.Input[builtins.str] security_group_id: Associated security group ID
+        """
+        if bind_mode is not None:
+            pulumi.set(__self__, "bind_mode", bind_mode)
+        if security_group_id is not None:
+            pulumi.set(__self__, "security_group_id", security_group_id)
+
+    @property
+    @pulumi.getter(name="bindMode")
+    def bind_mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Security group association mode. The value range is as follows: IngressDirectionIp: ingress IP, which allows IPs involved in TCP and ALL protocols in the source address of the security group ingress direction to access the database. If the source address is configured as a security group, it will be ignored. AssociateEcsIp: associate ECS IP, which allows cloud servers within the security group to access the database. Currently, only importing IP information of the primary network interface is supported
+        """
+        return pulumi.get(self, "bind_mode")
+
+    @bind_mode.setter
+    def bind_mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bind_mode", value)
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Associated security group ID
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @security_group_id.setter
+    def security_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "security_group_id", value)
+
 
 if not MYPY:
     class InstanceCapacityArgsDict(TypedDict):

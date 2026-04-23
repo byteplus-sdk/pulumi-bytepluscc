@@ -15,10 +15,25 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetMountServiceArgs, GetMountServiceResult, GetMountServiceOutputArgs } from "./getMountService";
+export const getMountService: typeof import("./getMountService").getMountService = null as any;
+export const getMountServiceOutput: typeof import("./getMountService").getMountServiceOutput = null as any;
+utilities.lazyLoad(exports, ["getMountService","getMountServiceOutput"], () => require("./getMountService"));
+
+export { GetMountServicesResult } from "./getMountServices";
+export const getMountServices: typeof import("./getMountServices").getMountServices = null as any;
+export const getMountServicesOutput: typeof import("./getMountServices").getMountServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getMountServices","getMountServicesOutput"], () => require("./getMountServices"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { MountServiceArgs, MountServiceState } from "./mountService";
+export type MountService = import("./mountService").MountService;
+export const MountService: typeof import("./mountService").MountService = null as any;
+utilities.lazyLoad(exports, ["MountService"], () => require("./mountService"));
 
 
 const _module = {
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:vepfs/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:vepfs/mountService:MountService":
+                return new MountService(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/mountService", _module)

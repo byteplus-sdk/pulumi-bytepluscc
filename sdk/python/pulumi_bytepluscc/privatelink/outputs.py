@@ -19,11 +19,15 @@ __all__ = [
     'EndpointServicePrivateDnsNameConfiguration',
     'EndpointServiceResource',
     'EndpointServiceTag',
+    'VpcEndpointConnectionResourcesAllocate',
+    'VpcEndpointConnectionZone',
     'VpcEndpointTag',
     'VpcEndpointZone',
     'GetEndpointServicePrivateDnsNameConfigurationResult',
     'GetEndpointServiceResourceResult',
     'GetEndpointServiceTagResult',
+    'GetVpcEndpointConnectionResourcesAllocateResult',
+    'GetVpcEndpointConnectionZoneResult',
     'GetVpcEndpointTagResult',
     'GetVpcEndpointZoneResult',
 ]
@@ -88,9 +92,7 @@ class EndpointServiceResource(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "instanceId":
-            suggest = "instance_id"
-        elif key == "resourceId":
+        if key == "resourceId":
             suggest = "resource_id"
         elif key == "zoneIds":
             suggest = "zone_ids"
@@ -107,28 +109,16 @@ class EndpointServiceResource(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_id: Optional[builtins.str] = None,
                  resource_id: Optional[builtins.str] = None,
                  zone_ids: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str instance_id: Endpoint service ID.
         :param builtins.str resource_id: Service resource ID to be added to the endpoint service.
         :param Sequence[builtins.str] zone_ids: Availability zone where the load balancer provides service.
         """
-        if instance_id is not None:
-            pulumi.set(__self__, "instance_id", instance_id)
         if resource_id is not None:
             pulumi.set(__self__, "resource_id", resource_id)
         if zone_ids is not None:
             pulumi.set(__self__, "zone_ids", zone_ids)
-
-    @property
-    @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[builtins.str]:
-        """
-        Endpoint service ID.
-        """
-        return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="resourceId")
@@ -176,6 +166,204 @@ class EndpointServiceTag(dict):
         Tag value of the endpoint service tag.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class VpcEndpointConnectionResourcesAllocate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceId":
+            suggest = "resource_id"
+        elif key == "zoneId":
+            suggest = "zone_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VpcEndpointConnectionResourcesAllocate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VpcEndpointConnectionResourcesAllocate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VpcEndpointConnectionResourcesAllocate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 resource_id: Optional[builtins.str] = None,
+                 zone_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str resource_id: Specify the service resource for the endpoint connection
+        :param builtins.str zone_id: Availability zone ID of the service resource to be specified
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[builtins.str]:
+        """
+        Specify the service resource for the endpoint connection
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        Availability zone ID of the service resource to be specified
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class VpcEndpointConnectionZone(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkInterfaceId":
+            suggest = "network_interface_id"
+        elif key == "networkInterfaceIp":
+            suggest = "network_interface_ip"
+        elif key == "networkInterfaceIpv6":
+            suggest = "network_interface_ipv6"
+        elif key == "resourceId":
+            suggest = "resource_id"
+        elif key == "serviceStatus":
+            suggest = "service_status"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "zoneDomain":
+            suggest = "zone_domain"
+        elif key == "zoneId":
+            suggest = "zone_id"
+        elif key == "zoneStatus":
+            suggest = "zone_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VpcEndpointConnectionZone. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VpcEndpointConnectionZone.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VpcEndpointConnectionZone.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_interface_id: Optional[builtins.str] = None,
+                 network_interface_ip: Optional[builtins.str] = None,
+                 network_interface_ipv6: Optional[builtins.str] = None,
+                 resource_id: Optional[builtins.str] = None,
+                 service_status: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None,
+                 zone_domain: Optional[builtins.str] = None,
+                 zone_id: Optional[builtins.str] = None,
+                 zone_status: Optional[builtins.str] = None):
+        """
+        :param builtins.str network_interface_id: Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+        :param builtins.str network_interface_ip: The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+        :param builtins.str network_interface_ipv6: Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+        :param builtins.str resource_id: Service resource ID
+        :param builtins.str service_status: Status of the service resource
+        :param builtins.str subnet_id: ID of the subnet to which the endpoint network interface belongs
+        :param builtins.str zone_domain: The domain name of the terminal node availability zone.
+        :param builtins.str zone_id: Endpoint zone ID
+        :param builtins.str zone_status: Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+        """
+        if network_interface_id is not None:
+            pulumi.set(__self__, "network_interface_id", network_interface_id)
+        if network_interface_ip is not None:
+            pulumi.set(__self__, "network_interface_ip", network_interface_ip)
+        if network_interface_ipv6 is not None:
+            pulumi.set(__self__, "network_interface_ipv6", network_interface_ipv6)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if service_status is not None:
+            pulumi.set(__self__, "service_status", service_status)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if zone_domain is not None:
+            pulumi.set(__self__, "zone_domain", zone_domain)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+        if zone_status is not None:
+            pulumi.set(__self__, "zone_status", zone_status)
+
+    @property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> Optional[builtins.str]:
+        """
+        Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @property
+    @pulumi.getter(name="networkInterfaceIp")
+    def network_interface_ip(self) -> Optional[builtins.str]:
+        """
+        The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+        """
+        return pulumi.get(self, "network_interface_ip")
+
+    @property
+    @pulumi.getter(name="networkInterfaceIpv6")
+    def network_interface_ipv6(self) -> Optional[builtins.str]:
+        """
+        Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+        """
+        return pulumi.get(self, "network_interface_ipv6")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[builtins.str]:
+        """
+        Service resource ID
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="serviceStatus")
+    def service_status(self) -> Optional[builtins.str]:
+        """
+        Status of the service resource
+        """
+        return pulumi.get(self, "service_status")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        ID of the subnet to which the endpoint network interface belongs
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="zoneDomain")
+    def zone_domain(self) -> Optional[builtins.str]:
+        """
+        The domain name of the terminal node availability zone.
+        """
+        return pulumi.get(self, "zone_domain")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        Endpoint zone ID
+        """
+        return pulumi.get(self, "zone_id")
+
+    @property
+    @pulumi.getter(name="zoneStatus")
+    def zone_status(self) -> Optional[builtins.str]:
+        """
+        Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+        """
+        return pulumi.get(self, "zone_status")
 
 
 @pulumi.output_type
@@ -341,25 +529,17 @@ class GetEndpointServicePrivateDnsNameConfigurationResult(dict):
 @pulumi.output_type
 class GetEndpointServiceResourceResult(dict):
     def __init__(__self__, *,
-                 instance_id: builtins.str,
                  resource_id: builtins.str,
+                 resource_type: builtins.str,
                  zone_ids: Sequence[builtins.str]):
         """
-        :param builtins.str instance_id: Endpoint service ID.
         :param builtins.str resource_id: Service resource ID to be added to the endpoint service.
+        :param builtins.str resource_type: Type of service resource.
         :param Sequence[builtins.str] zone_ids: Availability zone where the load balancer provides service.
         """
-        pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "zone_ids", zone_ids)
-
-    @property
-    @pulumi.getter(name="instanceId")
-    def instance_id(self) -> builtins.str:
-        """
-        Endpoint service ID.
-        """
-        return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="resourceId")
@@ -368,6 +548,14 @@ class GetEndpointServiceResourceResult(dict):
         Service resource ID to be added to the endpoint service.
         """
         return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> builtins.str:
+        """
+        Type of service resource.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter(name="zoneIds")
@@ -405,6 +593,141 @@ class GetEndpointServiceTagResult(dict):
         Tag value of the endpoint service tag.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVpcEndpointConnectionResourcesAllocateResult(dict):
+    def __init__(__self__, *,
+                 resource_id: builtins.str,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str resource_id: Specify the service resource for the endpoint connection
+        :param builtins.str zone_id: Availability zone ID of the service resource to be specified
+        """
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> builtins.str:
+        """
+        Specify the service resource for the endpoint connection
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        Availability zone ID of the service resource to be specified
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetVpcEndpointConnectionZoneResult(dict):
+    def __init__(__self__, *,
+                 network_interface_id: builtins.str,
+                 network_interface_ip: builtins.str,
+                 network_interface_ipv6: builtins.str,
+                 resource_id: builtins.str,
+                 service_status: builtins.str,
+                 subnet_id: builtins.str,
+                 zone_domain: builtins.str,
+                 zone_id: builtins.str,
+                 zone_status: builtins.str):
+        """
+        :param builtins.str network_interface_id: Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+        :param builtins.str network_interface_ip: The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+        :param builtins.str network_interface_ipv6: Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+        :param builtins.str resource_id: Service resource ID
+        :param builtins.str service_status: Status of the service resource
+        :param builtins.str subnet_id: ID of the subnet to which the endpoint network interface belongs
+        :param builtins.str zone_domain: The domain name of the terminal node availability zone.
+        :param builtins.str zone_id: Endpoint zone ID
+        :param builtins.str zone_status: Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+        """
+        pulumi.set(__self__, "network_interface_id", network_interface_id)
+        pulumi.set(__self__, "network_interface_ip", network_interface_ip)
+        pulumi.set(__self__, "network_interface_ipv6", network_interface_ipv6)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "service_status", service_status)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "zone_domain", zone_domain)
+        pulumi.set(__self__, "zone_id", zone_id)
+        pulumi.set(__self__, "zone_status", zone_status)
+
+    @property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> builtins.str:
+        """
+        Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @property
+    @pulumi.getter(name="networkInterfaceIp")
+    def network_interface_ip(self) -> builtins.str:
+        """
+        The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+        """
+        return pulumi.get(self, "network_interface_ip")
+
+    @property
+    @pulumi.getter(name="networkInterfaceIpv6")
+    def network_interface_ipv6(self) -> builtins.str:
+        """
+        Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+        """
+        return pulumi.get(self, "network_interface_ipv6")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> builtins.str:
+        """
+        Service resource ID
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="serviceStatus")
+    def service_status(self) -> builtins.str:
+        """
+        Status of the service resource
+        """
+        return pulumi.get(self, "service_status")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        ID of the subnet to which the endpoint network interface belongs
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="zoneDomain")
+    def zone_domain(self) -> builtins.str:
+        """
+        The domain name of the terminal node availability zone.
+        """
+        return pulumi.get(self, "zone_domain")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        Endpoint zone ID
+        """
+        return pulumi.get(self, "zone_id")
+
+    @property
+    @pulumi.getter(name="zoneStatus")
+    def zone_status(self) -> builtins.str:
+        """
+        Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+        """
+        return pulumi.get(self, "zone_status")
 
 
 @pulumi.output_type

@@ -40,6 +40,8 @@ __all__ = [
     'ClbServerGroupArgsDict',
     'ClbTagArgs',
     'ClbTagArgsDict',
+    'ListenerDomainExtensionArgs',
+    'ListenerDomainExtensionArgsDict',
     'ListenerHealthCheckArgs',
     'ListenerHealthCheckArgsDict',
     'ListenerTagArgs',
@@ -958,6 +960,78 @@ class ClbTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ListenerDomainExtensionArgsDict(TypedDict):
+        cert_center_certificate_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate ID of the extended domain name.
+        """
+        certificate_source: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+        """
+        domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+        """
+elif False:
+    ListenerDomainExtensionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ListenerDomainExtensionArgs:
+    def __init__(__self__, *,
+                 cert_center_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
+                 certificate_source: Optional[pulumi.Input[builtins.str]] = None,
+                 domain: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] cert_center_certificate_id: Certificate ID of the extended domain name.
+        :param pulumi.Input[builtins.str] certificate_source: Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+        :param pulumi.Input[builtins.str] domain: Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+        """
+        if cert_center_certificate_id is not None:
+            pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
+        if certificate_source is not None:
+            pulumi.set(__self__, "certificate_source", certificate_source)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+
+    @property
+    @pulumi.getter(name="certCenterCertificateId")
+    def cert_center_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate ID of the extended domain name.
+        """
+        return pulumi.get(self, "cert_center_certificate_id")
+
+    @cert_center_certificate_id.setter
+    def cert_center_certificate_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cert_center_certificate_id", value)
+
+    @property
+    @pulumi.getter(name="certificateSource")
+    def certificate_source(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Certificate source for the extended domain name to be added. Value: cert_center: SSL certificate from Volcano Engine Certificate Center. This parameter is required when adding an extended domain name.
+        """
+        return pulumi.get(self, "certificate_source")
+
+    @certificate_source.setter
+    def certificate_source(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "certificate_source", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Domain name. Supports both wildcard and exact domain names. Specifications: 1. Must contain at least one '.', and cannot start or end with '.'. 2. Only letters, numbers, '.', '-', and '*' are allowed. 3. Length must be between 1 and 128 characters. 4. Wildcard domain: Use '*' to replace one or more characters. 5. Exact domain: A domain name that strictly follows domain name specifications.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain", value)
 
 
 if not MYPY:

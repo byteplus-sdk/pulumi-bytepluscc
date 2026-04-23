@@ -80,6 +80,21 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Details of authorized allowlist accounts.
+     * 
+     */
+    @Import(name="permitAccountIds")
+    private @Nullable Output<List<String>> permitAccountIds;
+
+    /**
+     * @return Details of authorized allowlist accounts.
+     * 
+     */
+    public Optional<Output<List<String>>> permitAccountIds() {
+        return Optional.ofNullable(this.permitAccountIds);
+    }
+
+    /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
@@ -162,14 +177,14 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      * 
      */
     @Import(name="serviceNameSuffix")
     private @Nullable Output<String> serviceNameSuffix;
 
     /**
-     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * @return Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      * 
      */
     public Optional<Output<String>> serviceNameSuffix() {
@@ -250,6 +265,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         this.description = $.description;
         this.ipAddressVersions = $.ipAddressVersions;
         this.payer = $.payer;
+        this.permitAccountIds = $.permitAccountIds;
         this.privateDnsEnabled = $.privateDnsEnabled;
         this.privateDnsName = $.privateDnsName;
         this.privateDnsType = $.privateDnsType;
@@ -377,6 +393,37 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param permitAccountIds Details of authorized allowlist accounts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder permitAccountIds(@Nullable Output<List<String>> permitAccountIds) {
+            $.permitAccountIds = permitAccountIds;
+            return this;
+        }
+
+        /**
+         * @param permitAccountIds Details of authorized allowlist accounts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder permitAccountIds(List<String> permitAccountIds) {
+            return permitAccountIds(Output.of(permitAccountIds));
+        }
+
+        /**
+         * @param permitAccountIds Details of authorized allowlist accounts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder permitAccountIds(String... permitAccountIds) {
+            return permitAccountIds(List.of(permitAccountIds));
+        }
+
+        /**
          * @param privateDnsEnabled Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
          * 
          * @return builder
@@ -495,7 +542,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceNameSuffix Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+         * @param serviceNameSuffix Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
          * 
          * @return builder
          * 
@@ -506,7 +553,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceNameSuffix Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+         * @param serviceNameSuffix Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
          * 
          * @return builder
          * 

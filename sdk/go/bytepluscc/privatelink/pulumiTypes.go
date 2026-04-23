@@ -208,8 +208,6 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Value() pulumi.Stri
 }
 
 type EndpointServiceResource struct {
-	// Endpoint service ID.
-	InstanceId *string `pulumi:"instanceId"`
 	// Service resource ID to be added to the endpoint service.
 	ResourceId *string `pulumi:"resourceId"`
 	// Availability zone where the load balancer provides service.
@@ -228,8 +226,6 @@ type EndpointServiceResourceInput interface {
 }
 
 type EndpointServiceResourceArgs struct {
-	// Endpoint service ID.
-	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 	// Service resource ID to be added to the endpoint service.
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// Availability zone where the load balancer provides service.
@@ -285,11 +281,6 @@ func (o EndpointServiceResourceOutput) ToEndpointServiceResourceOutput() Endpoin
 
 func (o EndpointServiceResourceOutput) ToEndpointServiceResourceOutputWithContext(ctx context.Context) EndpointServiceResourceOutput {
 	return o
-}
-
-// Endpoint service ID.
-func (o EndpointServiceResourceOutput) InstanceId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v EndpointServiceResource) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
 // Service resource ID to be added to the endpoint service.
@@ -426,6 +417,281 @@ func (o EndpointServiceTagArrayOutput) Index(i pulumi.IntInput) EndpointServiceT
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EndpointServiceTag {
 		return vs[0].([]EndpointServiceTag)[vs[1].(int)]
 	}).(EndpointServiceTagOutput)
+}
+
+type VpcEndpointConnectionResourcesAllocate struct {
+	// Specify the service resource for the endpoint connection
+	ResourceId *string `pulumi:"resourceId"`
+	// Availability zone ID of the service resource to be specified
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// VpcEndpointConnectionResourcesAllocateInput is an input type that accepts VpcEndpointConnectionResourcesAllocateArgs and VpcEndpointConnectionResourcesAllocateOutput values.
+// You can construct a concrete instance of `VpcEndpointConnectionResourcesAllocateInput` via:
+//
+//	VpcEndpointConnectionResourcesAllocateArgs{...}
+type VpcEndpointConnectionResourcesAllocateInput interface {
+	pulumi.Input
+
+	ToVpcEndpointConnectionResourcesAllocateOutput() VpcEndpointConnectionResourcesAllocateOutput
+	ToVpcEndpointConnectionResourcesAllocateOutputWithContext(context.Context) VpcEndpointConnectionResourcesAllocateOutput
+}
+
+type VpcEndpointConnectionResourcesAllocateArgs struct {
+	// Specify the service resource for the endpoint connection
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// Availability zone ID of the service resource to be specified
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (VpcEndpointConnectionResourcesAllocateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (i VpcEndpointConnectionResourcesAllocateArgs) ToVpcEndpointConnectionResourcesAllocateOutput() VpcEndpointConnectionResourcesAllocateOutput {
+	return i.ToVpcEndpointConnectionResourcesAllocateOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointConnectionResourcesAllocateArgs) ToVpcEndpointConnectionResourcesAllocateOutputWithContext(ctx context.Context) VpcEndpointConnectionResourcesAllocateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointConnectionResourcesAllocateOutput)
+}
+
+// VpcEndpointConnectionResourcesAllocateArrayInput is an input type that accepts VpcEndpointConnectionResourcesAllocateArray and VpcEndpointConnectionResourcesAllocateArrayOutput values.
+// You can construct a concrete instance of `VpcEndpointConnectionResourcesAllocateArrayInput` via:
+//
+//	VpcEndpointConnectionResourcesAllocateArray{ VpcEndpointConnectionResourcesAllocateArgs{...} }
+type VpcEndpointConnectionResourcesAllocateArrayInput interface {
+	pulumi.Input
+
+	ToVpcEndpointConnectionResourcesAllocateArrayOutput() VpcEndpointConnectionResourcesAllocateArrayOutput
+	ToVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(context.Context) VpcEndpointConnectionResourcesAllocateArrayOutput
+}
+
+type VpcEndpointConnectionResourcesAllocateArray []VpcEndpointConnectionResourcesAllocateInput
+
+func (VpcEndpointConnectionResourcesAllocateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (i VpcEndpointConnectionResourcesAllocateArray) ToVpcEndpointConnectionResourcesAllocateArrayOutput() VpcEndpointConnectionResourcesAllocateArrayOutput {
+	return i.ToVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointConnectionResourcesAllocateArray) ToVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(ctx context.Context) VpcEndpointConnectionResourcesAllocateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointConnectionResourcesAllocateArrayOutput)
+}
+
+type VpcEndpointConnectionResourcesAllocateOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointConnectionResourcesAllocateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (o VpcEndpointConnectionResourcesAllocateOutput) ToVpcEndpointConnectionResourcesAllocateOutput() VpcEndpointConnectionResourcesAllocateOutput {
+	return o
+}
+
+func (o VpcEndpointConnectionResourcesAllocateOutput) ToVpcEndpointConnectionResourcesAllocateOutputWithContext(ctx context.Context) VpcEndpointConnectionResourcesAllocateOutput {
+	return o
+}
+
+// Specify the service resource for the endpoint connection
+func (o VpcEndpointConnectionResourcesAllocateOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionResourcesAllocate) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// Availability zone ID of the service resource to be specified
+func (o VpcEndpointConnectionResourcesAllocateOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionResourcesAllocate) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type VpcEndpointConnectionResourcesAllocateArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointConnectionResourcesAllocateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (o VpcEndpointConnectionResourcesAllocateArrayOutput) ToVpcEndpointConnectionResourcesAllocateArrayOutput() VpcEndpointConnectionResourcesAllocateArrayOutput {
+	return o
+}
+
+func (o VpcEndpointConnectionResourcesAllocateArrayOutput) ToVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(ctx context.Context) VpcEndpointConnectionResourcesAllocateArrayOutput {
+	return o
+}
+
+func (o VpcEndpointConnectionResourcesAllocateArrayOutput) Index(i pulumi.IntInput) VpcEndpointConnectionResourcesAllocateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcEndpointConnectionResourcesAllocate {
+		return vs[0].([]VpcEndpointConnectionResourcesAllocate)[vs[1].(int)]
+	}).(VpcEndpointConnectionResourcesAllocateOutput)
+}
+
+type VpcEndpointConnectionZone struct {
+	// Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
+	// The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+	NetworkInterfaceIp *string `pulumi:"networkInterfaceIp"`
+	// Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+	NetworkInterfaceIpv6 *string `pulumi:"networkInterfaceIpv6"`
+	// Service resource ID
+	ResourceId *string `pulumi:"resourceId"`
+	// Status of the service resource
+	ServiceStatus *string `pulumi:"serviceStatus"`
+	// ID of the subnet to which the endpoint network interface belongs
+	SubnetId *string `pulumi:"subnetId"`
+	// The domain name of the terminal node availability zone.
+	ZoneDomain *string `pulumi:"zoneDomain"`
+	// Endpoint zone ID
+	ZoneId *string `pulumi:"zoneId"`
+	// Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+	ZoneStatus *string `pulumi:"zoneStatus"`
+}
+
+// VpcEndpointConnectionZoneInput is an input type that accepts VpcEndpointConnectionZoneArgs and VpcEndpointConnectionZoneOutput values.
+// You can construct a concrete instance of `VpcEndpointConnectionZoneInput` via:
+//
+//	VpcEndpointConnectionZoneArgs{...}
+type VpcEndpointConnectionZoneInput interface {
+	pulumi.Input
+
+	ToVpcEndpointConnectionZoneOutput() VpcEndpointConnectionZoneOutput
+	ToVpcEndpointConnectionZoneOutputWithContext(context.Context) VpcEndpointConnectionZoneOutput
+}
+
+type VpcEndpointConnectionZoneArgs struct {
+	// Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
+	// The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+	NetworkInterfaceIp pulumi.StringPtrInput `pulumi:"networkInterfaceIp"`
+	// Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+	NetworkInterfaceIpv6 pulumi.StringPtrInput `pulumi:"networkInterfaceIpv6"`
+	// Service resource ID
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// Status of the service resource
+	ServiceStatus pulumi.StringPtrInput `pulumi:"serviceStatus"`
+	// ID of the subnet to which the endpoint network interface belongs
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// The domain name of the terminal node availability zone.
+	ZoneDomain pulumi.StringPtrInput `pulumi:"zoneDomain"`
+	// Endpoint zone ID
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+	// Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+	ZoneStatus pulumi.StringPtrInput `pulumi:"zoneStatus"`
+}
+
+func (VpcEndpointConnectionZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (i VpcEndpointConnectionZoneArgs) ToVpcEndpointConnectionZoneOutput() VpcEndpointConnectionZoneOutput {
+	return i.ToVpcEndpointConnectionZoneOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointConnectionZoneArgs) ToVpcEndpointConnectionZoneOutputWithContext(ctx context.Context) VpcEndpointConnectionZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointConnectionZoneOutput)
+}
+
+// VpcEndpointConnectionZoneArrayInput is an input type that accepts VpcEndpointConnectionZoneArray and VpcEndpointConnectionZoneArrayOutput values.
+// You can construct a concrete instance of `VpcEndpointConnectionZoneArrayInput` via:
+//
+//	VpcEndpointConnectionZoneArray{ VpcEndpointConnectionZoneArgs{...} }
+type VpcEndpointConnectionZoneArrayInput interface {
+	pulumi.Input
+
+	ToVpcEndpointConnectionZoneArrayOutput() VpcEndpointConnectionZoneArrayOutput
+	ToVpcEndpointConnectionZoneArrayOutputWithContext(context.Context) VpcEndpointConnectionZoneArrayOutput
+}
+
+type VpcEndpointConnectionZoneArray []VpcEndpointConnectionZoneInput
+
+func (VpcEndpointConnectionZoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (i VpcEndpointConnectionZoneArray) ToVpcEndpointConnectionZoneArrayOutput() VpcEndpointConnectionZoneArrayOutput {
+	return i.ToVpcEndpointConnectionZoneArrayOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointConnectionZoneArray) ToVpcEndpointConnectionZoneArrayOutputWithContext(ctx context.Context) VpcEndpointConnectionZoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointConnectionZoneArrayOutput)
+}
+
+type VpcEndpointConnectionZoneOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointConnectionZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (o VpcEndpointConnectionZoneOutput) ToVpcEndpointConnectionZoneOutput() VpcEndpointConnectionZoneOutput {
+	return o
+}
+
+func (o VpcEndpointConnectionZoneOutput) ToVpcEndpointConnectionZoneOutputWithContext(ctx context.Context) VpcEndpointConnectionZoneOutput {
+	return o
+}
+
+// Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+func (o VpcEndpointConnectionZoneOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
+// The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+func (o VpcEndpointConnectionZoneOutput) NetworkInterfaceIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.NetworkInterfaceIp }).(pulumi.StringPtrOutput)
+}
+
+// Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+func (o VpcEndpointConnectionZoneOutput) NetworkInterfaceIpv6() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.NetworkInterfaceIpv6 }).(pulumi.StringPtrOutput)
+}
+
+// Service resource ID
+func (o VpcEndpointConnectionZoneOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// Status of the service resource
+func (o VpcEndpointConnectionZoneOutput) ServiceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.ServiceStatus }).(pulumi.StringPtrOutput)
+}
+
+// ID of the subnet to which the endpoint network interface belongs
+func (o VpcEndpointConnectionZoneOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// The domain name of the terminal node availability zone.
+func (o VpcEndpointConnectionZoneOutput) ZoneDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.ZoneDomain }).(pulumi.StringPtrOutput)
+}
+
+// Endpoint zone ID
+func (o VpcEndpointConnectionZoneOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+// Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+func (o VpcEndpointConnectionZoneOutput) ZoneStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointConnectionZone) *string { return v.ZoneStatus }).(pulumi.StringPtrOutput)
+}
+
+type VpcEndpointConnectionZoneArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointConnectionZoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (o VpcEndpointConnectionZoneArrayOutput) ToVpcEndpointConnectionZoneArrayOutput() VpcEndpointConnectionZoneArrayOutput {
+	return o
+}
+
+func (o VpcEndpointConnectionZoneArrayOutput) ToVpcEndpointConnectionZoneArrayOutputWithContext(ctx context.Context) VpcEndpointConnectionZoneArrayOutput {
+	return o
+}
+
+func (o VpcEndpointConnectionZoneArrayOutput) Index(i pulumi.IntInput) VpcEndpointConnectionZoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcEndpointConnectionZone {
+		return vs[0].([]VpcEndpointConnectionZone)[vs[1].(int)]
+	}).(VpcEndpointConnectionZoneOutput)
 }
 
 type VpcEndpointTag struct {
@@ -738,10 +1004,10 @@ func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Value() pulumi.Stri
 }
 
 type GetEndpointServiceResource struct {
-	// Endpoint service ID.
-	InstanceId string `pulumi:"instanceId"`
 	// Service resource ID to be added to the endpoint service.
 	ResourceId string `pulumi:"resourceId"`
+	// Type of service resource.
+	ResourceType string `pulumi:"resourceType"`
 	// Availability zone where the load balancer provides service.
 	ZoneIds []string `pulumi:"zoneIds"`
 }
@@ -758,10 +1024,10 @@ type GetEndpointServiceResourceInput interface {
 }
 
 type GetEndpointServiceResourceArgs struct {
-	// Endpoint service ID.
-	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// Service resource ID to be added to the endpoint service.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// Type of service resource.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// Availability zone where the load balancer provides service.
 	ZoneIds pulumi.StringArrayInput `pulumi:"zoneIds"`
 }
@@ -817,14 +1083,14 @@ func (o GetEndpointServiceResourceOutput) ToGetEndpointServiceResourceOutputWith
 	return o
 }
 
-// Endpoint service ID.
-func (o GetEndpointServiceResourceOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEndpointServiceResource) string { return v.InstanceId }).(pulumi.StringOutput)
-}
-
 // Service resource ID to be added to the endpoint service.
 func (o GetEndpointServiceResourceOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServiceResource) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// Type of service resource.
+func (o GetEndpointServiceResourceOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointServiceResource) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // Availability zone where the load balancer provides service.
@@ -956,6 +1222,281 @@ func (o GetEndpointServiceTagArrayOutput) Index(i pulumi.IntInput) GetEndpointSe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointServiceTag {
 		return vs[0].([]GetEndpointServiceTag)[vs[1].(int)]
 	}).(GetEndpointServiceTagOutput)
+}
+
+type GetVpcEndpointConnectionResourcesAllocate struct {
+	// Specify the service resource for the endpoint connection
+	ResourceId string `pulumi:"resourceId"`
+	// Availability zone ID of the service resource to be specified
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetVpcEndpointConnectionResourcesAllocateInput is an input type that accepts GetVpcEndpointConnectionResourcesAllocateArgs and GetVpcEndpointConnectionResourcesAllocateOutput values.
+// You can construct a concrete instance of `GetVpcEndpointConnectionResourcesAllocateInput` via:
+//
+//	GetVpcEndpointConnectionResourcesAllocateArgs{...}
+type GetVpcEndpointConnectionResourcesAllocateInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointConnectionResourcesAllocateOutput() GetVpcEndpointConnectionResourcesAllocateOutput
+	ToGetVpcEndpointConnectionResourcesAllocateOutputWithContext(context.Context) GetVpcEndpointConnectionResourcesAllocateOutput
+}
+
+type GetVpcEndpointConnectionResourcesAllocateArgs struct {
+	// Specify the service resource for the endpoint connection
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// Availability zone ID of the service resource to be specified
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetVpcEndpointConnectionResourcesAllocateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (i GetVpcEndpointConnectionResourcesAllocateArgs) ToGetVpcEndpointConnectionResourcesAllocateOutput() GetVpcEndpointConnectionResourcesAllocateOutput {
+	return i.ToGetVpcEndpointConnectionResourcesAllocateOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointConnectionResourcesAllocateArgs) ToGetVpcEndpointConnectionResourcesAllocateOutputWithContext(ctx context.Context) GetVpcEndpointConnectionResourcesAllocateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointConnectionResourcesAllocateOutput)
+}
+
+// GetVpcEndpointConnectionResourcesAllocateArrayInput is an input type that accepts GetVpcEndpointConnectionResourcesAllocateArray and GetVpcEndpointConnectionResourcesAllocateArrayOutput values.
+// You can construct a concrete instance of `GetVpcEndpointConnectionResourcesAllocateArrayInput` via:
+//
+//	GetVpcEndpointConnectionResourcesAllocateArray{ GetVpcEndpointConnectionResourcesAllocateArgs{...} }
+type GetVpcEndpointConnectionResourcesAllocateArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointConnectionResourcesAllocateArrayOutput() GetVpcEndpointConnectionResourcesAllocateArrayOutput
+	ToGetVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(context.Context) GetVpcEndpointConnectionResourcesAllocateArrayOutput
+}
+
+type GetVpcEndpointConnectionResourcesAllocateArray []GetVpcEndpointConnectionResourcesAllocateInput
+
+func (GetVpcEndpointConnectionResourcesAllocateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (i GetVpcEndpointConnectionResourcesAllocateArray) ToGetVpcEndpointConnectionResourcesAllocateArrayOutput() GetVpcEndpointConnectionResourcesAllocateArrayOutput {
+	return i.ToGetVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointConnectionResourcesAllocateArray) ToGetVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(ctx context.Context) GetVpcEndpointConnectionResourcesAllocateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointConnectionResourcesAllocateArrayOutput)
+}
+
+type GetVpcEndpointConnectionResourcesAllocateOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointConnectionResourcesAllocateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (o GetVpcEndpointConnectionResourcesAllocateOutput) ToGetVpcEndpointConnectionResourcesAllocateOutput() GetVpcEndpointConnectionResourcesAllocateOutput {
+	return o
+}
+
+func (o GetVpcEndpointConnectionResourcesAllocateOutput) ToGetVpcEndpointConnectionResourcesAllocateOutputWithContext(ctx context.Context) GetVpcEndpointConnectionResourcesAllocateOutput {
+	return o
+}
+
+// Specify the service resource for the endpoint connection
+func (o GetVpcEndpointConnectionResourcesAllocateOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionResourcesAllocate) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// Availability zone ID of the service resource to be specified
+func (o GetVpcEndpointConnectionResourcesAllocateOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionResourcesAllocate) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetVpcEndpointConnectionResourcesAllocateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointConnectionResourcesAllocateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointConnectionResourcesAllocate)(nil)).Elem()
+}
+
+func (o GetVpcEndpointConnectionResourcesAllocateArrayOutput) ToGetVpcEndpointConnectionResourcesAllocateArrayOutput() GetVpcEndpointConnectionResourcesAllocateArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointConnectionResourcesAllocateArrayOutput) ToGetVpcEndpointConnectionResourcesAllocateArrayOutputWithContext(ctx context.Context) GetVpcEndpointConnectionResourcesAllocateArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointConnectionResourcesAllocateArrayOutput) Index(i pulumi.IntInput) GetVpcEndpointConnectionResourcesAllocateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcEndpointConnectionResourcesAllocate {
+		return vs[0].([]GetVpcEndpointConnectionResourcesAllocate)[vs[1].(int)]
+	}).(GetVpcEndpointConnectionResourcesAllocateOutput)
+}
+
+type GetVpcEndpointConnectionZone struct {
+	// Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
+	// The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+	NetworkInterfaceIp string `pulumi:"networkInterfaceIp"`
+	// Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+	NetworkInterfaceIpv6 string `pulumi:"networkInterfaceIpv6"`
+	// Service resource ID
+	ResourceId string `pulumi:"resourceId"`
+	// Status of the service resource
+	ServiceStatus string `pulumi:"serviceStatus"`
+	// ID of the subnet to which the endpoint network interface belongs
+	SubnetId string `pulumi:"subnetId"`
+	// The domain name of the terminal node availability zone.
+	ZoneDomain string `pulumi:"zoneDomain"`
+	// Endpoint zone ID
+	ZoneId string `pulumi:"zoneId"`
+	// Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+	ZoneStatus string `pulumi:"zoneStatus"`
+}
+
+// GetVpcEndpointConnectionZoneInput is an input type that accepts GetVpcEndpointConnectionZoneArgs and GetVpcEndpointConnectionZoneOutput values.
+// You can construct a concrete instance of `GetVpcEndpointConnectionZoneInput` via:
+//
+//	GetVpcEndpointConnectionZoneArgs{...}
+type GetVpcEndpointConnectionZoneInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointConnectionZoneOutput() GetVpcEndpointConnectionZoneOutput
+	ToGetVpcEndpointConnectionZoneOutputWithContext(context.Context) GetVpcEndpointConnectionZoneOutput
+}
+
+type GetVpcEndpointConnectionZoneArgs struct {
+	// Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
+	// The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+	NetworkInterfaceIp pulumi.StringInput `pulumi:"networkInterfaceIp"`
+	// Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+	NetworkInterfaceIpv6 pulumi.StringInput `pulumi:"networkInterfaceIpv6"`
+	// Service resource ID
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// Status of the service resource
+	ServiceStatus pulumi.StringInput `pulumi:"serviceStatus"`
+	// ID of the subnet to which the endpoint network interface belongs
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The domain name of the terminal node availability zone.
+	ZoneDomain pulumi.StringInput `pulumi:"zoneDomain"`
+	// Endpoint zone ID
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+	// Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+	ZoneStatus pulumi.StringInput `pulumi:"zoneStatus"`
+}
+
+func (GetVpcEndpointConnectionZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (i GetVpcEndpointConnectionZoneArgs) ToGetVpcEndpointConnectionZoneOutput() GetVpcEndpointConnectionZoneOutput {
+	return i.ToGetVpcEndpointConnectionZoneOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointConnectionZoneArgs) ToGetVpcEndpointConnectionZoneOutputWithContext(ctx context.Context) GetVpcEndpointConnectionZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointConnectionZoneOutput)
+}
+
+// GetVpcEndpointConnectionZoneArrayInput is an input type that accepts GetVpcEndpointConnectionZoneArray and GetVpcEndpointConnectionZoneArrayOutput values.
+// You can construct a concrete instance of `GetVpcEndpointConnectionZoneArrayInput` via:
+//
+//	GetVpcEndpointConnectionZoneArray{ GetVpcEndpointConnectionZoneArgs{...} }
+type GetVpcEndpointConnectionZoneArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointConnectionZoneArrayOutput() GetVpcEndpointConnectionZoneArrayOutput
+	ToGetVpcEndpointConnectionZoneArrayOutputWithContext(context.Context) GetVpcEndpointConnectionZoneArrayOutput
+}
+
+type GetVpcEndpointConnectionZoneArray []GetVpcEndpointConnectionZoneInput
+
+func (GetVpcEndpointConnectionZoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (i GetVpcEndpointConnectionZoneArray) ToGetVpcEndpointConnectionZoneArrayOutput() GetVpcEndpointConnectionZoneArrayOutput {
+	return i.ToGetVpcEndpointConnectionZoneArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointConnectionZoneArray) ToGetVpcEndpointConnectionZoneArrayOutputWithContext(ctx context.Context) GetVpcEndpointConnectionZoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointConnectionZoneArrayOutput)
+}
+
+type GetVpcEndpointConnectionZoneOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointConnectionZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (o GetVpcEndpointConnectionZoneOutput) ToGetVpcEndpointConnectionZoneOutput() GetVpcEndpointConnectionZoneOutput {
+	return o
+}
+
+func (o GetVpcEndpointConnectionZoneOutput) ToGetVpcEndpointConnectionZoneOutputWithContext(ctx context.Context) GetVpcEndpointConnectionZoneOutput {
+	return o
+}
+
+// Endpoint network interface ID. If a seamless service resource replacement is in progress, this indicates the endpoint network interface ID connected to the replaced service resource
+func (o GetVpcEndpointConnectionZoneOutput) NetworkInterfaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
+}
+
+// The private IPv4 address of the terminal node NIC. If a smooth service resource replacement is in progress, this refers to the IPv4 address of the terminal node NIC connected to the service resource being replaced.
+func (o GetVpcEndpointConnectionZoneOutput) NetworkInterfaceIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.NetworkInterfaceIp }).(pulumi.StringOutput)
+}
+
+// Private IPv6 address of the endpoint network interface. If a seamless service resource replacement is in progress, this indicates the IPv6 address of the endpoint network interface connected to the replaced service resource. If the endpoint only supports IPv4, this parameter is not returned
+func (o GetVpcEndpointConnectionZoneOutput) NetworkInterfaceIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.NetworkInterfaceIpv6 }).(pulumi.StringOutput)
+}
+
+// Service resource ID
+func (o GetVpcEndpointConnectionZoneOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// Status of the service resource
+func (o GetVpcEndpointConnectionZoneOutput) ServiceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.ServiceStatus }).(pulumi.StringOutput)
+}
+
+// ID of the subnet to which the endpoint network interface belongs
+func (o GetVpcEndpointConnectionZoneOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The domain name of the terminal node availability zone.
+func (o GetVpcEndpointConnectionZoneOutput) ZoneDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.ZoneDomain }).(pulumi.StringOutput)
+}
+
+// Endpoint zone ID
+func (o GetVpcEndpointConnectionZoneOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+// Status of the endpoint zone. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed
+func (o GetVpcEndpointConnectionZoneOutput) ZoneStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointConnectionZone) string { return v.ZoneStatus }).(pulumi.StringOutput)
+}
+
+type GetVpcEndpointConnectionZoneArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointConnectionZoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointConnectionZone)(nil)).Elem()
+}
+
+func (o GetVpcEndpointConnectionZoneArrayOutput) ToGetVpcEndpointConnectionZoneArrayOutput() GetVpcEndpointConnectionZoneArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointConnectionZoneArrayOutput) ToGetVpcEndpointConnectionZoneArrayOutputWithContext(ctx context.Context) GetVpcEndpointConnectionZoneArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointConnectionZoneArrayOutput) Index(i pulumi.IntInput) GetVpcEndpointConnectionZoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcEndpointConnectionZone {
+		return vs[0].([]GetVpcEndpointConnectionZone)[vs[1].(int)]
+	}).(GetVpcEndpointConnectionZoneOutput)
 }
 
 type GetVpcEndpointTag struct {
@@ -1240,6 +1781,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceResourceArrayInput)(nil)).Elem(), EndpointServiceResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceTagInput)(nil)).Elem(), EndpointServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceTagArrayInput)(nil)).Elem(), EndpointServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionResourcesAllocateInput)(nil)).Elem(), VpcEndpointConnectionResourcesAllocateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionResourcesAllocateArrayInput)(nil)).Elem(), VpcEndpointConnectionResourcesAllocateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionZoneInput)(nil)).Elem(), VpcEndpointConnectionZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionZoneArrayInput)(nil)).Elem(), VpcEndpointConnectionZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointTagInput)(nil)).Elem(), VpcEndpointTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointTagArrayInput)(nil)).Elem(), VpcEndpointTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointZoneInput)(nil)).Elem(), VpcEndpointZoneArgs{})
@@ -1249,6 +1794,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceResourceArrayInput)(nil)).Elem(), GetEndpointServiceResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceTagInput)(nil)).Elem(), GetEndpointServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceTagArrayInput)(nil)).Elem(), GetEndpointServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionResourcesAllocateInput)(nil)).Elem(), GetVpcEndpointConnectionResourcesAllocateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionResourcesAllocateArrayInput)(nil)).Elem(), GetVpcEndpointConnectionResourcesAllocateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionZoneInput)(nil)).Elem(), GetVpcEndpointConnectionZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionZoneArrayInput)(nil)).Elem(), GetVpcEndpointConnectionZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointTagInput)(nil)).Elem(), GetVpcEndpointTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointTagArrayInput)(nil)).Elem(), GetVpcEndpointTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointZoneInput)(nil)).Elem(), GetVpcEndpointZoneArgs{})
@@ -1259,6 +1808,10 @@ func init() {
 	pulumi.RegisterOutputType(EndpointServiceResourceArrayOutput{})
 	pulumi.RegisterOutputType(EndpointServiceTagOutput{})
 	pulumi.RegisterOutputType(EndpointServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(VpcEndpointConnectionResourcesAllocateOutput{})
+	pulumi.RegisterOutputType(VpcEndpointConnectionResourcesAllocateArrayOutput{})
+	pulumi.RegisterOutputType(VpcEndpointConnectionZoneOutput{})
+	pulumi.RegisterOutputType(VpcEndpointConnectionZoneArrayOutput{})
 	pulumi.RegisterOutputType(VpcEndpointTagOutput{})
 	pulumi.RegisterOutputType(VpcEndpointTagArrayOutput{})
 	pulumi.RegisterOutputType(VpcEndpointZoneOutput{})
@@ -1268,6 +1821,10 @@ func init() {
 	pulumi.RegisterOutputType(GetEndpointServiceResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceTagOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointConnectionResourcesAllocateOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointConnectionResourcesAllocateArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointConnectionZoneOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointConnectionZoneArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointTagOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointZoneOutput{})

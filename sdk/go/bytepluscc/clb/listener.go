@@ -55,7 +55,8 @@ type Listener struct {
 	// Creation time of the listener.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description      pulumi.StringOutput                `pulumi:"description"`
+	DomainExtensions ListenerDomainExtensionArrayOutput `pulumi:"domainExtensions"`
 	// Enable listener. on (default): enabled. off: disabled.
 	Enabled pulumi.StringOutput `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
@@ -188,7 +189,8 @@ type listenerState struct {
 	// Creation time of the listener.
 	CreatedTime *string `pulumi:"createdTime"`
 	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-	Description *string `pulumi:"description"`
+	Description      *string                   `pulumi:"description"`
+	DomainExtensions []ListenerDomainExtension `pulumi:"domainExtensions"`
 	// Enable listener. on (default): enabled. off: disabled.
 	Enabled *string `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
@@ -280,7 +282,8 @@ type ListenerState struct {
 	// Creation time of the listener.
 	CreatedTime pulumi.StringPtrInput
 	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-	Description pulumi.StringPtrInput
+	Description      pulumi.StringPtrInput
+	DomainExtensions ListenerDomainExtensionArrayInput
 	// Enable listener. on (default): enabled. off: disabled.
 	Enabled pulumi.StringPtrInput
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
@@ -374,7 +377,8 @@ type listenerArgs struct {
 	// Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
 	Cps *int `pulumi:"cps"`
 	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-	Description *string `pulumi:"description"`
+	Description      *string                   `pulumi:"description"`
+	DomainExtensions []ListenerDomainExtension `pulumi:"domainExtensions"`
 	// Enable listener. on (default): enabled. off: disabled.
 	Enabled *string `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
@@ -455,7 +459,8 @@ type ListenerArgs struct {
 	// Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
 	Cps pulumi.IntPtrInput
 	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-	Description pulumi.StringPtrInput
+	Description      pulumi.StringPtrInput
+	DomainExtensions ListenerDomainExtensionArrayInput
 	// Enable listener. on (default): enabled. off: disabled.
 	Enabled pulumi.StringPtrInput
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
@@ -673,6 +678,10 @@ func (o ListenerOutput) CreatedTime() pulumi.StringOutput {
 // Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
 func (o ListenerOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o ListenerOutput) DomainExtensions() ListenerDomainExtensionArrayOutput {
+	return o.ApplyT(func(v *Listener) ListenerDomainExtensionArrayOutput { return v.DomainExtensions }).(ListenerDomainExtensionArrayOutput)
 }
 
 // Enable listener. on (default): enabled. off: disabled.

@@ -8,6 +8,8 @@ import com.byteplus.bytepluscc.vefaas.inputs.GetFunctionArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetFunctionPlainArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetKafkaTriggerArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetKafkaTriggerPlainArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.GetReleaseArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.GetReleasePlainArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetSandboxArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetSandboxPlainArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetTimerArgs;
@@ -16,6 +18,8 @@ import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionsResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetKafkaTriggerResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetKafkaTriggersResult;
+import com.byteplus.bytepluscc.vefaas.outputs.GetReleaseResult;
+import com.byteplus.bytepluscc.vefaas.outputs.GetReleasesResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxesResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetTimerResult;
@@ -196,6 +200,90 @@ public final class VefaasFunctions {
      */
     public static CompletableFuture<GetKafkaTriggersResult> getKafkaTriggersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getKafkaTriggers:getKafkaTriggers", TypeShape.of(GetKafkaTriggersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleaseResult> getRelease(GetReleaseArgs args) {
+        return getRelease(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static CompletableFuture<GetReleaseResult> getReleasePlain(GetReleasePlainArgs args) {
+        return getReleasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleaseResult> getRelease(GetReleaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getRelease:getRelease", TypeShape.of(GetReleaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleaseResult> getRelease(GetReleaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getRelease:getRelease", TypeShape.of(GetReleaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static CompletableFuture<GetReleaseResult> getReleasePlain(GetReleasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getRelease:getRelease", TypeShape.of(GetReleaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleasesResult> getReleases() {
+        return getReleases(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static CompletableFuture<GetReleasesResult> getReleasesPlain() {
+        return getReleasesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleasesResult> getReleases(InvokeArgs args) {
+        return getReleases(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static CompletableFuture<GetReleasesResult> getReleasesPlain(InvokeArgs args) {
+        return getReleasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleasesResult> getReleases(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getReleases:getReleases", TypeShape.of(GetReleasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static Output<GetReleasesResult> getReleases(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getReleases:getReleases", TypeShape.of(GetReleasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Release
+     * 
+     */
+    public static CompletableFuture<GetReleasesResult> getReleasesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getReleases:getReleases", TypeShape.of(GetReleasesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VEFAAS::Sandbox

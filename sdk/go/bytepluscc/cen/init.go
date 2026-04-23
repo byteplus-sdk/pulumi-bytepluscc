@@ -27,6 +27,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Cen{}
 	case "bytepluscc:cen/grantInstance:GrantInstance":
 		r = &GrantInstance{}
+	case "bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth":
+		r = &InterRegionBandwidth{}
+	case "bytepluscc:cen/routeEntry:RouteEntry":
+		r = &RouteEntry{}
+	case "bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry":
+		r = &ServiceRouteEntry{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +59,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"cen/grantInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cen/interRegionBandwidth",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cen/routeEntry",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cen/serviceRouteEntry",
 		&module{version},
 	)
 }

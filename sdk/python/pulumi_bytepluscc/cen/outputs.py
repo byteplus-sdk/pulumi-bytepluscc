@@ -19,9 +19,11 @@ __all__ = [
     'BandwidthPackageTag',
     'CenInstance',
     'CenTag',
+    'ServiceRouteEntryPublishToInstance',
     'GetBandwidthPackageTagResult',
     'GetCenInstanceResult',
     'GetCenTagResult',
+    'GetServiceRouteEntryPublishToInstanceResult',
 ]
 
 @pulumi.output_type
@@ -165,6 +167,70 @@ class CenTag(dict):
 
 
 @pulumi.output_type
+class ServiceRouteEntryPublishToInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "instanceRegionId":
+            suggest = "instance_region_id"
+        elif key == "instanceType":
+            suggest = "instance_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceRouteEntryPublishToInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceRouteEntryPublishToInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceRouteEntryPublishToInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None,
+                 instance_region_id: Optional[builtins.str] = None,
+                 instance_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: Network instance ID for published cloud service access route.
+        :param builtins.str instance_region_id: Region for published cloud service access route.
+        :param builtins.str instance_type: Network instance type for published cloud service access route.
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if instance_region_id is not None:
+            pulumi.set(__self__, "instance_region_id", instance_region_id)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        Network instance ID for published cloud service access route.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceRegionId")
+    def instance_region_id(self) -> Optional[builtins.str]:
+        """
+        Region for published cloud service access route.
+        """
+        return pulumi.get(self, "instance_region_id")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[builtins.str]:
+        """
+        Network instance type for published cloud service access route.
+        """
+        return pulumi.get(self, "instance_type")
+
+
+@pulumi.output_type
 class GetBandwidthPackageTagResult(dict):
     def __init__(__self__, *,
                  key: builtins.str,
@@ -304,5 +370,45 @@ class GetCenTagResult(dict):
         Tag value for user labels. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetServiceRouteEntryPublishToInstanceResult(dict):
+    def __init__(__self__, *,
+                 instance_id: builtins.str,
+                 instance_region_id: builtins.str,
+                 instance_type: builtins.str):
+        """
+        :param builtins.str instance_id: Network instance ID for published cloud service access route.
+        :param builtins.str instance_region_id: Region for published cloud service access route.
+        :param builtins.str instance_type: Network instance type for published cloud service access route.
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_region_id", instance_region_id)
+        pulumi.set(__self__, "instance_type", instance_type)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        Network instance ID for published cloud service access route.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceRegionId")
+    def instance_region_id(self) -> builtins.str:
+        """
+        Region for published cloud service access route.
+        """
+        return pulumi.get(self, "instance_region_id")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> builtins.str:
+        """
+        Network instance type for published cloud service access route.
+        """
+        return pulumi.get(self, "instance_type")
 
 

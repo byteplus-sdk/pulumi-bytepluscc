@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &EndpointService{}
 	case "bytepluscc:privatelink/vpcEndpoint:VpcEndpoint":
 		r = &VpcEndpoint{}
+	case "bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection":
+		r = &VpcEndpointConnection{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +48,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"privatelink/vpcEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"privatelink/vpcEndpointConnection",
 		&module{version},
 	)
 }

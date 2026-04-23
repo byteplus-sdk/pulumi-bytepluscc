@@ -18,26 +18,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
         /// Instance ID.
         /// </summary>
         public readonly string? InstanceId;
-        /// <summary>
-        /// Instance name.
-        /// </summary>
-        public readonly string? InstanceName;
-        /// <summary>
-        /// Instance VPC ID.
-        /// </summary>
-        public readonly string? Vpc;
 
         [OutputConstructor]
-        private AllowListAssociatedInstance(
-            string? instanceId,
-
-            string? instanceName,
-
-            string? vpc)
+        private AllowListAssociatedInstance(string? instanceId)
         {
             InstanceId = instanceId;
-            InstanceName = instanceName;
-            Vpc = vpc;
         }
     }
 }

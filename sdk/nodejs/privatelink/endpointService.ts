@@ -72,6 +72,10 @@ export class EndpointService extends pulumi.CustomResource {
      */
     public readonly payer!: pulumi.Output<string>;
     /**
+     * Details of authorized allowlist accounts.
+     */
+    public readonly permitAccountIds!: pulumi.Output<string[]>;
+    /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      */
     public readonly privateDnsEnabled!: pulumi.Output<boolean>;
@@ -109,7 +113,7 @@ export class EndpointService extends pulumi.CustomResource {
      */
     public readonly serviceNameManaged!: pulumi.Output<string>;
     /**
-     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      */
     public readonly serviceNameSuffix!: pulumi.Output<string>;
     /**
@@ -162,6 +166,7 @@ export class EndpointService extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["ipAddressVersions"] = state ? state.ipAddressVersions : undefined;
             resourceInputs["payer"] = state ? state.payer : undefined;
+            resourceInputs["permitAccountIds"] = state ? state.permitAccountIds : undefined;
             resourceInputs["privateDnsEnabled"] = state ? state.privateDnsEnabled : undefined;
             resourceInputs["privateDnsName"] = state ? state.privateDnsName : undefined;
             resourceInputs["privateDnsNameConfiguration"] = state ? state.privateDnsNameConfiguration : undefined;
@@ -187,6 +192,7 @@ export class EndpointService extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["ipAddressVersions"] = args ? args.ipAddressVersions : undefined;
             resourceInputs["payer"] = args ? args.payer : undefined;
+            resourceInputs["permitAccountIds"] = args ? args.permitAccountIds : undefined;
             resourceInputs["privateDnsEnabled"] = args ? args.privateDnsEnabled : undefined;
             resourceInputs["privateDnsName"] = args ? args.privateDnsName : undefined;
             resourceInputs["privateDnsType"] = args ? args.privateDnsType : undefined;
@@ -248,6 +254,10 @@ export interface EndpointServiceState {
      */
     payer?: pulumi.Input<string>;
     /**
+     * Details of authorized allowlist accounts.
+     */
+    permitAccountIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      */
     privateDnsEnabled?: pulumi.Input<boolean>;
@@ -285,7 +295,7 @@ export interface EndpointServiceState {
      */
     serviceNameManaged?: pulumi.Input<string>;
     /**
-     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      */
     serviceNameSuffix?: pulumi.Input<string>;
     /**
@@ -340,6 +350,10 @@ export interface EndpointServiceArgs {
      */
     payer?: pulumi.Input<string>;
     /**
+     * Details of authorized allowlist accounts.
+     */
+    permitAccountIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      */
     privateDnsEnabled?: pulumi.Input<boolean>;
@@ -361,7 +375,7 @@ export interface EndpointServiceArgs {
      */
     serviceNameManaged?: pulumi.Input<string>;
     /**
-     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      */
     serviceNameSuffix?: pulumi.Input<string>;
     /**

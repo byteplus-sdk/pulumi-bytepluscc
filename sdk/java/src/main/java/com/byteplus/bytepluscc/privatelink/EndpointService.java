@@ -135,6 +135,20 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
         return this.payer;
     }
     /**
+     * Details of authorized allowlist accounts.
+     * 
+     */
+    @Export(name="permitAccountIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> permitAccountIds;
+
+    /**
+     * @return Details of authorized allowlist accounts.
+     * 
+     */
+    public Output<List<String>> permitAccountIds() {
+        return this.permitAccountIds;
+    }
+    /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
@@ -267,14 +281,14 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
         return this.serviceNameManaged;
     }
     /**
-     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      * 
      */
     @Export(name="serviceNameSuffix", refs={String.class}, tree="[0]")
     private Output<String> serviceNameSuffix;
 
     /**
-     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+     * @return Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
      * 
      */
     public Output<String> serviceNameSuffix() {

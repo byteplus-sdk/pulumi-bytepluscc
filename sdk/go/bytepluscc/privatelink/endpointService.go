@@ -35,6 +35,8 @@ type EndpointService struct {
 	IpAddressVersions pulumi.StringArrayOutput `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer pulumi.StringOutput `pulumi:"payer"`
+	// Details of authorized allowlist accounts.
+	PermitAccountIds pulumi.StringArrayOutput `pulumi:"permitAccountIds"`
 	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled pulumi.BoolOutput `pulumi:"privateDnsEnabled"`
 	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
@@ -54,7 +56,7 @@ type EndpointService struct {
 	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
 	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged pulumi.StringOutput `pulumi:"serviceNameManaged"`
-	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+	// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 	ServiceNameSuffix pulumi.StringOutput `pulumi:"serviceNameSuffix"`
 	// Current service principal.
 	ServiceOwner pulumi.StringOutput `pulumi:"serviceOwner"`
@@ -117,6 +119,8 @@ type endpointServiceState struct {
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer *string `pulumi:"payer"`
+	// Details of authorized allowlist accounts.
+	PermitAccountIds []string `pulumi:"permitAccountIds"`
 	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled *bool `pulumi:"privateDnsEnabled"`
 	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
@@ -136,7 +140,7 @@ type endpointServiceState struct {
 	ServiceName *string `pulumi:"serviceName"`
 	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged *string `pulumi:"serviceNameManaged"`
-	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+	// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 	ServiceNameSuffix *string `pulumi:"serviceNameSuffix"`
 	// Current service principal.
 	ServiceOwner *string `pulumi:"serviceOwner"`
@@ -170,6 +174,8 @@ type EndpointServiceState struct {
 	IpAddressVersions pulumi.StringArrayInput
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer pulumi.StringPtrInput
+	// Details of authorized allowlist accounts.
+	PermitAccountIds pulumi.StringArrayInput
 	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled pulumi.BoolPtrInput
 	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
@@ -189,7 +195,7 @@ type EndpointServiceState struct {
 	ServiceName pulumi.StringPtrInput
 	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged pulumi.StringPtrInput
-	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+	// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 	ServiceNameSuffix pulumi.StringPtrInput
 	// Current service principal.
 	ServiceOwner pulumi.StringPtrInput
@@ -221,6 +227,8 @@ type endpointServiceArgs struct {
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer *string `pulumi:"payer"`
+	// Details of authorized allowlist accounts.
+	PermitAccountIds []string `pulumi:"permitAccountIds"`
 	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled *bool `pulumi:"privateDnsEnabled"`
 	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
@@ -232,7 +240,7 @@ type endpointServiceArgs struct {
 	Resources   []EndpointServiceResource `pulumi:"resources"`
 	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged *string `pulumi:"serviceNameManaged"`
-	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+	// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 	ServiceNameSuffix *string `pulumi:"serviceNameSuffix"`
 	// Current service principal.
 	ServiceOwner *string `pulumi:"serviceOwner"`
@@ -255,6 +263,8 @@ type EndpointServiceArgs struct {
 	IpAddressVersions pulumi.StringArrayInput
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
 	Payer pulumi.StringPtrInput
+	// Details of authorized allowlist accounts.
+	PermitAccountIds pulumi.StringArrayInput
 	// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 	PrivateDnsEnabled pulumi.BoolPtrInput
 	// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
@@ -266,7 +276,7 @@ type EndpointServiceArgs struct {
 	Resources   EndpointServiceResourceArrayInput
 	// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
 	ServiceNameManaged pulumi.StringPtrInput
-	// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+	// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 	ServiceNameSuffix pulumi.StringPtrInput
 	// Current service principal.
 	ServiceOwner pulumi.StringPtrInput
@@ -401,6 +411,11 @@ func (o EndpointServiceOutput) Payer() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.Payer }).(pulumi.StringOutput)
 }
 
+// Details of authorized allowlist accounts.
+func (o EndpointServiceOutput) PermitAccountIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *EndpointService) pulumi.StringArrayOutput { return v.PermitAccountIds }).(pulumi.StringArrayOutput)
+}
+
 // Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
 func (o EndpointServiceOutput) PrivateDnsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.BoolOutput { return v.PrivateDnsEnabled }).(pulumi.BoolOutput)
@@ -452,7 +467,7 @@ func (o EndpointServiceOutput) ServiceNameManaged() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceNameManaged }).(pulumi.StringOutput)
 }
 
-// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
+// Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
 func (o EndpointServiceOutput) ServiceNameSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.ServiceNameSuffix }).(pulumi.StringOutput)
 }

@@ -6,12 +6,16 @@ package com.byteplus.bytepluscc.redis;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.redis.inputs.GetAccountArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetAccountPlainArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetAllowListArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressPlainArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.redis.outputs.GetAccountResult;
 import com.byteplus.bytepluscc.redis.outputs.GetAccountsResult;
+import com.byteplus.bytepluscc.redis.outputs.GetAllowListResult;
+import com.byteplus.bytepluscc.redis.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressResult;
 import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressesResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceResult;
@@ -108,6 +112,90 @@ public final class RedisFunctions {
      */
     public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:redis/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args) {
+        return getAllowList(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args) {
+        return getAllowListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists() {
+        return getAllowLists(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain() {
+        return getAllowListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args) {
+        return getAllowLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args) {
+        return getAllowListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::Redis::EndpointPublicAddress

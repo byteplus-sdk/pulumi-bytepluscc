@@ -275,6 +275,245 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type MountServiceAttachFileSystem struct {
+	// Account ID.
+	AccountId *string `pulumi:"accountId"`
+	// User mount path.
+	CustomerPath *string `pulumi:"customerPath"`
+	// File system ID.
+	FileSystemId *string `pulumi:"fileSystemId"`
+	// File system name.
+	FileSystemName *string `pulumi:"fileSystemName"`
+	// Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+	Status *string `pulumi:"status"`
+}
+
+// MountServiceAttachFileSystemInput is an input type that accepts MountServiceAttachFileSystemArgs and MountServiceAttachFileSystemOutput values.
+// You can construct a concrete instance of `MountServiceAttachFileSystemInput` via:
+//
+//	MountServiceAttachFileSystemArgs{...}
+type MountServiceAttachFileSystemInput interface {
+	pulumi.Input
+
+	ToMountServiceAttachFileSystemOutput() MountServiceAttachFileSystemOutput
+	ToMountServiceAttachFileSystemOutputWithContext(context.Context) MountServiceAttachFileSystemOutput
+}
+
+type MountServiceAttachFileSystemArgs struct {
+	// Account ID.
+	AccountId pulumi.StringPtrInput `pulumi:"accountId"`
+	// User mount path.
+	CustomerPath pulumi.StringPtrInput `pulumi:"customerPath"`
+	// File system ID.
+	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
+	// File system name.
+	FileSystemName pulumi.StringPtrInput `pulumi:"fileSystemName"`
+	// Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (MountServiceAttachFileSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (i MountServiceAttachFileSystemArgs) ToMountServiceAttachFileSystemOutput() MountServiceAttachFileSystemOutput {
+	return i.ToMountServiceAttachFileSystemOutputWithContext(context.Background())
+}
+
+func (i MountServiceAttachFileSystemArgs) ToMountServiceAttachFileSystemOutputWithContext(ctx context.Context) MountServiceAttachFileSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountServiceAttachFileSystemOutput)
+}
+
+// MountServiceAttachFileSystemArrayInput is an input type that accepts MountServiceAttachFileSystemArray and MountServiceAttachFileSystemArrayOutput values.
+// You can construct a concrete instance of `MountServiceAttachFileSystemArrayInput` via:
+//
+//	MountServiceAttachFileSystemArray{ MountServiceAttachFileSystemArgs{...} }
+type MountServiceAttachFileSystemArrayInput interface {
+	pulumi.Input
+
+	ToMountServiceAttachFileSystemArrayOutput() MountServiceAttachFileSystemArrayOutput
+	ToMountServiceAttachFileSystemArrayOutputWithContext(context.Context) MountServiceAttachFileSystemArrayOutput
+}
+
+type MountServiceAttachFileSystemArray []MountServiceAttachFileSystemInput
+
+func (MountServiceAttachFileSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (i MountServiceAttachFileSystemArray) ToMountServiceAttachFileSystemArrayOutput() MountServiceAttachFileSystemArrayOutput {
+	return i.ToMountServiceAttachFileSystemArrayOutputWithContext(context.Background())
+}
+
+func (i MountServiceAttachFileSystemArray) ToMountServiceAttachFileSystemArrayOutputWithContext(ctx context.Context) MountServiceAttachFileSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountServiceAttachFileSystemArrayOutput)
+}
+
+type MountServiceAttachFileSystemOutput struct{ *pulumi.OutputState }
+
+func (MountServiceAttachFileSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (o MountServiceAttachFileSystemOutput) ToMountServiceAttachFileSystemOutput() MountServiceAttachFileSystemOutput {
+	return o
+}
+
+func (o MountServiceAttachFileSystemOutput) ToMountServiceAttachFileSystemOutputWithContext(ctx context.Context) MountServiceAttachFileSystemOutput {
+	return o
+}
+
+// Account ID.
+func (o MountServiceAttachFileSystemOutput) AccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceAttachFileSystem) *string { return v.AccountId }).(pulumi.StringPtrOutput)
+}
+
+// User mount path.
+func (o MountServiceAttachFileSystemOutput) CustomerPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceAttachFileSystem) *string { return v.CustomerPath }).(pulumi.StringPtrOutput)
+}
+
+// File system ID.
+func (o MountServiceAttachFileSystemOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceAttachFileSystem) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
+}
+
+// File system name.
+func (o MountServiceAttachFileSystemOutput) FileSystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceAttachFileSystem) *string { return v.FileSystemName }).(pulumi.StringPtrOutput)
+}
+
+// Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+func (o MountServiceAttachFileSystemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceAttachFileSystem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type MountServiceAttachFileSystemArrayOutput struct{ *pulumi.OutputState }
+
+func (MountServiceAttachFileSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (o MountServiceAttachFileSystemArrayOutput) ToMountServiceAttachFileSystemArrayOutput() MountServiceAttachFileSystemArrayOutput {
+	return o
+}
+
+func (o MountServiceAttachFileSystemArrayOutput) ToMountServiceAttachFileSystemArrayOutputWithContext(ctx context.Context) MountServiceAttachFileSystemArrayOutput {
+	return o
+}
+
+func (o MountServiceAttachFileSystemArrayOutput) Index(i pulumi.IntInput) MountServiceAttachFileSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MountServiceAttachFileSystem {
+		return vs[0].([]MountServiceAttachFileSystem)[vs[1].(int)]
+	}).(MountServiceAttachFileSystemOutput)
+}
+
+type MountServiceNode struct {
+	// Node initial password.
+	DefaultPassword *string `pulumi:"defaultPassword"`
+	// Node instance ID.
+	NodeId *string `pulumi:"nodeId"`
+}
+
+// MountServiceNodeInput is an input type that accepts MountServiceNodeArgs and MountServiceNodeOutput values.
+// You can construct a concrete instance of `MountServiceNodeInput` via:
+//
+//	MountServiceNodeArgs{...}
+type MountServiceNodeInput interface {
+	pulumi.Input
+
+	ToMountServiceNodeOutput() MountServiceNodeOutput
+	ToMountServiceNodeOutputWithContext(context.Context) MountServiceNodeOutput
+}
+
+type MountServiceNodeArgs struct {
+	// Node initial password.
+	DefaultPassword pulumi.StringPtrInput `pulumi:"defaultPassword"`
+	// Node instance ID.
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+}
+
+func (MountServiceNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountServiceNode)(nil)).Elem()
+}
+
+func (i MountServiceNodeArgs) ToMountServiceNodeOutput() MountServiceNodeOutput {
+	return i.ToMountServiceNodeOutputWithContext(context.Background())
+}
+
+func (i MountServiceNodeArgs) ToMountServiceNodeOutputWithContext(ctx context.Context) MountServiceNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountServiceNodeOutput)
+}
+
+// MountServiceNodeArrayInput is an input type that accepts MountServiceNodeArray and MountServiceNodeArrayOutput values.
+// You can construct a concrete instance of `MountServiceNodeArrayInput` via:
+//
+//	MountServiceNodeArray{ MountServiceNodeArgs{...} }
+type MountServiceNodeArrayInput interface {
+	pulumi.Input
+
+	ToMountServiceNodeArrayOutput() MountServiceNodeArrayOutput
+	ToMountServiceNodeArrayOutputWithContext(context.Context) MountServiceNodeArrayOutput
+}
+
+type MountServiceNodeArray []MountServiceNodeInput
+
+func (MountServiceNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountServiceNode)(nil)).Elem()
+}
+
+func (i MountServiceNodeArray) ToMountServiceNodeArrayOutput() MountServiceNodeArrayOutput {
+	return i.ToMountServiceNodeArrayOutputWithContext(context.Background())
+}
+
+func (i MountServiceNodeArray) ToMountServiceNodeArrayOutputWithContext(ctx context.Context) MountServiceNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountServiceNodeArrayOutput)
+}
+
+type MountServiceNodeOutput struct{ *pulumi.OutputState }
+
+func (MountServiceNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountServiceNode)(nil)).Elem()
+}
+
+func (o MountServiceNodeOutput) ToMountServiceNodeOutput() MountServiceNodeOutput {
+	return o
+}
+
+func (o MountServiceNodeOutput) ToMountServiceNodeOutputWithContext(ctx context.Context) MountServiceNodeOutput {
+	return o
+}
+
+// Node initial password.
+func (o MountServiceNodeOutput) DefaultPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceNode) *string { return v.DefaultPassword }).(pulumi.StringPtrOutput)
+}
+
+// Node instance ID.
+func (o MountServiceNodeOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountServiceNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+type MountServiceNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (MountServiceNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountServiceNode)(nil)).Elem()
+}
+
+func (o MountServiceNodeArrayOutput) ToMountServiceNodeArrayOutput() MountServiceNodeArrayOutput {
+	return o
+}
+
+func (o MountServiceNodeArrayOutput) ToMountServiceNodeArrayOutputWithContext(ctx context.Context) MountServiceNodeArrayOutput {
+	return o
+}
+
+func (o MountServiceNodeArrayOutput) Index(i pulumi.IntInput) MountServiceNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MountServiceNode {
+		return vs[0].([]MountServiceNode)[vs[1].(int)]
+	}).(MountServiceNodeOutput)
+}
+
 type GetInstanceCapacityInfo struct {
 	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB int `pulumi:"totalTiB"`
@@ -451,19 +690,274 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 	}).(GetInstanceTagOutput)
 }
 
+type GetMountServiceAttachFileSystem struct {
+	// Account ID.
+	AccountId string `pulumi:"accountId"`
+	// User mount path.
+	CustomerPath string `pulumi:"customerPath"`
+	// File system ID.
+	FileSystemId string `pulumi:"fileSystemId"`
+	// File system name.
+	FileSystemName string `pulumi:"fileSystemName"`
+	// Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+	Status string `pulumi:"status"`
+}
+
+// GetMountServiceAttachFileSystemInput is an input type that accepts GetMountServiceAttachFileSystemArgs and GetMountServiceAttachFileSystemOutput values.
+// You can construct a concrete instance of `GetMountServiceAttachFileSystemInput` via:
+//
+//	GetMountServiceAttachFileSystemArgs{...}
+type GetMountServiceAttachFileSystemInput interface {
+	pulumi.Input
+
+	ToGetMountServiceAttachFileSystemOutput() GetMountServiceAttachFileSystemOutput
+	ToGetMountServiceAttachFileSystemOutputWithContext(context.Context) GetMountServiceAttachFileSystemOutput
+}
+
+type GetMountServiceAttachFileSystemArgs struct {
+	// Account ID.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// User mount path.
+	CustomerPath pulumi.StringInput `pulumi:"customerPath"`
+	// File system ID.
+	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	// File system name.
+	FileSystemName pulumi.StringInput `pulumi:"fileSystemName"`
+	// Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetMountServiceAttachFileSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (i GetMountServiceAttachFileSystemArgs) ToGetMountServiceAttachFileSystemOutput() GetMountServiceAttachFileSystemOutput {
+	return i.ToGetMountServiceAttachFileSystemOutputWithContext(context.Background())
+}
+
+func (i GetMountServiceAttachFileSystemArgs) ToGetMountServiceAttachFileSystemOutputWithContext(ctx context.Context) GetMountServiceAttachFileSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountServiceAttachFileSystemOutput)
+}
+
+// GetMountServiceAttachFileSystemArrayInput is an input type that accepts GetMountServiceAttachFileSystemArray and GetMountServiceAttachFileSystemArrayOutput values.
+// You can construct a concrete instance of `GetMountServiceAttachFileSystemArrayInput` via:
+//
+//	GetMountServiceAttachFileSystemArray{ GetMountServiceAttachFileSystemArgs{...} }
+type GetMountServiceAttachFileSystemArrayInput interface {
+	pulumi.Input
+
+	ToGetMountServiceAttachFileSystemArrayOutput() GetMountServiceAttachFileSystemArrayOutput
+	ToGetMountServiceAttachFileSystemArrayOutputWithContext(context.Context) GetMountServiceAttachFileSystemArrayOutput
+}
+
+type GetMountServiceAttachFileSystemArray []GetMountServiceAttachFileSystemInput
+
+func (GetMountServiceAttachFileSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (i GetMountServiceAttachFileSystemArray) ToGetMountServiceAttachFileSystemArrayOutput() GetMountServiceAttachFileSystemArrayOutput {
+	return i.ToGetMountServiceAttachFileSystemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountServiceAttachFileSystemArray) ToGetMountServiceAttachFileSystemArrayOutputWithContext(ctx context.Context) GetMountServiceAttachFileSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountServiceAttachFileSystemArrayOutput)
+}
+
+type GetMountServiceAttachFileSystemOutput struct{ *pulumi.OutputState }
+
+func (GetMountServiceAttachFileSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (o GetMountServiceAttachFileSystemOutput) ToGetMountServiceAttachFileSystemOutput() GetMountServiceAttachFileSystemOutput {
+	return o
+}
+
+func (o GetMountServiceAttachFileSystemOutput) ToGetMountServiceAttachFileSystemOutputWithContext(ctx context.Context) GetMountServiceAttachFileSystemOutput {
+	return o
+}
+
+// Account ID.
+func (o GetMountServiceAttachFileSystemOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceAttachFileSystem) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// User mount path.
+func (o GetMountServiceAttachFileSystemOutput) CustomerPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceAttachFileSystem) string { return v.CustomerPath }).(pulumi.StringOutput)
+}
+
+// File system ID.
+func (o GetMountServiceAttachFileSystemOutput) FileSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceAttachFileSystem) string { return v.FileSystemId }).(pulumi.StringOutput)
+}
+
+// File system name.
+func (o GetMountServiceAttachFileSystemOutput) FileSystemName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceAttachFileSystem) string { return v.FileSystemName }).(pulumi.StringOutput)
+}
+
+// Binding status. Details: Attaching: Attaching. AttachError: Attachment failed. Attached: Attached. Detaching: Detaching. DetachError: Detachment failed.
+func (o GetMountServiceAttachFileSystemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceAttachFileSystem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetMountServiceAttachFileSystemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountServiceAttachFileSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountServiceAttachFileSystem)(nil)).Elem()
+}
+
+func (o GetMountServiceAttachFileSystemArrayOutput) ToGetMountServiceAttachFileSystemArrayOutput() GetMountServiceAttachFileSystemArrayOutput {
+	return o
+}
+
+func (o GetMountServiceAttachFileSystemArrayOutput) ToGetMountServiceAttachFileSystemArrayOutputWithContext(ctx context.Context) GetMountServiceAttachFileSystemArrayOutput {
+	return o
+}
+
+func (o GetMountServiceAttachFileSystemArrayOutput) Index(i pulumi.IntInput) GetMountServiceAttachFileSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountServiceAttachFileSystem {
+		return vs[0].([]GetMountServiceAttachFileSystem)[vs[1].(int)]
+	}).(GetMountServiceAttachFileSystemOutput)
+}
+
+type GetMountServiceNode struct {
+	// Node initial password.
+	DefaultPassword string `pulumi:"defaultPassword"`
+	// Node instance ID.
+	NodeId string `pulumi:"nodeId"`
+}
+
+// GetMountServiceNodeInput is an input type that accepts GetMountServiceNodeArgs and GetMountServiceNodeOutput values.
+// You can construct a concrete instance of `GetMountServiceNodeInput` via:
+//
+//	GetMountServiceNodeArgs{...}
+type GetMountServiceNodeInput interface {
+	pulumi.Input
+
+	ToGetMountServiceNodeOutput() GetMountServiceNodeOutput
+	ToGetMountServiceNodeOutputWithContext(context.Context) GetMountServiceNodeOutput
+}
+
+type GetMountServiceNodeArgs struct {
+	// Node initial password.
+	DefaultPassword pulumi.StringInput `pulumi:"defaultPassword"`
+	// Node instance ID.
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+}
+
+func (GetMountServiceNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountServiceNode)(nil)).Elem()
+}
+
+func (i GetMountServiceNodeArgs) ToGetMountServiceNodeOutput() GetMountServiceNodeOutput {
+	return i.ToGetMountServiceNodeOutputWithContext(context.Background())
+}
+
+func (i GetMountServiceNodeArgs) ToGetMountServiceNodeOutputWithContext(ctx context.Context) GetMountServiceNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountServiceNodeOutput)
+}
+
+// GetMountServiceNodeArrayInput is an input type that accepts GetMountServiceNodeArray and GetMountServiceNodeArrayOutput values.
+// You can construct a concrete instance of `GetMountServiceNodeArrayInput` via:
+//
+//	GetMountServiceNodeArray{ GetMountServiceNodeArgs{...} }
+type GetMountServiceNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetMountServiceNodeArrayOutput() GetMountServiceNodeArrayOutput
+	ToGetMountServiceNodeArrayOutputWithContext(context.Context) GetMountServiceNodeArrayOutput
+}
+
+type GetMountServiceNodeArray []GetMountServiceNodeInput
+
+func (GetMountServiceNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountServiceNode)(nil)).Elem()
+}
+
+func (i GetMountServiceNodeArray) ToGetMountServiceNodeArrayOutput() GetMountServiceNodeArrayOutput {
+	return i.ToGetMountServiceNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountServiceNodeArray) ToGetMountServiceNodeArrayOutputWithContext(ctx context.Context) GetMountServiceNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountServiceNodeArrayOutput)
+}
+
+type GetMountServiceNodeOutput struct{ *pulumi.OutputState }
+
+func (GetMountServiceNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountServiceNode)(nil)).Elem()
+}
+
+func (o GetMountServiceNodeOutput) ToGetMountServiceNodeOutput() GetMountServiceNodeOutput {
+	return o
+}
+
+func (o GetMountServiceNodeOutput) ToGetMountServiceNodeOutputWithContext(ctx context.Context) GetMountServiceNodeOutput {
+	return o
+}
+
+// Node initial password.
+func (o GetMountServiceNodeOutput) DefaultPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceNode) string { return v.DefaultPassword }).(pulumi.StringOutput)
+}
+
+// Node instance ID.
+func (o GetMountServiceNodeOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountServiceNode) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+type GetMountServiceNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountServiceNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountServiceNode)(nil)).Elem()
+}
+
+func (o GetMountServiceNodeArrayOutput) ToGetMountServiceNodeArrayOutput() GetMountServiceNodeArrayOutput {
+	return o
+}
+
+func (o GetMountServiceNodeArrayOutput) ToGetMountServiceNodeArrayOutputWithContext(ctx context.Context) GetMountServiceNodeArrayOutput {
+	return o
+}
+
+func (o GetMountServiceNodeArrayOutput) Index(i pulumi.IntInput) GetMountServiceNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountServiceNode {
+		return vs[0].([]GetMountServiceNode)[vs[1].(int)]
+	}).(GetMountServiceNodeOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInfoInput)(nil)).Elem(), InstanceCapacityInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInfoPtrInput)(nil)).Elem(), InstanceCapacityInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceAttachFileSystemInput)(nil)).Elem(), MountServiceAttachFileSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceAttachFileSystemArrayInput)(nil)).Elem(), MountServiceAttachFileSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceNodeInput)(nil)).Elem(), MountServiceNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceNodeArrayInput)(nil)).Elem(), MountServiceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCapacityInfoInput)(nil)).Elem(), GetInstanceCapacityInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceAttachFileSystemInput)(nil)).Elem(), GetMountServiceAttachFileSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceAttachFileSystemArrayInput)(nil)).Elem(), GetMountServiceAttachFileSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceNodeInput)(nil)).Elem(), GetMountServiceNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceNodeArrayInput)(nil)).Elem(), GetMountServiceNodeArray{})
 	pulumi.RegisterOutputType(InstanceCapacityInfoOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(MountServiceAttachFileSystemOutput{})
+	pulumi.RegisterOutputType(MountServiceAttachFileSystemArrayOutput{})
+	pulumi.RegisterOutputType(MountServiceNodeOutput{})
+	pulumi.RegisterOutputType(MountServiceNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceCapacityInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetMountServiceAttachFileSystemOutput{})
+	pulumi.RegisterOutputType(GetMountServiceAttachFileSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetMountServiceNodeOutput{})
+	pulumi.RegisterOutputType(GetMountServiceNodeArrayOutput{})
 }

@@ -995,6 +995,25 @@
             "bytepluscc_cen_grant_instance": {
                 "current": "bytepluscc:cen/grantInstance:GrantInstance"
             },
+            "bytepluscc_cen_inter_region_bandwidth": {
+                "current": "bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth"
+            },
+            "bytepluscc_cen_route_entry": {
+                "current": "bytepluscc:cen/routeEntry:RouteEntry",
+                "fields": {
+                    "as_path": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cen_service_route_entry": {
+                "current": "bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry",
+                "fields": {
+                    "publish_to_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_acl": {
                 "current": "bytepluscc:clb/acl:Acl",
                 "fields": {
@@ -1051,6 +1070,9 @@
                 "current": "bytepluscc:clb/listener:Listener",
                 "fields": {
                     "acl_ids": {
+                        "maxItemsOne": false
+                    },
+                    "domain_extensions": {
                         "maxItemsOne": false
                     },
                     "rule_ids": {
@@ -1971,6 +1993,9 @@
                     }
                 }
             },
+            "bytepluscc_mongodb_ssl_state": {
+                "current": "bytepluscc:mongodb/sslState:SslState"
+            },
             "bytepluscc_natgateway_dnatentry": {
                 "current": "bytepluscc:natgateway/dnatentry:Dnatentry"
             },
@@ -2020,6 +2045,9 @@
                     "ip_address_versions": {
                         "maxItemsOne": false
                     },
+                    "permit_account_ids": {
+                        "maxItemsOne": false
+                    },
                     "resources": {
                         "maxItemsOne": false,
                         "elem": {
@@ -2048,6 +2076,17 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    },
+                    "zones": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_privatelink_vpc_endpoint_connection": {
+                "current": "bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection",
+                "fields": {
+                    "resources_allocate": {
                         "maxItemsOne": false
                     },
                     "zones": {
@@ -2085,6 +2124,14 @@
             },
             "bytepluscc_privatezone_user_vpc_authorization": {
                 "current": "bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization"
+            },
+            "bytepluscc_rabbitmq_allow_list": {
+                "current": "bytepluscc:rabbitmq/allowList:AllowList",
+                "fields": {
+                    "associated_instances": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_rabbitmq_instance": {
                 "current": "bytepluscc:rabbitmq/instance:Instance",
@@ -2401,6 +2448,20 @@
             "bytepluscc_redis_account": {
                 "current": "bytepluscc:redis/account:Account"
             },
+            "bytepluscc_redis_allow_list": {
+                "current": "bytepluscc:redis/allowList:AllowList",
+                "fields": {
+                    "associated_instances": {
+                        "maxItemsOne": false
+                    },
+                    "instance_ids": {
+                        "maxItemsOne": false
+                    },
+                    "security_group_bind_infos": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_redis_endpoint_public_address": {
                 "current": "bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress"
             },
@@ -2445,11 +2506,91 @@
                     }
                 }
             },
+            "bytepluscc_storageebs_snapshot_group": {
+                "current": "bytepluscc:storageebs/snapshotGroup:SnapshotGroup",
+                "fields": {
+                    "snapshots": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "tags": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "volume_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_storageebs_volume": {
                 "current": "bytepluscc:storageebs/volume:Volume",
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_alarm_notify_group": {
+                "current": "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup",
+                "fields": {
+                    "notice_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "receiver_infos": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "alarm_webhook_at_groups": {
+                                                "maxItemsOne": false
+                                            },
+                                            "alarm_webhook_at_users": {
+                                                "maxItemsOne": false
+                                            },
+                                            "general_webhook_headers": {
+                                                "maxItemsOne": false
+                                            },
+                                            "receiver_channels": {
+                                                "maxItemsOne": false
+                                            },
+                                            "receiver_names": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "notify_type": {
+                        "maxItemsOne": false
+                    },
+                    "receivers": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "alarm_webhook_at_groups": {
+                                    "maxItemsOne": false
+                                },
+                                "alarm_webhook_at_users": {
+                                    "maxItemsOne": false
+                                },
+                                "general_webhook_headers": {
+                                    "maxItemsOne": false
+                                },
+                                "receiver_channels": {
+                                    "maxItemsOne": false
+                                },
+                                "receiver_names": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -2525,8 +2666,110 @@
                     }
                 }
             },
+            "bytepluscc_tls_rule": {
+                "current": "bytepluscc:tls/rule:Rule",
+                "fields": {
+                    "container_rule": {
+                        "fields": {
+                            "env_tag": {
+                                "maxItemsOne": false
+                            },
+                            "exclude_container_env_regex": {
+                                "maxItemsOne": false
+                            },
+                            "exclude_container_label_regex": {
+                                "maxItemsOne": false
+                            },
+                            "include_container_env_regex": {
+                                "maxItemsOne": false
+                            },
+                            "include_container_label_regex": {
+                                "maxItemsOne": false
+                            },
+                            "kubernetes_rule": {
+                                "fields": {
+                                    "annotation_tag": {
+                                        "maxItemsOne": false
+                                    },
+                                    "exclude_pod_annotation_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "exclude_pod_label_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "include_pod_annotation_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "include_pod_label_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "label_tag": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "exclude_paths": {
+                        "maxItemsOne": false
+                    },
+                    "extract_rule": {
+                        "fields": {
+                            "filter_key_regex": {
+                                "maxItemsOne": false
+                            },
+                            "keys": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "host_group_infos": {
+                        "maxItemsOne": false
+                    },
+                    "paths": {
+                        "maxItemsOne": false
+                    },
+                    "user_define_rule": {
+                        "fields": {
+                            "fields": {
+                                "maxItemsOne": false
+                            },
+                            "parse_path_rule": {
+                                "fields": {
+                                    "keys": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_tls_schedule_sql_task": {
                 "current": "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask"
+            },
+            "bytepluscc_tls_shipper": {
+                "current": "bytepluscc:tls/shipper:Shipper",
+                "fields": {
+                    "content_info": {
+                        "fields": {
+                            "csv_info": {
+                                "fields": {
+                                    "keys": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            },
+                            "json_info": {
+                                "fields": {
+                                    "keys": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "bytepluscc_tls_topic": {
                 "current": "bytepluscc:tls/topic:Topic",
@@ -2698,6 +2941,9 @@
             "bytepluscc_vefaas_kafka_trigger": {
                 "current": "bytepluscc:vefaas/kafkaTrigger:KafkaTrigger"
             },
+            "bytepluscc_vefaas_release": {
+                "current": "bytepluscc:vefaas/release:Release"
+            },
             "bytepluscc_vefaas_sandbox": {
                 "current": "bytepluscc:vefaas/sandbox:Sandbox",
                 "fields": {
@@ -2723,6 +2969,17 @@
                 "current": "bytepluscc:vepfs/instance:Instance",
                 "fields": {
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vepfs_mount_service": {
+                "current": "bytepluscc:vepfs/mountService:MountService",
+                "fields": {
+                    "attach_file_systems": {
+                        "maxItemsOne": false
+                    },
+                    "nodes": {
                         "maxItemsOne": false
                     }
                 }
@@ -2869,6 +3126,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_vke_kubeconfig": {
+                "current": "bytepluscc:vke/kubeconfig:Kubeconfig"
             },
             "bytepluscc_vke_node": {
                 "current": "bytepluscc:vke/node:Node",
@@ -4568,6 +4828,49 @@
                     }
                 }
             },
+            "bytepluscc_cen_inter_region_bandwidth": {
+                "current": "bytepluscc:cen/getInterRegionBandwidth:getInterRegionBandwidth"
+            },
+            "bytepluscc_cen_inter_region_bandwidths": {
+                "current": "bytepluscc:cen/getInterRegionBandwidths:getInterRegionBandwidths",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cen_route_entries": {
+                "current": "bytepluscc:cen/getRouteEntries:getRouteEntries",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cen_route_entry": {
+                "current": "bytepluscc:cen/getRouteEntry:getRouteEntry",
+                "fields": {
+                    "as_path": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cen_service_route_entries": {
+                "current": "bytepluscc:cen/getServiceRouteEntries:getServiceRouteEntries",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cen_service_route_entry": {
+                "current": "bytepluscc:cen/getServiceRouteEntry:getServiceRouteEntry",
+                "fields": {
+                    "publish_to_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_acl": {
                 "current": "bytepluscc:clb/getAcl:getAcl",
                 "fields": {
@@ -4648,6 +4951,9 @@
                 "current": "bytepluscc:clb/getListener:getListener",
                 "fields": {
                     "acl_ids": {
+                        "maxItemsOne": false
+                    },
+                    "domain_extensions": {
                         "maxItemsOne": false
                     },
                     "rule_ids": {
@@ -5995,6 +6301,17 @@
                     }
                 }
             },
+            "bytepluscc_mongodb_ssl_state": {
+                "current": "bytepluscc:mongodb/getSslState:getSslState"
+            },
+            "bytepluscc_mongodb_ssl_states": {
+                "current": "bytepluscc:mongodb/getSslStates:getSslStates",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_natgateway_dnatentries": {
                 "current": "bytepluscc:natgateway/getDnatentries:getDnatentries",
                 "fields": {
@@ -6100,6 +6417,9 @@
                     "ip_address_versions": {
                         "maxItemsOne": false
                     },
+                    "permit_account_ids": {
+                        "maxItemsOne": false
+                    },
                     "resources": {
                         "maxItemsOne": false,
                         "elem": {
@@ -6139,6 +6459,25 @@
                         "maxItemsOne": false
                     },
                     "zones": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_privatelink_vpc_endpoint_connection": {
+                "current": "bytepluscc:privatelink/getVpcEndpointConnection:getVpcEndpointConnection",
+                "fields": {
+                    "resources_allocate": {
+                        "maxItemsOne": false
+                    },
+                    "zones": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_privatelink_vpc_endpoint_connections": {
+                "current": "bytepluscc:privatelink/getVpcEndpointConnections:getVpcEndpointConnections",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -6208,6 +6547,22 @@
             },
             "bytepluscc_privatezone_user_vpc_authorizations": {
                 "current": "bytepluscc:privatezone/getUserVpcAuthorizations:getUserVpcAuthorizations",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rabbitmq_allow_list": {
+                "current": "bytepluscc:rabbitmq/getAllowList:getAllowList",
+                "fields": {
+                    "associated_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rabbitmq_allow_lists": {
+                "current": "bytepluscc:rabbitmq/getAllowLists:getAllowLists",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -6673,6 +7028,35 @@
                     }
                 }
             },
+            "bytepluscc_redis_allow_list": {
+                "current": "bytepluscc:redis/getAllowList:getAllowList",
+                "fields": {
+                    "associated_instances": {
+                        "maxItemsOne": false
+                    },
+                    "instance_ids": {
+                        "maxItemsOne": false
+                    },
+                    "security_group_bind_infos": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ip_list": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_redis_allow_lists": {
+                "current": "bytepluscc:redis/getAllowLists:getAllowLists",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_redis_endpoint_public_address": {
                 "current": "bytepluscc:redis/getEndpointPublicAddress:getEndpointPublicAddress"
             },
@@ -6733,6 +7117,35 @@
                     }
                 }
             },
+            "bytepluscc_storageebs_snapshot_group": {
+                "current": "bytepluscc:storageebs/getSnapshotGroup:getSnapshotGroup",
+                "fields": {
+                    "snapshots": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "tags": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "volume_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_storageebs_snapshot_groups": {
+                "current": "bytepluscc:storageebs/getSnapshotGroups:getSnapshotGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_storageebs_snapshots": {
                 "current": "bytepluscc:storageebs/getSnapshots:getSnapshots",
                 "fields": {
@@ -6751,6 +7164,73 @@
             },
             "bytepluscc_storageebs_volumes": {
                 "current": "bytepluscc:storageebs/getVolumes:getVolumes",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_alarm_notify_group": {
+                "current": "bytepluscc:tls/getAlarmNotifyGroup:getAlarmNotifyGroup",
+                "fields": {
+                    "notice_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "receiver_infos": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "alarm_webhook_at_groups": {
+                                                "maxItemsOne": false
+                                            },
+                                            "alarm_webhook_at_users": {
+                                                "maxItemsOne": false
+                                            },
+                                            "general_webhook_headers": {
+                                                "maxItemsOne": false
+                                            },
+                                            "receiver_channels": {
+                                                "maxItemsOne": false
+                                            },
+                                            "receiver_names": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "notify_type": {
+                        "maxItemsOne": false
+                    },
+                    "receivers": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "alarm_webhook_at_groups": {
+                                    "maxItemsOne": false
+                                },
+                                "alarm_webhook_at_users": {
+                                    "maxItemsOne": false
+                                },
+                                "general_webhook_headers": {
+                                    "maxItemsOne": false
+                                },
+                                "receiver_channels": {
+                                    "maxItemsOne": false
+                                },
+                                "receiver_names": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tls_alarm_notify_groups": {
+                "current": "bytepluscc:tls/getAlarmNotifyGroups:getAlarmNotifyGroups",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -6861,11 +7341,129 @@
                     }
                 }
             },
+            "bytepluscc_tls_rule": {
+                "current": "bytepluscc:tls/getRule:getRule",
+                "fields": {
+                    "container_rule": {
+                        "fields": {
+                            "env_tag": {
+                                "maxItemsOne": false
+                            },
+                            "exclude_container_env_regex": {
+                                "maxItemsOne": false
+                            },
+                            "exclude_container_label_regex": {
+                                "maxItemsOne": false
+                            },
+                            "include_container_env_regex": {
+                                "maxItemsOne": false
+                            },
+                            "include_container_label_regex": {
+                                "maxItemsOne": false
+                            },
+                            "kubernetes_rule": {
+                                "fields": {
+                                    "annotation_tag": {
+                                        "maxItemsOne": false
+                                    },
+                                    "exclude_pod_annotation_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "exclude_pod_label_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "include_pod_annotation_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "include_pod_label_regex": {
+                                        "maxItemsOne": false
+                                    },
+                                    "label_tag": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "exclude_paths": {
+                        "maxItemsOne": false
+                    },
+                    "extract_rule": {
+                        "fields": {
+                            "filter_key_regex": {
+                                "maxItemsOne": false
+                            },
+                            "keys": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "host_group_infos": {
+                        "maxItemsOne": false
+                    },
+                    "paths": {
+                        "maxItemsOne": false
+                    },
+                    "user_define_rule": {
+                        "fields": {
+                            "fields": {
+                                "maxItemsOne": false
+                            },
+                            "parse_path_rule": {
+                                "fields": {
+                                    "keys": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tls_rules": {
+                "current": "bytepluscc:tls/getRules:getRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_tls_schedule_sql_task": {
                 "current": "bytepluscc:tls/getScheduleSqlTask:getScheduleSqlTask"
             },
             "bytepluscc_tls_schedule_sql_tasks": {
                 "current": "bytepluscc:tls/getScheduleSqlTasks:getScheduleSqlTasks",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_shipper": {
+                "current": "bytepluscc:tls/getShipper:getShipper",
+                "fields": {
+                    "content_info": {
+                        "fields": {
+                            "csv_info": {
+                                "fields": {
+                                    "keys": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            },
+                            "json_info": {
+                                "fields": {
+                                    "keys": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tls_shippers": {
+                "current": "bytepluscc:tls/getShippers:getShippers",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -7154,6 +7752,17 @@
                     }
                 }
             },
+            "bytepluscc_vefaas_release": {
+                "current": "bytepluscc:vefaas/getRelease:getRelease"
+            },
+            "bytepluscc_vefaas_releases": {
+                "current": "bytepluscc:vefaas/getReleases:getReleases",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vefaas_sandbox": {
                 "current": "bytepluscc:vefaas/getSandbox:getSandbox",
                 "fields": {
@@ -7201,6 +7810,25 @@
             },
             "bytepluscc_vepfs_instances": {
                 "current": "bytepluscc:vepfs/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vepfs_mount_service": {
+                "current": "bytepluscc:vepfs/getMountService:getMountService",
+                "fields": {
+                    "attach_file_systems": {
+                        "maxItemsOne": false
+                    },
+                    "nodes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vepfs_mount_services": {
+                "current": "bytepluscc:vepfs/getMountServices:getMountServices",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -7368,6 +7996,17 @@
             },
             "bytepluscc_vke_default_node_pools": {
                 "current": "bytepluscc:vke/getDefaultNodePools:getDefaultNodePools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vke_kubeconfig": {
+                "current": "bytepluscc:vke/getKubeconfig:getKubeconfig"
+            },
+            "bytepluscc_vke_kubeconfigs": {
+                "current": "bytepluscc:vke/getKubeconfigs:getKubeconfigs",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

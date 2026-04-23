@@ -13,11 +13,6 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointServiceResource {
     /**
-     * @return Endpoint service ID.
-     * 
-     */
-    private @Nullable String instanceId;
-    /**
      * @return Service resource ID to be added to the endpoint service.
      * 
      */
@@ -29,13 +24,6 @@ public final class EndpointServiceResource {
     private @Nullable List<String> zoneIds;
 
     private EndpointServiceResource() {}
-    /**
-     * @return Endpoint service ID.
-     * 
-     */
-    public Optional<String> instanceId() {
-        return Optional.ofNullable(this.instanceId);
-    }
     /**
      * @return Service resource ID to be added to the endpoint service.
      * 
@@ -60,23 +48,15 @@ public final class EndpointServiceResource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String instanceId;
         private @Nullable String resourceId;
         private @Nullable List<String> zoneIds;
         public Builder() {}
         public Builder(EndpointServiceResource defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.instanceId = defaults.instanceId;
     	      this.resourceId = defaults.resourceId;
     	      this.zoneIds = defaults.zoneIds;
         }
 
-        @CustomType.Setter
-        public Builder instanceId(@Nullable String instanceId) {
-
-            this.instanceId = instanceId;
-            return this;
-        }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
 
@@ -94,7 +74,6 @@ public final class EndpointServiceResource {
         }
         public EndpointServiceResource build() {
             final var _resultValue = new EndpointServiceResource();
-            _resultValue.instanceId = instanceId;
             _resultValue.resourceId = resourceId;
             _resultValue.zoneIds = zoneIds;
             return _resultValue;

@@ -99,6 +99,10 @@ export interface GetListenerResult {
      */
     readonly description: string;
     /**
+     * List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     */
+    readonly domainExtensions: outputs.clb.GetListenerDomainExtension[];
+    /**
      * Enable listener. on (default): enabled. off: disabled.
      */
     readonly enabled: string;

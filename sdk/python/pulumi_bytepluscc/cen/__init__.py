@@ -14,6 +14,15 @@ from .get_cen import *
 from .get_cens import *
 from .get_grant_instance import *
 from .get_grant_instances import *
+from .get_inter_region_bandwidth import *
+from .get_inter_region_bandwidths import *
+from .get_route_entries import *
+from .get_route_entry import *
+from .get_service_route_entries import *
+from .get_service_route_entry import *
 from .grant_instance import *
+from .inter_region_bandwidth import *
+from .route_entry import *
+from .service_route_entry import *
 from ._inputs import *
 from . import outputs
