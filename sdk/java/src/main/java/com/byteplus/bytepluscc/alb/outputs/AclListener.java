@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AclListener {
     /**
-     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
      * 
      */
     private @Nullable String aclType;
 
     private AclListener() {}
     /**
-     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
      * 
      */
     public Optional<String> aclType() {

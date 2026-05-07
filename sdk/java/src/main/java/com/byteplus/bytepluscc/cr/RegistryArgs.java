@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.cr;
 
+import com.byteplus.bytepluscc.cr.inputs.RegistryEndpointArgs;
 import com.byteplus.bytepluscc.cr.inputs.RegistryStatusArgs;
 import com.byteplus.bytepluscc.cr.inputs.RegistryTagArgs;
 import com.pulumi.core.Output;
@@ -20,14 +21,29 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     public static final RegistryArgs Empty = new RegistryArgs();
 
     /**
-     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * Public endpoint information for the image repository instance
+     * 
+     */
+    @Import(name="endpoint")
+    private @Nullable Output<RegistryEndpointArgs> endpoint;
+
+    /**
+     * @return Public endpoint information for the image repository instance
+     * 
+     */
+    public Optional<Output<RegistryEndpointArgs>> endpoint() {
+        return Optional.ofNullable(this.endpoint);
+    }
+
+    /**
+     * Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * @return Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      * 
      */
     public Output<String> name() {
@@ -35,14 +51,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Enter the project to associate with the instance. Each instance can only be associated with one project
+     * Specify the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
+     * @return Specify the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     public Optional<Output<String>> project() {
@@ -50,14 +66,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      * 
      */
     @Import(name="status")
     private @Nullable Output<RegistryStatusArgs> status;
 
     /**
-     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * @return Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      * 
      */
     public Optional<Output<RegistryStatusArgs>> status() {
@@ -72,14 +88,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * @return If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      * 
      */
     public Optional<Output<String>> type() {
@@ -89,6 +105,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     private RegistryArgs() {}
 
     private RegistryArgs(RegistryArgs $) {
+        this.endpoint = $.endpoint;
         this.name = $.name;
         this.project = $.project;
         this.status = $.status;
@@ -115,7 +132,28 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+         * @param endpoint Public endpoint information for the image repository instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpoint(@Nullable Output<RegistryEndpointArgs> endpoint) {
+            $.endpoint = endpoint;
+            return this;
+        }
+
+        /**
+         * @param endpoint Public endpoint information for the image repository instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpoint(RegistryEndpointArgs endpoint) {
+            return endpoint(Output.of(endpoint));
+        }
+
+        /**
+         * @param name Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
          * 
          * @return builder
          * 
@@ -126,7 +164,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+         * @param name Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
          * 
          * @return builder
          * 
@@ -136,7 +174,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
+         * @param project Specify the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -147,7 +185,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
+         * @param project Specify the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -157,7 +195,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+         * @param status Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
          * 
          * @return builder
          * 
@@ -168,7 +206,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+         * @param status Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
          * 
          * @return builder
          * 
@@ -191,7 +229,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+         * @param type If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
          * 
          * @return builder
          * 
@@ -202,7 +240,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+         * @param type If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
          * 
          * @return builder
          * 

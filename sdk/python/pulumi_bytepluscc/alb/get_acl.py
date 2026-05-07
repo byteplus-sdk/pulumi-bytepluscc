@@ -70,7 +70,7 @@ class GetAclResult:
     @pulumi.getter(name="aclEntries")
     def acl_entries(self) -> Sequence['outputs.GetAclAclEntryResult']:
         """
-        Details of IP entries in the access control policy group
+        Detailed information about IP entries in the access control policy group.
         """
         return pulumi.get(self, "acl_entries")
 
@@ -78,7 +78,7 @@ class GetAclResult:
     @pulumi.getter(name="aclEntryCount")
     def acl_entry_count(self) -> builtins.int:
         """
-        Number of IP entries in the access control policy group
+        Number of IP entries in the access control policy group.
         """
         return pulumi.get(self, "acl_entry_count")
 
@@ -86,7 +86,7 @@ class GetAclResult:
     @pulumi.getter(name="aclId")
     def acl_id(self) -> builtins.str:
         """
-        Access control policy group ID
+        Access control policy group ID.
         """
         return pulumi.get(self, "acl_id")
 
@@ -94,7 +94,7 @@ class GetAclResult:
     @pulumi.getter(name="aclName")
     def acl_name(self) -> builtins.str:
         """
-        Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+        Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -102,7 +102,7 @@ class GetAclResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Creation time of the access control policy group
+        Creation time of the access control policy group.
         """
         return pulumi.get(self, "created_time")
 
@@ -110,7 +110,7 @@ class GetAclResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+        Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -126,7 +126,7 @@ class GetAclResult:
     @pulumi.getter
     def listeners(self) -> Sequence['outputs.GetAclListenerResult']:
         """
-        Details of listeners associated with the access control policy group
+        Detailed information about listeners associated with the access control policy group.
         """
         return pulumi.get(self, "listeners")
 
@@ -134,7 +134,7 @@ class GetAclResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        Project name to which the access control policy group belongs
+        Name of the project to which the access control policy group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -142,7 +142,7 @@ class GetAclResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+        Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -150,7 +150,7 @@ class GetAclResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetAclTagResult']:
         """
-        Tags bound to the access control policy group
+        Tags bound to the access control policy group.
         """
         return pulumi.get(self, "tags")
 
@@ -158,7 +158,7 @@ class GetAclResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        Last operation time of the access control policy group
+        Most recent operation time for the access control policy group.
         """
         return pulumi.get(self, "updated_time")
 

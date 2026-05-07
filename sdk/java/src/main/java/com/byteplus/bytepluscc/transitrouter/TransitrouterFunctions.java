@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.transitrouter;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetPeerAttachmentArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetPeerAttachmentPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteEntryArgs;
@@ -14,6 +16,8 @@ import com.byteplus.bytepluscc.transitrouter.inputs.GetVpcAttachmentArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetVpcAttachmentPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetVpnAttachmentArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetVpnAttachmentPlainArgs;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetPeerAttachmentResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetPeerAttachmentsResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntriesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntryResult;
@@ -33,6 +37,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class TransitrouterFunctions {
+    /**
+     * Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentResult> getPeerAttachment(GetPeerAttachmentArgs args) {
+        return getPeerAttachment(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static CompletableFuture<GetPeerAttachmentResult> getPeerAttachmentPlain(GetPeerAttachmentPlainArgs args) {
+        return getPeerAttachmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentResult> getPeerAttachment(GetPeerAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getPeerAttachment:getPeerAttachment", TypeShape.of(GetPeerAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentResult> getPeerAttachment(GetPeerAttachmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getPeerAttachment:getPeerAttachment", TypeShape.of(GetPeerAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static CompletableFuture<GetPeerAttachmentResult> getPeerAttachmentPlain(GetPeerAttachmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getPeerAttachment:getPeerAttachment", TypeShape.of(GetPeerAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentsResult> getPeerAttachments() {
+        return getPeerAttachments(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static CompletableFuture<GetPeerAttachmentsResult> getPeerAttachmentsPlain() {
+        return getPeerAttachmentsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentsResult> getPeerAttachments(InvokeArgs args) {
+        return getPeerAttachments(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static CompletableFuture<GetPeerAttachmentsResult> getPeerAttachmentsPlain(InvokeArgs args) {
+        return getPeerAttachmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentsResult> getPeerAttachments(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getPeerAttachments:getPeerAttachments", TypeShape.of(GetPeerAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static Output<GetPeerAttachmentsResult> getPeerAttachments(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getPeerAttachments:getPeerAttachments", TypeShape.of(GetPeerAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::PeerAttachment
+     * 
+     */
+    public static CompletableFuture<GetPeerAttachmentsResult> getPeerAttachmentsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getPeerAttachments:getPeerAttachments", TypeShape.of(GetPeerAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::TransitRouter::TransitRouter
      * 

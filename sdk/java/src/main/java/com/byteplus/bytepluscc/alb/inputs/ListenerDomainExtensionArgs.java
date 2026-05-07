@@ -16,14 +16,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     public static final ListenerDomainExtensionArgs Empty = new ListenerDomainExtensionArgs();
 
     /**
-     * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+     * Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
      * 
      */
     @Import(name="certCenterCertificateId")
     private @Nullable Output<String> certCenterCertificateId;
 
     /**
-     * @return Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+     * @return Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
      * 
      */
     public Optional<Output<String>> certCenterCertificateId() {
@@ -46,14 +46,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     @Import(name="certificateSource")
     private @Nullable Output<String> certificateSource;
 
     /**
-     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     public Optional<Output<String>> certificateSource() {
@@ -61,14 +61,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+     * Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -91,14 +91,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
      * 
      */
     @Import(name="san")
     private @Nullable Output<String> san;
 
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
      * 
      */
     public Optional<Output<String>> san() {
@@ -135,7 +135,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certCenterCertificateId Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+         * @param certCenterCertificateId Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certCenterCertificateId Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+         * @param certCenterCertificateId Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateSource Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+         * @param certificateSource Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateSource Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+         * @param certificateSource Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param domain Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+         * @param domain Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param domain Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+         * @param domain Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param san If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+         * @param san If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param san If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+         * @param san If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
          * 
          * @return builder
          * 

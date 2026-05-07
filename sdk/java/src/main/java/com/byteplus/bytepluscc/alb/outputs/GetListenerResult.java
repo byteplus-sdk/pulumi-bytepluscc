@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetListenerResult {
     /**
-     * @return Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
+     * @return Whether the listener has enabled &#39;Record custom header in access logs&#39;: on: enabled. off: not enabled.
      * 
      */
     private String accessLogRecordCustomizedHeadersEnabled;
@@ -26,17 +26,17 @@ public final class GetListenerResult {
      */
     private List<String> aclIds;
     /**
-     * @return Enable access control. Values: on: enabled. off: disabled (default).
+     * @return Whether access control is enabled. Values: on: enabled. off: not enabled (default).
      * 
      */
     private String aclStatus;
     /**
-     * @return Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+     * @return Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
      * 
      */
     private String aclType;
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
      * 
      */
     private String caCertificateId;
@@ -46,7 +46,7 @@ public final class GetListenerResult {
      */
     private String caCertificateSource;
     /**
-     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
      * 
      */
     private String certCenterCertificateId;
@@ -56,7 +56,7 @@ public final class GetListenerResult {
      */
     private String certificateId;
     /**
-     * @return The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     private String certificateSource;
@@ -71,27 +71,27 @@ public final class GetListenerResult {
      */
     private String customizedCfgId;
     /**
-     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
      * 
      */
     private String description;
     /**
-     * @return List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
+     * @return List of extension domains associated with the HTTPS listener. An HTTPS listener can be associated with up to 20 extension domains.
      * 
      */
     private List<GetListenerDomainExtension> domainExtensions;
     /**
-     * @return HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+     * @return HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
      * 
      */
     private String enableHttp2;
     /**
-     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
      * 
      */
     private String enableQuic;
     /**
-     * @return Listener on/off status. Values: on: On (default). off: Off.
+     * @return Listener on/off status. Values: on: enabled (default); off: disabled.
      * 
      */
     private String enabled;
@@ -106,12 +106,12 @@ public final class GetListenerResult {
      */
     private String listenerId;
     /**
-     * @return Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+     * @return Listener name. If not specified, it is named in the &#34;protocol-port&#34; format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
      * 
      */
     private String listenerName;
     /**
-     * @return Load balancer instance ID to which the listener belongs.
+     * @return Load balancer instance ID associated with the listener.
      * 
      */
     private String loadBalancerId;
@@ -121,22 +121,22 @@ public final class GetListenerResult {
      */
     private String pcaLeafCertificateId;
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      * 
      */
     private String pcaRootCaCertificateId;
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      * 
      */
     private String pcaSubCaCertificateId;
     /**
-     * @return The listener port. Values: 1   - 65535.
+     * @return Listener port. Value range: 1   - 65535.
      * 
      */
     private Integer port;
     /**
-     * @return Name of the project to which the listener belongs.
+     * @return Project name to which the listener belongs.
      * 
      */
     private String projectName;
@@ -156,24 +156,24 @@ public final class GetListenerResult {
      */
     private List<GetListenerServerGroup> serverGroups;
     /**
-     * @return Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+     * @return Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
      * 
      */
     private String status;
     /**
-     * @return Listener tags.
+     * @return Tags associated with the listener.
      * 
      */
     private List<GetListenerTag> tags;
     /**
-     * @return Time of the listener&#39;s most recent operation.
+     * @return The most recent operation time of the listener.
      * 
      */
     private String updatedTime;
 
     private GetListenerResult() {}
     /**
-     * @return Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
+     * @return Whether the listener has enabled &#39;Record custom header in access logs&#39;: on: enabled. off: not enabled.
      * 
      */
     public String accessLogRecordCustomizedHeadersEnabled() {
@@ -187,21 +187,21 @@ public final class GetListenerResult {
         return this.aclIds;
     }
     /**
-     * @return Enable access control. Values: on: enabled. off: disabled (default).
+     * @return Whether access control is enabled. Values: on: enabled. off: not enabled (default).
      * 
      */
     public String aclStatus() {
         return this.aclStatus;
     }
     /**
-     * @return Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+     * @return Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
      * 
      */
     public String aclType() {
         return this.aclType;
     }
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
      * 
      */
     public String caCertificateId() {
@@ -215,7 +215,7 @@ public final class GetListenerResult {
         return this.caCertificateSource;
     }
     /**
-     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
      * 
      */
     public String certCenterCertificateId() {
@@ -229,7 +229,7 @@ public final class GetListenerResult {
         return this.certificateId;
     }
     /**
-     * @return The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     public String certificateSource() {
@@ -250,35 +250,35 @@ public final class GetListenerResult {
         return this.customizedCfgId;
     }
     /**
-     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
+     * @return List of extension domains associated with the HTTPS listener. An HTTPS listener can be associated with up to 20 extension domains.
      * 
      */
     public List<GetListenerDomainExtension> domainExtensions() {
         return this.domainExtensions;
     }
     /**
-     * @return HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+     * @return HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
      * 
      */
     public String enableHttp2() {
         return this.enableHttp2;
     }
     /**
-     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
      * 
      */
     public String enableQuic() {
         return this.enableQuic;
     }
     /**
-     * @return Listener on/off status. Values: on: On (default). off: Off.
+     * @return Listener on/off status. Values: on: enabled (default); off: disabled.
      * 
      */
     public String enabled() {
@@ -299,14 +299,14 @@ public final class GetListenerResult {
         return this.listenerId;
     }
     /**
-     * @return Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+     * @return Listener name. If not specified, it is named in the &#34;protocol-port&#34; format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
      * 
      */
     public String listenerName() {
         return this.listenerName;
     }
     /**
-     * @return Load balancer instance ID to which the listener belongs.
+     * @return Load balancer instance ID associated with the listener.
      * 
      */
     public String loadBalancerId() {
@@ -320,28 +320,28 @@ public final class GetListenerResult {
         return this.pcaLeafCertificateId;
     }
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      * 
      */
     public String pcaRootCaCertificateId() {
         return this.pcaRootCaCertificateId;
     }
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      * 
      */
     public String pcaSubCaCertificateId() {
         return this.pcaSubCaCertificateId;
     }
     /**
-     * @return The listener port. Values: 1   - 65535.
+     * @return Listener port. Value range: 1   - 65535.
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return Name of the project to which the listener belongs.
+     * @return Project name to which the listener belongs.
      * 
      */
     public String projectName() {
@@ -369,21 +369,21 @@ public final class GetListenerResult {
         return this.serverGroups;
     }
     /**
-     * @return Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+     * @return Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return Listener tags.
+     * @return Tags associated with the listener.
      * 
      */
     public List<GetListenerTag> tags() {
         return this.tags;
     }
     /**
-     * @return Time of the listener&#39;s most recent operation.
+     * @return The most recent operation time of the listener.
      * 
      */
     public String updatedTime() {

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AclAclEntry {
     /**
-     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     private @Nullable String description;
     /**
-     * @return IP entry address range; only CIDR addresses are supported
+     * @return IP entry address range. Only CIDR addresses are supported.
      * 
      */
     private @Nullable String entry;
 
     private AclAclEntry() {}
     /**
-     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return IP entry address range; only CIDR addresses are supported
+     * @return IP entry address range. Only CIDR addresses are supported.
      * 
      */
     public Optional<String> entry() {

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ALB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance through the listener port, you can set an access control policy for this listener. You can configure access control when creating the listener, or modify or reconfigure access control after the listener is created
+ * ALB provides access control at the listener level. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance via the listener port, you can set an access control policy for the listener. You can configure access control when creating the listener or modify/reconfigure it after the listener is created.
  *
  * ## Example Usage
  *
@@ -65,37 +65,37 @@ export class Acl extends pulumi.CustomResource {
 
     public readonly aclEntries!: pulumi.Output<outputs.alb.AclAclEntry[]>;
     /**
-     * Number of IP entries in the access control policy group
+     * Number of IP entries in the access control policy group.
      */
     public /*out*/ readonly aclEntryCount!: pulumi.Output<number>;
     /**
-     * Access control policy group ID
+     * Access control policy group ID.
      */
     public /*out*/ readonly aclId!: pulumi.Output<string>;
     /**
-     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     public readonly aclName!: pulumi.Output<string>;
     /**
-     * Creation time of the access control policy group
+     * Creation time of the access control policy group.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     public readonly listeners!: pulumi.Output<outputs.alb.AclListener[]>;
     /**
-     * Project name to which the access control policy group belongs
+     * Name of the project to which the access control policy group belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.alb.AclTag[]>;
     /**
-     * Last operation time of the access control policy group
+     * Most recent operation time for the access control policy group.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -148,37 +148,37 @@ export class Acl extends pulumi.CustomResource {
 export interface AclState {
     aclEntries?: pulumi.Input<pulumi.Input<inputs.alb.AclAclEntry>[]>;
     /**
-     * Number of IP entries in the access control policy group
+     * Number of IP entries in the access control policy group.
      */
     aclEntryCount?: pulumi.Input<number>;
     /**
-     * Access control policy group ID
+     * Access control policy group ID.
      */
     aclId?: pulumi.Input<string>;
     /**
-     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     aclName?: pulumi.Input<string>;
     /**
-     * Creation time of the access control policy group
+     * Creation time of the access control policy group.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     listeners?: pulumi.Input<pulumi.Input<inputs.alb.AclListener>[]>;
     /**
-     * Project name to which the access control policy group belongs
+     * Name of the project to which the access control policy group belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.AclTag>[]>;
     /**
-     * Last operation time of the access control policy group
+     * Most recent operation time for the access control policy group.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -189,16 +189,16 @@ export interface AclState {
 export interface AclArgs {
     aclEntries?: pulumi.Input<pulumi.Input<inputs.alb.AclAclEntry>[]>;
     /**
-     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     aclName?: pulumi.Input<string>;
     /**
-     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     listeners?: pulumi.Input<pulumi.Input<inputs.alb.AclListener>[]>;
     /**
-     * Project name to which the access control policy group belongs
+     * Name of the project to which the access control policy group belongs.
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.AclTag>[]>;

@@ -30,9 +30,9 @@ class AclArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['AclTagArgs']]]] = None):
         """
         The set of arguments for constructing a Acl resource.
-        :param pulumi.Input[builtins.str] acl_name: Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
-        :param pulumi.Input[builtins.str] description: Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
-        :param pulumi.Input[builtins.str] project_name: Project name to which the access control policy group belongs
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs.
         """
         if acl_entries is not None:
             pulumi.set(__self__, "acl_entries", acl_entries)
@@ -60,7 +60,7 @@ class AclArgs:
     @pulumi.getter(name="aclName")
     def acl_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+        Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -72,7 +72,7 @@ class AclArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+        Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -93,7 +93,7 @@ class AclArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Project name to which the access control policy group belongs
+        Name of the project to which the access control policy group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -127,14 +127,14 @@ class _AclState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Acl resources.
-        :param pulumi.Input[builtins.int] acl_entry_count: Number of IP entries in the access control policy group
-        :param pulumi.Input[builtins.str] acl_id: Access control policy group ID
-        :param pulumi.Input[builtins.str] acl_name: Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
-        :param pulumi.Input[builtins.str] created_time: Creation time of the access control policy group
-        :param pulumi.Input[builtins.str] description: Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
-        :param pulumi.Input[builtins.str] project_name: Project name to which the access control policy group belongs
-        :param pulumi.Input[builtins.str] status: Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
-        :param pulumi.Input[builtins.str] updated_time: Last operation time of the access control policy group
+        :param pulumi.Input[builtins.int] acl_entry_count: Number of IP entries in the access control policy group.
+        :param pulumi.Input[builtins.str] acl_id: Access control policy group ID.
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] created_time: Creation time of the access control policy group.
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs.
+        :param pulumi.Input[builtins.str] status: Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
+        :param pulumi.Input[builtins.str] updated_time: Most recent operation time for the access control policy group.
         """
         if acl_entries is not None:
             pulumi.set(__self__, "acl_entries", acl_entries)
@@ -172,7 +172,7 @@ class _AclState:
     @pulumi.getter(name="aclEntryCount")
     def acl_entry_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Number of IP entries in the access control policy group
+        Number of IP entries in the access control policy group.
         """
         return pulumi.get(self, "acl_entry_count")
 
@@ -184,7 +184,7 @@ class _AclState:
     @pulumi.getter(name="aclId")
     def acl_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Access control policy group ID
+        Access control policy group ID.
         """
         return pulumi.get(self, "acl_id")
 
@@ -196,7 +196,7 @@ class _AclState:
     @pulumi.getter(name="aclName")
     def acl_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+        Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -208,7 +208,7 @@ class _AclState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Creation time of the access control policy group
+        Creation time of the access control policy group.
         """
         return pulumi.get(self, "created_time")
 
@@ -220,7 +220,7 @@ class _AclState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+        Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -241,7 +241,7 @@ class _AclState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Project name to which the access control policy group belongs
+        Name of the project to which the access control policy group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -253,7 +253,7 @@ class _AclState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+        Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -274,7 +274,7 @@ class _AclState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Last operation time of the access control policy group
+        Most recent operation time for the access control policy group.
         """
         return pulumi.get(self, "updated_time")
 
@@ -297,7 +297,7 @@ class Acl(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AclTagArgs', 'AclTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        ALB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance through the listener port, you can set an access control policy for this listener. You can configure access control when creating the listener, or modify or reconfigure access control after the listener is created
+        ALB provides access control at the listener level. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance via the listener port, you can set an access control policy for the listener. You can configure access control when creating the listener or modify/reconfigure it after the listener is created.
 
         ## Example Usage
 
@@ -326,9 +326,9 @@ class Acl(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] acl_name: Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
-        :param pulumi.Input[builtins.str] description: Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
-        :param pulumi.Input[builtins.str] project_name: Project name to which the access control policy group belongs
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs.
         """
         ...
     @overload
@@ -337,7 +337,7 @@ class Acl(pulumi.CustomResource):
                  args: Optional[AclArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ALB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance through the listener port, you can set an access control policy for this listener. You can configure access control when creating the listener, or modify or reconfigure access control after the listener is created
+        ALB provides access control at the listener level. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance via the listener port, you can set an access control policy for the listener. You can configure access control when creating the listener or modify/reconfigure it after the listener is created.
 
         ## Example Usage
 
@@ -433,14 +433,14 @@ class Acl(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] acl_entry_count: Number of IP entries in the access control policy group
-        :param pulumi.Input[builtins.str] acl_id: Access control policy group ID
-        :param pulumi.Input[builtins.str] acl_name: Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
-        :param pulumi.Input[builtins.str] created_time: Creation time of the access control policy group
-        :param pulumi.Input[builtins.str] description: Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
-        :param pulumi.Input[builtins.str] project_name: Project name to which the access control policy group belongs
-        :param pulumi.Input[builtins.str] status: Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
-        :param pulumi.Input[builtins.str] updated_time: Last operation time of the access control policy group
+        :param pulumi.Input[builtins.int] acl_entry_count: Number of IP entries in the access control policy group.
+        :param pulumi.Input[builtins.str] acl_id: Access control policy group ID.
+        :param pulumi.Input[builtins.str] acl_name: Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        :param pulumi.Input[builtins.str] created_time: Creation time of the access control policy group.
+        :param pulumi.Input[builtins.str] description: Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the access control policy group belongs.
+        :param pulumi.Input[builtins.str] status: Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
+        :param pulumi.Input[builtins.str] updated_time: Most recent operation time for the access control policy group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -468,7 +468,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="aclEntryCount")
     def acl_entry_count(self) -> pulumi.Output[builtins.int]:
         """
-        Number of IP entries in the access control policy group
+        Number of IP entries in the access control policy group.
         """
         return pulumi.get(self, "acl_entry_count")
 
@@ -476,7 +476,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="aclId")
     def acl_id(self) -> pulumi.Output[builtins.str]:
         """
-        Access control policy group ID
+        Access control policy group ID.
         """
         return pulumi.get(self, "acl_id")
 
@@ -484,7 +484,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="aclName")
     def acl_name(self) -> pulumi.Output[builtins.str]:
         """
-        Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+        Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
         """
         return pulumi.get(self, "acl_name")
 
@@ -492,7 +492,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        Creation time of the access control policy group
+        Creation time of the access control policy group.
         """
         return pulumi.get(self, "created_time")
 
@@ -500,7 +500,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+        Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -513,7 +513,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        Project name to which the access control policy group belongs
+        Name of the project to which the access control policy group belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -521,7 +521,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+        Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -534,7 +534,7 @@ class Acl(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        Last operation time of the access control policy group
+        Most recent operation time for the access control policy group.
         """
         return pulumi.get(self, "updated_time")
 

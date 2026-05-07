@@ -35,7 +35,7 @@ export interface GetServerGroupResult {
      */
     readonly createTime: string;
     /**
-     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      */
     readonly crossZoneEnabled: string;
     /**
@@ -43,7 +43,7 @@ export interface GetServerGroupResult {
      */
     readonly description: string;
     /**
-     * Server group health check configuration information.
+     * Health check configuration information for the server group.
      */
     readonly healthCheck: outputs.alb.GetServerGroupHealthCheck;
     /**
@@ -51,7 +51,7 @@ export interface GetServerGroupResult {
      */
     readonly id: string;
     /**
-     * IP address type of the server group. Only IPv4 is supported.
+     * IP address type of the server group. Currently, only IPv4 is supported.
      */
     readonly ipAddressType: string;
     /**
@@ -67,7 +67,7 @@ export interface GetServerGroupResult {
      */
     readonly protocol: string;
     /**
-     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      */
     readonly scheduler: string;
     /**
@@ -75,23 +75,23 @@ export interface GetServerGroupResult {
      */
     readonly serverCount: number;
     /**
-     * ID of the backend server group.
+     * Backend server group ID.
      */
     readonly serverGroupId: string;
     /**
-     * Name of the backend server group.
+     * Backend server group name.
      */
     readonly serverGroupName: string;
     /**
-     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      */
     readonly serverGroupType: string;
     /**
-     * Information about servers in the backend server group.
+     * Information about the servers in the backend server group.
      */
     readonly servers: outputs.alb.GetServerGroupServer[];
     /**
-     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      */
     readonly status: string;
     /**

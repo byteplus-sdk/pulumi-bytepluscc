@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
+ * A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your load balancing policy. Backend servers receive and process the requests.
  *
  * ## Import
  *
@@ -48,7 +48,7 @@ export class ServerGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      */
     public readonly crossZoneEnabled!: pulumi.Output<string>;
     /**
@@ -56,11 +56,11 @@ export class ServerGroup extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Server group health check configuration information.
+     * Health check configuration information for the server group.
      */
     public readonly healthCheck!: pulumi.Output<outputs.alb.ServerGroupHealthCheck>;
     /**
-     * IP address type of the server group. Only IPv4 is supported.
+     * IP address type of the server group. Currently, only IPv4 is supported.
      */
     public readonly ipAddressType!: pulumi.Output<string>;
     public /*out*/ readonly listeners!: pulumi.Output<outputs.alb.ServerGroupListener[]>;
@@ -73,7 +73,7 @@ export class ServerGroup extends pulumi.CustomResource {
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      */
     public readonly scheduler!: pulumi.Output<string>;
     /**
@@ -81,20 +81,20 @@ export class ServerGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly serverCount!: pulumi.Output<number>;
     /**
-     * ID of the backend server group.
+     * Backend server group ID.
      */
     public /*out*/ readonly serverGroupId!: pulumi.Output<string>;
     /**
-     * Name of the backend server group.
+     * Backend server group name.
      */
     public readonly serverGroupName!: pulumi.Output<string>;
     /**
-     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      */
     public readonly serverGroupType!: pulumi.Output<string>;
     public readonly servers!: pulumi.Output<outputs.alb.ServerGroupServer[]>;
     /**
-     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      */
     public readonly status!: pulumi.Output<string>;
     /**
@@ -182,7 +182,7 @@ export interface ServerGroupState {
      */
     createTime?: pulumi.Input<string>;
     /**
-     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      */
     crossZoneEnabled?: pulumi.Input<string>;
     /**
@@ -190,11 +190,11 @@ export interface ServerGroupState {
      */
     description?: pulumi.Input<string>;
     /**
-     * Server group health check configuration information.
+     * Health check configuration information for the server group.
      */
     healthCheck?: pulumi.Input<inputs.alb.ServerGroupHealthCheck>;
     /**
-     * IP address type of the server group. Only IPv4 is supported.
+     * IP address type of the server group. Currently, only IPv4 is supported.
      */
     ipAddressType?: pulumi.Input<string>;
     listeners?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupListener>[]>;
@@ -207,7 +207,7 @@ export interface ServerGroupState {
      */
     protocol?: pulumi.Input<string>;
     /**
-     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      */
     scheduler?: pulumi.Input<string>;
     /**
@@ -215,20 +215,20 @@ export interface ServerGroupState {
      */
     serverCount?: pulumi.Input<number>;
     /**
-     * ID of the backend server group.
+     * Backend server group ID.
      */
     serverGroupId?: pulumi.Input<string>;
     /**
-     * Name of the backend server group.
+     * Backend server group name.
      */
     serverGroupName?: pulumi.Input<string>;
     /**
-     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      */
     serverGroupType?: pulumi.Input<string>;
     servers?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupServer>[]>;
     /**
-     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      */
     status?: pulumi.Input<string>;
     /**
@@ -251,7 +251,7 @@ export interface ServerGroupState {
  */
 export interface ServerGroupArgs {
     /**
-     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      */
     crossZoneEnabled?: pulumi.Input<string>;
     /**
@@ -259,11 +259,11 @@ export interface ServerGroupArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * Server group health check configuration information.
+     * Health check configuration information for the server group.
      */
     healthCheck?: pulumi.Input<inputs.alb.ServerGroupHealthCheck>;
     /**
-     * IP address type of the server group. Only IPv4 is supported.
+     * IP address type of the server group. Currently, only IPv4 is supported.
      */
     ipAddressType?: pulumi.Input<string>;
     /**
@@ -275,20 +275,20 @@ export interface ServerGroupArgs {
      */
     protocol?: pulumi.Input<string>;
     /**
-     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      */
     scheduler?: pulumi.Input<string>;
     /**
-     * Name of the backend server group.
+     * Backend server group name.
      */
     serverGroupName?: pulumi.Input<string>;
     /**
-     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      */
     serverGroupType?: pulumi.Input<string>;
     servers?: pulumi.Input<pulumi.Input<inputs.alb.ServerGroupServer>[]>;
     /**
-     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      */
     status?: pulumi.Input<string>;
     /**

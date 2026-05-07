@@ -18,6 +18,7 @@ from . import outputs
 
 __all__ = [
     'CustomerGatewayTag',
+    'SslVpnClientCertTag',
     'VpnConnectionBgpInfo',
     'VpnConnectionHealthChecker',
     'VpnConnectionIkeConfig',
@@ -29,6 +30,7 @@ __all__ = [
     'VpnConnectionTunnelOptionTunnelBgpInfo',
     'VpnGatewayTag',
     'GetCustomerGatewayTagResult',
+    'GetSslVpnClientCertTagResult',
     'GetVpnConnectionBgpInfoResult',
     'GetVpnConnectionHealthCheckerResult',
     'GetVpnConnectionIkeConfigResult',
@@ -68,6 +70,37 @@ class CustomerGatewayTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         Tag value for user tag
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SslVpnClientCertTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+        :param builtins.str value: Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 
@@ -1109,6 +1142,35 @@ class GetCustomerGatewayTagResult(dict):
     def value(self) -> builtins.str:
         """
         Tag value for user tag
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSslVpnClientCertTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+        :param builtins.str value: Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 

@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type PeerAttachmentTag struct {
+	// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+	Key *string `pulumi:"key"`
+	// Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+	Value *string `pulumi:"value"`
+}
+
+// PeerAttachmentTagInput is an input type that accepts PeerAttachmentTagArgs and PeerAttachmentTagOutput values.
+// You can construct a concrete instance of `PeerAttachmentTagInput` via:
+//
+//	PeerAttachmentTagArgs{...}
+type PeerAttachmentTagInput interface {
+	pulumi.Input
+
+	ToPeerAttachmentTagOutput() PeerAttachmentTagOutput
+	ToPeerAttachmentTagOutputWithContext(context.Context) PeerAttachmentTagOutput
+}
+
+type PeerAttachmentTagArgs struct {
+	// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (PeerAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PeerAttachmentTag)(nil)).Elem()
+}
+
+func (i PeerAttachmentTagArgs) ToPeerAttachmentTagOutput() PeerAttachmentTagOutput {
+	return i.ToPeerAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i PeerAttachmentTagArgs) ToPeerAttachmentTagOutputWithContext(ctx context.Context) PeerAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PeerAttachmentTagOutput)
+}
+
+// PeerAttachmentTagArrayInput is an input type that accepts PeerAttachmentTagArray and PeerAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `PeerAttachmentTagArrayInput` via:
+//
+//	PeerAttachmentTagArray{ PeerAttachmentTagArgs{...} }
+type PeerAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToPeerAttachmentTagArrayOutput() PeerAttachmentTagArrayOutput
+	ToPeerAttachmentTagArrayOutputWithContext(context.Context) PeerAttachmentTagArrayOutput
+}
+
+type PeerAttachmentTagArray []PeerAttachmentTagInput
+
+func (PeerAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PeerAttachmentTag)(nil)).Elem()
+}
+
+func (i PeerAttachmentTagArray) ToPeerAttachmentTagArrayOutput() PeerAttachmentTagArrayOutput {
+	return i.ToPeerAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i PeerAttachmentTagArray) ToPeerAttachmentTagArrayOutputWithContext(ctx context.Context) PeerAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PeerAttachmentTagArrayOutput)
+}
+
+type PeerAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (PeerAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PeerAttachmentTag)(nil)).Elem()
+}
+
+func (o PeerAttachmentTagOutput) ToPeerAttachmentTagOutput() PeerAttachmentTagOutput {
+	return o
+}
+
+func (o PeerAttachmentTagOutput) ToPeerAttachmentTagOutputWithContext(ctx context.Context) PeerAttachmentTagOutput {
+	return o
+}
+
+// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+func (o PeerAttachmentTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PeerAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+func (o PeerAttachmentTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PeerAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type PeerAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (PeerAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PeerAttachmentTag)(nil)).Elem()
+}
+
+func (o PeerAttachmentTagArrayOutput) ToPeerAttachmentTagArrayOutput() PeerAttachmentTagArrayOutput {
+	return o
+}
+
+func (o PeerAttachmentTagArrayOutput) ToPeerAttachmentTagArrayOutputWithContext(ctx context.Context) PeerAttachmentTagArrayOutput {
+	return o
+}
+
+func (o PeerAttachmentTagArrayOutput) Index(i pulumi.IntInput) PeerAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PeerAttachmentTag {
+		return vs[0].([]PeerAttachmentTag)[vs[1].(int)]
+	}).(PeerAttachmentTagOutput)
+}
+
 type TransitRouterAttachment struct {
 	// Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
 	AutoPublishRouteEnabled *bool `pulumi:"autoPublishRouteEnabled"`
@@ -903,6 +1009,112 @@ func (o VpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) VpnAttachmentTagOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnAttachmentTag {
 		return vs[0].([]VpnAttachmentTag)[vs[1].(int)]
 	}).(VpnAttachmentTagOutput)
+}
+
+type GetPeerAttachmentTag struct {
+	// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+	Key string `pulumi:"key"`
+	// Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+	Value string `pulumi:"value"`
+}
+
+// GetPeerAttachmentTagInput is an input type that accepts GetPeerAttachmentTagArgs and GetPeerAttachmentTagOutput values.
+// You can construct a concrete instance of `GetPeerAttachmentTagInput` via:
+//
+//	GetPeerAttachmentTagArgs{...}
+type GetPeerAttachmentTagInput interface {
+	pulumi.Input
+
+	ToGetPeerAttachmentTagOutput() GetPeerAttachmentTagOutput
+	ToGetPeerAttachmentTagOutputWithContext(context.Context) GetPeerAttachmentTagOutput
+}
+
+type GetPeerAttachmentTagArgs struct {
+	// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPeerAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPeerAttachmentTag)(nil)).Elem()
+}
+
+func (i GetPeerAttachmentTagArgs) ToGetPeerAttachmentTagOutput() GetPeerAttachmentTagOutput {
+	return i.ToGetPeerAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i GetPeerAttachmentTagArgs) ToGetPeerAttachmentTagOutputWithContext(ctx context.Context) GetPeerAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPeerAttachmentTagOutput)
+}
+
+// GetPeerAttachmentTagArrayInput is an input type that accepts GetPeerAttachmentTagArray and GetPeerAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `GetPeerAttachmentTagArrayInput` via:
+//
+//	GetPeerAttachmentTagArray{ GetPeerAttachmentTagArgs{...} }
+type GetPeerAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToGetPeerAttachmentTagArrayOutput() GetPeerAttachmentTagArrayOutput
+	ToGetPeerAttachmentTagArrayOutputWithContext(context.Context) GetPeerAttachmentTagArrayOutput
+}
+
+type GetPeerAttachmentTagArray []GetPeerAttachmentTagInput
+
+func (GetPeerAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPeerAttachmentTag)(nil)).Elem()
+}
+
+func (i GetPeerAttachmentTagArray) ToGetPeerAttachmentTagArrayOutput() GetPeerAttachmentTagArrayOutput {
+	return i.ToGetPeerAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetPeerAttachmentTagArray) ToGetPeerAttachmentTagArrayOutputWithContext(ctx context.Context) GetPeerAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPeerAttachmentTagArrayOutput)
+}
+
+type GetPeerAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (GetPeerAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPeerAttachmentTag)(nil)).Elem()
+}
+
+func (o GetPeerAttachmentTagOutput) ToGetPeerAttachmentTagOutput() GetPeerAttachmentTagOutput {
+	return o
+}
+
+func (o GetPeerAttachmentTagOutput) ToGetPeerAttachmentTagOutputWithContext(ctx context.Context) GetPeerAttachmentTagOutput {
+	return o
+}
+
+// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+func (o GetPeerAttachmentTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPeerAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+func (o GetPeerAttachmentTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPeerAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPeerAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPeerAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPeerAttachmentTag)(nil)).Elem()
+}
+
+func (o GetPeerAttachmentTagArrayOutput) ToGetPeerAttachmentTagArrayOutput() GetPeerAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetPeerAttachmentTagArrayOutput) ToGetPeerAttachmentTagArrayOutputWithContext(ctx context.Context) GetPeerAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetPeerAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetPeerAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPeerAttachmentTag {
+		return vs[0].([]GetPeerAttachmentTag)[vs[1].(int)]
+	}).(GetPeerAttachmentTagOutput)
 }
 
 type GetTransitRouterAttachment struct {
@@ -1810,6 +2022,8 @@ func (o GetVpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetVpnAttachmen
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PeerAttachmentTagInput)(nil)).Elem(), PeerAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PeerAttachmentTagArrayInput)(nil)).Elem(), PeerAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentInput)(nil)).Elem(), TransitRouterAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentArrayInput)(nil)).Elem(), TransitRouterAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentTagInput)(nil)).Elem(), TransitRouterAttachmentTagArgs{})
@@ -1824,6 +2038,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAttachmentTagArrayInput)(nil)).Elem(), VpcAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnAttachmentTagInput)(nil)).Elem(), VpnAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnAttachmentTagArrayInput)(nil)).Elem(), VpnAttachmentTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerAttachmentTagInput)(nil)).Elem(), GetPeerAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerAttachmentTagArrayInput)(nil)).Elem(), GetPeerAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentInput)(nil)).Elem(), GetTransitRouterAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentArrayInput)(nil)).Elem(), GetTransitRouterAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentTagInput)(nil)).Elem(), GetTransitRouterAttachmentTagArgs{})
@@ -1838,6 +2054,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAttachmentTagArrayInput)(nil)).Elem(), GetVpcAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnAttachmentTagInput)(nil)).Elem(), GetVpnAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnAttachmentTagArrayInput)(nil)).Elem(), GetVpnAttachmentTagArray{})
+	pulumi.RegisterOutputType(PeerAttachmentTagOutput{})
+	pulumi.RegisterOutputType(PeerAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentTagOutput{})
@@ -1852,6 +2070,8 @@ func init() {
 	pulumi.RegisterOutputType(VpcAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(VpnAttachmentTagOutput{})
 	pulumi.RegisterOutputType(VpnAttachmentTagArrayOutput{})
+	pulumi.RegisterOutputType(GetPeerAttachmentTagOutput{})
+	pulumi.RegisterOutputType(GetPeerAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentTagOutput{})

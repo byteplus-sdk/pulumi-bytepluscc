@@ -23,7 +23,7 @@ public final class GetServerGroupResult {
      */
     private String createTime;
     /**
-     * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * @return Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      * 
      */
     private String crossZoneEnabled;
@@ -33,7 +33,7 @@ public final class GetServerGroupResult {
      */
     private String description;
     /**
-     * @return Server group health check configuration information.
+     * @return Health check configuration information for the server group.
      * 
      */
     private GetServerGroupHealthCheck healthCheck;
@@ -43,7 +43,7 @@ public final class GetServerGroupResult {
      */
     private String id;
     /**
-     * @return IP address type of the server group. Only IPv4 is supported.
+     * @return IP address type of the server group. Currently, only IPv4 is supported.
      * 
      */
     private String ipAddressType;
@@ -63,7 +63,7 @@ public final class GetServerGroupResult {
      */
     private String protocol;
     /**
-     * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * @return Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      * 
      */
     private String scheduler;
@@ -73,27 +73,27 @@ public final class GetServerGroupResult {
      */
     private Integer serverCount;
     /**
-     * @return ID of the backend server group.
+     * @return Backend server group ID.
      * 
      */
     private String serverGroupId;
     /**
-     * @return Name of the backend server group.
+     * @return Backend server group name.
      * 
      */
     private String serverGroupName;
     /**
-     * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * @return Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      * 
      */
     private String serverGroupType;
     /**
-     * @return Information about servers in the backend server group.
+     * @return Information about the servers in the backend server group.
      * 
      */
     private List<GetServerGroupServer> servers;
     /**
-     * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * @return Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      * 
      */
     private String status;
@@ -127,7 +127,7 @@ public final class GetServerGroupResult {
         return this.createTime;
     }
     /**
-     * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * @return Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      * 
      */
     public String crossZoneEnabled() {
@@ -141,7 +141,7 @@ public final class GetServerGroupResult {
         return this.description;
     }
     /**
-     * @return Server group health check configuration information.
+     * @return Health check configuration information for the server group.
      * 
      */
     public GetServerGroupHealthCheck healthCheck() {
@@ -155,7 +155,7 @@ public final class GetServerGroupResult {
         return this.id;
     }
     /**
-     * @return IP address type of the server group. Only IPv4 is supported.
+     * @return IP address type of the server group. Currently, only IPv4 is supported.
      * 
      */
     public String ipAddressType() {
@@ -183,7 +183,7 @@ public final class GetServerGroupResult {
         return this.protocol;
     }
     /**
-     * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * @return Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      * 
      */
     public String scheduler() {
@@ -197,35 +197,35 @@ public final class GetServerGroupResult {
         return this.serverCount;
     }
     /**
-     * @return ID of the backend server group.
+     * @return Backend server group ID.
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return Name of the backend server group.
+     * @return Backend server group name.
      * 
      */
     public String serverGroupName() {
         return this.serverGroupName;
     }
     /**
-     * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * @return Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      * 
      */
     public String serverGroupType() {
         return this.serverGroupType;
     }
     /**
-     * @return Information about servers in the backend server group.
+     * @return Information about the servers in the backend server group.
      * 
      */
     public List<GetServerGroupServer> servers() {
         return this.servers;
     }
     /**
-     * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * @return Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      * 
      */
     public String status() {

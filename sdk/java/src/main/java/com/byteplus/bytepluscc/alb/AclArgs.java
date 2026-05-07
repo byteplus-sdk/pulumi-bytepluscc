@@ -27,14 +27,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     @Import(name="aclName")
     private @Nullable Output<String> aclName;
 
     /**
-     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * @return Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     public Optional<Output<String>> aclName() {
@@ -42,14 +42,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * @return Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Project name to which the access control policy group belongs
+     * Name of the project to which the access control policy group belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return Project name to which the access control policy group belongs
+     * @return Name of the project to which the access control policy group belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -128,7 +128,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclName Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+         * @param aclName Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclName Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+         * @param aclName Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+         * @param description Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -160,7 +160,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+         * @param description Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName Project name to which the access control policy group belongs
+         * @param projectName Name of the project to which the access control policy group belongs.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName Project name to which the access control policy group belongs
+         * @param projectName Name of the project to which the access control policy group belongs.
          * 
          * @return builder
          * 

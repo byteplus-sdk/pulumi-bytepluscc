@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ALB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance through the listener port, you can set an access control policy for this listener. You can configure access control when creating the listener, or modify or reconfigure access control after the listener is created
+ * ALB provides access control at the listener level. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance via the listener port, you can set an access control policy for the listener. You can configure access control when creating the listener or modify/reconfigure it after the listener is created.
  * 
  * ## Example Usage
  * 
@@ -83,70 +83,70 @@ public class Acl extends com.pulumi.resources.CustomResource {
         return this.aclEntries;
     }
     /**
-     * Number of IP entries in the access control policy group
+     * Number of IP entries in the access control policy group.
      * 
      */
     @Export(name="aclEntryCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> aclEntryCount;
 
     /**
-     * @return Number of IP entries in the access control policy group
+     * @return Number of IP entries in the access control policy group.
      * 
      */
     public Output<Integer> aclEntryCount() {
         return this.aclEntryCount;
     }
     /**
-     * Access control policy group ID
+     * Access control policy group ID.
      * 
      */
     @Export(name="aclId", refs={String.class}, tree="[0]")
     private Output<String> aclId;
 
     /**
-     * @return Access control policy group ID
+     * @return Access control policy group ID.
      * 
      */
     public Output<String> aclId() {
         return this.aclId;
     }
     /**
-     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     @Export(name="aclName", refs={String.class}, tree="[0]")
     private Output<String> aclName;
 
     /**
-     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * @return Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     public Output<String> aclName() {
         return this.aclName;
     }
     /**
-     * Creation time of the access control policy group
+     * Creation time of the access control policy group.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return Creation time of the access control policy group
+     * @return Creation time of the access control policy group.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * @return Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Output<String> description() {
@@ -159,28 +159,28 @@ public class Acl extends com.pulumi.resources.CustomResource {
         return this.listeners;
     }
     /**
-     * Project name to which the access control policy group belongs
+     * Name of the project to which the access control policy group belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return Project name to which the access control policy group belongs
+     * @return Name of the project to which the access control policy group belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * @return Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      * 
      */
     public Output<String> status() {
@@ -193,14 +193,14 @@ public class Acl extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * Last operation time of the access control policy group
+     * Most recent operation time for the access control policy group.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return Last operation time of the access control policy group
+     * @return Most recent operation time for the access control policy group.
      * 
      */
     public Output<String> updatedTime() {

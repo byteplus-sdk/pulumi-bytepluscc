@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
-    /// Access control (Identity and Access Management, abbreviated as IAM) is a permission management system provided by Volcano Engine for customers to control access to cloud resources by different identities.
+    /// Access control (Identity and Access Management, IAM) is a permission management system provided by Volcano Engine to help customers control access to cloud resources for different identities
     /// 
     /// ## Example Usage
     /// 
@@ -41,61 +41,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public partial class Accesskey : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Access Key Id.
+        /// Key ID (Access Key Id)
         /// </summary>
         [Output("accessKeyId")]
         public Output<string> AccessKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// Key creation time. The time format is ISO8601.
+        /// Key creation time (ISO8601 format)
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Last login time.
+        /// Last login time
         /// </summary>
         [Output("lastLoginDate")]
         public Output<string> LastLoginDate { get; private set; } = null!;
 
         /// <summary>
-        /// The last region accessed by the API key.
+        /// Last accessed region by the API key
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
 
         /// <summary>
-        /// The last time the API key was used.
+        /// Last usage time of the API key
         /// </summary>
         [Output("requestTime")]
         public Output<string> RequestTime { get; private set; } = null!;
 
         /// <summary>
-        /// Secret Access Key.
+        /// Secret Access Key
         /// </summary>
         [Output("secretAccessKey")]
         public Output<string> SecretAccessKey { get; private set; } = null!;
 
         /// <summary>
-        /// The English abbreviation of the last service accessed by the API key.
+        /// English abbreviation of the last accessed service by the API key
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
 
         /// <summary>
-        /// Key status. active means enabled, inactive means disabled.
+        /// Key status. "active" means enabled, "inactive" means disabled
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// Key update time. The time format is ISO8601.
+        /// Key update time (ISO8601 format)
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+        /// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
@@ -148,19 +148,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class AccesskeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Last login time.
-        /// </summary>
-        [Input("lastLoginDate")]
-        public Input<string>? LastLoginDate { get; set; }
-
-        /// <summary>
-        /// Key status. active means enabled, inactive means disabled.
+        /// Key status. "active" means enabled, "inactive" means disabled
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+        /// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
@@ -174,61 +168,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class AccesskeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Access Key Id.
+        /// Key ID (Access Key Id)
         /// </summary>
         [Input("accessKeyId")]
         public Input<string>? AccessKeyId { get; set; }
 
         /// <summary>
-        /// Key creation time. The time format is ISO8601.
+        /// Key creation time (ISO8601 format)
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// Last login time.
+        /// Last login time
         /// </summary>
         [Input("lastLoginDate")]
         public Input<string>? LastLoginDate { get; set; }
 
         /// <summary>
-        /// The last region accessed by the API key.
+        /// Last accessed region by the API key
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// The last time the API key was used.
+        /// Last usage time of the API key
         /// </summary>
         [Input("requestTime")]
         public Input<string>? RequestTime { get; set; }
 
         /// <summary>
-        /// Secret Access Key.
+        /// Secret Access Key
         /// </summary>
         [Input("secretAccessKey")]
         public Input<string>? SecretAccessKey { get; set; }
 
         /// <summary>
-        /// The English abbreviation of the last service accessed by the API key.
+        /// English abbreviation of the last accessed service by the API key
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// Key status. active means enabled, inactive means disabled.
+        /// Key status. "active" means enabled, "inactive" means disabled
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// Key update time. The time format is ISO8601.
+        /// Key update time (ISO8601 format)
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+        /// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

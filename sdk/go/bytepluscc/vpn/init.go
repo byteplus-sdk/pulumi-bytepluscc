@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:vpn/customerGateway:CustomerGateway":
 		r = &CustomerGateway{}
+	case "bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert":
+		r = &SslVpnClientCert{}
 	case "bytepluscc:vpn/vpnConnection:VpnConnection":
 		r = &VpnConnection{}
 	case "bytepluscc:vpn/vpnGateway:VpnGateway":
@@ -43,6 +45,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpn/customerGateway",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpn/sslVpnClientCert",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -6,12 +6,16 @@ package com.byteplus.bytepluscc.vpn;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.vpn.inputs.GetCustomerGatewayArgs;
 import com.byteplus.bytepluscc.vpn.inputs.GetCustomerGatewayPlainArgs;
+import com.byteplus.bytepluscc.vpn.inputs.GetSslVpnClientCertArgs;
+import com.byteplus.bytepluscc.vpn.inputs.GetSslVpnClientCertPlainArgs;
 import com.byteplus.bytepluscc.vpn.inputs.GetVpnConnectionArgs;
 import com.byteplus.bytepluscc.vpn.inputs.GetVpnConnectionPlainArgs;
 import com.byteplus.bytepluscc.vpn.inputs.GetVpnGatewayArgs;
 import com.byteplus.bytepluscc.vpn.inputs.GetVpnGatewayPlainArgs;
 import com.byteplus.bytepluscc.vpn.outputs.GetCustomerGatewayResult;
 import com.byteplus.bytepluscc.vpn.outputs.GetCustomerGatewaysResult;
+import com.byteplus.bytepluscc.vpn.outputs.GetSslVpnClientCertResult;
+import com.byteplus.bytepluscc.vpn.outputs.GetSslVpnClientCertsResult;
 import com.byteplus.bytepluscc.vpn.outputs.GetVpnConnectionResult;
 import com.byteplus.bytepluscc.vpn.outputs.GetVpnConnectionsResult;
 import com.byteplus.bytepluscc.vpn.outputs.GetVpnGatewayResult;
@@ -108,6 +112,90 @@ public final class VpnFunctions {
      */
     public static CompletableFuture<GetCustomerGatewaysResult> getCustomerGatewaysPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpn/getCustomerGateways:getCustomerGateways", TypeShape.of(GetCustomerGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertResult> getSslVpnClientCert(GetSslVpnClientCertArgs args) {
+        return getSslVpnClientCert(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static CompletableFuture<GetSslVpnClientCertResult> getSslVpnClientCertPlain(GetSslVpnClientCertPlainArgs args) {
+        return getSslVpnClientCertPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertResult> getSslVpnClientCert(GetSslVpnClientCertArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpn/getSslVpnClientCert:getSslVpnClientCert", TypeShape.of(GetSslVpnClientCertResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertResult> getSslVpnClientCert(GetSslVpnClientCertArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpn/getSslVpnClientCert:getSslVpnClientCert", TypeShape.of(GetSslVpnClientCertResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static CompletableFuture<GetSslVpnClientCertResult> getSslVpnClientCertPlain(GetSslVpnClientCertPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpn/getSslVpnClientCert:getSslVpnClientCert", TypeShape.of(GetSslVpnClientCertResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertsResult> getSslVpnClientCerts() {
+        return getSslVpnClientCerts(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static CompletableFuture<GetSslVpnClientCertsResult> getSslVpnClientCertsPlain() {
+        return getSslVpnClientCertsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertsResult> getSslVpnClientCerts(InvokeArgs args) {
+        return getSslVpnClientCerts(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static CompletableFuture<GetSslVpnClientCertsResult> getSslVpnClientCertsPlain(InvokeArgs args) {
+        return getSslVpnClientCertsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertsResult> getSslVpnClientCerts(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpn/getSslVpnClientCerts:getSslVpnClientCerts", TypeShape.of(GetSslVpnClientCertsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static Output<GetSslVpnClientCertsResult> getSslVpnClientCerts(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpn/getSslVpnClientCerts:getSslVpnClientCerts", TypeShape.of(GetSslVpnClientCertsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPN::SslVpnClientCert
+     * 
+     */
+    public static CompletableFuture<GetSslVpnClientCertsResult> getSslVpnClientCertsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpn/getSslVpnClientCerts:getSslVpnClientCerts", TypeShape.of(GetSslVpnClientCertsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPN::VPNConnection

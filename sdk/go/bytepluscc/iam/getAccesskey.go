@@ -30,27 +30,27 @@ type LookupAccesskeyArgs struct {
 
 // A collection of values returned by getAccesskey.
 type LookupAccesskeyResult struct {
-	// Access Key Id.
+	// Key ID (Access Key Id)
 	AccessKeyId string `pulumi:"accessKeyId"`
-	// Key creation time. The time format is ISO8601.
+	// Key creation time (ISO8601 format)
 	CreatedTime string `pulumi:"createdTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// Last login time.
+	// Last login time
 	LastLoginDate string `pulumi:"lastLoginDate"`
-	// The last region accessed by the API key.
+	// Last accessed region by the API key
 	Region string `pulumi:"region"`
-	// The last time the API key was used.
+	// Last usage time of the API key
 	RequestTime string `pulumi:"requestTime"`
-	// Secret Access Key.
+	// Secret Access Key
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// The English abbreviation of the last service accessed by the API key.
+	// English abbreviation of the last accessed service by the API key
 	Service string `pulumi:"service"`
-	// Key status. active means enabled, inactive means disabled.
+	// Key status. "active" means enabled, "inactive" means disabled
 	Status string `pulumi:"status"`
-	// Key update time. The time format is ISO8601.
+	// Key update time (ISO8601 format)
 	UpdatedTime string `pulumi:"updatedTime"`
-	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+	// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
 	UserName string `pulumi:"userName"`
 }
 
@@ -88,12 +88,12 @@ func (o LookupAccesskeyResultOutput) ToLookupAccesskeyResultOutputWithContext(ct
 	return o
 }
 
-// Access Key Id.
+// Key ID (Access Key Id)
 func (o LookupAccesskeyResultOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
 
-// Key creation time. The time format is ISO8601.
+// Key creation time (ISO8601 format)
 func (o LookupAccesskeyResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -103,42 +103,42 @@ func (o LookupAccesskeyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Last login time.
+// Last login time
 func (o LookupAccesskeyResultOutput) LastLoginDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.LastLoginDate }).(pulumi.StringOutput)
 }
 
-// The last region accessed by the API key.
+// Last accessed region by the API key
 func (o LookupAccesskeyResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// The last time the API key was used.
+// Last usage time of the API key
 func (o LookupAccesskeyResultOutput) RequestTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.RequestTime }).(pulumi.StringOutput)
 }
 
-// Secret Access Key.
+// Secret Access Key
 func (o LookupAccesskeyResultOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// The English abbreviation of the last service accessed by the API key.
+// English abbreviation of the last accessed service by the API key
 func (o LookupAccesskeyResultOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// Key status. active means enabled, inactive means disabled.
+// Key status. "active" means enabled, "inactive" means disabled
 func (o LookupAccesskeyResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Key update time. The time format is ISO8601.
+// Key update time (ISO8601 format)
 func (o LookupAccesskeyResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
 func (o LookupAccesskeyResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccesskeyResult) string { return v.UserName }).(pulumi.StringOutput)
 }

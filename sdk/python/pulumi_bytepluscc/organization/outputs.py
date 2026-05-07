@@ -20,10 +20,12 @@ __all__ = [
     'AccountTag',
     'OrganizationOrganization',
     'OrganizationOwner',
+    'ServiceControlPolicyTarget',
     'GetAccountSecureContactInfoResult',
     'GetAccountTagResult',
     'GetOrganizationOrganizationResult',
     'GetOrganizationOwnerResult',
+    'GetServiceControlPolicyTargetResult',
 ]
 
 @pulumi.output_type
@@ -334,6 +336,56 @@ class OrganizationOwner(dict):
 
 
 @pulumi.output_type
+class ServiceControlPolicyTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "targetId":
+            suggest = "target_id"
+        elif key == "targetType":
+            suggest = "target_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceControlPolicyTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceControlPolicyTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceControlPolicyTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target_id: Optional[builtins.str] = None,
+                 target_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str target_id: Target ID.
+        :param builtins.str target_type: Target type: 1. OU 2. Account.
+        """
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[builtins.str]:
+        """
+        Target ID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[builtins.str]:
+        """
+        Target type: 1. OU 2. Account.
+        """
+        return pulumi.get(self, "target_type")
+
+
+@pulumi.output_type
 class GetAccountSecureContactInfoResult(dict):
     def __init__(__self__, *,
                  email: builtins.str,
@@ -557,5 +609,56 @@ class GetOrganizationOwnerResult(dict):
         Entity Name
         """
         return pulumi.get(self, "main_name")
+
+
+@pulumi.output_type
+class GetServiceControlPolicyTargetResult(dict):
+    def __init__(__self__, *,
+                 attached_time: builtins.str,
+                 target_id: builtins.str,
+                 target_name: builtins.str,
+                 target_type: builtins.str):
+        """
+        :param builtins.str attached_time: Binding time.
+        :param builtins.str target_id: Target ID.
+        :param builtins.str target_name: Target name.
+        :param builtins.str target_type: Target type: 1. OU 2. Account.
+        """
+        pulumi.set(__self__, "attached_time", attached_time)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_name", target_name)
+        pulumi.set(__self__, "target_type", target_type)
+
+    @property
+    @pulumi.getter(name="attachedTime")
+    def attached_time(self) -> builtins.str:
+        """
+        Binding time.
+        """
+        return pulumi.get(self, "attached_time")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> builtins.str:
+        """
+        Target ID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetName")
+    def target_name(self) -> builtins.str:
+        """
+        Target name.
+        """
+        return pulumi.get(self, "target_name")
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> builtins.str:
+        """
+        Target type: 1. OU 2. Account.
+        """
+        return pulumi.get(self, "target_type")
 
 

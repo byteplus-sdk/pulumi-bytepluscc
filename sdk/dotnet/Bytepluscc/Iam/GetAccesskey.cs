@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class GetAccesskeyResult
     {
         /// <summary>
-        /// Access Key Id.
+        /// Key ID (Access Key Id)
         /// </summary>
         public readonly string AccessKeyId;
         /// <summary>
-        /// Key creation time. The time format is ISO8601.
+        /// Key creation time (ISO8601 format)
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
@@ -77,35 +77,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Last login time.
+        /// Last login time
         /// </summary>
         public readonly string LastLoginDate;
         /// <summary>
-        /// The last region accessed by the API key.
+        /// Last accessed region by the API key
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// The last time the API key was used.
+        /// Last usage time of the API key
         /// </summary>
         public readonly string RequestTime;
         /// <summary>
-        /// Secret Access Key.
+        /// Secret Access Key
         /// </summary>
         public readonly string SecretAccessKey;
         /// <summary>
-        /// The English abbreviation of the last service accessed by the API key.
+        /// English abbreviation of the last accessed service by the API key
         /// </summary>
         public readonly string Service;
         /// <summary>
-        /// Key status. active means enabled, inactive means disabled.
+        /// Key status. "active" means enabled, "inactive" means disabled
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Key update time. The time format is ISO8601.
+        /// Key update time (ISO8601 format)
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+        /// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
         /// </summary>
         public readonly string UserName;
 

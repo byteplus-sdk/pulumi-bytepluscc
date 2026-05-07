@@ -66,7 +66,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> builtins.str:
         """
-        Access Key Id.
+        Key ID (Access Key Id)
         """
         return pulumi.get(self, "access_key_id")
 
@@ -74,7 +74,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Key creation time. The time format is ISO8601.
+        Key creation time (ISO8601 format)
         """
         return pulumi.get(self, "created_time")
 
@@ -90,7 +90,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="lastLoginDate")
     def last_login_date(self) -> builtins.str:
         """
-        Last login time.
+        Last login time
         """
         return pulumi.get(self, "last_login_date")
 
@@ -98,7 +98,7 @@ class GetAccesskeyResult:
     @pulumi.getter
     def region(self) -> builtins.str:
         """
-        The last region accessed by the API key.
+        Last accessed region by the API key
         """
         return pulumi.get(self, "region")
 
@@ -106,7 +106,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="requestTime")
     def request_time(self) -> builtins.str:
         """
-        The last time the API key was used.
+        Last usage time of the API key
         """
         return pulumi.get(self, "request_time")
 
@@ -114,7 +114,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> builtins.str:
         """
-        Secret Access Key.
+        Secret Access Key
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -122,7 +122,7 @@ class GetAccesskeyResult:
     @pulumi.getter
     def service(self) -> builtins.str:
         """
-        The English abbreviation of the last service accessed by the API key.
+        English abbreviation of the last accessed service by the API key
         """
         return pulumi.get(self, "service")
 
@@ -130,7 +130,7 @@ class GetAccesskeyResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Key status. active means enabled, inactive means disabled.
+        Key status. "active" means enabled, "inactive" means disabled
         """
         return pulumi.get(self, "status")
 
@@ -138,7 +138,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        Key update time. The time format is ISO8601.
+        Key update time (ISO8601 format)
         """
         return pulumi.get(self, "updated_time")
 
@@ -146,7 +146,7 @@ class GetAccesskeyResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> builtins.str:
         """
-        User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+        User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
         """
         return pulumi.get(self, "user_name")
 

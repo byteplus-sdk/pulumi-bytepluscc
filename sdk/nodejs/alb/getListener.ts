@@ -31,7 +31,7 @@ export interface GetListenerArgs {
  */
 export interface GetListenerResult {
     /**
-     * Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+     * Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
      */
     readonly accessLogRecordCustomizedHeadersEnabled: string;
     /**
@@ -39,15 +39,15 @@ export interface GetListenerResult {
      */
     readonly aclIds: string[];
     /**
-     * Enable access control. Values: on: enabled. off: disabled (default).
+     * Whether access control is enabled. Values: on: enabled. off: not enabled (default).
      */
     readonly aclStatus: string;
     /**
-     * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+     * Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
      */
     readonly aclType: string;
     /**
-     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
      */
     readonly caCertificateId: string;
     /**
@@ -55,7 +55,7 @@ export interface GetListenerResult {
      */
     readonly caCertificateSource: string;
     /**
-     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
      */
     readonly certCenterCertificateId: string;
     /**
@@ -63,7 +63,7 @@ export interface GetListenerResult {
      */
     readonly certificateId: string;
     /**
-     * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
      */
     readonly certificateSource: string;
     /**
@@ -75,23 +75,23 @@ export interface GetListenerResult {
      */
     readonly customizedCfgId: string;
     /**
-     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
      */
     readonly description: string;
     /**
-     * List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
+     * List of extension domains associated with the HTTPS listener. An HTTPS listener can be associated with up to 20 extension domains.
      */
     readonly domainExtensions: outputs.alb.GetListenerDomainExtension[];
     /**
-     * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+     * HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
      */
     readonly enableHttp2: string;
     /**
-     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
      */
     readonly enableQuic: string;
     /**
-     * Listener on/off status. Values: on: On (default). off: Off.
+     * Listener on/off status. Values: on: enabled (default); off: disabled.
      */
     readonly enabled: string;
     /**
@@ -103,11 +103,11 @@ export interface GetListenerResult {
      */
     readonly listenerId: string;
     /**
-     * Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+     * Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
      */
     readonly listenerName: string;
     /**
-     * Load balancer instance ID to which the listener belongs.
+     * Load balancer instance ID associated with the listener.
      */
     readonly loadBalancerId: string;
     /**
@@ -115,19 +115,19 @@ export interface GetListenerResult {
      */
     readonly pcaLeafCertificateId: string;
     /**
-     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      */
     readonly pcaRootCaCertificateId: string;
     /**
-     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      */
     readonly pcaSubCaCertificateId: string;
     /**
-     * The listener port. Values: 1   - 65535.
+     * Listener port. Value range: 1   - 65535.
      */
     readonly port: number;
     /**
-     * Name of the project to which the listener belongs.
+     * Project name to which the listener belongs.
      */
     readonly projectName: string;
     /**
@@ -143,15 +143,15 @@ export interface GetListenerResult {
      */
     readonly serverGroups: outputs.alb.GetListenerServerGroup[];
     /**
-     * Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+     * Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
      */
     readonly status: string;
     /**
-     * Listener tags.
+     * Tags associated with the listener.
      */
     readonly tags: outputs.alb.GetListenerTag[];
     /**
-     * Time of the listener's most recent operation.
+     * The most recent operation time of the listener.
      */
     readonly updatedTime: string;
 }

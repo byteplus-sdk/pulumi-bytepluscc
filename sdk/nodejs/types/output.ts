@@ -8,29 +8,29 @@ import * as outputs from "../types/output";
 export namespace alb {
     export interface AclAclEntry {
         /**
-         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          */
         description: string;
         /**
-         * IP entry address range; only CIDR addresses are supported
+         * IP entry address range. Only CIDR addresses are supported.
          */
         entry: string;
     }
 
     export interface AclListener {
         /**
-         * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+         * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
          */
         aclType: string;
     }
 
     export interface AclTag {
         /**
-         * User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
+         * Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
          */
         key: string;
         /**
-         * User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
+         * User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
          */
         value: string;
     }
@@ -78,18 +78,18 @@ export namespace alb {
 
     export interface GetAclAclEntry {
         /**
-         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          */
         description: string;
         /**
-         * IP entry address range; only CIDR addresses are supported
+         * IP entry address range. Only CIDR addresses are supported.
          */
         entry: string;
     }
 
     export interface GetAclListener {
         /**
-         * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+         * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
          */
         aclType: string;
         /**
@@ -112,11 +112,11 @@ export namespace alb {
 
     export interface GetAclTag {
         /**
-         * User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
+         * Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
          */
         key: string;
         /**
-         * User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
+         * User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
          */
         value: string;
     }
@@ -175,7 +175,7 @@ export namespace alb {
 
     export interface GetListenerDomainExtension {
         /**
-         * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+         * Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
          */
         certCenterCertificateId: string;
         /**
@@ -183,19 +183,19 @@ export namespace alb {
          */
         certificateId: string;
         /**
-         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
          */
         certificateSource: string;
         /**
-         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
          */
         domain: string;
         /**
-         * Extended domain name ID.
+         * Extension domain name ID.
          */
         domainExtensionId: string;
         /**
-         * Listener ID to which the extended domain name belongs.
+         * Listener ID associated with the extended domain name.
          */
         listenerId: string;
         /**
@@ -203,7 +203,7 @@ export namespace alb {
          */
         pcaLeafCertificateId: string;
         /**
-         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+         * If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
          */
         san: string;
     }
@@ -221,11 +221,11 @@ export namespace alb {
 
     export interface GetListenerTag {
         /**
-         * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+         * User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
          */
         key: string;
         /**
-         * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+         * User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
          */
         value: string;
     }
@@ -652,31 +652,31 @@ export namespace alb {
 
     export interface GetServerGroupHealthCheck {
         /**
-         * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+         * The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          */
         domain: string;
         /**
-         * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+         * Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
          */
         enabled: string;
         /**
-         * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+         * Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
          */
         healthyThreshold: number;
         /**
-         * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+         * HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          */
         httpCode: string;
         /**
-         * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+         * HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
          */
         httpVersion: string;
         /**
-         * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+         * After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
          */
         interval: number;
         /**
-         * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
+         * After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
          */
         method: string;
         /**
@@ -688,15 +688,15 @@ export namespace alb {
          */
         protocol: string;
         /**
-         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
          */
         timeout: number;
         /**
-         * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+         * Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
          */
         unhealthyThreshold: number;
         /**
-         * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
+         * Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
          */
         uri: string;
     }
@@ -714,7 +714,7 @@ export namespace alb {
          */
         description: string;
         /**
-         * ID of the cloud server instance or network interface card.
+         * ID of the cloud server instance or network interface.
          */
         instanceId: string;
         /**
@@ -726,7 +726,7 @@ export namespace alb {
          */
         port: number;
         /**
-         * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+         * Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
          */
         remoteEnabled: string;
         /**
@@ -734,22 +734,22 @@ export namespace alb {
          */
         serverId: string;
         /**
-         * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+         * Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
          */
         type: string;
         /**
-         * Weight of the backend server.
+         * Backend server weight.
          */
         weight: number;
     }
 
     export interface GetServerGroupStickySessionConfig {
         /**
-         * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+         * Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
          */
         cookie: string;
         /**
-         * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+         * Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          */
         cookieTimeout: number;
         /**
@@ -757,18 +757,18 @@ export namespace alb {
          */
         stickySessionEnabled: string;
         /**
-         * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
+         * Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
          */
         stickySessionType: string;
     }
 
     export interface GetServerGroupTag {
         /**
-         * Tag key. Tag keys for the same resource must be unique.
+         * Tag key. Duplicate tag keys are not allowed for the same resource.
          */
         key: string;
         /**
-         * Tag value of the tag.
+         * Tag value.
          */
         value: string;
     }
@@ -786,7 +786,7 @@ export namespace alb {
 
     export interface ListenerDomainExtension {
         /**
-         * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+         * Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
          */
         certCenterCertificateId: string;
         /**
@@ -794,11 +794,11 @@ export namespace alb {
          */
         certificateId: string;
         /**
-         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
          */
         certificateSource: string;
         /**
-         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
          */
         domain: string;
         /**
@@ -806,7 +806,7 @@ export namespace alb {
          */
         pcaLeafCertificateId: string;
         /**
-         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+         * If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
          */
         san: string;
     }
@@ -824,11 +824,11 @@ export namespace alb {
 
     export interface ListenerTag {
         /**
-         * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+         * User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
          */
         key: string;
         /**
-         * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+         * User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
          */
         value: string;
     }
@@ -1150,31 +1150,31 @@ export namespace alb {
 
     export interface ServerGroupHealthCheck {
         /**
-         * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+         * The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          */
         domain: string;
         /**
-         * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+         * Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
          */
         enabled: string;
         /**
-         * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+         * Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
          */
         healthyThreshold: number;
         /**
-         * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+         * HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          */
         httpCode: string;
         /**
-         * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+         * HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
          */
         httpVersion: string;
         /**
-         * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+         * After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
          */
         interval: number;
         /**
-         * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
+         * After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
          */
         method: string;
         /**
@@ -1186,15 +1186,15 @@ export namespace alb {
          */
         protocol: string;
         /**
-         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
          */
         timeout: number;
         /**
-         * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+         * Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
          */
         unhealthyThreshold: number;
         /**
-         * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
+         * Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
          */
         uri: string;
     }
@@ -1212,7 +1212,7 @@ export namespace alb {
          */
         description: string;
         /**
-         * ID of the cloud server instance or network interface card.
+         * ID of the cloud server instance or network interface.
          */
         instanceId: string;
         /**
@@ -1224,7 +1224,7 @@ export namespace alb {
          */
         port: number;
         /**
-         * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+         * Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
          */
         remoteEnabled: string;
         /**
@@ -1232,22 +1232,22 @@ export namespace alb {
          */
         serverId: string;
         /**
-         * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+         * Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
          */
         type: string;
         /**
-         * Weight of the backend server.
+         * Backend server weight.
          */
         weight: number;
     }
 
     export interface ServerGroupStickySessionConfig {
         /**
-         * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+         * Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
          */
         cookie: string;
         /**
-         * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+         * Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          */
         cookieTimeout: number;
         /**
@@ -1255,18 +1255,18 @@ export namespace alb {
          */
         stickySessionEnabled: string;
         /**
-         * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
+         * Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
          */
         stickySessionType: string;
     }
 
     export interface ServerGroupTag {
         /**
-         * Tag key. Tag keys for the same resource must be unique.
+         * Tag key. Duplicate tag keys are not allowed for the same resource.
          */
         key: string;
         /**
-         * Tag value of the tag.
+         * Tag value.
          */
         value: string;
     }
@@ -10127,43 +10127,53 @@ export namespace config {
 }
 
 export namespace cr {
+    export interface GetRegistryEndpoint {
+        /**
+         * Public IP allowlist
+         */
+        aclPolicies: outputs.cr.GetRegistryEndpointAclPolicy[];
+        /**
+         * Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         */
+        enabled: boolean;
+        /**
+         * Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         */
+        status: string;
+    }
+
+    export interface GetRegistryEndpointAclPolicy {
+        /**
+         * IP entry address
+         */
+        description: string;
+        /**
+         * IP entry description
+         */
+        entry: string;
+    }
+
     export interface GetRegistryProxyCache {
         /**
-         * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+         * Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
          */
         type: string;
     }
 
     export interface GetRegistryStatus {
         /**
-         * Creating, [ Progressing ]: Creating
-         * Running, [ Ok ]: Running
-         * Running, [ Degraded ]: Running
-         * Stopped, [ Balance ]: Suspended due to insufficient balance
-         * Stopped, [ Released ]: Pending reclamation
-         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-         * Starting, [ Progressing ]: Starting
-         * Deleting, [ Progressing ]: Deleting
-         * Failed, [ Unknown ]: Abnormal
+         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
          */
         conditions: string[];
         /**
-         * Creating, [ Progressing ]: Creating
-         * Running, [ Ok ]: Running
-         * Running, [ Degraded ]: Running
-         * Stopped, [ Balance ]: Suspended due to insufficient balance
-         * Stopped, [ Released ]: Pending reclamation
-         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-         * Starting, [ Progressing ]: Starting
-         * Deleting, [ Progressing ]: Deleting
-         * Failed, [ Unknown ]: Abnormal
+         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
          */
         phase: string;
     }
 
     export interface GetRegistryTag {
         /**
-         * Tag key values
+         * Tag key
          */
         key: string;
         /**
@@ -10172,43 +10182,50 @@ export namespace cr {
         value: string;
     }
 
+    export interface RegistryEndpoint {
+        aclPolicies: outputs.cr.RegistryEndpointAclPolicy[];
+        /**
+         * Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         */
+        enabled: boolean;
+        /**
+         * Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         */
+        status: string;
+    }
+
+    export interface RegistryEndpointAclPolicy {
+        /**
+         * IP entry address
+         */
+        description: string;
+        /**
+         * IP entry description
+         */
+        entry: string;
+    }
+
     export interface RegistryProxyCache {
         /**
-         * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+         * Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
          */
         type: string;
     }
 
     export interface RegistryStatus {
         /**
-         * Creating, [ Progressing ]: Creating
-         * Running, [ Ok ]: Running
-         * Running, [ Degraded ]: Running
-         * Stopped, [ Balance ]: Suspended due to insufficient balance
-         * Stopped, [ Released ]: Pending reclamation
-         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-         * Starting, [ Progressing ]: Starting
-         * Deleting, [ Progressing ]: Deleting
-         * Failed, [ Unknown ]: Abnormal
+         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
          */
         conditions: string[];
         /**
-         * Creating, [ Progressing ]: Creating
-         * Running, [ Ok ]: Running
-         * Running, [ Degraded ]: Running
-         * Stopped, [ Balance ]: Suspended due to insufficient balance
-         * Stopped, [ Released ]: Pending reclamation
-         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-         * Starting, [ Progressing ]: Starting
-         * Deleting, [ Progressing ]: Deleting
-         * Failed, [ Unknown ]: Abnormal
+         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
          */
         phase: string;
     }
 
     export interface RegistryTag {
         /**
-         * Tag key values
+         * Tag key
          */
         key: string;
         /**
@@ -16182,6 +16199,25 @@ export namespace organization {
         mainName: string;
     }
 
+    export interface GetServiceControlPolicyTarget {
+        /**
+         * Binding time.
+         */
+        attachedTime: string;
+        /**
+         * Target ID.
+         */
+        targetId: string;
+        /**
+         * Target name.
+         */
+        targetName: string;
+        /**
+         * Target type: 1. OU 2. Account.
+         */
+        targetType: string;
+    }
+
     export interface OrganizationOrganization {
         /**
          * Creation Time
@@ -16226,6 +16262,17 @@ export namespace organization {
          * Entity Name
          */
         mainName: string;
+    }
+
+    export interface ServiceControlPolicyTarget {
+        /**
+         * Target ID.
+         */
+        targetId: string;
+        /**
+         * Target type: 1. OU 2. Account.
+         */
+        targetType: string;
     }
 
 }
@@ -21941,6 +21988,17 @@ export namespace tls {
 }
 
 export namespace transitrouter {
+    export interface GetPeerAttachmentTag {
+        /**
+         * Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+         */
+        key: string;
+        /**
+         * Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+         */
+        value: string;
+    }
+
     export interface GetTransitRouterAttachment {
         /**
          * Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
@@ -22086,6 +22144,17 @@ export namespace transitrouter {
         key: string;
         /**
          * User tag value.
+         */
+        value: string;
+    }
+
+    export interface PeerAttachmentTag {
+        /**
+         * Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+         */
+        key: string;
+        /**
+         * Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
          */
         value: string;
     }
@@ -27982,6 +28051,17 @@ export namespace vpn {
         value: string;
     }
 
+    export interface GetSslVpnClientCertTag {
+        /**
+         * Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+         */
+        key: string;
+        /**
+         * Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value: string;
+    }
+
     export interface GetVpnConnectionBgpInfo {
         /**
          * Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
@@ -28252,6 +28332,17 @@ export namespace vpn {
         key: string;
         /**
          * VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value: string;
+    }
+
+    export interface SslVpnClientCertTag {
+        /**
+         * Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+         */
+        key: string;
+        /**
+         * Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
          */
         value: string;
     }

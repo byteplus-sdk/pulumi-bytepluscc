@@ -16,14 +16,14 @@ public final class AclAclEntryArgs extends com.pulumi.resources.ResourceArgs {
     public static final AclAclEntryArgs Empty = new AclAclEntryArgs();
 
     /**
-     * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+     * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class AclAclEntryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IP entry address range; only CIDR addresses are supported
+     * IP entry address range. Only CIDR addresses are supported.
      * 
      */
     @Import(name="entry")
     private @Nullable Output<String> entry;
 
     /**
-     * @return IP entry address range; only CIDR addresses are supported
+     * @return IP entry address range. Only CIDR addresses are supported.
      * 
      */
     public Optional<Output<String>> entry() {
@@ -71,7 +71,7 @@ public final class AclAclEntryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+         * @param description Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AclAclEntryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+         * @param description Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class AclAclEntryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param entry IP entry address range; only CIDR addresses are supported
+         * @param entry IP entry address range. Only CIDR addresses are supported.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class AclAclEntryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param entry IP entry address range; only CIDR addresses are supported
+         * @param entry IP entry address range. Only CIDR addresses are supported.
          * 
          * @return builder
          * 

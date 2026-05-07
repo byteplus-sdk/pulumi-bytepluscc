@@ -119,6 +119,112 @@ func (o CustomerGatewayTagArrayOutput) Index(i pulumi.IntInput) CustomerGatewayT
 	}).(CustomerGatewayTagOutput)
 }
 
+type SslVpnClientCertTag struct {
+	// Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+	Key *string `pulumi:"key"`
+	// Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value *string `pulumi:"value"`
+}
+
+// SslVpnClientCertTagInput is an input type that accepts SslVpnClientCertTagArgs and SslVpnClientCertTagOutput values.
+// You can construct a concrete instance of `SslVpnClientCertTagInput` via:
+//
+//	SslVpnClientCertTagArgs{...}
+type SslVpnClientCertTagInput interface {
+	pulumi.Input
+
+	ToSslVpnClientCertTagOutput() SslVpnClientCertTagOutput
+	ToSslVpnClientCertTagOutputWithContext(context.Context) SslVpnClientCertTagOutput
+}
+
+type SslVpnClientCertTagArgs struct {
+	// Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SslVpnClientCertTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SslVpnClientCertTag)(nil)).Elem()
+}
+
+func (i SslVpnClientCertTagArgs) ToSslVpnClientCertTagOutput() SslVpnClientCertTagOutput {
+	return i.ToSslVpnClientCertTagOutputWithContext(context.Background())
+}
+
+func (i SslVpnClientCertTagArgs) ToSslVpnClientCertTagOutputWithContext(ctx context.Context) SslVpnClientCertTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SslVpnClientCertTagOutput)
+}
+
+// SslVpnClientCertTagArrayInput is an input type that accepts SslVpnClientCertTagArray and SslVpnClientCertTagArrayOutput values.
+// You can construct a concrete instance of `SslVpnClientCertTagArrayInput` via:
+//
+//	SslVpnClientCertTagArray{ SslVpnClientCertTagArgs{...} }
+type SslVpnClientCertTagArrayInput interface {
+	pulumi.Input
+
+	ToSslVpnClientCertTagArrayOutput() SslVpnClientCertTagArrayOutput
+	ToSslVpnClientCertTagArrayOutputWithContext(context.Context) SslVpnClientCertTagArrayOutput
+}
+
+type SslVpnClientCertTagArray []SslVpnClientCertTagInput
+
+func (SslVpnClientCertTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SslVpnClientCertTag)(nil)).Elem()
+}
+
+func (i SslVpnClientCertTagArray) ToSslVpnClientCertTagArrayOutput() SslVpnClientCertTagArrayOutput {
+	return i.ToSslVpnClientCertTagArrayOutputWithContext(context.Background())
+}
+
+func (i SslVpnClientCertTagArray) ToSslVpnClientCertTagArrayOutputWithContext(ctx context.Context) SslVpnClientCertTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SslVpnClientCertTagArrayOutput)
+}
+
+type SslVpnClientCertTagOutput struct{ *pulumi.OutputState }
+
+func (SslVpnClientCertTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SslVpnClientCertTag)(nil)).Elem()
+}
+
+func (o SslVpnClientCertTagOutput) ToSslVpnClientCertTagOutput() SslVpnClientCertTagOutput {
+	return o
+}
+
+func (o SslVpnClientCertTagOutput) ToSslVpnClientCertTagOutputWithContext(ctx context.Context) SslVpnClientCertTagOutput {
+	return o
+}
+
+// Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+func (o SslVpnClientCertTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SslVpnClientCertTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+func (o SslVpnClientCertTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SslVpnClientCertTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SslVpnClientCertTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SslVpnClientCertTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SslVpnClientCertTag)(nil)).Elem()
+}
+
+func (o SslVpnClientCertTagArrayOutput) ToSslVpnClientCertTagArrayOutput() SslVpnClientCertTagArrayOutput {
+	return o
+}
+
+func (o SslVpnClientCertTagArrayOutput) ToSslVpnClientCertTagArrayOutputWithContext(ctx context.Context) SslVpnClientCertTagArrayOutput {
+	return o
+}
+
+func (o SslVpnClientCertTagArrayOutput) Index(i pulumi.IntInput) SslVpnClientCertTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SslVpnClientCertTag {
+		return vs[0].([]SslVpnClientCertTag)[vs[1].(int)]
+	}).(SslVpnClientCertTagOutput)
+}
+
 type VpnConnectionBgpInfo struct {
 	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
 	EnableBgp *bool `pulumi:"enableBgp"`
@@ -2234,6 +2340,112 @@ func (o GetCustomerGatewayTagArrayOutput) Index(i pulumi.IntInput) GetCustomerGa
 	}).(GetCustomerGatewayTagOutput)
 }
 
+type GetSslVpnClientCertTag struct {
+	// Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+	Key string `pulumi:"key"`
+	// Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value string `pulumi:"value"`
+}
+
+// GetSslVpnClientCertTagInput is an input type that accepts GetSslVpnClientCertTagArgs and GetSslVpnClientCertTagOutput values.
+// You can construct a concrete instance of `GetSslVpnClientCertTagInput` via:
+//
+//	GetSslVpnClientCertTagArgs{...}
+type GetSslVpnClientCertTagInput interface {
+	pulumi.Input
+
+	ToGetSslVpnClientCertTagOutput() GetSslVpnClientCertTagOutput
+	ToGetSslVpnClientCertTagOutputWithContext(context.Context) GetSslVpnClientCertTagOutput
+}
+
+type GetSslVpnClientCertTagArgs struct {
+	// Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSslVpnClientCertTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSslVpnClientCertTag)(nil)).Elem()
+}
+
+func (i GetSslVpnClientCertTagArgs) ToGetSslVpnClientCertTagOutput() GetSslVpnClientCertTagOutput {
+	return i.ToGetSslVpnClientCertTagOutputWithContext(context.Background())
+}
+
+func (i GetSslVpnClientCertTagArgs) ToGetSslVpnClientCertTagOutputWithContext(ctx context.Context) GetSslVpnClientCertTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSslVpnClientCertTagOutput)
+}
+
+// GetSslVpnClientCertTagArrayInput is an input type that accepts GetSslVpnClientCertTagArray and GetSslVpnClientCertTagArrayOutput values.
+// You can construct a concrete instance of `GetSslVpnClientCertTagArrayInput` via:
+//
+//	GetSslVpnClientCertTagArray{ GetSslVpnClientCertTagArgs{...} }
+type GetSslVpnClientCertTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSslVpnClientCertTagArrayOutput() GetSslVpnClientCertTagArrayOutput
+	ToGetSslVpnClientCertTagArrayOutputWithContext(context.Context) GetSslVpnClientCertTagArrayOutput
+}
+
+type GetSslVpnClientCertTagArray []GetSslVpnClientCertTagInput
+
+func (GetSslVpnClientCertTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSslVpnClientCertTag)(nil)).Elem()
+}
+
+func (i GetSslVpnClientCertTagArray) ToGetSslVpnClientCertTagArrayOutput() GetSslVpnClientCertTagArrayOutput {
+	return i.ToGetSslVpnClientCertTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSslVpnClientCertTagArray) ToGetSslVpnClientCertTagArrayOutputWithContext(ctx context.Context) GetSslVpnClientCertTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSslVpnClientCertTagArrayOutput)
+}
+
+type GetSslVpnClientCertTagOutput struct{ *pulumi.OutputState }
+
+func (GetSslVpnClientCertTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSslVpnClientCertTag)(nil)).Elem()
+}
+
+func (o GetSslVpnClientCertTagOutput) ToGetSslVpnClientCertTagOutput() GetSslVpnClientCertTagOutput {
+	return o
+}
+
+func (o GetSslVpnClientCertTagOutput) ToGetSslVpnClientCertTagOutputWithContext(ctx context.Context) GetSslVpnClientCertTagOutput {
+	return o
+}
+
+// Tag key (Key) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag key, range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of 'sys:' in any case. Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1–128 characters. Note: Duplicate tag keys are not allowed for the same resource.
+func (o GetSslVpnClientCertTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSslVpnClientCertTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+func (o GetSslVpnClientCertTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSslVpnClientCertTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSslVpnClientCertTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSslVpnClientCertTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSslVpnClientCertTag)(nil)).Elem()
+}
+
+func (o GetSslVpnClientCertTagArrayOutput) ToGetSslVpnClientCertTagArrayOutput() GetSslVpnClientCertTagArrayOutput {
+	return o
+}
+
+func (o GetSslVpnClientCertTagArrayOutput) ToGetSslVpnClientCertTagArrayOutputWithContext(ctx context.Context) GetSslVpnClientCertTagArrayOutput {
+	return o
+}
+
+func (o GetSslVpnClientCertTagArrayOutput) Index(i pulumi.IntInput) GetSslVpnClientCertTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSslVpnClientCertTag {
+		return vs[0].([]GetSslVpnClientCertTag)[vs[1].(int)]
+	}).(GetSslVpnClientCertTagOutput)
+}
+
 type GetVpnConnectionBgpInfo struct {
 	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
 	EnableBgp bool `pulumi:"enableBgp"`
@@ -3396,6 +3608,8 @@ func (o GetVpnGatewayTagArrayOutput) Index(i pulumi.IntInput) GetVpnGatewayTagOu
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagInput)(nil)).Elem(), CustomerGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagArrayInput)(nil)).Elem(), CustomerGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SslVpnClientCertTagInput)(nil)).Elem(), SslVpnClientCertTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SslVpnClientCertTagArrayInput)(nil)).Elem(), SslVpnClientCertTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionBgpInfoInput)(nil)).Elem(), VpnConnectionBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionBgpInfoPtrInput)(nil)).Elem(), VpnConnectionBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionHealthCheckerInput)(nil)).Elem(), VpnConnectionHealthCheckerArgs{})
@@ -3418,6 +3632,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagArrayInput)(nil)).Elem(), VpnGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagInput)(nil)).Elem(), GetCustomerGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagArrayInput)(nil)).Elem(), GetCustomerGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSslVpnClientCertTagInput)(nil)).Elem(), GetSslVpnClientCertTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSslVpnClientCertTagArrayInput)(nil)).Elem(), GetSslVpnClientCertTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionBgpInfoInput)(nil)).Elem(), GetVpnConnectionBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionHealthCheckerInput)(nil)).Elem(), GetVpnConnectionHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionHealthCheckerArrayInput)(nil)).Elem(), GetVpnConnectionHealthCheckerArray{})
@@ -3434,6 +3650,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagArrayInput)(nil)).Elem(), GetVpnGatewayTagArray{})
 	pulumi.RegisterOutputType(CustomerGatewayTagOutput{})
 	pulumi.RegisterOutputType(CustomerGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(SslVpnClientCertTagOutput{})
+	pulumi.RegisterOutputType(SslVpnClientCertTagArrayOutput{})
 	pulumi.RegisterOutputType(VpnConnectionBgpInfoOutput{})
 	pulumi.RegisterOutputType(VpnConnectionBgpInfoPtrOutput{})
 	pulumi.RegisterOutputType(VpnConnectionHealthCheckerOutput{})
@@ -3456,6 +3674,8 @@ func init() {
 	pulumi.RegisterOutputType(VpnGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCustomerGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetCustomerGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSslVpnClientCertTagOutput{})
+	pulumi.RegisterOutputType(GetSslVpnClientCertTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionBgpInfoOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionHealthCheckerOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionHealthCheckerArrayOutput{})

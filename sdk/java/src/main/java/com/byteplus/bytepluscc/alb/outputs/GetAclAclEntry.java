@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAclAclEntry {
     /**
-     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     private String description;
     /**
-     * @return IP entry address range; only CIDR addresses are supported
+     * @return IP entry address range. Only CIDR addresses are supported.
      * 
      */
     private String entry;
 
     private GetAclAclEntry() {}
     /**
-     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return IP entry address range; only CIDR addresses are supported
+     * @return IP entry address range. Only CIDR addresses are supported.
      * 
      */
     public String entry() {

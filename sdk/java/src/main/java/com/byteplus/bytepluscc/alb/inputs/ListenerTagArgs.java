@@ -16,14 +16,14 @@ public final class ListenerTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final ListenerTagArgs Empty = new ListenerTagArgs();
 
     /**
-     * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource must be unique.
+     * User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource cannot be duplicated.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource must be unique.
+     * @return User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource cannot be duplicated.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ListenerTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}.
+     * User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}.
+     * @return User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ListenerTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource must be unique.
+         * @param key User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource cannot be duplicated.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ListenerTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource must be unique.
+         * @param key User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}. Tag keys for the same resource cannot be duplicated.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ListenerTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}.
+         * @param value User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ListenerTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}.
+         * @param value User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and {@literal @}.
          * 
          * @return builder
          * 

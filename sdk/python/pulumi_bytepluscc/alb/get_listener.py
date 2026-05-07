@@ -127,7 +127,7 @@ class GetListenerResult:
     @pulumi.getter(name="accessLogRecordCustomizedHeadersEnabled")
     def access_log_record_customized_headers_enabled(self) -> builtins.str:
         """
-        Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+        Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
         """
         return pulumi.get(self, "access_log_record_customized_headers_enabled")
 
@@ -143,7 +143,7 @@ class GetListenerResult:
     @pulumi.getter(name="aclStatus")
     def acl_status(self) -> builtins.str:
         """
-        Enable access control. Values: on: enabled. off: disabled (default).
+        Whether access control is enabled. Values: on: enabled. off: not enabled (default).
         """
         return pulumi.get(self, "acl_status")
 
@@ -151,7 +151,7 @@ class GetListenerResult:
     @pulumi.getter(name="aclType")
     def acl_type(self) -> builtins.str:
         """
-        Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+        Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
         """
         return pulumi.get(self, "acl_type")
 
@@ -159,7 +159,7 @@ class GetListenerResult:
     @pulumi.getter(name="caCertificateId")
     def ca_certificate_id(self) -> builtins.str:
         """
-        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
         """
         return pulumi.get(self, "ca_certificate_id")
 
@@ -175,7 +175,7 @@ class GetListenerResult:
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> builtins.str:
         """
-        Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+        Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -191,7 +191,7 @@ class GetListenerResult:
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> builtins.str:
         """
-        The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+        Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -215,7 +215,7 @@ class GetListenerResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -223,7 +223,7 @@ class GetListenerResult:
     @pulumi.getter(name="domainExtensions")
     def domain_extensions(self) -> Sequence['outputs.GetListenerDomainExtensionResult']:
         """
-        List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
+        List of extension domains associated with the HTTPS listener. An HTTPS listener can be associated with up to 20 extension domains.
         """
         return pulumi.get(self, "domain_extensions")
 
@@ -231,7 +231,7 @@ class GetListenerResult:
     @pulumi.getter(name="enableHttp2")
     def enable_http2(self) -> builtins.str:
         """
-        HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+        HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
         """
         return pulumi.get(self, "enable_http2")
 
@@ -239,7 +239,7 @@ class GetListenerResult:
     @pulumi.getter(name="enableQuic")
     def enable_quic(self) -> builtins.str:
         """
-        QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+        QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
         """
         return pulumi.get(self, "enable_quic")
 
@@ -247,7 +247,7 @@ class GetListenerResult:
     @pulumi.getter
     def enabled(self) -> builtins.str:
         """
-        Listener on/off status. Values: on: On (default). off: Off.
+        Listener on/off status. Values: on: enabled (default); off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -271,7 +271,7 @@ class GetListenerResult:
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> builtins.str:
         """
-        Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+        Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
         """
         return pulumi.get(self, "listener_name")
 
@@ -279,7 +279,7 @@ class GetListenerResult:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> builtins.str:
         """
-        Load balancer instance ID to which the listener belongs.
+        Load balancer instance ID associated with the listener.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -295,7 +295,7 @@ class GetListenerResult:
     @pulumi.getter(name="pcaRootCaCertificateId")
     def pca_root_ca_certificate_id(self) -> builtins.str:
         """
-        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
         """
         return pulumi.get(self, "pca_root_ca_certificate_id")
 
@@ -303,7 +303,7 @@ class GetListenerResult:
     @pulumi.getter(name="pcaSubCaCertificateId")
     def pca_sub_ca_certificate_id(self) -> builtins.str:
         """
-        CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+        CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
         """
         return pulumi.get(self, "pca_sub_ca_certificate_id")
 
@@ -311,7 +311,7 @@ class GetListenerResult:
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        The listener port. Values: 1   - 65535.
+        Listener port. Value range: 1   - 65535.
         """
         return pulumi.get(self, "port")
 
@@ -319,7 +319,7 @@ class GetListenerResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        Name of the project to which the listener belongs.
+        Project name to which the listener belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -351,7 +351,7 @@ class GetListenerResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+        Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
         """
         return pulumi.get(self, "status")
 
@@ -359,7 +359,7 @@ class GetListenerResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetListenerTagResult']:
         """
-        Listener tags.
+        Tags associated with the listener.
         """
         return pulumi.get(self, "tags")
 
@@ -367,7 +367,7 @@ class GetListenerResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        Time of the listener's most recent operation.
+        The most recent operation time of the listener.
         """
         return pulumi.get(self, "updated_time")
 

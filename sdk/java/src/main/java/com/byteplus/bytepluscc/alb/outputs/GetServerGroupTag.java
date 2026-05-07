@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetServerGroupTag {
     /**
-     * @return Tag key. Tag keys for the same resource must be unique.
+     * @return Tag key. Duplicate tag keys are not allowed for the same resource.
      * 
      */
     private String key;
     /**
-     * @return Tag value of the tag.
+     * @return Tag value.
      * 
      */
     private String value;
 
     private GetServerGroupTag() {}
     /**
-     * @return Tag key. Tag keys for the same resource must be unique.
+     * @return Tag key. Duplicate tag keys are not allowed for the same resource.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return Tag value of the tag.
+     * @return Tag value.
      * 
      */
     public String value() {

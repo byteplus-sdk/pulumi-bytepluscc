@@ -16,14 +16,14 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
     public static final ServerGroupTagArgs Empty = new ServerGroupTagArgs();
 
     /**
-     * Tag key. Tag keys for the same resource must be unique.
+     * Tag key. Duplicate tag keys are not allowed for the same resource.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return Tag key. Tag keys for the same resource must be unique.
+     * @return Tag key. Duplicate tag keys are not allowed for the same resource.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Tag value of the tag.
+     * Tag value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Tag value of the tag.
+     * @return Tag value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key Tag key. Tag keys for the same resource must be unique.
+         * @param key Tag key. Duplicate tag keys are not allowed for the same resource.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key Tag key. Tag keys for the same resource must be unique.
+         * @param key Tag key. Duplicate tag keys are not allowed for the same resource.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value Tag value of the tag.
+         * @param value Tag value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value Tag value of the tag.
+         * @param value Tag value.
          * 
          * @return builder
          * 

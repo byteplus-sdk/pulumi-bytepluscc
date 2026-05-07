@@ -39,16 +39,16 @@ class ServerGroupArgs:
         """
         The set of arguments for constructing a ServerGroup resource.
         :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
-        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         :param pulumi.Input[builtins.str] description: Description of the backend server group.
-        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: Server group health check configuration information.
-        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: Health check configuration information for the server group.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Currently, only IPv4 is supported.
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
         :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
-        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
-        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+        :param pulumi.Input[builtins.str] server_group_name: Backend server group name.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: Session persistence parameter information.
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
@@ -95,7 +95,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -119,7 +119,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> Optional[pulumi.Input['ServerGroupHealthCheckArgs']]:
         """
-        Server group health check configuration information.
+        Health check configuration information for the server group.
         """
         return pulumi.get(self, "health_check")
 
@@ -131,7 +131,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP address type of the server group. Only IPv4 is supported.
+        IP address type of the server group. Currently, only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -167,7 +167,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def scheduler(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -179,7 +179,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Name of the backend server group.
+        Backend server group name.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -191,7 +191,7 @@ class ServerGroupArgs:
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -212,7 +212,7 @@ class ServerGroupArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -267,18 +267,18 @@ class _ServerGroupState:
         """
         Input properties used for looking up and filtering ServerGroup resources.
         :param pulumi.Input[builtins.str] create_time: Creation time of the backend server group.
-        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         :param pulumi.Input[builtins.str] description: Description of the backend server group.
-        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: Server group health check configuration information.
-        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: Health check configuration information for the server group.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Currently, only IPv4 is supported.
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
         :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
-        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
         :param pulumi.Input[builtins.int] server_count: Number of backend servers in the server group.
-        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group.
-        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
-        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[builtins.str] server_group_id: Backend server group ID.
+        :param pulumi.Input[builtins.str] server_group_name: Backend server group name.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: Session persistence parameter information.
         :param pulumi.Input[builtins.str] update_time: Last operation time of the backend server group.
         :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
@@ -338,7 +338,7 @@ class _ServerGroupState:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -362,7 +362,7 @@ class _ServerGroupState:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> Optional[pulumi.Input['ServerGroupHealthCheckArgs']]:
         """
-        Server group health check configuration information.
+        Health check configuration information for the server group.
         """
         return pulumi.get(self, "health_check")
 
@@ -374,7 +374,7 @@ class _ServerGroupState:
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP address type of the server group. Only IPv4 is supported.
+        IP address type of the server group. Currently, only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -419,7 +419,7 @@ class _ServerGroupState:
     @pulumi.getter
     def scheduler(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -443,7 +443,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ID of the backend server group.
+        Backend server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -455,7 +455,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Name of the backend server group.
+        Backend server group name.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -467,7 +467,7 @@ class _ServerGroupState:
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -488,7 +488,7 @@ class _ServerGroupState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -564,7 +564,7 @@ class ServerGroup(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
+        A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your load balancing policy. Backend servers receive and process the requests.
 
         ## Import
 
@@ -574,16 +574,16 @@ class ServerGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         :param pulumi.Input[builtins.str] description: Description of the backend server group.
-        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: Server group health check configuration information.
-        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: Health check configuration information for the server group.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Currently, only IPv4 is supported.
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
         :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
-        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
-        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+        :param pulumi.Input[builtins.str] server_group_name: Backend server group name.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         :param pulumi.Input[Union['ServerGroupStickySessionConfigArgs', 'ServerGroupStickySessionConfigArgsDict']] sticky_session_config: Session persistence parameter information.
         :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
         """
@@ -594,7 +594,7 @@ class ServerGroup(pulumi.CustomResource):
                  args: ServerGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
+        A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your load balancing policy. Backend servers receive and process the requests.
 
         ## Import
 
@@ -698,18 +698,18 @@ class ServerGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] create_time: Creation time of the backend server group.
-        :param pulumi.Input[builtins.str] cross_zone_enabled: Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         :param pulumi.Input[builtins.str] description: Description of the backend server group.
-        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: Server group health check configuration information.
-        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Only IPv4 is supported.
+        :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: Health check configuration information for the server group.
+        :param pulumi.Input[builtins.str] ip_address_type: IP address type of the server group. Currently, only IPv4 is supported.
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the backend server group belongs.
         :param pulumi.Input[builtins.str] protocol: Backend protocol: HTTP, HTTPS.
-        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
         :param pulumi.Input[builtins.int] server_count: Number of backend servers in the server group.
-        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group.
-        :param pulumi.Input[builtins.str] server_group_name: Name of the backend server group.
-        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-        :param pulumi.Input[builtins.str] status: Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        :param pulumi.Input[builtins.str] server_group_id: Backend server group ID.
+        :param pulumi.Input[builtins.str] server_group_name: Backend server group name.
+        :param pulumi.Input[builtins.str] server_group_type: Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        :param pulumi.Input[builtins.str] status: Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         :param pulumi.Input[Union['ServerGroupStickySessionConfigArgs', 'ServerGroupStickySessionConfigArgsDict']] sticky_session_config: Session persistence parameter information.
         :param pulumi.Input[builtins.str] update_time: Last operation time of the backend server group.
         :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the backend server group belongs.
@@ -751,7 +751,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -767,7 +767,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> pulumi.Output['outputs.ServerGroupHealthCheck']:
         """
-        Server group health check configuration information.
+        Health check configuration information for the server group.
         """
         return pulumi.get(self, "health_check")
 
@@ -775,7 +775,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> pulumi.Output[builtins.str]:
         """
-        IP address type of the server group. Only IPv4 is supported.
+        IP address type of the server group. Currently, only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -804,7 +804,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def scheduler(self) -> pulumi.Output[builtins.str]:
         """
-        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -820,7 +820,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        ID of the backend server group.
+        Backend server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -828,7 +828,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        Name of the backend server group.
+        Backend server group name.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -836,7 +836,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> pulumi.Output[builtins.str]:
         """
-        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -849,7 +849,7 @@ class ServerGroup(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         """
         return pulumi.get(self, "status")
 

@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Inputs
     public sealed class RegistryProxyCacheGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+        /// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

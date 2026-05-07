@@ -30,29 +30,29 @@ type LookupAclArgs struct {
 
 // A collection of values returned by getAcl.
 type LookupAclResult struct {
-	// Details of IP entries in the access control policy group
+	// Detailed information about IP entries in the access control policy group.
 	AclEntries []GetAclAclEntry `pulumi:"aclEntries"`
-	// Number of IP entries in the access control policy group
+	// Number of IP entries in the access control policy group.
 	AclEntryCount int `pulumi:"aclEntryCount"`
-	// Access control policy group ID
+	// Access control policy group ID.
 	AclId string `pulumi:"aclId"`
-	// Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+	// Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
 	AclName string `pulumi:"aclName"`
-	// Creation time of the access control policy group
+	// Creation time of the access control policy group.
 	CreatedTime string `pulumi:"createdTime"`
-	// Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+	// Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// Details of listeners associated with the access control policy group
+	// Detailed information about listeners associated with the access control policy group.
 	Listeners []GetAclListener `pulumi:"listeners"`
-	// Project name to which the access control policy group belongs
+	// Name of the project to which the access control policy group belongs.
 	ProjectName string `pulumi:"projectName"`
-	// Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+	// Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
 	Status string `pulumi:"status"`
-	// Tags bound to the access control policy group
+	// Tags bound to the access control policy group.
 	Tags []GetAclTag `pulumi:"tags"`
-	// Last operation time of the access control policy group
+	// Most recent operation time for the access control policy group.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -90,32 +90,32 @@ func (o LookupAclResultOutput) ToLookupAclResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// Details of IP entries in the access control policy group
+// Detailed information about IP entries in the access control policy group.
 func (o LookupAclResultOutput) AclEntries() GetAclAclEntryArrayOutput {
 	return o.ApplyT(func(v LookupAclResult) []GetAclAclEntry { return v.AclEntries }).(GetAclAclEntryArrayOutput)
 }
 
-// Number of IP entries in the access control policy group
+// Number of IP entries in the access control policy group.
 func (o LookupAclResultOutput) AclEntryCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAclResult) int { return v.AclEntryCount }).(pulumi.IntOutput)
 }
 
-// Access control policy group ID
+// Access control policy group ID.
 func (o LookupAclResultOutput) AclId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.AclId }).(pulumi.StringOutput)
 }
 
-// Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+// Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
 func (o LookupAclResultOutput) AclName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.AclName }).(pulumi.StringOutput)
 }
 
-// Creation time of the access control policy group
+// Creation time of the access control policy group.
 func (o LookupAclResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+// Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 func (o LookupAclResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -125,27 +125,27 @@ func (o LookupAclResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Details of listeners associated with the access control policy group
+// Detailed information about listeners associated with the access control policy group.
 func (o LookupAclResultOutput) Listeners() GetAclListenerArrayOutput {
 	return o.ApplyT(func(v LookupAclResult) []GetAclListener { return v.Listeners }).(GetAclListenerArrayOutput)
 }
 
-// Project name to which the access control policy group belongs
+// Name of the project to which the access control policy group belongs.
 func (o LookupAclResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+// Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
 func (o LookupAclResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Tags bound to the access control policy group
+// Tags bound to the access control policy group.
 func (o LookupAclResultOutput) Tags() GetAclTagArrayOutput {
 	return o.ApplyT(func(v LookupAclResult) []GetAclTag { return v.Tags }).(GetAclTagArrayOutput)
 }
 
-// Last operation time of the access control policy group
+// Most recent operation time for the access control policy group.
 func (o LookupAclResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAclResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

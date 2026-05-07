@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * Each ALB instance must have at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under one ALB instance and configure different protocols for each listener to handle client requests using different protocols.
+ * Each ALB instance requires at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under a single ALB instance and configure different listening protocols for each listener to handle client requests using different protocols.
  * 
  * ## Example Usage
  * 
@@ -36,14 +36,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:alb/listener:Listener")
 public class Listener extends com.pulumi.resources.CustomResource {
     /**
-     * Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
+     * Whether the listener has enabled &#39;Record custom header in access logs&#39;: on: enabled. off: not enabled.
      * 
      */
     @Export(name="accessLogRecordCustomizedHeadersEnabled", refs={String.class}, tree="[0]")
     private Output<String> accessLogRecordCustomizedHeadersEnabled;
 
     /**
-     * @return Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
+     * @return Whether the listener has enabled &#39;Record custom header in access logs&#39;: on: enabled. off: not enabled.
      * 
      */
     public Output<String> accessLogRecordCustomizedHeadersEnabled() {
@@ -64,42 +64,42 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.aclIds;
     }
     /**
-     * Enable access control. Values: on: enabled. off: disabled (default).
+     * Whether access control is enabled. Values: on: enabled. off: not enabled (default).
      * 
      */
     @Export(name="aclStatus", refs={String.class}, tree="[0]")
     private Output<String> aclStatus;
 
     /**
-     * @return Enable access control. Values: on: enabled. off: disabled (default).
+     * @return Whether access control is enabled. Values: on: enabled. off: not enabled (default).
      * 
      */
     public Output<String> aclStatus() {
         return this.aclStatus;
     }
     /**
-     * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+     * Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
      * 
      */
     @Export(name="aclType", refs={String.class}, tree="[0]")
     private Output<String> aclType;
 
     /**
-     * @return Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+     * @return Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
      * 
      */
     public Output<String> aclType() {
         return this.aclType;
     }
     /**
-     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
      * 
      */
     @Export(name="caCertificateId", refs={String.class}, tree="[0]")
     private Output<String> caCertificateId;
 
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
      * 
      */
     public Output<String> caCertificateId() {
@@ -120,14 +120,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.caCertificateSource;
     }
     /**
-     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
      * 
      */
     @Export(name="certCenterCertificateId", refs={String.class}, tree="[0]")
     private Output<String> certCenterCertificateId;
 
     /**
-     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
      * 
      */
     public Output<String> certCenterCertificateId() {
@@ -148,14 +148,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.certificateId;
     }
     /**
-     * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     @Export(name="certificateSource", refs={String.class}, tree="[0]")
     private Output<String> certificateSource;
 
     /**
-     * @return The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     public Output<String> certificateSource() {
@@ -190,14 +190,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.customizedCfgId;
     }
     /**
-     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Output<String> description() {
@@ -210,42 +210,42 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.domainExtensions;
     }
     /**
-     * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+     * HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
      * 
      */
     @Export(name="enableHttp2", refs={String.class}, tree="[0]")
     private Output<String> enableHttp2;
 
     /**
-     * @return HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+     * @return HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
      * 
      */
     public Output<String> enableHttp2() {
         return this.enableHttp2;
     }
     /**
-     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
      * 
      */
     @Export(name="enableQuic", refs={String.class}, tree="[0]")
     private Output<String> enableQuic;
 
     /**
-     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
      * 
      */
     public Output<String> enableQuic() {
         return this.enableQuic;
     }
     /**
-     * Listener on/off status. Values: on: On (default). off: Off.
+     * Listener on/off status. Values: on: enabled (default); off: disabled.
      * 
      */
     @Export(name="enabled", refs={String.class}, tree="[0]")
     private Output<String> enabled;
 
     /**
-     * @return Listener on/off status. Values: on: On (default). off: Off.
+     * @return Listener on/off status. Values: on: enabled (default); off: disabled.
      * 
      */
     public Output<String> enabled() {
@@ -266,28 +266,28 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.listenerId;
     }
     /**
-     * Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+     * Listener name. If not specified, it is named in the &#34;protocol-port&#34; format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
      * 
      */
     @Export(name="listenerName", refs={String.class}, tree="[0]")
     private Output<String> listenerName;
 
     /**
-     * @return Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+     * @return Listener name. If not specified, it is named in the &#34;protocol-port&#34; format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
      * 
      */
     public Output<String> listenerName() {
         return this.listenerName;
     }
     /**
-     * Load balancer instance ID to which the listener belongs.
+     * Load balancer instance ID associated with the listener.
      * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
-     * @return Load balancer instance ID to which the listener belongs.
+     * @return Load balancer instance ID associated with the listener.
      * 
      */
     public Output<String> loadBalancerId() {
@@ -308,56 +308,56 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.pcaLeafCertificateId;
     }
     /**
-     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      * 
      */
     @Export(name="pcaRootCaCertificateId", refs={String.class}, tree="[0]")
     private Output<String> pcaRootCaCertificateId;
 
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      * 
      */
     public Output<String> pcaRootCaCertificateId() {
         return this.pcaRootCaCertificateId;
     }
     /**
-     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      * 
      */
     @Export(name="pcaSubCaCertificateId", refs={String.class}, tree="[0]")
     private Output<String> pcaSubCaCertificateId;
 
     /**
-     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      * 
      */
     public Output<String> pcaSubCaCertificateId() {
         return this.pcaSubCaCertificateId;
     }
     /**
-     * The listener port. Values: 1   - 65535.
+     * Listener port. Value range: 1   - 65535.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
-     * @return The listener port. Values: 1   - 65535.
+     * @return Listener port. Value range: 1   - 65535.
      * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
-     * Name of the project to which the listener belongs.
+     * Project name to which the listener belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return Name of the project to which the listener belongs.
+     * @return Project name to which the listener belongs.
      * 
      */
     public Output<String> projectName() {
@@ -398,14 +398,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.serverGroups;
     }
     /**
-     * Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+     * Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+     * @return Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
      * 
      */
     public Output<String> status() {
@@ -418,14 +418,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * Time of the listener&#39;s most recent operation.
+     * The most recent operation time of the listener.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return Time of the listener&#39;s most recent operation.
+     * @return The most recent operation time of the listener.
      * 
      */
     public Output<String> updatedTime() {

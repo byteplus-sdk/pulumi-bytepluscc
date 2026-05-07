@@ -32,14 +32,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * ID of the cloud server instance or network interface card.
+     * ID of the cloud server instance or network interface.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return ID of the cloud server instance or network interface card.
+     * @return ID of the cloud server instance or network interface.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -77,14 +77,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+     * Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
      * 
      */
     @Import(name="remoteEnabled")
     private @Nullable Output<String> remoteEnabled;
 
     /**
-     * @return Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+     * @return Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
      * 
      */
     public Optional<Output<String>> remoteEnabled() {
@@ -107,14 +107,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+     * Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+     * @return Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
      * 
      */
     public Optional<Output<String>> type() {
@@ -122,14 +122,14 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Weight of the backend server.
+     * Backend server weight.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return Weight of the backend server.
+     * @return Backend server weight.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -189,7 +189,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param instanceId ID of the cloud server instance or network interface card.
+         * @param instanceId ID of the cloud server instance or network interface.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param instanceId ID of the cloud server instance or network interface card.
+         * @param instanceId ID of the cloud server instance or network interface.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param remoteEnabled Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+         * @param remoteEnabled Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param remoteEnabled Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+         * @param remoteEnabled Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+         * @param type Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+         * @param type Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param weight Weight of the backend server.
+         * @param weight Backend server weight.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ServerGroupServerArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param weight Weight of the backend server.
+         * @param weight Backend server weight.
          * 
          * @return builder
          * 

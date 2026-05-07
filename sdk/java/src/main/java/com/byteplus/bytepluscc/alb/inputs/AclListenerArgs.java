@@ -16,14 +16,14 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     public static final AclListenerArgs Empty = new AclListenerArgs();
 
     /**
-     * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+     * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
      * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
-     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
      * 
      */
     public Optional<Output<String>> aclType() {
@@ -55,7 +55,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+         * @param aclType Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+         * @param aclType Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
          * 
          * @return builder
          * 

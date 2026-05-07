@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
+ * Container Registry (CR) provides secure, highly available hosting for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts.
  *
  * ## Example Usage
  *
@@ -19,6 +19,9 @@ import * as utilities from "../utilities";
  *     project: "default",
  *     name: "test",
  *     type: "Enterprise",
+ *     endpoint: {
+ *         enabled: true,
+ *     },
  *     tags: [{
  *         key: "env",
  *         value: "test",
@@ -61,44 +64,48 @@ export class Registry extends pulumi.CustomResource {
     }
 
     /**
-     * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+     * Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
      */
     public /*out*/ readonly chargeType!: pulumi.Output<string>;
     /**
-     * Creation time of the container registry instance
+     * Time when the container registry instance was created.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * Instance expiration time is only available for HybridCharge billing type
+     * Public endpoint information for the image repository instance
+     */
+    public readonly endpoint!: pulumi.Output<outputs.cr.RegistryEndpoint>;
+    /**
+     * Only applicable when the billing type is HybridCharge. Instance expiration time
      */
     public /*out*/ readonly expireTime!: pulumi.Output<string>;
     /**
-     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Enter the project to associate with the instance. Each instance can only be associated with one project
+     * Specify the project to associate with the instance. Each instance can only be associated with one project
      */
     public readonly project!: pulumi.Output<string>;
     /**
-     * ProxyCache configuration. Required when set as ProxyCache
+     * ProxyCache configuration. Required when set to ProxyCache
      */
     public /*out*/ readonly proxyCache!: pulumi.Output<outputs.cr.RegistryProxyCache>;
     /**
-     * Set as ProxyCache instance
+     * Whether to set as ProxyCache instance
      */
     public /*out*/ readonly proxyCacheEnabled!: pulumi.Output<boolean>;
     /**
-     * Instance auto-renewal type is only available for HybridCharge billing type
+     * Only applicable when the billing type is HybridCharge. Instance auto-renewal type
      */
     public /*out*/ readonly renewType!: pulumi.Output<string>;
     /**
-     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      */
     public readonly status!: pulumi.Output<outputs.cr.RegistryStatus>;
     public readonly tags!: pulumi.Output<outputs.cr.RegistryTag[]>;
     /**
-     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      */
     public readonly type!: pulumi.Output<string>;
 
@@ -117,6 +124,7 @@ export class Registry extends pulumi.CustomResource {
             const state = argsOrState as RegistryState | undefined;
             resourceInputs["chargeType"] = state ? state.chargeType : undefined;
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
+            resourceInputs["endpoint"] = state ? state.endpoint : undefined;
             resourceInputs["expireTime"] = state ? state.expireTime : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["project"] = state ? state.project : undefined;
@@ -131,6 +139,7 @@ export class Registry extends pulumi.CustomResource {
             if ((!args || args.name === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'name'");
             }
+            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["project"] = args ? args.project : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
@@ -153,44 +162,48 @@ export class Registry extends pulumi.CustomResource {
  */
 export interface RegistryState {
     /**
-     * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+     * Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * Creation time of the container registry instance
+     * Time when the container registry instance was created.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * Instance expiration time is only available for HybridCharge billing type
+     * Public endpoint information for the image repository instance
+     */
+    endpoint?: pulumi.Input<inputs.cr.RegistryEndpoint>;
+    /**
+     * Only applicable when the billing type is HybridCharge. Instance expiration time
      */
     expireTime?: pulumi.Input<string>;
     /**
-     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      */
     name?: pulumi.Input<string>;
     /**
-     * Enter the project to associate with the instance. Each instance can only be associated with one project
+     * Specify the project to associate with the instance. Each instance can only be associated with one project
      */
     project?: pulumi.Input<string>;
     /**
-     * ProxyCache configuration. Required when set as ProxyCache
+     * ProxyCache configuration. Required when set to ProxyCache
      */
     proxyCache?: pulumi.Input<inputs.cr.RegistryProxyCache>;
     /**
-     * Set as ProxyCache instance
+     * Whether to set as ProxyCache instance
      */
     proxyCacheEnabled?: pulumi.Input<boolean>;
     /**
-     * Instance auto-renewal type is only available for HybridCharge billing type
+     * Only applicable when the billing type is HybridCharge. Instance auto-renewal type
      */
     renewType?: pulumi.Input<string>;
     /**
-     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      */
     status?: pulumi.Input<inputs.cr.RegistryStatus>;
     tags?: pulumi.Input<pulumi.Input<inputs.cr.RegistryTag>[]>;
     /**
-     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      */
     type?: pulumi.Input<string>;
 }
@@ -200,20 +213,24 @@ export interface RegistryState {
  */
 export interface RegistryArgs {
     /**
-     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * Public endpoint information for the image repository instance
+     */
+    endpoint?: pulumi.Input<inputs.cr.RegistryEndpoint>;
+    /**
+     * Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      */
     name: pulumi.Input<string>;
     /**
-     * Enter the project to associate with the instance. Each instance can only be associated with one project
+     * Specify the project to associate with the instance. Each instance can only be associated with one project
      */
     project?: pulumi.Input<string>;
     /**
-     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      */
     status?: pulumi.Input<inputs.cr.RegistryStatus>;
     tags?: pulumi.Input<pulumi.Input<inputs.cr.RegistryTag>[]>;
     /**
-     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      */
     type?: pulumi.Input<string>;
 }

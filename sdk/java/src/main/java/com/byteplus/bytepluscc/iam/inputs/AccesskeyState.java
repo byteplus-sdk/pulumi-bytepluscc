@@ -16,14 +16,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     public static final AccesskeyState Empty = new AccesskeyState();
 
     /**
-     * Access Key Id.
+     * Key ID (Access Key Id)
      * 
      */
     @Import(name="accessKeyId")
     private @Nullable Output<String> accessKeyId;
 
     /**
-     * @return Access Key Id.
+     * @return Key ID (Access Key Id)
      * 
      */
     public Optional<Output<String>> accessKeyId() {
@@ -31,14 +31,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Key creation time. The time format is ISO8601.
+     * Key creation time (ISO8601 format)
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return Key creation time. The time format is ISO8601.
+     * @return Key creation time (ISO8601 format)
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -46,14 +46,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Last login time.
+     * Last login time
      * 
      */
     @Import(name="lastLoginDate")
     private @Nullable Output<String> lastLoginDate;
 
     /**
-     * @return Last login time.
+     * @return Last login time
      * 
      */
     public Optional<Output<String>> lastLoginDate() {
@@ -61,14 +61,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The last region accessed by the API key.
+     * Last accessed region by the API key
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return The last region accessed by the API key.
+     * @return Last accessed region by the API key
      * 
      */
     public Optional<Output<String>> region() {
@@ -76,14 +76,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The last time the API key was used.
+     * Last usage time of the API key
      * 
      */
     @Import(name="requestTime")
     private @Nullable Output<String> requestTime;
 
     /**
-     * @return The last time the API key was used.
+     * @return Last usage time of the API key
      * 
      */
     public Optional<Output<String>> requestTime() {
@@ -91,14 +91,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Secret Access Key.
+     * Secret Access Key
      * 
      */
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
     /**
-     * @return Secret Access Key.
+     * @return Secret Access Key
      * 
      */
     public Optional<Output<String>> secretAccessKey() {
@@ -106,14 +106,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The English abbreviation of the last service accessed by the API key.
+     * English abbreviation of the last accessed service by the API key
      * 
      */
     @Import(name="service")
     private @Nullable Output<String> service;
 
     /**
-     * @return The English abbreviation of the last service accessed by the API key.
+     * @return English abbreviation of the last accessed service by the API key
      * 
      */
     public Optional<Output<String>> service() {
@@ -121,14 +121,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Key status. active means enabled, inactive means disabled.
+     * Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Key status. active means enabled, inactive means disabled.
+     * @return Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
      * 
      */
     public Optional<Output<String>> status() {
@@ -136,14 +136,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Key update time. The time format is ISO8601.
+     * Key update time (ISO8601 format)
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return Key update time. The time format is ISO8601.
+     * @return Key update time (ISO8601 format)
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -151,14 +151,14 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+     * User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+     * @return User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
      * 
      */
     public Optional<Output<String>> userName() {
@@ -199,7 +199,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKeyId Access Key Id.
+         * @param accessKeyId Key ID (Access Key Id)
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKeyId Access Key Id.
+         * @param accessKeyId Key ID (Access Key Id)
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Key creation time. The time format is ISO8601.
+         * @param createdTime Key creation time (ISO8601 format)
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Key creation time. The time format is ISO8601.
+         * @param createdTime Key creation time (ISO8601 format)
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastLoginDate Last login time.
+         * @param lastLoginDate Last login time
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastLoginDate Last login time.
+         * @param lastLoginDate Last login time
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region The last region accessed by the API key.
+         * @param region Last accessed region by the API key
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region The last region accessed by the API key.
+         * @param region Last accessed region by the API key
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTime The last time the API key was used.
+         * @param requestTime Last usage time of the API key
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTime The last time the API key was used.
+         * @param requestTime Last usage time of the API key
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey Secret Access Key.
+         * @param secretAccessKey Secret Access Key
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretAccessKey Secret Access Key.
+         * @param secretAccessKey Secret Access Key
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service The English abbreviation of the last service accessed by the API key.
+         * @param service English abbreviation of the last accessed service by the API key
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service The English abbreviation of the last service accessed by the API key.
+         * @param service English abbreviation of the last accessed service by the API key
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Key status. active means enabled, inactive means disabled.
+         * @param status Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Key status. active means enabled, inactive means disabled.
+         * @param status Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime Key update time. The time format is ISO8601.
+         * @param updatedTime Key update time (ISO8601 format)
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime Key update time. The time format is ISO8601.
+         * @param updatedTime Key update time (ISO8601 format)
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+         * @param userName User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class AccesskeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+         * @param userName User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
          * 
          * @return builder
          * 

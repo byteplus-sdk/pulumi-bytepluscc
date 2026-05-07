@@ -777,6 +777,112 @@ func (o OrganizationOwnerPtrOutput) MainName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ServiceControlPolicyTarget struct {
+	// Target ID.
+	TargetId *string `pulumi:"targetId"`
+	// Target type: 1. OU 2. Account.
+	TargetType *string `pulumi:"targetType"`
+}
+
+// ServiceControlPolicyTargetInput is an input type that accepts ServiceControlPolicyTargetArgs and ServiceControlPolicyTargetOutput values.
+// You can construct a concrete instance of `ServiceControlPolicyTargetInput` via:
+//
+//	ServiceControlPolicyTargetArgs{...}
+type ServiceControlPolicyTargetInput interface {
+	pulumi.Input
+
+	ToServiceControlPolicyTargetOutput() ServiceControlPolicyTargetOutput
+	ToServiceControlPolicyTargetOutputWithContext(context.Context) ServiceControlPolicyTargetOutput
+}
+
+type ServiceControlPolicyTargetArgs struct {
+	// Target ID.
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// Target type: 1. OU 2. Account.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
+}
+
+func (ServiceControlPolicyTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (i ServiceControlPolicyTargetArgs) ToServiceControlPolicyTargetOutput() ServiceControlPolicyTargetOutput {
+	return i.ToServiceControlPolicyTargetOutputWithContext(context.Background())
+}
+
+func (i ServiceControlPolicyTargetArgs) ToServiceControlPolicyTargetOutputWithContext(ctx context.Context) ServiceControlPolicyTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceControlPolicyTargetOutput)
+}
+
+// ServiceControlPolicyTargetArrayInput is an input type that accepts ServiceControlPolicyTargetArray and ServiceControlPolicyTargetArrayOutput values.
+// You can construct a concrete instance of `ServiceControlPolicyTargetArrayInput` via:
+//
+//	ServiceControlPolicyTargetArray{ ServiceControlPolicyTargetArgs{...} }
+type ServiceControlPolicyTargetArrayInput interface {
+	pulumi.Input
+
+	ToServiceControlPolicyTargetArrayOutput() ServiceControlPolicyTargetArrayOutput
+	ToServiceControlPolicyTargetArrayOutputWithContext(context.Context) ServiceControlPolicyTargetArrayOutput
+}
+
+type ServiceControlPolicyTargetArray []ServiceControlPolicyTargetInput
+
+func (ServiceControlPolicyTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (i ServiceControlPolicyTargetArray) ToServiceControlPolicyTargetArrayOutput() ServiceControlPolicyTargetArrayOutput {
+	return i.ToServiceControlPolicyTargetArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceControlPolicyTargetArray) ToServiceControlPolicyTargetArrayOutputWithContext(ctx context.Context) ServiceControlPolicyTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceControlPolicyTargetArrayOutput)
+}
+
+type ServiceControlPolicyTargetOutput struct{ *pulumi.OutputState }
+
+func (ServiceControlPolicyTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (o ServiceControlPolicyTargetOutput) ToServiceControlPolicyTargetOutput() ServiceControlPolicyTargetOutput {
+	return o
+}
+
+func (o ServiceControlPolicyTargetOutput) ToServiceControlPolicyTargetOutputWithContext(ctx context.Context) ServiceControlPolicyTargetOutput {
+	return o
+}
+
+// Target ID.
+func (o ServiceControlPolicyTargetOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceControlPolicyTarget) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// Target type: 1. OU 2. Account.
+func (o ServiceControlPolicyTargetOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceControlPolicyTarget) *string { return v.TargetType }).(pulumi.StringPtrOutput)
+}
+
+type ServiceControlPolicyTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceControlPolicyTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (o ServiceControlPolicyTargetArrayOutput) ToServiceControlPolicyTargetArrayOutput() ServiceControlPolicyTargetArrayOutput {
+	return o
+}
+
+func (o ServiceControlPolicyTargetArrayOutput) ToServiceControlPolicyTargetArrayOutputWithContext(ctx context.Context) ServiceControlPolicyTargetArrayOutput {
+	return o
+}
+
+func (o ServiceControlPolicyTargetArrayOutput) Index(i pulumi.IntInput) ServiceControlPolicyTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceControlPolicyTarget {
+		return vs[0].([]ServiceControlPolicyTarget)[vs[1].(int)]
+	}).(ServiceControlPolicyTargetOutput)
+}
+
 type GetAccountSecureContactInfo struct {
 	// Security email
 	Email string `pulumi:"email"`
@@ -1156,6 +1262,130 @@ func (o GetOrganizationOwnerOutput) MainName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOrganizationOwner) string { return v.MainName }).(pulumi.StringOutput)
 }
 
+type GetServiceControlPolicyTarget struct {
+	// Binding time.
+	AttachedTime string `pulumi:"attachedTime"`
+	// Target ID.
+	TargetId string `pulumi:"targetId"`
+	// Target name.
+	TargetName string `pulumi:"targetName"`
+	// Target type: 1. OU 2. Account.
+	TargetType string `pulumi:"targetType"`
+}
+
+// GetServiceControlPolicyTargetInput is an input type that accepts GetServiceControlPolicyTargetArgs and GetServiceControlPolicyTargetOutput values.
+// You can construct a concrete instance of `GetServiceControlPolicyTargetInput` via:
+//
+//	GetServiceControlPolicyTargetArgs{...}
+type GetServiceControlPolicyTargetInput interface {
+	pulumi.Input
+
+	ToGetServiceControlPolicyTargetOutput() GetServiceControlPolicyTargetOutput
+	ToGetServiceControlPolicyTargetOutputWithContext(context.Context) GetServiceControlPolicyTargetOutput
+}
+
+type GetServiceControlPolicyTargetArgs struct {
+	// Binding time.
+	AttachedTime pulumi.StringInput `pulumi:"attachedTime"`
+	// Target ID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// Target name.
+	TargetName pulumi.StringInput `pulumi:"targetName"`
+	// Target type: 1. OU 2. Account.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+}
+
+func (GetServiceControlPolicyTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (i GetServiceControlPolicyTargetArgs) ToGetServiceControlPolicyTargetOutput() GetServiceControlPolicyTargetOutput {
+	return i.ToGetServiceControlPolicyTargetOutputWithContext(context.Background())
+}
+
+func (i GetServiceControlPolicyTargetArgs) ToGetServiceControlPolicyTargetOutputWithContext(ctx context.Context) GetServiceControlPolicyTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceControlPolicyTargetOutput)
+}
+
+// GetServiceControlPolicyTargetArrayInput is an input type that accepts GetServiceControlPolicyTargetArray and GetServiceControlPolicyTargetArrayOutput values.
+// You can construct a concrete instance of `GetServiceControlPolicyTargetArrayInput` via:
+//
+//	GetServiceControlPolicyTargetArray{ GetServiceControlPolicyTargetArgs{...} }
+type GetServiceControlPolicyTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceControlPolicyTargetArrayOutput() GetServiceControlPolicyTargetArrayOutput
+	ToGetServiceControlPolicyTargetArrayOutputWithContext(context.Context) GetServiceControlPolicyTargetArrayOutput
+}
+
+type GetServiceControlPolicyTargetArray []GetServiceControlPolicyTargetInput
+
+func (GetServiceControlPolicyTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (i GetServiceControlPolicyTargetArray) ToGetServiceControlPolicyTargetArrayOutput() GetServiceControlPolicyTargetArrayOutput {
+	return i.ToGetServiceControlPolicyTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceControlPolicyTargetArray) ToGetServiceControlPolicyTargetArrayOutputWithContext(ctx context.Context) GetServiceControlPolicyTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceControlPolicyTargetArrayOutput)
+}
+
+type GetServiceControlPolicyTargetOutput struct{ *pulumi.OutputState }
+
+func (GetServiceControlPolicyTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (o GetServiceControlPolicyTargetOutput) ToGetServiceControlPolicyTargetOutput() GetServiceControlPolicyTargetOutput {
+	return o
+}
+
+func (o GetServiceControlPolicyTargetOutput) ToGetServiceControlPolicyTargetOutputWithContext(ctx context.Context) GetServiceControlPolicyTargetOutput {
+	return o
+}
+
+// Binding time.
+func (o GetServiceControlPolicyTargetOutput) AttachedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceControlPolicyTarget) string { return v.AttachedTime }).(pulumi.StringOutput)
+}
+
+// Target ID.
+func (o GetServiceControlPolicyTargetOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceControlPolicyTarget) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// Target name.
+func (o GetServiceControlPolicyTargetOutput) TargetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceControlPolicyTarget) string { return v.TargetName }).(pulumi.StringOutput)
+}
+
+// Target type: 1. OU 2. Account.
+func (o GetServiceControlPolicyTargetOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceControlPolicyTarget) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
+type GetServiceControlPolicyTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceControlPolicyTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceControlPolicyTarget)(nil)).Elem()
+}
+
+func (o GetServiceControlPolicyTargetArrayOutput) ToGetServiceControlPolicyTargetArrayOutput() GetServiceControlPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GetServiceControlPolicyTargetArrayOutput) ToGetServiceControlPolicyTargetArrayOutputWithContext(ctx context.Context) GetServiceControlPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GetServiceControlPolicyTargetArrayOutput) Index(i pulumi.IntInput) GetServiceControlPolicyTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceControlPolicyTarget {
+		return vs[0].([]GetServiceControlPolicyTarget)[vs[1].(int)]
+	}).(GetServiceControlPolicyTargetOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountSecureContactInfoInput)(nil)).Elem(), AccountSecureContactInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountSecureContactInfoPtrInput)(nil)).Elem(), AccountSecureContactInfoArgs{})
@@ -1165,11 +1395,15 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOrganizationPtrInput)(nil)).Elem(), OrganizationOrganizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOwnerInput)(nil)).Elem(), OrganizationOwnerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOwnerPtrInput)(nil)).Elem(), OrganizationOwnerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceControlPolicyTargetInput)(nil)).Elem(), ServiceControlPolicyTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceControlPolicyTargetArrayInput)(nil)).Elem(), ServiceControlPolicyTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountSecureContactInfoInput)(nil)).Elem(), GetAccountSecureContactInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountTagInput)(nil)).Elem(), GetAccountTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountTagArrayInput)(nil)).Elem(), GetAccountTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationOrganizationInput)(nil)).Elem(), GetOrganizationOrganizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationOwnerInput)(nil)).Elem(), GetOrganizationOwnerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceControlPolicyTargetInput)(nil)).Elem(), GetServiceControlPolicyTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceControlPolicyTargetArrayInput)(nil)).Elem(), GetServiceControlPolicyTargetArray{})
 	pulumi.RegisterOutputType(AccountSecureContactInfoOutput{})
 	pulumi.RegisterOutputType(AccountSecureContactInfoPtrOutput{})
 	pulumi.RegisterOutputType(AccountTagOutput{})
@@ -1178,9 +1412,13 @@ func init() {
 	pulumi.RegisterOutputType(OrganizationOrganizationPtrOutput{})
 	pulumi.RegisterOutputType(OrganizationOwnerOutput{})
 	pulumi.RegisterOutputType(OrganizationOwnerPtrOutput{})
+	pulumi.RegisterOutputType(ServiceControlPolicyTargetOutput{})
+	pulumi.RegisterOutputType(ServiceControlPolicyTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetAccountSecureContactInfoOutput{})
 	pulumi.RegisterOutputType(GetAccountTagOutput{})
 	pulumi.RegisterOutputType(GetAccountTagArrayOutput{})
 	pulumi.RegisterOutputType(GetOrganizationOrganizationOutput{})
 	pulumi.RegisterOutputType(GetOrganizationOwnerOutput{})
+	pulumi.RegisterOutputType(GetServiceControlPolicyTargetOutput{})
+	pulumi.RegisterOutputType(GetServiceControlPolicyTargetArrayOutput{})
 }

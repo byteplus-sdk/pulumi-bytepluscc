@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ServerGroupStickySessionConfig {
     /**
-     * @return Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+     * @return Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
      * 
      */
     private @Nullable String cookie;
     /**
-     * @return Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+     * @return Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
      * 
      */
     private @Nullable Integer cookieTimeout;
@@ -28,21 +28,21 @@ public final class ServerGroupStickySessionConfig {
      */
     private @Nullable String stickySessionEnabled;
     /**
-     * @return Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
+     * @return Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
      * 
      */
     private @Nullable String stickySessionType;
 
     private ServerGroupStickySessionConfig() {}
     /**
-     * @return Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+     * @return Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
      * 
      */
     public Optional<String> cookie() {
         return Optional.ofNullable(this.cookie);
     }
     /**
-     * @return Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+     * @return Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
      * 
      */
     public Optional<Integer> cookieTimeout() {
@@ -56,7 +56,7 @@ public final class ServerGroupStickySessionConfig {
         return Optional.ofNullable(this.stickySessionEnabled);
     }
     /**
-     * @return Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
+     * @return Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
      * 
      */
     public Optional<String> stickySessionType() {

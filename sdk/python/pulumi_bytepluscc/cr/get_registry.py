@@ -28,13 +28,16 @@ class GetRegistryResult:
     """
     A collection of values returned by getRegistry.
     """
-    def __init__(__self__, charge_type=None, created_time=None, expire_time=None, id=None, name=None, project=None, proxy_cache=None, proxy_cache_enabled=None, renew_type=None, status=None, tags=None, type=None):
+    def __init__(__self__, charge_type=None, created_time=None, endpoint=None, expire_time=None, id=None, name=None, project=None, proxy_cache=None, proxy_cache_enabled=None, renew_type=None, status=None, tags=None, type=None):
         if charge_type and not isinstance(charge_type, str):
             raise TypeError("Expected argument 'charge_type' to be a str")
         pulumi.set(__self__, "charge_type", charge_type)
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
+        if endpoint and not isinstance(endpoint, dict):
+            raise TypeError("Expected argument 'endpoint' to be a dict")
+        pulumi.set(__self__, "endpoint", endpoint)
         if expire_time and not isinstance(expire_time, str):
             raise TypeError("Expected argument 'expire_time' to be a str")
         pulumi.set(__self__, "expire_time", expire_time)
@@ -70,7 +73,7 @@ class GetRegistryResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+        Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
         """
         return pulumi.get(self, "charge_type")
 
@@ -78,15 +81,23 @@ class GetRegistryResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Creation time of the container registry instance
+        Time when the container registry instance was created.
         """
         return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> 'outputs.GetRegistryEndpointResult':
+        """
+        Public endpoint information for the image repository instance
+        """
+        return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> builtins.str:
         """
-        Instance expiration time is only available for HybridCharge billing type
+        Only applicable when the billing type is HybridCharge. Instance expiration time
         """
         return pulumi.get(self, "expire_time")
 
@@ -102,7 +113,7 @@ class GetRegistryResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
         """
         return pulumi.get(self, "name")
 
@@ -110,7 +121,7 @@ class GetRegistryResult:
     @pulumi.getter
     def project(self) -> builtins.str:
         """
-        Enter the project to associate with the instance. Each instance can only be associated with one project
+        Specify the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -118,7 +129,7 @@ class GetRegistryResult:
     @pulumi.getter(name="proxyCache")
     def proxy_cache(self) -> 'outputs.GetRegistryProxyCacheResult':
         """
-        ProxyCache configuration. Required when set as ProxyCache
+        ProxyCache configuration. Required when set to ProxyCache
         """
         return pulumi.get(self, "proxy_cache")
 
@@ -126,7 +137,7 @@ class GetRegistryResult:
     @pulumi.getter(name="proxyCacheEnabled")
     def proxy_cache_enabled(self) -> builtins.bool:
         """
-        Set as ProxyCache instance
+        Whether to set as ProxyCache instance
         """
         return pulumi.get(self, "proxy_cache_enabled")
 
@@ -134,7 +145,7 @@ class GetRegistryResult:
     @pulumi.getter(name="renewType")
     def renew_type(self) -> builtins.str:
         """
-        Instance auto-renewal type is only available for HybridCharge billing type
+        Only applicable when the billing type is HybridCharge. Instance auto-renewal type
         """
         return pulumi.get(self, "renew_type")
 
@@ -142,7 +153,7 @@ class GetRegistryResult:
     @pulumi.getter
     def status(self) -> 'outputs.GetRegistryStatusResult':
         """
-        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
         """
         return pulumi.get(self, "status")
 
@@ -158,7 +169,7 @@ class GetRegistryResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+        If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
         """
         return pulumi.get(self, "type")
 
@@ -171,6 +182,7 @@ class AwaitableGetRegistryResult(GetRegistryResult):
         return GetRegistryResult(
             charge_type=self.charge_type,
             created_time=self.created_time,
+            endpoint=self.endpoint,
             expire_time=self.expire_time,
             id=self.id,
             name=self.name,
@@ -199,6 +211,7 @@ def get_registry(id: Optional[builtins.str] = None,
     return AwaitableGetRegistryResult(
         charge_type=pulumi.get(__ret__, 'charge_type'),
         created_time=pulumi.get(__ret__, 'created_time'),
+        endpoint=pulumi.get(__ret__, 'endpoint'),
         expire_time=pulumi.get(__ret__, 'expire_time'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
@@ -224,6 +237,7 @@ def get_registry_output(id: Optional[pulumi.Input[builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetRegistryResult(
         charge_type=pulumi.get(__response__, 'charge_type'),
         created_time=pulumi.get(__response__, 'created_time'),
+        endpoint=pulumi.get(__response__, 'endpoint'),
         expire_time=pulumi.get(__response__, 'expire_time'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),

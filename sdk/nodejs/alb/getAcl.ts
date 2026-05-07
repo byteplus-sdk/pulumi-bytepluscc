@@ -31,27 +31,27 @@ export interface GetAclArgs {
  */
 export interface GetAclResult {
     /**
-     * Details of IP entries in the access control policy group
+     * Detailed information about IP entries in the access control policy group.
      */
     readonly aclEntries: outputs.alb.GetAclAclEntry[];
     /**
-     * Number of IP entries in the access control policy group
+     * Number of IP entries in the access control policy group.
      */
     readonly aclEntryCount: number;
     /**
-     * Access control policy group ID
+     * Access control policy group ID.
      */
     readonly aclId: string;
     /**
-     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     readonly aclName: string;
     /**
-     * Creation time of the access control policy group
+     * Creation time of the access control policy group.
      */
     readonly createdTime: string;
     /**
-     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      */
     readonly description: string;
     /**
@@ -59,23 +59,23 @@ export interface GetAclResult {
      */
     readonly id: string;
     /**
-     * Details of listeners associated with the access control policy group
+     * Detailed information about listeners associated with the access control policy group.
      */
     readonly listeners: outputs.alb.GetAclListener[];
     /**
-     * Project name to which the access control policy group belongs
+     * Name of the project to which the access control policy group belongs.
      */
     readonly projectName: string;
     /**
-     * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      */
     readonly status: string;
     /**
-     * Tags bound to the access control policy group
+     * Tags bound to the access control policy group.
      */
     readonly tags: outputs.alb.GetAclTag[];
     /**
-     * Last operation time of the access control policy group
+     * Most recent operation time for the access control policy group.
      */
     readonly updatedTime: string;
 }
