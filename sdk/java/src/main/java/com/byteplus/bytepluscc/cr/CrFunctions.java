@@ -4,12 +4,16 @@
 package com.byteplus.bytepluscc.cr;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cr.inputs.GetEndpointAclPolicyArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetEndpointAclPolicyPlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetNameSpaceArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetNameSpacePlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRegistryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRegistryPlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryPlainArgs;
+import com.byteplus.bytepluscc.cr.outputs.GetEndpointAclPoliciesResult;
+import com.byteplus.bytepluscc.cr.outputs.GetEndpointAclPolicyResult;
 import com.byteplus.bytepluscc.cr.outputs.GetNameSpaceResult;
 import com.byteplus.bytepluscc.cr.outputs.GetNameSpacesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRegistriesResult;
@@ -25,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CrFunctions {
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPoliciesResult> getEndpointAclPolicies() {
+        return getEndpointAclPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static CompletableFuture<GetEndpointAclPoliciesResult> getEndpointAclPoliciesPlain() {
+        return getEndpointAclPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPoliciesResult> getEndpointAclPolicies(InvokeArgs args) {
+        return getEndpointAclPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static CompletableFuture<GetEndpointAclPoliciesResult> getEndpointAclPoliciesPlain(InvokeArgs args) {
+        return getEndpointAclPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPoliciesResult> getEndpointAclPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getEndpointAclPolicies:getEndpointAclPolicies", TypeShape.of(GetEndpointAclPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPoliciesResult> getEndpointAclPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getEndpointAclPolicies:getEndpointAclPolicies", TypeShape.of(GetEndpointAclPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static CompletableFuture<GetEndpointAclPoliciesResult> getEndpointAclPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getEndpointAclPolicies:getEndpointAclPolicies", TypeShape.of(GetEndpointAclPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPolicyResult> getEndpointAclPolicy(GetEndpointAclPolicyArgs args) {
+        return getEndpointAclPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static CompletableFuture<GetEndpointAclPolicyResult> getEndpointAclPolicyPlain(GetEndpointAclPolicyPlainArgs args) {
+        return getEndpointAclPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPolicyResult> getEndpointAclPolicy(GetEndpointAclPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getEndpointAclPolicy:getEndpointAclPolicy", TypeShape.of(GetEndpointAclPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static Output<GetEndpointAclPolicyResult> getEndpointAclPolicy(GetEndpointAclPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getEndpointAclPolicy:getEndpointAclPolicy", TypeShape.of(GetEndpointAclPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::EndpointAclPolicy
+     * 
+     */
+    public static CompletableFuture<GetEndpointAclPolicyResult> getEndpointAclPolicyPlain(GetEndpointAclPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getEndpointAclPolicy:getEndpointAclPolicy", TypeShape.of(GetEndpointAclPolicyResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CR::NameSpace
      * 

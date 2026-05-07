@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:cr/endpointAclPolicy:EndpointAclPolicy":
+		r = &EndpointAclPolicy{}
 	case "bytepluscc:cr/nameSpace:NameSpace":
 		r = &NameSpace{}
 	case "bytepluscc:cr/registry:Registry":
@@ -40,6 +42,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cr/endpointAclPolicy",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"cr/nameSpace",

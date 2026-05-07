@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetPeerAttachmentArgs, GetPeerAttachmentResult, GetPeerAttachmentOutputArgs } from "./getPeerAttachment";
+export const getPeerAttachment: typeof import("./getPeerAttachment").getPeerAttachment = null as any;
+export const getPeerAttachmentOutput: typeof import("./getPeerAttachment").getPeerAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getPeerAttachment","getPeerAttachmentOutput"], () => require("./getPeerAttachment"));
+
+export { GetPeerAttachmentsResult } from "./getPeerAttachments";
+export const getPeerAttachments: typeof import("./getPeerAttachments").getPeerAttachments = null as any;
+export const getPeerAttachmentsOutput: typeof import("./getPeerAttachments").getPeerAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getPeerAttachments","getPeerAttachmentsOutput"], () => require("./getPeerAttachments"));
+
 export { GetTransitRouterArgs, GetTransitRouterResult, GetTransitRouterOutputArgs } from "./getTransitRouter";
 export const getTransitRouter: typeof import("./getTransitRouter").getTransitRouter = null as any;
 export const getTransitRouterOutput: typeof import("./getTransitRouter").getTransitRouterOutput = null as any;
@@ -55,6 +65,11 @@ export const getVpnAttachments: typeof import("./getVpnAttachments").getVpnAttac
 export const getVpnAttachmentsOutput: typeof import("./getVpnAttachments").getVpnAttachmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getVpnAttachments","getVpnAttachmentsOutput"], () => require("./getVpnAttachments"));
 
+export { PeerAttachmentArgs, PeerAttachmentState } from "./peerAttachment";
+export type PeerAttachment = import("./peerAttachment").PeerAttachment;
+export const PeerAttachment: typeof import("./peerAttachment").PeerAttachment = null as any;
+utilities.lazyLoad(exports, ["PeerAttachment"], () => require("./peerAttachment"));
+
 export { TransitRouterArgs, TransitRouterState } from "./transitRouter";
 export type TransitRouter = import("./transitRouter").TransitRouter;
 export const TransitRouter: typeof import("./transitRouter").TransitRouter = null as any;
@@ -85,6 +100,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:transitrouter/peerAttachment:PeerAttachment":
+                return new PeerAttachment(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouter:TransitRouter":
                 return new TransitRouter(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
@@ -100,6 +117,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/peerAttachment", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouter", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteEntry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteTable", _module)

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetListenerDomainExtension {
     /**
-     * @return Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+     * @return Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
      * 
      */
     private String certCenterCertificateId;
@@ -21,22 +21,22 @@ public final class GetListenerDomainExtension {
      */
     private String certificateId;
     /**
-     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     private String certificateSource;
     /**
-     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
      * 
      */
     private String domain;
     /**
-     * @return Extended domain name ID.
+     * @return Extension domain name ID.
      * 
      */
     private String domainExtensionId;
     /**
-     * @return Listener ID to which the extended domain name belongs.
+     * @return Listener ID associated with the extended domain name.
      * 
      */
     private String listenerId;
@@ -46,14 +46,14 @@ public final class GetListenerDomainExtension {
      */
     private String pcaLeafCertificateId;
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
      * 
      */
     private String san;
 
     private GetListenerDomainExtension() {}
     /**
-     * @return Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+     * @return Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
      * 
      */
     public String certCenterCertificateId() {
@@ -67,28 +67,28 @@ public final class GetListenerDomainExtension {
         return this.certificateId;
     }
     /**
-     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     public String certificateSource() {
         return this.certificateSource;
     }
     /**
-     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return Extended domain name ID.
+     * @return Extension domain name ID.
      * 
      */
     public String domainExtensionId() {
         return this.domainExtensionId;
     }
     /**
-     * @return Listener ID to which the extended domain name belongs.
+     * @return Listener ID associated with the extended domain name.
      * 
      */
     public String listenerId() {
@@ -102,7 +102,7 @@ public final class GetListenerDomainExtension {
         return this.pcaLeafCertificateId;
     }
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
      * 
      */
     public String san() {

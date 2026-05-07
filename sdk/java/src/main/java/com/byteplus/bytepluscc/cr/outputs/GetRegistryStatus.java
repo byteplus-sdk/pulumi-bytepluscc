@@ -12,58 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryStatus {
     /**
-     * @return Creating, [ Progressing ]: Creating
-     * Running, [ Ok ]: Running
-     * Running, [ Degraded ]: Running
-     * Stopped, [ Balance ]: Suspended due to insufficient balance
-     * Stopped, [ Released ]: Pending reclamation
-     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-     * Starting, [ Progressing ]: Starting
-     * Deleting, [ Progressing ]: Deleting
-     * Failed, [ Unknown ]: Abnormal
+     * @return Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
      * 
      */
     private List<String> conditions;
     /**
-     * @return Creating, [ Progressing ]: Creating
-     * Running, [ Ok ]: Running
-     * Running, [ Degraded ]: Running
-     * Stopped, [ Balance ]: Suspended due to insufficient balance
-     * Stopped, [ Released ]: Pending reclamation
-     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-     * Starting, [ Progressing ]: Starting
-     * Deleting, [ Progressing ]: Deleting
-     * Failed, [ Unknown ]: Abnormal
+     * @return Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
      * 
      */
     private String phase;
 
     private GetRegistryStatus() {}
     /**
-     * @return Creating, [ Progressing ]: Creating
-     * Running, [ Ok ]: Running
-     * Running, [ Degraded ]: Running
-     * Stopped, [ Balance ]: Suspended due to insufficient balance
-     * Stopped, [ Released ]: Pending reclamation
-     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-     * Starting, [ Progressing ]: Starting
-     * Deleting, [ Progressing ]: Deleting
-     * Failed, [ Unknown ]: Abnormal
+     * @return Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
      * 
      */
     public List<String> conditions() {
         return this.conditions;
     }
     /**
-     * @return Creating, [ Progressing ]: Creating
-     * Running, [ Ok ]: Running
-     * Running, [ Degraded ]: Running
-     * Stopped, [ Balance ]: Suspended due to insufficient balance
-     * Stopped, [ Released ]: Pending reclamation
-     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-     * Starting, [ Progressing ]: Starting
-     * Deleting, [ Progressing ]: Deleting
-     * Failed, [ Unknown ]: Abnormal
+     * @return Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
      * 
      */
     public String phase() {

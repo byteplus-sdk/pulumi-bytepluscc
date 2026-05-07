@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryTag {
     /**
-     * @return Tag key values
+     * @return Tag key
      * 
      */
     private String key;
@@ -23,7 +23,7 @@ public final class GetRegistryTag {
 
     private GetRegistryTag() {}
     /**
-     * @return Tag key values
+     * @return Tag key
      * 
      */
     public String key() {

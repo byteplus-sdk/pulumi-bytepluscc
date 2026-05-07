@@ -17,7 +17,7 @@ public final class GetServerGroupServer {
      */
     private String description;
     /**
-     * @return ID of the cloud server instance or network interface card.
+     * @return ID of the cloud server instance or network interface.
      * 
      */
     private String instanceId;
@@ -32,7 +32,7 @@ public final class GetServerGroupServer {
      */
     private Integer port;
     /**
-     * @return Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+     * @return Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
      * 
      */
     private String remoteEnabled;
@@ -42,12 +42,12 @@ public final class GetServerGroupServer {
      */
     private String serverId;
     /**
-     * @return Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+     * @return Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
      * 
      */
     private String type;
     /**
-     * @return Weight of the backend server.
+     * @return Backend server weight.
      * 
      */
     private Integer weight;
@@ -61,7 +61,7 @@ public final class GetServerGroupServer {
         return this.description;
     }
     /**
-     * @return ID of the cloud server instance or network interface card.
+     * @return ID of the cloud server instance or network interface.
      * 
      */
     public String instanceId() {
@@ -82,7 +82,7 @@ public final class GetServerGroupServer {
         return this.port;
     }
     /**
-     * @return Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+     * @return Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
      * 
      */
     public String remoteEnabled() {
@@ -96,14 +96,14 @@ public final class GetServerGroupServer {
         return this.serverId;
     }
     /**
-     * @return Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+     * @return Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return Weight of the backend server.
+     * @return Backend server weight.
      * 
      */
     public Integer weight() {

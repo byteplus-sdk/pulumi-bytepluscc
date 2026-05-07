@@ -19,7 +19,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// ID of the cloud server instance or network interface card.
+        /// ID of the cloud server instance or network interface.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly int? Port;
         /// <summary>
-        /// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+        /// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
         /// </summary>
         public readonly string? RemoteEnabled;
         /// <summary>
@@ -39,11 +39,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly string? ServerId;
         /// <summary>
-        /// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+        /// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// Weight of the backend server.
+        /// Backend server weight.
         /// </summary>
         public readonly int? Weight;
 

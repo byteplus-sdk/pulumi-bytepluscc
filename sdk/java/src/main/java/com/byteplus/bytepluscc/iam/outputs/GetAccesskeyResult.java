@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAccesskeyResult {
     /**
-     * @return Access Key Id.
+     * @return Key ID (Access Key Id)
      * 
      */
     private String accessKeyId;
     /**
-     * @return Key creation time. The time format is ISO8601.
+     * @return Key creation time (ISO8601 format)
      * 
      */
     private String createdTime;
@@ -26,56 +26,56 @@ public final class GetAccesskeyResult {
      */
     private String id;
     /**
-     * @return Last login time.
+     * @return Last login time
      * 
      */
     private String lastLoginDate;
     /**
-     * @return The last region accessed by the API key.
+     * @return Last accessed region by the API key
      * 
      */
     private String region;
     /**
-     * @return The last time the API key was used.
+     * @return Last usage time of the API key
      * 
      */
     private String requestTime;
     /**
-     * @return Secret Access Key.
+     * @return Secret Access Key
      * 
      */
     private String secretAccessKey;
     /**
-     * @return The English abbreviation of the last service accessed by the API key.
+     * @return English abbreviation of the last accessed service by the API key
      * 
      */
     private String service;
     /**
-     * @return Key status. active means enabled, inactive means disabled.
+     * @return Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
      * 
      */
     private String status;
     /**
-     * @return Key update time. The time format is ISO8601.
+     * @return Key update time (ISO8601 format)
      * 
      */
     private String updatedTime;
     /**
-     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+     * @return User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
      * 
      */
     private String userName;
 
     private GetAccesskeyResult() {}
     /**
-     * @return Access Key Id.
+     * @return Key ID (Access Key Id)
      * 
      */
     public String accessKeyId() {
         return this.accessKeyId;
     }
     /**
-     * @return Key creation time. The time format is ISO8601.
+     * @return Key creation time (ISO8601 format)
      * 
      */
     public String createdTime() {
@@ -89,56 +89,56 @@ public final class GetAccesskeyResult {
         return this.id;
     }
     /**
-     * @return Last login time.
+     * @return Last login time
      * 
      */
     public String lastLoginDate() {
         return this.lastLoginDate;
     }
     /**
-     * @return The last region accessed by the API key.
+     * @return Last accessed region by the API key
      * 
      */
     public String region() {
         return this.region;
     }
     /**
-     * @return The last time the API key was used.
+     * @return Last usage time of the API key
      * 
      */
     public String requestTime() {
         return this.requestTime;
     }
     /**
-     * @return Secret Access Key.
+     * @return Secret Access Key
      * 
      */
     public String secretAccessKey() {
         return this.secretAccessKey;
     }
     /**
-     * @return The English abbreviation of the last service accessed by the API key.
+     * @return English abbreviation of the last accessed service by the API key
      * 
      */
     public String service() {
         return this.service;
     }
     /**
-     * @return Key status. active means enabled, inactive means disabled.
+     * @return Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return Key update time. The time format is ISO8601.
+     * @return Key update time (ISO8601 format)
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+     * @return User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
      * 
      */
     public String userName() {

@@ -16,6 +16,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'RegistryEndpointArgs',
+    'RegistryEndpointArgsDict',
+    'RegistryEndpointAclPolicyArgs',
+    'RegistryEndpointAclPolicyArgsDict',
     'RegistryProxyCacheArgs',
     'RegistryProxyCacheArgsDict',
     'RegistryStatusArgs',
@@ -27,10 +31,127 @@ __all__ = [
 MYPY = False
 
 if not MYPY:
+    class RegistryEndpointArgsDict(TypedDict):
+        acl_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['RegistryEndpointAclPolicyArgsDict']]]]
+        enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        """
+elif False:
+    RegistryEndpointArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RegistryEndpointArgs:
+    def __init__(__self__, *,
+                 acl_policies: Optional[pulumi.Input[Sequence[pulumi.Input['RegistryEndpointAclPolicyArgs']]]] = None,
+                 enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enabled: Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+        :param pulumi.Input[builtins.str] status: Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        """
+        if acl_policies is not None:
+            pulumi.set(__self__, "acl_policies", acl_policies)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="aclPolicies")
+    def acl_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryEndpointAclPolicyArgs']]]]:
+        return pulumi.get(self, "acl_policies")
+
+    @acl_policies.setter
+    def acl_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RegistryEndpointAclPolicyArgs']]]]):
+        pulumi.set(self, "acl_policies", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+if not MYPY:
+    class RegistryEndpointAclPolicyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP entry address
+        """
+        entry: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP entry description
+        """
+elif False:
+    RegistryEndpointAclPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RegistryEndpointAclPolicyArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 entry: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: IP entry address
+        :param pulumi.Input[builtins.str] entry: IP entry description
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if entry is not None:
+            pulumi.set(__self__, "entry", entry)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP entry address
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def entry(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP entry description
+        """
+        return pulumi.get(self, "entry")
+
+    @entry.setter
+    def entry(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "entry", value)
+
+
+if not MYPY:
     class RegistryProxyCacheArgsDict(TypedDict):
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+        Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
         """
 elif False:
     RegistryProxyCacheArgsDict: TypeAlias = Mapping[str, Any]
@@ -40,7 +161,7 @@ class RegistryProxyCacheArgs:
     def __init__(__self__, *,
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] type: Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+        :param pulumi.Input[builtins.str] type: Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -49,7 +170,7 @@ class RegistryProxyCacheArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+        Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
         """
         return pulumi.get(self, "type")
 
@@ -62,27 +183,11 @@ if not MYPY:
     class RegistryStatusArgsDict(TypedDict):
         conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        Creating, [ Progressing ]: Creating
-        Running, [ Ok ]: Running
-        Running, [ Degraded ]: Running
-        Stopped, [ Balance ]: Suspended due to insufficient balance
-        Stopped, [ Released ]: Pending reclamation
-        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-        Starting, [ Progressing ]: Starting
-        Deleting, [ Progressing ]: Deleting
-        Failed, [ Unknown ]: Abnormal
+        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         """
         phase: NotRequired[pulumi.Input[builtins.str]]
         """
-        Creating, [ Progressing ]: Creating
-        Running, [ Ok ]: Running
-        Running, [ Degraded ]: Running
-        Stopped, [ Balance ]: Suspended due to insufficient balance
-        Stopped, [ Released ]: Pending reclamation
-        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-        Starting, [ Progressing ]: Starting
-        Deleting, [ Progressing ]: Deleting
-        Failed, [ Unknown ]: Abnormal
+        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         """
 elif False:
     RegistryStatusArgsDict: TypeAlias = Mapping[str, Any]
@@ -93,24 +198,8 @@ class RegistryStatusArgs:
                  conditions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  phase: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] conditions: Creating, [ Progressing ]: Creating
-               Running, [ Ok ]: Running
-               Running, [ Degraded ]: Running
-               Stopped, [ Balance ]: Suspended due to insufficient balance
-               Stopped, [ Released ]: Pending reclamation
-               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-               Starting, [ Progressing ]: Starting
-               Deleting, [ Progressing ]: Deleting
-               Failed, [ Unknown ]: Abnormal
-        :param pulumi.Input[builtins.str] phase: Creating, [ Progressing ]: Creating
-               Running, [ Ok ]: Running
-               Running, [ Degraded ]: Running
-               Stopped, [ Balance ]: Suspended due to insufficient balance
-               Stopped, [ Released ]: Pending reclamation
-               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-               Starting, [ Progressing ]: Starting
-               Deleting, [ Progressing ]: Deleting
-               Failed, [ Unknown ]: Abnormal
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] conditions: Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        :param pulumi.Input[builtins.str] phase: Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -121,15 +210,7 @@ class RegistryStatusArgs:
     @pulumi.getter
     def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        Creating, [ Progressing ]: Creating
-        Running, [ Ok ]: Running
-        Running, [ Degraded ]: Running
-        Stopped, [ Balance ]: Suspended due to insufficient balance
-        Stopped, [ Released ]: Pending reclamation
-        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-        Starting, [ Progressing ]: Starting
-        Deleting, [ Progressing ]: Deleting
-        Failed, [ Unknown ]: Abnormal
+        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         """
         return pulumi.get(self, "conditions")
 
@@ -141,15 +222,7 @@ class RegistryStatusArgs:
     @pulumi.getter
     def phase(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Creating, [ Progressing ]: Creating
-        Running, [ Ok ]: Running
-        Running, [ Degraded ]: Running
-        Stopped, [ Balance ]: Suspended due to insufficient balance
-        Stopped, [ Released ]: Pending reclamation
-        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-        Starting, [ Progressing ]: Starting
-        Deleting, [ Progressing ]: Deleting
-        Failed, [ Unknown ]: Abnormal
+        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         """
         return pulumi.get(self, "phase")
 
@@ -162,7 +235,7 @@ if not MYPY:
     class RegistryTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        Tag key values
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -177,7 +250,7 @@ class RegistryTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: Tag key values
+        :param pulumi.Input[builtins.str] key: Tag key
         :param pulumi.Input[builtins.str] value: List of tag values
         """
         if key is not None:
@@ -189,7 +262,7 @@ class RegistryTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Tag key values
+        Tag key
         """
         return pulumi.get(self, "key")
 

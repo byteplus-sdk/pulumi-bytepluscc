@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'PeerAttachmentTagArgs',
+    'PeerAttachmentTagArgsDict',
     'TransitRouterAttachmentArgs',
     'TransitRouterAttachmentArgsDict',
     'TransitRouterAttachmentTagArgs',
@@ -33,6 +35,58 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class PeerAttachmentTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+        """
+elif False:
+    PeerAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PeerAttachmentTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        :param pulumi.Input[builtins.str] value: Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class TransitRouterAttachmentArgsDict(TypedDict):

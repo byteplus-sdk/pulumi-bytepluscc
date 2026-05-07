@@ -1284,12 +1284,22 @@
                     }
                 }
             },
+            "bytepluscc_cr_endpoint_acl_policy": {
+                "current": "bytepluscc:cr/endpointAclPolicy:EndpointAclPolicy"
+            },
             "bytepluscc_cr_name_space": {
                 "current": "bytepluscc:cr/nameSpace:NameSpace"
             },
             "bytepluscc_cr_registry": {
                 "current": "bytepluscc:cr/registry:Registry",
                 "fields": {
+                    "endpoint": {
+                        "fields": {
+                            "acl_policies": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "status": {
                         "fields": {
                             "conditions": {
@@ -2036,6 +2046,14 @@
             "bytepluscc_organization_organization": {
                 "current": "bytepluscc:organization/organization:Organization"
             },
+            "bytepluscc_organization_service_control_policy": {
+                "current": "bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy",
+                "fields": {
+                    "targets": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_organization_unit": {
                 "current": "bytepluscc:organization/unit:Unit"
             },
@@ -2773,6 +2791,14 @@
             },
             "bytepluscc_tls_topic": {
                 "current": "bytepluscc:tls/topic:Topic",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_peer_attachment": {
+                "current": "bytepluscc:transitrouter/peerAttachment:PeerAttachment",
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -3520,6 +3546,14 @@
             },
             "bytepluscc_vpn_customer_gateway": {
                 "current": "bytepluscc:vpn/customerGateway:CustomerGateway",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpn_ssl_vpn_client_cert": {
+                "current": "bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert",
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -5277,6 +5311,17 @@
                     }
                 }
             },
+            "bytepluscc_cr_endpoint_acl_policies": {
+                "current": "bytepluscc:cr/getEndpointAclPolicies:getEndpointAclPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cr_endpoint_acl_policy": {
+                "current": "bytepluscc:cr/getEndpointAclPolicy:getEndpointAclPolicy"
+            },
             "bytepluscc_cr_name_space": {
                 "current": "bytepluscc:cr/getNameSpace:getNameSpace"
             },
@@ -5299,6 +5344,13 @@
             "bytepluscc_cr_registry": {
                 "current": "bytepluscc:cr/getRegistry:getRegistry",
                 "fields": {
+                    "endpoint": {
+                        "fields": {
+                            "acl_policies": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "status": {
                         "fields": {
                             "conditions": {
@@ -6400,6 +6452,22 @@
                     }
                 }
             },
+            "bytepluscc_organization_service_control_policies": {
+                "current": "bytepluscc:organization/getServiceControlPolicies:getServiceControlPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_organization_service_control_policy": {
+                "current": "bytepluscc:organization/getServiceControlPolicy:getServiceControlPolicy",
+                "fields": {
+                    "targets": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_organization_unit": {
                 "current": "bytepluscc:organization/getUnit:getUnit"
             },
@@ -7480,6 +7548,22 @@
             },
             "bytepluscc_tls_topics": {
                 "current": "bytepluscc:tls/getTopics:getTopics",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_peer_attachment": {
+                "current": "bytepluscc:transitrouter/getPeerAttachment:getPeerAttachment",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_peer_attachments": {
+                "current": "bytepluscc:transitrouter/getPeerAttachments:getPeerAttachments",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -8608,6 +8692,22 @@
             },
             "bytepluscc_vpn_customer_gateways": {
                 "current": "bytepluscc:vpn/getCustomerGateways:getCustomerGateways",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpn_ssl_vpn_client_cert": {
+                "current": "bytepluscc:vpn/getSslVpnClientCert:getSslVpnClientCert",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpn_ssl_vpn_client_certs": {
+                "current": "bytepluscc:vpn/getSslVpnClientCerts:getSslVpnClientCerts",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

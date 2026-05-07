@@ -38,14 +38,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      * 
      */
     @Import(name="crossZoneEnabled")
     private @Nullable Output<String> crossZoneEnabled;
 
     /**
-     * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+     * @return Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
      * 
      */
     public Optional<Output<String>> crossZoneEnabled() {
@@ -68,14 +68,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Server group health check configuration information.
+     * Health check configuration information for the server group.
      * 
      */
     @Import(name="healthCheck")
     private @Nullable Output<ServerGroupHealthCheckArgs> healthCheck;
 
     /**
-     * @return Server group health check configuration information.
+     * @return Health check configuration information for the server group.
      * 
      */
     public Optional<Output<ServerGroupHealthCheckArgs>> healthCheck() {
@@ -83,14 +83,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IP address type of the server group. Only IPv4 is supported.
+     * IP address type of the server group. Currently, only IPv4 is supported.
      * 
      */
     @Import(name="ipAddressType")
     private @Nullable Output<String> ipAddressType;
 
     /**
-     * @return IP address type of the server group. Only IPv4 is supported.
+     * @return IP address type of the server group. Currently, only IPv4 is supported.
      * 
      */
     public Optional<Output<String>> ipAddressType() {
@@ -135,14 +135,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      * 
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
-     * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+     * @return Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
      * 
      */
     public Optional<Output<String>> scheduler() {
@@ -165,14 +165,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ID of the backend server group.
+     * Backend server group ID.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return ID of the backend server group.
+     * @return Backend server group ID.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -180,14 +180,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name of the backend server group.
+     * Backend server group name.
      * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
-     * @return Name of the backend server group.
+     * @return Backend server group name.
      * 
      */
     public Optional<Output<String>> serverGroupName() {
@@ -195,14 +195,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      * 
      */
     @Import(name="serverGroupType")
     private @Nullable Output<String> serverGroupType;
 
     /**
-     * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+     * @return Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
      * 
      */
     public Optional<Output<String>> serverGroupType() {
@@ -217,14 +217,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+     * @return Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
      * 
      */
     public Optional<Output<String>> status() {
@@ -347,7 +347,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+         * @param crossZoneEnabled Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+         * @param crossZoneEnabled Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheck Server group health check configuration information.
+         * @param healthCheck Health check configuration information for the server group.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheck Server group health check configuration information.
+         * @param healthCheck Health check configuration information for the server group.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressType IP address type of the server group. Only IPv4 is supported.
+         * @param ipAddressType IP address type of the server group. Currently, only IPv4 is supported.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressType IP address type of the server group. Only IPv4 is supported.
+         * @param ipAddressType IP address type of the server group. Currently, only IPv4 is supported.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduler Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+         * @param scheduler Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduler Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+         * @param scheduler Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId ID of the backend server group.
+         * @param serverGroupId Backend server group ID.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId ID of the backend server group.
+         * @param serverGroupId Backend server group ID.
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupName Name of the backend server group.
+         * @param serverGroupName Backend server group name.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupName Name of the backend server group.
+         * @param serverGroupName Backend server group name.
          * 
          * @return builder
          * 
@@ -570,7 +570,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupType Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+         * @param serverGroupType Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupType Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+         * @param serverGroupType Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
          * 
          * @return builder
          * 
@@ -604,7 +604,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+         * @param status Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
          * 
          * @return builder
          * 
@@ -615,7 +615,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+         * @param status Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
          * 
          * @return builder
          * 

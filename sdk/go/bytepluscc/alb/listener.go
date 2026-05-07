@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Each ALB instance must have at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under one ALB instance and configure different protocols for each listener to handle client requests using different protocols.
+// Each ALB instance requires at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under a single ALB instance and configure different listening protocols for each listener to handle client requests using different protocols.
 //
 // ## Import
 //
@@ -22,62 +22,62 @@ import (
 type Listener struct {
 	pulumi.CustomResourceState
 
-	// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+	// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
 	AccessLogRecordCustomizedHeadersEnabled pulumi.StringOutput `pulumi:"accessLogRecordCustomizedHeadersEnabled"`
 	// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
 	AclIds pulumi.StringArrayOutput `pulumi:"aclIds"`
-	// Enable access control. Values: on: enabled. off: disabled (default).
+	// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
 	AclStatus pulumi.StringOutput `pulumi:"aclStatus"`
-	// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+	// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
 	AclType pulumi.StringOutput `pulumi:"aclType"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
 	CaCertificateId pulumi.StringOutput `pulumi:"caCertificateId"`
 	// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CaCertificateSource pulumi.StringOutput `pulumi:"caCertificateSource"`
-	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
 	CertCenterCertificateId pulumi.StringOutput `pulumi:"certCenterCertificateId"`
 	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
-	// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+	// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CertificateSource pulumi.StringOutput `pulumi:"certificateSource"`
 	// Listener creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// Personalized configuration ID. If not bound, the value is an empty string.
 	CustomizedCfgId pulumi.StringOutput `pulumi:"customizedCfgId"`
-	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description      pulumi.StringOutput                `pulumi:"description"`
 	DomainExtensions ListenerDomainExtensionArrayOutput `pulumi:"domainExtensions"`
-	// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+	// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
 	EnableHttp2 pulumi.StringOutput `pulumi:"enableHttp2"`
-	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
 	EnableQuic pulumi.StringOutput `pulumi:"enableQuic"`
-	// Listener on/off status. Values: on: On (default). off: Off.
+	// Listener on/off status. Values: on: enabled (default); off: disabled.
 	Enabled pulumi.StringOutput `pulumi:"enabled"`
 	// Listener ID.
 	ListenerId pulumi.StringOutput `pulumi:"listenerId"`
-	// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+	// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
 	ListenerName pulumi.StringOutput `pulumi:"listenerName"`
-	// Load balancer instance ID to which the listener belongs.
+	// Load balancer instance ID associated with the listener.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringOutput `pulumi:"pcaLeafCertificateId"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
 	PcaRootCaCertificateId pulumi.StringOutput `pulumi:"pcaRootCaCertificateId"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
 	PcaSubCaCertificateId pulumi.StringOutput `pulumi:"pcaSubCaCertificateId"`
-	// The listener port. Values: 1   - 65535.
+	// Listener port. Value range: 1   - 65535.
 	Port pulumi.IntOutput `pulumi:"port"`
-	// Name of the project to which the listener belongs.
+	// Project name to which the listener belongs.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// Listener protocol. Supports HTTP and HTTPS protocols.
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// Default server group for the listener.
 	ServerGroupId pulumi.StringOutput            `pulumi:"serverGroupId"`
 	ServerGroups  ListenerServerGroupArrayOutput `pulumi:"serverGroups"`
-	// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+	// Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
 	Status pulumi.StringOutput    `pulumi:"status"`
 	Tags   ListenerTagArrayOutput `pulumi:"tags"`
-	// Time of the listener's most recent operation.
+	// The most recent operation time of the listener.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -123,122 +123,122 @@ func GetListener(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Listener resources.
 type listenerState struct {
-	// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+	// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
 	AccessLogRecordCustomizedHeadersEnabled *string `pulumi:"accessLogRecordCustomizedHeadersEnabled"`
 	// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
 	AclIds []string `pulumi:"aclIds"`
-	// Enable access control. Values: on: enabled. off: disabled (default).
+	// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
 	AclStatus *string `pulumi:"aclStatus"`
-	// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+	// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
 	AclType *string `pulumi:"aclType"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
 	CaCertificateId *string `pulumi:"caCertificateId"`
 	// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CaCertificateSource *string `pulumi:"caCertificateSource"`
-	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
 	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
 	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
 	CertificateId *string `pulumi:"certificateId"`
-	// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+	// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CertificateSource *string `pulumi:"certificateSource"`
 	// Listener creation time.
 	CreatedTime *string `pulumi:"createdTime"`
 	// Personalized configuration ID. If not bound, the value is an empty string.
 	CustomizedCfgId *string `pulumi:"customizedCfgId"`
-	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description      *string                   `pulumi:"description"`
 	DomainExtensions []ListenerDomainExtension `pulumi:"domainExtensions"`
-	// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+	// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
 	EnableHttp2 *string `pulumi:"enableHttp2"`
-	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
 	EnableQuic *string `pulumi:"enableQuic"`
-	// Listener on/off status. Values: on: On (default). off: Off.
+	// Listener on/off status. Values: on: enabled (default); off: disabled.
 	Enabled *string `pulumi:"enabled"`
 	// Listener ID.
 	ListenerId *string `pulumi:"listenerId"`
-	// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+	// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
 	ListenerName *string `pulumi:"listenerName"`
-	// Load balancer instance ID to which the listener belongs.
+	// Load balancer instance ID associated with the listener.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId *string `pulumi:"pcaLeafCertificateId"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
 	PcaRootCaCertificateId *string `pulumi:"pcaRootCaCertificateId"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
 	PcaSubCaCertificateId *string `pulumi:"pcaSubCaCertificateId"`
-	// The listener port. Values: 1   - 65535.
+	// Listener port. Value range: 1   - 65535.
 	Port *int `pulumi:"port"`
-	// Name of the project to which the listener belongs.
+	// Project name to which the listener belongs.
 	ProjectName *string `pulumi:"projectName"`
 	// Listener protocol. Supports HTTP and HTTPS protocols.
 	Protocol *string `pulumi:"protocol"`
 	// Default server group for the listener.
 	ServerGroupId *string               `pulumi:"serverGroupId"`
 	ServerGroups  []ListenerServerGroup `pulumi:"serverGroups"`
-	// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+	// Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
 	Status *string       `pulumi:"status"`
 	Tags   []ListenerTag `pulumi:"tags"`
-	// Time of the listener's most recent operation.
+	// The most recent operation time of the listener.
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type ListenerState struct {
-	// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+	// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
 	AccessLogRecordCustomizedHeadersEnabled pulumi.StringPtrInput
 	// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
 	AclIds pulumi.StringArrayInput
-	// Enable access control. Values: on: enabled. off: disabled (default).
+	// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
 	AclStatus pulumi.StringPtrInput
-	// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+	// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
 	AclType pulumi.StringPtrInput
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
 	CaCertificateId pulumi.StringPtrInput
 	// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CaCertificateSource pulumi.StringPtrInput
-	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
 	CertCenterCertificateId pulumi.StringPtrInput
 	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
 	CertificateId pulumi.StringPtrInput
-	// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+	// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CertificateSource pulumi.StringPtrInput
 	// Listener creation time.
 	CreatedTime pulumi.StringPtrInput
 	// Personalized configuration ID. If not bound, the value is an empty string.
 	CustomizedCfgId pulumi.StringPtrInput
-	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description      pulumi.StringPtrInput
 	DomainExtensions ListenerDomainExtensionArrayInput
-	// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+	// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
 	EnableHttp2 pulumi.StringPtrInput
-	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
 	EnableQuic pulumi.StringPtrInput
-	// Listener on/off status. Values: on: On (default). off: Off.
+	// Listener on/off status. Values: on: enabled (default); off: disabled.
 	Enabled pulumi.StringPtrInput
 	// Listener ID.
 	ListenerId pulumi.StringPtrInput
-	// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+	// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
 	ListenerName pulumi.StringPtrInput
-	// Load balancer instance ID to which the listener belongs.
+	// Load balancer instance ID associated with the listener.
 	LoadBalancerId pulumi.StringPtrInput
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringPtrInput
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
 	PcaRootCaCertificateId pulumi.StringPtrInput
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
 	PcaSubCaCertificateId pulumi.StringPtrInput
-	// The listener port. Values: 1   - 65535.
+	// Listener port. Value range: 1   - 65535.
 	Port pulumi.IntPtrInput
-	// Name of the project to which the listener belongs.
+	// Project name to which the listener belongs.
 	ProjectName pulumi.StringPtrInput
 	// Listener protocol. Supports HTTP and HTTPS protocols.
 	Protocol pulumi.StringPtrInput
 	// Default server group for the listener.
 	ServerGroupId pulumi.StringPtrInput
 	ServerGroups  ListenerServerGroupArrayInput
-	// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+	// Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
 	Status pulumi.StringPtrInput
 	Tags   ListenerTagArrayInput
-	// Time of the listener's most recent operation.
+	// The most recent operation time of the listener.
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -247,46 +247,46 @@ func (ListenerState) ElementType() reflect.Type {
 }
 
 type listenerArgs struct {
-	// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+	// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
 	AccessLogRecordCustomizedHeadersEnabled *string `pulumi:"accessLogRecordCustomizedHeadersEnabled"`
 	// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
 	AclIds []string `pulumi:"aclIds"`
-	// Enable access control. Values: on: enabled. off: disabled (default).
+	// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
 	AclStatus *string `pulumi:"aclStatus"`
-	// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+	// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
 	AclType *string `pulumi:"aclType"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
 	CaCertificateId *string `pulumi:"caCertificateId"`
 	// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CaCertificateSource *string `pulumi:"caCertificateSource"`
-	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
 	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
 	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
 	CertificateId *string `pulumi:"certificateId"`
-	// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+	// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CertificateSource *string `pulumi:"certificateSource"`
 	// Personalized configuration ID. If not bound, the value is an empty string.
 	CustomizedCfgId *string `pulumi:"customizedCfgId"`
-	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description      *string                   `pulumi:"description"`
 	DomainExtensions []ListenerDomainExtension `pulumi:"domainExtensions"`
-	// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+	// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
 	EnableHttp2 *string `pulumi:"enableHttp2"`
-	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
 	EnableQuic *string `pulumi:"enableQuic"`
-	// Listener on/off status. Values: on: On (default). off: Off.
+	// Listener on/off status. Values: on: enabled (default); off: disabled.
 	Enabled *string `pulumi:"enabled"`
-	// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+	// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
 	ListenerName *string `pulumi:"listenerName"`
-	// Load balancer instance ID to which the listener belongs.
+	// Load balancer instance ID associated with the listener.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId *string `pulumi:"pcaLeafCertificateId"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
 	PcaRootCaCertificateId *string `pulumi:"pcaRootCaCertificateId"`
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
 	PcaSubCaCertificateId *string `pulumi:"pcaSubCaCertificateId"`
-	// The listener port. Values: 1   - 65535.
+	// Listener port. Value range: 1   - 65535.
 	Port int `pulumi:"port"`
 	// Listener protocol. Supports HTTP and HTTPS protocols.
 	Protocol string `pulumi:"protocol"`
@@ -298,46 +298,46 @@ type listenerArgs struct {
 
 // The set of arguments for constructing a Listener resource.
 type ListenerArgs struct {
-	// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+	// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
 	AccessLogRecordCustomizedHeadersEnabled pulumi.StringPtrInput
 	// Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
 	AclIds pulumi.StringArrayInput
-	// Enable access control. Values: on: enabled. off: disabled (default).
+	// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
 	AclStatus pulumi.StringPtrInput
-	// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+	// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
 	AclType pulumi.StringPtrInput
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
 	CaCertificateId pulumi.StringPtrInput
 	// Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CaCertificateSource pulumi.StringPtrInput
-	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
 	CertCenterCertificateId pulumi.StringPtrInput
 	// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
 	CertificateId pulumi.StringPtrInput
-	// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+	// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
 	CertificateSource pulumi.StringPtrInput
 	// Personalized configuration ID. If not bound, the value is an empty string.
 	CustomizedCfgId pulumi.StringPtrInput
-	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
 	Description      pulumi.StringPtrInput
 	DomainExtensions ListenerDomainExtensionArrayInput
-	// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+	// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
 	EnableHttp2 pulumi.StringPtrInput
-	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+	// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
 	EnableQuic pulumi.StringPtrInput
-	// Listener on/off status. Values: on: On (default). off: Off.
+	// Listener on/off status. Values: on: enabled (default); off: disabled.
 	Enabled pulumi.StringPtrInput
-	// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+	// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
 	ListenerName pulumi.StringPtrInput
-	// Load balancer instance ID to which the listener belongs.
+	// Load balancer instance ID associated with the listener.
 	LoadBalancerId pulumi.StringInput
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringPtrInput
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
 	PcaRootCaCertificateId pulumi.StringPtrInput
-	// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+	// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
 	PcaSubCaCertificateId pulumi.StringPtrInput
-	// The listener port. Values: 1   - 65535.
+	// Listener port. Value range: 1   - 65535.
 	Port pulumi.IntInput
 	// Listener protocol. Supports HTTP and HTTPS protocols.
 	Protocol pulumi.StringInput
@@ -434,7 +434,7 @@ func (o ListenerOutput) ToListenerOutputWithContext(ctx context.Context) Listene
 	return o
 }
 
-// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
+// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
 func (o ListenerOutput) AccessLogRecordCustomizedHeadersEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.AccessLogRecordCustomizedHeadersEnabled }).(pulumi.StringOutput)
 }
@@ -444,17 +444,17 @@ func (o ListenerOutput) AclIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringArrayOutput { return v.AclIds }).(pulumi.StringArrayOutput)
 }
 
-// Enable access control. Values: on: enabled. off: disabled (default).
+// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
 func (o ListenerOutput) AclStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.AclStatus }).(pulumi.StringOutput)
 }
 
-// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
+// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
 func (o ListenerOutput) AclType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.AclType }).(pulumi.StringOutput)
 }
 
-// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
+// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
 func (o ListenerOutput) CaCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.CaCertificateId }).(pulumi.StringOutput)
 }
@@ -464,7 +464,7 @@ func (o ListenerOutput) CaCertificateSource() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.CaCertificateSource }).(pulumi.StringOutput)
 }
 
-// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
+// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
 func (o ListenerOutput) CertCenterCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.CertCenterCertificateId }).(pulumi.StringOutput)
 }
@@ -474,7 +474,7 @@ func (o ListenerOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
+// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
 func (o ListenerOutput) CertificateSource() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.CertificateSource }).(pulumi.StringOutput)
 }
@@ -489,7 +489,7 @@ func (o ListenerOutput) CustomizedCfgId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.CustomizedCfgId }).(pulumi.StringOutput)
 }
 
-// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
 func (o ListenerOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -498,17 +498,17 @@ func (o ListenerOutput) DomainExtensions() ListenerDomainExtensionArrayOutput {
 	return o.ApplyT(func(v *Listener) ListenerDomainExtensionArrayOutput { return v.DomainExtensions }).(ListenerDomainExtensionArrayOutput)
 }
 
-// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
+// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
 func (o ListenerOutput) EnableHttp2() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.EnableHttp2 }).(pulumi.StringOutput)
 }
 
-// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
+// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
 func (o ListenerOutput) EnableQuic() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.EnableQuic }).(pulumi.StringOutput)
 }
 
-// Listener on/off status. Values: on: On (default). off: Off.
+// Listener on/off status. Values: on: enabled (default); off: disabled.
 func (o ListenerOutput) Enabled() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Enabled }).(pulumi.StringOutput)
 }
@@ -518,12 +518,12 @@ func (o ListenerOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
+// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
 func (o ListenerOutput) ListenerName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.ListenerName }).(pulumi.StringOutput)
 }
 
-// Load balancer instance ID to which the listener belongs.
+// Load balancer instance ID associated with the listener.
 func (o ListenerOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
@@ -533,22 +533,22 @@ func (o ListenerOutput) PcaLeafCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PcaLeafCertificateId }).(pulumi.StringOutput)
 }
 
-// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
 func (o ListenerOutput) PcaRootCaCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PcaRootCaCertificateId }).(pulumi.StringOutput)
 }
 
-// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
 func (o ListenerOutput) PcaSubCaCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PcaSubCaCertificateId }).(pulumi.StringOutput)
 }
 
-// The listener port. Values: 1   - 65535.
+// Listener port. Value range: 1   - 65535.
 func (o ListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// Name of the project to which the listener belongs.
+// Project name to which the listener belongs.
 func (o ListenerOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -567,7 +567,7 @@ func (o ListenerOutput) ServerGroups() ListenerServerGroupArrayOutput {
 	return o.ApplyT(func(v *Listener) ListenerServerGroupArrayOutput { return v.ServerGroups }).(ListenerServerGroupArrayOutput)
 }
 
-// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
+// Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
 func (o ListenerOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -576,7 +576,7 @@ func (o ListenerOutput) Tags() ListenerTagArrayOutput {
 	return o.ApplyT(func(v *Listener) ListenerTagArrayOutput { return v.Tags }).(ListenerTagArrayOutput)
 }
 
-// Time of the listener's most recent operation.
+// The most recent operation time of the listener.
 func (o ListenerOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

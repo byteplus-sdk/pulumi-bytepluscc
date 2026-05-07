@@ -30,6 +30,16 @@ export const getOrganizations: typeof import("./getOrganizations").getOrganizati
 export const getOrganizationsOutput: typeof import("./getOrganizations").getOrganizationsOutput = null as any;
 utilities.lazyLoad(exports, ["getOrganizations","getOrganizationsOutput"], () => require("./getOrganizations"));
 
+export { GetServiceControlPoliciesResult } from "./getServiceControlPolicies";
+export const getServiceControlPolicies: typeof import("./getServiceControlPolicies").getServiceControlPolicies = null as any;
+export const getServiceControlPoliciesOutput: typeof import("./getServiceControlPolicies").getServiceControlPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceControlPolicies","getServiceControlPoliciesOutput"], () => require("./getServiceControlPolicies"));
+
+export { GetServiceControlPolicyArgs, GetServiceControlPolicyResult, GetServiceControlPolicyOutputArgs } from "./getServiceControlPolicy";
+export const getServiceControlPolicy: typeof import("./getServiceControlPolicy").getServiceControlPolicy = null as any;
+export const getServiceControlPolicyOutput: typeof import("./getServiceControlPolicy").getServiceControlPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceControlPolicy","getServiceControlPolicyOutput"], () => require("./getServiceControlPolicy"));
+
 export { GetUnitArgs, GetUnitResult, GetUnitOutputArgs } from "./getUnit";
 export const getUnit: typeof import("./getUnit").getUnit = null as any;
 export const getUnitOutput: typeof import("./getUnit").getUnitOutput = null as any;
@@ -45,6 +55,11 @@ export type Organization = import("./organization").Organization;
 export const Organization: typeof import("./organization").Organization = null as any;
 utilities.lazyLoad(exports, ["Organization"], () => require("./organization"));
 
+export { ServiceControlPolicyArgs, ServiceControlPolicyState } from "./serviceControlPolicy";
+export type ServiceControlPolicy = import("./serviceControlPolicy").ServiceControlPolicy;
+export const ServiceControlPolicy: typeof import("./serviceControlPolicy").ServiceControlPolicy = null as any;
+utilities.lazyLoad(exports, ["ServiceControlPolicy"], () => require("./serviceControlPolicy"));
+
 export { UnitArgs, UnitState } from "./unit";
 export type Unit = import("./unit").Unit;
 export const Unit: typeof import("./unit").Unit = null as any;
@@ -59,6 +74,8 @@ const _module = {
                 return new Account(name, <any>undefined, { urn })
             case "bytepluscc:organization/organization:Organization":
                 return new Organization(name, <any>undefined, { urn })
+            case "bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy":
+                return new ServiceControlPolicy(name, <any>undefined, { urn })
             case "bytepluscc:organization/unit:Unit":
                 return new Unit(name, <any>undefined, { urn })
             default:
@@ -68,4 +85,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/account", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/organization", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "organization/serviceControlPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/unit", _module)

@@ -13,8 +13,285 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type RegistryEndpoint struct {
+	AclPolicies []RegistryEndpointAclPolicy `pulumi:"aclPolicies"`
+	// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+	Enabled *bool `pulumi:"enabled"`
+	// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+	Status *string `pulumi:"status"`
+}
+
+// RegistryEndpointInput is an input type that accepts RegistryEndpointArgs and RegistryEndpointOutput values.
+// You can construct a concrete instance of `RegistryEndpointInput` via:
+//
+//	RegistryEndpointArgs{...}
+type RegistryEndpointInput interface {
+	pulumi.Input
+
+	ToRegistryEndpointOutput() RegistryEndpointOutput
+	ToRegistryEndpointOutputWithContext(context.Context) RegistryEndpointOutput
+}
+
+type RegistryEndpointArgs struct {
+	AclPolicies RegistryEndpointAclPolicyArrayInput `pulumi:"aclPolicies"`
+	// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (RegistryEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RegistryEndpoint)(nil)).Elem()
+}
+
+func (i RegistryEndpointArgs) ToRegistryEndpointOutput() RegistryEndpointOutput {
+	return i.ToRegistryEndpointOutputWithContext(context.Background())
+}
+
+func (i RegistryEndpointArgs) ToRegistryEndpointOutputWithContext(ctx context.Context) RegistryEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RegistryEndpointOutput)
+}
+
+func (i RegistryEndpointArgs) ToRegistryEndpointPtrOutput() RegistryEndpointPtrOutput {
+	return i.ToRegistryEndpointPtrOutputWithContext(context.Background())
+}
+
+func (i RegistryEndpointArgs) ToRegistryEndpointPtrOutputWithContext(ctx context.Context) RegistryEndpointPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RegistryEndpointOutput).ToRegistryEndpointPtrOutputWithContext(ctx)
+}
+
+// RegistryEndpointPtrInput is an input type that accepts RegistryEndpointArgs, RegistryEndpointPtr and RegistryEndpointPtrOutput values.
+// You can construct a concrete instance of `RegistryEndpointPtrInput` via:
+//
+//	        RegistryEndpointArgs{...}
+//
+//	or:
+//
+//	        nil
+type RegistryEndpointPtrInput interface {
+	pulumi.Input
+
+	ToRegistryEndpointPtrOutput() RegistryEndpointPtrOutput
+	ToRegistryEndpointPtrOutputWithContext(context.Context) RegistryEndpointPtrOutput
+}
+
+type registryEndpointPtrType RegistryEndpointArgs
+
+func RegistryEndpointPtr(v *RegistryEndpointArgs) RegistryEndpointPtrInput {
+	return (*registryEndpointPtrType)(v)
+}
+
+func (*registryEndpointPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RegistryEndpoint)(nil)).Elem()
+}
+
+func (i *registryEndpointPtrType) ToRegistryEndpointPtrOutput() RegistryEndpointPtrOutput {
+	return i.ToRegistryEndpointPtrOutputWithContext(context.Background())
+}
+
+func (i *registryEndpointPtrType) ToRegistryEndpointPtrOutputWithContext(ctx context.Context) RegistryEndpointPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RegistryEndpointPtrOutput)
+}
+
+type RegistryEndpointOutput struct{ *pulumi.OutputState }
+
+func (RegistryEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RegistryEndpoint)(nil)).Elem()
+}
+
+func (o RegistryEndpointOutput) ToRegistryEndpointOutput() RegistryEndpointOutput {
+	return o
+}
+
+func (o RegistryEndpointOutput) ToRegistryEndpointOutputWithContext(ctx context.Context) RegistryEndpointOutput {
+	return o
+}
+
+func (o RegistryEndpointOutput) ToRegistryEndpointPtrOutput() RegistryEndpointPtrOutput {
+	return o.ToRegistryEndpointPtrOutputWithContext(context.Background())
+}
+
+func (o RegistryEndpointOutput) ToRegistryEndpointPtrOutputWithContext(ctx context.Context) RegistryEndpointPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RegistryEndpoint) *RegistryEndpoint {
+		return &v
+	}).(RegistryEndpointPtrOutput)
+}
+
+func (o RegistryEndpointOutput) AclPolicies() RegistryEndpointAclPolicyArrayOutput {
+	return o.ApplyT(func(v RegistryEndpoint) []RegistryEndpointAclPolicy { return v.AclPolicies }).(RegistryEndpointAclPolicyArrayOutput)
+}
+
+// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+func (o RegistryEndpointOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RegistryEndpoint) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+func (o RegistryEndpointOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RegistryEndpoint) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type RegistryEndpointPtrOutput struct{ *pulumi.OutputState }
+
+func (RegistryEndpointPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RegistryEndpoint)(nil)).Elem()
+}
+
+func (o RegistryEndpointPtrOutput) ToRegistryEndpointPtrOutput() RegistryEndpointPtrOutput {
+	return o
+}
+
+func (o RegistryEndpointPtrOutput) ToRegistryEndpointPtrOutputWithContext(ctx context.Context) RegistryEndpointPtrOutput {
+	return o
+}
+
+func (o RegistryEndpointPtrOutput) Elem() RegistryEndpointOutput {
+	return o.ApplyT(func(v *RegistryEndpoint) RegistryEndpoint {
+		if v != nil {
+			return *v
+		}
+		var ret RegistryEndpoint
+		return ret
+	}).(RegistryEndpointOutput)
+}
+
+func (o RegistryEndpointPtrOutput) AclPolicies() RegistryEndpointAclPolicyArrayOutput {
+	return o.ApplyT(func(v *RegistryEndpoint) []RegistryEndpointAclPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.AclPolicies
+	}).(RegistryEndpointAclPolicyArrayOutput)
+}
+
+// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+func (o RegistryEndpointPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RegistryEndpoint) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+func (o RegistryEndpointPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RegistryEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+type RegistryEndpointAclPolicy struct {
+	// IP entry address
+	Description *string `pulumi:"description"`
+	// IP entry description
+	Entry *string `pulumi:"entry"`
+}
+
+// RegistryEndpointAclPolicyInput is an input type that accepts RegistryEndpointAclPolicyArgs and RegistryEndpointAclPolicyOutput values.
+// You can construct a concrete instance of `RegistryEndpointAclPolicyInput` via:
+//
+//	RegistryEndpointAclPolicyArgs{...}
+type RegistryEndpointAclPolicyInput interface {
+	pulumi.Input
+
+	ToRegistryEndpointAclPolicyOutput() RegistryEndpointAclPolicyOutput
+	ToRegistryEndpointAclPolicyOutputWithContext(context.Context) RegistryEndpointAclPolicyOutput
+}
+
+type RegistryEndpointAclPolicyArgs struct {
+	// IP entry address
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// IP entry description
+	Entry pulumi.StringPtrInput `pulumi:"entry"`
+}
+
+func (RegistryEndpointAclPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (i RegistryEndpointAclPolicyArgs) ToRegistryEndpointAclPolicyOutput() RegistryEndpointAclPolicyOutput {
+	return i.ToRegistryEndpointAclPolicyOutputWithContext(context.Background())
+}
+
+func (i RegistryEndpointAclPolicyArgs) ToRegistryEndpointAclPolicyOutputWithContext(ctx context.Context) RegistryEndpointAclPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RegistryEndpointAclPolicyOutput)
+}
+
+// RegistryEndpointAclPolicyArrayInput is an input type that accepts RegistryEndpointAclPolicyArray and RegistryEndpointAclPolicyArrayOutput values.
+// You can construct a concrete instance of `RegistryEndpointAclPolicyArrayInput` via:
+//
+//	RegistryEndpointAclPolicyArray{ RegistryEndpointAclPolicyArgs{...} }
+type RegistryEndpointAclPolicyArrayInput interface {
+	pulumi.Input
+
+	ToRegistryEndpointAclPolicyArrayOutput() RegistryEndpointAclPolicyArrayOutput
+	ToRegistryEndpointAclPolicyArrayOutputWithContext(context.Context) RegistryEndpointAclPolicyArrayOutput
+}
+
+type RegistryEndpointAclPolicyArray []RegistryEndpointAclPolicyInput
+
+func (RegistryEndpointAclPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (i RegistryEndpointAclPolicyArray) ToRegistryEndpointAclPolicyArrayOutput() RegistryEndpointAclPolicyArrayOutput {
+	return i.ToRegistryEndpointAclPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i RegistryEndpointAclPolicyArray) ToRegistryEndpointAclPolicyArrayOutputWithContext(ctx context.Context) RegistryEndpointAclPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RegistryEndpointAclPolicyArrayOutput)
+}
+
+type RegistryEndpointAclPolicyOutput struct{ *pulumi.OutputState }
+
+func (RegistryEndpointAclPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (o RegistryEndpointAclPolicyOutput) ToRegistryEndpointAclPolicyOutput() RegistryEndpointAclPolicyOutput {
+	return o
+}
+
+func (o RegistryEndpointAclPolicyOutput) ToRegistryEndpointAclPolicyOutputWithContext(ctx context.Context) RegistryEndpointAclPolicyOutput {
+	return o
+}
+
+// IP entry address
+func (o RegistryEndpointAclPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RegistryEndpointAclPolicy) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// IP entry description
+func (o RegistryEndpointAclPolicyOutput) Entry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RegistryEndpointAclPolicy) *string { return v.Entry }).(pulumi.StringPtrOutput)
+}
+
+type RegistryEndpointAclPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (RegistryEndpointAclPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (o RegistryEndpointAclPolicyArrayOutput) ToRegistryEndpointAclPolicyArrayOutput() RegistryEndpointAclPolicyArrayOutput {
+	return o
+}
+
+func (o RegistryEndpointAclPolicyArrayOutput) ToRegistryEndpointAclPolicyArrayOutputWithContext(ctx context.Context) RegistryEndpointAclPolicyArrayOutput {
+	return o
+}
+
+func (o RegistryEndpointAclPolicyArrayOutput) Index(i pulumi.IntInput) RegistryEndpointAclPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RegistryEndpointAclPolicy {
+		return vs[0].([]RegistryEndpointAclPolicy)[vs[1].(int)]
+	}).(RegistryEndpointAclPolicyOutput)
+}
+
 type RegistryProxyCache struct {
-	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+	// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 	Type *string `pulumi:"type"`
 }
 
@@ -30,7 +307,7 @@ type RegistryProxyCacheInput interface {
 }
 
 type RegistryProxyCacheArgs struct {
-	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+	// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -111,7 +388,7 @@ func (o RegistryProxyCacheOutput) ToRegistryProxyCachePtrOutputWithContext(ctx c
 	}).(RegistryProxyCachePtrOutput)
 }
 
-// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 func (o RegistryProxyCacheOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryProxyCache) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -140,7 +417,7 @@ func (o RegistryProxyCachePtrOutput) Elem() RegistryProxyCacheOutput {
 	}).(RegistryProxyCacheOutput)
 }
 
-// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 func (o RegistryProxyCachePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryProxyCache) *string {
 		if v == nil {
@@ -151,25 +428,9 @@ func (o RegistryProxyCachePtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type RegistryStatus struct {
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Conditions []string `pulumi:"conditions"`
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Phase *string `pulumi:"phase"`
 }
 
@@ -185,25 +446,9 @@ type RegistryStatusInput interface {
 }
 
 type RegistryStatusArgs struct {
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Conditions pulumi.StringArrayInput `pulumi:"conditions"`
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -284,28 +529,12 @@ func (o RegistryStatusOutput) ToRegistryStatusPtrOutputWithContext(ctx context.C
 	}).(RegistryStatusPtrOutput)
 }
 
-// Creating, [ Progressing ]: Creating
-// Running, [ Ok ]: Running
-// Running, [ Degraded ]: Running
-// Stopped, [ Balance ]: Suspended due to insufficient balance
-// Stopped, [ Released ]: Pending reclamation
-// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-// Starting, [ Progressing ]: Starting
-// Deleting, [ Progressing ]: Deleting
-// Failed, [ Unknown ]: Abnormal
+// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 func (o RegistryStatusOutput) Conditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryStatus) []string { return v.Conditions }).(pulumi.StringArrayOutput)
 }
 
-// Creating, [ Progressing ]: Creating
-// Running, [ Ok ]: Running
-// Running, [ Degraded ]: Running
-// Stopped, [ Balance ]: Suspended due to insufficient balance
-// Stopped, [ Released ]: Pending reclamation
-// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-// Starting, [ Progressing ]: Starting
-// Deleting, [ Progressing ]: Deleting
-// Failed, [ Unknown ]: Abnormal
+// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 func (o RegistryStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -334,15 +563,7 @@ func (o RegistryStatusPtrOutput) Elem() RegistryStatusOutput {
 	}).(RegistryStatusOutput)
 }
 
-// Creating, [ Progressing ]: Creating
-// Running, [ Ok ]: Running
-// Running, [ Degraded ]: Running
-// Stopped, [ Balance ]: Suspended due to insufficient balance
-// Stopped, [ Released ]: Pending reclamation
-// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-// Starting, [ Progressing ]: Starting
-// Deleting, [ Progressing ]: Deleting
-// Failed, [ Unknown ]: Abnormal
+// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 func (o RegistryStatusPtrOutput) Conditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryStatus) []string {
 		if v == nil {
@@ -352,15 +573,7 @@ func (o RegistryStatusPtrOutput) Conditions() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// Creating, [ Progressing ]: Creating
-// Running, [ Ok ]: Running
-// Running, [ Degraded ]: Running
-// Stopped, [ Balance ]: Suspended due to insufficient balance
-// Stopped, [ Released ]: Pending reclamation
-// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-// Starting, [ Progressing ]: Starting
-// Deleting, [ Progressing ]: Deleting
-// Failed, [ Unknown ]: Abnormal
+// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 func (o RegistryStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryStatus) *string {
 		if v == nil {
@@ -371,7 +584,7 @@ func (o RegistryStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type RegistryTag struct {
-	// Tag key values
+	// Tag key
 	Key *string `pulumi:"key"`
 	// List of tag values
 	Value *string `pulumi:"value"`
@@ -389,7 +602,7 @@ type RegistryTagInput interface {
 }
 
 type RegistryTagArgs struct {
-	// Tag key values
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// List of tag values
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -446,7 +659,7 @@ func (o RegistryTagOutput) ToRegistryTagOutputWithContext(ctx context.Context) R
 	return o
 }
 
-// Tag key values
+// Tag key
 func (o RegistryTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -476,8 +689,184 @@ func (o RegistryTagArrayOutput) Index(i pulumi.IntInput) RegistryTagOutput {
 	}).(RegistryTagOutput)
 }
 
+type GetRegistryEndpoint struct {
+	// Public IP allowlist
+	AclPolicies []GetRegistryEndpointAclPolicy `pulumi:"aclPolicies"`
+	// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+	Enabled bool `pulumi:"enabled"`
+	// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+	Status string `pulumi:"status"`
+}
+
+// GetRegistryEndpointInput is an input type that accepts GetRegistryEndpointArgs and GetRegistryEndpointOutput values.
+// You can construct a concrete instance of `GetRegistryEndpointInput` via:
+//
+//	GetRegistryEndpointArgs{...}
+type GetRegistryEndpointInput interface {
+	pulumi.Input
+
+	ToGetRegistryEndpointOutput() GetRegistryEndpointOutput
+	ToGetRegistryEndpointOutputWithContext(context.Context) GetRegistryEndpointOutput
+}
+
+type GetRegistryEndpointArgs struct {
+	// Public IP allowlist
+	AclPolicies GetRegistryEndpointAclPolicyArrayInput `pulumi:"aclPolicies"`
+	// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetRegistryEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegistryEndpoint)(nil)).Elem()
+}
+
+func (i GetRegistryEndpointArgs) ToGetRegistryEndpointOutput() GetRegistryEndpointOutput {
+	return i.ToGetRegistryEndpointOutputWithContext(context.Background())
+}
+
+func (i GetRegistryEndpointArgs) ToGetRegistryEndpointOutputWithContext(ctx context.Context) GetRegistryEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegistryEndpointOutput)
+}
+
+type GetRegistryEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetRegistryEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegistryEndpoint)(nil)).Elem()
+}
+
+func (o GetRegistryEndpointOutput) ToGetRegistryEndpointOutput() GetRegistryEndpointOutput {
+	return o
+}
+
+func (o GetRegistryEndpointOutput) ToGetRegistryEndpointOutputWithContext(ctx context.Context) GetRegistryEndpointOutput {
+	return o
+}
+
+// Public IP allowlist
+func (o GetRegistryEndpointOutput) AclPolicies() GetRegistryEndpointAclPolicyArrayOutput {
+	return o.ApplyT(func(v GetRegistryEndpoint) []GetRegistryEndpointAclPolicy { return v.AclPolicies }).(GetRegistryEndpointAclPolicyArrayOutput)
+}
+
+// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+func (o GetRegistryEndpointOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRegistryEndpoint) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+func (o GetRegistryEndpointOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegistryEndpoint) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetRegistryEndpointAclPolicy struct {
+	// IP entry address
+	Description string `pulumi:"description"`
+	// IP entry description
+	Entry string `pulumi:"entry"`
+}
+
+// GetRegistryEndpointAclPolicyInput is an input type that accepts GetRegistryEndpointAclPolicyArgs and GetRegistryEndpointAclPolicyOutput values.
+// You can construct a concrete instance of `GetRegistryEndpointAclPolicyInput` via:
+//
+//	GetRegistryEndpointAclPolicyArgs{...}
+type GetRegistryEndpointAclPolicyInput interface {
+	pulumi.Input
+
+	ToGetRegistryEndpointAclPolicyOutput() GetRegistryEndpointAclPolicyOutput
+	ToGetRegistryEndpointAclPolicyOutputWithContext(context.Context) GetRegistryEndpointAclPolicyOutput
+}
+
+type GetRegistryEndpointAclPolicyArgs struct {
+	// IP entry address
+	Description pulumi.StringInput `pulumi:"description"`
+	// IP entry description
+	Entry pulumi.StringInput `pulumi:"entry"`
+}
+
+func (GetRegistryEndpointAclPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (i GetRegistryEndpointAclPolicyArgs) ToGetRegistryEndpointAclPolicyOutput() GetRegistryEndpointAclPolicyOutput {
+	return i.ToGetRegistryEndpointAclPolicyOutputWithContext(context.Background())
+}
+
+func (i GetRegistryEndpointAclPolicyArgs) ToGetRegistryEndpointAclPolicyOutputWithContext(ctx context.Context) GetRegistryEndpointAclPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegistryEndpointAclPolicyOutput)
+}
+
+// GetRegistryEndpointAclPolicyArrayInput is an input type that accepts GetRegistryEndpointAclPolicyArray and GetRegistryEndpointAclPolicyArrayOutput values.
+// You can construct a concrete instance of `GetRegistryEndpointAclPolicyArrayInput` via:
+//
+//	GetRegistryEndpointAclPolicyArray{ GetRegistryEndpointAclPolicyArgs{...} }
+type GetRegistryEndpointAclPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetRegistryEndpointAclPolicyArrayOutput() GetRegistryEndpointAclPolicyArrayOutput
+	ToGetRegistryEndpointAclPolicyArrayOutputWithContext(context.Context) GetRegistryEndpointAclPolicyArrayOutput
+}
+
+type GetRegistryEndpointAclPolicyArray []GetRegistryEndpointAclPolicyInput
+
+func (GetRegistryEndpointAclPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (i GetRegistryEndpointAclPolicyArray) ToGetRegistryEndpointAclPolicyArrayOutput() GetRegistryEndpointAclPolicyArrayOutput {
+	return i.ToGetRegistryEndpointAclPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRegistryEndpointAclPolicyArray) ToGetRegistryEndpointAclPolicyArrayOutputWithContext(ctx context.Context) GetRegistryEndpointAclPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegistryEndpointAclPolicyArrayOutput)
+}
+
+type GetRegistryEndpointAclPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetRegistryEndpointAclPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (o GetRegistryEndpointAclPolicyOutput) ToGetRegistryEndpointAclPolicyOutput() GetRegistryEndpointAclPolicyOutput {
+	return o
+}
+
+func (o GetRegistryEndpointAclPolicyOutput) ToGetRegistryEndpointAclPolicyOutputWithContext(ctx context.Context) GetRegistryEndpointAclPolicyOutput {
+	return o
+}
+
+// IP entry address
+func (o GetRegistryEndpointAclPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegistryEndpointAclPolicy) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// IP entry description
+func (o GetRegistryEndpointAclPolicyOutput) Entry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegistryEndpointAclPolicy) string { return v.Entry }).(pulumi.StringOutput)
+}
+
+type GetRegistryEndpointAclPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRegistryEndpointAclPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegistryEndpointAclPolicy)(nil)).Elem()
+}
+
+func (o GetRegistryEndpointAclPolicyArrayOutput) ToGetRegistryEndpointAclPolicyArrayOutput() GetRegistryEndpointAclPolicyArrayOutput {
+	return o
+}
+
+func (o GetRegistryEndpointAclPolicyArrayOutput) ToGetRegistryEndpointAclPolicyArrayOutputWithContext(ctx context.Context) GetRegistryEndpointAclPolicyArrayOutput {
+	return o
+}
+
+func (o GetRegistryEndpointAclPolicyArrayOutput) Index(i pulumi.IntInput) GetRegistryEndpointAclPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRegistryEndpointAclPolicy {
+		return vs[0].([]GetRegistryEndpointAclPolicy)[vs[1].(int)]
+	}).(GetRegistryEndpointAclPolicyOutput)
+}
+
 type GetRegistryProxyCache struct {
-	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+	// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 	Type string `pulumi:"type"`
 }
 
@@ -493,7 +882,7 @@ type GetRegistryProxyCacheInput interface {
 }
 
 type GetRegistryProxyCacheArgs struct {
-	// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+	// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -523,31 +912,15 @@ func (o GetRegistryProxyCacheOutput) ToGetRegistryProxyCacheOutputWithContext(ct
 	return o
 }
 
-// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
+// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
 func (o GetRegistryProxyCacheOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryProxyCache) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetRegistryStatus struct {
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Conditions []string `pulumi:"conditions"`
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Phase string `pulumi:"phase"`
 }
 
@@ -563,25 +936,9 @@ type GetRegistryStatusInput interface {
 }
 
 type GetRegistryStatusArgs struct {
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Conditions pulumi.StringArrayInput `pulumi:"conditions"`
-	// Creating, [ Progressing ]: Creating
-	// Running, [ Ok ]: Running
-	// Running, [ Degraded ]: Running
-	// Stopped, [ Balance ]: Suspended due to insufficient balance
-	// Stopped, [ Released ]: Pending reclamation
-	// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-	// Starting, [ Progressing ]: Starting
-	// Deleting, [ Progressing ]: Deleting
-	// Failed, [ Unknown ]: Abnormal
+	// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -611,34 +968,18 @@ func (o GetRegistryStatusOutput) ToGetRegistryStatusOutputWithContext(ctx contex
 	return o
 }
 
-// Creating, [ Progressing ]: Creating
-// Running, [ Ok ]: Running
-// Running, [ Degraded ]: Running
-// Stopped, [ Balance ]: Suspended due to insufficient balance
-// Stopped, [ Released ]: Pending reclamation
-// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-// Starting, [ Progressing ]: Starting
-// Deleting, [ Progressing ]: Deleting
-// Failed, [ Unknown ]: Abnormal
+// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 func (o GetRegistryStatusOutput) Conditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryStatus) []string { return v.Conditions }).(pulumi.StringArrayOutput)
 }
 
-// Creating, [ Progressing ]: Creating
-// Running, [ Ok ]: Running
-// Running, [ Degraded ]: Running
-// Stopped, [ Balance ]: Suspended due to insufficient balance
-// Stopped, [ Released ]: Pending reclamation
-// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-// Starting, [ Progressing ]: Starting
-// Deleting, [ Progressing ]: Deleting
-// Failed, [ Unknown ]: Abnormal
+// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
 func (o GetRegistryStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetRegistryTag struct {
-	// Tag key values
+	// Tag key
 	Key string `pulumi:"key"`
 	// List of tag values
 	Value string `pulumi:"value"`
@@ -656,7 +997,7 @@ type GetRegistryTagInput interface {
 }
 
 type GetRegistryTagArgs struct {
-	// Tag key values
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
 	// List of tag values
 	Value pulumi.StringInput `pulumi:"value"`
@@ -713,7 +1054,7 @@ func (o GetRegistryTagOutput) ToGetRegistryTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Tag key values
+// Tag key
 func (o GetRegistryTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTag) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -744,22 +1085,36 @@ func (o GetRegistryTagArrayOutput) Index(i pulumi.IntInput) GetRegistryTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*RegistryEndpointInput)(nil)).Elem(), RegistryEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RegistryEndpointPtrInput)(nil)).Elem(), RegistryEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RegistryEndpointAclPolicyInput)(nil)).Elem(), RegistryEndpointAclPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RegistryEndpointAclPolicyArrayInput)(nil)).Elem(), RegistryEndpointAclPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryProxyCacheInput)(nil)).Elem(), RegistryProxyCacheArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryProxyCachePtrInput)(nil)).Elem(), RegistryProxyCacheArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryStatusInput)(nil)).Elem(), RegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryStatusPtrInput)(nil)).Elem(), RegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryTagInput)(nil)).Elem(), RegistryTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryTagArrayInput)(nil)).Elem(), RegistryTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointInput)(nil)).Elem(), GetRegistryEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointAclPolicyInput)(nil)).Elem(), GetRegistryEndpointAclPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointAclPolicyArrayInput)(nil)).Elem(), GetRegistryEndpointAclPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryProxyCacheInput)(nil)).Elem(), GetRegistryProxyCacheArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryStatusInput)(nil)).Elem(), GetRegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryTagInput)(nil)).Elem(), GetRegistryTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryTagArrayInput)(nil)).Elem(), GetRegistryTagArray{})
+	pulumi.RegisterOutputType(RegistryEndpointOutput{})
+	pulumi.RegisterOutputType(RegistryEndpointPtrOutput{})
+	pulumi.RegisterOutputType(RegistryEndpointAclPolicyOutput{})
+	pulumi.RegisterOutputType(RegistryEndpointAclPolicyArrayOutput{})
 	pulumi.RegisterOutputType(RegistryProxyCacheOutput{})
 	pulumi.RegisterOutputType(RegistryProxyCachePtrOutput{})
 	pulumi.RegisterOutputType(RegistryStatusOutput{})
 	pulumi.RegisterOutputType(RegistryStatusPtrOutput{})
 	pulumi.RegisterOutputType(RegistryTagOutput{})
 	pulumi.RegisterOutputType(RegistryTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRegistryEndpointOutput{})
+	pulumi.RegisterOutputType(GetRegistryEndpointAclPolicyOutput{})
+	pulumi.RegisterOutputType(GetRegistryEndpointAclPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetRegistryProxyCacheOutput{})
 	pulumi.RegisterOutputType(GetRegistryStatusOutput{})
 	pulumi.RegisterOutputType(GetRegistryTagOutput{})

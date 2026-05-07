@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.cr.inputs;
 
+import com.byteplus.bytepluscc.cr.inputs.RegistryEndpointArgs;
 import com.byteplus.bytepluscc.cr.inputs.RegistryProxyCacheArgs;
 import com.byteplus.bytepluscc.cr.inputs.RegistryStatusArgs;
 import com.byteplus.bytepluscc.cr.inputs.RegistryTagArgs;
@@ -21,14 +22,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     public static final RegistryState Empty = new RegistryState();
 
     /**
-     * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+     * Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+     * @return Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -36,14 +37,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Creation time of the container registry instance
+     * Time when the container registry instance was created.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return Creation time of the container registry instance
+     * @return Time when the container registry instance was created.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -51,14 +52,29 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Instance expiration time is only available for HybridCharge billing type
+     * Public endpoint information for the image repository instance
+     * 
+     */
+    @Import(name="endpoint")
+    private @Nullable Output<RegistryEndpointArgs> endpoint;
+
+    /**
+     * @return Public endpoint information for the image repository instance
+     * 
+     */
+    public Optional<Output<RegistryEndpointArgs>> endpoint() {
+        return Optional.ofNullable(this.endpoint);
+    }
+
+    /**
+     * Only applicable when the billing type is HybridCharge. Instance expiration time
      * 
      */
     @Import(name="expireTime")
     private @Nullable Output<String> expireTime;
 
     /**
-     * @return Instance expiration time is only available for HybridCharge billing type
+     * @return Only applicable when the billing type is HybridCharge. Instance expiration time
      * 
      */
     public Optional<Output<String>> expireTime() {
@@ -66,14 +82,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+     * @return Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -81,14 +97,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Enter the project to associate with the instance. Each instance can only be associated with one project
+     * Specify the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
+     * @return Specify the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     public Optional<Output<String>> project() {
@@ -96,14 +112,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ProxyCache configuration. Required when set as ProxyCache
+     * ProxyCache configuration. Required when set to ProxyCache
      * 
      */
     @Import(name="proxyCache")
     private @Nullable Output<RegistryProxyCacheArgs> proxyCache;
 
     /**
-     * @return ProxyCache configuration. Required when set as ProxyCache
+     * @return ProxyCache configuration. Required when set to ProxyCache
      * 
      */
     public Optional<Output<RegistryProxyCacheArgs>> proxyCache() {
@@ -111,14 +127,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set as ProxyCache instance
+     * Whether to set as ProxyCache instance
      * 
      */
     @Import(name="proxyCacheEnabled")
     private @Nullable Output<Boolean> proxyCacheEnabled;
 
     /**
-     * @return Set as ProxyCache instance
+     * @return Whether to set as ProxyCache instance
      * 
      */
     public Optional<Output<Boolean>> proxyCacheEnabled() {
@@ -126,14 +142,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Instance auto-renewal type is only available for HybridCharge billing type
+     * Only applicable when the billing type is HybridCharge. Instance auto-renewal type
      * 
      */
     @Import(name="renewType")
     private @Nullable Output<String> renewType;
 
     /**
-     * @return Instance auto-renewal type is only available for HybridCharge billing type
+     * @return Only applicable when the billing type is HybridCharge. Instance auto-renewal type
      * 
      */
     public Optional<Output<String>> renewType() {
@@ -141,14 +157,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      * 
      */
     @Import(name="status")
     private @Nullable Output<RegistryStatusArgs> status;
 
     /**
-     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+     * @return Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
      * 
      */
     public Optional<Output<RegistryStatusArgs>> status() {
@@ -163,14 +179,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+     * @return If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
      * 
      */
     public Optional<Output<String>> type() {
@@ -182,6 +198,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     private RegistryState(RegistryState $) {
         this.chargeType = $.chargeType;
         this.createdTime = $.createdTime;
+        this.endpoint = $.endpoint;
         this.expireTime = $.expireTime;
         this.name = $.name;
         this.project = $.project;
@@ -212,7 +229,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+         * @param chargeType Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
          * 
          * @return builder
          * 
@@ -223,7 +240,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+         * @param chargeType Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
          * 
          * @return builder
          * 
@@ -233,7 +250,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Creation time of the container registry instance
+         * @param createdTime Time when the container registry instance was created.
          * 
          * @return builder
          * 
@@ -244,7 +261,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Creation time of the container registry instance
+         * @param createdTime Time when the container registry instance was created.
          * 
          * @return builder
          * 
@@ -254,7 +271,28 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireTime Instance expiration time is only available for HybridCharge billing type
+         * @param endpoint Public endpoint information for the image repository instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpoint(@Nullable Output<RegistryEndpointArgs> endpoint) {
+            $.endpoint = endpoint;
+            return this;
+        }
+
+        /**
+         * @param endpoint Public endpoint information for the image repository instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpoint(RegistryEndpointArgs endpoint) {
+            return endpoint(Output.of(endpoint));
+        }
+
+        /**
+         * @param expireTime Only applicable when the billing type is HybridCharge. Instance expiration time
          * 
          * @return builder
          * 
@@ -265,7 +303,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireTime Instance expiration time is only available for HybridCharge billing type
+         * @param expireTime Only applicable when the billing type is HybridCharge. Instance expiration time
          * 
          * @return builder
          * 
@@ -275,7 +313,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+         * @param name Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
          * 
          * @return builder
          * 
@@ -286,7 +324,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+         * @param name Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
          * 
          * @return builder
          * 
@@ -296,7 +334,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
+         * @param project Specify the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -307,7 +345,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
+         * @param project Specify the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -317,7 +355,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCache ProxyCache configuration. Required when set as ProxyCache
+         * @param proxyCache ProxyCache configuration. Required when set to ProxyCache
          * 
          * @return builder
          * 
@@ -328,7 +366,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCache ProxyCache configuration. Required when set as ProxyCache
+         * @param proxyCache ProxyCache configuration. Required when set to ProxyCache
          * 
          * @return builder
          * 
@@ -338,7 +376,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCacheEnabled Set as ProxyCache instance
+         * @param proxyCacheEnabled Whether to set as ProxyCache instance
          * 
          * @return builder
          * 
@@ -349,7 +387,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCacheEnabled Set as ProxyCache instance
+         * @param proxyCacheEnabled Whether to set as ProxyCache instance
          * 
          * @return builder
          * 
@@ -359,7 +397,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType Instance auto-renewal type is only available for HybridCharge billing type
+         * @param renewType Only applicable when the billing type is HybridCharge. Instance auto-renewal type
          * 
          * @return builder
          * 
@@ -370,7 +408,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType Instance auto-renewal type is only available for HybridCharge billing type
+         * @param renewType Only applicable when the billing type is HybridCharge. Instance auto-renewal type
          * 
          * @return builder
          * 
@@ -380,7 +418,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+         * @param status Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
          * 
          * @return builder
          * 
@@ -391,7 +429,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+         * @param status Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
          * 
          * @return builder
          * 
@@ -414,7 +452,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+         * @param type If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
          * 
          * @return builder
          * 
@@ -425,7 +463,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+         * @param type If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
          * 
          * @return builder
          * 

@@ -30,29 +30,31 @@ type LookupRegistryArgs struct {
 
 // A collection of values returned by getRegistry.
 type LookupRegistryResult struct {
-	// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+	// Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
 	ChargeType string `pulumi:"chargeType"`
-	// Creation time of the container registry instance
+	// Time when the container registry instance was created.
 	CreatedTime string `pulumi:"createdTime"`
-	// Instance expiration time is only available for HybridCharge billing type
+	// Public endpoint information for the image repository instance
+	Endpoint GetRegistryEndpoint `pulumi:"endpoint"`
+	// Only applicable when the billing type is HybridCharge. Instance expiration time
 	ExpireTime string `pulumi:"expireTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+	// Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
 	Name string `pulumi:"name"`
-	// Enter the project to associate with the instance. Each instance can only be associated with one project
+	// Specify the project to associate with the instance. Each instance can only be associated with one project
 	Project string `pulumi:"project"`
-	// ProxyCache configuration. Required when set as ProxyCache
+	// ProxyCache configuration. Required when set to ProxyCache
 	ProxyCache GetRegistryProxyCache `pulumi:"proxyCache"`
-	// Set as ProxyCache instance
+	// Whether to set as ProxyCache instance
 	ProxyCacheEnabled bool `pulumi:"proxyCacheEnabled"`
-	// Instance auto-renewal type is only available for HybridCharge billing type
+	// Only applicable when the billing type is HybridCharge. Instance auto-renewal type
 	RenewType string `pulumi:"renewType"`
-	// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+	// Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
 	Status GetRegistryStatus `pulumi:"status"`
 	// Instance tags
 	Tags []GetRegistryTag `pulumi:"tags"`
-	// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+	// If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
 	Type string `pulumi:"type"`
 }
 
@@ -90,17 +92,22 @@ func (o LookupRegistryResultOutput) ToLookupRegistryResultOutputWithContext(ctx 
 	return o
 }
 
-// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+// Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
 func (o LookupRegistryResultOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// Creation time of the container registry instance
+// Time when the container registry instance was created.
 func (o LookupRegistryResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Instance expiration time is only available for HybridCharge billing type
+// Public endpoint information for the image repository instance
+func (o LookupRegistryResultOutput) Endpoint() GetRegistryEndpointOutput {
+	return o.ApplyT(func(v LookupRegistryResult) GetRegistryEndpoint { return v.Endpoint }).(GetRegistryEndpointOutput)
+}
+
+// Only applicable when the billing type is HybridCharge. Instance expiration time
 func (o LookupRegistryResultOutput) ExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.ExpireTime }).(pulumi.StringOutput)
 }
@@ -110,32 +117,32 @@ func (o LookupRegistryResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+// Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
 func (o LookupRegistryResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Enter the project to associate with the instance. Each instance can only be associated with one project
+// Specify the project to associate with the instance. Each instance can only be associated with one project
 func (o LookupRegistryResultOutput) Project() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.Project }).(pulumi.StringOutput)
 }
 
-// ProxyCache configuration. Required when set as ProxyCache
+// ProxyCache configuration. Required when set to ProxyCache
 func (o LookupRegistryResultOutput) ProxyCache() GetRegistryProxyCacheOutput {
 	return o.ApplyT(func(v LookupRegistryResult) GetRegistryProxyCache { return v.ProxyCache }).(GetRegistryProxyCacheOutput)
 }
 
-// Set as ProxyCache instance
+// Whether to set as ProxyCache instance
 func (o LookupRegistryResultOutput) ProxyCacheEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupRegistryResult) bool { return v.ProxyCacheEnabled }).(pulumi.BoolOutput)
 }
 
-// Instance auto-renewal type is only available for HybridCharge billing type
+// Only applicable when the billing type is HybridCharge. Instance auto-renewal type
 func (o LookupRegistryResultOutput) RenewType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.RenewType }).(pulumi.StringOutput)
 }
 
-// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+// Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
 func (o LookupRegistryResultOutput) Status() GetRegistryStatusOutput {
 	return o.ApplyT(func(v LookupRegistryResult) GetRegistryStatus { return v.Status }).(GetRegistryStatusOutput)
 }
@@ -145,7 +152,7 @@ func (o LookupRegistryResultOutput) Tags() GetRegistryTagArrayOutput {
 	return o.ApplyT(func(v LookupRegistryResult) []GetRegistryTag { return v.Tags }).(GetRegistryTagArrayOutput)
 }
 
-// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
+// If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
 func (o LookupRegistryResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.Type }).(pulumi.StringOutput)
 }

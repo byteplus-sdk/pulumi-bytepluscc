@@ -11,9 +11,12 @@ from .get_account import *
 from .get_accounts import *
 from .get_organization import *
 from .get_organizations import *
+from .get_service_control_policies import *
+from .get_service_control_policy import *
 from .get_unit import *
 from .get_units import *
 from .organization import *
+from .service_control_policy import *
 from .unit import *
 from ._inputs import *
 from . import outputs

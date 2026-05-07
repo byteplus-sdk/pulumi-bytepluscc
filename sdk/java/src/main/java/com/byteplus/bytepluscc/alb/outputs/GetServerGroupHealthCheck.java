@@ -12,37 +12,37 @@ import java.util.Objects;
 @CustomType
 public final class GetServerGroupHealthCheck {
     /**
-     * @return Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Each level of the domain name can contain letters, digits, &#39;-&#39;, and &#39;.&#39; characters, and &#39;-&#39; cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+     * @return The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with a &#39;.&#39;. Each level of the domain name can include letters, numbers, &#39;-&#39;, and &#39;.&#39; characters, but &#39;-&#39; cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
      * 
      */
     private String domain;
     /**
-     * @return Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+     * @return Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
      * 
      */
     private String enabled;
     /**
-     * @return Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+     * @return Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
      * 
      */
     private Integer healthyThreshold;
     /**
-     * @return HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+     * @return HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
      * 
      */
     private String httpCode;
     /**
-     * @return Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+     * @return HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
      * 
      */
     private String httpVersion;
     /**
-     * @return After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+     * @return After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
      * 
      */
     private Integer interval;
     /**
-     * @return Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
+     * @return After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
      * 
      */
     private String method;
@@ -57,66 +57,66 @@ public final class GetServerGroupHealthCheck {
      */
     private String protocol;
     /**
-     * @return Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+     * @return Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
      * 
      */
     private Integer timeout;
     /**
-     * @return Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+     * @return Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
      * 
      */
     private Integer unhealthyThreshold;
     /**
-     * @return Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is &#39;/&#39;.
+     * @return Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is &#39;/&#39;.
      * 
      */
     private String uri;
 
     private GetServerGroupHealthCheck() {}
     /**
-     * @return Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Each level of the domain name can contain letters, digits, &#39;-&#39;, and &#39;.&#39; characters, and &#39;-&#39; cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+     * @return The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one &#39;.&#39;, and cannot start or end with a &#39;.&#39;. Each level of the domain name can include letters, numbers, &#39;-&#39;, and &#39;.&#39; characters, but &#39;-&#39; cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+     * @return Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
      * 
      */
     public String enabled() {
         return this.enabled;
     }
     /**
-     * @return Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+     * @return Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
      * 
      */
     public Integer healthyThreshold() {
         return this.healthyThreshold;
     }
     /**
-     * @return HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+     * @return HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
      * 
      */
     public String httpCode() {
         return this.httpCode;
     }
     /**
-     * @return Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+     * @return HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
      * 
      */
     public String httpVersion() {
         return this.httpVersion;
     }
     /**
-     * @return After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+     * @return After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
      * 
      */
     public Integer interval() {
         return this.interval;
     }
     /**
-     * @return Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
+     * @return After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
      * 
      */
     public String method() {
@@ -137,21 +137,21 @@ public final class GetServerGroupHealthCheck {
         return this.protocol;
     }
     /**
-     * @return Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+     * @return Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
      * 
      */
     public Integer timeout() {
         return this.timeout;
     }
     /**
-     * @return Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+     * @return Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
      * 
      */
     public Integer unhealthyThreshold() {
         return this.unhealthyThreshold;
     }
     /**
-     * @return Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is &#39;/&#39;.
+     * @return Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with &#39;/&#39;. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is &#39;/&#39;.
      * 
      */
     public String uri() {

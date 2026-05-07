@@ -16,32 +16,32 @@ import java.util.Objects;
 @CustomType
 public final class GetAclResult {
     /**
-     * @return Details of IP entries in the access control policy group
+     * @return Detailed information about IP entries in the access control policy group.
      * 
      */
     private List<GetAclAclEntry> aclEntries;
     /**
-     * @return Number of IP entries in the access control policy group
+     * @return Number of IP entries in the access control policy group.
      * 
      */
     private Integer aclEntryCount;
     /**
-     * @return Access control policy group ID
+     * @return Access control policy group ID.
      * 
      */
     private String aclId;
     /**
-     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * @return Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     private String aclName;
     /**
-     * @return Creation time of the access control policy group
+     * @return Creation time of the access control policy group.
      * 
      */
     private String createdTime;
     /**
-     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * @return Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     private String description;
@@ -51,69 +51,69 @@ public final class GetAclResult {
      */
     private String id;
     /**
-     * @return Details of listeners associated with the access control policy group
+     * @return Detailed information about listeners associated with the access control policy group.
      * 
      */
     private List<GetAclListener> listeners;
     /**
-     * @return Project name to which the access control policy group belongs
+     * @return Name of the project to which the access control policy group belongs.
      * 
      */
     private String projectName;
     /**
-     * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * @return Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      * 
      */
     private String status;
     /**
-     * @return Tags bound to the access control policy group
+     * @return Tags bound to the access control policy group.
      * 
      */
     private List<GetAclTag> tags;
     /**
-     * @return Last operation time of the access control policy group
+     * @return Most recent operation time for the access control policy group.
      * 
      */
     private String updatedTime;
 
     private GetAclResult() {}
     /**
-     * @return Details of IP entries in the access control policy group
+     * @return Detailed information about IP entries in the access control policy group.
      * 
      */
     public List<GetAclAclEntry> aclEntries() {
         return this.aclEntries;
     }
     /**
-     * @return Number of IP entries in the access control policy group
+     * @return Number of IP entries in the access control policy group.
      * 
      */
     public Integer aclEntryCount() {
         return this.aclEntryCount;
     }
     /**
-     * @return Access control policy group ID
+     * @return Access control policy group ID.
      * 
      */
     public String aclId() {
         return this.aclId;
     }
     /**
-     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
+     * @return Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     public String aclName() {
         return this.aclName;
     }
     /**
-     * @return Creation time of the access control policy group
+     * @return Creation time of the access control policy group.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
+     * @return Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public String description() {
@@ -127,35 +127,35 @@ public final class GetAclResult {
         return this.id;
     }
     /**
-     * @return Details of listeners associated with the access control policy group
+     * @return Detailed information about listeners associated with the access control policy group.
      * 
      */
     public List<GetAclListener> listeners() {
         return this.listeners;
     }
     /**
-     * @return Project name to which the access control policy group belongs
+     * @return Name of the project to which the access control policy group belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
+     * @return Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return Tags bound to the access control policy group
+     * @return Tags bound to the access control policy group.
      * 
      */
     public List<GetAclTag> tags() {
         return this.tags;
     }
     /**
-     * @return Last operation time of the access control policy group
+     * @return Most recent operation time for the access control policy group.
      * 
      */
     public String updatedTime() {

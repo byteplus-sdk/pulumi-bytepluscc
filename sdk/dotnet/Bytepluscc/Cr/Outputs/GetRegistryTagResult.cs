@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class GetRegistryTagResult
     {
         /// <summary>
-        /// Tag key values
+        /// Tag key
         /// </summary>
         public readonly string Key;
         /// <summary>

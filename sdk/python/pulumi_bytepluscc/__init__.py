@@ -510,6 +510,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cr/endpointAclPolicy",
+  "fqn": "pulumi_bytepluscc.cr",
+  "classes": {
+   "bytepluscc:cr/endpointAclPolicy:EndpointAclPolicy": "EndpointAclPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cr/nameSpace",
   "fqn": "pulumi_bytepluscc.cr",
   "classes": {
@@ -878,6 +886,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "organization/serviceControlPolicy",
+  "fqn": "pulumi_bytepluscc.organization",
+  "classes": {
+   "bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy": "ServiceControlPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "organization/unit",
   "fqn": "pulumi_bytepluscc.organization",
   "classes": {
@@ -1210,6 +1226,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/topic:Topic": "Topic"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/peerAttachment",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/peerAttachment:PeerAttachment": "PeerAttachment"
   }
  },
  {
@@ -1570,6 +1594,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpn",
   "classes": {
    "bytepluscc:vpn/customerGateway:CustomerGateway": "CustomerGateway"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpn/sslVpnClientCert",
+  "fqn": "pulumi_bytepluscc.vpn",
+  "classes": {
+   "bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert": "SslVpnClientCert"
   }
  },
  {

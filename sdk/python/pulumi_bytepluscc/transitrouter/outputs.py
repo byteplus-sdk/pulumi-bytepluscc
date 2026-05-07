@@ -17,6 +17,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'PeerAttachmentTag',
     'TransitRouterAttachment',
     'TransitRouterAttachmentTag',
     'TransitRouterRouteTableTag',
@@ -24,6 +25,7 @@ __all__ = [
     'VpcAttachmentAttachPoint',
     'VpcAttachmentTag',
     'VpnAttachmentTag',
+    'GetPeerAttachmentTagResult',
     'GetTransitRouterAttachmentResult',
     'GetTransitRouterAttachmentTagResult',
     'GetTransitRouterRouteTableTagResult',
@@ -32,6 +34,37 @@ __all__ = [
     'GetVpcAttachmentTagResult',
     'GetVpnAttachmentTagResult',
 ]
+
+@pulumi.output_type
+class PeerAttachmentTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        :param builtins.str value: Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class TransitRouterAttachment(dict):
@@ -510,6 +543,35 @@ class VpnAttachmentTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         User tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetPeerAttachmentTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        :param builtins.str value: Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value for the cross-region connection user tag. Length limit: 0–255 characters. Case-sensitive. Cannot start or end with a space. Allowed characters: letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Note: If this parameter is provided, Tags.N.Key must be provided first.
         """
         return pulumi.get(self, "value")
 

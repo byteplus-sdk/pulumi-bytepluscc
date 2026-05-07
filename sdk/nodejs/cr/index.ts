@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { EndpointAclPolicyArgs, EndpointAclPolicyState } from "./endpointAclPolicy";
+export type EndpointAclPolicy = import("./endpointAclPolicy").EndpointAclPolicy;
+export const EndpointAclPolicy: typeof import("./endpointAclPolicy").EndpointAclPolicy = null as any;
+utilities.lazyLoad(exports, ["EndpointAclPolicy"], () => require("./endpointAclPolicy"));
+
+export { GetEndpointAclPoliciesResult } from "./getEndpointAclPolicies";
+export const getEndpointAclPolicies: typeof import("./getEndpointAclPolicies").getEndpointAclPolicies = null as any;
+export const getEndpointAclPoliciesOutput: typeof import("./getEndpointAclPolicies").getEndpointAclPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpointAclPolicies","getEndpointAclPoliciesOutput"], () => require("./getEndpointAclPolicies"));
+
+export { GetEndpointAclPolicyArgs, GetEndpointAclPolicyResult, GetEndpointAclPolicyOutputArgs } from "./getEndpointAclPolicy";
+export const getEndpointAclPolicy: typeof import("./getEndpointAclPolicy").getEndpointAclPolicy = null as any;
+export const getEndpointAclPolicyOutput: typeof import("./getEndpointAclPolicy").getEndpointAclPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpointAclPolicy","getEndpointAclPolicyOutput"], () => require("./getEndpointAclPolicy"));
+
 export { GetNameSpaceArgs, GetNameSpaceResult, GetNameSpaceOutputArgs } from "./getNameSpace";
 export const getNameSpace: typeof import("./getNameSpace").getNameSpace = null as any;
 export const getNameSpaceOutput: typeof import("./getNameSpace").getNameSpaceOutput = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cr/endpointAclPolicy:EndpointAclPolicy":
+                return new EndpointAclPolicy(name, <any>undefined, { urn })
             case "bytepluscc:cr/nameSpace:NameSpace":
                 return new NameSpace(name, <any>undefined, { urn })
             case "bytepluscc:cr/registry:Registry":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cr/endpointAclPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/nameSpace", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/registry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/repository", _module)

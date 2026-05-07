@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ListenerDomainExtension {
     /**
-     * @return Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+     * @return Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
      * 
      */
     private @Nullable String certCenterCertificateId;
@@ -22,12 +22,12 @@ public final class ListenerDomainExtension {
      */
     private @Nullable String certificateId;
     /**
-     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     private @Nullable String certificateSource;
     /**
-     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
      * 
      */
     private @Nullable String domain;
@@ -37,14 +37,14 @@ public final class ListenerDomainExtension {
      */
     private @Nullable String pcaLeafCertificateId;
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
      * 
      */
     private @Nullable String san;
 
     private ListenerDomainExtension() {}
     /**
-     * @return Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+     * @return Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
      * 
      */
     public Optional<String> certCenterCertificateId() {
@@ -58,14 +58,14 @@ public final class ListenerDomainExtension {
         return Optional.ofNullable(this.certificateId);
     }
     /**
-     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     public Optional<String> certificateSource() {
         return Optional.ofNullable(this.certificateSource);
     }
     /**
-     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length limit: 1–128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters other than &#39;.&#39; can appear before or after &#39;*&#39;. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
      * 
      */
     public Optional<String> domain() {
@@ -79,7 +79,7 @@ public final class ListenerDomainExtension {
         return Optional.ofNullable(this.pcaLeafCertificateId);
     }
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate&#39;s extension domain names, separated by commas.
      * 
      */
     public Optional<String> san() {

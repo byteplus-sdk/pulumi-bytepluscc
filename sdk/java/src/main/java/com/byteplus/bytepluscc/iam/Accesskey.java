@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * Access control (Identity and Access Management, abbreviated as IAM) is a permission management system provided by Volcano Engine for customers to control access to cloud resources by different identities.
+ * Access control (Identity and Access Management, IAM) is a permission management system provided by Volcano Engine to help customers control access to cloud resources for different identities
  * 
  * ## Example Usage
  * 
@@ -61,140 +61,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:iam/accesskey:Accesskey")
 public class Accesskey extends com.pulumi.resources.CustomResource {
     /**
-     * Access Key Id.
+     * Key ID (Access Key Id)
      * 
      */
     @Export(name="accessKeyId", refs={String.class}, tree="[0]")
     private Output<String> accessKeyId;
 
     /**
-     * @return Access Key Id.
+     * @return Key ID (Access Key Id)
      * 
      */
     public Output<String> accessKeyId() {
         return this.accessKeyId;
     }
     /**
-     * Key creation time. The time format is ISO8601.
+     * Key creation time (ISO8601 format)
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return Key creation time. The time format is ISO8601.
+     * @return Key creation time (ISO8601 format)
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * Last login time.
+     * Last login time
      * 
      */
     @Export(name="lastLoginDate", refs={String.class}, tree="[0]")
     private Output<String> lastLoginDate;
 
     /**
-     * @return Last login time.
+     * @return Last login time
      * 
      */
     public Output<String> lastLoginDate() {
         return this.lastLoginDate;
     }
     /**
-     * The last region accessed by the API key.
+     * Last accessed region by the API key
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
-     * @return The last region accessed by the API key.
+     * @return Last accessed region by the API key
      * 
      */
     public Output<String> region() {
         return this.region;
     }
     /**
-     * The last time the API key was used.
+     * Last usage time of the API key
      * 
      */
     @Export(name="requestTime", refs={String.class}, tree="[0]")
     private Output<String> requestTime;
 
     /**
-     * @return The last time the API key was used.
+     * @return Last usage time of the API key
      * 
      */
     public Output<String> requestTime() {
         return this.requestTime;
     }
     /**
-     * Secret Access Key.
+     * Secret Access Key
      * 
      */
     @Export(name="secretAccessKey", refs={String.class}, tree="[0]")
     private Output<String> secretAccessKey;
 
     /**
-     * @return Secret Access Key.
+     * @return Secret Access Key
      * 
      */
     public Output<String> secretAccessKey() {
         return this.secretAccessKey;
     }
     /**
-     * The English abbreviation of the last service accessed by the API key.
+     * English abbreviation of the last accessed service by the API key
      * 
      */
     @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
-     * @return The English abbreviation of the last service accessed by the API key.
+     * @return English abbreviation of the last accessed service by the API key
      * 
      */
     public Output<String> service() {
         return this.service;
     }
     /**
-     * Key status. active means enabled, inactive means disabled.
+     * Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Key status. active means enabled, inactive means disabled.
+     * @return Key status. &#34;active&#34; means enabled, &#34;inactive&#34; means disabled
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * Key update time. The time format is ISO8601.
+     * Key update time (ISO8601 format)
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return Key update time. The time format is ISO8601.
+     * @return Key update time (ISO8601 format)
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+     * User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
+     * @return User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
      * 
      */
     public Output<String> userName() {

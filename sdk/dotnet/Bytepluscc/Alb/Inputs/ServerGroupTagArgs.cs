@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class ServerGroupTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Tag key. Tag keys for the same resource must be unique.
+        /// Tag key. Duplicate tag keys are not allowed for the same resource.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// Tag value of the tag.
+        /// Tag value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

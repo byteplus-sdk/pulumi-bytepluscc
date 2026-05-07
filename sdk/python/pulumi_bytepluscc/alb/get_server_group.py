@@ -102,7 +102,7 @@ class GetServerGroupResult:
     @pulumi.getter(name="crossZoneEnabled")
     def cross_zone_enabled(self) -> builtins.str:
         """
-        Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
+        Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
         """
         return pulumi.get(self, "cross_zone_enabled")
 
@@ -118,7 +118,7 @@ class GetServerGroupResult:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> 'outputs.GetServerGroupHealthCheckResult':
         """
-        Server group health check configuration information.
+        Health check configuration information for the server group.
         """
         return pulumi.get(self, "health_check")
 
@@ -134,7 +134,7 @@ class GetServerGroupResult:
     @pulumi.getter(name="ipAddressType")
     def ip_address_type(self) -> builtins.str:
         """
-        IP address type of the server group. Only IPv4 is supported.
+        IP address type of the server group. Currently, only IPv4 is supported.
         """
         return pulumi.get(self, "ip_address_type")
 
@@ -166,7 +166,7 @@ class GetServerGroupResult:
     @pulumi.getter
     def scheduler(self) -> builtins.str:
         """
-        Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
+        Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -182,7 +182,7 @@ class GetServerGroupResult:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        ID of the backend server group.
+        Backend server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -190,7 +190,7 @@ class GetServerGroupResult:
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> builtins.str:
         """
-        Name of the backend server group.
+        Backend server group name.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -198,7 +198,7 @@ class GetServerGroupResult:
     @pulumi.getter(name="serverGroupType")
     def server_group_type(self) -> builtins.str:
         """
-        Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
+        Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
         """
         return pulumi.get(self, "server_group_type")
 
@@ -206,7 +206,7 @@ class GetServerGroupResult:
     @pulumi.getter
     def servers(self) -> Sequence['outputs.GetServerGroupServerResult']:
         """
-        Information about servers in the backend server group.
+        Information about the servers in the backend server group.
         """
         return pulumi.get(self, "servers")
 
@@ -214,7 +214,7 @@ class GetServerGroupResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
+        Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
         """
         return pulumi.get(self, "status")
 

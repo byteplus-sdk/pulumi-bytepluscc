@@ -24,6 +24,8 @@ __all__ = [
     'OrganizationOrganizationArgsDict',
     'OrganizationOwnerArgs',
     'OrganizationOwnerArgsDict',
+    'ServiceControlPolicyTargetArgs',
+    'ServiceControlPolicyTargetArgsDict',
 ]
 
 MYPY = False
@@ -434,5 +436,57 @@ class OrganizationOwnerArgs:
     @main_name.setter
     def main_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "main_name", value)
+
+
+if not MYPY:
+    class ServiceControlPolicyTargetArgsDict(TypedDict):
+        target_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Target ID.
+        """
+        target_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Target type: 1. OU 2. Account.
+        """
+elif False:
+    ServiceControlPolicyTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ServiceControlPolicyTargetArgs:
+    def __init__(__self__, *,
+                 target_id: Optional[pulumi.Input[builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] target_id: Target ID.
+        :param pulumi.Input[builtins.str] target_type: Target type: 1. OU 2. Account.
+        """
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Target ID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "target_id", value)
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Target type: 1. OU 2. Account.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "target_type", value)
 
 

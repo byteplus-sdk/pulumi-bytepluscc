@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAclListener {
     /**
-     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
      * 
      */
     private String aclType;
@@ -39,7 +39,7 @@ public final class GetAclListener {
 
     private GetAclListener() {}
     /**
-     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
      * 
      */
     public String aclType() {

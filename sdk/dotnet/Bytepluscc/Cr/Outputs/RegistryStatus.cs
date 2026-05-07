@@ -15,27 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class RegistryStatus
     {
         /// <summary>
-        /// Creating, [ Progressing ]: Creating
-        /// Running, [ Ok ]: Running
-        /// Running, [ Degraded ]: Running
-        /// Stopped, [ Balance ]: Suspended due to insufficient balance
-        /// Stopped, [ Released ]: Pending reclamation
-        /// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-        /// Starting, [ Progressing ]: Starting
-        /// Deleting, [ Progressing ]: Deleting
-        /// Failed, [ Unknown ]: Abnormal
+        /// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         /// </summary>
         public readonly ImmutableArray<string> Conditions;
         /// <summary>
-        /// Creating, [ Progressing ]: Creating
-        /// Running, [ Ok ]: Running
-        /// Running, [ Degraded ]: Running
-        /// Stopped, [ Balance ]: Suspended due to insufficient balance
-        /// Stopped, [ Released ]: Pending reclamation
-        /// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
-        /// Starting, [ Progressing ]: Starting
-        /// Deleting, [ Progressing ]: Deleting
-        /// Failed, [ Unknown ]: Abnormal
+        /// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
         /// </summary>
         public readonly string? Phase;
 

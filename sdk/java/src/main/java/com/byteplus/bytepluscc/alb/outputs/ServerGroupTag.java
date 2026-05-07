@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ServerGroupTag {
     /**
-     * @return Tag key. Tag keys for the same resource must be unique.
+     * @return Tag key. Duplicate tag keys are not allowed for the same resource.
      * 
      */
     private @Nullable String key;
     /**
-     * @return Tag value of the tag.
+     * @return Tag value.
      * 
      */
     private @Nullable String value;
 
     private ServerGroupTag() {}
     /**
-     * @return Tag key. Tag keys for the same resource must be unique.
+     * @return Tag key. Duplicate tag keys are not allowed for the same resource.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return Tag value of the tag.
+     * @return Tag value.
      * 
      */
     public Optional<String> value() {
