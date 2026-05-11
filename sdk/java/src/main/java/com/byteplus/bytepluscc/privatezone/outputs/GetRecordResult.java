@@ -3,11 +3,13 @@
 
 package com.byteplus.bytepluscc.privatezone.outputs;
 
+import com.byteplus.bytepluscc.privatezone.outputs.GetRecordRecordSet;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -47,6 +49,11 @@ public final class GetRecordResult {
      * 
      */
     private String recordId;
+    /**
+     * @return Record set list
+     * 
+     */
+    private List<GetRecordRecordSet> recordSets;
     /**
      * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
@@ -139,6 +146,13 @@ public final class GetRecordResult {
         return this.recordId;
     }
     /**
+     * @return Record set list
+     * 
+     */
+    public List<GetRecordRecordSet> recordSets() {
+        return this.recordSets;
+    }
+    /**
      * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
@@ -211,6 +225,7 @@ public final class GetRecordResult {
         private String lastOperator;
         private String line;
         private String recordId;
+        private List<GetRecordRecordSet> recordSets;
         private String remark;
         private Integer ttl;
         private String type;
@@ -229,6 +244,7 @@ public final class GetRecordResult {
     	      this.lastOperator = defaults.lastOperator;
     	      this.line = defaults.line;
     	      this.recordId = defaults.recordId;
+    	      this.recordSets = defaults.recordSets;
     	      this.remark = defaults.remark;
     	      this.ttl = defaults.ttl;
     	      this.type = defaults.type;
@@ -294,6 +310,17 @@ public final class GetRecordResult {
             }
             this.recordId = recordId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder recordSets(List<GetRecordRecordSet> recordSets) {
+            if (recordSets == null) {
+              throw new MissingRequiredPropertyException("GetRecordResult", "recordSets");
+            }
+            this.recordSets = recordSets;
+            return this;
+        }
+        public Builder recordSets(GetRecordRecordSet... recordSets) {
+            return recordSets(List.of(recordSets));
         }
         @CustomType.Setter
         public Builder remark(String remark) {
@@ -368,6 +395,7 @@ public final class GetRecordResult {
             _resultValue.lastOperator = lastOperator;
             _resultValue.line = line;
             _resultValue.recordId = recordId;
+            _resultValue.recordSets = recordSets;
             _resultValue.remark = remark;
             _resultValue.ttl = ttl;
             _resultValue.type = type;

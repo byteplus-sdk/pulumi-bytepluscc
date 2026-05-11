@@ -36,6 +36,8 @@ type LookupInstanceResult struct {
 	AutoRenew bool `pulumi:"autoRenew"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName string `pulumi:"backupPointName"`
+	// Restore data from the backup set to the original Redis instance.
+	BackupRestore GetInstanceBackupRestore `pulumi:"backupRestore"`
 	// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 	BlueGreenRole string `pulumi:"blueGreenRole"`
 	// Capacity information of the instance.
@@ -44,6 +46,8 @@ type LookupInstanceResult struct {
 	ChargeType string `pulumi:"chargeType"`
 	// Set the list of availability zones to which the node belongs.
 	ConfigureNodes []GetInstanceConfigureNode `pulumi:"configureNodes"`
+	// Enable data flashback
+	ContinuousBackup bool `pulumi:"continuousBackup"`
 	// Whether to create a backup before making changes.
 	CreateBackup bool `pulumi:"createBackup"`
 	// Creation time of the instance.
@@ -171,6 +175,11 @@ func (o LookupInstanceResultOutput) BackupPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BackupPointName }).(pulumi.StringOutput)
 }
 
+// Restore data from the backup set to the original Redis instance.
+func (o LookupInstanceResultOutput) BackupRestore() GetInstanceBackupRestoreOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceBackupRestore { return v.BackupRestore }).(GetInstanceBackupRestoreOutput)
+}
+
 // Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 func (o LookupInstanceResultOutput) BlueGreenRole() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BlueGreenRole }).(pulumi.StringOutput)
@@ -189,6 +198,11 @@ func (o LookupInstanceResultOutput) ChargeType() pulumi.StringOutput {
 // Set the list of availability zones to which the node belongs.
 func (o LookupInstanceResultOutput) ConfigureNodes() GetInstanceConfigureNodeArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceConfigureNode { return v.ConfigureNodes }).(GetInstanceConfigureNodeArrayOutput)
+}
+
+// Enable data flashback
+func (o LookupInstanceResultOutput) ContinuousBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.ContinuousBackup }).(pulumi.BoolOutput)
 }
 
 // Whether to create a backup before making changes.

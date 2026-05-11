@@ -77,6 +77,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly string BackupPointName;
         /// <summary>
+        /// Restore data from the backup set to the original Redis instance.
+        /// </summary>
+        public readonly Outputs.GetInstanceBackupRestoreResult BackupRestore;
+        /// <summary>
         /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         /// </summary>
         public readonly string BlueGreenRole;
@@ -92,6 +96,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// Set the list of availability zones to which the node belongs.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigureNodeResult> ConfigureNodes;
+        /// <summary>
+        /// Enable data flashback
+        /// </summary>
+        public readonly bool ContinuousBackup;
         /// <summary>
         /// Whether to create a backup before making changes.
         /// </summary>
@@ -253,6 +261,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
             string backupPointName,
 
+            Outputs.GetInstanceBackupRestoreResult backupRestore,
+
             string blueGreenRole,
 
             Outputs.GetInstanceCapacityResult capacity,
@@ -260,6 +270,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             string chargeType,
 
             ImmutableArray<Outputs.GetInstanceConfigureNodeResult> configureNodes,
+
+            bool continuousBackup,
 
             bool createBackup,
 
@@ -340,10 +352,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             AllowListIds = allowListIds;
             AutoRenew = autoRenew;
             BackupPointName = backupPointName;
+            BackupRestore = backupRestore;
             BlueGreenRole = blueGreenRole;
             Capacity = capacity;
             ChargeType = chargeType;
             ConfigureNodes = configureNodes;
+            ContinuousBackup = continuousBackup;
             CreateBackup = createBackup;
             CreateTime = createTime;
             DataLayout = dataLayout;

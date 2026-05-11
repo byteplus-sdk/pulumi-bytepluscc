@@ -84,6 +84,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         [Output("recordId")]
         public Output<string> RecordId { get; private set; } = null!;
 
+        [Output("recordSets")]
+        public Output<ImmutableArray<Outputs.RecordRecordSet>> RecordSets { get; private set; } = null!;
+
         /// <summary>
         /// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
         /// </summary>
@@ -282,6 +285,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         [Input("recordId")]
         public Input<string>? RecordId { get; set; }
+
+        [Input("recordSets")]
+        private InputList<Inputs.RecordRecordSetGetArgs>? _recordSets;
+        public InputList<Inputs.RecordRecordSetGetArgs> RecordSets
+        {
+            get => _recordSets ?? (_recordSets = new InputList<Inputs.RecordRecordSetGetArgs>());
+            set => _recordSets = value;
+        }
 
         /// <summary>
         /// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.

@@ -64,6 +64,8 @@ __all__ = [
     'InstanceProxyDetailProxyResourceInfoArgsDict',
     'InstanceTagArgs',
     'InstanceTagArgsDict',
+    'ParameterTemplateTemplateParamArgs',
+    'ParameterTemplateTemplateParamArgsDict',
 ]
 
 MYPY = False
@@ -2360,5 +2362,55 @@ class InstanceTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ParameterTemplateTemplateParamArgsDict(TypedDict):
+        name: pulumi.Input[builtins.str]
+        """
+        Instance parameter name
+        """
+        running_value: pulumi.Input[builtins.str]
+        """
+        Parameter runtime value
+        """
+elif False:
+    ParameterTemplateTemplateParamArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ParameterTemplateTemplateParamArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[builtins.str],
+                 running_value: pulumi.Input[builtins.str]):
+        """
+        :param pulumi.Input[builtins.str] name: Instance parameter name
+        :param pulumi.Input[builtins.str] running_value: Parameter runtime value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "running_value", running_value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[builtins.str]:
+        """
+        Instance parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="runningValue")
+    def running_value(self) -> pulumi.Input[builtins.str]:
+        """
+        Parameter runtime value
+        """
+        return pulumi.get(self, "running_value")
+
+    @running_value.setter
+    def running_value(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "running_value", value)
 
 

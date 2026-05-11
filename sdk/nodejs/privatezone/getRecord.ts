@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -56,6 +58,10 @@ export interface GetRecordResult {
      * DNS record ID.
      */
     readonly recordId: string;
+    /**
+     * Record set list
+     */
+    readonly recordSets: outputs.privatezone.GetRecordRecordSet[];
     /**
      * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */

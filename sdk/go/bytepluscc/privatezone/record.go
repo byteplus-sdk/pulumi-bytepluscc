@@ -67,7 +67,8 @@ type Record struct {
 	// DNS record route, only the default route 'default' is supported.
 	Line pulumi.StringOutput `pulumi:"line"`
 	// DNS record ID.
-	RecordId pulumi.StringOutput `pulumi:"recordId"`
+	RecordId   pulumi.StringOutput        `pulumi:"recordId"`
+	RecordSets RecordRecordSetArrayOutput `pulumi:"recordSets"`
 	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark pulumi.StringOutput `pulumi:"remark"`
 	// DNS record TTL (time to live), in seconds. Default is 600.
@@ -139,7 +140,8 @@ type recordState struct {
 	// DNS record route, only the default route 'default' is supported.
 	Line *string `pulumi:"line"`
 	// DNS record ID.
-	RecordId *string `pulumi:"recordId"`
+	RecordId   *string           `pulumi:"recordId"`
+	RecordSets []RecordRecordSet `pulumi:"recordSets"`
 	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark *string `pulumi:"remark"`
 	// DNS record TTL (time to live), in seconds. Default is 600.
@@ -170,7 +172,8 @@ type RecordState struct {
 	// DNS record route, only the default route 'default' is supported.
 	Line pulumi.StringPtrInput
 	// DNS record ID.
-	RecordId pulumi.StringPtrInput
+	RecordId   pulumi.StringPtrInput
+	RecordSets RecordRecordSetArrayInput
 	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark pulumi.StringPtrInput
 	// DNS record TTL (time to live), in seconds. Default is 600.
@@ -355,6 +358,10 @@ func (o RecordOutput) Line() pulumi.StringOutput {
 // DNS record ID.
 func (o RecordOutput) RecordId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.RecordId }).(pulumi.StringOutput)
+}
+
+func (o RecordOutput) RecordSets() RecordRecordSetArrayOutput {
+	return o.ApplyT(func(v *Record) RecordRecordSetArrayOutput { return v.RecordSets }).(RecordRecordSetArrayOutput)
 }
 
 // Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.

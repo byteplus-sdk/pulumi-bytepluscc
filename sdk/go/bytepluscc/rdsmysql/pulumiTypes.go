@@ -3456,6 +3456,112 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type ParameterTemplateTemplateParam struct {
+	// Instance parameter name
+	Name string `pulumi:"name"`
+	// Parameter runtime value
+	RunningValue string `pulumi:"runningValue"`
+}
+
+// ParameterTemplateTemplateParamInput is an input type that accepts ParameterTemplateTemplateParamArgs and ParameterTemplateTemplateParamOutput values.
+// You can construct a concrete instance of `ParameterTemplateTemplateParamInput` via:
+//
+//	ParameterTemplateTemplateParamArgs{...}
+type ParameterTemplateTemplateParamInput interface {
+	pulumi.Input
+
+	ToParameterTemplateTemplateParamOutput() ParameterTemplateTemplateParamOutput
+	ToParameterTemplateTemplateParamOutputWithContext(context.Context) ParameterTemplateTemplateParamOutput
+}
+
+type ParameterTemplateTemplateParamArgs struct {
+	// Instance parameter name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Parameter runtime value
+	RunningValue pulumi.StringInput `pulumi:"runningValue"`
+}
+
+func (ParameterTemplateTemplateParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (i ParameterTemplateTemplateParamArgs) ToParameterTemplateTemplateParamOutput() ParameterTemplateTemplateParamOutput {
+	return i.ToParameterTemplateTemplateParamOutputWithContext(context.Background())
+}
+
+func (i ParameterTemplateTemplateParamArgs) ToParameterTemplateTemplateParamOutputWithContext(ctx context.Context) ParameterTemplateTemplateParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ParameterTemplateTemplateParamOutput)
+}
+
+// ParameterTemplateTemplateParamArrayInput is an input type that accepts ParameterTemplateTemplateParamArray and ParameterTemplateTemplateParamArrayOutput values.
+// You can construct a concrete instance of `ParameterTemplateTemplateParamArrayInput` via:
+//
+//	ParameterTemplateTemplateParamArray{ ParameterTemplateTemplateParamArgs{...} }
+type ParameterTemplateTemplateParamArrayInput interface {
+	pulumi.Input
+
+	ToParameterTemplateTemplateParamArrayOutput() ParameterTemplateTemplateParamArrayOutput
+	ToParameterTemplateTemplateParamArrayOutputWithContext(context.Context) ParameterTemplateTemplateParamArrayOutput
+}
+
+type ParameterTemplateTemplateParamArray []ParameterTemplateTemplateParamInput
+
+func (ParameterTemplateTemplateParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (i ParameterTemplateTemplateParamArray) ToParameterTemplateTemplateParamArrayOutput() ParameterTemplateTemplateParamArrayOutput {
+	return i.ToParameterTemplateTemplateParamArrayOutputWithContext(context.Background())
+}
+
+func (i ParameterTemplateTemplateParamArray) ToParameterTemplateTemplateParamArrayOutputWithContext(ctx context.Context) ParameterTemplateTemplateParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ParameterTemplateTemplateParamArrayOutput)
+}
+
+type ParameterTemplateTemplateParamOutput struct{ *pulumi.OutputState }
+
+func (ParameterTemplateTemplateParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (o ParameterTemplateTemplateParamOutput) ToParameterTemplateTemplateParamOutput() ParameterTemplateTemplateParamOutput {
+	return o
+}
+
+func (o ParameterTemplateTemplateParamOutput) ToParameterTemplateTemplateParamOutputWithContext(ctx context.Context) ParameterTemplateTemplateParamOutput {
+	return o
+}
+
+// Instance parameter name
+func (o ParameterTemplateTemplateParamOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ParameterTemplateTemplateParam) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Parameter runtime value
+func (o ParameterTemplateTemplateParamOutput) RunningValue() pulumi.StringOutput {
+	return o.ApplyT(func(v ParameterTemplateTemplateParam) string { return v.RunningValue }).(pulumi.StringOutput)
+}
+
+type ParameterTemplateTemplateParamArrayOutput struct{ *pulumi.OutputState }
+
+func (ParameterTemplateTemplateParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (o ParameterTemplateTemplateParamArrayOutput) ToParameterTemplateTemplateParamArrayOutput() ParameterTemplateTemplateParamArrayOutput {
+	return o
+}
+
+func (o ParameterTemplateTemplateParamArrayOutput) ToParameterTemplateTemplateParamArrayOutputWithContext(ctx context.Context) ParameterTemplateTemplateParamArrayOutput {
+	return o
+}
+
+func (o ParameterTemplateTemplateParamArrayOutput) Index(i pulumi.IntInput) ParameterTemplateTemplateParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ParameterTemplateTemplateParam {
+		return vs[0].([]ParameterTemplateTemplateParam)[vs[1].(int)]
+	}).(ParameterTemplateTemplateParamOutput)
+}
+
 type GetAllowListAssociatedInstance struct {
 	// Instance ID bound to the current allowlist.
 	InstanceId string `pulumi:"instanceId"`
@@ -6366,6 +6472,157 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 	}).(GetInstanceTagOutput)
 }
 
+type GetParameterTemplateTemplateParam struct {
+	// Default value of the parameter
+	DefaultValue string `pulumi:"defaultValue"`
+	// Parameter description
+	Description string `pulumi:"description"`
+	// Expected value of the parameter
+	ExpectValue string `pulumi:"expectValue"`
+	// Instance parameter name
+	Name string `pulumi:"name"`
+	// Whether a restart is required for the instance to take effect
+	Restart bool `pulumi:"restart"`
+	// Parameter runtime value
+	RunningValue string `pulumi:"runningValue"`
+	// Parameter value range
+	ValueRange string `pulumi:"valueRange"`
+}
+
+// GetParameterTemplateTemplateParamInput is an input type that accepts GetParameterTemplateTemplateParamArgs and GetParameterTemplateTemplateParamOutput values.
+// You can construct a concrete instance of `GetParameterTemplateTemplateParamInput` via:
+//
+//	GetParameterTemplateTemplateParamArgs{...}
+type GetParameterTemplateTemplateParamInput interface {
+	pulumi.Input
+
+	ToGetParameterTemplateTemplateParamOutput() GetParameterTemplateTemplateParamOutput
+	ToGetParameterTemplateTemplateParamOutputWithContext(context.Context) GetParameterTemplateTemplateParamOutput
+}
+
+type GetParameterTemplateTemplateParamArgs struct {
+	// Default value of the parameter
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// Parameter description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Expected value of the parameter
+	ExpectValue pulumi.StringInput `pulumi:"expectValue"`
+	// Instance parameter name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Whether a restart is required for the instance to take effect
+	Restart pulumi.BoolInput `pulumi:"restart"`
+	// Parameter runtime value
+	RunningValue pulumi.StringInput `pulumi:"runningValue"`
+	// Parameter value range
+	ValueRange pulumi.StringInput `pulumi:"valueRange"`
+}
+
+func (GetParameterTemplateTemplateParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (i GetParameterTemplateTemplateParamArgs) ToGetParameterTemplateTemplateParamOutput() GetParameterTemplateTemplateParamOutput {
+	return i.ToGetParameterTemplateTemplateParamOutputWithContext(context.Background())
+}
+
+func (i GetParameterTemplateTemplateParamArgs) ToGetParameterTemplateTemplateParamOutputWithContext(ctx context.Context) GetParameterTemplateTemplateParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetParameterTemplateTemplateParamOutput)
+}
+
+// GetParameterTemplateTemplateParamArrayInput is an input type that accepts GetParameterTemplateTemplateParamArray and GetParameterTemplateTemplateParamArrayOutput values.
+// You can construct a concrete instance of `GetParameterTemplateTemplateParamArrayInput` via:
+//
+//	GetParameterTemplateTemplateParamArray{ GetParameterTemplateTemplateParamArgs{...} }
+type GetParameterTemplateTemplateParamArrayInput interface {
+	pulumi.Input
+
+	ToGetParameterTemplateTemplateParamArrayOutput() GetParameterTemplateTemplateParamArrayOutput
+	ToGetParameterTemplateTemplateParamArrayOutputWithContext(context.Context) GetParameterTemplateTemplateParamArrayOutput
+}
+
+type GetParameterTemplateTemplateParamArray []GetParameterTemplateTemplateParamInput
+
+func (GetParameterTemplateTemplateParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (i GetParameterTemplateTemplateParamArray) ToGetParameterTemplateTemplateParamArrayOutput() GetParameterTemplateTemplateParamArrayOutput {
+	return i.ToGetParameterTemplateTemplateParamArrayOutputWithContext(context.Background())
+}
+
+func (i GetParameterTemplateTemplateParamArray) ToGetParameterTemplateTemplateParamArrayOutputWithContext(ctx context.Context) GetParameterTemplateTemplateParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetParameterTemplateTemplateParamArrayOutput)
+}
+
+type GetParameterTemplateTemplateParamOutput struct{ *pulumi.OutputState }
+
+func (GetParameterTemplateTemplateParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (o GetParameterTemplateTemplateParamOutput) ToGetParameterTemplateTemplateParamOutput() GetParameterTemplateTemplateParamOutput {
+	return o
+}
+
+func (o GetParameterTemplateTemplateParamOutput) ToGetParameterTemplateTemplateParamOutputWithContext(ctx context.Context) GetParameterTemplateTemplateParamOutput {
+	return o
+}
+
+// Default value of the parameter
+func (o GetParameterTemplateTemplateParamOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// Parameter description
+func (o GetParameterTemplateTemplateParamOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Expected value of the parameter
+func (o GetParameterTemplateTemplateParamOutput) ExpectValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) string { return v.ExpectValue }).(pulumi.StringOutput)
+}
+
+// Instance parameter name
+func (o GetParameterTemplateTemplateParamOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Whether a restart is required for the instance to take effect
+func (o GetParameterTemplateTemplateParamOutput) Restart() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) bool { return v.Restart }).(pulumi.BoolOutput)
+}
+
+// Parameter runtime value
+func (o GetParameterTemplateTemplateParamOutput) RunningValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) string { return v.RunningValue }).(pulumi.StringOutput)
+}
+
+// Parameter value range
+func (o GetParameterTemplateTemplateParamOutput) ValueRange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterTemplateTemplateParam) string { return v.ValueRange }).(pulumi.StringOutput)
+}
+
+type GetParameterTemplateTemplateParamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetParameterTemplateTemplateParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetParameterTemplateTemplateParam)(nil)).Elem()
+}
+
+func (o GetParameterTemplateTemplateParamArrayOutput) ToGetParameterTemplateTemplateParamArrayOutput() GetParameterTemplateTemplateParamArrayOutput {
+	return o
+}
+
+func (o GetParameterTemplateTemplateParamArrayOutput) ToGetParameterTemplateTemplateParamArrayOutputWithContext(ctx context.Context) GetParameterTemplateTemplateParamArrayOutput {
+	return o
+}
+
+func (o GetParameterTemplateTemplateParamArrayOutput) Index(i pulumi.IntInput) GetParameterTemplateTemplateParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetParameterTemplateTemplateParam {
+		return vs[0].([]GetParameterTemplateTemplateParam)[vs[1].(int)]
+	}).(GetParameterTemplateTemplateParamOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
@@ -6415,6 +6672,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailProxyResourceInfoPtrInput)(nil)).Elem(), InstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ParameterTemplateTemplateParamInput)(nil)).Elem(), ParameterTemplateTemplateParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ParameterTemplateTemplateParamArrayInput)(nil)).Elem(), ParameterTemplateTemplateParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
@@ -6457,6 +6716,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfoInput)(nil)).Elem(), GetInstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterTemplateTemplateParamInput)(nil)).Elem(), GetParameterTemplateTemplateParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterTemplateTemplateParamArrayInput)(nil)).Elem(), GetParameterTemplateTemplateParamArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
@@ -6505,6 +6766,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceProxyDetailProxyResourceInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(ParameterTemplateTemplateParamOutput{})
+	pulumi.RegisterOutputType(ParameterTemplateTemplateParamArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
@@ -6547,4 +6810,6 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceProxyDetailProxyResourceInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetParameterTemplateTemplateParamOutput{})
+	pulumi.RegisterOutputType(GetParameterTemplateTemplateParamArrayOutput{})
 }

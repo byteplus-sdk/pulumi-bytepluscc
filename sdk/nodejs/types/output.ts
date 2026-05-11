@@ -16547,6 +16547,33 @@ export namespace privatelink {
 }
 
 export namespace privatezone {
+    export interface GetRecordRecordSet {
+        /**
+         * Full domain name
+         */
+        fqdn: string;
+        /**
+         * Subdomain prefix
+         */
+        host: string;
+        /**
+         * Record set ID
+         */
+        id: string;
+        /**
+         * Resolution line
+         */
+        line: string;
+        /**
+         * Record type
+         */
+        type: string;
+        /**
+         * Load balancing enabled
+         */
+        weightEnabled: boolean;
+    }
+
     export interface GetResolverEndpointIpConfig {
         /**
          * Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
@@ -16616,6 +16643,33 @@ export namespace privatezone {
          * VPC ID
          */
         vpcId: string;
+    }
+
+    export interface RecordRecordSet {
+        /**
+         * Full domain name
+         */
+        fqdn: string;
+        /**
+         * Subdomain prefix
+         */
+        host: string;
+        /**
+         * Record set ID
+         */
+        id: string;
+        /**
+         * Resolution line
+         */
+        line: string;
+        /**
+         * Record type
+         */
+        type: string;
+        /**
+         * Load balancing enabled
+         */
+        weightEnabled: boolean;
     }
 
     export interface ResolverEndpointIpConfig {
@@ -18091,6 +18145,37 @@ export namespace rdsmysql {
         value: string;
     }
 
+    export interface GetParameterTemplateTemplateParam {
+        /**
+         * Default value of the parameter
+         */
+        defaultValue: string;
+        /**
+         * Parameter description
+         */
+        description: string;
+        /**
+         * Expected value of the parameter
+         */
+        expectValue: string;
+        /**
+         * Instance parameter name
+         */
+        name: string;
+        /**
+         * Whether a restart is required for the instance to take effect
+         */
+        restart: boolean;
+        /**
+         * Parameter runtime value
+         */
+        runningValue: string;
+        /**
+         * Parameter value range
+         */
+        valueRange: string;
+    }
+
     export interface InstanceAddressObject {
         /**
          * false: private network resolution (default). true: private and public network resolution.
@@ -18383,6 +18468,17 @@ export namespace rdsmysql {
          * Tag value.
          */
         value: string;
+    }
+
+    export interface ParameterTemplateTemplateParam {
+        /**
+         * Instance parameter name
+         */
+        name: string;
+        /**
+         * Parameter runtime value
+         */
+        runningValue: string;
     }
 
 }
@@ -19096,6 +19192,21 @@ export namespace redis {
         securityGroupName: string;
     }
 
+    export interface GetInstanceBackupRestore {
+        /**
+         * Backup ID, used to specify which backup to use when restoring from a backup set
+         */
+        backupPointId: string;
+        /**
+         * Recovery method
+         */
+        backupType: string;
+        /**
+         * Used to specify the point in time for point-in-time recovery
+         */
+        timePoint: string;
+    }
+
     export interface GetInstanceCapacity {
         /**
          * Total memory capacity of the current instance. Unit: MiB.
@@ -19184,6 +19295,21 @@ export namespace redis {
          * The IPv4 address corresponding to the connection address.
          */
         vip: string;
+    }
+
+    export interface InstanceBackupRestore {
+        /**
+         * Backup ID, used to specify which backup to use when restoring from a backup set
+         */
+        backupPointId: string;
+        /**
+         * Recovery method
+         */
+        backupType: string;
+        /**
+         * Used to specify the point in time for point-in-time recovery
+         */
+        timePoint: string;
     }
 
     export interface InstanceCapacity {

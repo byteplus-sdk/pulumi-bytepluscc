@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
+    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, backup_restore=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, continuous_backup=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -38,6 +38,9 @@ class GetInstanceResult:
         if backup_point_name and not isinstance(backup_point_name, str):
             raise TypeError("Expected argument 'backup_point_name' to be a str")
         pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if backup_restore and not isinstance(backup_restore, dict):
+            raise TypeError("Expected argument 'backup_restore' to be a dict")
+        pulumi.set(__self__, "backup_restore", backup_restore)
         if blue_green_role and not isinstance(blue_green_role, str):
             raise TypeError("Expected argument 'blue_green_role' to be a str")
         pulumi.set(__self__, "blue_green_role", blue_green_role)
@@ -50,6 +53,9 @@ class GetInstanceResult:
         if configure_nodes and not isinstance(configure_nodes, list):
             raise TypeError("Expected argument 'configure_nodes' to be a list")
         pulumi.set(__self__, "configure_nodes", configure_nodes)
+        if continuous_backup and not isinstance(continuous_backup, bool):
+            raise TypeError("Expected argument 'continuous_backup' to be a bool")
+        pulumi.set(__self__, "continuous_backup", continuous_backup)
         if create_backup and not isinstance(create_backup, bool):
             raise TypeError("Expected argument 'create_backup' to be a bool")
         pulumi.set(__self__, "create_backup", create_backup)
@@ -190,6 +196,14 @@ class GetInstanceResult:
         return pulumi.get(self, "backup_point_name")
 
     @property
+    @pulumi.getter(name="backupRestore")
+    def backup_restore(self) -> 'outputs.GetInstanceBackupRestoreResult':
+        """
+        Restore data from the backup set to the original Redis instance.
+        """
+        return pulumi.get(self, "backup_restore")
+
+    @property
     @pulumi.getter(name="blueGreenRole")
     def blue_green_role(self) -> builtins.str:
         """
@@ -220,6 +234,14 @@ class GetInstanceResult:
         Set the list of availability zones to which the node belongs.
         """
         return pulumi.get(self, "configure_nodes")
+
+    @property
+    @pulumi.getter(name="continuousBackup")
+    def continuous_backup(self) -> builtins.bool:
+        """
+        Enable data flashback
+        """
+        return pulumi.get(self, "continuous_backup")
 
     @property
     @pulumi.getter(name="createBackup")
@@ -535,10 +557,12 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             allow_list_ids=self.allow_list_ids,
             auto_renew=self.auto_renew,
             backup_point_name=self.backup_point_name,
+            backup_restore=self.backup_restore,
             blue_green_role=self.blue_green_role,
             capacity=self.capacity,
             charge_type=self.charge_type,
             configure_nodes=self.configure_nodes,
+            continuous_backup=self.continuous_backup,
             create_backup=self.create_backup,
             create_time=self.create_time,
             data_layout=self.data_layout,
@@ -596,10 +620,12 @@ def get_instance(id: Optional[builtins.str] = None,
         allow_list_ids=pulumi.get(__ret__, 'allow_list_ids'),
         auto_renew=pulumi.get(__ret__, 'auto_renew'),
         backup_point_name=pulumi.get(__ret__, 'backup_point_name'),
+        backup_restore=pulumi.get(__ret__, 'backup_restore'),
         blue_green_role=pulumi.get(__ret__, 'blue_green_role'),
         capacity=pulumi.get(__ret__, 'capacity'),
         charge_type=pulumi.get(__ret__, 'charge_type'),
         configure_nodes=pulumi.get(__ret__, 'configure_nodes'),
+        continuous_backup=pulumi.get(__ret__, 'continuous_backup'),
         create_backup=pulumi.get(__ret__, 'create_backup'),
         create_time=pulumi.get(__ret__, 'create_time'),
         data_layout=pulumi.get(__ret__, 'data_layout'),
@@ -654,10 +680,12 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         allow_list_ids=pulumi.get(__response__, 'allow_list_ids'),
         auto_renew=pulumi.get(__response__, 'auto_renew'),
         backup_point_name=pulumi.get(__response__, 'backup_point_name'),
+        backup_restore=pulumi.get(__response__, 'backup_restore'),
         blue_green_role=pulumi.get(__response__, 'blue_green_role'),
         capacity=pulumi.get(__response__, 'capacity'),
         charge_type=pulumi.get(__response__, 'charge_type'),
         configure_nodes=pulumi.get(__response__, 'configure_nodes'),
+        continuous_backup=pulumi.get(__response__, 'continuous_backup'),
         create_backup=pulumi.get(__response__, 'create_backup'),
         create_time=pulumi.get(__response__, 'create_time'),
         data_layout=pulumi.get(__response__, 'data_layout'),

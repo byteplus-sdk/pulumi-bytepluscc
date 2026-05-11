@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.privatezone;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.privatezone.RecordArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.RecordState;
+import com.byteplus.bytepluscc.privatezone.outputs.RecordRecordSet;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -13,6 +14,7 @@ import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
@@ -153,6 +155,12 @@ public class Record extends com.pulumi.resources.CustomResource {
      */
     public Output<String> recordId() {
         return this.recordId;
+    }
+    @Export(name="recordSets", refs={List.class,RecordRecordSet.class}, tree="[0,1]")
+    private Output<List<RecordRecordSet>> recordSets;
+
+    public Output<List<RecordRecordSet>> recordSets() {
+        return this.recordSets;
     }
     /**
      * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.

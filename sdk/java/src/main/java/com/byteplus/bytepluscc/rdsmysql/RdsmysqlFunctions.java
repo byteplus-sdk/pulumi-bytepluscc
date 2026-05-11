@@ -16,6 +16,8 @@ import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplateArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplatePlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetBackupResult;
@@ -28,6 +30,8 @@ import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointsResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetParameterTemplateResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetParameterTemplatesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -540,5 +544,89 @@ public final class RdsmysqlFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplateResult> getParameterTemplate(GetParameterTemplateArgs args) {
+        return getParameterTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplateResult> getParameterTemplatePlain(GetParameterTemplatePlainArgs args) {
+        return getParameterTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplateResult> getParameterTemplate(GetParameterTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getParameterTemplate:getParameterTemplate", TypeShape.of(GetParameterTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplateResult> getParameterTemplate(GetParameterTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getParameterTemplate:getParameterTemplate", TypeShape.of(GetParameterTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplateResult> getParameterTemplatePlain(GetParameterTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getParameterTemplate:getParameterTemplate", TypeShape.of(GetParameterTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates() {
+        return getParameterTemplates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain() {
+        return getParameterTemplatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates(InvokeArgs args) {
+        return getParameterTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain(InvokeArgs args) {
+        return getParameterTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
     }
 }

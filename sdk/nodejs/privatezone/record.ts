@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -84,6 +86,7 @@ export class Record extends pulumi.CustomResource {
      * DNS record ID.
      */
     public /*out*/ readonly recordId!: pulumi.Output<string>;
+    public /*out*/ readonly recordSets!: pulumi.Output<outputs.privatezone.RecordRecordSet[]>;
     /**
      * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */
@@ -136,6 +139,7 @@ export class Record extends pulumi.CustomResource {
             resourceInputs["lastOperator"] = state ? state.lastOperator : undefined;
             resourceInputs["line"] = state ? state.line : undefined;
             resourceInputs["recordId"] = state ? state.recordId : undefined;
+            resourceInputs["recordSets"] = state ? state.recordSets : undefined;
             resourceInputs["remark"] = state ? state.remark : undefined;
             resourceInputs["ttl"] = state ? state.ttl : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -171,6 +175,7 @@ export class Record extends pulumi.CustomResource {
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["lastOperator"] = undefined /*out*/;
             resourceInputs["recordId"] = undefined /*out*/;
+            resourceInputs["recordSets"] = undefined /*out*/;
             resourceInputs["updatedAt"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -206,6 +211,7 @@ export interface RecordState {
      * DNS record ID.
      */
     recordId?: pulumi.Input<string>;
+    recordSets?: pulumi.Input<pulumi.Input<inputs.privatezone.RecordRecordSet>[]>;
     /**
      * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      */

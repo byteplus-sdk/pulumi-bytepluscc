@@ -14,6 +14,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['RecordArgs', 'Record']
 
@@ -190,6 +192,7 @@ class _RecordState:
                  last_operator: Optional[pulumi.Input[builtins.str]] = None,
                  line: Optional[pulumi.Input[builtins.str]] = None,
                  record_id: Optional[pulumi.Input[builtins.str]] = None,
+                 record_sets: Optional[pulumi.Input[Sequence[pulumi.Input['RecordRecordSetArgs']]]] = None,
                  remark: Optional[pulumi.Input[builtins.str]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
@@ -227,6 +230,8 @@ class _RecordState:
             pulumi.set(__self__, "line", line)
         if record_id is not None:
             pulumi.set(__self__, "record_id", record_id)
+        if record_sets is not None:
+            pulumi.set(__self__, "record_sets", record_sets)
         if remark is not None:
             pulumi.set(__self__, "remark", remark)
         if ttl is not None:
@@ -315,6 +320,15 @@ class _RecordState:
     @record_id.setter
     def record_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "record_id", value)
+
+    @property
+    @pulumi.getter(name="recordSets")
+    def record_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecordRecordSetArgs']]]]:
+        return pulumi.get(self, "record_sets")
+
+    @record_sets.setter
+    def record_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecordRecordSetArgs']]]]):
+        pulumi.set(self, "record_sets", value)
 
     @property
     @pulumi.getter
@@ -558,6 +572,7 @@ class Record(pulumi.CustomResource):
             __props__.__dict__["created_at"] = None
             __props__.__dict__["last_operator"] = None
             __props__.__dict__["record_id"] = None
+            __props__.__dict__["record_sets"] = None
             __props__.__dict__["updated_at"] = None
         super(Record, __self__).__init__(
             'bytepluscc:privatezone/record:Record',
@@ -575,6 +590,7 @@ class Record(pulumi.CustomResource):
             last_operator: Optional[pulumi.Input[builtins.str]] = None,
             line: Optional[pulumi.Input[builtins.str]] = None,
             record_id: Optional[pulumi.Input[builtins.str]] = None,
+            record_sets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecordRecordSetArgs', 'RecordRecordSetArgsDict']]]]] = None,
             remark: Optional[pulumi.Input[builtins.str]] = None,
             ttl: Optional[pulumi.Input[builtins.int]] = None,
             type: Optional[pulumi.Input[builtins.str]] = None,
@@ -615,6 +631,7 @@ class Record(pulumi.CustomResource):
         __props__.__dict__["last_operator"] = last_operator
         __props__.__dict__["line"] = line
         __props__.__dict__["record_id"] = record_id
+        __props__.__dict__["record_sets"] = record_sets
         __props__.__dict__["remark"] = remark
         __props__.__dict__["ttl"] = ttl
         __props__.__dict__["type"] = type
@@ -672,6 +689,11 @@ class Record(pulumi.CustomResource):
         DNS record ID.
         """
         return pulumi.get(self, "record_id")
+
+    @property
+    @pulumi.getter(name="recordSets")
+    def record_sets(self) -> pulumi.Output[Sequence['outputs.RecordRecordSet']]:
+        return pulumi.get(self, "record_sets")
 
     @property
     @pulumi.getter

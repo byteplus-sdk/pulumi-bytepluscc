@@ -8013,6 +8013,33 @@ export namespace privatelink {
 }
 
 export namespace privatezone {
+    export interface RecordRecordSet {
+        /**
+         * Full domain name
+         */
+        fqdn?: pulumi.Input<string>;
+        /**
+         * Subdomain prefix
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * Record set ID
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Resolution line
+         */
+        line?: pulumi.Input<string>;
+        /**
+         * Record type
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Load balancing enabled
+         */
+        weightEnabled?: pulumi.Input<boolean>;
+    }
+
     export interface ResolverEndpointIpConfig {
         /**
          * Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
@@ -8885,6 +8912,17 @@ export namespace rdsmysql {
          */
         value?: pulumi.Input<string>;
     }
+
+    export interface ParameterTemplateTemplateParam {
+        /**
+         * Instance parameter name
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Parameter runtime value
+         */
+        runningValue: pulumi.Input<string>;
+    }
 }
 
 export namespace rdspostgresql {
@@ -9218,6 +9256,21 @@ export namespace redis {
          * Associated security group ID
          */
         securityGroupId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceBackupRestore {
+        /**
+         * Backup ID, used to specify which backup to use when restoring from a backup set
+         */
+        backupPointId?: pulumi.Input<string>;
+        /**
+         * Recovery method
+         */
+        backupType?: pulumi.Input<string>;
+        /**
+         * Used to specify the point in time for point-in-time recovery
+         */
+        timePoint?: pulumi.Input<string>;
     }
 
     export interface InstanceCapacity {

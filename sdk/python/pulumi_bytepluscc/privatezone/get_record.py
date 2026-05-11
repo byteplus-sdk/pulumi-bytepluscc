@@ -14,6 +14,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetRecordResult',
@@ -27,7 +28,7 @@ class GetRecordResult:
     """
     A collection of values returned by getRecord.
     """
-    def __init__(__self__, created_at=None, enable=None, host=None, id=None, last_operator=None, line=None, record_id=None, remark=None, ttl=None, type=None, updated_at=None, value=None, weight=None, weight_enabled=None, zid=None):
+    def __init__(__self__, created_at=None, enable=None, host=None, id=None, last_operator=None, line=None, record_id=None, record_sets=None, remark=None, ttl=None, type=None, updated_at=None, value=None, weight=None, weight_enabled=None, zid=None):
         if created_at and not isinstance(created_at, str):
             raise TypeError("Expected argument 'created_at' to be a str")
         pulumi.set(__self__, "created_at", created_at)
@@ -49,6 +50,9 @@ class GetRecordResult:
         if record_id and not isinstance(record_id, str):
             raise TypeError("Expected argument 'record_id' to be a str")
         pulumi.set(__self__, "record_id", record_id)
+        if record_sets and not isinstance(record_sets, list):
+            raise TypeError("Expected argument 'record_sets' to be a list")
+        pulumi.set(__self__, "record_sets", record_sets)
         if remark and not isinstance(remark, str):
             raise TypeError("Expected argument 'remark' to be a str")
         pulumi.set(__self__, "remark", remark)
@@ -131,6 +135,14 @@ class GetRecordResult:
         return pulumi.get(self, "record_id")
 
     @property
+    @pulumi.getter(name="recordSets")
+    def record_sets(self) -> Sequence['outputs.GetRecordRecordSetResult']:
+        """
+        Record set list
+        """
+        return pulumi.get(self, "record_sets")
+
+    @property
     @pulumi.getter
     def remark(self) -> builtins.str:
         """
@@ -208,6 +220,7 @@ class AwaitableGetRecordResult(GetRecordResult):
             last_operator=self.last_operator,
             line=self.line,
             record_id=self.record_id,
+            record_sets=self.record_sets,
             remark=self.remark,
             ttl=self.ttl,
             type=self.type,
@@ -239,6 +252,7 @@ def get_record(id: Optional[builtins.str] = None,
         last_operator=pulumi.get(__ret__, 'last_operator'),
         line=pulumi.get(__ret__, 'line'),
         record_id=pulumi.get(__ret__, 'record_id'),
+        record_sets=pulumi.get(__ret__, 'record_sets'),
         remark=pulumi.get(__ret__, 'remark'),
         ttl=pulumi.get(__ret__, 'ttl'),
         type=pulumi.get(__ret__, 'type'),
@@ -267,6 +281,7 @@ def get_record_output(id: Optional[pulumi.Input[builtins.str]] = None,
         last_operator=pulumi.get(__response__, 'last_operator'),
         line=pulumi.get(__response__, 'line'),
         record_id=pulumi.get(__response__, 'record_id'),
+        record_sets=pulumi.get(__response__, 'record_sets'),
         remark=pulumi.get(__response__, 'remark'),
         ttl=pulumi.get(__response__, 'ttl'),
         type=pulumi.get(__response__, 'type'),

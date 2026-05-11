@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.redis;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.redis.InstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceState;
+import com.byteplus.bytepluscc.redis.outputs.InstanceBackupRestore;
 import com.byteplus.bytepluscc.redis.outputs.InstanceCapacity;
 import com.byteplus.bytepluscc.redis.outputs.InstanceConfigureNode;
 import com.byteplus.bytepluscc.redis.outputs.InstanceInstanceShard;
@@ -36,8 +37,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.redis.Instance;
  * import com.byteplus.bytepluscc.redis.InstanceArgs;
- * import com.pulumi.bytepluscc.redis.inputs.InstanceTagArgs;
  * import com.pulumi.bytepluscc.redis.inputs.InstanceConfigureNodeArgs;
+ * import com.pulumi.bytepluscc.redis.inputs.InstanceTagArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -52,24 +53,6 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var redisInstanceDemo = new Instance("redisInstanceDemo", InstanceArgs.builder()
- *             .instanceName("RedisInstance")
- *             .shardedCluster(1)
- *             .password("********")
- *             .nodeNumber(2)
- *             .shardCapacity(512)
- *             .shardNumber(2)
- *             .engineVersion("5.0")
- *             .vpcId("vpc-13f8xxxx")
- *             .subnetId("vpc_subnet-xxxx")
- *             .deletionProtection("disabled")
- *             .chargeType("PostPaid")
- *             .port(6381)
- *             .projectName("default")
- *             .tags(InstanceTagArgs.builder()
- *                 .key("env")
- *                 .value("test")
- *                 .build())
- *             .multiAz("enabled")
  *             .configureNodes(            
  *                 InstanceConfigureNodeArgs.builder()
  *                     .az("cn-beijing-a")
@@ -77,6 +60,29 @@ import javax.annotation.Nullable;
  *                 InstanceConfigureNodeArgs.builder()
  *                     .az("cn-beijing-b")
  *                     .build())
+ *             .multiAz("enabled")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .projectName("default")
+ *             .vpcId("vpc-xxxxx")
+ *             .subnetId("subnet-xxxxx")
+ *             .deletionProtection("enabled")
+ *             .port(9999)
+ *             .autoRenew(false)
+ *             .chargeType("PostPaid")
+ *             .engineVersion("6.0")
+ *             .shardCapacity(512)
+ *             .shardNumber(2)
+ *             .nodeNumber(2)
+ *             .allowListIds("acl-cnlfwmfaqdefxxxxx")
+ *             .password("********")
+ *             .shardedCluster(1)
+ *             .instanceName("ccapi-auto-test")
+ *             .noAuthMode("open")
+ *             .parameterGroupId("DefaultParamGroupId-6.0")
+ *             .continuousBackup(true)
  *             .build());
  * 
  *     }
@@ -137,6 +143,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.backupPointName;
     }
     /**
+     * Restore data from the backup set to the original Redis instance.
+     * 
+     */
+    @Export(name="backupRestore", refs={InstanceBackupRestore.class}, tree="[0]")
+    private Output<InstanceBackupRestore> backupRestore;
+
+    /**
+     * @return Restore data from the backup set to the original Redis instance.
+     * 
+     */
+    public Output<InstanceBackupRestore> backupRestore() {
+        return this.backupRestore;
+    }
+    /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      * 
      */
@@ -183,6 +203,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
 
     public Output<List<InstanceConfigureNode>> configureNodes() {
         return this.configureNodes;
+    }
+    /**
+     * Enable data flashback
+     * 
+     */
+    @Export(name="continuousBackup", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> continuousBackup;
+
+    /**
+     * @return Enable data flashback
+     * 
+     */
+    public Output<Boolean> continuousBackup() {
+        return this.continuousBackup;
     }
     /**
      * Whether to create a backup before making changes.

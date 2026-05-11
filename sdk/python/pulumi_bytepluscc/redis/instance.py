@@ -33,7 +33,9 @@ class InstanceArgs:
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_restore: Optional[pulumi.Input['InstanceBackupRestoreArgs']] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None,
+                 continuous_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  create_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  deletion_protection: Optional[pulumi.Input[builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -58,7 +60,9 @@ class InstanceArgs:
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input['InstanceBackupRestoreArgs'] backup_restore: Restore data from the backup set to the original Redis instance.
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] continuous_backup: Enable data flashback
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
         :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
         :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
@@ -85,8 +89,12 @@ class InstanceArgs:
             pulumi.set(__self__, "auto_renew", auto_renew)
         if backup_point_name is not None:
             pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if backup_restore is not None:
+            pulumi.set(__self__, "backup_restore", backup_restore)
         if charge_type is not None:
             pulumi.set(__self__, "charge_type", charge_type)
+        if continuous_backup is not None:
+            pulumi.set(__self__, "continuous_backup", continuous_backup)
         if create_backup is not None:
             pulumi.set(__self__, "create_backup", create_backup)
         if deletion_protection is not None:
@@ -242,6 +250,18 @@ class InstanceArgs:
         pulumi.set(self, "backup_point_name", value)
 
     @property
+    @pulumi.getter(name="backupRestore")
+    def backup_restore(self) -> Optional[pulumi.Input['InstanceBackupRestoreArgs']]:
+        """
+        Restore data from the backup set to the original Redis instance.
+        """
+        return pulumi.get(self, "backup_restore")
+
+    @backup_restore.setter
+    def backup_restore(self, value: Optional[pulumi.Input['InstanceBackupRestoreArgs']]):
+        pulumi.set(self, "backup_restore", value)
+
+    @property
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -252,6 +272,18 @@ class InstanceArgs:
     @charge_type.setter
     def charge_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "charge_type", value)
+
+    @property
+    @pulumi.getter(name="continuousBackup")
+    def continuous_backup(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable data flashback
+        """
+        return pulumi.get(self, "continuous_backup")
+
+    @continuous_backup.setter
+    def continuous_backup(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "continuous_backup", value)
 
     @property
     @pulumi.getter(name="createBackup")
@@ -401,10 +433,12 @@ class _InstanceState:
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_restore: Optional[pulumi.Input['InstanceBackupRestoreArgs']] = None,
                  blue_green_role: Optional[pulumi.Input[builtins.str]] = None,
                  capacity: Optional[pulumi.Input['InstanceCapacityArgs']] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  configure_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigureNodeArgs']]]] = None,
+                 continuous_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  create_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  create_time: Optional[pulumi.Input[builtins.str]] = None,
                  data_layout: Optional[pulumi.Input[builtins.str]] = None,
@@ -447,9 +481,11 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input['InstanceBackupRestoreArgs'] backup_restore: Restore data from the backup set to the original Redis instance.
         :param pulumi.Input[builtins.str] blue_green_role: Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         :param pulumi.Input['InstanceCapacityArgs'] capacity: Capacity information of the instance.
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] continuous_backup: Enable data flashback
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
         :param pulumi.Input[builtins.str] create_time: Creation time of the instance.
         :param pulumi.Input[builtins.str] data_layout: Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
@@ -491,6 +527,8 @@ class _InstanceState:
             pulumi.set(__self__, "auto_renew", auto_renew)
         if backup_point_name is not None:
             pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if backup_restore is not None:
+            pulumi.set(__self__, "backup_restore", backup_restore)
         if blue_green_role is not None:
             pulumi.set(__self__, "blue_green_role", blue_green_role)
         if capacity is not None:
@@ -499,6 +537,8 @@ class _InstanceState:
             pulumi.set(__self__, "charge_type", charge_type)
         if configure_nodes is not None:
             pulumi.set(__self__, "configure_nodes", configure_nodes)
+        if continuous_backup is not None:
+            pulumi.set(__self__, "continuous_backup", continuous_backup)
         if create_backup is not None:
             pulumi.set(__self__, "create_backup", create_backup)
         if create_time is not None:
@@ -611,6 +651,18 @@ class _InstanceState:
         pulumi.set(self, "backup_point_name", value)
 
     @property
+    @pulumi.getter(name="backupRestore")
+    def backup_restore(self) -> Optional[pulumi.Input['InstanceBackupRestoreArgs']]:
+        """
+        Restore data from the backup set to the original Redis instance.
+        """
+        return pulumi.get(self, "backup_restore")
+
+    @backup_restore.setter
+    def backup_restore(self, value: Optional[pulumi.Input['InstanceBackupRestoreArgs']]):
+        pulumi.set(self, "backup_restore", value)
+
+    @property
     @pulumi.getter(name="blueGreenRole")
     def blue_green_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -654,6 +706,18 @@ class _InstanceState:
     @configure_nodes.setter
     def configure_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigureNodeArgs']]]]):
         pulumi.set(self, "configure_nodes", value)
+
+    @property
+    @pulumi.getter(name="continuousBackup")
+    def continuous_backup(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable data flashback
+        """
+        return pulumi.get(self, "continuous_backup")
+
+    @continuous_backup.setter
+    def continuous_backup(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "continuous_backup", value)
 
     @property
     @pulumi.getter(name="createBackup")
@@ -1100,8 +1164,10 @@ class Instance(pulumi.CustomResource):
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_restore: Optional[pulumi.Input[Union['InstanceBackupRestoreArgs', 'InstanceBackupRestoreArgsDict']]] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  configure_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceConfigureNodeArgs', 'InstanceConfigureNodeArgsDict']]]]] = None,
+                 continuous_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  create_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  deletion_protection: Optional[pulumi.Input[builtins.str]] = None,
                  engine_version: Optional[pulumi.Input[builtins.str]] = None,
@@ -1132,24 +1198,6 @@ class Instance(pulumi.CustomResource):
         import pulumi_bytepluscc as bytepluscc
 
         redis_instance_demo = bytepluscc.redis.Instance("RedisInstanceDemo",
-            instance_name="RedisInstance",
-            sharded_cluster=1,
-            password="********",
-            node_number=2,
-            shard_capacity=512,
-            shard_number=2,
-            engine_version="5.0",
-            vpc_id="vpc-13f8xxxx",
-            subnet_id="vpc_subnet-xxxx",
-            deletion_protection="disabled",
-            charge_type="PostPaid",
-            port=6381,
-            project_name="default",
-            tags=[{
-                "key": "env",
-                "value": "test",
-            }],
-            multi_az="enabled",
             configure_nodes=[
                 {
                     "az": "cn-beijing-a",
@@ -1157,7 +1205,30 @@ class Instance(pulumi.CustomResource):
                 {
                     "az": "cn-beijing-b",
                 },
-            ])
+            ],
+            multi_az="enabled",
+            tags=[{
+                "key": "env",
+                "value": "test",
+            }],
+            project_name="default",
+            vpc_id="vpc-xxxxx",
+            subnet_id="subnet-xxxxx",
+            deletion_protection="enabled",
+            port=9999,
+            auto_renew=False,
+            charge_type="PostPaid",
+            engine_version="6.0",
+            shard_capacity=512,
+            shard_number=2,
+            node_number=2,
+            allow_list_ids=["acl-cnlfwmfaqdefxxxxx"],
+            password="********",
+            sharded_cluster=1,
+            instance_name="ccapi-auto-test",
+            no_auth_mode="open",
+            parameter_group_id="DefaultParamGroupId-6.0",
+            continuous_backup=True)
         ```
 
         ## Import
@@ -1171,7 +1242,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input[Union['InstanceBackupRestoreArgs', 'InstanceBackupRestoreArgsDict']] backup_restore: Restore data from the backup set to the original Redis instance.
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] continuous_backup: Enable data flashback
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
         :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
         :param pulumi.Input[builtins.str] engine_version: Database version number.
@@ -1207,24 +1280,6 @@ class Instance(pulumi.CustomResource):
         import pulumi_bytepluscc as bytepluscc
 
         redis_instance_demo = bytepluscc.redis.Instance("RedisInstanceDemo",
-            instance_name="RedisInstance",
-            sharded_cluster=1,
-            password="********",
-            node_number=2,
-            shard_capacity=512,
-            shard_number=2,
-            engine_version="5.0",
-            vpc_id="vpc-13f8xxxx",
-            subnet_id="vpc_subnet-xxxx",
-            deletion_protection="disabled",
-            charge_type="PostPaid",
-            port=6381,
-            project_name="default",
-            tags=[{
-                "key": "env",
-                "value": "test",
-            }],
-            multi_az="enabled",
             configure_nodes=[
                 {
                     "az": "cn-beijing-a",
@@ -1232,7 +1287,30 @@ class Instance(pulumi.CustomResource):
                 {
                     "az": "cn-beijing-b",
                 },
-            ])
+            ],
+            multi_az="enabled",
+            tags=[{
+                "key": "env",
+                "value": "test",
+            }],
+            project_name="default",
+            vpc_id="vpc-xxxxx",
+            subnet_id="subnet-xxxxx",
+            deletion_protection="enabled",
+            port=9999,
+            auto_renew=False,
+            charge_type="PostPaid",
+            engine_version="6.0",
+            shard_capacity=512,
+            shard_number=2,
+            node_number=2,
+            allow_list_ids=["acl-cnlfwmfaqdefxxxxx"],
+            password="********",
+            sharded_cluster=1,
+            instance_name="ccapi-auto-test",
+            no_auth_mode="open",
+            parameter_group_id="DefaultParamGroupId-6.0",
+            continuous_backup=True)
         ```
 
         ## Import
@@ -1259,8 +1337,10 @@ class Instance(pulumi.CustomResource):
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_restore: Optional[pulumi.Input[Union['InstanceBackupRestoreArgs', 'InstanceBackupRestoreArgsDict']]] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  configure_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceConfigureNodeArgs', 'InstanceConfigureNodeArgsDict']]]]] = None,
+                 continuous_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  create_backup: Optional[pulumi.Input[builtins.bool]] = None,
                  deletion_protection: Optional[pulumi.Input[builtins.str]] = None,
                  engine_version: Optional[pulumi.Input[builtins.str]] = None,
@@ -1292,10 +1372,12 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["allow_list_ids"] = allow_list_ids
             __props__.__dict__["auto_renew"] = auto_renew
             __props__.__dict__["backup_point_name"] = backup_point_name
+            __props__.__dict__["backup_restore"] = backup_restore
             __props__.__dict__["charge_type"] = charge_type
             if configure_nodes is None and not opts.urn:
                 raise TypeError("Missing required property 'configure_nodes'")
             __props__.__dict__["configure_nodes"] = configure_nodes
+            __props__.__dict__["continuous_backup"] = continuous_backup
             __props__.__dict__["create_backup"] = create_backup
             __props__.__dict__["deletion_protection"] = deletion_protection
             if engine_version is None and not opts.urn:
@@ -1362,10 +1444,12 @@ class Instance(pulumi.CustomResource):
             allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
             backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+            backup_restore: Optional[pulumi.Input[Union['InstanceBackupRestoreArgs', 'InstanceBackupRestoreArgsDict']]] = None,
             blue_green_role: Optional[pulumi.Input[builtins.str]] = None,
             capacity: Optional[pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']]] = None,
             charge_type: Optional[pulumi.Input[builtins.str]] = None,
             configure_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceConfigureNodeArgs', 'InstanceConfigureNodeArgsDict']]]]] = None,
+            continuous_backup: Optional[pulumi.Input[builtins.bool]] = None,
             create_backup: Optional[pulumi.Input[builtins.bool]] = None,
             create_time: Optional[pulumi.Input[builtins.str]] = None,
             data_layout: Optional[pulumi.Input[builtins.str]] = None,
@@ -1413,9 +1497,11 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         :param pulumi.Input[builtins.str] backup_point_name: Set a backup name for the full backup created before changes.
+        :param pulumi.Input[Union['InstanceBackupRestoreArgs', 'InstanceBackupRestoreArgsDict']] backup_restore: Restore data from the backup set to the original Redis instance.
         :param pulumi.Input[builtins.str] blue_green_role: Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: Capacity information of the instance.
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
+        :param pulumi.Input[builtins.bool] continuous_backup: Enable data flashback
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
         :param pulumi.Input[builtins.str] create_time: Creation time of the instance.
         :param pulumi.Input[builtins.str] data_layout: Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
@@ -1458,10 +1544,12 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["allow_list_ids"] = allow_list_ids
         __props__.__dict__["auto_renew"] = auto_renew
         __props__.__dict__["backup_point_name"] = backup_point_name
+        __props__.__dict__["backup_restore"] = backup_restore
         __props__.__dict__["blue_green_role"] = blue_green_role
         __props__.__dict__["capacity"] = capacity
         __props__.__dict__["charge_type"] = charge_type
         __props__.__dict__["configure_nodes"] = configure_nodes
+        __props__.__dict__["continuous_backup"] = continuous_backup
         __props__.__dict__["create_backup"] = create_backup
         __props__.__dict__["create_time"] = create_time
         __props__.__dict__["data_layout"] = data_layout
@@ -1526,6 +1614,14 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "backup_point_name")
 
     @property
+    @pulumi.getter(name="backupRestore")
+    def backup_restore(self) -> pulumi.Output['outputs.InstanceBackupRestore']:
+        """
+        Restore data from the backup set to the original Redis instance.
+        """
+        return pulumi.get(self, "backup_restore")
+
+    @property
     @pulumi.getter(name="blueGreenRole")
     def blue_green_role(self) -> pulumi.Output[builtins.str]:
         """
@@ -1553,6 +1649,14 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="configureNodes")
     def configure_nodes(self) -> pulumi.Output[Sequence['outputs.InstanceConfigureNode']]:
         return pulumi.get(self, "configure_nodes")
+
+    @property
+    @pulumi.getter(name="continuousBackup")
+    def continuous_backup(self) -> pulumi.Output[builtins.bool]:
+        """
+        Enable data flashback
+        """
+        return pulumi.get(self, "continuous_backup")
 
     @property
     @pulumi.getter(name="createBackup")
