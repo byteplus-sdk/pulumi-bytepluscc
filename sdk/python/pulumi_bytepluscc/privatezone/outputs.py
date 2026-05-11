@@ -16,17 +16,115 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'RecordRecordSet',
     'ResolverEndpointIpConfig',
     'ResolverEndpointTag',
     'ResolverRuleForwardIP',
     'ResolverRuleTag',
     'ResolverRuleVpC',
+    'GetRecordRecordSetResult',
     'GetResolverEndpointIpConfigResult',
     'GetResolverEndpointTagResult',
     'GetResolverRuleForwardIPResult',
     'GetResolverRuleTagResult',
     'GetResolverRuleVpCResult',
 ]
+
+@pulumi.output_type
+class RecordRecordSet(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "weightEnabled":
+            suggest = "weight_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RecordRecordSet. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RecordRecordSet.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RecordRecordSet.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 fqdn: Optional[builtins.str] = None,
+                 host: Optional[builtins.str] = None,
+                 id: Optional[builtins.str] = None,
+                 line: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 weight_enabled: Optional[builtins.bool] = None):
+        """
+        :param builtins.str fqdn: Full domain name
+        :param builtins.str host: Subdomain prefix
+        :param builtins.str id: Record set ID
+        :param builtins.str line: Resolution line
+        :param builtins.str type: Record type
+        :param builtins.bool weight_enabled: Load balancing enabled
+        """
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if line is not None:
+            pulumi.set(__self__, "line", line)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if weight_enabled is not None:
+            pulumi.set(__self__, "weight_enabled", weight_enabled)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> Optional[builtins.str]:
+        """
+        Full domain name
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[builtins.str]:
+        """
+        Subdomain prefix
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[builtins.str]:
+        """
+        Record set ID
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def line(self) -> Optional[builtins.str]:
+        """
+        Resolution line
+        """
+        return pulumi.get(self, "line")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Record type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> Optional[builtins.bool]:
+        """
+        Load balancing enabled
+        """
+        return pulumi.get(self, "weight_enabled")
+
 
 @pulumi.output_type
 class ResolverEndpointIpConfig(dict):
@@ -241,6 +339,79 @@ class ResolverRuleVpC(dict):
         VPC ID
         """
         return pulumi.get(self, "vpc_id")
+
+
+@pulumi.output_type
+class GetRecordRecordSetResult(dict):
+    def __init__(__self__, *,
+                 fqdn: builtins.str,
+                 host: builtins.str,
+                 id: builtins.str,
+                 line: builtins.str,
+                 type: builtins.str,
+                 weight_enabled: builtins.bool):
+        """
+        :param builtins.str fqdn: Full domain name
+        :param builtins.str host: Subdomain prefix
+        :param builtins.str id: Record set ID
+        :param builtins.str line: Resolution line
+        :param builtins.str type: Record type
+        :param builtins.bool weight_enabled: Load balancing enabled
+        """
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "line", line)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "weight_enabled", weight_enabled)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> builtins.str:
+        """
+        Full domain name
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter
+    def host(self) -> builtins.str:
+        """
+        Subdomain prefix
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        Record set ID
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def line(self) -> builtins.str:
+        """
+        Resolution line
+        """
+        return pulumi.get(self, "line")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Record type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> builtins.bool:
+        """
+        Load balancing enabled
+        """
+        return pulumi.get(self, "weight_enabled")
 
 
 @pulumi.output_type

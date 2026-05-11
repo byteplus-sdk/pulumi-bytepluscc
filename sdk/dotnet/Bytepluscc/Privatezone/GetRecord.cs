@@ -93,6 +93,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         public readonly string RecordId;
         /// <summary>
+        /// Record set list
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRecordRecordSetResult> RecordSets;
+        /// <summary>
         /// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
         /// </summary>
         public readonly string Remark;
@@ -141,6 +145,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 
             string recordId,
 
+            ImmutableArray<Outputs.GetRecordRecordSetResult> recordSets,
+
             string remark,
 
             int ttl,
@@ -164,6 +170,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
             LastOperator = lastOperator;
             Line = line;
             RecordId = recordId;
+            RecordSets = recordSets;
             Remark = remark;
             Ttl = ttl;
             Type = type;

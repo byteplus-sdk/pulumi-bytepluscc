@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'RecordRecordSetArgs',
+    'RecordRecordSetArgsDict',
     'ResolverEndpointIpConfigArgs',
     'ResolverEndpointIpConfigArgsDict',
     'ResolverEndpointTagArgs',
@@ -29,6 +31,138 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class RecordRecordSetArgsDict(TypedDict):
+        fqdn: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Full domain name
+        """
+        host: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Subdomain prefix
+        """
+        id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Record set ID
+        """
+        line: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Resolution line
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Record type
+        """
+        weight_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Load balancing enabled
+        """
+elif False:
+    RecordRecordSetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RecordRecordSetArgs:
+    def __init__(__self__, *,
+                 fqdn: Optional[pulumi.Input[builtins.str]] = None,
+                 host: Optional[pulumi.Input[builtins.str]] = None,
+                 id: Optional[pulumi.Input[builtins.str]] = None,
+                 line: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None,
+                 weight_enabled: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.str] fqdn: Full domain name
+        :param pulumi.Input[builtins.str] host: Subdomain prefix
+        :param pulumi.Input[builtins.str] id: Record set ID
+        :param pulumi.Input[builtins.str] line: Resolution line
+        :param pulumi.Input[builtins.str] type: Record type
+        :param pulumi.Input[builtins.bool] weight_enabled: Load balancing enabled
+        """
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if line is not None:
+            pulumi.set(__self__, "line", line)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if weight_enabled is not None:
+            pulumi.set(__self__, "weight_enabled", weight_enabled)
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Full domain name
+        """
+        return pulumi.get(self, "fqdn")
+
+    @fqdn.setter
+    def fqdn(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "fqdn", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Subdomain prefix
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Record set ID
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def line(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Resolution line
+        """
+        return pulumi.get(self, "line")
+
+    @line.setter
+    def line(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "line", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Record type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Load balancing enabled
+        """
+        return pulumi.get(self, "weight_enabled")
+
+    @weight_enabled.setter
+    def weight_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "weight_enabled", value)
+
 
 if not MYPY:
     class ResolverEndpointIpConfigArgsDict(TypedDict):

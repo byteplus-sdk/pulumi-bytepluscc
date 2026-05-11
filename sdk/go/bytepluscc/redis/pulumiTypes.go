@@ -243,6 +243,181 @@ func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) Allo
 	}).(AllowListSecurityGroupBindInfoOutput)
 }
 
+type InstanceBackupRestore struct {
+	// Backup ID, used to specify which backup to use when restoring from a backup set
+	BackupPointId *string `pulumi:"backupPointId"`
+	// Recovery method
+	BackupType *string `pulumi:"backupType"`
+	// Used to specify the point in time for point-in-time recovery
+	TimePoint *string `pulumi:"timePoint"`
+}
+
+// InstanceBackupRestoreInput is an input type that accepts InstanceBackupRestoreArgs and InstanceBackupRestoreOutput values.
+// You can construct a concrete instance of `InstanceBackupRestoreInput` via:
+//
+//	InstanceBackupRestoreArgs{...}
+type InstanceBackupRestoreInput interface {
+	pulumi.Input
+
+	ToInstanceBackupRestoreOutput() InstanceBackupRestoreOutput
+	ToInstanceBackupRestoreOutputWithContext(context.Context) InstanceBackupRestoreOutput
+}
+
+type InstanceBackupRestoreArgs struct {
+	// Backup ID, used to specify which backup to use when restoring from a backup set
+	BackupPointId pulumi.StringPtrInput `pulumi:"backupPointId"`
+	// Recovery method
+	BackupType pulumi.StringPtrInput `pulumi:"backupType"`
+	// Used to specify the point in time for point-in-time recovery
+	TimePoint pulumi.StringPtrInput `pulumi:"timePoint"`
+}
+
+func (InstanceBackupRestoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupRestore)(nil)).Elem()
+}
+
+func (i InstanceBackupRestoreArgs) ToInstanceBackupRestoreOutput() InstanceBackupRestoreOutput {
+	return i.ToInstanceBackupRestoreOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupRestoreArgs) ToInstanceBackupRestoreOutputWithContext(ctx context.Context) InstanceBackupRestoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupRestoreOutput)
+}
+
+func (i InstanceBackupRestoreArgs) ToInstanceBackupRestorePtrOutput() InstanceBackupRestorePtrOutput {
+	return i.ToInstanceBackupRestorePtrOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupRestoreArgs) ToInstanceBackupRestorePtrOutputWithContext(ctx context.Context) InstanceBackupRestorePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupRestoreOutput).ToInstanceBackupRestorePtrOutputWithContext(ctx)
+}
+
+// InstanceBackupRestorePtrInput is an input type that accepts InstanceBackupRestoreArgs, InstanceBackupRestorePtr and InstanceBackupRestorePtrOutput values.
+// You can construct a concrete instance of `InstanceBackupRestorePtrInput` via:
+//
+//	        InstanceBackupRestoreArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceBackupRestorePtrInput interface {
+	pulumi.Input
+
+	ToInstanceBackupRestorePtrOutput() InstanceBackupRestorePtrOutput
+	ToInstanceBackupRestorePtrOutputWithContext(context.Context) InstanceBackupRestorePtrOutput
+}
+
+type instanceBackupRestorePtrType InstanceBackupRestoreArgs
+
+func InstanceBackupRestorePtr(v *InstanceBackupRestoreArgs) InstanceBackupRestorePtrInput {
+	return (*instanceBackupRestorePtrType)(v)
+}
+
+func (*instanceBackupRestorePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupRestore)(nil)).Elem()
+}
+
+func (i *instanceBackupRestorePtrType) ToInstanceBackupRestorePtrOutput() InstanceBackupRestorePtrOutput {
+	return i.ToInstanceBackupRestorePtrOutputWithContext(context.Background())
+}
+
+func (i *instanceBackupRestorePtrType) ToInstanceBackupRestorePtrOutputWithContext(ctx context.Context) InstanceBackupRestorePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupRestorePtrOutput)
+}
+
+type InstanceBackupRestoreOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupRestoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupRestore)(nil)).Elem()
+}
+
+func (o InstanceBackupRestoreOutput) ToInstanceBackupRestoreOutput() InstanceBackupRestoreOutput {
+	return o
+}
+
+func (o InstanceBackupRestoreOutput) ToInstanceBackupRestoreOutputWithContext(ctx context.Context) InstanceBackupRestoreOutput {
+	return o
+}
+
+func (o InstanceBackupRestoreOutput) ToInstanceBackupRestorePtrOutput() InstanceBackupRestorePtrOutput {
+	return o.ToInstanceBackupRestorePtrOutputWithContext(context.Background())
+}
+
+func (o InstanceBackupRestoreOutput) ToInstanceBackupRestorePtrOutputWithContext(ctx context.Context) InstanceBackupRestorePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceBackupRestore) *InstanceBackupRestore {
+		return &v
+	}).(InstanceBackupRestorePtrOutput)
+}
+
+// Backup ID, used to specify which backup to use when restoring from a backup set
+func (o InstanceBackupRestoreOutput) BackupPointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupRestore) *string { return v.BackupPointId }).(pulumi.StringPtrOutput)
+}
+
+// Recovery method
+func (o InstanceBackupRestoreOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupRestore) *string { return v.BackupType }).(pulumi.StringPtrOutput)
+}
+
+// Used to specify the point in time for point-in-time recovery
+func (o InstanceBackupRestoreOutput) TimePoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupRestore) *string { return v.TimePoint }).(pulumi.StringPtrOutput)
+}
+
+type InstanceBackupRestorePtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupRestorePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupRestore)(nil)).Elem()
+}
+
+func (o InstanceBackupRestorePtrOutput) ToInstanceBackupRestorePtrOutput() InstanceBackupRestorePtrOutput {
+	return o
+}
+
+func (o InstanceBackupRestorePtrOutput) ToInstanceBackupRestorePtrOutputWithContext(ctx context.Context) InstanceBackupRestorePtrOutput {
+	return o
+}
+
+func (o InstanceBackupRestorePtrOutput) Elem() InstanceBackupRestoreOutput {
+	return o.ApplyT(func(v *InstanceBackupRestore) InstanceBackupRestore {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceBackupRestore
+		return ret
+	}).(InstanceBackupRestoreOutput)
+}
+
+// Backup ID, used to specify which backup to use when restoring from a backup set
+func (o InstanceBackupRestorePtrOutput) BackupPointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupRestore) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupPointId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Recovery method
+func (o InstanceBackupRestorePtrOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupRestore) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Used to specify the point in time for point-in-time recovery
+func (o InstanceBackupRestorePtrOutput) TimePoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupRestore) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimePoint
+	}).(pulumi.StringPtrOutput)
+}
+
 type InstanceCapacity struct {
 	// Total memory capacity of the current instance. Unit: MiB.
 	Total *int `pulumi:"total"`
@@ -1228,6 +1403,76 @@ func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetAllowListSecurityGroupBindInfoOutput)
 }
 
+type GetInstanceBackupRestore struct {
+	// Backup ID, used to specify which backup to use when restoring from a backup set
+	BackupPointId string `pulumi:"backupPointId"`
+	// Recovery method
+	BackupType string `pulumi:"backupType"`
+	// Used to specify the point in time for point-in-time recovery
+	TimePoint string `pulumi:"timePoint"`
+}
+
+// GetInstanceBackupRestoreInput is an input type that accepts GetInstanceBackupRestoreArgs and GetInstanceBackupRestoreOutput values.
+// You can construct a concrete instance of `GetInstanceBackupRestoreInput` via:
+//
+//	GetInstanceBackupRestoreArgs{...}
+type GetInstanceBackupRestoreInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupRestoreOutput() GetInstanceBackupRestoreOutput
+	ToGetInstanceBackupRestoreOutputWithContext(context.Context) GetInstanceBackupRestoreOutput
+}
+
+type GetInstanceBackupRestoreArgs struct {
+	// Backup ID, used to specify which backup to use when restoring from a backup set
+	BackupPointId pulumi.StringInput `pulumi:"backupPointId"`
+	// Recovery method
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// Used to specify the point in time for point-in-time recovery
+	TimePoint pulumi.StringInput `pulumi:"timePoint"`
+}
+
+func (GetInstanceBackupRestoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupRestore)(nil)).Elem()
+}
+
+func (i GetInstanceBackupRestoreArgs) ToGetInstanceBackupRestoreOutput() GetInstanceBackupRestoreOutput {
+	return i.ToGetInstanceBackupRestoreOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupRestoreArgs) ToGetInstanceBackupRestoreOutputWithContext(ctx context.Context) GetInstanceBackupRestoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupRestoreOutput)
+}
+
+type GetInstanceBackupRestoreOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupRestoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupRestore)(nil)).Elem()
+}
+
+func (o GetInstanceBackupRestoreOutput) ToGetInstanceBackupRestoreOutput() GetInstanceBackupRestoreOutput {
+	return o
+}
+
+func (o GetInstanceBackupRestoreOutput) ToGetInstanceBackupRestoreOutputWithContext(ctx context.Context) GetInstanceBackupRestoreOutput {
+	return o
+}
+
+// Backup ID, used to specify which backup to use when restoring from a backup set
+func (o GetInstanceBackupRestoreOutput) BackupPointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupRestore) string { return v.BackupPointId }).(pulumi.StringOutput)
+}
+
+// Recovery method
+func (o GetInstanceBackupRestoreOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupRestore) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Used to specify the point in time for point-in-time recovery
+func (o GetInstanceBackupRestoreOutput) TimePoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupRestore) string { return v.TimePoint }).(pulumi.StringOutput)
+}
+
 type GetInstanceCapacity struct {
 	// Total memory capacity of the current instance. Unit: MiB.
 	Total int `pulumi:"total"`
@@ -1878,6 +2123,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupRestoreInput)(nil)).Elem(), InstanceBackupRestoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupRestorePtrInput)(nil)).Elem(), InstanceBackupRestoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInput)(nil)).Elem(), InstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityPtrInput)(nil)).Elem(), InstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigureNodeInput)(nil)).Elem(), InstanceConfigureNodeArgs{})
@@ -1894,6 +2141,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupRestoreInput)(nil)).Elem(), GetInstanceBackupRestoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCapacityInput)(nil)).Elem(), GetInstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigureNodeInput)(nil)).Elem(), GetInstanceConfigureNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigureNodeArrayInput)(nil)).Elem(), GetInstanceConfigureNodeArray{})
@@ -1909,6 +2157,8 @@ func init() {
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(InstanceBackupRestoreOutput{})
+	pulumi.RegisterOutputType(InstanceBackupRestorePtrOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityPtrOutput{})
 	pulumi.RegisterOutputType(InstanceConfigureNodeOutput{})
@@ -1925,6 +2175,7 @@ func init() {
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupRestoreOutput{})
 	pulumi.RegisterOutputType(GetInstanceCapacityOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigureNodeOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigureNodeArrayOutput{})

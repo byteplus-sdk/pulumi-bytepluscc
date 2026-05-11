@@ -43,6 +43,10 @@ export interface GetInstanceResult {
      */
     readonly backupPointName: string;
     /**
+     * Restore data from the backup set to the original Redis instance.
+     */
+    readonly backupRestore: outputs.redis.GetInstanceBackupRestore;
+    /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      */
     readonly blueGreenRole: string;
@@ -58,6 +62,10 @@ export interface GetInstanceResult {
      * Set the list of availability zones to which the node belongs.
      */
     readonly configureNodes: outputs.redis.GetInstanceConfigureNode[];
+    /**
+     * Enable data flashback
+     */
+    readonly continuousBackup: boolean;
     /**
      * Whether to create a backup before making changes.
      */

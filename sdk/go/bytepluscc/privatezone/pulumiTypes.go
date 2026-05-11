@@ -13,6 +13,148 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type RecordRecordSet struct {
+	// Full domain name
+	Fqdn *string `pulumi:"fqdn"`
+	// Subdomain prefix
+	Host *string `pulumi:"host"`
+	// Record set ID
+	Id *string `pulumi:"id"`
+	// Resolution line
+	Line *string `pulumi:"line"`
+	// Record type
+	Type *string `pulumi:"type"`
+	// Load balancing enabled
+	WeightEnabled *bool `pulumi:"weightEnabled"`
+}
+
+// RecordRecordSetInput is an input type that accepts RecordRecordSetArgs and RecordRecordSetOutput values.
+// You can construct a concrete instance of `RecordRecordSetInput` via:
+//
+//	RecordRecordSetArgs{...}
+type RecordRecordSetInput interface {
+	pulumi.Input
+
+	ToRecordRecordSetOutput() RecordRecordSetOutput
+	ToRecordRecordSetOutputWithContext(context.Context) RecordRecordSetOutput
+}
+
+type RecordRecordSetArgs struct {
+	// Full domain name
+	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
+	// Subdomain prefix
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// Record set ID
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Resolution line
+	Line pulumi.StringPtrInput `pulumi:"line"`
+	// Record type
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Load balancing enabled
+	WeightEnabled pulumi.BoolPtrInput `pulumi:"weightEnabled"`
+}
+
+func (RecordRecordSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RecordRecordSet)(nil)).Elem()
+}
+
+func (i RecordRecordSetArgs) ToRecordRecordSetOutput() RecordRecordSetOutput {
+	return i.ToRecordRecordSetOutputWithContext(context.Background())
+}
+
+func (i RecordRecordSetArgs) ToRecordRecordSetOutputWithContext(ctx context.Context) RecordRecordSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RecordRecordSetOutput)
+}
+
+// RecordRecordSetArrayInput is an input type that accepts RecordRecordSetArray and RecordRecordSetArrayOutput values.
+// You can construct a concrete instance of `RecordRecordSetArrayInput` via:
+//
+//	RecordRecordSetArray{ RecordRecordSetArgs{...} }
+type RecordRecordSetArrayInput interface {
+	pulumi.Input
+
+	ToRecordRecordSetArrayOutput() RecordRecordSetArrayOutput
+	ToRecordRecordSetArrayOutputWithContext(context.Context) RecordRecordSetArrayOutput
+}
+
+type RecordRecordSetArray []RecordRecordSetInput
+
+func (RecordRecordSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RecordRecordSet)(nil)).Elem()
+}
+
+func (i RecordRecordSetArray) ToRecordRecordSetArrayOutput() RecordRecordSetArrayOutput {
+	return i.ToRecordRecordSetArrayOutputWithContext(context.Background())
+}
+
+func (i RecordRecordSetArray) ToRecordRecordSetArrayOutputWithContext(ctx context.Context) RecordRecordSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RecordRecordSetArrayOutput)
+}
+
+type RecordRecordSetOutput struct{ *pulumi.OutputState }
+
+func (RecordRecordSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RecordRecordSet)(nil)).Elem()
+}
+
+func (o RecordRecordSetOutput) ToRecordRecordSetOutput() RecordRecordSetOutput {
+	return o
+}
+
+func (o RecordRecordSetOutput) ToRecordRecordSetOutputWithContext(ctx context.Context) RecordRecordSetOutput {
+	return o
+}
+
+// Full domain name
+func (o RecordRecordSetOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RecordRecordSet) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
+}
+
+// Subdomain prefix
+func (o RecordRecordSetOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RecordRecordSet) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// Record set ID
+func (o RecordRecordSetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RecordRecordSet) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Resolution line
+func (o RecordRecordSetOutput) Line() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RecordRecordSet) *string { return v.Line }).(pulumi.StringPtrOutput)
+}
+
+// Record type
+func (o RecordRecordSetOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RecordRecordSet) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Load balancing enabled
+func (o RecordRecordSetOutput) WeightEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RecordRecordSet) *bool { return v.WeightEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type RecordRecordSetArrayOutput struct{ *pulumi.OutputState }
+
+func (RecordRecordSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RecordRecordSet)(nil)).Elem()
+}
+
+func (o RecordRecordSetArrayOutput) ToRecordRecordSetArrayOutput() RecordRecordSetArrayOutput {
+	return o
+}
+
+func (o RecordRecordSetArrayOutput) ToRecordRecordSetArrayOutputWithContext(ctx context.Context) RecordRecordSetArrayOutput {
+	return o
+}
+
+func (o RecordRecordSetArrayOutput) Index(i pulumi.IntInput) RecordRecordSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RecordRecordSet {
+		return vs[0].([]RecordRecordSet)[vs[1].(int)]
+	}).(RecordRecordSetOutput)
+}
+
 type ResolverEndpointIpConfig struct {
 	// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 	AzId *string `pulumi:"azId"`
@@ -559,6 +701,148 @@ func (o ResolverRuleVpCArrayOutput) Index(i pulumi.IntInput) ResolverRuleVpCOutp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ResolverRuleVpC {
 		return vs[0].([]ResolverRuleVpC)[vs[1].(int)]
 	}).(ResolverRuleVpCOutput)
+}
+
+type GetRecordRecordSet struct {
+	// Full domain name
+	Fqdn string `pulumi:"fqdn"`
+	// Subdomain prefix
+	Host string `pulumi:"host"`
+	// Record set ID
+	Id string `pulumi:"id"`
+	// Resolution line
+	Line string `pulumi:"line"`
+	// Record type
+	Type string `pulumi:"type"`
+	// Load balancing enabled
+	WeightEnabled bool `pulumi:"weightEnabled"`
+}
+
+// GetRecordRecordSetInput is an input type that accepts GetRecordRecordSetArgs and GetRecordRecordSetOutput values.
+// You can construct a concrete instance of `GetRecordRecordSetInput` via:
+//
+//	GetRecordRecordSetArgs{...}
+type GetRecordRecordSetInput interface {
+	pulumi.Input
+
+	ToGetRecordRecordSetOutput() GetRecordRecordSetOutput
+	ToGetRecordRecordSetOutputWithContext(context.Context) GetRecordRecordSetOutput
+}
+
+type GetRecordRecordSetArgs struct {
+	// Full domain name
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// Subdomain prefix
+	Host pulumi.StringInput `pulumi:"host"`
+	// Record set ID
+	Id pulumi.StringInput `pulumi:"id"`
+	// Resolution line
+	Line pulumi.StringInput `pulumi:"line"`
+	// Record type
+	Type pulumi.StringInput `pulumi:"type"`
+	// Load balancing enabled
+	WeightEnabled pulumi.BoolInput `pulumi:"weightEnabled"`
+}
+
+func (GetRecordRecordSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecordRecordSet)(nil)).Elem()
+}
+
+func (i GetRecordRecordSetArgs) ToGetRecordRecordSetOutput() GetRecordRecordSetOutput {
+	return i.ToGetRecordRecordSetOutputWithContext(context.Background())
+}
+
+func (i GetRecordRecordSetArgs) ToGetRecordRecordSetOutputWithContext(ctx context.Context) GetRecordRecordSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecordRecordSetOutput)
+}
+
+// GetRecordRecordSetArrayInput is an input type that accepts GetRecordRecordSetArray and GetRecordRecordSetArrayOutput values.
+// You can construct a concrete instance of `GetRecordRecordSetArrayInput` via:
+//
+//	GetRecordRecordSetArray{ GetRecordRecordSetArgs{...} }
+type GetRecordRecordSetArrayInput interface {
+	pulumi.Input
+
+	ToGetRecordRecordSetArrayOutput() GetRecordRecordSetArrayOutput
+	ToGetRecordRecordSetArrayOutputWithContext(context.Context) GetRecordRecordSetArrayOutput
+}
+
+type GetRecordRecordSetArray []GetRecordRecordSetInput
+
+func (GetRecordRecordSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecordRecordSet)(nil)).Elem()
+}
+
+func (i GetRecordRecordSetArray) ToGetRecordRecordSetArrayOutput() GetRecordRecordSetArrayOutput {
+	return i.ToGetRecordRecordSetArrayOutputWithContext(context.Background())
+}
+
+func (i GetRecordRecordSetArray) ToGetRecordRecordSetArrayOutputWithContext(ctx context.Context) GetRecordRecordSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRecordRecordSetArrayOutput)
+}
+
+type GetRecordRecordSetOutput struct{ *pulumi.OutputState }
+
+func (GetRecordRecordSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecordRecordSet)(nil)).Elem()
+}
+
+func (o GetRecordRecordSetOutput) ToGetRecordRecordSetOutput() GetRecordRecordSetOutput {
+	return o
+}
+
+func (o GetRecordRecordSetOutput) ToGetRecordRecordSetOutputWithContext(ctx context.Context) GetRecordRecordSetOutput {
+	return o
+}
+
+// Full domain name
+func (o GetRecordRecordSetOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecordRecordSet) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// Subdomain prefix
+func (o GetRecordRecordSetOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecordRecordSet) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// Record set ID
+func (o GetRecordRecordSetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecordRecordSet) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Resolution line
+func (o GetRecordRecordSetOutput) Line() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecordRecordSet) string { return v.Line }).(pulumi.StringOutput)
+}
+
+// Record type
+func (o GetRecordRecordSetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecordRecordSet) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Load balancing enabled
+func (o GetRecordRecordSetOutput) WeightEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRecordRecordSet) bool { return v.WeightEnabled }).(pulumi.BoolOutput)
+}
+
+type GetRecordRecordSetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRecordRecordSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRecordRecordSet)(nil)).Elem()
+}
+
+func (o GetRecordRecordSetArrayOutput) ToGetRecordRecordSetArrayOutput() GetRecordRecordSetArrayOutput {
+	return o
+}
+
+func (o GetRecordRecordSetArrayOutput) ToGetRecordRecordSetArrayOutputWithContext(ctx context.Context) GetRecordRecordSetArrayOutput {
+	return o
+}
+
+func (o GetRecordRecordSetArrayOutput) Index(i pulumi.IntInput) GetRecordRecordSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecordRecordSet {
+		return vs[0].([]GetRecordRecordSet)[vs[1].(int)]
+	}).(GetRecordRecordSetOutput)
 }
 
 type GetResolverEndpointIpConfig struct {
@@ -1128,6 +1412,8 @@ func (o GetResolverRuleVpCArrayOutput) Index(i pulumi.IntInput) GetResolverRuleV
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*RecordRecordSetInput)(nil)).Elem(), RecordRecordSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RecordRecordSetArrayInput)(nil)).Elem(), RecordRecordSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverEndpointIpConfigInput)(nil)).Elem(), ResolverEndpointIpConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverEndpointIpConfigArrayInput)(nil)).Elem(), ResolverEndpointIpConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverEndpointTagInput)(nil)).Elem(), ResolverEndpointTagArgs{})
@@ -1138,6 +1424,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverRuleTagArrayInput)(nil)).Elem(), ResolverRuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverRuleVpCInput)(nil)).Elem(), ResolverRuleVpCArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverRuleVpCArrayInput)(nil)).Elem(), ResolverRuleVpCArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordRecordSetInput)(nil)).Elem(), GetRecordRecordSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordRecordSetArrayInput)(nil)).Elem(), GetRecordRecordSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverEndpointIpConfigInput)(nil)).Elem(), GetResolverEndpointIpConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverEndpointIpConfigArrayInput)(nil)).Elem(), GetResolverEndpointIpConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverEndpointTagInput)(nil)).Elem(), GetResolverEndpointTagArgs{})
@@ -1148,6 +1436,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverRuleTagArrayInput)(nil)).Elem(), GetResolverRuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverRuleVpCInput)(nil)).Elem(), GetResolverRuleVpCArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverRuleVpCArrayInput)(nil)).Elem(), GetResolverRuleVpCArray{})
+	pulumi.RegisterOutputType(RecordRecordSetOutput{})
+	pulumi.RegisterOutputType(RecordRecordSetArrayOutput{})
 	pulumi.RegisterOutputType(ResolverEndpointIpConfigOutput{})
 	pulumi.RegisterOutputType(ResolverEndpointIpConfigArrayOutput{})
 	pulumi.RegisterOutputType(ResolverEndpointTagOutput{})
@@ -1158,6 +1448,8 @@ func init() {
 	pulumi.RegisterOutputType(ResolverRuleTagArrayOutput{})
 	pulumi.RegisterOutputType(ResolverRuleVpCOutput{})
 	pulumi.RegisterOutputType(ResolverRuleVpCArrayOutput{})
+	pulumi.RegisterOutputType(GetRecordRecordSetOutput{})
+	pulumi.RegisterOutputType(GetRecordRecordSetArrayOutput{})
 	pulumi.RegisterOutputType(GetResolverEndpointIpConfigOutput{})
 	pulumi.RegisterOutputType(GetResolverEndpointIpConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetResolverEndpointTagOutput{})

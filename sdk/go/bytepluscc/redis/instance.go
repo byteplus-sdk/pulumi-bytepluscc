@@ -29,26 +29,6 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := redis.NewInstance(ctx, "RedisInstanceDemo", &redis.InstanceArgs{
-//				InstanceName:       pulumi.String("RedisInstance"),
-//				ShardedCluster:     pulumi.Int(1),
-//				Password:           pulumi.String("********"),
-//				NodeNumber:         pulumi.Int(2),
-//				ShardCapacity:      pulumi.Int(512),
-//				ShardNumber:        pulumi.Int(2),
-//				EngineVersion:      pulumi.String("5.0"),
-//				VpcId:              pulumi.String("vpc-13f8xxxx"),
-//				SubnetId:           pulumi.String("vpc_subnet-xxxx"),
-//				DeletionProtection: pulumi.String("disabled"),
-//				ChargeType:         pulumi.String("PostPaid"),
-//				Port:               pulumi.Int(6381),
-//				ProjectName:        pulumi.String("default"),
-//				Tags: redis.InstanceTagArray{
-//					&redis.InstanceTagArgs{
-//						Key:   pulumi.String("env"),
-//						Value: pulumi.String("test"),
-//					},
-//				},
-//				MultiAz: pulumi.String("enabled"),
 //				ConfigureNodes: redis.InstanceConfigureNodeArray{
 //					&redis.InstanceConfigureNodeArgs{
 //						Az: pulumi.String("cn-beijing-a"),
@@ -57,6 +37,33 @@ import (
 //						Az: pulumi.String("cn-beijing-b"),
 //					},
 //				},
+//				MultiAz: pulumi.String("enabled"),
+//				Tags: redis.InstanceTagArray{
+//					&redis.InstanceTagArgs{
+//						Key:   pulumi.String("env"),
+//						Value: pulumi.String("test"),
+//					},
+//				},
+//				ProjectName:        pulumi.String("default"),
+//				VpcId:              pulumi.String("vpc-xxxxx"),
+//				SubnetId:           pulumi.String("subnet-xxxxx"),
+//				DeletionProtection: pulumi.String("enabled"),
+//				Port:               pulumi.Int(9999),
+//				AutoRenew:          pulumi.Bool(false),
+//				ChargeType:         pulumi.String("PostPaid"),
+//				EngineVersion:      pulumi.String("6.0"),
+//				ShardCapacity:      pulumi.Int(512),
+//				ShardNumber:        pulumi.Int(2),
+//				NodeNumber:         pulumi.Int(2),
+//				AllowListIds: pulumi.StringArray{
+//					pulumi.String("acl-cnlfwmfaqdefxxxxx"),
+//				},
+//				Password:         pulumi.String("********"),
+//				ShardedCluster:   pulumi.Int(1),
+//				InstanceName:     pulumi.String("ccapi-auto-test"),
+//				NoAuthMode:       pulumi.String("open"),
+//				ParameterGroupId: pulumi.String("DefaultParamGroupId-6.0"),
+//				ContinuousBackup: pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
@@ -81,6 +88,8 @@ type Instance struct {
 	AutoRenew pulumi.BoolOutput `pulumi:"autoRenew"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName pulumi.StringOutput `pulumi:"backupPointName"`
+	// Restore data from the backup set to the original Redis instance.
+	BackupRestore InstanceBackupRestoreOutput `pulumi:"backupRestore"`
 	// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 	BlueGreenRole pulumi.StringOutput `pulumi:"blueGreenRole"`
 	// Capacity information of the instance.
@@ -88,6 +97,8 @@ type Instance struct {
 	// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
 	ChargeType     pulumi.StringOutput              `pulumi:"chargeType"`
 	ConfigureNodes InstanceConfigureNodeArrayOutput `pulumi:"configureNodes"`
+	// Enable data flashback
+	ContinuousBackup pulumi.BoolOutput `pulumi:"continuousBackup"`
 	// Whether to create a backup before making changes.
 	CreateBackup pulumi.BoolOutput `pulumi:"createBackup"`
 	// Creation time of the instance.
@@ -221,6 +232,8 @@ type instanceState struct {
 	AutoRenew *bool `pulumi:"autoRenew"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName *string `pulumi:"backupPointName"`
+	// Restore data from the backup set to the original Redis instance.
+	BackupRestore *InstanceBackupRestore `pulumi:"backupRestore"`
 	// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 	BlueGreenRole *string `pulumi:"blueGreenRole"`
 	// Capacity information of the instance.
@@ -228,6 +241,8 @@ type instanceState struct {
 	// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
 	ChargeType     *string                 `pulumi:"chargeType"`
 	ConfigureNodes []InstanceConfigureNode `pulumi:"configureNodes"`
+	// Enable data flashback
+	ContinuousBackup *bool `pulumi:"continuousBackup"`
 	// Whether to create a backup before making changes.
 	CreateBackup *bool `pulumi:"createBackup"`
 	// Creation time of the instance.
@@ -308,6 +323,8 @@ type InstanceState struct {
 	AutoRenew pulumi.BoolPtrInput
 	// Set a backup name for the full backup created before changes.
 	BackupPointName pulumi.StringPtrInput
+	// Restore data from the backup set to the original Redis instance.
+	BackupRestore InstanceBackupRestorePtrInput
 	// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 	BlueGreenRole pulumi.StringPtrInput
 	// Capacity information of the instance.
@@ -315,6 +332,8 @@ type InstanceState struct {
 	// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
 	ChargeType     pulumi.StringPtrInput
 	ConfigureNodes InstanceConfigureNodeArrayInput
+	// Enable data flashback
+	ContinuousBackup pulumi.BoolPtrInput
 	// Whether to create a backup before making changes.
 	CreateBackup pulumi.BoolPtrInput
 	// Creation time of the instance.
@@ -399,9 +418,13 @@ type instanceArgs struct {
 	AutoRenew *bool `pulumi:"autoRenew"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName *string `pulumi:"backupPointName"`
+	// Restore data from the backup set to the original Redis instance.
+	BackupRestore *InstanceBackupRestore `pulumi:"backupRestore"`
 	// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
 	ChargeType     *string                 `pulumi:"chargeType"`
 	ConfigureNodes []InstanceConfigureNode `pulumi:"configureNodes"`
+	// Enable data flashback
+	ContinuousBackup *bool `pulumi:"continuousBackup"`
 	// Whether to create a backup before making changes.
 	CreateBackup *bool `pulumi:"createBackup"`
 	// Enable or disable instance deletion protection.
@@ -449,9 +472,13 @@ type InstanceArgs struct {
 	AutoRenew pulumi.BoolPtrInput
 	// Set a backup name for the full backup created before changes.
 	BackupPointName pulumi.StringPtrInput
+	// Restore data from the backup set to the original Redis instance.
+	BackupRestore InstanceBackupRestorePtrInput
 	// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
 	ChargeType     pulumi.StringPtrInput
 	ConfigureNodes InstanceConfigureNodeArrayInput
+	// Enable data flashback
+	ContinuousBackup pulumi.BoolPtrInput
 	// Whether to create a backup before making changes.
 	CreateBackup pulumi.BoolPtrInput
 	// Enable or disable instance deletion protection.
@@ -593,6 +620,11 @@ func (o InstanceOutput) BackupPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.BackupPointName }).(pulumi.StringOutput)
 }
 
+// Restore data from the backup set to the original Redis instance.
+func (o InstanceOutput) BackupRestore() InstanceBackupRestoreOutput {
+	return o.ApplyT(func(v *Instance) InstanceBackupRestoreOutput { return v.BackupRestore }).(InstanceBackupRestoreOutput)
+}
+
 // Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 func (o InstanceOutput) BlueGreenRole() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.BlueGreenRole }).(pulumi.StringOutput)
@@ -610,6 +642,11 @@ func (o InstanceOutput) ChargeType() pulumi.StringOutput {
 
 func (o InstanceOutput) ConfigureNodes() InstanceConfigureNodeArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceConfigureNodeArrayOutput { return v.ConfigureNodes }).(InstanceConfigureNodeArrayOutput)
+}
+
+// Enable data flashback
+func (o InstanceOutput) ContinuousBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.ContinuousBackup }).(pulumi.BoolOutput)
 }
 
 // Whether to create a backup before making changes.

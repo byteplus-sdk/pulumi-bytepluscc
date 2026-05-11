@@ -1054,6 +1054,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdsmysql/parameterTemplate",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate": "ParameterTemplate"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdspostgresql/allowList",
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {

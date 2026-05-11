@@ -16,24 +16,6 @@ import * as utilities from "../utilities";
  * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
  *
  * const redisInstanceDemo = new bytepluscc.redis.Instance("RedisInstanceDemo", {
- *     instanceName: "RedisInstance",
- *     shardedCluster: 1,
- *     password: "********",
- *     nodeNumber: 2,
- *     shardCapacity: 512,
- *     shardNumber: 2,
- *     engineVersion: "5.0",
- *     vpcId: "vpc-13f8xxxx",
- *     subnetId: "vpc_subnet-xxxx",
- *     deletionProtection: "disabled",
- *     chargeType: "PostPaid",
- *     port: 6381,
- *     projectName: "default",
- *     tags: [{
- *         key: "env",
- *         value: "test",
- *     }],
- *     multiAz: "enabled",
  *     configureNodes: [
  *         {
  *             az: "cn-beijing-a",
@@ -42,6 +24,29 @@ import * as utilities from "../utilities";
  *             az: "cn-beijing-b",
  *         },
  *     ],
+ *     multiAz: "enabled",
+ *     tags: [{
+ *         key: "env",
+ *         value: "test",
+ *     }],
+ *     projectName: "default",
+ *     vpcId: "vpc-xxxxx",
+ *     subnetId: "subnet-xxxxx",
+ *     deletionProtection: "enabled",
+ *     port: 9999,
+ *     autoRenew: false,
+ *     chargeType: "PostPaid",
+ *     engineVersion: "6.0",
+ *     shardCapacity: 512,
+ *     shardNumber: 2,
+ *     nodeNumber: 2,
+ *     allowListIds: ["acl-cnlfwmfaqdefxxxxx"],
+ *     password: "********",
+ *     shardedCluster: 1,
+ *     instanceName: "ccapi-auto-test",
+ *     noAuthMode: "open",
+ *     parameterGroupId: "DefaultParamGroupId-6.0",
+ *     continuousBackup: true,
  * });
  * ```
  *
@@ -92,6 +97,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly backupPointName!: pulumi.Output<string>;
     /**
+     * Restore data from the backup set to the original Redis instance.
+     */
+    public readonly backupRestore!: pulumi.Output<outputs.redis.InstanceBackupRestore>;
+    /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      */
     public /*out*/ readonly blueGreenRole!: pulumi.Output<string>;
@@ -104,6 +113,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly chargeType!: pulumi.Output<string>;
     public readonly configureNodes!: pulumi.Output<outputs.redis.InstanceConfigureNode[]>;
+    /**
+     * Enable data flashback
+     */
+    public readonly continuousBackup!: pulumi.Output<boolean>;
     /**
      * Whether to create a backup before making changes.
      */
@@ -260,10 +273,12 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["allowListIds"] = state ? state.allowListIds : undefined;
             resourceInputs["autoRenew"] = state ? state.autoRenew : undefined;
             resourceInputs["backupPointName"] = state ? state.backupPointName : undefined;
+            resourceInputs["backupRestore"] = state ? state.backupRestore : undefined;
             resourceInputs["blueGreenRole"] = state ? state.blueGreenRole : undefined;
             resourceInputs["capacity"] = state ? state.capacity : undefined;
             resourceInputs["chargeType"] = state ? state.chargeType : undefined;
             resourceInputs["configureNodes"] = state ? state.configureNodes : undefined;
+            resourceInputs["continuousBackup"] = state ? state.continuousBackup : undefined;
             resourceInputs["createBackup"] = state ? state.createBackup : undefined;
             resourceInputs["createTime"] = state ? state.createTime : undefined;
             resourceInputs["dataLayout"] = state ? state.dataLayout : undefined;
@@ -330,8 +345,10 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["allowListIds"] = args ? args.allowListIds : undefined;
             resourceInputs["autoRenew"] = args ? args.autoRenew : undefined;
             resourceInputs["backupPointName"] = args ? args.backupPointName : undefined;
+            resourceInputs["backupRestore"] = args ? args.backupRestore : undefined;
             resourceInputs["chargeType"] = args ? args.chargeType : undefined;
             resourceInputs["configureNodes"] = args ? args.configureNodes : undefined;
+            resourceInputs["continuousBackup"] = args ? args.continuousBackup : undefined;
             resourceInputs["createBackup"] = args ? args.createBackup : undefined;
             resourceInputs["deletionProtection"] = args ? args.deletionProtection : undefined;
             resourceInputs["engineVersion"] = args ? args.engineVersion : undefined;
@@ -394,6 +411,10 @@ export interface InstanceState {
      */
     backupPointName?: pulumi.Input<string>;
     /**
+     * Restore data from the backup set to the original Redis instance.
+     */
+    backupRestore?: pulumi.Input<inputs.redis.InstanceBackupRestore>;
+    /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      */
     blueGreenRole?: pulumi.Input<string>;
@@ -406,6 +427,10 @@ export interface InstanceState {
      */
     chargeType?: pulumi.Input<string>;
     configureNodes?: pulumi.Input<pulumi.Input<inputs.redis.InstanceConfigureNode>[]>;
+    /**
+     * Enable data flashback
+     */
+    continuousBackup?: pulumi.Input<boolean>;
     /**
      * Whether to create a backup before making changes.
      */
@@ -564,10 +589,18 @@ export interface InstanceArgs {
      */
     backupPointName?: pulumi.Input<string>;
     /**
+     * Restore data from the backup set to the original Redis instance.
+     */
+    backupRestore?: pulumi.Input<inputs.redis.InstanceBackupRestore>;
+    /**
      * Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
      */
     chargeType?: pulumi.Input<string>;
     configureNodes: pulumi.Input<pulumi.Input<inputs.redis.InstanceConfigureNode>[]>;
+    /**
+     * Enable data flashback
+     */
+    continuousBackup?: pulumi.Input<boolean>;
     /**
      * Whether to create a backup before making changes.
      */

@@ -41,6 +41,7 @@ __all__ = [
     'InstanceProxyDetail',
     'InstanceProxyDetailProxyResourceInfo',
     'InstanceTag',
+    'ParameterTemplateTemplateParam',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
     'GetBackupBackupMetaResult',
@@ -65,6 +66,7 @@ __all__ = [
     'GetInstanceProxyDetailResult',
     'GetInstanceProxyDetailProxyResourceInfoResult',
     'GetInstanceTagResult',
+    'GetParameterTemplateTemplateParamResult',
 ]
 
 @pulumi.output_type
@@ -1925,6 +1927,52 @@ class InstanceTag(dict):
 
 
 @pulumi.output_type
+class ParameterTemplateTemplateParam(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "runningValue":
+            suggest = "running_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ParameterTemplateTemplateParam. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ParameterTemplateTemplateParam.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ParameterTemplateTemplateParam.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 running_value: builtins.str):
+        """
+        :param builtins.str name: Instance parameter name
+        :param builtins.str running_value: Parameter runtime value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "running_value", running_value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Instance parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="runningValue")
+    def running_value(self) -> builtins.str:
+        """
+        Parameter runtime value
+        """
+        return pulumi.get(self, "running_value")
+
+
+@pulumi.output_type
 class GetAllowListAssociatedInstanceResult(dict):
     def __init__(__self__, *,
                  instance_id: builtins.str,
@@ -3388,5 +3436,89 @@ class GetInstanceTagResult(dict):
         Tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetParameterTemplateTemplateParamResult(dict):
+    def __init__(__self__, *,
+                 default_value: builtins.str,
+                 description: builtins.str,
+                 expect_value: builtins.str,
+                 name: builtins.str,
+                 restart: builtins.bool,
+                 running_value: builtins.str,
+                 value_range: builtins.str):
+        """
+        :param builtins.str default_value: Default value of the parameter
+        :param builtins.str description: Parameter description
+        :param builtins.str expect_value: Expected value of the parameter
+        :param builtins.str name: Instance parameter name
+        :param builtins.bool restart: Whether a restart is required for the instance to take effect
+        :param builtins.str running_value: Parameter runtime value
+        :param builtins.str value_range: Parameter value range
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "expect_value", expect_value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "restart", restart)
+        pulumi.set(__self__, "running_value", running_value)
+        pulumi.set(__self__, "value_range", value_range)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> builtins.str:
+        """
+        Default value of the parameter
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Parameter description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="expectValue")
+    def expect_value(self) -> builtins.str:
+        """
+        Expected value of the parameter
+        """
+        return pulumi.get(self, "expect_value")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Instance parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def restart(self) -> builtins.bool:
+        """
+        Whether a restart is required for the instance to take effect
+        """
+        return pulumi.get(self, "restart")
+
+    @property
+    @pulumi.getter(name="runningValue")
+    def running_value(self) -> builtins.str:
+        """
+        Parameter runtime value
+        """
+        return pulumi.get(self, "running_value")
+
+    @property
+    @pulumi.getter(name="valueRange")
+    def value_range(self) -> builtins.str:
+        """
+        Parameter value range
+        """
+        return pulumi.get(self, "value_range")
 
 

@@ -90,10 +90,25 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetParameterTemplateArgs, GetParameterTemplateResult, GetParameterTemplateOutputArgs } from "./getParameterTemplate";
+export const getParameterTemplate: typeof import("./getParameterTemplate").getParameterTemplate = null as any;
+export const getParameterTemplateOutput: typeof import("./getParameterTemplate").getParameterTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getParameterTemplate","getParameterTemplateOutput"], () => require("./getParameterTemplate"));
+
+export { GetParameterTemplatesResult } from "./getParameterTemplates";
+export const getParameterTemplates: typeof import("./getParameterTemplates").getParameterTemplates = null as any;
+export const getParameterTemplatesOutput: typeof import("./getParameterTemplates").getParameterTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getParameterTemplates","getParameterTemplatesOutput"], () => require("./getParameterTemplates"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { ParameterTemplateArgs, ParameterTemplateState } from "./parameterTemplate";
+export type ParameterTemplate = import("./parameterTemplate").ParameterTemplate;
+export const ParameterTemplate: typeof import("./parameterTemplate").ParameterTemplate = null as any;
+utilities.lazyLoad(exports, ["ParameterTemplate"], () => require("./parameterTemplate"));
 
 
 const _module = {
@@ -112,6 +127,8 @@ const _module = {
                 return new Endpoint(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
+                return new ParameterTemplate(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -123,3 +140,4 @@ pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/database", _module
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/dbAccount", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/endpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/parameterTemplate", _module)

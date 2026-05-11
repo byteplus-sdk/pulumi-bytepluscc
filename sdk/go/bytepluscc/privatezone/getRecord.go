@@ -44,6 +44,8 @@ type LookupRecordResult struct {
 	Line string `pulumi:"line"`
 	// DNS record ID.
 	RecordId string `pulumi:"recordId"`
+	// Record set list
+	RecordSets []GetRecordRecordSet `pulumi:"recordSets"`
 	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark string `pulumi:"remark"`
 	// DNS record TTL (time to live), in seconds. Default is 600.
@@ -129,6 +131,11 @@ func (o LookupRecordResultOutput) Line() pulumi.StringOutput {
 // DNS record ID.
 func (o LookupRecordResultOutput) RecordId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRecordResult) string { return v.RecordId }).(pulumi.StringOutput)
+}
+
+// Record set list
+func (o LookupRecordResultOutput) RecordSets() GetRecordRecordSetArrayOutput {
+	return o.ApplyT(func(v LookupRecordResult) []GetRecordRecordSet { return v.RecordSets }).(GetRecordRecordSetArrayOutput)
 }
 
 // Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.

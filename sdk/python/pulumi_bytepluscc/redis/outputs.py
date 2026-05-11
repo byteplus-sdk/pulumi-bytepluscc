@@ -19,6 +19,7 @@ from . import outputs
 __all__ = [
     'AllowListAssociatedInstance',
     'AllowListSecurityGroupBindInfo',
+    'InstanceBackupRestore',
     'InstanceCapacity',
     'InstanceConfigureNode',
     'InstanceInstanceShard',
@@ -27,6 +28,7 @@ __all__ = [
     'InstanceVisitAddr',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
+    'GetInstanceBackupRestoreResult',
     'GetInstanceCapacityResult',
     'GetInstanceConfigureNodeResult',
     'GetInstanceInstanceShardResult',
@@ -159,6 +161,70 @@ class AllowListSecurityGroupBindInfo(dict):
         Associated security group ID
         """
         return pulumi.get(self, "security_group_id")
+
+
+@pulumi.output_type
+class InstanceBackupRestore(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupPointId":
+            suggest = "backup_point_id"
+        elif key == "backupType":
+            suggest = "backup_type"
+        elif key == "timePoint":
+            suggest = "time_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceBackupRestore. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceBackupRestore.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceBackupRestore.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_point_id: Optional[builtins.str] = None,
+                 backup_type: Optional[builtins.str] = None,
+                 time_point: Optional[builtins.str] = None):
+        """
+        :param builtins.str backup_point_id: Backup ID, used to specify which backup to use when restoring from a backup set
+        :param builtins.str backup_type: Recovery method
+        :param builtins.str time_point: Used to specify the point in time for point-in-time recovery
+        """
+        if backup_point_id is not None:
+            pulumi.set(__self__, "backup_point_id", backup_point_id)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if time_point is not None:
+            pulumi.set(__self__, "time_point", time_point)
+
+    @property
+    @pulumi.getter(name="backupPointId")
+    def backup_point_id(self) -> Optional[builtins.str]:
+        """
+        Backup ID, used to specify which backup to use when restoring from a backup set
+        """
+        return pulumi.get(self, "backup_point_id")
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> Optional[builtins.str]:
+        """
+        Recovery method
+        """
+        return pulumi.get(self, "backup_type")
+
+    @property
+    @pulumi.getter(name="timePoint")
+    def time_point(self) -> Optional[builtins.str]:
+        """
+        Used to specify the point in time for point-in-time recovery
+        """
+        return pulumi.get(self, "time_point")
 
 
 @pulumi.output_type
@@ -578,6 +644,46 @@ class GetAllowListSecurityGroupBindInfoResult(dict):
         Name of the associated security group
         """
         return pulumi.get(self, "security_group_name")
+
+
+@pulumi.output_type
+class GetInstanceBackupRestoreResult(dict):
+    def __init__(__self__, *,
+                 backup_point_id: builtins.str,
+                 backup_type: builtins.str,
+                 time_point: builtins.str):
+        """
+        :param builtins.str backup_point_id: Backup ID, used to specify which backup to use when restoring from a backup set
+        :param builtins.str backup_type: Recovery method
+        :param builtins.str time_point: Used to specify the point in time for point-in-time recovery
+        """
+        pulumi.set(__self__, "backup_point_id", backup_point_id)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "time_point", time_point)
+
+    @property
+    @pulumi.getter(name="backupPointId")
+    def backup_point_id(self) -> builtins.str:
+        """
+        Backup ID, used to specify which backup to use when restoring from a backup set
+        """
+        return pulumi.get(self, "backup_point_id")
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> builtins.str:
+        """
+        Recovery method
+        """
+        return pulumi.get(self, "backup_type")
+
+    @property
+    @pulumi.getter(name="timePoint")
+    def time_point(self) -> builtins.str:
+        """
+        Used to specify the point in time for point-in-time recovery
+        """
+        return pulumi.get(self, "time_point")
 
 
 @pulumi.output_type

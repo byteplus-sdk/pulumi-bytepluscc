@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.redis;
 
+import com.byteplus.bytepluscc.redis.inputs.InstanceBackupRestoreArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceConfigureNodeArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceTagArgs;
 import com.pulumi.core.Output;
@@ -67,6 +68,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Restore data from the backup set to the original Redis instance.
+     * 
+     */
+    @Import(name="backupRestore")
+    private @Nullable Output<InstanceBackupRestoreArgs> backupRestore;
+
+    /**
+     * @return Restore data from the backup set to the original Redis instance.
+     * 
+     */
+    public Optional<Output<InstanceBackupRestoreArgs>> backupRestore() {
+        return Optional.ofNullable(this.backupRestore);
+    }
+
+    /**
      * Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
      * 
      */
@@ -86,6 +102,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     public Output<List<InstanceConfigureNodeArgs>> configureNodes() {
         return this.configureNodes;
+    }
+
+    /**
+     * Enable data flashback
+     * 
+     */
+    @Import(name="continuousBackup")
+    private @Nullable Output<Boolean> continuousBackup;
+
+    /**
+     * @return Enable data flashback
+     * 
+     */
+    public Optional<Output<Boolean>> continuousBackup() {
+        return Optional.ofNullable(this.continuousBackup);
     }
 
     /**
@@ -371,8 +402,10 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.allowListIds = $.allowListIds;
         this.autoRenew = $.autoRenew;
         this.backupPointName = $.backupPointName;
+        this.backupRestore = $.backupRestore;
         this.chargeType = $.chargeType;
         this.configureNodes = $.configureNodes;
+        this.continuousBackup = $.continuousBackup;
         this.createBackup = $.createBackup;
         this.deletionProtection = $.deletionProtection;
         this.engineVersion = $.engineVersion;
@@ -486,6 +519,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param backupRestore Restore data from the backup set to the original Redis instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRestore(@Nullable Output<InstanceBackupRestoreArgs> backupRestore) {
+            $.backupRestore = backupRestore;
+            return this;
+        }
+
+        /**
+         * @param backupRestore Restore data from the backup set to the original Redis instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupRestore(InstanceBackupRestoreArgs backupRestore) {
+            return backupRestore(Output.of(backupRestore));
+        }
+
+        /**
          * @param chargeType Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
          * 
          * @return builder
@@ -517,6 +571,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder configureNodes(InstanceConfigureNodeArgs... configureNodes) {
             return configureNodes(List.of(configureNodes));
+        }
+
+        /**
+         * @param continuousBackup Enable data flashback
+         * 
+         * @return builder
+         * 
+         */
+        public Builder continuousBackup(@Nullable Output<Boolean> continuousBackup) {
+            $.continuousBackup = continuousBackup;
+            return this;
+        }
+
+        /**
+         * @param continuousBackup Enable data flashback
+         * 
+         * @return builder
+         * 
+         */
+        public Builder continuousBackup(Boolean continuousBackup) {
+            return continuousBackup(Output.of(continuousBackup));
         }
 
         /**

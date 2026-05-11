@@ -25,28 +25,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     /// {
     ///     var redisInstanceDemo = new Bytepluscc.Redis.Instance("RedisInstanceDemo", new()
     ///     {
-    ///         InstanceName = "RedisInstance",
-    ///         ShardedCluster = 1,
-    ///         Password = "********",
-    ///         NodeNumber = 2,
-    ///         ShardCapacity = 512,
-    ///         ShardNumber = 2,
-    ///         EngineVersion = "5.0",
-    ///         VpcId = "vpc-13f8xxxx",
-    ///         SubnetId = "vpc_subnet-xxxx",
-    ///         DeletionProtection = "disabled",
-    ///         ChargeType = "PostPaid",
-    ///         Port = 6381,
-    ///         ProjectName = "default",
-    ///         Tags = new[]
-    ///         {
-    ///             new Bytepluscc.Redis.Inputs.InstanceTagArgs
-    ///             {
-    ///                 Key = "env",
-    ///                 Value = "test",
-    ///             },
-    ///         },
-    ///         MultiAz = "enabled",
     ///         ConfigureNodes = new[]
     ///         {
     ///             new Bytepluscc.Redis.Inputs.InstanceConfigureNodeArgs
@@ -58,6 +36,36 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     ///                 Az = "cn-beijing-b",
     ///             },
     ///         },
+    ///         MultiAz = "enabled",
+    ///         Tags = new[]
+    ///         {
+    ///             new Bytepluscc.Redis.Inputs.InstanceTagArgs
+    ///             {
+    ///                 Key = "env",
+    ///                 Value = "test",
+    ///             },
+    ///         },
+    ///         ProjectName = "default",
+    ///         VpcId = "vpc-xxxxx",
+    ///         SubnetId = "subnet-xxxxx",
+    ///         DeletionProtection = "enabled",
+    ///         Port = 9999,
+    ///         AutoRenew = false,
+    ///         ChargeType = "PostPaid",
+    ///         EngineVersion = "6.0",
+    ///         ShardCapacity = 512,
+    ///         ShardNumber = 2,
+    ///         NodeNumber = 2,
+    ///         AllowListIds = new[]
+    ///         {
+    ///             "acl-cnlfwmfaqdefxxxxx",
+    ///         },
+    ///         Password = "********",
+    ///         ShardedCluster = 1,
+    ///         InstanceName = "ccapi-auto-test",
+    ///         NoAuthMode = "open",
+    ///         ParameterGroupId = "DefaultParamGroupId-6.0",
+    ///         ContinuousBackup = true,
     ///     });
     /// 
     /// });
@@ -91,6 +99,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<string> BackupPointName { get; private set; } = null!;
 
         /// <summary>
+        /// Restore data from the backup set to the original Redis instance.
+        /// </summary>
+        [Output("backupRestore")]
+        public Output<Outputs.InstanceBackupRestore> BackupRestore { get; private set; } = null!;
+
+        /// <summary>
         /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         /// </summary>
         [Output("blueGreenRole")]
@@ -110,6 +124,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
         [Output("configureNodes")]
         public Output<ImmutableArray<Outputs.InstanceConfigureNode>> ConfigureNodes { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable data flashback
+        /// </summary>
+        [Output("continuousBackup")]
+        public Output<bool> ContinuousBackup { get; private set; } = null!;
 
         /// <summary>
         /// Whether to create a backup before making changes.
@@ -396,6 +416,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<string>? BackupPointName { get; set; }
 
         /// <summary>
+        /// Restore data from the backup set to the original Redis instance.
+        /// </summary>
+        [Input("backupRestore")]
+        public Input<Inputs.InstanceBackupRestoreArgs>? BackupRestore { get; set; }
+
+        /// <summary>
         /// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         /// </summary>
         [Input("chargeType")]
@@ -408,6 +434,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             get => _configureNodes ?? (_configureNodes = new InputList<Inputs.InstanceConfigureNodeArgs>());
             set => _configureNodes = value;
         }
+
+        /// <summary>
+        /// Enable data flashback
+        /// </summary>
+        [Input("continuousBackup")]
+        public Input<bool>? ContinuousBackup { get; set; }
 
         /// <summary>
         /// Whether to create a backup before making changes.
@@ -558,6 +590,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<string>? BackupPointName { get; set; }
 
         /// <summary>
+        /// Restore data from the backup set to the original Redis instance.
+        /// </summary>
+        [Input("backupRestore")]
+        public Input<Inputs.InstanceBackupRestoreGetArgs>? BackupRestore { get; set; }
+
+        /// <summary>
         /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         /// </summary>
         [Input("blueGreenRole")]
@@ -582,6 +620,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             get => _configureNodes ?? (_configureNodes = new InputList<Inputs.InstanceConfigureNodeGetArgs>());
             set => _configureNodes = value;
         }
+
+        /// <summary>
+        /// Enable data flashback
+        /// </summary>
+        [Input("continuousBackup")]
+        public Input<bool>? ContinuousBackup { get; set; }
 
         /// <summary>
         /// Whether to create a backup before making changes.

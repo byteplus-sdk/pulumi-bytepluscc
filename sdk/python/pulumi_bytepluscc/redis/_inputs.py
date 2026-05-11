@@ -20,6 +20,8 @@ __all__ = [
     'AllowListAssociatedInstanceArgsDict',
     'AllowListSecurityGroupBindInfoArgs',
     'AllowListSecurityGroupBindInfoArgsDict',
+    'InstanceBackupRestoreArgs',
+    'InstanceBackupRestoreArgsDict',
     'InstanceCapacityArgs',
     'InstanceCapacityArgsDict',
     'InstanceConfigureNodeArgs',
@@ -178,6 +180,78 @@ class AllowListSecurityGroupBindInfoArgs:
     @security_group_id.setter
     def security_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "security_group_id", value)
+
+
+if not MYPY:
+    class InstanceBackupRestoreArgsDict(TypedDict):
+        backup_point_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup ID, used to specify which backup to use when restoring from a backup set
+        """
+        backup_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Recovery method
+        """
+        time_point: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Used to specify the point in time for point-in-time recovery
+        """
+elif False:
+    InstanceBackupRestoreArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceBackupRestoreArgs:
+    def __init__(__self__, *,
+                 backup_point_id: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_type: Optional[pulumi.Input[builtins.str]] = None,
+                 time_point: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] backup_point_id: Backup ID, used to specify which backup to use when restoring from a backup set
+        :param pulumi.Input[builtins.str] backup_type: Recovery method
+        :param pulumi.Input[builtins.str] time_point: Used to specify the point in time for point-in-time recovery
+        """
+        if backup_point_id is not None:
+            pulumi.set(__self__, "backup_point_id", backup_point_id)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if time_point is not None:
+            pulumi.set(__self__, "time_point", time_point)
+
+    @property
+    @pulumi.getter(name="backupPointId")
+    def backup_point_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup ID, used to specify which backup to use when restoring from a backup set
+        """
+        return pulumi.get(self, "backup_point_id")
+
+    @backup_point_id.setter
+    def backup_point_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_point_id", value)
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Recovery method
+        """
+        return pulumi.get(self, "backup_type")
+
+    @backup_type.setter
+    def backup_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_type", value)
+
+    @property
+    @pulumi.getter(name="timePoint")
+    def time_point(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Used to specify the point in time for point-in-time recovery
+        """
+        return pulumi.get(self, "time_point")
+
+    @time_point.setter
+    def time_point(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "time_point", value)
 
 
 if not MYPY:

@@ -23,6 +23,9 @@ from .get_endpoint import *
 from .get_endpoints import *
 from .get_instance import *
 from .get_instances import *
+from .get_parameter_template import *
+from .get_parameter_templates import *
 from .instance import *
+from .parameter_template import *
 from ._inputs import *
 from . import outputs

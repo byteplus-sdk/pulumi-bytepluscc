@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.redis.outputs;
 
+import com.byteplus.bytepluscc.redis.outputs.GetInstanceBackupRestore;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceCapacity;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceConfigureNode;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceInstanceShard;
@@ -34,6 +35,11 @@ public final class GetInstanceResult {
      */
     private String backupPointName;
     /**
+     * @return Restore data from the backup set to the original Redis instance.
+     * 
+     */
+    private GetInstanceBackupRestore backupRestore;
+    /**
      * @return Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      * 
      */
@@ -53,6 +59,11 @@ public final class GetInstanceResult {
      * 
      */
     private List<GetInstanceConfigureNode> configureNodes;
+    /**
+     * @return Enable data flashback
+     * 
+     */
+    private Boolean continuousBackup;
     /**
      * @return Whether to create a backup before making changes.
      * 
@@ -267,6 +278,13 @@ public final class GetInstanceResult {
         return this.backupPointName;
     }
     /**
+     * @return Restore data from the backup set to the original Redis instance.
+     * 
+     */
+    public GetInstanceBackupRestore backupRestore() {
+        return this.backupRestore;
+    }
+    /**
      * @return Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      * 
      */
@@ -293,6 +311,13 @@ public final class GetInstanceResult {
      */
     public List<GetInstanceConfigureNode> configureNodes() {
         return this.configureNodes;
+    }
+    /**
+     * @return Enable data flashback
+     * 
+     */
+    public Boolean continuousBackup() {
+        return this.continuousBackup;
     }
     /**
      * @return Whether to create a backup before making changes.
@@ -573,10 +598,12 @@ public final class GetInstanceResult {
         private List<String> allowListIds;
         private Boolean autoRenew;
         private String backupPointName;
+        private GetInstanceBackupRestore backupRestore;
         private String blueGreenRole;
         private GetInstanceCapacity capacity;
         private String chargeType;
         private List<GetInstanceConfigureNode> configureNodes;
+        private Boolean continuousBackup;
         private Boolean createBackup;
         private String createTime;
         private String dataLayout;
@@ -621,10 +648,12 @@ public final class GetInstanceResult {
     	      this.allowListIds = defaults.allowListIds;
     	      this.autoRenew = defaults.autoRenew;
     	      this.backupPointName = defaults.backupPointName;
+    	      this.backupRestore = defaults.backupRestore;
     	      this.blueGreenRole = defaults.blueGreenRole;
     	      this.capacity = defaults.capacity;
     	      this.chargeType = defaults.chargeType;
     	      this.configureNodes = defaults.configureNodes;
+    	      this.continuousBackup = defaults.continuousBackup;
     	      this.createBackup = defaults.createBackup;
     	      this.createTime = defaults.createTime;
     	      this.dataLayout = defaults.dataLayout;
@@ -693,6 +722,14 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder backupRestore(GetInstanceBackupRestore backupRestore) {
+            if (backupRestore == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backupRestore");
+            }
+            this.backupRestore = backupRestore;
+            return this;
+        }
+        @CustomType.Setter
         public Builder blueGreenRole(String blueGreenRole) {
             if (blueGreenRole == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "blueGreenRole");
@@ -726,6 +763,14 @@ public final class GetInstanceResult {
         }
         public Builder configureNodes(GetInstanceConfigureNode... configureNodes) {
             return configureNodes(List.of(configureNodes));
+        }
+        @CustomType.Setter
+        public Builder continuousBackup(Boolean continuousBackup) {
+            if (continuousBackup == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "continuousBackup");
+            }
+            this.continuousBackup = continuousBackup;
+            return this;
         }
         @CustomType.Setter
         public Builder createBackup(Boolean createBackup) {
@@ -1051,10 +1096,12 @@ public final class GetInstanceResult {
             _resultValue.allowListIds = allowListIds;
             _resultValue.autoRenew = autoRenew;
             _resultValue.backupPointName = backupPointName;
+            _resultValue.backupRestore = backupRestore;
             _resultValue.blueGreenRole = blueGreenRole;
             _resultValue.capacity = capacity;
             _resultValue.chargeType = chargeType;
             _resultValue.configureNodes = configureNodes;
+            _resultValue.continuousBackup = continuousBackup;
             _resultValue.createBackup = createBackup;
             _resultValue.createTime = createTime;
             _resultValue.dataLayout = dataLayout;

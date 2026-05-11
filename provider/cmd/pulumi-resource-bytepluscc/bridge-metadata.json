@@ -2113,7 +2113,12 @@
                 }
             },
             "bytepluscc_privatezone_record": {
-                "current": "bytepluscc:privatezone/record:Record"
+                "current": "bytepluscc:privatezone/record:Record",
+                "fields": {
+                    "record_sets": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_privatezone_resolver_endpoint": {
                 "current": "bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint",
@@ -2379,6 +2384,14 @@
                         "maxItemsOne": false
                     },
                     "zone_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_parameter_template": {
+                "current": "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate",
+                "fields": {
+                    "template_params": {
                         "maxItemsOne": false
                     }
                 }
@@ -6559,7 +6572,12 @@
                 }
             },
             "bytepluscc_privatezone_record": {
-                "current": "bytepluscc:privatezone/getRecord:getRecord"
+                "current": "bytepluscc:privatezone/getRecord:getRecord",
+                "fields": {
+                    "record_sets": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_privatezone_records": {
                 "current": "bytepluscc:privatezone/getRecords:getRecords",
@@ -6951,6 +6969,22 @@
             },
             "bytepluscc_rdsmysql_instances": {
                 "current": "bytepluscc:rdsmysql/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_parameter_template": {
+                "current": "bytepluscc:rdsmysql/getParameterTemplate:getParameterTemplate",
+                "fields": {
+                    "template_params": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_parameter_templates": {
+                "current": "bytepluscc:rdsmysql/getParameterTemplates:getParameterTemplates",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

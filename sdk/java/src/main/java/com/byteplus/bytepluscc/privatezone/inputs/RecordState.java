@@ -3,11 +3,13 @@
 
 package com.byteplus.bytepluscc.privatezone.inputs;
 
+import com.byteplus.bytepluscc.privatezone.inputs.RecordRecordSetArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -105,6 +107,13 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> recordId() {
         return Optional.ofNullable(this.recordId);
+    }
+
+    @Import(name="recordSets")
+    private @Nullable Output<List<RecordRecordSetArgs>> recordSets;
+
+    public Optional<Output<List<RecordRecordSetArgs>>> recordSets() {
+        return Optional.ofNullable(this.recordSets);
     }
 
     /**
@@ -236,6 +245,7 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         this.lastOperator = $.lastOperator;
         this.line = $.line;
         this.recordId = $.recordId;
+        this.recordSets = $.recordSets;
         this.remark = $.remark;
         this.ttl = $.ttl;
         this.type = $.type;
@@ -388,6 +398,19 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder recordId(String recordId) {
             return recordId(Output.of(recordId));
+        }
+
+        public Builder recordSets(@Nullable Output<List<RecordRecordSetArgs>> recordSets) {
+            $.recordSets = recordSets;
+            return this;
+        }
+
+        public Builder recordSets(List<RecordRecordSetArgs> recordSets) {
+            return recordSets(Output.of(recordSets));
+        }
+
+        public Builder recordSets(RecordRecordSetArgs... recordSets) {
+            return recordSets(List.of(recordSets));
         }
 
         /**

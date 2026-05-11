@@ -33,6 +33,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Endpoint{}
 	case "bytepluscc:rdsmysql/instance:Instance":
 		r = &Instance{}
+	case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
+		r = &ParameterTemplate{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -74,6 +76,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdsmysql/instance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdsmysql/parameterTemplate",
 		&module{version},
 	)
 }
