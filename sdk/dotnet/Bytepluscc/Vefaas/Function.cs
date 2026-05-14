@@ -59,6 +59,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         public Output<string> CreationTime { get; private set; } = null!;
 
         /// <summary>
+        /// Dependency installation task status.
+        /// </summary>
+        [Output("dependencyInstallStatus")]
+        public Output<Outputs.FunctionDependencyInstallStatus> DependencyInstallStatus { get; private set; } = null!;
+
+        /// <summary>
         /// Function description. Up to 1000 Unicode characters
         /// </summary>
         [Output("description")]
@@ -69,6 +75,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         /// </summary>
         [Output("enableApmplus")]
         public Output<bool> EnableApmplus { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        /// </summary>
+        [Output("enableDependencyInstall")]
+        public Output<bool> EnableDependencyInstall { get; private set; } = null!;
 
         [Output("envs")]
         public Output<ImmutableArray<Outputs.FunctionEnv>> Envs { get; private set; } = null!;
@@ -285,6 +297,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         [Input("enableApmplus")]
         public Input<bool>? EnableApmplus { get; set; }
 
+        /// <summary>
+        /// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        /// </summary>
+        [Input("enableDependencyInstall")]
+        public Input<bool>? EnableDependencyInstall { get; set; }
+
         [Input("envs")]
         private InputList<Inputs.FunctionEnvArgs>? _envs;
         public InputList<Inputs.FunctionEnvArgs> Envs
@@ -448,6 +466,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         public Input<string>? CreationTime { get; set; }
 
         /// <summary>
+        /// Dependency installation task status.
+        /// </summary>
+        [Input("dependencyInstallStatus")]
+        public Input<Inputs.FunctionDependencyInstallStatusGetArgs>? DependencyInstallStatus { get; set; }
+
+        /// <summary>
         /// Function description. Up to 1000 Unicode characters
         /// </summary>
         [Input("description")]
@@ -458,6 +482,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         /// </summary>
         [Input("enableApmplus")]
         public Input<bool>? EnableApmplus { get; set; }
+
+        /// <summary>
+        /// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        /// </summary>
+        [Input("enableDependencyInstall")]
+        public Input<bool>? EnableDependencyInstall { get; set; }
 
         [Input("envs")]
         private InputList<Inputs.FunctionEnvGetArgs>? _envs;

@@ -30,42 +30,10 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.instanceId);
     }
 
-    /**
-     * Instance name.
-     * 
-     */
-    @Import(name="instanceName")
-    private @Nullable Output<String> instanceName;
-
-    /**
-     * @return Instance name.
-     * 
-     */
-    public Optional<Output<String>> instanceName() {
-        return Optional.ofNullable(this.instanceName);
-    }
-
-    /**
-     * VPC ID to which the instance belongs.
-     * 
-     */
-    @Import(name="vpc")
-    private @Nullable Output<String> vpc;
-
-    /**
-     * @return VPC ID to which the instance belongs.
-     * 
-     */
-    public Optional<Output<String>> vpc() {
-        return Optional.ofNullable(this.vpc);
-    }
-
     private AllowListAssociatedInstanceArgs() {}
 
     private AllowListAssociatedInstanceArgs(AllowListAssociatedInstanceArgs $) {
         this.instanceId = $.instanceId;
-        this.instanceName = $.instanceName;
-        this.vpc = $.vpc;
     }
 
     public static Builder builder() {
@@ -105,48 +73,6 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
-        }
-
-        /**
-         * @param instanceName Instance name.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceName(@Nullable Output<String> instanceName) {
-            $.instanceName = instanceName;
-            return this;
-        }
-
-        /**
-         * @param instanceName Instance name.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceName(String instanceName) {
-            return instanceName(Output.of(instanceName));
-        }
-
-        /**
-         * @param vpc VPC ID to which the instance belongs.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpc(@Nullable Output<String> vpc) {
-            $.vpc = vpc;
-            return this;
-        }
-
-        /**
-         * @param vpc VPC ID to which the instance belongs.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpc(String vpc) {
-            return vpc(Output.of(vpc));
         }
 
         public AllowListAssociatedInstanceArgs build() {

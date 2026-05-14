@@ -64,6 +64,10 @@ export class EndpointService extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     */
+    public readonly enableVerifyPrivateDns!: pulumi.Output<boolean>;
+    /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      */
     public readonly ipAddressVersions!: pulumi.Output<string[]>;
@@ -164,6 +168,7 @@ export class EndpointService extends pulumi.CustomResource {
             resourceInputs["businessStatus"] = state ? state.businessStatus : undefined;
             resourceInputs["createTime"] = state ? state.createTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["enableVerifyPrivateDns"] = state ? state.enableVerifyPrivateDns : undefined;
             resourceInputs["ipAddressVersions"] = state ? state.ipAddressVersions : undefined;
             resourceInputs["payer"] = state ? state.payer : undefined;
             resourceInputs["permitAccountIds"] = state ? state.permitAccountIds : undefined;
@@ -190,6 +195,7 @@ export class EndpointService extends pulumi.CustomResource {
             const args = argsOrState as EndpointServiceArgs | undefined;
             resourceInputs["autoAcceptEnabled"] = args ? args.autoAcceptEnabled : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["enableVerifyPrivateDns"] = args ? args.enableVerifyPrivateDns : undefined;
             resourceInputs["ipAddressVersions"] = args ? args.ipAddressVersions : undefined;
             resourceInputs["payer"] = args ? args.payer : undefined;
             resourceInputs["permitAccountIds"] = args ? args.permitAccountIds : undefined;
@@ -245,6 +251,10 @@ export interface EndpointServiceState {
      * Description of the endpoint service.
      */
     description?: pulumi.Input<string>;
+    /**
+     * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     */
+    enableVerifyPrivateDns?: pulumi.Input<boolean>;
     /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      */
@@ -341,6 +351,10 @@ export interface EndpointServiceArgs {
      * Description of the endpoint service.
      */
     description?: pulumi.Input<string>;
+    /**
+     * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     */
+    enableVerifyPrivateDns?: pulumi.Input<boolean>;
     /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      */

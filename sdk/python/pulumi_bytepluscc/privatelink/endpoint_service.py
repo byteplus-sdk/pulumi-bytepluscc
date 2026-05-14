@@ -24,6 +24,7 @@ class EndpointServiceArgs:
     def __init__(__self__, *,
                  auto_accept_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_verify_private_dns: Optional[pulumi.Input[builtins.bool]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
                  permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -43,6 +44,7 @@ class EndpointServiceArgs:
         The set of arguments for constructing a EndpointService resource.
         :param pulumi.Input[builtins.bool] auto_accept_enabled: Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
+        :param pulumi.Input[builtins.bool] enable_verify_private_dns: Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
@@ -61,6 +63,8 @@ class EndpointServiceArgs:
             pulumi.set(__self__, "auto_accept_enabled", auto_accept_enabled)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if enable_verify_private_dns is not None:
+            pulumi.set(__self__, "enable_verify_private_dns", enable_verify_private_dns)
         if ip_address_versions is not None:
             pulumi.set(__self__, "ip_address_versions", ip_address_versions)
         if payer is not None:
@@ -115,6 +119,18 @@ class EndpointServiceArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="enableVerifyPrivateDns")
+    def enable_verify_private_dns(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        """
+        return pulumi.get(self, "enable_verify_private_dns")
+
+    @enable_verify_private_dns.setter
+    def enable_verify_private_dns(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_verify_private_dns", value)
 
     @property
     @pulumi.getter(name="ipAddressVersions")
@@ -299,6 +315,7 @@ class _EndpointServiceState:
                  business_status: Optional[pulumi.Input[builtins.str]] = None,
                  create_time: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_verify_private_dns: Optional[pulumi.Input[builtins.bool]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
                  permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -328,6 +345,7 @@ class _EndpointServiceState:
         :param pulumi.Input[builtins.str] business_status: Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
         :param pulumi.Input[builtins.str] create_time: Creation time of the endpoint service.
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
+        :param pulumi.Input[builtins.bool] enable_verify_private_dns: Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
@@ -359,6 +377,8 @@ class _EndpointServiceState:
             pulumi.set(__self__, "create_time", create_time)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if enable_verify_private_dns is not None:
+            pulumi.set(__self__, "enable_verify_private_dns", enable_verify_private_dns)
         if ip_address_versions is not None:
             pulumi.set(__self__, "ip_address_versions", ip_address_versions)
         if payer is not None:
@@ -463,6 +483,18 @@ class _EndpointServiceState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="enableVerifyPrivateDns")
+    def enable_verify_private_dns(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        """
+        return pulumi.get(self, "enable_verify_private_dns")
+
+    @enable_verify_private_dns.setter
+    def enable_verify_private_dns(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_verify_private_dns", value)
 
     @property
     @pulumi.getter(name="ipAddressVersions")
@@ -731,6 +763,7 @@ class EndpointService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_accept_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_verify_private_dns: Optional[pulumi.Input[builtins.bool]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
                  permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -760,6 +793,7 @@ class EndpointService(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.bool] auto_accept_enabled: Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
+        :param pulumi.Input[builtins.bool] enable_verify_private_dns: Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
@@ -806,6 +840,7 @@ class EndpointService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_accept_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_verify_private_dns: Optional[pulumi.Input[builtins.bool]] = None,
                  ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  payer: Optional[pulumi.Input[builtins.str]] = None,
                  permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -832,6 +867,7 @@ class EndpointService(pulumi.CustomResource):
 
             __props__.__dict__["auto_accept_enabled"] = auto_accept_enabled
             __props__.__dict__["description"] = description
+            __props__.__dict__["enable_verify_private_dns"] = enable_verify_private_dns
             __props__.__dict__["ip_address_versions"] = ip_address_versions
             __props__.__dict__["payer"] = payer
             __props__.__dict__["permit_account_ids"] = permit_account_ids
@@ -872,6 +908,7 @@ class EndpointService(pulumi.CustomResource):
             business_status: Optional[pulumi.Input[builtins.str]] = None,
             create_time: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
+            enable_verify_private_dns: Optional[pulumi.Input[builtins.bool]] = None,
             ip_address_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             payer: Optional[pulumi.Input[builtins.str]] = None,
             permit_account_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -906,6 +943,7 @@ class EndpointService(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] business_status: Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
         :param pulumi.Input[builtins.str] create_time: Creation time of the endpoint service.
         :param pulumi.Input[builtins.str] description: Description of the endpoint service.
+        :param pulumi.Input[builtins.bool] enable_verify_private_dns: Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_address_versions: IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         :param pulumi.Input[builtins.str] payer: Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] permit_account_ids: Details of authorized allowlist accounts.
@@ -936,6 +974,7 @@ class EndpointService(pulumi.CustomResource):
         __props__.__dict__["business_status"] = business_status
         __props__.__dict__["create_time"] = create_time
         __props__.__dict__["description"] = description
+        __props__.__dict__["enable_verify_private_dns"] = enable_verify_private_dns
         __props__.__dict__["ip_address_versions"] = ip_address_versions
         __props__.__dict__["payer"] = payer
         __props__.__dict__["permit_account_ids"] = permit_account_ids
@@ -999,6 +1038,14 @@ class EndpointService(pulumi.CustomResource):
         Description of the endpoint service.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="enableVerifyPrivateDns")
+    def enable_verify_private_dns(self) -> pulumi.Output[builtins.bool]:
+        """
+        Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        """
+        return pulumi.get(self, "enable_verify_private_dns")
 
     @property
     @pulumi.getter(name="ipAddressVersions")

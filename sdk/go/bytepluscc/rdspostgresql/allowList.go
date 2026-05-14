@@ -13,39 +13,6 @@ import (
 
 // An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/rdspostgresql"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := rdspostgresql.NewAllowList(ctx, "RdsPostgresqlAllowListDemo", &rdspostgresql.AllowListArgs{
-//				AllowLists: pulumi.StringArray{
-//					pulumi.String("1.2.3.4/32"),
-//					pulumi.String("5.6.7.8/32"),
-//				},
-//				AllowListCategory: pulumi.String("Ordinary"),
-//				AllowListDesc:     pulumi.String("test"),
-//				AllowListName:     pulumi.String("ccapi-test-1"),
-//				AllowListType:     pulumi.String("IPv4"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // ```sh
@@ -183,9 +150,8 @@ type allowListArgs struct {
 	// Network protocol type used by the allowlist. Value: IPv4 (default).
 	AllowListType *string `pulumi:"allowListType"`
 	// IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-	AllowLists []string `pulumi:"allowLists"`
-	// Number of instances bound to this allowlist.
-	AssociatedInstanceNum *int `pulumi:"associatedInstanceNum"`
+	AllowLists          []string                      `pulumi:"allowLists"`
+	AssociatedInstances []AllowListAssociatedInstance `pulumi:"associatedInstances"`
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress *string `pulumi:"ipAddress"`
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
@@ -208,9 +174,8 @@ type AllowListArgs struct {
 	// Network protocol type used by the allowlist. Value: IPv4 (default).
 	AllowListType pulumi.StringPtrInput
 	// IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-	AllowLists pulumi.StringArrayInput
-	// Number of instances bound to this allowlist.
-	AssociatedInstanceNum pulumi.IntPtrInput
+	AllowLists          pulumi.StringArrayInput
+	AssociatedInstances AllowListAssociatedInstanceArrayInput
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress pulumi.StringPtrInput
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.

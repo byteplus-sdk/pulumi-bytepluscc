@@ -19,6 +19,8 @@ from . import outputs
 __all__ = [
     'AllowListAssociatedInstance',
     'AllowListSecurityGroupBindInfo',
+    'BackupBackupMeta',
+    'BackupBackupPolicy',
     'DbEndpointAddress',
     'DbEndpointReadOnlyNodeWeight',
     'InstanceChargeDetail',
@@ -31,6 +33,8 @@ __all__ = [
     'InstanceTag',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
+    'GetBackupBackupMetaResult',
+    'GetBackupBackupPolicyResult',
     'GetDbEndpointAddressResult',
     'GetDbEndpointReadOnlyNodeWeightResult',
     'GetInstanceChargeDetailResult',
@@ -50,8 +54,6 @@ class AllowListAssociatedInstance(dict):
         suggest = None
         if key == "instanceId":
             suggest = "instance_id"
-        elif key == "instanceName":
-            suggest = "instance_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
@@ -65,20 +67,12 @@ class AllowListAssociatedInstance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_id: Optional[builtins.str] = None,
-                 instance_name: Optional[builtins.str] = None,
-                 vpc: Optional[builtins.str] = None):
+                 instance_id: Optional[builtins.str] = None):
         """
         :param builtins.str instance_id: Instance ID.
-        :param builtins.str instance_name: Instance name.
-        :param builtins.str vpc: VPC ID to which the instance belongs.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
-        if instance_name is not None:
-            pulumi.set(__self__, "instance_name", instance_name)
-        if vpc is not None:
-            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -87,22 +81,6 @@ class AllowListAssociatedInstance(dict):
         Instance ID.
         """
         return pulumi.get(self, "instance_id")
-
-    @property
-    @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[builtins.str]:
-        """
-        Instance name.
-        """
-        return pulumi.get(self, "instance_name")
-
-    @property
-    @pulumi.getter
-    def vpc(self) -> Optional[builtins.str]:
-        """
-        VPC ID to which the instance belongs.
-        """
-        return pulumi.get(self, "vpc")
 
 
 @pulumi.output_type
@@ -181,6 +159,162 @@ class AllowListSecurityGroupBindInfo(dict):
         Security group name.
         """
         return pulumi.get(self, "security_group_name")
+
+
+@pulumi.output_type
+class BackupBackupMeta(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbName":
+            suggest = "db_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupBackupMeta. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupBackupMeta.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupBackupMeta.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str db_name: Database name.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[builtins.str]:
+        """
+        Database name.
+        """
+        return pulumi.get(self, "db_name")
+
+
+@pulumi.output_type
+class BackupBackupPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupRetentionPeriod":
+            suggest = "backup_retention_period"
+        elif key == "dataIncrBackupPeriods":
+            suggest = "data_incr_backup_periods"
+        elif key == "fullBackupPeriod":
+            suggest = "full_backup_period"
+        elif key == "fullBackupTime":
+            suggest = "full_backup_time"
+        elif key == "hourlyIncrBackupEnable":
+            suggest = "hourly_incr_backup_enable"
+        elif key == "incrementBackupFrequency":
+            suggest = "increment_backup_frequency"
+        elif key == "walLogSpaceLimitEnable":
+            suggest = "wal_log_space_limit_enable"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupBackupPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupBackupPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupBackupPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_retention_period: Optional[builtins.int] = None,
+                 data_incr_backup_periods: Optional[builtins.str] = None,
+                 full_backup_period: Optional[builtins.str] = None,
+                 full_backup_time: Optional[builtins.str] = None,
+                 hourly_incr_backup_enable: Optional[builtins.bool] = None,
+                 increment_backup_frequency: Optional[builtins.int] = None,
+                 wal_log_space_limit_enable: Optional[builtins.bool] = None):
+        """
+        :param builtins.int backup_retention_period: Backup retention days.
+        :param builtins.str data_incr_backup_periods: Data incremental backup schedule.
+        :param builtins.str full_backup_period: Full backup schedule, such as Monday,Tuesday.
+        :param builtins.str full_backup_time: Full backup time window, such as 00:00Z-01:00Z.
+        :param builtins.bool hourly_incr_backup_enable: Enable hourly incremental backup.
+        :param builtins.int increment_backup_frequency: Incremental backup frequency (hours).
+        :param builtins.bool wal_log_space_limit_enable: Enable WAL log space limit.
+        """
+        if backup_retention_period is not None:
+            pulumi.set(__self__, "backup_retention_period", backup_retention_period)
+        if data_incr_backup_periods is not None:
+            pulumi.set(__self__, "data_incr_backup_periods", data_incr_backup_periods)
+        if full_backup_period is not None:
+            pulumi.set(__self__, "full_backup_period", full_backup_period)
+        if full_backup_time is not None:
+            pulumi.set(__self__, "full_backup_time", full_backup_time)
+        if hourly_incr_backup_enable is not None:
+            pulumi.set(__self__, "hourly_incr_backup_enable", hourly_incr_backup_enable)
+        if increment_backup_frequency is not None:
+            pulumi.set(__self__, "increment_backup_frequency", increment_backup_frequency)
+        if wal_log_space_limit_enable is not None:
+            pulumi.set(__self__, "wal_log_space_limit_enable", wal_log_space_limit_enable)
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriod")
+    def backup_retention_period(self) -> Optional[builtins.int]:
+        """
+        Backup retention days.
+        """
+        return pulumi.get(self, "backup_retention_period")
+
+    @property
+    @pulumi.getter(name="dataIncrBackupPeriods")
+    def data_incr_backup_periods(self) -> Optional[builtins.str]:
+        """
+        Data incremental backup schedule.
+        """
+        return pulumi.get(self, "data_incr_backup_periods")
+
+    @property
+    @pulumi.getter(name="fullBackupPeriod")
+    def full_backup_period(self) -> Optional[builtins.str]:
+        """
+        Full backup schedule, such as Monday,Tuesday.
+        """
+        return pulumi.get(self, "full_backup_period")
+
+    @property
+    @pulumi.getter(name="fullBackupTime")
+    def full_backup_time(self) -> Optional[builtins.str]:
+        """
+        Full backup time window, such as 00:00Z-01:00Z.
+        """
+        return pulumi.get(self, "full_backup_time")
+
+    @property
+    @pulumi.getter(name="hourlyIncrBackupEnable")
+    def hourly_incr_backup_enable(self) -> Optional[builtins.bool]:
+        """
+        Enable hourly incremental backup.
+        """
+        return pulumi.get(self, "hourly_incr_backup_enable")
+
+    @property
+    @pulumi.getter(name="incrementBackupFrequency")
+    def increment_backup_frequency(self) -> Optional[builtins.int]:
+        """
+        Incremental backup frequency (hours).
+        """
+        return pulumi.get(self, "increment_backup_frequency")
+
+    @property
+    @pulumi.getter(name="walLogSpaceLimitEnable")
+    def wal_log_space_limit_enable(self) -> Optional[builtins.bool]:
+        """
+        Enable WAL log space limit.
+        """
+        return pulumi.get(self, "wal_log_space_limit_enable")
 
 
 @pulumi.output_type
@@ -1291,6 +1425,108 @@ class GetAllowListSecurityGroupBindInfoResult(dict):
         Security group name.
         """
         return pulumi.get(self, "security_group_name")
+
+
+@pulumi.output_type
+class GetBackupBackupMetaResult(dict):
+    def __init__(__self__, *,
+                 db_name: builtins.str):
+        """
+        :param builtins.str db_name: Database name.
+        """
+        pulumi.set(__self__, "db_name", db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> builtins.str:
+        """
+        Database name.
+        """
+        return pulumi.get(self, "db_name")
+
+
+@pulumi.output_type
+class GetBackupBackupPolicyResult(dict):
+    def __init__(__self__, *,
+                 backup_retention_period: builtins.int,
+                 data_incr_backup_periods: builtins.str,
+                 full_backup_period: builtins.str,
+                 full_backup_time: builtins.str,
+                 hourly_incr_backup_enable: builtins.bool,
+                 increment_backup_frequency: builtins.int,
+                 wal_log_space_limit_enable: builtins.bool):
+        """
+        :param builtins.int backup_retention_period: Backup retention days.
+        :param builtins.str data_incr_backup_periods: Data incremental backup schedule.
+        :param builtins.str full_backup_period: Full backup schedule, such as Monday,Tuesday.
+        :param builtins.str full_backup_time: Full backup time window, such as 00:00Z-01:00Z.
+        :param builtins.bool hourly_incr_backup_enable: Enable hourly incremental backup.
+        :param builtins.int increment_backup_frequency: Incremental backup frequency (hours).
+        :param builtins.bool wal_log_space_limit_enable: Enable WAL log space limit.
+        """
+        pulumi.set(__self__, "backup_retention_period", backup_retention_period)
+        pulumi.set(__self__, "data_incr_backup_periods", data_incr_backup_periods)
+        pulumi.set(__self__, "full_backup_period", full_backup_period)
+        pulumi.set(__self__, "full_backup_time", full_backup_time)
+        pulumi.set(__self__, "hourly_incr_backup_enable", hourly_incr_backup_enable)
+        pulumi.set(__self__, "increment_backup_frequency", increment_backup_frequency)
+        pulumi.set(__self__, "wal_log_space_limit_enable", wal_log_space_limit_enable)
+
+    @property
+    @pulumi.getter(name="backupRetentionPeriod")
+    def backup_retention_period(self) -> builtins.int:
+        """
+        Backup retention days.
+        """
+        return pulumi.get(self, "backup_retention_period")
+
+    @property
+    @pulumi.getter(name="dataIncrBackupPeriods")
+    def data_incr_backup_periods(self) -> builtins.str:
+        """
+        Data incremental backup schedule.
+        """
+        return pulumi.get(self, "data_incr_backup_periods")
+
+    @property
+    @pulumi.getter(name="fullBackupPeriod")
+    def full_backup_period(self) -> builtins.str:
+        """
+        Full backup schedule, such as Monday,Tuesday.
+        """
+        return pulumi.get(self, "full_backup_period")
+
+    @property
+    @pulumi.getter(name="fullBackupTime")
+    def full_backup_time(self) -> builtins.str:
+        """
+        Full backup time window, such as 00:00Z-01:00Z.
+        """
+        return pulumi.get(self, "full_backup_time")
+
+    @property
+    @pulumi.getter(name="hourlyIncrBackupEnable")
+    def hourly_incr_backup_enable(self) -> builtins.bool:
+        """
+        Enable hourly incremental backup.
+        """
+        return pulumi.get(self, "hourly_incr_backup_enable")
+
+    @property
+    @pulumi.getter(name="incrementBackupFrequency")
+    def increment_backup_frequency(self) -> builtins.int:
+        """
+        Incremental backup frequency (hours).
+        """
+        return pulumi.get(self, "increment_backup_frequency")
+
+    @property
+    @pulumi.getter(name="walLogSpaceLimitEnable")
+    def wal_log_space_limit_enable(self) -> builtins.bool:
+        """
+        Enable WAL log space limit.
+        """
+        return pulumi.get(self, "wal_log_space_limit_enable")
 
 
 @pulumi.output_type

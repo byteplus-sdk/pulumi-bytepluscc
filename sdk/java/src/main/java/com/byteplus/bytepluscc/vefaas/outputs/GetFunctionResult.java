@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.vefaas.outputs;
 
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionAsyncTaskConfig;
+import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionDependencyInstallStatus;
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionEnv;
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionNasStorage;
 import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionSourceAccessConfig;
@@ -52,6 +53,11 @@ public final class GetFunctionResult {
      */
     private String creationTime;
     /**
+     * @return Dependency installation task status.
+     * 
+     */
+    private GetFunctionDependencyInstallStatus dependencyInstallStatus;
+    /**
      * @return Function description. Up to 1000 Unicode characters
      * 
      */
@@ -61,6 +67,11 @@ public final class GetFunctionResult {
      * 
      */
     private Boolean enableApmplus;
+    /**
+     * @return Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    private Boolean enableDependencyInstall;
     /**
      * @return Environment variables.
      * 
@@ -231,6 +242,13 @@ public final class GetFunctionResult {
         return this.creationTime;
     }
     /**
+     * @return Dependency installation task status.
+     * 
+     */
+    public GetFunctionDependencyInstallStatus dependencyInstallStatus() {
+        return this.dependencyInstallStatus;
+    }
+    /**
      * @return Function description. Up to 1000 Unicode characters
      * 
      */
@@ -243,6 +261,13 @@ public final class GetFunctionResult {
      */
     public Boolean enableApmplus() {
         return this.enableApmplus;
+    }
+    /**
+     * @return Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    public Boolean enableDependencyInstall() {
+        return this.enableDependencyInstall;
     }
     /**
      * @return Environment variables.
@@ -435,8 +460,10 @@ public final class GetFunctionResult {
         private String command;
         private String cpuStrategy;
         private String creationTime;
+        private GetFunctionDependencyInstallStatus dependencyInstallStatus;
         private String description;
         private Boolean enableApmplus;
+        private Boolean enableDependencyInstall;
         private List<GetFunctionEnv> envs;
         private Boolean exclusiveMode;
         private String functionId;
@@ -471,8 +498,10 @@ public final class GetFunctionResult {
     	      this.command = defaults.command;
     	      this.cpuStrategy = defaults.cpuStrategy;
     	      this.creationTime = defaults.creationTime;
+    	      this.dependencyInstallStatus = defaults.dependencyInstallStatus;
     	      this.description = defaults.description;
     	      this.enableApmplus = defaults.enableApmplus;
+    	      this.enableDependencyInstall = defaults.enableDependencyInstall;
     	      this.envs = defaults.envs;
     	      this.exclusiveMode = defaults.exclusiveMode;
     	      this.functionId = defaults.functionId;
@@ -549,6 +578,14 @@ public final class GetFunctionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder dependencyInstallStatus(GetFunctionDependencyInstallStatus dependencyInstallStatus) {
+            if (dependencyInstallStatus == null) {
+              throw new MissingRequiredPropertyException("GetFunctionResult", "dependencyInstallStatus");
+            }
+            this.dependencyInstallStatus = dependencyInstallStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
               throw new MissingRequiredPropertyException("GetFunctionResult", "description");
@@ -562,6 +599,14 @@ public final class GetFunctionResult {
               throw new MissingRequiredPropertyException("GetFunctionResult", "enableApmplus");
             }
             this.enableApmplus = enableApmplus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enableDependencyInstall(Boolean enableDependencyInstall) {
+            if (enableDependencyInstall == null) {
+              throw new MissingRequiredPropertyException("GetFunctionResult", "enableDependencyInstall");
+            }
+            this.enableDependencyInstall = enableDependencyInstall;
             return this;
         }
         @CustomType.Setter
@@ -778,8 +823,10 @@ public final class GetFunctionResult {
             _resultValue.command = command;
             _resultValue.cpuStrategy = cpuStrategy;
             _resultValue.creationTime = creationTime;
+            _resultValue.dependencyInstallStatus = dependencyInstallStatus;
             _resultValue.description = description;
             _resultValue.enableApmplus = enableApmplus;
+            _resultValue.enableDependencyInstall = enableDependencyInstall;
             _resultValue.envs = envs;
             _resultValue.exclusiveMode = exclusiveMode;
             _resultValue.functionId = functionId;

@@ -171,6 +171,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
 
+        [Output("instanceParameters")]
+        public Output<ImmutableArray<Outputs.InstanceInstanceParameter>> InstanceParameters { get; private set; } = null!;
+
         /// <summary>
         /// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
         /// </summary>
@@ -425,6 +428,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
+        [Input("instanceParameters")]
+        private InputList<Inputs.InstanceInstanceParameterArgs>? _instanceParameters;
+        public InputList<Inputs.InstanceInstanceParameterArgs> InstanceParameters
+        {
+            get => _instanceParameters ?? (_instanceParameters = new InputList<Inputs.InstanceInstanceParameterArgs>());
+            set => _instanceParameters = value;
+        }
+
         /// <summary>
         /// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
         /// </summary>
@@ -648,6 +659,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
+
+        [Input("instanceParameters")]
+        private InputList<Inputs.InstanceInstanceParameterGetArgs>? _instanceParameters;
+        public InputList<Inputs.InstanceInstanceParameterGetArgs> InstanceParameters
+        {
+            get => _instanceParameters ?? (_instanceParameters = new InputList<Inputs.InstanceInstanceParameterGetArgs>());
+            set => _instanceParameters = value;
+        }
 
         /// <summary>
         /// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.

@@ -55,6 +55,10 @@ export interface GetFunctionResult {
      */
     readonly creationTime: string;
     /**
+     * Dependency installation task status.
+     */
+    readonly dependencyInstallStatus: outputs.vefaas.GetFunctionDependencyInstallStatus;
+    /**
      * Function description. Up to 1000 Unicode characters
      */
     readonly description: string;
@@ -62,6 +66,10 @@ export interface GetFunctionResult {
      * Whether to enable application monitoring
      */
     readonly enableApmplus: boolean;
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     */
+    readonly enableDependencyInstall: boolean;
     /**
      * Environment variables.
      */

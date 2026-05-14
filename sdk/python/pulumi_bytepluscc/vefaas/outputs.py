@@ -21,6 +21,7 @@ __all__ = [
     'FunctionAsyncTaskConfigDestinationConfig',
     'FunctionAsyncTaskConfigDestinationConfigOnFailure',
     'FunctionAsyncTaskConfigDestinationConfigOnSuccess',
+    'FunctionDependencyInstallStatus',
     'FunctionEnv',
     'FunctionNasStorage',
     'FunctionNasStorageNasConfig',
@@ -41,6 +42,7 @@ __all__ = [
     'GetFunctionAsyncTaskConfigDestinationConfigResult',
     'GetFunctionAsyncTaskConfigDestinationConfigOnFailureResult',
     'GetFunctionAsyncTaskConfigDestinationConfigOnSuccessResult',
+    'GetFunctionDependencyInstallStatusResult',
     'GetFunctionEnvResult',
     'GetFunctionNasStorageResult',
     'GetFunctionNasStorageNasConfigResult',
@@ -209,6 +211,68 @@ class FunctionAsyncTaskConfigDestinationConfigOnSuccess(dict):
         Specific callback target. Set the value to empty ("") to disable this callback
         """
         return pulumi.get(self, "destination")
+
+
+@pulumi.output_type
+class FunctionDependencyInstallStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "createTime":
+            suggest = "create_time"
+        elif key == "finishTime":
+            suggest = "finish_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionDependencyInstallStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionDependencyInstallStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionDependencyInstallStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 create_time: Optional[builtins.str] = None,
+                 finish_time: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None):
+        """
+        :param builtins.str create_time: Task creation time.
+        :param builtins.str finish_time: Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        :param builtins.str status: Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if finish_time is not None:
+            pulumi.set(__self__, "finish_time", finish_time)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[builtins.str]:
+        """
+        Task creation time.
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="finishTime")
+    def finish_time(self) -> Optional[builtins.str]:
+        """
+        Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        return pulumi.get(self, "finish_time")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type
@@ -1177,6 +1241,46 @@ class GetFunctionAsyncTaskConfigDestinationConfigOnSuccessResult(dict):
         Specific callback target. Set the value to empty ("") to disable this callback
         """
         return pulumi.get(self, "destination")
+
+
+@pulumi.output_type
+class GetFunctionDependencyInstallStatusResult(dict):
+    def __init__(__self__, *,
+                 create_time: builtins.str,
+                 finish_time: builtins.str,
+                 status: builtins.str):
+        """
+        :param builtins.str create_time: Task creation time.
+        :param builtins.str finish_time: Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        :param builtins.str status: Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "finish_time", finish_time)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        Task creation time.
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="finishTime")
+    def finish_time(self) -> builtins.str:
+        """
+        Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        return pulumi.get(self, "finish_time")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type

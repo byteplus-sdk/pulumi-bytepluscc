@@ -13,32 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     /// <summary>
     /// An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var rdsPostgresqlAllowListDemo = new Bytepluscc.Rdspostgresql.AllowList("RdsPostgresqlAllowListDemo", new()
-    ///     {
-    ///         AllowListValue = new[]
-    ///         {
-    ///             "1.2.3.4/32",
-    ///             "5.6.7.8/32",
-    ///         },
-    ///         AllowListCategory = "Ordinary",
-    ///         AllowListDesc = "test",
-    ///         AllowListName = "ccapi-test-1",
-    ///         AllowListType = "IPv4",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ```sh
@@ -209,11 +183,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             set => _allowLists = value;
         }
 
-        /// <summary>
-        /// Number of instances bound to this allowlist.
-        /// </summary>
-        [Input("associatedInstanceNum")]
-        public Input<int>? AssociatedInstanceNum { get; set; }
+        [Input("associatedInstances")]
+        private InputList<Inputs.AllowListAssociatedInstanceArgs>? _associatedInstances;
+        public InputList<Inputs.AllowListAssociatedInstanceArgs> AssociatedInstances
+        {
+            get => _associatedInstances ?? (_associatedInstances = new InputList<Inputs.AllowListAssociatedInstanceArgs>());
+            set => _associatedInstances = value;
+        }
 
         /// <summary>
         /// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.

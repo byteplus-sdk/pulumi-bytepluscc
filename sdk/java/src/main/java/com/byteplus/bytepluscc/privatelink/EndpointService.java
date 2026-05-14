@@ -107,6 +107,20 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
+     * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     * 
+     */
+    @Export(name="enableVerifyPrivateDns", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> enableVerifyPrivateDns;
+
+    /**
+     * @return Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     * 
+     */
+    public Output<Boolean> enableVerifyPrivateDns() {
+        return this.enableVerifyPrivateDns;
+    }
+    /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */

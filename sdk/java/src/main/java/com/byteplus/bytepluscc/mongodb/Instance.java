@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.mongodb.InstanceArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceState;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceConfigServer;
+import com.byteplus.bytepluscc.mongodb.outputs.InstanceInstanceParameter;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceMongo;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceNode;
 import com.byteplus.bytepluscc.mongodb.outputs.InstanceNodeAvailabilityZone;
@@ -325,6 +326,12 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> instanceName() {
         return this.instanceName;
+    }
+    @Export(name="instanceParameters", refs={List.class,InstanceInstanceParameter.class}, tree="[0,1]")
+    private Output<List<InstanceInstanceParameter>> instanceParameters;
+
+    public Output<List<InstanceInstanceParameter>> instanceParameters() {
+        return this.instanceParameters;
     }
     /**
      * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.

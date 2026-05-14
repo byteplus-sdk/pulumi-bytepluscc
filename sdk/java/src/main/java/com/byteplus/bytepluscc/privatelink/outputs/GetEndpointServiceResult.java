@@ -42,6 +42,11 @@ public final class GetEndpointServiceResult {
      */
     private String description;
     /**
+     * @return Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     * 
+     */
+    private Boolean enableVerifyPrivateDns;
+    /**
      * @return Uniquely identifies the resource.
      * 
      */
@@ -192,6 +197,13 @@ public final class GetEndpointServiceResult {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     * 
+     */
+    public Boolean enableVerifyPrivateDns() {
+        return this.enableVerifyPrivateDns;
     }
     /**
      * @return Uniquely identifies the resource.
@@ -369,6 +381,7 @@ public final class GetEndpointServiceResult {
         private String businessStatus;
         private String createTime;
         private String description;
+        private Boolean enableVerifyPrivateDns;
         private String id;
         private List<String> ipAddressVersions;
         private String payer;
@@ -400,6 +413,7 @@ public final class GetEndpointServiceResult {
     	      this.businessStatus = defaults.businessStatus;
     	      this.createTime = defaults.createTime;
     	      this.description = defaults.description;
+    	      this.enableVerifyPrivateDns = defaults.enableVerifyPrivateDns;
     	      this.id = defaults.id;
     	      this.ipAddressVersions = defaults.ipAddressVersions;
     	      this.payer = defaults.payer;
@@ -463,6 +477,14 @@ public final class GetEndpointServiceResult {
               throw new MissingRequiredPropertyException("GetEndpointServiceResult", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enableVerifyPrivateDns(Boolean enableVerifyPrivateDns) {
+            if (enableVerifyPrivateDns == null) {
+              throw new MissingRequiredPropertyException("GetEndpointServiceResult", "enableVerifyPrivateDns");
+            }
+            this.enableVerifyPrivateDns = enableVerifyPrivateDns;
             return this;
         }
         @CustomType.Setter
@@ -671,6 +693,7 @@ public final class GetEndpointServiceResult {
             _resultValue.businessStatus = businessStatus;
             _resultValue.createTime = createTime;
             _resultValue.description = description;
+            _resultValue.enableVerifyPrivateDns = enableVerifyPrivateDns;
             _resultValue.id = id;
             _resultValue.ipAddressVersions = ipAddressVersions;
             _resultValue.payer = payer;

@@ -3,11 +3,11 @@
 
 package com.byteplus.bytepluscc.rdspostgresql;
 
+import com.byteplus.bytepluscc.rdspostgresql.inputs.AllowListAssociatedInstanceArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.AllowListSecurityGroupBindInfoArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -94,19 +94,11 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.allowLists);
     }
 
-    /**
-     * Number of instances bound to this allowlist.
-     * 
-     */
-    @Import(name="associatedInstanceNum")
-    private @Nullable Output<Integer> associatedInstanceNum;
+    @Import(name="associatedInstances")
+    private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
 
-    /**
-     * @return Number of instances bound to this allowlist.
-     * 
-     */
-    public Optional<Output<Integer>> associatedInstanceNum() {
-        return Optional.ofNullable(this.associatedInstanceNum);
+    public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
+        return Optional.ofNullable(this.associatedInstances);
     }
 
     /**
@@ -184,7 +176,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         this.allowListName = $.allowListName;
         this.allowListType = $.allowListType;
         this.allowLists = $.allowLists;
-        this.associatedInstanceNum = $.associatedInstanceNum;
+        this.associatedInstances = $.associatedInstances;
         this.ipAddress = $.ipAddress;
         this.modifyMode = $.modifyMode;
         this.securityGroupBindInfos = $.securityGroupBindInfos;
@@ -325,25 +317,17 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
             return allowLists(List.of(allowLists));
         }
 
-        /**
-         * @param associatedInstanceNum Number of instances bound to this allowlist.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder associatedInstanceNum(@Nullable Output<Integer> associatedInstanceNum) {
-            $.associatedInstanceNum = associatedInstanceNum;
+        public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
+            $.associatedInstances = associatedInstances;
             return this;
         }
 
-        /**
-         * @param associatedInstanceNum Number of instances bound to this allowlist.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder associatedInstanceNum(Integer associatedInstanceNum) {
-            return associatedInstanceNum(Output.of(associatedInstanceNum));
+        public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
+            return associatedInstances(Output.of(associatedInstances));
+        }
+
+        public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
+            return associatedInstances(List.of(associatedInstances));
         }
 
         /**

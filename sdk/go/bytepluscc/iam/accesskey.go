@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Access control (Identity and Access Management, IAM) is a permission management system provided by Volcano Engine to help customers control access to cloud resources for different identities
+// Access control (Identity and Access Management, abbreviated as IAM) is a permission management system provided by Volcano Engine for customers to control access to cloud resources by different identities.
 //
 // ## Example Usage
 //
@@ -47,25 +47,25 @@ import (
 type Accesskey struct {
 	pulumi.CustomResourceState
 
-	// Key ID (Access Key Id)
+	// Access Key Id.
 	AccessKeyId pulumi.StringOutput `pulumi:"accessKeyId"`
-	// Key creation time (ISO8601 format)
+	// Key creation time. The time format is ISO8601.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// Last login time
+	// Last login time.
 	LastLoginDate pulumi.StringOutput `pulumi:"lastLoginDate"`
-	// Last accessed region by the API key
+	// The last region accessed by the API key.
 	Region pulumi.StringOutput `pulumi:"region"`
-	// Last usage time of the API key
+	// The last time the API key was used.
 	RequestTime pulumi.StringOutput `pulumi:"requestTime"`
-	// Secret Access Key
+	// Secret Access Key.
 	SecretAccessKey pulumi.StringOutput `pulumi:"secretAccessKey"`
-	// English abbreviation of the last accessed service by the API key
+	// The English abbreviation of the last service accessed by the API key.
 	Service pulumi.StringOutput `pulumi:"service"`
-	// Key status. "active" means enabled, "inactive" means disabled
+	// Key status. active means enabled, inactive means disabled.
 	Status pulumi.StringOutput `pulumi:"status"`
-	// Key update time (ISO8601 format)
+	// Key update time. The time format is ISO8601.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
 	UserName pulumi.StringOutput `pulumi:"userName"`
 }
 
@@ -99,48 +99,48 @@ func GetAccesskey(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Accesskey resources.
 type accesskeyState struct {
-	// Key ID (Access Key Id)
+	// Access Key Id.
 	AccessKeyId *string `pulumi:"accessKeyId"`
-	// Key creation time (ISO8601 format)
+	// Key creation time. The time format is ISO8601.
 	CreatedTime *string `pulumi:"createdTime"`
-	// Last login time
+	// Last login time.
 	LastLoginDate *string `pulumi:"lastLoginDate"`
-	// Last accessed region by the API key
+	// The last region accessed by the API key.
 	Region *string `pulumi:"region"`
-	// Last usage time of the API key
+	// The last time the API key was used.
 	RequestTime *string `pulumi:"requestTime"`
-	// Secret Access Key
+	// Secret Access Key.
 	SecretAccessKey *string `pulumi:"secretAccessKey"`
-	// English abbreviation of the last accessed service by the API key
+	// The English abbreviation of the last service accessed by the API key.
 	Service *string `pulumi:"service"`
-	// Key status. "active" means enabled, "inactive" means disabled
+	// Key status. active means enabled, inactive means disabled.
 	Status *string `pulumi:"status"`
-	// Key update time (ISO8601 format)
+	// Key update time. The time format is ISO8601.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
 	UserName *string `pulumi:"userName"`
 }
 
 type AccesskeyState struct {
-	// Key ID (Access Key Id)
+	// Access Key Id.
 	AccessKeyId pulumi.StringPtrInput
-	// Key creation time (ISO8601 format)
+	// Key creation time. The time format is ISO8601.
 	CreatedTime pulumi.StringPtrInput
-	// Last login time
+	// Last login time.
 	LastLoginDate pulumi.StringPtrInput
-	// Last accessed region by the API key
+	// The last region accessed by the API key.
 	Region pulumi.StringPtrInput
-	// Last usage time of the API key
+	// The last time the API key was used.
 	RequestTime pulumi.StringPtrInput
-	// Secret Access Key
+	// Secret Access Key.
 	SecretAccessKey pulumi.StringPtrInput
-	// English abbreviation of the last accessed service by the API key
+	// The English abbreviation of the last service accessed by the API key.
 	Service pulumi.StringPtrInput
-	// Key status. "active" means enabled, "inactive" means disabled
+	// Key status. active means enabled, inactive means disabled.
 	Status pulumi.StringPtrInput
-	// Key update time (ISO8601 format)
+	// Key update time. The time format is ISO8601.
 	UpdatedTime pulumi.StringPtrInput
-	// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
 	UserName pulumi.StringPtrInput
 }
 
@@ -149,17 +149,21 @@ func (AccesskeyState) ElementType() reflect.Type {
 }
 
 type accesskeyArgs struct {
-	// Key status. "active" means enabled, "inactive" means disabled
+	// Secret Access Key.
+	SecretAccessKey *string `pulumi:"secretAccessKey"`
+	// Key status. active means enabled, inactive means disabled.
 	Status *string `pulumi:"status"`
-	// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
 	UserName *string `pulumi:"userName"`
 }
 
 // The set of arguments for constructing a Accesskey resource.
 type AccesskeyArgs struct {
-	// Key status. "active" means enabled, "inactive" means disabled
+	// Secret Access Key.
+	SecretAccessKey pulumi.StringPtrInput
+	// Key status. active means enabled, inactive means disabled.
 	Status pulumi.StringPtrInput
-	// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+	// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
 	UserName pulumi.StringPtrInput
 }
 
@@ -250,52 +254,52 @@ func (o AccesskeyOutput) ToAccesskeyOutputWithContext(ctx context.Context) Acces
 	return o
 }
 
-// Key ID (Access Key Id)
+// Access Key Id.
 func (o AccesskeyOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.AccessKeyId }).(pulumi.StringOutput)
 }
 
-// Key creation time (ISO8601 format)
+// Key creation time. The time format is ISO8601.
 func (o AccesskeyOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Last login time
+// Last login time.
 func (o AccesskeyOutput) LastLoginDate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.LastLoginDate }).(pulumi.StringOutput)
 }
 
-// Last accessed region by the API key
+// The last region accessed by the API key.
 func (o AccesskeyOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
 }
 
-// Last usage time of the API key
+// The last time the API key was used.
 func (o AccesskeyOutput) RequestTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.RequestTime }).(pulumi.StringOutput)
 }
 
-// Secret Access Key
+// Secret Access Key.
 func (o AccesskeyOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// English abbreviation of the last accessed service by the API key
+// The English abbreviation of the last service accessed by the API key.
 func (o AccesskeyOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
 }
 
-// Key status. "active" means enabled, "inactive" means disabled
+// Key status. active means enabled, inactive means disabled.
 func (o AccesskeyOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// Key update time (ISO8601 format)
+// Key update time. The time format is ISO8601.
 func (o AccesskeyOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+// User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
 func (o AccesskeyOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Accesskey) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }

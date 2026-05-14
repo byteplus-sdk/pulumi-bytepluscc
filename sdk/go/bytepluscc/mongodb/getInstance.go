@@ -66,6 +66,8 @@ type LookupInstanceResult struct {
 	InstanceId string `pulumi:"instanceId"`
 	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
 	InstanceName string `pulumi:"instanceName"`
+	// Instance parameter list
+	InstanceParameters []GetInstanceInstanceParameter `pulumi:"instanceParameters"`
 	// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
 	InstanceStatus string `pulumi:"instanceStatus"`
 	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
@@ -244,6 +246,11 @@ func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {
 // Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
 func (o LookupInstanceResultOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// Instance parameter list
+func (o LookupInstanceResultOutput) InstanceParameters() GetInstanceInstanceParameterArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceInstanceParameter { return v.InstanceParameters }).(GetInstanceInstanceParameterArrayOutput)
 }
 
 // Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.

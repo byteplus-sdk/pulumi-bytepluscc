@@ -24,42 +24,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.byteplus.bytepluscc.rdspostgresql.AllowList;
- * import com.byteplus.bytepluscc.rdspostgresql.AllowListArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var rdsPostgresqlAllowListDemo = new AllowList("rdsPostgresqlAllowListDemo", AllowListArgs.builder()
- *             .allowLists(            
- *                 "1.2.3.4/32",
- *                 "5.6.7.8/32")
- *             .allowListCategory("Ordinary")
- *             .allowListDesc("test")
- *             .allowListName("ccapi-test-1")
- *             .allowListType("IPv4")
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

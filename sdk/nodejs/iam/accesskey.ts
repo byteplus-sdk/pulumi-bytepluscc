@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * Access control (Identity and Access Management, IAM) is a permission management system provided by Volcano Engine to help customers control access to cloud resources for different identities
+ * Access control (Identity and Access Management, abbreviated as IAM) is a permission management system provided by Volcano Engine for customers to control access to cloud resources by different identities.
  *
  * ## Example Usage
  *
@@ -51,43 +51,43 @@ export class Accesskey extends pulumi.CustomResource {
     }
 
     /**
-     * Key ID (Access Key Id)
+     * Access Key Id.
      */
     public /*out*/ readonly accessKeyId!: pulumi.Output<string>;
     /**
-     * Key creation time (ISO8601 format)
+     * Key creation time. The time format is ISO8601.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * Last login time
+     * Last login time.
      */
     public /*out*/ readonly lastLoginDate!: pulumi.Output<string>;
     /**
-     * Last accessed region by the API key
+     * The last region accessed by the API key.
      */
     public /*out*/ readonly region!: pulumi.Output<string>;
     /**
-     * Last usage time of the API key
+     * The last time the API key was used.
      */
     public /*out*/ readonly requestTime!: pulumi.Output<string>;
     /**
-     * Secret Access Key
+     * Secret Access Key.
      */
-    public /*out*/ readonly secretAccessKey!: pulumi.Output<string>;
+    public readonly secretAccessKey!: pulumi.Output<string>;
     /**
-     * English abbreviation of the last accessed service by the API key
+     * The English abbreviation of the last service accessed by the API key.
      */
     public /*out*/ readonly service!: pulumi.Output<string>;
     /**
-     * Key status. "active" means enabled, "inactive" means disabled
+     * Key status. active means enabled, inactive means disabled.
      */
     public readonly status!: pulumi.Output<string>;
     /**
-     * Key update time (ISO8601 format)
+     * Key update time. The time format is ISO8601.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+     * User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      */
     public readonly userName!: pulumi.Output<string>;
 
@@ -116,6 +116,7 @@ export class Accesskey extends pulumi.CustomResource {
             resourceInputs["userName"] = state ? state.userName : undefined;
         } else {
             const args = argsOrState as AccesskeyArgs | undefined;
+            resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
             resourceInputs["userName"] = args ? args.userName : undefined;
             resourceInputs["accessKeyId"] = undefined /*out*/;
@@ -123,7 +124,6 @@ export class Accesskey extends pulumi.CustomResource {
             resourceInputs["lastLoginDate"] = undefined /*out*/;
             resourceInputs["region"] = undefined /*out*/;
             resourceInputs["requestTime"] = undefined /*out*/;
-            resourceInputs["secretAccessKey"] = undefined /*out*/;
             resourceInputs["service"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
         }
@@ -137,43 +137,43 @@ export class Accesskey extends pulumi.CustomResource {
  */
 export interface AccesskeyState {
     /**
-     * Key ID (Access Key Id)
+     * Access Key Id.
      */
     accessKeyId?: pulumi.Input<string>;
     /**
-     * Key creation time (ISO8601 format)
+     * Key creation time. The time format is ISO8601.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * Last login time
+     * Last login time.
      */
     lastLoginDate?: pulumi.Input<string>;
     /**
-     * Last accessed region by the API key
+     * The last region accessed by the API key.
      */
     region?: pulumi.Input<string>;
     /**
-     * Last usage time of the API key
+     * The last time the API key was used.
      */
     requestTime?: pulumi.Input<string>;
     /**
-     * Secret Access Key
+     * Secret Access Key.
      */
     secretAccessKey?: pulumi.Input<string>;
     /**
-     * English abbreviation of the last accessed service by the API key
+     * The English abbreviation of the last service accessed by the API key.
      */
     service?: pulumi.Input<string>;
     /**
-     * Key status. "active" means enabled, "inactive" means disabled
+     * Key status. active means enabled, inactive means disabled.
      */
     status?: pulumi.Input<string>;
     /**
-     * Key update time (ISO8601 format)
+     * Key update time. The time format is ISO8601.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+     * User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      */
     userName?: pulumi.Input<string>;
 }
@@ -183,11 +183,15 @@ export interface AccesskeyState {
  */
 export interface AccesskeyArgs {
     /**
-     * Key status. "active" means enabled, "inactive" means disabled
+     * Secret Access Key.
+     */
+    secretAccessKey?: pulumi.Input<string>;
+    /**
+     * Key status. active means enabled, inactive means disabled.
      */
     status?: pulumi.Input<string>;
     /**
-     * User name. Used to create a key for a specified IAM user. If no user name is specified, the key is created for the current request identity (that is, if the main account requests, the key is created for the main account; if an IAM user requests, the key is created for that IAM user. Note: Roles cannot create keys for themselves). When an IAM user has the AccessKeySelfManageAccess permission, to create a key for themselves, they must include their own UserName in the request
+     * User name. Used to create a key for the specified IAM user. If no user name is specified, a key is created for the current request identity (that is, if the primary account makes the request, the key is created for the primary account itself; if an IAM user makes the request, the key is created for the IAM user. Note: Roles do not support creating keys for themselves). If the IAM user has the AccessKeySelfManageAccess permission and needs to create a key for themselves, they must include their own UserName in the request.
      */
     userName?: pulumi.Input<string>;
 }

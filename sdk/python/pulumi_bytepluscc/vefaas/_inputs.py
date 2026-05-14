@@ -24,6 +24,8 @@ __all__ = [
     'FunctionAsyncTaskConfigDestinationConfigOnFailureArgsDict',
     'FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs',
     'FunctionAsyncTaskConfigDestinationConfigOnSuccessArgsDict',
+    'FunctionDependencyInstallStatusArgs',
+    'FunctionDependencyInstallStatusArgsDict',
     'FunctionEnvArgs',
     'FunctionEnvArgsDict',
     'FunctionNasStorageArgs',
@@ -246,6 +248,78 @@ class FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs:
     @destination.setter
     def destination(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "destination", value)
+
+
+if not MYPY:
+    class FunctionDependencyInstallStatusArgsDict(TypedDict):
+        create_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Task creation time.
+        """
+        finish_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+elif False:
+    FunctionDependencyInstallStatusArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FunctionDependencyInstallStatusArgs:
+    def __init__(__self__, *,
+                 create_time: Optional[pulumi.Input[builtins.str]] = None,
+                 finish_time: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] create_time: Task creation time.
+        :param pulumi.Input[builtins.str] finish_time: Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        :param pulumi.Input[builtins.str] status: Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if finish_time is not None:
+            pulumi.set(__self__, "finish_time", finish_time)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Task creation time.
+        """
+        return pulumi.get(self, "create_time")
+
+    @create_time.setter
+    def create_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "create_time", value)
+
+    @property
+    @pulumi.getter(name="finishTime")
+    def finish_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        return pulumi.get(self, "finish_time")
+
+    @finish_time.setter
+    def finish_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "finish_time", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
 
 
 if not MYPY:

@@ -34,6 +34,10 @@ __all__ = [
     'InstanceTagArgsDict',
     'InstanceVisitAddrArgs',
     'InstanceVisitAddrArgsDict',
+    'ParameterGroupParamValueArgs',
+    'ParameterGroupParamValueArgsDict',
+    'ParameterGroupParameterArgs',
+    'ParameterGroupParameterArgsDict',
 ]
 
 MYPY = False
@@ -677,5 +681,207 @@ class InstanceVisitAddrArgs:
     @vip.setter
     def vip(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "vip", value)
+
+
+if not MYPY:
+    class ParameterGroupParamValueArgsDict(TypedDict):
+        name: pulumi.Input[builtins.str]
+        """
+        Parameter name
+        """
+        value: pulumi.Input[builtins.str]
+        """
+        Parameter value
+        """
+elif False:
+    ParameterGroupParamValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ParameterGroupParamValueArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[builtins.str],
+                 value: pulumi.Input[builtins.str]):
+        """
+        :param pulumi.Input[builtins.str] name: Parameter name
+        :param pulumi.Input[builtins.str] value: Parameter value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[builtins.str]:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[builtins.str]:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ParameterGroupParameterArgsDict(TypedDict):
+        current_value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Current parameter value
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter description
+        """
+        need_reboot: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether modifying this parameter requires a restart
+        """
+        param_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter name
+        """
+        range: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter value range
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter type
+        """
+        unit: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter unit
+        """
+elif False:
+    ParameterGroupParameterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ParameterGroupParameterArgs:
+    def __init__(__self__, *,
+                 current_value: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 need_reboot: Optional[pulumi.Input[builtins.bool]] = None,
+                 param_name: Optional[pulumi.Input[builtins.str]] = None,
+                 range: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None,
+                 unit: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] current_value: Current parameter value
+        :param pulumi.Input[builtins.str] description: Parameter description
+        :param pulumi.Input[builtins.bool] need_reboot: Whether modifying this parameter requires a restart
+        :param pulumi.Input[builtins.str] param_name: Parameter name
+        :param pulumi.Input[builtins.str] range: Parameter value range
+        :param pulumi.Input[builtins.str] type: Parameter type
+        :param pulumi.Input[builtins.str] unit: Parameter unit
+        """
+        if current_value is not None:
+            pulumi.set(__self__, "current_value", current_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if need_reboot is not None:
+            pulumi.set(__self__, "need_reboot", need_reboot)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if range is not None:
+            pulumi.set(__self__, "range", range)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="currentValue")
+    def current_value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Current parameter value
+        """
+        return pulumi.get(self, "current_value")
+
+    @current_value.setter
+    def current_value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "current_value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="needReboot")
+    def need_reboot(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether modifying this parameter requires a restart
+        """
+        return pulumi.get(self, "need_reboot")
+
+    @need_reboot.setter
+    def need_reboot(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "need_reboot", value)
+
+    @property
+    @pulumi.getter(name="paramName")
+    def param_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "param_name")
+
+    @param_name.setter
+    def param_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "param_name", value)
+
+    @property
+    @pulumi.getter
+    def range(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter value range
+        """
+        return pulumi.get(self, "range")
+
+    @range.setter
+    def range(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "range", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter unit
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "unit", value)
 
 

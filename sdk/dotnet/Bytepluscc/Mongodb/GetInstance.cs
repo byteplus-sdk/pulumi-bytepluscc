@@ -137,6 +137,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
+        /// Instance parameter list
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceInstanceParameterResult> InstanceParameters;
+        /// <summary>
         /// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
         /// </summary>
         public readonly string InstanceStatus;
@@ -283,6 +287,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
             string instanceName,
 
+            ImmutableArray<Outputs.GetInstanceInstanceParameterResult> instanceParameters,
+
             string instanceStatus,
 
             string instanceType,
@@ -355,6 +361,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
             InstanceCount = instanceCount;
             InstanceId = instanceId;
             InstanceName = instanceName;
+            InstanceParameters = instanceParameters;
             InstanceStatus = instanceStatus;
             InstanceType = instanceType;
             Mongos = mongos;

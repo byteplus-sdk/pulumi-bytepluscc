@@ -36,6 +36,7 @@ class InstanceArgs:
                  db_engine_version: Optional[pulumi.Input[builtins.str]] = None,
                  instance_count: Optional[pulumi.Input[builtins.int]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  mongos_node_number: Optional[pulumi.Input[builtins.int]] = None,
                  mongos_node_spec: Optional[pulumi.Input[builtins.str]] = None,
@@ -98,6 +99,8 @@ class InstanceArgs:
             pulumi.set(__self__, "instance_count", instance_count)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if instance_parameters is not None:
+            pulumi.set(__self__, "instance_parameters", instance_parameters)
         if instance_type is not None:
             pulumi.set(__self__, "instance_type", instance_type)
         if mongos_node_number is not None:
@@ -292,6 +295,15 @@ class InstanceArgs:
         pulumi.set(self, "instance_name", value)
 
     @property
+    @pulumi.getter(name="instanceParameters")
+    def instance_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]]]:
+        return pulumi.get(self, "instance_parameters")
+
+    @instance_parameters.setter
+    def instance_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]]]):
+        pulumi.set(self, "instance_parameters", value)
+
+    @property
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -450,6 +462,7 @@ class _InstanceState:
                  instance_count: Optional[pulumi.Input[builtins.int]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]]] = None,
                  instance_status: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  mongos: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceMongoArgs']]]] = None,
@@ -552,6 +565,8 @@ class _InstanceState:
             pulumi.set(__self__, "instance_id", instance_id)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if instance_parameters is not None:
+            pulumi.set(__self__, "instance_parameters", instance_parameters)
         if instance_status is not None:
             pulumi.set(__self__, "instance_status", instance_status)
         if instance_type is not None:
@@ -807,6 +822,15 @@ class _InstanceState:
     @instance_name.setter
     def instance_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter(name="instanceParameters")
+    def instance_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]]]:
+        return pulumi.get(self, "instance_parameters")
+
+    @instance_parameters.setter
+    def instance_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]]]):
+        pulumi.set(self, "instance_parameters", value)
 
     @property
     @pulumi.getter(name="instanceStatus")
@@ -1133,6 +1157,7 @@ class Instance(pulumi.CustomResource):
                  db_engine_version: Optional[pulumi.Input[builtins.str]] = None,
                  instance_count: Optional[pulumi.Input[builtins.int]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceInstanceParameterArgs', 'InstanceInstanceParameterArgsDict']]]]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  mongos_node_number: Optional[pulumi.Input[builtins.int]] = None,
                  mongos_node_spec: Optional[pulumi.Input[builtins.str]] = None,
@@ -1300,6 +1325,7 @@ class Instance(pulumi.CustomResource):
                  db_engine_version: Optional[pulumi.Input[builtins.str]] = None,
                  instance_count: Optional[pulumi.Input[builtins.int]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceInstanceParameterArgs', 'InstanceInstanceParameterArgsDict']]]]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  mongos_node_number: Optional[pulumi.Input[builtins.int]] = None,
                  mongos_node_spec: Optional[pulumi.Input[builtins.str]] = None,
@@ -1335,6 +1361,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["db_engine_version"] = db_engine_version
             __props__.__dict__["instance_count"] = instance_count
             __props__.__dict__["instance_name"] = instance_name
+            __props__.__dict__["instance_parameters"] = instance_parameters
             __props__.__dict__["instance_type"] = instance_type
             __props__.__dict__["mongos_node_number"] = mongos_node_number
             __props__.__dict__["mongos_node_spec"] = mongos_node_spec
@@ -1407,6 +1434,7 @@ class Instance(pulumi.CustomResource):
             instance_count: Optional[pulumi.Input[builtins.int]] = None,
             instance_id: Optional[pulumi.Input[builtins.str]] = None,
             instance_name: Optional[pulumi.Input[builtins.str]] = None,
+            instance_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceInstanceParameterArgs', 'InstanceInstanceParameterArgsDict']]]]] = None,
             instance_status: Optional[pulumi.Input[builtins.str]] = None,
             instance_type: Optional[pulumi.Input[builtins.str]] = None,
             mongos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceMongoArgs', 'InstanceMongoArgsDict']]]]] = None,
@@ -1501,6 +1529,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["instance_count"] = instance_count
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["instance_name"] = instance_name
+        __props__.__dict__["instance_parameters"] = instance_parameters
         __props__.__dict__["instance_status"] = instance_status
         __props__.__dict__["instance_type"] = instance_type
         __props__.__dict__["mongos"] = mongos
@@ -1662,6 +1691,11 @@ class Instance(pulumi.CustomResource):
         Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="instanceParameters")
+    def instance_parameters(self) -> pulumi.Output[Sequence['outputs.InstanceInstanceParameter']]:
+        return pulumi.get(self, "instance_parameters")
 
     @property
     @pulumi.getter(name="instanceStatus")

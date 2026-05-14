@@ -33,11 +33,15 @@ type Function struct {
 	CpuStrategy pulumi.StringOutput `pulumi:"cpuStrategy"`
 	// Function creation time
 	CreationTime pulumi.StringOutput `pulumi:"creationTime"`
+	// Dependency installation task status.
+	DependencyInstallStatus FunctionDependencyInstallStatusOutput `pulumi:"dependencyInstallStatus"`
 	// Function description. Up to 1000 Unicode characters
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Whether to enable application monitoring
-	EnableApmplus pulumi.BoolOutput      `pulumi:"enableApmplus"`
-	Envs          FunctionEnvArrayOutput `pulumi:"envs"`
+	EnableApmplus pulumi.BoolOutput `pulumi:"enableApmplus"`
+	// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+	EnableDependencyInstall pulumi.BoolOutput      `pulumi:"enableDependencyInstall"`
+	Envs                    FunctionEnvArrayOutput `pulumi:"envs"`
 	// Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
 	ExclusiveMode pulumi.BoolOutput `pulumi:"exclusiveMode"`
 	// Function ID
@@ -127,11 +131,15 @@ type functionState struct {
 	CpuStrategy *string `pulumi:"cpuStrategy"`
 	// Function creation time
 	CreationTime *string `pulumi:"creationTime"`
+	// Dependency installation task status.
+	DependencyInstallStatus *FunctionDependencyInstallStatus `pulumi:"dependencyInstallStatus"`
 	// Function description. Up to 1000 Unicode characters
 	Description *string `pulumi:"description"`
 	// Whether to enable application monitoring
-	EnableApmplus *bool         `pulumi:"enableApmplus"`
-	Envs          []FunctionEnv `pulumi:"envs"`
+	EnableApmplus *bool `pulumi:"enableApmplus"`
+	// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+	EnableDependencyInstall *bool         `pulumi:"enableDependencyInstall"`
+	Envs                    []FunctionEnv `pulumi:"envs"`
 	// Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
 	ExclusiveMode *bool `pulumi:"exclusiveMode"`
 	// Function ID
@@ -192,11 +200,15 @@ type FunctionState struct {
 	CpuStrategy pulumi.StringPtrInput
 	// Function creation time
 	CreationTime pulumi.StringPtrInput
+	// Dependency installation task status.
+	DependencyInstallStatus FunctionDependencyInstallStatusPtrInput
 	// Function description. Up to 1000 Unicode characters
 	Description pulumi.StringPtrInput
 	// Whether to enable application monitoring
 	EnableApmplus pulumi.BoolPtrInput
-	Envs          FunctionEnvArrayInput
+	// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+	EnableDependencyInstall pulumi.BoolPtrInput
+	Envs                    FunctionEnvArrayInput
 	// Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
 	ExclusiveMode pulumi.BoolPtrInput
 	// Function ID
@@ -258,8 +270,10 @@ type functionArgs struct {
 	// Function description. Up to 1000 Unicode characters
 	Description *string `pulumi:"description"`
 	// Whether to enable application monitoring
-	EnableApmplus *bool         `pulumi:"enableApmplus"`
-	Envs          []FunctionEnv `pulumi:"envs"`
+	EnableApmplus *bool `pulumi:"enableApmplus"`
+	// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+	EnableDependencyInstall *bool         `pulumi:"enableDependencyInstall"`
+	Envs                    []FunctionEnv `pulumi:"envs"`
 	// Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
 	ExclusiveMode *bool `pulumi:"exclusiveMode"`
 	// Function initialization timeout configuration
@@ -309,7 +323,9 @@ type FunctionArgs struct {
 	Description pulumi.StringPtrInput
 	// Whether to enable application monitoring
 	EnableApmplus pulumi.BoolPtrInput
-	Envs          FunctionEnvArrayInput
+	// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+	EnableDependencyInstall pulumi.BoolPtrInput
+	Envs                    FunctionEnvArrayInput
 	// Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
 	ExclusiveMode pulumi.BoolPtrInput
 	// Function initialization timeout configuration
@@ -464,6 +480,11 @@ func (o FunctionOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// Dependency installation task status.
+func (o FunctionOutput) DependencyInstallStatus() FunctionDependencyInstallStatusOutput {
+	return o.ApplyT(func(v *Function) FunctionDependencyInstallStatusOutput { return v.DependencyInstallStatus }).(FunctionDependencyInstallStatusOutput)
+}
+
 // Function description. Up to 1000 Unicode characters
 func (o FunctionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
@@ -472,6 +493,11 @@ func (o FunctionOutput) Description() pulumi.StringOutput {
 // Whether to enable application monitoring
 func (o FunctionOutput) EnableApmplus() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Function) pulumi.BoolOutput { return v.EnableApmplus }).(pulumi.BoolOutput)
+}
+
+// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+func (o FunctionOutput) EnableDependencyInstall() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Function) pulumi.BoolOutput { return v.EnableDependencyInstall }).(pulumi.BoolOutput)
 }
 
 func (o FunctionOutput) Envs() FunctionEnvArrayOutput {

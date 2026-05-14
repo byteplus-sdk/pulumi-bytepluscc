@@ -109,7 +109,8 @@ type Instance struct {
 	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-	InstanceName pulumi.StringOutput `pulumi:"instanceName"`
+	InstanceName       pulumi.StringOutput                  `pulumi:"instanceName"`
+	InstanceParameters InstanceInstanceParameterArrayOutput `pulumi:"instanceParameters"`
 	// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
 	InstanceStatus pulumi.StringOutput `pulumi:"instanceStatus"`
 	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
@@ -238,7 +239,8 @@ type instanceState struct {
 	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
 	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-	InstanceName *string `pulumi:"instanceName"`
+	InstanceName       *string                     `pulumi:"instanceName"`
+	InstanceParameters []InstanceInstanceParameter `pulumi:"instanceParameters"`
 	// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
 	InstanceStatus *string `pulumi:"instanceStatus"`
 	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
@@ -323,7 +325,8 @@ type InstanceState struct {
 	// Instance ID.
 	InstanceId pulumi.StringPtrInput
 	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-	InstanceName pulumi.StringPtrInput
+	InstanceName       pulumi.StringPtrInput
+	InstanceParameters InstanceInstanceParameterArrayInput
 	// Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
 	InstanceStatus pulumi.StringPtrInput
 	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
@@ -397,7 +400,8 @@ type instanceArgs struct {
 	// Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
 	InstanceCount *int `pulumi:"instanceCount"`
 	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-	InstanceName *string `pulumi:"instanceName"`
+	InstanceName       *string                     `pulumi:"instanceName"`
+	InstanceParameters []InstanceInstanceParameter `pulumi:"instanceParameters"`
 	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
 	InstanceType *string `pulumi:"instanceType"`
 	// Number of Mongos nodes in the sharded cluster. Range: 2~32.
@@ -451,7 +455,8 @@ type InstanceArgs struct {
 	// Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
 	InstanceCount pulumi.IntPtrInput
 	// Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-	InstanceName pulumi.StringPtrInput
+	InstanceName       pulumi.StringPtrInput
+	InstanceParameters InstanceInstanceParameterArrayInput
 	// MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
 	InstanceType pulumi.StringPtrInput
 	// Number of Mongos nodes in the sharded cluster. Range: 2~32.
@@ -655,6 +660,10 @@ func (o InstanceOutput) InstanceId() pulumi.StringOutput {
 // Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
 func (o InstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+func (o InstanceOutput) InstanceParameters() InstanceInstanceParameterArrayOutput {
+	return o.ApplyT(func(v *Instance) InstanceInstanceParameterArrayOutput { return v.InstanceParameters }).(InstanceInstanceParameterArrayOutput)
 }
 
 // Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.

@@ -60,10 +60,25 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetParameterGroupArgs, GetParameterGroupResult, GetParameterGroupOutputArgs } from "./getParameterGroup";
+export const getParameterGroup: typeof import("./getParameterGroup").getParameterGroup = null as any;
+export const getParameterGroupOutput: typeof import("./getParameterGroup").getParameterGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getParameterGroup","getParameterGroupOutput"], () => require("./getParameterGroup"));
+
+export { GetParameterGroupsResult } from "./getParameterGroups";
+export const getParameterGroups: typeof import("./getParameterGroups").getParameterGroups = null as any;
+export const getParameterGroupsOutput: typeof import("./getParameterGroups").getParameterGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getParameterGroups","getParameterGroupsOutput"], () => require("./getParameterGroups"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { ParameterGroupArgs, ParameterGroupState } from "./parameterGroup";
+export type ParameterGroup = import("./parameterGroup").ParameterGroup;
+export const ParameterGroup: typeof import("./parameterGroup").ParameterGroup = null as any;
+utilities.lazyLoad(exports, ["ParameterGroup"], () => require("./parameterGroup"));
 
 
 const _module = {
@@ -78,6 +93,8 @@ const _module = {
                 return new EndpointPublicAddress(name, <any>undefined, { urn })
             case "bytepluscc:redis/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:redis/parameterGroup:ParameterGroup":
+                return new ParameterGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -87,3 +104,4 @@ pulumi.runtime.registerResourceModule("bytepluscc", "redis/account", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/endpointPublicAddress", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "redis/parameterGroup", _module)

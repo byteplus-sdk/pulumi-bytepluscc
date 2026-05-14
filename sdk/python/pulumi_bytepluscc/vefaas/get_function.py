@@ -28,7 +28,7 @@ class GetFunctionResult:
     """
     A collection of values returned by getFunction.
     """
-    def __init__(__self__, async_task_config=None, code_size=None, code_size_limit=None, command=None, cpu_strategy=None, creation_time=None, description=None, enable_apmplus=None, envs=None, exclusive_mode=None, function_id=None, id=None, initializer_sec=None, instance_type=None, last_update_time=None, max_concurrency=None, memory_mb=None, name=None, nas_storage=None, owner=None, port=None, project_name=None, request_timeout=None, role=None, runtime=None, source=None, source_access_config=None, source_type=None, tags=None, tls_config=None, tos_mount_config=None, triggers_count=None, vpc_config=None):
+    def __init__(__self__, async_task_config=None, code_size=None, code_size_limit=None, command=None, cpu_strategy=None, creation_time=None, dependency_install_status=None, description=None, enable_apmplus=None, enable_dependency_install=None, envs=None, exclusive_mode=None, function_id=None, id=None, initializer_sec=None, instance_type=None, last_update_time=None, max_concurrency=None, memory_mb=None, name=None, nas_storage=None, owner=None, port=None, project_name=None, request_timeout=None, role=None, runtime=None, source=None, source_access_config=None, source_type=None, tags=None, tls_config=None, tos_mount_config=None, triggers_count=None, vpc_config=None):
         if async_task_config and not isinstance(async_task_config, dict):
             raise TypeError("Expected argument 'async_task_config' to be a dict")
         pulumi.set(__self__, "async_task_config", async_task_config)
@@ -47,12 +47,18 @@ class GetFunctionResult:
         if creation_time and not isinstance(creation_time, str):
             raise TypeError("Expected argument 'creation_time' to be a str")
         pulumi.set(__self__, "creation_time", creation_time)
+        if dependency_install_status and not isinstance(dependency_install_status, dict):
+            raise TypeError("Expected argument 'dependency_install_status' to be a dict")
+        pulumi.set(__self__, "dependency_install_status", dependency_install_status)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
         if enable_apmplus and not isinstance(enable_apmplus, bool):
             raise TypeError("Expected argument 'enable_apmplus' to be a bool")
         pulumi.set(__self__, "enable_apmplus", enable_apmplus)
+        if enable_dependency_install and not isinstance(enable_dependency_install, bool):
+            raise TypeError("Expected argument 'enable_dependency_install' to be a bool")
+        pulumi.set(__self__, "enable_dependency_install", enable_dependency_install)
         if envs and not isinstance(envs, list):
             raise TypeError("Expected argument 'envs' to be a list")
         pulumi.set(__self__, "envs", envs)
@@ -178,6 +184,14 @@ class GetFunctionResult:
         return pulumi.get(self, "creation_time")
 
     @property
+    @pulumi.getter(name="dependencyInstallStatus")
+    def dependency_install_status(self) -> 'outputs.GetFunctionDependencyInstallStatusResult':
+        """
+        Dependency installation task status.
+        """
+        return pulumi.get(self, "dependency_install_status")
+
+    @property
     @pulumi.getter
     def description(self) -> builtins.str:
         """
@@ -192,6 +206,14 @@ class GetFunctionResult:
         Whether to enable application monitoring
         """
         return pulumi.get(self, "enable_apmplus")
+
+    @property
+    @pulumi.getter(name="enableDependencyInstall")
+    def enable_dependency_install(self) -> builtins.bool:
+        """
+        Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        """
+        return pulumi.get(self, "enable_dependency_install")
 
     @property
     @pulumi.getter
@@ -406,8 +428,10 @@ class AwaitableGetFunctionResult(GetFunctionResult):
             command=self.command,
             cpu_strategy=self.cpu_strategy,
             creation_time=self.creation_time,
+            dependency_install_status=self.dependency_install_status,
             description=self.description,
             enable_apmplus=self.enable_apmplus,
+            enable_dependency_install=self.enable_dependency_install,
             envs=self.envs,
             exclusive_mode=self.exclusive_mode,
             function_id=self.function_id,
@@ -455,8 +479,10 @@ def get_function(id: Optional[builtins.str] = None,
         command=pulumi.get(__ret__, 'command'),
         cpu_strategy=pulumi.get(__ret__, 'cpu_strategy'),
         creation_time=pulumi.get(__ret__, 'creation_time'),
+        dependency_install_status=pulumi.get(__ret__, 'dependency_install_status'),
         description=pulumi.get(__ret__, 'description'),
         enable_apmplus=pulumi.get(__ret__, 'enable_apmplus'),
+        enable_dependency_install=pulumi.get(__ret__, 'enable_dependency_install'),
         envs=pulumi.get(__ret__, 'envs'),
         exclusive_mode=pulumi.get(__ret__, 'exclusive_mode'),
         function_id=pulumi.get(__ret__, 'function_id'),
@@ -501,8 +527,10 @@ def get_function_output(id: Optional[pulumi.Input[builtins.str]] = None,
         command=pulumi.get(__response__, 'command'),
         cpu_strategy=pulumi.get(__response__, 'cpu_strategy'),
         creation_time=pulumi.get(__response__, 'creation_time'),
+        dependency_install_status=pulumi.get(__response__, 'dependency_install_status'),
         description=pulumi.get(__response__, 'description'),
         enable_apmplus=pulumi.get(__response__, 'enable_apmplus'),
+        enable_dependency_install=pulumi.get(__response__, 'enable_dependency_install'),
         envs=pulumi.get(__response__, 'envs'),
         exclusive_mode=pulumi.get(__response__, 'exclusive_mode'),
         function_id=pulumi.get(__response__, 'function_id'),

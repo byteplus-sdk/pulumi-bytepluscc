@@ -146,6 +146,7 @@ export class Instance extends pulumi.CustomResource {
      * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     public readonly instanceName!: pulumi.Output<string>;
+    public readonly instanceParameters!: pulumi.Output<outputs.mongodb.InstanceInstanceParameter[]>;
     /**
      * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      */
@@ -270,6 +271,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["instanceCount"] = state ? state.instanceCount : undefined;
             resourceInputs["instanceId"] = state ? state.instanceId : undefined;
             resourceInputs["instanceName"] = state ? state.instanceName : undefined;
+            resourceInputs["instanceParameters"] = state ? state.instanceParameters : undefined;
             resourceInputs["instanceStatus"] = state ? state.instanceStatus : undefined;
             resourceInputs["instanceType"] = state ? state.instanceType : undefined;
             resourceInputs["mongos"] = state ? state.mongos : undefined;
@@ -323,6 +325,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["dbEngineVersion"] = args ? args.dbEngineVersion : undefined;
             resourceInputs["instanceCount"] = args ? args.instanceCount : undefined;
             resourceInputs["instanceName"] = args ? args.instanceName : undefined;
+            resourceInputs["instanceParameters"] = args ? args.instanceParameters : undefined;
             resourceInputs["instanceType"] = args ? args.instanceType : undefined;
             resourceInputs["mongosNodeNumber"] = args ? args.mongosNodeNumber : undefined;
             resourceInputs["mongosNodeSpec"] = args ? args.mongosNodeSpec : undefined;
@@ -433,6 +436,7 @@ export interface InstanceState {
      * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     instanceName?: pulumi.Input<string>;
+    instanceParameters?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceInstanceParameter>[]>;
     /**
      * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      */
@@ -568,6 +572,7 @@ export interface InstanceArgs {
      * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     instanceName?: pulumi.Input<string>;
+    instanceParameters?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceInstanceParameter>[]>;
     /**
      * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      */

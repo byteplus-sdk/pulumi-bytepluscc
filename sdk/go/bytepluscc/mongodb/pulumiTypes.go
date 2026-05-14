@@ -297,6 +297,121 @@ func (o InstanceConfigServerArrayOutput) Index(i pulumi.IntInput) InstanceConfig
 	}).(InstanceConfigServerOutput)
 }
 
+type InstanceInstanceParameter struct {
+	// Parameter name
+	ParameterName *string `pulumi:"parameterName"`
+	// Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+	ParameterRole *string `pulumi:"parameterRole"`
+	// Parameter value
+	ParameterValue *string `pulumi:"parameterValue"`
+}
+
+// InstanceInstanceParameterInput is an input type that accepts InstanceInstanceParameterArgs and InstanceInstanceParameterOutput values.
+// You can construct a concrete instance of `InstanceInstanceParameterInput` via:
+//
+//	InstanceInstanceParameterArgs{...}
+type InstanceInstanceParameterInput interface {
+	pulumi.Input
+
+	ToInstanceInstanceParameterOutput() InstanceInstanceParameterOutput
+	ToInstanceInstanceParameterOutputWithContext(context.Context) InstanceInstanceParameterOutput
+}
+
+type InstanceInstanceParameterArgs struct {
+	// Parameter name
+	ParameterName pulumi.StringPtrInput `pulumi:"parameterName"`
+	// Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+	ParameterRole pulumi.StringPtrInput `pulumi:"parameterRole"`
+	// Parameter value
+	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
+}
+
+func (InstanceInstanceParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceInstanceParameter)(nil)).Elem()
+}
+
+func (i InstanceInstanceParameterArgs) ToInstanceInstanceParameterOutput() InstanceInstanceParameterOutput {
+	return i.ToInstanceInstanceParameterOutputWithContext(context.Background())
+}
+
+func (i InstanceInstanceParameterArgs) ToInstanceInstanceParameterOutputWithContext(ctx context.Context) InstanceInstanceParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceInstanceParameterOutput)
+}
+
+// InstanceInstanceParameterArrayInput is an input type that accepts InstanceInstanceParameterArray and InstanceInstanceParameterArrayOutput values.
+// You can construct a concrete instance of `InstanceInstanceParameterArrayInput` via:
+//
+//	InstanceInstanceParameterArray{ InstanceInstanceParameterArgs{...} }
+type InstanceInstanceParameterArrayInput interface {
+	pulumi.Input
+
+	ToInstanceInstanceParameterArrayOutput() InstanceInstanceParameterArrayOutput
+	ToInstanceInstanceParameterArrayOutputWithContext(context.Context) InstanceInstanceParameterArrayOutput
+}
+
+type InstanceInstanceParameterArray []InstanceInstanceParameterInput
+
+func (InstanceInstanceParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceInstanceParameter)(nil)).Elem()
+}
+
+func (i InstanceInstanceParameterArray) ToInstanceInstanceParameterArrayOutput() InstanceInstanceParameterArrayOutput {
+	return i.ToInstanceInstanceParameterArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceInstanceParameterArray) ToInstanceInstanceParameterArrayOutputWithContext(ctx context.Context) InstanceInstanceParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceInstanceParameterArrayOutput)
+}
+
+type InstanceInstanceParameterOutput struct{ *pulumi.OutputState }
+
+func (InstanceInstanceParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceInstanceParameter)(nil)).Elem()
+}
+
+func (o InstanceInstanceParameterOutput) ToInstanceInstanceParameterOutput() InstanceInstanceParameterOutput {
+	return o
+}
+
+func (o InstanceInstanceParameterOutput) ToInstanceInstanceParameterOutputWithContext(ctx context.Context) InstanceInstanceParameterOutput {
+	return o
+}
+
+// Parameter name
+func (o InstanceInstanceParameterOutput) ParameterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceInstanceParameter) *string { return v.ParameterName }).(pulumi.StringPtrOutput)
+}
+
+// Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+func (o InstanceInstanceParameterOutput) ParameterRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceInstanceParameter) *string { return v.ParameterRole }).(pulumi.StringPtrOutput)
+}
+
+// Parameter value
+func (o InstanceInstanceParameterOutput) ParameterValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceInstanceParameter) *string { return v.ParameterValue }).(pulumi.StringPtrOutput)
+}
+
+type InstanceInstanceParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceInstanceParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceInstanceParameter)(nil)).Elem()
+}
+
+func (o InstanceInstanceParameterArrayOutput) ToInstanceInstanceParameterArrayOutput() InstanceInstanceParameterArrayOutput {
+	return o
+}
+
+func (o InstanceInstanceParameterArrayOutput) ToInstanceInstanceParameterArrayOutputWithContext(ctx context.Context) InstanceInstanceParameterArrayOutput {
+	return o
+}
+
+func (o InstanceInstanceParameterArrayOutput) Index(i pulumi.IntInput) InstanceInstanceParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceInstanceParameter {
+		return vs[0].([]InstanceInstanceParameter)[vs[1].(int)]
+	}).(InstanceInstanceParameterOutput)
+}
+
 type InstanceMongo struct {
 	// Mongos node ID
 	MongosNodeId *string `pulumi:"mongosNodeId"`
@@ -1448,6 +1563,175 @@ func (o GetInstanceConfigServerArrayOutput) Index(i pulumi.IntInput) GetInstance
 	}).(GetInstanceConfigServerOutput)
 }
 
+type GetInstanceInstanceParameter struct {
+	// Parameter validation rule
+	CheckingCode string `pulumi:"checkingCode"`
+	// Whether to force modification
+	ForceModify bool `pulumi:"forceModify"`
+	// Requires instance restart to take effect after modification
+	ForceRestart bool `pulumi:"forceRestart"`
+	// Parameter default value
+	ParameterDefaultValue string `pulumi:"parameterDefaultValue"`
+	// Parameter description
+	ParameterDescription string `pulumi:"parameterDescription"`
+	// Parameter name
+	ParameterName string `pulumi:"parameterName"`
+	// Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+	ParameterRole string `pulumi:"parameterRole"`
+	// Parameter type. Optional values: String, Integer, Boolean, List, Float
+	ParameterType string `pulumi:"parameterType"`
+	// Parameter value
+	ParameterValue string `pulumi:"parameterValue"`
+}
+
+// GetInstanceInstanceParameterInput is an input type that accepts GetInstanceInstanceParameterArgs and GetInstanceInstanceParameterOutput values.
+// You can construct a concrete instance of `GetInstanceInstanceParameterInput` via:
+//
+//	GetInstanceInstanceParameterArgs{...}
+type GetInstanceInstanceParameterInput interface {
+	pulumi.Input
+
+	ToGetInstanceInstanceParameterOutput() GetInstanceInstanceParameterOutput
+	ToGetInstanceInstanceParameterOutputWithContext(context.Context) GetInstanceInstanceParameterOutput
+}
+
+type GetInstanceInstanceParameterArgs struct {
+	// Parameter validation rule
+	CheckingCode pulumi.StringInput `pulumi:"checkingCode"`
+	// Whether to force modification
+	ForceModify pulumi.BoolInput `pulumi:"forceModify"`
+	// Requires instance restart to take effect after modification
+	ForceRestart pulumi.BoolInput `pulumi:"forceRestart"`
+	// Parameter default value
+	ParameterDefaultValue pulumi.StringInput `pulumi:"parameterDefaultValue"`
+	// Parameter description
+	ParameterDescription pulumi.StringInput `pulumi:"parameterDescription"`
+	// Parameter name
+	ParameterName pulumi.StringInput `pulumi:"parameterName"`
+	// Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+	ParameterRole pulumi.StringInput `pulumi:"parameterRole"`
+	// Parameter type. Optional values: String, Integer, Boolean, List, Float
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// Parameter value
+	ParameterValue pulumi.StringInput `pulumi:"parameterValue"`
+}
+
+func (GetInstanceInstanceParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceInstanceParameter)(nil)).Elem()
+}
+
+func (i GetInstanceInstanceParameterArgs) ToGetInstanceInstanceParameterOutput() GetInstanceInstanceParameterOutput {
+	return i.ToGetInstanceInstanceParameterOutputWithContext(context.Background())
+}
+
+func (i GetInstanceInstanceParameterArgs) ToGetInstanceInstanceParameterOutputWithContext(ctx context.Context) GetInstanceInstanceParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceInstanceParameterOutput)
+}
+
+// GetInstanceInstanceParameterArrayInput is an input type that accepts GetInstanceInstanceParameterArray and GetInstanceInstanceParameterArrayOutput values.
+// You can construct a concrete instance of `GetInstanceInstanceParameterArrayInput` via:
+//
+//	GetInstanceInstanceParameterArray{ GetInstanceInstanceParameterArgs{...} }
+type GetInstanceInstanceParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceInstanceParameterArrayOutput() GetInstanceInstanceParameterArrayOutput
+	ToGetInstanceInstanceParameterArrayOutputWithContext(context.Context) GetInstanceInstanceParameterArrayOutput
+}
+
+type GetInstanceInstanceParameterArray []GetInstanceInstanceParameterInput
+
+func (GetInstanceInstanceParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceInstanceParameter)(nil)).Elem()
+}
+
+func (i GetInstanceInstanceParameterArray) ToGetInstanceInstanceParameterArrayOutput() GetInstanceInstanceParameterArrayOutput {
+	return i.ToGetInstanceInstanceParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceInstanceParameterArray) ToGetInstanceInstanceParameterArrayOutputWithContext(ctx context.Context) GetInstanceInstanceParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceInstanceParameterArrayOutput)
+}
+
+type GetInstanceInstanceParameterOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceInstanceParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceInstanceParameter)(nil)).Elem()
+}
+
+func (o GetInstanceInstanceParameterOutput) ToGetInstanceInstanceParameterOutput() GetInstanceInstanceParameterOutput {
+	return o
+}
+
+func (o GetInstanceInstanceParameterOutput) ToGetInstanceInstanceParameterOutputWithContext(ctx context.Context) GetInstanceInstanceParameterOutput {
+	return o
+}
+
+// Parameter validation rule
+func (o GetInstanceInstanceParameterOutput) CheckingCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.CheckingCode }).(pulumi.StringOutput)
+}
+
+// Whether to force modification
+func (o GetInstanceInstanceParameterOutput) ForceModify() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) bool { return v.ForceModify }).(pulumi.BoolOutput)
+}
+
+// Requires instance restart to take effect after modification
+func (o GetInstanceInstanceParameterOutput) ForceRestart() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) bool { return v.ForceRestart }).(pulumi.BoolOutput)
+}
+
+// Parameter default value
+func (o GetInstanceInstanceParameterOutput) ParameterDefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.ParameterDefaultValue }).(pulumi.StringOutput)
+}
+
+// Parameter description
+func (o GetInstanceInstanceParameterOutput) ParameterDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.ParameterDescription }).(pulumi.StringOutput)
+}
+
+// Parameter name
+func (o GetInstanceInstanceParameterOutput) ParameterName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.ParameterName }).(pulumi.StringOutput)
+}
+
+// Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+func (o GetInstanceInstanceParameterOutput) ParameterRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.ParameterRole }).(pulumi.StringOutput)
+}
+
+// Parameter type. Optional values: String, Integer, Boolean, List, Float
+func (o GetInstanceInstanceParameterOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// Parameter value
+func (o GetInstanceInstanceParameterOutput) ParameterValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceInstanceParameter) string { return v.ParameterValue }).(pulumi.StringOutput)
+}
+
+type GetInstanceInstanceParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceInstanceParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceInstanceParameter)(nil)).Elem()
+}
+
+func (o GetInstanceInstanceParameterArrayOutput) ToGetInstanceInstanceParameterArrayOutput() GetInstanceInstanceParameterArrayOutput {
+	return o
+}
+
+func (o GetInstanceInstanceParameterArrayOutput) ToGetInstanceInstanceParameterArrayOutputWithContext(ctx context.Context) GetInstanceInstanceParameterArrayOutput {
+	return o
+}
+
+func (o GetInstanceInstanceParameterArrayOutput) Index(i pulumi.IntInput) GetInstanceInstanceParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceInstanceParameter {
+		return vs[0].([]GetInstanceInstanceParameter)[vs[1].(int)]
+	}).(GetInstanceInstanceParameterOutput)
+}
+
 type GetInstanceMongo struct {
 	// Mongos node ID
 	MongosNodeId string `pulumi:"mongosNodeId"`
@@ -2323,6 +2607,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerInput)(nil)).Elem(), InstanceConfigServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerArrayInput)(nil)).Elem(), InstanceConfigServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceInstanceParameterInput)(nil)).Elem(), InstanceInstanceParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceInstanceParameterArrayInput)(nil)).Elem(), InstanceInstanceParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMongoInput)(nil)).Elem(), InstanceMongoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMongoArrayInput)(nil)).Elem(), InstanceMongoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeInput)(nil)).Elem(), InstanceNodeArgs{})
@@ -2339,6 +2625,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerInput)(nil)).Elem(), GetInstanceConfigServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerArrayInput)(nil)).Elem(), GetInstanceConfigServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceParameterInput)(nil)).Elem(), GetInstanceInstanceParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceParameterArrayInput)(nil)).Elem(), GetInstanceInstanceParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMongoInput)(nil)).Elem(), GetInstanceMongoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMongoArrayInput)(nil)).Elem(), GetInstanceMongoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeInput)(nil)).Elem(), GetInstanceNodeArgs{})
@@ -2355,6 +2643,8 @@ func init() {
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerArrayOutput{})
+	pulumi.RegisterOutputType(InstanceInstanceParameterOutput{})
+	pulumi.RegisterOutputType(InstanceInstanceParameterArrayOutput{})
 	pulumi.RegisterOutputType(InstanceMongoOutput{})
 	pulumi.RegisterOutputType(InstanceMongoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceNodeOutput{})
@@ -2371,6 +2661,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceInstanceParameterOutput{})
+	pulumi.RegisterOutputType(GetInstanceInstanceParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceMongoOutput{})
 	pulumi.RegisterOutputType(GetInstanceMongoArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeOutput{})

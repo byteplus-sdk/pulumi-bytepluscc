@@ -7585,6 +7585,21 @@ export namespace mongodb {
         zoneId?: pulumi.Input<string>;
     }
 
+    export interface InstanceInstanceParameter {
+        /**
+         * Parameter name
+         */
+        parameterName?: pulumi.Input<string>;
+        /**
+         * Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+         */
+        parameterRole?: pulumi.Input<string>;
+        /**
+         * Parameter value
+         */
+        parameterValue?: pulumi.Input<string>;
+    }
+
     export interface InstanceMongo {
         /**
          * Mongos node ID
@@ -8931,14 +8946,6 @@ export namespace rdspostgresql {
          * Instance ID.
          */
         instanceId?: pulumi.Input<string>;
-        /**
-         * Instance name.
-         */
-        instanceName?: pulumi.Input<string>;
-        /**
-         * VPC ID to which the instance belongs.
-         */
-        vpc?: pulumi.Input<string>;
     }
 
     export interface AllowListSecurityGroupBindInfo {
@@ -8958,6 +8965,44 @@ export namespace rdspostgresql {
          * Security group name.
          */
         securityGroupName?: pulumi.Input<string>;
+    }
+
+    export interface BackupBackupMeta {
+        /**
+         * Database name.
+         */
+        dbName?: pulumi.Input<string>;
+    }
+
+    export interface BackupBackupPolicy {
+        /**
+         * Backup retention days.
+         */
+        backupRetentionPeriod?: pulumi.Input<number>;
+        /**
+         * Data incremental backup schedule.
+         */
+        dataIncrBackupPeriods?: pulumi.Input<string>;
+        /**
+         * Full backup schedule, such as Monday,Tuesday.
+         */
+        fullBackupPeriod?: pulumi.Input<string>;
+        /**
+         * Full backup time window, such as 00:00Z-01:00Z.
+         */
+        fullBackupTime?: pulumi.Input<string>;
+        /**
+         * Enable hourly incremental backup.
+         */
+        hourlyIncrBackupEnable?: pulumi.Input<boolean>;
+        /**
+         * Incremental backup frequency (hours).
+         */
+        incrementBackupFrequency?: pulumi.Input<number>;
+        /**
+         * Enable WAL log space limit.
+         */
+        walLogSpaceLimitEnable?: pulumi.Input<boolean>;
     }
 
     export interface DbEndpointAddress {
@@ -9358,6 +9403,48 @@ export namespace redis {
          * The IPv4 address corresponding to the connection address.
          */
         vip?: pulumi.Input<string>;
+    }
+
+    export interface ParameterGroupParamValue {
+        /**
+         * Parameter name
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Parameter value
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface ParameterGroupParameter {
+        /**
+         * Current parameter value
+         */
+        currentValue?: pulumi.Input<string>;
+        /**
+         * Parameter description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Whether modifying this parameter requires a restart
+         */
+        needReboot?: pulumi.Input<boolean>;
+        /**
+         * Parameter name
+         */
+        paramName?: pulumi.Input<string>;
+        /**
+         * Parameter value range
+         */
+        range?: pulumi.Input<string>;
+        /**
+         * Parameter type
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Parameter unit
+         */
+        unit?: pulumi.Input<string>;
     }
 }
 
@@ -11113,6 +11200,21 @@ export namespace vefaas {
          * Specific callback target. Set the value to empty ("") to disable this callback
          */
         destination?: pulumi.Input<string>;
+    }
+
+    export interface FunctionDependencyInstallStatus {
+        /**
+         * Task creation time.
+         */
+        createTime?: pulumi.Input<string>;
+        /**
+         * Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+         */
+        finishTime?: pulumi.Input<string>;
+        /**
+         * Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+         */
+        status?: pulumi.Input<string>;
     }
 
     export interface FunctionEnv {
