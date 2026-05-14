@@ -17,6 +17,9 @@ from .get_endpoint_public_address import *
 from .get_endpoint_public_addresses import *
 from .get_instance import *
 from .get_instances import *
+from .get_parameter_group import *
+from .get_parameter_groups import *
 from .instance import *
+from .parameter_group import *
 from ._inputs import *
 from . import outputs

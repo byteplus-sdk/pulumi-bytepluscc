@@ -622,6 +622,181 @@ func (o FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput) Destination(
 	}).(pulumi.StringPtrOutput)
 }
 
+type FunctionDependencyInstallStatus struct {
+	// Task creation time.
+	CreateTime *string `pulumi:"createTime"`
+	// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	FinishTime *string `pulumi:"finishTime"`
+	// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	Status *string `pulumi:"status"`
+}
+
+// FunctionDependencyInstallStatusInput is an input type that accepts FunctionDependencyInstallStatusArgs and FunctionDependencyInstallStatusOutput values.
+// You can construct a concrete instance of `FunctionDependencyInstallStatusInput` via:
+//
+//	FunctionDependencyInstallStatusArgs{...}
+type FunctionDependencyInstallStatusInput interface {
+	pulumi.Input
+
+	ToFunctionDependencyInstallStatusOutput() FunctionDependencyInstallStatusOutput
+	ToFunctionDependencyInstallStatusOutputWithContext(context.Context) FunctionDependencyInstallStatusOutput
+}
+
+type FunctionDependencyInstallStatusArgs struct {
+	// Task creation time.
+	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
+	// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	FinishTime pulumi.StringPtrInput `pulumi:"finishTime"`
+	// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (FunctionDependencyInstallStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionDependencyInstallStatus)(nil)).Elem()
+}
+
+func (i FunctionDependencyInstallStatusArgs) ToFunctionDependencyInstallStatusOutput() FunctionDependencyInstallStatusOutput {
+	return i.ToFunctionDependencyInstallStatusOutputWithContext(context.Background())
+}
+
+func (i FunctionDependencyInstallStatusArgs) ToFunctionDependencyInstallStatusOutputWithContext(ctx context.Context) FunctionDependencyInstallStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionDependencyInstallStatusOutput)
+}
+
+func (i FunctionDependencyInstallStatusArgs) ToFunctionDependencyInstallStatusPtrOutput() FunctionDependencyInstallStatusPtrOutput {
+	return i.ToFunctionDependencyInstallStatusPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionDependencyInstallStatusArgs) ToFunctionDependencyInstallStatusPtrOutputWithContext(ctx context.Context) FunctionDependencyInstallStatusPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionDependencyInstallStatusOutput).ToFunctionDependencyInstallStatusPtrOutputWithContext(ctx)
+}
+
+// FunctionDependencyInstallStatusPtrInput is an input type that accepts FunctionDependencyInstallStatusArgs, FunctionDependencyInstallStatusPtr and FunctionDependencyInstallStatusPtrOutput values.
+// You can construct a concrete instance of `FunctionDependencyInstallStatusPtrInput` via:
+//
+//	        FunctionDependencyInstallStatusArgs{...}
+//
+//	or:
+//
+//	        nil
+type FunctionDependencyInstallStatusPtrInput interface {
+	pulumi.Input
+
+	ToFunctionDependencyInstallStatusPtrOutput() FunctionDependencyInstallStatusPtrOutput
+	ToFunctionDependencyInstallStatusPtrOutputWithContext(context.Context) FunctionDependencyInstallStatusPtrOutput
+}
+
+type functionDependencyInstallStatusPtrType FunctionDependencyInstallStatusArgs
+
+func FunctionDependencyInstallStatusPtr(v *FunctionDependencyInstallStatusArgs) FunctionDependencyInstallStatusPtrInput {
+	return (*functionDependencyInstallStatusPtrType)(v)
+}
+
+func (*functionDependencyInstallStatusPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionDependencyInstallStatus)(nil)).Elem()
+}
+
+func (i *functionDependencyInstallStatusPtrType) ToFunctionDependencyInstallStatusPtrOutput() FunctionDependencyInstallStatusPtrOutput {
+	return i.ToFunctionDependencyInstallStatusPtrOutputWithContext(context.Background())
+}
+
+func (i *functionDependencyInstallStatusPtrType) ToFunctionDependencyInstallStatusPtrOutputWithContext(ctx context.Context) FunctionDependencyInstallStatusPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionDependencyInstallStatusPtrOutput)
+}
+
+type FunctionDependencyInstallStatusOutput struct{ *pulumi.OutputState }
+
+func (FunctionDependencyInstallStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionDependencyInstallStatus)(nil)).Elem()
+}
+
+func (o FunctionDependencyInstallStatusOutput) ToFunctionDependencyInstallStatusOutput() FunctionDependencyInstallStatusOutput {
+	return o
+}
+
+func (o FunctionDependencyInstallStatusOutput) ToFunctionDependencyInstallStatusOutputWithContext(ctx context.Context) FunctionDependencyInstallStatusOutput {
+	return o
+}
+
+func (o FunctionDependencyInstallStatusOutput) ToFunctionDependencyInstallStatusPtrOutput() FunctionDependencyInstallStatusPtrOutput {
+	return o.ToFunctionDependencyInstallStatusPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionDependencyInstallStatusOutput) ToFunctionDependencyInstallStatusPtrOutputWithContext(ctx context.Context) FunctionDependencyInstallStatusPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionDependencyInstallStatus) *FunctionDependencyInstallStatus {
+		return &v
+	}).(FunctionDependencyInstallStatusPtrOutput)
+}
+
+// Task creation time.
+func (o FunctionDependencyInstallStatusOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionDependencyInstallStatus) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
+}
+
+// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+func (o FunctionDependencyInstallStatusOutput) FinishTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionDependencyInstallStatus) *string { return v.FinishTime }).(pulumi.StringPtrOutput)
+}
+
+// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+func (o FunctionDependencyInstallStatusOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FunctionDependencyInstallStatus) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type FunctionDependencyInstallStatusPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionDependencyInstallStatusPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionDependencyInstallStatus)(nil)).Elem()
+}
+
+func (o FunctionDependencyInstallStatusPtrOutput) ToFunctionDependencyInstallStatusPtrOutput() FunctionDependencyInstallStatusPtrOutput {
+	return o
+}
+
+func (o FunctionDependencyInstallStatusPtrOutput) ToFunctionDependencyInstallStatusPtrOutputWithContext(ctx context.Context) FunctionDependencyInstallStatusPtrOutput {
+	return o
+}
+
+func (o FunctionDependencyInstallStatusPtrOutput) Elem() FunctionDependencyInstallStatusOutput {
+	return o.ApplyT(func(v *FunctionDependencyInstallStatus) FunctionDependencyInstallStatus {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionDependencyInstallStatus
+		return ret
+	}).(FunctionDependencyInstallStatusOutput)
+}
+
+// Task creation time.
+func (o FunctionDependencyInstallStatusPtrOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionDependencyInstallStatus) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreateTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+func (o FunctionDependencyInstallStatusPtrOutput) FinishTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionDependencyInstallStatus) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FinishTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+func (o FunctionDependencyInstallStatusPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionDependencyInstallStatus) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
 type FunctionEnv struct {
 	// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
 	Key *string `pulumi:"key"`
@@ -3214,6 +3389,76 @@ func (o GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput) Destination(
 	return o.ApplyT(func(v GetFunctionAsyncTaskConfigDestinationConfigOnSuccess) string { return v.Destination }).(pulumi.StringOutput)
 }
 
+type GetFunctionDependencyInstallStatus struct {
+	// Task creation time.
+	CreateTime string `pulumi:"createTime"`
+	// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	FinishTime string `pulumi:"finishTime"`
+	// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	Status string `pulumi:"status"`
+}
+
+// GetFunctionDependencyInstallStatusInput is an input type that accepts GetFunctionDependencyInstallStatusArgs and GetFunctionDependencyInstallStatusOutput values.
+// You can construct a concrete instance of `GetFunctionDependencyInstallStatusInput` via:
+//
+//	GetFunctionDependencyInstallStatusArgs{...}
+type GetFunctionDependencyInstallStatusInput interface {
+	pulumi.Input
+
+	ToGetFunctionDependencyInstallStatusOutput() GetFunctionDependencyInstallStatusOutput
+	ToGetFunctionDependencyInstallStatusOutputWithContext(context.Context) GetFunctionDependencyInstallStatusOutput
+}
+
+type GetFunctionDependencyInstallStatusArgs struct {
+	// Task creation time.
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	FinishTime pulumi.StringInput `pulumi:"finishTime"`
+	// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetFunctionDependencyInstallStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionDependencyInstallStatus)(nil)).Elem()
+}
+
+func (i GetFunctionDependencyInstallStatusArgs) ToGetFunctionDependencyInstallStatusOutput() GetFunctionDependencyInstallStatusOutput {
+	return i.ToGetFunctionDependencyInstallStatusOutputWithContext(context.Background())
+}
+
+func (i GetFunctionDependencyInstallStatusArgs) ToGetFunctionDependencyInstallStatusOutputWithContext(ctx context.Context) GetFunctionDependencyInstallStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionDependencyInstallStatusOutput)
+}
+
+type GetFunctionDependencyInstallStatusOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionDependencyInstallStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionDependencyInstallStatus)(nil)).Elem()
+}
+
+func (o GetFunctionDependencyInstallStatusOutput) ToGetFunctionDependencyInstallStatusOutput() GetFunctionDependencyInstallStatusOutput {
+	return o
+}
+
+func (o GetFunctionDependencyInstallStatusOutput) ToGetFunctionDependencyInstallStatusOutputWithContext(ctx context.Context) GetFunctionDependencyInstallStatusOutput {
+	return o
+}
+
+// Task creation time.
+func (o GetFunctionDependencyInstallStatusOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionDependencyInstallStatus) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// Task completion time. The task is considered complete when it is in one of the following statuses: Canceled: Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+func (o GetFunctionDependencyInstallStatusOutput) FinishTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionDependencyInstallStatus) string { return v.FinishTime }).(pulumi.StringOutput)
+}
+
+// Task status. Possible values are as follows: Enqueued: Queued. Dequeued: Dequeued. InProgress: In progress. Canceling/Canceled: Canceling/Canceled. Timeout: Timed out. Failed: Failed. Succeeded: Succeeded.
+func (o GetFunctionDependencyInstallStatusOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionDependencyInstallStatus) string { return v.Status }).(pulumi.StringOutput)
+}
+
 type GetFunctionEnv struct {
 	// Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
 	Key string `pulumi:"key"`
@@ -4651,6 +4896,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnFailurePtrInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnFailureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnSuccessInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrInput)(nil)).Elem(), FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionDependencyInstallStatusInput)(nil)).Elem(), FunctionDependencyInstallStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionDependencyInstallStatusPtrInput)(nil)).Elem(), FunctionDependencyInstallStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionEnvInput)(nil)).Elem(), FunctionEnvArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionEnvArrayInput)(nil)).Elem(), FunctionEnvArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionNasStorageInput)(nil)).Elem(), FunctionNasStorageArgs{})
@@ -4687,6 +4934,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigInput)(nil)).Elem(), GetFunctionAsyncTaskConfigDestinationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnFailureInput)(nil)).Elem(), GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionAsyncTaskConfigDestinationConfigOnSuccessInput)(nil)).Elem(), GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionDependencyInstallStatusInput)(nil)).Elem(), GetFunctionDependencyInstallStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionEnvInput)(nil)).Elem(), GetFunctionEnvArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionEnvArrayInput)(nil)).Elem(), GetFunctionEnvArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionNasStorageInput)(nil)).Elem(), GetFunctionNasStorageArgs{})
@@ -4718,6 +4966,8 @@ func init() {
 	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnFailurePtrOutput{})
 	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnSuccessOutput{})
 	pulumi.RegisterOutputType(FunctionAsyncTaskConfigDestinationConfigOnSuccessPtrOutput{})
+	pulumi.RegisterOutputType(FunctionDependencyInstallStatusOutput{})
+	pulumi.RegisterOutputType(FunctionDependencyInstallStatusPtrOutput{})
 	pulumi.RegisterOutputType(FunctionEnvOutput{})
 	pulumi.RegisterOutputType(FunctionEnvArrayOutput{})
 	pulumi.RegisterOutputType(FunctionNasStorageOutput{})
@@ -4754,6 +5004,7 @@ func init() {
 	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigDestinationConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigDestinationConfigOnFailureOutput{})
 	pulumi.RegisterOutputType(GetFunctionAsyncTaskConfigDestinationConfigOnSuccessOutput{})
+	pulumi.RegisterOutputType(GetFunctionDependencyInstallStatusOutput{})
 	pulumi.RegisterOutputType(GetFunctionEnvOutput{})
 	pulumi.RegisterOutputType(GetFunctionEnvArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionNasStorageOutput{})

@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.mongodb.inputs;
 
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceConfigServerArgs;
+import com.byteplus.bytepluscc.mongodb.inputs.InstanceInstanceParameterArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceMongoArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceNodeArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceNodeAvailabilityZoneArgs;
@@ -269,6 +270,13 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
+    }
+
+    @Import(name="instanceParameters")
+    private @Nullable Output<List<InstanceInstanceParameterArgs>> instanceParameters;
+
+    public Optional<Output<List<InstanceInstanceParameterArgs>>> instanceParameters() {
+        return Optional.ofNullable(this.instanceParameters);
     }
 
     /**
@@ -656,6 +664,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.instanceCount = $.instanceCount;
         this.instanceId = $.instanceId;
         this.instanceName = $.instanceName;
+        this.instanceParameters = $.instanceParameters;
         this.instanceStatus = $.instanceStatus;
         this.instanceType = $.instanceType;
         this.mongos = $.mongos;
@@ -1060,6 +1069,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
+        }
+
+        public Builder instanceParameters(@Nullable Output<List<InstanceInstanceParameterArgs>> instanceParameters) {
+            $.instanceParameters = instanceParameters;
+            return this;
+        }
+
+        public Builder instanceParameters(List<InstanceInstanceParameterArgs> instanceParameters) {
+            return instanceParameters(Output.of(instanceParameters));
+        }
+
+        public Builder instanceParameters(InstanceInstanceParameterArgs... instanceParameters) {
+            return instanceParameters(List.of(instanceParameters));
         }
 
         /**

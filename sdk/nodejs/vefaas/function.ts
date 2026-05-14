@@ -68,6 +68,10 @@ export class Function extends pulumi.CustomResource {
      */
     public /*out*/ readonly creationTime!: pulumi.Output<string>;
     /**
+     * Dependency installation task status.
+     */
+    public /*out*/ readonly dependencyInstallStatus!: pulumi.Output<outputs.vefaas.FunctionDependencyInstallStatus>;
+    /**
      * Function description. Up to 1000 Unicode characters
      */
     public readonly description!: pulumi.Output<string>;
@@ -75,6 +79,10 @@ export class Function extends pulumi.CustomResource {
      * Whether to enable application monitoring
      */
     public readonly enableApmplus!: pulumi.Output<boolean>;
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     */
+    public readonly enableDependencyInstall!: pulumi.Output<boolean>;
     public readonly envs!: pulumi.Output<outputs.vefaas.FunctionEnv[]>;
     /**
      * Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
@@ -185,8 +193,10 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["command"] = state ? state.command : undefined;
             resourceInputs["cpuStrategy"] = state ? state.cpuStrategy : undefined;
             resourceInputs["creationTime"] = state ? state.creationTime : undefined;
+            resourceInputs["dependencyInstallStatus"] = state ? state.dependencyInstallStatus : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["enableApmplus"] = state ? state.enableApmplus : undefined;
+            resourceInputs["enableDependencyInstall"] = state ? state.enableDependencyInstall : undefined;
             resourceInputs["envs"] = state ? state.envs : undefined;
             resourceInputs["exclusiveMode"] = state ? state.exclusiveMode : undefined;
             resourceInputs["functionId"] = state ? state.functionId : undefined;
@@ -218,6 +228,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["cpuStrategy"] = args ? args.cpuStrategy : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["enableApmplus"] = args ? args.enableApmplus : undefined;
+            resourceInputs["enableDependencyInstall"] = args ? args.enableDependencyInstall : undefined;
             resourceInputs["envs"] = args ? args.envs : undefined;
             resourceInputs["exclusiveMode"] = args ? args.exclusiveMode : undefined;
             resourceInputs["initializerSec"] = args ? args.initializerSec : undefined;
@@ -240,6 +251,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["codeSize"] = undefined /*out*/;
             resourceInputs["codeSizeLimit"] = undefined /*out*/;
             resourceInputs["creationTime"] = undefined /*out*/;
+            resourceInputs["dependencyInstallStatus"] = undefined /*out*/;
             resourceInputs["functionId"] = undefined /*out*/;
             resourceInputs["instanceType"] = undefined /*out*/;
             resourceInputs["lastUpdateTime"] = undefined /*out*/;
@@ -280,6 +292,10 @@ export interface FunctionState {
      */
     creationTime?: pulumi.Input<string>;
     /**
+     * Dependency installation task status.
+     */
+    dependencyInstallStatus?: pulumi.Input<inputs.vefaas.FunctionDependencyInstallStatus>;
+    /**
      * Function description. Up to 1000 Unicode characters
      */
     description?: pulumi.Input<string>;
@@ -287,6 +303,10 @@ export interface FunctionState {
      * Whether to enable application monitoring
      */
     enableApmplus?: pulumi.Input<boolean>;
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     */
+    enableDependencyInstall?: pulumi.Input<boolean>;
     envs?: pulumi.Input<pulumi.Input<inputs.vefaas.FunctionEnv>[]>;
     /**
      * Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
@@ -403,6 +423,10 @@ export interface FunctionArgs {
      * Whether to enable application monitoring
      */
     enableApmplus?: pulumi.Input<boolean>;
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     */
+    enableDependencyInstall?: pulumi.Input<boolean>;
     envs?: pulumi.Input<pulumi.Input<inputs.vefaas.FunctionEnv>[]>;
     /**
      * Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.

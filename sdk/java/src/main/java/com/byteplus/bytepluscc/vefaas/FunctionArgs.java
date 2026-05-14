@@ -101,6 +101,21 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.enableApmplus);
     }
 
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    @Import(name="enableDependencyInstall")
+    private @Nullable Output<Boolean> enableDependencyInstall;
+
+    /**
+     * @return Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    public Optional<Output<Boolean>> enableDependencyInstall() {
+        return Optional.ofNullable(this.enableDependencyInstall);
+    }
+
     @Import(name="envs")
     private @Nullable Output<List<FunctionEnvArgs>> envs;
 
@@ -378,6 +393,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         this.cpuStrategy = $.cpuStrategy;
         this.description = $.description;
         this.enableApmplus = $.enableApmplus;
+        this.enableDependencyInstall = $.enableDependencyInstall;
         this.envs = $.envs;
         this.exclusiveMode = $.exclusiveMode;
         this.initializerSec = $.initializerSec;
@@ -520,6 +536,27 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder enableApmplus(Boolean enableApmplus) {
             return enableApmplus(Output.of(enableApmplus));
+        }
+
+        /**
+         * @param enableDependencyInstall Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDependencyInstall(@Nullable Output<Boolean> enableDependencyInstall) {
+            $.enableDependencyInstall = enableDependencyInstall;
+            return this;
+        }
+
+        /**
+         * @param enableDependencyInstall Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDependencyInstall(Boolean enableDependencyInstall) {
+            return enableDependencyInstall(Output.of(enableDependencyInstall));
         }
 
         public Builder envs(@Nullable Output<List<FunctionEnvArgs>> envs) {

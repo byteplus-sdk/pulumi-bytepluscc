@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.mongodb;
 
+import com.byteplus.bytepluscc.mongodb.inputs.InstanceInstanceParameterArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceNodeAvailabilityZoneArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.InstanceTagArgs;
 import com.pulumi.core.Output;
@@ -154,6 +155,13 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
+    }
+
+    @Import(name="instanceParameters")
+    private @Nullable Output<List<InstanceInstanceParameterArgs>> instanceParameters;
+
+    public Optional<Output<List<InstanceInstanceParameterArgs>>> instanceParameters() {
+        return Optional.ofNullable(this.instanceParameters);
     }
 
     /**
@@ -407,6 +415,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.dbEngineVersion = $.dbEngineVersion;
         this.instanceCount = $.instanceCount;
         this.instanceName = $.instanceName;
+        this.instanceParameters = $.instanceParameters;
         this.instanceType = $.instanceType;
         this.mongosNodeNumber = $.mongosNodeNumber;
         this.mongosNodeSpec = $.mongosNodeSpec;
@@ -641,6 +650,19 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
+        }
+
+        public Builder instanceParameters(@Nullable Output<List<InstanceInstanceParameterArgs>> instanceParameters) {
+            $.instanceParameters = instanceParameters;
+            return this;
+        }
+
+        public Builder instanceParameters(List<InstanceInstanceParameterArgs> instanceParameters) {
+            return instanceParameters(Output.of(instanceParameters));
+        }
+
+        public Builder instanceParameters(InstanceInstanceParameterArgs... instanceParameters) {
+            return instanceParameters(List.of(instanceParameters));
         }
 
         /**

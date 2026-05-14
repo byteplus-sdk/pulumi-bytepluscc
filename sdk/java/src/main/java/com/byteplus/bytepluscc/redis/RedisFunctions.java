@@ -12,6 +12,8 @@ import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressPlainArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetParameterGroupArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetParameterGroupPlainArgs;
 import com.byteplus.bytepluscc.redis.outputs.GetAccountResult;
 import com.byteplus.bytepluscc.redis.outputs.GetAccountsResult;
 import com.byteplus.bytepluscc.redis.outputs.GetAllowListResult;
@@ -20,6 +22,8 @@ import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressResult;
 import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressesResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.redis.outputs.GetParameterGroupResult;
+import com.byteplus.bytepluscc.redis.outputs.GetParameterGroupsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -364,5 +368,89 @@ public final class RedisFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:redis/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupResult> getParameterGroup(GetParameterGroupArgs args) {
+        return getParameterGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static CompletableFuture<GetParameterGroupResult> getParameterGroupPlain(GetParameterGroupPlainArgs args) {
+        return getParameterGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupResult> getParameterGroup(GetParameterGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getParameterGroup:getParameterGroup", TypeShape.of(GetParameterGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupResult> getParameterGroup(GetParameterGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getParameterGroup:getParameterGroup", TypeShape.of(GetParameterGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static CompletableFuture<GetParameterGroupResult> getParameterGroupPlain(GetParameterGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getParameterGroup:getParameterGroup", TypeShape.of(GetParameterGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupsResult> getParameterGroups() {
+        return getParameterGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static CompletableFuture<GetParameterGroupsResult> getParameterGroupsPlain() {
+        return getParameterGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupsResult> getParameterGroups(InvokeArgs args) {
+        return getParameterGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static CompletableFuture<GetParameterGroupsResult> getParameterGroupsPlain(InvokeArgs args) {
+        return getParameterGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupsResult> getParameterGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getParameterGroups:getParameterGroups", TypeShape.of(GetParameterGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static Output<GetParameterGroupsResult> getParameterGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getParameterGroups:getParameterGroups", TypeShape.of(GetParameterGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::ParameterGroup
+     * 
+     */
+    public static CompletableFuture<GetParameterGroupsResult> getParameterGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getParameterGroups:getParameterGroups", TypeShape.of(GetParameterGroupsResult.class), args, Utilities.withVersion(options));
     }
 }

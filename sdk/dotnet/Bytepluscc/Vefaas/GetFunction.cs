@@ -89,6 +89,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         /// </summary>
         public readonly string CreationTime;
         /// <summary>
+        /// Dependency installation task status.
+        /// </summary>
+        public readonly Outputs.GetFunctionDependencyInstallStatusResult DependencyInstallStatus;
+        /// <summary>
         /// Function description. Up to 1000 Unicode characters
         /// </summary>
         public readonly string Description;
@@ -96,6 +100,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         /// Whether to enable application monitoring
         /// </summary>
         public readonly bool EnableApmplus;
+        /// <summary>
+        /// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        /// </summary>
+        public readonly bool EnableDependencyInstall;
         /// <summary>
         /// Environment variables.
         /// </summary>
@@ -211,9 +219,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
 
             string creationTime,
 
+            Outputs.GetFunctionDependencyInstallStatusResult dependencyInstallStatus,
+
             string description,
 
             bool enableApmplus,
+
+            bool enableDependencyInstall,
 
             ImmutableArray<Outputs.GetFunctionEnvResult> envs,
 
@@ -271,8 +283,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
             Command = command;
             CpuStrategy = cpuStrategy;
             CreationTime = creationTime;
+            DependencyInstallStatus = dependencyInstallStatus;
             Description = description;
             EnableApmplus = enableApmplus;
+            EnableDependencyInstall = enableDependencyInstall;
             Envs = envs;
             ExclusiveMode = exclusiveMode;
             FunctionId = functionId;

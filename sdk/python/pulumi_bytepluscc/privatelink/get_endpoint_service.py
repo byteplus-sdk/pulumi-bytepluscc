@@ -28,7 +28,7 @@ class GetEndpointServiceResult:
     """
     A collection of values returned by getEndpointService.
     """
-    def __init__(__self__, auto_accept_enabled=None, billing_type=None, business_status=None, create_time=None, description=None, id=None, ip_address_versions=None, payer=None, permit_account_ids=None, private_dns_enabled=None, private_dns_name=None, private_dns_name_configuration=None, private_dns_type=None, project_name=None, resources=None, service_domain=None, service_id=None, service_name=None, service_name_managed=None, service_name_suffix=None, service_owner=None, service_resource_type=None, service_type=None, status=None, tags=None, update_time=None, wildcard_domain_enabled=None, zone_ids=None):
+    def __init__(__self__, auto_accept_enabled=None, billing_type=None, business_status=None, create_time=None, description=None, enable_verify_private_dns=None, id=None, ip_address_versions=None, payer=None, permit_account_ids=None, private_dns_enabled=None, private_dns_name=None, private_dns_name_configuration=None, private_dns_type=None, project_name=None, resources=None, service_domain=None, service_id=None, service_name=None, service_name_managed=None, service_name_suffix=None, service_owner=None, service_resource_type=None, service_type=None, status=None, tags=None, update_time=None, wildcard_domain_enabled=None, zone_ids=None):
         if auto_accept_enabled and not isinstance(auto_accept_enabled, bool):
             raise TypeError("Expected argument 'auto_accept_enabled' to be a bool")
         pulumi.set(__self__, "auto_accept_enabled", auto_accept_enabled)
@@ -44,6 +44,9 @@ class GetEndpointServiceResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if enable_verify_private_dns and not isinstance(enable_verify_private_dns, bool):
+            raise TypeError("Expected argument 'enable_verify_private_dns' to be a bool")
+        pulumi.set(__self__, "enable_verify_private_dns", enable_verify_private_dns)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -153,6 +156,14 @@ class GetEndpointServiceResult:
         Description of the endpoint service.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="enableVerifyPrivateDns")
+    def enable_verify_private_dns(self) -> builtins.bool:
+        """
+        Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        """
+        return pulumi.get(self, "enable_verify_private_dns")
 
     @property
     @pulumi.getter
@@ -350,6 +361,7 @@ class AwaitableGetEndpointServiceResult(GetEndpointServiceResult):
             business_status=self.business_status,
             create_time=self.create_time,
             description=self.description,
+            enable_verify_private_dns=self.enable_verify_private_dns,
             id=self.id,
             ip_address_versions=self.ip_address_versions,
             payer=self.payer,
@@ -394,6 +406,7 @@ def get_endpoint_service(id: Optional[builtins.str] = None,
         business_status=pulumi.get(__ret__, 'business_status'),
         create_time=pulumi.get(__ret__, 'create_time'),
         description=pulumi.get(__ret__, 'description'),
+        enable_verify_private_dns=pulumi.get(__ret__, 'enable_verify_private_dns'),
         id=pulumi.get(__ret__, 'id'),
         ip_address_versions=pulumi.get(__ret__, 'ip_address_versions'),
         payer=pulumi.get(__ret__, 'payer'),
@@ -435,6 +448,7 @@ def get_endpoint_service_output(id: Optional[pulumi.Input[builtins.str]] = None,
         business_status=pulumi.get(__response__, 'business_status'),
         create_time=pulumi.get(__response__, 'create_time'),
         description=pulumi.get(__response__, 'description'),
+        enable_verify_private_dns=pulumi.get(__response__, 'enable_verify_private_dns'),
         id=pulumi.get(__response__, 'id'),
         ip_address_versions=pulumi.get(__response__, 'ip_address_versions'),
         payer=pulumi.get(__response__, 'payer'),

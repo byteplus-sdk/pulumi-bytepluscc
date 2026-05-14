@@ -42,10 +42,14 @@ type LookupFunctionResult struct {
 	CpuStrategy string `pulumi:"cpuStrategy"`
 	// Function creation time
 	CreationTime string `pulumi:"creationTime"`
+	// Dependency installation task status.
+	DependencyInstallStatus GetFunctionDependencyInstallStatus `pulumi:"dependencyInstallStatus"`
 	// Function description. Up to 1000 Unicode characters
 	Description string `pulumi:"description"`
 	// Whether to enable application monitoring
 	EnableApmplus bool `pulumi:"enableApmplus"`
+	// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+	EnableDependencyInstall bool `pulumi:"enableDependencyInstall"`
 	// Environment variables.
 	Envs []GetFunctionEnv `pulumi:"envs"`
 	// Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
@@ -162,6 +166,11 @@ func (o LookupFunctionResultOutput) CreationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFunctionResult) string { return v.CreationTime }).(pulumi.StringOutput)
 }
 
+// Dependency installation task status.
+func (o LookupFunctionResultOutput) DependencyInstallStatus() GetFunctionDependencyInstallStatusOutput {
+	return o.ApplyT(func(v LookupFunctionResult) GetFunctionDependencyInstallStatus { return v.DependencyInstallStatus }).(GetFunctionDependencyInstallStatusOutput)
+}
+
 // Function description. Up to 1000 Unicode characters
 func (o LookupFunctionResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFunctionResult) string { return v.Description }).(pulumi.StringOutput)
@@ -170,6 +179,11 @@ func (o LookupFunctionResultOutput) Description() pulumi.StringOutput {
 // Whether to enable application monitoring
 func (o LookupFunctionResultOutput) EnableApmplus() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFunctionResult) bool { return v.EnableApmplus }).(pulumi.BoolOutput)
+}
+
+// Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+func (o LookupFunctionResultOutput) EnableDependencyInstall() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupFunctionResult) bool { return v.EnableDependencyInstall }).(pulumi.BoolOutput)
 }
 
 // Environment variables.

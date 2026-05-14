@@ -10,6 +10,11 @@ export type AllowList = import("./allowList").AllowList;
 export const AllowList: typeof import("./allowList").AllowList = null as any;
 utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
 
+export { BackupArgs, BackupState } from "./backup";
+export type Backup = import("./backup").Backup;
+export const Backup: typeof import("./backup").Backup = null as any;
+utilities.lazyLoad(exports, ["Backup"], () => require("./backup"));
+
 export { DatabaseArgs, DatabaseState } from "./database";
 export type Database = import("./database").Database;
 export const Database: typeof import("./database").Database = null as any;
@@ -34,6 +39,16 @@ export { GetAllowListsResult } from "./getAllowLists";
 export const getAllowLists: typeof import("./getAllowLists").getAllowLists = null as any;
 export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
 utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
+
+export { GetBackupArgs, GetBackupResult, GetBackupOutputArgs } from "./getBackup";
+export const getBackup: typeof import("./getBackup").getBackup = null as any;
+export const getBackupOutput: typeof import("./getBackup").getBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getBackup","getBackupOutput"], () => require("./getBackup"));
+
+export { GetBackupsResult } from "./getBackups";
+export const getBackups: typeof import("./getBackups").getBackups = null as any;
+export const getBackupsOutput: typeof import("./getBackups").getBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getBackups","getBackupsOutput"], () => require("./getBackups"));
 
 export { GetDatabaseArgs, GetDatabaseResult, GetDatabaseOutputArgs } from "./getDatabase";
 export const getDatabase: typeof import("./getDatabase").getDatabase = null as any;
@@ -102,6 +117,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:rdspostgresql/allowList:AllowList":
                 return new AllowList(name, <any>undefined, { urn })
+            case "bytepluscc:rdspostgresql/backup:Backup":
+                return new Backup(name, <any>undefined, { urn })
             case "bytepluscc:rdspostgresql/database:Database":
                 return new Database(name, <any>undefined, { urn })
             case "bytepluscc:rdspostgresql/dbAccount:DbAccount":
@@ -118,6 +135,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/allowList", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/backup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/database", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/dbAccount", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/dbEndpoint", _module)

@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, auto_renew=None, charge_status=None, charge_type=None, closed_time=None, config_server_node_spec=None, config_server_storage_space_gb=None, config_servers=None, config_servers_id=None, created_time=None, db_engine=None, db_engine_version=None, db_engine_version_str=None, expired_time=None, id=None, instance_count=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, mongos=None, mongos_id=None, mongos_node_number=None, mongos_node_spec=None, node_availability_zones=None, node_number=None, node_spec=None, nodes=None, period=None, period_unit=None, private_endpoint=None, project_name=None, read_only_node_number=None, reclaim_time=None, shard_number=None, shards=None, storage_space_gb=None, storage_type=None, subnet_id=None, super_account_name=None, super_account_password=None, tags=None, updated_time=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, allow_list_ids=None, auto_renew=None, charge_status=None, charge_type=None, closed_time=None, config_server_node_spec=None, config_server_storage_space_gb=None, config_servers=None, config_servers_id=None, created_time=None, db_engine=None, db_engine_version=None, db_engine_version_str=None, expired_time=None, id=None, instance_count=None, instance_id=None, instance_name=None, instance_parameters=None, instance_status=None, instance_type=None, mongos=None, mongos_id=None, mongos_node_number=None, mongos_node_spec=None, node_availability_zones=None, node_number=None, node_spec=None, nodes=None, period=None, period_unit=None, private_endpoint=None, project_name=None, read_only_node_number=None, reclaim_time=None, shard_number=None, shards=None, storage_space_gb=None, storage_type=None, subnet_id=None, super_account_name=None, super_account_password=None, tags=None, updated_time=None, vpc_id=None, zone_id=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -83,6 +83,9 @@ class GetInstanceResult:
         if instance_name and not isinstance(instance_name, str):
             raise TypeError("Expected argument 'instance_name' to be a str")
         pulumi.set(__self__, "instance_name", instance_name)
+        if instance_parameters and not isinstance(instance_parameters, list):
+            raise TypeError("Expected argument 'instance_parameters' to be a list")
+        pulumi.set(__self__, "instance_parameters", instance_parameters)
         if instance_status and not isinstance(instance_status, str):
             raise TypeError("Expected argument 'instance_status' to be a str")
         pulumi.set(__self__, "instance_status", instance_status)
@@ -308,6 +311,14 @@ class GetInstanceResult:
         Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="instanceParameters")
+    def instance_parameters(self) -> Sequence['outputs.GetInstanceInstanceParameterResult']:
+        """
+        Instance parameter list
+        """
+        return pulumi.get(self, "instance_parameters")
 
     @property
     @pulumi.getter(name="instanceStatus")
@@ -550,6 +561,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             instance_count=self.instance_count,
             instance_id=self.instance_id,
             instance_name=self.instance_name,
+            instance_parameters=self.instance_parameters,
             instance_status=self.instance_status,
             instance_type=self.instance_type,
             mongos=self.mongos,
@@ -611,6 +623,7 @@ def get_instance(id: Optional[builtins.str] = None,
         instance_count=pulumi.get(__ret__, 'instance_count'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         instance_name=pulumi.get(__ret__, 'instance_name'),
+        instance_parameters=pulumi.get(__ret__, 'instance_parameters'),
         instance_status=pulumi.get(__ret__, 'instance_status'),
         instance_type=pulumi.get(__ret__, 'instance_type'),
         mongos=pulumi.get(__ret__, 'mongos'),
@@ -669,6 +682,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         instance_count=pulumi.get(__response__, 'instance_count'),
         instance_id=pulumi.get(__response__, 'instance_id'),
         instance_name=pulumi.get(__response__, 'instance_name'),
+        instance_parameters=pulumi.get(__response__, 'instance_parameters'),
         instance_status=pulumi.get(__response__, 'instance_status'),
         instance_type=pulumi.get(__response__, 'instance_type'),
         mongos=pulumi.get(__response__, 'mongos'),

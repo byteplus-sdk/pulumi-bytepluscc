@@ -40,6 +40,8 @@ type LookupEndpointServiceResult struct {
 	CreateTime string `pulumi:"createTime"`
 	// Description of the endpoint service.
 	Description string `pulumi:"description"`
+	// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+	EnableVerifyPrivateDns bool `pulumi:"enableVerifyPrivateDns"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
@@ -145,6 +147,11 @@ func (o LookupEndpointServiceResultOutput) CreateTime() pulumi.StringOutput {
 // Description of the endpoint service.
 func (o LookupEndpointServiceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointServiceResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+func (o LookupEndpointServiceResultOutput) EnableVerifyPrivateDns() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupEndpointServiceResult) bool { return v.EnableVerifyPrivateDns }).(pulumi.BoolOutput)
 }
 
 // Uniquely identifies the resource.

@@ -51,6 +51,10 @@ export interface GetEndpointServiceResult {
      */
     readonly description: string;
     /**
+     * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     */
+    readonly enableVerifyPrivateDns: boolean;
+    /**
      * Uniquely identifies the resource.
      */
     readonly id: string;

@@ -9,24 +9,6 @@ import * as utilities from "../utilities";
 /**
  * An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
- *
- * const rdsPostgresqlAllowListDemo = new bytepluscc.rdspostgresql.AllowList("RdsPostgresqlAllowListDemo", {
- *     allowLists: [
- *         "1.2.3.4/32",
- *         "5.6.7.8/32",
- *     ],
- *     allowListCategory: "Ordinary",
- *     allowListDesc: "test",
- *     allowListName: "ccapi-test-1",
- *     allowListType: "IPv4",
- * });
- * ```
- *
  * ## Import
  *
  * ```sh
@@ -92,8 +74,8 @@ export class AllowList extends pulumi.CustomResource {
     /**
      * Number of instances bound to this allowlist.
      */
-    public readonly associatedInstanceNum!: pulumi.Output<number>;
-    public /*out*/ readonly associatedInstances!: pulumi.Output<outputs.rdspostgresql.AllowListAssociatedInstance[]>;
+    public /*out*/ readonly associatedInstanceNum!: pulumi.Output<number>;
+    public readonly associatedInstances!: pulumi.Output<outputs.rdspostgresql.AllowListAssociatedInstance[]>;
     /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      */
@@ -146,7 +128,7 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["allowListName"] = args ? args.allowListName : undefined;
             resourceInputs["allowListType"] = args ? args.allowListType : undefined;
             resourceInputs["allowLists"] = args ? args.allowLists : undefined;
-            resourceInputs["associatedInstanceNum"] = args ? args.associatedInstanceNum : undefined;
+            resourceInputs["associatedInstances"] = args ? args.associatedInstances : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
             resourceInputs["modifyMode"] = args ? args.modifyMode : undefined;
             resourceInputs["securityGroupBindInfos"] = args ? args.securityGroupBindInfos : undefined;
@@ -154,7 +136,7 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["userAllowList"] = args ? args.userAllowList : undefined;
             resourceInputs["allowListId"] = undefined /*out*/;
             resourceInputs["allowListIpNum"] = undefined /*out*/;
-            resourceInputs["associatedInstances"] = undefined /*out*/;
+            resourceInputs["associatedInstanceNum"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AllowList.__pulumiType, name, resourceInputs, opts);
@@ -241,10 +223,7 @@ export interface AllowListArgs {
      * IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
      */
     allowLists?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Number of instances bound to this allowlist.
-     */
-    associatedInstanceNum?: pulumi.Input<number>;
+    associatedInstances?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.AllowListAssociatedInstance>[]>;
     /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      */

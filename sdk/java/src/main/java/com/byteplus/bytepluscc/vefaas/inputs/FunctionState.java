@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.vefaas.inputs;
 
 import com.byteplus.bytepluscc.vefaas.inputs.FunctionAsyncTaskConfigArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.FunctionDependencyInstallStatusArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.FunctionEnvArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.FunctionNasStorageArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.FunctionSourceAccessConfigArgs;
@@ -117,6 +118,21 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Dependency installation task status.
+     * 
+     */
+    @Import(name="dependencyInstallStatus")
+    private @Nullable Output<FunctionDependencyInstallStatusArgs> dependencyInstallStatus;
+
+    /**
+     * @return Dependency installation task status.
+     * 
+     */
+    public Optional<Output<FunctionDependencyInstallStatusArgs>> dependencyInstallStatus() {
+        return Optional.ofNullable(this.dependencyInstallStatus);
+    }
+
+    /**
      * Function description. Up to 1000 Unicode characters
      * 
      */
@@ -144,6 +160,21 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> enableApmplus() {
         return Optional.ofNullable(this.enableApmplus);
+    }
+
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    @Import(name="enableDependencyInstall")
+    private @Nullable Output<Boolean> enableDependencyInstall;
+
+    /**
+     * @return Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    public Optional<Output<Boolean>> enableDependencyInstall() {
+        return Optional.ofNullable(this.enableDependencyInstall);
     }
 
     @Import(name="envs")
@@ -499,8 +530,10 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         this.command = $.command;
         this.cpuStrategy = $.cpuStrategy;
         this.creationTime = $.creationTime;
+        this.dependencyInstallStatus = $.dependencyInstallStatus;
         this.description = $.description;
         this.enableApmplus = $.enableApmplus;
+        this.enableDependencyInstall = $.enableDependencyInstall;
         this.envs = $.envs;
         this.exclusiveMode = $.exclusiveMode;
         this.functionId = $.functionId;
@@ -672,6 +705,27 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param dependencyInstallStatus Dependency installation task status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dependencyInstallStatus(@Nullable Output<FunctionDependencyInstallStatusArgs> dependencyInstallStatus) {
+            $.dependencyInstallStatus = dependencyInstallStatus;
+            return this;
+        }
+
+        /**
+         * @param dependencyInstallStatus Dependency installation task status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dependencyInstallStatus(FunctionDependencyInstallStatusArgs dependencyInstallStatus) {
+            return dependencyInstallStatus(Output.of(dependencyInstallStatus));
+        }
+
+        /**
          * @param description Function description. Up to 1000 Unicode characters
          * 
          * @return builder
@@ -711,6 +765,27 @@ public final class FunctionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder enableApmplus(Boolean enableApmplus) {
             return enableApmplus(Output.of(enableApmplus));
+        }
+
+        /**
+         * @param enableDependencyInstall Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDependencyInstall(@Nullable Output<Boolean> enableDependencyInstall) {
+            $.enableDependencyInstall = enableDependencyInstall;
+            return this;
+        }
+
+        /**
+         * @param enableDependencyInstall Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDependencyInstall(Boolean enableDependencyInstall) {
+            return enableDependencyInstall(Output.of(enableDependencyInstall));
         }
 
         public Builder envs(@Nullable Output<List<FunctionEnvArgs>> envs) {

@@ -103,6 +103,10 @@ export interface GetInstanceResult {
      */
     readonly instanceName: string;
     /**
+     * Instance parameter list
+     */
+    readonly instanceParameters: outputs.mongodb.GetInstanceInstanceParameter[];
+    /**
      * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      */
     readonly instanceStatus: string;

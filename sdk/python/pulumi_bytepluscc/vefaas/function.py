@@ -27,6 +27,7 @@ class FunctionArgs:
                  cpu_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enable_apmplus: Optional[pulumi.Input[builtins.bool]] = None,
+                 enable_dependency_install: Optional[pulumi.Input[builtins.bool]] = None,
                  envs: Optional[pulumi.Input[Sequence[pulumi.Input['FunctionEnvArgs']]]] = None,
                  exclusive_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  initializer_sec: Optional[pulumi.Input[builtins.int]] = None,
@@ -53,6 +54,7 @@ class FunctionArgs:
         :param pulumi.Input[builtins.str] cpu_strategy: Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
         :param pulumi.Input[builtins.str] description: Function description. Up to 1000 Unicode characters
         :param pulumi.Input[builtins.bool] enable_apmplus: Whether to enable application monitoring
+        :param pulumi.Input[builtins.bool] enable_dependency_install: Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
         :param pulumi.Input[builtins.bool] exclusive_mode: Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
         :param pulumi.Input[builtins.int] initializer_sec: Function initialization timeout configuration
         :param pulumi.Input[builtins.int] max_concurrency: Maximum concurrency per instance. Effective when ExclusiveMode = false. Range: 1–1000
@@ -81,6 +83,8 @@ class FunctionArgs:
             pulumi.set(__self__, "description", description)
         if enable_apmplus is not None:
             pulumi.set(__self__, "enable_apmplus", enable_apmplus)
+        if enable_dependency_install is not None:
+            pulumi.set(__self__, "enable_dependency_install", enable_dependency_install)
         if envs is not None:
             pulumi.set(__self__, "envs", envs)
         if exclusive_mode is not None:
@@ -179,6 +183,18 @@ class FunctionArgs:
     @enable_apmplus.setter
     def enable_apmplus(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enable_apmplus", value)
+
+    @property
+    @pulumi.getter(name="enableDependencyInstall")
+    def enable_dependency_install(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        """
+        return pulumi.get(self, "enable_dependency_install")
+
+    @enable_dependency_install.setter
+    def enable_dependency_install(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_dependency_install", value)
 
     @property
     @pulumi.getter
@@ -412,8 +428,10 @@ class _FunctionState:
                  command: Optional[pulumi.Input[builtins.str]] = None,
                  cpu_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  creation_time: Optional[pulumi.Input[builtins.str]] = None,
+                 dependency_install_status: Optional[pulumi.Input['FunctionDependencyInstallStatusArgs']] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enable_apmplus: Optional[pulumi.Input[builtins.bool]] = None,
+                 enable_dependency_install: Optional[pulumi.Input[builtins.bool]] = None,
                  envs: Optional[pulumi.Input[Sequence[pulumi.Input['FunctionEnvArgs']]]] = None,
                  exclusive_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  function_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -446,8 +464,10 @@ class _FunctionState:
         :param pulumi.Input[builtins.str] command: Custom startup command for the instance (currently only supported in native/v1 runtime)
         :param pulumi.Input[builtins.str] cpu_strategy: Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
         :param pulumi.Input[builtins.str] creation_time: Function creation time
+        :param pulumi.Input['FunctionDependencyInstallStatusArgs'] dependency_install_status: Dependency installation task status.
         :param pulumi.Input[builtins.str] description: Function description. Up to 1000 Unicode characters
         :param pulumi.Input[builtins.bool] enable_apmplus: Whether to enable application monitoring
+        :param pulumi.Input[builtins.bool] enable_dependency_install: Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
         :param pulumi.Input[builtins.bool] exclusive_mode: Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
         :param pulumi.Input[builtins.str] function_id: Function ID
         :param pulumi.Input[builtins.int] initializer_sec: Function initialization timeout configuration
@@ -483,10 +503,14 @@ class _FunctionState:
             pulumi.set(__self__, "cpu_strategy", cpu_strategy)
         if creation_time is not None:
             pulumi.set(__self__, "creation_time", creation_time)
+        if dependency_install_status is not None:
+            pulumi.set(__self__, "dependency_install_status", dependency_install_status)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if enable_apmplus is not None:
             pulumi.set(__self__, "enable_apmplus", enable_apmplus)
+        if enable_dependency_install is not None:
+            pulumi.set(__self__, "enable_dependency_install", enable_dependency_install)
         if envs is not None:
             pulumi.set(__self__, "envs", envs)
         if exclusive_mode is not None:
@@ -609,6 +633,18 @@ class _FunctionState:
         pulumi.set(self, "creation_time", value)
 
     @property
+    @pulumi.getter(name="dependencyInstallStatus")
+    def dependency_install_status(self) -> Optional[pulumi.Input['FunctionDependencyInstallStatusArgs']]:
+        """
+        Dependency installation task status.
+        """
+        return pulumi.get(self, "dependency_install_status")
+
+    @dependency_install_status.setter
+    def dependency_install_status(self, value: Optional[pulumi.Input['FunctionDependencyInstallStatusArgs']]):
+        pulumi.set(self, "dependency_install_status", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -631,6 +667,18 @@ class _FunctionState:
     @enable_apmplus.setter
     def enable_apmplus(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enable_apmplus", value)
+
+    @property
+    @pulumi.getter(name="enableDependencyInstall")
+    def enable_dependency_install(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        """
+        return pulumi.get(self, "enable_dependency_install")
+
+    @enable_dependency_install.setter
+    def enable_dependency_install(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_dependency_install", value)
 
     @property
     @pulumi.getter
@@ -926,6 +974,7 @@ class Function(pulumi.CustomResource):
                  cpu_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enable_apmplus: Optional[pulumi.Input[builtins.bool]] = None,
+                 enable_dependency_install: Optional[pulumi.Input[builtins.bool]] = None,
                  envs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FunctionEnvArgs', 'FunctionEnvArgsDict']]]]] = None,
                  exclusive_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  initializer_sec: Optional[pulumi.Input[builtins.int]] = None,
@@ -962,6 +1011,7 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] cpu_strategy: Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
         :param pulumi.Input[builtins.str] description: Function description. Up to 1000 Unicode characters
         :param pulumi.Input[builtins.bool] enable_apmplus: Whether to enable application monitoring
+        :param pulumi.Input[builtins.bool] enable_dependency_install: Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
         :param pulumi.Input[builtins.bool] exclusive_mode: Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
         :param pulumi.Input[builtins.int] initializer_sec: Function initialization timeout configuration
         :param pulumi.Input[builtins.int] max_concurrency: Maximum concurrency per instance. Effective when ExclusiveMode = false. Range: 1–1000
@@ -1015,6 +1065,7 @@ class Function(pulumi.CustomResource):
                  cpu_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enable_apmplus: Optional[pulumi.Input[builtins.bool]] = None,
+                 enable_dependency_install: Optional[pulumi.Input[builtins.bool]] = None,
                  envs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FunctionEnvArgs', 'FunctionEnvArgsDict']]]]] = None,
                  exclusive_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  initializer_sec: Optional[pulumi.Input[builtins.int]] = None,
@@ -1048,6 +1099,7 @@ class Function(pulumi.CustomResource):
             __props__.__dict__["cpu_strategy"] = cpu_strategy
             __props__.__dict__["description"] = description
             __props__.__dict__["enable_apmplus"] = enable_apmplus
+            __props__.__dict__["enable_dependency_install"] = enable_dependency_install
             __props__.__dict__["envs"] = envs
             __props__.__dict__["exclusive_mode"] = exclusive_mode
             __props__.__dict__["initializer_sec"] = initializer_sec
@@ -1070,6 +1122,7 @@ class Function(pulumi.CustomResource):
             __props__.__dict__["code_size"] = None
             __props__.__dict__["code_size_limit"] = None
             __props__.__dict__["creation_time"] = None
+            __props__.__dict__["dependency_install_status"] = None
             __props__.__dict__["function_id"] = None
             __props__.__dict__["instance_type"] = None
             __props__.__dict__["last_update_time"] = None
@@ -1091,8 +1144,10 @@ class Function(pulumi.CustomResource):
             command: Optional[pulumi.Input[builtins.str]] = None,
             cpu_strategy: Optional[pulumi.Input[builtins.str]] = None,
             creation_time: Optional[pulumi.Input[builtins.str]] = None,
+            dependency_install_status: Optional[pulumi.Input[Union['FunctionDependencyInstallStatusArgs', 'FunctionDependencyInstallStatusArgsDict']]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             enable_apmplus: Optional[pulumi.Input[builtins.bool]] = None,
+            enable_dependency_install: Optional[pulumi.Input[builtins.bool]] = None,
             envs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FunctionEnvArgs', 'FunctionEnvArgsDict']]]]] = None,
             exclusive_mode: Optional[pulumi.Input[builtins.bool]] = None,
             function_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1130,8 +1185,10 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] command: Custom startup command for the instance (currently only supported in native/v1 runtime)
         :param pulumi.Input[builtins.str] cpu_strategy: Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
         :param pulumi.Input[builtins.str] creation_time: Function creation time
+        :param pulumi.Input[Union['FunctionDependencyInstallStatusArgs', 'FunctionDependencyInstallStatusArgsDict']] dependency_install_status: Dependency installation task status.
         :param pulumi.Input[builtins.str] description: Function description. Up to 1000 Unicode characters
         :param pulumi.Input[builtins.bool] enable_apmplus: Whether to enable application monitoring
+        :param pulumi.Input[builtins.bool] enable_dependency_install: Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
         :param pulumi.Input[builtins.bool] exclusive_mode: Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
         :param pulumi.Input[builtins.str] function_id: Function ID
         :param pulumi.Input[builtins.int] initializer_sec: Function initialization timeout configuration
@@ -1165,8 +1222,10 @@ class Function(pulumi.CustomResource):
         __props__.__dict__["command"] = command
         __props__.__dict__["cpu_strategy"] = cpu_strategy
         __props__.__dict__["creation_time"] = creation_time
+        __props__.__dict__["dependency_install_status"] = dependency_install_status
         __props__.__dict__["description"] = description
         __props__.__dict__["enable_apmplus"] = enable_apmplus
+        __props__.__dict__["enable_dependency_install"] = enable_dependency_install
         __props__.__dict__["envs"] = envs
         __props__.__dict__["exclusive_mode"] = exclusive_mode
         __props__.__dict__["function_id"] = function_id
@@ -1242,6 +1301,14 @@ class Function(pulumi.CustomResource):
         return pulumi.get(self, "creation_time")
 
     @property
+    @pulumi.getter(name="dependencyInstallStatus")
+    def dependency_install_status(self) -> pulumi.Output['outputs.FunctionDependencyInstallStatus']:
+        """
+        Dependency installation task status.
+        """
+        return pulumi.get(self, "dependency_install_status")
+
+    @property
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
@@ -1256,6 +1323,14 @@ class Function(pulumi.CustomResource):
         Whether to enable application monitoring
         """
         return pulumi.get(self, "enable_apmplus")
+
+    @property
+    @pulumi.getter(name="enableDependencyInstall")
+    def enable_dependency_install(self) -> pulumi.Output[builtins.bool]:
+        """
+        Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+        """
+        return pulumi.get(self, "enable_dependency_install")
 
     @property
     @pulumi.getter

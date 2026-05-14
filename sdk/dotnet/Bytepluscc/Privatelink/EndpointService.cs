@@ -53,6 +53,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        /// </summary>
+        [Output("enableVerifyPrivateDns")]
+        public Output<bool> EnableVerifyPrivateDns { get; private set; } = null!;
+
+        /// <summary>
         /// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         /// </summary>
         [Output("ipAddressVersions")]
@@ -237,6 +243,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        /// </summary>
+        [Input("enableVerifyPrivateDns")]
+        public Input<bool>? EnableVerifyPrivateDns { get; set; }
+
         [Input("ipAddressVersions")]
         private InputList<string>? _ipAddressVersions;
 
@@ -380,6 +392,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        /// </summary>
+        [Input("enableVerifyPrivateDns")]
+        public Input<bool>? EnableVerifyPrivateDns { get; set; }
 
         [Input("ipAddressVersions")]
         private InputList<string>? _ipAddressVersions;

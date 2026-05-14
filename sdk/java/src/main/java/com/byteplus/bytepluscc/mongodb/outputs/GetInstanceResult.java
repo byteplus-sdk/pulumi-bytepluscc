@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.mongodb.outputs;
 
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceConfigServer;
+import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceInstanceParameter;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceMongo;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceNode;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceNodeAvailabilityZone;
@@ -109,6 +110,11 @@ public final class GetInstanceResult {
      * 
      */
     private String instanceName;
+    /**
+     * @return Instance parameter list
+     * 
+     */
+    private List<GetInstanceInstanceParameter> instanceParameters;
     /**
      * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      * 
@@ -373,6 +379,13 @@ public final class GetInstanceResult {
         return this.instanceName;
     }
     /**
+     * @return Instance parameter list
+     * 
+     */
+    public List<GetInstanceInstanceParameter> instanceParameters() {
+        return this.instanceParameters;
+    }
+    /**
      * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      * 
      */
@@ -589,6 +602,7 @@ public final class GetInstanceResult {
         private Integer instanceCount;
         private String instanceId;
         private String instanceName;
+        private List<GetInstanceInstanceParameter> instanceParameters;
         private String instanceStatus;
         private String instanceType;
         private List<GetInstanceMongo> mongos;
@@ -637,6 +651,7 @@ public final class GetInstanceResult {
     	      this.instanceCount = defaults.instanceCount;
     	      this.instanceId = defaults.instanceId;
     	      this.instanceName = defaults.instanceName;
+    	      this.instanceParameters = defaults.instanceParameters;
     	      this.instanceStatus = defaults.instanceStatus;
     	      this.instanceType = defaults.instanceType;
     	      this.mongos = defaults.mongos;
@@ -815,6 +830,17 @@ public final class GetInstanceResult {
             }
             this.instanceName = instanceName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder instanceParameters(List<GetInstanceInstanceParameter> instanceParameters) {
+            if (instanceParameters == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "instanceParameters");
+            }
+            this.instanceParameters = instanceParameters;
+            return this;
+        }
+        public Builder instanceParameters(GetInstanceInstanceParameter... instanceParameters) {
+            return instanceParameters(List.of(instanceParameters));
         }
         @CustomType.Setter
         public Builder instanceStatus(String instanceStatus) {
@@ -1067,6 +1093,7 @@ public final class GetInstanceResult {
             _resultValue.instanceCount = instanceCount;
             _resultValue.instanceId = instanceId;
             _resultValue.instanceName = instanceName;
+            _resultValue.instanceParameters = instanceParameters;
             _resultValue.instanceStatus = instanceStatus;
             _resultValue.instanceType = instanceType;
             _resultValue.mongos = mongos;

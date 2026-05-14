@@ -19,6 +19,7 @@ from . import outputs
 __all__ = [
     'AllowListAssociatedInstance',
     'InstanceConfigServer',
+    'InstanceInstanceParameter',
     'InstanceMongo',
     'InstanceNode',
     'InstanceNodeAvailabilityZone',
@@ -27,6 +28,7 @@ __all__ = [
     'InstanceTag',
     'GetAllowListAssociatedInstanceResult',
     'GetInstanceConfigServerResult',
+    'GetInstanceInstanceParameterResult',
     'GetInstanceMongoResult',
     'GetInstanceNodeResult',
     'GetInstanceNodeAvailabilityZoneResult',
@@ -243,6 +245,70 @@ class InstanceConfigServer(dict):
         Availability zone ID of the current node.
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class InstanceInstanceParameter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterName":
+            suggest = "parameter_name"
+        elif key == "parameterRole":
+            suggest = "parameter_role"
+        elif key == "parameterValue":
+            suggest = "parameter_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceInstanceParameter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceInstanceParameter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceInstanceParameter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameter_name: Optional[builtins.str] = None,
+                 parameter_role: Optional[builtins.str] = None,
+                 parameter_value: Optional[builtins.str] = None):
+        """
+        :param builtins.str parameter_name: Parameter name
+        :param builtins.str parameter_role: Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        :param builtins.str parameter_value: Parameter value
+        """
+        if parameter_name is not None:
+            pulumi.set(__self__, "parameter_name", parameter_name)
+        if parameter_role is not None:
+            pulumi.set(__self__, "parameter_role", parameter_role)
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> Optional[builtins.str]:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "parameter_name")
+
+    @property
+    @pulumi.getter(name="parameterRole")
+    def parameter_role(self) -> Optional[builtins.str]:
+        """
+        Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        """
+        return pulumi.get(self, "parameter_role")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[builtins.str]:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "parameter_value")
 
 
 @pulumi.output_type
@@ -1028,6 +1094,112 @@ class GetInstanceConfigServerResult(dict):
         Availability zone ID of the current node.
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetInstanceInstanceParameterResult(dict):
+    def __init__(__self__, *,
+                 checking_code: builtins.str,
+                 force_modify: builtins.bool,
+                 force_restart: builtins.bool,
+                 parameter_default_value: builtins.str,
+                 parameter_description: builtins.str,
+                 parameter_name: builtins.str,
+                 parameter_role: builtins.str,
+                 parameter_type: builtins.str,
+                 parameter_value: builtins.str):
+        """
+        :param builtins.str checking_code: Parameter validation rule
+        :param builtins.bool force_modify: Whether to force modification
+        :param builtins.bool force_restart: Requires instance restart to take effect after modification
+        :param builtins.str parameter_default_value: Parameter default value
+        :param builtins.str parameter_description: Parameter description
+        :param builtins.str parameter_name: Parameter name
+        :param builtins.str parameter_role: Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        :param builtins.str parameter_type: Parameter type. Optional values: String, Integer, Boolean, List, Float
+        :param builtins.str parameter_value: Parameter value
+        """
+        pulumi.set(__self__, "checking_code", checking_code)
+        pulumi.set(__self__, "force_modify", force_modify)
+        pulumi.set(__self__, "force_restart", force_restart)
+        pulumi.set(__self__, "parameter_default_value", parameter_default_value)
+        pulumi.set(__self__, "parameter_description", parameter_description)
+        pulumi.set(__self__, "parameter_name", parameter_name)
+        pulumi.set(__self__, "parameter_role", parameter_role)
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+
+    @property
+    @pulumi.getter(name="checkingCode")
+    def checking_code(self) -> builtins.str:
+        """
+        Parameter validation rule
+        """
+        return pulumi.get(self, "checking_code")
+
+    @property
+    @pulumi.getter(name="forceModify")
+    def force_modify(self) -> builtins.bool:
+        """
+        Whether to force modification
+        """
+        return pulumi.get(self, "force_modify")
+
+    @property
+    @pulumi.getter(name="forceRestart")
+    def force_restart(self) -> builtins.bool:
+        """
+        Requires instance restart to take effect after modification
+        """
+        return pulumi.get(self, "force_restart")
+
+    @property
+    @pulumi.getter(name="parameterDefaultValue")
+    def parameter_default_value(self) -> builtins.str:
+        """
+        Parameter default value
+        """
+        return pulumi.get(self, "parameter_default_value")
+
+    @property
+    @pulumi.getter(name="parameterDescription")
+    def parameter_description(self) -> builtins.str:
+        """
+        Parameter description
+        """
+        return pulumi.get(self, "parameter_description")
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> builtins.str:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "parameter_name")
+
+    @property
+    @pulumi.getter(name="parameterRole")
+    def parameter_role(self) -> builtins.str:
+        """
+        Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        """
+        return pulumi.get(self, "parameter_role")
+
+    @property
+    @pulumi.getter(name="parameterType")
+    def parameter_type(self) -> builtins.str:
+        """
+        Parameter type. Optional values: String, Integer, Boolean, List, Float
+        """
+        return pulumi.get(self, "parameter_type")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> builtins.str:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "parameter_value")
 
 
 @pulumi.output_type

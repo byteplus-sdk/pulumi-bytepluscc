@@ -19,18 +19,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Inputs
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
-        /// <summary>
-        /// Instance name.
-        /// </summary>
-        [Input("instanceName")]
-        public Input<string>? InstanceName { get; set; }
-
-        /// <summary>
-        /// VPC ID to which the instance belongs.
-        /// </summary>
-        [Input("vpc")]
-        public Input<string>? Vpc { get; set; }
-
         public AllowListAssociatedInstanceGetArgs()
         {
         }

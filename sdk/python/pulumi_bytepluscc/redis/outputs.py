@@ -26,6 +26,8 @@ __all__ = [
     'InstanceInstanceShardServerNode',
     'InstanceTag',
     'InstanceVisitAddr',
+    'ParameterGroupParamValue',
+    'ParameterGroupParameter',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
     'GetInstanceBackupRestoreResult',
@@ -35,6 +37,8 @@ __all__ = [
     'GetInstanceInstanceShardServerNodeResult',
     'GetInstanceTagResult',
     'GetInstanceVisitAddrResult',
+    'GetParameterGroupParamValueResult',
+    'GetParameterGroupParameterResult',
 ]
 
 @pulumi.output_type
@@ -545,6 +549,147 @@ class InstanceVisitAddr(dict):
 
 
 @pulumi.output_type
+class ParameterGroupParamValue(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: Parameter name
+        :param builtins.str value: Parameter value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ParameterGroupParameter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "currentValue":
+            suggest = "current_value"
+        elif key == "needReboot":
+            suggest = "need_reboot"
+        elif key == "paramName":
+            suggest = "param_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ParameterGroupParameter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ParameterGroupParameter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ParameterGroupParameter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 current_value: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 need_reboot: Optional[builtins.bool] = None,
+                 param_name: Optional[builtins.str] = None,
+                 range: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 unit: Optional[builtins.str] = None):
+        """
+        :param builtins.str current_value: Current parameter value
+        :param builtins.str description: Parameter description
+        :param builtins.bool need_reboot: Whether modifying this parameter requires a restart
+        :param builtins.str param_name: Parameter name
+        :param builtins.str range: Parameter value range
+        :param builtins.str type: Parameter type
+        :param builtins.str unit: Parameter unit
+        """
+        if current_value is not None:
+            pulumi.set(__self__, "current_value", current_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if need_reboot is not None:
+            pulumi.set(__self__, "need_reboot", need_reboot)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if range is not None:
+            pulumi.set(__self__, "range", range)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="currentValue")
+    def current_value(self) -> Optional[builtins.str]:
+        """
+        Current parameter value
+        """
+        return pulumi.get(self, "current_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Parameter description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="needReboot")
+    def need_reboot(self) -> Optional[builtins.bool]:
+        """
+        Whether modifying this parameter requires a restart
+        """
+        return pulumi.get(self, "need_reboot")
+
+    @property
+    @pulumi.getter(name="paramName")
+    def param_name(self) -> Optional[builtins.str]:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "param_name")
+
+    @property
+    @pulumi.getter
+    def range(self) -> Optional[builtins.str]:
+        """
+        Parameter value range
+        """
+        return pulumi.get(self, "range")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Parameter type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> Optional[builtins.str]:
+        """
+        Parameter unit
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
 class GetAllowListAssociatedInstanceResult(dict):
     def __init__(__self__, *,
                  instance_id: builtins.str,
@@ -924,5 +1069,118 @@ class GetInstanceVisitAddrResult(dict):
         The IPv4 address corresponding to the connection address.
         """
         return pulumi.get(self, "vip")
+
+
+@pulumi.output_type
+class GetParameterGroupParamValueResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: Parameter name
+        :param builtins.str value: Parameter value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetParameterGroupParameterResult(dict):
+    def __init__(__self__, *,
+                 current_value: builtins.str,
+                 description: builtins.str,
+                 need_reboot: builtins.bool,
+                 param_name: builtins.str,
+                 range: builtins.str,
+                 type: builtins.str,
+                 unit: builtins.str):
+        """
+        :param builtins.str current_value: Current parameter value
+        :param builtins.str description: Parameter description
+        :param builtins.bool need_reboot: Whether modifying this parameter requires a restart
+        :param builtins.str param_name: Parameter name
+        :param builtins.str range: Parameter value range
+        :param builtins.str type: Parameter type
+        :param builtins.str unit: Parameter unit
+        """
+        pulumi.set(__self__, "current_value", current_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "need_reboot", need_reboot)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "range", range)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="currentValue")
+    def current_value(self) -> builtins.str:
+        """
+        Current parameter value
+        """
+        return pulumi.get(self, "current_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Parameter description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="needReboot")
+    def need_reboot(self) -> builtins.bool:
+        """
+        Whether modifying this parameter requires a restart
+        """
+        return pulumi.get(self, "need_reboot")
+
+    @property
+    @pulumi.getter(name="paramName")
+    def param_name(self) -> builtins.str:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "param_name")
+
+    @property
+    @pulumi.getter
+    def range(self) -> builtins.str:
+        """
+        Parameter value range
+        """
+        return pulumi.get(self, "range")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Parameter type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> builtins.str:
+        """
+        Parameter unit
+        """
+        return pulumi.get(self, "unit")
 
 

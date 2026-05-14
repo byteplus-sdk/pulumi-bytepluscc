@@ -1979,6 +1979,9 @@
                     "config_servers": {
                         "maxItemsOne": false
                     },
+                    "instance_parameters": {
+                        "maxItemsOne": false
+                    },
                     "mongos": {
                         "maxItemsOne": false
                     },
@@ -2417,6 +2420,14 @@
                     }
                 }
             },
+            "bytepluscc_rdspostgresql_backup": {
+                "current": "bytepluscc:rdspostgresql/backup:Backup",
+                "fields": {
+                    "backup_meta": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_rdspostgresql_database": {
                 "current": "bytepluscc:rdspostgresql/database:Database"
             },
@@ -2525,6 +2536,17 @@
                         "maxItemsOne": false
                     },
                     "zone_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_redis_parameter_group": {
+                "current": "bytepluscc:redis/parameterGroup:ParameterGroup",
+                "fields": {
+                    "param_values": {
+                        "maxItemsOne": false
+                    },
+                    "parameters": {
                         "maxItemsOne": false
                     }
                 }
@@ -6334,6 +6356,9 @@
                     "config_servers": {
                         "maxItemsOne": false
                     },
+                    "instance_parameters": {
+                        "maxItemsOne": false
+                    },
                     "mongos": {
                         "maxItemsOne": false
                     },
@@ -7020,6 +7045,22 @@
                     }
                 }
             },
+            "bytepluscc_rdspostgresql_backup": {
+                "current": "bytepluscc:rdspostgresql/getBackup:getBackup",
+                "fields": {
+                    "backup_meta": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_backups": {
+                "current": "bytepluscc:rdspostgresql/getBackups:getBackups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_rdspostgresql_database": {
                 "current": "bytepluscc:rdspostgresql/getDatabase:getDatabase"
             },
@@ -7205,6 +7246,25 @@
             },
             "bytepluscc_redis_instances": {
                 "current": "bytepluscc:redis/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_redis_parameter_group": {
+                "current": "bytepluscc:redis/getParameterGroup:getParameterGroup",
+                "fields": {
+                    "param_values": {
+                        "maxItemsOne": false
+                    },
+                    "parameters": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_redis_parameter_groups": {
+                "current": "bytepluscc:redis/getParameterGroups:getParameterGroups",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

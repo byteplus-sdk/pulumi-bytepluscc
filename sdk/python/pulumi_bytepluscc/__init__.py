@@ -1070,6 +1070,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdspostgresql/backup",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/backup:Backup": "Backup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdspostgresql/database",
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {
@@ -1138,6 +1146,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.redis",
   "classes": {
    "bytepluscc:redis/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "redis/parameterGroup",
+  "fqn": "pulumi_bytepluscc.redis",
+  "classes": {
+   "bytepluscc:redis/parameterGroup:ParameterGroup": "ParameterGroup"
   }
  },
  {

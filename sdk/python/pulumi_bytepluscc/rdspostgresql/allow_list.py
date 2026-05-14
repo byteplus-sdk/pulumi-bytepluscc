@@ -27,7 +27,7 @@ class AllowListArgs:
                  allow_list_name: Optional[pulumi.Input[builtins.str]] = None,
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
+                 associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListSecurityGroupBindInfoArgs']]]] = None,
@@ -40,7 +40,6 @@ class AllowListArgs:
         :param pulumi.Input[builtins.str] allow_list_name: Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
         :param pulumi.Input[builtins.str] allow_list_type: Network protocol type used by the allowlist. Value: IPv4 (default).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_lists: IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-        :param pulumi.Input[builtins.int] associated_instance_num: Number of instances bound to this allowlist.
         :param pulumi.Input[builtins.str] ip_address: Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         :param pulumi.Input[builtins.str] modify_mode: Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
         :param pulumi.Input[builtins.bool] update_security_group: Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
@@ -56,8 +55,8 @@ class AllowListArgs:
             pulumi.set(__self__, "allow_list_type", allow_list_type)
         if allow_lists is not None:
             pulumi.set(__self__, "allow_lists", allow_lists)
-        if associated_instance_num is not None:
-            pulumi.set(__self__, "associated_instance_num", associated_instance_num)
+        if associated_instances is not None:
+            pulumi.set(__self__, "associated_instances", associated_instances)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
         if modify_mode is not None:
@@ -130,16 +129,13 @@ class AllowListArgs:
         pulumi.set(self, "allow_lists", value)
 
     @property
-    @pulumi.getter(name="associatedInstanceNum")
-    def associated_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
-        """
-        Number of instances bound to this allowlist.
-        """
-        return pulumi.get(self, "associated_instance_num")
+    @pulumi.getter(name="associatedInstances")
+    def associated_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]]:
+        return pulumi.get(self, "associated_instances")
 
-    @associated_instance_num.setter
-    def associated_instance_num(self, value: Optional[pulumi.Input[builtins.int]]):
-        pulumi.set(self, "associated_instance_num", value)
+    @associated_instances.setter
+    def associated_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]]):
+        pulumi.set(self, "associated_instances", value)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -434,7 +430,7 @@ class AllowList(pulumi.CustomResource):
                  allow_list_name: Optional[pulumi.Input[builtins.str]] = None,
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
+                 associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListSecurityGroupBindInfoArgs', 'AllowListSecurityGroupBindInfoArgsDict']]]]] = None,
@@ -443,23 +439,6 @@ class AllowList(pulumi.CustomResource):
                  __props__=None):
         """
         An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        rds_postgresql_allow_list_demo = bytepluscc.rdspostgresql.AllowList("RdsPostgresqlAllowListDemo",
-            allow_lists=[
-                "1.2.3.4/32",
-                "5.6.7.8/32",
-            ],
-            allow_list_category="Ordinary",
-            allow_list_desc="test",
-            allow_list_name="ccapi-test-1",
-            allow_list_type="IPv4")
-        ```
 
         ## Import
 
@@ -474,7 +453,6 @@ class AllowList(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] allow_list_name: Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
         :param pulumi.Input[builtins.str] allow_list_type: Network protocol type used by the allowlist. Value: IPv4 (default).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_lists: IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-        :param pulumi.Input[builtins.int] associated_instance_num: Number of instances bound to this allowlist.
         :param pulumi.Input[builtins.str] ip_address: Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         :param pulumi.Input[builtins.str] modify_mode: Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
         :param pulumi.Input[builtins.bool] update_security_group: Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
@@ -488,23 +466,6 @@ class AllowList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        rds_postgresql_allow_list_demo = bytepluscc.rdspostgresql.AllowList("RdsPostgresqlAllowListDemo",
-            allow_lists=[
-                "1.2.3.4/32",
-                "5.6.7.8/32",
-            ],
-            allow_list_category="Ordinary",
-            allow_list_desc="test",
-            allow_list_name="ccapi-test-1",
-            allow_list_type="IPv4")
-        ```
 
         ## Import
 
@@ -532,7 +493,7 @@ class AllowList(pulumi.CustomResource):
                  allow_list_name: Optional[pulumi.Input[builtins.str]] = None,
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
+                 associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListSecurityGroupBindInfoArgs', 'AllowListSecurityGroupBindInfoArgsDict']]]]] = None,
@@ -552,7 +513,7 @@ class AllowList(pulumi.CustomResource):
             __props__.__dict__["allow_list_name"] = allow_list_name
             __props__.__dict__["allow_list_type"] = allow_list_type
             __props__.__dict__["allow_lists"] = allow_lists
-            __props__.__dict__["associated_instance_num"] = associated_instance_num
+            __props__.__dict__["associated_instances"] = associated_instances
             __props__.__dict__["ip_address"] = ip_address
             __props__.__dict__["modify_mode"] = modify_mode
             __props__.__dict__["security_group_bind_infos"] = security_group_bind_infos
@@ -560,7 +521,7 @@ class AllowList(pulumi.CustomResource):
             __props__.__dict__["user_allow_list"] = user_allow_list
             __props__.__dict__["allow_list_id"] = None
             __props__.__dict__["allow_list_ip_num"] = None
-            __props__.__dict__["associated_instances"] = None
+            __props__.__dict__["associated_instance_num"] = None
         super(AllowList, __self__).__init__(
             'bytepluscc:rdspostgresql/allowList:AllowList',
             resource_name,

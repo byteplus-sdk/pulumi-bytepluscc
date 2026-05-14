@@ -20,6 +20,8 @@ __all__ = [
     'AllowListAssociatedInstanceArgsDict',
     'InstanceConfigServerArgs',
     'InstanceConfigServerArgsDict',
+    'InstanceInstanceParameterArgs',
+    'InstanceInstanceParameterArgsDict',
     'InstanceMongoArgs',
     'InstanceMongoArgsDict',
     'InstanceNodeArgs',
@@ -298,6 +300,78 @@ class InstanceConfigServerArgs:
     @zone_id.setter
     def zone_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "zone_id", value)
+
+
+if not MYPY:
+    class InstanceInstanceParameterArgsDict(TypedDict):
+        parameter_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter name
+        """
+        parameter_role: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        """
+        parameter_value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter value
+        """
+elif False:
+    InstanceInstanceParameterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceInstanceParameterArgs:
+    def __init__(__self__, *,
+                 parameter_name: Optional[pulumi.Input[builtins.str]] = None,
+                 parameter_role: Optional[pulumi.Input[builtins.str]] = None,
+                 parameter_value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] parameter_name: Parameter name
+        :param pulumi.Input[builtins.str] parameter_role: Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        :param pulumi.Input[builtins.str] parameter_value: Parameter value
+        """
+        if parameter_name is not None:
+            pulumi.set(__self__, "parameter_name", parameter_name)
+        if parameter_role is not None:
+            pulumi.set(__self__, "parameter_role", parameter_role)
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "parameter_name")
+
+    @parameter_name.setter
+    def parameter_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "parameter_name", value)
+
+    @property
+    @pulumi.getter(name="parameterRole")
+    def parameter_role(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter role. Optional values: Node, Shard, ConfigServer, Mongos
+        """
+        return pulumi.get(self, "parameter_role")
+
+    @parameter_role.setter
+    def parameter_role(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "parameter_role", value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @parameter_value.setter
+    def parameter_value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "parameter_value", value)
 
 
 if not MYPY:

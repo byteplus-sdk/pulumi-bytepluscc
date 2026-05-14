@@ -50,6 +50,21 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     * 
+     */
+    @Import(name="enableVerifyPrivateDns")
+    private @Nullable Output<Boolean> enableVerifyPrivateDns;
+
+    /**
+     * @return Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> enableVerifyPrivateDns() {
+        return Optional.ofNullable(this.enableVerifyPrivateDns);
+    }
+
+    /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
@@ -263,6 +278,7 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
     private EndpointServiceArgs(EndpointServiceArgs $) {
         this.autoAcceptEnabled = $.autoAcceptEnabled;
         this.description = $.description;
+        this.enableVerifyPrivateDns = $.enableVerifyPrivateDns;
         this.ipAddressVersions = $.ipAddressVersions;
         this.payer = $.payer;
         this.permitAccountIds = $.permitAccountIds;
@@ -338,6 +354,27 @@ public final class EndpointServiceArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param enableVerifyPrivateDns Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableVerifyPrivateDns(@Nullable Output<Boolean> enableVerifyPrivateDns) {
+            $.enableVerifyPrivateDns = enableVerifyPrivateDns;
+            return this;
+        }
+
+        /**
+         * @param enableVerifyPrivateDns Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableVerifyPrivateDns(Boolean enableVerifyPrivateDns) {
+            return enableVerifyPrivateDns(Output.of(enableVerifyPrivateDns));
         }
 
         /**

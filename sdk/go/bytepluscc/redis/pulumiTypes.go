@@ -1155,6 +1155,263 @@ func (o InstanceVisitAddrArrayOutput) Index(i pulumi.IntInput) InstanceVisitAddr
 	}).(InstanceVisitAddrOutput)
 }
 
+type ParameterGroupParamValue struct {
+	// Parameter name
+	Name string `pulumi:"name"`
+	// Parameter value
+	Value string `pulumi:"value"`
+}
+
+// ParameterGroupParamValueInput is an input type that accepts ParameterGroupParamValueArgs and ParameterGroupParamValueOutput values.
+// You can construct a concrete instance of `ParameterGroupParamValueInput` via:
+//
+//	ParameterGroupParamValueArgs{...}
+type ParameterGroupParamValueInput interface {
+	pulumi.Input
+
+	ToParameterGroupParamValueOutput() ParameterGroupParamValueOutput
+	ToParameterGroupParamValueOutputWithContext(context.Context) ParameterGroupParamValueOutput
+}
+
+type ParameterGroupParamValueArgs struct {
+	// Parameter name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Parameter value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ParameterGroupParamValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ParameterGroupParamValue)(nil)).Elem()
+}
+
+func (i ParameterGroupParamValueArgs) ToParameterGroupParamValueOutput() ParameterGroupParamValueOutput {
+	return i.ToParameterGroupParamValueOutputWithContext(context.Background())
+}
+
+func (i ParameterGroupParamValueArgs) ToParameterGroupParamValueOutputWithContext(ctx context.Context) ParameterGroupParamValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ParameterGroupParamValueOutput)
+}
+
+// ParameterGroupParamValueArrayInput is an input type that accepts ParameterGroupParamValueArray and ParameterGroupParamValueArrayOutput values.
+// You can construct a concrete instance of `ParameterGroupParamValueArrayInput` via:
+//
+//	ParameterGroupParamValueArray{ ParameterGroupParamValueArgs{...} }
+type ParameterGroupParamValueArrayInput interface {
+	pulumi.Input
+
+	ToParameterGroupParamValueArrayOutput() ParameterGroupParamValueArrayOutput
+	ToParameterGroupParamValueArrayOutputWithContext(context.Context) ParameterGroupParamValueArrayOutput
+}
+
+type ParameterGroupParamValueArray []ParameterGroupParamValueInput
+
+func (ParameterGroupParamValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ParameterGroupParamValue)(nil)).Elem()
+}
+
+func (i ParameterGroupParamValueArray) ToParameterGroupParamValueArrayOutput() ParameterGroupParamValueArrayOutput {
+	return i.ToParameterGroupParamValueArrayOutputWithContext(context.Background())
+}
+
+func (i ParameterGroupParamValueArray) ToParameterGroupParamValueArrayOutputWithContext(ctx context.Context) ParameterGroupParamValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ParameterGroupParamValueArrayOutput)
+}
+
+type ParameterGroupParamValueOutput struct{ *pulumi.OutputState }
+
+func (ParameterGroupParamValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ParameterGroupParamValue)(nil)).Elem()
+}
+
+func (o ParameterGroupParamValueOutput) ToParameterGroupParamValueOutput() ParameterGroupParamValueOutput {
+	return o
+}
+
+func (o ParameterGroupParamValueOutput) ToParameterGroupParamValueOutputWithContext(ctx context.Context) ParameterGroupParamValueOutput {
+	return o
+}
+
+// Parameter name
+func (o ParameterGroupParamValueOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ParameterGroupParamValue) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Parameter value
+func (o ParameterGroupParamValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ParameterGroupParamValue) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ParameterGroupParamValueArrayOutput struct{ *pulumi.OutputState }
+
+func (ParameterGroupParamValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ParameterGroupParamValue)(nil)).Elem()
+}
+
+func (o ParameterGroupParamValueArrayOutput) ToParameterGroupParamValueArrayOutput() ParameterGroupParamValueArrayOutput {
+	return o
+}
+
+func (o ParameterGroupParamValueArrayOutput) ToParameterGroupParamValueArrayOutputWithContext(ctx context.Context) ParameterGroupParamValueArrayOutput {
+	return o
+}
+
+func (o ParameterGroupParamValueArrayOutput) Index(i pulumi.IntInput) ParameterGroupParamValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ParameterGroupParamValue {
+		return vs[0].([]ParameterGroupParamValue)[vs[1].(int)]
+	}).(ParameterGroupParamValueOutput)
+}
+
+type ParameterGroupParameter struct {
+	// Current parameter value
+	CurrentValue *string `pulumi:"currentValue"`
+	// Parameter description
+	Description *string `pulumi:"description"`
+	// Whether modifying this parameter requires a restart
+	NeedReboot *bool `pulumi:"needReboot"`
+	// Parameter name
+	ParamName *string `pulumi:"paramName"`
+	// Parameter value range
+	Range *string `pulumi:"range"`
+	// Parameter type
+	Type *string `pulumi:"type"`
+	// Parameter unit
+	Unit *string `pulumi:"unit"`
+}
+
+// ParameterGroupParameterInput is an input type that accepts ParameterGroupParameterArgs and ParameterGroupParameterOutput values.
+// You can construct a concrete instance of `ParameterGroupParameterInput` via:
+//
+//	ParameterGroupParameterArgs{...}
+type ParameterGroupParameterInput interface {
+	pulumi.Input
+
+	ToParameterGroupParameterOutput() ParameterGroupParameterOutput
+	ToParameterGroupParameterOutputWithContext(context.Context) ParameterGroupParameterOutput
+}
+
+type ParameterGroupParameterArgs struct {
+	// Current parameter value
+	CurrentValue pulumi.StringPtrInput `pulumi:"currentValue"`
+	// Parameter description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Whether modifying this parameter requires a restart
+	NeedReboot pulumi.BoolPtrInput `pulumi:"needReboot"`
+	// Parameter name
+	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
+	// Parameter value range
+	Range pulumi.StringPtrInput `pulumi:"range"`
+	// Parameter type
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Parameter unit
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
+}
+
+func (ParameterGroupParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ParameterGroupParameter)(nil)).Elem()
+}
+
+func (i ParameterGroupParameterArgs) ToParameterGroupParameterOutput() ParameterGroupParameterOutput {
+	return i.ToParameterGroupParameterOutputWithContext(context.Background())
+}
+
+func (i ParameterGroupParameterArgs) ToParameterGroupParameterOutputWithContext(ctx context.Context) ParameterGroupParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ParameterGroupParameterOutput)
+}
+
+// ParameterGroupParameterArrayInput is an input type that accepts ParameterGroupParameterArray and ParameterGroupParameterArrayOutput values.
+// You can construct a concrete instance of `ParameterGroupParameterArrayInput` via:
+//
+//	ParameterGroupParameterArray{ ParameterGroupParameterArgs{...} }
+type ParameterGroupParameterArrayInput interface {
+	pulumi.Input
+
+	ToParameterGroupParameterArrayOutput() ParameterGroupParameterArrayOutput
+	ToParameterGroupParameterArrayOutputWithContext(context.Context) ParameterGroupParameterArrayOutput
+}
+
+type ParameterGroupParameterArray []ParameterGroupParameterInput
+
+func (ParameterGroupParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ParameterGroupParameter)(nil)).Elem()
+}
+
+func (i ParameterGroupParameterArray) ToParameterGroupParameterArrayOutput() ParameterGroupParameterArrayOutput {
+	return i.ToParameterGroupParameterArrayOutputWithContext(context.Background())
+}
+
+func (i ParameterGroupParameterArray) ToParameterGroupParameterArrayOutputWithContext(ctx context.Context) ParameterGroupParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ParameterGroupParameterArrayOutput)
+}
+
+type ParameterGroupParameterOutput struct{ *pulumi.OutputState }
+
+func (ParameterGroupParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ParameterGroupParameter)(nil)).Elem()
+}
+
+func (o ParameterGroupParameterOutput) ToParameterGroupParameterOutput() ParameterGroupParameterOutput {
+	return o
+}
+
+func (o ParameterGroupParameterOutput) ToParameterGroupParameterOutputWithContext(ctx context.Context) ParameterGroupParameterOutput {
+	return o
+}
+
+// Current parameter value
+func (o ParameterGroupParameterOutput) CurrentValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *string { return v.CurrentValue }).(pulumi.StringPtrOutput)
+}
+
+// Parameter description
+func (o ParameterGroupParameterOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Whether modifying this parameter requires a restart
+func (o ParameterGroupParameterOutput) NeedReboot() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *bool { return v.NeedReboot }).(pulumi.BoolPtrOutput)
+}
+
+// Parameter name
+func (o ParameterGroupParameterOutput) ParamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
+}
+
+// Parameter value range
+func (o ParameterGroupParameterOutput) Range() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *string { return v.Range }).(pulumi.StringPtrOutput)
+}
+
+// Parameter type
+func (o ParameterGroupParameterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Parameter unit
+func (o ParameterGroupParameterOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ParameterGroupParameter) *string { return v.Unit }).(pulumi.StringPtrOutput)
+}
+
+type ParameterGroupParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (ParameterGroupParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ParameterGroupParameter)(nil)).Elem()
+}
+
+func (o ParameterGroupParameterArrayOutput) ToParameterGroupParameterArrayOutput() ParameterGroupParameterArrayOutput {
+	return o
+}
+
+func (o ParameterGroupParameterArrayOutput) ToParameterGroupParameterArrayOutputWithContext(ctx context.Context) ParameterGroupParameterArrayOutput {
+	return o
+}
+
+func (o ParameterGroupParameterArrayOutput) Index(i pulumi.IntInput) ParameterGroupParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ParameterGroupParameter {
+		return vs[0].([]ParameterGroupParameter)[vs[1].(int)]
+	}).(ParameterGroupParameterOutput)
+}
+
 type GetAllowListAssociatedInstance struct {
 	// Instance ID bound to the current allowlist
 	InstanceId string `pulumi:"instanceId"`
@@ -2118,6 +2375,263 @@ func (o GetInstanceVisitAddrArrayOutput) Index(i pulumi.IntInput) GetInstanceVis
 	}).(GetInstanceVisitAddrOutput)
 }
 
+type GetParameterGroupParamValue struct {
+	// Parameter name
+	Name string `pulumi:"name"`
+	// Parameter value
+	Value string `pulumi:"value"`
+}
+
+// GetParameterGroupParamValueInput is an input type that accepts GetParameterGroupParamValueArgs and GetParameterGroupParamValueOutput values.
+// You can construct a concrete instance of `GetParameterGroupParamValueInput` via:
+//
+//	GetParameterGroupParamValueArgs{...}
+type GetParameterGroupParamValueInput interface {
+	pulumi.Input
+
+	ToGetParameterGroupParamValueOutput() GetParameterGroupParamValueOutput
+	ToGetParameterGroupParamValueOutputWithContext(context.Context) GetParameterGroupParamValueOutput
+}
+
+type GetParameterGroupParamValueArgs struct {
+	// Parameter name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Parameter value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetParameterGroupParamValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetParameterGroupParamValue)(nil)).Elem()
+}
+
+func (i GetParameterGroupParamValueArgs) ToGetParameterGroupParamValueOutput() GetParameterGroupParamValueOutput {
+	return i.ToGetParameterGroupParamValueOutputWithContext(context.Background())
+}
+
+func (i GetParameterGroupParamValueArgs) ToGetParameterGroupParamValueOutputWithContext(ctx context.Context) GetParameterGroupParamValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetParameterGroupParamValueOutput)
+}
+
+// GetParameterGroupParamValueArrayInput is an input type that accepts GetParameterGroupParamValueArray and GetParameterGroupParamValueArrayOutput values.
+// You can construct a concrete instance of `GetParameterGroupParamValueArrayInput` via:
+//
+//	GetParameterGroupParamValueArray{ GetParameterGroupParamValueArgs{...} }
+type GetParameterGroupParamValueArrayInput interface {
+	pulumi.Input
+
+	ToGetParameterGroupParamValueArrayOutput() GetParameterGroupParamValueArrayOutput
+	ToGetParameterGroupParamValueArrayOutputWithContext(context.Context) GetParameterGroupParamValueArrayOutput
+}
+
+type GetParameterGroupParamValueArray []GetParameterGroupParamValueInput
+
+func (GetParameterGroupParamValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetParameterGroupParamValue)(nil)).Elem()
+}
+
+func (i GetParameterGroupParamValueArray) ToGetParameterGroupParamValueArrayOutput() GetParameterGroupParamValueArrayOutput {
+	return i.ToGetParameterGroupParamValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetParameterGroupParamValueArray) ToGetParameterGroupParamValueArrayOutputWithContext(ctx context.Context) GetParameterGroupParamValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetParameterGroupParamValueArrayOutput)
+}
+
+type GetParameterGroupParamValueOutput struct{ *pulumi.OutputState }
+
+func (GetParameterGroupParamValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetParameterGroupParamValue)(nil)).Elem()
+}
+
+func (o GetParameterGroupParamValueOutput) ToGetParameterGroupParamValueOutput() GetParameterGroupParamValueOutput {
+	return o
+}
+
+func (o GetParameterGroupParamValueOutput) ToGetParameterGroupParamValueOutputWithContext(ctx context.Context) GetParameterGroupParamValueOutput {
+	return o
+}
+
+// Parameter name
+func (o GetParameterGroupParamValueOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParamValue) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Parameter value
+func (o GetParameterGroupParamValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParamValue) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetParameterGroupParamValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetParameterGroupParamValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetParameterGroupParamValue)(nil)).Elem()
+}
+
+func (o GetParameterGroupParamValueArrayOutput) ToGetParameterGroupParamValueArrayOutput() GetParameterGroupParamValueArrayOutput {
+	return o
+}
+
+func (o GetParameterGroupParamValueArrayOutput) ToGetParameterGroupParamValueArrayOutputWithContext(ctx context.Context) GetParameterGroupParamValueArrayOutput {
+	return o
+}
+
+func (o GetParameterGroupParamValueArrayOutput) Index(i pulumi.IntInput) GetParameterGroupParamValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetParameterGroupParamValue {
+		return vs[0].([]GetParameterGroupParamValue)[vs[1].(int)]
+	}).(GetParameterGroupParamValueOutput)
+}
+
+type GetParameterGroupParameter struct {
+	// Current parameter value
+	CurrentValue string `pulumi:"currentValue"`
+	// Parameter description
+	Description string `pulumi:"description"`
+	// Whether modifying this parameter requires a restart
+	NeedReboot bool `pulumi:"needReboot"`
+	// Parameter name
+	ParamName string `pulumi:"paramName"`
+	// Parameter value range
+	Range string `pulumi:"range"`
+	// Parameter type
+	Type string `pulumi:"type"`
+	// Parameter unit
+	Unit string `pulumi:"unit"`
+}
+
+// GetParameterGroupParameterInput is an input type that accepts GetParameterGroupParameterArgs and GetParameterGroupParameterOutput values.
+// You can construct a concrete instance of `GetParameterGroupParameterInput` via:
+//
+//	GetParameterGroupParameterArgs{...}
+type GetParameterGroupParameterInput interface {
+	pulumi.Input
+
+	ToGetParameterGroupParameterOutput() GetParameterGroupParameterOutput
+	ToGetParameterGroupParameterOutputWithContext(context.Context) GetParameterGroupParameterOutput
+}
+
+type GetParameterGroupParameterArgs struct {
+	// Current parameter value
+	CurrentValue pulumi.StringInput `pulumi:"currentValue"`
+	// Parameter description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Whether modifying this parameter requires a restart
+	NeedReboot pulumi.BoolInput `pulumi:"needReboot"`
+	// Parameter name
+	ParamName pulumi.StringInput `pulumi:"paramName"`
+	// Parameter value range
+	Range pulumi.StringInput `pulumi:"range"`
+	// Parameter type
+	Type pulumi.StringInput `pulumi:"type"`
+	// Parameter unit
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetParameterGroupParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetParameterGroupParameter)(nil)).Elem()
+}
+
+func (i GetParameterGroupParameterArgs) ToGetParameterGroupParameterOutput() GetParameterGroupParameterOutput {
+	return i.ToGetParameterGroupParameterOutputWithContext(context.Background())
+}
+
+func (i GetParameterGroupParameterArgs) ToGetParameterGroupParameterOutputWithContext(ctx context.Context) GetParameterGroupParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetParameterGroupParameterOutput)
+}
+
+// GetParameterGroupParameterArrayInput is an input type that accepts GetParameterGroupParameterArray and GetParameterGroupParameterArrayOutput values.
+// You can construct a concrete instance of `GetParameterGroupParameterArrayInput` via:
+//
+//	GetParameterGroupParameterArray{ GetParameterGroupParameterArgs{...} }
+type GetParameterGroupParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetParameterGroupParameterArrayOutput() GetParameterGroupParameterArrayOutput
+	ToGetParameterGroupParameterArrayOutputWithContext(context.Context) GetParameterGroupParameterArrayOutput
+}
+
+type GetParameterGroupParameterArray []GetParameterGroupParameterInput
+
+func (GetParameterGroupParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetParameterGroupParameter)(nil)).Elem()
+}
+
+func (i GetParameterGroupParameterArray) ToGetParameterGroupParameterArrayOutput() GetParameterGroupParameterArrayOutput {
+	return i.ToGetParameterGroupParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetParameterGroupParameterArray) ToGetParameterGroupParameterArrayOutputWithContext(ctx context.Context) GetParameterGroupParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetParameterGroupParameterArrayOutput)
+}
+
+type GetParameterGroupParameterOutput struct{ *pulumi.OutputState }
+
+func (GetParameterGroupParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetParameterGroupParameter)(nil)).Elem()
+}
+
+func (o GetParameterGroupParameterOutput) ToGetParameterGroupParameterOutput() GetParameterGroupParameterOutput {
+	return o
+}
+
+func (o GetParameterGroupParameterOutput) ToGetParameterGroupParameterOutputWithContext(ctx context.Context) GetParameterGroupParameterOutput {
+	return o
+}
+
+// Current parameter value
+func (o GetParameterGroupParameterOutput) CurrentValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) string { return v.CurrentValue }).(pulumi.StringOutput)
+}
+
+// Parameter description
+func (o GetParameterGroupParameterOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Whether modifying this parameter requires a restart
+func (o GetParameterGroupParameterOutput) NeedReboot() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) bool { return v.NeedReboot }).(pulumi.BoolOutput)
+}
+
+// Parameter name
+func (o GetParameterGroupParameterOutput) ParamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) string { return v.ParamName }).(pulumi.StringOutput)
+}
+
+// Parameter value range
+func (o GetParameterGroupParameterOutput) Range() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) string { return v.Range }).(pulumi.StringOutput)
+}
+
+// Parameter type
+func (o GetParameterGroupParameterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Parameter unit
+func (o GetParameterGroupParameterOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetParameterGroupParameter) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+type GetParameterGroupParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetParameterGroupParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetParameterGroupParameter)(nil)).Elem()
+}
+
+func (o GetParameterGroupParameterArrayOutput) ToGetParameterGroupParameterArrayOutput() GetParameterGroupParameterArrayOutput {
+	return o
+}
+
+func (o GetParameterGroupParameterArrayOutput) ToGetParameterGroupParameterArrayOutputWithContext(ctx context.Context) GetParameterGroupParameterArrayOutput {
+	return o
+}
+
+func (o GetParameterGroupParameterArrayOutput) Index(i pulumi.IntInput) GetParameterGroupParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetParameterGroupParameter {
+		return vs[0].([]GetParameterGroupParameter)[vs[1].(int)]
+	}).(GetParameterGroupParameterOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
@@ -2137,6 +2651,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceVisitAddrInput)(nil)).Elem(), InstanceVisitAddrArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceVisitAddrArrayInput)(nil)).Elem(), InstanceVisitAddrArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ParameterGroupParamValueInput)(nil)).Elem(), ParameterGroupParamValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ParameterGroupParamValueArrayInput)(nil)).Elem(), ParameterGroupParamValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ParameterGroupParameterInput)(nil)).Elem(), ParameterGroupParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ParameterGroupParameterArrayInput)(nil)).Elem(), ParameterGroupParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
@@ -2153,6 +2671,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceVisitAddrInput)(nil)).Elem(), GetInstanceVisitAddrArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceVisitAddrArrayInput)(nil)).Elem(), GetInstanceVisitAddrArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterGroupParamValueInput)(nil)).Elem(), GetParameterGroupParamValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterGroupParamValueArrayInput)(nil)).Elem(), GetParameterGroupParamValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterGroupParameterInput)(nil)).Elem(), GetParameterGroupParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterGroupParameterArrayInput)(nil)).Elem(), GetParameterGroupParameterArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
@@ -2171,6 +2693,10 @@ func init() {
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(InstanceVisitAddrOutput{})
 	pulumi.RegisterOutputType(InstanceVisitAddrArrayOutput{})
+	pulumi.RegisterOutputType(ParameterGroupParamValueOutput{})
+	pulumi.RegisterOutputType(ParameterGroupParamValueArrayOutput{})
+	pulumi.RegisterOutputType(ParameterGroupParameterOutput{})
+	pulumi.RegisterOutputType(ParameterGroupParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
@@ -2187,4 +2713,8 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceVisitAddrOutput{})
 	pulumi.RegisterOutputType(GetInstanceVisitAddrArrayOutput{})
+	pulumi.RegisterOutputType(GetParameterGroupParamValueOutput{})
+	pulumi.RegisterOutputType(GetParameterGroupParamValueArrayOutput{})
+	pulumi.RegisterOutputType(GetParameterGroupParameterOutput{})
+	pulumi.RegisterOutputType(GetParameterGroupParameterArrayOutput{})
 }

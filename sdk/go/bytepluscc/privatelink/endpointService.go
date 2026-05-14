@@ -31,6 +31,8 @@ type EndpointService struct {
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
 	// Description of the endpoint service.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+	EnableVerifyPrivateDns pulumi.BoolOutput `pulumi:"enableVerifyPrivateDns"`
 	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions pulumi.StringArrayOutput `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
@@ -115,6 +117,8 @@ type endpointServiceState struct {
 	CreateTime *string `pulumi:"createTime"`
 	// Description of the endpoint service.
 	Description *string `pulumi:"description"`
+	// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+	EnableVerifyPrivateDns *bool `pulumi:"enableVerifyPrivateDns"`
 	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
@@ -170,6 +174,8 @@ type EndpointServiceState struct {
 	CreateTime pulumi.StringPtrInput
 	// Description of the endpoint service.
 	Description pulumi.StringPtrInput
+	// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+	EnableVerifyPrivateDns pulumi.BoolPtrInput
 	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions pulumi.StringArrayInput
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
@@ -223,6 +229,8 @@ type endpointServiceArgs struct {
 	AutoAcceptEnabled *bool `pulumi:"autoAcceptEnabled"`
 	// Description of the endpoint service.
 	Description *string `pulumi:"description"`
+	// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+	EnableVerifyPrivateDns *bool `pulumi:"enableVerifyPrivateDns"`
 	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions []string `pulumi:"ipAddressVersions"`
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
@@ -259,6 +267,8 @@ type EndpointServiceArgs struct {
 	AutoAcceptEnabled pulumi.BoolPtrInput
 	// Description of the endpoint service.
 	Description pulumi.StringPtrInput
+	// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+	EnableVerifyPrivateDns pulumi.BoolPtrInput
 	// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
 	IpAddressVersions pulumi.StringArrayInput
 	// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
@@ -399,6 +409,11 @@ func (o EndpointServiceOutput) CreateTime() pulumi.StringOutput {
 // Description of the endpoint service.
 func (o EndpointServiceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *EndpointService) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+func (o EndpointServiceOutput) EnableVerifyPrivateDns() pulumi.BoolOutput {
+	return o.ApplyT(func(v *EndpointService) pulumi.BoolOutput { return v.EnableVerifyPrivateDns }).(pulumi.BoolOutput)
 }
 
 // IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.

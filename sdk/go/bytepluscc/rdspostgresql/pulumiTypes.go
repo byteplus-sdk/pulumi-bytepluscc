@@ -16,10 +16,6 @@ var _ = internal.GetEnvOrDefault
 type AllowListAssociatedInstance struct {
 	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// Instance name.
-	InstanceName *string `pulumi:"instanceName"`
-	// VPC ID to which the instance belongs.
-	Vpc *string `pulumi:"vpc"`
 }
 
 // AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
@@ -36,10 +32,6 @@ type AllowListAssociatedInstanceInput interface {
 type AllowListAssociatedInstanceArgs struct {
 	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// Instance name.
-	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// VPC ID to which the instance belongs.
-	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
 func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
@@ -96,16 +88,6 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 // Instance ID.
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
-}
-
-// Instance name.
-func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
-}
-
-// VPC ID to which the instance belongs.
-func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
 
 type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -250,6 +232,354 @@ func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) Allo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowListSecurityGroupBindInfo {
 		return vs[0].([]AllowListSecurityGroupBindInfo)[vs[1].(int)]
 	}).(AllowListSecurityGroupBindInfoOutput)
+}
+
+type BackupBackupMeta struct {
+	// Database name.
+	DbName *string `pulumi:"dbName"`
+}
+
+// BackupBackupMetaInput is an input type that accepts BackupBackupMetaArgs and BackupBackupMetaOutput values.
+// You can construct a concrete instance of `BackupBackupMetaInput` via:
+//
+//	BackupBackupMetaArgs{...}
+type BackupBackupMetaInput interface {
+	pulumi.Input
+
+	ToBackupBackupMetaOutput() BackupBackupMetaOutput
+	ToBackupBackupMetaOutputWithContext(context.Context) BackupBackupMetaOutput
+}
+
+type BackupBackupMetaArgs struct {
+	// Database name.
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+}
+
+func (BackupBackupMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupMeta)(nil)).Elem()
+}
+
+func (i BackupBackupMetaArgs) ToBackupBackupMetaOutput() BackupBackupMetaOutput {
+	return i.ToBackupBackupMetaOutputWithContext(context.Background())
+}
+
+func (i BackupBackupMetaArgs) ToBackupBackupMetaOutputWithContext(ctx context.Context) BackupBackupMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupMetaOutput)
+}
+
+// BackupBackupMetaArrayInput is an input type that accepts BackupBackupMetaArray and BackupBackupMetaArrayOutput values.
+// You can construct a concrete instance of `BackupBackupMetaArrayInput` via:
+//
+//	BackupBackupMetaArray{ BackupBackupMetaArgs{...} }
+type BackupBackupMetaArrayInput interface {
+	pulumi.Input
+
+	ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput
+	ToBackupBackupMetaArrayOutputWithContext(context.Context) BackupBackupMetaArrayOutput
+}
+
+type BackupBackupMetaArray []BackupBackupMetaInput
+
+func (BackupBackupMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupMeta)(nil)).Elem()
+}
+
+func (i BackupBackupMetaArray) ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput {
+	return i.ToBackupBackupMetaArrayOutputWithContext(context.Background())
+}
+
+func (i BackupBackupMetaArray) ToBackupBackupMetaArrayOutputWithContext(ctx context.Context) BackupBackupMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupMetaArrayOutput)
+}
+
+type BackupBackupMetaOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupMeta)(nil)).Elem()
+}
+
+func (o BackupBackupMetaOutput) ToBackupBackupMetaOutput() BackupBackupMetaOutput {
+	return o
+}
+
+func (o BackupBackupMetaOutput) ToBackupBackupMetaOutputWithContext(ctx context.Context) BackupBackupMetaOutput {
+	return o
+}
+
+// Database name.
+func (o BackupBackupMetaOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupMeta) *string { return v.DbName }).(pulumi.StringPtrOutput)
+}
+
+type BackupBackupMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupMeta)(nil)).Elem()
+}
+
+func (o BackupBackupMetaArrayOutput) ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o BackupBackupMetaArrayOutput) ToBackupBackupMetaArrayOutputWithContext(ctx context.Context) BackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o BackupBackupMetaArrayOutput) Index(i pulumi.IntInput) BackupBackupMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupBackupMeta {
+		return vs[0].([]BackupBackupMeta)[vs[1].(int)]
+	}).(BackupBackupMetaOutput)
+}
+
+type BackupBackupPolicy struct {
+	// Backup retention days.
+	BackupRetentionPeriod *int `pulumi:"backupRetentionPeriod"`
+	// Data incremental backup schedule.
+	DataIncrBackupPeriods *string `pulumi:"dataIncrBackupPeriods"`
+	// Full backup schedule, such as Monday,Tuesday.
+	FullBackupPeriod *string `pulumi:"fullBackupPeriod"`
+	// Full backup time window, such as 00:00Z-01:00Z.
+	FullBackupTime *string `pulumi:"fullBackupTime"`
+	// Enable hourly incremental backup.
+	HourlyIncrBackupEnable *bool `pulumi:"hourlyIncrBackupEnable"`
+	// Incremental backup frequency (hours).
+	IncrementBackupFrequency *int `pulumi:"incrementBackupFrequency"`
+	// Enable WAL log space limit.
+	WalLogSpaceLimitEnable *bool `pulumi:"walLogSpaceLimitEnable"`
+}
+
+// BackupBackupPolicyInput is an input type that accepts BackupBackupPolicyArgs and BackupBackupPolicyOutput values.
+// You can construct a concrete instance of `BackupBackupPolicyInput` via:
+//
+//	BackupBackupPolicyArgs{...}
+type BackupBackupPolicyInput interface {
+	pulumi.Input
+
+	ToBackupBackupPolicyOutput() BackupBackupPolicyOutput
+	ToBackupBackupPolicyOutputWithContext(context.Context) BackupBackupPolicyOutput
+}
+
+type BackupBackupPolicyArgs struct {
+	// Backup retention days.
+	BackupRetentionPeriod pulumi.IntPtrInput `pulumi:"backupRetentionPeriod"`
+	// Data incremental backup schedule.
+	DataIncrBackupPeriods pulumi.StringPtrInput `pulumi:"dataIncrBackupPeriods"`
+	// Full backup schedule, such as Monday,Tuesday.
+	FullBackupPeriod pulumi.StringPtrInput `pulumi:"fullBackupPeriod"`
+	// Full backup time window, such as 00:00Z-01:00Z.
+	FullBackupTime pulumi.StringPtrInput `pulumi:"fullBackupTime"`
+	// Enable hourly incremental backup.
+	HourlyIncrBackupEnable pulumi.BoolPtrInput `pulumi:"hourlyIncrBackupEnable"`
+	// Incremental backup frequency (hours).
+	IncrementBackupFrequency pulumi.IntPtrInput `pulumi:"incrementBackupFrequency"`
+	// Enable WAL log space limit.
+	WalLogSpaceLimitEnable pulumi.BoolPtrInput `pulumi:"walLogSpaceLimitEnable"`
+}
+
+func (BackupBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupPolicy)(nil)).Elem()
+}
+
+func (i BackupBackupPolicyArgs) ToBackupBackupPolicyOutput() BackupBackupPolicyOutput {
+	return i.ToBackupBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i BackupBackupPolicyArgs) ToBackupBackupPolicyOutputWithContext(ctx context.Context) BackupBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupPolicyOutput)
+}
+
+func (i BackupBackupPolicyArgs) ToBackupBackupPolicyPtrOutput() BackupBackupPolicyPtrOutput {
+	return i.ToBackupBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i BackupBackupPolicyArgs) ToBackupBackupPolicyPtrOutputWithContext(ctx context.Context) BackupBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupPolicyOutput).ToBackupBackupPolicyPtrOutputWithContext(ctx)
+}
+
+// BackupBackupPolicyPtrInput is an input type that accepts BackupBackupPolicyArgs, BackupBackupPolicyPtr and BackupBackupPolicyPtrOutput values.
+// You can construct a concrete instance of `BackupBackupPolicyPtrInput` via:
+//
+//	        BackupBackupPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type BackupBackupPolicyPtrInput interface {
+	pulumi.Input
+
+	ToBackupBackupPolicyPtrOutput() BackupBackupPolicyPtrOutput
+	ToBackupBackupPolicyPtrOutputWithContext(context.Context) BackupBackupPolicyPtrOutput
+}
+
+type backupBackupPolicyPtrType BackupBackupPolicyArgs
+
+func BackupBackupPolicyPtr(v *BackupBackupPolicyArgs) BackupBackupPolicyPtrInput {
+	return (*backupBackupPolicyPtrType)(v)
+}
+
+func (*backupBackupPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BackupBackupPolicy)(nil)).Elem()
+}
+
+func (i *backupBackupPolicyPtrType) ToBackupBackupPolicyPtrOutput() BackupBackupPolicyPtrOutput {
+	return i.ToBackupBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *backupBackupPolicyPtrType) ToBackupBackupPolicyPtrOutputWithContext(ctx context.Context) BackupBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupPolicyPtrOutput)
+}
+
+type BackupBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupPolicy)(nil)).Elem()
+}
+
+func (o BackupBackupPolicyOutput) ToBackupBackupPolicyOutput() BackupBackupPolicyOutput {
+	return o
+}
+
+func (o BackupBackupPolicyOutput) ToBackupBackupPolicyOutputWithContext(ctx context.Context) BackupBackupPolicyOutput {
+	return o
+}
+
+func (o BackupBackupPolicyOutput) ToBackupBackupPolicyPtrOutput() BackupBackupPolicyPtrOutput {
+	return o.ToBackupBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o BackupBackupPolicyOutput) ToBackupBackupPolicyPtrOutputWithContext(ctx context.Context) BackupBackupPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackupBackupPolicy) *BackupBackupPolicy {
+		return &v
+	}).(BackupBackupPolicyPtrOutput)
+}
+
+// Backup retention days.
+func (o BackupBackupPolicyOutput) BackupRetentionPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *int { return v.BackupRetentionPeriod }).(pulumi.IntPtrOutput)
+}
+
+// Data incremental backup schedule.
+func (o BackupBackupPolicyOutput) DataIncrBackupPeriods() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *string { return v.DataIncrBackupPeriods }).(pulumi.StringPtrOutput)
+}
+
+// Full backup schedule, such as Monday,Tuesday.
+func (o BackupBackupPolicyOutput) FullBackupPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *string { return v.FullBackupPeriod }).(pulumi.StringPtrOutput)
+}
+
+// Full backup time window, such as 00:00Z-01:00Z.
+func (o BackupBackupPolicyOutput) FullBackupTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *string { return v.FullBackupTime }).(pulumi.StringPtrOutput)
+}
+
+// Enable hourly incremental backup.
+func (o BackupBackupPolicyOutput) HourlyIncrBackupEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *bool { return v.HourlyIncrBackupEnable }).(pulumi.BoolPtrOutput)
+}
+
+// Incremental backup frequency (hours).
+func (o BackupBackupPolicyOutput) IncrementBackupFrequency() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *int { return v.IncrementBackupFrequency }).(pulumi.IntPtrOutput)
+}
+
+// Enable WAL log space limit.
+func (o BackupBackupPolicyOutput) WalLogSpaceLimitEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BackupBackupPolicy) *bool { return v.WalLogSpaceLimitEnable }).(pulumi.BoolPtrOutput)
+}
+
+type BackupBackupPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BackupBackupPolicy)(nil)).Elem()
+}
+
+func (o BackupBackupPolicyPtrOutput) ToBackupBackupPolicyPtrOutput() BackupBackupPolicyPtrOutput {
+	return o
+}
+
+func (o BackupBackupPolicyPtrOutput) ToBackupBackupPolicyPtrOutputWithContext(ctx context.Context) BackupBackupPolicyPtrOutput {
+	return o
+}
+
+func (o BackupBackupPolicyPtrOutput) Elem() BackupBackupPolicyOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) BackupBackupPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret BackupBackupPolicy
+		return ret
+	}).(BackupBackupPolicyOutput)
+}
+
+// Backup retention days.
+func (o BackupBackupPolicyPtrOutput) BackupRetentionPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BackupRetentionPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+// Data incremental backup schedule.
+func (o BackupBackupPolicyPtrOutput) DataIncrBackupPeriods() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DataIncrBackupPeriods
+	}).(pulumi.StringPtrOutput)
+}
+
+// Full backup schedule, such as Monday,Tuesday.
+func (o BackupBackupPolicyPtrOutput) FullBackupPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FullBackupPeriod
+	}).(pulumi.StringPtrOutput)
+}
+
+// Full backup time window, such as 00:00Z-01:00Z.
+func (o BackupBackupPolicyPtrOutput) FullBackupTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FullBackupTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Enable hourly incremental backup.
+func (o BackupBackupPolicyPtrOutput) HourlyIncrBackupEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.HourlyIncrBackupEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Incremental backup frequency (hours).
+func (o BackupBackupPolicyPtrOutput) IncrementBackupFrequency() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IncrementBackupFrequency
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enable WAL log space limit.
+func (o BackupBackupPolicyPtrOutput) WalLogSpaceLimitEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BackupBackupPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.WalLogSpaceLimitEnable
+	}).(pulumi.BoolPtrOutput)
 }
 
 type DbEndpointAddress struct {
@@ -2105,6 +2435,209 @@ func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetAllowListSecurityGroupBindInfoOutput)
 }
 
+type GetBackupBackupMeta struct {
+	// Database name.
+	DbName string `pulumi:"dbName"`
+}
+
+// GetBackupBackupMetaInput is an input type that accepts GetBackupBackupMetaArgs and GetBackupBackupMetaOutput values.
+// You can construct a concrete instance of `GetBackupBackupMetaInput` via:
+//
+//	GetBackupBackupMetaArgs{...}
+type GetBackupBackupMetaInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput
+	ToGetBackupBackupMetaOutputWithContext(context.Context) GetBackupBackupMetaOutput
+}
+
+type GetBackupBackupMetaArgs struct {
+	// Database name.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+}
+
+func (GetBackupBackupMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (i GetBackupBackupMetaArgs) ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput {
+	return i.ToGetBackupBackupMetaOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupMetaArgs) ToGetBackupBackupMetaOutputWithContext(ctx context.Context) GetBackupBackupMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupMetaOutput)
+}
+
+// GetBackupBackupMetaArrayInput is an input type that accepts GetBackupBackupMetaArray and GetBackupBackupMetaArrayOutput values.
+// You can construct a concrete instance of `GetBackupBackupMetaArrayInput` via:
+//
+//	GetBackupBackupMetaArray{ GetBackupBackupMetaArgs{...} }
+type GetBackupBackupMetaArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput
+	ToGetBackupBackupMetaArrayOutputWithContext(context.Context) GetBackupBackupMetaArrayOutput
+}
+
+type GetBackupBackupMetaArray []GetBackupBackupMetaInput
+
+func (GetBackupBackupMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (i GetBackupBackupMetaArray) ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput {
+	return i.ToGetBackupBackupMetaArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupMetaArray) ToGetBackupBackupMetaArrayOutputWithContext(ctx context.Context) GetBackupBackupMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupMetaArrayOutput)
+}
+
+type GetBackupBackupMetaOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutputWithContext(ctx context.Context) GetBackupBackupMetaOutput {
+	return o
+}
+
+// Database name.
+func (o GetBackupBackupMetaOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupMeta) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+type GetBackupBackupMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (o GetBackupBackupMetaArrayOutput) ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaArrayOutput) ToGetBackupBackupMetaArrayOutputWithContext(ctx context.Context) GetBackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaArrayOutput) Index(i pulumi.IntInput) GetBackupBackupMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupBackupMeta {
+		return vs[0].([]GetBackupBackupMeta)[vs[1].(int)]
+	}).(GetBackupBackupMetaOutput)
+}
+
+type GetBackupBackupPolicy struct {
+	// Backup retention days.
+	BackupRetentionPeriod int `pulumi:"backupRetentionPeriod"`
+	// Data incremental backup schedule.
+	DataIncrBackupPeriods string `pulumi:"dataIncrBackupPeriods"`
+	// Full backup schedule, such as Monday,Tuesday.
+	FullBackupPeriod string `pulumi:"fullBackupPeriod"`
+	// Full backup time window, such as 00:00Z-01:00Z.
+	FullBackupTime string `pulumi:"fullBackupTime"`
+	// Enable hourly incremental backup.
+	HourlyIncrBackupEnable bool `pulumi:"hourlyIncrBackupEnable"`
+	// Incremental backup frequency (hours).
+	IncrementBackupFrequency int `pulumi:"incrementBackupFrequency"`
+	// Enable WAL log space limit.
+	WalLogSpaceLimitEnable bool `pulumi:"walLogSpaceLimitEnable"`
+}
+
+// GetBackupBackupPolicyInput is an input type that accepts GetBackupBackupPolicyArgs and GetBackupBackupPolicyOutput values.
+// You can construct a concrete instance of `GetBackupBackupPolicyInput` via:
+//
+//	GetBackupBackupPolicyArgs{...}
+type GetBackupBackupPolicyInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupPolicyOutput() GetBackupBackupPolicyOutput
+	ToGetBackupBackupPolicyOutputWithContext(context.Context) GetBackupBackupPolicyOutput
+}
+
+type GetBackupBackupPolicyArgs struct {
+	// Backup retention days.
+	BackupRetentionPeriod pulumi.IntInput `pulumi:"backupRetentionPeriod"`
+	// Data incremental backup schedule.
+	DataIncrBackupPeriods pulumi.StringInput `pulumi:"dataIncrBackupPeriods"`
+	// Full backup schedule, such as Monday,Tuesday.
+	FullBackupPeriod pulumi.StringInput `pulumi:"fullBackupPeriod"`
+	// Full backup time window, such as 00:00Z-01:00Z.
+	FullBackupTime pulumi.StringInput `pulumi:"fullBackupTime"`
+	// Enable hourly incremental backup.
+	HourlyIncrBackupEnable pulumi.BoolInput `pulumi:"hourlyIncrBackupEnable"`
+	// Incremental backup frequency (hours).
+	IncrementBackupFrequency pulumi.IntInput `pulumi:"incrementBackupFrequency"`
+	// Enable WAL log space limit.
+	WalLogSpaceLimitEnable pulumi.BoolInput `pulumi:"walLogSpaceLimitEnable"`
+}
+
+func (GetBackupBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupPolicy)(nil)).Elem()
+}
+
+func (i GetBackupBackupPolicyArgs) ToGetBackupBackupPolicyOutput() GetBackupBackupPolicyOutput {
+	return i.ToGetBackupBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupPolicyArgs) ToGetBackupBackupPolicyOutputWithContext(ctx context.Context) GetBackupBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupPolicyOutput)
+}
+
+type GetBackupBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupPolicy)(nil)).Elem()
+}
+
+func (o GetBackupBackupPolicyOutput) ToGetBackupBackupPolicyOutput() GetBackupBackupPolicyOutput {
+	return o
+}
+
+func (o GetBackupBackupPolicyOutput) ToGetBackupBackupPolicyOutputWithContext(ctx context.Context) GetBackupBackupPolicyOutput {
+	return o
+}
+
+// Backup retention days.
+func (o GetBackupBackupPolicyOutput) BackupRetentionPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) int { return v.BackupRetentionPeriod }).(pulumi.IntOutput)
+}
+
+// Data incremental backup schedule.
+func (o GetBackupBackupPolicyOutput) DataIncrBackupPeriods() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) string { return v.DataIncrBackupPeriods }).(pulumi.StringOutput)
+}
+
+// Full backup schedule, such as Monday,Tuesday.
+func (o GetBackupBackupPolicyOutput) FullBackupPeriod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) string { return v.FullBackupPeriod }).(pulumi.StringOutput)
+}
+
+// Full backup time window, such as 00:00Z-01:00Z.
+func (o GetBackupBackupPolicyOutput) FullBackupTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) string { return v.FullBackupTime }).(pulumi.StringOutput)
+}
+
+// Enable hourly incremental backup.
+func (o GetBackupBackupPolicyOutput) HourlyIncrBackupEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) bool { return v.HourlyIncrBackupEnable }).(pulumi.BoolOutput)
+}
+
+// Incremental backup frequency (hours).
+func (o GetBackupBackupPolicyOutput) IncrementBackupFrequency() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) int { return v.IncrementBackupFrequency }).(pulumi.IntOutput)
+}
+
+// Enable WAL log space limit.
+func (o GetBackupBackupPolicyOutput) WalLogSpaceLimitEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackupBackupPolicy) bool { return v.WalLogSpaceLimitEnable }).(pulumi.BoolOutput)
+}
+
 type GetDbEndpointAddress struct {
 	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
 	CrossRegionDomain string `pulumi:"crossRegionDomain"`
@@ -3519,6 +4052,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaInput)(nil)).Elem(), BackupBackupMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaArrayInput)(nil)).Elem(), BackupBackupMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupPolicyInput)(nil)).Elem(), BackupBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupPolicyPtrInput)(nil)).Elem(), BackupBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressInput)(nil)).Elem(), DbEndpointAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressArrayInput)(nil)).Elem(), DbEndpointAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArgs{})
@@ -3543,6 +4080,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaInput)(nil)).Elem(), GetBackupBackupMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaArrayInput)(nil)).Elem(), GetBackupBackupMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupPolicyInput)(nil)).Elem(), GetBackupBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressInput)(nil)).Elem(), GetDbEndpointAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressArrayInput)(nil)).Elem(), GetDbEndpointAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArgs{})
@@ -3565,6 +4105,10 @@ func init() {
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(BackupBackupMetaOutput{})
+	pulumi.RegisterOutputType(BackupBackupMetaArrayOutput{})
+	pulumi.RegisterOutputType(BackupBackupPolicyOutput{})
+	pulumi.RegisterOutputType(BackupBackupPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbEndpointAddressOutput{})
 	pulumi.RegisterOutputType(DbEndpointAddressArrayOutput{})
 	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightOutput{})
@@ -3589,6 +4133,9 @@ func init() {
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupMetaOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupMetaArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointAddressOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointAddressArrayOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightOutput{})

@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.vefaas.FunctionArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.FunctionState;
 import com.byteplus.bytepluscc.vefaas.outputs.FunctionAsyncTaskConfig;
+import com.byteplus.bytepluscc.vefaas.outputs.FunctionDependencyInstallStatus;
 import com.byteplus.bytepluscc.vefaas.outputs.FunctionEnv;
 import com.byteplus.bytepluscc.vefaas.outputs.FunctionNasStorage;
 import com.byteplus.bytepluscc.vefaas.outputs.FunctionSourceAccessConfig;
@@ -126,6 +127,20 @@ public class Function extends com.pulumi.resources.CustomResource {
         return this.creationTime;
     }
     /**
+     * Dependency installation task status.
+     * 
+     */
+    @Export(name="dependencyInstallStatus", refs={FunctionDependencyInstallStatus.class}, tree="[0]")
+    private Output<FunctionDependencyInstallStatus> dependencyInstallStatus;
+
+    /**
+     * @return Dependency installation task status.
+     * 
+     */
+    public Output<FunctionDependencyInstallStatus> dependencyInstallStatus() {
+        return this.dependencyInstallStatus;
+    }
+    /**
      * Function description. Up to 1000 Unicode characters
      * 
      */
@@ -152,6 +167,20 @@ public class Function extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> enableApmplus() {
         return this.enableApmplus;
+    }
+    /**
+     * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    @Export(name="enableDependencyInstall", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> enableDependencyInstall;
+
+    /**
+     * @return Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
+     * 
+     */
+    public Output<Boolean> enableDependencyInstall() {
+        return this.enableDependencyInstall;
     }
     @Export(name="envs", refs={List.class,FunctionEnv.class}, tree="[0,1]")
     private Output<List<FunctionEnv>> envs;

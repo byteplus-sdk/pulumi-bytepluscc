@@ -85,6 +85,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
+        /// </summary>
+        public readonly bool EnableVerifyPrivateDns;
+        /// <summary>
         /// Uniquely identifies the resource.
         /// </summary>
         public readonly string Id;
@@ -189,6 +193,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
 
             string description,
 
+            bool enableVerifyPrivateDns,
+
             string id,
 
             ImmutableArray<string> ipAddressVersions,
@@ -240,6 +246,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
             BusinessStatus = businessStatus;
             CreateTime = createTime;
             Description = description;
+            EnableVerifyPrivateDns = enableVerifyPrivateDns;
             Id = id;
             IpAddressVersions = ipAddressVersions;
             Payer = payer;
