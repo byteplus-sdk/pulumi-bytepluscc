@@ -65,10 +65,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     public sealed class GetDbEndpointResult
     {
         /// <summary>
-        /// Address list.
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetDbEndpointAddressResult> Addresses;
-        /// <summary>
         /// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
         /// </summary>
         public readonly string AutoAddNewNodes;
@@ -101,6 +97,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Public service zone connection address
+        /// </summary>
+        public readonly Outputs.GetDbEndpointInnerAddressesResult InnerAddresses;
+        /// <summary>
         /// Instance ID.
         /// </summary>
         public readonly string InstanceId;
@@ -108,6 +108,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
         /// </summary>
         public readonly string Nodes;
+        /// <summary>
+        /// Private network connection address
+        /// </summary>
+        public readonly Outputs.GetDbEndpointPrivateAddressesResult PrivateAddresses;
+        /// <summary>
+        /// Public network connection address
+        /// </summary>
+        public readonly Outputs.GetDbEndpointPublicAddressesResult PublicAddresses;
         /// <summary>
         /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         /// </summary>
@@ -135,8 +143,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
         [OutputConstructor]
         private GetDbEndpointResult(
-            ImmutableArray<Outputs.GetDbEndpointAddressResult> addresses,
-
             string autoAddNewNodes,
 
             string description,
@@ -153,9 +159,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
             string id,
 
+            Outputs.GetDbEndpointInnerAddressesResult innerAddresses,
+
             string instanceId,
 
             string nodes,
+
+            Outputs.GetDbEndpointPrivateAddressesResult privateAddresses,
+
+            Outputs.GetDbEndpointPublicAddressesResult publicAddresses,
 
             string readOnlyNodeDistributionType,
 
@@ -169,7 +181,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
             bool writeNodeHaltWriting)
         {
-            Addresses = addresses;
             AutoAddNewNodes = autoAddNewNodes;
             Description = description;
             EnableReadOnly = enableReadOnly;
@@ -178,8 +189,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             EndpointName = endpointName;
             EndpointType = endpointType;
             Id = id;
+            InnerAddresses = innerAddresses;
             InstanceId = instanceId;
             Nodes = nodes;
+            PrivateAddresses = privateAddresses;
+            PublicAddresses = publicAddresses;
             ReadOnlyNodeDistributionType = readOnlyNodeDistributionType;
             ReadOnlyNodeMaxDelayTime = readOnlyNodeMaxDelayTime;
             ReadOnlyNodeWeights = readOnlyNodeWeights;

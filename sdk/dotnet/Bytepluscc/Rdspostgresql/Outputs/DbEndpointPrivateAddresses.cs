@@ -12,70 +12,70 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Outputs
 {
 
     [OutputType]
-    public sealed class GetDbEndpointAddressResult
+    public sealed class DbEndpointPrivateAddresses
     {
         /// <summary>
         /// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
         /// </summary>
-        public readonly string CrossRegionDomain;
+        public readonly string? CrossRegionDomain;
         /// <summary>
         /// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
         /// </summary>
-        public readonly bool DnsVisibility;
+        public readonly bool? DnsVisibility;
         /// <summary>
         /// Connection domain name
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
         /// </summary>
-        public readonly string DomainPrefix;
+        public readonly string? DomainPrefix;
         /// <summary>
         /// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
         /// </summary>
-        public readonly string DomainVisibilitySetting;
+        public readonly string? DomainVisibilitySetting;
         /// <summary>
         /// EIP ID, valid only for Public addresses.
         /// </summary>
-        public readonly string EipId;
+        public readonly string? EipId;
         /// <summary>
         /// IP address
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
         /// </summary>
-        public readonly string NetworkType;
+        public readonly string? NetworkType;
         /// <summary>
         /// Port number.
         /// </summary>
-        public readonly string Port;
+        public readonly string? Port;
         /// <summary>
         /// Subnet ID
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
-        private GetDbEndpointAddressResult(
-            string crossRegionDomain,
+        private DbEndpointPrivateAddresses(
+            string? crossRegionDomain,
 
-            bool dnsVisibility,
+            bool? dnsVisibility,
 
-            string domain,
+            string? domain,
 
-            string domainPrefix,
+            string? domainPrefix,
 
-            string domainVisibilitySetting,
+            string? domainVisibilitySetting,
 
-            string eipId,
+            string? eipId,
 
-            string ipAddress,
+            string? ipAddress,
 
-            string networkType,
+            string? networkType,
 
-            string port,
+            string? port,
 
-            string subnetId)
+            string? subnetId)
         {
             CrossRegionDomain = crossRegionDomain;
             DnsVisibility = dnsVisibility;

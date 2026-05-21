@@ -13,28 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     /// <summary>
     /// The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var rdsPostgresqlDbEndpointDemo = new Bytepluscc.Rdspostgresql.DbEndpoint("RdsPostgresqlDbEndpointDemo", new()
-    ///     {
-    ///         EndpointName = "ccapi-test-1",
-    ///         EndpointType = "Custom",
-    ///         InstanceId = "postgres-9dxxxxxd",
-    ///         Nodes = "Primary",
-    ///         ReadWriteMode = "ReadWrite",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ```sh
@@ -44,9 +22,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     [ByteplusccResourceType("bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint")]
     public partial class DbEndpoint : global::Pulumi.CustomResource
     {
-        [Output("addresses")]
-        public Output<ImmutableArray<Outputs.DbEndpointAddress>> Addresses { get; private set; } = null!;
-
         /// <summary>
         /// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
         /// </summary>
@@ -90,6 +65,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Output<string> EndpointType { get; private set; } = null!;
 
         /// <summary>
+        /// Public service zone connection address
+        /// </summary>
+        [Output("innerAddresses")]
+        public Output<Outputs.DbEndpointInnerAddresses> InnerAddresses { get; private set; } = null!;
+
+        /// <summary>
         /// Instance ID.
         /// </summary>
         [Output("instanceId")]
@@ -100,6 +81,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Output("nodes")]
         public Output<string> Nodes { get; private set; } = null!;
+
+        /// <summary>
+        /// Private network connection address
+        /// </summary>
+        [Output("privateAddresses")]
+        public Output<Outputs.DbEndpointPrivateAddresses> PrivateAddresses { get; private set; } = null!;
+
+        /// <summary>
+        /// Public network connection address
+        /// </summary>
+        [Output("publicAddresses")]
+        public Output<Outputs.DbEndpointPublicAddresses> PublicAddresses { get; private set; } = null!;
 
         /// <summary>
         /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
@@ -181,14 +174,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
     public sealed class DbEndpointArgs : global::Pulumi.ResourceArgs
     {
-        [Input("addresses")]
-        private InputList<Inputs.DbEndpointAddressArgs>? _addresses;
-        public InputList<Inputs.DbEndpointAddressArgs> Addresses
-        {
-            get => _addresses ?? (_addresses = new InputList<Inputs.DbEndpointAddressArgs>());
-            set => _addresses = value;
-        }
-
         /// <summary>
         /// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
         /// </summary>
@@ -208,6 +193,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
+        /// Public service zone connection address
+        /// </summary>
+        [Input("innerAddresses")]
+        public Input<Inputs.DbEndpointInnerAddressesArgs>? InnerAddresses { get; set; }
+
+        /// <summary>
         /// Instance ID.
         /// </summary>
         [Input("instanceId")]
@@ -218,6 +209,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Input("nodes")]
         public Input<string>? Nodes { get; set; }
+
+        /// <summary>
+        /// Private network connection address
+        /// </summary>
+        [Input("privateAddresses")]
+        public Input<Inputs.DbEndpointPrivateAddressesArgs>? PrivateAddresses { get; set; }
+
+        /// <summary>
+        /// Public network connection address
+        /// </summary>
+        [Input("publicAddresses")]
+        public Input<Inputs.DbEndpointPublicAddressesArgs>? PublicAddresses { get; set; }
 
         /// <summary>
         /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
@@ -265,14 +268,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
     public sealed class DbEndpointState : global::Pulumi.ResourceArgs
     {
-        [Input("addresses")]
-        private InputList<Inputs.DbEndpointAddressGetArgs>? _addresses;
-        public InputList<Inputs.DbEndpointAddressGetArgs> Addresses
-        {
-            get => _addresses ?? (_addresses = new InputList<Inputs.DbEndpointAddressGetArgs>());
-            set => _addresses = value;
-        }
-
         /// <summary>
         /// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
         /// </summary>
@@ -316,6 +311,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
+        /// Public service zone connection address
+        /// </summary>
+        [Input("innerAddresses")]
+        public Input<Inputs.DbEndpointInnerAddressesGetArgs>? InnerAddresses { get; set; }
+
+        /// <summary>
         /// Instance ID.
         /// </summary>
         [Input("instanceId")]
@@ -326,6 +327,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Input("nodes")]
         public Input<string>? Nodes { get; set; }
+
+        /// <summary>
+        /// Private network connection address
+        /// </summary>
+        [Input("privateAddresses")]
+        public Input<Inputs.DbEndpointPrivateAddressesGetArgs>? PrivateAddresses { get; set; }
+
+        /// <summary>
+        /// Public network connection address
+        /// </summary>
+        [Input("publicAddresses")]
+        public Input<Inputs.DbEndpointPublicAddressesGetArgs>? PublicAddresses { get; set; }
 
         /// <summary>
         /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.

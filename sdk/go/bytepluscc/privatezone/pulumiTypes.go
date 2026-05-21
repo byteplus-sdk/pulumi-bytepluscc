@@ -13,6 +13,218 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type PrivateZoneTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// PrivateZoneTagInput is an input type that accepts PrivateZoneTagArgs and PrivateZoneTagOutput values.
+// You can construct a concrete instance of `PrivateZoneTagInput` via:
+//
+//	PrivateZoneTagArgs{...}
+type PrivateZoneTagInput interface {
+	pulumi.Input
+
+	ToPrivateZoneTagOutput() PrivateZoneTagOutput
+	ToPrivateZoneTagOutputWithContext(context.Context) PrivateZoneTagOutput
+}
+
+type PrivateZoneTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (PrivateZoneTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateZoneTag)(nil)).Elem()
+}
+
+func (i PrivateZoneTagArgs) ToPrivateZoneTagOutput() PrivateZoneTagOutput {
+	return i.ToPrivateZoneTagOutputWithContext(context.Background())
+}
+
+func (i PrivateZoneTagArgs) ToPrivateZoneTagOutputWithContext(ctx context.Context) PrivateZoneTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateZoneTagOutput)
+}
+
+// PrivateZoneTagArrayInput is an input type that accepts PrivateZoneTagArray and PrivateZoneTagArrayOutput values.
+// You can construct a concrete instance of `PrivateZoneTagArrayInput` via:
+//
+//	PrivateZoneTagArray{ PrivateZoneTagArgs{...} }
+type PrivateZoneTagArrayInput interface {
+	pulumi.Input
+
+	ToPrivateZoneTagArrayOutput() PrivateZoneTagArrayOutput
+	ToPrivateZoneTagArrayOutputWithContext(context.Context) PrivateZoneTagArrayOutput
+}
+
+type PrivateZoneTagArray []PrivateZoneTagInput
+
+func (PrivateZoneTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateZoneTag)(nil)).Elem()
+}
+
+func (i PrivateZoneTagArray) ToPrivateZoneTagArrayOutput() PrivateZoneTagArrayOutput {
+	return i.ToPrivateZoneTagArrayOutputWithContext(context.Background())
+}
+
+func (i PrivateZoneTagArray) ToPrivateZoneTagArrayOutputWithContext(ctx context.Context) PrivateZoneTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateZoneTagArrayOutput)
+}
+
+type PrivateZoneTagOutput struct{ *pulumi.OutputState }
+
+func (PrivateZoneTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateZoneTag)(nil)).Elem()
+}
+
+func (o PrivateZoneTagOutput) ToPrivateZoneTagOutput() PrivateZoneTagOutput {
+	return o
+}
+
+func (o PrivateZoneTagOutput) ToPrivateZoneTagOutputWithContext(ctx context.Context) PrivateZoneTagOutput {
+	return o
+}
+
+// Tag key
+func (o PrivateZoneTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrivateZoneTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o PrivateZoneTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrivateZoneTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type PrivateZoneTagArrayOutput struct{ *pulumi.OutputState }
+
+func (PrivateZoneTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateZoneTag)(nil)).Elem()
+}
+
+func (o PrivateZoneTagArrayOutput) ToPrivateZoneTagArrayOutput() PrivateZoneTagArrayOutput {
+	return o
+}
+
+func (o PrivateZoneTagArrayOutput) ToPrivateZoneTagArrayOutputWithContext(ctx context.Context) PrivateZoneTagArrayOutput {
+	return o
+}
+
+func (o PrivateZoneTagArrayOutput) Index(i pulumi.IntInput) PrivateZoneTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrivateZoneTag {
+		return vs[0].([]PrivateZoneTag)[vs[1].(int)]
+	}).(PrivateZoneTagOutput)
+}
+
+type PrivateZoneVpc struct {
+	// Region where the VPC is located
+	Region *string `pulumi:"region"`
+	// VPC ID
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// PrivateZoneVpcInput is an input type that accepts PrivateZoneVpcArgs and PrivateZoneVpcOutput values.
+// You can construct a concrete instance of `PrivateZoneVpcInput` via:
+//
+//	PrivateZoneVpcArgs{...}
+type PrivateZoneVpcInput interface {
+	pulumi.Input
+
+	ToPrivateZoneVpcOutput() PrivateZoneVpcOutput
+	ToPrivateZoneVpcOutputWithContext(context.Context) PrivateZoneVpcOutput
+}
+
+type PrivateZoneVpcArgs struct {
+	// Region where the VPC is located
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// VPC ID
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (PrivateZoneVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateZoneVpc)(nil)).Elem()
+}
+
+func (i PrivateZoneVpcArgs) ToPrivateZoneVpcOutput() PrivateZoneVpcOutput {
+	return i.ToPrivateZoneVpcOutputWithContext(context.Background())
+}
+
+func (i PrivateZoneVpcArgs) ToPrivateZoneVpcOutputWithContext(ctx context.Context) PrivateZoneVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateZoneVpcOutput)
+}
+
+// PrivateZoneVpcArrayInput is an input type that accepts PrivateZoneVpcArray and PrivateZoneVpcArrayOutput values.
+// You can construct a concrete instance of `PrivateZoneVpcArrayInput` via:
+//
+//	PrivateZoneVpcArray{ PrivateZoneVpcArgs{...} }
+type PrivateZoneVpcArrayInput interface {
+	pulumi.Input
+
+	ToPrivateZoneVpcArrayOutput() PrivateZoneVpcArrayOutput
+	ToPrivateZoneVpcArrayOutputWithContext(context.Context) PrivateZoneVpcArrayOutput
+}
+
+type PrivateZoneVpcArray []PrivateZoneVpcInput
+
+func (PrivateZoneVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateZoneVpc)(nil)).Elem()
+}
+
+func (i PrivateZoneVpcArray) ToPrivateZoneVpcArrayOutput() PrivateZoneVpcArrayOutput {
+	return i.ToPrivateZoneVpcArrayOutputWithContext(context.Background())
+}
+
+func (i PrivateZoneVpcArray) ToPrivateZoneVpcArrayOutputWithContext(ctx context.Context) PrivateZoneVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateZoneVpcArrayOutput)
+}
+
+type PrivateZoneVpcOutput struct{ *pulumi.OutputState }
+
+func (PrivateZoneVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateZoneVpc)(nil)).Elem()
+}
+
+func (o PrivateZoneVpcOutput) ToPrivateZoneVpcOutput() PrivateZoneVpcOutput {
+	return o
+}
+
+func (o PrivateZoneVpcOutput) ToPrivateZoneVpcOutputWithContext(ctx context.Context) PrivateZoneVpcOutput {
+	return o
+}
+
+// Region where the VPC is located
+func (o PrivateZoneVpcOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrivateZoneVpc) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// VPC ID
+func (o PrivateZoneVpcOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrivateZoneVpc) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type PrivateZoneVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (PrivateZoneVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateZoneVpc)(nil)).Elem()
+}
+
+func (o PrivateZoneVpcArrayOutput) ToPrivateZoneVpcArrayOutput() PrivateZoneVpcArrayOutput {
+	return o
+}
+
+func (o PrivateZoneVpcArrayOutput) ToPrivateZoneVpcArrayOutputWithContext(ctx context.Context) PrivateZoneVpcArrayOutput {
+	return o
+}
+
+func (o PrivateZoneVpcArrayOutput) Index(i pulumi.IntInput) PrivateZoneVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrivateZoneVpc {
+		return vs[0].([]PrivateZoneVpc)[vs[1].(int)]
+	}).(PrivateZoneVpcOutput)
+}
+
 type RecordRecordSet struct {
 	// Full domain name
 	Fqdn *string `pulumi:"fqdn"`
@@ -701,6 +913,236 @@ func (o ResolverRuleVpCArrayOutput) Index(i pulumi.IntInput) ResolverRuleVpCOutp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ResolverRuleVpC {
 		return vs[0].([]ResolverRuleVpC)[vs[1].(int)]
 	}).(ResolverRuleVpCOutput)
+}
+
+type GetPrivateZoneTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetPrivateZoneTagInput is an input type that accepts GetPrivateZoneTagArgs and GetPrivateZoneTagOutput values.
+// You can construct a concrete instance of `GetPrivateZoneTagInput` via:
+//
+//	GetPrivateZoneTagArgs{...}
+type GetPrivateZoneTagInput interface {
+	pulumi.Input
+
+	ToGetPrivateZoneTagOutput() GetPrivateZoneTagOutput
+	ToGetPrivateZoneTagOutputWithContext(context.Context) GetPrivateZoneTagOutput
+}
+
+type GetPrivateZoneTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPrivateZoneTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateZoneTag)(nil)).Elem()
+}
+
+func (i GetPrivateZoneTagArgs) ToGetPrivateZoneTagOutput() GetPrivateZoneTagOutput {
+	return i.ToGetPrivateZoneTagOutputWithContext(context.Background())
+}
+
+func (i GetPrivateZoneTagArgs) ToGetPrivateZoneTagOutputWithContext(ctx context.Context) GetPrivateZoneTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateZoneTagOutput)
+}
+
+// GetPrivateZoneTagArrayInput is an input type that accepts GetPrivateZoneTagArray and GetPrivateZoneTagArrayOutput values.
+// You can construct a concrete instance of `GetPrivateZoneTagArrayInput` via:
+//
+//	GetPrivateZoneTagArray{ GetPrivateZoneTagArgs{...} }
+type GetPrivateZoneTagArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateZoneTagArrayOutput() GetPrivateZoneTagArrayOutput
+	ToGetPrivateZoneTagArrayOutputWithContext(context.Context) GetPrivateZoneTagArrayOutput
+}
+
+type GetPrivateZoneTagArray []GetPrivateZoneTagInput
+
+func (GetPrivateZoneTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateZoneTag)(nil)).Elem()
+}
+
+func (i GetPrivateZoneTagArray) ToGetPrivateZoneTagArrayOutput() GetPrivateZoneTagArrayOutput {
+	return i.ToGetPrivateZoneTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateZoneTagArray) ToGetPrivateZoneTagArrayOutputWithContext(ctx context.Context) GetPrivateZoneTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateZoneTagArrayOutput)
+}
+
+type GetPrivateZoneTagOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateZoneTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateZoneTag)(nil)).Elem()
+}
+
+func (o GetPrivateZoneTagOutput) ToGetPrivateZoneTagOutput() GetPrivateZoneTagOutput {
+	return o
+}
+
+func (o GetPrivateZoneTagOutput) ToGetPrivateZoneTagOutputWithContext(ctx context.Context) GetPrivateZoneTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetPrivateZoneTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateZoneTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetPrivateZoneTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateZoneTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPrivateZoneTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateZoneTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateZoneTag)(nil)).Elem()
+}
+
+func (o GetPrivateZoneTagArrayOutput) ToGetPrivateZoneTagArrayOutput() GetPrivateZoneTagArrayOutput {
+	return o
+}
+
+func (o GetPrivateZoneTagArrayOutput) ToGetPrivateZoneTagArrayOutputWithContext(ctx context.Context) GetPrivateZoneTagArrayOutput {
+	return o
+}
+
+func (o GetPrivateZoneTagArrayOutput) Index(i pulumi.IntInput) GetPrivateZoneTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateZoneTag {
+		return vs[0].([]GetPrivateZoneTag)[vs[1].(int)]
+	}).(GetPrivateZoneTagOutput)
+}
+
+type GetPrivateZoneVpc struct {
+	// Account ID to which the VPC belongs
+	AccountId string `pulumi:"accountId"`
+	// Region where the VPC is located
+	Region string `pulumi:"region"`
+	// Name of the region where the VPC is located
+	RegionName string `pulumi:"regionName"`
+	// VPC ID
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetPrivateZoneVpcInput is an input type that accepts GetPrivateZoneVpcArgs and GetPrivateZoneVpcOutput values.
+// You can construct a concrete instance of `GetPrivateZoneVpcInput` via:
+//
+//	GetPrivateZoneVpcArgs{...}
+type GetPrivateZoneVpcInput interface {
+	pulumi.Input
+
+	ToGetPrivateZoneVpcOutput() GetPrivateZoneVpcOutput
+	ToGetPrivateZoneVpcOutputWithContext(context.Context) GetPrivateZoneVpcOutput
+}
+
+type GetPrivateZoneVpcArgs struct {
+	// Account ID to which the VPC belongs
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// Region where the VPC is located
+	Region pulumi.StringInput `pulumi:"region"`
+	// Name of the region where the VPC is located
+	RegionName pulumi.StringInput `pulumi:"regionName"`
+	// VPC ID
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetPrivateZoneVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateZoneVpc)(nil)).Elem()
+}
+
+func (i GetPrivateZoneVpcArgs) ToGetPrivateZoneVpcOutput() GetPrivateZoneVpcOutput {
+	return i.ToGetPrivateZoneVpcOutputWithContext(context.Background())
+}
+
+func (i GetPrivateZoneVpcArgs) ToGetPrivateZoneVpcOutputWithContext(ctx context.Context) GetPrivateZoneVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateZoneVpcOutput)
+}
+
+// GetPrivateZoneVpcArrayInput is an input type that accepts GetPrivateZoneVpcArray and GetPrivateZoneVpcArrayOutput values.
+// You can construct a concrete instance of `GetPrivateZoneVpcArrayInput` via:
+//
+//	GetPrivateZoneVpcArray{ GetPrivateZoneVpcArgs{...} }
+type GetPrivateZoneVpcArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateZoneVpcArrayOutput() GetPrivateZoneVpcArrayOutput
+	ToGetPrivateZoneVpcArrayOutputWithContext(context.Context) GetPrivateZoneVpcArrayOutput
+}
+
+type GetPrivateZoneVpcArray []GetPrivateZoneVpcInput
+
+func (GetPrivateZoneVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateZoneVpc)(nil)).Elem()
+}
+
+func (i GetPrivateZoneVpcArray) ToGetPrivateZoneVpcArrayOutput() GetPrivateZoneVpcArrayOutput {
+	return i.ToGetPrivateZoneVpcArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateZoneVpcArray) ToGetPrivateZoneVpcArrayOutputWithContext(ctx context.Context) GetPrivateZoneVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateZoneVpcArrayOutput)
+}
+
+type GetPrivateZoneVpcOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateZoneVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateZoneVpc)(nil)).Elem()
+}
+
+func (o GetPrivateZoneVpcOutput) ToGetPrivateZoneVpcOutput() GetPrivateZoneVpcOutput {
+	return o
+}
+
+func (o GetPrivateZoneVpcOutput) ToGetPrivateZoneVpcOutputWithContext(ctx context.Context) GetPrivateZoneVpcOutput {
+	return o
+}
+
+// Account ID to which the VPC belongs
+func (o GetPrivateZoneVpcOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateZoneVpc) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// Region where the VPC is located
+func (o GetPrivateZoneVpcOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateZoneVpc) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Name of the region where the VPC is located
+func (o GetPrivateZoneVpcOutput) RegionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateZoneVpc) string { return v.RegionName }).(pulumi.StringOutput)
+}
+
+// VPC ID
+func (o GetPrivateZoneVpcOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateZoneVpc) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetPrivateZoneVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateZoneVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateZoneVpc)(nil)).Elem()
+}
+
+func (o GetPrivateZoneVpcArrayOutput) ToGetPrivateZoneVpcArrayOutput() GetPrivateZoneVpcArrayOutput {
+	return o
+}
+
+func (o GetPrivateZoneVpcArrayOutput) ToGetPrivateZoneVpcArrayOutputWithContext(ctx context.Context) GetPrivateZoneVpcArrayOutput {
+	return o
+}
+
+func (o GetPrivateZoneVpcArrayOutput) Index(i pulumi.IntInput) GetPrivateZoneVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateZoneVpc {
+		return vs[0].([]GetPrivateZoneVpc)[vs[1].(int)]
+	}).(GetPrivateZoneVpcOutput)
 }
 
 type GetRecordRecordSet struct {
@@ -1412,6 +1854,10 @@ func (o GetResolverRuleVpCArrayOutput) Index(i pulumi.IntInput) GetResolverRuleV
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateZoneTagInput)(nil)).Elem(), PrivateZoneTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateZoneTagArrayInput)(nil)).Elem(), PrivateZoneTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateZoneVpcInput)(nil)).Elem(), PrivateZoneVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateZoneVpcArrayInput)(nil)).Elem(), PrivateZoneVpcArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RecordRecordSetInput)(nil)).Elem(), RecordRecordSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RecordRecordSetArrayInput)(nil)).Elem(), RecordRecordSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverEndpointIpConfigInput)(nil)).Elem(), ResolverEndpointIpConfigArgs{})
@@ -1424,6 +1870,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverRuleTagArrayInput)(nil)).Elem(), ResolverRuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverRuleVpCInput)(nil)).Elem(), ResolverRuleVpCArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResolverRuleVpCArrayInput)(nil)).Elem(), ResolverRuleVpCArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateZoneTagInput)(nil)).Elem(), GetPrivateZoneTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateZoneTagArrayInput)(nil)).Elem(), GetPrivateZoneTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateZoneVpcInput)(nil)).Elem(), GetPrivateZoneVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateZoneVpcArrayInput)(nil)).Elem(), GetPrivateZoneVpcArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordRecordSetInput)(nil)).Elem(), GetRecordRecordSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecordRecordSetArrayInput)(nil)).Elem(), GetRecordRecordSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverEndpointIpConfigInput)(nil)).Elem(), GetResolverEndpointIpConfigArgs{})
@@ -1436,6 +1886,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverRuleTagArrayInput)(nil)).Elem(), GetResolverRuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverRuleVpCInput)(nil)).Elem(), GetResolverRuleVpCArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResolverRuleVpCArrayInput)(nil)).Elem(), GetResolverRuleVpCArray{})
+	pulumi.RegisterOutputType(PrivateZoneTagOutput{})
+	pulumi.RegisterOutputType(PrivateZoneTagArrayOutput{})
+	pulumi.RegisterOutputType(PrivateZoneVpcOutput{})
+	pulumi.RegisterOutputType(PrivateZoneVpcArrayOutput{})
 	pulumi.RegisterOutputType(RecordRecordSetOutput{})
 	pulumi.RegisterOutputType(RecordRecordSetArrayOutput{})
 	pulumi.RegisterOutputType(ResolverEndpointIpConfigOutput{})
@@ -1448,6 +1902,10 @@ func init() {
 	pulumi.RegisterOutputType(ResolverRuleTagArrayOutput{})
 	pulumi.RegisterOutputType(ResolverRuleVpCOutput{})
 	pulumi.RegisterOutputType(ResolverRuleVpCArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateZoneTagOutput{})
+	pulumi.RegisterOutputType(GetPrivateZoneTagArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateZoneVpcOutput{})
+	pulumi.RegisterOutputType(GetPrivateZoneVpcArrayOutput{})
 	pulumi.RegisterOutputType(GetRecordRecordSetOutput{})
 	pulumi.RegisterOutputType(GetRecordRecordSetArrayOutput{})
 	pulumi.RegisterOutputType(GetResolverEndpointIpConfigOutput{})

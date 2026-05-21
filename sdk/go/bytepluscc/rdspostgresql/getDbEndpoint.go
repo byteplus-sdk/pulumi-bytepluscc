@@ -30,8 +30,6 @@ type LookupDbEndpointArgs struct {
 
 // A collection of values returned by getDbEndpoint.
 type LookupDbEndpointResult struct {
-	// Address list.
-	Addresses []GetDbEndpointAddress `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes string `pulumi:"autoAddNewNodes"`
 	// Address description
@@ -48,10 +46,16 @@ type LookupDbEndpointResult struct {
 	EndpointType string `pulumi:"endpointType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// Public service zone connection address
+	InnerAddresses GetDbEndpointInnerAddresses `pulumi:"innerAddresses"`
 	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
 	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes string `pulumi:"nodes"`
+	// Private network connection address
+	PrivateAddresses GetDbEndpointPrivateAddresses `pulumi:"privateAddresses"`
+	// Public network connection address
+	PublicAddresses GetDbEndpointPublicAddresses `pulumi:"publicAddresses"`
 	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType string `pulumi:"readOnlyNodeDistributionType"`
 	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
@@ -100,11 +104,6 @@ func (o LookupDbEndpointResultOutput) ToLookupDbEndpointResultOutputWithContext(
 	return o
 }
 
-// Address list.
-func (o LookupDbEndpointResultOutput) Addresses() GetDbEndpointAddressArrayOutput {
-	return o.ApplyT(func(v LookupDbEndpointResult) []GetDbEndpointAddress { return v.Addresses }).(GetDbEndpointAddressArrayOutput)
-}
-
 // When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 func (o LookupDbEndpointResultOutput) AutoAddNewNodes() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbEndpointResult) string { return v.AutoAddNewNodes }).(pulumi.StringOutput)
@@ -145,6 +144,11 @@ func (o LookupDbEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Public service zone connection address
+func (o LookupDbEndpointResultOutput) InnerAddresses() GetDbEndpointInnerAddressesOutput {
+	return o.ApplyT(func(v LookupDbEndpointResult) GetDbEndpointInnerAddresses { return v.InnerAddresses }).(GetDbEndpointInnerAddressesOutput)
+}
+
 // Instance ID.
 func (o LookupDbEndpointResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbEndpointResult) string { return v.InstanceId }).(pulumi.StringOutput)
@@ -153,6 +157,16 @@ func (o LookupDbEndpointResultOutput) InstanceId() pulumi.StringOutput {
 // List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 func (o LookupDbEndpointResultOutput) Nodes() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbEndpointResult) string { return v.Nodes }).(pulumi.StringOutput)
+}
+
+// Private network connection address
+func (o LookupDbEndpointResultOutput) PrivateAddresses() GetDbEndpointPrivateAddressesOutput {
+	return o.ApplyT(func(v LookupDbEndpointResult) GetDbEndpointPrivateAddresses { return v.PrivateAddresses }).(GetDbEndpointPrivateAddressesOutput)
+}
+
+// Public network connection address
+func (o LookupDbEndpointResultOutput) PublicAddresses() GetDbEndpointPublicAddressesOutput {
+	return o.ApplyT(func(v LookupDbEndpointResult) GetDbEndpointPublicAddresses { return v.PublicAddresses }).(GetDbEndpointPublicAddressesOutput)
 }
 
 // Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.

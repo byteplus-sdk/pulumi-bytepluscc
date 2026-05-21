@@ -21,7 +21,9 @@ __all__ = [
     'AllowListSecurityGroupBindInfo',
     'BackupBackupMeta',
     'BackupBackupPolicy',
-    'DbEndpointAddress',
+    'DbEndpointInnerAddresses',
+    'DbEndpointPrivateAddresses',
+    'DbEndpointPublicAddresses',
     'DbEndpointReadOnlyNodeWeight',
     'InstanceChargeDetail',
     'InstanceEndpoint',
@@ -35,7 +37,9 @@ __all__ = [
     'GetAllowListSecurityGroupBindInfoResult',
     'GetBackupBackupMetaResult',
     'GetBackupBackupPolicyResult',
-    'GetDbEndpointAddressResult',
+    'GetDbEndpointInnerAddressesResult',
+    'GetDbEndpointPrivateAddressesResult',
+    'GetDbEndpointPublicAddressesResult',
     'GetDbEndpointReadOnlyNodeWeightResult',
     'GetInstanceChargeDetailResult',
     'GetInstanceEndpointResult',
@@ -318,41 +322,89 @@ class BackupBackupPolicy(dict):
 
 
 @pulumi.output_type
-class DbEndpointAddress(dict):
+class DbEndpointInnerAddresses(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "dnsVisibility":
+        if key == "crossRegionDomain":
+            suggest = "cross_region_domain"
+        elif key == "dnsVisibility":
             suggest = "dns_visibility"
         elif key == "domainPrefix":
             suggest = "domain_prefix"
+        elif key == "domainVisibilitySetting":
+            suggest = "domain_visibility_setting"
+        elif key == "eipId":
+            suggest = "eip_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in DbEndpointAddress. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbEndpointInnerAddresses. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        DbEndpointAddress.__key_warning(key)
+        DbEndpointInnerAddresses.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        DbEndpointAddress.__key_warning(key)
+        DbEndpointInnerAddresses.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cross_region_domain: Optional[builtins.str] = None,
                  dns_visibility: Optional[builtins.bool] = None,
+                 domain: Optional[builtins.str] = None,
                  domain_prefix: Optional[builtins.str] = None,
-                 port: Optional[builtins.str] = None):
+                 domain_visibility_setting: Optional[builtins.str] = None,
+                 eip_id: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 network_type: Optional[builtins.str] = None,
+                 port: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None):
         """
+        :param builtins.str cross_region_domain: Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
         :param builtins.bool dns_visibility: Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        :param builtins.str domain: Connection domain name
         :param builtins.str domain_prefix: New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        :param builtins.str domain_visibility_setting: Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses.
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
         :param builtins.str port: Port number.
+        :param builtins.str subnet_id: Subnet ID
         """
+        if cross_region_domain is not None:
+            pulumi.set(__self__, "cross_region_domain", cross_region_domain)
         if dns_visibility is not None:
             pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
         if domain_prefix is not None:
             pulumi.set(__self__, "domain_prefix", domain_prefix)
+        if domain_visibility_setting is not None:
+            pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
         if port is not None:
             pulumi.set(__self__, "port", port)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> Optional[builtins.str]:
+        """
+        Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        """
+        return pulumi.get(self, "cross_region_domain")
 
     @property
     @pulumi.getter(name="dnsVisibility")
@@ -363,6 +415,14 @@ class DbEndpointAddress(dict):
         return pulumi.get(self, "dns_visibility")
 
     @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
     @pulumi.getter(name="domainPrefix")
     def domain_prefix(self) -> Optional[builtins.str]:
         """
@@ -371,12 +431,368 @@ class DbEndpointAddress(dict):
         return pulumi.get(self, "domain_prefix")
 
     @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> Optional[builtins.str]:
+        """
+        Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[builtins.str]:
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[builtins.str]:
+        """
+        Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
         Port number.
         """
         return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class DbEndpointPrivateAddresses(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "crossRegionDomain":
+            suggest = "cross_region_domain"
+        elif key == "dnsVisibility":
+            suggest = "dns_visibility"
+        elif key == "domainPrefix":
+            suggest = "domain_prefix"
+        elif key == "domainVisibilitySetting":
+            suggest = "domain_visibility_setting"
+        elif key == "eipId":
+            suggest = "eip_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbEndpointPrivateAddresses. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbEndpointPrivateAddresses.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbEndpointPrivateAddresses.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cross_region_domain: Optional[builtins.str] = None,
+                 dns_visibility: Optional[builtins.bool] = None,
+                 domain: Optional[builtins.str] = None,
+                 domain_prefix: Optional[builtins.str] = None,
+                 domain_visibility_setting: Optional[builtins.str] = None,
+                 eip_id: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 network_type: Optional[builtins.str] = None,
+                 port: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str cross_region_domain: Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        :param builtins.bool dns_visibility: Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        :param builtins.str domain: Connection domain name
+        :param builtins.str domain_prefix: New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        :param builtins.str domain_visibility_setting: Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses.
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        :param builtins.str port: Port number.
+        :param builtins.str subnet_id: Subnet ID
+        """
+        if cross_region_domain is not None:
+            pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if domain_prefix is not None:
+            pulumi.set(__self__, "domain_prefix", domain_prefix)
+        if domain_visibility_setting is not None:
+            pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> Optional[builtins.str]:
+        """
+        Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[builtins.bool]:
+        """
+        Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> Optional[builtins.str]:
+        """
+        New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> Optional[builtins.str]:
+        """
+        Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[builtins.str]:
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[builtins.str]:
+        """
+        Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.str]:
+        """
+        Port number.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class DbEndpointPublicAddresses(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "crossRegionDomain":
+            suggest = "cross_region_domain"
+        elif key == "dnsVisibility":
+            suggest = "dns_visibility"
+        elif key == "domainPrefix":
+            suggest = "domain_prefix"
+        elif key == "domainVisibilitySetting":
+            suggest = "domain_visibility_setting"
+        elif key == "eipId":
+            suggest = "eip_id"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbEndpointPublicAddresses. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbEndpointPublicAddresses.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbEndpointPublicAddresses.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cross_region_domain: Optional[builtins.str] = None,
+                 dns_visibility: Optional[builtins.bool] = None,
+                 domain: Optional[builtins.str] = None,
+                 domain_prefix: Optional[builtins.str] = None,
+                 domain_visibility_setting: Optional[builtins.str] = None,
+                 eip_id: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 network_type: Optional[builtins.str] = None,
+                 port: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str cross_region_domain: Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        :param builtins.bool dns_visibility: Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        :param builtins.str domain: Connection domain name
+        :param builtins.str domain_prefix: New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        :param builtins.str domain_visibility_setting: Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses.
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        :param builtins.str port: Port number.
+        :param builtins.str subnet_id: Subnet ID
+        """
+        if cross_region_domain is not None:
+            pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if domain_prefix is not None:
+            pulumi.set(__self__, "domain_prefix", domain_prefix)
+        if domain_visibility_setting is not None:
+            pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> Optional[builtins.str]:
+        """
+        Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[builtins.bool]:
+        """
+        Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> Optional[builtins.str]:
+        """
+        New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> Optional[builtins.str]:
+        """
+        Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[builtins.str]:
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[builtins.str]:
+        """
+        Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.str]:
+        """
+        Port number.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -1530,7 +1946,241 @@ class GetBackupBackupPolicyResult(dict):
 
 
 @pulumi.output_type
-class GetDbEndpointAddressResult(dict):
+class GetDbEndpointInnerAddressesResult(dict):
+    def __init__(__self__, *,
+                 cross_region_domain: builtins.str,
+                 dns_visibility: builtins.bool,
+                 domain: builtins.str,
+                 domain_prefix: builtins.str,
+                 domain_visibility_setting: builtins.str,
+                 eip_id: builtins.str,
+                 ip_address: builtins.str,
+                 network_type: builtins.str,
+                 port: builtins.str,
+                 subnet_id: builtins.str):
+        """
+        :param builtins.str cross_region_domain: Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        :param builtins.bool dns_visibility: Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        :param builtins.str domain: Connection domain name
+        :param builtins.str domain_prefix: New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        :param builtins.str domain_visibility_setting: Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses.
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        :param builtins.str port: Port number.
+        :param builtins.str subnet_id: Subnet ID
+        """
+        pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        pulumi.set(__self__, "dns_visibility", dns_visibility)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "domain_prefix", domain_prefix)
+        pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        pulumi.set(__self__, "eip_id", eip_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> builtins.str:
+        """
+        Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> builtins.bool:
+        """
+        Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> builtins.str:
+        """
+        New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> builtins.str:
+        """
+        Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> builtins.str:
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> builtins.str:
+        """
+        Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.str:
+        """
+        Port number.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDbEndpointPrivateAddressesResult(dict):
+    def __init__(__self__, *,
+                 cross_region_domain: builtins.str,
+                 dns_visibility: builtins.bool,
+                 domain: builtins.str,
+                 domain_prefix: builtins.str,
+                 domain_visibility_setting: builtins.str,
+                 eip_id: builtins.str,
+                 ip_address: builtins.str,
+                 network_type: builtins.str,
+                 port: builtins.str,
+                 subnet_id: builtins.str):
+        """
+        :param builtins.str cross_region_domain: Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        :param builtins.bool dns_visibility: Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        :param builtins.str domain: Connection domain name
+        :param builtins.str domain_prefix: New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        :param builtins.str domain_visibility_setting: Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        :param builtins.str eip_id: EIP ID, valid only for Public addresses.
+        :param builtins.str ip_address: IP address
+        :param builtins.str network_type: Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        :param builtins.str port: Port number.
+        :param builtins.str subnet_id: Subnet ID
+        """
+        pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        pulumi.set(__self__, "dns_visibility", dns_visibility)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "domain_prefix", domain_prefix)
+        pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        pulumi.set(__self__, "eip_id", eip_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> builtins.str:
+        """
+        Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> builtins.bool:
+        """
+        Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        Connection domain name
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> builtins.str:
+        """
+        New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> builtins.str:
+        """
+        Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> builtins.str:
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> builtins.str:
+        """
+        Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.str:
+        """
+        Port number.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDbEndpointPublicAddressesResult(dict):
     def __init__(__self__, *,
                  cross_region_domain: builtins.str,
                  dns_visibility: builtins.bool,

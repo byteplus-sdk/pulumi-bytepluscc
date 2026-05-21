@@ -16,6 +16,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'PrivateZoneTagArgs',
+    'PrivateZoneTagArgsDict',
+    'PrivateZoneVpcArgs',
+    'PrivateZoneVpcArgsDict',
     'RecordRecordSetArgs',
     'RecordRecordSetArgsDict',
     'ResolverEndpointIpConfigArgs',
@@ -31,6 +35,110 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class PrivateZoneTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    PrivateZoneTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrivateZoneTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class PrivateZoneVpcArgsDict(TypedDict):
+        region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Region where the VPC is located
+        """
+        vpc_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPC ID
+        """
+elif False:
+    PrivateZoneVpcArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrivateZoneVpcArgs:
+    def __init__(__self__, *,
+                 region: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] region: Region where the VPC is located
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID
+        """
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Region where the VPC is located
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        VPC ID
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @vpc_id.setter
+    def vpc_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_id", value)
+
 
 if not MYPY:
     class RecordRecordSetArgsDict(TypedDict):
