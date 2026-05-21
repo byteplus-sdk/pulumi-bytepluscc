@@ -9,21 +9,6 @@ import * as utilities from "../utilities";
 /**
  * The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
- *
- * const rdsPostgresqlDbEndpointDemo = new bytepluscc.rdspostgresql.DbEndpoint("RdsPostgresqlDbEndpointDemo", {
- *     endpointName: "ccapi-test-1",
- *     endpointType: "Custom",
- *     instanceId: "postgres-9dxxxxxd",
- *     nodes: "Primary",
- *     readWriteMode: "ReadWrite",
- * });
- * ```
- *
  * ## Import
  *
  * ```sh
@@ -58,7 +43,6 @@ export class DbEndpoint extends pulumi.CustomResource {
         return obj['__pulumiType'] === DbEndpoint.__pulumiType;
     }
 
-    public readonly addresses!: pulumi.Output<outputs.rdspostgresql.DbEndpointAddress[]>;
     /**
      * When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      */
@@ -88,6 +72,10 @@ export class DbEndpoint extends pulumi.CustomResource {
      */
     public readonly endpointType!: pulumi.Output<string>;
     /**
+     * Public service zone connection address
+     */
+    public readonly innerAddresses!: pulumi.Output<outputs.rdspostgresql.DbEndpointInnerAddresses>;
+    /**
      * Instance ID.
      */
     public readonly instanceId!: pulumi.Output<string>;
@@ -95,6 +83,14 @@ export class DbEndpoint extends pulumi.CustomResource {
      * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
      */
     public readonly nodes!: pulumi.Output<string>;
+    /**
+     * Private network connection address
+     */
+    public readonly privateAddresses!: pulumi.Output<outputs.rdspostgresql.DbEndpointPrivateAddresses>;
+    /**
+     * Public network connection address
+     */
+    public readonly publicAddresses!: pulumi.Output<outputs.rdspostgresql.DbEndpointPublicAddresses>;
     /**
      * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      */
@@ -130,7 +126,6 @@ export class DbEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbEndpointState | undefined;
-            resourceInputs["addresses"] = state ? state.addresses : undefined;
             resourceInputs["autoAddNewNodes"] = state ? state.autoAddNewNodes : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["enableReadOnly"] = state ? state.enableReadOnly : undefined;
@@ -138,8 +133,11 @@ export class DbEndpoint extends pulumi.CustomResource {
             resourceInputs["endpointId"] = state ? state.endpointId : undefined;
             resourceInputs["endpointName"] = state ? state.endpointName : undefined;
             resourceInputs["endpointType"] = state ? state.endpointType : undefined;
+            resourceInputs["innerAddresses"] = state ? state.innerAddresses : undefined;
             resourceInputs["instanceId"] = state ? state.instanceId : undefined;
             resourceInputs["nodes"] = state ? state.nodes : undefined;
+            resourceInputs["privateAddresses"] = state ? state.privateAddresses : undefined;
+            resourceInputs["publicAddresses"] = state ? state.publicAddresses : undefined;
             resourceInputs["readOnlyNodeDistributionType"] = state ? state.readOnlyNodeDistributionType : undefined;
             resourceInputs["readOnlyNodeMaxDelayTime"] = state ? state.readOnlyNodeMaxDelayTime : undefined;
             resourceInputs["readOnlyNodeWeights"] = state ? state.readOnlyNodeWeights : undefined;
@@ -148,12 +146,14 @@ export class DbEndpoint extends pulumi.CustomResource {
             resourceInputs["writeNodeHaltWriting"] = state ? state.writeNodeHaltWriting : undefined;
         } else {
             const args = argsOrState as DbEndpointArgs | undefined;
-            resourceInputs["addresses"] = args ? args.addresses : undefined;
             resourceInputs["enableReadWriteSplitting"] = args ? args.enableReadWriteSplitting : undefined;
             resourceInputs["endpointName"] = args ? args.endpointName : undefined;
             resourceInputs["endpointType"] = args ? args.endpointType : undefined;
+            resourceInputs["innerAddresses"] = args ? args.innerAddresses : undefined;
             resourceInputs["instanceId"] = args ? args.instanceId : undefined;
             resourceInputs["nodes"] = args ? args.nodes : undefined;
+            resourceInputs["privateAddresses"] = args ? args.privateAddresses : undefined;
+            resourceInputs["publicAddresses"] = args ? args.publicAddresses : undefined;
             resourceInputs["readOnlyNodeDistributionType"] = args ? args.readOnlyNodeDistributionType : undefined;
             resourceInputs["readOnlyNodeMaxDelayTime"] = args ? args.readOnlyNodeMaxDelayTime : undefined;
             resourceInputs["readOnlyNodeWeights"] = args ? args.readOnlyNodeWeights : undefined;
@@ -174,7 +174,6 @@ export class DbEndpoint extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DbEndpoint resources.
  */
 export interface DbEndpointState {
-    addresses?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.DbEndpointAddress>[]>;
     /**
      * When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      */
@@ -204,6 +203,10 @@ export interface DbEndpointState {
      */
     endpointType?: pulumi.Input<string>;
     /**
+     * Public service zone connection address
+     */
+    innerAddresses?: pulumi.Input<inputs.rdspostgresql.DbEndpointInnerAddresses>;
+    /**
      * Instance ID.
      */
     instanceId?: pulumi.Input<string>;
@@ -211,6 +214,14 @@ export interface DbEndpointState {
      * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
      */
     nodes?: pulumi.Input<string>;
+    /**
+     * Private network connection address
+     */
+    privateAddresses?: pulumi.Input<inputs.rdspostgresql.DbEndpointPrivateAddresses>;
+    /**
+     * Public network connection address
+     */
+    publicAddresses?: pulumi.Input<inputs.rdspostgresql.DbEndpointPublicAddresses>;
     /**
      * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      */
@@ -238,7 +249,6 @@ export interface DbEndpointState {
  * The set of arguments for constructing a DbEndpoint resource.
  */
 export interface DbEndpointArgs {
-    addresses?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.DbEndpointAddress>[]>;
     /**
      * Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
      */
@@ -252,6 +262,10 @@ export interface DbEndpointArgs {
      */
     endpointType?: pulumi.Input<string>;
     /**
+     * Public service zone connection address
+     */
+    innerAddresses?: pulumi.Input<inputs.rdspostgresql.DbEndpointInnerAddresses>;
+    /**
      * Instance ID.
      */
     instanceId?: pulumi.Input<string>;
@@ -259,6 +273,14 @@ export interface DbEndpointArgs {
      * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
      */
     nodes?: pulumi.Input<string>;
+    /**
+     * Private network connection address
+     */
+    privateAddresses?: pulumi.Input<inputs.rdspostgresql.DbEndpointPrivateAddresses>;
+    /**
+     * Public network connection address
+     */
+    publicAddresses?: pulumi.Input<inputs.rdspostgresql.DbEndpointPublicAddresses>;
     /**
      * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      */

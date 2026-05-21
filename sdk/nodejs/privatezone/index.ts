@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetPrivateZoneArgs, GetPrivateZoneResult, GetPrivateZoneOutputArgs } from "./getPrivateZone";
+export const getPrivateZone: typeof import("./getPrivateZone").getPrivateZone = null as any;
+export const getPrivateZoneOutput: typeof import("./getPrivateZone").getPrivateZoneOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateZone","getPrivateZoneOutput"], () => require("./getPrivateZone"));
+
+export { GetPrivateZonesResult } from "./getPrivateZones";
+export const getPrivateZones: typeof import("./getPrivateZones").getPrivateZones = null as any;
+export const getPrivateZonesOutput: typeof import("./getPrivateZones").getPrivateZonesOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateZones","getPrivateZonesOutput"], () => require("./getPrivateZones"));
+
 export { GetRecordArgs, GetRecordResult, GetRecordOutputArgs } from "./getRecord";
 export const getRecord: typeof import("./getRecord").getRecord = null as any;
 export const getRecordOutput: typeof import("./getRecord").getRecordOutput = null as any;
@@ -45,6 +55,11 @@ export const getUserVpcAuthorizations: typeof import("./getUserVpcAuthorizations
 export const getUserVpcAuthorizationsOutput: typeof import("./getUserVpcAuthorizations").getUserVpcAuthorizationsOutput = null as any;
 utilities.lazyLoad(exports, ["getUserVpcAuthorizations","getUserVpcAuthorizationsOutput"], () => require("./getUserVpcAuthorizations"));
 
+export { PrivateZoneArgs, PrivateZoneState } from "./privateZone";
+export type PrivateZone = import("./privateZone").PrivateZone;
+export const PrivateZone: typeof import("./privateZone").PrivateZone = null as any;
+utilities.lazyLoad(exports, ["PrivateZone"], () => require("./privateZone"));
+
 export { RecordArgs, RecordState } from "./record";
 export type Record = import("./record").Record;
 export const Record: typeof import("./record").Record = null as any;
@@ -70,6 +85,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:privatezone/privateZone:PrivateZone":
+                return new PrivateZone(name, <any>undefined, { urn })
             case "bytepluscc:privatezone/record:Record":
                 return new Record(name, <any>undefined, { urn })
             case "bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint":
@@ -83,6 +100,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/privateZone", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/record", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/resolverEndpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/resolverRule", _module)

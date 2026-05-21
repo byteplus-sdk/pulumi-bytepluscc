@@ -22,12 +22,14 @@ __all__ = ['DbEndpointArgs', 'DbEndpoint']
 @pulumi.input_type
 class DbEndpointArgs:
     def __init__(__self__, *,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointAddressArgs']]]] = None,
                  enable_read_write_splitting: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_name: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[builtins.str]] = None,
+                 inner_addresses: Optional[pulumi.Input['DbEndpointInnerAddressesArgs']] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[builtins.str]] = None,
+                 private_addresses: Optional[pulumi.Input['DbEndpointPrivateAddressesArgs']] = None,
+                 public_addresses: Optional[pulumi.Input['DbEndpointPublicAddressesArgs']] = None,
                  read_only_node_distribution_type: Optional[pulumi.Input[builtins.str]] = None,
                  read_only_node_max_delay_time: Optional[pulumi.Input[builtins.int]] = None,
                  read_only_node_weights: Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointReadOnlyNodeWeightArgs']]]] = None,
@@ -39,26 +41,33 @@ class DbEndpointArgs:
         :param pulumi.Input[builtins.str] enable_read_write_splitting: Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
         :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
         :param pulumi.Input[builtins.str] endpoint_type: Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
+        :param pulumi.Input['DbEndpointInnerAddressesArgs'] inner_addresses: Public service zone connection address
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
         :param pulumi.Input[builtins.str] nodes: List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
+        :param pulumi.Input['DbEndpointPrivateAddressesArgs'] private_addresses: Private network connection address
+        :param pulumi.Input['DbEndpointPublicAddressesArgs'] public_addresses: Public network connection address
         :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         :param pulumi.Input[builtins.int] read_write_proxy_connection: After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
         :param pulumi.Input[builtins.bool] write_node_halt_writing: Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
         """
-        if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
         if enable_read_write_splitting is not None:
             pulumi.set(__self__, "enable_read_write_splitting", enable_read_write_splitting)
         if endpoint_name is not None:
             pulumi.set(__self__, "endpoint_name", endpoint_name)
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if inner_addresses is not None:
+            pulumi.set(__self__, "inner_addresses", inner_addresses)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
+        if private_addresses is not None:
+            pulumi.set(__self__, "private_addresses", private_addresses)
+        if public_addresses is not None:
+            pulumi.set(__self__, "public_addresses", public_addresses)
         if read_only_node_distribution_type is not None:
             pulumi.set(__self__, "read_only_node_distribution_type", read_only_node_distribution_type)
         if read_only_node_max_delay_time is not None:
@@ -71,15 +80,6 @@ class DbEndpointArgs:
             pulumi.set(__self__, "read_write_proxy_connection", read_write_proxy_connection)
         if write_node_halt_writing is not None:
             pulumi.set(__self__, "write_node_halt_writing", write_node_halt_writing)
-
-    @property
-    @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointAddressArgs']]]]:
-        return pulumi.get(self, "addresses")
-
-    @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointAddressArgs']]]]):
-        pulumi.set(self, "addresses", value)
 
     @property
     @pulumi.getter(name="enableReadWriteSplitting")
@@ -118,6 +118,18 @@ class DbEndpointArgs:
         pulumi.set(self, "endpoint_type", value)
 
     @property
+    @pulumi.getter(name="innerAddresses")
+    def inner_addresses(self) -> Optional[pulumi.Input['DbEndpointInnerAddressesArgs']]:
+        """
+        Public service zone connection address
+        """
+        return pulumi.get(self, "inner_addresses")
+
+    @inner_addresses.setter
+    def inner_addresses(self, value: Optional[pulumi.Input['DbEndpointInnerAddressesArgs']]):
+        pulumi.set(self, "inner_addresses", value)
+
+    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -140,6 +152,30 @@ class DbEndpointArgs:
     @nodes.setter
     def nodes(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "nodes", value)
+
+    @property
+    @pulumi.getter(name="privateAddresses")
+    def private_addresses(self) -> Optional[pulumi.Input['DbEndpointPrivateAddressesArgs']]:
+        """
+        Private network connection address
+        """
+        return pulumi.get(self, "private_addresses")
+
+    @private_addresses.setter
+    def private_addresses(self, value: Optional[pulumi.Input['DbEndpointPrivateAddressesArgs']]):
+        pulumi.set(self, "private_addresses", value)
+
+    @property
+    @pulumi.getter(name="publicAddresses")
+    def public_addresses(self) -> Optional[pulumi.Input['DbEndpointPublicAddressesArgs']]:
+        """
+        Public network connection address
+        """
+        return pulumi.get(self, "public_addresses")
+
+    @public_addresses.setter
+    def public_addresses(self, value: Optional[pulumi.Input['DbEndpointPublicAddressesArgs']]):
+        pulumi.set(self, "public_addresses", value)
 
     @property
     @pulumi.getter(name="readOnlyNodeDistributionType")
@@ -214,7 +250,6 @@ class DbEndpointArgs:
 @pulumi.input_type
 class _DbEndpointState:
     def __init__(__self__, *,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointAddressArgs']]]] = None,
                  auto_add_new_nodes: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enable_read_only: Optional[pulumi.Input[builtins.str]] = None,
@@ -222,8 +257,11 @@ class _DbEndpointState:
                  endpoint_id: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_name: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[builtins.str]] = None,
+                 inner_addresses: Optional[pulumi.Input['DbEndpointInnerAddressesArgs']] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[builtins.str]] = None,
+                 private_addresses: Optional[pulumi.Input['DbEndpointPrivateAddressesArgs']] = None,
+                 public_addresses: Optional[pulumi.Input['DbEndpointPublicAddressesArgs']] = None,
                  read_only_node_distribution_type: Optional[pulumi.Input[builtins.str]] = None,
                  read_only_node_max_delay_time: Optional[pulumi.Input[builtins.int]] = None,
                  read_only_node_weights: Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointReadOnlyNodeWeightArgs']]]] = None,
@@ -239,16 +277,17 @@ class _DbEndpointState:
         :param pulumi.Input[builtins.str] endpoint_id: Instance connection endpoint ID.
         :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
         :param pulumi.Input[builtins.str] endpoint_type: Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
+        :param pulumi.Input['DbEndpointInnerAddressesArgs'] inner_addresses: Public service zone connection address
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
         :param pulumi.Input[builtins.str] nodes: List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
+        :param pulumi.Input['DbEndpointPrivateAddressesArgs'] private_addresses: Private network connection address
+        :param pulumi.Input['DbEndpointPublicAddressesArgs'] public_addresses: Public network connection address
         :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         :param pulumi.Input[builtins.int] read_write_proxy_connection: After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
         :param pulumi.Input[builtins.bool] write_node_halt_writing: Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
         """
-        if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
         if auto_add_new_nodes is not None:
             pulumi.set(__self__, "auto_add_new_nodes", auto_add_new_nodes)
         if description is not None:
@@ -263,10 +302,16 @@ class _DbEndpointState:
             pulumi.set(__self__, "endpoint_name", endpoint_name)
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if inner_addresses is not None:
+            pulumi.set(__self__, "inner_addresses", inner_addresses)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
+        if private_addresses is not None:
+            pulumi.set(__self__, "private_addresses", private_addresses)
+        if public_addresses is not None:
+            pulumi.set(__self__, "public_addresses", public_addresses)
         if read_only_node_distribution_type is not None:
             pulumi.set(__self__, "read_only_node_distribution_type", read_only_node_distribution_type)
         if read_only_node_max_delay_time is not None:
@@ -279,15 +324,6 @@ class _DbEndpointState:
             pulumi.set(__self__, "read_write_proxy_connection", read_write_proxy_connection)
         if write_node_halt_writing is not None:
             pulumi.set(__self__, "write_node_halt_writing", write_node_halt_writing)
-
-    @property
-    @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointAddressArgs']]]]:
-        return pulumi.get(self, "addresses")
-
-    @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbEndpointAddressArgs']]]]):
-        pulumi.set(self, "addresses", value)
 
     @property
     @pulumi.getter(name="autoAddNewNodes")
@@ -374,6 +410,18 @@ class _DbEndpointState:
         pulumi.set(self, "endpoint_type", value)
 
     @property
+    @pulumi.getter(name="innerAddresses")
+    def inner_addresses(self) -> Optional[pulumi.Input['DbEndpointInnerAddressesArgs']]:
+        """
+        Public service zone connection address
+        """
+        return pulumi.get(self, "inner_addresses")
+
+    @inner_addresses.setter
+    def inner_addresses(self, value: Optional[pulumi.Input['DbEndpointInnerAddressesArgs']]):
+        pulumi.set(self, "inner_addresses", value)
+
+    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -396,6 +444,30 @@ class _DbEndpointState:
     @nodes.setter
     def nodes(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "nodes", value)
+
+    @property
+    @pulumi.getter(name="privateAddresses")
+    def private_addresses(self) -> Optional[pulumi.Input['DbEndpointPrivateAddressesArgs']]:
+        """
+        Private network connection address
+        """
+        return pulumi.get(self, "private_addresses")
+
+    @private_addresses.setter
+    def private_addresses(self, value: Optional[pulumi.Input['DbEndpointPrivateAddressesArgs']]):
+        pulumi.set(self, "private_addresses", value)
+
+    @property
+    @pulumi.getter(name="publicAddresses")
+    def public_addresses(self) -> Optional[pulumi.Input['DbEndpointPublicAddressesArgs']]:
+        """
+        Public network connection address
+        """
+        return pulumi.get(self, "public_addresses")
+
+    @public_addresses.setter
+    def public_addresses(self, value: Optional[pulumi.Input['DbEndpointPublicAddressesArgs']]):
+        pulumi.set(self, "public_addresses", value)
 
     @property
     @pulumi.getter(name="readOnlyNodeDistributionType")
@@ -473,12 +545,14 @@ class DbEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbEndpointAddressArgs', 'DbEndpointAddressArgsDict']]]]] = None,
                  enable_read_write_splitting: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_name: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[builtins.str]] = None,
+                 inner_addresses: Optional[pulumi.Input[Union['DbEndpointInnerAddressesArgs', 'DbEndpointInnerAddressesArgsDict']]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[builtins.str]] = None,
+                 private_addresses: Optional[pulumi.Input[Union['DbEndpointPrivateAddressesArgs', 'DbEndpointPrivateAddressesArgsDict']]] = None,
+                 public_addresses: Optional[pulumi.Input[Union['DbEndpointPublicAddressesArgs', 'DbEndpointPublicAddressesArgsDict']]] = None,
                  read_only_node_distribution_type: Optional[pulumi.Input[builtins.str]] = None,
                  read_only_node_max_delay_time: Optional[pulumi.Input[builtins.int]] = None,
                  read_only_node_weights: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbEndpointReadOnlyNodeWeightArgs', 'DbEndpointReadOnlyNodeWeightArgsDict']]]]] = None,
@@ -488,20 +562,6 @@ class DbEndpoint(pulumi.CustomResource):
                  __props__=None):
         """
         The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        rds_postgresql_db_endpoint_demo = bytepluscc.rdspostgresql.DbEndpoint("RdsPostgresqlDbEndpointDemo",
-            endpoint_name="ccapi-test-1",
-            endpoint_type="Custom",
-            instance_id="postgres-9dxxxxxd",
-            nodes="Primary",
-            read_write_mode="ReadWrite")
-        ```
 
         ## Import
 
@@ -514,8 +574,11 @@ class DbEndpoint(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] enable_read_write_splitting: Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
         :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
         :param pulumi.Input[builtins.str] endpoint_type: Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
+        :param pulumi.Input[Union['DbEndpointInnerAddressesArgs', 'DbEndpointInnerAddressesArgsDict']] inner_addresses: Public service zone connection address
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
         :param pulumi.Input[builtins.str] nodes: List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
+        :param pulumi.Input[Union['DbEndpointPrivateAddressesArgs', 'DbEndpointPrivateAddressesArgsDict']] private_addresses: Private network connection address
+        :param pulumi.Input[Union['DbEndpointPublicAddressesArgs', 'DbEndpointPublicAddressesArgsDict']] public_addresses: Public network connection address
         :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
@@ -530,20 +593,6 @@ class DbEndpoint(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        rds_postgresql_db_endpoint_demo = bytepluscc.rdspostgresql.DbEndpoint("RdsPostgresqlDbEndpointDemo",
-            endpoint_name="ccapi-test-1",
-            endpoint_type="Custom",
-            instance_id="postgres-9dxxxxxd",
-            nodes="Primary",
-            read_write_mode="ReadWrite")
-        ```
 
         ## Import
 
@@ -566,12 +615,14 @@ class DbEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbEndpointAddressArgs', 'DbEndpointAddressArgsDict']]]]] = None,
                  enable_read_write_splitting: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_name: Optional[pulumi.Input[builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[builtins.str]] = None,
+                 inner_addresses: Optional[pulumi.Input[Union['DbEndpointInnerAddressesArgs', 'DbEndpointInnerAddressesArgsDict']]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[builtins.str]] = None,
+                 private_addresses: Optional[pulumi.Input[Union['DbEndpointPrivateAddressesArgs', 'DbEndpointPrivateAddressesArgsDict']]] = None,
+                 public_addresses: Optional[pulumi.Input[Union['DbEndpointPublicAddressesArgs', 'DbEndpointPublicAddressesArgsDict']]] = None,
                  read_only_node_distribution_type: Optional[pulumi.Input[builtins.str]] = None,
                  read_only_node_max_delay_time: Optional[pulumi.Input[builtins.int]] = None,
                  read_only_node_weights: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbEndpointReadOnlyNodeWeightArgs', 'DbEndpointReadOnlyNodeWeightArgsDict']]]]] = None,
@@ -587,12 +638,14 @@ class DbEndpoint(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbEndpointArgs.__new__(DbEndpointArgs)
 
-            __props__.__dict__["addresses"] = addresses
             __props__.__dict__["enable_read_write_splitting"] = enable_read_write_splitting
             __props__.__dict__["endpoint_name"] = endpoint_name
             __props__.__dict__["endpoint_type"] = endpoint_type
+            __props__.__dict__["inner_addresses"] = inner_addresses
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["nodes"] = nodes
+            __props__.__dict__["private_addresses"] = private_addresses
+            __props__.__dict__["public_addresses"] = public_addresses
             __props__.__dict__["read_only_node_distribution_type"] = read_only_node_distribution_type
             __props__.__dict__["read_only_node_max_delay_time"] = read_only_node_max_delay_time
             __props__.__dict__["read_only_node_weights"] = read_only_node_weights
@@ -613,7 +666,6 @@ class DbEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbEndpointAddressArgs', 'DbEndpointAddressArgsDict']]]]] = None,
             auto_add_new_nodes: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             enable_read_only: Optional[pulumi.Input[builtins.str]] = None,
@@ -621,8 +673,11 @@ class DbEndpoint(pulumi.CustomResource):
             endpoint_id: Optional[pulumi.Input[builtins.str]] = None,
             endpoint_name: Optional[pulumi.Input[builtins.str]] = None,
             endpoint_type: Optional[pulumi.Input[builtins.str]] = None,
+            inner_addresses: Optional[pulumi.Input[Union['DbEndpointInnerAddressesArgs', 'DbEndpointInnerAddressesArgsDict']]] = None,
             instance_id: Optional[pulumi.Input[builtins.str]] = None,
             nodes: Optional[pulumi.Input[builtins.str]] = None,
+            private_addresses: Optional[pulumi.Input[Union['DbEndpointPrivateAddressesArgs', 'DbEndpointPrivateAddressesArgsDict']]] = None,
+            public_addresses: Optional[pulumi.Input[Union['DbEndpointPublicAddressesArgs', 'DbEndpointPublicAddressesArgsDict']]] = None,
             read_only_node_distribution_type: Optional[pulumi.Input[builtins.str]] = None,
             read_only_node_max_delay_time: Optional[pulumi.Input[builtins.int]] = None,
             read_only_node_weights: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbEndpointReadOnlyNodeWeightArgs', 'DbEndpointReadOnlyNodeWeightArgsDict']]]]] = None,
@@ -643,8 +698,11 @@ class DbEndpoint(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] endpoint_id: Instance connection endpoint ID.
         :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
         :param pulumi.Input[builtins.str] endpoint_type: Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
+        :param pulumi.Input[Union['DbEndpointInnerAddressesArgs', 'DbEndpointInnerAddressesArgsDict']] inner_addresses: Public service zone connection address
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
         :param pulumi.Input[builtins.str] nodes: List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
+        :param pulumi.Input[Union['DbEndpointPrivateAddressesArgs', 'DbEndpointPrivateAddressesArgsDict']] private_addresses: Private network connection address
+        :param pulumi.Input[Union['DbEndpointPublicAddressesArgs', 'DbEndpointPublicAddressesArgsDict']] public_addresses: Public network connection address
         :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
@@ -655,7 +713,6 @@ class DbEndpoint(pulumi.CustomResource):
 
         __props__ = _DbEndpointState.__new__(_DbEndpointState)
 
-        __props__.__dict__["addresses"] = addresses
         __props__.__dict__["auto_add_new_nodes"] = auto_add_new_nodes
         __props__.__dict__["description"] = description
         __props__.__dict__["enable_read_only"] = enable_read_only
@@ -663,8 +720,11 @@ class DbEndpoint(pulumi.CustomResource):
         __props__.__dict__["endpoint_id"] = endpoint_id
         __props__.__dict__["endpoint_name"] = endpoint_name
         __props__.__dict__["endpoint_type"] = endpoint_type
+        __props__.__dict__["inner_addresses"] = inner_addresses
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["nodes"] = nodes
+        __props__.__dict__["private_addresses"] = private_addresses
+        __props__.__dict__["public_addresses"] = public_addresses
         __props__.__dict__["read_only_node_distribution_type"] = read_only_node_distribution_type
         __props__.__dict__["read_only_node_max_delay_time"] = read_only_node_max_delay_time
         __props__.__dict__["read_only_node_weights"] = read_only_node_weights
@@ -672,11 +732,6 @@ class DbEndpoint(pulumi.CustomResource):
         __props__.__dict__["read_write_proxy_connection"] = read_write_proxy_connection
         __props__.__dict__["write_node_halt_writing"] = write_node_halt_writing
         return DbEndpoint(resource_name, opts=opts, __props__=__props__)
-
-    @property
-    @pulumi.getter
-    def addresses(self) -> pulumi.Output[Sequence['outputs.DbEndpointAddress']]:
-        return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="autoAddNewNodes")
@@ -735,6 +790,14 @@ class DbEndpoint(pulumi.CustomResource):
         return pulumi.get(self, "endpoint_type")
 
     @property
+    @pulumi.getter(name="innerAddresses")
+    def inner_addresses(self) -> pulumi.Output['outputs.DbEndpointInnerAddresses']:
+        """
+        Public service zone connection address
+        """
+        return pulumi.get(self, "inner_addresses")
+
+    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
@@ -749,6 +812,22 @@ class DbEndpoint(pulumi.CustomResource):
         List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
         """
         return pulumi.get(self, "nodes")
+
+    @property
+    @pulumi.getter(name="privateAddresses")
+    def private_addresses(self) -> pulumi.Output['outputs.DbEndpointPrivateAddresses']:
+        """
+        Private network connection address
+        """
+        return pulumi.get(self, "private_addresses")
+
+    @property
+    @pulumi.getter(name="publicAddresses")
+    def public_addresses(self) -> pulumi.Output['outputs.DbEndpointPublicAddresses']:
+        """
+        Public network connection address
+        """
+        return pulumi.get(self, "public_addresses")
 
     @property
     @pulumi.getter(name="readOnlyNodeDistributionType")

@@ -6,6 +6,8 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_private_zone import *
+from .get_private_zones import *
 from .get_record import *
 from .get_records import *
 from .get_resolver_endpoint import *
@@ -14,6 +16,7 @@ from .get_resolver_rule import *
 from .get_resolver_rules import *
 from .get_user_vpc_authorization import *
 from .get_user_vpc_authorizations import *
+from .private_zone import *
 from .record import *
 from .resolver_endpoint import *
 from .resolver_rule import *

@@ -31,10 +31,6 @@ export interface GetDbEndpointArgs {
  */
 export interface GetDbEndpointResult {
     /**
-     * Address list.
-     */
-    readonly addresses: outputs.rdspostgresql.GetDbEndpointAddress[];
-    /**
      * When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      */
     readonly autoAddNewNodes: string;
@@ -67,6 +63,10 @@ export interface GetDbEndpointResult {
      */
     readonly id: string;
     /**
+     * Public service zone connection address
+     */
+    readonly innerAddresses: outputs.rdspostgresql.GetDbEndpointInnerAddresses;
+    /**
      * Instance ID.
      */
     readonly instanceId: string;
@@ -74,6 +74,14 @@ export interface GetDbEndpointResult {
      * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
      */
     readonly nodes: string;
+    /**
+     * Private network connection address
+     */
+    readonly privateAddresses: outputs.rdspostgresql.GetDbEndpointPrivateAddresses;
+    /**
+     * Public network connection address
+     */
+    readonly publicAddresses: outputs.rdspostgresql.GetDbEndpointPublicAddresses;
     /**
      * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      */

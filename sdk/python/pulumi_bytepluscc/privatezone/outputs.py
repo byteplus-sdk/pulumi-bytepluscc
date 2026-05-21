@@ -16,12 +16,16 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'PrivateZoneTag',
+    'PrivateZoneVpc',
     'RecordRecordSet',
     'ResolverEndpointIpConfig',
     'ResolverEndpointTag',
     'ResolverRuleForwardIP',
     'ResolverRuleTag',
     'ResolverRuleVpC',
+    'GetPrivateZoneTagResult',
+    'GetPrivateZoneVpcResult',
     'GetRecordRecordSetResult',
     'GetResolverEndpointIpConfigResult',
     'GetResolverEndpointTagResult',
@@ -29,6 +33,85 @@ __all__ = [
     'GetResolverRuleTagResult',
     'GetResolverRuleVpCResult',
 ]
+
+@pulumi.output_type
+class PrivateZoneTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class PrivateZoneVpc(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "vpcId":
+            suggest = "vpc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PrivateZoneVpc. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PrivateZoneVpc.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PrivateZoneVpc.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 region: Optional[builtins.str] = None,
+                 vpc_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str region: Region where the VPC is located
+        :param builtins.str vpc_id: VPC ID
+        """
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[builtins.str]:
+        """
+        Region where the VPC is located
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[builtins.str]:
+        """
+        VPC ID
+        """
+        return pulumi.get(self, "vpc_id")
+
 
 @pulumi.output_type
 class RecordRecordSet(dict):
@@ -335,6 +418,86 @@ class ResolverRuleVpC(dict):
     @property
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[builtins.str]:
+        """
+        VPC ID
+        """
+        return pulumi.get(self, "vpc_id")
+
+
+@pulumi.output_type
+class GetPrivateZoneTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetPrivateZoneVpcResult(dict):
+    def __init__(__self__, *,
+                 account_id: builtins.str,
+                 region: builtins.str,
+                 region_name: builtins.str,
+                 vpc_id: builtins.str):
+        """
+        :param builtins.str account_id: Account ID to which the VPC belongs
+        :param builtins.str region: Region where the VPC is located
+        :param builtins.str region_name: Name of the region where the VPC is located
+        :param builtins.str vpc_id: VPC ID
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "region_name", region_name)
+        pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> builtins.str:
+        """
+        Account ID to which the VPC belongs
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        Region where the VPC is located
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="regionName")
+    def region_name(self) -> builtins.str:
+        """
+        Name of the region where the VPC is located
+        """
+        return pulumi.get(self, "region_name")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> builtins.str:
         """
         VPC ID
         """

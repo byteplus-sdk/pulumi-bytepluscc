@@ -10,7 +10,7 @@ import java.lang.String;
 import java.util.Objects;
 
 @CustomType
-public final class GetDbEndpointAddress {
+public final class GetDbEndpointInnerAddresses {
     /**
      * @return Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
      * 
@@ -62,7 +62,7 @@ public final class GetDbEndpointAddress {
      */
     private String subnetId;
 
-    private GetDbEndpointAddress() {}
+    private GetDbEndpointInnerAddresses() {}
     /**
      * @return Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
      * 
@@ -138,7 +138,7 @@ public final class GetDbEndpointAddress {
         return new Builder();
     }
 
-    public static Builder builder(GetDbEndpointAddress defaults) {
+    public static Builder builder(GetDbEndpointInnerAddresses defaults) {
         return new Builder(defaults);
     }
     @CustomType.Builder
@@ -154,7 +154,7 @@ public final class GetDbEndpointAddress {
         private String port;
         private String subnetId;
         public Builder() {}
-        public Builder(GetDbEndpointAddress defaults) {
+        public Builder(GetDbEndpointInnerAddresses defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.crossRegionDomain = defaults.crossRegionDomain;
     	      this.dnsVisibility = defaults.dnsVisibility;
@@ -171,7 +171,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder crossRegionDomain(String crossRegionDomain) {
             if (crossRegionDomain == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "crossRegionDomain");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "crossRegionDomain");
             }
             this.crossRegionDomain = crossRegionDomain;
             return this;
@@ -179,7 +179,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder dnsVisibility(Boolean dnsVisibility) {
             if (dnsVisibility == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "dnsVisibility");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "dnsVisibility");
             }
             this.dnsVisibility = dnsVisibility;
             return this;
@@ -187,7 +187,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder domain(String domain) {
             if (domain == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "domain");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "domain");
             }
             this.domain = domain;
             return this;
@@ -195,7 +195,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder domainPrefix(String domainPrefix) {
             if (domainPrefix == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "domainPrefix");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "domainPrefix");
             }
             this.domainPrefix = domainPrefix;
             return this;
@@ -203,7 +203,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder domainVisibilitySetting(String domainVisibilitySetting) {
             if (domainVisibilitySetting == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "domainVisibilitySetting");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "domainVisibilitySetting");
             }
             this.domainVisibilitySetting = domainVisibilitySetting;
             return this;
@@ -211,7 +211,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder eipId(String eipId) {
             if (eipId == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "eipId");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "eipId");
             }
             this.eipId = eipId;
             return this;
@@ -219,7 +219,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             if (ipAddress == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "ipAddress");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "ipAddress");
             }
             this.ipAddress = ipAddress;
             return this;
@@ -227,7 +227,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder networkType(String networkType) {
             if (networkType == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "networkType");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "networkType");
             }
             this.networkType = networkType;
             return this;
@@ -235,7 +235,7 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder port(String port) {
             if (port == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "port");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "port");
             }
             this.port = port;
             return this;
@@ -243,13 +243,13 @@ public final class GetDbEndpointAddress {
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointAddress", "subnetId");
+              throw new MissingRequiredPropertyException("GetDbEndpointInnerAddresses", "subnetId");
             }
             this.subnetId = subnetId;
             return this;
         }
-        public GetDbEndpointAddress build() {
-            final var _resultValue = new GetDbEndpointAddress();
+        public GetDbEndpointInnerAddresses build() {
+            final var _resultValue = new GetDbEndpointInnerAddresses();
             _resultValue.crossRegionDomain = crossRegionDomain;
             _resultValue.dnsVisibility = dnsVisibility;
             _resultValue.domain = domain;

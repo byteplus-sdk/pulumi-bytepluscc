@@ -16601,6 +16601,36 @@ export namespace privatelink {
 }
 
 export namespace privatezone {
+    export interface GetPrivateZoneTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetPrivateZoneVpc {
+        /**
+         * Account ID to which the VPC belongs
+         */
+        accountId: string;
+        /**
+         * Region where the VPC is located
+         */
+        region: string;
+        /**
+         * Name of the region where the VPC is located
+         */
+        regionName: string;
+        /**
+         * VPC ID
+         */
+        vpcId: string;
+    }
+
     export interface GetRecordRecordSet {
         /**
          * Full domain name
@@ -16693,6 +16723,28 @@ export namespace privatezone {
          * Name of the VPC region
          */
         regionName: string;
+        /**
+         * VPC ID
+         */
+        vpcId: string;
+    }
+
+    export interface PrivateZoneTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface PrivateZoneVpc {
+        /**
+         * Region where the VPC is located
+         */
+        region: string;
         /**
          * VPC ID
          */
@@ -18602,19 +18654,133 @@ export namespace rdspostgresql {
         walLogSpaceLimitEnable: boolean;
     }
 
-    export interface DbEndpointAddress {
+    export interface DbEndpointInnerAddresses {
+        /**
+         * Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+         */
+        crossRegionDomain: string;
         /**
          * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
          */
         dnsVisibility: boolean;
         /**
+         * Connection domain name
+         */
+        domain: string;
+        /**
          * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
          */
         domainPrefix: string;
         /**
+         * Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+         */
+        domainVisibilitySetting: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * IP address
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+         */
+        networkType: string;
+        /**
          * Port number.
          */
         port: string;
+        /**
+         * Subnet ID
+         */
+        subnetId: string;
+    }
+
+    export interface DbEndpointPrivateAddresses {
+        /**
+         * Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+         */
+        crossRegionDomain: string;
+        /**
+         * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+         */
+        dnsVisibility: boolean;
+        /**
+         * Connection domain name
+         */
+        domain: string;
+        /**
+         * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+         */
+        domainPrefix: string;
+        /**
+         * Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+         */
+        domainVisibilitySetting: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * IP address
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+         */
+        networkType: string;
+        /**
+         * Port number.
+         */
+        port: string;
+        /**
+         * Subnet ID
+         */
+        subnetId: string;
+    }
+
+    export interface DbEndpointPublicAddresses {
+        /**
+         * Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+         */
+        crossRegionDomain: string;
+        /**
+         * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+         */
+        dnsVisibility: boolean;
+        /**
+         * Connection domain name
+         */
+        domain: string;
+        /**
+         * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+         */
+        domainPrefix: string;
+        /**
+         * Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+         */
+        domainVisibilitySetting: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * IP address
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+         */
+        networkType: string;
+        /**
+         * Port number.
+         */
+        port: string;
+        /**
+         * Subnet ID
+         */
+        subnetId: string;
     }
 
     export interface DbEndpointReadOnlyNodeWeight {
@@ -18704,7 +18870,93 @@ export namespace rdspostgresql {
         walLogSpaceLimitEnable: boolean;
     }
 
-    export interface GetDbEndpointAddress {
+    export interface GetDbEndpointInnerAddresses {
+        /**
+         * Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+         */
+        crossRegionDomain: string;
+        /**
+         * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+         */
+        dnsVisibility: boolean;
+        /**
+         * Connection domain name
+         */
+        domain: string;
+        /**
+         * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+         */
+        domainPrefix: string;
+        /**
+         * Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+         */
+        domainVisibilitySetting: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * IP address
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+         */
+        networkType: string;
+        /**
+         * Port number.
+         */
+        port: string;
+        /**
+         * Subnet ID
+         */
+        subnetId: string;
+    }
+
+    export interface GetDbEndpointPrivateAddresses {
+        /**
+         * Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+         */
+        crossRegionDomain: string;
+        /**
+         * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+         */
+        dnsVisibility: boolean;
+        /**
+         * Connection domain name
+         */
+        domain: string;
+        /**
+         * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+         */
+        domainPrefix: string;
+        /**
+         * Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+         */
+        domainVisibilitySetting: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * IP address
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+         */
+        networkType: string;
+        /**
+         * Port number.
+         */
+        port: string;
+        /**
+         * Subnet ID
+         */
+        subnetId: string;
+    }
+
+    export interface GetDbEndpointPublicAddresses {
         /**
          * Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
          */

@@ -3,7 +3,9 @@
 
 package com.byteplus.bytepluscc.rdspostgresql.outputs;
 
-import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointAddress;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointInnerAddresses;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointPrivateAddresses;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointPublicAddresses;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointReadOnlyNodeWeight;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -15,11 +17,6 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbEndpointResult {
-    /**
-     * @return Address list.
-     * 
-     */
-    private List<GetDbEndpointAddress> addresses;
     /**
      * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      * 
@@ -61,6 +58,11 @@ public final class GetDbEndpointResult {
      */
     private String id;
     /**
+     * @return Public service zone connection address
+     * 
+     */
+    private GetDbEndpointInnerAddresses innerAddresses;
+    /**
      * @return Instance ID.
      * 
      */
@@ -70,6 +72,16 @@ public final class GetDbEndpointResult {
      * 
      */
     private String nodes;
+    /**
+     * @return Private network connection address
+     * 
+     */
+    private GetDbEndpointPrivateAddresses privateAddresses;
+    /**
+     * @return Public network connection address
+     * 
+     */
+    private GetDbEndpointPublicAddresses publicAddresses;
     /**
      * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      * 
@@ -102,13 +114,6 @@ public final class GetDbEndpointResult {
     private Boolean writeNodeHaltWriting;
 
     private GetDbEndpointResult() {}
-    /**
-     * @return Address list.
-     * 
-     */
-    public List<GetDbEndpointAddress> addresses() {
-        return this.addresses;
-    }
     /**
      * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      * 
@@ -166,6 +171,13 @@ public final class GetDbEndpointResult {
         return this.id;
     }
     /**
+     * @return Public service zone connection address
+     * 
+     */
+    public GetDbEndpointInnerAddresses innerAddresses() {
+        return this.innerAddresses;
+    }
+    /**
      * @return Instance ID.
      * 
      */
@@ -178,6 +190,20 @@ public final class GetDbEndpointResult {
      */
     public String nodes() {
         return this.nodes;
+    }
+    /**
+     * @return Private network connection address
+     * 
+     */
+    public GetDbEndpointPrivateAddresses privateAddresses() {
+        return this.privateAddresses;
+    }
+    /**
+     * @return Public network connection address
+     * 
+     */
+    public GetDbEndpointPublicAddresses publicAddresses() {
+        return this.publicAddresses;
     }
     /**
      * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
@@ -231,7 +257,6 @@ public final class GetDbEndpointResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbEndpointAddress> addresses;
         private String autoAddNewNodes;
         private String description;
         private String enableReadOnly;
@@ -240,8 +265,11 @@ public final class GetDbEndpointResult {
         private String endpointName;
         private String endpointType;
         private String id;
+        private GetDbEndpointInnerAddresses innerAddresses;
         private String instanceId;
         private String nodes;
+        private GetDbEndpointPrivateAddresses privateAddresses;
+        private GetDbEndpointPublicAddresses publicAddresses;
         private String readOnlyNodeDistributionType;
         private Integer readOnlyNodeMaxDelayTime;
         private List<GetDbEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
@@ -251,7 +279,6 @@ public final class GetDbEndpointResult {
         public Builder() {}
         public Builder(GetDbEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.addresses = defaults.addresses;
     	      this.autoAddNewNodes = defaults.autoAddNewNodes;
     	      this.description = defaults.description;
     	      this.enableReadOnly = defaults.enableReadOnly;
@@ -260,8 +287,11 @@ public final class GetDbEndpointResult {
     	      this.endpointName = defaults.endpointName;
     	      this.endpointType = defaults.endpointType;
     	      this.id = defaults.id;
+    	      this.innerAddresses = defaults.innerAddresses;
     	      this.instanceId = defaults.instanceId;
     	      this.nodes = defaults.nodes;
+    	      this.privateAddresses = defaults.privateAddresses;
+    	      this.publicAddresses = defaults.publicAddresses;
     	      this.readOnlyNodeDistributionType = defaults.readOnlyNodeDistributionType;
     	      this.readOnlyNodeMaxDelayTime = defaults.readOnlyNodeMaxDelayTime;
     	      this.readOnlyNodeWeights = defaults.readOnlyNodeWeights;
@@ -270,17 +300,6 @@ public final class GetDbEndpointResult {
     	      this.writeNodeHaltWriting = defaults.writeNodeHaltWriting;
         }
 
-        @CustomType.Setter
-        public Builder addresses(List<GetDbEndpointAddress> addresses) {
-            if (addresses == null) {
-              throw new MissingRequiredPropertyException("GetDbEndpointResult", "addresses");
-            }
-            this.addresses = addresses;
-            return this;
-        }
-        public Builder addresses(GetDbEndpointAddress... addresses) {
-            return addresses(List.of(addresses));
-        }
         @CustomType.Setter
         public Builder autoAddNewNodes(String autoAddNewNodes) {
             if (autoAddNewNodes == null) {
@@ -346,6 +365,14 @@ public final class GetDbEndpointResult {
             return this;
         }
         @CustomType.Setter
+        public Builder innerAddresses(GetDbEndpointInnerAddresses innerAddresses) {
+            if (innerAddresses == null) {
+              throw new MissingRequiredPropertyException("GetDbEndpointResult", "innerAddresses");
+            }
+            this.innerAddresses = innerAddresses;
+            return this;
+        }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             if (instanceId == null) {
               throw new MissingRequiredPropertyException("GetDbEndpointResult", "instanceId");
@@ -359,6 +386,22 @@ public final class GetDbEndpointResult {
               throw new MissingRequiredPropertyException("GetDbEndpointResult", "nodes");
             }
             this.nodes = nodes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateAddresses(GetDbEndpointPrivateAddresses privateAddresses) {
+            if (privateAddresses == null) {
+              throw new MissingRequiredPropertyException("GetDbEndpointResult", "privateAddresses");
+            }
+            this.privateAddresses = privateAddresses;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder publicAddresses(GetDbEndpointPublicAddresses publicAddresses) {
+            if (publicAddresses == null) {
+              throw new MissingRequiredPropertyException("GetDbEndpointResult", "publicAddresses");
+            }
+            this.publicAddresses = publicAddresses;
             return this;
         }
         @CustomType.Setter
@@ -414,7 +457,6 @@ public final class GetDbEndpointResult {
         }
         public GetDbEndpointResult build() {
             final var _resultValue = new GetDbEndpointResult();
-            _resultValue.addresses = addresses;
             _resultValue.autoAddNewNodes = autoAddNewNodes;
             _resultValue.description = description;
             _resultValue.enableReadOnly = enableReadOnly;
@@ -423,8 +465,11 @@ public final class GetDbEndpointResult {
             _resultValue.endpointName = endpointName;
             _resultValue.endpointType = endpointType;
             _resultValue.id = id;
+            _resultValue.innerAddresses = innerAddresses;
             _resultValue.instanceId = instanceId;
             _resultValue.nodes = nodes;
+            _resultValue.privateAddresses = privateAddresses;
+            _resultValue.publicAddresses = publicAddresses;
             _resultValue.readOnlyNodeDistributionType = readOnlyNodeDistributionType;
             _resultValue.readOnlyNodeMaxDelayTime = readOnlyNodeMaxDelayTime;
             _resultValue.readOnlyNodeWeights = readOnlyNodeWeights;

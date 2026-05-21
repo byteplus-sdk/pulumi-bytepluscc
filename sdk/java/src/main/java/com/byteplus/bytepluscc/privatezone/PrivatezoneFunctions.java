@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.privatezone;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.privatezone.inputs.GetPrivateZoneArgs;
+import com.byteplus.bytepluscc.privatezone.inputs.GetPrivateZonePlainArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetRecordArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetRecordPlainArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetResolverEndpointArgs;
@@ -12,6 +14,8 @@ import com.byteplus.bytepluscc.privatezone.inputs.GetResolverRuleArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetResolverRulePlainArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetUserVpcAuthorizationArgs;
 import com.byteplus.bytepluscc.privatezone.inputs.GetUserVpcAuthorizationPlainArgs;
+import com.byteplus.bytepluscc.privatezone.outputs.GetPrivateZoneResult;
+import com.byteplus.bytepluscc.privatezone.outputs.GetPrivateZonesResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetRecordResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetRecordsResult;
 import com.byteplus.bytepluscc.privatezone.outputs.GetResolverEndpointResult;
@@ -29,6 +33,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class PrivatezoneFunctions {
+    /**
+     * Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZoneResult> getPrivateZone(GetPrivateZoneArgs args) {
+        return getPrivateZone(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static CompletableFuture<GetPrivateZoneResult> getPrivateZonePlain(GetPrivateZonePlainArgs args) {
+        return getPrivateZonePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZoneResult> getPrivateZone(GetPrivateZoneArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getPrivateZone:getPrivateZone", TypeShape.of(GetPrivateZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZoneResult> getPrivateZone(GetPrivateZoneArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getPrivateZone:getPrivateZone", TypeShape.of(GetPrivateZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static CompletableFuture<GetPrivateZoneResult> getPrivateZonePlain(GetPrivateZonePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatezone/getPrivateZone:getPrivateZone", TypeShape.of(GetPrivateZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZonesResult> getPrivateZones() {
+        return getPrivateZones(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static CompletableFuture<GetPrivateZonesResult> getPrivateZonesPlain() {
+        return getPrivateZonesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZonesResult> getPrivateZones(InvokeArgs args) {
+        return getPrivateZones(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static CompletableFuture<GetPrivateZonesResult> getPrivateZonesPlain(InvokeArgs args) {
+        return getPrivateZonesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZonesResult> getPrivateZones(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getPrivateZones:getPrivateZones", TypeShape.of(GetPrivateZonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static Output<GetPrivateZonesResult> getPrivateZones(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatezone/getPrivateZones:getPrivateZones", TypeShape.of(GetPrivateZonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateZone::PrivateZone
+     * 
+     */
+    public static CompletableFuture<GetPrivateZonesResult> getPrivateZonesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatezone/getPrivateZones:getPrivateZones", TypeShape.of(GetPrivateZonesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::PrivateZone::Record
      * 

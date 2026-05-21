@@ -2115,6 +2115,17 @@
                     }
                 }
             },
+            "bytepluscc_privatezone_private_zone": {
+                "current": "bytepluscc:privatezone/privateZone:PrivateZone",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "vpcs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_privatezone_record": {
                 "current": "bytepluscc:privatezone/record:Record",
                 "fields": {
@@ -2442,9 +2453,6 @@
             "bytepluscc_rdspostgresql_db_endpoint": {
                 "current": "bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint",
                 "fields": {
-                    "addresses": {
-                        "maxItemsOne": false
-                    },
                     "read_only_node_weights": {
                         "maxItemsOne": false
                     }
@@ -6596,6 +6604,25 @@
                     }
                 }
             },
+            "bytepluscc_privatezone_private_zone": {
+                "current": "bytepluscc:privatezone/getPrivateZone:getPrivateZone",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "vpcs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_privatezone_private_zones": {
+                "current": "bytepluscc:privatezone/getPrivateZones:getPrivateZones",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_privatezone_record": {
                 "current": "bytepluscc:privatezone/getRecord:getRecord",
                 "fields": {
@@ -7091,9 +7118,6 @@
             "bytepluscc_rdspostgresql_db_endpoint": {
                 "current": "bytepluscc:rdspostgresql/getDbEndpoint:getDbEndpoint",
                 "fields": {
-                    "addresses": {
-                        "maxItemsOne": false
-                    },
                     "read_only_node_weights": {
                         "maxItemsOne": false
                     }

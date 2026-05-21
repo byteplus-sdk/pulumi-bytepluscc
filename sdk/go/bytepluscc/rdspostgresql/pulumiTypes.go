@@ -582,119 +582,928 @@ func (o BackupBackupPolicyPtrOutput) WalLogSpaceLimitEnable() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-type DbEndpointAddress struct {
+type DbEndpointInnerAddresses struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain *string `pulumi:"crossRegionDomain"`
 	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain *string `pulumi:"domain"`
 	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 	DomainPrefix *string `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting *string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId *string `pulumi:"eipId"`
+	// IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType *string `pulumi:"networkType"`
 	// Port number.
 	Port *string `pulumi:"port"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
 }
 
-// DbEndpointAddressInput is an input type that accepts DbEndpointAddressArgs and DbEndpointAddressOutput values.
-// You can construct a concrete instance of `DbEndpointAddressInput` via:
+// DbEndpointInnerAddressesInput is an input type that accepts DbEndpointInnerAddressesArgs and DbEndpointInnerAddressesOutput values.
+// You can construct a concrete instance of `DbEndpointInnerAddressesInput` via:
 //
-//	DbEndpointAddressArgs{...}
-type DbEndpointAddressInput interface {
+//	DbEndpointInnerAddressesArgs{...}
+type DbEndpointInnerAddressesInput interface {
 	pulumi.Input
 
-	ToDbEndpointAddressOutput() DbEndpointAddressOutput
-	ToDbEndpointAddressOutputWithContext(context.Context) DbEndpointAddressOutput
+	ToDbEndpointInnerAddressesOutput() DbEndpointInnerAddressesOutput
+	ToDbEndpointInnerAddressesOutputWithContext(context.Context) DbEndpointInnerAddressesOutput
 }
 
-type DbEndpointAddressArgs struct {
+type DbEndpointInnerAddressesArgs struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain pulumi.StringPtrInput `pulumi:"crossRegionDomain"`
 	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting pulumi.StringPtrInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
 	// Port number.
 	Port pulumi.StringPtrInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
-func (DbEndpointAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DbEndpointAddress)(nil)).Elem()
+func (DbEndpointInnerAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointInnerAddresses)(nil)).Elem()
 }
 
-func (i DbEndpointAddressArgs) ToDbEndpointAddressOutput() DbEndpointAddressOutput {
-	return i.ToDbEndpointAddressOutputWithContext(context.Background())
+func (i DbEndpointInnerAddressesArgs) ToDbEndpointInnerAddressesOutput() DbEndpointInnerAddressesOutput {
+	return i.ToDbEndpointInnerAddressesOutputWithContext(context.Background())
 }
 
-func (i DbEndpointAddressArgs) ToDbEndpointAddressOutputWithContext(ctx context.Context) DbEndpointAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointAddressOutput)
+func (i DbEndpointInnerAddressesArgs) ToDbEndpointInnerAddressesOutputWithContext(ctx context.Context) DbEndpointInnerAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointInnerAddressesOutput)
 }
 
-// DbEndpointAddressArrayInput is an input type that accepts DbEndpointAddressArray and DbEndpointAddressArrayOutput values.
-// You can construct a concrete instance of `DbEndpointAddressArrayInput` via:
+func (i DbEndpointInnerAddressesArgs) ToDbEndpointInnerAddressesPtrOutput() DbEndpointInnerAddressesPtrOutput {
+	return i.ToDbEndpointInnerAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i DbEndpointInnerAddressesArgs) ToDbEndpointInnerAddressesPtrOutputWithContext(ctx context.Context) DbEndpointInnerAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointInnerAddressesOutput).ToDbEndpointInnerAddressesPtrOutputWithContext(ctx)
+}
+
+// DbEndpointInnerAddressesPtrInput is an input type that accepts DbEndpointInnerAddressesArgs, DbEndpointInnerAddressesPtr and DbEndpointInnerAddressesPtrOutput values.
+// You can construct a concrete instance of `DbEndpointInnerAddressesPtrInput` via:
 //
-//	DbEndpointAddressArray{ DbEndpointAddressArgs{...} }
-type DbEndpointAddressArrayInput interface {
+//	        DbEndpointInnerAddressesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbEndpointInnerAddressesPtrInput interface {
 	pulumi.Input
 
-	ToDbEndpointAddressArrayOutput() DbEndpointAddressArrayOutput
-	ToDbEndpointAddressArrayOutputWithContext(context.Context) DbEndpointAddressArrayOutput
+	ToDbEndpointInnerAddressesPtrOutput() DbEndpointInnerAddressesPtrOutput
+	ToDbEndpointInnerAddressesPtrOutputWithContext(context.Context) DbEndpointInnerAddressesPtrOutput
 }
 
-type DbEndpointAddressArray []DbEndpointAddressInput
+type dbEndpointInnerAddressesPtrType DbEndpointInnerAddressesArgs
 
-func (DbEndpointAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DbEndpointAddress)(nil)).Elem()
+func DbEndpointInnerAddressesPtr(v *DbEndpointInnerAddressesArgs) DbEndpointInnerAddressesPtrInput {
+	return (*dbEndpointInnerAddressesPtrType)(v)
 }
 
-func (i DbEndpointAddressArray) ToDbEndpointAddressArrayOutput() DbEndpointAddressArrayOutput {
-	return i.ToDbEndpointAddressArrayOutputWithContext(context.Background())
+func (*dbEndpointInnerAddressesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbEndpointInnerAddresses)(nil)).Elem()
 }
 
-func (i DbEndpointAddressArray) ToDbEndpointAddressArrayOutputWithContext(ctx context.Context) DbEndpointAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointAddressArrayOutput)
+func (i *dbEndpointInnerAddressesPtrType) ToDbEndpointInnerAddressesPtrOutput() DbEndpointInnerAddressesPtrOutput {
+	return i.ToDbEndpointInnerAddressesPtrOutputWithContext(context.Background())
 }
 
-type DbEndpointAddressOutput struct{ *pulumi.OutputState }
-
-func (DbEndpointAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DbEndpointAddress)(nil)).Elem()
+func (i *dbEndpointInnerAddressesPtrType) ToDbEndpointInnerAddressesPtrOutputWithContext(ctx context.Context) DbEndpointInnerAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointInnerAddressesPtrOutput)
 }
 
-func (o DbEndpointAddressOutput) ToDbEndpointAddressOutput() DbEndpointAddressOutput {
+type DbEndpointInnerAddressesOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointInnerAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointInnerAddresses)(nil)).Elem()
+}
+
+func (o DbEndpointInnerAddressesOutput) ToDbEndpointInnerAddressesOutput() DbEndpointInnerAddressesOutput {
 	return o
 }
 
-func (o DbEndpointAddressOutput) ToDbEndpointAddressOutputWithContext(ctx context.Context) DbEndpointAddressOutput {
+func (o DbEndpointInnerAddressesOutput) ToDbEndpointInnerAddressesOutputWithContext(ctx context.Context) DbEndpointInnerAddressesOutput {
 	return o
+}
+
+func (o DbEndpointInnerAddressesOutput) ToDbEndpointInnerAddressesPtrOutput() DbEndpointInnerAddressesPtrOutput {
+	return o.ToDbEndpointInnerAddressesPtrOutputWithContext(context.Background())
+}
+
+func (o DbEndpointInnerAddressesOutput) ToDbEndpointInnerAddressesPtrOutputWithContext(ctx context.Context) DbEndpointInnerAddressesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbEndpointInnerAddresses) *DbEndpointInnerAddresses {
+		return &v
+	}).(DbEndpointInnerAddressesPtrOutput)
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o DbEndpointInnerAddressesOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.CrossRegionDomain }).(pulumi.StringPtrOutput)
 }
 
 // Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
-func (o DbEndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v DbEndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+func (o DbEndpointInnerAddressesOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o DbEndpointInnerAddressesOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
-func (o DbEndpointAddressOutput) DomainPrefix() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DbEndpointAddress) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
+func (o DbEndpointInnerAddressesOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o DbEndpointInnerAddressesOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.DomainVisibilitySetting }).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o DbEndpointInnerAddressesOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o DbEndpointInnerAddressesOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o DbEndpointInnerAddressesOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
 // Port number.
-func (o DbEndpointAddressOutput) Port() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DbEndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
+func (o DbEndpointInnerAddressesOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-type DbEndpointAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (DbEndpointAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]DbEndpointAddress)(nil)).Elem()
+// Subnet ID
+func (o DbEndpointInnerAddressesOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointInnerAddresses) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-func (o DbEndpointAddressArrayOutput) ToDbEndpointAddressArrayOutput() DbEndpointAddressArrayOutput {
+type DbEndpointInnerAddressesPtrOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointInnerAddressesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbEndpointInnerAddresses)(nil)).Elem()
+}
+
+func (o DbEndpointInnerAddressesPtrOutput) ToDbEndpointInnerAddressesPtrOutput() DbEndpointInnerAddressesPtrOutput {
 	return o
 }
 
-func (o DbEndpointAddressArrayOutput) ToDbEndpointAddressArrayOutputWithContext(ctx context.Context) DbEndpointAddressArrayOutput {
+func (o DbEndpointInnerAddressesPtrOutput) ToDbEndpointInnerAddressesPtrOutputWithContext(ctx context.Context) DbEndpointInnerAddressesPtrOutput {
 	return o
 }
 
-func (o DbEndpointAddressArrayOutput) Index(i pulumi.IntInput) DbEndpointAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbEndpointAddress {
-		return vs[0].([]DbEndpointAddress)[vs[1].(int)]
-	}).(DbEndpointAddressOutput)
+func (o DbEndpointInnerAddressesPtrOutput) Elem() DbEndpointInnerAddressesOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) DbEndpointInnerAddresses {
+		if v != nil {
+			return *v
+		}
+		var ret DbEndpointInnerAddresses
+		return ret
+	}).(DbEndpointInnerAddressesOutput)
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o DbEndpointInnerAddressesPtrOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CrossRegionDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o DbEndpointInnerAddressesPtrOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DnsVisibility
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o DbEndpointInnerAddressesPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o DbEndpointInnerAddressesPtrOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o DbEndpointInnerAddressesPtrOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainVisibilitySetting
+	}).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o DbEndpointInnerAddressesPtrOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EipId
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o DbEndpointInnerAddressesPtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o DbEndpointInnerAddressesPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Port number.
+func (o DbEndpointInnerAddressesPtrOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o DbEndpointInnerAddressesPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointInnerAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DbEndpointPrivateAddresses struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain *string `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain *string `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix *string `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting *string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId *string `pulumi:"eipId"`
+	// IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType *string `pulumi:"networkType"`
+	// Port number.
+	Port *string `pulumi:"port"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// DbEndpointPrivateAddressesInput is an input type that accepts DbEndpointPrivateAddressesArgs and DbEndpointPrivateAddressesOutput values.
+// You can construct a concrete instance of `DbEndpointPrivateAddressesInput` via:
+//
+//	DbEndpointPrivateAddressesArgs{...}
+type DbEndpointPrivateAddressesInput interface {
+	pulumi.Input
+
+	ToDbEndpointPrivateAddressesOutput() DbEndpointPrivateAddressesOutput
+	ToDbEndpointPrivateAddressesOutputWithContext(context.Context) DbEndpointPrivateAddressesOutput
+}
+
+type DbEndpointPrivateAddressesArgs struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain pulumi.StringPtrInput `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting pulumi.StringPtrInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// Port number.
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (DbEndpointPrivateAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (i DbEndpointPrivateAddressesArgs) ToDbEndpointPrivateAddressesOutput() DbEndpointPrivateAddressesOutput {
+	return i.ToDbEndpointPrivateAddressesOutputWithContext(context.Background())
+}
+
+func (i DbEndpointPrivateAddressesArgs) ToDbEndpointPrivateAddressesOutputWithContext(ctx context.Context) DbEndpointPrivateAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointPrivateAddressesOutput)
+}
+
+func (i DbEndpointPrivateAddressesArgs) ToDbEndpointPrivateAddressesPtrOutput() DbEndpointPrivateAddressesPtrOutput {
+	return i.ToDbEndpointPrivateAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i DbEndpointPrivateAddressesArgs) ToDbEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPrivateAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointPrivateAddressesOutput).ToDbEndpointPrivateAddressesPtrOutputWithContext(ctx)
+}
+
+// DbEndpointPrivateAddressesPtrInput is an input type that accepts DbEndpointPrivateAddressesArgs, DbEndpointPrivateAddressesPtr and DbEndpointPrivateAddressesPtrOutput values.
+// You can construct a concrete instance of `DbEndpointPrivateAddressesPtrInput` via:
+//
+//	        DbEndpointPrivateAddressesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbEndpointPrivateAddressesPtrInput interface {
+	pulumi.Input
+
+	ToDbEndpointPrivateAddressesPtrOutput() DbEndpointPrivateAddressesPtrOutput
+	ToDbEndpointPrivateAddressesPtrOutputWithContext(context.Context) DbEndpointPrivateAddressesPtrOutput
+}
+
+type dbEndpointPrivateAddressesPtrType DbEndpointPrivateAddressesArgs
+
+func DbEndpointPrivateAddressesPtr(v *DbEndpointPrivateAddressesArgs) DbEndpointPrivateAddressesPtrInput {
+	return (*dbEndpointPrivateAddressesPtrType)(v)
+}
+
+func (*dbEndpointPrivateAddressesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (i *dbEndpointPrivateAddressesPtrType) ToDbEndpointPrivateAddressesPtrOutput() DbEndpointPrivateAddressesPtrOutput {
+	return i.ToDbEndpointPrivateAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i *dbEndpointPrivateAddressesPtrType) ToDbEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPrivateAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointPrivateAddressesPtrOutput)
+}
+
+type DbEndpointPrivateAddressesOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointPrivateAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (o DbEndpointPrivateAddressesOutput) ToDbEndpointPrivateAddressesOutput() DbEndpointPrivateAddressesOutput {
+	return o
+}
+
+func (o DbEndpointPrivateAddressesOutput) ToDbEndpointPrivateAddressesOutputWithContext(ctx context.Context) DbEndpointPrivateAddressesOutput {
+	return o
+}
+
+func (o DbEndpointPrivateAddressesOutput) ToDbEndpointPrivateAddressesPtrOutput() DbEndpointPrivateAddressesPtrOutput {
+	return o.ToDbEndpointPrivateAddressesPtrOutputWithContext(context.Background())
+}
+
+func (o DbEndpointPrivateAddressesOutput) ToDbEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPrivateAddressesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbEndpointPrivateAddresses) *DbEndpointPrivateAddresses {
+		return &v
+	}).(DbEndpointPrivateAddressesPtrOutput)
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o DbEndpointPrivateAddressesOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.CrossRegionDomain }).(pulumi.StringPtrOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o DbEndpointPrivateAddressesOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o DbEndpointPrivateAddressesOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o DbEndpointPrivateAddressesOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o DbEndpointPrivateAddressesOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.DomainVisibilitySetting }).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o DbEndpointPrivateAddressesOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o DbEndpointPrivateAddressesOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o DbEndpointPrivateAddressesOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// Port number.
+func (o DbEndpointPrivateAddressesOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o DbEndpointPrivateAddressesOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPrivateAddresses) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type DbEndpointPrivateAddressesPtrOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointPrivateAddressesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (o DbEndpointPrivateAddressesPtrOutput) ToDbEndpointPrivateAddressesPtrOutput() DbEndpointPrivateAddressesPtrOutput {
+	return o
+}
+
+func (o DbEndpointPrivateAddressesPtrOutput) ToDbEndpointPrivateAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPrivateAddressesPtrOutput {
+	return o
+}
+
+func (o DbEndpointPrivateAddressesPtrOutput) Elem() DbEndpointPrivateAddressesOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) DbEndpointPrivateAddresses {
+		if v != nil {
+			return *v
+		}
+		var ret DbEndpointPrivateAddresses
+		return ret
+	}).(DbEndpointPrivateAddressesOutput)
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o DbEndpointPrivateAddressesPtrOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CrossRegionDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o DbEndpointPrivateAddressesPtrOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DnsVisibility
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o DbEndpointPrivateAddressesPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o DbEndpointPrivateAddressesPtrOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o DbEndpointPrivateAddressesPtrOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainVisibilitySetting
+	}).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o DbEndpointPrivateAddressesPtrOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EipId
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o DbEndpointPrivateAddressesPtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o DbEndpointPrivateAddressesPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Port number.
+func (o DbEndpointPrivateAddressesPtrOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o DbEndpointPrivateAddressesPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPrivateAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DbEndpointPublicAddresses struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain *string `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain *string `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix *string `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting *string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId *string `pulumi:"eipId"`
+	// IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType *string `pulumi:"networkType"`
+	// Port number.
+	Port *string `pulumi:"port"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// DbEndpointPublicAddressesInput is an input type that accepts DbEndpointPublicAddressesArgs and DbEndpointPublicAddressesOutput values.
+// You can construct a concrete instance of `DbEndpointPublicAddressesInput` via:
+//
+//	DbEndpointPublicAddressesArgs{...}
+type DbEndpointPublicAddressesInput interface {
+	pulumi.Input
+
+	ToDbEndpointPublicAddressesOutput() DbEndpointPublicAddressesOutput
+	ToDbEndpointPublicAddressesOutputWithContext(context.Context) DbEndpointPublicAddressesOutput
+}
+
+type DbEndpointPublicAddressesArgs struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain pulumi.StringPtrInput `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting pulumi.StringPtrInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// Port number.
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (DbEndpointPublicAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (i DbEndpointPublicAddressesArgs) ToDbEndpointPublicAddressesOutput() DbEndpointPublicAddressesOutput {
+	return i.ToDbEndpointPublicAddressesOutputWithContext(context.Background())
+}
+
+func (i DbEndpointPublicAddressesArgs) ToDbEndpointPublicAddressesOutputWithContext(ctx context.Context) DbEndpointPublicAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointPublicAddressesOutput)
+}
+
+func (i DbEndpointPublicAddressesArgs) ToDbEndpointPublicAddressesPtrOutput() DbEndpointPublicAddressesPtrOutput {
+	return i.ToDbEndpointPublicAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i DbEndpointPublicAddressesArgs) ToDbEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPublicAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointPublicAddressesOutput).ToDbEndpointPublicAddressesPtrOutputWithContext(ctx)
+}
+
+// DbEndpointPublicAddressesPtrInput is an input type that accepts DbEndpointPublicAddressesArgs, DbEndpointPublicAddressesPtr and DbEndpointPublicAddressesPtrOutput values.
+// You can construct a concrete instance of `DbEndpointPublicAddressesPtrInput` via:
+//
+//	        DbEndpointPublicAddressesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbEndpointPublicAddressesPtrInput interface {
+	pulumi.Input
+
+	ToDbEndpointPublicAddressesPtrOutput() DbEndpointPublicAddressesPtrOutput
+	ToDbEndpointPublicAddressesPtrOutputWithContext(context.Context) DbEndpointPublicAddressesPtrOutput
+}
+
+type dbEndpointPublicAddressesPtrType DbEndpointPublicAddressesArgs
+
+func DbEndpointPublicAddressesPtr(v *DbEndpointPublicAddressesArgs) DbEndpointPublicAddressesPtrInput {
+	return (*dbEndpointPublicAddressesPtrType)(v)
+}
+
+func (*dbEndpointPublicAddressesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (i *dbEndpointPublicAddressesPtrType) ToDbEndpointPublicAddressesPtrOutput() DbEndpointPublicAddressesPtrOutput {
+	return i.ToDbEndpointPublicAddressesPtrOutputWithContext(context.Background())
+}
+
+func (i *dbEndpointPublicAddressesPtrType) ToDbEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPublicAddressesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointPublicAddressesPtrOutput)
+}
+
+type DbEndpointPublicAddressesOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointPublicAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (o DbEndpointPublicAddressesOutput) ToDbEndpointPublicAddressesOutput() DbEndpointPublicAddressesOutput {
+	return o
+}
+
+func (o DbEndpointPublicAddressesOutput) ToDbEndpointPublicAddressesOutputWithContext(ctx context.Context) DbEndpointPublicAddressesOutput {
+	return o
+}
+
+func (o DbEndpointPublicAddressesOutput) ToDbEndpointPublicAddressesPtrOutput() DbEndpointPublicAddressesPtrOutput {
+	return o.ToDbEndpointPublicAddressesPtrOutputWithContext(context.Background())
+}
+
+func (o DbEndpointPublicAddressesOutput) ToDbEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPublicAddressesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbEndpointPublicAddresses) *DbEndpointPublicAddresses {
+		return &v
+	}).(DbEndpointPublicAddressesPtrOutput)
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o DbEndpointPublicAddressesOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.CrossRegionDomain }).(pulumi.StringPtrOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o DbEndpointPublicAddressesOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o DbEndpointPublicAddressesOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o DbEndpointPublicAddressesOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o DbEndpointPublicAddressesOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.DomainVisibilitySetting }).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o DbEndpointPublicAddressesOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o DbEndpointPublicAddressesOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o DbEndpointPublicAddressesOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// Port number.
+func (o DbEndpointPublicAddressesOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o DbEndpointPublicAddressesOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointPublicAddresses) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type DbEndpointPublicAddressesPtrOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointPublicAddressesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (o DbEndpointPublicAddressesPtrOutput) ToDbEndpointPublicAddressesPtrOutput() DbEndpointPublicAddressesPtrOutput {
+	return o
+}
+
+func (o DbEndpointPublicAddressesPtrOutput) ToDbEndpointPublicAddressesPtrOutputWithContext(ctx context.Context) DbEndpointPublicAddressesPtrOutput {
+	return o
+}
+
+func (o DbEndpointPublicAddressesPtrOutput) Elem() DbEndpointPublicAddressesOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) DbEndpointPublicAddresses {
+		if v != nil {
+			return *v
+		}
+		var ret DbEndpointPublicAddresses
+		return ret
+	}).(DbEndpointPublicAddressesOutput)
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o DbEndpointPublicAddressesPtrOutput) CrossRegionDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CrossRegionDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o DbEndpointPublicAddressesPtrOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DnsVisibility
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name
+func (o DbEndpointPublicAddressesPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o DbEndpointPublicAddressesPtrOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o DbEndpointPublicAddressesPtrOutput) DomainVisibilitySetting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainVisibilitySetting
+	}).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o DbEndpointPublicAddressesPtrOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EipId
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address
+func (o DbEndpointPublicAddressesPtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o DbEndpointPublicAddressesPtrOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Port number.
+func (o DbEndpointPublicAddressesPtrOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID
+func (o DbEndpointPublicAddressesPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbEndpointPublicAddresses) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
 }
 
 type DbEndpointReadOnlyNodeWeight struct {
@@ -2638,7 +3447,7 @@ func (o GetBackupBackupPolicyOutput) WalLogSpaceLimitEnable() pulumi.BoolOutput 
 	return o.ApplyT(func(v GetBackupBackupPolicy) bool { return v.WalLogSpaceLimitEnable }).(pulumi.BoolOutput)
 }
 
-type GetDbEndpointAddress struct {
+type GetDbEndpointInnerAddresses struct {
 	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
 	CrossRegionDomain string `pulumi:"crossRegionDomain"`
 	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
@@ -2661,18 +3470,18 @@ type GetDbEndpointAddress struct {
 	SubnetId string `pulumi:"subnetId"`
 }
 
-// GetDbEndpointAddressInput is an input type that accepts GetDbEndpointAddressArgs and GetDbEndpointAddressOutput values.
-// You can construct a concrete instance of `GetDbEndpointAddressInput` via:
+// GetDbEndpointInnerAddressesInput is an input type that accepts GetDbEndpointInnerAddressesArgs and GetDbEndpointInnerAddressesOutput values.
+// You can construct a concrete instance of `GetDbEndpointInnerAddressesInput` via:
 //
-//	GetDbEndpointAddressArgs{...}
-type GetDbEndpointAddressInput interface {
+//	GetDbEndpointInnerAddressesArgs{...}
+type GetDbEndpointInnerAddressesInput interface {
 	pulumi.Input
 
-	ToGetDbEndpointAddressOutput() GetDbEndpointAddressOutput
-	ToGetDbEndpointAddressOutputWithContext(context.Context) GetDbEndpointAddressOutput
+	ToGetDbEndpointInnerAddressesOutput() GetDbEndpointInnerAddressesOutput
+	ToGetDbEndpointInnerAddressesOutputWithContext(context.Context) GetDbEndpointInnerAddressesOutput
 }
 
-type GetDbEndpointAddressArgs struct {
+type GetDbEndpointInnerAddressesArgs struct {
 	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
 	CrossRegionDomain pulumi.StringInput `pulumi:"crossRegionDomain"`
 	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
@@ -2695,125 +3504,346 @@ type GetDbEndpointAddressArgs struct {
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
-func (GetDbEndpointAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDbEndpointAddress)(nil)).Elem()
+func (GetDbEndpointInnerAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointInnerAddresses)(nil)).Elem()
 }
 
-func (i GetDbEndpointAddressArgs) ToGetDbEndpointAddressOutput() GetDbEndpointAddressOutput {
-	return i.ToGetDbEndpointAddressOutputWithContext(context.Background())
+func (i GetDbEndpointInnerAddressesArgs) ToGetDbEndpointInnerAddressesOutput() GetDbEndpointInnerAddressesOutput {
+	return i.ToGetDbEndpointInnerAddressesOutputWithContext(context.Background())
 }
 
-func (i GetDbEndpointAddressArgs) ToGetDbEndpointAddressOutputWithContext(ctx context.Context) GetDbEndpointAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointAddressOutput)
+func (i GetDbEndpointInnerAddressesArgs) ToGetDbEndpointInnerAddressesOutputWithContext(ctx context.Context) GetDbEndpointInnerAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointInnerAddressesOutput)
 }
 
-// GetDbEndpointAddressArrayInput is an input type that accepts GetDbEndpointAddressArray and GetDbEndpointAddressArrayOutput values.
-// You can construct a concrete instance of `GetDbEndpointAddressArrayInput` via:
-//
-//	GetDbEndpointAddressArray{ GetDbEndpointAddressArgs{...} }
-type GetDbEndpointAddressArrayInput interface {
-	pulumi.Input
+type GetDbEndpointInnerAddressesOutput struct{ *pulumi.OutputState }
 
-	ToGetDbEndpointAddressArrayOutput() GetDbEndpointAddressArrayOutput
-	ToGetDbEndpointAddressArrayOutputWithContext(context.Context) GetDbEndpointAddressArrayOutput
+func (GetDbEndpointInnerAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointInnerAddresses)(nil)).Elem()
 }
 
-type GetDbEndpointAddressArray []GetDbEndpointAddressInput
-
-func (GetDbEndpointAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDbEndpointAddress)(nil)).Elem()
-}
-
-func (i GetDbEndpointAddressArray) ToGetDbEndpointAddressArrayOutput() GetDbEndpointAddressArrayOutput {
-	return i.ToGetDbEndpointAddressArrayOutputWithContext(context.Background())
-}
-
-func (i GetDbEndpointAddressArray) ToGetDbEndpointAddressArrayOutputWithContext(ctx context.Context) GetDbEndpointAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointAddressArrayOutput)
-}
-
-type GetDbEndpointAddressOutput struct{ *pulumi.OutputState }
-
-func (GetDbEndpointAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDbEndpointAddress)(nil)).Elem()
-}
-
-func (o GetDbEndpointAddressOutput) ToGetDbEndpointAddressOutput() GetDbEndpointAddressOutput {
+func (o GetDbEndpointInnerAddressesOutput) ToGetDbEndpointInnerAddressesOutput() GetDbEndpointInnerAddressesOutput {
 	return o
 }
 
-func (o GetDbEndpointAddressOutput) ToGetDbEndpointAddressOutputWithContext(ctx context.Context) GetDbEndpointAddressOutput {
+func (o GetDbEndpointInnerAddressesOutput) ToGetDbEndpointInnerAddressesOutputWithContext(ctx context.Context) GetDbEndpointInnerAddressesOutput {
 	return o
 }
 
 // Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
-func (o GetDbEndpointAddressOutput) CrossRegionDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) CrossRegionDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
 }
 
 // Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
-func (o GetDbEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+func (o GetDbEndpointInnerAddressesOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
 }
 
 // Connection domain name
-func (o GetDbEndpointAddressOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.Domain }).(pulumi.StringOutput)
 }
 
 // New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
-func (o GetDbEndpointAddressOutput) DomainPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.DomainPrefix }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) DomainPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.DomainPrefix }).(pulumi.StringOutput)
 }
 
 // Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
-func (o GetDbEndpointAddressOutput) DomainVisibilitySetting() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) DomainVisibilitySetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
 }
 
 // EIP ID, valid only for Public addresses.
-func (o GetDbEndpointAddressOutput) EipId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.EipId }).(pulumi.StringOutput)
 }
 
 // IP address
-func (o GetDbEndpointAddressOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
 // Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
-func (o GetDbEndpointAddressOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
 // Port number.
-func (o GetDbEndpointAddressOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.Port }).(pulumi.StringOutput)
 }
 
 // Subnet ID
-func (o GetDbEndpointAddressOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetDbEndpointInnerAddressesOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointInnerAddresses) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-type GetDbEndpointAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (GetDbEndpointAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDbEndpointAddress)(nil)).Elem()
+type GetDbEndpointPrivateAddresses struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain string `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain string `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix string `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId string `pulumi:"eipId"`
+	// IP address
+	IpAddress string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType string `pulumi:"networkType"`
+	// Port number.
+	Port string `pulumi:"port"`
+	// Subnet ID
+	SubnetId string `pulumi:"subnetId"`
 }
 
-func (o GetDbEndpointAddressArrayOutput) ToGetDbEndpointAddressArrayOutput() GetDbEndpointAddressArrayOutput {
+// GetDbEndpointPrivateAddressesInput is an input type that accepts GetDbEndpointPrivateAddressesArgs and GetDbEndpointPrivateAddressesOutput values.
+// You can construct a concrete instance of `GetDbEndpointPrivateAddressesInput` via:
+//
+//	GetDbEndpointPrivateAddressesArgs{...}
+type GetDbEndpointPrivateAddressesInput interface {
+	pulumi.Input
+
+	ToGetDbEndpointPrivateAddressesOutput() GetDbEndpointPrivateAddressesOutput
+	ToGetDbEndpointPrivateAddressesOutputWithContext(context.Context) GetDbEndpointPrivateAddressesOutput
+}
+
+type GetDbEndpointPrivateAddressesArgs struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain pulumi.StringInput `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix pulumi.StringInput `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting pulumi.StringInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Port number.
+	Port pulumi.StringInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDbEndpointPrivateAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (i GetDbEndpointPrivateAddressesArgs) ToGetDbEndpointPrivateAddressesOutput() GetDbEndpointPrivateAddressesOutput {
+	return i.ToGetDbEndpointPrivateAddressesOutputWithContext(context.Background())
+}
+
+func (i GetDbEndpointPrivateAddressesArgs) ToGetDbEndpointPrivateAddressesOutputWithContext(ctx context.Context) GetDbEndpointPrivateAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointPrivateAddressesOutput)
+}
+
+type GetDbEndpointPrivateAddressesOutput struct{ *pulumi.OutputState }
+
+func (GetDbEndpointPrivateAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointPrivateAddresses)(nil)).Elem()
+}
+
+func (o GetDbEndpointPrivateAddressesOutput) ToGetDbEndpointPrivateAddressesOutput() GetDbEndpointPrivateAddressesOutput {
 	return o
 }
 
-func (o GetDbEndpointAddressArrayOutput) ToGetDbEndpointAddressArrayOutputWithContext(ctx context.Context) GetDbEndpointAddressArrayOutput {
+func (o GetDbEndpointPrivateAddressesOutput) ToGetDbEndpointPrivateAddressesOutputWithContext(ctx context.Context) GetDbEndpointPrivateAddressesOutput {
 	return o
 }
 
-func (o GetDbEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetDbEndpointAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbEndpointAddress {
-		return vs[0].([]GetDbEndpointAddress)[vs[1].(int)]
-	}).(GetDbEndpointAddressOutput)
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o GetDbEndpointPrivateAddressesOutput) CrossRegionDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o GetDbEndpointPrivateAddressesOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// Connection domain name
+func (o GetDbEndpointPrivateAddressesOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o GetDbEndpointPrivateAddressesOutput) DomainPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.DomainPrefix }).(pulumi.StringOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o GetDbEndpointPrivateAddressesOutput) DomainVisibilitySetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o GetDbEndpointPrivateAddressesOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o GetDbEndpointPrivateAddressesOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o GetDbEndpointPrivateAddressesOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Port number.
+func (o GetDbEndpointPrivateAddressesOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// Subnet ID
+func (o GetDbEndpointPrivateAddressesOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPrivateAddresses) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetDbEndpointPublicAddresses struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain string `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain string `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix string `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting string `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId string `pulumi:"eipId"`
+	// IP address
+	IpAddress string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType string `pulumi:"networkType"`
+	// Port number.
+	Port string `pulumi:"port"`
+	// Subnet ID
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetDbEndpointPublicAddressesInput is an input type that accepts GetDbEndpointPublicAddressesArgs and GetDbEndpointPublicAddressesOutput values.
+// You can construct a concrete instance of `GetDbEndpointPublicAddressesInput` via:
+//
+//	GetDbEndpointPublicAddressesArgs{...}
+type GetDbEndpointPublicAddressesInput interface {
+	pulumi.Input
+
+	ToGetDbEndpointPublicAddressesOutput() GetDbEndpointPublicAddressesOutput
+	ToGetDbEndpointPublicAddressesOutputWithContext(context.Context) GetDbEndpointPublicAddressesOutput
+}
+
+type GetDbEndpointPublicAddressesArgs struct {
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+	CrossRegionDomain pulumi.StringInput `pulumi:"crossRegionDomain"`
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// Connection domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+	DomainPrefix pulumi.StringInput `pulumi:"domainPrefix"`
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+	DomainVisibilitySetting pulumi.StringInput `pulumi:"domainVisibilitySetting"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP address
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Port number.
+	Port pulumi.StringInput `pulumi:"port"`
+	// Subnet ID
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDbEndpointPublicAddressesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (i GetDbEndpointPublicAddressesArgs) ToGetDbEndpointPublicAddressesOutput() GetDbEndpointPublicAddressesOutput {
+	return i.ToGetDbEndpointPublicAddressesOutputWithContext(context.Background())
+}
+
+func (i GetDbEndpointPublicAddressesArgs) ToGetDbEndpointPublicAddressesOutputWithContext(ctx context.Context) GetDbEndpointPublicAddressesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointPublicAddressesOutput)
+}
+
+type GetDbEndpointPublicAddressesOutput struct{ *pulumi.OutputState }
+
+func (GetDbEndpointPublicAddressesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointPublicAddresses)(nil)).Elem()
+}
+
+func (o GetDbEndpointPublicAddressesOutput) ToGetDbEndpointPublicAddressesOutput() GetDbEndpointPublicAddressesOutput {
+	return o
+}
+
+func (o GetDbEndpointPublicAddressesOutput) ToGetDbEndpointPublicAddressesOutputWithContext(ctx context.Context) GetDbEndpointPublicAddressesOutput {
+	return o
+}
+
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
+func (o GetDbEndpointPublicAddressesOutput) CrossRegionDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
+}
+
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
+func (o GetDbEndpointPublicAddressesOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// Connection domain name
+func (o GetDbEndpointPublicAddressesOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
+func (o GetDbEndpointPublicAddressesOutput) DomainPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.DomainPrefix }).(pulumi.StringOutput)
+}
+
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
+func (o GetDbEndpointPublicAddressesOutput) DomainVisibilitySetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o GetDbEndpointPublicAddressesOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o GetDbEndpointPublicAddressesOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
+func (o GetDbEndpointPublicAddressesOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Port number.
+func (o GetDbEndpointPublicAddressesOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// Subnet ID
+func (o GetDbEndpointPublicAddressesOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointPublicAddresses) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 type GetDbEndpointReadOnlyNodeWeight struct {
@@ -4056,8 +5086,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaArrayInput)(nil)).Elem(), BackupBackupMetaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupPolicyInput)(nil)).Elem(), BackupBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupPolicyPtrInput)(nil)).Elem(), BackupBackupPolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressInput)(nil)).Elem(), DbEndpointAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressArrayInput)(nil)).Elem(), DbEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointInnerAddressesInput)(nil)).Elem(), DbEndpointInnerAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointInnerAddressesPtrInput)(nil)).Elem(), DbEndpointInnerAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointPrivateAddressesInput)(nil)).Elem(), DbEndpointPrivateAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointPrivateAddressesPtrInput)(nil)).Elem(), DbEndpointPrivateAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointPublicAddressesInput)(nil)).Elem(), DbEndpointPublicAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointPublicAddressesPtrInput)(nil)).Elem(), DbEndpointPublicAddressesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailInput)(nil)).Elem(), InstanceChargeDetailArgs{})
@@ -4083,8 +5117,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaInput)(nil)).Elem(), GetBackupBackupMetaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaArrayInput)(nil)).Elem(), GetBackupBackupMetaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupPolicyInput)(nil)).Elem(), GetBackupBackupPolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressInput)(nil)).Elem(), GetDbEndpointAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressArrayInput)(nil)).Elem(), GetDbEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointInnerAddressesInput)(nil)).Elem(), GetDbEndpointInnerAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointPrivateAddressesInput)(nil)).Elem(), GetDbEndpointPrivateAddressesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointPublicAddressesInput)(nil)).Elem(), GetDbEndpointPublicAddressesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeDetailInput)(nil)).Elem(), GetInstanceChargeDetailArgs{})
@@ -4109,8 +5144,12 @@ func init() {
 	pulumi.RegisterOutputType(BackupBackupMetaArrayOutput{})
 	pulumi.RegisterOutputType(BackupBackupPolicyOutput{})
 	pulumi.RegisterOutputType(BackupBackupPolicyPtrOutput{})
-	pulumi.RegisterOutputType(DbEndpointAddressOutput{})
-	pulumi.RegisterOutputType(DbEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(DbEndpointInnerAddressesOutput{})
+	pulumi.RegisterOutputType(DbEndpointInnerAddressesPtrOutput{})
+	pulumi.RegisterOutputType(DbEndpointPrivateAddressesOutput{})
+	pulumi.RegisterOutputType(DbEndpointPrivateAddressesPtrOutput{})
+	pulumi.RegisterOutputType(DbEndpointPublicAddressesOutput{})
+	pulumi.RegisterOutputType(DbEndpointPublicAddressesPtrOutput{})
 	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightOutput{})
 	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailOutput{})
@@ -4136,8 +5175,9 @@ func init() {
 	pulumi.RegisterOutputType(GetBackupBackupMetaOutput{})
 	pulumi.RegisterOutputType(GetBackupBackupMetaArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupBackupPolicyOutput{})
-	pulumi.RegisterOutputType(GetDbEndpointAddressOutput{})
-	pulumi.RegisterOutputType(GetDbEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointInnerAddressesOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointPrivateAddressesOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointPublicAddressesOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightOutput{})
 	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeDetailOutput{})

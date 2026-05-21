@@ -3,7 +3,9 @@
 
 package com.byteplus.bytepluscc.rdspostgresql;
 
-import com.byteplus.bytepluscc.rdspostgresql.inputs.DbEndpointAddressArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.DbEndpointInnerAddressesArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.DbEndpointPrivateAddressesArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.DbEndpointPublicAddressesArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.DbEndpointReadOnlyNodeWeightArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -19,13 +21,6 @@ import javax.annotation.Nullable;
 public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DbEndpointArgs Empty = new DbEndpointArgs();
-
-    @Import(name="addresses")
-    private @Nullable Output<List<DbEndpointAddressArgs>> addresses;
-
-    public Optional<Output<List<DbEndpointAddressArgs>>> addresses() {
-        return Optional.ofNullable(this.addresses);
-    }
 
     /**
      * Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
@@ -73,6 +68,21 @@ public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Public service zone connection address
+     * 
+     */
+    @Import(name="innerAddresses")
+    private @Nullable Output<DbEndpointInnerAddressesArgs> innerAddresses;
+
+    /**
+     * @return Public service zone connection address
+     * 
+     */
+    public Optional<Output<DbEndpointInnerAddressesArgs>> innerAddresses() {
+        return Optional.ofNullable(this.innerAddresses);
+    }
+
+    /**
      * Instance ID.
      * 
      */
@@ -100,6 +110,36 @@ public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> nodes() {
         return Optional.ofNullable(this.nodes);
+    }
+
+    /**
+     * Private network connection address
+     * 
+     */
+    @Import(name="privateAddresses")
+    private @Nullable Output<DbEndpointPrivateAddressesArgs> privateAddresses;
+
+    /**
+     * @return Private network connection address
+     * 
+     */
+    public Optional<Output<DbEndpointPrivateAddressesArgs>> privateAddresses() {
+        return Optional.ofNullable(this.privateAddresses);
+    }
+
+    /**
+     * Public network connection address
+     * 
+     */
+    @Import(name="publicAddresses")
+    private @Nullable Output<DbEndpointPublicAddressesArgs> publicAddresses;
+
+    /**
+     * @return Public network connection address
+     * 
+     */
+    public Optional<Output<DbEndpointPublicAddressesArgs>> publicAddresses() {
+        return Optional.ofNullable(this.publicAddresses);
     }
 
     /**
@@ -187,12 +227,14 @@ public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
     private DbEndpointArgs() {}
 
     private DbEndpointArgs(DbEndpointArgs $) {
-        this.addresses = $.addresses;
         this.enableReadWriteSplitting = $.enableReadWriteSplitting;
         this.endpointName = $.endpointName;
         this.endpointType = $.endpointType;
+        this.innerAddresses = $.innerAddresses;
         this.instanceId = $.instanceId;
         this.nodes = $.nodes;
+        this.privateAddresses = $.privateAddresses;
+        this.publicAddresses = $.publicAddresses;
         this.readOnlyNodeDistributionType = $.readOnlyNodeDistributionType;
         this.readOnlyNodeMaxDelayTime = $.readOnlyNodeMaxDelayTime;
         this.readOnlyNodeWeights = $.readOnlyNodeWeights;
@@ -217,19 +259,6 @@ public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DbEndpointArgs defaults) {
             $ = new DbEndpointArgs(Objects.requireNonNull(defaults));
-        }
-
-        public Builder addresses(@Nullable Output<List<DbEndpointAddressArgs>> addresses) {
-            $.addresses = addresses;
-            return this;
-        }
-
-        public Builder addresses(List<DbEndpointAddressArgs> addresses) {
-            return addresses(Output.of(addresses));
-        }
-
-        public Builder addresses(DbEndpointAddressArgs... addresses) {
-            return addresses(List.of(addresses));
         }
 
         /**
@@ -296,6 +325,27 @@ public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param innerAddresses Public service zone connection address
+         * 
+         * @return builder
+         * 
+         */
+        public Builder innerAddresses(@Nullable Output<DbEndpointInnerAddressesArgs> innerAddresses) {
+            $.innerAddresses = innerAddresses;
+            return this;
+        }
+
+        /**
+         * @param innerAddresses Public service zone connection address
+         * 
+         * @return builder
+         * 
+         */
+        public Builder innerAddresses(DbEndpointInnerAddressesArgs innerAddresses) {
+            return innerAddresses(Output.of(innerAddresses));
+        }
+
+        /**
          * @param instanceId Instance ID.
          * 
          * @return builder
@@ -335,6 +385,48 @@ public final class DbEndpointArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodes(String nodes) {
             return nodes(Output.of(nodes));
+        }
+
+        /**
+         * @param privateAddresses Private network connection address
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateAddresses(@Nullable Output<DbEndpointPrivateAddressesArgs> privateAddresses) {
+            $.privateAddresses = privateAddresses;
+            return this;
+        }
+
+        /**
+         * @param privateAddresses Private network connection address
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateAddresses(DbEndpointPrivateAddressesArgs privateAddresses) {
+            return privateAddresses(Output.of(privateAddresses));
+        }
+
+        /**
+         * @param publicAddresses Public network connection address
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicAddresses(@Nullable Output<DbEndpointPublicAddressesArgs> publicAddresses) {
+            $.publicAddresses = publicAddresses;
+            return this;
+        }
+
+        /**
+         * @param publicAddresses Public network connection address
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicAddresses(DbEndpointPublicAddressesArgs publicAddresses) {
+            return publicAddresses(Output.of(publicAddresses));
         }
 
         /**

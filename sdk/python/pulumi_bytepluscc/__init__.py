@@ -926,6 +926,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "privatezone/privateZone",
+  "fqn": "pulumi_bytepluscc.privatezone",
+  "classes": {
+   "bytepluscc:privatezone/privateZone:PrivateZone": "PrivateZone"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "privatezone/record",
   "fqn": "pulumi_bytepluscc.privatezone",
   "classes": {

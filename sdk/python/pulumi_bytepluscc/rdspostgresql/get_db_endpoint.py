@@ -28,10 +28,7 @@ class GetDbEndpointResult:
     """
     A collection of values returned by getDbEndpoint.
     """
-    def __init__(__self__, addresses=None, auto_add_new_nodes=None, description=None, enable_read_only=None, enable_read_write_splitting=None, endpoint_id=None, endpoint_name=None, endpoint_type=None, id=None, instance_id=None, nodes=None, read_only_node_distribution_type=None, read_only_node_max_delay_time=None, read_only_node_weights=None, read_write_mode=None, read_write_proxy_connection=None, write_node_halt_writing=None):
-        if addresses and not isinstance(addresses, list):
-            raise TypeError("Expected argument 'addresses' to be a list")
-        pulumi.set(__self__, "addresses", addresses)
+    def __init__(__self__, auto_add_new_nodes=None, description=None, enable_read_only=None, enable_read_write_splitting=None, endpoint_id=None, endpoint_name=None, endpoint_type=None, id=None, inner_addresses=None, instance_id=None, nodes=None, private_addresses=None, public_addresses=None, read_only_node_distribution_type=None, read_only_node_max_delay_time=None, read_only_node_weights=None, read_write_mode=None, read_write_proxy_connection=None, write_node_halt_writing=None):
         if auto_add_new_nodes and not isinstance(auto_add_new_nodes, str):
             raise TypeError("Expected argument 'auto_add_new_nodes' to be a str")
         pulumi.set(__self__, "auto_add_new_nodes", auto_add_new_nodes)
@@ -56,12 +53,21 @@ class GetDbEndpointResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if inner_addresses and not isinstance(inner_addresses, dict):
+            raise TypeError("Expected argument 'inner_addresses' to be a dict")
+        pulumi.set(__self__, "inner_addresses", inner_addresses)
         if instance_id and not isinstance(instance_id, str):
             raise TypeError("Expected argument 'instance_id' to be a str")
         pulumi.set(__self__, "instance_id", instance_id)
         if nodes and not isinstance(nodes, str):
             raise TypeError("Expected argument 'nodes' to be a str")
         pulumi.set(__self__, "nodes", nodes)
+        if private_addresses and not isinstance(private_addresses, dict):
+            raise TypeError("Expected argument 'private_addresses' to be a dict")
+        pulumi.set(__self__, "private_addresses", private_addresses)
+        if public_addresses and not isinstance(public_addresses, dict):
+            raise TypeError("Expected argument 'public_addresses' to be a dict")
+        pulumi.set(__self__, "public_addresses", public_addresses)
         if read_only_node_distribution_type and not isinstance(read_only_node_distribution_type, str):
             raise TypeError("Expected argument 'read_only_node_distribution_type' to be a str")
         pulumi.set(__self__, "read_only_node_distribution_type", read_only_node_distribution_type)
@@ -80,14 +86,6 @@ class GetDbEndpointResult:
         if write_node_halt_writing and not isinstance(write_node_halt_writing, bool):
             raise TypeError("Expected argument 'write_node_halt_writing' to be a bool")
         pulumi.set(__self__, "write_node_halt_writing", write_node_halt_writing)
-
-    @property
-    @pulumi.getter
-    def addresses(self) -> Sequence['outputs.GetDbEndpointAddressResult']:
-        """
-        Address list.
-        """
-        return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="autoAddNewNodes")
@@ -154,6 +152,14 @@ class GetDbEndpointResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="innerAddresses")
+    def inner_addresses(self) -> 'outputs.GetDbEndpointInnerAddressesResult':
+        """
+        Public service zone connection address
+        """
+        return pulumi.get(self, "inner_addresses")
+
+    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
@@ -168,6 +174,22 @@ class GetDbEndpointResult:
         List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
         """
         return pulumi.get(self, "nodes")
+
+    @property
+    @pulumi.getter(name="privateAddresses")
+    def private_addresses(self) -> 'outputs.GetDbEndpointPrivateAddressesResult':
+        """
+        Private network connection address
+        """
+        return pulumi.get(self, "private_addresses")
+
+    @property
+    @pulumi.getter(name="publicAddresses")
+    def public_addresses(self) -> 'outputs.GetDbEndpointPublicAddressesResult':
+        """
+        Public network connection address
+        """
+        return pulumi.get(self, "public_addresses")
 
     @property
     @pulumi.getter(name="readOnlyNodeDistributionType")
@@ -224,7 +246,6 @@ class AwaitableGetDbEndpointResult(GetDbEndpointResult):
         if False:
             yield self
         return GetDbEndpointResult(
-            addresses=self.addresses,
             auto_add_new_nodes=self.auto_add_new_nodes,
             description=self.description,
             enable_read_only=self.enable_read_only,
@@ -233,8 +254,11 @@ class AwaitableGetDbEndpointResult(GetDbEndpointResult):
             endpoint_name=self.endpoint_name,
             endpoint_type=self.endpoint_type,
             id=self.id,
+            inner_addresses=self.inner_addresses,
             instance_id=self.instance_id,
             nodes=self.nodes,
+            private_addresses=self.private_addresses,
+            public_addresses=self.public_addresses,
             read_only_node_distribution_type=self.read_only_node_distribution_type,
             read_only_node_max_delay_time=self.read_only_node_max_delay_time,
             read_only_node_weights=self.read_only_node_weights,
@@ -257,7 +281,6 @@ def get_db_endpoint(id: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('bytepluscc:rdspostgresql/getDbEndpoint:getDbEndpoint', __args__, opts=opts, typ=GetDbEndpointResult).value
 
     return AwaitableGetDbEndpointResult(
-        addresses=pulumi.get(__ret__, 'addresses'),
         auto_add_new_nodes=pulumi.get(__ret__, 'auto_add_new_nodes'),
         description=pulumi.get(__ret__, 'description'),
         enable_read_only=pulumi.get(__ret__, 'enable_read_only'),
@@ -266,8 +289,11 @@ def get_db_endpoint(id: Optional[builtins.str] = None,
         endpoint_name=pulumi.get(__ret__, 'endpoint_name'),
         endpoint_type=pulumi.get(__ret__, 'endpoint_type'),
         id=pulumi.get(__ret__, 'id'),
+        inner_addresses=pulumi.get(__ret__, 'inner_addresses'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         nodes=pulumi.get(__ret__, 'nodes'),
+        private_addresses=pulumi.get(__ret__, 'private_addresses'),
+        public_addresses=pulumi.get(__ret__, 'public_addresses'),
         read_only_node_distribution_type=pulumi.get(__ret__, 'read_only_node_distribution_type'),
         read_only_node_max_delay_time=pulumi.get(__ret__, 'read_only_node_max_delay_time'),
         read_only_node_weights=pulumi.get(__ret__, 'read_only_node_weights'),
@@ -287,7 +313,6 @@ def get_db_endpoint_output(id: Optional[pulumi.Input[builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:rdspostgresql/getDbEndpoint:getDbEndpoint', __args__, opts=opts, typ=GetDbEndpointResult)
     return __ret__.apply(lambda __response__: GetDbEndpointResult(
-        addresses=pulumi.get(__response__, 'addresses'),
         auto_add_new_nodes=pulumi.get(__response__, 'auto_add_new_nodes'),
         description=pulumi.get(__response__, 'description'),
         enable_read_only=pulumi.get(__response__, 'enable_read_only'),
@@ -296,8 +321,11 @@ def get_db_endpoint_output(id: Optional[pulumi.Input[builtins.str]] = None,
         endpoint_name=pulumi.get(__response__, 'endpoint_name'),
         endpoint_type=pulumi.get(__response__, 'endpoint_type'),
         id=pulumi.get(__response__, 'id'),
+        inner_addresses=pulumi.get(__response__, 'inner_addresses'),
         instance_id=pulumi.get(__response__, 'instance_id'),
         nodes=pulumi.get(__response__, 'nodes'),
+        private_addresses=pulumi.get(__response__, 'private_addresses'),
+        public_addresses=pulumi.get(__response__, 'public_addresses'),
         read_only_node_distribution_type=pulumi.get(__response__, 'read_only_node_distribution_type'),
         read_only_node_max_delay_time=pulumi.get(__response__, 'read_only_node_max_delay_time'),
         read_only_node_weights=pulumi.get(__response__, 'read_only_node_weights'),

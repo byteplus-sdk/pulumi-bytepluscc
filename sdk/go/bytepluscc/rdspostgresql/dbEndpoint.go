@@ -13,36 +13,6 @@ import (
 
 // The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/rdspostgresql"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := rdspostgresql.NewDbEndpoint(ctx, "RdsPostgresqlDbEndpointDemo", &rdspostgresql.DbEndpointArgs{
-//				EndpointName:  pulumi.String("ccapi-test-1"),
-//				EndpointType:  pulumi.String("Custom"),
-//				InstanceId:    pulumi.String("postgres-9dxxxxxd"),
-//				Nodes:         pulumi.String("Primary"),
-//				ReadWriteMode: pulumi.String("ReadWrite"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // ```sh
@@ -51,7 +21,6 @@ import (
 type DbEndpoint struct {
 	pulumi.CustomResourceState
 
-	Addresses DbEndpointAddressArrayOutput `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes pulumi.StringOutput `pulumi:"autoAddNewNodes"`
 	// Address description
@@ -66,10 +35,16 @@ type DbEndpoint struct {
 	EndpointName pulumi.StringOutput `pulumi:"endpointName"`
 	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType pulumi.StringOutput `pulumi:"endpointType"`
+	// Public service zone connection address
+	InnerAddresses DbEndpointInnerAddressesOutput `pulumi:"innerAddresses"`
 	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes pulumi.StringOutput `pulumi:"nodes"`
+	// Private network connection address
+	PrivateAddresses DbEndpointPrivateAddressesOutput `pulumi:"privateAddresses"`
+	// Public network connection address
+	PublicAddresses DbEndpointPublicAddressesOutput `pulumi:"publicAddresses"`
 	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType pulumi.StringOutput `pulumi:"readOnlyNodeDistributionType"`
 	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
@@ -113,7 +88,6 @@ func GetDbEndpoint(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbEndpoint resources.
 type dbEndpointState struct {
-	Addresses []DbEndpointAddress `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes *string `pulumi:"autoAddNewNodes"`
 	// Address description
@@ -128,10 +102,16 @@ type dbEndpointState struct {
 	EndpointName *string `pulumi:"endpointName"`
 	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType *string `pulumi:"endpointType"`
+	// Public service zone connection address
+	InnerAddresses *DbEndpointInnerAddresses `pulumi:"innerAddresses"`
 	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
 	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes *string `pulumi:"nodes"`
+	// Private network connection address
+	PrivateAddresses *DbEndpointPrivateAddresses `pulumi:"privateAddresses"`
+	// Public network connection address
+	PublicAddresses *DbEndpointPublicAddresses `pulumi:"publicAddresses"`
 	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
 	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
@@ -146,7 +126,6 @@ type dbEndpointState struct {
 }
 
 type DbEndpointState struct {
-	Addresses DbEndpointAddressArrayInput
 	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes pulumi.StringPtrInput
 	// Address description
@@ -161,10 +140,16 @@ type DbEndpointState struct {
 	EndpointName pulumi.StringPtrInput
 	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType pulumi.StringPtrInput
+	// Public service zone connection address
+	InnerAddresses DbEndpointInnerAddressesPtrInput
 	// Instance ID.
 	InstanceId pulumi.StringPtrInput
 	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes pulumi.StringPtrInput
+	// Private network connection address
+	PrivateAddresses DbEndpointPrivateAddressesPtrInput
+	// Public network connection address
+	PublicAddresses DbEndpointPublicAddressesPtrInput
 	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType pulumi.StringPtrInput
 	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
@@ -183,17 +168,22 @@ func (DbEndpointState) ElementType() reflect.Type {
 }
 
 type dbEndpointArgs struct {
-	Addresses []DbEndpointAddress `pulumi:"addresses"`
 	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting *string `pulumi:"enableReadWriteSplitting"`
 	// Instance connection endpoint name.
 	EndpointName *string `pulumi:"endpointName"`
 	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType *string `pulumi:"endpointType"`
+	// Public service zone connection address
+	InnerAddresses *DbEndpointInnerAddresses `pulumi:"innerAddresses"`
 	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
 	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes *string `pulumi:"nodes"`
+	// Private network connection address
+	PrivateAddresses *DbEndpointPrivateAddresses `pulumi:"privateAddresses"`
+	// Public network connection address
+	PublicAddresses *DbEndpointPublicAddresses `pulumi:"publicAddresses"`
 	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
 	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
@@ -209,17 +199,22 @@ type dbEndpointArgs struct {
 
 // The set of arguments for constructing a DbEndpoint resource.
 type DbEndpointArgs struct {
-	Addresses DbEndpointAddressArrayInput
 	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting pulumi.StringPtrInput
 	// Instance connection endpoint name.
 	EndpointName pulumi.StringPtrInput
 	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType pulumi.StringPtrInput
+	// Public service zone connection address
+	InnerAddresses DbEndpointInnerAddressesPtrInput
 	// Instance ID.
 	InstanceId pulumi.StringPtrInput
 	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes pulumi.StringPtrInput
+	// Private network connection address
+	PrivateAddresses DbEndpointPrivateAddressesPtrInput
+	// Public network connection address
+	PublicAddresses DbEndpointPublicAddressesPtrInput
 	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType pulumi.StringPtrInput
 	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
@@ -320,10 +315,6 @@ func (o DbEndpointOutput) ToDbEndpointOutputWithContext(ctx context.Context) DbE
 	return o
 }
 
-func (o DbEndpointOutput) Addresses() DbEndpointAddressArrayOutput {
-	return o.ApplyT(func(v *DbEndpoint) DbEndpointAddressArrayOutput { return v.Addresses }).(DbEndpointAddressArrayOutput)
-}
-
 // When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 func (o DbEndpointOutput) AutoAddNewNodes() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.AutoAddNewNodes }).(pulumi.StringOutput)
@@ -359,6 +350,11 @@ func (o DbEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.EndpointType }).(pulumi.StringOutput)
 }
 
+// Public service zone connection address
+func (o DbEndpointOutput) InnerAddresses() DbEndpointInnerAddressesOutput {
+	return o.ApplyT(func(v *DbEndpoint) DbEndpointInnerAddressesOutput { return v.InnerAddresses }).(DbEndpointInnerAddressesOutput)
+}
+
 // Instance ID.
 func (o DbEndpointOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
@@ -367,6 +363,16 @@ func (o DbEndpointOutput) InstanceId() pulumi.StringOutput {
 // List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 func (o DbEndpointOutput) Nodes() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.Nodes }).(pulumi.StringOutput)
+}
+
+// Private network connection address
+func (o DbEndpointOutput) PrivateAddresses() DbEndpointPrivateAddressesOutput {
+	return o.ApplyT(func(v *DbEndpoint) DbEndpointPrivateAddressesOutput { return v.PrivateAddresses }).(DbEndpointPrivateAddressesOutput)
+}
+
+// Public network connection address
+func (o DbEndpointOutput) PublicAddresses() DbEndpointPublicAddressesOutput {
+	return o.ApplyT(func(v *DbEndpoint) DbEndpointPublicAddressesOutput { return v.PublicAddresses }).(DbEndpointPublicAddressesOutput)
 }
 
 // Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
