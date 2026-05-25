@@ -16,6 +16,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AlarmAlarmNotifyGroupArgs',
+    'AlarmAlarmNotifyGroupArgsDict',
+    'AlarmAlarmPeriodDetailArgs',
+    'AlarmAlarmPeriodDetailArgsDict',
+    'AlarmJoinConfigurationArgs',
+    'AlarmJoinConfigurationArgsDict',
     'AlarmNotifyGroupNoticeRuleArgs',
     'AlarmNotifyGroupNoticeRuleArgsDict',
     'AlarmNotifyGroupNoticeRuleReceiverInfoArgs',
@@ -26,6 +32,12 @@ __all__ = [
     'AlarmNotifyGroupReceiverArgsDict',
     'AlarmNotifyGroupReceiverGeneralWebhookHeaderArgs',
     'AlarmNotifyGroupReceiverGeneralWebhookHeaderArgsDict',
+    'AlarmQueryRequestArgs',
+    'AlarmQueryRequestArgsDict',
+    'AlarmRequestCycleArgs',
+    'AlarmRequestCycleArgsDict',
+    'AlarmTriggerConditionArgs',
+    'AlarmTriggerConditionArgsDict',
     'ImportTaskImportSourceInfoArgs',
     'ImportTaskImportSourceInfoArgsDict',
     'ImportTaskImportSourceInfoKafkaSourceInfoArgs',
@@ -129,6 +141,182 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AlarmAlarmNotifyGroupArgsDict(TypedDict):
+        alarm_notify_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Alert notification group ID.
+        """
+elif False:
+    AlarmAlarmNotifyGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmAlarmNotifyGroupArgs:
+    def __init__(__self__, *,
+                 alarm_notify_group_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] alarm_notify_group_id: Alert notification group ID.
+        """
+        if alarm_notify_group_id is not None:
+            pulumi.set(__self__, "alarm_notify_group_id", alarm_notify_group_id)
+
+    @property
+    @pulumi.getter(name="alarmNotifyGroupId")
+    def alarm_notify_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Alert notification group ID.
+        """
+        return pulumi.get(self, "alarm_notify_group_id")
+
+    @alarm_notify_group_id.setter
+    def alarm_notify_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "alarm_notify_group_id", value)
+
+
+if not MYPY:
+    class AlarmAlarmPeriodDetailArgsDict(TypedDict):
+        email: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Email alert interval, in minutes. Value range: 1–1440
+        """
+        general_webhook: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        """
+        phone: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Phone alert cycle, in minutes. Value range: 10–1440.
+        """
+        sms: NotRequired[pulumi.Input[builtins.int]]
+        """
+        SMS alert interval, in minutes. Value range: 10–1440
+        """
+elif False:
+    AlarmAlarmPeriodDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmAlarmPeriodDetailArgs:
+    def __init__(__self__, *,
+                 email: Optional[pulumi.Input[builtins.int]] = None,
+                 general_webhook: Optional[pulumi.Input[builtins.int]] = None,
+                 phone: Optional[pulumi.Input[builtins.int]] = None,
+                 sms: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] email: Email alert interval, in minutes. Value range: 1–1440
+        :param pulumi.Input[builtins.int] general_webhook: Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        :param pulumi.Input[builtins.int] phone: Phone alert cycle, in minutes. Value range: 10–1440.
+        :param pulumi.Input[builtins.int] sms: SMS alert interval, in minutes. Value range: 10–1440
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if general_webhook is not None:
+            pulumi.set(__self__, "general_webhook", general_webhook)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
+        if sms is not None:
+            pulumi.set(__self__, "sms", sms)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Email alert interval, in minutes. Value range: 1–1440
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter(name="generalWebhook")
+    def general_webhook(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        """
+        return pulumi.get(self, "general_webhook")
+
+    @general_webhook.setter
+    def general_webhook(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "general_webhook", value)
+
+    @property
+    @pulumi.getter
+    def phone(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Phone alert cycle, in minutes. Value range: 10–1440.
+        """
+        return pulumi.get(self, "phone")
+
+    @phone.setter
+    def phone(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "phone", value)
+
+    @property
+    @pulumi.getter
+    def sms(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        SMS alert interval, in minutes. Value range: 10–1440
+        """
+        return pulumi.get(self, "sms")
+
+    @sms.setter
+    def sms(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "sms", value)
+
+
+if not MYPY:
+    class AlarmJoinConfigurationArgsDict(TypedDict):
+        condition: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Expression used for left join or right join.
+        """
+        set_operation_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+elif False:
+    AlarmJoinConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmJoinConfigurationArgs:
+    def __init__(__self__, *,
+                 condition: Optional[pulumi.Input[builtins.str]] = None,
+                 set_operation_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] condition: Expression used for left join or right join.
+        :param pulumi.Input[builtins.str] set_operation_type: Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if set_operation_type is not None:
+            pulumi.set(__self__, "set_operation_type", set_operation_type)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Expression used for left join or right join.
+        """
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="setOperationType")
+    def set_operation_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+        return pulumi.get(self, "set_operation_type")
+
+    @set_operation_type.setter
+    def set_operation_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "set_operation_type", value)
+
 
 if not MYPY:
     class AlarmNotifyGroupNoticeRuleArgsDict(TypedDict):
@@ -927,6 +1115,382 @@ class AlarmNotifyGroupReceiverGeneralWebhookHeaderArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class AlarmQueryRequestArgsDict(TypedDict):
+        end_time_offset: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        """
+        end_time_offset_unit: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        """
+        query: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Query analysis statement, with a maximum supported length of 1024 characters.
+        """
+        start_time_offset: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        """
+        start_time_offset_unit: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        """
+        time_span_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        """
+        topic_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Log topic ID monitored by the alert policy.
+        """
+        topic_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the log topic monitored by the alert policy.
+        """
+        truncated_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+elif False:
+    AlarmQueryRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmQueryRequestArgs:
+    def __init__(__self__, *,
+                 end_time_offset: Optional[pulumi.Input[builtins.int]] = None,
+                 end_time_offset_unit: Optional[pulumi.Input[builtins.str]] = None,
+                 query: Optional[pulumi.Input[builtins.str]] = None,
+                 start_time_offset: Optional[pulumi.Input[builtins.int]] = None,
+                 start_time_offset_unit: Optional[pulumi.Input[builtins.str]] = None,
+                 time_span_type: Optional[pulumi.Input[builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[builtins.str]] = None,
+                 topic_name: Optional[pulumi.Input[builtins.str]] = None,
+                 truncated_time: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] end_time_offset: Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        :param pulumi.Input[builtins.str] end_time_offset_unit: Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        :param pulumi.Input[builtins.str] query: Query analysis statement, with a maximum supported length of 1024 characters.
+        :param pulumi.Input[builtins.int] start_time_offset: Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        :param pulumi.Input[builtins.str] start_time_offset_unit: Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        :param pulumi.Input[builtins.str] time_span_type: Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        :param pulumi.Input[builtins.str] topic_id: Log topic ID monitored by the alert policy.
+        :param pulumi.Input[builtins.str] topic_name: Name of the log topic monitored by the alert policy.
+        :param pulumi.Input[builtins.str] truncated_time: Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+        if end_time_offset is not None:
+            pulumi.set(__self__, "end_time_offset", end_time_offset)
+        if end_time_offset_unit is not None:
+            pulumi.set(__self__, "end_time_offset_unit", end_time_offset_unit)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if start_time_offset is not None:
+            pulumi.set(__self__, "start_time_offset", start_time_offset)
+        if start_time_offset_unit is not None:
+            pulumi.set(__self__, "start_time_offset_unit", start_time_offset_unit)
+        if time_span_type is not None:
+            pulumi.set(__self__, "time_span_type", time_span_type)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+        if topic_name is not None:
+            pulumi.set(__self__, "topic_name", topic_name)
+        if truncated_time is not None:
+            pulumi.set(__self__, "truncated_time", truncated_time)
+
+    @property
+    @pulumi.getter(name="endTimeOffset")
+    def end_time_offset(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        """
+        return pulumi.get(self, "end_time_offset")
+
+    @end_time_offset.setter
+    def end_time_offset(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "end_time_offset", value)
+
+    @property
+    @pulumi.getter(name="endTimeOffsetUnit")
+    def end_time_offset_unit(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "end_time_offset_unit")
+
+    @end_time_offset_unit.setter
+    def end_time_offset_unit(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "end_time_offset_unit", value)
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Query analysis statement, with a maximum supported length of 1024 characters.
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "query", value)
+
+    @property
+    @pulumi.getter(name="startTimeOffset")
+    def start_time_offset(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        """
+        return pulumi.get(self, "start_time_offset")
+
+    @start_time_offset.setter
+    def start_time_offset(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "start_time_offset", value)
+
+    @property
+    @pulumi.getter(name="startTimeOffsetUnit")
+    def start_time_offset_unit(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "start_time_offset_unit")
+
+    @start_time_offset_unit.setter
+    def start_time_offset_unit(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "start_time_offset_unit", value)
+
+    @property
+    @pulumi.getter(name="timeSpanType")
+    def time_span_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        """
+        return pulumi.get(self, "time_span_type")
+
+    @time_span_type.setter
+    def time_span_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "time_span_type", value)
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Log topic ID monitored by the alert policy.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "topic_id", value)
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the log topic monitored by the alert policy.
+        """
+        return pulumi.get(self, "topic_name")
+
+    @topic_name.setter
+    def topic_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "topic_name", value)
+
+    @property
+    @pulumi.getter(name="truncatedTime")
+    def truncated_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "truncated_time")
+
+    @truncated_time.setter
+    def truncated_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "truncated_time", value)
+
+
+if not MYPY:
+    class AlarmRequestCycleArgsDict(TypedDict):
+        cron_tab: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        """
+        cron_time_zone: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Time zone in which the Cron expression takes effect.
+        """
+        time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+elif False:
+    AlarmRequestCycleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmRequestCycleArgs:
+    def __init__(__self__, *,
+                 cron_tab: Optional[pulumi.Input[builtins.str]] = None,
+                 cron_time_zone: Optional[pulumi.Input[builtins.str]] = None,
+                 time: Optional[pulumi.Input[builtins.int]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] cron_tab: Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        :param pulumi.Input[builtins.str] cron_time_zone: Time zone in which the Cron expression takes effect.
+        :param pulumi.Input[builtins.int] time: Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        :param pulumi.Input[builtins.str] type: Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+        if cron_tab is not None:
+            pulumi.set(__self__, "cron_tab", cron_tab)
+        if cron_time_zone is not None:
+            pulumi.set(__self__, "cron_time_zone", cron_time_zone)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="cronTab")
+    def cron_tab(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        """
+        return pulumi.get(self, "cron_tab")
+
+    @cron_tab.setter
+    def cron_tab(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cron_tab", value)
+
+    @property
+    @pulumi.getter(name="cronTimeZone")
+    def cron_time_zone(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Time zone in which the Cron expression takes effect.
+        """
+        return pulumi.get(self, "cron_time_zone")
+
+    @cron_time_zone.setter
+    def cron_time_zone(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cron_time_zone", value)
+
+    @property
+    @pulumi.getter
+    def time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        """
+        return pulumi.get(self, "time")
+
+    @time.setter
+    def time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "time", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class AlarmTriggerConditionArgsDict(TypedDict):
+        condition: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Alert trigger condition expression.
+        """
+        count_condition: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        """
+        no_data: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        """
+        severity: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+elif False:
+    AlarmTriggerConditionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmTriggerConditionArgs:
+    def __init__(__self__, *,
+                 condition: Optional[pulumi.Input[builtins.str]] = None,
+                 count_condition: Optional[pulumi.Input[builtins.str]] = None,
+                 no_data: Optional[pulumi.Input[builtins.bool]] = None,
+                 severity: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] condition: Alert trigger condition expression.
+        :param pulumi.Input[builtins.str] count_condition: Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        :param pulumi.Input[builtins.bool] no_data: When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        :param pulumi.Input[builtins.str] severity: Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if count_condition is not None:
+            pulumi.set(__self__, "count_condition", count_condition)
+        if no_data is not None:
+            pulumi.set(__self__, "no_data", no_data)
+        if severity is not None:
+            pulumi.set(__self__, "severity", severity)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Alert trigger condition expression.
+        """
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="countCondition")
+    def count_condition(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        """
+        return pulumi.get(self, "count_condition")
+
+    @count_condition.setter
+    def count_condition(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "count_condition", value)
+
+    @property
+    @pulumi.getter(name="noData")
+    def no_data(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        """
+        return pulumi.get(self, "no_data")
+
+    @no_data.setter
+    def no_data(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "no_data", value)
+
+    @property
+    @pulumi.getter
+    def severity(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+        return pulumi.get(self, "severity")
+
+    @severity.setter
+    def severity(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "severity", value)
 
 
 if not MYPY:

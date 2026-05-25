@@ -19,6 +19,7 @@ from . import outputs
 __all__ = [
     'CustomerGatewayTag',
     'SslVpnClientCertTag',
+    'SslVpnServerTag',
     'VpnConnectionBgpInfo',
     'VpnConnectionHealthChecker',
     'VpnConnectionIkeConfig',
@@ -28,9 +29,11 @@ __all__ = [
     'VpnConnectionTunnelOptionIkeConfig',
     'VpnConnectionTunnelOptionIpsecConfig',
     'VpnConnectionTunnelOptionTunnelBgpInfo',
+    'VpnGatewayRouteAsPath',
     'VpnGatewayTag',
     'GetCustomerGatewayTagResult',
     'GetSslVpnClientCertTagResult',
+    'GetSslVpnServerTagResult',
     'GetVpnConnectionBgpInfoResult',
     'GetVpnConnectionHealthCheckerResult',
     'GetVpnConnectionIkeConfigResult',
@@ -40,6 +43,7 @@ __all__ = [
     'GetVpnConnectionTunnelOptionIkeConfigResult',
     'GetVpnConnectionTunnelOptionIpsecConfigResult',
     'GetVpnConnectionTunnelOptionTunnelBgpInfoResult',
+    'GetVpnGatewayRouteAsPathResult',
     'GetVpnGatewayTagResult',
 ]
 
@@ -101,6 +105,37 @@ class SslVpnClientCertTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SslVpnServerTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        :param builtins.str value: Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 
@@ -1087,6 +1122,37 @@ class VpnConnectionTunnelOptionTunnelBgpInfo(dict):
 
 
 @pulumi.output_type
+class VpnGatewayRouteAsPath(dict):
+    def __init__(__self__, *,
+                 numbers: Optional[Sequence[builtins.int]] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param Sequence[builtins.int] numbers: AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        :param builtins.str type: AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+        if numbers is not None:
+            pulumi.set(__self__, "numbers", numbers)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def numbers(self) -> Optional[Sequence[builtins.int]]:
+        """
+        AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        """
+        return pulumi.get(self, "numbers")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class VpnGatewayTag(dict):
     def __init__(__self__, *,
                  key: Optional[builtins.str] = None,
@@ -1171,6 +1237,35 @@ class GetSslVpnClientCertTagResult(dict):
     def value(self) -> builtins.str:
         """
         Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSslVpnServerTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        :param builtins.str value: Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 
@@ -1885,6 +1980,35 @@ class GetVpnConnectionTunnelOptionTunnelBgpInfoResult(dict):
         The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
         """
         return pulumi.get(self, "tunnel_cidr")
+
+
+@pulumi.output_type
+class GetVpnGatewayRouteAsPathResult(dict):
+    def __init__(__self__, *,
+                 numbers: Sequence[builtins.int],
+                 type: builtins.str):
+        """
+        :param Sequence[builtins.int] numbers: AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        :param builtins.str type: AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+        pulumi.set(__self__, "numbers", numbers)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def numbers(self) -> Sequence[builtins.int]:
+        """
+        AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        """
+        return pulumi.get(self, "numbers")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

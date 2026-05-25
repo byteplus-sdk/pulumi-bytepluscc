@@ -16,7 +16,7 @@ var _ = internal.GetEnvOrDefault
 type EndpointServicePrivateDnsNameConfiguration struct {
 	// Domain verification name.
 	Name *string `pulumi:"name"`
-	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+	// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 	Status *string `pulumi:"status"`
 	// Domain verification type. TXT: TXT record.
 	Type *string `pulumi:"type"`
@@ -38,7 +38,7 @@ type EndpointServicePrivateDnsNameConfigurationInput interface {
 type EndpointServicePrivateDnsNameConfigurationArgs struct {
 	// Domain verification name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+	// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Domain verification type. TXT: TXT record.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -128,7 +128,7 @@ func (o EndpointServicePrivateDnsNameConfigurationOutput) Name() pulumi.StringPt
 	return o.ApplyT(func(v EndpointServicePrivateDnsNameConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 func (o EndpointServicePrivateDnsNameConfigurationOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServicePrivateDnsNameConfiguration) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -177,7 +177,7 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Name() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointServicePrivateDnsNameConfiguration) *string {
 		if v == nil {
@@ -927,7 +927,7 @@ func (o VpcEndpointZoneArrayOutput) Index(i pulumi.IntInput) VpcEndpointZoneOutp
 type GetEndpointServicePrivateDnsNameConfiguration struct {
 	// Domain verification name.
 	Name string `pulumi:"name"`
-	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+	// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 	Status string `pulumi:"status"`
 	// Domain verification type. TXT: TXT record.
 	Type string `pulumi:"type"`
@@ -949,7 +949,7 @@ type GetEndpointServicePrivateDnsNameConfigurationInput interface {
 type GetEndpointServicePrivateDnsNameConfigurationArgs struct {
 	// Domain verification name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+	// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 	Status pulumi.StringInput `pulumi:"status"`
 	// Domain verification type. TXT: TXT record.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -988,7 +988,7 @@ func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Name() pulumi.Strin
 	return o.ApplyT(func(v GetEndpointServicePrivateDnsNameConfiguration) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+// Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
 func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServicePrivateDnsNameConfiguration) string { return v.Status }).(pulumi.StringOutput)
 }

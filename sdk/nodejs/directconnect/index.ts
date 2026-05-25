@@ -10,6 +10,11 @@ export type DirectConnectGateway = import("./directConnectGateway").DirectConnec
 export const DirectConnectGateway: typeof import("./directConnectGateway").DirectConnectGateway = null as any;
 utilities.lazyLoad(exports, ["DirectConnectGateway"], () => require("./directConnectGateway"));
 
+export { GatewayRouteArgs, GatewayRouteState } from "./gatewayRoute";
+export type GatewayRoute = import("./gatewayRoute").GatewayRoute;
+export const GatewayRoute: typeof import("./gatewayRoute").GatewayRoute = null as any;
+utilities.lazyLoad(exports, ["GatewayRoute"], () => require("./gatewayRoute"));
+
 export { GetDirectConnectGatewayArgs, GetDirectConnectGatewayResult, GetDirectConnectGatewayOutputArgs } from "./getDirectConnectGateway";
 export const getDirectConnectGateway: typeof import("./getDirectConnectGateway").getDirectConnectGateway = null as any;
 export const getDirectConnectGatewayOutput: typeof import("./getDirectConnectGateway").getDirectConnectGatewayOutput = null as any;
@@ -20,6 +25,31 @@ export const getDirectConnectGateways: typeof import("./getDirectConnectGateways
 export const getDirectConnectGatewaysOutput: typeof import("./getDirectConnectGateways").getDirectConnectGatewaysOutput = null as any;
 utilities.lazyLoad(exports, ["getDirectConnectGateways","getDirectConnectGatewaysOutput"], () => require("./getDirectConnectGateways"));
 
+export { GetGatewayRouteArgs, GetGatewayRouteResult, GetGatewayRouteOutputArgs } from "./getGatewayRoute";
+export const getGatewayRoute: typeof import("./getGatewayRoute").getGatewayRoute = null as any;
+export const getGatewayRouteOutput: typeof import("./getGatewayRoute").getGatewayRouteOutput = null as any;
+utilities.lazyLoad(exports, ["getGatewayRoute","getGatewayRouteOutput"], () => require("./getGatewayRoute"));
+
+export { GetGatewayRoutesResult } from "./getGatewayRoutes";
+export const getGatewayRoutes: typeof import("./getGatewayRoutes").getGatewayRoutes = null as any;
+export const getGatewayRoutesOutput: typeof import("./getGatewayRoutes").getGatewayRoutesOutput = null as any;
+utilities.lazyLoad(exports, ["getGatewayRoutes","getGatewayRoutesOutput"], () => require("./getGatewayRoutes"));
+
+export { GetVirtualInterfaceArgs, GetVirtualInterfaceResult, GetVirtualInterfaceOutputArgs } from "./getVirtualInterface";
+export const getVirtualInterface: typeof import("./getVirtualInterface").getVirtualInterface = null as any;
+export const getVirtualInterfaceOutput: typeof import("./getVirtualInterface").getVirtualInterfaceOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualInterface","getVirtualInterfaceOutput"], () => require("./getVirtualInterface"));
+
+export { GetVirtualInterfacesResult } from "./getVirtualInterfaces";
+export const getVirtualInterfaces: typeof import("./getVirtualInterfaces").getVirtualInterfaces = null as any;
+export const getVirtualInterfacesOutput: typeof import("./getVirtualInterfaces").getVirtualInterfacesOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualInterfaces","getVirtualInterfacesOutput"], () => require("./getVirtualInterfaces"));
+
+export { VirtualInterfaceArgs, VirtualInterfaceState } from "./virtualInterface";
+export type VirtualInterface = import("./virtualInterface").VirtualInterface;
+export const VirtualInterface: typeof import("./virtualInterface").VirtualInterface = null as any;
+utilities.lazyLoad(exports, ["VirtualInterface"], () => require("./virtualInterface"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +57,15 @@ const _module = {
         switch (type) {
             case "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway":
                 return new DirectConnectGateway(name, <any>undefined, { urn })
+            case "bytepluscc:directconnect/gatewayRoute:GatewayRoute":
+                return new GatewayRoute(name, <any>undefined, { urn })
+            case "bytepluscc:directconnect/virtualInterface:VirtualInterface":
+                return new VirtualInterface(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/directConnectGateway", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/gatewayRoute", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/virtualInterface", _module)

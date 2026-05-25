@@ -25,6 +25,16 @@ export const getKeys: typeof import("./getKeys").getKeys = null as any;
 export const getKeysOutput: typeof import("./getKeys").getKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getKeys","getKeysOutput"], () => require("./getKeys"));
 
+export { GetSecretArgs, GetSecretResult, GetSecretOutputArgs } from "./getSecret";
+export const getSecret: typeof import("./getSecret").getSecret = null as any;
+export const getSecretOutput: typeof import("./getSecret").getSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSecret","getSecretOutput"], () => require("./getSecret"));
+
+export { GetSecretsResult } from "./getSecrets";
+export const getSecrets: typeof import("./getSecrets").getSecrets = null as any;
+export const getSecretsOutput: typeof import("./getSecrets").getSecretsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecrets","getSecretsOutput"], () => require("./getSecrets"));
+
 export { KeyArgs, KeyState } from "./key";
 export type Key = import("./key").Key;
 export const Key: typeof import("./key").Key = null as any;
@@ -35,6 +45,11 @@ export type KeyRing = import("./keyRing").KeyRing;
 export const KeyRing: typeof import("./keyRing").KeyRing = null as any;
 utilities.lazyLoad(exports, ["KeyRing"], () => require("./keyRing"));
 
+export { SecretArgs, SecretState } from "./secret";
+export type Secret = import("./secret").Secret;
+export const Secret: typeof import("./secret").Secret = null as any;
+utilities.lazyLoad(exports, ["Secret"], () => require("./secret"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +59,8 @@ const _module = {
                 return new Key(name, <any>undefined, { urn })
             case "bytepluscc:kms/keyRing:KeyRing":
                 return new KeyRing(name, <any>undefined, { urn })
+            case "bytepluscc:kms/secret:Secret":
+                return new Secret(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +68,4 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "kms/key", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kms/keyRing", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "kms/secret", _module)

@@ -17,7 +17,7 @@ public final class EndpointServicePrivateDnsNameConfiguration {
      */
     private @Nullable String name;
     /**
-     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+     * @return Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
      * 
      */
     private @Nullable String status;
@@ -41,7 +41,7 @@ public final class EndpointServicePrivateDnsNameConfiguration {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+     * @return Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
      * 
      */
     public Optional<String> status() {

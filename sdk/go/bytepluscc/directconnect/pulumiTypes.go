@@ -409,6 +409,112 @@ func (o DirectConnectGatewayTagArrayOutput) Index(i pulumi.IntInput) DirectConne
 	}).(DirectConnectGatewayTagOutput)
 }
 
+type VirtualInterfaceTag struct {
+	// Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+	Key *string `pulumi:"key"`
+	// Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value *string `pulumi:"value"`
+}
+
+// VirtualInterfaceTagInput is an input type that accepts VirtualInterfaceTagArgs and VirtualInterfaceTagOutput values.
+// You can construct a concrete instance of `VirtualInterfaceTagInput` via:
+//
+//	VirtualInterfaceTagArgs{...}
+type VirtualInterfaceTagInput interface {
+	pulumi.Input
+
+	ToVirtualInterfaceTagOutput() VirtualInterfaceTagOutput
+	ToVirtualInterfaceTagOutputWithContext(context.Context) VirtualInterfaceTagOutput
+}
+
+type VirtualInterfaceTagArgs struct {
+	// Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VirtualInterfaceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualInterfaceTag)(nil)).Elem()
+}
+
+func (i VirtualInterfaceTagArgs) ToVirtualInterfaceTagOutput() VirtualInterfaceTagOutput {
+	return i.ToVirtualInterfaceTagOutputWithContext(context.Background())
+}
+
+func (i VirtualInterfaceTagArgs) ToVirtualInterfaceTagOutputWithContext(ctx context.Context) VirtualInterfaceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualInterfaceTagOutput)
+}
+
+// VirtualInterfaceTagArrayInput is an input type that accepts VirtualInterfaceTagArray and VirtualInterfaceTagArrayOutput values.
+// You can construct a concrete instance of `VirtualInterfaceTagArrayInput` via:
+//
+//	VirtualInterfaceTagArray{ VirtualInterfaceTagArgs{...} }
+type VirtualInterfaceTagArrayInput interface {
+	pulumi.Input
+
+	ToVirtualInterfaceTagArrayOutput() VirtualInterfaceTagArrayOutput
+	ToVirtualInterfaceTagArrayOutputWithContext(context.Context) VirtualInterfaceTagArrayOutput
+}
+
+type VirtualInterfaceTagArray []VirtualInterfaceTagInput
+
+func (VirtualInterfaceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualInterfaceTag)(nil)).Elem()
+}
+
+func (i VirtualInterfaceTagArray) ToVirtualInterfaceTagArrayOutput() VirtualInterfaceTagArrayOutput {
+	return i.ToVirtualInterfaceTagArrayOutputWithContext(context.Background())
+}
+
+func (i VirtualInterfaceTagArray) ToVirtualInterfaceTagArrayOutputWithContext(ctx context.Context) VirtualInterfaceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualInterfaceTagArrayOutput)
+}
+
+type VirtualInterfaceTagOutput struct{ *pulumi.OutputState }
+
+func (VirtualInterfaceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualInterfaceTag)(nil)).Elem()
+}
+
+func (o VirtualInterfaceTagOutput) ToVirtualInterfaceTagOutput() VirtualInterfaceTagOutput {
+	return o
+}
+
+func (o VirtualInterfaceTagOutput) ToVirtualInterfaceTagOutputWithContext(ctx context.Context) VirtualInterfaceTagOutput {
+	return o
+}
+
+// Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+func (o VirtualInterfaceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualInterfaceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+func (o VirtualInterfaceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualInterfaceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VirtualInterfaceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (VirtualInterfaceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VirtualInterfaceTag)(nil)).Elem()
+}
+
+func (o VirtualInterfaceTagArrayOutput) ToVirtualInterfaceTagArrayOutput() VirtualInterfaceTagArrayOutput {
+	return o
+}
+
+func (o VirtualInterfaceTagArrayOutput) ToVirtualInterfaceTagArrayOutputWithContext(ctx context.Context) VirtualInterfaceTagArrayOutput {
+	return o
+}
+
+func (o VirtualInterfaceTagArrayOutput) Index(i pulumi.IntInput) VirtualInterfaceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualInterfaceTag {
+		return vs[0].([]VirtualInterfaceTag)[vs[1].(int)]
+	}).(VirtualInterfaceTagOutput)
+}
+
 type GetDirectConnectGatewayAssociateCen struct {
 	// ID of CEN.
 	CenId string `pulumi:"cenId"`
@@ -700,6 +806,112 @@ func (o GetDirectConnectGatewayTagArrayOutput) Index(i pulumi.IntInput) GetDirec
 	}).(GetDirectConnectGatewayTagOutput)
 }
 
+type GetVirtualInterfaceTag struct {
+	// Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+	Key string `pulumi:"key"`
+	// Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value string `pulumi:"value"`
+}
+
+// GetVirtualInterfaceTagInput is an input type that accepts GetVirtualInterfaceTagArgs and GetVirtualInterfaceTagOutput values.
+// You can construct a concrete instance of `GetVirtualInterfaceTagInput` via:
+//
+//	GetVirtualInterfaceTagArgs{...}
+type GetVirtualInterfaceTagInput interface {
+	pulumi.Input
+
+	ToGetVirtualInterfaceTagOutput() GetVirtualInterfaceTagOutput
+	ToGetVirtualInterfaceTagOutputWithContext(context.Context) GetVirtualInterfaceTagOutput
+}
+
+type GetVirtualInterfaceTagArgs struct {
+	// Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVirtualInterfaceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualInterfaceTag)(nil)).Elem()
+}
+
+func (i GetVirtualInterfaceTagArgs) ToGetVirtualInterfaceTagOutput() GetVirtualInterfaceTagOutput {
+	return i.ToGetVirtualInterfaceTagOutputWithContext(context.Background())
+}
+
+func (i GetVirtualInterfaceTagArgs) ToGetVirtualInterfaceTagOutputWithContext(ctx context.Context) GetVirtualInterfaceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualInterfaceTagOutput)
+}
+
+// GetVirtualInterfaceTagArrayInput is an input type that accepts GetVirtualInterfaceTagArray and GetVirtualInterfaceTagArrayOutput values.
+// You can construct a concrete instance of `GetVirtualInterfaceTagArrayInput` via:
+//
+//	GetVirtualInterfaceTagArray{ GetVirtualInterfaceTagArgs{...} }
+type GetVirtualInterfaceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualInterfaceTagArrayOutput() GetVirtualInterfaceTagArrayOutput
+	ToGetVirtualInterfaceTagArrayOutputWithContext(context.Context) GetVirtualInterfaceTagArrayOutput
+}
+
+type GetVirtualInterfaceTagArray []GetVirtualInterfaceTagInput
+
+func (GetVirtualInterfaceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualInterfaceTag)(nil)).Elem()
+}
+
+func (i GetVirtualInterfaceTagArray) ToGetVirtualInterfaceTagArrayOutput() GetVirtualInterfaceTagArrayOutput {
+	return i.ToGetVirtualInterfaceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualInterfaceTagArray) ToGetVirtualInterfaceTagArrayOutputWithContext(ctx context.Context) GetVirtualInterfaceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualInterfaceTagArrayOutput)
+}
+
+type GetVirtualInterfaceTagOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualInterfaceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualInterfaceTag)(nil)).Elem()
+}
+
+func (o GetVirtualInterfaceTagOutput) ToGetVirtualInterfaceTagOutput() GetVirtualInterfaceTagOutput {
+	return o
+}
+
+func (o GetVirtualInterfaceTagOutput) ToGetVirtualInterfaceTagOutputWithContext(ctx context.Context) GetVirtualInterfaceTagOutput {
+	return o
+}
+
+// Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+func (o GetVirtualInterfaceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualInterfaceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+func (o GetVirtualInterfaceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualInterfaceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVirtualInterfaceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualInterfaceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualInterfaceTag)(nil)).Elem()
+}
+
+func (o GetVirtualInterfaceTagArrayOutput) ToGetVirtualInterfaceTagArrayOutput() GetVirtualInterfaceTagArrayOutput {
+	return o
+}
+
+func (o GetVirtualInterfaceTagArrayOutput) ToGetVirtualInterfaceTagArrayOutputWithContext(ctx context.Context) GetVirtualInterfaceTagArrayOutput {
+	return o
+}
+
+func (o GetVirtualInterfaceTagArrayOutput) Index(i pulumi.IntInput) GetVirtualInterfaceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualInterfaceTag {
+		return vs[0].([]GetVirtualInterfaceTag)[vs[1].(int)]
+	}).(GetVirtualInterfaceTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateCenInput)(nil)).Elem(), DirectConnectGatewayAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateCenArrayInput)(nil)).Elem(), DirectConnectGatewayAssociateCenArray{})
@@ -707,20 +919,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateEicPtrInput)(nil)).Elem(), DirectConnectGatewayAssociateEicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayTagInput)(nil)).Elem(), DirectConnectGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayTagArrayInput)(nil)).Elem(), DirectConnectGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualInterfaceTagInput)(nil)).Elem(), VirtualInterfaceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualInterfaceTagArrayInput)(nil)).Elem(), VirtualInterfaceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateCenInput)(nil)).Elem(), GetDirectConnectGatewayAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateCenArrayInput)(nil)).Elem(), GetDirectConnectGatewayAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateEicInput)(nil)).Elem(), GetDirectConnectGatewayAssociateEicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayTagInput)(nil)).Elem(), GetDirectConnectGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayTagArrayInput)(nil)).Elem(), GetDirectConnectGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualInterfaceTagInput)(nil)).Elem(), GetVirtualInterfaceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualInterfaceTagArrayInput)(nil)).Elem(), GetVirtualInterfaceTagArray{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateCenOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateEicOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateEicPtrOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayTagOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(VirtualInterfaceTagOutput{})
+	pulumi.RegisterOutputType(VirtualInterfaceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateCenOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateEicOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualInterfaceTagOutput{})
+	pulumi.RegisterOutputType(GetVirtualInterfaceTagArrayOutput{})
 }

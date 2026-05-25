@@ -7,7 +7,13 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .direct_connect_gateway import *
+from .gateway_route import *
 from .get_direct_connect_gateway import *
 from .get_direct_connect_gateways import *
+from .get_gateway_route import *
+from .get_gateway_routes import *
+from .get_virtual_interface import *
+from .get_virtual_interfaces import *
+from .virtual_interface import *
 from ._inputs import *
 from . import outputs

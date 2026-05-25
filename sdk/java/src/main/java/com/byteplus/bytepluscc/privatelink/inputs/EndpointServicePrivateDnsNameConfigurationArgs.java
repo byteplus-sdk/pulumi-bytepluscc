@@ -31,14 +31,14 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
     }
 
     /**
-     * Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+     * Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+     * @return Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
      * 
      */
     public Optional<Output<String>> status() {
@@ -124,7 +124,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param status Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+         * @param status Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class EndpointServicePrivateDnsNameConfigurationArgs extends com.pu
         }
 
         /**
-         * @param status Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+         * @param status Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
          * 
          * @return builder
          * 

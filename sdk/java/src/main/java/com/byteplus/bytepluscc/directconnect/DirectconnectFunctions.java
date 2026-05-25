@@ -6,8 +6,16 @@ package com.byteplus.bytepluscc.directconnect;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.directconnect.inputs.GetDirectConnectGatewayArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetDirectConnectGatewayPlainArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetGatewayRouteArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetGatewayRoutePlainArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetVirtualInterfaceArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetVirtualInterfacePlainArgs;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewayResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewaysResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetGatewayRouteResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetGatewayRoutesResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetVirtualInterfaceResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetVirtualInterfacesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +108,173 @@ public final class DirectconnectFunctions {
      */
     public static CompletableFuture<GetDirectConnectGatewaysResult> getDirectConnectGatewaysPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getDirectConnectGateways:getDirectConnectGateways", TypeShape.of(GetDirectConnectGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRouteResult> getGatewayRoute(GetGatewayRouteArgs args) {
+        return getGatewayRoute(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static CompletableFuture<GetGatewayRouteResult> getGatewayRoutePlain(GetGatewayRoutePlainArgs args) {
+        return getGatewayRoutePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRouteResult> getGatewayRoute(GetGatewayRouteArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getGatewayRoute:getGatewayRoute", TypeShape.of(GetGatewayRouteResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRouteResult> getGatewayRoute(GetGatewayRouteArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getGatewayRoute:getGatewayRoute", TypeShape.of(GetGatewayRouteResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static CompletableFuture<GetGatewayRouteResult> getGatewayRoutePlain(GetGatewayRoutePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getGatewayRoute:getGatewayRoute", TypeShape.of(GetGatewayRouteResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRoutesResult> getGatewayRoutes() {
+        return getGatewayRoutes(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static CompletableFuture<GetGatewayRoutesResult> getGatewayRoutesPlain() {
+        return getGatewayRoutesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRoutesResult> getGatewayRoutes(InvokeArgs args) {
+        return getGatewayRoutes(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static CompletableFuture<GetGatewayRoutesResult> getGatewayRoutesPlain(InvokeArgs args) {
+        return getGatewayRoutesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRoutesResult> getGatewayRoutes(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getGatewayRoutes:getGatewayRoutes", TypeShape.of(GetGatewayRoutesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static Output<GetGatewayRoutesResult> getGatewayRoutes(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getGatewayRoutes:getGatewayRoutes", TypeShape.of(GetGatewayRoutesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::DirectConnectGatewayRoute
+     * 
+     */
+    public static CompletableFuture<GetGatewayRoutesResult> getGatewayRoutesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getGatewayRoutes:getGatewayRoutes", TypeShape.of(GetGatewayRoutesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfaceResult> getVirtualInterface(GetVirtualInterfaceArgs args) {
+        return getVirtualInterface(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static CompletableFuture<GetVirtualInterfaceResult> getVirtualInterfacePlain(GetVirtualInterfacePlainArgs args) {
+        return getVirtualInterfacePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfaceResult> getVirtualInterface(GetVirtualInterfaceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getVirtualInterface:getVirtualInterface", TypeShape.of(GetVirtualInterfaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfaceResult> getVirtualInterface(GetVirtualInterfaceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getVirtualInterface:getVirtualInterface", TypeShape.of(GetVirtualInterfaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static CompletableFuture<GetVirtualInterfaceResult> getVirtualInterfacePlain(GetVirtualInterfacePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getVirtualInterface:getVirtualInterface", TypeShape.of(GetVirtualInterfaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfacesResult> getVirtualInterfaces() {
+        return getVirtualInterfaces(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static CompletableFuture<GetVirtualInterfacesResult> getVirtualInterfacesPlain() {
+        return getVirtualInterfacesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfacesResult> getVirtualInterfaces(InvokeArgs args) {
+        return getVirtualInterfaces(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static CompletableFuture<GetVirtualInterfacesResult> getVirtualInterfacesPlain(InvokeArgs args) {
+        return getVirtualInterfacesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfacesResult> getVirtualInterfaces(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getVirtualInterfaces:getVirtualInterfaces", TypeShape.of(GetVirtualInterfacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static Output<GetVirtualInterfacesResult> getVirtualInterfaces(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getVirtualInterfaces:getVirtualInterfaces", TypeShape.of(GetVirtualInterfacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::VirtualInterface
+     * 
+     */
+    public static CompletableFuture<GetVirtualInterfacesResult> getVirtualInterfacesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getVirtualInterfaces:getVirtualInterfaces", TypeShape.of(GetVirtualInterfacesResult.class), args, Utilities.withVersion(options));
     }
 }

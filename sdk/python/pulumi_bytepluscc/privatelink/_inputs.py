@@ -42,7 +42,7 @@ if not MYPY:
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -64,7 +64,7 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] name: Domain verification name.
-        :param pulumi.Input[builtins.str] status: Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        :param pulumi.Input[builtins.str] status: Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         :param pulumi.Input[builtins.str] type: Domain verification type. TXT: TXT record.
         :param pulumi.Input[builtins.str] value: Domain verification value.
         """
@@ -93,7 +93,7 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         """
         return pulumi.get(self, "status")
 

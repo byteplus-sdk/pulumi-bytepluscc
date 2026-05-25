@@ -41,7 +41,7 @@ class EndpointServicePrivateDnsNameConfiguration(dict):
                  value: Optional[builtins.str] = None):
         """
         :param builtins.str name: Domain verification name.
-        :param builtins.str status: Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        :param builtins.str status: Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         :param builtins.str type: Domain verification type. TXT: TXT record.
         :param builtins.str value: Domain verification value.
         """
@@ -66,7 +66,7 @@ class EndpointServicePrivateDnsNameConfiguration(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         """
         return pulumi.get(self, "status")
 
@@ -484,7 +484,7 @@ class GetEndpointServicePrivateDnsNameConfigurationResult(dict):
                  value: builtins.str):
         """
         :param builtins.str name: Domain verification name.
-        :param builtins.str status: Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        :param builtins.str status: Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         :param builtins.str type: Domain verification type. TXT: TXT record.
         :param builtins.str value: Domain verification value.
         """
@@ -505,7 +505,7 @@ class GetEndpointServicePrivateDnsNameConfigurationResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
         """
         return pulumi.get(self, "status")
 
