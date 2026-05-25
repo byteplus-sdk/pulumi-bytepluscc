@@ -29,6 +29,7 @@ import * as emr from "./emr";
 import * as escloud from "./escloud";
 import * as filenas from "./filenas";
 import * as fwcenter from "./fwcenter";
+import * as gtm from "./gtm";
 import * as hbase from "./hbase";
 import * as iam from "./iam";
 import * as kafka from "./kafka";
@@ -76,6 +77,7 @@ export {
     escloud,
     filenas,
     fwcenter,
+    gtm,
     hbase,
     iam,
     kafka,

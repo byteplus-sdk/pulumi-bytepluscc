@@ -10319,6 +10319,28 @@ export namespace directconnect {
         value: string;
     }
 
+    export interface GetVirtualInterfaceTag {
+        /**
+         * Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+         */
+        key: string;
+        /**
+         * Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value: string;
+    }
+
+    export interface VirtualInterfaceTag {
+        /**
+         * Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+         */
+        key: string;
+        /**
+         * Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value: string;
+    }
+
 }
 
 export namespace dns {
@@ -14480,6 +14502,59 @@ export namespace fwcenter {
 
 }
 
+export namespace gtm {
+    export interface GetPoolAddress {
+        /**
+         * Address capacity
+         */
+        capacity: number;
+        /**
+         * Geographic location of the address, returned only in queries
+         */
+        geo: string;
+        /**
+         * Address availability mode
+         */
+        mode: string;
+        /**
+         * List of geographic route codes to be corrected
+         */
+        rectifiedGeos: string[];
+        /**
+         * Target address value
+         */
+        value: string;
+        /**
+         * Address weight
+         */
+        weight: number;
+    }
+
+    export interface PoolAddress {
+        /**
+         * Address capacity
+         */
+        capacity: number;
+        /**
+         * Address availability mode
+         */
+        mode: string;
+        /**
+         * List of geographic route codes to be corrected
+         */
+        rectifiedGeos: string[];
+        /**
+         * Target address value
+         */
+        value: string;
+        /**
+         * Address weight
+         */
+        weight: number;
+    }
+
+}
+
 export namespace hbase {
     export interface GetInstanceEndpoint {
         /**
@@ -16338,7 +16413,7 @@ export namespace privatelink {
          */
         name: string;
         /**
-         * Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+         * Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
          */
         status: string;
         /**
@@ -16379,7 +16454,7 @@ export namespace privatelink {
          */
         name: string;
         /**
-         * Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+         * Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
          */
         status: string;
         /**
@@ -20196,6 +20271,43 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface AlarmAlarmNotifyGroup {
+        /**
+         * Alert notification group ID.
+         */
+        alarmNotifyGroupId: string;
+    }
+
+    export interface AlarmAlarmPeriodDetail {
+        /**
+         * Email alert interval, in minutes. Value range: 1–1440
+         */
+        email: number;
+        /**
+         * Custom Webhook alert interval, in minutes. Value range: 1–1440.
+         */
+        generalWebhook: number;
+        /**
+         * Phone alert cycle, in minutes. Value range: 10–1440.
+         */
+        phone: number;
+        /**
+         * SMS alert interval, in minutes. Value range: 10–1440
+         */
+        sms: number;
+    }
+
+    export interface AlarmJoinConfiguration {
+        /**
+         * Expression used for left join or right join.
+         */
+        condition: string;
+        /**
+         * Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+         */
+        setOperationType: string;
+    }
+
     export interface AlarmNotifyGroupNoticeRule {
         /**
          * Whether there is an end node afterwards.
@@ -20352,6 +20464,315 @@ export namespace tls {
          * Custom request header value.
          */
         value: string;
+    }
+
+    export interface AlarmQueryRequest {
+        /**
+         * Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+         */
+        endTimeOffset: number;
+        /**
+         * Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+         */
+        endTimeOffsetUnit: string;
+        /**
+         * Query analysis statement, with a maximum supported length of 1024 characters.
+         */
+        query: string;
+        /**
+         * Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+         */
+        startTimeOffset: number;
+        /**
+         * Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+         */
+        startTimeOffsetUnit: string;
+        /**
+         * Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+         */
+        timeSpanType: string;
+        /**
+         * Log topic ID monitored by the alert policy.
+         */
+        topicId: string;
+        /**
+         * Name of the log topic monitored by the alert policy.
+         */
+        topicName: string;
+        /**
+         * Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+         */
+        truncatedTime: string;
+    }
+
+    export interface AlarmRequestCycle {
+        /**
+         * Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+         */
+        cronTab: string;
+        /**
+         * Time zone in which the Cron expression takes effect.
+         */
+        cronTimeZone: string;
+        /**
+         * Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+         */
+        time: number;
+        /**
+         * Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+         */
+        type: string;
+    }
+
+    export interface AlarmTriggerCondition {
+        /**
+         * Alert trigger condition expression.
+         */
+        condition: string;
+        /**
+         * Numerical expression for scenarios with data or specific entries, implemented using **count**.
+         */
+        countCondition: string;
+        /**
+         * When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+         */
+        noData: boolean;
+        /**
+         * Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+         */
+        severity: string;
+    }
+
+    export interface GetAlarmAlarmNotifyGroup {
+        /**
+         * Alert notification group ID.
+         */
+        alarmNotifyGroupId: string;
+        /**
+         * Alert notification group name.
+         */
+        alarmNotifyGroupName: string;
+        /**
+         * Alert notification group creation time.
+         */
+        createTime: string;
+        /**
+         * IAM project to which the alert group belongs.
+         */
+        iamProjectName: string;
+        /**
+         * Time when the alert notification group was modified.
+         */
+        modifyTime: string;
+        /**
+         * Notification group rule
+         */
+        noticeRules: outputs.tls.GetAlarmAlarmNotifyGroupNoticeRule[];
+        /**
+         * Type of alert notification. Optional values, select one or more: Trigger   - when an alert is triggered. Recovery   - when an alert is recovered.
+         */
+        notifyTypes: string[];
+        /**
+         * List of IAM users who receive alerts.
+         */
+        receivers: outputs.tls.GetAlarmAlarmNotifyGroupReceiver[];
+    }
+
+    export interface GetAlarmAlarmNotifyGroupNoticeRule {
+        /**
+         * Whether a subsequent end node exists.
+         */
+        hasEndNode: boolean;
+        /**
+         * Whether to continue to the next level of condition evaluation
+         */
+        hasNext: boolean;
+        /**
+         * Notification group rule
+         */
+        receiverInfos: outputs.tls.GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo[];
+        /**
+         * Rule node, in JSON format.
+         */
+        ruleNode: string;
+    }
+
+    export interface GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo {
+        /**
+         * Alert content template ID.
+         */
+        alarmContentTemplateId: string;
+        /**
+         * Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+         */
+        alarmWebhookAtGroups: string[];
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+         */
+        alarmWebhookAtUsers: string[];
+        /**
+         * ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+         */
+        alarmWebhookIntegrationId: string;
+        /**
+         * Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+         */
+        alarmWebhookIntegrationName: string;
+        /**
+         * Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+         */
+        alarmWebhookIsAtAll: boolean;
+        /**
+         * End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+         */
+        endTime: string;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+         */
+        generalWebhookBody: string;
+        /**
+         * Custom interface callback request header.
+         */
+        generalWebhookHeaders: outputs.tls.GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader[];
+        /**
+         * Custom interface callback method. Only POST or PUT is supported.
+         */
+        generalWebhookMethod: string;
+        /**
+         * Custom callback URL for the interface
+         */
+        generalWebhookUrl: string;
+        /**
+         * Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+         */
+        receiverChannels: string[];
+        /**
+         * IAM user or user group name
+         */
+        receiverNames: string[];
+        /**
+         * Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+         */
+        receiverType: string;
+        /**
+         * Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime: string;
+    }
+
+    export interface GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader {
+        /**
+         * Key of the custom request header.
+         */
+        key: string;
+        /**
+         * Value of the custom request header.
+         */
+        value: string;
+    }
+
+    export interface GetAlarmAlarmNotifyGroupReceiver {
+        /**
+         * Alert content template ID.
+         */
+        alarmContentTemplateId: string;
+        /**
+         * Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+         */
+        alarmWebhookAtGroups: string[];
+        /**
+         * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+         */
+        alarmWebhookAtUsers: string[];
+        /**
+         * ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+         */
+        alarmWebhookIntegrationId: string;
+        /**
+         * Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+         */
+        alarmWebhookIntegrationName: string;
+        /**
+         * Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+         */
+        alarmWebhookIsAtAll: boolean;
+        /**
+         * End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+         */
+        endTime: string;
+        /**
+         * Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+         */
+        generalWebhookBody: string;
+        /**
+         * Custom interface callback request header.
+         */
+        generalWebhookHeaders: outputs.tls.GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader[];
+        /**
+         * Custom interface callback method. Only POST or PUT is supported.
+         */
+        generalWebhookMethod: string;
+        /**
+         * Custom callback URL for the interface
+         */
+        generalWebhookUrl: string;
+        /**
+         * Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+         */
+        receiverChannels: string[];
+        /**
+         * IAM user or user group name
+         */
+        receiverNames: string[];
+        /**
+         * Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+         */
+        receiverType: string;
+        /**
+         * Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+         */
+        startTime: string;
+    }
+
+    export interface GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader {
+        /**
+         * Key of the custom request header.
+         */
+        key: string;
+        /**
+         * Value of the custom request header.
+         */
+        value: string;
+    }
+
+    export interface GetAlarmAlarmPeriodDetail {
+        /**
+         * Email alert interval, in minutes. Value range: 1–1440
+         */
+        email: number;
+        /**
+         * Custom Webhook alert interval, in minutes. Value range: 1–1440.
+         */
+        generalWebhook: number;
+        /**
+         * Phone alert cycle, in minutes. Value range: 10–1440.
+         */
+        phone: number;
+        /**
+         * SMS alert interval, in minutes. Value range: 10–1440
+         */
+        sms: number;
+    }
+
+    export interface GetAlarmJoinConfiguration {
+        /**
+         * Expression used for left join or right join.
+         */
+        condition: string;
+        /**
+         * Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+         */
+        setOperationType: string;
     }
 
     export interface GetAlarmNotifyGroupNoticeRule {
@@ -20519,6 +20940,87 @@ export namespace tls {
          * Custom request header value.
          */
         value: string;
+    }
+
+    export interface GetAlarmQueryRequest {
+        /**
+         * Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+         */
+        endTimeOffset: number;
+        /**
+         * Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+         */
+        endTimeOffsetUnit: string;
+        /**
+         * Alert object sequence number, starting from 1 and incrementing by 1
+         */
+        number: number;
+        /**
+         * Query analysis statement, with a maximum supported length of 1024 characters.
+         */
+        query: string;
+        /**
+         * Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+         */
+        startTimeOffset: number;
+        /**
+         * Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+         */
+        startTimeOffsetUnit: string;
+        /**
+         * Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+         */
+        timeSpanType: string;
+        /**
+         * Log topic ID monitored by the alert policy.
+         */
+        topicId: string;
+        /**
+         * Name of the log topic monitored by the alert policy.
+         */
+        topicName: string;
+        /**
+         * Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+         */
+        truncatedTime: string;
+    }
+
+    export interface GetAlarmRequestCycle {
+        /**
+         * Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+         */
+        cronTab: string;
+        /**
+         * Time zone in which the Cron expression takes effect.
+         */
+        cronTimeZone: string;
+        /**
+         * Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+         */
+        time: number;
+        /**
+         * Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+         */
+        type: string;
+    }
+
+    export interface GetAlarmTriggerCondition {
+        /**
+         * Alert trigger condition expression.
+         */
+        condition: string;
+        /**
+         * Numerical expression for scenarios with data or specific entries, implemented using **count**.
+         */
+        countCondition: string;
+        /**
+         * When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+         */
+        noData: boolean;
+        /**
+         * Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+         */
+        severity: string;
     }
 
     export interface GetImportTaskImportSourceInfo {
@@ -28676,6 +29178,17 @@ export namespace vpn {
         value: string;
     }
 
+    export interface GetSslVpnServerTag {
+        /**
+         * Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+         */
+        key: string;
+        /**
+         * Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value: string;
+    }
+
     export interface GetVpnConnectionBgpInfo {
         /**
          * Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
@@ -28939,6 +29452,17 @@ export namespace vpn {
         tunnelCidr: string;
     }
 
+    export interface GetVpnGatewayRouteAsPath {
+        /**
+         * AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+         */
+        numbers: number[];
+        /**
+         * AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+         */
+        type: string;
+    }
+
     export interface GetVpnGatewayTag {
         /**
          * VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
@@ -28957,6 +29481,17 @@ export namespace vpn {
         key: string;
         /**
          * Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value: string;
+    }
+
+    export interface SslVpnServerTag {
+        /**
+         * Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+         */
+        key: string;
+        /**
+         * Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
          */
         value: string;
     }
@@ -29222,6 +29757,17 @@ export namespace vpn {
          * The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
          */
         tunnelCidr: string;
+    }
+
+    export interface VpnGatewayRouteAsPath {
+        /**
+         * AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+         */
+        numbers: number[];
+        /**
+         * AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+         */
+        type: string;
     }
 
     export interface VpnGatewayTag {

@@ -225,6 +225,112 @@ func (o SslVpnClientCertTagArrayOutput) Index(i pulumi.IntInput) SslVpnClientCer
 	}).(SslVpnClientCertTagOutput)
 }
 
+type SslVpnServerTag struct {
+	// Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+	Key *string `pulumi:"key"`
+	// Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value *string `pulumi:"value"`
+}
+
+// SslVpnServerTagInput is an input type that accepts SslVpnServerTagArgs and SslVpnServerTagOutput values.
+// You can construct a concrete instance of `SslVpnServerTagInput` via:
+//
+//	SslVpnServerTagArgs{...}
+type SslVpnServerTagInput interface {
+	pulumi.Input
+
+	ToSslVpnServerTagOutput() SslVpnServerTagOutput
+	ToSslVpnServerTagOutputWithContext(context.Context) SslVpnServerTagOutput
+}
+
+type SslVpnServerTagArgs struct {
+	// Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SslVpnServerTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SslVpnServerTag)(nil)).Elem()
+}
+
+func (i SslVpnServerTagArgs) ToSslVpnServerTagOutput() SslVpnServerTagOutput {
+	return i.ToSslVpnServerTagOutputWithContext(context.Background())
+}
+
+func (i SslVpnServerTagArgs) ToSslVpnServerTagOutputWithContext(ctx context.Context) SslVpnServerTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SslVpnServerTagOutput)
+}
+
+// SslVpnServerTagArrayInput is an input type that accepts SslVpnServerTagArray and SslVpnServerTagArrayOutput values.
+// You can construct a concrete instance of `SslVpnServerTagArrayInput` via:
+//
+//	SslVpnServerTagArray{ SslVpnServerTagArgs{...} }
+type SslVpnServerTagArrayInput interface {
+	pulumi.Input
+
+	ToSslVpnServerTagArrayOutput() SslVpnServerTagArrayOutput
+	ToSslVpnServerTagArrayOutputWithContext(context.Context) SslVpnServerTagArrayOutput
+}
+
+type SslVpnServerTagArray []SslVpnServerTagInput
+
+func (SslVpnServerTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SslVpnServerTag)(nil)).Elem()
+}
+
+func (i SslVpnServerTagArray) ToSslVpnServerTagArrayOutput() SslVpnServerTagArrayOutput {
+	return i.ToSslVpnServerTagArrayOutputWithContext(context.Background())
+}
+
+func (i SslVpnServerTagArray) ToSslVpnServerTagArrayOutputWithContext(ctx context.Context) SslVpnServerTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SslVpnServerTagArrayOutput)
+}
+
+type SslVpnServerTagOutput struct{ *pulumi.OutputState }
+
+func (SslVpnServerTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SslVpnServerTag)(nil)).Elem()
+}
+
+func (o SslVpnServerTagOutput) ToSslVpnServerTagOutput() SslVpnServerTagOutput {
+	return o
+}
+
+func (o SslVpnServerTagOutput) ToSslVpnServerTagOutputWithContext(ctx context.Context) SslVpnServerTagOutput {
+	return o
+}
+
+// Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+func (o SslVpnServerTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SslVpnServerTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+func (o SslVpnServerTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SslVpnServerTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SslVpnServerTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SslVpnServerTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SslVpnServerTag)(nil)).Elem()
+}
+
+func (o SslVpnServerTagArrayOutput) ToSslVpnServerTagArrayOutput() SslVpnServerTagArrayOutput {
+	return o
+}
+
+func (o SslVpnServerTagArrayOutput) ToSslVpnServerTagArrayOutputWithContext(ctx context.Context) SslVpnServerTagArrayOutput {
+	return o
+}
+
+func (o SslVpnServerTagArrayOutput) Index(i pulumi.IntInput) SslVpnServerTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SslVpnServerTag {
+		return vs[0].([]SslVpnServerTag)[vs[1].(int)]
+	}).(SslVpnServerTagOutput)
+}
+
 type VpnConnectionBgpInfo struct {
 	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
 	EnableBgp *bool `pulumi:"enableBgp"`
@@ -2128,6 +2234,112 @@ func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) TunnelCidr() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
+type VpnGatewayRouteAsPath struct {
+	// AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+	Numbers []int `pulumi:"numbers"`
+	// AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+	Type *string `pulumi:"type"`
+}
+
+// VpnGatewayRouteAsPathInput is an input type that accepts VpnGatewayRouteAsPathArgs and VpnGatewayRouteAsPathOutput values.
+// You can construct a concrete instance of `VpnGatewayRouteAsPathInput` via:
+//
+//	VpnGatewayRouteAsPathArgs{...}
+type VpnGatewayRouteAsPathInput interface {
+	pulumi.Input
+
+	ToVpnGatewayRouteAsPathOutput() VpnGatewayRouteAsPathOutput
+	ToVpnGatewayRouteAsPathOutputWithContext(context.Context) VpnGatewayRouteAsPathOutput
+}
+
+type VpnGatewayRouteAsPathArgs struct {
+	// AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+	Numbers pulumi.IntArrayInput `pulumi:"numbers"`
+	// AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (VpnGatewayRouteAsPathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (i VpnGatewayRouteAsPathArgs) ToVpnGatewayRouteAsPathOutput() VpnGatewayRouteAsPathOutput {
+	return i.ToVpnGatewayRouteAsPathOutputWithContext(context.Background())
+}
+
+func (i VpnGatewayRouteAsPathArgs) ToVpnGatewayRouteAsPathOutputWithContext(ctx context.Context) VpnGatewayRouteAsPathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnGatewayRouteAsPathOutput)
+}
+
+// VpnGatewayRouteAsPathArrayInput is an input type that accepts VpnGatewayRouteAsPathArray and VpnGatewayRouteAsPathArrayOutput values.
+// You can construct a concrete instance of `VpnGatewayRouteAsPathArrayInput` via:
+//
+//	VpnGatewayRouteAsPathArray{ VpnGatewayRouteAsPathArgs{...} }
+type VpnGatewayRouteAsPathArrayInput interface {
+	pulumi.Input
+
+	ToVpnGatewayRouteAsPathArrayOutput() VpnGatewayRouteAsPathArrayOutput
+	ToVpnGatewayRouteAsPathArrayOutputWithContext(context.Context) VpnGatewayRouteAsPathArrayOutput
+}
+
+type VpnGatewayRouteAsPathArray []VpnGatewayRouteAsPathInput
+
+func (VpnGatewayRouteAsPathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (i VpnGatewayRouteAsPathArray) ToVpnGatewayRouteAsPathArrayOutput() VpnGatewayRouteAsPathArrayOutput {
+	return i.ToVpnGatewayRouteAsPathArrayOutputWithContext(context.Background())
+}
+
+func (i VpnGatewayRouteAsPathArray) ToVpnGatewayRouteAsPathArrayOutputWithContext(ctx context.Context) VpnGatewayRouteAsPathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnGatewayRouteAsPathArrayOutput)
+}
+
+type VpnGatewayRouteAsPathOutput struct{ *pulumi.OutputState }
+
+func (VpnGatewayRouteAsPathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (o VpnGatewayRouteAsPathOutput) ToVpnGatewayRouteAsPathOutput() VpnGatewayRouteAsPathOutput {
+	return o
+}
+
+func (o VpnGatewayRouteAsPathOutput) ToVpnGatewayRouteAsPathOutputWithContext(ctx context.Context) VpnGatewayRouteAsPathOutput {
+	return o
+}
+
+// AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+func (o VpnGatewayRouteAsPathOutput) Numbers() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v VpnGatewayRouteAsPath) []int { return v.Numbers }).(pulumi.IntArrayOutput)
+}
+
+// AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+func (o VpnGatewayRouteAsPathOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnGatewayRouteAsPath) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type VpnGatewayRouteAsPathArrayOutput struct{ *pulumi.OutputState }
+
+func (VpnGatewayRouteAsPathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (o VpnGatewayRouteAsPathArrayOutput) ToVpnGatewayRouteAsPathArrayOutput() VpnGatewayRouteAsPathArrayOutput {
+	return o
+}
+
+func (o VpnGatewayRouteAsPathArrayOutput) ToVpnGatewayRouteAsPathArrayOutputWithContext(ctx context.Context) VpnGatewayRouteAsPathArrayOutput {
+	return o
+}
+
+func (o VpnGatewayRouteAsPathArrayOutput) Index(i pulumi.IntInput) VpnGatewayRouteAsPathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnGatewayRouteAsPath {
+		return vs[0].([]VpnGatewayRouteAsPath)[vs[1].(int)]
+	}).(VpnGatewayRouteAsPathOutput)
+}
+
 type VpnGatewayTag struct {
 	// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
 	Key *string `pulumi:"key"`
@@ -2444,6 +2656,112 @@ func (o GetSslVpnClientCertTagArrayOutput) Index(i pulumi.IntInput) GetSslVpnCli
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSslVpnClientCertTag {
 		return vs[0].([]GetSslVpnClientCertTag)[vs[1].(int)]
 	}).(GetSslVpnClientCertTagOutput)
+}
+
+type GetSslVpnServerTag struct {
+	// Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+	Key string `pulumi:"key"`
+	// Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value string `pulumi:"value"`
+}
+
+// GetSslVpnServerTagInput is an input type that accepts GetSslVpnServerTagArgs and GetSslVpnServerTagOutput values.
+// You can construct a concrete instance of `GetSslVpnServerTagInput` via:
+//
+//	GetSslVpnServerTagArgs{...}
+type GetSslVpnServerTagInput interface {
+	pulumi.Input
+
+	ToGetSslVpnServerTagOutput() GetSslVpnServerTagOutput
+	ToGetSslVpnServerTagOutputWithContext(context.Context) GetSslVpnServerTagOutput
+}
+
+type GetSslVpnServerTagArgs struct {
+	// Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSslVpnServerTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSslVpnServerTag)(nil)).Elem()
+}
+
+func (i GetSslVpnServerTagArgs) ToGetSslVpnServerTagOutput() GetSslVpnServerTagOutput {
+	return i.ToGetSslVpnServerTagOutputWithContext(context.Background())
+}
+
+func (i GetSslVpnServerTagArgs) ToGetSslVpnServerTagOutputWithContext(ctx context.Context) GetSslVpnServerTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSslVpnServerTagOutput)
+}
+
+// GetSslVpnServerTagArrayInput is an input type that accepts GetSslVpnServerTagArray and GetSslVpnServerTagArrayOutput values.
+// You can construct a concrete instance of `GetSslVpnServerTagArrayInput` via:
+//
+//	GetSslVpnServerTagArray{ GetSslVpnServerTagArgs{...} }
+type GetSslVpnServerTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSslVpnServerTagArrayOutput() GetSslVpnServerTagArrayOutput
+	ToGetSslVpnServerTagArrayOutputWithContext(context.Context) GetSslVpnServerTagArrayOutput
+}
+
+type GetSslVpnServerTagArray []GetSslVpnServerTagInput
+
+func (GetSslVpnServerTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSslVpnServerTag)(nil)).Elem()
+}
+
+func (i GetSslVpnServerTagArray) ToGetSslVpnServerTagArrayOutput() GetSslVpnServerTagArrayOutput {
+	return i.ToGetSslVpnServerTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSslVpnServerTagArray) ToGetSslVpnServerTagArrayOutputWithContext(ctx context.Context) GetSslVpnServerTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSslVpnServerTagArrayOutput)
+}
+
+type GetSslVpnServerTagOutput struct{ *pulumi.OutputState }
+
+func (GetSslVpnServerTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSslVpnServerTag)(nil)).Elem()
+}
+
+func (o GetSslVpnServerTagOutput) ToGetSslVpnServerTagOutput() GetSslVpnServerTagOutput {
+	return o
+}
+
+func (o GetSslVpnServerTagOutput) ToGetSslVpnServerTagOutputWithContext(ctx context.Context) GetSslVpnServerTagOutput {
+	return o
+}
+
+// Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+func (o GetSslVpnServerTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSslVpnServerTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+func (o GetSslVpnServerTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSslVpnServerTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSslVpnServerTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSslVpnServerTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSslVpnServerTag)(nil)).Elem()
+}
+
+func (o GetSslVpnServerTagArrayOutput) ToGetSslVpnServerTagArrayOutput() GetSslVpnServerTagArrayOutput {
+	return o
+}
+
+func (o GetSslVpnServerTagArrayOutput) ToGetSslVpnServerTagArrayOutputWithContext(ctx context.Context) GetSslVpnServerTagArrayOutput {
+	return o
+}
+
+func (o GetSslVpnServerTagArrayOutput) Index(i pulumi.IntInput) GetSslVpnServerTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSslVpnServerTag {
+		return vs[0].([]GetSslVpnServerTag)[vs[1].(int)]
+	}).(GetSslVpnServerTagOutput)
 }
 
 type GetVpnConnectionBgpInfo struct {
@@ -3499,6 +3817,112 @@ func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) TunnelCidr() pulumi.Str
 	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) string { return v.TunnelCidr }).(pulumi.StringOutput)
 }
 
+type GetVpnGatewayRouteAsPath struct {
+	// AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+	Numbers []int `pulumi:"numbers"`
+	// AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+	Type string `pulumi:"type"`
+}
+
+// GetVpnGatewayRouteAsPathInput is an input type that accepts GetVpnGatewayRouteAsPathArgs and GetVpnGatewayRouteAsPathOutput values.
+// You can construct a concrete instance of `GetVpnGatewayRouteAsPathInput` via:
+//
+//	GetVpnGatewayRouteAsPathArgs{...}
+type GetVpnGatewayRouteAsPathInput interface {
+	pulumi.Input
+
+	ToGetVpnGatewayRouteAsPathOutput() GetVpnGatewayRouteAsPathOutput
+	ToGetVpnGatewayRouteAsPathOutputWithContext(context.Context) GetVpnGatewayRouteAsPathOutput
+}
+
+type GetVpnGatewayRouteAsPathArgs struct {
+	// AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+	Numbers pulumi.IntArrayInput `pulumi:"numbers"`
+	// AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetVpnGatewayRouteAsPathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (i GetVpnGatewayRouteAsPathArgs) ToGetVpnGatewayRouteAsPathOutput() GetVpnGatewayRouteAsPathOutput {
+	return i.ToGetVpnGatewayRouteAsPathOutputWithContext(context.Background())
+}
+
+func (i GetVpnGatewayRouteAsPathArgs) ToGetVpnGatewayRouteAsPathOutputWithContext(ctx context.Context) GetVpnGatewayRouteAsPathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnGatewayRouteAsPathOutput)
+}
+
+// GetVpnGatewayRouteAsPathArrayInput is an input type that accepts GetVpnGatewayRouteAsPathArray and GetVpnGatewayRouteAsPathArrayOutput values.
+// You can construct a concrete instance of `GetVpnGatewayRouteAsPathArrayInput` via:
+//
+//	GetVpnGatewayRouteAsPathArray{ GetVpnGatewayRouteAsPathArgs{...} }
+type GetVpnGatewayRouteAsPathArrayInput interface {
+	pulumi.Input
+
+	ToGetVpnGatewayRouteAsPathArrayOutput() GetVpnGatewayRouteAsPathArrayOutput
+	ToGetVpnGatewayRouteAsPathArrayOutputWithContext(context.Context) GetVpnGatewayRouteAsPathArrayOutput
+}
+
+type GetVpnGatewayRouteAsPathArray []GetVpnGatewayRouteAsPathInput
+
+func (GetVpnGatewayRouteAsPathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (i GetVpnGatewayRouteAsPathArray) ToGetVpnGatewayRouteAsPathArrayOutput() GetVpnGatewayRouteAsPathArrayOutput {
+	return i.ToGetVpnGatewayRouteAsPathArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpnGatewayRouteAsPathArray) ToGetVpnGatewayRouteAsPathArrayOutputWithContext(ctx context.Context) GetVpnGatewayRouteAsPathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnGatewayRouteAsPathArrayOutput)
+}
+
+type GetVpnGatewayRouteAsPathOutput struct{ *pulumi.OutputState }
+
+func (GetVpnGatewayRouteAsPathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (o GetVpnGatewayRouteAsPathOutput) ToGetVpnGatewayRouteAsPathOutput() GetVpnGatewayRouteAsPathOutput {
+	return o
+}
+
+func (o GetVpnGatewayRouteAsPathOutput) ToGetVpnGatewayRouteAsPathOutputWithContext(ctx context.Context) GetVpnGatewayRouteAsPathOutput {
+	return o
+}
+
+// AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+func (o GetVpnGatewayRouteAsPathOutput) Numbers() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetVpnGatewayRouteAsPath) []int { return v.Numbers }).(pulumi.IntArrayOutput)
+}
+
+// AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+func (o GetVpnGatewayRouteAsPathOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnGatewayRouteAsPath) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetVpnGatewayRouteAsPathArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpnGatewayRouteAsPathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnGatewayRouteAsPath)(nil)).Elem()
+}
+
+func (o GetVpnGatewayRouteAsPathArrayOutput) ToGetVpnGatewayRouteAsPathArrayOutput() GetVpnGatewayRouteAsPathArrayOutput {
+	return o
+}
+
+func (o GetVpnGatewayRouteAsPathArrayOutput) ToGetVpnGatewayRouteAsPathArrayOutputWithContext(ctx context.Context) GetVpnGatewayRouteAsPathArrayOutput {
+	return o
+}
+
+func (o GetVpnGatewayRouteAsPathArrayOutput) Index(i pulumi.IntInput) GetVpnGatewayRouteAsPathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpnGatewayRouteAsPath {
+		return vs[0].([]GetVpnGatewayRouteAsPath)[vs[1].(int)]
+	}).(GetVpnGatewayRouteAsPathOutput)
+}
+
 type GetVpnGatewayTag struct {
 	// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
 	Key string `pulumi:"key"`
@@ -3610,6 +4034,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagArrayInput)(nil)).Elem(), CustomerGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SslVpnClientCertTagInput)(nil)).Elem(), SslVpnClientCertTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SslVpnClientCertTagArrayInput)(nil)).Elem(), SslVpnClientCertTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SslVpnServerTagInput)(nil)).Elem(), SslVpnServerTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SslVpnServerTagArrayInput)(nil)).Elem(), SslVpnServerTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionBgpInfoInput)(nil)).Elem(), VpnConnectionBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionBgpInfoPtrInput)(nil)).Elem(), VpnConnectionBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionHealthCheckerInput)(nil)).Elem(), VpnConnectionHealthCheckerArgs{})
@@ -3628,12 +4054,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionIpsecConfigPtrInput)(nil)).Elem(), VpnConnectionTunnelOptionIpsecConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionTunnelBgpInfoInput)(nil)).Elem(), VpnConnectionTunnelOptionTunnelBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionTunnelBgpInfoPtrInput)(nil)).Elem(), VpnConnectionTunnelOptionTunnelBgpInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayRouteAsPathInput)(nil)).Elem(), VpnGatewayRouteAsPathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayRouteAsPathArrayInput)(nil)).Elem(), VpnGatewayRouteAsPathArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagInput)(nil)).Elem(), VpnGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagArrayInput)(nil)).Elem(), VpnGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagInput)(nil)).Elem(), GetCustomerGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagArrayInput)(nil)).Elem(), GetCustomerGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSslVpnClientCertTagInput)(nil)).Elem(), GetSslVpnClientCertTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSslVpnClientCertTagArrayInput)(nil)).Elem(), GetSslVpnClientCertTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSslVpnServerTagInput)(nil)).Elem(), GetSslVpnServerTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSslVpnServerTagArrayInput)(nil)).Elem(), GetSslVpnServerTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionBgpInfoInput)(nil)).Elem(), GetVpnConnectionBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionHealthCheckerInput)(nil)).Elem(), GetVpnConnectionHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionHealthCheckerArrayInput)(nil)).Elem(), GetVpnConnectionHealthCheckerArray{})
@@ -3646,12 +4076,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionIkeConfigInput)(nil)).Elem(), GetVpnConnectionTunnelOptionIkeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionIpsecConfigInput)(nil)).Elem(), GetVpnConnectionTunnelOptionIpsecConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionTunnelBgpInfoInput)(nil)).Elem(), GetVpnConnectionTunnelOptionTunnelBgpInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayRouteAsPathInput)(nil)).Elem(), GetVpnGatewayRouteAsPathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayRouteAsPathArrayInput)(nil)).Elem(), GetVpnGatewayRouteAsPathArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagInput)(nil)).Elem(), GetVpnGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagArrayInput)(nil)).Elem(), GetVpnGatewayTagArray{})
 	pulumi.RegisterOutputType(CustomerGatewayTagOutput{})
 	pulumi.RegisterOutputType(CustomerGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(SslVpnClientCertTagOutput{})
 	pulumi.RegisterOutputType(SslVpnClientCertTagArrayOutput{})
+	pulumi.RegisterOutputType(SslVpnServerTagOutput{})
+	pulumi.RegisterOutputType(SslVpnServerTagArrayOutput{})
 	pulumi.RegisterOutputType(VpnConnectionBgpInfoOutput{})
 	pulumi.RegisterOutputType(VpnConnectionBgpInfoPtrOutput{})
 	pulumi.RegisterOutputType(VpnConnectionHealthCheckerOutput{})
@@ -3670,12 +4104,16 @@ func init() {
 	pulumi.RegisterOutputType(VpnConnectionTunnelOptionIpsecConfigPtrOutput{})
 	pulumi.RegisterOutputType(VpnConnectionTunnelOptionTunnelBgpInfoOutput{})
 	pulumi.RegisterOutputType(VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput{})
+	pulumi.RegisterOutputType(VpnGatewayRouteAsPathOutput{})
+	pulumi.RegisterOutputType(VpnGatewayRouteAsPathArrayOutput{})
 	pulumi.RegisterOutputType(VpnGatewayTagOutput{})
 	pulumi.RegisterOutputType(VpnGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCustomerGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetCustomerGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSslVpnClientCertTagOutput{})
 	pulumi.RegisterOutputType(GetSslVpnClientCertTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSslVpnServerTagOutput{})
+	pulumi.RegisterOutputType(GetSslVpnServerTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionBgpInfoOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionHealthCheckerOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionHealthCheckerArrayOutput{})
@@ -3688,6 +4126,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionIkeConfigOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionIpsecConfigOutput{})
 	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionTunnelBgpInfoOutput{})
+	pulumi.RegisterOutputType(GetVpnGatewayRouteAsPathOutput{})
+	pulumi.RegisterOutputType(GetVpnGatewayRouteAsPathArrayOutput{})
 	pulumi.RegisterOutputType(GetVpnGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetVpnGatewayTagArrayOutput{})
 }

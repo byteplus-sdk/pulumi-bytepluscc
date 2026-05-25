@@ -16,7 +16,7 @@ public final class GetEndpointServicePrivateDnsNameConfiguration {
      */
     private String name;
     /**
-     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+     * @return Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
      * 
      */
     private String status;
@@ -40,7 +40,7 @@ public final class GetEndpointServicePrivateDnsNameConfiguration {
         return this.name;
     }
     /**
-     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+     * @return Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
      * 
      */
     public String status() {

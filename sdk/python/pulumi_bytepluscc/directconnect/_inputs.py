@@ -22,6 +22,8 @@ __all__ = [
     'DirectConnectGatewayAssociateEicArgsDict',
     'DirectConnectGatewayTagArgs',
     'DirectConnectGatewayTagArgsDict',
+    'VirtualInterfaceTagArgs',
+    'VirtualInterfaceTagArgsDict',
 ]
 
 MYPY = False
@@ -214,6 +216,58 @@ class DirectConnectGatewayTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         User label tag value. Length must be between 0 and 256 characters.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class VirtualInterfaceTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+elif False:
+    VirtualInterfaceTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VirtualInterfaceTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+        :param pulumi.Input[builtins.str] value: Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 

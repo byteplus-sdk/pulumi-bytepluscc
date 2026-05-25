@@ -30,6 +30,16 @@ export const getSslVpnClientCerts: typeof import("./getSslVpnClientCerts").getSs
 export const getSslVpnClientCertsOutput: typeof import("./getSslVpnClientCerts").getSslVpnClientCertsOutput = null as any;
 utilities.lazyLoad(exports, ["getSslVpnClientCerts","getSslVpnClientCertsOutput"], () => require("./getSslVpnClientCerts"));
 
+export { GetSslVpnServerArgs, GetSslVpnServerResult, GetSslVpnServerOutputArgs } from "./getSslVpnServer";
+export const getSslVpnServer: typeof import("./getSslVpnServer").getSslVpnServer = null as any;
+export const getSslVpnServerOutput: typeof import("./getSslVpnServer").getSslVpnServerOutput = null as any;
+utilities.lazyLoad(exports, ["getSslVpnServer","getSslVpnServerOutput"], () => require("./getSslVpnServer"));
+
+export { GetSslVpnServersResult } from "./getSslVpnServers";
+export const getSslVpnServers: typeof import("./getSslVpnServers").getSslVpnServers = null as any;
+export const getSslVpnServersOutput: typeof import("./getSslVpnServers").getSslVpnServersOutput = null as any;
+utilities.lazyLoad(exports, ["getSslVpnServers","getSslVpnServersOutput"], () => require("./getSslVpnServers"));
+
 export { GetVpnConnectionArgs, GetVpnConnectionResult, GetVpnConnectionOutputArgs } from "./getVpnConnection";
 export const getVpnConnection: typeof import("./getVpnConnection").getVpnConnection = null as any;
 export const getVpnConnectionOutput: typeof import("./getVpnConnection").getVpnConnectionOutput = null as any;
@@ -45,6 +55,16 @@ export const getVpnGateway: typeof import("./getVpnGateway").getVpnGateway = nul
 export const getVpnGatewayOutput: typeof import("./getVpnGateway").getVpnGatewayOutput = null as any;
 utilities.lazyLoad(exports, ["getVpnGateway","getVpnGatewayOutput"], () => require("./getVpnGateway"));
 
+export { GetVpnGatewayRouteArgs, GetVpnGatewayRouteResult, GetVpnGatewayRouteOutputArgs } from "./getVpnGatewayRoute";
+export const getVpnGatewayRoute: typeof import("./getVpnGatewayRoute").getVpnGatewayRoute = null as any;
+export const getVpnGatewayRouteOutput: typeof import("./getVpnGatewayRoute").getVpnGatewayRouteOutput = null as any;
+utilities.lazyLoad(exports, ["getVpnGatewayRoute","getVpnGatewayRouteOutput"], () => require("./getVpnGatewayRoute"));
+
+export { GetVpnGatewayRoutesResult } from "./getVpnGatewayRoutes";
+export const getVpnGatewayRoutes: typeof import("./getVpnGatewayRoutes").getVpnGatewayRoutes = null as any;
+export const getVpnGatewayRoutesOutput: typeof import("./getVpnGatewayRoutes").getVpnGatewayRoutesOutput = null as any;
+utilities.lazyLoad(exports, ["getVpnGatewayRoutes","getVpnGatewayRoutesOutput"], () => require("./getVpnGatewayRoutes"));
+
 export { GetVpnGatewaysResult } from "./getVpnGateways";
 export const getVpnGateways: typeof import("./getVpnGateways").getVpnGateways = null as any;
 export const getVpnGatewaysOutput: typeof import("./getVpnGateways").getVpnGatewaysOutput = null as any;
@@ -54,6 +74,11 @@ export { SslVpnClientCertArgs, SslVpnClientCertState } from "./sslVpnClientCert"
 export type SslVpnClientCert = import("./sslVpnClientCert").SslVpnClientCert;
 export const SslVpnClientCert: typeof import("./sslVpnClientCert").SslVpnClientCert = null as any;
 utilities.lazyLoad(exports, ["SslVpnClientCert"], () => require("./sslVpnClientCert"));
+
+export { SslVpnServerArgs, SslVpnServerState } from "./sslVpnServer";
+export type SslVpnServer = import("./sslVpnServer").SslVpnServer;
+export const SslVpnServer: typeof import("./sslVpnServer").SslVpnServer = null as any;
+utilities.lazyLoad(exports, ["SslVpnServer"], () => require("./sslVpnServer"));
 
 export { VpnConnectionArgs, VpnConnectionState } from "./vpnConnection";
 export type VpnConnection = import("./vpnConnection").VpnConnection;
@@ -65,6 +90,11 @@ export type VpnGateway = import("./vpnGateway").VpnGateway;
 export const VpnGateway: typeof import("./vpnGateway").VpnGateway = null as any;
 utilities.lazyLoad(exports, ["VpnGateway"], () => require("./vpnGateway"));
 
+export { VpnGatewayRouteArgs, VpnGatewayRouteState } from "./vpnGatewayRoute";
+export type VpnGatewayRoute = import("./vpnGatewayRoute").VpnGatewayRoute;
+export const VpnGatewayRoute: typeof import("./vpnGatewayRoute").VpnGatewayRoute = null as any;
+utilities.lazyLoad(exports, ["VpnGatewayRoute"], () => require("./vpnGatewayRoute"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -74,10 +104,14 @@ const _module = {
                 return new CustomerGateway(name, <any>undefined, { urn })
             case "bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert":
                 return new SslVpnClientCert(name, <any>undefined, { urn })
+            case "bytepluscc:vpn/sslVpnServer:SslVpnServer":
+                return new SslVpnServer(name, <any>undefined, { urn })
             case "bytepluscc:vpn/vpnConnection:VpnConnection":
                 return new VpnConnection(name, <any>undefined, { urn })
             case "bytepluscc:vpn/vpnGateway:VpnGateway":
                 return new VpnGateway(name, <any>undefined, { urn })
+            case "bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute":
+                return new VpnGatewayRoute(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -85,5 +119,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/customerGateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/sslVpnClientCert", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpn/sslVpnServer", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/vpnConnection", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/vpnGateway", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpn/vpnGatewayRoute", _module)

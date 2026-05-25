@@ -10,7 +10,10 @@ from .get_key import *
 from .get_key_ring import *
 from .get_key_rings import *
 from .get_keys import *
+from .get_secret import *
+from .get_secrets import *
 from .key import *
 from .key_ring import *
+from .secret import *
 from ._inputs import *
 from . import outputs

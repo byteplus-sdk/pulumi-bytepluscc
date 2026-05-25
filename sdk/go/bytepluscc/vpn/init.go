@@ -25,10 +25,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CustomerGateway{}
 	case "bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert":
 		r = &SslVpnClientCert{}
+	case "bytepluscc:vpn/sslVpnServer:SslVpnServer":
+		r = &SslVpnServer{}
 	case "bytepluscc:vpn/vpnConnection:VpnConnection":
 		r = &VpnConnection{}
 	case "bytepluscc:vpn/vpnGateway:VpnGateway":
 		r = &VpnGateway{}
+	case "bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute":
+		r = &VpnGatewayRoute{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -54,12 +58,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"vpn/sslVpnServer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"vpn/vpnConnection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpn/vpnGateway",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpn/vpnGatewayRoute",
 		&module{version},
 	)
 }

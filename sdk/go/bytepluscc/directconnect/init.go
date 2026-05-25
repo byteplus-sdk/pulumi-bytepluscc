@@ -23,6 +23,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway":
 		r = &DirectConnectGateway{}
+	case "bytepluscc:directconnect/gatewayRoute:GatewayRoute":
+		r = &GatewayRoute{}
+	case "bytepluscc:directconnect/virtualInterface:VirtualInterface":
+		r = &VirtualInterface{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +43,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"directconnect/directConnectGateway",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"directconnect/gatewayRoute",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"directconnect/virtualInterface",
 		&module{version},
 	)
 }

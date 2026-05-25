@@ -49,6 +49,8 @@ if typing.TYPE_CHECKING:
     filenas = __filenas
     import pulumi_bytepluscc.fwcenter as __fwcenter
     fwcenter = __fwcenter
+    import pulumi_bytepluscc.gtm as __gtm
+    gtm = __gtm
     import pulumi_bytepluscc.hbase as __hbase
     hbase = __hbase
     import pulumi_bytepluscc.iam as __iam
@@ -119,6 +121,7 @@ else:
     escloud = _utilities.lazy_import('pulumi_bytepluscc.escloud')
     filenas = _utilities.lazy_import('pulumi_bytepluscc.filenas')
     fwcenter = _utilities.lazy_import('pulumi_bytepluscc.fwcenter')
+    gtm = _utilities.lazy_import('pulumi_bytepluscc.gtm')
     hbase = _utilities.lazy_import('pulumi_bytepluscc.hbase')
     iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
     kafka = _utilities.lazy_import('pulumi_bytepluscc.kafka')
@@ -550,6 +553,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "directconnect/gatewayRoute",
+  "fqn": "pulumi_bytepluscc.directconnect",
+  "classes": {
+   "bytepluscc:directconnect/gatewayRoute:GatewayRoute": "GatewayRoute"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "directconnect/virtualInterface",
+  "fqn": "pulumi_bytepluscc.directconnect",
+  "classes": {
+   "bytepluscc:directconnect/virtualInterface:VirtualInterface": "VirtualInterface"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "dns/zone",
   "fqn": "pulumi_bytepluscc.dns",
   "classes": {
@@ -702,6 +721,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "gtm/pool",
+  "fqn": "pulumi_bytepluscc.gtm",
+  "classes": {
+   "bytepluscc:gtm/pool:Pool": "Pool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "hbase/instance",
   "fqn": "pulumi_bytepluscc.hbase",
   "classes": {
@@ -810,6 +837,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.kms",
   "classes": {
    "bytepluscc:kms/keyRing:KeyRing": "KeyRing"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "kms/secret",
+  "fqn": "pulumi_bytepluscc.kms",
+  "classes": {
+   "bytepluscc:kms/secret:Secret": "Secret"
   }
  },
  {
@@ -1186,6 +1221,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
    "bytepluscc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/alarm",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/alarm:Alarm": "Alarm"
   }
  },
  {
@@ -1638,6 +1681,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vpn/sslVpnServer",
+  "fqn": "pulumi_bytepluscc.vpn",
+  "classes": {
+   "bytepluscc:vpn/sslVpnServer:SslVpnServer": "SslVpnServer"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vpn/vpnConnection",
   "fqn": "pulumi_bytepluscc.vpn",
   "classes": {
@@ -1650,6 +1701,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpn",
   "classes": {
    "bytepluscc:vpn/vpnGateway:VpnGateway": "VpnGateway"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpn/vpnGatewayRoute",
+  "fqn": "pulumi_bytepluscc.vpn",
+  "classes": {
+   "bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute": "VpnGatewayRoute"
   }
  },
  {

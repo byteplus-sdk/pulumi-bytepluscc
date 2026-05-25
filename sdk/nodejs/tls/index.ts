@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AlarmArgs, AlarmState } from "./alarm";
+export type Alarm = import("./alarm").Alarm;
+export const Alarm: typeof import("./alarm").Alarm = null as any;
+utilities.lazyLoad(exports, ["Alarm"], () => require("./alarm"));
+
 export { AlarmNotifyGroupArgs, AlarmNotifyGroupState } from "./alarmNotifyGroup";
 export type AlarmNotifyGroup = import("./alarmNotifyGroup").AlarmNotifyGroup;
 export const AlarmNotifyGroup: typeof import("./alarmNotifyGroup").AlarmNotifyGroup = null as any;
@@ -15,6 +20,11 @@ export type ConsumerGroup = import("./consumerGroup").ConsumerGroup;
 export const ConsumerGroup: typeof import("./consumerGroup").ConsumerGroup = null as any;
 utilities.lazyLoad(exports, ["ConsumerGroup"], () => require("./consumerGroup"));
 
+export { GetAlarmArgs, GetAlarmResult, GetAlarmOutputArgs } from "./getAlarm";
+export const getAlarm: typeof import("./getAlarm").getAlarm = null as any;
+export const getAlarmOutput: typeof import("./getAlarm").getAlarmOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarm","getAlarmOutput"], () => require("./getAlarm"));
+
 export { GetAlarmNotifyGroupArgs, GetAlarmNotifyGroupResult, GetAlarmNotifyGroupOutputArgs } from "./getAlarmNotifyGroup";
 export const getAlarmNotifyGroup: typeof import("./getAlarmNotifyGroup").getAlarmNotifyGroup = null as any;
 export const getAlarmNotifyGroupOutput: typeof import("./getAlarmNotifyGroup").getAlarmNotifyGroupOutput = null as any;
@@ -24,6 +34,11 @@ export { GetAlarmNotifyGroupsResult } from "./getAlarmNotifyGroups";
 export const getAlarmNotifyGroups: typeof import("./getAlarmNotifyGroups").getAlarmNotifyGroups = null as any;
 export const getAlarmNotifyGroupsOutput: typeof import("./getAlarmNotifyGroups").getAlarmNotifyGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getAlarmNotifyGroups","getAlarmNotifyGroupsOutput"], () => require("./getAlarmNotifyGroups"));
+
+export { GetAlarmsResult } from "./getAlarms";
+export const getAlarms: typeof import("./getAlarms").getAlarms = null as any;
+export const getAlarmsOutput: typeof import("./getAlarms").getAlarmsOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarms","getAlarmsOutput"], () => require("./getAlarms"));
 
 export { GetConsumerGroupArgs, GetConsumerGroupResult, GetConsumerGroupOutputArgs } from "./getConsumerGroup";
 export const getConsumerGroup: typeof import("./getConsumerGroup").getConsumerGroup = null as any;
@@ -145,6 +160,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:tls/alarm:Alarm":
+                return new Alarm(name, <any>undefined, { urn })
             case "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup":
                 return new AlarmNotifyGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/consumerGroup:ConsumerGroup":
@@ -168,6 +185,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarm", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmNotifyGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/importTask", _module)

@@ -8,10 +8,14 @@ import com.byteplus.bytepluscc.kms.inputs.GetKeyArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyPlainArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyRingArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyRingPlainArgs;
+import com.byteplus.bytepluscc.kms.inputs.GetSecretArgs;
+import com.byteplus.bytepluscc.kms.inputs.GetSecretPlainArgs;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyRingResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyRingsResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeysResult;
+import com.byteplus.bytepluscc.kms.outputs.GetSecretResult;
+import com.byteplus.bytepluscc.kms.outputs.GetSecretsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -188,5 +192,89 @@ public final class KmsFunctions {
      */
     public static CompletableFuture<GetKeysResult> getKeysPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKeys:getKeys", TypeShape.of(GetKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretResult> getSecret(GetSecretArgs args) {
+        return getSecret(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static CompletableFuture<GetSecretResult> getSecretPlain(GetSecretPlainArgs args) {
+        return getSecretPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretResult> getSecret(GetSecretArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getSecret:getSecret", TypeShape.of(GetSecretResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretResult> getSecret(GetSecretArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getSecret:getSecret", TypeShape.of(GetSecretResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static CompletableFuture<GetSecretResult> getSecretPlain(GetSecretPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kms/getSecret:getSecret", TypeShape.of(GetSecretResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretsResult> getSecrets() {
+        return getSecrets(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static CompletableFuture<GetSecretsResult> getSecretsPlain() {
+        return getSecretsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretsResult> getSecrets(InvokeArgs args) {
+        return getSecrets(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static CompletableFuture<GetSecretsResult> getSecretsPlain(InvokeArgs args) {
+        return getSecretsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretsResult> getSecrets(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getSecrets:getSecrets", TypeShape.of(GetSecretsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static Output<GetSecretsResult> getSecrets(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getSecrets:getSecrets", TypeShape.of(GetSecretsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::Secret
+     * 
+     */
+    public static CompletableFuture<GetSecretsResult> getSecretsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kms/getSecrets:getSecrets", TypeShape.of(GetSecretsResult.class), args, Utilities.withVersion(options));
     }
 }

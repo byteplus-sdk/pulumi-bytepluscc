@@ -20,6 +20,8 @@ __all__ = [
     'CustomerGatewayTagArgsDict',
     'SslVpnClientCertTagArgs',
     'SslVpnClientCertTagArgsDict',
+    'SslVpnServerTagArgs',
+    'SslVpnServerTagArgsDict',
     'VpnConnectionBgpInfoArgs',
     'VpnConnectionBgpInfoArgsDict',
     'VpnConnectionHealthCheckerArgs',
@@ -38,6 +40,8 @@ __all__ = [
     'VpnConnectionTunnelOptionIpsecConfigArgsDict',
     'VpnConnectionTunnelOptionTunnelBgpInfoArgs',
     'VpnConnectionTunnelOptionTunnelBgpInfoArgsDict',
+    'VpnGatewayRouteAsPathArgs',
+    'VpnGatewayRouteAsPathArgsDict',
     'VpnGatewayTagArgs',
     'VpnGatewayTagArgsDict',
 ]
@@ -140,6 +144,58 @@ class SslVpnClientCertTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         Tag value (Value) for SSL client certificate tags. Parameter   - N: indicates the sequence number of the tag value, range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty, length must be between 0–256 characters. Case-sensitive, cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class SslVpnServerTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+elif False:
+    SslVpnServerTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SslVpnServerTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        :param pulumi.Input[builtins.str] value: Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
         """
         return pulumi.get(self, "value")
 
@@ -1434,6 +1490,58 @@ class VpnConnectionTunnelOptionTunnelBgpInfoArgs:
     @tunnel_cidr.setter
     def tunnel_cidr(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "tunnel_cidr", value)
+
+
+if not MYPY:
+    class VpnGatewayRouteAsPathArgsDict(TypedDict):
+        numbers: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
+        """
+        AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+elif False:
+    VpnGatewayRouteAsPathArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnGatewayRouteAsPathArgs:
+    def __init__(__self__, *,
+                 numbers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] numbers: AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        :param pulumi.Input[builtins.str] type: AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+        if numbers is not None:
+            pulumi.set(__self__, "numbers", numbers)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
+        """
+        AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+        """
+        return pulumi.get(self, "numbers")
+
+    @numbers.setter
+    def numbers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]):
+        pulumi.set(self, "numbers", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
 
 
 if not MYPY:

@@ -4,8 +4,10 @@
 package com.byteplus.bytepluscc.tls;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.tls.inputs.GetAlarmArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetAlarmPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetImportTaskArgs;
@@ -24,6 +26,8 @@ import com.byteplus.bytepluscc.tls.inputs.GetTopicArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetTopicPlainArgs;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmNotifyGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmNotifyGroupsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetAlarmResult;
+import com.byteplus.bytepluscc.tls.outputs.GetAlarmsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetImportTaskResult;
@@ -49,6 +53,41 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class TlsFunctions {
+    /**
+     * Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args) {
+        return getAlarm(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args) {
+        return getAlarmPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarm:getAlarm", TypeShape.of(GetAlarmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarm:getAlarm", TypeShape.of(GetAlarmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarm:getAlarm", TypeShape.of(GetAlarmResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::TLS::AlarmNotifyGroup
      * 
@@ -132,6 +171,55 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetAlarmNotifyGroupsResult> getAlarmNotifyGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarmNotifyGroups:getAlarmNotifyGroups", TypeShape.of(GetAlarmNotifyGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmsResult> getAlarms() {
+        return getAlarms(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static CompletableFuture<GetAlarmsResult> getAlarmsPlain() {
+        return getAlarmsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmsResult> getAlarms(InvokeArgs args) {
+        return getAlarms(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static CompletableFuture<GetAlarmsResult> getAlarmsPlain(InvokeArgs args) {
+        return getAlarmsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmsResult> getAlarms(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarms:getAlarms", TypeShape.of(GetAlarmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static Output<GetAlarmsResult> getAlarms(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarms:getAlarms", TypeShape.of(GetAlarmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Alarm
+     * 
+     */
+    public static CompletableFuture<GetAlarmsResult> getAlarmsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarms:getAlarms", TypeShape.of(GetAlarmsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::TLS::ConsumerGroup

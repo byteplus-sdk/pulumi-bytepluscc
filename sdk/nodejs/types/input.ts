@@ -4997,6 +4997,16 @@ export namespace directconnect {
         value?: pulumi.Input<string>;
     }
 
+    export interface VirtualInterfaceTag {
+        /**
+         * Tag key (Key) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag key (Key), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag keys (Key) are separated by &. Cannot start with sys: in any case. sys: is reserved for system tags and cannot be created. Length range: 1–128 characters. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@).
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace dns {
@@ -7058,6 +7068,31 @@ export namespace fwcenter {
 
 }
 
+export namespace gtm {
+    export interface PoolAddress {
+        /**
+         * Address capacity
+         */
+        capacity?: pulumi.Input<number>;
+        /**
+         * Address availability mode
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * List of geographic route codes to be corrected
+         */
+        rectifiedGeos?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Target address value
+         */
+        value: pulumi.Input<string>;
+        /**
+         * Address weight
+         */
+        weight?: pulumi.Input<number>;
+    }
+}
+
 export namespace hbase {
     export interface InstanceEndpoint {
         /**
@@ -7911,7 +7946,7 @@ export namespace privatelink {
          */
         name?: pulumi.Input<string>;
         /**
-         * Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+         * Domain verification status. PendingVerification: Pending verification, Verifying: In progress, Verified: Verified, Failed: Verification failed
          */
         status?: pulumi.Input<string>;
         /**
@@ -9752,6 +9787,43 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface AlarmAlarmNotifyGroup {
+        /**
+         * Alert notification group ID.
+         */
+        alarmNotifyGroupId?: pulumi.Input<string>;
+    }
+
+    export interface AlarmAlarmPeriodDetail {
+        /**
+         * Email alert interval, in minutes. Value range: 1–1440
+         */
+        email?: pulumi.Input<number>;
+        /**
+         * Custom Webhook alert interval, in minutes. Value range: 1–1440.
+         */
+        generalWebhook?: pulumi.Input<number>;
+        /**
+         * Phone alert cycle, in minutes. Value range: 10–1440.
+         */
+        phone?: pulumi.Input<number>;
+        /**
+         * SMS alert interval, in minutes. Value range: 10–1440
+         */
+        sms?: pulumi.Input<number>;
+    }
+
+    export interface AlarmJoinConfiguration {
+        /**
+         * Expression used for left join or right join.
+         */
+        condition?: pulumi.Input<string>;
+        /**
+         * Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+         */
+        setOperationType?: pulumi.Input<string>;
+    }
+
     export interface AlarmNotifyGroupNoticeRule {
         /**
          * Whether there is an end node afterwards.
@@ -9908,6 +9980,83 @@ export namespace tls {
          * Custom request header value.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface AlarmQueryRequest {
+        /**
+         * Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+         */
+        endTimeOffset?: pulumi.Input<number>;
+        /**
+         * Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+         */
+        endTimeOffsetUnit?: pulumi.Input<string>;
+        /**
+         * Query analysis statement, with a maximum supported length of 1024 characters.
+         */
+        query?: pulumi.Input<string>;
+        /**
+         * Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+         */
+        startTimeOffset?: pulumi.Input<number>;
+        /**
+         * Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+         */
+        startTimeOffsetUnit?: pulumi.Input<string>;
+        /**
+         * Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+         */
+        timeSpanType?: pulumi.Input<string>;
+        /**
+         * Log topic ID monitored by the alert policy.
+         */
+        topicId?: pulumi.Input<string>;
+        /**
+         * Name of the log topic monitored by the alert policy.
+         */
+        topicName?: pulumi.Input<string>;
+        /**
+         * Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+         */
+        truncatedTime?: pulumi.Input<string>;
+    }
+
+    export interface AlarmRequestCycle {
+        /**
+         * Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+         */
+        cronTab?: pulumi.Input<string>;
+        /**
+         * Time zone in which the Cron expression takes effect.
+         */
+        cronTimeZone?: pulumi.Input<string>;
+        /**
+         * Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+         */
+        time?: pulumi.Input<number>;
+        /**
+         * Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface AlarmTriggerCondition {
+        /**
+         * Alert trigger condition expression.
+         */
+        condition?: pulumi.Input<string>;
+        /**
+         * Numerical expression for scenarios with data or specific entries, implemented using **count**.
+         */
+        countCondition?: pulumi.Input<string>;
+        /**
+         * When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+         */
+        noData?: pulumi.Input<boolean>;
+        /**
+         * Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+         */
+        severity?: pulumi.Input<string>;
     }
 
     export interface ImportTaskImportSourceInfo {
@@ -13844,6 +13993,17 @@ export namespace vpn {
         value?: pulumi.Input<string>;
     }
 
+    export interface SslVpnServerTag {
+        /**
+         * Tag key for the SSL server label (Key). Naming rules: Must not start with any case combination of sys:. Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Length must be between 1 and 128 characters. Note: Tag keys for the same resource must be unique.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value for the SSL server label (Value). Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: "_", ".", ":", "/", "=", "+", "-", "@". Can be empty. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface VpnConnectionBgpInfo {
         /**
          * Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
@@ -14105,6 +14265,17 @@ export namespace vpn {
          * The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
          */
         tunnelCidr?: pulumi.Input<string>;
+    }
+
+    export interface VpnGatewayRouteAsPath {
+        /**
+         * AS path sequence. If the AS path type is Sequence, the returned data is the original ASN sequence, such as [65533]. If the AS path type is Set, it indicates that the AS path has been aggregated, and the returned data is the aggregated ASN sequence, such as [4,5].
+         */
+        numbers?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * AS path type. Sequence: normal ordered sequence; Set: aggregated sequence.
+         */
+        type?: pulumi.Input<string>;
     }
 
     export interface VpnGatewayTag {

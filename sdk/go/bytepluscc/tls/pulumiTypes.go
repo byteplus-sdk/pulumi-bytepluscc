@@ -13,6 +13,403 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AlarmAlarmNotifyGroup struct {
+	// Alert notification group ID.
+	AlarmNotifyGroupId *string `pulumi:"alarmNotifyGroupId"`
+}
+
+// AlarmAlarmNotifyGroupInput is an input type that accepts AlarmAlarmNotifyGroupArgs and AlarmAlarmNotifyGroupOutput values.
+// You can construct a concrete instance of `AlarmAlarmNotifyGroupInput` via:
+//
+//	AlarmAlarmNotifyGroupArgs{...}
+type AlarmAlarmNotifyGroupInput interface {
+	pulumi.Input
+
+	ToAlarmAlarmNotifyGroupOutput() AlarmAlarmNotifyGroupOutput
+	ToAlarmAlarmNotifyGroupOutputWithContext(context.Context) AlarmAlarmNotifyGroupOutput
+}
+
+type AlarmAlarmNotifyGroupArgs struct {
+	// Alert notification group ID.
+	AlarmNotifyGroupId pulumi.StringPtrInput `pulumi:"alarmNotifyGroupId"`
+}
+
+func (AlarmAlarmNotifyGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (i AlarmAlarmNotifyGroupArgs) ToAlarmAlarmNotifyGroupOutput() AlarmAlarmNotifyGroupOutput {
+	return i.ToAlarmAlarmNotifyGroupOutputWithContext(context.Background())
+}
+
+func (i AlarmAlarmNotifyGroupArgs) ToAlarmAlarmNotifyGroupOutputWithContext(ctx context.Context) AlarmAlarmNotifyGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmAlarmNotifyGroupOutput)
+}
+
+// AlarmAlarmNotifyGroupArrayInput is an input type that accepts AlarmAlarmNotifyGroupArray and AlarmAlarmNotifyGroupArrayOutput values.
+// You can construct a concrete instance of `AlarmAlarmNotifyGroupArrayInput` via:
+//
+//	AlarmAlarmNotifyGroupArray{ AlarmAlarmNotifyGroupArgs{...} }
+type AlarmAlarmNotifyGroupArrayInput interface {
+	pulumi.Input
+
+	ToAlarmAlarmNotifyGroupArrayOutput() AlarmAlarmNotifyGroupArrayOutput
+	ToAlarmAlarmNotifyGroupArrayOutputWithContext(context.Context) AlarmAlarmNotifyGroupArrayOutput
+}
+
+type AlarmAlarmNotifyGroupArray []AlarmAlarmNotifyGroupInput
+
+func (AlarmAlarmNotifyGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (i AlarmAlarmNotifyGroupArray) ToAlarmAlarmNotifyGroupArrayOutput() AlarmAlarmNotifyGroupArrayOutput {
+	return i.ToAlarmAlarmNotifyGroupArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmAlarmNotifyGroupArray) ToAlarmAlarmNotifyGroupArrayOutputWithContext(ctx context.Context) AlarmAlarmNotifyGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmAlarmNotifyGroupArrayOutput)
+}
+
+type AlarmAlarmNotifyGroupOutput struct{ *pulumi.OutputState }
+
+func (AlarmAlarmNotifyGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (o AlarmAlarmNotifyGroupOutput) ToAlarmAlarmNotifyGroupOutput() AlarmAlarmNotifyGroupOutput {
+	return o
+}
+
+func (o AlarmAlarmNotifyGroupOutput) ToAlarmAlarmNotifyGroupOutputWithContext(ctx context.Context) AlarmAlarmNotifyGroupOutput {
+	return o
+}
+
+// Alert notification group ID.
+func (o AlarmAlarmNotifyGroupOutput) AlarmNotifyGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmAlarmNotifyGroup) *string { return v.AlarmNotifyGroupId }).(pulumi.StringPtrOutput)
+}
+
+type AlarmAlarmNotifyGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmAlarmNotifyGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (o AlarmAlarmNotifyGroupArrayOutput) ToAlarmAlarmNotifyGroupArrayOutput() AlarmAlarmNotifyGroupArrayOutput {
+	return o
+}
+
+func (o AlarmAlarmNotifyGroupArrayOutput) ToAlarmAlarmNotifyGroupArrayOutputWithContext(ctx context.Context) AlarmAlarmNotifyGroupArrayOutput {
+	return o
+}
+
+func (o AlarmAlarmNotifyGroupArrayOutput) Index(i pulumi.IntInput) AlarmAlarmNotifyGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmAlarmNotifyGroup {
+		return vs[0].([]AlarmAlarmNotifyGroup)[vs[1].(int)]
+	}).(AlarmAlarmNotifyGroupOutput)
+}
+
+type AlarmAlarmPeriodDetail struct {
+	// Email alert interval, in minutes. Value range: 1–1440
+	Email *int `pulumi:"email"`
+	// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+	GeneralWebhook *int `pulumi:"generalWebhook"`
+	// Phone alert cycle, in minutes. Value range: 10–1440.
+	Phone *int `pulumi:"phone"`
+	// SMS alert interval, in minutes. Value range: 10–1440
+	Sms *int `pulumi:"sms"`
+}
+
+// AlarmAlarmPeriodDetailInput is an input type that accepts AlarmAlarmPeriodDetailArgs and AlarmAlarmPeriodDetailOutput values.
+// You can construct a concrete instance of `AlarmAlarmPeriodDetailInput` via:
+//
+//	AlarmAlarmPeriodDetailArgs{...}
+type AlarmAlarmPeriodDetailInput interface {
+	pulumi.Input
+
+	ToAlarmAlarmPeriodDetailOutput() AlarmAlarmPeriodDetailOutput
+	ToAlarmAlarmPeriodDetailOutputWithContext(context.Context) AlarmAlarmPeriodDetailOutput
+}
+
+type AlarmAlarmPeriodDetailArgs struct {
+	// Email alert interval, in minutes. Value range: 1–1440
+	Email pulumi.IntPtrInput `pulumi:"email"`
+	// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+	GeneralWebhook pulumi.IntPtrInput `pulumi:"generalWebhook"`
+	// Phone alert cycle, in minutes. Value range: 10–1440.
+	Phone pulumi.IntPtrInput `pulumi:"phone"`
+	// SMS alert interval, in minutes. Value range: 10–1440
+	Sms pulumi.IntPtrInput `pulumi:"sms"`
+}
+
+func (AlarmAlarmPeriodDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmAlarmPeriodDetail)(nil)).Elem()
+}
+
+func (i AlarmAlarmPeriodDetailArgs) ToAlarmAlarmPeriodDetailOutput() AlarmAlarmPeriodDetailOutput {
+	return i.ToAlarmAlarmPeriodDetailOutputWithContext(context.Background())
+}
+
+func (i AlarmAlarmPeriodDetailArgs) ToAlarmAlarmPeriodDetailOutputWithContext(ctx context.Context) AlarmAlarmPeriodDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmAlarmPeriodDetailOutput)
+}
+
+func (i AlarmAlarmPeriodDetailArgs) ToAlarmAlarmPeriodDetailPtrOutput() AlarmAlarmPeriodDetailPtrOutput {
+	return i.ToAlarmAlarmPeriodDetailPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmAlarmPeriodDetailArgs) ToAlarmAlarmPeriodDetailPtrOutputWithContext(ctx context.Context) AlarmAlarmPeriodDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmAlarmPeriodDetailOutput).ToAlarmAlarmPeriodDetailPtrOutputWithContext(ctx)
+}
+
+// AlarmAlarmPeriodDetailPtrInput is an input type that accepts AlarmAlarmPeriodDetailArgs, AlarmAlarmPeriodDetailPtr and AlarmAlarmPeriodDetailPtrOutput values.
+// You can construct a concrete instance of `AlarmAlarmPeriodDetailPtrInput` via:
+//
+//	        AlarmAlarmPeriodDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmAlarmPeriodDetailPtrInput interface {
+	pulumi.Input
+
+	ToAlarmAlarmPeriodDetailPtrOutput() AlarmAlarmPeriodDetailPtrOutput
+	ToAlarmAlarmPeriodDetailPtrOutputWithContext(context.Context) AlarmAlarmPeriodDetailPtrOutput
+}
+
+type alarmAlarmPeriodDetailPtrType AlarmAlarmPeriodDetailArgs
+
+func AlarmAlarmPeriodDetailPtr(v *AlarmAlarmPeriodDetailArgs) AlarmAlarmPeriodDetailPtrInput {
+	return (*alarmAlarmPeriodDetailPtrType)(v)
+}
+
+func (*alarmAlarmPeriodDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmAlarmPeriodDetail)(nil)).Elem()
+}
+
+func (i *alarmAlarmPeriodDetailPtrType) ToAlarmAlarmPeriodDetailPtrOutput() AlarmAlarmPeriodDetailPtrOutput {
+	return i.ToAlarmAlarmPeriodDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmAlarmPeriodDetailPtrType) ToAlarmAlarmPeriodDetailPtrOutputWithContext(ctx context.Context) AlarmAlarmPeriodDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmAlarmPeriodDetailPtrOutput)
+}
+
+type AlarmAlarmPeriodDetailOutput struct{ *pulumi.OutputState }
+
+func (AlarmAlarmPeriodDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmAlarmPeriodDetail)(nil)).Elem()
+}
+
+func (o AlarmAlarmPeriodDetailOutput) ToAlarmAlarmPeriodDetailOutput() AlarmAlarmPeriodDetailOutput {
+	return o
+}
+
+func (o AlarmAlarmPeriodDetailOutput) ToAlarmAlarmPeriodDetailOutputWithContext(ctx context.Context) AlarmAlarmPeriodDetailOutput {
+	return o
+}
+
+func (o AlarmAlarmPeriodDetailOutput) ToAlarmAlarmPeriodDetailPtrOutput() AlarmAlarmPeriodDetailPtrOutput {
+	return o.ToAlarmAlarmPeriodDetailPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmAlarmPeriodDetailOutput) ToAlarmAlarmPeriodDetailPtrOutputWithContext(ctx context.Context) AlarmAlarmPeriodDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmAlarmPeriodDetail) *AlarmAlarmPeriodDetail {
+		return &v
+	}).(AlarmAlarmPeriodDetailPtrOutput)
+}
+
+// Email alert interval, in minutes. Value range: 1–1440
+func (o AlarmAlarmPeriodDetailOutput) Email() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmAlarmPeriodDetail) *int { return v.Email }).(pulumi.IntPtrOutput)
+}
+
+// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+func (o AlarmAlarmPeriodDetailOutput) GeneralWebhook() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmAlarmPeriodDetail) *int { return v.GeneralWebhook }).(pulumi.IntPtrOutput)
+}
+
+// Phone alert cycle, in minutes. Value range: 10–1440.
+func (o AlarmAlarmPeriodDetailOutput) Phone() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmAlarmPeriodDetail) *int { return v.Phone }).(pulumi.IntPtrOutput)
+}
+
+// SMS alert interval, in minutes. Value range: 10–1440
+func (o AlarmAlarmPeriodDetailOutput) Sms() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmAlarmPeriodDetail) *int { return v.Sms }).(pulumi.IntPtrOutput)
+}
+
+type AlarmAlarmPeriodDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmAlarmPeriodDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmAlarmPeriodDetail)(nil)).Elem()
+}
+
+func (o AlarmAlarmPeriodDetailPtrOutput) ToAlarmAlarmPeriodDetailPtrOutput() AlarmAlarmPeriodDetailPtrOutput {
+	return o
+}
+
+func (o AlarmAlarmPeriodDetailPtrOutput) ToAlarmAlarmPeriodDetailPtrOutputWithContext(ctx context.Context) AlarmAlarmPeriodDetailPtrOutput {
+	return o
+}
+
+func (o AlarmAlarmPeriodDetailPtrOutput) Elem() AlarmAlarmPeriodDetailOutput {
+	return o.ApplyT(func(v *AlarmAlarmPeriodDetail) AlarmAlarmPeriodDetail {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmAlarmPeriodDetail
+		return ret
+	}).(AlarmAlarmPeriodDetailOutput)
+}
+
+// Email alert interval, in minutes. Value range: 1–1440
+func (o AlarmAlarmPeriodDetailPtrOutput) Email() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlarmAlarmPeriodDetail) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Email
+	}).(pulumi.IntPtrOutput)
+}
+
+// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+func (o AlarmAlarmPeriodDetailPtrOutput) GeneralWebhook() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlarmAlarmPeriodDetail) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GeneralWebhook
+	}).(pulumi.IntPtrOutput)
+}
+
+// Phone alert cycle, in minutes. Value range: 10–1440.
+func (o AlarmAlarmPeriodDetailPtrOutput) Phone() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlarmAlarmPeriodDetail) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Phone
+	}).(pulumi.IntPtrOutput)
+}
+
+// SMS alert interval, in minutes. Value range: 10–1440
+func (o AlarmAlarmPeriodDetailPtrOutput) Sms() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlarmAlarmPeriodDetail) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Sms
+	}).(pulumi.IntPtrOutput)
+}
+
+type AlarmJoinConfiguration struct {
+	// Expression used for left join or right join.
+	Condition *string `pulumi:"condition"`
+	// Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+	SetOperationType *string `pulumi:"setOperationType"`
+}
+
+// AlarmJoinConfigurationInput is an input type that accepts AlarmJoinConfigurationArgs and AlarmJoinConfigurationOutput values.
+// You can construct a concrete instance of `AlarmJoinConfigurationInput` via:
+//
+//	AlarmJoinConfigurationArgs{...}
+type AlarmJoinConfigurationInput interface {
+	pulumi.Input
+
+	ToAlarmJoinConfigurationOutput() AlarmJoinConfigurationOutput
+	ToAlarmJoinConfigurationOutputWithContext(context.Context) AlarmJoinConfigurationOutput
+}
+
+type AlarmJoinConfigurationArgs struct {
+	// Expression used for left join or right join.
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+	SetOperationType pulumi.StringPtrInput `pulumi:"setOperationType"`
+}
+
+func (AlarmJoinConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (i AlarmJoinConfigurationArgs) ToAlarmJoinConfigurationOutput() AlarmJoinConfigurationOutput {
+	return i.ToAlarmJoinConfigurationOutputWithContext(context.Background())
+}
+
+func (i AlarmJoinConfigurationArgs) ToAlarmJoinConfigurationOutputWithContext(ctx context.Context) AlarmJoinConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmJoinConfigurationOutput)
+}
+
+// AlarmJoinConfigurationArrayInput is an input type that accepts AlarmJoinConfigurationArray and AlarmJoinConfigurationArrayOutput values.
+// You can construct a concrete instance of `AlarmJoinConfigurationArrayInput` via:
+//
+//	AlarmJoinConfigurationArray{ AlarmJoinConfigurationArgs{...} }
+type AlarmJoinConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToAlarmJoinConfigurationArrayOutput() AlarmJoinConfigurationArrayOutput
+	ToAlarmJoinConfigurationArrayOutputWithContext(context.Context) AlarmJoinConfigurationArrayOutput
+}
+
+type AlarmJoinConfigurationArray []AlarmJoinConfigurationInput
+
+func (AlarmJoinConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (i AlarmJoinConfigurationArray) ToAlarmJoinConfigurationArrayOutput() AlarmJoinConfigurationArrayOutput {
+	return i.ToAlarmJoinConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmJoinConfigurationArray) ToAlarmJoinConfigurationArrayOutputWithContext(ctx context.Context) AlarmJoinConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmJoinConfigurationArrayOutput)
+}
+
+type AlarmJoinConfigurationOutput struct{ *pulumi.OutputState }
+
+func (AlarmJoinConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (o AlarmJoinConfigurationOutput) ToAlarmJoinConfigurationOutput() AlarmJoinConfigurationOutput {
+	return o
+}
+
+func (o AlarmJoinConfigurationOutput) ToAlarmJoinConfigurationOutputWithContext(ctx context.Context) AlarmJoinConfigurationOutput {
+	return o
+}
+
+// Expression used for left join or right join.
+func (o AlarmJoinConfigurationOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmJoinConfiguration) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+func (o AlarmJoinConfigurationOutput) SetOperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmJoinConfiguration) *string { return v.SetOperationType }).(pulumi.StringPtrOutput)
+}
+
+type AlarmJoinConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmJoinConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (o AlarmJoinConfigurationArrayOutput) ToAlarmJoinConfigurationArrayOutput() AlarmJoinConfigurationArrayOutput {
+	return o
+}
+
+func (o AlarmJoinConfigurationArrayOutput) ToAlarmJoinConfigurationArrayOutputWithContext(ctx context.Context) AlarmJoinConfigurationArrayOutput {
+	return o
+}
+
+func (o AlarmJoinConfigurationArrayOutput) Index(i pulumi.IntInput) AlarmJoinConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmJoinConfiguration {
+		return vs[0].([]AlarmJoinConfiguration)[vs[1].(int)]
+	}).(AlarmJoinConfigurationOutput)
+}
+
 type AlarmNotifyGroupNoticeRule struct {
 	// Whether there is an end node afterwards.
 	HasEndNode *bool `pulumi:"hasEndNode"`
@@ -788,6 +1185,493 @@ func (o AlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmNotifyGroupReceiverGeneralWebhookHeader {
 		return vs[0].([]AlarmNotifyGroupReceiverGeneralWebhookHeader)[vs[1].(int)]
 	}).(AlarmNotifyGroupReceiverGeneralWebhookHeaderOutput)
+}
+
+type AlarmQueryRequest struct {
+	// Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+	EndTimeOffset *int `pulumi:"endTimeOffset"`
+	// Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+	EndTimeOffsetUnit *string `pulumi:"endTimeOffsetUnit"`
+	// Query analysis statement, with a maximum supported length of 1024 characters.
+	Query *string `pulumi:"query"`
+	// Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+	StartTimeOffset *int `pulumi:"startTimeOffset"`
+	// Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+	StartTimeOffsetUnit *string `pulumi:"startTimeOffsetUnit"`
+	// Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+	TimeSpanType *string `pulumi:"timeSpanType"`
+	// Log topic ID monitored by the alert policy.
+	TopicId *string `pulumi:"topicId"`
+	// Name of the log topic monitored by the alert policy.
+	TopicName *string `pulumi:"topicName"`
+	// Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+	TruncatedTime *string `pulumi:"truncatedTime"`
+}
+
+// AlarmQueryRequestInput is an input type that accepts AlarmQueryRequestArgs and AlarmQueryRequestOutput values.
+// You can construct a concrete instance of `AlarmQueryRequestInput` via:
+//
+//	AlarmQueryRequestArgs{...}
+type AlarmQueryRequestInput interface {
+	pulumi.Input
+
+	ToAlarmQueryRequestOutput() AlarmQueryRequestOutput
+	ToAlarmQueryRequestOutputWithContext(context.Context) AlarmQueryRequestOutput
+}
+
+type AlarmQueryRequestArgs struct {
+	// Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+	EndTimeOffset pulumi.IntPtrInput `pulumi:"endTimeOffset"`
+	// Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+	EndTimeOffsetUnit pulumi.StringPtrInput `pulumi:"endTimeOffsetUnit"`
+	// Query analysis statement, with a maximum supported length of 1024 characters.
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+	StartTimeOffset pulumi.IntPtrInput `pulumi:"startTimeOffset"`
+	// Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+	StartTimeOffsetUnit pulumi.StringPtrInput `pulumi:"startTimeOffsetUnit"`
+	// Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+	TimeSpanType pulumi.StringPtrInput `pulumi:"timeSpanType"`
+	// Log topic ID monitored by the alert policy.
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+	// Name of the log topic monitored by the alert policy.
+	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
+	// Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+	TruncatedTime pulumi.StringPtrInput `pulumi:"truncatedTime"`
+}
+
+func (AlarmQueryRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmQueryRequest)(nil)).Elem()
+}
+
+func (i AlarmQueryRequestArgs) ToAlarmQueryRequestOutput() AlarmQueryRequestOutput {
+	return i.ToAlarmQueryRequestOutputWithContext(context.Background())
+}
+
+func (i AlarmQueryRequestArgs) ToAlarmQueryRequestOutputWithContext(ctx context.Context) AlarmQueryRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmQueryRequestOutput)
+}
+
+// AlarmQueryRequestArrayInput is an input type that accepts AlarmQueryRequestArray and AlarmQueryRequestArrayOutput values.
+// You can construct a concrete instance of `AlarmQueryRequestArrayInput` via:
+//
+//	AlarmQueryRequestArray{ AlarmQueryRequestArgs{...} }
+type AlarmQueryRequestArrayInput interface {
+	pulumi.Input
+
+	ToAlarmQueryRequestArrayOutput() AlarmQueryRequestArrayOutput
+	ToAlarmQueryRequestArrayOutputWithContext(context.Context) AlarmQueryRequestArrayOutput
+}
+
+type AlarmQueryRequestArray []AlarmQueryRequestInput
+
+func (AlarmQueryRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmQueryRequest)(nil)).Elem()
+}
+
+func (i AlarmQueryRequestArray) ToAlarmQueryRequestArrayOutput() AlarmQueryRequestArrayOutput {
+	return i.ToAlarmQueryRequestArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmQueryRequestArray) ToAlarmQueryRequestArrayOutputWithContext(ctx context.Context) AlarmQueryRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmQueryRequestArrayOutput)
+}
+
+type AlarmQueryRequestOutput struct{ *pulumi.OutputState }
+
+func (AlarmQueryRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmQueryRequest)(nil)).Elem()
+}
+
+func (o AlarmQueryRequestOutput) ToAlarmQueryRequestOutput() AlarmQueryRequestOutput {
+	return o
+}
+
+func (o AlarmQueryRequestOutput) ToAlarmQueryRequestOutputWithContext(ctx context.Context) AlarmQueryRequestOutput {
+	return o
+}
+
+// Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+func (o AlarmQueryRequestOutput) EndTimeOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *int { return v.EndTimeOffset }).(pulumi.IntPtrOutput)
+}
+
+// Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+func (o AlarmQueryRequestOutput) EndTimeOffsetUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.EndTimeOffsetUnit }).(pulumi.StringPtrOutput)
+}
+
+// Query analysis statement, with a maximum supported length of 1024 characters.
+func (o AlarmQueryRequestOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.Query }).(pulumi.StringPtrOutput)
+}
+
+// Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+func (o AlarmQueryRequestOutput) StartTimeOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *int { return v.StartTimeOffset }).(pulumi.IntPtrOutput)
+}
+
+// Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+func (o AlarmQueryRequestOutput) StartTimeOffsetUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.StartTimeOffsetUnit }).(pulumi.StringPtrOutput)
+}
+
+// Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+func (o AlarmQueryRequestOutput) TimeSpanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.TimeSpanType }).(pulumi.StringPtrOutput)
+}
+
+// Log topic ID monitored by the alert policy.
+func (o AlarmQueryRequestOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+// Name of the log topic monitored by the alert policy.
+func (o AlarmQueryRequestOutput) TopicName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.TopicName }).(pulumi.StringPtrOutput)
+}
+
+// Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+func (o AlarmQueryRequestOutput) TruncatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmQueryRequest) *string { return v.TruncatedTime }).(pulumi.StringPtrOutput)
+}
+
+type AlarmQueryRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmQueryRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmQueryRequest)(nil)).Elem()
+}
+
+func (o AlarmQueryRequestArrayOutput) ToAlarmQueryRequestArrayOutput() AlarmQueryRequestArrayOutput {
+	return o
+}
+
+func (o AlarmQueryRequestArrayOutput) ToAlarmQueryRequestArrayOutputWithContext(ctx context.Context) AlarmQueryRequestArrayOutput {
+	return o
+}
+
+func (o AlarmQueryRequestArrayOutput) Index(i pulumi.IntInput) AlarmQueryRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmQueryRequest {
+		return vs[0].([]AlarmQueryRequest)[vs[1].(int)]
+	}).(AlarmQueryRequestOutput)
+}
+
+type AlarmRequestCycle struct {
+	// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+	CronTab *string `pulumi:"cronTab"`
+	// Time zone in which the Cron expression takes effect.
+	CronTimeZone *string `pulumi:"cronTimeZone"`
+	// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+	Time *int `pulumi:"time"`
+	// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+	Type *string `pulumi:"type"`
+}
+
+// AlarmRequestCycleInput is an input type that accepts AlarmRequestCycleArgs and AlarmRequestCycleOutput values.
+// You can construct a concrete instance of `AlarmRequestCycleInput` via:
+//
+//	AlarmRequestCycleArgs{...}
+type AlarmRequestCycleInput interface {
+	pulumi.Input
+
+	ToAlarmRequestCycleOutput() AlarmRequestCycleOutput
+	ToAlarmRequestCycleOutputWithContext(context.Context) AlarmRequestCycleOutput
+}
+
+type AlarmRequestCycleArgs struct {
+	// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+	CronTab pulumi.StringPtrInput `pulumi:"cronTab"`
+	// Time zone in which the Cron expression takes effect.
+	CronTimeZone pulumi.StringPtrInput `pulumi:"cronTimeZone"`
+	// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+	Time pulumi.IntPtrInput `pulumi:"time"`
+	// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (AlarmRequestCycleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmRequestCycle)(nil)).Elem()
+}
+
+func (i AlarmRequestCycleArgs) ToAlarmRequestCycleOutput() AlarmRequestCycleOutput {
+	return i.ToAlarmRequestCycleOutputWithContext(context.Background())
+}
+
+func (i AlarmRequestCycleArgs) ToAlarmRequestCycleOutputWithContext(ctx context.Context) AlarmRequestCycleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmRequestCycleOutput)
+}
+
+func (i AlarmRequestCycleArgs) ToAlarmRequestCyclePtrOutput() AlarmRequestCyclePtrOutput {
+	return i.ToAlarmRequestCyclePtrOutputWithContext(context.Background())
+}
+
+func (i AlarmRequestCycleArgs) ToAlarmRequestCyclePtrOutputWithContext(ctx context.Context) AlarmRequestCyclePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmRequestCycleOutput).ToAlarmRequestCyclePtrOutputWithContext(ctx)
+}
+
+// AlarmRequestCyclePtrInput is an input type that accepts AlarmRequestCycleArgs, AlarmRequestCyclePtr and AlarmRequestCyclePtrOutput values.
+// You can construct a concrete instance of `AlarmRequestCyclePtrInput` via:
+//
+//	        AlarmRequestCycleArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmRequestCyclePtrInput interface {
+	pulumi.Input
+
+	ToAlarmRequestCyclePtrOutput() AlarmRequestCyclePtrOutput
+	ToAlarmRequestCyclePtrOutputWithContext(context.Context) AlarmRequestCyclePtrOutput
+}
+
+type alarmRequestCyclePtrType AlarmRequestCycleArgs
+
+func AlarmRequestCyclePtr(v *AlarmRequestCycleArgs) AlarmRequestCyclePtrInput {
+	return (*alarmRequestCyclePtrType)(v)
+}
+
+func (*alarmRequestCyclePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmRequestCycle)(nil)).Elem()
+}
+
+func (i *alarmRequestCyclePtrType) ToAlarmRequestCyclePtrOutput() AlarmRequestCyclePtrOutput {
+	return i.ToAlarmRequestCyclePtrOutputWithContext(context.Background())
+}
+
+func (i *alarmRequestCyclePtrType) ToAlarmRequestCyclePtrOutputWithContext(ctx context.Context) AlarmRequestCyclePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmRequestCyclePtrOutput)
+}
+
+type AlarmRequestCycleOutput struct{ *pulumi.OutputState }
+
+func (AlarmRequestCycleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmRequestCycle)(nil)).Elem()
+}
+
+func (o AlarmRequestCycleOutput) ToAlarmRequestCycleOutput() AlarmRequestCycleOutput {
+	return o
+}
+
+func (o AlarmRequestCycleOutput) ToAlarmRequestCycleOutputWithContext(ctx context.Context) AlarmRequestCycleOutput {
+	return o
+}
+
+func (o AlarmRequestCycleOutput) ToAlarmRequestCyclePtrOutput() AlarmRequestCyclePtrOutput {
+	return o.ToAlarmRequestCyclePtrOutputWithContext(context.Background())
+}
+
+func (o AlarmRequestCycleOutput) ToAlarmRequestCyclePtrOutputWithContext(ctx context.Context) AlarmRequestCyclePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmRequestCycle) *AlarmRequestCycle {
+		return &v
+	}).(AlarmRequestCyclePtrOutput)
+}
+
+// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+func (o AlarmRequestCycleOutput) CronTab() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmRequestCycle) *string { return v.CronTab }).(pulumi.StringPtrOutput)
+}
+
+// Time zone in which the Cron expression takes effect.
+func (o AlarmRequestCycleOutput) CronTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmRequestCycle) *string { return v.CronTimeZone }).(pulumi.StringPtrOutput)
+}
+
+// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+func (o AlarmRequestCycleOutput) Time() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AlarmRequestCycle) *int { return v.Time }).(pulumi.IntPtrOutput)
+}
+
+// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+func (o AlarmRequestCycleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmRequestCycle) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type AlarmRequestCyclePtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmRequestCyclePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmRequestCycle)(nil)).Elem()
+}
+
+func (o AlarmRequestCyclePtrOutput) ToAlarmRequestCyclePtrOutput() AlarmRequestCyclePtrOutput {
+	return o
+}
+
+func (o AlarmRequestCyclePtrOutput) ToAlarmRequestCyclePtrOutputWithContext(ctx context.Context) AlarmRequestCyclePtrOutput {
+	return o
+}
+
+func (o AlarmRequestCyclePtrOutput) Elem() AlarmRequestCycleOutput {
+	return o.ApplyT(func(v *AlarmRequestCycle) AlarmRequestCycle {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmRequestCycle
+		return ret
+	}).(AlarmRequestCycleOutput)
+}
+
+// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+func (o AlarmRequestCyclePtrOutput) CronTab() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmRequestCycle) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CronTab
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time zone in which the Cron expression takes effect.
+func (o AlarmRequestCyclePtrOutput) CronTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmRequestCycle) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CronTimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+func (o AlarmRequestCyclePtrOutput) Time() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AlarmRequestCycle) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Time
+	}).(pulumi.IntPtrOutput)
+}
+
+// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+func (o AlarmRequestCyclePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmRequestCycle) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmTriggerCondition struct {
+	// Alert trigger condition expression.
+	Condition *string `pulumi:"condition"`
+	// Numerical expression for scenarios with data or specific entries, implemented using **count**.
+	CountCondition *string `pulumi:"countCondition"`
+	// When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+	NoData *bool `pulumi:"noData"`
+	// Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+	Severity *string `pulumi:"severity"`
+}
+
+// AlarmTriggerConditionInput is an input type that accepts AlarmTriggerConditionArgs and AlarmTriggerConditionOutput values.
+// You can construct a concrete instance of `AlarmTriggerConditionInput` via:
+//
+//	AlarmTriggerConditionArgs{...}
+type AlarmTriggerConditionInput interface {
+	pulumi.Input
+
+	ToAlarmTriggerConditionOutput() AlarmTriggerConditionOutput
+	ToAlarmTriggerConditionOutputWithContext(context.Context) AlarmTriggerConditionOutput
+}
+
+type AlarmTriggerConditionArgs struct {
+	// Alert trigger condition expression.
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
+	// Numerical expression for scenarios with data or specific entries, implemented using **count**.
+	CountCondition pulumi.StringPtrInput `pulumi:"countCondition"`
+	// When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+	NoData pulumi.BoolPtrInput `pulumi:"noData"`
+	// Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+	Severity pulumi.StringPtrInput `pulumi:"severity"`
+}
+
+func (AlarmTriggerConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmTriggerCondition)(nil)).Elem()
+}
+
+func (i AlarmTriggerConditionArgs) ToAlarmTriggerConditionOutput() AlarmTriggerConditionOutput {
+	return i.ToAlarmTriggerConditionOutputWithContext(context.Background())
+}
+
+func (i AlarmTriggerConditionArgs) ToAlarmTriggerConditionOutputWithContext(ctx context.Context) AlarmTriggerConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmTriggerConditionOutput)
+}
+
+// AlarmTriggerConditionArrayInput is an input type that accepts AlarmTriggerConditionArray and AlarmTriggerConditionArrayOutput values.
+// You can construct a concrete instance of `AlarmTriggerConditionArrayInput` via:
+//
+//	AlarmTriggerConditionArray{ AlarmTriggerConditionArgs{...} }
+type AlarmTriggerConditionArrayInput interface {
+	pulumi.Input
+
+	ToAlarmTriggerConditionArrayOutput() AlarmTriggerConditionArrayOutput
+	ToAlarmTriggerConditionArrayOutputWithContext(context.Context) AlarmTriggerConditionArrayOutput
+}
+
+type AlarmTriggerConditionArray []AlarmTriggerConditionInput
+
+func (AlarmTriggerConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmTriggerCondition)(nil)).Elem()
+}
+
+func (i AlarmTriggerConditionArray) ToAlarmTriggerConditionArrayOutput() AlarmTriggerConditionArrayOutput {
+	return i.ToAlarmTriggerConditionArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmTriggerConditionArray) ToAlarmTriggerConditionArrayOutputWithContext(ctx context.Context) AlarmTriggerConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmTriggerConditionArrayOutput)
+}
+
+type AlarmTriggerConditionOutput struct{ *pulumi.OutputState }
+
+func (AlarmTriggerConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmTriggerCondition)(nil)).Elem()
+}
+
+func (o AlarmTriggerConditionOutput) ToAlarmTriggerConditionOutput() AlarmTriggerConditionOutput {
+	return o
+}
+
+func (o AlarmTriggerConditionOutput) ToAlarmTriggerConditionOutputWithContext(ctx context.Context) AlarmTriggerConditionOutput {
+	return o
+}
+
+// Alert trigger condition expression.
+func (o AlarmTriggerConditionOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmTriggerCondition) *string { return v.Condition }).(pulumi.StringPtrOutput)
+}
+
+// Numerical expression for scenarios with data or specific entries, implemented using **count**.
+func (o AlarmTriggerConditionOutput) CountCondition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmTriggerCondition) *string { return v.CountCondition }).(pulumi.StringPtrOutput)
+}
+
+// When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+func (o AlarmTriggerConditionOutput) NoData() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AlarmTriggerCondition) *bool { return v.NoData }).(pulumi.BoolPtrOutput)
+}
+
+// Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+func (o AlarmTriggerConditionOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmTriggerCondition) *string { return v.Severity }).(pulumi.StringPtrOutput)
+}
+
+type AlarmTriggerConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmTriggerConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmTriggerCondition)(nil)).Elem()
+}
+
+func (o AlarmTriggerConditionArrayOutput) ToAlarmTriggerConditionArrayOutput() AlarmTriggerConditionArrayOutput {
+	return o
+}
+
+func (o AlarmTriggerConditionArrayOutput) ToAlarmTriggerConditionArrayOutputWithContext(ctx context.Context) AlarmTriggerConditionArrayOutput {
+	return o
+}
+
+func (o AlarmTriggerConditionArrayOutput) Index(i pulumi.IntInput) AlarmTriggerConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmTriggerCondition {
+		return vs[0].([]AlarmTriggerCondition)[vs[1].(int)]
+	}).(AlarmTriggerConditionOutput)
 }
 
 type ImportTaskImportSourceInfo struct {
@@ -9685,6 +10569,1139 @@ func (o TopicTagArrayOutput) Index(i pulumi.IntInput) TopicTagOutput {
 	}).(TopicTagOutput)
 }
 
+type GetAlarmAlarmNotifyGroup struct {
+	// Alert notification group ID.
+	AlarmNotifyGroupId string `pulumi:"alarmNotifyGroupId"`
+	// Alert notification group name.
+	AlarmNotifyGroupName string `pulumi:"alarmNotifyGroupName"`
+	// Alert notification group creation time.
+	CreateTime string `pulumi:"createTime"`
+	// IAM project to which the alert group belongs.
+	IamProjectName string `pulumi:"iamProjectName"`
+	// Time when the alert notification group was modified.
+	ModifyTime string `pulumi:"modifyTime"`
+	// Notification group rule
+	NoticeRules []GetAlarmAlarmNotifyGroupNoticeRule `pulumi:"noticeRules"`
+	// Type of alert notification. Optional values, select one or more: Trigger   - when an alert is triggered. Recovery   - when an alert is recovered.
+	NotifyTypes []string `pulumi:"notifyTypes"`
+	// List of IAM users who receive alerts.
+	Receivers []GetAlarmAlarmNotifyGroupReceiver `pulumi:"receivers"`
+}
+
+// GetAlarmAlarmNotifyGroupInput is an input type that accepts GetAlarmAlarmNotifyGroupArgs and GetAlarmAlarmNotifyGroupOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupInput` via:
+//
+//	GetAlarmAlarmNotifyGroupArgs{...}
+type GetAlarmAlarmNotifyGroupInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupOutput() GetAlarmAlarmNotifyGroupOutput
+	ToGetAlarmAlarmNotifyGroupOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupOutput
+}
+
+type GetAlarmAlarmNotifyGroupArgs struct {
+	// Alert notification group ID.
+	AlarmNotifyGroupId pulumi.StringInput `pulumi:"alarmNotifyGroupId"`
+	// Alert notification group name.
+	AlarmNotifyGroupName pulumi.StringInput `pulumi:"alarmNotifyGroupName"`
+	// Alert notification group creation time.
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// IAM project to which the alert group belongs.
+	IamProjectName pulumi.StringInput `pulumi:"iamProjectName"`
+	// Time when the alert notification group was modified.
+	ModifyTime pulumi.StringInput `pulumi:"modifyTime"`
+	// Notification group rule
+	NoticeRules GetAlarmAlarmNotifyGroupNoticeRuleArrayInput `pulumi:"noticeRules"`
+	// Type of alert notification. Optional values, select one or more: Trigger   - when an alert is triggered. Recovery   - when an alert is recovered.
+	NotifyTypes pulumi.StringArrayInput `pulumi:"notifyTypes"`
+	// List of IAM users who receive alerts.
+	Receivers GetAlarmAlarmNotifyGroupReceiverArrayInput `pulumi:"receivers"`
+}
+
+func (GetAlarmAlarmNotifyGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupArgs) ToGetAlarmAlarmNotifyGroupOutput() GetAlarmAlarmNotifyGroupOutput {
+	return i.ToGetAlarmAlarmNotifyGroupOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupArgs) ToGetAlarmAlarmNotifyGroupOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupOutput)
+}
+
+// GetAlarmAlarmNotifyGroupArrayInput is an input type that accepts GetAlarmAlarmNotifyGroupArray and GetAlarmAlarmNotifyGroupArrayOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupArrayInput` via:
+//
+//	GetAlarmAlarmNotifyGroupArray{ GetAlarmAlarmNotifyGroupArgs{...} }
+type GetAlarmAlarmNotifyGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupArrayOutput() GetAlarmAlarmNotifyGroupArrayOutput
+	ToGetAlarmAlarmNotifyGroupArrayOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupArrayOutput
+}
+
+type GetAlarmAlarmNotifyGroupArray []GetAlarmAlarmNotifyGroupInput
+
+func (GetAlarmAlarmNotifyGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupArray) ToGetAlarmAlarmNotifyGroupArrayOutput() GetAlarmAlarmNotifyGroupArrayOutput {
+	return i.ToGetAlarmAlarmNotifyGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupArray) ToGetAlarmAlarmNotifyGroupArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupOutput) ToGetAlarmAlarmNotifyGroupOutput() GetAlarmAlarmNotifyGroupOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupOutput) ToGetAlarmAlarmNotifyGroupOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupOutput {
+	return o
+}
+
+// Alert notification group ID.
+func (o GetAlarmAlarmNotifyGroupOutput) AlarmNotifyGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) string { return v.AlarmNotifyGroupId }).(pulumi.StringOutput)
+}
+
+// Alert notification group name.
+func (o GetAlarmAlarmNotifyGroupOutput) AlarmNotifyGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) string { return v.AlarmNotifyGroupName }).(pulumi.StringOutput)
+}
+
+// Alert notification group creation time.
+func (o GetAlarmAlarmNotifyGroupOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// IAM project to which the alert group belongs.
+func (o GetAlarmAlarmNotifyGroupOutput) IamProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) string { return v.IamProjectName }).(pulumi.StringOutput)
+}
+
+// Time when the alert notification group was modified.
+func (o GetAlarmAlarmNotifyGroupOutput) ModifyTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) string { return v.ModifyTime }).(pulumi.StringOutput)
+}
+
+// Notification group rule
+func (o GetAlarmAlarmNotifyGroupOutput) NoticeRules() GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) []GetAlarmAlarmNotifyGroupNoticeRule { return v.NoticeRules }).(GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput)
+}
+
+// Type of alert notification. Optional values, select one or more: Trigger   - when an alert is triggered. Recovery   - when an alert is recovered.
+func (o GetAlarmAlarmNotifyGroupOutput) NotifyTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) []string { return v.NotifyTypes }).(pulumi.StringArrayOutput)
+}
+
+// List of IAM users who receive alerts.
+func (o GetAlarmAlarmNotifyGroupOutput) Receivers() GetAlarmAlarmNotifyGroupReceiverArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroup) []GetAlarmAlarmNotifyGroupReceiver { return v.Receivers }).(GetAlarmAlarmNotifyGroupReceiverArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroup)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupArrayOutput) ToGetAlarmAlarmNotifyGroupArrayOutput() GetAlarmAlarmNotifyGroupArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupArrayOutput) ToGetAlarmAlarmNotifyGroupArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupArrayOutput) Index(i pulumi.IntInput) GetAlarmAlarmNotifyGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmAlarmNotifyGroup {
+		return vs[0].([]GetAlarmAlarmNotifyGroup)[vs[1].(int)]
+	}).(GetAlarmAlarmNotifyGroupOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRule struct {
+	// Whether a subsequent end node exists.
+	HasEndNode bool `pulumi:"hasEndNode"`
+	// Whether to continue to the next level of condition evaluation
+	HasNext bool `pulumi:"hasNext"`
+	// Notification group rule
+	ReceiverInfos []GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo `pulumi:"receiverInfos"`
+	// Rule node, in JSON format.
+	RuleNode string `pulumi:"ruleNode"`
+}
+
+// GetAlarmAlarmNotifyGroupNoticeRuleInput is an input type that accepts GetAlarmAlarmNotifyGroupNoticeRuleArgs and GetAlarmAlarmNotifyGroupNoticeRuleOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupNoticeRuleInput` via:
+//
+//	GetAlarmAlarmNotifyGroupNoticeRuleArgs{...}
+type GetAlarmAlarmNotifyGroupNoticeRuleInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupNoticeRuleOutput() GetAlarmAlarmNotifyGroupNoticeRuleOutput
+	ToGetAlarmAlarmNotifyGroupNoticeRuleOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupNoticeRuleOutput
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleArgs struct {
+	// Whether a subsequent end node exists.
+	HasEndNode pulumi.BoolInput `pulumi:"hasEndNode"`
+	// Whether to continue to the next level of condition evaluation
+	HasNext pulumi.BoolInput `pulumi:"hasNext"`
+	// Notification group rule
+	ReceiverInfos GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayInput `pulumi:"receiverInfos"`
+	// Rule node, in JSON format.
+	RuleNode pulumi.StringInput `pulumi:"ruleNode"`
+}
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRule)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleArgs) ToGetAlarmAlarmNotifyGroupNoticeRuleOutput() GetAlarmAlarmNotifyGroupNoticeRuleOutput {
+	return i.ToGetAlarmAlarmNotifyGroupNoticeRuleOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleArgs) ToGetAlarmAlarmNotifyGroupNoticeRuleOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupNoticeRuleOutput)
+}
+
+// GetAlarmAlarmNotifyGroupNoticeRuleArrayInput is an input type that accepts GetAlarmAlarmNotifyGroupNoticeRuleArray and GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupNoticeRuleArrayInput` via:
+//
+//	GetAlarmAlarmNotifyGroupNoticeRuleArray{ GetAlarmAlarmNotifyGroupNoticeRuleArgs{...} }
+type GetAlarmAlarmNotifyGroupNoticeRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput
+	ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleArray []GetAlarmAlarmNotifyGroupNoticeRuleInput
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupNoticeRule)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleArray) ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput {
+	return i.ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleArray) ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRule)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleOutput() GetAlarmAlarmNotifyGroupNoticeRuleOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleOutput {
+	return o
+}
+
+// Whether a subsequent end node exists.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleOutput) HasEndNode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRule) bool { return v.HasEndNode }).(pulumi.BoolOutput)
+}
+
+// Whether to continue to the next level of condition evaluation
+func (o GetAlarmAlarmNotifyGroupNoticeRuleOutput) HasNext() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRule) bool { return v.HasNext }).(pulumi.BoolOutput)
+}
+
+// Notification group rule
+func (o GetAlarmAlarmNotifyGroupNoticeRuleOutput) ReceiverInfos() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRule) []GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo {
+		return v.ReceiverInfos
+	}).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput)
+}
+
+// Rule node, in JSON format.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleOutput) RuleNode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRule) string { return v.RuleNode }).(pulumi.StringOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupNoticeRule)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput) Index(i pulumi.IntInput) GetAlarmAlarmNotifyGroupNoticeRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmAlarmNotifyGroupNoticeRule {
+		return vs[0].([]GetAlarmAlarmNotifyGroupNoticeRule)[vs[1].(int)]
+	}).(GetAlarmAlarmNotifyGroupNoticeRuleOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo struct {
+	// Alert content template ID.
+	AlarmContentTemplateId string `pulumi:"alarmContentTemplateId"`
+	// Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtGroups []string `pulumi:"alarmWebhookAtGroups"`
+	// Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtUsers []string `pulumi:"alarmWebhookAtUsers"`
+	// ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationId string `pulumi:"alarmWebhookIntegrationId"`
+	// Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationName string `pulumi:"alarmWebhookIntegrationName"`
+	// Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+	AlarmWebhookIsAtAll bool `pulumi:"alarmWebhookIsAtAll"`
+	// End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+	EndTime string `pulumi:"endTime"`
+	// Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+	GeneralWebhookBody string `pulumi:"generalWebhookBody"`
+	// Custom interface callback request header.
+	GeneralWebhookHeaders []GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader `pulumi:"generalWebhookHeaders"`
+	// Custom interface callback method. Only POST or PUT is supported.
+	GeneralWebhookMethod string `pulumi:"generalWebhookMethod"`
+	// Custom callback URL for the interface
+	GeneralWebhookUrl string `pulumi:"generalWebhookUrl"`
+	// Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+	ReceiverChannels []string `pulumi:"receiverChannels"`
+	// IAM user or user group name
+	ReceiverNames []string `pulumi:"receiverNames"`
+	// Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+	ReceiverType string `pulumi:"receiverType"`
+	// Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+	StartTime string `pulumi:"startTime"`
+}
+
+// GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoInput is an input type that accepts GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs and GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoInput` via:
+//
+//	GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs{...}
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs struct {
+	// Alert content template ID.
+	AlarmContentTemplateId pulumi.StringInput `pulumi:"alarmContentTemplateId"`
+	// Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtGroups pulumi.StringArrayInput `pulumi:"alarmWebhookAtGroups"`
+	// Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtUsers pulumi.StringArrayInput `pulumi:"alarmWebhookAtUsers"`
+	// ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationId pulumi.StringInput `pulumi:"alarmWebhookIntegrationId"`
+	// Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationName pulumi.StringInput `pulumi:"alarmWebhookIntegrationName"`
+	// Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+	AlarmWebhookIsAtAll pulumi.BoolInput `pulumi:"alarmWebhookIsAtAll"`
+	// End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+	GeneralWebhookBody pulumi.StringInput `pulumi:"generalWebhookBody"`
+	// Custom interface callback request header.
+	GeneralWebhookHeaders GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayInput `pulumi:"generalWebhookHeaders"`
+	// Custom interface callback method. Only POST or PUT is supported.
+	GeneralWebhookMethod pulumi.StringInput `pulumi:"generalWebhookMethod"`
+	// Custom callback URL for the interface
+	GeneralWebhookUrl pulumi.StringInput `pulumi:"generalWebhookUrl"`
+	// Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+	ReceiverChannels pulumi.StringArrayInput `pulumi:"receiverChannels"`
+	// IAM user or user group name
+	ReceiverNames pulumi.StringArrayInput `pulumi:"receiverNames"`
+	// Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+	ReceiverType pulumi.StringInput `pulumi:"receiverType"`
+	// Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+}
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput {
+	return i.ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput)
+}
+
+// GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayInput is an input type that accepts GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray and GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayInput` via:
+//
+//	GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray{ GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs{...} }
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray []GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoInput
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput {
+	return i.ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput {
+	return o
+}
+
+// Alert content template ID.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) AlarmContentTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.AlarmContentTemplateId }).(pulumi.StringOutput)
+}
+
+// Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) AlarmWebhookAtGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) []string { return v.AlarmWebhookAtGroups }).(pulumi.StringArrayOutput)
+}
+
+// Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) AlarmWebhookAtUsers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) []string { return v.AlarmWebhookAtUsers }).(pulumi.StringArrayOutput)
+}
+
+// ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) AlarmWebhookIntegrationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.AlarmWebhookIntegrationId }).(pulumi.StringOutput)
+}
+
+// Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) AlarmWebhookIntegrationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.AlarmWebhookIntegrationName }).(pulumi.StringOutput)
+}
+
+// Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) AlarmWebhookIsAtAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) bool { return v.AlarmWebhookIsAtAll }).(pulumi.BoolOutput)
+}
+
+// End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+// Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) GeneralWebhookBody() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.GeneralWebhookBody }).(pulumi.StringOutput)
+}
+
+// Custom interface callback request header.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) GeneralWebhookHeaders() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) []GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader {
+		return v.GeneralWebhookHeaders
+	}).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput)
+}
+
+// Custom interface callback method. Only POST or PUT is supported.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) GeneralWebhookMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.GeneralWebhookMethod }).(pulumi.StringOutput)
+}
+
+// Custom callback URL for the interface
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) GeneralWebhookUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.GeneralWebhookUrl }).(pulumi.StringOutput)
+}
+
+// Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) ReceiverChannels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) []string { return v.ReceiverChannels }).(pulumi.StringArrayOutput)
+}
+
+// IAM user or user group name
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) ReceiverNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) []string { return v.ReceiverNames }).(pulumi.StringArrayOutput)
+}
+
+// Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) ReceiverType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.ReceiverType }).(pulumi.StringOutput)
+}
+
+// Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput) Index(i pulumi.IntInput) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo {
+		return vs[0].([]GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfo)[vs[1].(int)]
+	}).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader struct {
+	// Key of the custom request header.
+	Key string `pulumi:"key"`
+	// Value of the custom request header.
+	Value string `pulumi:"value"`
+}
+
+// GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderInput is an input type that accepts GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs and GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderInput` via:
+//
+//	GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs{...}
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs struct {
+	// Key of the custom request header.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the custom request header.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput {
+	return i.ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput)
+}
+
+// GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayInput is an input type that accepts GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray and GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayInput` via:
+//
+//	GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray{ GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs{...} }
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput
+	ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray []GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderInput
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput {
+	return i.ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput {
+	return o
+}
+
+// Key of the custom request header.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the custom request header.
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput() GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput) ToGetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput) Index(i pulumi.IntInput) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader {
+		return vs[0].([]GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader)[vs[1].(int)]
+	}).(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput)
+}
+
+type GetAlarmAlarmNotifyGroupReceiver struct {
+	// Alert content template ID.
+	AlarmContentTemplateId string `pulumi:"alarmContentTemplateId"`
+	// Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtGroups []string `pulumi:"alarmWebhookAtGroups"`
+	// Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtUsers []string `pulumi:"alarmWebhookAtUsers"`
+	// ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationId string `pulumi:"alarmWebhookIntegrationId"`
+	// Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationName string `pulumi:"alarmWebhookIntegrationName"`
+	// Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+	AlarmWebhookIsAtAll bool `pulumi:"alarmWebhookIsAtAll"`
+	// End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+	EndTime string `pulumi:"endTime"`
+	// Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+	GeneralWebhookBody string `pulumi:"generalWebhookBody"`
+	// Custom interface callback request header.
+	GeneralWebhookHeaders []GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader `pulumi:"generalWebhookHeaders"`
+	// Custom interface callback method. Only POST or PUT is supported.
+	GeneralWebhookMethod string `pulumi:"generalWebhookMethod"`
+	// Custom callback URL for the interface
+	GeneralWebhookUrl string `pulumi:"generalWebhookUrl"`
+	// Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+	ReceiverChannels []string `pulumi:"receiverChannels"`
+	// IAM user or user group name
+	ReceiverNames []string `pulumi:"receiverNames"`
+	// Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+	ReceiverType string `pulumi:"receiverType"`
+	// Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+	StartTime string `pulumi:"startTime"`
+}
+
+// GetAlarmAlarmNotifyGroupReceiverInput is an input type that accepts GetAlarmAlarmNotifyGroupReceiverArgs and GetAlarmAlarmNotifyGroupReceiverOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupReceiverInput` via:
+//
+//	GetAlarmAlarmNotifyGroupReceiverArgs{...}
+type GetAlarmAlarmNotifyGroupReceiverInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupReceiverOutput() GetAlarmAlarmNotifyGroupReceiverOutput
+	ToGetAlarmAlarmNotifyGroupReceiverOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupReceiverOutput
+}
+
+type GetAlarmAlarmNotifyGroupReceiverArgs struct {
+	// Alert content template ID.
+	AlarmContentTemplateId pulumi.StringInput `pulumi:"alarmContentTemplateId"`
+	// Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtGroups pulumi.StringArrayInput `pulumi:"alarmWebhookAtGroups"`
+	// Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+	AlarmWebhookAtUsers pulumi.StringArrayInput `pulumi:"alarmWebhookAtUsers"`
+	// ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationId pulumi.StringInput `pulumi:"alarmWebhookIntegrationId"`
+	// Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+	AlarmWebhookIntegrationName pulumi.StringInput `pulumi:"alarmWebhookIntegrationName"`
+	// Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+	AlarmWebhookIsAtAll pulumi.BoolInput `pulumi:"alarmWebhookIsAtAll"`
+	// End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+	GeneralWebhookBody pulumi.StringInput `pulumi:"generalWebhookBody"`
+	// Custom interface callback request header.
+	GeneralWebhookHeaders GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput `pulumi:"generalWebhookHeaders"`
+	// Custom interface callback method. Only POST or PUT is supported.
+	GeneralWebhookMethod pulumi.StringInput `pulumi:"generalWebhookMethod"`
+	// Custom callback URL for the interface
+	GeneralWebhookUrl pulumi.StringInput `pulumi:"generalWebhookUrl"`
+	// Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+	ReceiverChannels pulumi.StringArrayInput `pulumi:"receiverChannels"`
+	// IAM user or user group name
+	ReceiverNames pulumi.StringArrayInput `pulumi:"receiverNames"`
+	// Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+	ReceiverType pulumi.StringInput `pulumi:"receiverType"`
+	// Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+}
+
+func (GetAlarmAlarmNotifyGroupReceiverArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiver)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverArgs) ToGetAlarmAlarmNotifyGroupReceiverOutput() GetAlarmAlarmNotifyGroupReceiverOutput {
+	return i.ToGetAlarmAlarmNotifyGroupReceiverOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverArgs) ToGetAlarmAlarmNotifyGroupReceiverOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupReceiverOutput)
+}
+
+// GetAlarmAlarmNotifyGroupReceiverArrayInput is an input type that accepts GetAlarmAlarmNotifyGroupReceiverArray and GetAlarmAlarmNotifyGroupReceiverArrayOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupReceiverArrayInput` via:
+//
+//	GetAlarmAlarmNotifyGroupReceiverArray{ GetAlarmAlarmNotifyGroupReceiverArgs{...} }
+type GetAlarmAlarmNotifyGroupReceiverArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupReceiverArrayOutput() GetAlarmAlarmNotifyGroupReceiverArrayOutput
+	ToGetAlarmAlarmNotifyGroupReceiverArrayOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupReceiverArrayOutput
+}
+
+type GetAlarmAlarmNotifyGroupReceiverArray []GetAlarmAlarmNotifyGroupReceiverInput
+
+func (GetAlarmAlarmNotifyGroupReceiverArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupReceiver)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverArray) ToGetAlarmAlarmNotifyGroupReceiverArrayOutput() GetAlarmAlarmNotifyGroupReceiverArrayOutput {
+	return i.ToGetAlarmAlarmNotifyGroupReceiverArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverArray) ToGetAlarmAlarmNotifyGroupReceiverArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupReceiverArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupReceiverOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupReceiverOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiver)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) ToGetAlarmAlarmNotifyGroupReceiverOutput() GetAlarmAlarmNotifyGroupReceiverOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) ToGetAlarmAlarmNotifyGroupReceiverOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverOutput {
+	return o
+}
+
+// Alert content template ID.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) AlarmContentTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.AlarmContentTemplateId }).(pulumi.StringOutput)
+}
+
+// Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) AlarmWebhookAtGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) []string { return v.AlarmWebhookAtGroups }).(pulumi.StringArrayOutput)
+}
+
+// Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) AlarmWebhookAtUsers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) []string { return v.AlarmWebhookAtUsers }).(pulumi.StringArrayOutput)
+}
+
+// ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) AlarmWebhookIntegrationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.AlarmWebhookIntegrationId }).(pulumi.StringOutput)
+}
+
+// Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) AlarmWebhookIntegrationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.AlarmWebhookIntegrationName }).(pulumi.StringOutput)
+}
+
+// Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) AlarmWebhookIsAtAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) bool { return v.AlarmWebhookIsAtAll }).(pulumi.BoolOutput)
+}
+
+// End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+// Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) GeneralWebhookBody() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.GeneralWebhookBody }).(pulumi.StringOutput)
+}
+
+// Custom interface callback request header.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) GeneralWebhookHeaders() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) []GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader {
+		return v.GeneralWebhookHeaders
+	}).(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput)
+}
+
+// Custom interface callback method. Only POST or PUT is supported.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) GeneralWebhookMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.GeneralWebhookMethod }).(pulumi.StringOutput)
+}
+
+// Custom callback URL for the interface
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) GeneralWebhookUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.GeneralWebhookUrl }).(pulumi.StringOutput)
+}
+
+// Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) ReceiverChannels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) []string { return v.ReceiverChannels }).(pulumi.StringArrayOutput)
+}
+
+// IAM user or user group name
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) ReceiverNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) []string { return v.ReceiverNames }).(pulumi.StringArrayOutput)
+}
+
+// Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) ReceiverType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.ReceiverType }).(pulumi.StringOutput)
+}
+
+// Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+func (o GetAlarmAlarmNotifyGroupReceiverOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiver) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+type GetAlarmAlarmNotifyGroupReceiverArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupReceiverArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupReceiver)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverArrayOutput) ToGetAlarmAlarmNotifyGroupReceiverArrayOutput() GetAlarmAlarmNotifyGroupReceiverArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverArrayOutput) ToGetAlarmAlarmNotifyGroupReceiverArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverArrayOutput) Index(i pulumi.IntInput) GetAlarmAlarmNotifyGroupReceiverOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmAlarmNotifyGroupReceiver {
+		return vs[0].([]GetAlarmAlarmNotifyGroupReceiver)[vs[1].(int)]
+	}).(GetAlarmAlarmNotifyGroupReceiverOutput)
+}
+
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader struct {
+	// Key of the custom request header.
+	Key string `pulumi:"key"`
+	// Value of the custom request header.
+	Value string `pulumi:"value"`
+}
+
+// GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderInput is an input type that accepts GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs and GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderInput` via:
+//
+//	GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs{...}
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput
+	ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput
+}
+
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs struct {
+	// Key of the custom request header.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the custom request header.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput {
+	return i.ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput)
+}
+
+// GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput is an input type that accepts GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray and GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput` via:
+//
+//	GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray{ GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs{...} }
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput
+	ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutputWithContext(context.Context) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput
+}
+
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray []GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderInput
+
+func (GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput {
+	return i.ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput)
+}
+
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput {
+	return o
+}
+
+// Key of the custom request header.
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of the custom request header.
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput() GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput) ToGetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutputWithContext(ctx context.Context) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput) Index(i pulumi.IntInput) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader {
+		return vs[0].([]GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeader)[vs[1].(int)]
+	}).(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput)
+}
+
+type GetAlarmAlarmPeriodDetail struct {
+	// Email alert interval, in minutes. Value range: 1–1440
+	Email int `pulumi:"email"`
+	// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+	GeneralWebhook int `pulumi:"generalWebhook"`
+	// Phone alert cycle, in minutes. Value range: 10–1440.
+	Phone int `pulumi:"phone"`
+	// SMS alert interval, in minutes. Value range: 10–1440
+	Sms int `pulumi:"sms"`
+}
+
+// GetAlarmAlarmPeriodDetailInput is an input type that accepts GetAlarmAlarmPeriodDetailArgs and GetAlarmAlarmPeriodDetailOutput values.
+// You can construct a concrete instance of `GetAlarmAlarmPeriodDetailInput` via:
+//
+//	GetAlarmAlarmPeriodDetailArgs{...}
+type GetAlarmAlarmPeriodDetailInput interface {
+	pulumi.Input
+
+	ToGetAlarmAlarmPeriodDetailOutput() GetAlarmAlarmPeriodDetailOutput
+	ToGetAlarmAlarmPeriodDetailOutputWithContext(context.Context) GetAlarmAlarmPeriodDetailOutput
+}
+
+type GetAlarmAlarmPeriodDetailArgs struct {
+	// Email alert interval, in minutes. Value range: 1–1440
+	Email pulumi.IntInput `pulumi:"email"`
+	// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+	GeneralWebhook pulumi.IntInput `pulumi:"generalWebhook"`
+	// Phone alert cycle, in minutes. Value range: 10–1440.
+	Phone pulumi.IntInput `pulumi:"phone"`
+	// SMS alert interval, in minutes. Value range: 10–1440
+	Sms pulumi.IntInput `pulumi:"sms"`
+}
+
+func (GetAlarmAlarmPeriodDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmPeriodDetail)(nil)).Elem()
+}
+
+func (i GetAlarmAlarmPeriodDetailArgs) ToGetAlarmAlarmPeriodDetailOutput() GetAlarmAlarmPeriodDetailOutput {
+	return i.ToGetAlarmAlarmPeriodDetailOutputWithContext(context.Background())
+}
+
+func (i GetAlarmAlarmPeriodDetailArgs) ToGetAlarmAlarmPeriodDetailOutputWithContext(ctx context.Context) GetAlarmAlarmPeriodDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmAlarmPeriodDetailOutput)
+}
+
+type GetAlarmAlarmPeriodDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmAlarmPeriodDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmAlarmPeriodDetail)(nil)).Elem()
+}
+
+func (o GetAlarmAlarmPeriodDetailOutput) ToGetAlarmAlarmPeriodDetailOutput() GetAlarmAlarmPeriodDetailOutput {
+	return o
+}
+
+func (o GetAlarmAlarmPeriodDetailOutput) ToGetAlarmAlarmPeriodDetailOutputWithContext(ctx context.Context) GetAlarmAlarmPeriodDetailOutput {
+	return o
+}
+
+// Email alert interval, in minutes. Value range: 1–1440
+func (o GetAlarmAlarmPeriodDetailOutput) Email() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmAlarmPeriodDetail) int { return v.Email }).(pulumi.IntOutput)
+}
+
+// Custom Webhook alert interval, in minutes. Value range: 1–1440.
+func (o GetAlarmAlarmPeriodDetailOutput) GeneralWebhook() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmAlarmPeriodDetail) int { return v.GeneralWebhook }).(pulumi.IntOutput)
+}
+
+// Phone alert cycle, in minutes. Value range: 10–1440.
+func (o GetAlarmAlarmPeriodDetailOutput) Phone() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmAlarmPeriodDetail) int { return v.Phone }).(pulumi.IntOutput)
+}
+
+// SMS alert interval, in minutes. Value range: 10–1440
+func (o GetAlarmAlarmPeriodDetailOutput) Sms() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmAlarmPeriodDetail) int { return v.Sms }).(pulumi.IntOutput)
+}
+
+type GetAlarmJoinConfiguration struct {
+	// Expression used for left join or right join.
+	Condition string `pulumi:"condition"`
+	// Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+	SetOperationType string `pulumi:"setOperationType"`
+}
+
+// GetAlarmJoinConfigurationInput is an input type that accepts GetAlarmJoinConfigurationArgs and GetAlarmJoinConfigurationOutput values.
+// You can construct a concrete instance of `GetAlarmJoinConfigurationInput` via:
+//
+//	GetAlarmJoinConfigurationArgs{...}
+type GetAlarmJoinConfigurationInput interface {
+	pulumi.Input
+
+	ToGetAlarmJoinConfigurationOutput() GetAlarmJoinConfigurationOutput
+	ToGetAlarmJoinConfigurationOutputWithContext(context.Context) GetAlarmJoinConfigurationOutput
+}
+
+type GetAlarmJoinConfigurationArgs struct {
+	// Expression used for left join or right join.
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+	SetOperationType pulumi.StringInput `pulumi:"setOperationType"`
+}
+
+func (GetAlarmJoinConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (i GetAlarmJoinConfigurationArgs) ToGetAlarmJoinConfigurationOutput() GetAlarmJoinConfigurationOutput {
+	return i.ToGetAlarmJoinConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetAlarmJoinConfigurationArgs) ToGetAlarmJoinConfigurationOutputWithContext(ctx context.Context) GetAlarmJoinConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmJoinConfigurationOutput)
+}
+
+// GetAlarmJoinConfigurationArrayInput is an input type that accepts GetAlarmJoinConfigurationArray and GetAlarmJoinConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetAlarmJoinConfigurationArrayInput` via:
+//
+//	GetAlarmJoinConfigurationArray{ GetAlarmJoinConfigurationArgs{...} }
+type GetAlarmJoinConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmJoinConfigurationArrayOutput() GetAlarmJoinConfigurationArrayOutput
+	ToGetAlarmJoinConfigurationArrayOutputWithContext(context.Context) GetAlarmJoinConfigurationArrayOutput
+}
+
+type GetAlarmJoinConfigurationArray []GetAlarmJoinConfigurationInput
+
+func (GetAlarmJoinConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (i GetAlarmJoinConfigurationArray) ToGetAlarmJoinConfigurationArrayOutput() GetAlarmJoinConfigurationArrayOutput {
+	return i.ToGetAlarmJoinConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmJoinConfigurationArray) ToGetAlarmJoinConfigurationArrayOutputWithContext(ctx context.Context) GetAlarmJoinConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmJoinConfigurationArrayOutput)
+}
+
+type GetAlarmJoinConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmJoinConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (o GetAlarmJoinConfigurationOutput) ToGetAlarmJoinConfigurationOutput() GetAlarmJoinConfigurationOutput {
+	return o
+}
+
+func (o GetAlarmJoinConfigurationOutput) ToGetAlarmJoinConfigurationOutputWithContext(ctx context.Context) GetAlarmJoinConfigurationOutput {
+	return o
+}
+
+// Expression used for left join or right join.
+func (o GetAlarmJoinConfigurationOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmJoinConfiguration) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+func (o GetAlarmJoinConfigurationOutput) SetOperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmJoinConfiguration) string { return v.SetOperationType }).(pulumi.StringOutput)
+}
+
+type GetAlarmJoinConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmJoinConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmJoinConfiguration)(nil)).Elem()
+}
+
+func (o GetAlarmJoinConfigurationArrayOutput) ToGetAlarmJoinConfigurationArrayOutput() GetAlarmJoinConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAlarmJoinConfigurationArrayOutput) ToGetAlarmJoinConfigurationArrayOutputWithContext(ctx context.Context) GetAlarmJoinConfigurationArrayOutput {
+	return o
+}
+
+func (o GetAlarmJoinConfigurationArrayOutput) Index(i pulumi.IntInput) GetAlarmJoinConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmJoinConfiguration {
+		return vs[0].([]GetAlarmJoinConfiguration)[vs[1].(int)]
+	}).(GetAlarmJoinConfigurationOutput)
+}
+
 type GetAlarmNotifyGroupNoticeRule struct {
 	// Whether there is an end node afterwards.
 	HasEndNode bool `pulumi:"hasEndNode"`
@@ -10471,6 +12488,387 @@ func (o GetAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmNotifyGroupReceiverGeneralWebhookHeader {
 		return vs[0].([]GetAlarmNotifyGroupReceiverGeneralWebhookHeader)[vs[1].(int)]
 	}).(GetAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput)
+}
+
+type GetAlarmQueryRequest struct {
+	// Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+	EndTimeOffset int `pulumi:"endTimeOffset"`
+	// Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+	EndTimeOffsetUnit string `pulumi:"endTimeOffsetUnit"`
+	// Alert object sequence number, starting from 1 and incrementing by 1
+	Number int `pulumi:"number"`
+	// Query analysis statement, with a maximum supported length of 1024 characters.
+	Query string `pulumi:"query"`
+	// Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+	StartTimeOffset int `pulumi:"startTimeOffset"`
+	// Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+	StartTimeOffsetUnit string `pulumi:"startTimeOffsetUnit"`
+	// Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+	TimeSpanType string `pulumi:"timeSpanType"`
+	// Log topic ID monitored by the alert policy.
+	TopicId string `pulumi:"topicId"`
+	// Name of the log topic monitored by the alert policy.
+	TopicName string `pulumi:"topicName"`
+	// Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+	TruncatedTime string `pulumi:"truncatedTime"`
+}
+
+// GetAlarmQueryRequestInput is an input type that accepts GetAlarmQueryRequestArgs and GetAlarmQueryRequestOutput values.
+// You can construct a concrete instance of `GetAlarmQueryRequestInput` via:
+//
+//	GetAlarmQueryRequestArgs{...}
+type GetAlarmQueryRequestInput interface {
+	pulumi.Input
+
+	ToGetAlarmQueryRequestOutput() GetAlarmQueryRequestOutput
+	ToGetAlarmQueryRequestOutputWithContext(context.Context) GetAlarmQueryRequestOutput
+}
+
+type GetAlarmQueryRequestArgs struct {
+	// Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+	EndTimeOffset pulumi.IntInput `pulumi:"endTimeOffset"`
+	// Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+	EndTimeOffsetUnit pulumi.StringInput `pulumi:"endTimeOffsetUnit"`
+	// Alert object sequence number, starting from 1 and incrementing by 1
+	Number pulumi.IntInput `pulumi:"number"`
+	// Query analysis statement, with a maximum supported length of 1024 characters.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+	StartTimeOffset pulumi.IntInput `pulumi:"startTimeOffset"`
+	// Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+	StartTimeOffsetUnit pulumi.StringInput `pulumi:"startTimeOffsetUnit"`
+	// Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+	TimeSpanType pulumi.StringInput `pulumi:"timeSpanType"`
+	// Log topic ID monitored by the alert policy.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+	// Name of the log topic monitored by the alert policy.
+	TopicName pulumi.StringInput `pulumi:"topicName"`
+	// Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+	TruncatedTime pulumi.StringInput `pulumi:"truncatedTime"`
+}
+
+func (GetAlarmQueryRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmQueryRequest)(nil)).Elem()
+}
+
+func (i GetAlarmQueryRequestArgs) ToGetAlarmQueryRequestOutput() GetAlarmQueryRequestOutput {
+	return i.ToGetAlarmQueryRequestOutputWithContext(context.Background())
+}
+
+func (i GetAlarmQueryRequestArgs) ToGetAlarmQueryRequestOutputWithContext(ctx context.Context) GetAlarmQueryRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmQueryRequestOutput)
+}
+
+// GetAlarmQueryRequestArrayInput is an input type that accepts GetAlarmQueryRequestArray and GetAlarmQueryRequestArrayOutput values.
+// You can construct a concrete instance of `GetAlarmQueryRequestArrayInput` via:
+//
+//	GetAlarmQueryRequestArray{ GetAlarmQueryRequestArgs{...} }
+type GetAlarmQueryRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmQueryRequestArrayOutput() GetAlarmQueryRequestArrayOutput
+	ToGetAlarmQueryRequestArrayOutputWithContext(context.Context) GetAlarmQueryRequestArrayOutput
+}
+
+type GetAlarmQueryRequestArray []GetAlarmQueryRequestInput
+
+func (GetAlarmQueryRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmQueryRequest)(nil)).Elem()
+}
+
+func (i GetAlarmQueryRequestArray) ToGetAlarmQueryRequestArrayOutput() GetAlarmQueryRequestArrayOutput {
+	return i.ToGetAlarmQueryRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmQueryRequestArray) ToGetAlarmQueryRequestArrayOutputWithContext(ctx context.Context) GetAlarmQueryRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmQueryRequestArrayOutput)
+}
+
+type GetAlarmQueryRequestOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmQueryRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmQueryRequest)(nil)).Elem()
+}
+
+func (o GetAlarmQueryRequestOutput) ToGetAlarmQueryRequestOutput() GetAlarmQueryRequestOutput {
+	return o
+}
+
+func (o GetAlarmQueryRequestOutput) ToGetAlarmQueryRequestOutputWithContext(ctx context.Context) GetAlarmQueryRequestOutput {
+	return o
+}
+
+// Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+func (o GetAlarmQueryRequestOutput) EndTimeOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) int { return v.EndTimeOffset }).(pulumi.IntOutput)
+}
+
+// Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+func (o GetAlarmQueryRequestOutput) EndTimeOffsetUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.EndTimeOffsetUnit }).(pulumi.StringOutput)
+}
+
+// Alert object sequence number, starting from 1 and incrementing by 1
+func (o GetAlarmQueryRequestOutput) Number() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) int { return v.Number }).(pulumi.IntOutput)
+}
+
+// Query analysis statement, with a maximum supported length of 1024 characters.
+func (o GetAlarmQueryRequestOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+func (o GetAlarmQueryRequestOutput) StartTimeOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) int { return v.StartTimeOffset }).(pulumi.IntOutput)
+}
+
+// Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+func (o GetAlarmQueryRequestOutput) StartTimeOffsetUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.StartTimeOffsetUnit }).(pulumi.StringOutput)
+}
+
+// Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+func (o GetAlarmQueryRequestOutput) TimeSpanType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.TimeSpanType }).(pulumi.StringOutput)
+}
+
+// Log topic ID monitored by the alert policy.
+func (o GetAlarmQueryRequestOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+// Name of the log topic monitored by the alert policy.
+func (o GetAlarmQueryRequestOutput) TopicName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.TopicName }).(pulumi.StringOutput)
+}
+
+// Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+func (o GetAlarmQueryRequestOutput) TruncatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmQueryRequest) string { return v.TruncatedTime }).(pulumi.StringOutput)
+}
+
+type GetAlarmQueryRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmQueryRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmQueryRequest)(nil)).Elem()
+}
+
+func (o GetAlarmQueryRequestArrayOutput) ToGetAlarmQueryRequestArrayOutput() GetAlarmQueryRequestArrayOutput {
+	return o
+}
+
+func (o GetAlarmQueryRequestArrayOutput) ToGetAlarmQueryRequestArrayOutputWithContext(ctx context.Context) GetAlarmQueryRequestArrayOutput {
+	return o
+}
+
+func (o GetAlarmQueryRequestArrayOutput) Index(i pulumi.IntInput) GetAlarmQueryRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmQueryRequest {
+		return vs[0].([]GetAlarmQueryRequest)[vs[1].(int)]
+	}).(GetAlarmQueryRequestOutput)
+}
+
+type GetAlarmRequestCycle struct {
+	// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+	CronTab string `pulumi:"cronTab"`
+	// Time zone in which the Cron expression takes effect.
+	CronTimeZone string `pulumi:"cronTimeZone"`
+	// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+	Time int `pulumi:"time"`
+	// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+	Type string `pulumi:"type"`
+}
+
+// GetAlarmRequestCycleInput is an input type that accepts GetAlarmRequestCycleArgs and GetAlarmRequestCycleOutput values.
+// You can construct a concrete instance of `GetAlarmRequestCycleInput` via:
+//
+//	GetAlarmRequestCycleArgs{...}
+type GetAlarmRequestCycleInput interface {
+	pulumi.Input
+
+	ToGetAlarmRequestCycleOutput() GetAlarmRequestCycleOutput
+	ToGetAlarmRequestCycleOutputWithContext(context.Context) GetAlarmRequestCycleOutput
+}
+
+type GetAlarmRequestCycleArgs struct {
+	// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+	CronTab pulumi.StringInput `pulumi:"cronTab"`
+	// Time zone in which the Cron expression takes effect.
+	CronTimeZone pulumi.StringInput `pulumi:"cronTimeZone"`
+	// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+	Time pulumi.IntInput `pulumi:"time"`
+	// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAlarmRequestCycleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmRequestCycle)(nil)).Elem()
+}
+
+func (i GetAlarmRequestCycleArgs) ToGetAlarmRequestCycleOutput() GetAlarmRequestCycleOutput {
+	return i.ToGetAlarmRequestCycleOutputWithContext(context.Background())
+}
+
+func (i GetAlarmRequestCycleArgs) ToGetAlarmRequestCycleOutputWithContext(ctx context.Context) GetAlarmRequestCycleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmRequestCycleOutput)
+}
+
+type GetAlarmRequestCycleOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmRequestCycleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmRequestCycle)(nil)).Elem()
+}
+
+func (o GetAlarmRequestCycleOutput) ToGetAlarmRequestCycleOutput() GetAlarmRequestCycleOutput {
+	return o
+}
+
+func (o GetAlarmRequestCycleOutput) ToGetAlarmRequestCycleOutputWithContext(ctx context.Context) GetAlarmRequestCycleOutput {
+	return o
+}
+
+// Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+func (o GetAlarmRequestCycleOutput) CronTab() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmRequestCycle) string { return v.CronTab }).(pulumi.StringOutput)
+}
+
+// Time zone in which the Cron expression takes effect.
+func (o GetAlarmRequestCycleOutput) CronTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmRequestCycle) string { return v.CronTimeZone }).(pulumi.StringOutput)
+}
+
+// Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+func (o GetAlarmRequestCycleOutput) Time() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAlarmRequestCycle) int { return v.Time }).(pulumi.IntOutput)
+}
+
+// Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+func (o GetAlarmRequestCycleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmRequestCycle) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAlarmTriggerCondition struct {
+	// Alert trigger condition expression.
+	Condition string `pulumi:"condition"`
+	// Numerical expression for scenarios with data or specific entries, implemented using **count**.
+	CountCondition string `pulumi:"countCondition"`
+	// When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+	NoData bool `pulumi:"noData"`
+	// Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+	Severity string `pulumi:"severity"`
+}
+
+// GetAlarmTriggerConditionInput is an input type that accepts GetAlarmTriggerConditionArgs and GetAlarmTriggerConditionOutput values.
+// You can construct a concrete instance of `GetAlarmTriggerConditionInput` via:
+//
+//	GetAlarmTriggerConditionArgs{...}
+type GetAlarmTriggerConditionInput interface {
+	pulumi.Input
+
+	ToGetAlarmTriggerConditionOutput() GetAlarmTriggerConditionOutput
+	ToGetAlarmTriggerConditionOutputWithContext(context.Context) GetAlarmTriggerConditionOutput
+}
+
+type GetAlarmTriggerConditionArgs struct {
+	// Alert trigger condition expression.
+	Condition pulumi.StringInput `pulumi:"condition"`
+	// Numerical expression for scenarios with data or specific entries, implemented using **count**.
+	CountCondition pulumi.StringInput `pulumi:"countCondition"`
+	// When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+	NoData pulumi.BoolInput `pulumi:"noData"`
+	// Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+	Severity pulumi.StringInput `pulumi:"severity"`
+}
+
+func (GetAlarmTriggerConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmTriggerCondition)(nil)).Elem()
+}
+
+func (i GetAlarmTriggerConditionArgs) ToGetAlarmTriggerConditionOutput() GetAlarmTriggerConditionOutput {
+	return i.ToGetAlarmTriggerConditionOutputWithContext(context.Background())
+}
+
+func (i GetAlarmTriggerConditionArgs) ToGetAlarmTriggerConditionOutputWithContext(ctx context.Context) GetAlarmTriggerConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmTriggerConditionOutput)
+}
+
+// GetAlarmTriggerConditionArrayInput is an input type that accepts GetAlarmTriggerConditionArray and GetAlarmTriggerConditionArrayOutput values.
+// You can construct a concrete instance of `GetAlarmTriggerConditionArrayInput` via:
+//
+//	GetAlarmTriggerConditionArray{ GetAlarmTriggerConditionArgs{...} }
+type GetAlarmTriggerConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmTriggerConditionArrayOutput() GetAlarmTriggerConditionArrayOutput
+	ToGetAlarmTriggerConditionArrayOutputWithContext(context.Context) GetAlarmTriggerConditionArrayOutput
+}
+
+type GetAlarmTriggerConditionArray []GetAlarmTriggerConditionInput
+
+func (GetAlarmTriggerConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmTriggerCondition)(nil)).Elem()
+}
+
+func (i GetAlarmTriggerConditionArray) ToGetAlarmTriggerConditionArrayOutput() GetAlarmTriggerConditionArrayOutput {
+	return i.ToGetAlarmTriggerConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmTriggerConditionArray) ToGetAlarmTriggerConditionArrayOutputWithContext(ctx context.Context) GetAlarmTriggerConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmTriggerConditionArrayOutput)
+}
+
+type GetAlarmTriggerConditionOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmTriggerConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmTriggerCondition)(nil)).Elem()
+}
+
+func (o GetAlarmTriggerConditionOutput) ToGetAlarmTriggerConditionOutput() GetAlarmTriggerConditionOutput {
+	return o
+}
+
+func (o GetAlarmTriggerConditionOutput) ToGetAlarmTriggerConditionOutputWithContext(ctx context.Context) GetAlarmTriggerConditionOutput {
+	return o
+}
+
+// Alert trigger condition expression.
+func (o GetAlarmTriggerConditionOutput) Condition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmTriggerCondition) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+// Numerical expression for scenarios with data or specific entries, implemented using **count**.
+func (o GetAlarmTriggerConditionOutput) CountCondition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmTriggerCondition) string { return v.CountCondition }).(pulumi.StringOutput)
+}
+
+// When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+func (o GetAlarmTriggerConditionOutput) NoData() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmTriggerCondition) bool { return v.NoData }).(pulumi.BoolOutput)
+}
+
+// Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+func (o GetAlarmTriggerConditionOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmTriggerCondition) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+type GetAlarmTriggerConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmTriggerConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmTriggerCondition)(nil)).Elem()
+}
+
+func (o GetAlarmTriggerConditionArrayOutput) ToGetAlarmTriggerConditionArrayOutput() GetAlarmTriggerConditionArrayOutput {
+	return o
+}
+
+func (o GetAlarmTriggerConditionArrayOutput) ToGetAlarmTriggerConditionArrayOutputWithContext(ctx context.Context) GetAlarmTriggerConditionArrayOutput {
+	return o
+}
+
+func (o GetAlarmTriggerConditionArrayOutput) Index(i pulumi.IntInput) GetAlarmTriggerConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmTriggerCondition {
+		return vs[0].([]GetAlarmTriggerCondition)[vs[1].(int)]
+	}).(GetAlarmTriggerConditionOutput)
 }
 
 type GetImportTaskImportSourceInfo struct {
@@ -15734,6 +18132,12 @@ func (o GetTopicTagArrayOutput) Index(i pulumi.IntInput) GetTopicTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmNotifyGroupInput)(nil)).Elem(), AlarmAlarmNotifyGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmNotifyGroupArrayInput)(nil)).Elem(), AlarmAlarmNotifyGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmPeriodDetailInput)(nil)).Elem(), AlarmAlarmPeriodDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmPeriodDetailPtrInput)(nil)).Elem(), AlarmAlarmPeriodDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmJoinConfigurationInput)(nil)).Elem(), AlarmJoinConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmJoinConfigurationArrayInput)(nil)).Elem(), AlarmJoinConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupNoticeRuleInput)(nil)).Elem(), AlarmNotifyGroupNoticeRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupNoticeRuleArrayInput)(nil)).Elem(), AlarmNotifyGroupNoticeRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupNoticeRuleReceiverInfoInput)(nil)).Elem(), AlarmNotifyGroupNoticeRuleReceiverInfoArgs{})
@@ -15744,6 +18148,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupReceiverArrayInput)(nil)).Elem(), AlarmNotifyGroupReceiverArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupReceiverGeneralWebhookHeaderInput)(nil)).Elem(), AlarmNotifyGroupReceiverGeneralWebhookHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput)(nil)).Elem(), AlarmNotifyGroupReceiverGeneralWebhookHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmQueryRequestInput)(nil)).Elem(), AlarmQueryRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmQueryRequestArrayInput)(nil)).Elem(), AlarmQueryRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmRequestCycleInput)(nil)).Elem(), AlarmRequestCycleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmRequestCyclePtrInput)(nil)).Elem(), AlarmRequestCycleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionInput)(nil)).Elem(), AlarmTriggerConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionArrayInput)(nil)).Elem(), AlarmTriggerConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoPtrInput)(nil)).Elem(), ImportTaskImportSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoKafkaSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoKafkaSourceInfoArgs{})
@@ -15844,6 +18254,21 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ShipperTosShipperInfoPtrInput)(nil)).Elem(), ShipperTosShipperInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagInput)(nil)).Elem(), TopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagArrayInput)(nil)).Elem(), TopicTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupNoticeRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupNoticeRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupReceiverArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupReceiverArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmPeriodDetailInput)(nil)).Elem(), GetAlarmAlarmPeriodDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmJoinConfigurationInput)(nil)).Elem(), GetAlarmJoinConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmJoinConfigurationArrayInput)(nil)).Elem(), GetAlarmJoinConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupNoticeRuleInput)(nil)).Elem(), GetAlarmNotifyGroupNoticeRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupNoticeRuleArrayInput)(nil)).Elem(), GetAlarmNotifyGroupNoticeRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupNoticeRuleReceiverInfoInput)(nil)).Elem(), GetAlarmNotifyGroupNoticeRuleReceiverInfoArgs{})
@@ -15854,6 +18279,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupReceiverArrayInput)(nil)).Elem(), GetAlarmNotifyGroupReceiverArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupReceiverGeneralWebhookHeaderInput)(nil)).Elem(), GetAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput)(nil)).Elem(), GetAlarmNotifyGroupReceiverGeneralWebhookHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmQueryRequestInput)(nil)).Elem(), GetAlarmQueryRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmQueryRequestArrayInput)(nil)).Elem(), GetAlarmQueryRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmRequestCycleInput)(nil)).Elem(), GetAlarmRequestCycleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionInput)(nil)).Elem(), GetAlarmTriggerConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionArrayInput)(nil)).Elem(), GetAlarmTriggerConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoKafkaSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoKafkaSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoTosSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoTosSourceInfoArgs{})
@@ -15926,6 +18356,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShipperTosShipperInfoInput)(nil)).Elem(), GetShipperTosShipperInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagInput)(nil)).Elem(), GetTopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagArrayInput)(nil)).Elem(), GetTopicTagArray{})
+	pulumi.RegisterOutputType(AlarmAlarmNotifyGroupOutput{})
+	pulumi.RegisterOutputType(AlarmAlarmNotifyGroupArrayOutput{})
+	pulumi.RegisterOutputType(AlarmAlarmPeriodDetailOutput{})
+	pulumi.RegisterOutputType(AlarmAlarmPeriodDetailPtrOutput{})
+	pulumi.RegisterOutputType(AlarmJoinConfigurationOutput{})
+	pulumi.RegisterOutputType(AlarmJoinConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(AlarmNotifyGroupNoticeRuleOutput{})
 	pulumi.RegisterOutputType(AlarmNotifyGroupNoticeRuleArrayOutput{})
 	pulumi.RegisterOutputType(AlarmNotifyGroupNoticeRuleReceiverInfoOutput{})
@@ -15936,6 +18372,12 @@ func init() {
 	pulumi.RegisterOutputType(AlarmNotifyGroupReceiverArrayOutput{})
 	pulumi.RegisterOutputType(AlarmNotifyGroupReceiverGeneralWebhookHeaderOutput{})
 	pulumi.RegisterOutputType(AlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput{})
+	pulumi.RegisterOutputType(AlarmQueryRequestOutput{})
+	pulumi.RegisterOutputType(AlarmQueryRequestArrayOutput{})
+	pulumi.RegisterOutputType(AlarmRequestCycleOutput{})
+	pulumi.RegisterOutputType(AlarmRequestCyclePtrOutput{})
+	pulumi.RegisterOutputType(AlarmTriggerConditionOutput{})
+	pulumi.RegisterOutputType(AlarmTriggerConditionArrayOutput{})
 	pulumi.RegisterOutputType(ImportTaskImportSourceInfoOutput{})
 	pulumi.RegisterOutputType(ImportTaskImportSourceInfoPtrOutput{})
 	pulumi.RegisterOutputType(ImportTaskImportSourceInfoKafkaSourceInfoOutput{})
@@ -16036,6 +18478,21 @@ func init() {
 	pulumi.RegisterOutputType(ShipperTosShipperInfoPtrOutput{})
 	pulumi.RegisterOutputType(TopicTagOutput{})
 	pulumi.RegisterOutputType(TopicTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupNoticeRuleOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupNoticeRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupReceiverOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupReceiverArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmAlarmPeriodDetailOutput{})
+	pulumi.RegisterOutputType(GetAlarmJoinConfigurationOutput{})
+	pulumi.RegisterOutputType(GetAlarmJoinConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupNoticeRuleOutput{})
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupNoticeRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupNoticeRuleReceiverInfoOutput{})
@@ -16046,6 +18503,11 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupReceiverArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput{})
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmQueryRequestOutput{})
+	pulumi.RegisterOutputType(GetAlarmQueryRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmRequestCycleOutput{})
+	pulumi.RegisterOutputType(GetAlarmTriggerConditionOutput{})
+	pulumi.RegisterOutputType(GetAlarmTriggerConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoOutput{})
 	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoKafkaSourceInfoOutput{})
 	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoTosSourceInfoOutput{})

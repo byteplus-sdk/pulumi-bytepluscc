@@ -17,11 +17,17 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AlarmAlarmNotifyGroup',
+    'AlarmAlarmPeriodDetail',
+    'AlarmJoinConfiguration',
     'AlarmNotifyGroupNoticeRule',
     'AlarmNotifyGroupNoticeRuleReceiverInfo',
     'AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader',
     'AlarmNotifyGroupReceiver',
     'AlarmNotifyGroupReceiverGeneralWebhookHeader',
+    'AlarmQueryRequest',
+    'AlarmRequestCycle',
+    'AlarmTriggerCondition',
     'ImportTaskImportSourceInfo',
     'ImportTaskImportSourceInfoKafkaSourceInfo',
     'ImportTaskImportSourceInfoTosSourceInfo',
@@ -72,11 +78,22 @@ __all__ = [
     'ShipperKafkaShipperInfo',
     'ShipperTosShipperInfo',
     'TopicTag',
+    'GetAlarmAlarmNotifyGroupResult',
+    'GetAlarmAlarmNotifyGroupNoticeRuleResult',
+    'GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoResult',
+    'GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderResult',
+    'GetAlarmAlarmNotifyGroupReceiverResult',
+    'GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderResult',
+    'GetAlarmAlarmPeriodDetailResult',
+    'GetAlarmJoinConfigurationResult',
     'GetAlarmNotifyGroupNoticeRuleResult',
     'GetAlarmNotifyGroupNoticeRuleReceiverInfoResult',
     'GetAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderResult',
     'GetAlarmNotifyGroupReceiverResult',
     'GetAlarmNotifyGroupReceiverGeneralWebhookHeaderResult',
+    'GetAlarmQueryRequestResult',
+    'GetAlarmRequestCycleResult',
+    'GetAlarmTriggerConditionResult',
     'GetImportTaskImportSourceInfoResult',
     'GetImportTaskImportSourceInfoKafkaSourceInfoResult',
     'GetImportTaskImportSourceInfoTosSourceInfoResult',
@@ -128,6 +145,162 @@ __all__ = [
     'GetShipperTosShipperInfoResult',
     'GetTopicTagResult',
 ]
+
+@pulumi.output_type
+class AlarmAlarmNotifyGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "alarmNotifyGroupId":
+            suggest = "alarm_notify_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlarmAlarmNotifyGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlarmAlarmNotifyGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlarmAlarmNotifyGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 alarm_notify_group_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str alarm_notify_group_id: Alert notification group ID.
+        """
+        if alarm_notify_group_id is not None:
+            pulumi.set(__self__, "alarm_notify_group_id", alarm_notify_group_id)
+
+    @property
+    @pulumi.getter(name="alarmNotifyGroupId")
+    def alarm_notify_group_id(self) -> Optional[builtins.str]:
+        """
+        Alert notification group ID.
+        """
+        return pulumi.get(self, "alarm_notify_group_id")
+
+
+@pulumi.output_type
+class AlarmAlarmPeriodDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "generalWebhook":
+            suggest = "general_webhook"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlarmAlarmPeriodDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlarmAlarmPeriodDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlarmAlarmPeriodDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 email: Optional[builtins.int] = None,
+                 general_webhook: Optional[builtins.int] = None,
+                 phone: Optional[builtins.int] = None,
+                 sms: Optional[builtins.int] = None):
+        """
+        :param builtins.int email: Email alert interval, in minutes. Value range: 1–1440
+        :param builtins.int general_webhook: Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        :param builtins.int phone: Phone alert cycle, in minutes. Value range: 10–1440.
+        :param builtins.int sms: SMS alert interval, in minutes. Value range: 10–1440
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if general_webhook is not None:
+            pulumi.set(__self__, "general_webhook", general_webhook)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
+        if sms is not None:
+            pulumi.set(__self__, "sms", sms)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[builtins.int]:
+        """
+        Email alert interval, in minutes. Value range: 1–1440
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="generalWebhook")
+    def general_webhook(self) -> Optional[builtins.int]:
+        """
+        Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        """
+        return pulumi.get(self, "general_webhook")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> Optional[builtins.int]:
+        """
+        Phone alert cycle, in minutes. Value range: 10–1440.
+        """
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter
+    def sms(self) -> Optional[builtins.int]:
+        """
+        SMS alert interval, in minutes. Value range: 10–1440
+        """
+        return pulumi.get(self, "sms")
+
+
+@pulumi.output_type
+class AlarmJoinConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "setOperationType":
+            suggest = "set_operation_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlarmJoinConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlarmJoinConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlarmJoinConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional[builtins.str] = None,
+                 set_operation_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str condition: Expression used for left join or right join.
+        :param builtins.str set_operation_type: Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if set_operation_type is not None:
+            pulumi.set(__self__, "set_operation_type", set_operation_type)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[builtins.str]:
+        """
+        Expression used for left join or right join.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="setOperationType")
+    def set_operation_type(self) -> Optional[builtins.str]:
+        """
+        Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+        return pulumi.get(self, "set_operation_type")
+
 
 @pulumi.output_type
 class AlarmNotifyGroupNoticeRule(dict):
@@ -719,6 +892,300 @@ class AlarmNotifyGroupReceiverGeneralWebhookHeader(dict):
         Custom request header value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AlarmQueryRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endTimeOffset":
+            suggest = "end_time_offset"
+        elif key == "endTimeOffsetUnit":
+            suggest = "end_time_offset_unit"
+        elif key == "startTimeOffset":
+            suggest = "start_time_offset"
+        elif key == "startTimeOffsetUnit":
+            suggest = "start_time_offset_unit"
+        elif key == "timeSpanType":
+            suggest = "time_span_type"
+        elif key == "topicId":
+            suggest = "topic_id"
+        elif key == "topicName":
+            suggest = "topic_name"
+        elif key == "truncatedTime":
+            suggest = "truncated_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlarmQueryRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlarmQueryRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlarmQueryRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_time_offset: Optional[builtins.int] = None,
+                 end_time_offset_unit: Optional[builtins.str] = None,
+                 query: Optional[builtins.str] = None,
+                 start_time_offset: Optional[builtins.int] = None,
+                 start_time_offset_unit: Optional[builtins.str] = None,
+                 time_span_type: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None,
+                 topic_name: Optional[builtins.str] = None,
+                 truncated_time: Optional[builtins.str] = None):
+        """
+        :param builtins.int end_time_offset: Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        :param builtins.str end_time_offset_unit: Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        :param builtins.str query: Query analysis statement, with a maximum supported length of 1024 characters.
+        :param builtins.int start_time_offset: Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        :param builtins.str start_time_offset_unit: Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        :param builtins.str time_span_type: Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        :param builtins.str topic_id: Log topic ID monitored by the alert policy.
+        :param builtins.str topic_name: Name of the log topic monitored by the alert policy.
+        :param builtins.str truncated_time: Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+        if end_time_offset is not None:
+            pulumi.set(__self__, "end_time_offset", end_time_offset)
+        if end_time_offset_unit is not None:
+            pulumi.set(__self__, "end_time_offset_unit", end_time_offset_unit)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if start_time_offset is not None:
+            pulumi.set(__self__, "start_time_offset", start_time_offset)
+        if start_time_offset_unit is not None:
+            pulumi.set(__self__, "start_time_offset_unit", start_time_offset_unit)
+        if time_span_type is not None:
+            pulumi.set(__self__, "time_span_type", time_span_type)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+        if topic_name is not None:
+            pulumi.set(__self__, "topic_name", topic_name)
+        if truncated_time is not None:
+            pulumi.set(__self__, "truncated_time", truncated_time)
+
+    @property
+    @pulumi.getter(name="endTimeOffset")
+    def end_time_offset(self) -> Optional[builtins.int]:
+        """
+        Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        """
+        return pulumi.get(self, "end_time_offset")
+
+    @property
+    @pulumi.getter(name="endTimeOffsetUnit")
+    def end_time_offset_unit(self) -> Optional[builtins.str]:
+        """
+        Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "end_time_offset_unit")
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[builtins.str]:
+        """
+        Query analysis statement, with a maximum supported length of 1024 characters.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="startTimeOffset")
+    def start_time_offset(self) -> Optional[builtins.int]:
+        """
+        Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        """
+        return pulumi.get(self, "start_time_offset")
+
+    @property
+    @pulumi.getter(name="startTimeOffsetUnit")
+    def start_time_offset_unit(self) -> Optional[builtins.str]:
+        """
+        Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "start_time_offset_unit")
+
+    @property
+    @pulumi.getter(name="timeSpanType")
+    def time_span_type(self) -> Optional[builtins.str]:
+        """
+        Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        """
+        return pulumi.get(self, "time_span_type")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        Log topic ID monitored by the alert policy.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> Optional[builtins.str]:
+        """
+        Name of the log topic monitored by the alert policy.
+        """
+        return pulumi.get(self, "topic_name")
+
+    @property
+    @pulumi.getter(name="truncatedTime")
+    def truncated_time(self) -> Optional[builtins.str]:
+        """
+        Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "truncated_time")
+
+
+@pulumi.output_type
+class AlarmRequestCycle(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cronTab":
+            suggest = "cron_tab"
+        elif key == "cronTimeZone":
+            suggest = "cron_time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlarmRequestCycle. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlarmRequestCycle.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlarmRequestCycle.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cron_tab: Optional[builtins.str] = None,
+                 cron_time_zone: Optional[builtins.str] = None,
+                 time: Optional[builtins.int] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str cron_tab: Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        :param builtins.str cron_time_zone: Time zone in which the Cron expression takes effect.
+        :param builtins.int time: Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        :param builtins.str type: Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+        if cron_tab is not None:
+            pulumi.set(__self__, "cron_tab", cron_tab)
+        if cron_time_zone is not None:
+            pulumi.set(__self__, "cron_time_zone", cron_time_zone)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="cronTab")
+    def cron_tab(self) -> Optional[builtins.str]:
+        """
+        Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        """
+        return pulumi.get(self, "cron_tab")
+
+    @property
+    @pulumi.getter(name="cronTimeZone")
+    def cron_time_zone(self) -> Optional[builtins.str]:
+        """
+        Time zone in which the Cron expression takes effect.
+        """
+        return pulumi.get(self, "cron_time_zone")
+
+    @property
+    @pulumi.getter
+    def time(self) -> Optional[builtins.int]:
+        """
+        Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        """
+        return pulumi.get(self, "time")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class AlarmTriggerCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "countCondition":
+            suggest = "count_condition"
+        elif key == "noData":
+            suggest = "no_data"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlarmTriggerCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlarmTriggerCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlarmTriggerCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional[builtins.str] = None,
+                 count_condition: Optional[builtins.str] = None,
+                 no_data: Optional[builtins.bool] = None,
+                 severity: Optional[builtins.str] = None):
+        """
+        :param builtins.str condition: Alert trigger condition expression.
+        :param builtins.str count_condition: Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        :param builtins.bool no_data: When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        :param builtins.str severity: Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if count_condition is not None:
+            pulumi.set(__self__, "count_condition", count_condition)
+        if no_data is not None:
+            pulumi.set(__self__, "no_data", no_data)
+        if severity is not None:
+            pulumi.set(__self__, "severity", severity)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[builtins.str]:
+        """
+        Alert trigger condition expression.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="countCondition")
+    def count_condition(self) -> Optional[builtins.str]:
+        """
+        Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        """
+        return pulumi.get(self, "count_condition")
+
+    @property
+    @pulumi.getter(name="noData")
+    def no_data(self) -> Optional[builtins.bool]:
+        """
+        When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        """
+        return pulumi.get(self, "no_data")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> Optional[builtins.str]:
+        """
+        Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+        return pulumi.get(self, "severity")
 
 
 @pulumi.output_type
@@ -4229,6 +4696,634 @@ class TopicTag(dict):
 
 
 @pulumi.output_type
+class GetAlarmAlarmNotifyGroupResult(dict):
+    def __init__(__self__, *,
+                 alarm_notify_group_id: builtins.str,
+                 alarm_notify_group_name: builtins.str,
+                 create_time: builtins.str,
+                 iam_project_name: builtins.str,
+                 modify_time: builtins.str,
+                 notice_rules: Sequence['outputs.GetAlarmAlarmNotifyGroupNoticeRuleResult'],
+                 notify_types: Sequence[builtins.str],
+                 receivers: Sequence['outputs.GetAlarmAlarmNotifyGroupReceiverResult']):
+        """
+        :param builtins.str alarm_notify_group_id: Alert notification group ID.
+        :param builtins.str alarm_notify_group_name: Alert notification group name.
+        :param builtins.str create_time: Alert notification group creation time.
+        :param builtins.str iam_project_name: IAM project to which the alert group belongs.
+        :param builtins.str modify_time: Time when the alert notification group was modified.
+        :param Sequence['GetAlarmAlarmNotifyGroupNoticeRuleArgs'] notice_rules: Notification group rule
+        :param Sequence[builtins.str] notify_types: Type of alert notification. Optional values, select one or more: Trigger   - when an alert is triggered. Recovery   - when an alert is recovered.
+        :param Sequence['GetAlarmAlarmNotifyGroupReceiverArgs'] receivers: List of IAM users who receive alerts.
+        """
+        pulumi.set(__self__, "alarm_notify_group_id", alarm_notify_group_id)
+        pulumi.set(__self__, "alarm_notify_group_name", alarm_notify_group_name)
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "iam_project_name", iam_project_name)
+        pulumi.set(__self__, "modify_time", modify_time)
+        pulumi.set(__self__, "notice_rules", notice_rules)
+        pulumi.set(__self__, "notify_types", notify_types)
+        pulumi.set(__self__, "receivers", receivers)
+
+    @property
+    @pulumi.getter(name="alarmNotifyGroupId")
+    def alarm_notify_group_id(self) -> builtins.str:
+        """
+        Alert notification group ID.
+        """
+        return pulumi.get(self, "alarm_notify_group_id")
+
+    @property
+    @pulumi.getter(name="alarmNotifyGroupName")
+    def alarm_notify_group_name(self) -> builtins.str:
+        """
+        Alert notification group name.
+        """
+        return pulumi.get(self, "alarm_notify_group_name")
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        Alert notification group creation time.
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="iamProjectName")
+    def iam_project_name(self) -> builtins.str:
+        """
+        IAM project to which the alert group belongs.
+        """
+        return pulumi.get(self, "iam_project_name")
+
+    @property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> builtins.str:
+        """
+        Time when the alert notification group was modified.
+        """
+        return pulumi.get(self, "modify_time")
+
+    @property
+    @pulumi.getter(name="noticeRules")
+    def notice_rules(self) -> Sequence['outputs.GetAlarmAlarmNotifyGroupNoticeRuleResult']:
+        """
+        Notification group rule
+        """
+        return pulumi.get(self, "notice_rules")
+
+    @property
+    @pulumi.getter(name="notifyTypes")
+    def notify_types(self) -> Sequence[builtins.str]:
+        """
+        Type of alert notification. Optional values, select one or more: Trigger   - when an alert is triggered. Recovery   - when an alert is recovered.
+        """
+        return pulumi.get(self, "notify_types")
+
+    @property
+    @pulumi.getter
+    def receivers(self) -> Sequence['outputs.GetAlarmAlarmNotifyGroupReceiverResult']:
+        """
+        List of IAM users who receive alerts.
+        """
+        return pulumi.get(self, "receivers")
+
+
+@pulumi.output_type
+class GetAlarmAlarmNotifyGroupNoticeRuleResult(dict):
+    def __init__(__self__, *,
+                 has_end_node: builtins.bool,
+                 has_next: builtins.bool,
+                 receiver_infos: Sequence['outputs.GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoResult'],
+                 rule_node: builtins.str):
+        """
+        :param builtins.bool has_end_node: Whether a subsequent end node exists.
+        :param builtins.bool has_next: Whether to continue to the next level of condition evaluation
+        :param Sequence['GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoArgs'] receiver_infos: Notification group rule
+        :param builtins.str rule_node: Rule node, in JSON format.
+        """
+        pulumi.set(__self__, "has_end_node", has_end_node)
+        pulumi.set(__self__, "has_next", has_next)
+        pulumi.set(__self__, "receiver_infos", receiver_infos)
+        pulumi.set(__self__, "rule_node", rule_node)
+
+    @property
+    @pulumi.getter(name="hasEndNode")
+    def has_end_node(self) -> builtins.bool:
+        """
+        Whether a subsequent end node exists.
+        """
+        return pulumi.get(self, "has_end_node")
+
+    @property
+    @pulumi.getter(name="hasNext")
+    def has_next(self) -> builtins.bool:
+        """
+        Whether to continue to the next level of condition evaluation
+        """
+        return pulumi.get(self, "has_next")
+
+    @property
+    @pulumi.getter(name="receiverInfos")
+    def receiver_infos(self) -> Sequence['outputs.GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoResult']:
+        """
+        Notification group rule
+        """
+        return pulumi.get(self, "receiver_infos")
+
+    @property
+    @pulumi.getter(name="ruleNode")
+    def rule_node(self) -> builtins.str:
+        """
+        Rule node, in JSON format.
+        """
+        return pulumi.get(self, "rule_node")
+
+
+@pulumi.output_type
+class GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoResult(dict):
+    def __init__(__self__, *,
+                 alarm_content_template_id: builtins.str,
+                 alarm_webhook_at_groups: Sequence[builtins.str],
+                 alarm_webhook_at_users: Sequence[builtins.str],
+                 alarm_webhook_integration_id: builtins.str,
+                 alarm_webhook_integration_name: builtins.str,
+                 alarm_webhook_is_at_all: builtins.bool,
+                 end_time: builtins.str,
+                 general_webhook_body: builtins.str,
+                 general_webhook_headers: Sequence['outputs.GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderResult'],
+                 general_webhook_method: builtins.str,
+                 general_webhook_url: builtins.str,
+                 receiver_channels: Sequence[builtins.str],
+                 receiver_names: Sequence[builtins.str],
+                 receiver_type: builtins.str,
+                 start_time: builtins.str):
+        """
+        :param builtins.str alarm_content_template_id: Alert content template ID.
+        :param Sequence[builtins.str] alarm_webhook_at_groups: Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+        :param Sequence[builtins.str] alarm_webhook_at_users: Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+        :param builtins.str alarm_webhook_integration_id: ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        :param builtins.str alarm_webhook_integration_name: Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        :param builtins.bool alarm_webhook_is_at_all: Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+        :param builtins.str end_time: End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+        :param builtins.str general_webhook_body: Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+        :param Sequence['GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs'] general_webhook_headers: Custom interface callback request header.
+        :param builtins.str general_webhook_method: Custom interface callback method. Only POST or PUT is supported.
+        :param builtins.str general_webhook_url: Custom callback URL for the interface
+        :param Sequence[builtins.str] receiver_channels: Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+        :param Sequence[builtins.str] receiver_names: IAM user or user group name
+        :param builtins.str receiver_type: Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+        :param builtins.str start_time: Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+        """
+        pulumi.set(__self__, "alarm_content_template_id", alarm_content_template_id)
+        pulumi.set(__self__, "alarm_webhook_at_groups", alarm_webhook_at_groups)
+        pulumi.set(__self__, "alarm_webhook_at_users", alarm_webhook_at_users)
+        pulumi.set(__self__, "alarm_webhook_integration_id", alarm_webhook_integration_id)
+        pulumi.set(__self__, "alarm_webhook_integration_name", alarm_webhook_integration_name)
+        pulumi.set(__self__, "alarm_webhook_is_at_all", alarm_webhook_is_at_all)
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "general_webhook_body", general_webhook_body)
+        pulumi.set(__self__, "general_webhook_headers", general_webhook_headers)
+        pulumi.set(__self__, "general_webhook_method", general_webhook_method)
+        pulumi.set(__self__, "general_webhook_url", general_webhook_url)
+        pulumi.set(__self__, "receiver_channels", receiver_channels)
+        pulumi.set(__self__, "receiver_names", receiver_names)
+        pulumi.set(__self__, "receiver_type", receiver_type)
+        pulumi.set(__self__, "start_time", start_time)
+
+    @property
+    @pulumi.getter(name="alarmContentTemplateId")
+    def alarm_content_template_id(self) -> builtins.str:
+        """
+        Alert content template ID.
+        """
+        return pulumi.get(self, "alarm_content_template_id")
+
+    @property
+    @pulumi.getter(name="alarmWebhookAtGroups")
+    def alarm_webhook_at_groups(self) -> Sequence[builtins.str]:
+        """
+        Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+        """
+        return pulumi.get(self, "alarm_webhook_at_groups")
+
+    @property
+    @pulumi.getter(name="alarmWebhookAtUsers")
+    def alarm_webhook_at_users(self) -> Sequence[builtins.str]:
+        """
+        Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+        """
+        return pulumi.get(self, "alarm_webhook_at_users")
+
+    @property
+    @pulumi.getter(name="alarmWebhookIntegrationId")
+    def alarm_webhook_integration_id(self) -> builtins.str:
+        """
+        ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        """
+        return pulumi.get(self, "alarm_webhook_integration_id")
+
+    @property
+    @pulumi.getter(name="alarmWebhookIntegrationName")
+    def alarm_webhook_integration_name(self) -> builtins.str:
+        """
+        Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        """
+        return pulumi.get(self, "alarm_webhook_integration_name")
+
+    @property
+    @pulumi.getter(name="alarmWebhookIsAtAll")
+    def alarm_webhook_is_at_all(self) -> builtins.bool:
+        """
+        Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+        """
+        return pulumi.get(self, "alarm_webhook_is_at_all")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> builtins.str:
+        """
+        End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="generalWebhookBody")
+    def general_webhook_body(self) -> builtins.str:
+        """
+        Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+        """
+        return pulumi.get(self, "general_webhook_body")
+
+    @property
+    @pulumi.getter(name="generalWebhookHeaders")
+    def general_webhook_headers(self) -> Sequence['outputs.GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderResult']:
+        """
+        Custom interface callback request header.
+        """
+        return pulumi.get(self, "general_webhook_headers")
+
+    @property
+    @pulumi.getter(name="generalWebhookMethod")
+    def general_webhook_method(self) -> builtins.str:
+        """
+        Custom interface callback method. Only POST or PUT is supported.
+        """
+        return pulumi.get(self, "general_webhook_method")
+
+    @property
+    @pulumi.getter(name="generalWebhookUrl")
+    def general_webhook_url(self) -> builtins.str:
+        """
+        Custom callback URL for the interface
+        """
+        return pulumi.get(self, "general_webhook_url")
+
+    @property
+    @pulumi.getter(name="receiverChannels")
+    def receiver_channels(self) -> Sequence[builtins.str]:
+        """
+        Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+        """
+        return pulumi.get(self, "receiver_channels")
+
+    @property
+    @pulumi.getter(name="receiverNames")
+    def receiver_names(self) -> Sequence[builtins.str]:
+        """
+        IAM user or user group name
+        """
+        return pulumi.get(self, "receiver_names")
+
+    @property
+    @pulumi.getter(name="receiverType")
+    def receiver_type(self) -> builtins.str:
+        """
+        Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+        """
+        return pulumi.get(self, "receiver_type")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> builtins.str:
+        """
+        Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+        """
+        return pulumi.get(self, "start_time")
+
+
+@pulumi.output_type
+class GetAlarmAlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Key of the custom request header.
+        :param builtins.str value: Value of the custom request header.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key of the custom request header.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Value of the custom request header.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAlarmAlarmNotifyGroupReceiverResult(dict):
+    def __init__(__self__, *,
+                 alarm_content_template_id: builtins.str,
+                 alarm_webhook_at_groups: Sequence[builtins.str],
+                 alarm_webhook_at_users: Sequence[builtins.str],
+                 alarm_webhook_integration_id: builtins.str,
+                 alarm_webhook_integration_name: builtins.str,
+                 alarm_webhook_is_at_all: builtins.bool,
+                 end_time: builtins.str,
+                 general_webhook_body: builtins.str,
+                 general_webhook_headers: Sequence['outputs.GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderResult'],
+                 general_webhook_method: builtins.str,
+                 general_webhook_url: builtins.str,
+                 receiver_channels: Sequence[builtins.str],
+                 receiver_names: Sequence[builtins.str],
+                 receiver_type: builtins.str,
+                 start_time: builtins.str):
+        """
+        :param builtins.str alarm_content_template_id: Alert content template ID.
+        :param Sequence[builtins.str] alarm_webhook_at_groups: Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+        :param Sequence[builtins.str] alarm_webhook_at_users: Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+        :param builtins.str alarm_webhook_integration_id: ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        :param builtins.str alarm_webhook_integration_name: Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        :param builtins.bool alarm_webhook_is_at_all: Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+        :param builtins.str end_time: End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+        :param builtins.str general_webhook_body: Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+        :param Sequence['GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs'] general_webhook_headers: Custom interface callback request header.
+        :param builtins.str general_webhook_method: Custom interface callback method. Only POST or PUT is supported.
+        :param builtins.str general_webhook_url: Custom callback URL for the interface
+        :param Sequence[builtins.str] receiver_channels: Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+        :param Sequence[builtins.str] receiver_names: IAM user or user group name
+        :param builtins.str receiver_type: Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+        :param builtins.str start_time: Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+        """
+        pulumi.set(__self__, "alarm_content_template_id", alarm_content_template_id)
+        pulumi.set(__self__, "alarm_webhook_at_groups", alarm_webhook_at_groups)
+        pulumi.set(__self__, "alarm_webhook_at_users", alarm_webhook_at_users)
+        pulumi.set(__self__, "alarm_webhook_integration_id", alarm_webhook_integration_id)
+        pulumi.set(__self__, "alarm_webhook_integration_name", alarm_webhook_integration_name)
+        pulumi.set(__self__, "alarm_webhook_is_at_all", alarm_webhook_is_at_all)
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "general_webhook_body", general_webhook_body)
+        pulumi.set(__self__, "general_webhook_headers", general_webhook_headers)
+        pulumi.set(__self__, "general_webhook_method", general_webhook_method)
+        pulumi.set(__self__, "general_webhook_url", general_webhook_url)
+        pulumi.set(__self__, "receiver_channels", receiver_channels)
+        pulumi.set(__self__, "receiver_names", receiver_names)
+        pulumi.set(__self__, "receiver_type", receiver_type)
+        pulumi.set(__self__, "start_time", start_time)
+
+    @property
+    @pulumi.getter(name="alarmContentTemplateId")
+    def alarm_content_template_id(self) -> builtins.str:
+        """
+        Alert content template ID.
+        """
+        return pulumi.get(self, "alarm_content_template_id")
+
+    @property
+    @pulumi.getter(name="alarmWebhookAtGroups")
+    def alarm_webhook_at_groups(self) -> Sequence[builtins.str]:
+        """
+        Name of the user group to be notified when sending notifications to 飞书, DingTalk, or WeCom via Webhook integration configuration.
+        """
+        return pulumi.get(self, "alarm_webhook_at_groups")
+
+    @property
+    @pulumi.getter(name="alarmWebhookAtUsers")
+    def alarm_webhook_at_users(self) -> Sequence[builtins.str]:
+        """
+        Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration.
+        """
+        return pulumi.get(self, "alarm_webhook_at_users")
+
+    @property
+    @pulumi.getter(name="alarmWebhookIntegrationId")
+    def alarm_webhook_integration_id(self) -> builtins.str:
+        """
+        ID of the alert Webhook integration configuration. When you configure parameters starting with AlarmWebhook, it means you choose to manage the Webhook address using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        """
+        return pulumi.get(self, "alarm_webhook_integration_id")
+
+    @property
+    @pulumi.getter(name="alarmWebhookIntegrationName")
+    def alarm_webhook_integration_name(self) -> builtins.str:
+        """
+        Name of the alert Webhook integration configuration. When parameters starting with AlarmWebhook are configured, it means you choose to manage Webhook addresses using the Webhook integration configuration. In this case, leave parameters starting with GeneralWebhook empty; no configuration is required.
+        """
+        return pulumi.get(self, "alarm_webhook_integration_name")
+
+    @property
+    @pulumi.getter(name="alarmWebhookIsAtAll")
+    def alarm_webhook_is_at_all(self) -> builtins.bool:
+        """
+        Whether to notify all users when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration configuration. true: notify all users. false: do not notify all users.
+        """
+        return pulumi.get(self, "alarm_webhook_is_at_all")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> builtins.str:
+        """
+        End time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="generalWebhookBody")
+    def general_webhook_body(self) -> builtins.str:
+        """
+        Custom WebHook request body. It is recommended to set the request body content according to the callback interface format requirements of the corresponding service.
+        """
+        return pulumi.get(self, "general_webhook_body")
+
+    @property
+    @pulumi.getter(name="generalWebhookHeaders")
+    def general_webhook_headers(self) -> Sequence['outputs.GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderResult']:
+        """
+        Custom interface callback request header.
+        """
+        return pulumi.get(self, "general_webhook_headers")
+
+    @property
+    @pulumi.getter(name="generalWebhookMethod")
+    def general_webhook_method(self) -> builtins.str:
+        """
+        Custom interface callback method. Only POST or PUT is supported.
+        """
+        return pulumi.get(self, "general_webhook_method")
+
+    @property
+    @pulumi.getter(name="generalWebhookUrl")
+    def general_webhook_url(self) -> builtins.str:
+        """
+        Custom callback URL for the interface
+        """
+        return pulumi.get(self, "general_webhook_url")
+
+    @property
+    @pulumi.getter(name="receiverChannels")
+    def receiver_channels(self) -> Sequence[builtins.str]:
+        """
+        Notification receiving channels. You can set one or more channels. Options: Email: Email. Sms: SMS. Phone: Phone call. GeneralWebhook: Custom Webhook address. 飞书: 飞书. DingTalk: DingTalk. WeCom: WeCom.
+        """
+        return pulumi.get(self, "receiver_channels")
+
+    @property
+    @pulumi.getter(name="receiverNames")
+    def receiver_names(self) -> Sequence[builtins.str]:
+        """
+        IAM user or user group name
+        """
+        return pulumi.get(self, "receiver_names")
+
+    @property
+    @pulumi.getter(name="receiverType")
+    def receiver_type(self) -> builtins.str:
+        """
+        Recipient type. Options: User: IAM user. UserGroup: IAM user group.
+        """
+        return pulumi.get(self, "receiver_type")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> builtins.str:
+        """
+        Start time for receiving alert notifications. 24-hour format, HH:mm:ss, range: 00:00:00–23:59:59. StartTime cannot be later than EndTime.
+        """
+        return pulumi.get(self, "start_time")
+
+
+@pulumi.output_type
+class GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Key of the custom request header.
+        :param builtins.str value: Value of the custom request header.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key of the custom request header.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Value of the custom request header.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAlarmAlarmPeriodDetailResult(dict):
+    def __init__(__self__, *,
+                 email: builtins.int,
+                 general_webhook: builtins.int,
+                 phone: builtins.int,
+                 sms: builtins.int):
+        """
+        :param builtins.int email: Email alert interval, in minutes. Value range: 1–1440
+        :param builtins.int general_webhook: Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        :param builtins.int phone: Phone alert cycle, in minutes. Value range: 10–1440.
+        :param builtins.int sms: SMS alert interval, in minutes. Value range: 10–1440
+        """
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "general_webhook", general_webhook)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "sms", sms)
+
+    @property
+    @pulumi.getter
+    def email(self) -> builtins.int:
+        """
+        Email alert interval, in minutes. Value range: 1–1440
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="generalWebhook")
+    def general_webhook(self) -> builtins.int:
+        """
+        Custom Webhook alert interval, in minutes. Value range: 1–1440.
+        """
+        return pulumi.get(self, "general_webhook")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> builtins.int:
+        """
+        Phone alert cycle, in minutes. Value range: 10–1440.
+        """
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter
+    def sms(self) -> builtins.int:
+        """
+        SMS alert interval, in minutes. Value range: 10–1440
+        """
+        return pulumi.get(self, "sms")
+
+
+@pulumi.output_type
+class GetAlarmJoinConfigurationResult(dict):
+    def __init__(__self__, *,
+                 condition: builtins.str,
+                 set_operation_type: builtins.str):
+        """
+        :param builtins.str condition: Expression used for left join or right join.
+        :param builtins.str set_operation_type: Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "set_operation_type", set_operation_type)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> builtins.str:
+        """
+        Expression used for left join or right join.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="setOperationType")
+    def set_operation_type(self) -> builtins.str:
+        """
+        Set operation type. Optional values: CrossJoin: Cartesian product. LeftJoin: Left join. RightJoin: Right join. InnerJoin: Inner join. FullJoin: Full join.
+        """
+        return pulumi.get(self, "set_operation_type")
+
+
+@pulumi.output_type
 class GetAlarmNotifyGroupNoticeRuleResult(dict):
     def __init__(__self__, *,
                  has_end_node: builtins.bool,
@@ -4679,6 +5774,225 @@ class GetAlarmNotifyGroupReceiverGeneralWebhookHeaderResult(dict):
         Custom request header value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAlarmQueryRequestResult(dict):
+    def __init__(__self__, *,
+                 end_time_offset: builtins.int,
+                 end_time_offset_unit: builtins.str,
+                 number: builtins.int,
+                 query: builtins.str,
+                 start_time_offset: builtins.int,
+                 start_time_offset_unit: builtins.str,
+                 time_span_type: builtins.str,
+                 topic_id: builtins.str,
+                 topic_name: builtins.str,
+                 truncated_time: builtins.str):
+        """
+        :param builtins.int end_time_offset: Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        :param builtins.str end_time_offset_unit: Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        :param builtins.int number: Alert object sequence number, starting from 1 and incrementing by 1
+        :param builtins.str query: Query analysis statement, with a maximum supported length of 1024 characters.
+        :param builtins.int start_time_offset: Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        :param builtins.str start_time_offset_unit: Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        :param builtins.str time_span_type: Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        :param builtins.str topic_id: Log topic ID monitored by the alert policy.
+        :param builtins.str topic_name: Name of the log topic monitored by the alert policy.
+        :param builtins.str truncated_time: Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+        pulumi.set(__self__, "end_time_offset", end_time_offset)
+        pulumi.set(__self__, "end_time_offset_unit", end_time_offset_unit)
+        pulumi.set(__self__, "number", number)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "start_time_offset", start_time_offset)
+        pulumi.set(__self__, "start_time_offset_unit", start_time_offset_unit)
+        pulumi.set(__self__, "time_span_type", time_span_type)
+        pulumi.set(__self__, "topic_id", topic_id)
+        pulumi.set(__self__, "topic_name", topic_name)
+        pulumi.set(__self__, "truncated_time", truncated_time)
+
+    @property
+    @pulumi.getter(name="endTimeOffset")
+    def end_time_offset(self) -> builtins.int:
+        """
+        Query end time, relative to the current time, in minutes. Value must be a non-positive integer and greater than StartTimeOffset. Maximum: 0, minimum: -1440
+        """
+        return pulumi.get(self, "end_time_offset")
+
+    @property
+    @pulumi.getter(name="endTimeOffsetUnit")
+    def end_time_offset_unit(self) -> builtins.str:
+        """
+        Unit for the end time range of the query. Default is minutes. Supports second/minute/hour (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "end_time_offset_unit")
+
+    @property
+    @pulumi.getter
+    def number(self) -> builtins.int:
+        """
+        Alert object sequence number, starting from 1 and incrementing by 1
+        """
+        return pulumi.get(self, "number")
+
+    @property
+    @pulumi.getter
+    def query(self) -> builtins.str:
+        """
+        Query analysis statement, with a maximum supported length of 1024 characters.
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="startTimeOffset")
+    def start_time_offset(self) -> builtins.int:
+        """
+        Query start time, relative to the current time, in minutes. Value must be a non-positive integer. Maximum: 0, minimum: -1440
+        """
+        return pulumi.get(self, "start_time_offset")
+
+    @property
+    @pulumi.getter(name="startTimeOffsetUnit")
+    def start_time_offset_unit(self) -> builtins.str:
+        """
+        Unit for the query start time range. The default is minutes. Supports seconds/minutes/hours (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "start_time_offset_unit")
+
+    @property
+    @pulumi.getter(name="timeSpanType")
+    def time_span_type(self) -> builtins.str:
+        """
+        Whether to use on-the-hour time for the query. If left blank, defaults to Relative.
+        """
+        return pulumi.get(self, "time_span_type")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        Log topic ID monitored by the alert policy.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> builtins.str:
+        """
+        Name of the log topic monitored by the alert policy.
+        """
+        return pulumi.get(self, "topic_name")
+
+    @property
+    @pulumi.getter(name="truncatedTime")
+    def truncated_time(self) -> builtins.str:
+        """
+        Round time values, i.e., round to the nearest minute or hour (Second, Minute, Hour).
+        """
+        return pulumi.get(self, "truncated_time")
+
+
+@pulumi.output_type
+class GetAlarmRequestCycleResult(dict):
+    def __init__(__self__, *,
+                 cron_tab: builtins.str,
+                 cron_time_zone: builtins.str,
+                 time: builtins.int,
+                 type: builtins.str):
+        """
+        :param builtins.str cron_tab: Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        :param builtins.str cron_time_zone: Time zone in which the Cron expression takes effect.
+        :param builtins.int time: Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        :param builtins.str type: Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+        pulumi.set(__self__, "cron_tab", cron_tab)
+        pulumi.set(__self__, "cron_time_zone", cron_time_zone)
+        pulumi.set(__self__, "time", time)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="cronTab")
+    def cron_tab(self) -> builtins.str:
+        """
+        Cron expression. Log Service uses a Cron expression to specify the scheduled execution of alert tasks. The minimum granularity is one minute, using a 24-hour format. For example, 0 18 * * * means the alert task runs once daily at 18:00.
+        """
+        return pulumi.get(self, "cron_tab")
+
+    @property
+    @pulumi.getter(name="cronTimeZone")
+    def cron_time_zone(self) -> builtins.str:
+        """
+        Time zone in which the Cron expression takes effect.
+        """
+        return pulumi.get(self, "cron_time_zone")
+
+    @property
+    @pulumi.getter
+    def time(self) -> builtins.int:
+        """
+        Scheduling cycle or the specific time point for periodic execution (minutes from 00:00). Value range: 1–1440, in minutes.
+        """
+        return pulumi.get(self, "time")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Scheduling interval type. Options: Period: schedule at regular intervals. Fixed: schedule at a fixed time each day. Cron: use a Cron expression.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAlarmTriggerConditionResult(dict):
+    def __init__(__self__, *,
+                 condition: builtins.str,
+                 count_condition: builtins.str,
+                 no_data: builtins.bool,
+                 severity: builtins.str):
+        """
+        :param builtins.str condition: Alert trigger condition expression.
+        :param builtins.str count_condition: Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        :param builtins.bool no_data: When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        :param builtins.str severity: Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "count_condition", count_condition)
+        pulumi.set(__self__, "no_data", no_data)
+        pulumi.set(__self__, "severity", severity)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> builtins.str:
+        """
+        Alert trigger condition expression.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="countCondition")
+    def count_condition(self) -> builtins.str:
+        """
+        Numerical expression for scenarios with data or specific entries, implemented using **count**.
+        """
+        return pulumi.get(self, "count_condition")
+
+    @property
+    @pulumi.getter(name="noData")
+    def no_data(self) -> builtins.bool:
+        """
+        When enabled, if the result after set operations is an empty set, a separate no-data alert is triggered.
+        """
+        return pulumi.get(self, "no_data")
+
+    @property
+    @pulumi.getter
+    def severity(self) -> builtins.str:
+        """
+        Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
+        """
+        return pulumi.get(self, "severity")
 
 
 @pulumi.output_type
