@@ -52,8 +52,8 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Output<string?> ProxyUrl { get; private set; } = null!;
 
         /// <summary>
-        /// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-        /// variable
+        /// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+        /// `ap-southeast-1` when not provided.
         /// </summary>
         [Output("region")]
         public Output<string?> Region { get; private set; } = null!;
@@ -64,6 +64,13 @@ namespace Byteplus.Pulumi.Bytepluscc
         /// </summary>
         [Output("secretKey")]
         public Output<string?> SecretKey { get; private set; } = null!;
+
+        /// <summary>
+        /// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+        /// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+        /// </summary>
+        [Output("sessionToken")]
+        public Output<string?> SessionToken { get; private set; } = null!;
 
 
         /// <summary>
@@ -151,8 +158,8 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Input<string>? ProxyUrl { get; set; }
 
         /// <summary>
-        /// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-        /// variable
+        /// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+        /// `ap-southeast-1` when not provided.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -164,6 +171,13 @@ namespace Byteplus.Pulumi.Bytepluscc
         [Input("secretKey")]
         public Input<string>? SecretKey { get; set; }
 
+        /// <summary>
+        /// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+        /// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+        /// </summary>
+        [Input("sessionToken")]
+        public Input<string>? SessionToken { get; set; }
+
         public ProviderArgs()
         {
             AccessKey = Utilities.GetEnv("BYTEPLUS_ACCESS_KEY");
@@ -174,6 +188,7 @@ namespace Byteplus.Pulumi.Bytepluscc
             ProxyUrl = Utilities.GetEnv("BYTEPLUS_PROXY_URL");
             Region = Utilities.GetEnv("BYTEPLUS_REGION");
             SecretKey = Utilities.GetEnv("BYTEPLUS_SECRET_KEY");
+            SessionToken = Utilities.GetEnv("BYTEPLUS_SESSION_TOKEN");
         }
         public static new ProviderArgs Empty => new ProviderArgs();
     }

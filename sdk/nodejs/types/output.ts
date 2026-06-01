@@ -14844,13 +14844,48 @@ export namespace iam {
 
     export interface GetRolePolicy {
         /**
+         * Policy binding time.
+         */
+        attachDate: string;
+        /**
+         * Policy description.
+         */
+        description: string;
+        /**
          * Policy name
          */
         policyName: string;
         /**
+         * Policy authorization scope, specifically refers to the project scope.
+         */
+        policyScopes: outputs.iam.GetRolePolicyPolicyScope[];
+        /**
+         * Policy TRN.
+         */
+        policyTrn: string;
+        /**
          * Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          */
         policyType: string;
+    }
+
+    export interface GetRolePolicyPolicyScope {
+        /**
+         * Project authorization time.
+         */
+        attachDate: string;
+        /**
+         * Authorization type. Global means global authorization (not limited to any project), Project means project-based authorization.
+         */
+        policyScopeType: string;
+        /**
+         * Project display name for project-based authorization.
+         */
+        projectDisplayName: string;
+        /**
+         * Project name for project-based authorization.
+         */
+        projectName: string;
     }
 
     export interface GetRoleTag {
@@ -15531,6 +15566,55 @@ export namespace kafka {
 }
 
 export namespace kms {
+    export interface GetKeyAsymmetricCiphertext {
+        /**
+         * Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+         */
+        algorithm: string;
+        /**
+         * Ciphertext of encryption result, Base64-encoded.
+         */
+        ciphertextBlob: string;
+        /**
+         * Plaintext to be encrypted, Base64-encoded.
+         */
+        plaintext: string;
+    }
+
+    export interface GetKeyAsymmetricSignature {
+        /**
+         * Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+         */
+        algorithm: string;
+        /**
+         * Message to be signed, Base64-encoded.
+         */
+        message: string;
+        /**
+         * Message type. Optional values: RAW, DIGEST.
+         */
+        messageType: string;
+        /**
+         * Signature result, Base64-encoded.
+         */
+        signature: string;
+    }
+
+    export interface GetKeyCiphertext {
+        /**
+         * Ciphertext of encryption result, Base64-encoded.
+         */
+        ciphertextBlob: string;
+        /**
+         * Encryption context JSON string.
+         */
+        encryptionContext: string;
+        /**
+         * Plaintext to be encrypted, Base64-encoded.
+         */
+        plaintext: string;
+    }
+
     export interface GetKeyMultiRegionConfiguration {
         /**
          * Multi-region key type.
@@ -15568,6 +15652,67 @@ export namespace kms {
         trn: string;
     }
 
+    export interface GetKeyReEncrypt {
+        /**
+         * Re-encrypted ciphertext, Base64-encoded.
+         */
+        ciphertextBlob: string;
+        /**
+         * New encryption context JSON string.
+         */
+        newEncryptionContext: string;
+        /**
+         * Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+         */
+        newKeyId: string;
+        /**
+         * Target key name.
+         */
+        newKeyName: string;
+        /**
+         * Name of the keyring to which the target key belongs.
+         */
+        newKeyringName: string;
+        /**
+         * Old encryption context JSON string.
+         */
+        oldEncryptionContext: string;
+        /**
+         * Source ciphertext to be re-encrypted, Base64-encoded.
+         */
+        sourceCiphertextBlob: string;
+    }
+
+    export interface GetKeyReplicateKey {
+        /**
+         * Replica key description.
+         */
+        description: string;
+        /**
+         * Replica key ID.
+         */
+        replicaKeyId: string;
+        /**
+         * Target region of the replica key.
+         */
+        replicaRegion: string;
+        /**
+         * Replica key label.
+         */
+        tags: outputs.kms.GetKeyReplicateKeyTag[];
+    }
+
+    export interface GetKeyReplicateKeyTag {
+        /**
+         * KMS key label key.
+         */
+        key: string;
+        /**
+         * KMS key label value.
+         */
+        value: string;
+    }
+
     export interface GetKeyTag {
         /**
          * KMS key label key.
@@ -15577,6 +15722,55 @@ export namespace kms {
          * KMS key label value.
          */
         value: string;
+    }
+
+    export interface KeyAsymmetricCiphertext {
+        /**
+         * Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+         */
+        algorithm: string;
+        /**
+         * Ciphertext of encryption result, Base64-encoded.
+         */
+        ciphertextBlob: string;
+        /**
+         * Plaintext to be encrypted, Base64-encoded.
+         */
+        plaintext: string;
+    }
+
+    export interface KeyAsymmetricSignature {
+        /**
+         * Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+         */
+        algorithm: string;
+        /**
+         * Message to be signed, Base64-encoded.
+         */
+        message: string;
+        /**
+         * Message type. Optional values: RAW, DIGEST.
+         */
+        messageType: string;
+        /**
+         * Signature result, Base64-encoded.
+         */
+        signature: string;
+    }
+
+    export interface KeyCiphertext {
+        /**
+         * Ciphertext of encryption result, Base64-encoded.
+         */
+        ciphertextBlob: string;
+        /**
+         * Encryption context JSON string.
+         */
+        encryptionContext: string;
+        /**
+         * Plaintext to be encrypted, Base64-encoded.
+         */
+        plaintext: string;
     }
 
     export interface KeyMultiRegionConfiguration {
@@ -15611,6 +15805,64 @@ export namespace kms {
          * Multi-region key conversion.
          */
         trn: string;
+    }
+
+    export interface KeyReEncrypt {
+        /**
+         * Re-encrypted ciphertext, Base64-encoded.
+         */
+        ciphertextBlob: string;
+        /**
+         * New encryption context JSON string.
+         */
+        newEncryptionContext: string;
+        /**
+         * Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+         */
+        newKeyId: string;
+        /**
+         * Target key name.
+         */
+        newKeyName: string;
+        /**
+         * Name of the keyring to which the target key belongs.
+         */
+        newKeyringName: string;
+        /**
+         * Old encryption context JSON string.
+         */
+        oldEncryptionContext: string;
+        /**
+         * Source ciphertext to be re-encrypted, Base64-encoded.
+         */
+        sourceCiphertextBlob: string;
+    }
+
+    export interface KeyReplicateKey {
+        /**
+         * Replica key description.
+         */
+        description: string;
+        /**
+         * Replica key ID.
+         */
+        replicaKeyId: string;
+        /**
+         * Target region of the replica key.
+         */
+        replicaRegion: string;
+        tags: outputs.kms.KeyReplicateKeyTag[];
+    }
+
+    export interface KeyReplicateKeyTag {
+        /**
+         * KMS key label key.
+         */
+        key: string;
+        /**
+         * KMS key label value.
+         */
+        value: string;
     }
 
     export interface KeyTag {
@@ -19334,6 +19586,41 @@ export namespace rdspostgresql {
         value: string;
     }
 
+    export interface GetParameterTemplateTemplateParam {
+        /**
+         * Parameter validation rules
+         */
+        checkingCode: string;
+        /**
+         * Default value of the parameter
+         */
+        defaultValue: string;
+        /**
+         * Parameter description information in English
+         */
+        description: string;
+        /**
+         * Parameter description information in Chinese
+         */
+        descriptionZh: string;
+        /**
+         * Whether modifying this parameter requires a restart
+         */
+        forceRestart: boolean;
+        /**
+         * Parameter name
+         */
+        name: string;
+        /**
+         * Data type of the parameter
+         */
+        type: string;
+        /**
+         * Parameter value
+         */
+        value: string;
+    }
+
     export interface InstanceChargeDetail {
         /**
          * Enable auto-renewal for prepaid scenarios
@@ -19566,6 +19853,17 @@ export namespace rdspostgresql {
         key: string;
         /**
          * Tag value
+         */
+        value: string;
+    }
+
+    export interface ParameterTemplateTemplateParam {
+        /**
+         * Parameter name
+         */
+        name: string;
+        /**
+         * Parameter value
          */
         value: string;
     }

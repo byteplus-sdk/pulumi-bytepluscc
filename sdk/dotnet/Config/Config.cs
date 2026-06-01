@@ -116,8 +116,8 @@ namespace Byteplus.Pulumi.Bytepluscc
 
         private static readonly __Value<string?> _region = new __Value<string?>(() => __config.Get("region") ?? Utilities.GetEnv("BYTEPLUS_REGION"));
         /// <summary>
-        /// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-        /// variable
+        /// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+        /// `ap-southeast-1` when not provided.
         /// </summary>
         public static string? Region
         {
@@ -134,6 +134,17 @@ namespace Byteplus.Pulumi.Bytepluscc
         {
             get => _secretKey.Get();
             set => _secretKey.Set(value);
+        }
+
+        private static readonly __Value<string?> _sessionToken = new __Value<string?>(() => __config.Get("sessionToken") ?? Utilities.GetEnv("BYTEPLUS_SESSION_TOKEN"));
+        /// <summary>
+        /// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+        /// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+        /// </summary>
+        public static string? SessionToken
+        {
+            get => _sessionToken.Get();
+            set => _sessionToken.Set(value);
         }
 
         public static class Types

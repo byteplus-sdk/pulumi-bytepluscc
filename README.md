@@ -47,6 +47,7 @@ provider configuration:
 
 - `accessKey` (String) The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
 - `secretKey` (String) he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+- `sessionToken` (String) The Session Token for Byteplus Provider. It is required when using temporary STS credentials, and can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
 - `profile` (String) The Profile for Byteplus Provider. It can be used as an alternative authentication method to AK/SK, and can also be sourced from the `BYTEPLUS_PROFILE` environment variable
 - `file_path` (String) The File Path for Byteplus Provider. It specifies the path to the profile configuration file. If not specified, the default path `~/.byteplus` will be used, and can also be sourced from the `BYTEPLUS_FILE_PATH` environment variable
 - `assumeRole` (Attributes) An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration. (see [below for nested schema](#nestedatt--assume_role))

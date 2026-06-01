@@ -48,6 +48,8 @@ type LookupRoleResult struct {
 	RoleId int `pulumi:"roleId"`
 	// Role name, length 1–64, supports English letters, numbers, and .-_ characters
 	RoleName string `pulumi:"roleName"`
+	// Service associated with the service-linked role to be created.
+	ServiceName string `pulumi:"serviceName"`
 	// Tag
 	Tags []GetRoleTag `pulumi:"tags"`
 	// Role TRN
@@ -135,6 +137,11 @@ func (o LookupRoleResultOutput) RoleId() pulumi.IntOutput {
 // Role name, length 1–64, supports English letters, numbers, and .-_ characters
 func (o LookupRoleResultOutput) RoleName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.RoleName }).(pulumi.StringOutput)
+}
+
+// Service associated with the service-linked role to be created.
+func (o LookupRoleResultOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRoleResult) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
 // Tag

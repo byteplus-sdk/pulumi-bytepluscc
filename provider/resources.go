@@ -78,6 +78,11 @@ func Provider() tfbridge.ProviderInfo {
 					EnvVars: []string{"BYTEPLUS_SECRET_KEY"},
 				},
 			},
+			"session_token": {
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"BYTEPLUS_SESSION_TOKEN"},
+				},
+			},
 			"file_path": {
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"BYTEPLUS_FILE_PATH"},

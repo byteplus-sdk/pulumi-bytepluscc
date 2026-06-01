@@ -30,7 +30,8 @@ class ProviderArgs:
                  profile: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_url: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
-                 secret_key: Optional[pulumi.Input[builtins.str]] = None):
+                 secret_key: Optional[pulumi.Input[builtins.str]] = None,
+                 session_token: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
         :param pulumi.Input[builtins.str] access_key: The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`
@@ -43,10 +44,12 @@ class ProviderArgs:
         :param pulumi.Input[builtins.str] file_path: The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         :param pulumi.Input[builtins.str] profile: The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
         :param pulumi.Input[builtins.str] proxy_url: PROXY URL for Byteplus Provider
-        :param pulumi.Input[builtins.str] region: The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-               variable
+        :param pulumi.Input[builtins.str] region: The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+               `ap-southeast-1` when not provided.
         :param pulumi.Input[builtins.str] secret_key: he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
                environment variable
+        :param pulumi.Input[builtins.str] session_token: The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+               from the `BYTEPLUS_SESSION_TOKEN` environment variable
         """
         if access_key is None:
             access_key = _utilities.get_env('BYTEPLUS_ACCESS_KEY')
@@ -84,6 +87,10 @@ class ProviderArgs:
             secret_key = _utilities.get_env('BYTEPLUS_SECRET_KEY')
         if secret_key is not None:
             pulumi.set(__self__, "secret_key", secret_key)
+        if session_token is None:
+            session_token = _utilities.get_env('BYTEPLUS_SESSION_TOKEN')
+        if session_token is not None:
+            pulumi.set(__self__, "session_token", session_token)
 
     @property
     @pulumi.getter(name="accessKey")
@@ -187,8 +194,8 @@ class ProviderArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-        variable
+        The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+        `ap-southeast-1` when not provided.
         """
         return pulumi.get(self, "region")
 
@@ -209,6 +216,19 @@ class ProviderArgs:
     def secret_key(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "secret_key", value)
 
+    @property
+    @pulumi.getter(name="sessionToken")
+    def session_token(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+        from the `BYTEPLUS_SESSION_TOKEN` environment variable
+        """
+        return pulumi.get(self, "session_token")
+
+    @session_token.setter
+    def session_token(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "session_token", value)
+
 
 @pulumi.type_token("pulumi:providers:bytepluscc")
 class Provider(pulumi.ProviderResource):
@@ -226,6 +246,7 @@ class Provider(pulumi.ProviderResource):
                  proxy_url: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  secret_key: Optional[pulumi.Input[builtins.str]] = None,
+                 session_token: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
         The provider type for the bytepluscc package. By default, resources use package-wide configuration
@@ -245,10 +266,12 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[builtins.str] file_path: The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         :param pulumi.Input[builtins.str] profile: The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
         :param pulumi.Input[builtins.str] proxy_url: PROXY URL for Byteplus Provider
-        :param pulumi.Input[builtins.str] region: The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-               variable
+        :param pulumi.Input[builtins.str] region: The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+               `ap-southeast-1` when not provided.
         :param pulumi.Input[builtins.str] secret_key: he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
                environment variable
+        :param pulumi.Input[builtins.str] session_token: The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+               from the `BYTEPLUS_SESSION_TOKEN` environment variable
         """
         ...
     @overload
@@ -287,6 +310,7 @@ class Provider(pulumi.ProviderResource):
                  proxy_url: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  secret_key: Optional[pulumi.Input[builtins.str]] = None,
+                 session_token: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,6 +346,9 @@ class Provider(pulumi.ProviderResource):
             if secret_key is None:
                 secret_key = _utilities.get_env('BYTEPLUS_SECRET_KEY')
             __props__.__dict__["secret_key"] = secret_key
+            if session_token is None:
+                session_token = _utilities.get_env('BYTEPLUS_SESSION_TOKEN')
+            __props__.__dict__["session_token"] = session_token
         super(Provider, __self__).__init__(
             'bytepluscc',
             resource_name,
@@ -374,8 +401,8 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def region(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-        variable
+        The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+        `ap-southeast-1` when not provided.
         """
         return pulumi.get(self, "region")
 
@@ -387,6 +414,15 @@ class Provider(pulumi.ProviderResource):
         environment variable
         """
         return pulumi.get(self, "secret_key")
+
+    @property
+    @pulumi.getter(name="sessionToken")
+    def session_token(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+        from the `BYTEPLUS_SESSION_TOKEN` environment variable
+        """
+        return pulumi.get(self, "session_token")
 
     @pulumi.output_type
     class TerraformConfigResult:

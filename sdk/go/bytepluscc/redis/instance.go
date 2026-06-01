@@ -105,9 +105,9 @@ type Instance struct {
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
 	// Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
 	DataLayout pulumi.StringOutput `pulumi:"dataLayout"`
-	// Enable or disable instance deletion protection.
+	// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 	DeletionProtection pulumi.StringOutput `pulumi:"deletionProtection"`
-	// Database version number.
+	// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 	EngineVersion pulumi.StringOutput `pulumi:"engineVersion"`
 	// Instance expiration time.
 	ExpiredTime pulumi.StringOutput `pulumi:"expiredTime"`
@@ -122,7 +122,7 @@ type Instance struct {
 	MaintenanceTime pulumi.StringOutput `pulumi:"maintenanceTime"`
 	// Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
 	MaxConnections pulumi.IntOutput `pulumi:"maxConnections"`
-	// Set the deployment scheme for the instance's availability zone.
+	// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 	MultiAz pulumi.StringOutput `pulumi:"multiAz"`
 	// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
 	NoAuthMode pulumi.StringOutput `pulumi:"noAuthMode"`
@@ -146,7 +146,9 @@ type Instance struct {
 	PurchaseMonths pulumi.IntOutput `pulumi:"purchaseMonths"`
 	// Set whether to reserve additional bandwidth
 	ReserveAdditionalBandwidth pulumi.BoolOutput `pulumi:"reserveAdditionalBandwidth"`
-	// Service type of the instance
+	// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+	RestartInstance pulumi.BoolOutput `pulumi:"restartInstance"`
+	// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
 	ServiceType pulumi.StringOutput `pulumi:"serviceType"`
 	// Memory capacity of each shard in the instance. Unit: MiB.
 	ShardCapacity pulumi.IntOutput `pulumi:"shardCapacity"`
@@ -154,7 +156,7 @@ type Instance struct {
 	ShardNumber pulumi.IntOutput `pulumi:"shardNumber"`
 	// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
 	ShardedCluster pulumi.IntOutput `pulumi:"shardedCluster"`
-	// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+	// Current status of the instance.
 	Status pulumi.StringOutput `pulumi:"status"`
 	// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
 	SubnetId pulumi.StringOutput    `pulumi:"subnetId"`
@@ -249,9 +251,9 @@ type instanceState struct {
 	CreateTime *string `pulumi:"createTime"`
 	// Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
 	DataLayout *string `pulumi:"dataLayout"`
-	// Enable or disable instance deletion protection.
+	// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 	DeletionProtection *string `pulumi:"deletionProtection"`
-	// Database version number.
+	// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 	EngineVersion *string `pulumi:"engineVersion"`
 	// Instance expiration time.
 	ExpiredTime *string `pulumi:"expiredTime"`
@@ -266,7 +268,7 @@ type instanceState struct {
 	MaintenanceTime *string `pulumi:"maintenanceTime"`
 	// Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
 	MaxConnections *int `pulumi:"maxConnections"`
-	// Set the deployment scheme for the instance's availability zone.
+	// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 	MultiAz *string `pulumi:"multiAz"`
 	// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
 	NoAuthMode *string `pulumi:"noAuthMode"`
@@ -290,7 +292,9 @@ type instanceState struct {
 	PurchaseMonths *int `pulumi:"purchaseMonths"`
 	// Set whether to reserve additional bandwidth
 	ReserveAdditionalBandwidth *bool `pulumi:"reserveAdditionalBandwidth"`
-	// Service type of the instance
+	// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+	RestartInstance *bool `pulumi:"restartInstance"`
+	// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
 	ServiceType *string `pulumi:"serviceType"`
 	// Memory capacity of each shard in the instance. Unit: MiB.
 	ShardCapacity *int `pulumi:"shardCapacity"`
@@ -298,7 +302,7 @@ type instanceState struct {
 	ShardNumber *int `pulumi:"shardNumber"`
 	// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
 	ShardedCluster *int `pulumi:"shardedCluster"`
-	// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+	// Current status of the instance.
 	Status *string `pulumi:"status"`
 	// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
 	SubnetId *string       `pulumi:"subnetId"`
@@ -340,9 +344,9 @@ type InstanceState struct {
 	CreateTime pulumi.StringPtrInput
 	// Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
 	DataLayout pulumi.StringPtrInput
-	// Enable or disable instance deletion protection.
+	// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 	DeletionProtection pulumi.StringPtrInput
-	// Database version number.
+	// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 	EngineVersion pulumi.StringPtrInput
 	// Instance expiration time.
 	ExpiredTime pulumi.StringPtrInput
@@ -357,7 +361,7 @@ type InstanceState struct {
 	MaintenanceTime pulumi.StringPtrInput
 	// Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
 	MaxConnections pulumi.IntPtrInput
-	// Set the deployment scheme for the instance's availability zone.
+	// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 	MultiAz pulumi.StringPtrInput
 	// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
 	NoAuthMode pulumi.StringPtrInput
@@ -381,7 +385,9 @@ type InstanceState struct {
 	PurchaseMonths pulumi.IntPtrInput
 	// Set whether to reserve additional bandwidth
 	ReserveAdditionalBandwidth pulumi.BoolPtrInput
-	// Service type of the instance
+	// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+	RestartInstance pulumi.BoolPtrInput
+	// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
 	ServiceType pulumi.StringPtrInput
 	// Memory capacity of each shard in the instance. Unit: MiB.
 	ShardCapacity pulumi.IntPtrInput
@@ -389,7 +395,7 @@ type InstanceState struct {
 	ShardNumber pulumi.IntPtrInput
 	// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
 	ShardedCluster pulumi.IntPtrInput
-	// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+	// Current status of the instance.
 	Status pulumi.StringPtrInput
 	// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
 	SubnetId pulumi.StringPtrInput
@@ -427,13 +433,13 @@ type instanceArgs struct {
 	ContinuousBackup *bool `pulumi:"continuousBackup"`
 	// Whether to create a backup before making changes.
 	CreateBackup *bool `pulumi:"createBackup"`
-	// Enable or disable instance deletion protection.
+	// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 	DeletionProtection *string `pulumi:"deletionProtection"`
-	// Database version number.
+	// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 	EngineVersion string `pulumi:"engineVersion"`
 	// Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
 	InstanceName *string `pulumi:"instanceName"`
-	// Set the deployment scheme for the instance's availability zone.
+	// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 	MultiAz string `pulumi:"multiAz"`
 	// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
 	NoAuthMode *string `pulumi:"noAuthMode"`
@@ -451,6 +457,8 @@ type instanceArgs struct {
 	PurchaseMonths *int `pulumi:"purchaseMonths"`
 	// Set whether to reserve additional bandwidth
 	ReserveAdditionalBandwidth *bool `pulumi:"reserveAdditionalBandwidth"`
+	// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+	RestartInstance *bool `pulumi:"restartInstance"`
 	// Memory capacity of each shard in the instance. Unit: MiB.
 	ShardCapacity int `pulumi:"shardCapacity"`
 	// Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
@@ -481,13 +489,13 @@ type InstanceArgs struct {
 	ContinuousBackup pulumi.BoolPtrInput
 	// Whether to create a backup before making changes.
 	CreateBackup pulumi.BoolPtrInput
-	// Enable or disable instance deletion protection.
+	// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 	DeletionProtection pulumi.StringPtrInput
-	// Database version number.
+	// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 	EngineVersion pulumi.StringInput
 	// Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
 	InstanceName pulumi.StringPtrInput
-	// Set the deployment scheme for the instance's availability zone.
+	// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 	MultiAz pulumi.StringInput
 	// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
 	NoAuthMode pulumi.StringPtrInput
@@ -505,6 +513,8 @@ type InstanceArgs struct {
 	PurchaseMonths pulumi.IntPtrInput
 	// Set whether to reserve additional bandwidth
 	ReserveAdditionalBandwidth pulumi.BoolPtrInput
+	// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+	RestartInstance pulumi.BoolPtrInput
 	// Memory capacity of each shard in the instance. Unit: MiB.
 	ShardCapacity pulumi.IntInput
 	// Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
@@ -664,12 +674,12 @@ func (o InstanceOutput) DataLayout() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DataLayout }).(pulumi.StringOutput)
 }
 
-// Enable or disable instance deletion protection.
+// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 func (o InstanceOutput) DeletionProtection() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DeletionProtection }).(pulumi.StringOutput)
 }
 
-// Database version number.
+// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 func (o InstanceOutput) EngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.EngineVersion }).(pulumi.StringOutput)
 }
@@ -708,7 +718,7 @@ func (o InstanceOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
-// Set the deployment scheme for the instance's availability zone.
+// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 func (o InstanceOutput) MultiAz() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.MultiAz }).(pulumi.StringOutput)
 }
@@ -768,7 +778,12 @@ func (o InstanceOutput) ReserveAdditionalBandwidth() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.ReserveAdditionalBandwidth }).(pulumi.BoolOutput)
 }
 
-// Service type of the instance
+// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+func (o InstanceOutput) RestartInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.RestartInstance }).(pulumi.BoolOutput)
+}
+
+// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
 func (o InstanceOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ServiceType }).(pulumi.StringOutput)
 }
@@ -788,7 +803,7 @@ func (o InstanceOutput) ShardedCluster() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.ShardedCluster }).(pulumi.IntOutput)
 }
 
-// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+// Current status of the instance.
 func (o InstanceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

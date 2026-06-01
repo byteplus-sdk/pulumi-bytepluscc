@@ -60,6 +60,11 @@ public final class GetRoleResult {
      */
     private String roleName;
     /**
+     * @return Service associated with the service-linked role to be created.
+     * 
+     */
+    private String serviceName;
+    /**
      * @return Tag
      * 
      */
@@ -145,6 +150,13 @@ public final class GetRoleResult {
         return this.roleName;
     }
     /**
+     * @return Service associated with the service-linked role to be created.
+     * 
+     */
+    public String serviceName() {
+        return this.serviceName;
+    }
+    /**
      * @return Tag
      * 
      */
@@ -191,6 +203,7 @@ public final class GetRoleResult {
         private List<GetRolePolicy> policies;
         private Integer roleId;
         private String roleName;
+        private String serviceName;
         private List<GetRoleTag> tags;
         private String trn;
         private String trustPolicyDocument;
@@ -207,6 +220,7 @@ public final class GetRoleResult {
     	      this.policies = defaults.policies;
     	      this.roleId = defaults.roleId;
     	      this.roleName = defaults.roleName;
+    	      this.serviceName = defaults.serviceName;
     	      this.tags = defaults.tags;
     	      this.trn = defaults.trn;
     	      this.trustPolicyDocument = defaults.trustPolicyDocument;
@@ -289,6 +303,14 @@ public final class GetRoleResult {
             return this;
         }
         @CustomType.Setter
+        public Builder serviceName(String serviceName) {
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetRoleResult", "serviceName");
+            }
+            this.serviceName = serviceName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tags(List<GetRoleTag> tags) {
             if (tags == null) {
               throw new MissingRequiredPropertyException("GetRoleResult", "tags");
@@ -334,6 +356,7 @@ public final class GetRoleResult {
             _resultValue.policies = policies;
             _resultValue.roleId = roleId;
             _resultValue.roleName = roleName;
+            _resultValue.serviceName = serviceName;
             _resultValue.tags = tags;
             _resultValue.trn = trn;
             _resultValue.trustPolicyDocument = trustPolicyDocument;

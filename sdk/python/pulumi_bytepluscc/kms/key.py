@@ -24,40 +24,60 @@ class KeyArgs:
     def __init__(__self__, *,
                  key_name: pulumi.Input[builtins.str],
                  keyring_name: pulumi.Input[builtins.str],
+                 asymmetric_ciphertext: Optional[pulumi.Input['KeyAsymmetricCiphertextArgs']] = None,
+                 asymmetric_signature: Optional[pulumi.Input['KeyAsymmetricSignatureArgs']] = None,
+                 ciphertext: Optional[pulumi.Input['KeyCiphertextArgs']] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
+                 key_primary_region: Optional[pulumi.Input[builtins.str]] = None,
                  key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 re_encrypt: Optional[pulumi.Input['KeyReEncryptArgs']] = None,
+                 replicate_key: Optional[pulumi.Input['KeyReplicateKeyArgs']] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['KeyTagArgs']]]] = None):
         """
         The set of arguments for constructing a Key resource.
         :param pulumi.Input[builtins.str] key_name: Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         :param pulumi.Input[builtins.str] keyring_name: Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
+        :param pulumi.Input['KeyAsymmetricCiphertextArgs'] asymmetric_ciphertext: Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input['KeyAsymmetricSignatureArgs'] asymmetric_signature: Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input['KeyCiphertextArgs'] ciphertext: Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.str] description: Key description: Length 0–8192 characters.
         :param pulumi.Input[builtins.int] key_archive_operation: User master key archive operation (enter 1 to archive, 2 to unarchive).
         :param pulumi.Input[builtins.int] key_enable_operation: User master key enable operation (enter 1 to enable, 2 to disable).
+        :param pulumi.Input[builtins.str] key_primary_region: Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
         :param pulumi.Input[builtins.int] key_rotation_operation: User master key rotation operation (enter 1 to enable, 2 to disable).
         :param pulumi.Input[builtins.str] key_spec: Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         :param pulumi.Input[builtins.str] key_usage: Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
         :param pulumi.Input[builtins.bool] multi_region: Is this a multi-region type master key.
         :param pulumi.Input[builtins.str] origin: Key source. Options: CloudKMS, External, ExternalKeyStore.
         :param pulumi.Input[builtins.str] protection_level: Key protection level. Options: SOFTWARE, HSM.
+        :param pulumi.Input['KeyReEncryptArgs'] re_encrypt: Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input['KeyReplicateKeyArgs'] replicate_key: Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.int] rotate_interval: Key rotation period (days). Range: [90, 2560].
         """
         pulumi.set(__self__, "key_name", key_name)
         pulumi.set(__self__, "keyring_name", keyring_name)
+        if asymmetric_ciphertext is not None:
+            pulumi.set(__self__, "asymmetric_ciphertext", asymmetric_ciphertext)
+        if asymmetric_signature is not None:
+            pulumi.set(__self__, "asymmetric_signature", asymmetric_signature)
+        if ciphertext is not None:
+            pulumi.set(__self__, "ciphertext", ciphertext)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if key_archive_operation is not None:
             pulumi.set(__self__, "key_archive_operation", key_archive_operation)
         if key_enable_operation is not None:
             pulumi.set(__self__, "key_enable_operation", key_enable_operation)
+        if key_primary_region is not None:
+            pulumi.set(__self__, "key_primary_region", key_primary_region)
         if key_rotation_operation is not None:
             pulumi.set(__self__, "key_rotation_operation", key_rotation_operation)
         if key_spec is not None:
@@ -70,6 +90,10 @@ class KeyArgs:
             pulumi.set(__self__, "origin", origin)
         if protection_level is not None:
             pulumi.set(__self__, "protection_level", protection_level)
+        if re_encrypt is not None:
+            pulumi.set(__self__, "re_encrypt", re_encrypt)
+        if replicate_key is not None:
+            pulumi.set(__self__, "replicate_key", replicate_key)
         if rotate_interval is not None:
             pulumi.set(__self__, "rotate_interval", rotate_interval)
         if tags is not None:
@@ -98,6 +122,42 @@ class KeyArgs:
     @keyring_name.setter
     def keyring_name(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "keyring_name", value)
+
+    @property
+    @pulumi.getter(name="asymmetricCiphertext")
+    def asymmetric_ciphertext(self) -> Optional[pulumi.Input['KeyAsymmetricCiphertextArgs']]:
+        """
+        Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_ciphertext")
+
+    @asymmetric_ciphertext.setter
+    def asymmetric_ciphertext(self, value: Optional[pulumi.Input['KeyAsymmetricCiphertextArgs']]):
+        pulumi.set(self, "asymmetric_ciphertext", value)
+
+    @property
+    @pulumi.getter(name="asymmetricSignature")
+    def asymmetric_signature(self) -> Optional[pulumi.Input['KeyAsymmetricSignatureArgs']]:
+        """
+        Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_signature")
+
+    @asymmetric_signature.setter
+    def asymmetric_signature(self, value: Optional[pulumi.Input['KeyAsymmetricSignatureArgs']]):
+        pulumi.set(self, "asymmetric_signature", value)
+
+    @property
+    @pulumi.getter
+    def ciphertext(self) -> Optional[pulumi.Input['KeyCiphertextArgs']]:
+        """
+        Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "ciphertext")
+
+    @ciphertext.setter
+    def ciphertext(self, value: Optional[pulumi.Input['KeyCiphertextArgs']]):
+        pulumi.set(self, "ciphertext", value)
 
     @property
     @pulumi.getter
@@ -134,6 +194,18 @@ class KeyArgs:
     @key_enable_operation.setter
     def key_enable_operation(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "key_enable_operation", value)
+
+    @property
+    @pulumi.getter(name="keyPrimaryRegion")
+    def key_primary_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        """
+        return pulumi.get(self, "key_primary_region")
+
+    @key_primary_region.setter
+    def key_primary_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_primary_region", value)
 
     @property
     @pulumi.getter(name="keyRotationOperation")
@@ -208,6 +280,30 @@ class KeyArgs:
         pulumi.set(self, "protection_level", value)
 
     @property
+    @pulumi.getter(name="reEncrypt")
+    def re_encrypt(self) -> Optional[pulumi.Input['KeyReEncryptArgs']]:
+        """
+        Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "re_encrypt")
+
+    @re_encrypt.setter
+    def re_encrypt(self, value: Optional[pulumi.Input['KeyReEncryptArgs']]):
+        pulumi.set(self, "re_encrypt", value)
+
+    @property
+    @pulumi.getter(name="replicateKey")
+    def replicate_key(self) -> Optional[pulumi.Input['KeyReplicateKeyArgs']]:
+        """
+        Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "replicate_key")
+
+    @replicate_key.setter
+    def replicate_key(self, value: Optional[pulumi.Input['KeyReplicateKeyArgs']]):
+        pulumi.set(self, "replicate_key", value)
+
+    @property
     @pulumi.getter(name="rotateInterval")
     def rotate_interval(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -232,6 +328,9 @@ class KeyArgs:
 @pulumi.input_type
 class _KeyState:
     def __init__(__self__, *,
+                 asymmetric_ciphertext: Optional[pulumi.Input['KeyAsymmetricCiphertextArgs']] = None,
+                 asymmetric_signature: Optional[pulumi.Input['KeyAsymmetricSignatureArgs']] = None,
+                 ciphertext: Optional[pulumi.Input['KeyCiphertextArgs']] = None,
                  created_time: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
@@ -239,6 +338,7 @@ class _KeyState:
                  key_id: Optional[pulumi.Input[builtins.str]] = None,
                  key_material_expire_time: Optional[pulumi.Input[builtins.str]] = None,
                  key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 key_primary_region: Optional[pulumi.Input[builtins.str]] = None,
                  key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_state: Optional[pulumi.Input[builtins.str]] = None,
@@ -249,6 +349,8 @@ class _KeyState:
                  multi_region_configuration: Optional[pulumi.Input['KeyMultiRegionConfigurationArgs']] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 re_encrypt: Optional[pulumi.Input['KeyReEncryptArgs']] = None,
+                 replicate_key: Optional[pulumi.Input['KeyReplicateKeyArgs']] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  schedule_delete_time: Optional[pulumi.Input[builtins.str]] = None,
@@ -258,6 +360,9 @@ class _KeyState:
                  updated_time: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering Key resources.
+        :param pulumi.Input['KeyAsymmetricCiphertextArgs'] asymmetric_ciphertext: Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input['KeyAsymmetricSignatureArgs'] asymmetric_signature: Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input['KeyCiphertextArgs'] ciphertext: Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.int] created_time: Key creation time.
         :param pulumi.Input[builtins.str] description: Key description: Length 0–8192 characters.
         :param pulumi.Input[builtins.int] key_archive_operation: User master key archive operation (enter 1 to archive, 2 to unarchive).
@@ -265,6 +370,7 @@ class _KeyState:
         :param pulumi.Input[builtins.str] key_id: Key unique identifier in UUID format.
         :param pulumi.Input[builtins.str] key_material_expire_time: Key material expiration time. If empty, the key does not expire.
         :param pulumi.Input[builtins.str] key_name: Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
+        :param pulumi.Input[builtins.str] key_primary_region: Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
         :param pulumi.Input[builtins.int] key_rotation_operation: User master key rotation operation (enter 1 to enable, 2 to disable).
         :param pulumi.Input[builtins.str] key_spec: Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         :param pulumi.Input[builtins.str] key_state: Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
@@ -275,6 +381,8 @@ class _KeyState:
         :param pulumi.Input['KeyMultiRegionConfigurationArgs'] multi_region_configuration: Multi-region key configuration information.
         :param pulumi.Input[builtins.str] origin: Key source. Options: CloudKMS, External, ExternalKeyStore.
         :param pulumi.Input[builtins.str] protection_level: Key protection level. Options: SOFTWARE, HSM.
+        :param pulumi.Input['KeyReEncryptArgs'] re_encrypt: Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input['KeyReplicateKeyArgs'] replicate_key: Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.int] rotate_interval: Key rotation period (days). Range: [90, 2560].
         :param pulumi.Input[builtins.str] rotate_state: Key rotation status. Options: Enable, Disable.
         :param pulumi.Input[builtins.str] schedule_delete_time: Key deletion time.
@@ -282,6 +390,12 @@ class _KeyState:
         :param pulumi.Input[builtins.str] trn: Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
         :param pulumi.Input[builtins.int] updated_time: Key update time.
         """
+        if asymmetric_ciphertext is not None:
+            pulumi.set(__self__, "asymmetric_ciphertext", asymmetric_ciphertext)
+        if asymmetric_signature is not None:
+            pulumi.set(__self__, "asymmetric_signature", asymmetric_signature)
+        if ciphertext is not None:
+            pulumi.set(__self__, "ciphertext", ciphertext)
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
         if description is not None:
@@ -296,6 +410,8 @@ class _KeyState:
             pulumi.set(__self__, "key_material_expire_time", key_material_expire_time)
         if key_name is not None:
             pulumi.set(__self__, "key_name", key_name)
+        if key_primary_region is not None:
+            pulumi.set(__self__, "key_primary_region", key_primary_region)
         if key_rotation_operation is not None:
             pulumi.set(__self__, "key_rotation_operation", key_rotation_operation)
         if key_spec is not None:
@@ -316,6 +432,10 @@ class _KeyState:
             pulumi.set(__self__, "origin", origin)
         if protection_level is not None:
             pulumi.set(__self__, "protection_level", protection_level)
+        if re_encrypt is not None:
+            pulumi.set(__self__, "re_encrypt", re_encrypt)
+        if replicate_key is not None:
+            pulumi.set(__self__, "replicate_key", replicate_key)
         if rotate_interval is not None:
             pulumi.set(__self__, "rotate_interval", rotate_interval)
         if rotate_state is not None:
@@ -330,6 +450,42 @@ class _KeyState:
             pulumi.set(__self__, "trn", trn)
         if updated_time is not None:
             pulumi.set(__self__, "updated_time", updated_time)
+
+    @property
+    @pulumi.getter(name="asymmetricCiphertext")
+    def asymmetric_ciphertext(self) -> Optional[pulumi.Input['KeyAsymmetricCiphertextArgs']]:
+        """
+        Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_ciphertext")
+
+    @asymmetric_ciphertext.setter
+    def asymmetric_ciphertext(self, value: Optional[pulumi.Input['KeyAsymmetricCiphertextArgs']]):
+        pulumi.set(self, "asymmetric_ciphertext", value)
+
+    @property
+    @pulumi.getter(name="asymmetricSignature")
+    def asymmetric_signature(self) -> Optional[pulumi.Input['KeyAsymmetricSignatureArgs']]:
+        """
+        Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_signature")
+
+    @asymmetric_signature.setter
+    def asymmetric_signature(self, value: Optional[pulumi.Input['KeyAsymmetricSignatureArgs']]):
+        pulumi.set(self, "asymmetric_signature", value)
+
+    @property
+    @pulumi.getter
+    def ciphertext(self) -> Optional[pulumi.Input['KeyCiphertextArgs']]:
+        """
+        Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "ciphertext")
+
+    @ciphertext.setter
+    def ciphertext(self, value: Optional[pulumi.Input['KeyCiphertextArgs']]):
+        pulumi.set(self, "ciphertext", value)
 
     @property
     @pulumi.getter(name="createdTime")
@@ -414,6 +570,18 @@ class _KeyState:
     @key_name.setter
     def key_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "key_name", value)
+
+    @property
+    @pulumi.getter(name="keyPrimaryRegion")
+    def key_primary_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        """
+        return pulumi.get(self, "key_primary_region")
+
+    @key_primary_region.setter
+    def key_primary_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_primary_region", value)
 
     @property
     @pulumi.getter(name="keyRotationOperation")
@@ -536,6 +704,30 @@ class _KeyState:
         pulumi.set(self, "protection_level", value)
 
     @property
+    @pulumi.getter(name="reEncrypt")
+    def re_encrypt(self) -> Optional[pulumi.Input['KeyReEncryptArgs']]:
+        """
+        Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "re_encrypt")
+
+    @re_encrypt.setter
+    def re_encrypt(self, value: Optional[pulumi.Input['KeyReEncryptArgs']]):
+        pulumi.set(self, "re_encrypt", value)
+
+    @property
+    @pulumi.getter(name="replicateKey")
+    def replicate_key(self) -> Optional[pulumi.Input['KeyReplicateKeyArgs']]:
+        """
+        Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "replicate_key")
+
+    @replicate_key.setter
+    def replicate_key(self, value: Optional[pulumi.Input['KeyReplicateKeyArgs']]):
+        pulumi.set(self, "replicate_key", value)
+
+    @property
     @pulumi.getter(name="rotateInterval")
     def rotate_interval(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -623,10 +815,14 @@ class Key(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 asymmetric_ciphertext: Optional[pulumi.Input[Union['KeyAsymmetricCiphertextArgs', 'KeyAsymmetricCiphertextArgsDict']]] = None,
+                 asymmetric_signature: Optional[pulumi.Input[Union['KeyAsymmetricSignatureArgs', 'KeyAsymmetricSignatureArgsDict']]] = None,
+                 ciphertext: Optional[pulumi.Input[Union['KeyCiphertextArgs', 'KeyCiphertextArgsDict']]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 key_primary_region: Optional[pulumi.Input[builtins.str]] = None,
                  key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
@@ -634,6 +830,8 @@ class Key(pulumi.CustomResource):
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 re_encrypt: Optional[pulumi.Input[Union['KeyReEncryptArgs', 'KeyReEncryptArgsDict']]] = None,
+                 replicate_key: Optional[pulumi.Input[Union['KeyReplicateKeyArgs', 'KeyReplicateKeyArgsDict']]] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyTagArgs', 'KeyTagArgsDict']]]]] = None,
                  __props__=None):
@@ -648,10 +846,14 @@ class Key(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['KeyAsymmetricCiphertextArgs', 'KeyAsymmetricCiphertextArgsDict']] asymmetric_ciphertext: Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input[Union['KeyAsymmetricSignatureArgs', 'KeyAsymmetricSignatureArgsDict']] asymmetric_signature: Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input[Union['KeyCiphertextArgs', 'KeyCiphertextArgsDict']] ciphertext: Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.str] description: Key description: Length 0–8192 characters.
         :param pulumi.Input[builtins.int] key_archive_operation: User master key archive operation (enter 1 to archive, 2 to unarchive).
         :param pulumi.Input[builtins.int] key_enable_operation: User master key enable operation (enter 1 to enable, 2 to disable).
         :param pulumi.Input[builtins.str] key_name: Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
+        :param pulumi.Input[builtins.str] key_primary_region: Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
         :param pulumi.Input[builtins.int] key_rotation_operation: User master key rotation operation (enter 1 to enable, 2 to disable).
         :param pulumi.Input[builtins.str] key_spec: Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         :param pulumi.Input[builtins.str] key_usage: Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
@@ -659,6 +861,8 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] multi_region: Is this a multi-region type master key.
         :param pulumi.Input[builtins.str] origin: Key source. Options: CloudKMS, External, ExternalKeyStore.
         :param pulumi.Input[builtins.str] protection_level: Key protection level. Options: SOFTWARE, HSM.
+        :param pulumi.Input[Union['KeyReEncryptArgs', 'KeyReEncryptArgsDict']] re_encrypt: Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input[Union['KeyReplicateKeyArgs', 'KeyReplicateKeyArgsDict']] replicate_key: Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.int] rotate_interval: Key rotation period (days). Range: [90, 2560].
         """
         ...
@@ -691,10 +895,14 @@ class Key(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 asymmetric_ciphertext: Optional[pulumi.Input[Union['KeyAsymmetricCiphertextArgs', 'KeyAsymmetricCiphertextArgsDict']]] = None,
+                 asymmetric_signature: Optional[pulumi.Input[Union['KeyAsymmetricSignatureArgs', 'KeyAsymmetricSignatureArgsDict']]] = None,
+                 ciphertext: Optional[pulumi.Input[Union['KeyCiphertextArgs', 'KeyCiphertextArgsDict']]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 key_primary_region: Optional[pulumi.Input[builtins.str]] = None,
                  key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
@@ -702,6 +910,8 @@ class Key(pulumi.CustomResource):
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 re_encrypt: Optional[pulumi.Input[Union['KeyReEncryptArgs', 'KeyReEncryptArgsDict']]] = None,
+                 replicate_key: Optional[pulumi.Input[Union['KeyReplicateKeyArgs', 'KeyReplicateKeyArgsDict']]] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyTagArgs', 'KeyTagArgsDict']]]]] = None,
                  __props__=None):
@@ -713,12 +923,16 @@ class Key(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = KeyArgs.__new__(KeyArgs)
 
+            __props__.__dict__["asymmetric_ciphertext"] = asymmetric_ciphertext
+            __props__.__dict__["asymmetric_signature"] = asymmetric_signature
+            __props__.__dict__["ciphertext"] = ciphertext
             __props__.__dict__["description"] = description
             __props__.__dict__["key_archive_operation"] = key_archive_operation
             __props__.__dict__["key_enable_operation"] = key_enable_operation
             if key_name is None and not opts.urn:
                 raise TypeError("Missing required property 'key_name'")
             __props__.__dict__["key_name"] = key_name
+            __props__.__dict__["key_primary_region"] = key_primary_region
             __props__.__dict__["key_rotation_operation"] = key_rotation_operation
             __props__.__dict__["key_spec"] = key_spec
             __props__.__dict__["key_usage"] = key_usage
@@ -728,6 +942,8 @@ class Key(pulumi.CustomResource):
             __props__.__dict__["multi_region"] = multi_region
             __props__.__dict__["origin"] = origin
             __props__.__dict__["protection_level"] = protection_level
+            __props__.__dict__["re_encrypt"] = re_encrypt
+            __props__.__dict__["replicate_key"] = replicate_key
             __props__.__dict__["rotate_interval"] = rotate_interval
             __props__.__dict__["tags"] = tags
             __props__.__dict__["created_time"] = None
@@ -751,6 +967,9 @@ class Key(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            asymmetric_ciphertext: Optional[pulumi.Input[Union['KeyAsymmetricCiphertextArgs', 'KeyAsymmetricCiphertextArgsDict']]] = None,
+            asymmetric_signature: Optional[pulumi.Input[Union['KeyAsymmetricSignatureArgs', 'KeyAsymmetricSignatureArgsDict']]] = None,
+            ciphertext: Optional[pulumi.Input[Union['KeyCiphertextArgs', 'KeyCiphertextArgsDict']]] = None,
             created_time: Optional[pulumi.Input[builtins.int]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
@@ -758,6 +977,7 @@ class Key(pulumi.CustomResource):
             key_id: Optional[pulumi.Input[builtins.str]] = None,
             key_material_expire_time: Optional[pulumi.Input[builtins.str]] = None,
             key_name: Optional[pulumi.Input[builtins.str]] = None,
+            key_primary_region: Optional[pulumi.Input[builtins.str]] = None,
             key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
             key_spec: Optional[pulumi.Input[builtins.str]] = None,
             key_state: Optional[pulumi.Input[builtins.str]] = None,
@@ -768,6 +988,8 @@ class Key(pulumi.CustomResource):
             multi_region_configuration: Optional[pulumi.Input[Union['KeyMultiRegionConfigurationArgs', 'KeyMultiRegionConfigurationArgsDict']]] = None,
             origin: Optional[pulumi.Input[builtins.str]] = None,
             protection_level: Optional[pulumi.Input[builtins.str]] = None,
+            re_encrypt: Optional[pulumi.Input[Union['KeyReEncryptArgs', 'KeyReEncryptArgsDict']]] = None,
+            replicate_key: Optional[pulumi.Input[Union['KeyReplicateKeyArgs', 'KeyReplicateKeyArgsDict']]] = None,
             rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
             rotate_state: Optional[pulumi.Input[builtins.str]] = None,
             schedule_delete_time: Optional[pulumi.Input[builtins.str]] = None,
@@ -782,6 +1004,9 @@ class Key(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['KeyAsymmetricCiphertextArgs', 'KeyAsymmetricCiphertextArgsDict']] asymmetric_ciphertext: Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input[Union['KeyAsymmetricSignatureArgs', 'KeyAsymmetricSignatureArgsDict']] asymmetric_signature: Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input[Union['KeyCiphertextArgs', 'KeyCiphertextArgsDict']] ciphertext: Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.int] created_time: Key creation time.
         :param pulumi.Input[builtins.str] description: Key description: Length 0–8192 characters.
         :param pulumi.Input[builtins.int] key_archive_operation: User master key archive operation (enter 1 to archive, 2 to unarchive).
@@ -789,6 +1014,7 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] key_id: Key unique identifier in UUID format.
         :param pulumi.Input[builtins.str] key_material_expire_time: Key material expiration time. If empty, the key does not expire.
         :param pulumi.Input[builtins.str] key_name: Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
+        :param pulumi.Input[builtins.str] key_primary_region: Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
         :param pulumi.Input[builtins.int] key_rotation_operation: User master key rotation operation (enter 1 to enable, 2 to disable).
         :param pulumi.Input[builtins.str] key_spec: Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         :param pulumi.Input[builtins.str] key_state: Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
@@ -799,6 +1025,8 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[Union['KeyMultiRegionConfigurationArgs', 'KeyMultiRegionConfigurationArgsDict']] multi_region_configuration: Multi-region key configuration information.
         :param pulumi.Input[builtins.str] origin: Key source. Options: CloudKMS, External, ExternalKeyStore.
         :param pulumi.Input[builtins.str] protection_level: Key protection level. Options: SOFTWARE, HSM.
+        :param pulumi.Input[Union['KeyReEncryptArgs', 'KeyReEncryptArgsDict']] re_encrypt: Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        :param pulumi.Input[Union['KeyReplicateKeyArgs', 'KeyReplicateKeyArgsDict']] replicate_key: Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
         :param pulumi.Input[builtins.int] rotate_interval: Key rotation period (days). Range: [90, 2560].
         :param pulumi.Input[builtins.str] rotate_state: Key rotation status. Options: Enable, Disable.
         :param pulumi.Input[builtins.str] schedule_delete_time: Key deletion time.
@@ -810,6 +1038,9 @@ class Key(pulumi.CustomResource):
 
         __props__ = _KeyState.__new__(_KeyState)
 
+        __props__.__dict__["asymmetric_ciphertext"] = asymmetric_ciphertext
+        __props__.__dict__["asymmetric_signature"] = asymmetric_signature
+        __props__.__dict__["ciphertext"] = ciphertext
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["description"] = description
         __props__.__dict__["key_archive_operation"] = key_archive_operation
@@ -817,6 +1048,7 @@ class Key(pulumi.CustomResource):
         __props__.__dict__["key_id"] = key_id
         __props__.__dict__["key_material_expire_time"] = key_material_expire_time
         __props__.__dict__["key_name"] = key_name
+        __props__.__dict__["key_primary_region"] = key_primary_region
         __props__.__dict__["key_rotation_operation"] = key_rotation_operation
         __props__.__dict__["key_spec"] = key_spec
         __props__.__dict__["key_state"] = key_state
@@ -827,6 +1059,8 @@ class Key(pulumi.CustomResource):
         __props__.__dict__["multi_region_configuration"] = multi_region_configuration
         __props__.__dict__["origin"] = origin
         __props__.__dict__["protection_level"] = protection_level
+        __props__.__dict__["re_encrypt"] = re_encrypt
+        __props__.__dict__["replicate_key"] = replicate_key
         __props__.__dict__["rotate_interval"] = rotate_interval
         __props__.__dict__["rotate_state"] = rotate_state
         __props__.__dict__["schedule_delete_time"] = schedule_delete_time
@@ -835,6 +1069,30 @@ class Key(pulumi.CustomResource):
         __props__.__dict__["trn"] = trn
         __props__.__dict__["updated_time"] = updated_time
         return Key(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="asymmetricCiphertext")
+    def asymmetric_ciphertext(self) -> pulumi.Output['outputs.KeyAsymmetricCiphertext']:
+        """
+        Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_ciphertext")
+
+    @property
+    @pulumi.getter(name="asymmetricSignature")
+    def asymmetric_signature(self) -> pulumi.Output['outputs.KeyAsymmetricSignature']:
+        """
+        Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_signature")
+
+    @property
+    @pulumi.getter
+    def ciphertext(self) -> pulumi.Output['outputs.KeyCiphertext']:
+        """
+        Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "ciphertext")
 
     @property
     @pulumi.getter(name="createdTime")
@@ -891,6 +1149,14 @@ class Key(pulumi.CustomResource):
         Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         """
         return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="keyPrimaryRegion")
+    def key_primary_region(self) -> pulumi.Output[builtins.str]:
+        """
+        Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        """
+        return pulumi.get(self, "key_primary_region")
 
     @property
     @pulumi.getter(name="keyRotationOperation")
@@ -971,6 +1237,22 @@ class Key(pulumi.CustomResource):
         Key protection level. Options: SOFTWARE, HSM.
         """
         return pulumi.get(self, "protection_level")
+
+    @property
+    @pulumi.getter(name="reEncrypt")
+    def re_encrypt(self) -> pulumi.Output['outputs.KeyReEncrypt']:
+        """
+        Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "re_encrypt")
+
+    @property
+    @pulumi.getter(name="replicateKey")
+    def replicate_key(self) -> pulumi.Output['outputs.KeyReplicateKey']:
+        """
+        Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "replicate_key")
 
     @property
     @pulumi.getter(name="rotateInterval")

@@ -44,6 +44,18 @@ export class Key extends pulumi.CustomResource {
     }
 
     /**
+     * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    public readonly asymmetricCiphertext!: pulumi.Output<outputs.kms.KeyAsymmetricCiphertext>;
+    /**
+     * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    public readonly asymmetricSignature!: pulumi.Output<outputs.kms.KeyAsymmetricSignature>;
+    /**
+     * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    public readonly ciphertext!: pulumi.Output<outputs.kms.KeyCiphertext>;
+    /**
      * Key creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<number>;
@@ -71,6 +83,10 @@ export class Key extends pulumi.CustomResource {
      * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     public readonly keyName!: pulumi.Output<string>;
+    /**
+     * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     */
+    public readonly keyPrimaryRegion!: pulumi.Output<string>;
     /**
      * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
@@ -112,6 +128,14 @@ export class Key extends pulumi.CustomResource {
      */
     public readonly protectionLevel!: pulumi.Output<string>;
     /**
+     * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    public readonly reEncrypt!: pulumi.Output<outputs.kms.KeyReEncrypt>;
+    /**
+     * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    public readonly replicateKey!: pulumi.Output<outputs.kms.KeyReplicateKey>;
+    /**
      * Key rotation period (days). Range: [90, 2560].
      */
     public readonly rotateInterval!: pulumi.Output<number>;
@@ -150,6 +174,9 @@ export class Key extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyState | undefined;
+            resourceInputs["asymmetricCiphertext"] = state ? state.asymmetricCiphertext : undefined;
+            resourceInputs["asymmetricSignature"] = state ? state.asymmetricSignature : undefined;
+            resourceInputs["ciphertext"] = state ? state.ciphertext : undefined;
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["keyArchiveOperation"] = state ? state.keyArchiveOperation : undefined;
@@ -157,6 +184,7 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["keyMaterialExpireTime"] = state ? state.keyMaterialExpireTime : undefined;
             resourceInputs["keyName"] = state ? state.keyName : undefined;
+            resourceInputs["keyPrimaryRegion"] = state ? state.keyPrimaryRegion : undefined;
             resourceInputs["keyRotationOperation"] = state ? state.keyRotationOperation : undefined;
             resourceInputs["keySpec"] = state ? state.keySpec : undefined;
             resourceInputs["keyState"] = state ? state.keyState : undefined;
@@ -167,6 +195,8 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["multiRegionConfiguration"] = state ? state.multiRegionConfiguration : undefined;
             resourceInputs["origin"] = state ? state.origin : undefined;
             resourceInputs["protectionLevel"] = state ? state.protectionLevel : undefined;
+            resourceInputs["reEncrypt"] = state ? state.reEncrypt : undefined;
+            resourceInputs["replicateKey"] = state ? state.replicateKey : undefined;
             resourceInputs["rotateInterval"] = state ? state.rotateInterval : undefined;
             resourceInputs["rotateState"] = state ? state.rotateState : undefined;
             resourceInputs["scheduleDeleteTime"] = state ? state.scheduleDeleteTime : undefined;
@@ -182,10 +212,14 @@ export class Key extends pulumi.CustomResource {
             if ((!args || args.keyringName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'keyringName'");
             }
+            resourceInputs["asymmetricCiphertext"] = args ? args.asymmetricCiphertext : undefined;
+            resourceInputs["asymmetricSignature"] = args ? args.asymmetricSignature : undefined;
+            resourceInputs["ciphertext"] = args ? args.ciphertext : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["keyArchiveOperation"] = args ? args.keyArchiveOperation : undefined;
             resourceInputs["keyEnableOperation"] = args ? args.keyEnableOperation : undefined;
             resourceInputs["keyName"] = args ? args.keyName : undefined;
+            resourceInputs["keyPrimaryRegion"] = args ? args.keyPrimaryRegion : undefined;
             resourceInputs["keyRotationOperation"] = args ? args.keyRotationOperation : undefined;
             resourceInputs["keySpec"] = args ? args.keySpec : undefined;
             resourceInputs["keyUsage"] = args ? args.keyUsage : undefined;
@@ -193,6 +227,8 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["multiRegion"] = args ? args.multiRegion : undefined;
             resourceInputs["origin"] = args ? args.origin : undefined;
             resourceInputs["protectionLevel"] = args ? args.protectionLevel : undefined;
+            resourceInputs["reEncrypt"] = args ? args.reEncrypt : undefined;
+            resourceInputs["replicateKey"] = args ? args.replicateKey : undefined;
             resourceInputs["rotateInterval"] = args ? args.rotateInterval : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["createdTime"] = undefined /*out*/;
@@ -216,6 +252,18 @@ export class Key extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Key resources.
  */
 export interface KeyState {
+    /**
+     * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    asymmetricCiphertext?: pulumi.Input<inputs.kms.KeyAsymmetricCiphertext>;
+    /**
+     * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    asymmetricSignature?: pulumi.Input<inputs.kms.KeyAsymmetricSignature>;
+    /**
+     * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    ciphertext?: pulumi.Input<inputs.kms.KeyCiphertext>;
     /**
      * Key creation time.
      */
@@ -244,6 +292,10 @@ export interface KeyState {
      * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     keyName?: pulumi.Input<string>;
+    /**
+     * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     */
+    keyPrimaryRegion?: pulumi.Input<string>;
     /**
      * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
@@ -285,6 +337,14 @@ export interface KeyState {
      */
     protectionLevel?: pulumi.Input<string>;
     /**
+     * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    reEncrypt?: pulumi.Input<inputs.kms.KeyReEncrypt>;
+    /**
+     * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    replicateKey?: pulumi.Input<inputs.kms.KeyReplicateKey>;
+    /**
      * Key rotation period (days). Range: [90, 2560].
      */
     rotateInterval?: pulumi.Input<number>;
@@ -316,6 +376,18 @@ export interface KeyState {
  */
 export interface KeyArgs {
     /**
+     * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    asymmetricCiphertext?: pulumi.Input<inputs.kms.KeyAsymmetricCiphertext>;
+    /**
+     * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    asymmetricSignature?: pulumi.Input<inputs.kms.KeyAsymmetricSignature>;
+    /**
+     * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    ciphertext?: pulumi.Input<inputs.kms.KeyCiphertext>;
+    /**
      * Key description: Length 0–8192 characters.
      */
     description?: pulumi.Input<string>;
@@ -331,6 +403,10 @@ export interface KeyArgs {
      * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     keyName: pulumi.Input<string>;
+    /**
+     * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     */
+    keyPrimaryRegion?: pulumi.Input<string>;
     /**
      * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
@@ -359,6 +435,14 @@ export interface KeyArgs {
      * Key protection level. Options: SOFTWARE, HSM.
      */
     protectionLevel?: pulumi.Input<string>;
+    /**
+     * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    reEncrypt?: pulumi.Input<inputs.kms.KeyReEncrypt>;
+    /**
+     * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    replicateKey?: pulumi.Input<inputs.kms.KeyReplicateKey>;
     /**
      * Key rotation period (days). Range: [90, 2560].
      */

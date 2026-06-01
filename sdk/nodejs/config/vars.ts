@@ -100,8 +100,8 @@ Object.defineProperty(exports, "proxyUrl", {
 });
 
 /**
- * The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
- * variable
+ * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+ * `ap-southeast-1` when not provided.
  */
 export declare const region: string | undefined;
 Object.defineProperty(exports, "region", {
@@ -119,6 +119,18 @@ export declare const secretKey: string | undefined;
 Object.defineProperty(exports, "secretKey", {
     get() {
         return __config.get("secretKey") ?? utilities.getEnv("BYTEPLUS_SECRET_KEY");
+    },
+    enumerable: true,
+});
+
+/**
+ * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+ * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+ */
+export declare const sessionToken: string | undefined;
+Object.defineProperty(exports, "sessionToken", {
+    get() {
+        return __config.get("sessionToken") ?? utilities.getEnv("BYTEPLUS_SESSION_TOKEN");
     },
     enumerable: true,
 });

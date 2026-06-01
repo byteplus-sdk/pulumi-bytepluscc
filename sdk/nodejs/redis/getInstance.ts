@@ -79,11 +79,11 @@ export interface GetInstanceResult {
      */
     readonly dataLayout: string;
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      */
     readonly deletionProtection: string;
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      */
     readonly engineVersion: string;
     /**
@@ -119,7 +119,7 @@ export interface GetInstanceResult {
      */
     readonly maxConnections: number;
     /**
-     * Set the deployment scheme for the instance's availability zone.
+     * Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      */
     readonly multiAz: string;
     /**
@@ -167,7 +167,11 @@ export interface GetInstanceResult {
      */
     readonly reserveAdditionalBandwidth: boolean;
     /**
-     * Service type of the instance
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     */
+    readonly restartInstance: boolean;
+    /**
+     * Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      */
     readonly serviceType: string;
     /**
@@ -183,7 +187,7 @@ export interface GetInstanceResult {
      */
     readonly shardedCluster: number;
     /**
-     * Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * Current status of the instance.
      */
     readonly status: string;
     /**

@@ -130,11 +130,11 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly dataLayout!: pulumi.Output<string>;
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      */
     public readonly deletionProtection!: pulumi.Output<string>;
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      */
     public readonly engineVersion!: pulumi.Output<string>;
     /**
@@ -163,7 +163,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly maxConnections!: pulumi.Output<number>;
     /**
-     * Set the deployment scheme for the instance's availability zone.
+     * Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      */
     public readonly multiAz!: pulumi.Output<string>;
     /**
@@ -211,7 +211,11 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly reserveAdditionalBandwidth!: pulumi.Output<boolean>;
     /**
-     * Service type of the instance
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     */
+    public readonly restartInstance!: pulumi.Output<boolean>;
+    /**
+     * Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      */
     public /*out*/ readonly serviceType!: pulumi.Output<string>;
     /**
@@ -227,7 +231,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly shardedCluster!: pulumi.Output<number>;
     /**
-     * Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * Current status of the instance.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
@@ -303,6 +307,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["purchaseMonths"] = state ? state.purchaseMonths : undefined;
             resourceInputs["reserveAdditionalBandwidth"] = state ? state.reserveAdditionalBandwidth : undefined;
+            resourceInputs["restartInstance"] = state ? state.restartInstance : undefined;
             resourceInputs["serviceType"] = state ? state.serviceType : undefined;
             resourceInputs["shardCapacity"] = state ? state.shardCapacity : undefined;
             resourceInputs["shardNumber"] = state ? state.shardNumber : undefined;
@@ -362,6 +367,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["purchaseMonths"] = args ? args.purchaseMonths : undefined;
             resourceInputs["reserveAdditionalBandwidth"] = args ? args.reserveAdditionalBandwidth : undefined;
+            resourceInputs["restartInstance"] = args ? args.restartInstance : undefined;
             resourceInputs["shardCapacity"] = args ? args.shardCapacity : undefined;
             resourceInputs["shardNumber"] = args ? args.shardNumber : undefined;
             resourceInputs["shardedCluster"] = args ? args.shardedCluster : undefined;
@@ -444,11 +450,11 @@ export interface InstanceState {
      */
     dataLayout?: pulumi.Input<string>;
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      */
     deletionProtection?: pulumi.Input<string>;
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      */
     engineVersion?: pulumi.Input<string>;
     /**
@@ -477,7 +483,7 @@ export interface InstanceState {
      */
     maxConnections?: pulumi.Input<number>;
     /**
-     * Set the deployment scheme for the instance's availability zone.
+     * Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      */
     multiAz?: pulumi.Input<string>;
     /**
@@ -525,7 +531,11 @@ export interface InstanceState {
      */
     reserveAdditionalBandwidth?: pulumi.Input<boolean>;
     /**
-     * Service type of the instance
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     */
+    restartInstance?: pulumi.Input<boolean>;
+    /**
+     * Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      */
     serviceType?: pulumi.Input<string>;
     /**
@@ -541,7 +551,7 @@ export interface InstanceState {
      */
     shardedCluster?: pulumi.Input<number>;
     /**
-     * Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * Current status of the instance.
      */
     status?: pulumi.Input<string>;
     /**
@@ -606,11 +616,11 @@ export interface InstanceArgs {
      */
     createBackup?: pulumi.Input<boolean>;
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      */
     deletionProtection?: pulumi.Input<string>;
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      */
     engineVersion: pulumi.Input<string>;
     /**
@@ -618,7 +628,7 @@ export interface InstanceArgs {
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * Set the deployment scheme for the instance's availability zone.
+     * Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      */
     multiAz: pulumi.Input<string>;
     /**
@@ -653,6 +663,10 @@ export interface InstanceArgs {
      * Set whether to reserve additional bandwidth
      */
     reserveAdditionalBandwidth?: pulumi.Input<boolean>;
+    /**
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     */
+    restartInstance?: pulumi.Input<boolean>;
     /**
      * Memory capacity of each shard in the instance. Unit: MiB.
      */

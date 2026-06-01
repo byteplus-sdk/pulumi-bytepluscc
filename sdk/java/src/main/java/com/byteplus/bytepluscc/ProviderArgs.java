@@ -144,16 +144,16 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-     * variable
+     * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+     * `ap-southeast-1` when not provided.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-     * variable
+     * @return The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+     * `ap-southeast-1` when not provided.
      * 
      */
     public Optional<Output<String>> region() {
@@ -177,6 +177,23 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.secretKey);
     }
 
+    /**
+     * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     * 
+     */
+    @Import(name="sessionToken")
+    private @Nullable Output<String> sessionToken;
+
+    /**
+     * @return The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     * 
+     */
+    public Optional<Output<String>> sessionToken() {
+        return Optional.ofNullable(this.sessionToken);
+    }
+
     private ProviderArgs() {}
 
     private ProviderArgs(ProviderArgs $) {
@@ -190,6 +207,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.proxyUrl = $.proxyUrl;
         this.region = $.region;
         this.secretKey = $.secretKey;
+        this.sessionToken = $.sessionToken;
     }
 
     public static Builder builder() {
@@ -383,8 +401,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-         * variable
+         * @param region The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+         * `ap-southeast-1` when not provided.
          * 
          * @return builder
          * 
@@ -395,8 +413,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-         * variable
+         * @param region The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+         * `ap-southeast-1` when not provided.
          * 
          * @return builder
          * 
@@ -428,6 +446,29 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
             return secretKey(Output.of(secretKey));
         }
 
+        /**
+         * @param sessionToken The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+         * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sessionToken(@Nullable Output<String> sessionToken) {
+            $.sessionToken = sessionToken;
+            return this;
+        }
+
+        /**
+         * @param sessionToken The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+         * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sessionToken(String sessionToken) {
+            return sessionToken(Output.of(sessionToken));
+        }
+
         public ProviderArgs build() {
             $.accessKey = Codegen.stringProp("accessKey").output().arg($.accessKey).env("BYTEPLUS_ACCESS_KEY").getNullable();
             $.customerHeaders = Codegen.stringProp("customerHeaders").output().arg($.customerHeaders).env("BYTEPLUS_CUSTOMER_HEADERS").getNullable();
@@ -437,6 +478,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
             $.proxyUrl = Codegen.stringProp("proxyUrl").output().arg($.proxyUrl).env("BYTEPLUS_PROXY_URL").getNullable();
             $.region = Codegen.stringProp("region").output().arg($.region).env("BYTEPLUS_REGION").getNullable();
             $.secretKey = Codegen.stringProp("secretKey").output().arg($.secretKey).env("BYTEPLUS_SECRET_KEY").getNullable();
+            $.sessionToken = Codegen.stringProp("sessionToken").output().arg($.sessionToken).env("BYTEPLUS_SESSION_TOKEN").getNullable();
             return $;
         }
     }

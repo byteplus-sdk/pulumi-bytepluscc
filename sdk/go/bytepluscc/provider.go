@@ -30,12 +30,15 @@ type Provider struct {
 	Profile pulumi.StringPtrOutput `pulumi:"profile"`
 	// PROXY URL for Byteplus Provider
 	ProxyUrl pulumi.StringPtrOutput `pulumi:"proxyUrl"`
-	// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-	// variable
+	// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+	// `ap-southeast-1` when not provided.
 	Region pulumi.StringPtrOutput `pulumi:"region"`
 	// he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
 	// environment variable
 	SecretKey pulumi.StringPtrOutput `pulumi:"secretKey"`
+	// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+	// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+	SessionToken pulumi.StringPtrOutput `pulumi:"sessionToken"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -85,6 +88,11 @@ func NewProvider(ctx *pulumi.Context,
 			args.SecretKey = pulumi.StringPtr(d.(string))
 		}
 	}
+	if args.SessionToken == nil {
+		if d := internal.GetEnvOrDefault(nil, nil, "BYTEPLUS_SESSION_TOKEN"); d != nil {
+			args.SessionToken = pulumi.StringPtr(d.(string))
+		}
+	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:bytepluscc", name, args, &resource, opts...)
@@ -113,12 +121,15 @@ type providerArgs struct {
 	Profile *string `pulumi:"profile"`
 	// PROXY URL for Byteplus Provider
 	ProxyUrl *string `pulumi:"proxyUrl"`
-	// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-	// variable
+	// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+	// `ap-southeast-1` when not provided.
 	Region *string `pulumi:"region"`
 	// he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
 	// environment variable
 	SecretKey *string `pulumi:"secretKey"`
+	// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+	// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+	SessionToken *string `pulumi:"sessionToken"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -141,12 +152,15 @@ type ProviderArgs struct {
 	Profile pulumi.StringPtrInput
 	// PROXY URL for Byteplus Provider
 	ProxyUrl pulumi.StringPtrInput
-	// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-	// variable
+	// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+	// `ap-southeast-1` when not provided.
 	Region pulumi.StringPtrInput
 	// he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
 	// environment variable
 	SecretKey pulumi.StringPtrInput
+	// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+	// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+	SessionToken pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -236,8 +250,8 @@ func (o ProviderOutput) ProxyUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ProxyUrl }).(pulumi.StringPtrOutput)
 }
 
-// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-// variable
+// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+// `ap-southeast-1` when not provided.
 func (o ProviderOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Region }).(pulumi.StringPtrOutput)
 }
@@ -246,6 +260,12 @@ func (o ProviderOutput) Region() pulumi.StringPtrOutput {
 // environment variable
 func (o ProviderOutput) SecretKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.SecretKey }).(pulumi.StringPtrOutput)
+}
+
+// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+func (o ProviderOutput) SessionToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.SessionToken }).(pulumi.StringPtrOutput)
 }
 
 func init() {

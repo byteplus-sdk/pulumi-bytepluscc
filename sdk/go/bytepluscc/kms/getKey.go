@@ -30,6 +30,12 @@ type LookupKeyArgs struct {
 
 // A collection of values returned by getKey.
 type LookupKeyResult struct {
+	// Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+	AsymmetricCiphertext GetKeyAsymmetricCiphertext `pulumi:"asymmetricCiphertext"`
+	// Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+	AsymmetricSignature GetKeyAsymmetricSignature `pulumi:"asymmetricSignature"`
+	// Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+	Ciphertext GetKeyCiphertext `pulumi:"ciphertext"`
 	// Key creation time.
 	CreatedTime int `pulumi:"createdTime"`
 	// Key description: Length 0–8192 characters.
@@ -46,6 +52,8 @@ type LookupKeyResult struct {
 	KeyMaterialExpireTime string `pulumi:"keyMaterialExpireTime"`
 	// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
 	KeyName string `pulumi:"keyName"`
+	// Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+	KeyPrimaryRegion string `pulumi:"keyPrimaryRegion"`
 	// User master key rotation operation (enter 1 to enable, 2 to disable).
 	KeyRotationOperation int `pulumi:"keyRotationOperation"`
 	// Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
@@ -66,6 +74,10 @@ type LookupKeyResult struct {
 	Origin string `pulumi:"origin"`
 	// Key protection level. Options: SOFTWARE, HSM.
 	ProtectionLevel string `pulumi:"protectionLevel"`
+	// Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+	ReEncrypt GetKeyReEncrypt `pulumi:"reEncrypt"`
+	// Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+	ReplicateKey GetKeyReplicateKey `pulumi:"replicateKey"`
 	// Key rotation period (days). Range: [90, 2560].
 	RotateInterval int `pulumi:"rotateInterval"`
 	// Key rotation status. Options: Enable, Disable.
@@ -116,6 +128,21 @@ func (o LookupKeyResultOutput) ToLookupKeyResultOutputWithContext(ctx context.Co
 	return o
 }
 
+// Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+func (o LookupKeyResultOutput) AsymmetricCiphertext() GetKeyAsymmetricCiphertextOutput {
+	return o.ApplyT(func(v LookupKeyResult) GetKeyAsymmetricCiphertext { return v.AsymmetricCiphertext }).(GetKeyAsymmetricCiphertextOutput)
+}
+
+// Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+func (o LookupKeyResultOutput) AsymmetricSignature() GetKeyAsymmetricSignatureOutput {
+	return o.ApplyT(func(v LookupKeyResult) GetKeyAsymmetricSignature { return v.AsymmetricSignature }).(GetKeyAsymmetricSignatureOutput)
+}
+
+// Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+func (o LookupKeyResultOutput) Ciphertext() GetKeyCiphertextOutput {
+	return o.ApplyT(func(v LookupKeyResult) GetKeyCiphertext { return v.Ciphertext }).(GetKeyCiphertextOutput)
+}
+
 // Key creation time.
 func (o LookupKeyResultOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.CreatedTime }).(pulumi.IntOutput)
@@ -154,6 +181,11 @@ func (o LookupKeyResultOutput) KeyMaterialExpireTime() pulumi.StringOutput {
 // Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
 func (o LookupKeyResultOutput) KeyName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyName }).(pulumi.StringOutput)
+}
+
+// Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+func (o LookupKeyResultOutput) KeyPrimaryRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyPrimaryRegion }).(pulumi.StringOutput)
 }
 
 // User master key rotation operation (enter 1 to enable, 2 to disable).
@@ -204,6 +236,16 @@ func (o LookupKeyResultOutput) Origin() pulumi.StringOutput {
 // Key protection level. Options: SOFTWARE, HSM.
 func (o LookupKeyResultOutput) ProtectionLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ProtectionLevel }).(pulumi.StringOutput)
+}
+
+// Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+func (o LookupKeyResultOutput) ReEncrypt() GetKeyReEncryptOutput {
+	return o.ApplyT(func(v LookupKeyResult) GetKeyReEncrypt { return v.ReEncrypt }).(GetKeyReEncryptOutput)
+}
+
+// Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+func (o LookupKeyResultOutput) ReplicateKey() GetKeyReplicateKeyOutput {
+	return o.ApplyT(func(v LookupKeyResult) GetKeyReplicateKey { return v.ReplicateKey }).(GetKeyReplicateKeyOutput)
 }
 
 // Key rotation period (days). Range: [90, 2560].

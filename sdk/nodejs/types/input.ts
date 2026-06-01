@@ -7519,6 +7519,55 @@ export namespace kafka {
 }
 
 export namespace kms {
+    export interface KeyAsymmetricCiphertext {
+        /**
+         * Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+         */
+        algorithm?: pulumi.Input<string>;
+        /**
+         * Ciphertext of encryption result, Base64-encoded.
+         */
+        ciphertextBlob?: pulumi.Input<string>;
+        /**
+         * Plaintext to be encrypted, Base64-encoded.
+         */
+        plaintext?: pulumi.Input<string>;
+    }
+
+    export interface KeyAsymmetricSignature {
+        /**
+         * Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+         */
+        algorithm?: pulumi.Input<string>;
+        /**
+         * Message to be signed, Base64-encoded.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * Message type. Optional values: RAW, DIGEST.
+         */
+        messageType?: pulumi.Input<string>;
+        /**
+         * Signature result, Base64-encoded.
+         */
+        signature?: pulumi.Input<string>;
+    }
+
+    export interface KeyCiphertext {
+        /**
+         * Ciphertext of encryption result, Base64-encoded.
+         */
+        ciphertextBlob?: pulumi.Input<string>;
+        /**
+         * Encryption context JSON string.
+         */
+        encryptionContext?: pulumi.Input<string>;
+        /**
+         * Plaintext to be encrypted, Base64-encoded.
+         */
+        plaintext?: pulumi.Input<string>;
+    }
+
     export interface KeyMultiRegionConfiguration {
         /**
          * Multi-region key type.
@@ -7551,6 +7600,64 @@ export namespace kms {
          * Multi-region key conversion.
          */
         trn?: pulumi.Input<string>;
+    }
+
+    export interface KeyReEncrypt {
+        /**
+         * Re-encrypted ciphertext, Base64-encoded.
+         */
+        ciphertextBlob?: pulumi.Input<string>;
+        /**
+         * New encryption context JSON string.
+         */
+        newEncryptionContext?: pulumi.Input<string>;
+        /**
+         * Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+         */
+        newKeyId?: pulumi.Input<string>;
+        /**
+         * Target key name.
+         */
+        newKeyName?: pulumi.Input<string>;
+        /**
+         * Name of the keyring to which the target key belongs.
+         */
+        newKeyringName?: pulumi.Input<string>;
+        /**
+         * Old encryption context JSON string.
+         */
+        oldEncryptionContext?: pulumi.Input<string>;
+        /**
+         * Source ciphertext to be re-encrypted, Base64-encoded.
+         */
+        sourceCiphertextBlob?: pulumi.Input<string>;
+    }
+
+    export interface KeyReplicateKey {
+        /**
+         * Replica key description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Replica key ID.
+         */
+        replicaKeyId?: pulumi.Input<string>;
+        /**
+         * Target region of the replica key.
+         */
+        replicaRegion?: pulumi.Input<string>;
+        tags?: pulumi.Input<pulumi.Input<inputs.kms.KeyReplicateKeyTag>[]>;
+    }
+
+    export interface KeyReplicateKeyTag {
+        /**
+         * KMS key label key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * KMS key label value.
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface KeyTag {
@@ -9440,6 +9547,17 @@ export namespace rdspostgresql {
          * Tag value
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface ParameterTemplateTemplateParam {
+        /**
+         * Parameter name
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Parameter value
+         */
+        value: pulumi.Input<string>;
     }
 }
 

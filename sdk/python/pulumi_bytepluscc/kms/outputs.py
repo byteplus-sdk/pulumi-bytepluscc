@@ -17,15 +17,221 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'KeyAsymmetricCiphertext',
+    'KeyAsymmetricSignature',
+    'KeyCiphertext',
     'KeyMultiRegionConfiguration',
     'KeyMultiRegionConfigurationPrimaryKey',
     'KeyMultiRegionConfigurationReplicaKey',
+    'KeyReEncrypt',
+    'KeyReplicateKey',
+    'KeyReplicateKeyTag',
     'KeyTag',
+    'GetKeyAsymmetricCiphertextResult',
+    'GetKeyAsymmetricSignatureResult',
+    'GetKeyCiphertextResult',
     'GetKeyMultiRegionConfigurationResult',
     'GetKeyMultiRegionConfigurationPrimaryKeyResult',
     'GetKeyMultiRegionConfigurationReplicaKeyResult',
+    'GetKeyReEncryptResult',
+    'GetKeyReplicateKeyResult',
+    'GetKeyReplicateKeyTagResult',
     'GetKeyTagResult',
 ]
+
+@pulumi.output_type
+class KeyAsymmetricCiphertext(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ciphertextBlob":
+            suggest = "ciphertext_blob"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyAsymmetricCiphertext. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyAsymmetricCiphertext.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyAsymmetricCiphertext.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[builtins.str] = None,
+                 ciphertext_blob: Optional[builtins.str] = None,
+                 plaintext: Optional[builtins.str] = None):
+        """
+        :param builtins.str algorithm: Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+        :param builtins.str ciphertext_blob: Ciphertext of encryption result, Base64-encoded.
+        :param builtins.str plaintext: Plaintext to be encrypted, Base64-encoded.
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if ciphertext_blob is not None:
+            pulumi.set(__self__, "ciphertext_blob", ciphertext_blob)
+        if plaintext is not None:
+            pulumi.set(__self__, "plaintext", plaintext)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[builtins.str]:
+        """
+        Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="ciphertextBlob")
+    def ciphertext_blob(self) -> Optional[builtins.str]:
+        """
+        Ciphertext of encryption result, Base64-encoded.
+        """
+        return pulumi.get(self, "ciphertext_blob")
+
+    @property
+    @pulumi.getter
+    def plaintext(self) -> Optional[builtins.str]:
+        """
+        Plaintext to be encrypted, Base64-encoded.
+        """
+        return pulumi.get(self, "plaintext")
+
+
+@pulumi.output_type
+class KeyAsymmetricSignature(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "messageType":
+            suggest = "message_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyAsymmetricSignature. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyAsymmetricSignature.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyAsymmetricSignature.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[builtins.str] = None,
+                 message: Optional[builtins.str] = None,
+                 message_type: Optional[builtins.str] = None,
+                 signature: Optional[builtins.str] = None):
+        """
+        :param builtins.str algorithm: Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+        :param builtins.str message: Message to be signed, Base64-encoded.
+        :param builtins.str message_type: Message type. Optional values: RAW, DIGEST.
+        :param builtins.str signature: Signature result, Base64-encoded.
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if message_type is not None:
+            pulumi.set(__self__, "message_type", message_type)
+        if signature is not None:
+            pulumi.set(__self__, "signature", signature)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[builtins.str]:
+        """
+        Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[builtins.str]:
+        """
+        Message to be signed, Base64-encoded.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="messageType")
+    def message_type(self) -> Optional[builtins.str]:
+        """
+        Message type. Optional values: RAW, DIGEST.
+        """
+        return pulumi.get(self, "message_type")
+
+    @property
+    @pulumi.getter
+    def signature(self) -> Optional[builtins.str]:
+        """
+        Signature result, Base64-encoded.
+        """
+        return pulumi.get(self, "signature")
+
+
+@pulumi.output_type
+class KeyCiphertext(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ciphertextBlob":
+            suggest = "ciphertext_blob"
+        elif key == "encryptionContext":
+            suggest = "encryption_context"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyCiphertext. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyCiphertext.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyCiphertext.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ciphertext_blob: Optional[builtins.str] = None,
+                 encryption_context: Optional[builtins.str] = None,
+                 plaintext: Optional[builtins.str] = None):
+        """
+        :param builtins.str ciphertext_blob: Ciphertext of encryption result, Base64-encoded.
+        :param builtins.str encryption_context: Encryption context JSON string.
+        :param builtins.str plaintext: Plaintext to be encrypted, Base64-encoded.
+        """
+        if ciphertext_blob is not None:
+            pulumi.set(__self__, "ciphertext_blob", ciphertext_blob)
+        if encryption_context is not None:
+            pulumi.set(__self__, "encryption_context", encryption_context)
+        if plaintext is not None:
+            pulumi.set(__self__, "plaintext", plaintext)
+
+    @property
+    @pulumi.getter(name="ciphertextBlob")
+    def ciphertext_blob(self) -> Optional[builtins.str]:
+        """
+        Ciphertext of encryption result, Base64-encoded.
+        """
+        return pulumi.get(self, "ciphertext_blob")
+
+    @property
+    @pulumi.getter(name="encryptionContext")
+    def encryption_context(self) -> Optional[builtins.str]:
+        """
+        Encryption context JSON string.
+        """
+        return pulumi.get(self, "encryption_context")
+
+    @property
+    @pulumi.getter
+    def plaintext(self) -> Optional[builtins.str]:
+        """
+        Plaintext to be encrypted, Base64-encoded.
+        """
+        return pulumi.get(self, "plaintext")
+
 
 @pulumi.output_type
 class KeyMultiRegionConfiguration(dict):
@@ -150,6 +356,227 @@ class KeyMultiRegionConfigurationReplicaKey(dict):
 
 
 @pulumi.output_type
+class KeyReEncrypt(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ciphertextBlob":
+            suggest = "ciphertext_blob"
+        elif key == "newEncryptionContext":
+            suggest = "new_encryption_context"
+        elif key == "newKeyId":
+            suggest = "new_key_id"
+        elif key == "newKeyName":
+            suggest = "new_key_name"
+        elif key == "newKeyringName":
+            suggest = "new_keyring_name"
+        elif key == "oldEncryptionContext":
+            suggest = "old_encryption_context"
+        elif key == "sourceCiphertextBlob":
+            suggest = "source_ciphertext_blob"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyReEncrypt. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyReEncrypt.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyReEncrypt.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ciphertext_blob: Optional[builtins.str] = None,
+                 new_encryption_context: Optional[builtins.str] = None,
+                 new_key_id: Optional[builtins.str] = None,
+                 new_key_name: Optional[builtins.str] = None,
+                 new_keyring_name: Optional[builtins.str] = None,
+                 old_encryption_context: Optional[builtins.str] = None,
+                 source_ciphertext_blob: Optional[builtins.str] = None):
+        """
+        :param builtins.str ciphertext_blob: Re-encrypted ciphertext, Base64-encoded.
+        :param builtins.str new_encryption_context: New encryption context JSON string.
+        :param builtins.str new_key_id: Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+        :param builtins.str new_key_name: Target key name.
+        :param builtins.str new_keyring_name: Name of the keyring to which the target key belongs.
+        :param builtins.str old_encryption_context: Old encryption context JSON string.
+        :param builtins.str source_ciphertext_blob: Source ciphertext to be re-encrypted, Base64-encoded.
+        """
+        if ciphertext_blob is not None:
+            pulumi.set(__self__, "ciphertext_blob", ciphertext_blob)
+        if new_encryption_context is not None:
+            pulumi.set(__self__, "new_encryption_context", new_encryption_context)
+        if new_key_id is not None:
+            pulumi.set(__self__, "new_key_id", new_key_id)
+        if new_key_name is not None:
+            pulumi.set(__self__, "new_key_name", new_key_name)
+        if new_keyring_name is not None:
+            pulumi.set(__self__, "new_keyring_name", new_keyring_name)
+        if old_encryption_context is not None:
+            pulumi.set(__self__, "old_encryption_context", old_encryption_context)
+        if source_ciphertext_blob is not None:
+            pulumi.set(__self__, "source_ciphertext_blob", source_ciphertext_blob)
+
+    @property
+    @pulumi.getter(name="ciphertextBlob")
+    def ciphertext_blob(self) -> Optional[builtins.str]:
+        """
+        Re-encrypted ciphertext, Base64-encoded.
+        """
+        return pulumi.get(self, "ciphertext_blob")
+
+    @property
+    @pulumi.getter(name="newEncryptionContext")
+    def new_encryption_context(self) -> Optional[builtins.str]:
+        """
+        New encryption context JSON string.
+        """
+        return pulumi.get(self, "new_encryption_context")
+
+    @property
+    @pulumi.getter(name="newKeyId")
+    def new_key_id(self) -> Optional[builtins.str]:
+        """
+        Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+        """
+        return pulumi.get(self, "new_key_id")
+
+    @property
+    @pulumi.getter(name="newKeyName")
+    def new_key_name(self) -> Optional[builtins.str]:
+        """
+        Target key name.
+        """
+        return pulumi.get(self, "new_key_name")
+
+    @property
+    @pulumi.getter(name="newKeyringName")
+    def new_keyring_name(self) -> Optional[builtins.str]:
+        """
+        Name of the keyring to which the target key belongs.
+        """
+        return pulumi.get(self, "new_keyring_name")
+
+    @property
+    @pulumi.getter(name="oldEncryptionContext")
+    def old_encryption_context(self) -> Optional[builtins.str]:
+        """
+        Old encryption context JSON string.
+        """
+        return pulumi.get(self, "old_encryption_context")
+
+    @property
+    @pulumi.getter(name="sourceCiphertextBlob")
+    def source_ciphertext_blob(self) -> Optional[builtins.str]:
+        """
+        Source ciphertext to be re-encrypted, Base64-encoded.
+        """
+        return pulumi.get(self, "source_ciphertext_blob")
+
+
+@pulumi.output_type
+class KeyReplicateKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "replicaKeyId":
+            suggest = "replica_key_id"
+        elif key == "replicaRegion":
+            suggest = "replica_region"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KeyReplicateKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KeyReplicateKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KeyReplicateKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 replica_key_id: Optional[builtins.str] = None,
+                 replica_region: Optional[builtins.str] = None,
+                 tags: Optional[Sequence['outputs.KeyReplicateKeyTag']] = None):
+        """
+        :param builtins.str description: Replica key description.
+        :param builtins.str replica_key_id: Replica key ID.
+        :param builtins.str replica_region: Target region of the replica key.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if replica_key_id is not None:
+            pulumi.set(__self__, "replica_key_id", replica_key_id)
+        if replica_region is not None:
+            pulumi.set(__self__, "replica_region", replica_region)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Replica key description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="replicaKeyId")
+    def replica_key_id(self) -> Optional[builtins.str]:
+        """
+        Replica key ID.
+        """
+        return pulumi.get(self, "replica_key_id")
+
+    @property
+    @pulumi.getter(name="replicaRegion")
+    def replica_region(self) -> Optional[builtins.str]:
+        """
+        Target region of the replica key.
+        """
+        return pulumi.get(self, "replica_region")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.KeyReplicateKeyTag']]:
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class KeyReplicateKeyTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: KMS key label key.
+        :param builtins.str value: KMS key label value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        KMS key label key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        KMS key label value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class KeyTag(dict):
     def __init__(__self__, *,
                  key: Optional[builtins.str] = None,
@@ -178,6 +605,137 @@ class KeyTag(dict):
         KMS key label value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetKeyAsymmetricCiphertextResult(dict):
+    def __init__(__self__, *,
+                 algorithm: builtins.str,
+                 ciphertext_blob: builtins.str,
+                 plaintext: builtins.str):
+        """
+        :param builtins.str algorithm: Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+        :param builtins.str ciphertext_blob: Ciphertext of encryption result, Base64-encoded.
+        :param builtins.str plaintext: Plaintext to be encrypted, Base64-encoded.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "ciphertext_blob", ciphertext_blob)
+        pulumi.set(__self__, "plaintext", plaintext)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> builtins.str:
+        """
+        Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="ciphertextBlob")
+    def ciphertext_blob(self) -> builtins.str:
+        """
+        Ciphertext of encryption result, Base64-encoded.
+        """
+        return pulumi.get(self, "ciphertext_blob")
+
+    @property
+    @pulumi.getter
+    def plaintext(self) -> builtins.str:
+        """
+        Plaintext to be encrypted, Base64-encoded.
+        """
+        return pulumi.get(self, "plaintext")
+
+
+@pulumi.output_type
+class GetKeyAsymmetricSignatureResult(dict):
+    def __init__(__self__, *,
+                 algorithm: builtins.str,
+                 message: builtins.str,
+                 message_type: builtins.str,
+                 signature: builtins.str):
+        """
+        :param builtins.str algorithm: Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+        :param builtins.str message: Message to be signed, Base64-encoded.
+        :param builtins.str message_type: Message type. Optional values: RAW, DIGEST.
+        :param builtins.str signature: Signature result, Base64-encoded.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "message_type", message_type)
+        pulumi.set(__self__, "signature", signature)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> builtins.str:
+        """
+        Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter
+    def message(self) -> builtins.str:
+        """
+        Message to be signed, Base64-encoded.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="messageType")
+    def message_type(self) -> builtins.str:
+        """
+        Message type. Optional values: RAW, DIGEST.
+        """
+        return pulumi.get(self, "message_type")
+
+    @property
+    @pulumi.getter
+    def signature(self) -> builtins.str:
+        """
+        Signature result, Base64-encoded.
+        """
+        return pulumi.get(self, "signature")
+
+
+@pulumi.output_type
+class GetKeyCiphertextResult(dict):
+    def __init__(__self__, *,
+                 ciphertext_blob: builtins.str,
+                 encryption_context: builtins.str,
+                 plaintext: builtins.str):
+        """
+        :param builtins.str ciphertext_blob: Ciphertext of encryption result, Base64-encoded.
+        :param builtins.str encryption_context: Encryption context JSON string.
+        :param builtins.str plaintext: Plaintext to be encrypted, Base64-encoded.
+        """
+        pulumi.set(__self__, "ciphertext_blob", ciphertext_blob)
+        pulumi.set(__self__, "encryption_context", encryption_context)
+        pulumi.set(__self__, "plaintext", plaintext)
+
+    @property
+    @pulumi.getter(name="ciphertextBlob")
+    def ciphertext_blob(self) -> builtins.str:
+        """
+        Ciphertext of encryption result, Base64-encoded.
+        """
+        return pulumi.get(self, "ciphertext_blob")
+
+    @property
+    @pulumi.getter(name="encryptionContext")
+    def encryption_context(self) -> builtins.str:
+        """
+        Encryption context JSON string.
+        """
+        return pulumi.get(self, "encryption_context")
+
+    @property
+    @pulumi.getter
+    def plaintext(self) -> builtins.str:
+        """
+        Plaintext to be encrypted, Base64-encoded.
+        """
+        return pulumi.get(self, "plaintext")
 
 
 @pulumi.output_type
@@ -276,6 +834,170 @@ class GetKeyMultiRegionConfigurationReplicaKeyResult(dict):
         Multi-region key conversion.
         """
         return pulumi.get(self, "trn")
+
+
+@pulumi.output_type
+class GetKeyReEncryptResult(dict):
+    def __init__(__self__, *,
+                 ciphertext_blob: builtins.str,
+                 new_encryption_context: builtins.str,
+                 new_key_id: builtins.str,
+                 new_key_name: builtins.str,
+                 new_keyring_name: builtins.str,
+                 old_encryption_context: builtins.str,
+                 source_ciphertext_blob: builtins.str):
+        """
+        :param builtins.str ciphertext_blob: Re-encrypted ciphertext, Base64-encoded.
+        :param builtins.str new_encryption_context: New encryption context JSON string.
+        :param builtins.str new_key_id: Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+        :param builtins.str new_key_name: Target key name.
+        :param builtins.str new_keyring_name: Name of the keyring to which the target key belongs.
+        :param builtins.str old_encryption_context: Old encryption context JSON string.
+        :param builtins.str source_ciphertext_blob: Source ciphertext to be re-encrypted, Base64-encoded.
+        """
+        pulumi.set(__self__, "ciphertext_blob", ciphertext_blob)
+        pulumi.set(__self__, "new_encryption_context", new_encryption_context)
+        pulumi.set(__self__, "new_key_id", new_key_id)
+        pulumi.set(__self__, "new_key_name", new_key_name)
+        pulumi.set(__self__, "new_keyring_name", new_keyring_name)
+        pulumi.set(__self__, "old_encryption_context", old_encryption_context)
+        pulumi.set(__self__, "source_ciphertext_blob", source_ciphertext_blob)
+
+    @property
+    @pulumi.getter(name="ciphertextBlob")
+    def ciphertext_blob(self) -> builtins.str:
+        """
+        Re-encrypted ciphertext, Base64-encoded.
+        """
+        return pulumi.get(self, "ciphertext_blob")
+
+    @property
+    @pulumi.getter(name="newEncryptionContext")
+    def new_encryption_context(self) -> builtins.str:
+        """
+        New encryption context JSON string.
+        """
+        return pulumi.get(self, "new_encryption_context")
+
+    @property
+    @pulumi.getter(name="newKeyId")
+    def new_key_id(self) -> builtins.str:
+        """
+        Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+        """
+        return pulumi.get(self, "new_key_id")
+
+    @property
+    @pulumi.getter(name="newKeyName")
+    def new_key_name(self) -> builtins.str:
+        """
+        Target key name.
+        """
+        return pulumi.get(self, "new_key_name")
+
+    @property
+    @pulumi.getter(name="newKeyringName")
+    def new_keyring_name(self) -> builtins.str:
+        """
+        Name of the keyring to which the target key belongs.
+        """
+        return pulumi.get(self, "new_keyring_name")
+
+    @property
+    @pulumi.getter(name="oldEncryptionContext")
+    def old_encryption_context(self) -> builtins.str:
+        """
+        Old encryption context JSON string.
+        """
+        return pulumi.get(self, "old_encryption_context")
+
+    @property
+    @pulumi.getter(name="sourceCiphertextBlob")
+    def source_ciphertext_blob(self) -> builtins.str:
+        """
+        Source ciphertext to be re-encrypted, Base64-encoded.
+        """
+        return pulumi.get(self, "source_ciphertext_blob")
+
+
+@pulumi.output_type
+class GetKeyReplicateKeyResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 replica_key_id: builtins.str,
+                 replica_region: builtins.str,
+                 tags: Sequence['outputs.GetKeyReplicateKeyTagResult']):
+        """
+        :param builtins.str description: Replica key description.
+        :param builtins.str replica_key_id: Replica key ID.
+        :param builtins.str replica_region: Target region of the replica key.
+        :param Sequence['GetKeyReplicateKeyTagArgs'] tags: Replica key label.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "replica_key_id", replica_key_id)
+        pulumi.set(__self__, "replica_region", replica_region)
+        pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Replica key description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="replicaKeyId")
+    def replica_key_id(self) -> builtins.str:
+        """
+        Replica key ID.
+        """
+        return pulumi.get(self, "replica_key_id")
+
+    @property
+    @pulumi.getter(name="replicaRegion")
+    def replica_region(self) -> builtins.str:
+        """
+        Target region of the replica key.
+        """
+        return pulumi.get(self, "replica_region")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetKeyReplicateKeyTagResult']:
+        """
+        Replica key label.
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetKeyReplicateKeyTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: KMS key label key.
+        :param builtins.str value: KMS key label value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        KMS key label key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        KMS key label value.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

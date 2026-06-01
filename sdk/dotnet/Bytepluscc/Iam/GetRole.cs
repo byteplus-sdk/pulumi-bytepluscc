@@ -101,6 +101,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// </summary>
         public readonly string RoleName;
         /// <summary>
+        /// Service associated with the service-linked role to be created.
+        /// </summary>
+        public readonly string ServiceName;
+        /// <summary>
         /// Tag
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRoleTagResult> Tags;
@@ -137,6 +141,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
 
             string roleName,
 
+            string serviceName,
+
             ImmutableArray<Outputs.GetRoleTagResult> tags,
 
             string trn,
@@ -154,6 +160,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
             Policies = policies;
             RoleId = roleId;
             RoleName = roleName;
+            ServiceName = serviceName;
             Tags = tags;
             Trn = trn;
             TrustPolicyDocument = trustPolicyDocument;

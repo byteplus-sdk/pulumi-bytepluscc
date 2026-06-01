@@ -83,8 +83,8 @@ class _ExportableConfig(types.ModuleType):
     @property
     def region(self) -> Optional[str]:
         """
-        The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-        variable
+        The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+        `ap-southeast-1` when not provided.
         """
         return __config__.get('region') or _utilities.get_env('BYTEPLUS_REGION')
 
@@ -95,4 +95,12 @@ class _ExportableConfig(types.ModuleType):
         environment variable
         """
         return __config__.get('secretKey') or _utilities.get_env('BYTEPLUS_SECRET_KEY')
+
+    @property
+    def session_token(self) -> Optional[str]:
+        """
+        The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+        from the `BYTEPLUS_SESSION_TOKEN` environment variable
+        """
+        return __config__.get('sessionToken') or _utilities.get_env('BYTEPLUS_SESSION_TOKEN')
 

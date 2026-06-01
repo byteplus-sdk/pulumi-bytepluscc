@@ -46,12 +46,13 @@ class InstanceArgs:
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  purchase_months: Optional[pulumi.Input[builtins.int]] = None,
                  reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
+                 restart_instance: Optional[pulumi.Input[builtins.bool]] = None,
                  shard_number: Optional[pulumi.Input[builtins.int]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] engine_version: Database version number.
-        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] engine_version: Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
+        :param pulumi.Input[builtins.str] multi_az: Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
         :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
@@ -64,7 +65,7 @@ class InstanceArgs:
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         :param pulumi.Input[builtins.bool] continuous_backup: Enable data flashback
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
-        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection. disabled: Off. enabled: On.
         :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         :param pulumi.Input[builtins.str] parameter_group_id: The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
@@ -73,6 +74,7 @@ class InstanceArgs:
         :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
         :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
+        :param pulumi.Input[builtins.bool] restart_instance: Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
         :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         """
         pulumi.set(__self__, "configure_nodes", configure_nodes)
@@ -115,6 +117,8 @@ class InstanceArgs:
             pulumi.set(__self__, "purchase_months", purchase_months)
         if reserve_additional_bandwidth is not None:
             pulumi.set(__self__, "reserve_additional_bandwidth", reserve_additional_bandwidth)
+        if restart_instance is not None:
+            pulumi.set(__self__, "restart_instance", restart_instance)
         if shard_number is not None:
             pulumi.set(__self__, "shard_number", shard_number)
         if tags is not None:
@@ -133,7 +137,7 @@ class InstanceArgs:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> pulumi.Input[builtins.str]:
         """
-        Database version number.
+        Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         """
         return pulumi.get(self, "engine_version")
 
@@ -145,7 +149,7 @@ class InstanceArgs:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> pulumi.Input[builtins.str]:
         """
-        Set the deployment scheme for the instance's availability zone.
+        Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         """
         return pulumi.get(self, "multi_az")
 
@@ -301,7 +305,7 @@ class InstanceArgs:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Enable or disable instance deletion protection.
+        Enable or disable instance deletion protection. disabled: Off. enabled: On.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -406,6 +410,18 @@ class InstanceArgs:
         pulumi.set(self, "reserve_additional_bandwidth", value)
 
     @property
+    @pulumi.getter(name="restartInstance")
+    def restart_instance(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        """
+        return pulumi.get(self, "restart_instance")
+
+    @restart_instance.setter
+    def restart_instance(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "restart_instance", value)
+
+    @property
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -463,6 +479,7 @@ class _InstanceState:
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  purchase_months: Optional[pulumi.Input[builtins.int]] = None,
                  reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
+                 restart_instance: Optional[pulumi.Input[builtins.bool]] = None,
                  service_type: Optional[pulumi.Input[builtins.str]] = None,
                  shard_capacity: Optional[pulumi.Input[builtins.int]] = None,
                  shard_number: Optional[pulumi.Input[builtins.int]] = None,
@@ -489,15 +506,15 @@ class _InstanceState:
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
         :param pulumi.Input[builtins.str] create_time: Creation time of the instance.
         :param pulumi.Input[builtins.str] data_layout: Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
-        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
-        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection. disabled: Off. enabled: On.
+        :param pulumi.Input[builtins.str] engine_version: Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         :param pulumi.Input[builtins.str] expired_time: Instance expiration time.
         :param pulumi.Input[builtins.str] instance_class: Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
         :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         :param pulumi.Input[builtins.str] maintenance_time: Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         :param pulumi.Input[builtins.int] max_connections: Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
-        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] multi_az: Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: List of Proxy and Server node IDs.
         :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
@@ -509,11 +526,12 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
         :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
-        :param pulumi.Input[builtins.str] service_type: Service type of the instance
+        :param pulumi.Input[builtins.bool] restart_instance: Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        :param pulumi.Input[builtins.str] service_type: Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
         :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-        :param pulumi.Input[builtins.str] status: Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        :param pulumi.Input[builtins.str] status: Current status of the instance.
         :param pulumi.Input[builtins.str] subnet_id: Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         :param pulumi.Input[builtins.str] vi_pv6: The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         :param pulumi.Input[builtins.str] vip: IPv4 address corresponding to the instance's private network connection address.
@@ -587,6 +605,8 @@ class _InstanceState:
             pulumi.set(__self__, "purchase_months", purchase_months)
         if reserve_additional_bandwidth is not None:
             pulumi.set(__self__, "reserve_additional_bandwidth", reserve_additional_bandwidth)
+        if restart_instance is not None:
+            pulumi.set(__self__, "restart_instance", restart_instance)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if shard_capacity is not None:
@@ -759,7 +779,7 @@ class _InstanceState:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Enable or disable instance deletion protection.
+        Enable or disable instance deletion protection. disabled: Off. enabled: On.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -771,7 +791,7 @@ class _InstanceState:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Database version number.
+        Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         """
         return pulumi.get(self, "engine_version")
 
@@ -864,7 +884,7 @@ class _InstanceState:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Set the deployment scheme for the instance's availability zone.
+        Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         """
         return pulumi.get(self, "multi_az")
 
@@ -1005,10 +1025,22 @@ class _InstanceState:
         pulumi.set(self, "reserve_additional_bandwidth", value)
 
     @property
+    @pulumi.getter(name="restartInstance")
+    def restart_instance(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        """
+        return pulumi.get(self, "restart_instance")
+
+    @restart_instance.setter
+    def restart_instance(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "restart_instance", value)
+
+    @property
     @pulumi.getter(name="serviceType")
     def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Service type of the instance
+        Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         """
         return pulumi.get(self, "service_type")
 
@@ -1056,7 +1088,7 @@ class _InstanceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        Current status of the instance.
         """
         return pulumi.get(self, "status")
 
@@ -1181,6 +1213,7 @@ class Instance(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  purchase_months: Optional[pulumi.Input[builtins.int]] = None,
                  reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
+                 restart_instance: Optional[pulumi.Input[builtins.bool]] = None,
                  shard_capacity: Optional[pulumi.Input[builtins.int]] = None,
                  shard_number: Optional[pulumi.Input[builtins.int]] = None,
                  sharded_cluster: Optional[pulumi.Input[builtins.int]] = None,
@@ -1246,10 +1279,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] charge_type: Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         :param pulumi.Input[builtins.bool] continuous_backup: Enable data flashback
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
-        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
-        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection. disabled: Off. enabled: On.
+        :param pulumi.Input[builtins.str] engine_version: Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] multi_az: Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         :param pulumi.Input[builtins.str] parameter_group_id: The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
@@ -1258,6 +1291,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
         :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
+        :param pulumi.Input[builtins.bool] restart_instance: Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
         :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
         :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
@@ -1354,6 +1388,7 @@ class Instance(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  purchase_months: Optional[pulumi.Input[builtins.int]] = None,
                  reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
+                 restart_instance: Optional[pulumi.Input[builtins.bool]] = None,
                  shard_capacity: Optional[pulumi.Input[builtins.int]] = None,
                  shard_number: Optional[pulumi.Input[builtins.int]] = None,
                  sharded_cluster: Optional[pulumi.Input[builtins.int]] = None,
@@ -1397,6 +1432,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["purchase_months"] = purchase_months
             __props__.__dict__["reserve_additional_bandwidth"] = reserve_additional_bandwidth
+            __props__.__dict__["restart_instance"] = restart_instance
             if shard_capacity is None and not opts.urn:
                 raise TypeError("Missing required property 'shard_capacity'")
             __props__.__dict__["shard_capacity"] = shard_capacity
@@ -1474,6 +1510,7 @@ class Instance(pulumi.CustomResource):
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             purchase_months: Optional[pulumi.Input[builtins.int]] = None,
             reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
+            restart_instance: Optional[pulumi.Input[builtins.bool]] = None,
             service_type: Optional[pulumi.Input[builtins.str]] = None,
             shard_capacity: Optional[pulumi.Input[builtins.int]] = None,
             shard_number: Optional[pulumi.Input[builtins.int]] = None,
@@ -1505,15 +1542,15 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] create_backup: Whether to create a backup before making changes.
         :param pulumi.Input[builtins.str] create_time: Creation time of the instance.
         :param pulumi.Input[builtins.str] data_layout: Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
-        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection.
-        :param pulumi.Input[builtins.str] engine_version: Database version number.
+        :param pulumi.Input[builtins.str] deletion_protection: Enable or disable instance deletion protection. disabled: Off. enabled: On.
+        :param pulumi.Input[builtins.str] engine_version: Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         :param pulumi.Input[builtins.str] expired_time: Instance expiration time.
         :param pulumi.Input[builtins.str] instance_class: Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         :param pulumi.Input[builtins.str] instance_id: Instance ID.
         :param pulumi.Input[builtins.str] instance_name: Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         :param pulumi.Input[builtins.str] maintenance_time: Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         :param pulumi.Input[builtins.int] max_connections: Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
-        :param pulumi.Input[builtins.str] multi_az: Set the deployment scheme for the instance's availability zone.
+        :param pulumi.Input[builtins.str] multi_az: Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         :param pulumi.Input[builtins.str] no_auth_mode: Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: List of Proxy and Server node IDs.
         :param pulumi.Input[builtins.int] node_number: Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
@@ -1525,11 +1562,12 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
         :param pulumi.Input[builtins.int] purchase_months: Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: Set whether to reserve additional bandwidth
-        :param pulumi.Input[builtins.str] service_type: Service type of the instance
+        :param pulumi.Input[builtins.bool] restart_instance: Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        :param pulumi.Input[builtins.str] service_type: Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         :param pulumi.Input[builtins.int] shard_capacity: Memory capacity of each shard in the instance. Unit: MiB.
         :param pulumi.Input[builtins.int] shard_number: Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         :param pulumi.Input[builtins.int] sharded_cluster: Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-        :param pulumi.Input[builtins.str] status: Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        :param pulumi.Input[builtins.str] status: Current status of the instance.
         :param pulumi.Input[builtins.str] subnet_id: Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         :param pulumi.Input[builtins.str] vi_pv6: The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         :param pulumi.Input[builtins.str] vip: IPv4 address corresponding to the instance's private network connection address.
@@ -1574,6 +1612,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["purchase_months"] = purchase_months
         __props__.__dict__["reserve_additional_bandwidth"] = reserve_additional_bandwidth
+        __props__.__dict__["restart_instance"] = restart_instance
         __props__.__dict__["service_type"] = service_type
         __props__.__dict__["shard_capacity"] = shard_capacity
         __props__.__dict__["shard_number"] = shard_number
@@ -1686,7 +1725,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> pulumi.Output[builtins.str]:
         """
-        Enable or disable instance deletion protection.
+        Enable or disable instance deletion protection. disabled: Off. enabled: On.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -1694,7 +1733,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> pulumi.Output[builtins.str]:
         """
-        Database version number.
+        Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         """
         return pulumi.get(self, "engine_version")
 
@@ -1755,7 +1794,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> pulumi.Output[builtins.str]:
         """
-        Set the deployment scheme for the instance's availability zone.
+        Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         """
         return pulumi.get(self, "multi_az")
 
@@ -1848,10 +1887,18 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "reserve_additional_bandwidth")
 
     @property
+    @pulumi.getter(name="restartInstance")
+    def restart_instance(self) -> pulumi.Output[builtins.bool]:
+        """
+        Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        """
+        return pulumi.get(self, "restart_instance")
+
+    @property
     @pulumi.getter(name="serviceType")
     def service_type(self) -> pulumi.Output[builtins.str]:
         """
-        Service type of the instance
+        Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         """
         return pulumi.get(self, "service_type")
 
@@ -1883,7 +1930,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        Current status of the instance.
         """
         return pulumi.get(self, "status")
 

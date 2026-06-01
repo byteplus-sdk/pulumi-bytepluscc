@@ -65,6 +65,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class GetKeyResult
     {
         /// <summary>
+        /// Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        public readonly Outputs.GetKeyAsymmetricCiphertextResult AsymmetricCiphertext;
+        /// <summary>
+        /// Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        public readonly Outputs.GetKeyAsymmetricSignatureResult AsymmetricSignature;
+        /// <summary>
+        /// Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        public readonly Outputs.GetKeyCiphertextResult Ciphertext;
+        /// <summary>
         /// Key creation time.
         /// </summary>
         public readonly int CreatedTime;
@@ -96,6 +108,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         public readonly string KeyName;
+        /// <summary>
+        /// Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        /// </summary>
+        public readonly string KeyPrimaryRegion;
         /// <summary>
         /// User master key rotation operation (enter 1 to enable, 2 to disable).
         /// </summary>
@@ -137,6 +153,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         public readonly string ProtectionLevel;
         /// <summary>
+        /// Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        public readonly Outputs.GetKeyReEncryptResult ReEncrypt;
+        /// <summary>
+        /// Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        public readonly Outputs.GetKeyReplicateKeyResult ReplicateKey;
+        /// <summary>
         /// Key rotation period (days). Range: [90, 2560].
         /// </summary>
         public readonly int RotateInterval;
@@ -167,6 +191,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
         [OutputConstructor]
         private GetKeyResult(
+            Outputs.GetKeyAsymmetricCiphertextResult asymmetricCiphertext,
+
+            Outputs.GetKeyAsymmetricSignatureResult asymmetricSignature,
+
+            Outputs.GetKeyCiphertextResult ciphertext,
+
             int createdTime,
 
             string description,
@@ -182,6 +212,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
             string keyMaterialExpireTime,
 
             string keyName,
+
+            string keyPrimaryRegion,
 
             int keyRotationOperation,
 
@@ -203,6 +235,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
             string protectionLevel,
 
+            Outputs.GetKeyReEncryptResult reEncrypt,
+
+            Outputs.GetKeyReplicateKeyResult replicateKey,
+
             int rotateInterval,
 
             string rotateState,
@@ -217,6 +253,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
             int updatedTime)
         {
+            AsymmetricCiphertext = asymmetricCiphertext;
+            AsymmetricSignature = asymmetricSignature;
+            Ciphertext = ciphertext;
             CreatedTime = createdTime;
             Description = description;
             Id = id;
@@ -225,6 +264,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
             KeyId = keyId;
             KeyMaterialExpireTime = keyMaterialExpireTime;
             KeyName = keyName;
+            KeyPrimaryRegion = keyPrimaryRegion;
             KeyRotationOperation = keyRotationOperation;
             KeySpec = keySpec;
             KeyState = keyState;
@@ -235,6 +275,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
             MultiRegionConfiguration = multiRegionConfiguration;
             Origin = origin;
             ProtectionLevel = protectionLevel;
+            ReEncrypt = reEncrypt;
+            ReplicateKey = replicateKey;
             RotateInterval = rotateInterval;
             RotateState = rotateState;
             ScheduleDeleteTime = scheduleDeleteTime;

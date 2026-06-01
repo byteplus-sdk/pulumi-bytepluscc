@@ -150,13 +150,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<string> DataLayout { get; private set; } = null!;
 
         /// <summary>
-        /// Enable or disable instance deletion protection.
+        /// Enable or disable instance deletion protection. disabled: Off. enabled: On.
         /// </summary>
         [Output("deletionProtection")]
         public Output<string> DeletionProtection { get; private set; } = null!;
 
         /// <summary>
-        /// Database version number.
+        /// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         /// </summary>
         [Output("engineVersion")]
         public Output<string> EngineVersion { get; private set; } = null!;
@@ -201,7 +201,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<int> MaxConnections { get; private set; } = null!;
 
         /// <summary>
-        /// Set the deployment scheme for the instance's availability zone.
+        /// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         /// </summary>
         [Output("multiAz")]
         public Output<string> MultiAz { get; private set; } = null!;
@@ -273,7 +273,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<bool> ReserveAdditionalBandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// Service type of the instance
+        /// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        /// </summary>
+        [Output("restartInstance")]
+        public Output<bool> RestartInstance { get; private set; } = null!;
+
+        /// <summary>
+        /// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         /// </summary>
         [Output("serviceType")]
         public Output<string> ServiceType { get; private set; } = null!;
@@ -297,7 +303,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<int> ShardedCluster { get; private set; } = null!;
 
         /// <summary>
-        /// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        /// Current status of the instance.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -448,13 +454,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<bool>? CreateBackup { get; set; }
 
         /// <summary>
-        /// Enable or disable instance deletion protection.
+        /// Enable or disable instance deletion protection. disabled: Off. enabled: On.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// Database version number.
+        /// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         /// </summary>
         [Input("engineVersion", required: true)]
         public Input<string> EngineVersion { get; set; } = null!;
@@ -466,7 +472,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// Set the deployment scheme for the instance's availability zone.
+        /// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         /// </summary>
         [Input("multiAz", required: true)]
         public Input<string> MultiAz { get; set; } = null!;
@@ -518,6 +524,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         [Input("reserveAdditionalBandwidth")]
         public Input<bool>? ReserveAdditionalBandwidth { get; set; }
+
+        /// <summary>
+        /// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        /// </summary>
+        [Input("restartInstance")]
+        public Input<bool>? RestartInstance { get; set; }
 
         /// <summary>
         /// Memory capacity of each shard in the instance. Unit: MiB.
@@ -646,13 +658,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<string>? DataLayout { get; set; }
 
         /// <summary>
-        /// Enable or disable instance deletion protection.
+        /// Enable or disable instance deletion protection. disabled: Off. enabled: On.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// Database version number.
+        /// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         /// </summary>
         [Input("engineVersion")]
         public Input<string>? EngineVersion { get; set; }
@@ -702,7 +714,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<int>? MaxConnections { get; set; }
 
         /// <summary>
-        /// Set the deployment scheme for the instance's availability zone.
+        /// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         /// </summary>
         [Input("multiAz")]
         public Input<string>? MultiAz { get; set; }
@@ -780,7 +792,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<bool>? ReserveAdditionalBandwidth { get; set; }
 
         /// <summary>
-        /// Service type of the instance
+        /// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        /// </summary>
+        [Input("restartInstance")]
+        public Input<bool>? RestartInstance { get; set; }
+
+        /// <summary>
+        /// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
@@ -804,7 +822,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<int>? ShardedCluster { get; set; }
 
         /// <summary>
-        /// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        /// Current status of the instance.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

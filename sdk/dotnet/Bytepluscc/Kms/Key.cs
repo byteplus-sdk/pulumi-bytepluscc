@@ -23,6 +23,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public partial class Key : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Output("asymmetricCiphertext")]
+        public Output<Outputs.KeyAsymmetricCiphertext> AsymmetricCiphertext { get; private set; } = null!;
+
+        /// <summary>
+        /// Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Output("asymmetricSignature")]
+        public Output<Outputs.KeyAsymmetricSignature> AsymmetricSignature { get; private set; } = null!;
+
+        /// <summary>
+        /// Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Output("ciphertext")]
+        public Output<Outputs.KeyCiphertext> Ciphertext { get; private set; } = null!;
+
+        /// <summary>
         /// Key creation time.
         /// </summary>
         [Output("createdTime")]
@@ -63,6 +81,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Output("keyName")]
         public Output<string> KeyName { get; private set; } = null!;
+
+        /// <summary>
+        /// Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        /// </summary>
+        [Output("keyPrimaryRegion")]
+        public Output<string> KeyPrimaryRegion { get; private set; } = null!;
 
         /// <summary>
         /// User master key rotation operation (enter 1 to enable, 2 to disable).
@@ -123,6 +147,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Output("protectionLevel")]
         public Output<string> ProtectionLevel { get; private set; } = null!;
+
+        /// <summary>
+        /// Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Output("reEncrypt")]
+        public Output<Outputs.KeyReEncrypt> ReEncrypt { get; private set; } = null!;
+
+        /// <summary>
+        /// Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Output("replicateKey")]
+        public Output<Outputs.KeyReplicateKey> ReplicateKey { get; private set; } = null!;
 
         /// <summary>
         /// Key rotation period (days). Range: [90, 2560].
@@ -211,6 +247,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class KeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("asymmetricCiphertext")]
+        public Input<Inputs.KeyAsymmetricCiphertextArgs>? AsymmetricCiphertext { get; set; }
+
+        /// <summary>
+        /// Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("asymmetricSignature")]
+        public Input<Inputs.KeyAsymmetricSignatureArgs>? AsymmetricSignature { get; set; }
+
+        /// <summary>
+        /// Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("ciphertext")]
+        public Input<Inputs.KeyCiphertextArgs>? Ciphertext { get; set; }
+
+        /// <summary>
         /// Key description: Length 0–8192 characters.
         /// </summary>
         [Input("description")]
@@ -233,6 +287,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("keyName", required: true)]
         public Input<string> KeyName { get; set; } = null!;
+
+        /// <summary>
+        /// Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        /// </summary>
+        [Input("keyPrimaryRegion")]
+        public Input<string>? KeyPrimaryRegion { get; set; }
 
         /// <summary>
         /// User master key rotation operation (enter 1 to enable, 2 to disable).
@@ -277,6 +337,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? ProtectionLevel { get; set; }
 
         /// <summary>
+        /// Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("reEncrypt")]
+        public Input<Inputs.KeyReEncryptArgs>? ReEncrypt { get; set; }
+
+        /// <summary>
+        /// Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("replicateKey")]
+        public Input<Inputs.KeyReplicateKeyArgs>? ReplicateKey { get; set; }
+
+        /// <summary>
         /// Key rotation period (days). Range: [90, 2560].
         /// </summary>
         [Input("rotateInterval")]
@@ -298,6 +370,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
     public sealed class KeyState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("asymmetricCiphertext")]
+        public Input<Inputs.KeyAsymmetricCiphertextGetArgs>? AsymmetricCiphertext { get; set; }
+
+        /// <summary>
+        /// Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("asymmetricSignature")]
+        public Input<Inputs.KeyAsymmetricSignatureGetArgs>? AsymmetricSignature { get; set; }
+
+        /// <summary>
+        /// Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("ciphertext")]
+        public Input<Inputs.KeyCiphertextGetArgs>? Ciphertext { get; set; }
+
         /// <summary>
         /// Key creation time.
         /// </summary>
@@ -339,6 +429,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("keyName")]
         public Input<string>? KeyName { get; set; }
+
+        /// <summary>
+        /// Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        /// </summary>
+        [Input("keyPrimaryRegion")]
+        public Input<string>? KeyPrimaryRegion { get; set; }
 
         /// <summary>
         /// User master key rotation operation (enter 1 to enable, 2 to disable).
@@ -399,6 +495,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("protectionLevel")]
         public Input<string>? ProtectionLevel { get; set; }
+
+        /// <summary>
+        /// Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("reEncrypt")]
+        public Input<Inputs.KeyReEncryptGetArgs>? ReEncrypt { get; set; }
+
+        /// <summary>
+        /// Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        /// </summary>
+        [Input("replicateKey")]
+        public Input<Inputs.KeyReplicateKeyGetArgs>? ReplicateKey { get; set; }
 
         /// <summary>
         /// Key rotation period (days). Range: [90, 2560].
