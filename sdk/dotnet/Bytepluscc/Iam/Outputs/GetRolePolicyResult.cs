@@ -15,9 +15,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class GetRolePolicyResult
     {
         /// <summary>
+        /// Policy binding time.
+        /// </summary>
+        public readonly string AttachDate;
+        /// <summary>
+        /// Policy description.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// Policy name
         /// </summary>
         public readonly string PolicyName;
+        /// <summary>
+        /// Policy authorization scope, specifically refers to the project scope.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRolePolicyPolicyScopeResult> PolicyScopes;
+        /// <summary>
+        /// Policy TRN.
+        /// </summary>
+        public readonly string PolicyTrn;
         /// <summary>
         /// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         /// </summary>
@@ -25,11 +41,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
 
         [OutputConstructor]
         private GetRolePolicyResult(
+            string attachDate,
+
+            string description,
+
             string policyName,
+
+            ImmutableArray<Outputs.GetRolePolicyPolicyScopeResult> policyScopes,
+
+            string policyTrn,
 
             string policyType)
         {
+            AttachDate = attachDate;
+            Description = description;
             PolicyName = policyName;
+            PolicyScopes = policyScopes;
+            PolicyTrn = policyTrn;
             PolicyType = policyType;
         }
     }

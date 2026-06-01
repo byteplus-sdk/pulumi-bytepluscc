@@ -54,9 +54,9 @@ type LookupInstanceResult struct {
 	CreateTime string `pulumi:"createTime"`
 	// Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
 	DataLayout string `pulumi:"dataLayout"`
-	// Enable or disable instance deletion protection.
+	// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 	DeletionProtection string `pulumi:"deletionProtection"`
-	// Database version number.
+	// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 	EngineVersion string `pulumi:"engineVersion"`
 	// Instance expiration time.
 	ExpiredTime string `pulumi:"expiredTime"`
@@ -74,7 +74,7 @@ type LookupInstanceResult struct {
 	MaintenanceTime string `pulumi:"maintenanceTime"`
 	// Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
 	MaxConnections int `pulumi:"maxConnections"`
-	// Set the deployment scheme for the instance's availability zone.
+	// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 	MultiAz string `pulumi:"multiAz"`
 	// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
 	NoAuthMode string `pulumi:"noAuthMode"`
@@ -98,7 +98,9 @@ type LookupInstanceResult struct {
 	PurchaseMonths int `pulumi:"purchaseMonths"`
 	// Set whether to reserve additional bandwidth
 	ReserveAdditionalBandwidth bool `pulumi:"reserveAdditionalBandwidth"`
-	// Service type of the instance
+	// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+	RestartInstance bool `pulumi:"restartInstance"`
+	// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
 	ServiceType string `pulumi:"serviceType"`
 	// Memory capacity of each shard in the instance. Unit: MiB.
 	ShardCapacity int `pulumi:"shardCapacity"`
@@ -106,7 +108,7 @@ type LookupInstanceResult struct {
 	ShardNumber int `pulumi:"shardNumber"`
 	// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
 	ShardedCluster int `pulumi:"shardedCluster"`
-	// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+	// Current status of the instance.
 	Status string `pulumi:"status"`
 	// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
 	SubnetId string `pulumi:"subnetId"`
@@ -220,12 +222,12 @@ func (o LookupInstanceResultOutput) DataLayout() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.DataLayout }).(pulumi.StringOutput)
 }
 
-// Enable or disable instance deletion protection.
+// Enable or disable instance deletion protection. disabled: Off. enabled: On.
 func (o LookupInstanceResultOutput) DeletionProtection() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.DeletionProtection }).(pulumi.StringOutput)
 }
 
-// Database version number.
+// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
 func (o LookupInstanceResultOutput) EngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.EngineVersion }).(pulumi.StringOutput)
 }
@@ -270,7 +272,7 @@ func (o LookupInstanceResultOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
-// Set the deployment scheme for the instance's availability zone.
+// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
 func (o LookupInstanceResultOutput) MultiAz() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.MultiAz }).(pulumi.StringOutput)
 }
@@ -330,7 +332,12 @@ func (o LookupInstanceResultOutput) ReserveAdditionalBandwidth() pulumi.BoolOutp
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.ReserveAdditionalBandwidth }).(pulumi.BoolOutput)
 }
 
-// Service type of the instance
+// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+func (o LookupInstanceResultOutput) RestartInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.RestartInstance }).(pulumi.BoolOutput)
+}
+
+// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
 func (o LookupInstanceResultOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ServiceType }).(pulumi.StringOutput)
 }
@@ -350,7 +357,7 @@ func (o LookupInstanceResultOutput) ShardedCluster() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.ShardedCluster }).(pulumi.IntOutput)
 }
 
-// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+// Current status of the instance.
 func (o LookupInstanceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Status }).(pulumi.StringOutput)
 }

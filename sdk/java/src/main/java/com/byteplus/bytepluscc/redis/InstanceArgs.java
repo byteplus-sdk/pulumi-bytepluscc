@@ -135,14 +135,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
-     * @return Enable or disable instance deletion protection.
+     * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     public Optional<Output<String>> deletionProtection() {
@@ -150,14 +150,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     @Import(name="engineVersion", required=true)
     private Output<String> engineVersion;
 
     /**
-     * @return Database version number.
+     * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     public Output<String> engineVersion() {
@@ -180,14 +180,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set the deployment scheme for the instance&#39;s availability zone.
+     * Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     @Import(name="multiAz", required=true)
     private Output<String> multiAz;
 
     /**
-     * @return Set the deployment scheme for the instance&#39;s availability zone.
+     * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     public Output<String> multiAz() {
@@ -315,6 +315,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    @Import(name="restartInstance")
+    private @Nullable Output<Boolean> restartInstance;
+
+    /**
+     * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    public Optional<Output<Boolean>> restartInstance() {
+        return Optional.ofNullable(this.restartInstance);
+    }
+
+    /**
      * Memory capacity of each shard in the instance. Unit: MiB.
      * 
      */
@@ -419,6 +434,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.projectName = $.projectName;
         this.purchaseMonths = $.purchaseMonths;
         this.reserveAdditionalBandwidth = $.reserveAdditionalBandwidth;
+        this.restartInstance = $.restartInstance;
         this.shardCapacity = $.shardCapacity;
         this.shardNumber = $.shardNumber;
         this.shardedCluster = $.shardedCluster;
@@ -616,7 +632,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection Enable or disable instance deletion protection.
+         * @param deletionProtection Enable or disable instance deletion protection. disabled: Off. enabled: On.
          * 
          * @return builder
          * 
@@ -627,7 +643,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection Enable or disable instance deletion protection.
+         * @param deletionProtection Enable or disable instance deletion protection. disabled: Off. enabled: On.
          * 
          * @return builder
          * 
@@ -637,7 +653,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion Database version number.
+         * @param engineVersion Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
          * 
          * @return builder
          * 
@@ -648,7 +664,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion Database version number.
+         * @param engineVersion Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
          * 
          * @return builder
          * 
@@ -679,7 +695,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz Set the deployment scheme for the instance&#39;s availability zone.
+         * @param multiAz Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
          * 
          * @return builder
          * 
@@ -690,7 +706,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz Set the deployment scheme for the instance&#39;s availability zone.
+         * @param multiAz Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
          * 
          * @return builder
          * 
@@ -865,6 +881,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder reserveAdditionalBandwidth(Boolean reserveAdditionalBandwidth) {
             return reserveAdditionalBandwidth(Output.of(reserveAdditionalBandwidth));
+        }
+
+        /**
+         * @param restartInstance Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restartInstance(@Nullable Output<Boolean> restartInstance) {
+            $.restartInstance = restartInstance;
+            return this;
+        }
+
+        /**
+         * @param restartInstance Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restartInstance(Boolean restartInstance) {
+            return restartInstance(Output.of(restartInstance));
         }
 
         /**

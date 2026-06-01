@@ -16,6 +16,8 @@ import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbEndpointArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbEndpointPlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetParameterTemplateArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetParameterTemplatePlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetSchemaArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetSchemaPlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetAllowListResult;
@@ -30,6 +32,8 @@ import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointsResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetParameterTemplateResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetParameterTemplatesResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetSchemaResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetSchemasResult;
 import com.pulumi.core.Output;
@@ -544,6 +548,90 @@ public final class RdspostgresqlFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplateResult> getParameterTemplate(GetParameterTemplateArgs args) {
+        return getParameterTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplateResult> getParameterTemplatePlain(GetParameterTemplatePlainArgs args) {
+        return getParameterTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplateResult> getParameterTemplate(GetParameterTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getParameterTemplate:getParameterTemplate", TypeShape.of(GetParameterTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplateResult> getParameterTemplate(GetParameterTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getParameterTemplate:getParameterTemplate", TypeShape.of(GetParameterTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplateResult> getParameterTemplatePlain(GetParameterTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getParameterTemplate:getParameterTemplate", TypeShape.of(GetParameterTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates() {
+        return getParameterTemplates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain() {
+        return getParameterTemplatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates(InvokeArgs args) {
+        return getParameterTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain(InvokeArgs args) {
+        return getParameterTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static Output<GetParameterTemplatesResult> getParameterTemplates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::ParameterTemplate
+     * 
+     */
+    public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::RDSPostgreSQL::Schema

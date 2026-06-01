@@ -97,16 +97,16 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.proxyUrl);
     }
     /**
-     * The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-     * variable
+     * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+     * `ap-southeast-1` when not provided.
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> region;
 
     /**
-     * @return The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-     * variable
+     * @return The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+     * `ap-southeast-1` when not provided.
      * 
      */
     public Output<Optional<String>> region() {
@@ -127,6 +127,22 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      */
     public Output<Optional<String>> secretKey() {
         return Codegen.optional(this.secretKey);
+    }
+    /**
+     * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     * 
+     */
+    @Export(name="sessionToken", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sessionToken;
+
+    /**
+     * @return The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     * 
+     */
+    public Output<Optional<String>> sessionToken() {
+        return Codegen.optional(this.sessionToken);
     }
 
     /**

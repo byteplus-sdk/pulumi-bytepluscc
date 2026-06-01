@@ -50,8 +50,8 @@ export class Provider extends pulumi.ProviderResource {
      */
     public readonly proxyUrl!: pulumi.Output<string | undefined>;
     /**
-     * The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-     * variable
+     * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+     * `ap-southeast-1` when not provided.
      */
     public readonly region!: pulumi.Output<string | undefined>;
     /**
@@ -59,6 +59,11 @@ export class Provider extends pulumi.ProviderResource {
      * environment variable
      */
     public readonly secretKey!: pulumi.Output<string | undefined>;
+    /**
+     * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     */
+    public readonly sessionToken!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -81,6 +86,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["proxyUrl"] = (args ? args.proxyUrl : undefined) ?? utilities.getEnv("BYTEPLUS_PROXY_URL");
             resourceInputs["region"] = (args ? args.region : undefined) ?? utilities.getEnv("BYTEPLUS_REGION");
             resourceInputs["secretKey"] = (args ? args.secretKey : undefined) ?? utilities.getEnv("BYTEPLUS_SECRET_KEY");
+            resourceInputs["sessionToken"] = (args ? args.sessionToken : undefined) ?? utilities.getEnv("BYTEPLUS_SESSION_TOKEN");
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
@@ -135,8 +141,8 @@ export interface ProviderArgs {
      */
     proxyUrl?: pulumi.Input<string>;
     /**
-     * The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-     * variable
+     * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+     * `ap-southeast-1` when not provided.
      */
     region?: pulumi.Input<string>;
     /**
@@ -144,6 +150,11 @@ export interface ProviderArgs {
      * environment variable
      */
     secretKey?: pulumi.Input<string>;
+    /**
+     * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     */
+    sessionToken?: pulumi.Input<string>;
 }
 
 export namespace Provider {

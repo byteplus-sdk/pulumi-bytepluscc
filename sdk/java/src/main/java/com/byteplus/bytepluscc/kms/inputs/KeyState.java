@@ -3,7 +3,12 @@
 
 package com.byteplus.bytepluscc.kms.inputs;
 
+import com.byteplus.bytepluscc.kms.inputs.KeyAsymmetricCiphertextArgs;
+import com.byteplus.bytepluscc.kms.inputs.KeyAsymmetricSignatureArgs;
+import com.byteplus.bytepluscc.kms.inputs.KeyCiphertextArgs;
 import com.byteplus.bytepluscc.kms.inputs.KeyMultiRegionConfigurationArgs;
+import com.byteplus.bytepluscc.kms.inputs.KeyReEncryptArgs;
+import com.byteplus.bytepluscc.kms.inputs.KeyReplicateKeyArgs;
 import com.byteplus.bytepluscc.kms.inputs.KeyTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -19,6 +24,51 @@ import javax.annotation.Nullable;
 public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     public static final KeyState Empty = new KeyState();
+
+    /**
+     * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    @Import(name="asymmetricCiphertext")
+    private @Nullable Output<KeyAsymmetricCiphertextArgs> asymmetricCiphertext;
+
+    /**
+     * @return Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public Optional<Output<KeyAsymmetricCiphertextArgs>> asymmetricCiphertext() {
+        return Optional.ofNullable(this.asymmetricCiphertext);
+    }
+
+    /**
+     * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    @Import(name="asymmetricSignature")
+    private @Nullable Output<KeyAsymmetricSignatureArgs> asymmetricSignature;
+
+    /**
+     * @return Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public Optional<Output<KeyAsymmetricSignatureArgs>> asymmetricSignature() {
+        return Optional.ofNullable(this.asymmetricSignature);
+    }
+
+    /**
+     * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    @Import(name="ciphertext")
+    private @Nullable Output<KeyCiphertextArgs> ciphertext;
+
+    /**
+     * @return Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public Optional<Output<KeyCiphertextArgs>> ciphertext() {
+        return Optional.ofNullable(this.ciphertext);
+    }
 
     /**
      * Key creation time.
@@ -123,6 +173,21 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> keyName() {
         return Optional.ofNullable(this.keyName);
+    }
+
+    /**
+     * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     * 
+     */
+    @Import(name="keyPrimaryRegion")
+    private @Nullable Output<String> keyPrimaryRegion;
+
+    /**
+     * @return Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     * 
+     */
+    public Optional<Output<String>> keyPrimaryRegion() {
+        return Optional.ofNullable(this.keyPrimaryRegion);
     }
 
     /**
@@ -276,6 +341,36 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    @Import(name="reEncrypt")
+    private @Nullable Output<KeyReEncryptArgs> reEncrypt;
+
+    /**
+     * @return Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public Optional<Output<KeyReEncryptArgs>> reEncrypt() {
+        return Optional.ofNullable(this.reEncrypt);
+    }
+
+    /**
+     * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    @Import(name="replicateKey")
+    private @Nullable Output<KeyReplicateKeyArgs> replicateKey;
+
+    /**
+     * @return Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public Optional<Output<KeyReplicateKeyArgs>> replicateKey() {
+        return Optional.ofNullable(this.replicateKey);
+    }
+
+    /**
      * Key rotation period (days). Range: [90, 2560].
      * 
      */
@@ -375,6 +470,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     private KeyState() {}
 
     private KeyState(KeyState $) {
+        this.asymmetricCiphertext = $.asymmetricCiphertext;
+        this.asymmetricSignature = $.asymmetricSignature;
+        this.ciphertext = $.ciphertext;
         this.createdTime = $.createdTime;
         this.description = $.description;
         this.keyArchiveOperation = $.keyArchiveOperation;
@@ -382,6 +480,7 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         this.keyId = $.keyId;
         this.keyMaterialExpireTime = $.keyMaterialExpireTime;
         this.keyName = $.keyName;
+        this.keyPrimaryRegion = $.keyPrimaryRegion;
         this.keyRotationOperation = $.keyRotationOperation;
         this.keySpec = $.keySpec;
         this.keyState = $.keyState;
@@ -392,6 +491,8 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         this.multiRegionConfiguration = $.multiRegionConfiguration;
         this.origin = $.origin;
         this.protectionLevel = $.protectionLevel;
+        this.reEncrypt = $.reEncrypt;
+        this.replicateKey = $.replicateKey;
         this.rotateInterval = $.rotateInterval;
         this.rotateState = $.rotateState;
         this.scheduleDeleteTime = $.scheduleDeleteTime;
@@ -417,6 +518,69 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(KeyState defaults) {
             $ = new KeyState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param asymmetricCiphertext Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asymmetricCiphertext(@Nullable Output<KeyAsymmetricCiphertextArgs> asymmetricCiphertext) {
+            $.asymmetricCiphertext = asymmetricCiphertext;
+            return this;
+        }
+
+        /**
+         * @param asymmetricCiphertext Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asymmetricCiphertext(KeyAsymmetricCiphertextArgs asymmetricCiphertext) {
+            return asymmetricCiphertext(Output.of(asymmetricCiphertext));
+        }
+
+        /**
+         * @param asymmetricSignature Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asymmetricSignature(@Nullable Output<KeyAsymmetricSignatureArgs> asymmetricSignature) {
+            $.asymmetricSignature = asymmetricSignature;
+            return this;
+        }
+
+        /**
+         * @param asymmetricSignature Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder asymmetricSignature(KeyAsymmetricSignatureArgs asymmetricSignature) {
+            return asymmetricSignature(Output.of(asymmetricSignature));
+        }
+
+        /**
+         * @param ciphertext Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ciphertext(@Nullable Output<KeyCiphertextArgs> ciphertext) {
+            $.ciphertext = ciphertext;
+            return this;
+        }
+
+        /**
+         * @param ciphertext Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ciphertext(KeyCiphertextArgs ciphertext) {
+            return ciphertext(Output.of(ciphertext));
         }
 
         /**
@@ -564,6 +728,27 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder keyName(String keyName) {
             return keyName(Output.of(keyName));
+        }
+
+        /**
+         * @param keyPrimaryRegion Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyPrimaryRegion(@Nullable Output<String> keyPrimaryRegion) {
+            $.keyPrimaryRegion = keyPrimaryRegion;
+            return this;
+        }
+
+        /**
+         * @param keyPrimaryRegion Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyPrimaryRegion(String keyPrimaryRegion) {
+            return keyPrimaryRegion(Output.of(keyPrimaryRegion));
         }
 
         /**
@@ -774,6 +959,48 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder protectionLevel(String protectionLevel) {
             return protectionLevel(Output.of(protectionLevel));
+        }
+
+        /**
+         * @param reEncrypt Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reEncrypt(@Nullable Output<KeyReEncryptArgs> reEncrypt) {
+            $.reEncrypt = reEncrypt;
+            return this;
+        }
+
+        /**
+         * @param reEncrypt Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reEncrypt(KeyReEncryptArgs reEncrypt) {
+            return reEncrypt(Output.of(reEncrypt));
+        }
+
+        /**
+         * @param replicateKey Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicateKey(@Nullable Output<KeyReplicateKeyArgs> replicateKey) {
+            $.replicateKey = replicateKey;
+            return this;
+        }
+
+        /**
+         * @param replicateKey Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicateKey(KeyReplicateKeyArgs replicateKey) {
+            return replicateKey(Output.of(replicateKey));
         }
 
         /**

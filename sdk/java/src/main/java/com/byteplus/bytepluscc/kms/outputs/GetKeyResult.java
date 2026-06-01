@@ -3,7 +3,12 @@
 
 package com.byteplus.bytepluscc.kms.outputs;
 
+import com.byteplus.bytepluscc.kms.outputs.GetKeyAsymmetricCiphertext;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyAsymmetricSignature;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyCiphertext;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyMultiRegionConfiguration;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyReEncrypt;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyReplicateKey;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -15,6 +20,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetKeyResult {
+    /**
+     * @return Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    private GetKeyAsymmetricCiphertext asymmetricCiphertext;
+    /**
+     * @return Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    private GetKeyAsymmetricSignature asymmetricSignature;
+    /**
+     * @return Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    private GetKeyCiphertext ciphertext;
     /**
      * @return Key creation time.
      * 
@@ -55,6 +75,11 @@ public final class GetKeyResult {
      * 
      */
     private String keyName;
+    /**
+     * @return Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     * 
+     */
+    private String keyPrimaryRegion;
     /**
      * @return User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
@@ -106,6 +131,16 @@ public final class GetKeyResult {
      */
     private String protectionLevel;
     /**
+     * @return Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    private GetKeyReEncrypt reEncrypt;
+    /**
+     * @return Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    private GetKeyReplicateKey replicateKey;
+    /**
      * @return Key rotation period (days). Range: [90, 2560].
      * 
      */
@@ -142,6 +177,27 @@ public final class GetKeyResult {
     private Integer updatedTime;
 
     private GetKeyResult() {}
+    /**
+     * @return Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public GetKeyAsymmetricCiphertext asymmetricCiphertext() {
+        return this.asymmetricCiphertext;
+    }
+    /**
+     * @return Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public GetKeyAsymmetricSignature asymmetricSignature() {
+        return this.asymmetricSignature;
+    }
+    /**
+     * @return Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public GetKeyCiphertext ciphertext() {
+        return this.ciphertext;
+    }
     /**
      * @return Key creation time.
      * 
@@ -197,6 +253,13 @@ public final class GetKeyResult {
      */
     public String keyName() {
         return this.keyName;
+    }
+    /**
+     * @return Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     * 
+     */
+    public String keyPrimaryRegion() {
+        return this.keyPrimaryRegion;
     }
     /**
      * @return User master key rotation operation (enter 1 to enable, 2 to disable).
@@ -269,6 +332,20 @@ public final class GetKeyResult {
         return this.protectionLevel;
     }
     /**
+     * @return Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public GetKeyReEncrypt reEncrypt() {
+        return this.reEncrypt;
+    }
+    /**
+     * @return Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     * 
+     */
+    public GetKeyReplicateKey replicateKey() {
+        return this.replicateKey;
+    }
+    /**
      * @return Key rotation period (days). Range: [90, 2560].
      * 
      */
@@ -327,6 +404,9 @@ public final class GetKeyResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private GetKeyAsymmetricCiphertext asymmetricCiphertext;
+        private GetKeyAsymmetricSignature asymmetricSignature;
+        private GetKeyCiphertext ciphertext;
         private Integer createdTime;
         private String description;
         private String id;
@@ -335,6 +415,7 @@ public final class GetKeyResult {
         private String keyId;
         private String keyMaterialExpireTime;
         private String keyName;
+        private String keyPrimaryRegion;
         private Integer keyRotationOperation;
         private String keySpec;
         private String keyState;
@@ -345,6 +426,8 @@ public final class GetKeyResult {
         private GetKeyMultiRegionConfiguration multiRegionConfiguration;
         private String origin;
         private String protectionLevel;
+        private GetKeyReEncrypt reEncrypt;
+        private GetKeyReplicateKey replicateKey;
         private Integer rotateInterval;
         private String rotateState;
         private String scheduleDeleteTime;
@@ -355,6 +438,9 @@ public final class GetKeyResult {
         public Builder() {}
         public Builder(GetKeyResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.asymmetricCiphertext = defaults.asymmetricCiphertext;
+    	      this.asymmetricSignature = defaults.asymmetricSignature;
+    	      this.ciphertext = defaults.ciphertext;
     	      this.createdTime = defaults.createdTime;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
@@ -363,6 +449,7 @@ public final class GetKeyResult {
     	      this.keyId = defaults.keyId;
     	      this.keyMaterialExpireTime = defaults.keyMaterialExpireTime;
     	      this.keyName = defaults.keyName;
+    	      this.keyPrimaryRegion = defaults.keyPrimaryRegion;
     	      this.keyRotationOperation = defaults.keyRotationOperation;
     	      this.keySpec = defaults.keySpec;
     	      this.keyState = defaults.keyState;
@@ -373,6 +460,8 @@ public final class GetKeyResult {
     	      this.multiRegionConfiguration = defaults.multiRegionConfiguration;
     	      this.origin = defaults.origin;
     	      this.protectionLevel = defaults.protectionLevel;
+    	      this.reEncrypt = defaults.reEncrypt;
+    	      this.replicateKey = defaults.replicateKey;
     	      this.rotateInterval = defaults.rotateInterval;
     	      this.rotateState = defaults.rotateState;
     	      this.scheduleDeleteTime = defaults.scheduleDeleteTime;
@@ -382,6 +471,30 @@ public final class GetKeyResult {
     	      this.updatedTime = defaults.updatedTime;
         }
 
+        @CustomType.Setter
+        public Builder asymmetricCiphertext(GetKeyAsymmetricCiphertext asymmetricCiphertext) {
+            if (asymmetricCiphertext == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "asymmetricCiphertext");
+            }
+            this.asymmetricCiphertext = asymmetricCiphertext;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder asymmetricSignature(GetKeyAsymmetricSignature asymmetricSignature) {
+            if (asymmetricSignature == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "asymmetricSignature");
+            }
+            this.asymmetricSignature = asymmetricSignature;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ciphertext(GetKeyCiphertext ciphertext) {
+            if (ciphertext == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "ciphertext");
+            }
+            this.ciphertext = ciphertext;
+            return this;
+        }
         @CustomType.Setter
         public Builder createdTime(Integer createdTime) {
             if (createdTime == null) {
@@ -444,6 +557,14 @@ public final class GetKeyResult {
               throw new MissingRequiredPropertyException("GetKeyResult", "keyName");
             }
             this.keyName = keyName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyPrimaryRegion(String keyPrimaryRegion) {
+            if (keyPrimaryRegion == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "keyPrimaryRegion");
+            }
+            this.keyPrimaryRegion = keyPrimaryRegion;
             return this;
         }
         @CustomType.Setter
@@ -527,6 +648,22 @@ public final class GetKeyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder reEncrypt(GetKeyReEncrypt reEncrypt) {
+            if (reEncrypt == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "reEncrypt");
+            }
+            this.reEncrypt = reEncrypt;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicateKey(GetKeyReplicateKey replicateKey) {
+            if (replicateKey == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "replicateKey");
+            }
+            this.replicateKey = replicateKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder rotateInterval(Integer rotateInterval) {
             if (rotateInterval == null) {
               throw new MissingRequiredPropertyException("GetKeyResult", "rotateInterval");
@@ -587,6 +724,9 @@ public final class GetKeyResult {
         }
         public GetKeyResult build() {
             final var _resultValue = new GetKeyResult();
+            _resultValue.asymmetricCiphertext = asymmetricCiphertext;
+            _resultValue.asymmetricSignature = asymmetricSignature;
+            _resultValue.ciphertext = ciphertext;
             _resultValue.createdTime = createdTime;
             _resultValue.description = description;
             _resultValue.id = id;
@@ -595,6 +735,7 @@ public final class GetKeyResult {
             _resultValue.keyId = keyId;
             _resultValue.keyMaterialExpireTime = keyMaterialExpireTime;
             _resultValue.keyName = keyName;
+            _resultValue.keyPrimaryRegion = keyPrimaryRegion;
             _resultValue.keyRotationOperation = keyRotationOperation;
             _resultValue.keySpec = keySpec;
             _resultValue.keyState = keyState;
@@ -605,6 +746,8 @@ public final class GetKeyResult {
             _resultValue.multiRegionConfiguration = multiRegionConfiguration;
             _resultValue.origin = origin;
             _resultValue.protectionLevel = protectionLevel;
+            _resultValue.reEncrypt = reEncrypt;
+            _resultValue.replicateKey = replicateKey;
             _resultValue.rotateInterval = rotateInterval;
             _resultValue.rotateState = rotateState;
             _resultValue.scheduleDeleteTime = scheduleDeleteTime;

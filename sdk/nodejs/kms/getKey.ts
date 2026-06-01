@@ -31,6 +31,18 @@ export interface GetKeyArgs {
  */
 export interface GetKeyResult {
     /**
+     * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    readonly asymmetricCiphertext: outputs.kms.GetKeyAsymmetricCiphertext;
+    /**
+     * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    readonly asymmetricSignature: outputs.kms.GetKeyAsymmetricSignature;
+    /**
+     * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    readonly ciphertext: outputs.kms.GetKeyCiphertext;
+    /**
      * Key creation time.
      */
     readonly createdTime: number;
@@ -62,6 +74,10 @@ export interface GetKeyResult {
      * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     readonly keyName: string;
+    /**
+     * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+     */
+    readonly keyPrimaryRegion: string;
     /**
      * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
@@ -102,6 +118,14 @@ export interface GetKeyResult {
      * Key protection level. Options: SOFTWARE, HSM.
      */
     readonly protectionLevel: string;
+    /**
+     * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    readonly reEncrypt: outputs.kms.GetKeyReEncrypt;
+    /**
+     * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+     */
+    readonly replicateKey: outputs.kms.GetKeyReplicateKey;
     /**
      * Key rotation period (days). Range: [90, 2560].
      */

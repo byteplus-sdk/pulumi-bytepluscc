@@ -23,59 +23,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.byteplus.bytepluscc.iam.Role;
- * import com.byteplus.bytepluscc.iam.RoleArgs;
- * import com.pulumi.bytepluscc.iam.inputs.RoleTagArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var roleDemo = new Role("roleDemo", RoleArgs.builder()
- *             .roleName("RoleDemo")
- *             .description("role attach policies")
- *             .maxSessionDuration(3600)
- *             .trustPolicyDocument("""
- * {
- *     "Statement": [
- *         {
- *             "Effect": "Allow",
- *             "Action": [
- *                 "sts:AssumeRole"
- *             ],
- *             "Principal": {
- *                 "IAM": [
- *                     "trn:iam::20000000xx:root"
- *                 ]
- *             }
- *         }
- *     ]
- * }            """)
- *             .tags(RoleTagArgs.builder()
- *                 .key("env")
- *                 .value("test")
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -191,6 +138,20 @@ public class Role extends com.pulumi.resources.CustomResource {
     public Output<String> roleName() {
         return this.roleName;
     }
+    /**
+     * Service associated with the service-linked role to be created.
+     * 
+     */
+    @Export(name="serviceName", refs={String.class}, tree="[0]")
+    private Output<String> serviceName;
+
+    /**
+     * @return Service associated with the service-linked role to be created.
+     * 
+     */
+    public Output<String> serviceName() {
+        return this.serviceName;
+    }
     @Export(name="tags", refs={List.class,RoleTag.class}, tree="[0,1]")
     private Output<List<RoleTag>> tags;
 
@@ -252,7 +213,7 @@ public class Role extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Role(java.lang.String name, RoleArgs args) {
+    public Role(java.lang.String name, @Nullable RoleArgs args) {
         this(name, args, null);
     }
     /**
@@ -261,7 +222,7 @@ public class Role extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Role(java.lang.String name, RoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public Role(java.lang.String name, @Nullable RoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("bytepluscc:iam/role:Role", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
@@ -269,7 +230,7 @@ public class Role extends com.pulumi.resources.CustomResource {
         super("bytepluscc:iam/role:Role", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static RoleArgs makeArgs(RoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    private static RoleArgs makeArgs(@Nullable RoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         if (options != null && options.getUrn().isPresent()) {
             return null;
         }

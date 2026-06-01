@@ -33,6 +33,7 @@ __all__ = [
     'InstanceMaintenanceWindowDayOfWeekMaintenanceTime',
     'InstanceNodeInfo',
     'InstanceTag',
+    'ParameterTemplateTemplateParam',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
     'GetBackupBackupMetaResult',
@@ -49,6 +50,7 @@ __all__ = [
     'GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeResult',
     'GetInstanceNodeInfoResult',
     'GetInstanceTagResult',
+    'GetParameterTemplateTemplateParamResult',
 ]
 
 @pulumi.output_type
@@ -1753,6 +1755,35 @@ class InstanceTag(dict):
 
 
 @pulumi.output_type
+class ParameterTemplateTemplateParam(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: Parameter name
+        :param builtins.str value: Parameter value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetAllowListAssociatedInstanceResult(dict):
     def __init__(__self__, *,
                  instance_id: builtins.str,
@@ -2995,6 +3026,101 @@ class GetInstanceTagResult(dict):
     def value(self) -> builtins.str:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetParameterTemplateTemplateParamResult(dict):
+    def __init__(__self__, *,
+                 checking_code: builtins.str,
+                 default_value: builtins.str,
+                 description: builtins.str,
+                 description_zh: builtins.str,
+                 force_restart: builtins.bool,
+                 name: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str checking_code: Parameter validation rules
+        :param builtins.str default_value: Default value of the parameter
+        :param builtins.str description: Parameter description information in English
+        :param builtins.str description_zh: Parameter description information in Chinese
+        :param builtins.bool force_restart: Whether modifying this parameter requires a restart
+        :param builtins.str name: Parameter name
+        :param builtins.str type: Data type of the parameter
+        :param builtins.str value: Parameter value
+        """
+        pulumi.set(__self__, "checking_code", checking_code)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "description_zh", description_zh)
+        pulumi.set(__self__, "force_restart", force_restart)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="checkingCode")
+    def checking_code(self) -> builtins.str:
+        """
+        Parameter validation rules
+        """
+        return pulumi.get(self, "checking_code")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> builtins.str:
+        """
+        Default value of the parameter
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Parameter description information in English
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="descriptionZh")
+    def description_zh(self) -> builtins.str:
+        """
+        Parameter description information in Chinese
+        """
+        return pulumi.get(self, "description_zh")
+
+    @property
+    @pulumi.getter(name="forceRestart")
+    def force_restart(self) -> builtins.bool:
+        """
+        Whether modifying this parameter requires a restart
+        """
+        return pulumi.get(self, "force_restart")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Data type of the parameter
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Parameter value
         """
         return pulumi.get(self, "value")
 

@@ -1977,6 +1977,13 @@
                             }
                         }
                     },
+                    "replicate_key": {
+                        "fields": {
+                            "tags": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -2517,6 +2524,14 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_parameter_template": {
+                "current": "bytepluscc:rdspostgresql/parameterTemplate:ParameterTemplate",
+                "fields": {
+                    "template_params": {
                         "maxItemsOne": false
                     }
                 }
@@ -6305,7 +6320,14 @@
                 "current": "bytepluscc:iam/getRole:getRole",
                 "fields": {
                     "policies": {
-                        "maxItemsOne": false
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "policy_scopes": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     },
                     "tags": {
                         "maxItemsOne": false
@@ -6430,6 +6452,13 @@
                     "multi_region_configuration": {
                         "fields": {
                             "replica_keys": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "replicate_key": {
+                        "fields": {
+                            "tags": {
                                 "maxItemsOne": false
                             }
                         }
@@ -7300,6 +7329,22 @@
             },
             "bytepluscc_rdspostgresql_instances": {
                 "current": "bytepluscc:rdspostgresql/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_parameter_template": {
+                "current": "bytepluscc:rdspostgresql/getParameterTemplate:getParameterTemplate",
+                "fields": {
+                    "template_params": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_parameter_templates": {
+                "current": "bytepluscc:rdspostgresql/getParameterTemplates:getParameterTemplates",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

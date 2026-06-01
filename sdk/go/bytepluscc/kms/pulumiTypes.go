@@ -13,6 +13,550 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type KeyAsymmetricCiphertext struct {
+	// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+	Algorithm *string `pulumi:"algorithm"`
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob *string `pulumi:"ciphertextBlob"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext *string `pulumi:"plaintext"`
+}
+
+// KeyAsymmetricCiphertextInput is an input type that accepts KeyAsymmetricCiphertextArgs and KeyAsymmetricCiphertextOutput values.
+// You can construct a concrete instance of `KeyAsymmetricCiphertextInput` via:
+//
+//	KeyAsymmetricCiphertextArgs{...}
+type KeyAsymmetricCiphertextInput interface {
+	pulumi.Input
+
+	ToKeyAsymmetricCiphertextOutput() KeyAsymmetricCiphertextOutput
+	ToKeyAsymmetricCiphertextOutputWithContext(context.Context) KeyAsymmetricCiphertextOutput
+}
+
+type KeyAsymmetricCiphertextArgs struct {
+	// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob pulumi.StringPtrInput `pulumi:"ciphertextBlob"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext pulumi.StringPtrInput `pulumi:"plaintext"`
+}
+
+func (KeyAsymmetricCiphertextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyAsymmetricCiphertext)(nil)).Elem()
+}
+
+func (i KeyAsymmetricCiphertextArgs) ToKeyAsymmetricCiphertextOutput() KeyAsymmetricCiphertextOutput {
+	return i.ToKeyAsymmetricCiphertextOutputWithContext(context.Background())
+}
+
+func (i KeyAsymmetricCiphertextArgs) ToKeyAsymmetricCiphertextOutputWithContext(ctx context.Context) KeyAsymmetricCiphertextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAsymmetricCiphertextOutput)
+}
+
+func (i KeyAsymmetricCiphertextArgs) ToKeyAsymmetricCiphertextPtrOutput() KeyAsymmetricCiphertextPtrOutput {
+	return i.ToKeyAsymmetricCiphertextPtrOutputWithContext(context.Background())
+}
+
+func (i KeyAsymmetricCiphertextArgs) ToKeyAsymmetricCiphertextPtrOutputWithContext(ctx context.Context) KeyAsymmetricCiphertextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAsymmetricCiphertextOutput).ToKeyAsymmetricCiphertextPtrOutputWithContext(ctx)
+}
+
+// KeyAsymmetricCiphertextPtrInput is an input type that accepts KeyAsymmetricCiphertextArgs, KeyAsymmetricCiphertextPtr and KeyAsymmetricCiphertextPtrOutput values.
+// You can construct a concrete instance of `KeyAsymmetricCiphertextPtrInput` via:
+//
+//	        KeyAsymmetricCiphertextArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyAsymmetricCiphertextPtrInput interface {
+	pulumi.Input
+
+	ToKeyAsymmetricCiphertextPtrOutput() KeyAsymmetricCiphertextPtrOutput
+	ToKeyAsymmetricCiphertextPtrOutputWithContext(context.Context) KeyAsymmetricCiphertextPtrOutput
+}
+
+type keyAsymmetricCiphertextPtrType KeyAsymmetricCiphertextArgs
+
+func KeyAsymmetricCiphertextPtr(v *KeyAsymmetricCiphertextArgs) KeyAsymmetricCiphertextPtrInput {
+	return (*keyAsymmetricCiphertextPtrType)(v)
+}
+
+func (*keyAsymmetricCiphertextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyAsymmetricCiphertext)(nil)).Elem()
+}
+
+func (i *keyAsymmetricCiphertextPtrType) ToKeyAsymmetricCiphertextPtrOutput() KeyAsymmetricCiphertextPtrOutput {
+	return i.ToKeyAsymmetricCiphertextPtrOutputWithContext(context.Background())
+}
+
+func (i *keyAsymmetricCiphertextPtrType) ToKeyAsymmetricCiphertextPtrOutputWithContext(ctx context.Context) KeyAsymmetricCiphertextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAsymmetricCiphertextPtrOutput)
+}
+
+type KeyAsymmetricCiphertextOutput struct{ *pulumi.OutputState }
+
+func (KeyAsymmetricCiphertextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyAsymmetricCiphertext)(nil)).Elem()
+}
+
+func (o KeyAsymmetricCiphertextOutput) ToKeyAsymmetricCiphertextOutput() KeyAsymmetricCiphertextOutput {
+	return o
+}
+
+func (o KeyAsymmetricCiphertextOutput) ToKeyAsymmetricCiphertextOutputWithContext(ctx context.Context) KeyAsymmetricCiphertextOutput {
+	return o
+}
+
+func (o KeyAsymmetricCiphertextOutput) ToKeyAsymmetricCiphertextPtrOutput() KeyAsymmetricCiphertextPtrOutput {
+	return o.ToKeyAsymmetricCiphertextPtrOutputWithContext(context.Background())
+}
+
+func (o KeyAsymmetricCiphertextOutput) ToKeyAsymmetricCiphertextPtrOutputWithContext(ctx context.Context) KeyAsymmetricCiphertextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyAsymmetricCiphertext) *KeyAsymmetricCiphertext {
+		return &v
+	}).(KeyAsymmetricCiphertextPtrOutput)
+}
+
+// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+func (o KeyAsymmetricCiphertextOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricCiphertext) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
+}
+
+// Ciphertext of encryption result, Base64-encoded.
+func (o KeyAsymmetricCiphertextOutput) CiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricCiphertext) *string { return v.CiphertextBlob }).(pulumi.StringPtrOutput)
+}
+
+// Plaintext to be encrypted, Base64-encoded.
+func (o KeyAsymmetricCiphertextOutput) Plaintext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricCiphertext) *string { return v.Plaintext }).(pulumi.StringPtrOutput)
+}
+
+type KeyAsymmetricCiphertextPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyAsymmetricCiphertextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyAsymmetricCiphertext)(nil)).Elem()
+}
+
+func (o KeyAsymmetricCiphertextPtrOutput) ToKeyAsymmetricCiphertextPtrOutput() KeyAsymmetricCiphertextPtrOutput {
+	return o
+}
+
+func (o KeyAsymmetricCiphertextPtrOutput) ToKeyAsymmetricCiphertextPtrOutputWithContext(ctx context.Context) KeyAsymmetricCiphertextPtrOutput {
+	return o
+}
+
+func (o KeyAsymmetricCiphertextPtrOutput) Elem() KeyAsymmetricCiphertextOutput {
+	return o.ApplyT(func(v *KeyAsymmetricCiphertext) KeyAsymmetricCiphertext {
+		if v != nil {
+			return *v
+		}
+		var ret KeyAsymmetricCiphertext
+		return ret
+	}).(KeyAsymmetricCiphertextOutput)
+}
+
+// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+func (o KeyAsymmetricCiphertextPtrOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricCiphertext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithm
+	}).(pulumi.StringPtrOutput)
+}
+
+// Ciphertext of encryption result, Base64-encoded.
+func (o KeyAsymmetricCiphertextPtrOutput) CiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricCiphertext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CiphertextBlob
+	}).(pulumi.StringPtrOutput)
+}
+
+// Plaintext to be encrypted, Base64-encoded.
+func (o KeyAsymmetricCiphertextPtrOutput) Plaintext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricCiphertext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Plaintext
+	}).(pulumi.StringPtrOutput)
+}
+
+type KeyAsymmetricSignature struct {
+	// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+	Algorithm *string `pulumi:"algorithm"`
+	// Message to be signed, Base64-encoded.
+	Message *string `pulumi:"message"`
+	// Message type. Optional values: RAW, DIGEST.
+	MessageType *string `pulumi:"messageType"`
+	// Signature result, Base64-encoded.
+	Signature *string `pulumi:"signature"`
+}
+
+// KeyAsymmetricSignatureInput is an input type that accepts KeyAsymmetricSignatureArgs and KeyAsymmetricSignatureOutput values.
+// You can construct a concrete instance of `KeyAsymmetricSignatureInput` via:
+//
+//	KeyAsymmetricSignatureArgs{...}
+type KeyAsymmetricSignatureInput interface {
+	pulumi.Input
+
+	ToKeyAsymmetricSignatureOutput() KeyAsymmetricSignatureOutput
+	ToKeyAsymmetricSignatureOutputWithContext(context.Context) KeyAsymmetricSignatureOutput
+}
+
+type KeyAsymmetricSignatureArgs struct {
+	// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
+	// Message to be signed, Base64-encoded.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// Message type. Optional values: RAW, DIGEST.
+	MessageType pulumi.StringPtrInput `pulumi:"messageType"`
+	// Signature result, Base64-encoded.
+	Signature pulumi.StringPtrInput `pulumi:"signature"`
+}
+
+func (KeyAsymmetricSignatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyAsymmetricSignature)(nil)).Elem()
+}
+
+func (i KeyAsymmetricSignatureArgs) ToKeyAsymmetricSignatureOutput() KeyAsymmetricSignatureOutput {
+	return i.ToKeyAsymmetricSignatureOutputWithContext(context.Background())
+}
+
+func (i KeyAsymmetricSignatureArgs) ToKeyAsymmetricSignatureOutputWithContext(ctx context.Context) KeyAsymmetricSignatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAsymmetricSignatureOutput)
+}
+
+func (i KeyAsymmetricSignatureArgs) ToKeyAsymmetricSignaturePtrOutput() KeyAsymmetricSignaturePtrOutput {
+	return i.ToKeyAsymmetricSignaturePtrOutputWithContext(context.Background())
+}
+
+func (i KeyAsymmetricSignatureArgs) ToKeyAsymmetricSignaturePtrOutputWithContext(ctx context.Context) KeyAsymmetricSignaturePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAsymmetricSignatureOutput).ToKeyAsymmetricSignaturePtrOutputWithContext(ctx)
+}
+
+// KeyAsymmetricSignaturePtrInput is an input type that accepts KeyAsymmetricSignatureArgs, KeyAsymmetricSignaturePtr and KeyAsymmetricSignaturePtrOutput values.
+// You can construct a concrete instance of `KeyAsymmetricSignaturePtrInput` via:
+//
+//	        KeyAsymmetricSignatureArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyAsymmetricSignaturePtrInput interface {
+	pulumi.Input
+
+	ToKeyAsymmetricSignaturePtrOutput() KeyAsymmetricSignaturePtrOutput
+	ToKeyAsymmetricSignaturePtrOutputWithContext(context.Context) KeyAsymmetricSignaturePtrOutput
+}
+
+type keyAsymmetricSignaturePtrType KeyAsymmetricSignatureArgs
+
+func KeyAsymmetricSignaturePtr(v *KeyAsymmetricSignatureArgs) KeyAsymmetricSignaturePtrInput {
+	return (*keyAsymmetricSignaturePtrType)(v)
+}
+
+func (*keyAsymmetricSignaturePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyAsymmetricSignature)(nil)).Elem()
+}
+
+func (i *keyAsymmetricSignaturePtrType) ToKeyAsymmetricSignaturePtrOutput() KeyAsymmetricSignaturePtrOutput {
+	return i.ToKeyAsymmetricSignaturePtrOutputWithContext(context.Background())
+}
+
+func (i *keyAsymmetricSignaturePtrType) ToKeyAsymmetricSignaturePtrOutputWithContext(ctx context.Context) KeyAsymmetricSignaturePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyAsymmetricSignaturePtrOutput)
+}
+
+type KeyAsymmetricSignatureOutput struct{ *pulumi.OutputState }
+
+func (KeyAsymmetricSignatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyAsymmetricSignature)(nil)).Elem()
+}
+
+func (o KeyAsymmetricSignatureOutput) ToKeyAsymmetricSignatureOutput() KeyAsymmetricSignatureOutput {
+	return o
+}
+
+func (o KeyAsymmetricSignatureOutput) ToKeyAsymmetricSignatureOutputWithContext(ctx context.Context) KeyAsymmetricSignatureOutput {
+	return o
+}
+
+func (o KeyAsymmetricSignatureOutput) ToKeyAsymmetricSignaturePtrOutput() KeyAsymmetricSignaturePtrOutput {
+	return o.ToKeyAsymmetricSignaturePtrOutputWithContext(context.Background())
+}
+
+func (o KeyAsymmetricSignatureOutput) ToKeyAsymmetricSignaturePtrOutputWithContext(ctx context.Context) KeyAsymmetricSignaturePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyAsymmetricSignature) *KeyAsymmetricSignature {
+		return &v
+	}).(KeyAsymmetricSignaturePtrOutput)
+}
+
+// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+func (o KeyAsymmetricSignatureOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricSignature) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
+}
+
+// Message to be signed, Base64-encoded.
+func (o KeyAsymmetricSignatureOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricSignature) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// Message type. Optional values: RAW, DIGEST.
+func (o KeyAsymmetricSignatureOutput) MessageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricSignature) *string { return v.MessageType }).(pulumi.StringPtrOutput)
+}
+
+// Signature result, Base64-encoded.
+func (o KeyAsymmetricSignatureOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyAsymmetricSignature) *string { return v.Signature }).(pulumi.StringPtrOutput)
+}
+
+type KeyAsymmetricSignaturePtrOutput struct{ *pulumi.OutputState }
+
+func (KeyAsymmetricSignaturePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyAsymmetricSignature)(nil)).Elem()
+}
+
+func (o KeyAsymmetricSignaturePtrOutput) ToKeyAsymmetricSignaturePtrOutput() KeyAsymmetricSignaturePtrOutput {
+	return o
+}
+
+func (o KeyAsymmetricSignaturePtrOutput) ToKeyAsymmetricSignaturePtrOutputWithContext(ctx context.Context) KeyAsymmetricSignaturePtrOutput {
+	return o
+}
+
+func (o KeyAsymmetricSignaturePtrOutput) Elem() KeyAsymmetricSignatureOutput {
+	return o.ApplyT(func(v *KeyAsymmetricSignature) KeyAsymmetricSignature {
+		if v != nil {
+			return *v
+		}
+		var ret KeyAsymmetricSignature
+		return ret
+	}).(KeyAsymmetricSignatureOutput)
+}
+
+// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+func (o KeyAsymmetricSignaturePtrOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricSignature) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithm
+	}).(pulumi.StringPtrOutput)
+}
+
+// Message to be signed, Base64-encoded.
+func (o KeyAsymmetricSignaturePtrOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricSignature) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Message
+	}).(pulumi.StringPtrOutput)
+}
+
+// Message type. Optional values: RAW, DIGEST.
+func (o KeyAsymmetricSignaturePtrOutput) MessageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricSignature) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MessageType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Signature result, Base64-encoded.
+func (o KeyAsymmetricSignaturePtrOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyAsymmetricSignature) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Signature
+	}).(pulumi.StringPtrOutput)
+}
+
+type KeyCiphertext struct {
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob *string `pulumi:"ciphertextBlob"`
+	// Encryption context JSON string.
+	EncryptionContext *string `pulumi:"encryptionContext"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext *string `pulumi:"plaintext"`
+}
+
+// KeyCiphertextInput is an input type that accepts KeyCiphertextArgs and KeyCiphertextOutput values.
+// You can construct a concrete instance of `KeyCiphertextInput` via:
+//
+//	KeyCiphertextArgs{...}
+type KeyCiphertextInput interface {
+	pulumi.Input
+
+	ToKeyCiphertextOutput() KeyCiphertextOutput
+	ToKeyCiphertextOutputWithContext(context.Context) KeyCiphertextOutput
+}
+
+type KeyCiphertextArgs struct {
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob pulumi.StringPtrInput `pulumi:"ciphertextBlob"`
+	// Encryption context JSON string.
+	EncryptionContext pulumi.StringPtrInput `pulumi:"encryptionContext"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext pulumi.StringPtrInput `pulumi:"plaintext"`
+}
+
+func (KeyCiphertextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyCiphertext)(nil)).Elem()
+}
+
+func (i KeyCiphertextArgs) ToKeyCiphertextOutput() KeyCiphertextOutput {
+	return i.ToKeyCiphertextOutputWithContext(context.Background())
+}
+
+func (i KeyCiphertextArgs) ToKeyCiphertextOutputWithContext(ctx context.Context) KeyCiphertextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyCiphertextOutput)
+}
+
+func (i KeyCiphertextArgs) ToKeyCiphertextPtrOutput() KeyCiphertextPtrOutput {
+	return i.ToKeyCiphertextPtrOutputWithContext(context.Background())
+}
+
+func (i KeyCiphertextArgs) ToKeyCiphertextPtrOutputWithContext(ctx context.Context) KeyCiphertextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyCiphertextOutput).ToKeyCiphertextPtrOutputWithContext(ctx)
+}
+
+// KeyCiphertextPtrInput is an input type that accepts KeyCiphertextArgs, KeyCiphertextPtr and KeyCiphertextPtrOutput values.
+// You can construct a concrete instance of `KeyCiphertextPtrInput` via:
+//
+//	        KeyCiphertextArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyCiphertextPtrInput interface {
+	pulumi.Input
+
+	ToKeyCiphertextPtrOutput() KeyCiphertextPtrOutput
+	ToKeyCiphertextPtrOutputWithContext(context.Context) KeyCiphertextPtrOutput
+}
+
+type keyCiphertextPtrType KeyCiphertextArgs
+
+func KeyCiphertextPtr(v *KeyCiphertextArgs) KeyCiphertextPtrInput {
+	return (*keyCiphertextPtrType)(v)
+}
+
+func (*keyCiphertextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyCiphertext)(nil)).Elem()
+}
+
+func (i *keyCiphertextPtrType) ToKeyCiphertextPtrOutput() KeyCiphertextPtrOutput {
+	return i.ToKeyCiphertextPtrOutputWithContext(context.Background())
+}
+
+func (i *keyCiphertextPtrType) ToKeyCiphertextPtrOutputWithContext(ctx context.Context) KeyCiphertextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyCiphertextPtrOutput)
+}
+
+type KeyCiphertextOutput struct{ *pulumi.OutputState }
+
+func (KeyCiphertextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyCiphertext)(nil)).Elem()
+}
+
+func (o KeyCiphertextOutput) ToKeyCiphertextOutput() KeyCiphertextOutput {
+	return o
+}
+
+func (o KeyCiphertextOutput) ToKeyCiphertextOutputWithContext(ctx context.Context) KeyCiphertextOutput {
+	return o
+}
+
+func (o KeyCiphertextOutput) ToKeyCiphertextPtrOutput() KeyCiphertextPtrOutput {
+	return o.ToKeyCiphertextPtrOutputWithContext(context.Background())
+}
+
+func (o KeyCiphertextOutput) ToKeyCiphertextPtrOutputWithContext(ctx context.Context) KeyCiphertextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyCiphertext) *KeyCiphertext {
+		return &v
+	}).(KeyCiphertextPtrOutput)
+}
+
+// Ciphertext of encryption result, Base64-encoded.
+func (o KeyCiphertextOutput) CiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyCiphertext) *string { return v.CiphertextBlob }).(pulumi.StringPtrOutput)
+}
+
+// Encryption context JSON string.
+func (o KeyCiphertextOutput) EncryptionContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyCiphertext) *string { return v.EncryptionContext }).(pulumi.StringPtrOutput)
+}
+
+// Plaintext to be encrypted, Base64-encoded.
+func (o KeyCiphertextOutput) Plaintext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyCiphertext) *string { return v.Plaintext }).(pulumi.StringPtrOutput)
+}
+
+type KeyCiphertextPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyCiphertextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyCiphertext)(nil)).Elem()
+}
+
+func (o KeyCiphertextPtrOutput) ToKeyCiphertextPtrOutput() KeyCiphertextPtrOutput {
+	return o
+}
+
+func (o KeyCiphertextPtrOutput) ToKeyCiphertextPtrOutputWithContext(ctx context.Context) KeyCiphertextPtrOutput {
+	return o
+}
+
+func (o KeyCiphertextPtrOutput) Elem() KeyCiphertextOutput {
+	return o.ApplyT(func(v *KeyCiphertext) KeyCiphertext {
+		if v != nil {
+			return *v
+		}
+		var ret KeyCiphertext
+		return ret
+	}).(KeyCiphertextOutput)
+}
+
+// Ciphertext of encryption result, Base64-encoded.
+func (o KeyCiphertextPtrOutput) CiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyCiphertext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CiphertextBlob
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encryption context JSON string.
+func (o KeyCiphertextPtrOutput) EncryptionContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyCiphertext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncryptionContext
+	}).(pulumi.StringPtrOutput)
+}
+
+// Plaintext to be encrypted, Base64-encoded.
+func (o KeyCiphertextPtrOutput) Plaintext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyCiphertext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Plaintext
+	}).(pulumi.StringPtrOutput)
+}
+
 type KeyMultiRegionConfiguration struct {
 	// Multi-region key type.
 	MultiRegionKeyType *string `pulumi:"multiRegionKeyType"`
@@ -446,6 +990,553 @@ func (o KeyMultiRegionConfigurationReplicaKeyArrayOutput) Index(i pulumi.IntInpu
 	}).(KeyMultiRegionConfigurationReplicaKeyOutput)
 }
 
+type KeyReEncrypt struct {
+	// Re-encrypted ciphertext, Base64-encoded.
+	CiphertextBlob *string `pulumi:"ciphertextBlob"`
+	// New encryption context JSON string.
+	NewEncryptionContext *string `pulumi:"newEncryptionContext"`
+	// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+	NewKeyId *string `pulumi:"newKeyId"`
+	// Target key name.
+	NewKeyName *string `pulumi:"newKeyName"`
+	// Name of the keyring to which the target key belongs.
+	NewKeyringName *string `pulumi:"newKeyringName"`
+	// Old encryption context JSON string.
+	OldEncryptionContext *string `pulumi:"oldEncryptionContext"`
+	// Source ciphertext to be re-encrypted, Base64-encoded.
+	SourceCiphertextBlob *string `pulumi:"sourceCiphertextBlob"`
+}
+
+// KeyReEncryptInput is an input type that accepts KeyReEncryptArgs and KeyReEncryptOutput values.
+// You can construct a concrete instance of `KeyReEncryptInput` via:
+//
+//	KeyReEncryptArgs{...}
+type KeyReEncryptInput interface {
+	pulumi.Input
+
+	ToKeyReEncryptOutput() KeyReEncryptOutput
+	ToKeyReEncryptOutputWithContext(context.Context) KeyReEncryptOutput
+}
+
+type KeyReEncryptArgs struct {
+	// Re-encrypted ciphertext, Base64-encoded.
+	CiphertextBlob pulumi.StringPtrInput `pulumi:"ciphertextBlob"`
+	// New encryption context JSON string.
+	NewEncryptionContext pulumi.StringPtrInput `pulumi:"newEncryptionContext"`
+	// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+	NewKeyId pulumi.StringPtrInput `pulumi:"newKeyId"`
+	// Target key name.
+	NewKeyName pulumi.StringPtrInput `pulumi:"newKeyName"`
+	// Name of the keyring to which the target key belongs.
+	NewKeyringName pulumi.StringPtrInput `pulumi:"newKeyringName"`
+	// Old encryption context JSON string.
+	OldEncryptionContext pulumi.StringPtrInput `pulumi:"oldEncryptionContext"`
+	// Source ciphertext to be re-encrypted, Base64-encoded.
+	SourceCiphertextBlob pulumi.StringPtrInput `pulumi:"sourceCiphertextBlob"`
+}
+
+func (KeyReEncryptArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyReEncrypt)(nil)).Elem()
+}
+
+func (i KeyReEncryptArgs) ToKeyReEncryptOutput() KeyReEncryptOutput {
+	return i.ToKeyReEncryptOutputWithContext(context.Background())
+}
+
+func (i KeyReEncryptArgs) ToKeyReEncryptOutputWithContext(ctx context.Context) KeyReEncryptOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReEncryptOutput)
+}
+
+func (i KeyReEncryptArgs) ToKeyReEncryptPtrOutput() KeyReEncryptPtrOutput {
+	return i.ToKeyReEncryptPtrOutputWithContext(context.Background())
+}
+
+func (i KeyReEncryptArgs) ToKeyReEncryptPtrOutputWithContext(ctx context.Context) KeyReEncryptPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReEncryptOutput).ToKeyReEncryptPtrOutputWithContext(ctx)
+}
+
+// KeyReEncryptPtrInput is an input type that accepts KeyReEncryptArgs, KeyReEncryptPtr and KeyReEncryptPtrOutput values.
+// You can construct a concrete instance of `KeyReEncryptPtrInput` via:
+//
+//	        KeyReEncryptArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyReEncryptPtrInput interface {
+	pulumi.Input
+
+	ToKeyReEncryptPtrOutput() KeyReEncryptPtrOutput
+	ToKeyReEncryptPtrOutputWithContext(context.Context) KeyReEncryptPtrOutput
+}
+
+type keyReEncryptPtrType KeyReEncryptArgs
+
+func KeyReEncryptPtr(v *KeyReEncryptArgs) KeyReEncryptPtrInput {
+	return (*keyReEncryptPtrType)(v)
+}
+
+func (*keyReEncryptPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyReEncrypt)(nil)).Elem()
+}
+
+func (i *keyReEncryptPtrType) ToKeyReEncryptPtrOutput() KeyReEncryptPtrOutput {
+	return i.ToKeyReEncryptPtrOutputWithContext(context.Background())
+}
+
+func (i *keyReEncryptPtrType) ToKeyReEncryptPtrOutputWithContext(ctx context.Context) KeyReEncryptPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReEncryptPtrOutput)
+}
+
+type KeyReEncryptOutput struct{ *pulumi.OutputState }
+
+func (KeyReEncryptOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyReEncrypt)(nil)).Elem()
+}
+
+func (o KeyReEncryptOutput) ToKeyReEncryptOutput() KeyReEncryptOutput {
+	return o
+}
+
+func (o KeyReEncryptOutput) ToKeyReEncryptOutputWithContext(ctx context.Context) KeyReEncryptOutput {
+	return o
+}
+
+func (o KeyReEncryptOutput) ToKeyReEncryptPtrOutput() KeyReEncryptPtrOutput {
+	return o.ToKeyReEncryptPtrOutputWithContext(context.Background())
+}
+
+func (o KeyReEncryptOutput) ToKeyReEncryptPtrOutputWithContext(ctx context.Context) KeyReEncryptPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyReEncrypt) *KeyReEncrypt {
+		return &v
+	}).(KeyReEncryptPtrOutput)
+}
+
+// Re-encrypted ciphertext, Base64-encoded.
+func (o KeyReEncryptOutput) CiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.CiphertextBlob }).(pulumi.StringPtrOutput)
+}
+
+// New encryption context JSON string.
+func (o KeyReEncryptOutput) NewEncryptionContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.NewEncryptionContext }).(pulumi.StringPtrOutput)
+}
+
+// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+func (o KeyReEncryptOutput) NewKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.NewKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Target key name.
+func (o KeyReEncryptOutput) NewKeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.NewKeyName }).(pulumi.StringPtrOutput)
+}
+
+// Name of the keyring to which the target key belongs.
+func (o KeyReEncryptOutput) NewKeyringName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.NewKeyringName }).(pulumi.StringPtrOutput)
+}
+
+// Old encryption context JSON string.
+func (o KeyReEncryptOutput) OldEncryptionContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.OldEncryptionContext }).(pulumi.StringPtrOutput)
+}
+
+// Source ciphertext to be re-encrypted, Base64-encoded.
+func (o KeyReEncryptOutput) SourceCiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReEncrypt) *string { return v.SourceCiphertextBlob }).(pulumi.StringPtrOutput)
+}
+
+type KeyReEncryptPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyReEncryptPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyReEncrypt)(nil)).Elem()
+}
+
+func (o KeyReEncryptPtrOutput) ToKeyReEncryptPtrOutput() KeyReEncryptPtrOutput {
+	return o
+}
+
+func (o KeyReEncryptPtrOutput) ToKeyReEncryptPtrOutputWithContext(ctx context.Context) KeyReEncryptPtrOutput {
+	return o
+}
+
+func (o KeyReEncryptPtrOutput) Elem() KeyReEncryptOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) KeyReEncrypt {
+		if v != nil {
+			return *v
+		}
+		var ret KeyReEncrypt
+		return ret
+	}).(KeyReEncryptOutput)
+}
+
+// Re-encrypted ciphertext, Base64-encoded.
+func (o KeyReEncryptPtrOutput) CiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CiphertextBlob
+	}).(pulumi.StringPtrOutput)
+}
+
+// New encryption context JSON string.
+func (o KeyReEncryptPtrOutput) NewEncryptionContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NewEncryptionContext
+	}).(pulumi.StringPtrOutput)
+}
+
+// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+func (o KeyReEncryptPtrOutput) NewKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NewKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Target key name.
+func (o KeyReEncryptPtrOutput) NewKeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NewKeyName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Name of the keyring to which the target key belongs.
+func (o KeyReEncryptPtrOutput) NewKeyringName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NewKeyringName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Old encryption context JSON string.
+func (o KeyReEncryptPtrOutput) OldEncryptionContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OldEncryptionContext
+	}).(pulumi.StringPtrOutput)
+}
+
+// Source ciphertext to be re-encrypted, Base64-encoded.
+func (o KeyReEncryptPtrOutput) SourceCiphertextBlob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReEncrypt) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceCiphertextBlob
+	}).(pulumi.StringPtrOutput)
+}
+
+type KeyReplicateKey struct {
+	// Replica key description.
+	Description *string `pulumi:"description"`
+	// Replica key ID.
+	ReplicaKeyId *string `pulumi:"replicaKeyId"`
+	// Target region of the replica key.
+	ReplicaRegion *string              `pulumi:"replicaRegion"`
+	Tags          []KeyReplicateKeyTag `pulumi:"tags"`
+}
+
+// KeyReplicateKeyInput is an input type that accepts KeyReplicateKeyArgs and KeyReplicateKeyOutput values.
+// You can construct a concrete instance of `KeyReplicateKeyInput` via:
+//
+//	KeyReplicateKeyArgs{...}
+type KeyReplicateKeyInput interface {
+	pulumi.Input
+
+	ToKeyReplicateKeyOutput() KeyReplicateKeyOutput
+	ToKeyReplicateKeyOutputWithContext(context.Context) KeyReplicateKeyOutput
+}
+
+type KeyReplicateKeyArgs struct {
+	// Replica key description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Replica key ID.
+	ReplicaKeyId pulumi.StringPtrInput `pulumi:"replicaKeyId"`
+	// Target region of the replica key.
+	ReplicaRegion pulumi.StringPtrInput        `pulumi:"replicaRegion"`
+	Tags          KeyReplicateKeyTagArrayInput `pulumi:"tags"`
+}
+
+func (KeyReplicateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyReplicateKey)(nil)).Elem()
+}
+
+func (i KeyReplicateKeyArgs) ToKeyReplicateKeyOutput() KeyReplicateKeyOutput {
+	return i.ToKeyReplicateKeyOutputWithContext(context.Background())
+}
+
+func (i KeyReplicateKeyArgs) ToKeyReplicateKeyOutputWithContext(ctx context.Context) KeyReplicateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicateKeyOutput)
+}
+
+func (i KeyReplicateKeyArgs) ToKeyReplicateKeyPtrOutput() KeyReplicateKeyPtrOutput {
+	return i.ToKeyReplicateKeyPtrOutputWithContext(context.Background())
+}
+
+func (i KeyReplicateKeyArgs) ToKeyReplicateKeyPtrOutputWithContext(ctx context.Context) KeyReplicateKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicateKeyOutput).ToKeyReplicateKeyPtrOutputWithContext(ctx)
+}
+
+// KeyReplicateKeyPtrInput is an input type that accepts KeyReplicateKeyArgs, KeyReplicateKeyPtr and KeyReplicateKeyPtrOutput values.
+// You can construct a concrete instance of `KeyReplicateKeyPtrInput` via:
+//
+//	        KeyReplicateKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyReplicateKeyPtrInput interface {
+	pulumi.Input
+
+	ToKeyReplicateKeyPtrOutput() KeyReplicateKeyPtrOutput
+	ToKeyReplicateKeyPtrOutputWithContext(context.Context) KeyReplicateKeyPtrOutput
+}
+
+type keyReplicateKeyPtrType KeyReplicateKeyArgs
+
+func KeyReplicateKeyPtr(v *KeyReplicateKeyArgs) KeyReplicateKeyPtrInput {
+	return (*keyReplicateKeyPtrType)(v)
+}
+
+func (*keyReplicateKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyReplicateKey)(nil)).Elem()
+}
+
+func (i *keyReplicateKeyPtrType) ToKeyReplicateKeyPtrOutput() KeyReplicateKeyPtrOutput {
+	return i.ToKeyReplicateKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *keyReplicateKeyPtrType) ToKeyReplicateKeyPtrOutputWithContext(ctx context.Context) KeyReplicateKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicateKeyPtrOutput)
+}
+
+type KeyReplicateKeyOutput struct{ *pulumi.OutputState }
+
+func (KeyReplicateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyReplicateKey)(nil)).Elem()
+}
+
+func (o KeyReplicateKeyOutput) ToKeyReplicateKeyOutput() KeyReplicateKeyOutput {
+	return o
+}
+
+func (o KeyReplicateKeyOutput) ToKeyReplicateKeyOutputWithContext(ctx context.Context) KeyReplicateKeyOutput {
+	return o
+}
+
+func (o KeyReplicateKeyOutput) ToKeyReplicateKeyPtrOutput() KeyReplicateKeyPtrOutput {
+	return o.ToKeyReplicateKeyPtrOutputWithContext(context.Background())
+}
+
+func (o KeyReplicateKeyOutput) ToKeyReplicateKeyPtrOutputWithContext(ctx context.Context) KeyReplicateKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyReplicateKey) *KeyReplicateKey {
+		return &v
+	}).(KeyReplicateKeyPtrOutput)
+}
+
+// Replica key description.
+func (o KeyReplicateKeyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReplicateKey) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Replica key ID.
+func (o KeyReplicateKeyOutput) ReplicaKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReplicateKey) *string { return v.ReplicaKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Target region of the replica key.
+func (o KeyReplicateKeyOutput) ReplicaRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReplicateKey) *string { return v.ReplicaRegion }).(pulumi.StringPtrOutput)
+}
+
+func (o KeyReplicateKeyOutput) Tags() KeyReplicateKeyTagArrayOutput {
+	return o.ApplyT(func(v KeyReplicateKey) []KeyReplicateKeyTag { return v.Tags }).(KeyReplicateKeyTagArrayOutput)
+}
+
+type KeyReplicateKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyReplicateKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyReplicateKey)(nil)).Elem()
+}
+
+func (o KeyReplicateKeyPtrOutput) ToKeyReplicateKeyPtrOutput() KeyReplicateKeyPtrOutput {
+	return o
+}
+
+func (o KeyReplicateKeyPtrOutput) ToKeyReplicateKeyPtrOutputWithContext(ctx context.Context) KeyReplicateKeyPtrOutput {
+	return o
+}
+
+func (o KeyReplicateKeyPtrOutput) Elem() KeyReplicateKeyOutput {
+	return o.ApplyT(func(v *KeyReplicateKey) KeyReplicateKey {
+		if v != nil {
+			return *v
+		}
+		var ret KeyReplicateKey
+		return ret
+	}).(KeyReplicateKeyOutput)
+}
+
+// Replica key description.
+func (o KeyReplicateKeyPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReplicateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// Replica key ID.
+func (o KeyReplicateKeyPtrOutput) ReplicaKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReplicateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicaKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Target region of the replica key.
+func (o KeyReplicateKeyPtrOutput) ReplicaRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyReplicateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicaRegion
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o KeyReplicateKeyPtrOutput) Tags() KeyReplicateKeyTagArrayOutput {
+	return o.ApplyT(func(v *KeyReplicateKey) []KeyReplicateKeyTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(KeyReplicateKeyTagArrayOutput)
+}
+
+type KeyReplicateKeyTag struct {
+	// KMS key label key.
+	Key *string `pulumi:"key"`
+	// KMS key label value.
+	Value *string `pulumi:"value"`
+}
+
+// KeyReplicateKeyTagInput is an input type that accepts KeyReplicateKeyTagArgs and KeyReplicateKeyTagOutput values.
+// You can construct a concrete instance of `KeyReplicateKeyTagInput` via:
+//
+//	KeyReplicateKeyTagArgs{...}
+type KeyReplicateKeyTagInput interface {
+	pulumi.Input
+
+	ToKeyReplicateKeyTagOutput() KeyReplicateKeyTagOutput
+	ToKeyReplicateKeyTagOutputWithContext(context.Context) KeyReplicateKeyTagOutput
+}
+
+type KeyReplicateKeyTagArgs struct {
+	// KMS key label key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// KMS key label value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (KeyReplicateKeyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (i KeyReplicateKeyTagArgs) ToKeyReplicateKeyTagOutput() KeyReplicateKeyTagOutput {
+	return i.ToKeyReplicateKeyTagOutputWithContext(context.Background())
+}
+
+func (i KeyReplicateKeyTagArgs) ToKeyReplicateKeyTagOutputWithContext(ctx context.Context) KeyReplicateKeyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicateKeyTagOutput)
+}
+
+// KeyReplicateKeyTagArrayInput is an input type that accepts KeyReplicateKeyTagArray and KeyReplicateKeyTagArrayOutput values.
+// You can construct a concrete instance of `KeyReplicateKeyTagArrayInput` via:
+//
+//	KeyReplicateKeyTagArray{ KeyReplicateKeyTagArgs{...} }
+type KeyReplicateKeyTagArrayInput interface {
+	pulumi.Input
+
+	ToKeyReplicateKeyTagArrayOutput() KeyReplicateKeyTagArrayOutput
+	ToKeyReplicateKeyTagArrayOutputWithContext(context.Context) KeyReplicateKeyTagArrayOutput
+}
+
+type KeyReplicateKeyTagArray []KeyReplicateKeyTagInput
+
+func (KeyReplicateKeyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (i KeyReplicateKeyTagArray) ToKeyReplicateKeyTagArrayOutput() KeyReplicateKeyTagArrayOutput {
+	return i.ToKeyReplicateKeyTagArrayOutputWithContext(context.Background())
+}
+
+func (i KeyReplicateKeyTagArray) ToKeyReplicateKeyTagArrayOutputWithContext(ctx context.Context) KeyReplicateKeyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicateKeyTagArrayOutput)
+}
+
+type KeyReplicateKeyTagOutput struct{ *pulumi.OutputState }
+
+func (KeyReplicateKeyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (o KeyReplicateKeyTagOutput) ToKeyReplicateKeyTagOutput() KeyReplicateKeyTagOutput {
+	return o
+}
+
+func (o KeyReplicateKeyTagOutput) ToKeyReplicateKeyTagOutputWithContext(ctx context.Context) KeyReplicateKeyTagOutput {
+	return o
+}
+
+// KMS key label key.
+func (o KeyReplicateKeyTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReplicateKeyTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// KMS key label value.
+func (o KeyReplicateKeyTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyReplicateKeyTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type KeyReplicateKeyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (KeyReplicateKeyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (o KeyReplicateKeyTagArrayOutput) ToKeyReplicateKeyTagArrayOutput() KeyReplicateKeyTagArrayOutput {
+	return o
+}
+
+func (o KeyReplicateKeyTagArrayOutput) ToKeyReplicateKeyTagArrayOutputWithContext(ctx context.Context) KeyReplicateKeyTagArrayOutput {
+	return o
+}
+
+func (o KeyReplicateKeyTagArrayOutput) Index(i pulumi.IntInput) KeyReplicateKeyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyReplicateKeyTag {
+		return vs[0].([]KeyReplicateKeyTag)[vs[1].(int)]
+	}).(KeyReplicateKeyTagOutput)
+}
+
 type KeyTag struct {
 	// KMS key label key.
 	Key *string `pulumi:"key"`
@@ -550,6 +1641,225 @@ func (o KeyTagArrayOutput) Index(i pulumi.IntInput) KeyTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyTag {
 		return vs[0].([]KeyTag)[vs[1].(int)]
 	}).(KeyTagOutput)
+}
+
+type GetKeyAsymmetricCiphertext struct {
+	// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+	Algorithm string `pulumi:"algorithm"`
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob string `pulumi:"ciphertextBlob"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext string `pulumi:"plaintext"`
+}
+
+// GetKeyAsymmetricCiphertextInput is an input type that accepts GetKeyAsymmetricCiphertextArgs and GetKeyAsymmetricCiphertextOutput values.
+// You can construct a concrete instance of `GetKeyAsymmetricCiphertextInput` via:
+//
+//	GetKeyAsymmetricCiphertextArgs{...}
+type GetKeyAsymmetricCiphertextInput interface {
+	pulumi.Input
+
+	ToGetKeyAsymmetricCiphertextOutput() GetKeyAsymmetricCiphertextOutput
+	ToGetKeyAsymmetricCiphertextOutputWithContext(context.Context) GetKeyAsymmetricCiphertextOutput
+}
+
+type GetKeyAsymmetricCiphertextArgs struct {
+	// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob pulumi.StringInput `pulumi:"ciphertextBlob"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext pulumi.StringInput `pulumi:"plaintext"`
+}
+
+func (GetKeyAsymmetricCiphertextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyAsymmetricCiphertext)(nil)).Elem()
+}
+
+func (i GetKeyAsymmetricCiphertextArgs) ToGetKeyAsymmetricCiphertextOutput() GetKeyAsymmetricCiphertextOutput {
+	return i.ToGetKeyAsymmetricCiphertextOutputWithContext(context.Background())
+}
+
+func (i GetKeyAsymmetricCiphertextArgs) ToGetKeyAsymmetricCiphertextOutputWithContext(ctx context.Context) GetKeyAsymmetricCiphertextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyAsymmetricCiphertextOutput)
+}
+
+type GetKeyAsymmetricCiphertextOutput struct{ *pulumi.OutputState }
+
+func (GetKeyAsymmetricCiphertextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyAsymmetricCiphertext)(nil)).Elem()
+}
+
+func (o GetKeyAsymmetricCiphertextOutput) ToGetKeyAsymmetricCiphertextOutput() GetKeyAsymmetricCiphertextOutput {
+	return o
+}
+
+func (o GetKeyAsymmetricCiphertextOutput) ToGetKeyAsymmetricCiphertextOutputWithContext(ctx context.Context) GetKeyAsymmetricCiphertextOutput {
+	return o
+}
+
+// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
+func (o GetKeyAsymmetricCiphertextOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricCiphertext) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// Ciphertext of encryption result, Base64-encoded.
+func (o GetKeyAsymmetricCiphertextOutput) CiphertextBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricCiphertext) string { return v.CiphertextBlob }).(pulumi.StringOutput)
+}
+
+// Plaintext to be encrypted, Base64-encoded.
+func (o GetKeyAsymmetricCiphertextOutput) Plaintext() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricCiphertext) string { return v.Plaintext }).(pulumi.StringOutput)
+}
+
+type GetKeyAsymmetricSignature struct {
+	// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+	Algorithm string `pulumi:"algorithm"`
+	// Message to be signed, Base64-encoded.
+	Message string `pulumi:"message"`
+	// Message type. Optional values: RAW, DIGEST.
+	MessageType string `pulumi:"messageType"`
+	// Signature result, Base64-encoded.
+	Signature string `pulumi:"signature"`
+}
+
+// GetKeyAsymmetricSignatureInput is an input type that accepts GetKeyAsymmetricSignatureArgs and GetKeyAsymmetricSignatureOutput values.
+// You can construct a concrete instance of `GetKeyAsymmetricSignatureInput` via:
+//
+//	GetKeyAsymmetricSignatureArgs{...}
+type GetKeyAsymmetricSignatureInput interface {
+	pulumi.Input
+
+	ToGetKeyAsymmetricSignatureOutput() GetKeyAsymmetricSignatureOutput
+	ToGetKeyAsymmetricSignatureOutputWithContext(context.Context) GetKeyAsymmetricSignatureOutput
+}
+
+type GetKeyAsymmetricSignatureArgs struct {
+	// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// Message to be signed, Base64-encoded.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Message type. Optional values: RAW, DIGEST.
+	MessageType pulumi.StringInput `pulumi:"messageType"`
+	// Signature result, Base64-encoded.
+	Signature pulumi.StringInput `pulumi:"signature"`
+}
+
+func (GetKeyAsymmetricSignatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyAsymmetricSignature)(nil)).Elem()
+}
+
+func (i GetKeyAsymmetricSignatureArgs) ToGetKeyAsymmetricSignatureOutput() GetKeyAsymmetricSignatureOutput {
+	return i.ToGetKeyAsymmetricSignatureOutputWithContext(context.Background())
+}
+
+func (i GetKeyAsymmetricSignatureArgs) ToGetKeyAsymmetricSignatureOutputWithContext(ctx context.Context) GetKeyAsymmetricSignatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyAsymmetricSignatureOutput)
+}
+
+type GetKeyAsymmetricSignatureOutput struct{ *pulumi.OutputState }
+
+func (GetKeyAsymmetricSignatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyAsymmetricSignature)(nil)).Elem()
+}
+
+func (o GetKeyAsymmetricSignatureOutput) ToGetKeyAsymmetricSignatureOutput() GetKeyAsymmetricSignatureOutput {
+	return o
+}
+
+func (o GetKeyAsymmetricSignatureOutput) ToGetKeyAsymmetricSignatureOutputWithContext(ctx context.Context) GetKeyAsymmetricSignatureOutput {
+	return o
+}
+
+// Signature algorithm, for example: RSA*PSS*SHA*256, RSA*PKCS1*SHA*256, ECDSA*SHA*256, SM2_DSA.
+func (o GetKeyAsymmetricSignatureOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricSignature) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// Message to be signed, Base64-encoded.
+func (o GetKeyAsymmetricSignatureOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricSignature) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Message type. Optional values: RAW, DIGEST.
+func (o GetKeyAsymmetricSignatureOutput) MessageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricSignature) string { return v.MessageType }).(pulumi.StringOutput)
+}
+
+// Signature result, Base64-encoded.
+func (o GetKeyAsymmetricSignatureOutput) Signature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyAsymmetricSignature) string { return v.Signature }).(pulumi.StringOutput)
+}
+
+type GetKeyCiphertext struct {
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob string `pulumi:"ciphertextBlob"`
+	// Encryption context JSON string.
+	EncryptionContext string `pulumi:"encryptionContext"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext string `pulumi:"plaintext"`
+}
+
+// GetKeyCiphertextInput is an input type that accepts GetKeyCiphertextArgs and GetKeyCiphertextOutput values.
+// You can construct a concrete instance of `GetKeyCiphertextInput` via:
+//
+//	GetKeyCiphertextArgs{...}
+type GetKeyCiphertextInput interface {
+	pulumi.Input
+
+	ToGetKeyCiphertextOutput() GetKeyCiphertextOutput
+	ToGetKeyCiphertextOutputWithContext(context.Context) GetKeyCiphertextOutput
+}
+
+type GetKeyCiphertextArgs struct {
+	// Ciphertext of encryption result, Base64-encoded.
+	CiphertextBlob pulumi.StringInput `pulumi:"ciphertextBlob"`
+	// Encryption context JSON string.
+	EncryptionContext pulumi.StringInput `pulumi:"encryptionContext"`
+	// Plaintext to be encrypted, Base64-encoded.
+	Plaintext pulumi.StringInput `pulumi:"plaintext"`
+}
+
+func (GetKeyCiphertextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyCiphertext)(nil)).Elem()
+}
+
+func (i GetKeyCiphertextArgs) ToGetKeyCiphertextOutput() GetKeyCiphertextOutput {
+	return i.ToGetKeyCiphertextOutputWithContext(context.Background())
+}
+
+func (i GetKeyCiphertextArgs) ToGetKeyCiphertextOutputWithContext(ctx context.Context) GetKeyCiphertextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyCiphertextOutput)
+}
+
+type GetKeyCiphertextOutput struct{ *pulumi.OutputState }
+
+func (GetKeyCiphertextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyCiphertext)(nil)).Elem()
+}
+
+func (o GetKeyCiphertextOutput) ToGetKeyCiphertextOutput() GetKeyCiphertextOutput {
+	return o
+}
+
+func (o GetKeyCiphertextOutput) ToGetKeyCiphertextOutputWithContext(ctx context.Context) GetKeyCiphertextOutput {
+	return o
+}
+
+// Ciphertext of encryption result, Base64-encoded.
+func (o GetKeyCiphertextOutput) CiphertextBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyCiphertext) string { return v.CiphertextBlob }).(pulumi.StringOutput)
+}
+
+// Encryption context JSON string.
+func (o GetKeyCiphertextOutput) EncryptionContext() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyCiphertext) string { return v.EncryptionContext }).(pulumi.StringOutput)
+}
+
+// Plaintext to be encrypted, Base64-encoded.
+func (o GetKeyCiphertextOutput) Plaintext() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyCiphertext) string { return v.Plaintext }).(pulumi.StringOutput)
 }
 
 type GetKeyMultiRegionConfiguration struct {
@@ -791,6 +2101,297 @@ func (o GetKeyMultiRegionConfigurationReplicaKeyArrayOutput) Index(i pulumi.IntI
 	}).(GetKeyMultiRegionConfigurationReplicaKeyOutput)
 }
 
+type GetKeyReEncrypt struct {
+	// Re-encrypted ciphertext, Base64-encoded.
+	CiphertextBlob string `pulumi:"ciphertextBlob"`
+	// New encryption context JSON string.
+	NewEncryptionContext string `pulumi:"newEncryptionContext"`
+	// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+	NewKeyId string `pulumi:"newKeyId"`
+	// Target key name.
+	NewKeyName string `pulumi:"newKeyName"`
+	// Name of the keyring to which the target key belongs.
+	NewKeyringName string `pulumi:"newKeyringName"`
+	// Old encryption context JSON string.
+	OldEncryptionContext string `pulumi:"oldEncryptionContext"`
+	// Source ciphertext to be re-encrypted, Base64-encoded.
+	SourceCiphertextBlob string `pulumi:"sourceCiphertextBlob"`
+}
+
+// GetKeyReEncryptInput is an input type that accepts GetKeyReEncryptArgs and GetKeyReEncryptOutput values.
+// You can construct a concrete instance of `GetKeyReEncryptInput` via:
+//
+//	GetKeyReEncryptArgs{...}
+type GetKeyReEncryptInput interface {
+	pulumi.Input
+
+	ToGetKeyReEncryptOutput() GetKeyReEncryptOutput
+	ToGetKeyReEncryptOutputWithContext(context.Context) GetKeyReEncryptOutput
+}
+
+type GetKeyReEncryptArgs struct {
+	// Re-encrypted ciphertext, Base64-encoded.
+	CiphertextBlob pulumi.StringInput `pulumi:"ciphertextBlob"`
+	// New encryption context JSON string.
+	NewEncryptionContext pulumi.StringInput `pulumi:"newEncryptionContext"`
+	// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+	NewKeyId pulumi.StringInput `pulumi:"newKeyId"`
+	// Target key name.
+	NewKeyName pulumi.StringInput `pulumi:"newKeyName"`
+	// Name of the keyring to which the target key belongs.
+	NewKeyringName pulumi.StringInput `pulumi:"newKeyringName"`
+	// Old encryption context JSON string.
+	OldEncryptionContext pulumi.StringInput `pulumi:"oldEncryptionContext"`
+	// Source ciphertext to be re-encrypted, Base64-encoded.
+	SourceCiphertextBlob pulumi.StringInput `pulumi:"sourceCiphertextBlob"`
+}
+
+func (GetKeyReEncryptArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyReEncrypt)(nil)).Elem()
+}
+
+func (i GetKeyReEncryptArgs) ToGetKeyReEncryptOutput() GetKeyReEncryptOutput {
+	return i.ToGetKeyReEncryptOutputWithContext(context.Background())
+}
+
+func (i GetKeyReEncryptArgs) ToGetKeyReEncryptOutputWithContext(ctx context.Context) GetKeyReEncryptOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReEncryptOutput)
+}
+
+type GetKeyReEncryptOutput struct{ *pulumi.OutputState }
+
+func (GetKeyReEncryptOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyReEncrypt)(nil)).Elem()
+}
+
+func (o GetKeyReEncryptOutput) ToGetKeyReEncryptOutput() GetKeyReEncryptOutput {
+	return o
+}
+
+func (o GetKeyReEncryptOutput) ToGetKeyReEncryptOutputWithContext(ctx context.Context) GetKeyReEncryptOutput {
+	return o
+}
+
+// Re-encrypted ciphertext, Base64-encoded.
+func (o GetKeyReEncryptOutput) CiphertextBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.CiphertextBlob }).(pulumi.StringOutput)
+}
+
+// New encryption context JSON string.
+func (o GetKeyReEncryptOutput) NewEncryptionContext() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.NewEncryptionContext }).(pulumi.StringOutput)
+}
+
+// Target key ID. If not specified, you must provide NewKeyringName and NewKeyName.
+func (o GetKeyReEncryptOutput) NewKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.NewKeyId }).(pulumi.StringOutput)
+}
+
+// Target key name.
+func (o GetKeyReEncryptOutput) NewKeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.NewKeyName }).(pulumi.StringOutput)
+}
+
+// Name of the keyring to which the target key belongs.
+func (o GetKeyReEncryptOutput) NewKeyringName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.NewKeyringName }).(pulumi.StringOutput)
+}
+
+// Old encryption context JSON string.
+func (o GetKeyReEncryptOutput) OldEncryptionContext() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.OldEncryptionContext }).(pulumi.StringOutput)
+}
+
+// Source ciphertext to be re-encrypted, Base64-encoded.
+func (o GetKeyReEncryptOutput) SourceCiphertextBlob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReEncrypt) string { return v.SourceCiphertextBlob }).(pulumi.StringOutput)
+}
+
+type GetKeyReplicateKey struct {
+	// Replica key description.
+	Description string `pulumi:"description"`
+	// Replica key ID.
+	ReplicaKeyId string `pulumi:"replicaKeyId"`
+	// Target region of the replica key.
+	ReplicaRegion string `pulumi:"replicaRegion"`
+	// Replica key label.
+	Tags []GetKeyReplicateKeyTag `pulumi:"tags"`
+}
+
+// GetKeyReplicateKeyInput is an input type that accepts GetKeyReplicateKeyArgs and GetKeyReplicateKeyOutput values.
+// You can construct a concrete instance of `GetKeyReplicateKeyInput` via:
+//
+//	GetKeyReplicateKeyArgs{...}
+type GetKeyReplicateKeyInput interface {
+	pulumi.Input
+
+	ToGetKeyReplicateKeyOutput() GetKeyReplicateKeyOutput
+	ToGetKeyReplicateKeyOutputWithContext(context.Context) GetKeyReplicateKeyOutput
+}
+
+type GetKeyReplicateKeyArgs struct {
+	// Replica key description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Replica key ID.
+	ReplicaKeyId pulumi.StringInput `pulumi:"replicaKeyId"`
+	// Target region of the replica key.
+	ReplicaRegion pulumi.StringInput `pulumi:"replicaRegion"`
+	// Replica key label.
+	Tags GetKeyReplicateKeyTagArrayInput `pulumi:"tags"`
+}
+
+func (GetKeyReplicateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyReplicateKey)(nil)).Elem()
+}
+
+func (i GetKeyReplicateKeyArgs) ToGetKeyReplicateKeyOutput() GetKeyReplicateKeyOutput {
+	return i.ToGetKeyReplicateKeyOutputWithContext(context.Background())
+}
+
+func (i GetKeyReplicateKeyArgs) ToGetKeyReplicateKeyOutputWithContext(ctx context.Context) GetKeyReplicateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicateKeyOutput)
+}
+
+type GetKeyReplicateKeyOutput struct{ *pulumi.OutputState }
+
+func (GetKeyReplicateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyReplicateKey)(nil)).Elem()
+}
+
+func (o GetKeyReplicateKeyOutput) ToGetKeyReplicateKeyOutput() GetKeyReplicateKeyOutput {
+	return o
+}
+
+func (o GetKeyReplicateKeyOutput) ToGetKeyReplicateKeyOutputWithContext(ctx context.Context) GetKeyReplicateKeyOutput {
+	return o
+}
+
+// Replica key description.
+func (o GetKeyReplicateKeyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReplicateKey) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Replica key ID.
+func (o GetKeyReplicateKeyOutput) ReplicaKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReplicateKey) string { return v.ReplicaKeyId }).(pulumi.StringOutput)
+}
+
+// Target region of the replica key.
+func (o GetKeyReplicateKeyOutput) ReplicaRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReplicateKey) string { return v.ReplicaRegion }).(pulumi.StringOutput)
+}
+
+// Replica key label.
+func (o GetKeyReplicateKeyOutput) Tags() GetKeyReplicateKeyTagArrayOutput {
+	return o.ApplyT(func(v GetKeyReplicateKey) []GetKeyReplicateKeyTag { return v.Tags }).(GetKeyReplicateKeyTagArrayOutput)
+}
+
+type GetKeyReplicateKeyTag struct {
+	// KMS key label key.
+	Key string `pulumi:"key"`
+	// KMS key label value.
+	Value string `pulumi:"value"`
+}
+
+// GetKeyReplicateKeyTagInput is an input type that accepts GetKeyReplicateKeyTagArgs and GetKeyReplicateKeyTagOutput values.
+// You can construct a concrete instance of `GetKeyReplicateKeyTagInput` via:
+//
+//	GetKeyReplicateKeyTagArgs{...}
+type GetKeyReplicateKeyTagInput interface {
+	pulumi.Input
+
+	ToGetKeyReplicateKeyTagOutput() GetKeyReplicateKeyTagOutput
+	ToGetKeyReplicateKeyTagOutputWithContext(context.Context) GetKeyReplicateKeyTagOutput
+}
+
+type GetKeyReplicateKeyTagArgs struct {
+	// KMS key label key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// KMS key label value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetKeyReplicateKeyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (i GetKeyReplicateKeyTagArgs) ToGetKeyReplicateKeyTagOutput() GetKeyReplicateKeyTagOutput {
+	return i.ToGetKeyReplicateKeyTagOutputWithContext(context.Background())
+}
+
+func (i GetKeyReplicateKeyTagArgs) ToGetKeyReplicateKeyTagOutputWithContext(ctx context.Context) GetKeyReplicateKeyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicateKeyTagOutput)
+}
+
+// GetKeyReplicateKeyTagArrayInput is an input type that accepts GetKeyReplicateKeyTagArray and GetKeyReplicateKeyTagArrayOutput values.
+// You can construct a concrete instance of `GetKeyReplicateKeyTagArrayInput` via:
+//
+//	GetKeyReplicateKeyTagArray{ GetKeyReplicateKeyTagArgs{...} }
+type GetKeyReplicateKeyTagArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyReplicateKeyTagArrayOutput() GetKeyReplicateKeyTagArrayOutput
+	ToGetKeyReplicateKeyTagArrayOutputWithContext(context.Context) GetKeyReplicateKeyTagArrayOutput
+}
+
+type GetKeyReplicateKeyTagArray []GetKeyReplicateKeyTagInput
+
+func (GetKeyReplicateKeyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (i GetKeyReplicateKeyTagArray) ToGetKeyReplicateKeyTagArrayOutput() GetKeyReplicateKeyTagArrayOutput {
+	return i.ToGetKeyReplicateKeyTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyReplicateKeyTagArray) ToGetKeyReplicateKeyTagArrayOutputWithContext(ctx context.Context) GetKeyReplicateKeyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicateKeyTagArrayOutput)
+}
+
+type GetKeyReplicateKeyTagOutput struct{ *pulumi.OutputState }
+
+func (GetKeyReplicateKeyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (o GetKeyReplicateKeyTagOutput) ToGetKeyReplicateKeyTagOutput() GetKeyReplicateKeyTagOutput {
+	return o
+}
+
+func (o GetKeyReplicateKeyTagOutput) ToGetKeyReplicateKeyTagOutputWithContext(ctx context.Context) GetKeyReplicateKeyTagOutput {
+	return o
+}
+
+// KMS key label key.
+func (o GetKeyReplicateKeyTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReplicateKeyTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// KMS key label value.
+func (o GetKeyReplicateKeyTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyReplicateKeyTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetKeyReplicateKeyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyReplicateKeyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyReplicateKeyTag)(nil)).Elem()
+}
+
+func (o GetKeyReplicateKeyTagArrayOutput) ToGetKeyReplicateKeyTagArrayOutput() GetKeyReplicateKeyTagArrayOutput {
+	return o
+}
+
+func (o GetKeyReplicateKeyTagArrayOutput) ToGetKeyReplicateKeyTagArrayOutputWithContext(ctx context.Context) GetKeyReplicateKeyTagArrayOutput {
+	return o
+}
+
+func (o GetKeyReplicateKeyTagArrayOutput) Index(i pulumi.IntInput) GetKeyReplicateKeyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyReplicateKeyTag {
+		return vs[0].([]GetKeyReplicateKeyTag)[vs[1].(int)]
+	}).(GetKeyReplicateKeyTagOutput)
+}
+
 type GetKeyTag struct {
 	// KMS key label key.
 	Key string `pulumi:"key"`
@@ -898,32 +2499,70 @@ func (o GetKeyTagArrayOutput) Index(i pulumi.IntInput) GetKeyTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyAsymmetricCiphertextInput)(nil)).Elem(), KeyAsymmetricCiphertextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyAsymmetricCiphertextPtrInput)(nil)).Elem(), KeyAsymmetricCiphertextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyAsymmetricSignatureInput)(nil)).Elem(), KeyAsymmetricSignatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyAsymmetricSignaturePtrInput)(nil)).Elem(), KeyAsymmetricSignatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyCiphertextInput)(nil)).Elem(), KeyCiphertextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyCiphertextPtrInput)(nil)).Elem(), KeyCiphertextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationInput)(nil)).Elem(), KeyMultiRegionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationPtrInput)(nil)).Elem(), KeyMultiRegionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationPrimaryKeyInput)(nil)).Elem(), KeyMultiRegionConfigurationPrimaryKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationPrimaryKeyPtrInput)(nil)).Elem(), KeyMultiRegionConfigurationPrimaryKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationReplicaKeyInput)(nil)).Elem(), KeyMultiRegionConfigurationReplicaKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationReplicaKeyArrayInput)(nil)).Elem(), KeyMultiRegionConfigurationReplicaKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyReEncryptInput)(nil)).Elem(), KeyReEncryptArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyReEncryptPtrInput)(nil)).Elem(), KeyReEncryptArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyReplicateKeyInput)(nil)).Elem(), KeyReplicateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyReplicateKeyPtrInput)(nil)).Elem(), KeyReplicateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyReplicateKeyTagInput)(nil)).Elem(), KeyReplicateKeyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyReplicateKeyTagArrayInput)(nil)).Elem(), KeyReplicateKeyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyTagInput)(nil)).Elem(), KeyTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyTagArrayInput)(nil)).Elem(), KeyTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyAsymmetricCiphertextInput)(nil)).Elem(), GetKeyAsymmetricCiphertextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyAsymmetricSignatureInput)(nil)).Elem(), GetKeyAsymmetricSignatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyCiphertextInput)(nil)).Elem(), GetKeyCiphertextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationInput)(nil)).Elem(), GetKeyMultiRegionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationPrimaryKeyInput)(nil)).Elem(), GetKeyMultiRegionConfigurationPrimaryKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationReplicaKeyInput)(nil)).Elem(), GetKeyMultiRegionConfigurationReplicaKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationReplicaKeyArrayInput)(nil)).Elem(), GetKeyMultiRegionConfigurationReplicaKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyReEncryptInput)(nil)).Elem(), GetKeyReEncryptArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyReplicateKeyInput)(nil)).Elem(), GetKeyReplicateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyReplicateKeyTagInput)(nil)).Elem(), GetKeyReplicateKeyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyReplicateKeyTagArrayInput)(nil)).Elem(), GetKeyReplicateKeyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyTagInput)(nil)).Elem(), GetKeyTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyTagArrayInput)(nil)).Elem(), GetKeyTagArray{})
+	pulumi.RegisterOutputType(KeyAsymmetricCiphertextOutput{})
+	pulumi.RegisterOutputType(KeyAsymmetricCiphertextPtrOutput{})
+	pulumi.RegisterOutputType(KeyAsymmetricSignatureOutput{})
+	pulumi.RegisterOutputType(KeyAsymmetricSignaturePtrOutput{})
+	pulumi.RegisterOutputType(KeyCiphertextOutput{})
+	pulumi.RegisterOutputType(KeyCiphertextPtrOutput{})
 	pulumi.RegisterOutputType(KeyMultiRegionConfigurationOutput{})
 	pulumi.RegisterOutputType(KeyMultiRegionConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(KeyMultiRegionConfigurationPrimaryKeyOutput{})
 	pulumi.RegisterOutputType(KeyMultiRegionConfigurationPrimaryKeyPtrOutput{})
 	pulumi.RegisterOutputType(KeyMultiRegionConfigurationReplicaKeyOutput{})
 	pulumi.RegisterOutputType(KeyMultiRegionConfigurationReplicaKeyArrayOutput{})
+	pulumi.RegisterOutputType(KeyReEncryptOutput{})
+	pulumi.RegisterOutputType(KeyReEncryptPtrOutput{})
+	pulumi.RegisterOutputType(KeyReplicateKeyOutput{})
+	pulumi.RegisterOutputType(KeyReplicateKeyPtrOutput{})
+	pulumi.RegisterOutputType(KeyReplicateKeyTagOutput{})
+	pulumi.RegisterOutputType(KeyReplicateKeyTagArrayOutput{})
 	pulumi.RegisterOutputType(KeyTagOutput{})
 	pulumi.RegisterOutputType(KeyTagArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyAsymmetricCiphertextOutput{})
+	pulumi.RegisterOutputType(GetKeyAsymmetricSignatureOutput{})
+	pulumi.RegisterOutputType(GetKeyCiphertextOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationPrimaryKeyOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationReplicaKeyOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationReplicaKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyReEncryptOutput{})
+	pulumi.RegisterOutputType(GetKeyReplicateKeyOutput{})
+	pulumi.RegisterOutputType(GetKeyReplicateKeyTagOutput{})
+	pulumi.RegisterOutputType(GetKeyReplicateKeyTagArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyTagOutput{})
 	pulumi.RegisterOutputType(GetKeyTagArrayOutput{})
 }

@@ -131,6 +131,21 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.roleName);
     }
 
+    /**
+     * Service associated with the service-linked role to be created.
+     * 
+     */
+    @Import(name="serviceName")
+    private @Nullable Output<String> serviceName;
+
+    /**
+     * @return Service associated with the service-linked role to be created.
+     * 
+     */
+    public Optional<Output<String>> serviceName() {
+        return Optional.ofNullable(this.serviceName);
+    }
+
     @Import(name="tags")
     private @Nullable Output<List<RoleTagArgs>> tags;
 
@@ -194,6 +209,7 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
         this.policies = $.policies;
         this.roleId = $.roleId;
         this.roleName = $.roleName;
+        this.serviceName = $.serviceName;
         this.tags = $.tags;
         this.trn = $.trn;
         this.trustPolicyDocument = $.trustPolicyDocument;
@@ -376,6 +392,27 @@ public final class RoleState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder roleName(String roleName) {
             return roleName(Output.of(roleName));
+        }
+
+        /**
+         * @param serviceName Service associated with the service-linked role to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(@Nullable Output<String> serviceName) {
+            $.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * @param serviceName Service associated with the service-linked role to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(String serviceName) {
+            return serviceName(Output.of(serviceName));
         }
 
         public Builder tags(@Nullable Output<List<RoleTagArgs>> tags) {

@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, backup_restore=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, continuous_backup=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
+    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, backup_restore=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, continuous_backup=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, restart_instance=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -131,6 +131,9 @@ class GetInstanceResult:
         if reserve_additional_bandwidth and not isinstance(reserve_additional_bandwidth, bool):
             raise TypeError("Expected argument 'reserve_additional_bandwidth' to be a bool")
         pulumi.set(__self__, "reserve_additional_bandwidth", reserve_additional_bandwidth)
+        if restart_instance and not isinstance(restart_instance, bool):
+            raise TypeError("Expected argument 'restart_instance' to be a bool")
+        pulumi.set(__self__, "restart_instance", restart_instance)
         if service_type and not isinstance(service_type, str):
             raise TypeError("Expected argument 'service_type' to be a str")
         pulumi.set(__self__, "service_type", service_type)
@@ -271,7 +274,7 @@ class GetInstanceResult:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> builtins.str:
         """
-        Enable or disable instance deletion protection.
+        Enable or disable instance deletion protection. disabled: Off. enabled: On.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -279,7 +282,7 @@ class GetInstanceResult:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> builtins.str:
         """
-        Database version number.
+        Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         """
         return pulumi.get(self, "engine_version")
 
@@ -351,7 +354,7 @@ class GetInstanceResult:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> builtins.str:
         """
-        Set the deployment scheme for the instance's availability zone.
+        Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         """
         return pulumi.get(self, "multi_az")
 
@@ -444,10 +447,18 @@ class GetInstanceResult:
         return pulumi.get(self, "reserve_additional_bandwidth")
 
     @property
+    @pulumi.getter(name="restartInstance")
+    def restart_instance(self) -> builtins.bool:
+        """
+        Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        """
+        return pulumi.get(self, "restart_instance")
+
+    @property
     @pulumi.getter(name="serviceType")
     def service_type(self) -> builtins.str:
         """
-        Service type of the instance
+        Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         """
         return pulumi.get(self, "service_type")
 
@@ -479,7 +490,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        Current status of the instance.
         """
         return pulumi.get(self, "status")
 
@@ -588,6 +599,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             project_name=self.project_name,
             purchase_months=self.purchase_months,
             reserve_additional_bandwidth=self.reserve_additional_bandwidth,
+            restart_instance=self.restart_instance,
             service_type=self.service_type,
             shard_capacity=self.shard_capacity,
             shard_number=self.shard_number,
@@ -651,6 +663,7 @@ def get_instance(id: Optional[builtins.str] = None,
         project_name=pulumi.get(__ret__, 'project_name'),
         purchase_months=pulumi.get(__ret__, 'purchase_months'),
         reserve_additional_bandwidth=pulumi.get(__ret__, 'reserve_additional_bandwidth'),
+        restart_instance=pulumi.get(__ret__, 'restart_instance'),
         service_type=pulumi.get(__ret__, 'service_type'),
         shard_capacity=pulumi.get(__ret__, 'shard_capacity'),
         shard_number=pulumi.get(__ret__, 'shard_number'),
@@ -711,6 +724,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         project_name=pulumi.get(__response__, 'project_name'),
         purchase_months=pulumi.get(__response__, 'purchase_months'),
         reserve_additional_bandwidth=pulumi.get(__response__, 'reserve_additional_bandwidth'),
+        restart_instance=pulumi.get(__response__, 'restart_instance'),
         service_type=pulumi.get(__response__, 'service_type'),
         shard_capacity=pulumi.get(__response__, 'shard_capacity'),
         shard_number=pulumi.get(__response__, 'shard_number'),

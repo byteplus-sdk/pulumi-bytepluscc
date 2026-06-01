@@ -44,6 +44,7 @@ __all__ = [
     'GetPolicyPolicyUserGroupPolicyScopeResult',
     'GetPolicyPolicyUserPolicyScopeResult',
     'GetRolePolicyResult',
+    'GetRolePolicyPolicyScopeResult',
     'GetRoleTagResult',
     'GetSamlProviderCertificateResult',
     'GetUserAccessKeyResult',
@@ -1768,14 +1769,42 @@ class GetPolicyPolicyUserPolicyScopeResult(dict):
 @pulumi.output_type
 class GetRolePolicyResult(dict):
     def __init__(__self__, *,
+                 attach_date: builtins.str,
+                 description: builtins.str,
                  policy_name: builtins.str,
+                 policy_scopes: Sequence['outputs.GetRolePolicyPolicyScopeResult'],
+                 policy_trn: builtins.str,
                  policy_type: builtins.str):
         """
+        :param builtins.str attach_date: Policy binding time.
+        :param builtins.str description: Policy description.
         :param builtins.str policy_name: Policy name
+        :param Sequence['GetRolePolicyPolicyScopeArgs'] policy_scopes: Policy authorization scope, specifically refers to the project scope.
+        :param builtins.str policy_trn: Policy TRN.
         :param builtins.str policy_type: Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
+        pulumi.set(__self__, "attach_date", attach_date)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "policy_name", policy_name)
+        pulumi.set(__self__, "policy_scopes", policy_scopes)
+        pulumi.set(__self__, "policy_trn", policy_trn)
         pulumi.set(__self__, "policy_type", policy_type)
+
+    @property
+    @pulumi.getter(name="attachDate")
+    def attach_date(self) -> builtins.str:
+        """
+        Policy binding time.
+        """
+        return pulumi.get(self, "attach_date")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Policy description.
+        """
+        return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="policyName")
@@ -1786,12 +1815,79 @@ class GetRolePolicyResult(dict):
         return pulumi.get(self, "policy_name")
 
     @property
+    @pulumi.getter(name="policyScopes")
+    def policy_scopes(self) -> Sequence['outputs.GetRolePolicyPolicyScopeResult']:
+        """
+        Policy authorization scope, specifically refers to the project scope.
+        """
+        return pulumi.get(self, "policy_scopes")
+
+    @property
+    @pulumi.getter(name="policyTrn")
+    def policy_trn(self) -> builtins.str:
+        """
+        Policy TRN.
+        """
+        return pulumi.get(self, "policy_trn")
+
+    @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> builtins.str:
         """
         Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetRolePolicyPolicyScopeResult(dict):
+    def __init__(__self__, *,
+                 attach_date: builtins.str,
+                 policy_scope_type: builtins.str,
+                 project_display_name: builtins.str,
+                 project_name: builtins.str):
+        """
+        :param builtins.str attach_date: Project authorization time.
+        :param builtins.str policy_scope_type: Authorization type. Global means global authorization (not limited to any project), Project means project-based authorization.
+        :param builtins.str project_display_name: Project display name for project-based authorization.
+        :param builtins.str project_name: Project name for project-based authorization.
+        """
+        pulumi.set(__self__, "attach_date", attach_date)
+        pulumi.set(__self__, "policy_scope_type", policy_scope_type)
+        pulumi.set(__self__, "project_display_name", project_display_name)
+        pulumi.set(__self__, "project_name", project_name)
+
+    @property
+    @pulumi.getter(name="attachDate")
+    def attach_date(self) -> builtins.str:
+        """
+        Project authorization time.
+        """
+        return pulumi.get(self, "attach_date")
+
+    @property
+    @pulumi.getter(name="policyScopeType")
+    def policy_scope_type(self) -> builtins.str:
+        """
+        Authorization type. Global means global authorization (not limited to any project), Project means project-based authorization.
+        """
+        return pulumi.get(self, "policy_scope_type")
+
+    @property
+    @pulumi.getter(name="projectDisplayName")
+    def project_display_name(self) -> builtins.str:
+        """
+        Project display name for project-based authorization.
+        """
+        return pulumi.get(self, "project_display_name")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> builtins.str:
+        """
+        Project name for project-based authorization.
+        """
+        return pulumi.get(self, "project_name")
 
 
 @pulumi.output_type

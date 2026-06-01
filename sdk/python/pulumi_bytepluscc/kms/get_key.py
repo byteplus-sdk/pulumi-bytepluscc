@@ -28,7 +28,16 @@ class GetKeyResult:
     """
     A collection of values returned by getKey.
     """
-    def __init__(__self__, created_time=None, description=None, id=None, key_archive_operation=None, key_enable_operation=None, key_id=None, key_material_expire_time=None, key_name=None, key_rotation_operation=None, key_spec=None, key_state=None, key_usage=None, keyring_name=None, last_rotation_time=None, multi_region=None, multi_region_configuration=None, origin=None, protection_level=None, rotate_interval=None, rotate_state=None, schedule_delete_time=None, schedule_rotation_time=None, tags=None, trn=None, updated_time=None):
+    def __init__(__self__, asymmetric_ciphertext=None, asymmetric_signature=None, ciphertext=None, created_time=None, description=None, id=None, key_archive_operation=None, key_enable_operation=None, key_id=None, key_material_expire_time=None, key_name=None, key_primary_region=None, key_rotation_operation=None, key_spec=None, key_state=None, key_usage=None, keyring_name=None, last_rotation_time=None, multi_region=None, multi_region_configuration=None, origin=None, protection_level=None, re_encrypt=None, replicate_key=None, rotate_interval=None, rotate_state=None, schedule_delete_time=None, schedule_rotation_time=None, tags=None, trn=None, updated_time=None):
+        if asymmetric_ciphertext and not isinstance(asymmetric_ciphertext, dict):
+            raise TypeError("Expected argument 'asymmetric_ciphertext' to be a dict")
+        pulumi.set(__self__, "asymmetric_ciphertext", asymmetric_ciphertext)
+        if asymmetric_signature and not isinstance(asymmetric_signature, dict):
+            raise TypeError("Expected argument 'asymmetric_signature' to be a dict")
+        pulumi.set(__self__, "asymmetric_signature", asymmetric_signature)
+        if ciphertext and not isinstance(ciphertext, dict):
+            raise TypeError("Expected argument 'ciphertext' to be a dict")
+        pulumi.set(__self__, "ciphertext", ciphertext)
         if created_time and not isinstance(created_time, int):
             raise TypeError("Expected argument 'created_time' to be a int")
         pulumi.set(__self__, "created_time", created_time)
@@ -53,6 +62,9 @@ class GetKeyResult:
         if key_name and not isinstance(key_name, str):
             raise TypeError("Expected argument 'key_name' to be a str")
         pulumi.set(__self__, "key_name", key_name)
+        if key_primary_region and not isinstance(key_primary_region, str):
+            raise TypeError("Expected argument 'key_primary_region' to be a str")
+        pulumi.set(__self__, "key_primary_region", key_primary_region)
         if key_rotation_operation and not isinstance(key_rotation_operation, int):
             raise TypeError("Expected argument 'key_rotation_operation' to be a int")
         pulumi.set(__self__, "key_rotation_operation", key_rotation_operation)
@@ -83,6 +95,12 @@ class GetKeyResult:
         if protection_level and not isinstance(protection_level, str):
             raise TypeError("Expected argument 'protection_level' to be a str")
         pulumi.set(__self__, "protection_level", protection_level)
+        if re_encrypt and not isinstance(re_encrypt, dict):
+            raise TypeError("Expected argument 're_encrypt' to be a dict")
+        pulumi.set(__self__, "re_encrypt", re_encrypt)
+        if replicate_key and not isinstance(replicate_key, dict):
+            raise TypeError("Expected argument 'replicate_key' to be a dict")
+        pulumi.set(__self__, "replicate_key", replicate_key)
         if rotate_interval and not isinstance(rotate_interval, int):
             raise TypeError("Expected argument 'rotate_interval' to be a int")
         pulumi.set(__self__, "rotate_interval", rotate_interval)
@@ -104,6 +122,30 @@ class GetKeyResult:
         if updated_time and not isinstance(updated_time, int):
             raise TypeError("Expected argument 'updated_time' to be a int")
         pulumi.set(__self__, "updated_time", updated_time)
+
+    @property
+    @pulumi.getter(name="asymmetricCiphertext")
+    def asymmetric_ciphertext(self) -> 'outputs.GetKeyAsymmetricCiphertextResult':
+        """
+        Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_ciphertext")
+
+    @property
+    @pulumi.getter(name="asymmetricSignature")
+    def asymmetric_signature(self) -> 'outputs.GetKeyAsymmetricSignatureResult':
+        """
+        Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "asymmetric_signature")
+
+    @property
+    @pulumi.getter
+    def ciphertext(self) -> 'outputs.GetKeyCiphertextResult':
+        """
+        Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "ciphertext")
 
     @property
     @pulumi.getter(name="createdTime")
@@ -168,6 +210,14 @@ class GetKeyResult:
         Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         """
         return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="keyPrimaryRegion")
+    def key_primary_region(self) -> builtins.str:
+        """
+        Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
+        """
+        return pulumi.get(self, "key_primary_region")
 
     @property
     @pulumi.getter(name="keyRotationOperation")
@@ -250,6 +300,22 @@ class GetKeyResult:
         return pulumi.get(self, "protection_level")
 
     @property
+    @pulumi.getter(name="reEncrypt")
+    def re_encrypt(self) -> 'outputs.GetKeyReEncryptResult':
+        """
+        Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "re_encrypt")
+
+    @property
+    @pulumi.getter(name="replicateKey")
+    def replicate_key(self) -> 'outputs.GetKeyReplicateKeyResult':
+        """
+        Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
+        """
+        return pulumi.get(self, "replicate_key")
+
+    @property
     @pulumi.getter(name="rotateInterval")
     def rotate_interval(self) -> builtins.int:
         """
@@ -312,6 +378,9 @@ class AwaitableGetKeyResult(GetKeyResult):
         if False:
             yield self
         return GetKeyResult(
+            asymmetric_ciphertext=self.asymmetric_ciphertext,
+            asymmetric_signature=self.asymmetric_signature,
+            ciphertext=self.ciphertext,
             created_time=self.created_time,
             description=self.description,
             id=self.id,
@@ -320,6 +389,7 @@ class AwaitableGetKeyResult(GetKeyResult):
             key_id=self.key_id,
             key_material_expire_time=self.key_material_expire_time,
             key_name=self.key_name,
+            key_primary_region=self.key_primary_region,
             key_rotation_operation=self.key_rotation_operation,
             key_spec=self.key_spec,
             key_state=self.key_state,
@@ -330,6 +400,8 @@ class AwaitableGetKeyResult(GetKeyResult):
             multi_region_configuration=self.multi_region_configuration,
             origin=self.origin,
             protection_level=self.protection_level,
+            re_encrypt=self.re_encrypt,
+            replicate_key=self.replicate_key,
             rotate_interval=self.rotate_interval,
             rotate_state=self.rotate_state,
             schedule_delete_time=self.schedule_delete_time,
@@ -353,6 +425,9 @@ def get_key(id: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('bytepluscc:kms/getKey:getKey', __args__, opts=opts, typ=GetKeyResult).value
 
     return AwaitableGetKeyResult(
+        asymmetric_ciphertext=pulumi.get(__ret__, 'asymmetric_ciphertext'),
+        asymmetric_signature=pulumi.get(__ret__, 'asymmetric_signature'),
+        ciphertext=pulumi.get(__ret__, 'ciphertext'),
         created_time=pulumi.get(__ret__, 'created_time'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
@@ -361,6 +436,7 @@ def get_key(id: Optional[builtins.str] = None,
         key_id=pulumi.get(__ret__, 'key_id'),
         key_material_expire_time=pulumi.get(__ret__, 'key_material_expire_time'),
         key_name=pulumi.get(__ret__, 'key_name'),
+        key_primary_region=pulumi.get(__ret__, 'key_primary_region'),
         key_rotation_operation=pulumi.get(__ret__, 'key_rotation_operation'),
         key_spec=pulumi.get(__ret__, 'key_spec'),
         key_state=pulumi.get(__ret__, 'key_state'),
@@ -371,6 +447,8 @@ def get_key(id: Optional[builtins.str] = None,
         multi_region_configuration=pulumi.get(__ret__, 'multi_region_configuration'),
         origin=pulumi.get(__ret__, 'origin'),
         protection_level=pulumi.get(__ret__, 'protection_level'),
+        re_encrypt=pulumi.get(__ret__, 're_encrypt'),
+        replicate_key=pulumi.get(__ret__, 'replicate_key'),
         rotate_interval=pulumi.get(__ret__, 'rotate_interval'),
         rotate_state=pulumi.get(__ret__, 'rotate_state'),
         schedule_delete_time=pulumi.get(__ret__, 'schedule_delete_time'),
@@ -391,6 +469,9 @@ def get_key_output(id: Optional[pulumi.Input[builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:kms/getKey:getKey', __args__, opts=opts, typ=GetKeyResult)
     return __ret__.apply(lambda __response__: GetKeyResult(
+        asymmetric_ciphertext=pulumi.get(__response__, 'asymmetric_ciphertext'),
+        asymmetric_signature=pulumi.get(__response__, 'asymmetric_signature'),
+        ciphertext=pulumi.get(__response__, 'ciphertext'),
         created_time=pulumi.get(__response__, 'created_time'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
@@ -399,6 +480,7 @@ def get_key_output(id: Optional[pulumi.Input[builtins.str]] = None,
         key_id=pulumi.get(__response__, 'key_id'),
         key_material_expire_time=pulumi.get(__response__, 'key_material_expire_time'),
         key_name=pulumi.get(__response__, 'key_name'),
+        key_primary_region=pulumi.get(__response__, 'key_primary_region'),
         key_rotation_operation=pulumi.get(__response__, 'key_rotation_operation'),
         key_spec=pulumi.get(__response__, 'key_spec'),
         key_state=pulumi.get(__response__, 'key_state'),
@@ -409,6 +491,8 @@ def get_key_output(id: Optional[pulumi.Input[builtins.str]] = None,
         multi_region_configuration=pulumi.get(__response__, 'multi_region_configuration'),
         origin=pulumi.get(__response__, 'origin'),
         protection_level=pulumi.get(__response__, 'protection_level'),
+        re_encrypt=pulumi.get(__response__, 're_encrypt'),
+        replicate_key=pulumi.get(__response__, 'replicate_key'),
         rotate_interval=pulumi.get(__response__, 'rotate_interval'),
         rotate_state=pulumi.get(__response__, 'rotate_state'),
         schedule_delete_time=pulumi.get(__response__, 'schedule_delete_time'),

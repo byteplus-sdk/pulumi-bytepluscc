@@ -80,12 +80,12 @@ public final class GetInstanceResult {
      */
     private String dataLayout;
     /**
-     * @return Enable or disable instance deletion protection.
+     * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     private String deletionProtection;
     /**
-     * @return Database version number.
+     * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     private String engineVersion;
@@ -130,7 +130,7 @@ public final class GetInstanceResult {
      */
     private Integer maxConnections;
     /**
-     * @return Set the deployment scheme for the instance&#39;s availability zone.
+     * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     private String multiAz;
@@ -190,7 +190,12 @@ public final class GetInstanceResult {
      */
     private Boolean reserveAdditionalBandwidth;
     /**
-     * @return Service type of the instance
+     * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    private Boolean restartInstance;
+    /**
+     * @return Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      * 
      */
     private String serviceType;
@@ -210,7 +215,7 @@ public final class GetInstanceResult {
      */
     private Integer shardedCluster;
     /**
-     * @return Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * @return Current status of the instance.
      * 
      */
     private String status;
@@ -341,14 +346,14 @@ public final class GetInstanceResult {
         return this.dataLayout;
     }
     /**
-     * @return Enable or disable instance deletion protection.
+     * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     public String deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * @return Database version number.
+     * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     public String engineVersion() {
@@ -411,7 +416,7 @@ public final class GetInstanceResult {
         return this.maxConnections;
     }
     /**
-     * @return Set the deployment scheme for the instance&#39;s availability zone.
+     * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     public String multiAz() {
@@ -495,7 +500,14 @@ public final class GetInstanceResult {
         return this.reserveAdditionalBandwidth;
     }
     /**
-     * @return Service type of the instance
+     * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    public Boolean restartInstance() {
+        return this.restartInstance;
+    }
+    /**
+     * @return Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      * 
      */
     public String serviceType() {
@@ -523,7 +535,7 @@ public final class GetInstanceResult {
         return this.shardedCluster;
     }
     /**
-     * @return Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * @return Current status of the instance.
      * 
      */
     public String status() {
@@ -629,6 +641,7 @@ public final class GetInstanceResult {
         private String projectName;
         private Integer purchaseMonths;
         private Boolean reserveAdditionalBandwidth;
+        private Boolean restartInstance;
         private String serviceType;
         private Integer shardCapacity;
         private Integer shardNumber;
@@ -679,6 +692,7 @@ public final class GetInstanceResult {
     	      this.projectName = defaults.projectName;
     	      this.purchaseMonths = defaults.purchaseMonths;
     	      this.reserveAdditionalBandwidth = defaults.reserveAdditionalBandwidth;
+    	      this.restartInstance = defaults.restartInstance;
     	      this.serviceType = defaults.serviceType;
     	      this.shardCapacity = defaults.shardCapacity;
     	      this.shardNumber = defaults.shardNumber;
@@ -979,6 +993,14 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder restartInstance(Boolean restartInstance) {
+            if (restartInstance == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "restartInstance");
+            }
+            this.restartInstance = restartInstance;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceType(String serviceType) {
             if (serviceType == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "serviceType");
@@ -1127,6 +1149,7 @@ public final class GetInstanceResult {
             _resultValue.projectName = projectName;
             _resultValue.purchaseMonths = purchaseMonths;
             _resultValue.reserveAdditionalBandwidth = reserveAdditionalBandwidth;
+            _resultValue.restartInstance = restartInstance;
             _resultValue.serviceType = serviceType;
             _resultValue.shardCapacity = shardCapacity;
             _resultValue.shardNumber = shardNumber;

@@ -261,28 +261,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.dataLayout;
     }
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     @Export(name="deletionProtection", refs={String.class}, tree="[0]")
     private Output<String> deletionProtection;
 
     /**
-     * @return Enable or disable instance deletion protection.
+     * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     public Output<String> deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     @Export(name="engineVersion", refs={String.class}, tree="[0]")
     private Output<String> engineVersion;
 
     /**
-     * @return Database version number.
+     * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     public Output<String> engineVersion() {
@@ -379,14 +379,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.maxConnections;
     }
     /**
-     * Set the deployment scheme for the instance&#39;s availability zone.
+     * Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     @Export(name="multiAz", refs={String.class}, tree="[0]")
     private Output<String> multiAz;
 
     /**
-     * @return Set the deployment scheme for the instance&#39;s availability zone.
+     * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     public Output<String> multiAz() {
@@ -547,14 +547,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.reserveAdditionalBandwidth;
     }
     /**
-     * Service type of the instance
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    @Export(name="restartInstance", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> restartInstance;
+
+    /**
+     * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    public Output<Boolean> restartInstance() {
+        return this.restartInstance;
+    }
+    /**
+     * Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
-     * @return Service type of the instance
+     * @return Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      * 
      */
     public Output<String> serviceType() {
@@ -603,14 +617,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.shardedCluster;
     }
     /**
-     * Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * Current status of the instance.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * @return Current status of the instance.
      * 
      */
     public Output<String> status() {

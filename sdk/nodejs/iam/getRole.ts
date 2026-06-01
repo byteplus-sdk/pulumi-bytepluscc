@@ -67,6 +67,10 @@ export interface GetRoleResult {
      */
     readonly roleName: string;
     /**
+     * Service associated with the service-linked role to be created.
+     */
+    readonly serviceName: string;
+    /**
      * Tag
      */
     readonly tags: outputs.iam.GetRoleTag[];

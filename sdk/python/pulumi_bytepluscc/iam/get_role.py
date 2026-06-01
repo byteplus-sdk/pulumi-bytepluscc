@@ -28,7 +28,7 @@ class GetRoleResult:
     """
     A collection of values returned by getRole.
     """
-    def __init__(__self__, create_date=None, description=None, display_name=None, id=None, is_service_linked_role=None, max_session_duration=None, policies=None, role_id=None, role_name=None, tags=None, trn=None, trust_policy_document=None, update_date=None):
+    def __init__(__self__, create_date=None, description=None, display_name=None, id=None, is_service_linked_role=None, max_session_duration=None, policies=None, role_id=None, role_name=None, service_name=None, tags=None, trn=None, trust_policy_document=None, update_date=None):
         if create_date and not isinstance(create_date, str):
             raise TypeError("Expected argument 'create_date' to be a str")
         pulumi.set(__self__, "create_date", create_date)
@@ -56,6 +56,9 @@ class GetRoleResult:
         if role_name and not isinstance(role_name, str):
             raise TypeError("Expected argument 'role_name' to be a str")
         pulumi.set(__self__, "role_name", role_name)
+        if service_name and not isinstance(service_name, str):
+            raise TypeError("Expected argument 'service_name' to be a str")
+        pulumi.set(__self__, "service_name", service_name)
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
@@ -142,6 +145,14 @@ class GetRoleResult:
         return pulumi.get(self, "role_name")
 
     @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> builtins.str:
+        """
+        Service associated with the service-linked role to be created.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetRoleTagResult']:
         """
@@ -189,6 +200,7 @@ class AwaitableGetRoleResult(GetRoleResult):
             policies=self.policies,
             role_id=self.role_id,
             role_name=self.role_name,
+            service_name=self.service_name,
             tags=self.tags,
             trn=self.trn,
             trust_policy_document=self.trust_policy_document,
@@ -218,6 +230,7 @@ def get_role(id: Optional[builtins.str] = None,
         policies=pulumi.get(__ret__, 'policies'),
         role_id=pulumi.get(__ret__, 'role_id'),
         role_name=pulumi.get(__ret__, 'role_name'),
+        service_name=pulumi.get(__ret__, 'service_name'),
         tags=pulumi.get(__ret__, 'tags'),
         trn=pulumi.get(__ret__, 'trn'),
         trust_policy_document=pulumi.get(__ret__, 'trust_policy_document'),
@@ -244,6 +257,7 @@ def get_role_output(id: Optional[pulumi.Input[builtins.str]] = None,
         policies=pulumi.get(__response__, 'policies'),
         role_id=pulumi.get(__response__, 'role_id'),
         role_name=pulumi.get(__response__, 'role_name'),
+        service_name=pulumi.get(__response__, 'service_name'),
         tags=pulumi.get(__response__, 'tags'),
         trn=pulumi.get(__response__, 'trn'),
         trust_policy_document=pulumi.get(__response__, 'trust_policy_document'),

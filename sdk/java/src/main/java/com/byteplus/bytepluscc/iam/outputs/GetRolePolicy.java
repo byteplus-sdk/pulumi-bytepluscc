@@ -3,18 +3,40 @@
 
 package com.byteplus.bytepluscc.iam.outputs;
 
+import com.byteplus.bytepluscc.iam.outputs.GetRolePolicyPolicyScope;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetRolePolicy {
     /**
+     * @return Policy binding time.
+     * 
+     */
+    private String attachDate;
+    /**
+     * @return Policy description.
+     * 
+     */
+    private String description;
+    /**
      * @return Policy name
      * 
      */
     private String policyName;
+    /**
+     * @return Policy authorization scope, specifically refers to the project scope.
+     * 
+     */
+    private List<GetRolePolicyPolicyScope> policyScopes;
+    /**
+     * @return Policy TRN.
+     * 
+     */
+    private String policyTrn;
     /**
      * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
@@ -23,11 +45,39 @@ public final class GetRolePolicy {
 
     private GetRolePolicy() {}
     /**
+     * @return Policy binding time.
+     * 
+     */
+    public String attachDate() {
+        return this.attachDate;
+    }
+    /**
+     * @return Policy description.
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
+    /**
      * @return Policy name
      * 
      */
     public String policyName() {
         return this.policyName;
+    }
+    /**
+     * @return Policy authorization scope, specifically refers to the project scope.
+     * 
+     */
+    public List<GetRolePolicyPolicyScope> policyScopes() {
+        return this.policyScopes;
+    }
+    /**
+     * @return Policy TRN.
+     * 
+     */
+    public String policyTrn() {
+        return this.policyTrn;
     }
     /**
      * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
@@ -46,21 +96,64 @@ public final class GetRolePolicy {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String attachDate;
+        private String description;
         private String policyName;
+        private List<GetRolePolicyPolicyScope> policyScopes;
+        private String policyTrn;
         private String policyType;
         public Builder() {}
         public Builder(GetRolePolicy defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.attachDate = defaults.attachDate;
+    	      this.description = defaults.description;
     	      this.policyName = defaults.policyName;
+    	      this.policyScopes = defaults.policyScopes;
+    	      this.policyTrn = defaults.policyTrn;
     	      this.policyType = defaults.policyType;
         }
 
+        @CustomType.Setter
+        public Builder attachDate(String attachDate) {
+            if (attachDate == null) {
+              throw new MissingRequiredPropertyException("GetRolePolicy", "attachDate");
+            }
+            this.attachDate = attachDate;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRolePolicy", "description");
+            }
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder policyName(String policyName) {
             if (policyName == null) {
               throw new MissingRequiredPropertyException("GetRolePolicy", "policyName");
             }
             this.policyName = policyName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder policyScopes(List<GetRolePolicyPolicyScope> policyScopes) {
+            if (policyScopes == null) {
+              throw new MissingRequiredPropertyException("GetRolePolicy", "policyScopes");
+            }
+            this.policyScopes = policyScopes;
+            return this;
+        }
+        public Builder policyScopes(GetRolePolicyPolicyScope... policyScopes) {
+            return policyScopes(List.of(policyScopes));
+        }
+        @CustomType.Setter
+        public Builder policyTrn(String policyTrn) {
+            if (policyTrn == null) {
+              throw new MissingRequiredPropertyException("GetRolePolicy", "policyTrn");
+            }
+            this.policyTrn = policyTrn;
             return this;
         }
         @CustomType.Setter
@@ -73,7 +166,11 @@ public final class GetRolePolicy {
         }
         public GetRolePolicy build() {
             final var _resultValue = new GetRolePolicy();
+            _resultValue.attachDate = attachDate;
+            _resultValue.description = description;
             _resultValue.policyName = policyName;
+            _resultValue.policyScopes = policyScopes;
+            _resultValue.policyTrn = policyTrn;
             _resultValue.policyType = policyType;
             return _resultValue;
         }

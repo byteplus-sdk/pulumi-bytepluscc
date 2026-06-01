@@ -197,14 +197,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Enable or disable instance deletion protection.
+     * Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
-     * @return Enable or disable instance deletion protection.
+     * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
      * 
      */
     public Optional<Output<String>> deletionProtection() {
@@ -212,14 +212,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Database version number.
+     * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     @Import(name="engineVersion")
     private @Nullable Output<String> engineVersion;
 
     /**
-     * @return Database version number.
+     * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
      * 
      */
     public Optional<Output<String>> engineVersion() {
@@ -324,14 +324,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set the deployment scheme for the instance&#39;s availability zone.
+     * Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     @Import(name="multiAz")
     private @Nullable Output<String> multiAz;
 
     /**
-     * @return Set the deployment scheme for the instance&#39;s availability zone.
+     * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
      * 
      */
     public Optional<Output<String>> multiAz() {
@@ -504,14 +504,29 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Service type of the instance
+     * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    @Import(name="restartInstance")
+    private @Nullable Output<Boolean> restartInstance;
+
+    /**
+     * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+     * 
+     */
+    public Optional<Output<Boolean>> restartInstance() {
+        return Optional.ofNullable(this.restartInstance);
+    }
+
+    /**
+     * Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
-     * @return Service type of the instance
+     * @return Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
      * 
      */
     public Optional<Output<String>> serviceType() {
@@ -564,14 +579,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * Current status of the instance.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+     * @return Current status of the instance.
      * 
      */
     public Optional<Output<String>> status() {
@@ -718,6 +733,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.projectName = $.projectName;
         this.purchaseMonths = $.purchaseMonths;
         this.reserveAdditionalBandwidth = $.reserveAdditionalBandwidth;
+        this.restartInstance = $.restartInstance;
         this.serviceType = $.serviceType;
         this.shardCapacity = $.shardCapacity;
         this.shardNumber = $.shardNumber;
@@ -1006,7 +1022,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection Enable or disable instance deletion protection.
+         * @param deletionProtection Enable or disable instance deletion protection. disabled: Off. enabled: On.
          * 
          * @return builder
          * 
@@ -1017,7 +1033,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection Enable or disable instance deletion protection.
+         * @param deletionProtection Enable or disable instance deletion protection. disabled: Off. enabled: On.
          * 
          * @return builder
          * 
@@ -1027,7 +1043,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion Database version number.
+         * @param engineVersion Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
          * 
          * @return builder
          * 
@@ -1038,7 +1054,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion Database version number.
+         * @param engineVersion Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
          * 
          * @return builder
          * 
@@ -1187,7 +1203,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz Set the deployment scheme for the instance&#39;s availability zone.
+         * @param multiAz Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
          * 
          * @return builder
          * 
@@ -1198,7 +1214,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz Set the deployment scheme for the instance&#39;s availability zone.
+         * @param multiAz Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
          * 
          * @return builder
          * 
@@ -1449,7 +1465,28 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceType Service type of the instance
+         * @param restartInstance Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restartInstance(@Nullable Output<Boolean> restartInstance) {
+            $.restartInstance = restartInstance;
+            return this;
+        }
+
+        /**
+         * @param restartInstance Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restartInstance(Boolean restartInstance) {
+            return restartInstance(Output.of(restartInstance));
+        }
+
+        /**
+         * @param serviceType Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
          * 
          * @return builder
          * 
@@ -1460,7 +1497,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceType Service type of the instance
+         * @param serviceType Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
          * 
          * @return builder
          * 
@@ -1533,7 +1570,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+         * @param status Current status of the instance.
          * 
          * @return builder
          * 
@@ -1544,7 +1581,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+         * @param status Current status of the instance.
          * 
          * @return builder
          * 

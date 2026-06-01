@@ -48,6 +48,8 @@ __all__ = [
     'InstanceNodeInfoArgsDict',
     'InstanceTagArgs',
     'InstanceTagArgsDict',
+    'ParameterTemplateTemplateParamArgs',
+    'ParameterTemplateTemplateParamArgsDict',
 ]
 
 MYPY = False
@@ -2239,6 +2241,56 @@ class InstanceTagArgs:
 
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ParameterTemplateTemplateParamArgsDict(TypedDict):
+        name: pulumi.Input[builtins.str]
+        """
+        Parameter name
+        """
+        value: pulumi.Input[builtins.str]
+        """
+        Parameter value
+        """
+elif False:
+    ParameterTemplateTemplateParamArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ParameterTemplateTemplateParamArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[builtins.str],
+                 value: pulumi.Input[builtins.str]):
+        """
+        :param pulumi.Input[builtins.str] name: Parameter name
+        :param pulumi.Input[builtins.str] value: Parameter value
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[builtins.str]:
+        """
+        Parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[builtins.str]:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "value", value)
 
 

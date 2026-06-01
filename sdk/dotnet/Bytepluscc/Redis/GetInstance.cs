@@ -113,11 +113,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly string DataLayout;
         /// <summary>
-        /// Enable or disable instance deletion protection.
+        /// Enable or disable instance deletion protection. disabled: Off. enabled: On.
         /// </summary>
         public readonly string DeletionProtection;
         /// <summary>
-        /// Database version number.
+        /// Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
         /// </summary>
         public readonly string EngineVersion;
         /// <summary>
@@ -153,7 +153,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly int MaxConnections;
         /// <summary>
-        /// Set the deployment scheme for the instance's availability zone.
+        /// Set the instance's availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
         /// </summary>
         public readonly string MultiAz;
         /// <summary>
@@ -201,7 +201,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly bool ReserveAdditionalBandwidth;
         /// <summary>
-        /// Service type of the instance
+        /// Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
+        /// </summary>
+        public readonly bool RestartInstance;
+        /// <summary>
+        /// Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
         /// </summary>
         public readonly string ServiceType;
         /// <summary>
@@ -217,7 +221,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly int ShardedCluster;
         /// <summary>
-        /// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
+        /// Current status of the instance.
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -323,6 +327,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
             bool reserveAdditionalBandwidth,
 
+            bool restartInstance,
+
             string serviceType,
 
             int shardCapacity,
@@ -383,6 +389,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             ProjectName = projectName;
             PurchaseMonths = purchaseMonths;
             ReserveAdditionalBandwidth = reserveAdditionalBandwidth;
+            RestartInstance = restartInstance;
             ServiceType = serviceType;
             ShardCapacity = shardCapacity;
             ShardNumber = shardNumber;

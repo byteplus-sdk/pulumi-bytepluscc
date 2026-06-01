@@ -60,13 +60,19 @@ PROXY URL for Byteplus Provider
 
 region: Optional[str]
 """
-The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-variable
+The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+`ap-southeast-1` when not provided.
 """
 
 secretKey: Optional[str]
 """
 he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
 environment variable
+"""
+
+sessionToken: Optional[str]
+"""
+The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+from the `BYTEPLUS_SESSION_TOKEN` environment variable
 """
 

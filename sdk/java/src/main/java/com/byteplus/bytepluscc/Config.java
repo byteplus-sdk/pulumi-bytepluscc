@@ -72,8 +72,8 @@ public final class Config {
         return Codegen.stringProp("proxyUrl").config(config).env("BYTEPLUS_PROXY_URL").get();
     }
 /**
- * The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
- * variable
+ * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+ * `ap-southeast-1` when not provided.
  * 
  */
     public Optional<String> region() {
@@ -86,5 +86,13 @@ public final class Config {
  */
     public Optional<String> secretKey() {
         return Codegen.stringProp("secretKey").config(config).env("BYTEPLUS_SECRET_KEY").get();
+    }
+/**
+ * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+ * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+ * 
+ */
+    public Optional<String> sessionToken() {
+        return Codegen.stringProp("sessionToken").config(config).env("BYTEPLUS_SESSION_TOKEN").get();
     }
 }

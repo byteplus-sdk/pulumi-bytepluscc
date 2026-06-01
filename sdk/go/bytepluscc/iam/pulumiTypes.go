@@ -3484,8 +3484,16 @@ func (o GetPolicyPolicyUserPolicyScopeArrayOutput) Index(i pulumi.IntInput) GetP
 }
 
 type GetRolePolicy struct {
+	// Policy binding time.
+	AttachDate string `pulumi:"attachDate"`
+	// Policy description.
+	Description string `pulumi:"description"`
 	// Policy name
 	PolicyName string `pulumi:"policyName"`
+	// Policy authorization scope, specifically refers to the project scope.
+	PolicyScopes []GetRolePolicyPolicyScope `pulumi:"policyScopes"`
+	// Policy TRN.
+	PolicyTrn string `pulumi:"policyTrn"`
 	// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType string `pulumi:"policyType"`
 }
@@ -3502,8 +3510,16 @@ type GetRolePolicyInput interface {
 }
 
 type GetRolePolicyArgs struct {
+	// Policy binding time.
+	AttachDate pulumi.StringInput `pulumi:"attachDate"`
+	// Policy description.
+	Description pulumi.StringInput `pulumi:"description"`
 	// Policy name
 	PolicyName pulumi.StringInput `pulumi:"policyName"`
+	// Policy authorization scope, specifically refers to the project scope.
+	PolicyScopes GetRolePolicyPolicyScopeArrayInput `pulumi:"policyScopes"`
+	// Policy TRN.
+	PolicyTrn pulumi.StringInput `pulumi:"policyTrn"`
 	// Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
@@ -3559,9 +3575,29 @@ func (o GetRolePolicyOutput) ToGetRolePolicyOutputWithContext(ctx context.Contex
 	return o
 }
 
+// Policy binding time.
+func (o GetRolePolicyOutput) AttachDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicy) string { return v.AttachDate }).(pulumi.StringOutput)
+}
+
+// Policy description.
+func (o GetRolePolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicy) string { return v.Description }).(pulumi.StringOutput)
+}
+
 // Policy name
 func (o GetRolePolicyOutput) PolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRolePolicy) string { return v.PolicyName }).(pulumi.StringOutput)
+}
+
+// Policy authorization scope, specifically refers to the project scope.
+func (o GetRolePolicyOutput) PolicyScopes() GetRolePolicyPolicyScopeArrayOutput {
+	return o.ApplyT(func(v GetRolePolicy) []GetRolePolicyPolicyScope { return v.PolicyScopes }).(GetRolePolicyPolicyScopeArrayOutput)
+}
+
+// Policy TRN.
+func (o GetRolePolicyOutput) PolicyTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicy) string { return v.PolicyTrn }).(pulumi.StringOutput)
 }
 
 // Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
@@ -3587,6 +3623,130 @@ func (o GetRolePolicyArrayOutput) Index(i pulumi.IntInput) GetRolePolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRolePolicy {
 		return vs[0].([]GetRolePolicy)[vs[1].(int)]
 	}).(GetRolePolicyOutput)
+}
+
+type GetRolePolicyPolicyScope struct {
+	// Project authorization time.
+	AttachDate string `pulumi:"attachDate"`
+	// Authorization type. Global means global authorization (not limited to any project), Project means project-based authorization.
+	PolicyScopeType string `pulumi:"policyScopeType"`
+	// Project display name for project-based authorization.
+	ProjectDisplayName string `pulumi:"projectDisplayName"`
+	// Project name for project-based authorization.
+	ProjectName string `pulumi:"projectName"`
+}
+
+// GetRolePolicyPolicyScopeInput is an input type that accepts GetRolePolicyPolicyScopeArgs and GetRolePolicyPolicyScopeOutput values.
+// You can construct a concrete instance of `GetRolePolicyPolicyScopeInput` via:
+//
+//	GetRolePolicyPolicyScopeArgs{...}
+type GetRolePolicyPolicyScopeInput interface {
+	pulumi.Input
+
+	ToGetRolePolicyPolicyScopeOutput() GetRolePolicyPolicyScopeOutput
+	ToGetRolePolicyPolicyScopeOutputWithContext(context.Context) GetRolePolicyPolicyScopeOutput
+}
+
+type GetRolePolicyPolicyScopeArgs struct {
+	// Project authorization time.
+	AttachDate pulumi.StringInput `pulumi:"attachDate"`
+	// Authorization type. Global means global authorization (not limited to any project), Project means project-based authorization.
+	PolicyScopeType pulumi.StringInput `pulumi:"policyScopeType"`
+	// Project display name for project-based authorization.
+	ProjectDisplayName pulumi.StringInput `pulumi:"projectDisplayName"`
+	// Project name for project-based authorization.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+}
+
+func (GetRolePolicyPolicyScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRolePolicyPolicyScope)(nil)).Elem()
+}
+
+func (i GetRolePolicyPolicyScopeArgs) ToGetRolePolicyPolicyScopeOutput() GetRolePolicyPolicyScopeOutput {
+	return i.ToGetRolePolicyPolicyScopeOutputWithContext(context.Background())
+}
+
+func (i GetRolePolicyPolicyScopeArgs) ToGetRolePolicyPolicyScopeOutputWithContext(ctx context.Context) GetRolePolicyPolicyScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRolePolicyPolicyScopeOutput)
+}
+
+// GetRolePolicyPolicyScopeArrayInput is an input type that accepts GetRolePolicyPolicyScopeArray and GetRolePolicyPolicyScopeArrayOutput values.
+// You can construct a concrete instance of `GetRolePolicyPolicyScopeArrayInput` via:
+//
+//	GetRolePolicyPolicyScopeArray{ GetRolePolicyPolicyScopeArgs{...} }
+type GetRolePolicyPolicyScopeArrayInput interface {
+	pulumi.Input
+
+	ToGetRolePolicyPolicyScopeArrayOutput() GetRolePolicyPolicyScopeArrayOutput
+	ToGetRolePolicyPolicyScopeArrayOutputWithContext(context.Context) GetRolePolicyPolicyScopeArrayOutput
+}
+
+type GetRolePolicyPolicyScopeArray []GetRolePolicyPolicyScopeInput
+
+func (GetRolePolicyPolicyScopeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRolePolicyPolicyScope)(nil)).Elem()
+}
+
+func (i GetRolePolicyPolicyScopeArray) ToGetRolePolicyPolicyScopeArrayOutput() GetRolePolicyPolicyScopeArrayOutput {
+	return i.ToGetRolePolicyPolicyScopeArrayOutputWithContext(context.Background())
+}
+
+func (i GetRolePolicyPolicyScopeArray) ToGetRolePolicyPolicyScopeArrayOutputWithContext(ctx context.Context) GetRolePolicyPolicyScopeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRolePolicyPolicyScopeArrayOutput)
+}
+
+type GetRolePolicyPolicyScopeOutput struct{ *pulumi.OutputState }
+
+func (GetRolePolicyPolicyScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRolePolicyPolicyScope)(nil)).Elem()
+}
+
+func (o GetRolePolicyPolicyScopeOutput) ToGetRolePolicyPolicyScopeOutput() GetRolePolicyPolicyScopeOutput {
+	return o
+}
+
+func (o GetRolePolicyPolicyScopeOutput) ToGetRolePolicyPolicyScopeOutputWithContext(ctx context.Context) GetRolePolicyPolicyScopeOutput {
+	return o
+}
+
+// Project authorization time.
+func (o GetRolePolicyPolicyScopeOutput) AttachDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicyPolicyScope) string { return v.AttachDate }).(pulumi.StringOutput)
+}
+
+// Authorization type. Global means global authorization (not limited to any project), Project means project-based authorization.
+func (o GetRolePolicyPolicyScopeOutput) PolicyScopeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicyPolicyScope) string { return v.PolicyScopeType }).(pulumi.StringOutput)
+}
+
+// Project display name for project-based authorization.
+func (o GetRolePolicyPolicyScopeOutput) ProjectDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicyPolicyScope) string { return v.ProjectDisplayName }).(pulumi.StringOutput)
+}
+
+// Project name for project-based authorization.
+func (o GetRolePolicyPolicyScopeOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRolePolicyPolicyScope) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+type GetRolePolicyPolicyScopeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRolePolicyPolicyScopeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRolePolicyPolicyScope)(nil)).Elem()
+}
+
+func (o GetRolePolicyPolicyScopeArrayOutput) ToGetRolePolicyPolicyScopeArrayOutput() GetRolePolicyPolicyScopeArrayOutput {
+	return o
+}
+
+func (o GetRolePolicyPolicyScopeArrayOutput) ToGetRolePolicyPolicyScopeArrayOutputWithContext(ctx context.Context) GetRolePolicyPolicyScopeArrayOutput {
+	return o
+}
+
+func (o GetRolePolicyPolicyScopeArrayOutput) Index(i pulumi.IntInput) GetRolePolicyPolicyScopeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRolePolicyPolicyScope {
+		return vs[0].([]GetRolePolicyPolicyScope)[vs[1].(int)]
+	}).(GetRolePolicyPolicyScopeOutput)
 }
 
 type GetRoleTag struct {
@@ -4548,6 +4708,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyPolicyUserPolicyScopeArrayInput)(nil)).Elem(), GetPolicyPolicyUserPolicyScopeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRolePolicyInput)(nil)).Elem(), GetRolePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRolePolicyArrayInput)(nil)).Elem(), GetRolePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRolePolicyPolicyScopeInput)(nil)).Elem(), GetRolePolicyPolicyScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRolePolicyPolicyScopeArrayInput)(nil)).Elem(), GetRolePolicyPolicyScopeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRoleTagInput)(nil)).Elem(), GetRoleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRoleTagArrayInput)(nil)).Elem(), GetRoleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSamlProviderCertificateInput)(nil)).Elem(), GetSamlProviderCertificateArgs{})
@@ -4614,6 +4776,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPolicyPolicyUserPolicyScopeArrayOutput{})
 	pulumi.RegisterOutputType(GetRolePolicyOutput{})
 	pulumi.RegisterOutputType(GetRolePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRolePolicyPolicyScopeOutput{})
+	pulumi.RegisterOutputType(GetRolePolicyPolicyScopeArrayOutput{})
 	pulumi.RegisterOutputType(GetRoleTagOutput{})
 	pulumi.RegisterOutputType(GetRoleTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSamlProviderCertificateOutput{})

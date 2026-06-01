@@ -101,8 +101,8 @@ func GetProxyUrl(ctx *pulumi.Context) string {
 	return value
 }
 
-// The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
-// variable
+// The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
+// `ap-southeast-1` when not provided.
 func GetRegion(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "bytepluscc:region")
 	if err == nil {
@@ -124,6 +124,20 @@ func GetSecretKey(ctx *pulumi.Context) string {
 	}
 	var value string
 	if d := internal.GetEnvOrDefault(nil, nil, "BYTEPLUS_SECRET_KEY"); d != nil {
+		value = d.(string)
+	}
+	return value
+}
+
+// The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
+// from the `BYTEPLUS_SESSION_TOKEN` environment variable
+func GetSessionToken(ctx *pulumi.Context) string {
+	v, err := config.Try(ctx, "bytepluscc:sessionToken")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "BYTEPLUS_SESSION_TOKEN"); d != nil {
 		value = d.(string)
 	}
 	return value
