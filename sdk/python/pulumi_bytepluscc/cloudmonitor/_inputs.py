@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ContactGroupContactArgs',
+    'ContactGroupContactArgsDict',
     'RuleConditionArgs',
     'RuleConditionArgsDict',
     'RuleDimensionConditionsArgs',
@@ -47,6 +49,38 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class ContactGroupContactArgsDict(TypedDict):
+        contact_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        联系人ID。
+        """
+elif False:
+    ContactGroupContactArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ContactGroupContactArgs:
+    def __init__(__self__, *,
+                 contact_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] contact_id: 联系人ID。
+        """
+        if contact_id is not None:
+            pulumi.set(__self__, "contact_id", contact_id)
+
+    @property
+    @pulumi.getter(name="contactId")
+    def contact_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        联系人ID。
+        """
+        return pulumi.get(self, "contact_id")
+
+    @contact_id.setter
+    def contact_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "contact_id", value)
+
 
 if not MYPY:
     class RuleConditionArgsDict(TypedDict):

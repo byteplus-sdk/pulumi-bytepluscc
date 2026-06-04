@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .contact_group import *
+from .get_contact_group import *
+from .get_contact_groups import *
 from .get_rule import *
 from .get_rules import *
 from .rule import *

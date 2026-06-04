@@ -1202,6 +1202,14 @@
             "bytepluscc_cloudidentity_user_provisioning": {
                 "current": "bytepluscc:cloudidentity/userProvisioning:UserProvisioning"
             },
+            "bytepluscc_cloudmonitor_contact_group": {
+                "current": "bytepluscc:cloudmonitor/contactGroup:ContactGroup",
+                "fields": {
+                    "contacts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_rule": {
                 "current": "bytepluscc:cloudmonitor/rule:Rule",
                 "fields": {
@@ -1922,6 +1930,38 @@
                     },
                     "policies": {
                         "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_service": {
+                "current": "bytepluscc:id/service:Service",
+                "fields": {
+                    "routes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "api_spec": {
+                                    "fields": {
+                                        "extractors": {
+                                            "maxItemsOne": false
+                                        },
+                                        "response_filters": {
+                                            "maxItemsOne": false,
+                                            "elem": {
+                                                "fields": {
+                                                    "attributes": {
+                                                        "maxItemsOne": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
                     "tags": {
                         "maxItemsOne": false
@@ -5351,6 +5391,22 @@
                     }
                 }
             },
+            "bytepluscc_cloudmonitor_contact_group": {
+                "current": "bytepluscc:cloudmonitor/getContactGroup:getContactGroup",
+                "fields": {
+                    "contacts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudmonitor_contact_groups": {
+                "current": "bytepluscc:cloudmonitor/getContactGroups:getContactGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_rule": {
                 "current": "bytepluscc:cloudmonitor/getRule:getRule",
                 "fields": {
@@ -6377,6 +6433,46 @@
             },
             "bytepluscc_iam_users": {
                 "current": "bytepluscc:iam/getUsers:getUsers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_service": {
+                "current": "bytepluscc:id/getService:getService",
+                "fields": {
+                    "routes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "api_spec": {
+                                    "fields": {
+                                        "extractors": {
+                                            "maxItemsOne": false
+                                        },
+                                        "response_filters": {
+                                            "maxItemsOne": false,
+                                            "elem": {
+                                                "fields": {
+                                                    "attributes": {
+                                                        "maxItemsOne": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_services": {
+                "current": "bytepluscc:id/getServices:getServices",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

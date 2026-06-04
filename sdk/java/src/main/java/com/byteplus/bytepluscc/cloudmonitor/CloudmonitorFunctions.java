@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.cloudmonitor;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactGroupArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactGroupPlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRulePlainArgs;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupsResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetRuleResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetRulesResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CloudmonitorFunctions {
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupResult> getContactGroup(GetContactGroupArgs args) {
+        return getContactGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static CompletableFuture<GetContactGroupResult> getContactGroupPlain(GetContactGroupPlainArgs args) {
+        return getContactGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupResult> getContactGroup(GetContactGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getContactGroup:getContactGroup", TypeShape.of(GetContactGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupResult> getContactGroup(GetContactGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getContactGroup:getContactGroup", TypeShape.of(GetContactGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static CompletableFuture<GetContactGroupResult> getContactGroupPlain(GetContactGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getContactGroup:getContactGroup", TypeShape.of(GetContactGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupsResult> getContactGroups() {
+        return getContactGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static CompletableFuture<GetContactGroupsResult> getContactGroupsPlain() {
+        return getContactGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupsResult> getContactGroups(InvokeArgs args) {
+        return getContactGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static CompletableFuture<GetContactGroupsResult> getContactGroupsPlain(InvokeArgs args) {
+        return getContactGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupsResult> getContactGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getContactGroups:getContactGroups", TypeShape.of(GetContactGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static Output<GetContactGroupsResult> getContactGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getContactGroups:getContactGroups", TypeShape.of(GetContactGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup
+     * 
+     */
+    public static CompletableFuture<GetContactGroupsResult> getContactGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getContactGroups:getContactGroups", TypeShape.of(GetContactGroupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CloudMonitor::Rule
      * 

@@ -9696,6 +9696,32 @@ export namespace cloudidentity {
 }
 
 export namespace cloudmonitor {
+    export interface ContactGroupContact {
+        /**
+         * 联系人ID。
+         */
+        contactId: string;
+    }
+
+    export interface GetContactGroupContact {
+        /**
+         * 联系人ID。
+         */
+        contactId: string;
+        /**
+         * 联系人邮箱地址。
+         */
+        email: string;
+        /**
+         * 联系人名称。
+         */
+        name: string;
+        /**
+         * 联系人手机号码。
+         */
+        phone: string;
+    }
+
     export interface GetRuleCondition {
         /**
          * Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
@@ -15356,6 +15382,330 @@ export namespace iam {
         key: string;
         /**
          * Tag value.
+         */
+        value: string;
+    }
+
+}
+
+export namespace id {
+    export interface GetServiceBackend {
+        /**
+         * Backend service domain name, for example api.example.com
+         */
+        backendDomain: string;
+        /**
+         * Backend service port, default is 443
+         */
+        backendPort: number;
+        /**
+         * Whether to enable TLS
+         */
+        enableTls: boolean;
+        /**
+         * Communication protocol, for example HTTP or HTTPS
+         */
+        protocol: string;
+        /**
+         * Request timeout in seconds, default is 30 seconds
+         */
+        timeoutSeconds: number;
+    }
+
+    export interface GetServiceRoute {
+        /**
+         * API specification configuration
+         */
+        apiSpec: outputs.id.GetServiceRouteApiSpec;
+        /**
+         * Authentication resource type
+         */
+        authResourceType: string;
+        /**
+         * Route description
+         */
+        description: string;
+        /**
+         * HTTP methods, separated by commas
+         */
+        method: string;
+        /**
+         * Request path, 1–256 characters
+         */
+        path: string;
+        /**
+         * Path match type, for example Exact, Prefix
+         */
+        pathMatchType: string;
+        /**
+         * Permission pool name
+         */
+        permissionPool: string;
+        /**
+         * Route priority, lower values indicate higher priority
+         */
+        priority: number;
+        /**
+         * Resource type, for example Collection
+         */
+        resourceType: string;
+        /**
+         * Route name, 1–64 characters
+         */
+        routeName: string;
+    }
+
+    export interface GetServiceRouteApiSpec {
+        /**
+         * Operation type, for example READ
+         */
+        actionType: string;
+        /**
+         * Operation value, for example search
+         */
+        actionValue: string;
+        /**
+         * Attribute extractor list
+         */
+        extractors: outputs.id.GetServiceRouteApiSpecExtractor[];
+        /**
+         * Resource identifier type
+         */
+        identifierType: number;
+        /**
+         * Resource identifier value, for example JSON Pointer
+         */
+        identifierValue: string;
+        /**
+         * Response filter list
+         */
+        responseFilters: outputs.id.GetServiceRouteApiSpecResponseFilter[];
+    }
+
+    export interface GetServiceRouteApiSpecExtractor {
+        /**
+         * Whether used for authentication
+         */
+        isAuth: boolean;
+        /**
+         * JSON Pointer expression
+         */
+        path: string;
+        /**
+         * Extracted resource type
+         */
+        resourceType: string;
+        /**
+         * Extraction source enumeration value
+         */
+        source: number;
+    }
+
+    export interface GetServiceRouteApiSpecResponseFilter {
+        /**
+         * Attribute mapping list
+         */
+        attributes: outputs.id.GetServiceRouteApiSpecResponseFilterAttribute[];
+        /**
+         * Array path JSON Pointer
+         */
+        filterPath: string;
+        /**
+         * ID field name
+         */
+        idField: string;
+        /**
+         * Whether used for authentication
+         */
+        isAuth: boolean;
+        /**
+         * Filter mode enumeration value
+         */
+        mode: number;
+        /**
+         * Resource path JSON Pointer
+         */
+        resourcePath: string;
+        /**
+         * Filtered resource type
+         */
+        resourceType: string;
+    }
+
+    export interface GetServiceRouteApiSpecResponseFilterAttribute {
+        /**
+         * Source field path JSON Pointer
+         */
+        field: string;
+        /**
+         * Target attribute name
+         */
+        target: string;
+    }
+
+    export interface GetServiceTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface ServiceBackend {
+        /**
+         * Backend service domain name, for example api.example.com
+         */
+        backendDomain: string;
+        /**
+         * Backend service port, default is 443
+         */
+        backendPort: number;
+        /**
+         * Whether to enable TLS
+         */
+        enableTls: boolean;
+        /**
+         * Communication protocol, for example HTTP or HTTPS
+         */
+        protocol: string;
+        /**
+         * Request timeout in seconds, default is 30 seconds
+         */
+        timeoutSeconds: number;
+    }
+
+    export interface ServiceRoute {
+        /**
+         * API specification configuration
+         */
+        apiSpec: outputs.id.ServiceRouteApiSpec;
+        /**
+         * Authentication resource type
+         */
+        authResourceType: string;
+        /**
+         * Route description
+         */
+        description: string;
+        /**
+         * HTTP methods, separated by commas
+         */
+        method: string;
+        /**
+         * Request path, 1–256 characters
+         */
+        path: string;
+        /**
+         * Path match type, for example Exact, Prefix
+         */
+        pathMatchType: string;
+        /**
+         * Permission pool name
+         */
+        permissionPool: string;
+        /**
+         * Route priority, lower values indicate higher priority
+         */
+        priority: number;
+        /**
+         * Resource type, for example Collection
+         */
+        resourceType: string;
+        /**
+         * Route name, 1–64 characters
+         */
+        routeName: string;
+    }
+
+    export interface ServiceRouteApiSpec {
+        /**
+         * Operation type, for example READ
+         */
+        actionType: string;
+        /**
+         * Operation value, for example search
+         */
+        actionValue: string;
+        extractors: outputs.id.ServiceRouteApiSpecExtractor[];
+        /**
+         * Resource identifier type
+         */
+        identifierType: number;
+        /**
+         * Resource identifier value, for example JSON Pointer
+         */
+        identifierValue: string;
+        responseFilters: outputs.id.ServiceRouteApiSpecResponseFilter[];
+    }
+
+    export interface ServiceRouteApiSpecExtractor {
+        /**
+         * Whether used for authentication
+         */
+        isAuth: boolean;
+        /**
+         * JSON Pointer expression
+         */
+        path: string;
+        /**
+         * Extracted resource type
+         */
+        resourceType: string;
+        /**
+         * Extraction source enumeration value
+         */
+        source: number;
+    }
+
+    export interface ServiceRouteApiSpecResponseFilter {
+        attributes: outputs.id.ServiceRouteApiSpecResponseFilterAttribute[];
+        /**
+         * Array path JSON Pointer
+         */
+        filterPath: string;
+        /**
+         * ID field name
+         */
+        idField: string;
+        /**
+         * Whether used for authentication
+         */
+        isAuth: boolean;
+        /**
+         * Filter mode enumeration value
+         */
+        mode: number;
+        /**
+         * Resource path JSON Pointer
+         */
+        resourcePath: string;
+        /**
+         * Filtered resource type
+         */
+        resourceType: string;
+    }
+
+    export interface ServiceRouteApiSpecResponseFilterAttribute {
+        /**
+         * Source field path JSON Pointer
+         */
+        field: string;
+        /**
+         * Target attribute name
+         */
+        target: string;
+    }
+
+    export interface ServiceTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
          */
         value: string;
     }
