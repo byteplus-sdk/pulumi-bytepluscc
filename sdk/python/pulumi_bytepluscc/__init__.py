@@ -55,6 +55,8 @@ if typing.TYPE_CHECKING:
     hbase = __hbase
     import pulumi_bytepluscc.iam as __iam
     iam = __iam
+    import pulumi_bytepluscc.id as __id
+    id = __id
     import pulumi_bytepluscc.kafka as __kafka
     kafka = __kafka
     import pulumi_bytepluscc.kms as __kms
@@ -124,6 +126,7 @@ else:
     gtm = _utilities.lazy_import('pulumi_bytepluscc.gtm')
     hbase = _utilities.lazy_import('pulumi_bytepluscc.hbase')
     iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
+    id = _utilities.lazy_import('pulumi_bytepluscc.id')
     kafka = _utilities.lazy_import('pulumi_bytepluscc.kafka')
     kms = _utilities.lazy_import('pulumi_bytepluscc.kms')
     mongodb = _utilities.lazy_import('pulumi_bytepluscc.mongodb')
@@ -505,6 +508,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudmonitor/contactGroup",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/contactGroup:ContactGroup": "ContactGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudmonitor/rule",
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
@@ -797,6 +808,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.iam",
   "classes": {
    "bytepluscc:iam/user:User": "User"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "id/service",
+  "fqn": "pulumi_bytepluscc.id",
+  "classes": {
+   "bytepluscc:id/service:Service": "Service"
   }
  },
  {

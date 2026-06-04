@@ -17,6 +17,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ContactGroupContact',
     'RuleCondition',
     'RuleDimensionConditions',
     'RuleDimensionConditionsMetaCondition',
@@ -31,6 +32,7 @@ __all__ = [
     'RuleOriginalDimensions',
     'RuleRecoveryNotify',
     'RuleTag',
+    'GetContactGroupContactResult',
     'GetRuleConditionResult',
     'GetRuleDimensionConditionsResult',
     'GetRuleDimensionConditionsMetaConditionResult',
@@ -46,6 +48,42 @@ __all__ = [
     'GetRuleRecoveryNotifyResult',
     'GetRuleTagResult',
 ]
+
+@pulumi.output_type
+class ContactGroupContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contactId":
+            suggest = "contact_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ContactGroupContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ContactGroupContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ContactGroupContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contact_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str contact_id: 联系人ID。
+        """
+        if contact_id is not None:
+            pulumi.set(__self__, "contact_id", contact_id)
+
+    @property
+    @pulumi.getter(name="contactId")
+    def contact_id(self) -> Optional[builtins.str]:
+        """
+        联系人ID。
+        """
+        return pulumi.get(self, "contact_id")
+
 
 @pulumi.output_type
 class RuleCondition(dict):
@@ -727,6 +765,57 @@ class RuleTag(dict):
         Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetContactGroupContactResult(dict):
+    def __init__(__self__, *,
+                 contact_id: builtins.str,
+                 email: builtins.str,
+                 name: builtins.str,
+                 phone: builtins.str):
+        """
+        :param builtins.str contact_id: 联系人ID。
+        :param builtins.str email: 联系人邮箱地址。
+        :param builtins.str name: 联系人名称。
+        :param builtins.str phone: 联系人手机号码。
+        """
+        pulumi.set(__self__, "contact_id", contact_id)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone", phone)
+
+    @property
+    @pulumi.getter(name="contactId")
+    def contact_id(self) -> builtins.str:
+        """
+        联系人ID。
+        """
+        return pulumi.get(self, "contact_id")
+
+    @property
+    @pulumi.getter
+    def email(self) -> builtins.str:
+        """
+        联系人邮箱地址。
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        联系人名称。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> builtins.str:
+        """
+        联系人手机号码。
+        """
+        return pulumi.get(self, "phone")
 
 
 @pulumi.output_type

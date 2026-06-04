@@ -4704,6 +4704,13 @@ export namespace cloudidentity {
 }
 
 export namespace cloudmonitor {
+    export interface ContactGroupContact {
+        /**
+         * 联系人ID。
+         */
+        contactId?: pulumi.Input<string>;
+    }
+
     export interface RuleCondition {
         /**
          * Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
@@ -7413,6 +7420,164 @@ export namespace iam {
         key?: pulumi.Input<string>;
         /**
          * Tag value.
+         */
+        value?: pulumi.Input<string>;
+    }
+}
+
+export namespace id {
+    export interface ServiceBackend {
+        /**
+         * Backend service domain name, for example api.example.com
+         */
+        backendDomain: pulumi.Input<string>;
+        /**
+         * Backend service port, default is 443
+         */
+        backendPort?: pulumi.Input<number>;
+        /**
+         * Whether to enable TLS
+         */
+        enableTls: pulumi.Input<boolean>;
+        /**
+         * Communication protocol, for example HTTP or HTTPS
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * Request timeout in seconds, default is 30 seconds
+         */
+        timeoutSeconds?: pulumi.Input<number>;
+    }
+
+    export interface ServiceRoute {
+        /**
+         * API specification configuration
+         */
+        apiSpec?: pulumi.Input<inputs.id.ServiceRouteApiSpec>;
+        /**
+         * Authentication resource type
+         */
+        authResourceType?: pulumi.Input<string>;
+        /**
+         * Route description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * HTTP methods, separated by commas
+         */
+        method?: pulumi.Input<string>;
+        /**
+         * Request path, 1–256 characters
+         */
+        path?: pulumi.Input<string>;
+        /**
+         * Path match type, for example Exact, Prefix
+         */
+        pathMatchType?: pulumi.Input<string>;
+        /**
+         * Permission pool name
+         */
+        permissionPool?: pulumi.Input<string>;
+        /**
+         * Route priority, lower values indicate higher priority
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * Resource type, for example Collection
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * Route name, 1–64 characters
+         */
+        routeName?: pulumi.Input<string>;
+    }
+
+    export interface ServiceRouteApiSpec {
+        /**
+         * Operation type, for example READ
+         */
+        actionType?: pulumi.Input<string>;
+        /**
+         * Operation value, for example search
+         */
+        actionValue?: pulumi.Input<string>;
+        extractors?: pulumi.Input<pulumi.Input<inputs.id.ServiceRouteApiSpecExtractor>[]>;
+        /**
+         * Resource identifier type
+         */
+        identifierType?: pulumi.Input<number>;
+        /**
+         * Resource identifier value, for example JSON Pointer
+         */
+        identifierValue?: pulumi.Input<string>;
+        responseFilters?: pulumi.Input<pulumi.Input<inputs.id.ServiceRouteApiSpecResponseFilter>[]>;
+    }
+
+    export interface ServiceRouteApiSpecExtractor {
+        /**
+         * Whether used for authentication
+         */
+        isAuth?: pulumi.Input<boolean>;
+        /**
+         * JSON Pointer expression
+         */
+        path?: pulumi.Input<string>;
+        /**
+         * Extracted resource type
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * Extraction source enumeration value
+         */
+        source?: pulumi.Input<number>;
+    }
+
+    export interface ServiceRouteApiSpecResponseFilter {
+        attributes?: pulumi.Input<pulumi.Input<inputs.id.ServiceRouteApiSpecResponseFilterAttribute>[]>;
+        /**
+         * Array path JSON Pointer
+         */
+        filterPath?: pulumi.Input<string>;
+        /**
+         * ID field name
+         */
+        idField?: pulumi.Input<string>;
+        /**
+         * Whether used for authentication
+         */
+        isAuth?: pulumi.Input<boolean>;
+        /**
+         * Filter mode enumeration value
+         */
+        mode?: pulumi.Input<number>;
+        /**
+         * Resource path JSON Pointer
+         */
+        resourcePath?: pulumi.Input<string>;
+        /**
+         * Filtered resource type
+         */
+        resourceType?: pulumi.Input<string>;
+    }
+
+    export interface ServiceRouteApiSpecResponseFilterAttribute {
+        /**
+         * Source field path JSON Pointer
+         */
+        field?: pulumi.Input<string>;
+        /**
+         * Target attribute name
+         */
+        target?: pulumi.Input<string>;
+    }
+
+    export interface ServiceTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }

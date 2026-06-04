@@ -13,6 +13,103 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ContactGroupContact struct {
+	// 联系人ID。
+	ContactId *string `pulumi:"contactId"`
+}
+
+// ContactGroupContactInput is an input type that accepts ContactGroupContactArgs and ContactGroupContactOutput values.
+// You can construct a concrete instance of `ContactGroupContactInput` via:
+//
+//	ContactGroupContactArgs{...}
+type ContactGroupContactInput interface {
+	pulumi.Input
+
+	ToContactGroupContactOutput() ContactGroupContactOutput
+	ToContactGroupContactOutputWithContext(context.Context) ContactGroupContactOutput
+}
+
+type ContactGroupContactArgs struct {
+	// 联系人ID。
+	ContactId pulumi.StringPtrInput `pulumi:"contactId"`
+}
+
+func (ContactGroupContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContactGroupContact)(nil)).Elem()
+}
+
+func (i ContactGroupContactArgs) ToContactGroupContactOutput() ContactGroupContactOutput {
+	return i.ToContactGroupContactOutputWithContext(context.Background())
+}
+
+func (i ContactGroupContactArgs) ToContactGroupContactOutputWithContext(ctx context.Context) ContactGroupContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContactGroupContactOutput)
+}
+
+// ContactGroupContactArrayInput is an input type that accepts ContactGroupContactArray and ContactGroupContactArrayOutput values.
+// You can construct a concrete instance of `ContactGroupContactArrayInput` via:
+//
+//	ContactGroupContactArray{ ContactGroupContactArgs{...} }
+type ContactGroupContactArrayInput interface {
+	pulumi.Input
+
+	ToContactGroupContactArrayOutput() ContactGroupContactArrayOutput
+	ToContactGroupContactArrayOutputWithContext(context.Context) ContactGroupContactArrayOutput
+}
+
+type ContactGroupContactArray []ContactGroupContactInput
+
+func (ContactGroupContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContactGroupContact)(nil)).Elem()
+}
+
+func (i ContactGroupContactArray) ToContactGroupContactArrayOutput() ContactGroupContactArrayOutput {
+	return i.ToContactGroupContactArrayOutputWithContext(context.Background())
+}
+
+func (i ContactGroupContactArray) ToContactGroupContactArrayOutputWithContext(ctx context.Context) ContactGroupContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContactGroupContactArrayOutput)
+}
+
+type ContactGroupContactOutput struct{ *pulumi.OutputState }
+
+func (ContactGroupContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContactGroupContact)(nil)).Elem()
+}
+
+func (o ContactGroupContactOutput) ToContactGroupContactOutput() ContactGroupContactOutput {
+	return o
+}
+
+func (o ContactGroupContactOutput) ToContactGroupContactOutputWithContext(ctx context.Context) ContactGroupContactOutput {
+	return o
+}
+
+// 联系人ID。
+func (o ContactGroupContactOutput) ContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContactGroupContact) *string { return v.ContactId }).(pulumi.StringPtrOutput)
+}
+
+type ContactGroupContactArrayOutput struct{ *pulumi.OutputState }
+
+func (ContactGroupContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContactGroupContact)(nil)).Elem()
+}
+
+func (o ContactGroupContactArrayOutput) ToContactGroupContactArrayOutput() ContactGroupContactArrayOutput {
+	return o
+}
+
+func (o ContactGroupContactArrayOutput) ToContactGroupContactArrayOutputWithContext(ctx context.Context) ContactGroupContactArrayOutput {
+	return o
+}
+
+func (o ContactGroupContactArrayOutput) Index(i pulumi.IntInput) ContactGroupContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContactGroupContact {
+		return vs[0].([]ContactGroupContact)[vs[1].(int)]
+	}).(ContactGroupContactOutput)
+}
+
 type RuleCondition struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
@@ -1956,6 +2053,130 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 	}).(RuleTagOutput)
 }
 
+type GetContactGroupContact struct {
+	// 联系人ID。
+	ContactId string `pulumi:"contactId"`
+	// 联系人邮箱地址。
+	Email string `pulumi:"email"`
+	// 联系人名称。
+	Name string `pulumi:"name"`
+	// 联系人手机号码。
+	Phone string `pulumi:"phone"`
+}
+
+// GetContactGroupContactInput is an input type that accepts GetContactGroupContactArgs and GetContactGroupContactOutput values.
+// You can construct a concrete instance of `GetContactGroupContactInput` via:
+//
+//	GetContactGroupContactArgs{...}
+type GetContactGroupContactInput interface {
+	pulumi.Input
+
+	ToGetContactGroupContactOutput() GetContactGroupContactOutput
+	ToGetContactGroupContactOutputWithContext(context.Context) GetContactGroupContactOutput
+}
+
+type GetContactGroupContactArgs struct {
+	// 联系人ID。
+	ContactId pulumi.StringInput `pulumi:"contactId"`
+	// 联系人邮箱地址。
+	Email pulumi.StringInput `pulumi:"email"`
+	// 联系人名称。
+	Name pulumi.StringInput `pulumi:"name"`
+	// 联系人手机号码。
+	Phone pulumi.StringInput `pulumi:"phone"`
+}
+
+func (GetContactGroupContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContactGroupContact)(nil)).Elem()
+}
+
+func (i GetContactGroupContactArgs) ToGetContactGroupContactOutput() GetContactGroupContactOutput {
+	return i.ToGetContactGroupContactOutputWithContext(context.Background())
+}
+
+func (i GetContactGroupContactArgs) ToGetContactGroupContactOutputWithContext(ctx context.Context) GetContactGroupContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContactGroupContactOutput)
+}
+
+// GetContactGroupContactArrayInput is an input type that accepts GetContactGroupContactArray and GetContactGroupContactArrayOutput values.
+// You can construct a concrete instance of `GetContactGroupContactArrayInput` via:
+//
+//	GetContactGroupContactArray{ GetContactGroupContactArgs{...} }
+type GetContactGroupContactArrayInput interface {
+	pulumi.Input
+
+	ToGetContactGroupContactArrayOutput() GetContactGroupContactArrayOutput
+	ToGetContactGroupContactArrayOutputWithContext(context.Context) GetContactGroupContactArrayOutput
+}
+
+type GetContactGroupContactArray []GetContactGroupContactInput
+
+func (GetContactGroupContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContactGroupContact)(nil)).Elem()
+}
+
+func (i GetContactGroupContactArray) ToGetContactGroupContactArrayOutput() GetContactGroupContactArrayOutput {
+	return i.ToGetContactGroupContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetContactGroupContactArray) ToGetContactGroupContactArrayOutputWithContext(ctx context.Context) GetContactGroupContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetContactGroupContactArrayOutput)
+}
+
+type GetContactGroupContactOutput struct{ *pulumi.OutputState }
+
+func (GetContactGroupContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetContactGroupContact)(nil)).Elem()
+}
+
+func (o GetContactGroupContactOutput) ToGetContactGroupContactOutput() GetContactGroupContactOutput {
+	return o
+}
+
+func (o GetContactGroupContactOutput) ToGetContactGroupContactOutputWithContext(ctx context.Context) GetContactGroupContactOutput {
+	return o
+}
+
+// 联系人ID。
+func (o GetContactGroupContactOutput) ContactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContactGroupContact) string { return v.ContactId }).(pulumi.StringOutput)
+}
+
+// 联系人邮箱地址。
+func (o GetContactGroupContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContactGroupContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// 联系人名称。
+func (o GetContactGroupContactOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContactGroupContact) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 联系人手机号码。
+func (o GetContactGroupContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContactGroupContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+type GetContactGroupContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetContactGroupContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetContactGroupContact)(nil)).Elem()
+}
+
+func (o GetContactGroupContactArrayOutput) ToGetContactGroupContactArrayOutput() GetContactGroupContactArrayOutput {
+	return o
+}
+
+func (o GetContactGroupContactArrayOutput) ToGetContactGroupContactArrayOutputWithContext(ctx context.Context) GetContactGroupContactArrayOutput {
+	return o
+}
+
+func (o GetContactGroupContactArrayOutput) Index(i pulumi.IntInput) GetContactGroupContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContactGroupContact {
+		return vs[0].([]GetContactGroupContact)[vs[1].(int)]
+	}).(GetContactGroupContactOutput)
+}
+
 type GetRuleCondition struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator string `pulumi:"comparisonOperator"`
@@ -3249,6 +3470,8 @@ func (o GetRuleTagArrayOutput) Index(i pulumi.IntInput) GetRuleTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ContactGroupContactInput)(nil)).Elem(), ContactGroupContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContactGroupContactArrayInput)(nil)).Elem(), ContactGroupContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleConditionInput)(nil)).Elem(), RuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleConditionArrayInput)(nil)).Elem(), RuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleDimensionConditionsInput)(nil)).Elem(), RuleDimensionConditionsArgs{})
@@ -3277,6 +3500,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRecoveryNotifyPtrInput)(nil)).Elem(), RuleRecoveryNotifyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagInput)(nil)).Elem(), RuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagArrayInput)(nil)).Elem(), RuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContactGroupContactInput)(nil)).Elem(), GetContactGroupContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetContactGroupContactArrayInput)(nil)).Elem(), GetContactGroupContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleConditionInput)(nil)).Elem(), GetRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleConditionArrayInput)(nil)).Elem(), GetRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleDimensionConditionsInput)(nil)).Elem(), GetRuleDimensionConditionsArgs{})
@@ -3298,6 +3523,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRecoveryNotifyInput)(nil)).Elem(), GetRuleRecoveryNotifyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagInput)(nil)).Elem(), GetRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagArrayInput)(nil)).Elem(), GetRuleTagArray{})
+	pulumi.RegisterOutputType(ContactGroupContactOutput{})
+	pulumi.RegisterOutputType(ContactGroupContactArrayOutput{})
 	pulumi.RegisterOutputType(RuleConditionOutput{})
 	pulumi.RegisterOutputType(RuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(RuleDimensionConditionsOutput{})
@@ -3326,6 +3553,8 @@ func init() {
 	pulumi.RegisterOutputType(RuleRecoveryNotifyPtrOutput{})
 	pulumi.RegisterOutputType(RuleTagOutput{})
 	pulumi.RegisterOutputType(RuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetContactGroupContactOutput{})
+	pulumi.RegisterOutputType(GetContactGroupContactArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleDimensionConditionsOutput{})
