@@ -13,27 +13,27 @@ import java.util.Objects;
 @CustomType
 public final class GetContactGroupResult {
     /**
-     * @return 创建本联系组的账号ID。
+     * @return Account ID that created this contact group
      * 
      */
     private String accountId;
     /**
-     * @return 联系组的ID。
+     * @return Contact group ID
      * 
      */
     private String contactGroupId;
     /**
-     * @return 联系组中的联系信息。
+     * @return Contact information in the contact group
      * 
      */
     private List<GetContactGroupContact> contacts;
     /**
-     * @return 联系组的创建时间。
+     * @return Contact group creation time
      * 
      */
     private String createdAt;
     /**
-     * @return 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      * 
      */
     private String description;
@@ -43,47 +43,47 @@ public final class GetContactGroupResult {
      */
     private String id;
     /**
-     * @return 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      * 
      */
     private String name;
     /**
-     * @return 联系组的更新时间。
+     * @return Contact group update time
      * 
      */
     private String updatedAt;
 
     private GetContactGroupResult() {}
     /**
-     * @return 创建本联系组的账号ID。
+     * @return Account ID that created this contact group
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return 联系组的ID。
+     * @return Contact group ID
      * 
      */
     public String contactGroupId() {
         return this.contactGroupId;
     }
     /**
-     * @return 联系组中的联系信息。
+     * @return Contact information in the contact group
      * 
      */
     public List<GetContactGroupContact> contacts() {
         return this.contacts;
     }
     /**
-     * @return 联系组的创建时间。
+     * @return Contact group creation time
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      * 
      */
     public String description() {
@@ -97,14 +97,14 @@ public final class GetContactGroupResult {
         return this.id;
     }
     /**
-     * @return 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 联系组的更新时间。
+     * @return Contact group update time
      * 
      */
     public String updatedAt() {

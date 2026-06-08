@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.transitrouter;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetPeerAttachmentArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetPeerAttachmentPlainArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetRouteTablePropagationArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetRouteTablePropagationPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteEntryArgs;
@@ -18,6 +20,8 @@ import com.byteplus.bytepluscc.transitrouter.inputs.GetVpnAttachmentArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetVpnAttachmentPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetPeerAttachmentResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetPeerAttachmentsResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetRouteTablePropagationResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetRouteTablePropagationsResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntriesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntryResult;
@@ -120,6 +124,90 @@ public final class TransitrouterFunctions {
      */
     public static CompletableFuture<GetPeerAttachmentsResult> getPeerAttachmentsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getPeerAttachments:getPeerAttachments", TypeShape.of(GetPeerAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationResult> getRouteTablePropagation(GetRouteTablePropagationArgs args) {
+        return getRouteTablePropagation(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static CompletableFuture<GetRouteTablePropagationResult> getRouteTablePropagationPlain(GetRouteTablePropagationPlainArgs args) {
+        return getRouteTablePropagationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationResult> getRouteTablePropagation(GetRouteTablePropagationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getRouteTablePropagation:getRouteTablePropagation", TypeShape.of(GetRouteTablePropagationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationResult> getRouteTablePropagation(GetRouteTablePropagationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getRouteTablePropagation:getRouteTablePropagation", TypeShape.of(GetRouteTablePropagationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static CompletableFuture<GetRouteTablePropagationResult> getRouteTablePropagationPlain(GetRouteTablePropagationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getRouteTablePropagation:getRouteTablePropagation", TypeShape.of(GetRouteTablePropagationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationsResult> getRouteTablePropagations() {
+        return getRouteTablePropagations(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static CompletableFuture<GetRouteTablePropagationsResult> getRouteTablePropagationsPlain() {
+        return getRouteTablePropagationsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationsResult> getRouteTablePropagations(InvokeArgs args) {
+        return getRouteTablePropagations(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static CompletableFuture<GetRouteTablePropagationsResult> getRouteTablePropagationsPlain(InvokeArgs args) {
+        return getRouteTablePropagationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationsResult> getRouteTablePropagations(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getRouteTablePropagations:getRouteTablePropagations", TypeShape.of(GetRouteTablePropagationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static Output<GetRouteTablePropagationsResult> getRouteTablePropagations(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getRouteTablePropagations:getRouteTablePropagations", TypeShape.of(GetRouteTablePropagationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::RouteTablePropagation
+     * 
+     */
+    public static CompletableFuture<GetRouteTablePropagationsResult> getRouteTablePropagationsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getRouteTablePropagations:getRouteTablePropagations", TypeShape.of(GetRouteTablePropagationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::TransitRouter::TransitRouter

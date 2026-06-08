@@ -19,13 +19,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
         /// </summary>
         public readonly string? BucketName;
         /// <summary>
-        /// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-        /// </summary>
-        public readonly string? DeliveryType;
-        /// <summary>
-        /// Enable access log (Layer 7) delivery to object storage TOS
+        /// Enable access log TOS feature?
         /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Enable access log TLS feature?
+        /// </summary>
+        public readonly bool? TlsEnabled;
         /// <summary>
         /// Log project
         /// </summary>
@@ -39,17 +39,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
         private ClbAccessLog(
             string? bucketName,
 
-            string? deliveryType,
-
             bool? enabled,
+
+            bool? tlsEnabled,
 
             string? tlsProjectId,
 
             string? tlsTopicId)
         {
             BucketName = bucketName;
-            DeliveryType = deliveryType;
             Enabled = enabled;
+            TlsEnabled = tlsEnabled;
             TlsProjectId = tlsProjectId;
             TlsTopicId = tlsTopicId;
         }

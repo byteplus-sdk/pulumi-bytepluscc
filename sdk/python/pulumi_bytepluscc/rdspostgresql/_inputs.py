@@ -46,6 +46,12 @@ __all__ = [
     'InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgsDict',
     'InstanceNodeInfoArgs',
     'InstanceNodeInfoArgsDict',
+    'InstanceReplicationSlotArgs',
+    'InstanceReplicationSlotArgsDict',
+    'InstanceRestoreToExistedInstanceArgs',
+    'InstanceRestoreToExistedInstanceArgsDict',
+    'InstanceRestoreToExistedInstanceDatabaseArgs',
+    'InstanceRestoreToExistedInstanceDatabaseArgsDict',
     'InstanceTagArgs',
     'InstanceTagArgsDict',
     'ParameterTemplateTemplateParamArgs',
@@ -2190,6 +2196,315 @@ class InstanceNodeInfoArgs:
     @vcpu.setter
     def vcpu(self, value: Optional[pulumi.Input[builtins.float]]):
         pulumi.set(self, "vcpu", value)
+
+
+if not MYPY:
+    class InstanceReplicationSlotArgsDict(TypedDict):
+        database: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Database associated with the slot
+        """
+        ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Connected client IP address
+        """
+        plugin: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Plugin used by the slot
+        """
+        slot_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Slot name
+        """
+        slot_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Slot status
+        """
+        slot_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Slot type
+        """
+        temporary: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether it is a temporary slot
+        """
+        wal_delay: NotRequired[pulumi.Input[builtins.int]]
+        """
+        WAL delay size
+        """
+elif False:
+    InstanceReplicationSlotArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceReplicationSlotArgs:
+    def __init__(__self__, *,
+                 database: Optional[pulumi.Input[builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 plugin: Optional[pulumi.Input[builtins.str]] = None,
+                 slot_name: Optional[pulumi.Input[builtins.str]] = None,
+                 slot_status: Optional[pulumi.Input[builtins.str]] = None,
+                 slot_type: Optional[pulumi.Input[builtins.str]] = None,
+                 temporary: Optional[pulumi.Input[builtins.bool]] = None,
+                 wal_delay: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] database: Database associated with the slot
+        :param pulumi.Input[builtins.str] ip_address: Connected client IP address
+        :param pulumi.Input[builtins.str] plugin: Plugin used by the slot
+        :param pulumi.Input[builtins.str] slot_name: Slot name
+        :param pulumi.Input[builtins.str] slot_status: Slot status
+        :param pulumi.Input[builtins.str] slot_type: Slot type
+        :param pulumi.Input[builtins.bool] temporary: Whether it is a temporary slot
+        :param pulumi.Input[builtins.int] wal_delay: WAL delay size
+        """
+        if database is not None:
+            pulumi.set(__self__, "database", database)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if plugin is not None:
+            pulumi.set(__self__, "plugin", plugin)
+        if slot_name is not None:
+            pulumi.set(__self__, "slot_name", slot_name)
+        if slot_status is not None:
+            pulumi.set(__self__, "slot_status", slot_status)
+        if slot_type is not None:
+            pulumi.set(__self__, "slot_type", slot_type)
+        if temporary is not None:
+            pulumi.set(__self__, "temporary", temporary)
+        if wal_delay is not None:
+            pulumi.set(__self__, "wal_delay", wal_delay)
+
+    @property
+    @pulumi.getter
+    def database(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Database associated with the slot
+        """
+        return pulumi.get(self, "database")
+
+    @database.setter
+    def database(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "database", value)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Connected client IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter
+    def plugin(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Plugin used by the slot
+        """
+        return pulumi.get(self, "plugin")
+
+    @plugin.setter
+    def plugin(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "plugin", value)
+
+    @property
+    @pulumi.getter(name="slotName")
+    def slot_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Slot name
+        """
+        return pulumi.get(self, "slot_name")
+
+    @slot_name.setter
+    def slot_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "slot_name", value)
+
+    @property
+    @pulumi.getter(name="slotStatus")
+    def slot_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Slot status
+        """
+        return pulumi.get(self, "slot_status")
+
+    @slot_status.setter
+    def slot_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "slot_status", value)
+
+    @property
+    @pulumi.getter(name="slotType")
+    def slot_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Slot type
+        """
+        return pulumi.get(self, "slot_type")
+
+    @slot_type.setter
+    def slot_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "slot_type", value)
+
+    @property
+    @pulumi.getter
+    def temporary(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether it is a temporary slot
+        """
+        return pulumi.get(self, "temporary")
+
+    @temporary.setter
+    def temporary(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "temporary", value)
+
+    @property
+    @pulumi.getter(name="walDelay")
+    def wal_delay(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        WAL delay size
+        """
+        return pulumi.get(self, "wal_delay")
+
+    @wal_delay.setter
+    def wal_delay(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "wal_delay", value)
+
+
+if not MYPY:
+    class InstanceRestoreToExistedInstanceArgsDict(TypedDict):
+        backup_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup set ID
+        """
+        databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceRestoreToExistedInstanceDatabaseArgsDict']]]]
+        source_db_instance_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Source instance ID
+        """
+        target_db_instance_account: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Database account for the target instance
+        """
+elif False:
+    InstanceRestoreToExistedInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceRestoreToExistedInstanceArgs:
+    def __init__(__self__, *,
+                 backup_id: Optional[pulumi.Input[builtins.str]] = None,
+                 databases: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceRestoreToExistedInstanceDatabaseArgs']]]] = None,
+                 source_db_instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 target_db_instance_account: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] backup_id: Backup set ID
+        :param pulumi.Input[builtins.str] source_db_instance_id: Source instance ID
+        :param pulumi.Input[builtins.str] target_db_instance_account: Database account for the target instance
+        """
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if databases is not None:
+            pulumi.set(__self__, "databases", databases)
+        if source_db_instance_id is not None:
+            pulumi.set(__self__, "source_db_instance_id", source_db_instance_id)
+        if target_db_instance_account is not None:
+            pulumi.set(__self__, "target_db_instance_account", target_db_instance_account)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup set ID
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_id", value)
+
+    @property
+    @pulumi.getter
+    def databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceRestoreToExistedInstanceDatabaseArgs']]]]:
+        return pulumi.get(self, "databases")
+
+    @databases.setter
+    def databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceRestoreToExistedInstanceDatabaseArgs']]]]):
+        pulumi.set(self, "databases", value)
+
+    @property
+    @pulumi.getter(name="sourceDbInstanceId")
+    def source_db_instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Source instance ID
+        """
+        return pulumi.get(self, "source_db_instance_id")
+
+    @source_db_instance_id.setter
+    def source_db_instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_db_instance_id", value)
+
+    @property
+    @pulumi.getter(name="targetDbInstanceAccount")
+    def target_db_instance_account(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Database account for the target instance
+        """
+        return pulumi.get(self, "target_db_instance_account")
+
+    @target_db_instance_account.setter
+    def target_db_instance_account(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "target_db_instance_account", value)
+
+
+if not MYPY:
+    class InstanceRestoreToExistedInstanceDatabaseArgsDict(TypedDict):
+        db_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Source database name
+        """
+        new_db_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the new database after restoration
+        """
+elif False:
+    InstanceRestoreToExistedInstanceDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceRestoreToExistedInstanceDatabaseArgs:
+    def __init__(__self__, *,
+                 db_name: Optional[pulumi.Input[builtins.str]] = None,
+                 new_db_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] db_name: Source database name
+        :param pulumi.Input[builtins.str] new_db_name: Name of the new database after restoration
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if new_db_name is not None:
+            pulumi.set(__self__, "new_db_name", new_db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Source database name
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "db_name", value)
+
+    @property
+    @pulumi.getter(name="newDbName")
+    def new_db_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the new database after restoration
+        """
+        return pulumi.get(self, "new_db_name")
+
+    @new_db_name.setter
+    def new_db_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "new_db_name", value)
 
 
 if not MYPY:

@@ -130,36 +130,6 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Public IP address
-     * 
-     */
-    @Import(name="eipAddress")
-    private @Nullable Output<String> eipAddress;
-
-    /**
-     * @return Public IP address
-     * 
-     */
-    public Optional<Output<String>> eipAddress() {
-        return Optional.ofNullable(this.eipAddress);
-    }
-
-    /**
-     * Public IP ID
-     * 
-     */
-    @Import(name="eipId")
-    private @Nullable Output<String> eipId;
-
-    /**
-     * @return Public IP ID
-     * 
-     */
-    public Optional<Output<String>> eipId() {
-        return Optional.ofNullable(this.eipId);
-    }
-
-    /**
      * Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
      * 
      */
@@ -475,8 +445,6 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         this.bypassSecurityGroupEnabled = $.bypassSecurityGroupEnabled;
         this.description = $.description;
         this.eip = $.eip;
-        this.eipAddress = $.eipAddress;
-        this.eipId = $.eipId;
         this.eniAddressNum = $.eniAddressNum;
         this.enis = $.enis;
         this.exclusiveClusterId = $.exclusiveClusterId;
@@ -674,48 +642,6 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder eip(ClbEipArgs eip) {
             return eip(Output.of(eip));
-        }
-
-        /**
-         * @param eipAddress Public IP address
-         * 
-         * @return builder
-         * 
-         */
-        public Builder eipAddress(@Nullable Output<String> eipAddress) {
-            $.eipAddress = eipAddress;
-            return this;
-        }
-
-        /**
-         * @param eipAddress Public IP address
-         * 
-         * @return builder
-         * 
-         */
-        public Builder eipAddress(String eipAddress) {
-            return eipAddress(Output.of(eipAddress));
-        }
-
-        /**
-         * @param eipId Public IP ID
-         * 
-         * @return builder
-         * 
-         */
-        public Builder eipId(@Nullable Output<String> eipId) {
-            $.eipId = eipId;
-            return this;
-        }
-
-        /**
-         * @param eipId Public IP ID
-         * 
-         * @return builder
-         * 
-         */
-        public Builder eipId(String eipId) {
-            return eipId(Output.of(eipId));
         }
 
         /**

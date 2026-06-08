@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 符合条件的联系组的详细信息。
+ * Details of contact groups that meet the criteria
  * 
  * ## Example Usage
  * 
@@ -33,28 +33,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudmonitor/contactGroup:ContactGroup")
 public class ContactGroup extends com.pulumi.resources.CustomResource {
     /**
-     * 创建本联系组的账号ID。
+     * Account ID that created this contact group
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 创建本联系组的账号ID。
+     * @return Account ID that created this contact group
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 联系组的ID。
+     * Contact group ID
      * 
      */
     @Export(name="contactGroupId", refs={String.class}, tree="[0]")
     private Output<String> contactGroupId;
 
     /**
-     * @return 联系组的ID。
+     * @return Contact group ID
      * 
      */
     public Output<String> contactGroupId() {
@@ -67,56 +67,56 @@ public class ContactGroup extends com.pulumi.resources.CustomResource {
         return this.contacts;
     }
     /**
-     * 联系组的创建时间。
+     * Contact group creation time
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 联系组的创建时间。
+     * @return Contact group creation time
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 联系组的更新时间。
+     * Contact group update time
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 联系组的更新时间。
+     * @return Contact group update time
      * 
      */
     public Output<String> updatedAt() {

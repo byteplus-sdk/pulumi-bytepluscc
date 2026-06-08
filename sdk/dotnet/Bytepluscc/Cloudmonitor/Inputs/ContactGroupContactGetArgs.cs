@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class ContactGroupContactGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 联系人ID。
+        /// Contact ID
         /// </summary>
         [Input("contactId")]
         public Input<string>? ContactId { get; set; }

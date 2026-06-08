@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 符合条件的联系组的详细信息。
+// Details of contact groups that meet the criteria
 //
 // ## Import
 //
@@ -22,18 +22,18 @@ import (
 type ContactGroup struct {
 	pulumi.CustomResourceState
 
-	// 创建本联系组的账号ID。
+	// Account ID that created this contact group
 	AccountId pulumi.StringOutput `pulumi:"accountId"`
-	// 联系组的ID。
+	// Contact group ID
 	ContactGroupId pulumi.StringOutput            `pulumi:"contactGroupId"`
 	Contacts       ContactGroupContactArrayOutput `pulumi:"contacts"`
-	// 联系组的创建时间。
+	// Contact group creation time
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
-	// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+	// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+	// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 联系组的更新时间。
+	// Contact group update time
 	UpdatedAt pulumi.StringOutput `pulumi:"updatedAt"`
 }
 
@@ -70,34 +70,34 @@ func GetContactGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ContactGroup resources.
 type contactGroupState struct {
-	// 创建本联系组的账号ID。
+	// Account ID that created this contact group
 	AccountId *string `pulumi:"accountId"`
-	// 联系组的ID。
+	// Contact group ID
 	ContactGroupId *string               `pulumi:"contactGroupId"`
 	Contacts       []ContactGroupContact `pulumi:"contacts"`
-	// 联系组的创建时间。
+	// Contact group creation time
 	CreatedAt *string `pulumi:"createdAt"`
-	// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+	// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 	Description *string `pulumi:"description"`
-	// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+	// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 	Name *string `pulumi:"name"`
-	// 联系组的更新时间。
+	// Contact group update time
 	UpdatedAt *string `pulumi:"updatedAt"`
 }
 
 type ContactGroupState struct {
-	// 创建本联系组的账号ID。
+	// Account ID that created this contact group
 	AccountId pulumi.StringPtrInput
-	// 联系组的ID。
+	// Contact group ID
 	ContactGroupId pulumi.StringPtrInput
 	Contacts       ContactGroupContactArrayInput
-	// 联系组的创建时间。
+	// Contact group creation time
 	CreatedAt pulumi.StringPtrInput
-	// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+	// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 	Description pulumi.StringPtrInput
-	// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+	// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 	Name pulumi.StringPtrInput
-	// 联系组的更新时间。
+	// Contact group update time
 	UpdatedAt pulumi.StringPtrInput
 }
 
@@ -107,18 +107,18 @@ func (ContactGroupState) ElementType() reflect.Type {
 
 type contactGroupArgs struct {
 	Contacts []ContactGroupContact `pulumi:"contacts"`
-	// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+	// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 	Description *string `pulumi:"description"`
-	// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+	// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a ContactGroup resource.
 type ContactGroupArgs struct {
 	Contacts ContactGroupContactArrayInput
-	// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+	// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 	Description pulumi.StringPtrInput
-	// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+	// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 	Name pulumi.StringInput
 }
 
@@ -209,12 +209,12 @@ func (o ContactGroupOutput) ToContactGroupOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 创建本联系组的账号ID。
+// Account ID that created this contact group
 func (o ContactGroupOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContactGroup) pulumi.StringOutput { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 联系组的ID。
+// Contact group ID
 func (o ContactGroupOutput) ContactGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContactGroup) pulumi.StringOutput { return v.ContactGroupId }).(pulumi.StringOutput)
 }
@@ -223,22 +223,22 @@ func (o ContactGroupOutput) Contacts() ContactGroupContactArrayOutput {
 	return o.ApplyT(func(v *ContactGroup) ContactGroupContactArrayOutput { return v.Contacts }).(ContactGroupContactArrayOutput)
 }
 
-// 联系组的创建时间。
+// Contact group creation time
 func (o ContactGroupOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContactGroup) pulumi.StringOutput { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 func (o ContactGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContactGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 func (o ContactGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContactGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 联系组的更新时间。
+// Contact group update time
 func (o ContactGroupOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContactGroup) pulumi.StringOutput { return v.UpdatedAt }).(pulumi.StringOutput)
 }

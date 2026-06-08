@@ -50,6 +50,8 @@ type LookupLoadBalancerResult struct {
 	EipBillingConfig GetLoadBalancerEipBillingConfig `pulumi:"eipBillingConfig"`
 	// Global accelerator configuration, used to improve cross-region access speed.
 	GlobalAccelerator GetLoadBalancerGlobalAccelerator `pulumi:"globalAccelerator"`
+	// Health check log information in the ALB instance
+	HealthLog GetLoadBalancerHealthLog `pulumi:"healthLog"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 	// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
@@ -80,6 +82,8 @@ type LookupLoadBalancerResult struct {
 	Status string `pulumi:"status"`
 	// List of tags bound to the instance, used for categorization and billing.
 	Tags []GetLoadBalancerTag `pulumi:"tags"`
+	// Access log information in the ALB instance
+	TlsAccessLog GetLoadBalancerTlsAccessLog `pulumi:"tlsAccessLog"`
 	// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
 	Type string `pulumi:"type"`
 	// Last update time of the ALB instance.
@@ -180,6 +184,11 @@ func (o LookupLoadBalancerResultOutput) GlobalAccelerator() GetLoadBalancerGloba
 	return o.ApplyT(func(v LookupLoadBalancerResult) GetLoadBalancerGlobalAccelerator { return v.GlobalAccelerator }).(GetLoadBalancerGlobalAcceleratorOutput)
 }
 
+// Health check log information in the ALB instance
+func (o LookupLoadBalancerResultOutput) HealthLog() GetLoadBalancerHealthLogOutput {
+	return o.ApplyT(func(v LookupLoadBalancerResult) GetLoadBalancerHealthLog { return v.HealthLog }).(GetLoadBalancerHealthLogOutput)
+}
+
 // Uniquely identifies the resource.
 func (o LookupLoadBalancerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLoadBalancerResult) string { return v.Id }).(pulumi.StringOutput)
@@ -253,6 +262,11 @@ func (o LookupLoadBalancerResultOutput) Status() pulumi.StringOutput {
 // List of tags bound to the instance, used for categorization and billing.
 func (o LookupLoadBalancerResultOutput) Tags() GetLoadBalancerTagArrayOutput {
 	return o.ApplyT(func(v LookupLoadBalancerResult) []GetLoadBalancerTag { return v.Tags }).(GetLoadBalancerTagArrayOutput)
+}
+
+// Access log information in the ALB instance
+func (o LookupLoadBalancerResultOutput) TlsAccessLog() GetLoadBalancerTlsAccessLogOutput {
+	return o.ApplyT(func(v LookupLoadBalancerResult) GetLoadBalancerTlsAccessLog { return v.TlsAccessLog }).(GetLoadBalancerTlsAccessLogOutput)
 }
 
 // Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.

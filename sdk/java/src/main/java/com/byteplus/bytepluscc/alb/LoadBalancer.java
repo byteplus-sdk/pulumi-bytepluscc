@@ -8,8 +8,10 @@ import com.byteplus.bytepluscc.alb.LoadBalancerArgs;
 import com.byteplus.bytepluscc.alb.inputs.LoadBalancerState;
 import com.byteplus.bytepluscc.alb.outputs.LoadBalancerEipBillingConfig;
 import com.byteplus.bytepluscc.alb.outputs.LoadBalancerGlobalAccelerator;
+import com.byteplus.bytepluscc.alb.outputs.LoadBalancerHealthLog;
 import com.byteplus.bytepluscc.alb.outputs.LoadBalancerIpv6EipBillingConfig;
 import com.byteplus.bytepluscc.alb.outputs.LoadBalancerTag;
+import com.byteplus.bytepluscc.alb.outputs.LoadBalancerTlsAccessLog;
 import com.byteplus.bytepluscc.alb.outputs.LoadBalancerZoneMapping;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -176,6 +178,20 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      */
     public Output<LoadBalancerGlobalAccelerator> globalAccelerator() {
         return this.globalAccelerator;
+    }
+    /**
+     * Health check log information in the ALB instance
+     * 
+     */
+    @Export(name="healthLog", refs={LoadBalancerHealthLog.class}, tree="[0]")
+    private Output<LoadBalancerHealthLog> healthLog;
+
+    /**
+     * @return Health check log information in the ALB instance
+     * 
+     */
+    public Output<LoadBalancerHealthLog> healthLog() {
+        return this.healthLog;
     }
     /**
      * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
@@ -364,6 +380,20 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
 
     public Output<List<LoadBalancerTag>> tags() {
         return this.tags;
+    }
+    /**
+     * Access log information in the ALB instance
+     * 
+     */
+    @Export(name="tlsAccessLog", refs={LoadBalancerTlsAccessLog.class}, tree="[0]")
+    private Output<LoadBalancerTlsAccessLog> tlsAccessLog;
+
+    /**
+     * @return Access log information in the ALB instance
+     * 
+     */
+    public Output<LoadBalancerTlsAccessLog> tlsAccessLog() {
+        return this.tlsAccessLog;
     }
     /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.

@@ -5,8 +5,10 @@ package com.byteplus.bytepluscc.alb.inputs;
 
 import com.byteplus.bytepluscc.alb.inputs.LoadBalancerEipBillingConfigArgs;
 import com.byteplus.bytepluscc.alb.inputs.LoadBalancerGlobalAcceleratorArgs;
+import com.byteplus.bytepluscc.alb.inputs.LoadBalancerHealthLogArgs;
 import com.byteplus.bytepluscc.alb.inputs.LoadBalancerIpv6EipBillingConfigArgs;
 import com.byteplus.bytepluscc.alb.inputs.LoadBalancerTagArgs;
+import com.byteplus.bytepluscc.alb.inputs.LoadBalancerTlsAccessLogArgs;
 import com.byteplus.bytepluscc.alb.inputs.LoadBalancerZoneMappingArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -170,6 +172,21 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<LoadBalancerGlobalAcceleratorArgs>> globalAccelerator() {
         return Optional.ofNullable(this.globalAccelerator);
+    }
+
+    /**
+     * Health check log information in the ALB instance
+     * 
+     */
+    @Import(name="healthLog")
+    private @Nullable Output<LoadBalancerHealthLogArgs> healthLog;
+
+    /**
+     * @return Health check log information in the ALB instance
+     * 
+     */
+    public Optional<Output<LoadBalancerHealthLogArgs>> healthLog() {
+        return Optional.ofNullable(this.healthLog);
     }
 
     /**
@@ -375,6 +392,21 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Access log information in the ALB instance
+     * 
+     */
+    @Import(name="tlsAccessLog")
+    private @Nullable Output<LoadBalancerTlsAccessLogArgs> tlsAccessLog;
+
+    /**
+     * @return Access log information in the ALB instance
+     * 
+     */
+    public Optional<Output<LoadBalancerTlsAccessLogArgs>> tlsAccessLog() {
+        return Optional.ofNullable(this.tlsAccessLog);
+    }
+
+    /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
@@ -484,6 +516,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         this.dnsName = $.dnsName;
         this.eipBillingConfig = $.eipBillingConfig;
         this.globalAccelerator = $.globalAccelerator;
+        this.healthLog = $.healthLog;
         this.ipv6BandwidthPackageId = $.ipv6BandwidthPackageId;
         this.ipv6EipBillingConfig = $.ipv6EipBillingConfig;
         this.loadBalancerBillingType = $.loadBalancerBillingType;
@@ -498,6 +531,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         this.proxyProtocolEnabled = $.proxyProtocolEnabled;
         this.status = $.status;
         this.tags = $.tags;
+        this.tlsAccessLog = $.tlsAccessLog;
         this.type = $.type;
         this.updateTime = $.updateTime;
         this.vpcId = $.vpcId;
@@ -733,6 +767,27 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder globalAccelerator(LoadBalancerGlobalAcceleratorArgs globalAccelerator) {
             return globalAccelerator(Output.of(globalAccelerator));
+        }
+
+        /**
+         * @param healthLog Health check log information in the ALB instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healthLog(@Nullable Output<LoadBalancerHealthLogArgs> healthLog) {
+            $.healthLog = healthLog;
+            return this;
+        }
+
+        /**
+         * @param healthLog Health check log information in the ALB instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healthLog(LoadBalancerHealthLogArgs healthLog) {
+            return healthLog(Output.of(healthLog));
         }
 
         /**
@@ -1019,6 +1074,27 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
 
         public Builder tags(LoadBalancerTagArgs... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param tlsAccessLog Access log information in the ALB instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsAccessLog(@Nullable Output<LoadBalancerTlsAccessLogArgs> tlsAccessLog) {
+            $.tlsAccessLog = tlsAccessLog;
+            return this;
+        }
+
+        /**
+         * @param tlsAccessLog Access log information in the ALB instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsAccessLog(LoadBalancerTlsAccessLogArgs tlsAccessLog) {
+            return tlsAccessLog(Output.of(tlsAccessLog));
         }
 
         /**

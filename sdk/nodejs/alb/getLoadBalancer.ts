@@ -71,6 +71,10 @@ export interface GetLoadBalancerResult {
      */
     readonly globalAccelerator: outputs.alb.GetLoadBalancerGlobalAccelerator;
     /**
+     * Health check log information in the ALB instance
+     */
+    readonly healthLog: outputs.alb.GetLoadBalancerHealthLog;
+    /**
      * Uniquely identifies the resource.
      */
     readonly id: string;
@@ -130,6 +134,10 @@ export interface GetLoadBalancerResult {
      * List of tags bound to the instance, used for categorization and billing.
      */
     readonly tags: outputs.alb.GetLoadBalancerTag[];
+    /**
+     * Access log information in the ALB instance
+     */
+    readonly tlsAccessLog: outputs.alb.GetLoadBalancerTlsAccessLog;
     /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */

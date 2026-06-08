@@ -32,33 +32,33 @@ public final class ClbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-     * 
-     */
-    @Import(name="deliveryType")
-    private @Nullable Output<String> deliveryType;
-
-    /**
-     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-     * 
-     */
-    public Optional<Output<String>> deliveryType() {
-        return Optional.ofNullable(this.deliveryType);
-    }
-
-    /**
-     * Enable access log (Layer 7) delivery to object storage TOS
+     * Enable access log TOS feature?
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return Enable access log (Layer 7) delivery to object storage TOS
+     * @return Enable access log TOS feature?
      * 
      */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
+    }
+
+    /**
+     * Enable access log TLS feature?
+     * 
+     */
+    @Import(name="tlsEnabled")
+    private @Nullable Output<Boolean> tlsEnabled;
+
+    /**
+     * @return Enable access log TLS feature?
+     * 
+     */
+    public Optional<Output<Boolean>> tlsEnabled() {
+        return Optional.ofNullable(this.tlsEnabled);
     }
 
     /**
@@ -95,8 +95,8 @@ public final class ClbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
 
     private ClbAccessLogArgs(ClbAccessLogArgs $) {
         this.bucketName = $.bucketName;
-        this.deliveryType = $.deliveryType;
         this.enabled = $.enabled;
+        this.tlsEnabled = $.tlsEnabled;
         this.tlsProjectId = $.tlsProjectId;
         this.tlsTopicId = $.tlsTopicId;
     }
@@ -141,28 +141,7 @@ public final class ClbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deliveryType Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-         * 
-         * @return builder
-         * 
-         */
-        public Builder deliveryType(@Nullable Output<String> deliveryType) {
-            $.deliveryType = deliveryType;
-            return this;
-        }
-
-        /**
-         * @param deliveryType Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-         * 
-         * @return builder
-         * 
-         */
-        public Builder deliveryType(String deliveryType) {
-            return deliveryType(Output.of(deliveryType));
-        }
-
-        /**
-         * @param enabled Enable access log (Layer 7) delivery to object storage TOS
+         * @param enabled Enable access log TOS feature?
          * 
          * @return builder
          * 
@@ -173,13 +152,34 @@ public final class ClbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled Enable access log (Layer 7) delivery to object storage TOS
+         * @param enabled Enable access log TOS feature?
          * 
          * @return builder
          * 
          */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
+        }
+
+        /**
+         * @param tlsEnabled Enable access log TLS feature?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsEnabled(@Nullable Output<Boolean> tlsEnabled) {
+            $.tlsEnabled = tlsEnabled;
+            return this;
+        }
+
+        /**
+         * @param tlsEnabled Enable access log TLS feature?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsEnabled(Boolean tlsEnabled) {
+            return tlsEnabled(Output.of(tlsEnabled));
         }
 
         /**

@@ -8,11 +8,17 @@ import typing
 # Export this package's modules as members:
 from .acl import *
 from .certificate import *
+from .check_log_project import *
+from .check_log_topic import *
 from .clb import *
 from .get_acl import *
 from .get_acls import *
 from .get_certificate import *
 from .get_certificates import *
+from .get_check_log_project import *
+from .get_check_log_projects import *
+from .get_check_log_topic import *
+from .get_check_log_topics import *
 from .get_clb import *
 from .get_clbs import *
 from .get_listener import *

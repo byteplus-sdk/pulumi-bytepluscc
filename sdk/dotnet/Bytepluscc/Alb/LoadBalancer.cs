@@ -83,6 +83,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<Outputs.LoadBalancerGlobalAccelerator> GlobalAccelerator { get; private set; } = null!;
 
         /// <summary>
+        /// Health check log information in the ALB instance
+        /// </summary>
+        [Output("healthLog")]
+        public Output<Outputs.LoadBalancerHealthLog> HealthLog { get; private set; } = null!;
+
+        /// <summary>
         /// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         /// </summary>
         [Output("ipv6BandwidthPackageId")]
@@ -162,6 +168,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 
         [Output("tags")]
         public Output<ImmutableArray<Outputs.LoadBalancerTag>> Tags { get; private set; } = null!;
+
+        /// <summary>
+        /// Access log information in the ALB instance
+        /// </summary>
+        [Output("tlsAccessLog")]
+        public Output<Outputs.LoadBalancerTlsAccessLog> TlsAccessLog { get; private set; } = null!;
 
         /// <summary>
         /// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
@@ -286,6 +298,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<Inputs.LoadBalancerGlobalAcceleratorArgs>? GlobalAccelerator { get; set; }
 
         /// <summary>
+        /// Health check log information in the ALB instance
+        /// </summary>
+        [Input("healthLog")]
+        public Input<Inputs.LoadBalancerHealthLogArgs>? HealthLog { get; set; }
+
+        /// <summary>
         /// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         /// </summary>
         [Input("ipv6BandwidthPackageId")]
@@ -346,6 +364,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             get => _tags ?? (_tags = new InputList<Inputs.LoadBalancerTagArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Access log information in the ALB instance
+        /// </summary>
+        [Input("tlsAccessLog")]
+        public Input<Inputs.LoadBalancerTlsAccessLogArgs>? TlsAccessLog { get; set; }
 
         /// <summary>
         /// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
@@ -454,6 +478,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<Inputs.LoadBalancerGlobalAcceleratorGetArgs>? GlobalAccelerator { get; set; }
 
         /// <summary>
+        /// Health check log information in the ALB instance
+        /// </summary>
+        [Input("healthLog")]
+        public Input<Inputs.LoadBalancerHealthLogGetArgs>? HealthLog { get; set; }
+
+        /// <summary>
         /// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         /// </summary>
         [Input("ipv6BandwidthPackageId")]
@@ -538,6 +568,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             get => _tags ?? (_tags = new InputList<Inputs.LoadBalancerTagGetArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Access log information in the ALB instance
+        /// </summary>
+        [Input("tlsAccessLog")]
+        public Input<Inputs.LoadBalancerTlsAccessLogGetArgs>? TlsAccessLog { get; set; }
 
         /// <summary>
         /// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.

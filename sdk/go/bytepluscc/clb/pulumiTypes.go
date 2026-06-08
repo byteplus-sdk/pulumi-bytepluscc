@@ -467,10 +467,10 @@ func (o CertificateTagArrayOutput) Index(i pulumi.IntInput) CertificateTagOutput
 type ClbAccessLog struct {
 	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName *string `pulumi:"bucketName"`
-	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-	DeliveryType *string `pulumi:"deliveryType"`
-	// Enable access log (Layer 7) delivery to object storage TOS
+	// Enable access log TOS feature?
 	Enabled *bool `pulumi:"enabled"`
+	// Enable access log TLS feature?
+	TlsEnabled *bool `pulumi:"tlsEnabled"`
 	// Log project
 	TlsProjectId *string `pulumi:"tlsProjectId"`
 	// Log topic
@@ -491,10 +491,10 @@ type ClbAccessLogInput interface {
 type ClbAccessLogArgs struct {
 	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName pulumi.StringPtrInput `pulumi:"bucketName"`
-	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-	DeliveryType pulumi.StringPtrInput `pulumi:"deliveryType"`
-	// Enable access log (Layer 7) delivery to object storage TOS
+	// Enable access log TOS feature?
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// Enable access log TLS feature?
+	TlsEnabled pulumi.BoolPtrInput `pulumi:"tlsEnabled"`
 	// Log project
 	TlsProjectId pulumi.StringPtrInput `pulumi:"tlsProjectId"`
 	// Log topic
@@ -583,14 +583,14 @@ func (o ClbAccessLogOutput) BucketName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *string { return v.BucketName }).(pulumi.StringPtrOutput)
 }
 
-// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-func (o ClbAccessLogOutput) DeliveryType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ClbAccessLog) *string { return v.DeliveryType }).(pulumi.StringPtrOutput)
-}
-
-// Enable access log (Layer 7) delivery to object storage TOS
+// Enable access log TOS feature?
 func (o ClbAccessLogOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Enable access log TLS feature?
+func (o ClbAccessLogOutput) TlsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ClbAccessLog) *bool { return v.TlsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Log project
@@ -637,23 +637,23 @@ func (o ClbAccessLogPtrOutput) BucketName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-func (o ClbAccessLogPtrOutput) DeliveryType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ClbAccessLog) *string {
-		if v == nil {
-			return nil
-		}
-		return v.DeliveryType
-	}).(pulumi.StringPtrOutput)
-}
-
-// Enable access log (Layer 7) delivery to object storage TOS
+// Enable access log TOS feature?
 func (o ClbAccessLogPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClbAccessLog) *bool {
 		if v == nil {
 			return nil
 		}
 		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable access log TLS feature?
+func (o ClbAccessLogPtrOutput) TlsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClbAccessLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TlsEnabled
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -4917,10 +4917,10 @@ func (o GetCertificateTagArrayOutput) Index(i pulumi.IntInput) GetCertificateTag
 type GetClbAccessLog struct {
 	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName string `pulumi:"bucketName"`
-	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-	DeliveryType string `pulumi:"deliveryType"`
-	// Enable access log (Layer 7) delivery to object storage TOS
+	// Enable access log TOS feature?
 	Enabled bool `pulumi:"enabled"`
+	// Enable access log TLS feature?
+	TlsEnabled bool `pulumi:"tlsEnabled"`
 	// Log project
 	TlsProjectId string `pulumi:"tlsProjectId"`
 	// Log topic
@@ -4941,10 +4941,10 @@ type GetClbAccessLogInput interface {
 type GetClbAccessLogArgs struct {
 	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName pulumi.StringInput `pulumi:"bucketName"`
-	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-	DeliveryType pulumi.StringInput `pulumi:"deliveryType"`
-	// Enable access log (Layer 7) delivery to object storage TOS
+	// Enable access log TOS feature?
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Enable access log TLS feature?
+	TlsEnabled pulumi.BoolInput `pulumi:"tlsEnabled"`
 	// Log project
 	TlsProjectId pulumi.StringInput `pulumi:"tlsProjectId"`
 	// Log topic
@@ -4982,14 +4982,14 @@ func (o GetClbAccessLogOutput) BucketName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbAccessLog) string { return v.BucketName }).(pulumi.StringOutput)
 }
 
-// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-func (o GetClbAccessLogOutput) DeliveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClbAccessLog) string { return v.DeliveryType }).(pulumi.StringOutput)
-}
-
-// Enable access log (Layer 7) delivery to object storage TOS
+// Enable access log TOS feature?
 func (o GetClbAccessLogOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClbAccessLog) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Enable access log TLS feature?
+func (o GetClbAccessLogOutput) TlsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClbAccessLog) bool { return v.TlsEnabled }).(pulumi.BoolOutput)
 }
 
 // Log project

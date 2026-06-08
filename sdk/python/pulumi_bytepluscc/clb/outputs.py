@@ -264,8 +264,8 @@ class ClbAccessLog(dict):
         suggest = None
         if key == "bucketName":
             suggest = "bucket_name"
-        elif key == "deliveryType":
-            suggest = "delivery_type"
+        elif key == "tlsEnabled":
+            suggest = "tls_enabled"
         elif key == "tlsProjectId":
             suggest = "tls_project_id"
         elif key == "tlsTopicId":
@@ -284,23 +284,23 @@ class ClbAccessLog(dict):
 
     def __init__(__self__, *,
                  bucket_name: Optional[builtins.str] = None,
-                 delivery_type: Optional[builtins.str] = None,
                  enabled: Optional[builtins.bool] = None,
+                 tls_enabled: Optional[builtins.bool] = None,
                  tls_project_id: Optional[builtins.str] = None,
                  tls_topic_id: Optional[builtins.str] = None):
         """
         :param builtins.str bucket_name: Name of the object storage bucket for storing Layer 7 access logs
-        :param builtins.str delivery_type: Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-        :param builtins.bool enabled: Enable access log (Layer 7) delivery to object storage TOS
+        :param builtins.bool enabled: Enable access log TOS feature?
+        :param builtins.bool tls_enabled: Enable access log TLS feature?
         :param builtins.str tls_project_id: Log project
         :param builtins.str tls_topic_id: Log topic
         """
         if bucket_name is not None:
             pulumi.set(__self__, "bucket_name", bucket_name)
-        if delivery_type is not None:
-            pulumi.set(__self__, "delivery_type", delivery_type)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if tls_enabled is not None:
+            pulumi.set(__self__, "tls_enabled", tls_enabled)
         if tls_project_id is not None:
             pulumi.set(__self__, "tls_project_id", tls_project_id)
         if tls_topic_id is not None:
@@ -315,20 +315,20 @@ class ClbAccessLog(dict):
         return pulumi.get(self, "bucket_name")
 
     @property
-    @pulumi.getter(name="deliveryType")
-    def delivery_type(self) -> Optional[builtins.str]:
-        """
-        Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-        """
-        return pulumi.get(self, "delivery_type")
-
-    @property
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        Enable access log (Layer 7) delivery to object storage TOS
+        Enable access log TOS feature?
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="tlsEnabled")
+    def tls_enabled(self) -> Optional[builtins.bool]:
+        """
+        Enable access log TLS feature?
+        """
+        return pulumi.get(self, "tls_enabled")
 
     @property
     @pulumi.getter(name="tlsProjectId")
@@ -2286,20 +2286,20 @@ class GetCertificateTagResult(dict):
 class GetClbAccessLogResult(dict):
     def __init__(__self__, *,
                  bucket_name: builtins.str,
-                 delivery_type: builtins.str,
                  enabled: builtins.bool,
+                 tls_enabled: builtins.bool,
                  tls_project_id: builtins.str,
                  tls_topic_id: builtins.str):
         """
         :param builtins.str bucket_name: Name of the object storage bucket for storing Layer 7 access logs
-        :param builtins.str delivery_type: Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-        :param builtins.bool enabled: Enable access log (Layer 7) delivery to object storage TOS
+        :param builtins.bool enabled: Enable access log TOS feature?
+        :param builtins.bool tls_enabled: Enable access log TLS feature?
         :param builtins.str tls_project_id: Log project
         :param builtins.str tls_topic_id: Log topic
         """
         pulumi.set(__self__, "bucket_name", bucket_name)
-        pulumi.set(__self__, "delivery_type", delivery_type)
         pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "tls_enabled", tls_enabled)
         pulumi.set(__self__, "tls_project_id", tls_project_id)
         pulumi.set(__self__, "tls_topic_id", tls_topic_id)
 
@@ -2312,20 +2312,20 @@ class GetClbAccessLogResult(dict):
         return pulumi.get(self, "bucket_name")
 
     @property
-    @pulumi.getter(name="deliveryType")
-    def delivery_type(self) -> builtins.str:
-        """
-        Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-        """
-        return pulumi.get(self, "delivery_type")
-
-    @property
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        Enable access log (Layer 7) delivery to object storage TOS
+        Enable access log TOS feature?
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="tlsEnabled")
+    def tls_enabled(self) -> builtins.bool:
+        """
+        Enable access log TLS feature?
+        """
+        return pulumi.get(self, "tls_enabled")
 
     @property
     @pulumi.getter(name="tlsProjectId")

@@ -20,16 +20,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
         public Input<string>? BucketName { get; set; }
 
         /// <summary>
-        /// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-        /// </summary>
-        [Input("deliveryType")]
-        public Input<string>? DeliveryType { get; set; }
-
-        /// <summary>
-        /// Enable access log (Layer 7) delivery to object storage TOS
+        /// Enable access log TOS feature?
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
+
+        /// <summary>
+        /// Enable access log TLS feature?
+        /// </summary>
+        [Input("tlsEnabled")]
+        public Input<bool>? TlsEnabled { get; set; }
 
         /// <summary>
         /// Log project

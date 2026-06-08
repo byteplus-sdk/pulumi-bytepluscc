@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class GetContactGroupContactResult
     {
         /// <summary>
-        /// 联系人ID。
+        /// Contact ID
         /// </summary>
         public readonly string ContactId;
         /// <summary>
-        /// 联系人邮箱地址。
+        /// Contact email address
         /// </summary>
         public readonly string Email;
         /// <summary>
-        /// 联系人名称。
+        /// Contact name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 联系人手机号码。
+        /// Contact mobile number
         /// </summary>
         public readonly string Phone;
 

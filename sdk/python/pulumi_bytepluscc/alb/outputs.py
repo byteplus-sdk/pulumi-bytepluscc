@@ -29,8 +29,10 @@ __all__ = [
     'ListenerTag',
     'LoadBalancerEipBillingConfig',
     'LoadBalancerGlobalAccelerator',
+    'LoadBalancerHealthLog',
     'LoadBalancerIpv6EipBillingConfig',
     'LoadBalancerTag',
+    'LoadBalancerTlsAccessLog',
     'LoadBalancerZoneMapping',
     'RuleForwardGroupConfig',
     'RuleForwardGroupConfigServerGroupTuple',
@@ -68,8 +70,10 @@ __all__ = [
     'GetListenerTagResult',
     'GetLoadBalancerEipBillingConfigResult',
     'GetLoadBalancerGlobalAcceleratorResult',
+    'GetLoadBalancerHealthLogResult',
     'GetLoadBalancerIpv6EipBillingConfigResult',
     'GetLoadBalancerTagResult',
+    'GetLoadBalancerTlsAccessLogResult',
     'GetLoadBalancerZoneMappingResult',
     'GetLoadBalancerZoneMappingLoadBalancerAddressResult',
     'GetLoadBalancerZoneMappingLoadBalancerAddressEipResult',
@@ -714,6 +718,68 @@ class LoadBalancerGlobalAccelerator(dict):
 
 
 @pulumi.output_type
+class LoadBalancerHealthLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "projectId":
+            suggest = "project_id"
+        elif key == "topicId":
+            suggest = "topic_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LoadBalancerHealthLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LoadBalancerHealthLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LoadBalancerHealthLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: Optional[builtins.bool] = None,
+                 project_id: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enabled: Whether to enable access log
+        :param builtins.str project_id: TLS project ID bound to access log
+        :param builtins.str topic_id: TLS subject ID bound to access log
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[builtins.bool]:
+        """
+        Whether to enable access log
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[builtins.str]:
+        """
+        TLS project ID bound to access log
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        TLS subject ID bound to access log
+        """
+        return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
 class LoadBalancerIpv6EipBillingConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -802,6 +868,68 @@ class LoadBalancerTag(dict):
         Tag value used to identify the specific tag content.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class LoadBalancerTlsAccessLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "projectId":
+            suggest = "project_id"
+        elif key == "topicId":
+            suggest = "topic_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LoadBalancerTlsAccessLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LoadBalancerTlsAccessLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LoadBalancerTlsAccessLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: Optional[builtins.bool] = None,
+                 project_id: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enabled: Whether to enable access log
+        :param builtins.str project_id: TLS project ID bound to access log
+        :param builtins.str topic_id: TLS subject ID bound to access log
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[builtins.bool]:
+        """
+        Whether to enable access log
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[builtins.str]:
+        """
+        TLS project ID bound to access log
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        TLS subject ID bound to access log
+        """
+        return pulumi.get(self, "topic_id")
 
 
 @pulumi.output_type
@@ -2705,6 +2833,46 @@ class GetLoadBalancerGlobalAcceleratorResult(dict):
 
 
 @pulumi.output_type
+class GetLoadBalancerHealthLogResult(dict):
+    def __init__(__self__, *,
+                 enabled: builtins.bool,
+                 project_id: builtins.str,
+                 topic_id: builtins.str):
+        """
+        :param builtins.bool enabled: Whether to enable access log
+        :param builtins.str project_id: TLS project ID bound to access log
+        :param builtins.str topic_id: TLS subject ID bound to access log
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> builtins.bool:
+        """
+        Whether to enable access log
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        TLS project ID bound to access log
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        TLS subject ID bound to access log
+        """
+        return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
 class GetLoadBalancerIpv6EipBillingConfigResult(dict):
     def __init__(__self__, *,
                  bandwidth: builtins.int,
@@ -2771,6 +2939,46 @@ class GetLoadBalancerTagResult(dict):
         Tag value used to identify the specific tag content.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetLoadBalancerTlsAccessLogResult(dict):
+    def __init__(__self__, *,
+                 enabled: builtins.bool,
+                 project_id: builtins.str,
+                 topic_id: builtins.str):
+        """
+        :param builtins.bool enabled: Whether to enable access log
+        :param builtins.str project_id: TLS project ID bound to access log
+        :param builtins.str topic_id: TLS subject ID bound to access log
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> builtins.bool:
+        """
+        Whether to enable access log
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        TLS project ID bound to access log
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        TLS subject ID bound to access log
+        """
+        return pulumi.get(self, "topic_id")
 
 
 @pulumi.output_type

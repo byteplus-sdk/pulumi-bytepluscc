@@ -112,6 +112,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
+        [Output("replicationSlots")]
+        public Output<ImmutableArray<Outputs.InstanceReplicationSlot>> ReplicationSlots { get; private set; } = null!;
+
+        /// <summary>
+        /// Restore backup data to the current instance
+        /// </summary>
+        [Output("restoreToExistedInstance")]
+        public Output<Outputs.InstanceRestoreToExistedInstance> RestoreToExistedInstance { get; private set; } = null!;
+
         /// <summary>
         /// Data file space used by the primary node. Unit: Byte
         /// </summary>
@@ -284,6 +293,20 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
+        [Input("replicationSlots")]
+        private InputList<Inputs.InstanceReplicationSlotArgs>? _replicationSlots;
+        public InputList<Inputs.InstanceReplicationSlotArgs> ReplicationSlots
+        {
+            get => _replicationSlots ?? (_replicationSlots = new InputList<Inputs.InstanceReplicationSlotArgs>());
+            set => _replicationSlots = value;
+        }
+
+        /// <summary>
+        /// Restore backup data to the current instance
+        /// </summary>
+        [Input("restoreToExistedInstance")]
+        public Input<Inputs.InstanceRestoreToExistedInstanceArgs>? RestoreToExistedInstance { get; set; }
+
         /// <summary>
         /// Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
         /// </summary>
@@ -429,6 +452,20 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
+
+        [Input("replicationSlots")]
+        private InputList<Inputs.InstanceReplicationSlotGetArgs>? _replicationSlots;
+        public InputList<Inputs.InstanceReplicationSlotGetArgs> ReplicationSlots
+        {
+            get => _replicationSlots ?? (_replicationSlots = new InputList<Inputs.InstanceReplicationSlotGetArgs>());
+            set => _replicationSlots = value;
+        }
+
+        /// <summary>
+        /// Restore backup data to the current instance
+        /// </summary>
+        [Input("restoreToExistedInstance")]
+        public Input<Inputs.InstanceRestoreToExistedInstanceGetArgs>? RestoreToExistedInstance { get; set; }
 
         /// <summary>
         /// Data file space used by the primary node. Unit: Byte

@@ -71,7 +71,7 @@ class ContactGroupContact(dict):
     def __init__(__self__, *,
                  contact_id: Optional[builtins.str] = None):
         """
-        :param builtins.str contact_id: 联系人ID。
+        :param builtins.str contact_id: Contact ID
         """
         if contact_id is not None:
             pulumi.set(__self__, "contact_id", contact_id)
@@ -80,7 +80,7 @@ class ContactGroupContact(dict):
     @pulumi.getter(name="contactId")
     def contact_id(self) -> Optional[builtins.str]:
         """
-        联系人ID。
+        Contact ID
         """
         return pulumi.get(self, "contact_id")
 
@@ -775,10 +775,10 @@ class GetContactGroupContactResult(dict):
                  name: builtins.str,
                  phone: builtins.str):
         """
-        :param builtins.str contact_id: 联系人ID。
-        :param builtins.str email: 联系人邮箱地址。
-        :param builtins.str name: 联系人名称。
-        :param builtins.str phone: 联系人手机号码。
+        :param builtins.str contact_id: Contact ID
+        :param builtins.str email: Contact email address
+        :param builtins.str name: Contact name
+        :param builtins.str phone: Contact mobile number
         """
         pulumi.set(__self__, "contact_id", contact_id)
         pulumi.set(__self__, "email", email)
@@ -789,7 +789,7 @@ class GetContactGroupContactResult(dict):
     @pulumi.getter(name="contactId")
     def contact_id(self) -> builtins.str:
         """
-        联系人ID。
+        Contact ID
         """
         return pulumi.get(self, "contact_id")
 
@@ -797,7 +797,7 @@ class GetContactGroupContactResult(dict):
     @pulumi.getter
     def email(self) -> builtins.str:
         """
-        联系人邮箱地址。
+        Contact email address
         """
         return pulumi.get(self, "email")
 
@@ -805,7 +805,7 @@ class GetContactGroupContactResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        联系人名称。
+        Contact name
         """
         return pulumi.get(self, "name")
 
@@ -813,7 +813,7 @@ class GetContactGroupContactResult(dict):
     @pulumi.getter
     def phone(self) -> builtins.str:
         """
-        联系人手机号码。
+        Contact mobile number
         """
         return pulumi.get(self, "phone")
 

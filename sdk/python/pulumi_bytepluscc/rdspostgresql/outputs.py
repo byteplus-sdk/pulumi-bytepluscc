@@ -32,6 +32,9 @@ __all__ = [
     'InstanceMaintenanceWindow',
     'InstanceMaintenanceWindowDayOfWeekMaintenanceTime',
     'InstanceNodeInfo',
+    'InstanceReplicationSlot',
+    'InstanceRestoreToExistedInstance',
+    'InstanceRestoreToExistedInstanceDatabase',
     'InstanceTag',
     'ParameterTemplateTemplateParam',
     'GetAllowListAssociatedInstanceResult',
@@ -49,6 +52,9 @@ __all__ = [
     'GetInstanceMaintenanceWindowResult',
     'GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeResult',
     'GetInstanceNodeInfoResult',
+    'GetInstanceReplicationSlotResult',
+    'GetInstanceRestoreToExistedInstanceResult',
+    'GetInstanceRestoreToExistedInstanceDatabaseResult',
     'GetInstanceTagResult',
     'GetParameterTemplateTemplateParamResult',
 ]
@@ -1724,6 +1730,256 @@ class InstanceNodeInfo(dict):
 
 
 @pulumi.output_type
+class InstanceReplicationSlot(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "slotName":
+            suggest = "slot_name"
+        elif key == "slotStatus":
+            suggest = "slot_status"
+        elif key == "slotType":
+            suggest = "slot_type"
+        elif key == "walDelay":
+            suggest = "wal_delay"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceReplicationSlot. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceReplicationSlot.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceReplicationSlot.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 database: Optional[builtins.str] = None,
+                 ip_address: Optional[builtins.str] = None,
+                 plugin: Optional[builtins.str] = None,
+                 slot_name: Optional[builtins.str] = None,
+                 slot_status: Optional[builtins.str] = None,
+                 slot_type: Optional[builtins.str] = None,
+                 temporary: Optional[builtins.bool] = None,
+                 wal_delay: Optional[builtins.int] = None):
+        """
+        :param builtins.str database: Database associated with the slot
+        :param builtins.str ip_address: Connected client IP address
+        :param builtins.str plugin: Plugin used by the slot
+        :param builtins.str slot_name: Slot name
+        :param builtins.str slot_status: Slot status
+        :param builtins.str slot_type: Slot type
+        :param builtins.bool temporary: Whether it is a temporary slot
+        :param builtins.int wal_delay: WAL delay size
+        """
+        if database is not None:
+            pulumi.set(__self__, "database", database)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if plugin is not None:
+            pulumi.set(__self__, "plugin", plugin)
+        if slot_name is not None:
+            pulumi.set(__self__, "slot_name", slot_name)
+        if slot_status is not None:
+            pulumi.set(__self__, "slot_status", slot_status)
+        if slot_type is not None:
+            pulumi.set(__self__, "slot_type", slot_type)
+        if temporary is not None:
+            pulumi.set(__self__, "temporary", temporary)
+        if wal_delay is not None:
+            pulumi.set(__self__, "wal_delay", wal_delay)
+
+    @property
+    @pulumi.getter
+    def database(self) -> Optional[builtins.str]:
+        """
+        Database associated with the slot
+        """
+        return pulumi.get(self, "database")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[builtins.str]:
+        """
+        Connected client IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter
+    def plugin(self) -> Optional[builtins.str]:
+        """
+        Plugin used by the slot
+        """
+        return pulumi.get(self, "plugin")
+
+    @property
+    @pulumi.getter(name="slotName")
+    def slot_name(self) -> Optional[builtins.str]:
+        """
+        Slot name
+        """
+        return pulumi.get(self, "slot_name")
+
+    @property
+    @pulumi.getter(name="slotStatus")
+    def slot_status(self) -> Optional[builtins.str]:
+        """
+        Slot status
+        """
+        return pulumi.get(self, "slot_status")
+
+    @property
+    @pulumi.getter(name="slotType")
+    def slot_type(self) -> Optional[builtins.str]:
+        """
+        Slot type
+        """
+        return pulumi.get(self, "slot_type")
+
+    @property
+    @pulumi.getter
+    def temporary(self) -> Optional[builtins.bool]:
+        """
+        Whether it is a temporary slot
+        """
+        return pulumi.get(self, "temporary")
+
+    @property
+    @pulumi.getter(name="walDelay")
+    def wal_delay(self) -> Optional[builtins.int]:
+        """
+        WAL delay size
+        """
+        return pulumi.get(self, "wal_delay")
+
+
+@pulumi.output_type
+class InstanceRestoreToExistedInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupId":
+            suggest = "backup_id"
+        elif key == "sourceDbInstanceId":
+            suggest = "source_db_instance_id"
+        elif key == "targetDbInstanceAccount":
+            suggest = "target_db_instance_account"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceRestoreToExistedInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceRestoreToExistedInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceRestoreToExistedInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_id: Optional[builtins.str] = None,
+                 databases: Optional[Sequence['outputs.InstanceRestoreToExistedInstanceDatabase']] = None,
+                 source_db_instance_id: Optional[builtins.str] = None,
+                 target_db_instance_account: Optional[builtins.str] = None):
+        """
+        :param builtins.str backup_id: Backup set ID
+        :param builtins.str source_db_instance_id: Source instance ID
+        :param builtins.str target_db_instance_account: Database account for the target instance
+        """
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if databases is not None:
+            pulumi.set(__self__, "databases", databases)
+        if source_db_instance_id is not None:
+            pulumi.set(__self__, "source_db_instance_id", source_db_instance_id)
+        if target_db_instance_account is not None:
+            pulumi.set(__self__, "target_db_instance_account", target_db_instance_account)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[builtins.str]:
+        """
+        Backup set ID
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter
+    def databases(self) -> Optional[Sequence['outputs.InstanceRestoreToExistedInstanceDatabase']]:
+        return pulumi.get(self, "databases")
+
+    @property
+    @pulumi.getter(name="sourceDbInstanceId")
+    def source_db_instance_id(self) -> Optional[builtins.str]:
+        """
+        Source instance ID
+        """
+        return pulumi.get(self, "source_db_instance_id")
+
+    @property
+    @pulumi.getter(name="targetDbInstanceAccount")
+    def target_db_instance_account(self) -> Optional[builtins.str]:
+        """
+        Database account for the target instance
+        """
+        return pulumi.get(self, "target_db_instance_account")
+
+
+@pulumi.output_type
+class InstanceRestoreToExistedInstanceDatabase(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbName":
+            suggest = "db_name"
+        elif key == "newDbName":
+            suggest = "new_db_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceRestoreToExistedInstanceDatabase. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceRestoreToExistedInstanceDatabase.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceRestoreToExistedInstanceDatabase.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_name: Optional[builtins.str] = None,
+                 new_db_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str db_name: Source database name
+        :param builtins.str new_db_name: Name of the new database after restoration
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if new_db_name is not None:
+            pulumi.set(__self__, "new_db_name", new_db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[builtins.str]:
+        """
+        Source database name
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="newDbName")
+    def new_db_name(self) -> Optional[builtins.str]:
+        """
+        Name of the new database after restoration
+        """
+        return pulumi.get(self, "new_db_name")
+
+
+@pulumi.output_type
 class InstanceTag(dict):
     def __init__(__self__, *,
                  key: Optional[builtins.str] = None,
@@ -2999,6 +3255,181 @@ class GetInstanceNodeInfoResult(dict):
         Availability zone of the node
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetInstanceReplicationSlotResult(dict):
+    def __init__(__self__, *,
+                 database: builtins.str,
+                 ip_address: builtins.str,
+                 plugin: builtins.str,
+                 slot_name: builtins.str,
+                 slot_status: builtins.str,
+                 slot_type: builtins.str,
+                 temporary: builtins.bool,
+                 wal_delay: builtins.int):
+        """
+        :param builtins.str database: Database associated with the slot
+        :param builtins.str ip_address: Connected client IP address
+        :param builtins.str plugin: Plugin used by the slot
+        :param builtins.str slot_name: Slot name
+        :param builtins.str slot_status: Slot status
+        :param builtins.str slot_type: Slot type
+        :param builtins.bool temporary: Whether it is a temporary slot
+        :param builtins.int wal_delay: WAL delay size
+        """
+        pulumi.set(__self__, "database", database)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "plugin", plugin)
+        pulumi.set(__self__, "slot_name", slot_name)
+        pulumi.set(__self__, "slot_status", slot_status)
+        pulumi.set(__self__, "slot_type", slot_type)
+        pulumi.set(__self__, "temporary", temporary)
+        pulumi.set(__self__, "wal_delay", wal_delay)
+
+    @property
+    @pulumi.getter
+    def database(self) -> builtins.str:
+        """
+        Database associated with the slot
+        """
+        return pulumi.get(self, "database")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        Connected client IP address
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter
+    def plugin(self) -> builtins.str:
+        """
+        Plugin used by the slot
+        """
+        return pulumi.get(self, "plugin")
+
+    @property
+    @pulumi.getter(name="slotName")
+    def slot_name(self) -> builtins.str:
+        """
+        Slot name
+        """
+        return pulumi.get(self, "slot_name")
+
+    @property
+    @pulumi.getter(name="slotStatus")
+    def slot_status(self) -> builtins.str:
+        """
+        Slot status
+        """
+        return pulumi.get(self, "slot_status")
+
+    @property
+    @pulumi.getter(name="slotType")
+    def slot_type(self) -> builtins.str:
+        """
+        Slot type
+        """
+        return pulumi.get(self, "slot_type")
+
+    @property
+    @pulumi.getter
+    def temporary(self) -> builtins.bool:
+        """
+        Whether it is a temporary slot
+        """
+        return pulumi.get(self, "temporary")
+
+    @property
+    @pulumi.getter(name="walDelay")
+    def wal_delay(self) -> builtins.int:
+        """
+        WAL delay size
+        """
+        return pulumi.get(self, "wal_delay")
+
+
+@pulumi.output_type
+class GetInstanceRestoreToExistedInstanceResult(dict):
+    def __init__(__self__, *,
+                 backup_id: builtins.str,
+                 databases: Sequence['outputs.GetInstanceRestoreToExistedInstanceDatabaseResult'],
+                 source_db_instance_id: builtins.str,
+                 target_db_instance_account: builtins.str):
+        """
+        :param builtins.str backup_id: Backup set ID
+        :param Sequence['GetInstanceRestoreToExistedInstanceDatabaseArgs'] databases: List of databases to restore
+        :param builtins.str source_db_instance_id: Source instance ID
+        :param builtins.str target_db_instance_account: Database account for the target instance
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "databases", databases)
+        pulumi.set(__self__, "source_db_instance_id", source_db_instance_id)
+        pulumi.set(__self__, "target_db_instance_account", target_db_instance_account)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> builtins.str:
+        """
+        Backup set ID
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter
+    def databases(self) -> Sequence['outputs.GetInstanceRestoreToExistedInstanceDatabaseResult']:
+        """
+        List of databases to restore
+        """
+        return pulumi.get(self, "databases")
+
+    @property
+    @pulumi.getter(name="sourceDbInstanceId")
+    def source_db_instance_id(self) -> builtins.str:
+        """
+        Source instance ID
+        """
+        return pulumi.get(self, "source_db_instance_id")
+
+    @property
+    @pulumi.getter(name="targetDbInstanceAccount")
+    def target_db_instance_account(self) -> builtins.str:
+        """
+        Database account for the target instance
+        """
+        return pulumi.get(self, "target_db_instance_account")
+
+
+@pulumi.output_type
+class GetInstanceRestoreToExistedInstanceDatabaseResult(dict):
+    def __init__(__self__, *,
+                 db_name: builtins.str,
+                 new_db_name: builtins.str):
+        """
+        :param builtins.str db_name: Source database name
+        :param builtins.str new_db_name: Name of the new database after restoration
+        """
+        pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "new_db_name", new_db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> builtins.str:
+        """
+        Source database name
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="newDbName")
+    def new_db_name(self) -> builtins.str:
+        """
+        Name of the new database after restoration
+        """
+        return pulumi.get(self, "new_db_name")
 
 
 @pulumi.output_type

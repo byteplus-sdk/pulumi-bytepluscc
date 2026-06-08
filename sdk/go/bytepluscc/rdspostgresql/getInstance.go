@@ -64,6 +64,10 @@ type LookupInstanceResult struct {
 	NodeSpec string `pulumi:"nodeSpec"`
 	// Project. Default value: default project
 	ProjectName string `pulumi:"projectName"`
+	// Replication slot list for the instance
+	ReplicationSlots []GetInstanceReplicationSlot `pulumi:"replicationSlots"`
+	// Restore backup data to the current instance
+	RestoreToExistedInstance GetInstanceRestoreToExistedInstance `pulumi:"restoreToExistedInstance"`
 	// Data file space used by the primary node. Unit: Byte
 	StorageDataUse float64 `pulumi:"storageDataUse"`
 	// Log file space used by the primary node. Unit: Byte
@@ -209,6 +213,16 @@ func (o LookupInstanceResultOutput) NodeSpec() pulumi.StringOutput {
 // Project. Default value: default project
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Replication slot list for the instance
+func (o LookupInstanceResultOutput) ReplicationSlots() GetInstanceReplicationSlotArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceReplicationSlot { return v.ReplicationSlots }).(GetInstanceReplicationSlotArrayOutput)
+}
+
+// Restore backup data to the current instance
+func (o LookupInstanceResultOutput) RestoreToExistedInstance() GetInstanceRestoreToExistedInstanceOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceRestoreToExistedInstance { return v.RestoreToExistedInstance }).(GetInstanceRestoreToExistedInstanceOutput)
 }
 
 // Data file space used by the primary node. Unit: Byte

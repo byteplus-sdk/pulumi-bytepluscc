@@ -396,6 +396,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/checkLogProject",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/checkLogProject:CheckLogProject": "CheckLogProject"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "clb/checkLogTopic",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/checkLogTopic:CheckLogTopic": "CheckLogTopic"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/clb",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -1336,6 +1352,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/peerAttachment:PeerAttachment": "PeerAttachment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/routeTablePropagation",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation": "RouteTablePropagation"
   }
  },
  {

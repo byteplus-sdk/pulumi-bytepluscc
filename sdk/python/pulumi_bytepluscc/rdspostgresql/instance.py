@@ -32,6 +32,8 @@ class InstanceArgs:
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  maintenance_window: Optional[pulumi.Input['InstanceMaintenanceWindowArgs']] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 replication_slots: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]] = None,
+                 restore_to_existed_instance: Optional[pulumi.Input['InstanceRestoreToExistedInstanceArgs']] = None,
                  storage_space: Optional[pulumi.Input[builtins.float]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
@@ -45,6 +47,7 @@ class InstanceArgs:
         :param pulumi.Input[builtins.str] instance_name: Instance name
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Instance maintenance window
         :param pulumi.Input[builtins.str] project_name: Project. Default value: default project
+        :param pulumi.Input['InstanceRestoreToExistedInstanceArgs'] restore_to_existed_instance: Restore backup data to the current instance
         :param pulumi.Input[builtins.float] storage_space: Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
         """
         pulumi.set(__self__, "charge_detail", charge_detail)
@@ -61,6 +64,10 @@ class InstanceArgs:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if replication_slots is not None:
+            pulumi.set(__self__, "replication_slots", replication_slots)
+        if restore_to_existed_instance is not None:
+            pulumi.set(__self__, "restore_to_existed_instance", restore_to_existed_instance)
         if storage_space is not None:
             pulumi.set(__self__, "storage_space", storage_space)
         if tags is not None:
@@ -184,6 +191,27 @@ class InstanceArgs:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="replicationSlots")
+    def replication_slots(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]]:
+        return pulumi.get(self, "replication_slots")
+
+    @replication_slots.setter
+    def replication_slots(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]]):
+        pulumi.set(self, "replication_slots", value)
+
+    @property
+    @pulumi.getter(name="restoreToExistedInstance")
+    def restore_to_existed_instance(self) -> Optional[pulumi.Input['InstanceRestoreToExistedInstanceArgs']]:
+        """
+        Restore backup data to the current instance
+        """
+        return pulumi.get(self, "restore_to_existed_instance")
+
+    @restore_to_existed_instance.setter
+    def restore_to_existed_instance(self, value: Optional[pulumi.Input['InstanceRestoreToExistedInstanceArgs']]):
+        pulumi.set(self, "restore_to_existed_instance", value)
+
+    @property
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> Optional[pulumi.Input[builtins.float]]:
         """
@@ -224,6 +252,8 @@ class _InstanceState:
                  node_number: Optional[pulumi.Input[builtins.float]] = None,
                  node_spec: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 replication_slots: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]] = None,
+                 restore_to_existed_instance: Optional[pulumi.Input['InstanceRestoreToExistedInstanceArgs']] = None,
                  storage_data_use: Optional[pulumi.Input[builtins.float]] = None,
                  storage_log_use: Optional[pulumi.Input[builtins.float]] = None,
                  storage_space: Optional[pulumi.Input[builtins.float]] = None,
@@ -253,6 +283,7 @@ class _InstanceState:
         :param pulumi.Input[builtins.float] node_number: Number of nodes
         :param pulumi.Input[builtins.str] node_spec: Primary node specification
         :param pulumi.Input[builtins.str] project_name: Project. Default value: default project
+        :param pulumi.Input['InstanceRestoreToExistedInstanceArgs'] restore_to_existed_instance: Restore backup data to the current instance
         :param pulumi.Input[builtins.float] storage_data_use: Data file space used by the primary node. Unit: Byte
         :param pulumi.Input[builtins.float] storage_log_use: Log file space used by the primary node. Unit: Byte
         :param pulumi.Input[builtins.float] storage_space: Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
@@ -298,6 +329,10 @@ class _InstanceState:
             pulumi.set(__self__, "node_spec", node_spec)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if replication_slots is not None:
+            pulumi.set(__self__, "replication_slots", replication_slots)
+        if restore_to_existed_instance is not None:
+            pulumi.set(__self__, "restore_to_existed_instance", restore_to_existed_instance)
         if storage_data_use is not None:
             pulumi.set(__self__, "storage_data_use", storage_data_use)
         if storage_log_use is not None:
@@ -512,6 +547,27 @@ class _InstanceState:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="replicationSlots")
+    def replication_slots(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]]:
+        return pulumi.get(self, "replication_slots")
+
+    @replication_slots.setter
+    def replication_slots(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]]):
+        pulumi.set(self, "replication_slots", value)
+
+    @property
+    @pulumi.getter(name="restoreToExistedInstance")
+    def restore_to_existed_instance(self) -> Optional[pulumi.Input['InstanceRestoreToExistedInstanceArgs']]:
+        """
+        Restore backup data to the current instance
+        """
+        return pulumi.get(self, "restore_to_existed_instance")
+
+    @restore_to_existed_instance.setter
+    def restore_to_existed_instance(self, value: Optional[pulumi.Input['InstanceRestoreToExistedInstanceArgs']]):
+        pulumi.set(self, "restore_to_existed_instance", value)
+
+    @property
     @pulumi.getter(name="storageDataUse")
     def storage_data_use(self) -> Optional[pulumi.Input[builtins.float]]:
         """
@@ -678,6 +734,8 @@ class Instance(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 replication_slots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceReplicationSlotArgs', 'InstanceReplicationSlotArgsDict']]]]] = None,
+                 restore_to_existed_instance: Optional[pulumi.Input[Union['InstanceRestoreToExistedInstanceArgs', 'InstanceRestoreToExistedInstanceArgsDict']]] = None,
                  storage_space: Optional[pulumi.Input[builtins.float]] = None,
                  storage_type: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -701,6 +759,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] instance_name: Instance name
         :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Instance maintenance window
         :param pulumi.Input[builtins.str] project_name: Project. Default value: default project
+        :param pulumi.Input[Union['InstanceRestoreToExistedInstanceArgs', 'InstanceRestoreToExistedInstanceArgsDict']] restore_to_existed_instance: Restore backup data to the current instance
         :param pulumi.Input[builtins.float] storage_space: Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
         :param pulumi.Input[builtins.str] storage_type: Instance storage type, fixed value LocalSSD (local SSD disk)
         :param pulumi.Input[builtins.str] subnet_id: Subnet ID
@@ -743,6 +802,8 @@ class Instance(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeInfoArgs', 'InstanceNodeInfoArgsDict']]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 replication_slots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceReplicationSlotArgs', 'InstanceReplicationSlotArgsDict']]]]] = None,
+                 restore_to_existed_instance: Optional[pulumi.Input[Union['InstanceRestoreToExistedInstanceArgs', 'InstanceRestoreToExistedInstanceArgsDict']]] = None,
                  storage_space: Optional[pulumi.Input[builtins.float]] = None,
                  storage_type: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -770,6 +831,8 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'node_infos'")
             __props__.__dict__["node_infos"] = node_infos
             __props__.__dict__["project_name"] = project_name
+            __props__.__dict__["replication_slots"] = replication_slots
+            __props__.__dict__["restore_to_existed_instance"] = restore_to_existed_instance
             __props__.__dict__["storage_space"] = storage_space
             if storage_type is None and not opts.urn:
                 raise TypeError("Missing required property 'storage_type'")
@@ -824,6 +887,8 @@ class Instance(pulumi.CustomResource):
             node_number: Optional[pulumi.Input[builtins.float]] = None,
             node_spec: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
+            replication_slots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceReplicationSlotArgs', 'InstanceReplicationSlotArgsDict']]]]] = None,
+            restore_to_existed_instance: Optional[pulumi.Input[Union['InstanceRestoreToExistedInstanceArgs', 'InstanceRestoreToExistedInstanceArgsDict']]] = None,
             storage_data_use: Optional[pulumi.Input[builtins.float]] = None,
             storage_log_use: Optional[pulumi.Input[builtins.float]] = None,
             storage_space: Optional[pulumi.Input[builtins.float]] = None,
@@ -858,6 +923,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.float] node_number: Number of nodes
         :param pulumi.Input[builtins.str] node_spec: Primary node specification
         :param pulumi.Input[builtins.str] project_name: Project. Default value: default project
+        :param pulumi.Input[Union['InstanceRestoreToExistedInstanceArgs', 'InstanceRestoreToExistedInstanceArgsDict']] restore_to_existed_instance: Restore backup data to the current instance
         :param pulumi.Input[builtins.float] storage_data_use: Data file space used by the primary node. Unit: Byte
         :param pulumi.Input[builtins.float] storage_log_use: Log file space used by the primary node. Unit: Byte
         :param pulumi.Input[builtins.float] storage_space: Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
@@ -891,6 +957,8 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["node_number"] = node_number
         __props__.__dict__["node_spec"] = node_spec
         __props__.__dict__["project_name"] = project_name
+        __props__.__dict__["replication_slots"] = replication_slots
+        __props__.__dict__["restore_to_existed_instance"] = restore_to_existed_instance
         __props__.__dict__["storage_data_use"] = storage_data_use
         __props__.__dict__["storage_log_use"] = storage_log_use
         __props__.__dict__["storage_space"] = storage_space
@@ -1027,6 +1095,19 @@ class Instance(pulumi.CustomResource):
         Project. Default value: default project
         """
         return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter(name="replicationSlots")
+    def replication_slots(self) -> pulumi.Output[Sequence['outputs.InstanceReplicationSlot']]:
+        return pulumi.get(self, "replication_slots")
+
+    @property
+    @pulumi.getter(name="restoreToExistedInstance")
+    def restore_to_existed_instance(self) -> pulumi.Output['outputs.InstanceRestoreToExistedInstance']:
+        """
+        Restore backup data to the current instance
+        """
+        return pulumi.get(self, "restore_to_existed_instance")
 
     @property
     @pulumi.getter(name="storageDataUse")

@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, charge_detail=None, create_time=None, data_sync_mode=None, db_engine_version=None, endpoints=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_window=None, memory=None, node_infos=None, node_number=None, node_spec=None, project_name=None, storage_data_use=None, storage_log_use=None, storage_space=None, storage_temp_use=None, storage_type=None, storage_use=None, storage_wal_use=None, subnet_id=None, tags=None, update_time=None, vcpu=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, allow_list_ids=None, charge_detail=None, create_time=None, data_sync_mode=None, db_engine_version=None, endpoints=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_window=None, memory=None, node_infos=None, node_number=None, node_spec=None, project_name=None, replication_slots=None, restore_to_existed_instance=None, storage_data_use=None, storage_log_use=None, storage_space=None, storage_temp_use=None, storage_type=None, storage_use=None, storage_wal_use=None, subnet_id=None, tags=None, update_time=None, vcpu=None, vpc_id=None, zone_id=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -80,6 +80,12 @@ class GetInstanceResult:
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
+        if replication_slots and not isinstance(replication_slots, list):
+            raise TypeError("Expected argument 'replication_slots' to be a list")
+        pulumi.set(__self__, "replication_slots", replication_slots)
+        if restore_to_existed_instance and not isinstance(restore_to_existed_instance, dict):
+            raise TypeError("Expected argument 'restore_to_existed_instance' to be a dict")
+        pulumi.set(__self__, "restore_to_existed_instance", restore_to_existed_instance)
         if storage_data_use and not isinstance(storage_data_use, float):
             raise TypeError("Expected argument 'storage_data_use' to be a float")
         pulumi.set(__self__, "storage_data_use", storage_data_use)
@@ -257,6 +263,22 @@ class GetInstanceResult:
         return pulumi.get(self, "project_name")
 
     @property
+    @pulumi.getter(name="replicationSlots")
+    def replication_slots(self) -> Sequence['outputs.GetInstanceReplicationSlotResult']:
+        """
+        Replication slot list for the instance
+        """
+        return pulumi.get(self, "replication_slots")
+
+    @property
+    @pulumi.getter(name="restoreToExistedInstance")
+    def restore_to_existed_instance(self) -> 'outputs.GetInstanceRestoreToExistedInstanceResult':
+        """
+        Restore backup data to the current instance
+        """
+        return pulumi.get(self, "restore_to_existed_instance")
+
+    @property
     @pulumi.getter(name="storageDataUse")
     def storage_data_use(self) -> builtins.float:
         """
@@ -384,6 +406,8 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             node_number=self.node_number,
             node_spec=self.node_spec,
             project_name=self.project_name,
+            replication_slots=self.replication_slots,
+            restore_to_existed_instance=self.restore_to_existed_instance,
             storage_data_use=self.storage_data_use,
             storage_log_use=self.storage_log_use,
             storage_space=self.storage_space,
@@ -430,6 +454,8 @@ def get_instance(id: Optional[builtins.str] = None,
         node_number=pulumi.get(__ret__, 'node_number'),
         node_spec=pulumi.get(__ret__, 'node_spec'),
         project_name=pulumi.get(__ret__, 'project_name'),
+        replication_slots=pulumi.get(__ret__, 'replication_slots'),
+        restore_to_existed_instance=pulumi.get(__ret__, 'restore_to_existed_instance'),
         storage_data_use=pulumi.get(__ret__, 'storage_data_use'),
         storage_log_use=pulumi.get(__ret__, 'storage_log_use'),
         storage_space=pulumi.get(__ret__, 'storage_space'),
@@ -473,6 +499,8 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         node_number=pulumi.get(__response__, 'node_number'),
         node_spec=pulumi.get(__response__, 'node_spec'),
         project_name=pulumi.get(__response__, 'project_name'),
+        replication_slots=pulumi.get(__response__, 'replication_slots'),
+        restore_to_existed_instance=pulumi.get(__response__, 'restore_to_existed_instance'),
         storage_data_use=pulumi.get(__response__, 'storage_data_use'),
         storage_log_use=pulumi.get(__response__, 'storage_log_use'),
         storage_space=pulumi.get(__response__, 'storage_space'),

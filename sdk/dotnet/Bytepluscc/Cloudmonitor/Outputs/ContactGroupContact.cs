@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class ContactGroupContact
     {
         /// <summary>
-        /// 联系人ID。
+        /// Contact ID
         /// </summary>
         public readonly string? ContactId;
 

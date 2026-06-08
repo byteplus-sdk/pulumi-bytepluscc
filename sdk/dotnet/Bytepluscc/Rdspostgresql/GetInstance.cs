@@ -133,6 +133,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
+        /// Replication slot list for the instance
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceReplicationSlotResult> ReplicationSlots;
+        /// <summary>
+        /// Restore backup data to the current instance
+        /// </summary>
+        public readonly Outputs.GetInstanceRestoreToExistedInstanceResult RestoreToExistedInstance;
+        /// <summary>
         /// Data file space used by the primary node. Unit: Byte
         /// </summary>
         public readonly double StorageDataUse;
@@ -221,6 +229,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
             string projectName,
 
+            ImmutableArray<Outputs.GetInstanceReplicationSlotResult> replicationSlots,
+
+            Outputs.GetInstanceRestoreToExistedInstanceResult restoreToExistedInstance,
+
             double storageDataUse,
 
             double storageLogUse,
@@ -264,6 +276,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             NodeNumber = nodeNumber;
             NodeSpec = nodeSpec;
             ProjectName = projectName;
+            ReplicationSlots = replicationSlots;
+            RestoreToExistedInstance = restoreToExistedInstance;
             StorageDataUse = storageDataUse;
             StorageLogUse = storageLogUse;
             StorageSpace = storageSpace;

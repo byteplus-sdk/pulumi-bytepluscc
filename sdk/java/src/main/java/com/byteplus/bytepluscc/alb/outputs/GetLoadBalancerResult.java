@@ -5,8 +5,10 @@ package com.byteplus.bytepluscc.alb.outputs;
 
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerEipBillingConfig;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerGlobalAccelerator;
+import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerHealthLog;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerIpv6EipBillingConfig;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerTag;
+import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerTlsAccessLog;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerZoneMapping;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -67,6 +69,11 @@ public final class GetLoadBalancerResult {
      * 
      */
     private GetLoadBalancerGlobalAccelerator globalAccelerator;
+    /**
+     * @return Health check log information in the ALB instance
+     * 
+     */
+    private GetLoadBalancerHealthLog healthLog;
     /**
      * @return Uniquely identifies the resource.
      * 
@@ -142,6 +149,11 @@ public final class GetLoadBalancerResult {
      * 
      */
     private List<GetLoadBalancerTag> tags;
+    /**
+     * @return Access log information in the ALB instance
+     * 
+     */
+    private GetLoadBalancerTlsAccessLog tlsAccessLog;
     /**
      * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
@@ -250,6 +262,13 @@ public final class GetLoadBalancerResult {
         return this.globalAccelerator;
     }
     /**
+     * @return Health check log information in the ALB instance
+     * 
+     */
+    public GetLoadBalancerHealthLog healthLog() {
+        return this.healthLog;
+    }
+    /**
      * @return Uniquely identifies the resource.
      * 
      */
@@ -355,6 +374,13 @@ public final class GetLoadBalancerResult {
         return this.tags;
     }
     /**
+     * @return Access log information in the ALB instance
+     * 
+     */
+    public GetLoadBalancerTlsAccessLog tlsAccessLog() {
+        return this.tlsAccessLog;
+    }
+    /**
      * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
@@ -423,6 +449,7 @@ public final class GetLoadBalancerResult {
         private String dnsName;
         private GetLoadBalancerEipBillingConfig eipBillingConfig;
         private GetLoadBalancerGlobalAccelerator globalAccelerator;
+        private GetLoadBalancerHealthLog healthLog;
         private String id;
         private String ipv6BandwidthPackageId;
         private GetLoadBalancerIpv6EipBillingConfig ipv6EipBillingConfig;
@@ -438,6 +465,7 @@ public final class GetLoadBalancerResult {
         private String proxyProtocolEnabled;
         private String status;
         private List<GetLoadBalancerTag> tags;
+        private GetLoadBalancerTlsAccessLog tlsAccessLog;
         private String type;
         private String updateTime;
         private String vpcId;
@@ -458,6 +486,7 @@ public final class GetLoadBalancerResult {
     	      this.dnsName = defaults.dnsName;
     	      this.eipBillingConfig = defaults.eipBillingConfig;
     	      this.globalAccelerator = defaults.globalAccelerator;
+    	      this.healthLog = defaults.healthLog;
     	      this.id = defaults.id;
     	      this.ipv6BandwidthPackageId = defaults.ipv6BandwidthPackageId;
     	      this.ipv6EipBillingConfig = defaults.ipv6EipBillingConfig;
@@ -473,6 +502,7 @@ public final class GetLoadBalancerResult {
     	      this.proxyProtocolEnabled = defaults.proxyProtocolEnabled;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
+    	      this.tlsAccessLog = defaults.tlsAccessLog;
     	      this.type = defaults.type;
     	      this.updateTime = defaults.updateTime;
     	      this.vpcId = defaults.vpcId;
@@ -560,6 +590,14 @@ public final class GetLoadBalancerResult {
               throw new MissingRequiredPropertyException("GetLoadBalancerResult", "globalAccelerator");
             }
             this.globalAccelerator = globalAccelerator;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder healthLog(GetLoadBalancerHealthLog healthLog) {
+            if (healthLog == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerResult", "healthLog");
+            }
+            this.healthLog = healthLog;
             return this;
         }
         @CustomType.Setter
@@ -686,6 +724,14 @@ public final class GetLoadBalancerResult {
             return tags(List.of(tags));
         }
         @CustomType.Setter
+        public Builder tlsAccessLog(GetLoadBalancerTlsAccessLog tlsAccessLog) {
+            if (tlsAccessLog == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerResult", "tlsAccessLog");
+            }
+            this.tlsAccessLog = tlsAccessLog;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancerResult", "type");
@@ -756,6 +802,7 @@ public final class GetLoadBalancerResult {
             _resultValue.dnsName = dnsName;
             _resultValue.eipBillingConfig = eipBillingConfig;
             _resultValue.globalAccelerator = globalAccelerator;
+            _resultValue.healthLog = healthLog;
             _resultValue.id = id;
             _resultValue.ipv6BandwidthPackageId = ipv6BandwidthPackageId;
             _resultValue.ipv6EipBillingConfig = ipv6EipBillingConfig;
@@ -771,6 +818,7 @@ public final class GetLoadBalancerResult {
             _resultValue.proxyProtocolEnabled = proxyProtocolEnabled;
             _resultValue.status = status;
             _resultValue.tags = tags;
+            _resultValue.tlsAccessLog = tlsAccessLog;
             _resultValue.type = type;
             _resultValue.updateTime = updateTime;
             _resultValue.vpcId = vpcId;

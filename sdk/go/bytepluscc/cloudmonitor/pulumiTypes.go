@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ContactGroupContact struct {
-	// 联系人ID。
+	// Contact ID
 	ContactId *string `pulumi:"contactId"`
 }
 
@@ -30,7 +30,7 @@ type ContactGroupContactInput interface {
 }
 
 type ContactGroupContactArgs struct {
-	// 联系人ID。
+	// Contact ID
 	ContactId pulumi.StringPtrInput `pulumi:"contactId"`
 }
 
@@ -85,7 +85,7 @@ func (o ContactGroupContactOutput) ToContactGroupContactOutputWithContext(ctx co
 	return o
 }
 
-// 联系人ID。
+// Contact ID
 func (o ContactGroupContactOutput) ContactId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContactGroupContact) *string { return v.ContactId }).(pulumi.StringPtrOutput)
 }
@@ -2054,13 +2054,13 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 }
 
 type GetContactGroupContact struct {
-	// 联系人ID。
+	// Contact ID
 	ContactId string `pulumi:"contactId"`
-	// 联系人邮箱地址。
+	// Contact email address
 	Email string `pulumi:"email"`
-	// 联系人名称。
+	// Contact name
 	Name string `pulumi:"name"`
-	// 联系人手机号码。
+	// Contact mobile number
 	Phone string `pulumi:"phone"`
 }
 
@@ -2076,13 +2076,13 @@ type GetContactGroupContactInput interface {
 }
 
 type GetContactGroupContactArgs struct {
-	// 联系人ID。
+	// Contact ID
 	ContactId pulumi.StringInput `pulumi:"contactId"`
-	// 联系人邮箱地址。
+	// Contact email address
 	Email pulumi.StringInput `pulumi:"email"`
-	// 联系人名称。
+	// Contact name
 	Name pulumi.StringInput `pulumi:"name"`
-	// 联系人手机号码。
+	// Contact mobile number
 	Phone pulumi.StringInput `pulumi:"phone"`
 }
 
@@ -2137,22 +2137,22 @@ func (o GetContactGroupContactOutput) ToGetContactGroupContactOutputWithContext(
 	return o
 }
 
-// 联系人ID。
+// Contact ID
 func (o GetContactGroupContactOutput) ContactId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContactGroupContact) string { return v.ContactId }).(pulumi.StringOutput)
 }
 
-// 联系人邮箱地址。
+// Contact email address
 func (o GetContactGroupContactOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContactGroupContact) string { return v.Email }).(pulumi.StringOutput)
 }
 
-// 联系人名称。
+// Contact name
 func (o GetContactGroupContactOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContactGroupContact) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 联系人手机号码。
+// Contact mobile number
 func (o GetContactGroupContactOutput) Phone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContactGroupContact) string { return v.Phone }).(pulumi.StringOutput)
 }

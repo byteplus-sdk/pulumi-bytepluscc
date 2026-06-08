@@ -29,8 +29,6 @@ class ClbArgs:
                  bypass_security_group_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip: Optional[pulumi.Input['ClbEipArgs']] = None,
-                 eip_address: Optional[pulumi.Input[builtins.str]] = None,
-                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
                  eni_address_num: Optional[pulumi.Input[builtins.float]] = None,
                  enis: Optional[pulumi.Input['ClbEnisArgs']] = None,
                  exclusive_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -62,8 +60,6 @@ class ClbArgs:
         :param pulumi.Input[builtins.str] bypass_security_group_enabled: Whether to enable bypass security group feature
         :param pulumi.Input[builtins.str] description: Description of the load balancer instance
         :param pulumi.Input['ClbEipArgs'] eip: Public IP information of the load balancer instance
-        :param pulumi.Input[builtins.str] eip_address: Public IP address
-        :param pulumi.Input[builtins.str] eip_id: Public IP ID
         :param pulumi.Input[builtins.float] eni_address_num: Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
         :param pulumi.Input['ClbEnisArgs'] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
@@ -98,10 +94,6 @@ class ClbArgs:
             pulumi.set(__self__, "description", description)
         if eip is not None:
             pulumi.set(__self__, "eip", eip)
-        if eip_address is not None:
-            pulumi.set(__self__, "eip_address", eip_address)
-        if eip_id is not None:
-            pulumi.set(__self__, "eip_id", eip_id)
         if eni_address_num is not None:
             pulumi.set(__self__, "eni_address_num", eni_address_num)
         if enis is not None:
@@ -230,30 +222,6 @@ class ClbArgs:
     @eip.setter
     def eip(self, value: Optional[pulumi.Input['ClbEipArgs']]):
         pulumi.set(self, "eip", value)
-
-    @property
-    @pulumi.getter(name="eipAddress")
-    def eip_address(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        Public IP address
-        """
-        return pulumi.get(self, "eip_address")
-
-    @eip_address.setter
-    def eip_address(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "eip_address", value)
-
-    @property
-    @pulumi.getter(name="eipId")
-    def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        Public IP ID
-        """
-        return pulumi.get(self, "eip_id")
-
-    @eip_id.setter
-    def eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "eip_id", value)
 
     @property
     @pulumi.getter(name="eniAddressNum")
@@ -1272,8 +1240,6 @@ class Clb(pulumi.CustomResource):
                  bypass_security_group_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip: Optional[pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']]] = None,
-                 eip_address: Optional[pulumi.Input[builtins.str]] = None,
-                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
                  eni_address_num: Optional[pulumi.Input[builtins.float]] = None,
                  enis: Optional[pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']]] = None,
                  exclusive_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1315,8 +1281,6 @@ class Clb(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] bypass_security_group_enabled: Whether to enable bypass security group feature
         :param pulumi.Input[builtins.str] description: Description of the load balancer instance
         :param pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']] eip: Public IP information of the load balancer instance
-        :param pulumi.Input[builtins.str] eip_address: Public IP address
-        :param pulumi.Input[builtins.str] eip_id: Public IP ID
         :param pulumi.Input[builtins.float] eni_address_num: Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
         :param pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']] enis: List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
         :param pulumi.Input[builtins.str] exclusive_cluster_id: Dedicated cluster ID
@@ -1374,8 +1338,6 @@ class Clb(pulumi.CustomResource):
                  bypass_security_group_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip: Optional[pulumi.Input[Union['ClbEipArgs', 'ClbEipArgsDict']]] = None,
-                 eip_address: Optional[pulumi.Input[builtins.str]] = None,
-                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
                  eni_address_num: Optional[pulumi.Input[builtins.float]] = None,
                  enis: Optional[pulumi.Input[Union['ClbEnisArgs', 'ClbEnisArgsDict']]] = None,
                  exclusive_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1414,8 +1376,6 @@ class Clb(pulumi.CustomResource):
             __props__.__dict__["bypass_security_group_enabled"] = bypass_security_group_enabled
             __props__.__dict__["description"] = description
             __props__.__dict__["eip"] = eip
-            __props__.__dict__["eip_address"] = eip_address
-            __props__.__dict__["eip_id"] = eip_id
             __props__.__dict__["eni_address_num"] = eni_address_num
             __props__.__dict__["enis"] = enis
             __props__.__dict__["exclusive_cluster_id"] = exclusive_cluster_id
@@ -1442,6 +1402,8 @@ class Clb(pulumi.CustomResource):
             __props__.__dict__["business_status"] = None
             __props__.__dict__["create_time"] = None
             __props__.__dict__["deleted_time"] = None
+            __props__.__dict__["eip_address"] = None
+            __props__.__dict__["eip_id"] = None
             __props__.__dict__["enabled"] = None
             __props__.__dict__["eni"] = None
             __props__.__dict__["eni_ipv6_address"] = None

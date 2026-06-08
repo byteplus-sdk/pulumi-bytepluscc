@@ -350,10 +350,6 @@ type clbArgs struct {
 	Description *string `pulumi:"description"`
 	// Public IP information of the load balancer instance
 	Eip *ClbEip `pulumi:"eip"`
-	// Public IP address
-	EipAddress *string `pulumi:"eipAddress"`
-	// Public IP ID
-	EipId *string `pulumi:"eipId"`
 	// Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
 	EniAddressNum *float64 `pulumi:"eniAddressNum"`
 	// List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
@@ -413,10 +409,6 @@ type ClbArgs struct {
 	Description pulumi.StringPtrInput
 	// Public IP information of the load balancer instance
 	Eip ClbEipPtrInput
-	// Public IP address
-	EipAddress pulumi.StringPtrInput
-	// Public IP ID
-	EipId pulumi.StringPtrInput
 	// Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
 	EniAddressNum pulumi.Float64PtrInput
 	// List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation

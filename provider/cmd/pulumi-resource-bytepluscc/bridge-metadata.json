@@ -1042,6 +1042,12 @@
                     }
                 }
             },
+            "bytepluscc_clb_check_log_project": {
+                "current": "bytepluscc:clb/checkLogProject:CheckLogProject"
+            },
+            "bytepluscc_clb_check_log_topic": {
+                "current": "bytepluscc:clb/checkLogTopic:CheckLogTopic"
+            },
             "bytepluscc_clb_clb": {
                 "current": "bytepluscc:clb/clb:Clb",
                 "fields": {
@@ -2563,6 +2569,16 @@
                     "node_info": {
                         "maxItemsOne": false
                     },
+                    "replication_slots": {
+                        "maxItemsOne": false
+                    },
+                    "restore_to_existed_instance": {
+                        "fields": {
+                            "databases": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -2948,6 +2964,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_transitrouter_route_table_propagation": {
+                "current": "bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation"
             },
             "bytepluscc_transitrouter_transit_router": {
                 "current": "bytepluscc:transitrouter/transitRouter:TransitRouter",
@@ -5113,6 +5132,28 @@
             },
             "bytepluscc_clb_certificates": {
                 "current": "bytepluscc:clb/getCertificates:getCertificates",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_check_log_project": {
+                "current": "bytepluscc:clb/getCheckLogProject:getCheckLogProject"
+            },
+            "bytepluscc_clb_check_log_projects": {
+                "current": "bytepluscc:clb/getCheckLogProjects:getCheckLogProjects",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_check_log_topic": {
+                "current": "bytepluscc:clb/getCheckLogTopic:getCheckLogTopic"
+            },
+            "bytepluscc_clb_check_log_topics": {
+                "current": "bytepluscc:clb/getCheckLogTopics:getCheckLogTopics",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -7418,6 +7459,16 @@
                     "node_info": {
                         "maxItemsOne": false
                     },
+                    "replication_slots": {
+                        "maxItemsOne": false
+                    },
+                    "restore_to_existed_instance": {
+                        "fields": {
+                            "databases": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -8039,6 +8090,17 @@
             },
             "bytepluscc_transitrouter_peer_attachments": {
                 "current": "bytepluscc:transitrouter/getPeerAttachments:getPeerAttachments",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_route_table_propagation": {
+                "current": "bytepluscc:transitrouter/getRouteTablePropagation:getRouteTablePropagation"
+            },
+            "bytepluscc_transitrouter_route_table_propagations": {
+                "current": "bytepluscc:transitrouter/getRouteTablePropagations:getRouteTablePropagations",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
