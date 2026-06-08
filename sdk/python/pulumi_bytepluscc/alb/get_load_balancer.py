@@ -28,7 +28,7 @@ class GetLoadBalancerResult:
     """
     A collection of values returned by getLoadBalancer.
     """
-    def __init__(__self__, address_ip_version=None, bandwidth_package_id=None, business_status=None, create_time=None, delete_protection=None, deleted_time=None, description=None, dns_name=None, eip_billing_config=None, global_accelerator=None, id=None, ipv6_bandwidth_package_id=None, ipv6_eip_billing_config=None, load_balancer_billing_type=None, load_balancer_edition=None, load_balancer_id=None, load_balancer_name=None, lock_reason=None, modification_protection_reason=None, modification_protection_status=None, overdue_time=None, project_name=None, proxy_protocol_enabled=None, status=None, tags=None, type=None, update_time=None, vpc_id=None, waf_instance_id=None, waf_protected_domain=None, waf_protection_enabled=None, zone_mappings=None):
+    def __init__(__self__, address_ip_version=None, bandwidth_package_id=None, business_status=None, create_time=None, delete_protection=None, deleted_time=None, description=None, dns_name=None, eip_billing_config=None, global_accelerator=None, health_log=None, id=None, ipv6_bandwidth_package_id=None, ipv6_eip_billing_config=None, load_balancer_billing_type=None, load_balancer_edition=None, load_balancer_id=None, load_balancer_name=None, lock_reason=None, modification_protection_reason=None, modification_protection_status=None, overdue_time=None, project_name=None, proxy_protocol_enabled=None, status=None, tags=None, tls_access_log=None, type=None, update_time=None, vpc_id=None, waf_instance_id=None, waf_protected_domain=None, waf_protection_enabled=None, zone_mappings=None):
         if address_ip_version and not isinstance(address_ip_version, str):
             raise TypeError("Expected argument 'address_ip_version' to be a str")
         pulumi.set(__self__, "address_ip_version", address_ip_version)
@@ -59,6 +59,9 @@ class GetLoadBalancerResult:
         if global_accelerator and not isinstance(global_accelerator, dict):
             raise TypeError("Expected argument 'global_accelerator' to be a dict")
         pulumi.set(__self__, "global_accelerator", global_accelerator)
+        if health_log and not isinstance(health_log, dict):
+            raise TypeError("Expected argument 'health_log' to be a dict")
+        pulumi.set(__self__, "health_log", health_log)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -104,6 +107,9 @@ class GetLoadBalancerResult:
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
+        if tls_access_log and not isinstance(tls_access_log, dict):
+            raise TypeError("Expected argument 'tls_access_log' to be a dict")
+        pulumi.set(__self__, "tls_access_log", tls_access_log)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -205,6 +211,14 @@ class GetLoadBalancerResult:
         Global accelerator configuration, used to improve cross-region access speed.
         """
         return pulumi.get(self, "global_accelerator")
+
+    @property
+    @pulumi.getter(name="healthLog")
+    def health_log(self) -> 'outputs.GetLoadBalancerHealthLogResult':
+        """
+        Health check log information in the ALB instance
+        """
+        return pulumi.get(self, "health_log")
 
     @property
     @pulumi.getter
@@ -327,6 +341,14 @@ class GetLoadBalancerResult:
         return pulumi.get(self, "tags")
 
     @property
+    @pulumi.getter(name="tlsAccessLog")
+    def tls_access_log(self) -> 'outputs.GetLoadBalancerTlsAccessLogResult':
+        """
+        Access log information in the ALB instance
+        """
+        return pulumi.get(self, "tls_access_log")
+
+    @property
     @pulumi.getter
     def type(self) -> builtins.str:
         """
@@ -399,6 +421,7 @@ class AwaitableGetLoadBalancerResult(GetLoadBalancerResult):
             dns_name=self.dns_name,
             eip_billing_config=self.eip_billing_config,
             global_accelerator=self.global_accelerator,
+            health_log=self.health_log,
             id=self.id,
             ipv6_bandwidth_package_id=self.ipv6_bandwidth_package_id,
             ipv6_eip_billing_config=self.ipv6_eip_billing_config,
@@ -414,6 +437,7 @@ class AwaitableGetLoadBalancerResult(GetLoadBalancerResult):
             proxy_protocol_enabled=self.proxy_protocol_enabled,
             status=self.status,
             tags=self.tags,
+            tls_access_log=self.tls_access_log,
             type=self.type,
             update_time=self.update_time,
             vpc_id=self.vpc_id,
@@ -447,6 +471,7 @@ def get_load_balancer(id: Optional[builtins.str] = None,
         dns_name=pulumi.get(__ret__, 'dns_name'),
         eip_billing_config=pulumi.get(__ret__, 'eip_billing_config'),
         global_accelerator=pulumi.get(__ret__, 'global_accelerator'),
+        health_log=pulumi.get(__ret__, 'health_log'),
         id=pulumi.get(__ret__, 'id'),
         ipv6_bandwidth_package_id=pulumi.get(__ret__, 'ipv6_bandwidth_package_id'),
         ipv6_eip_billing_config=pulumi.get(__ret__, 'ipv6_eip_billing_config'),
@@ -462,6 +487,7 @@ def get_load_balancer(id: Optional[builtins.str] = None,
         proxy_protocol_enabled=pulumi.get(__ret__, 'proxy_protocol_enabled'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
+        tls_access_log=pulumi.get(__ret__, 'tls_access_log'),
         type=pulumi.get(__ret__, 'type'),
         update_time=pulumi.get(__ret__, 'update_time'),
         vpc_id=pulumi.get(__ret__, 'vpc_id'),
@@ -492,6 +518,7 @@ def get_load_balancer_output(id: Optional[pulumi.Input[builtins.str]] = None,
         dns_name=pulumi.get(__response__, 'dns_name'),
         eip_billing_config=pulumi.get(__response__, 'eip_billing_config'),
         global_accelerator=pulumi.get(__response__, 'global_accelerator'),
+        health_log=pulumi.get(__response__, 'health_log'),
         id=pulumi.get(__response__, 'id'),
         ipv6_bandwidth_package_id=pulumi.get(__response__, 'ipv6_bandwidth_package_id'),
         ipv6_eip_billing_config=pulumi.get(__response__, 'ipv6_eip_billing_config'),
@@ -507,6 +534,7 @@ def get_load_balancer_output(id: Optional[pulumi.Input[builtins.str]] = None,
         proxy_protocol_enabled=pulumi.get(__response__, 'proxy_protocol_enabled'),
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),
+        tls_access_log=pulumi.get(__response__, 'tls_access_log'),
         type=pulumi.get(__response__, 'type'),
         update_time=pulumi.get(__response__, 'update_time'),
         vpc_id=pulumi.get(__response__, 'vpc_id'),

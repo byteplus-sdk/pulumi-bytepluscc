@@ -15,6 +15,16 @@ export const getPeerAttachments: typeof import("./getPeerAttachments").getPeerAt
 export const getPeerAttachmentsOutput: typeof import("./getPeerAttachments").getPeerAttachmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getPeerAttachments","getPeerAttachmentsOutput"], () => require("./getPeerAttachments"));
 
+export { GetRouteTablePropagationArgs, GetRouteTablePropagationResult, GetRouteTablePropagationOutputArgs } from "./getRouteTablePropagation";
+export const getRouteTablePropagation: typeof import("./getRouteTablePropagation").getRouteTablePropagation = null as any;
+export const getRouteTablePropagationOutput: typeof import("./getRouteTablePropagation").getRouteTablePropagationOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteTablePropagation","getRouteTablePropagationOutput"], () => require("./getRouteTablePropagation"));
+
+export { GetRouteTablePropagationsResult } from "./getRouteTablePropagations";
+export const getRouteTablePropagations: typeof import("./getRouteTablePropagations").getRouteTablePropagations = null as any;
+export const getRouteTablePropagationsOutput: typeof import("./getRouteTablePropagations").getRouteTablePropagationsOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteTablePropagations","getRouteTablePropagationsOutput"], () => require("./getRouteTablePropagations"));
+
 export { GetTransitRouterArgs, GetTransitRouterResult, GetTransitRouterOutputArgs } from "./getTransitRouter";
 export const getTransitRouter: typeof import("./getTransitRouter").getTransitRouter = null as any;
 export const getTransitRouterOutput: typeof import("./getTransitRouter").getTransitRouterOutput = null as any;
@@ -70,6 +80,11 @@ export type PeerAttachment = import("./peerAttachment").PeerAttachment;
 export const PeerAttachment: typeof import("./peerAttachment").PeerAttachment = null as any;
 utilities.lazyLoad(exports, ["PeerAttachment"], () => require("./peerAttachment"));
 
+export { RouteTablePropagationArgs, RouteTablePropagationState } from "./routeTablePropagation";
+export type RouteTablePropagation = import("./routeTablePropagation").RouteTablePropagation;
+export const RouteTablePropagation: typeof import("./routeTablePropagation").RouteTablePropagation = null as any;
+utilities.lazyLoad(exports, ["RouteTablePropagation"], () => require("./routeTablePropagation"));
+
 export { TransitRouterArgs, TransitRouterState } from "./transitRouter";
 export type TransitRouter = import("./transitRouter").TransitRouter;
 export const TransitRouter: typeof import("./transitRouter").TransitRouter = null as any;
@@ -102,6 +117,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:transitrouter/peerAttachment:PeerAttachment":
                 return new PeerAttachment(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation":
+                return new RouteTablePropagation(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouter:TransitRouter":
                 return new TransitRouter(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
@@ -118,6 +135,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/peerAttachment", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/routeTablePropagation", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouter", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteEntry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteTable", _module)

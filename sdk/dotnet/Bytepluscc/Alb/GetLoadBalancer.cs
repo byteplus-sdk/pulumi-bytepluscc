@@ -105,6 +105,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly Outputs.GetLoadBalancerGlobalAcceleratorResult GlobalAccelerator;
         /// <summary>
+        /// Health check log information in the ALB instance
+        /// </summary>
+        public readonly Outputs.GetLoadBalancerHealthLogResult HealthLog;
+        /// <summary>
         /// Uniquely identifies the resource.
         /// </summary>
         public readonly string Id;
@@ -165,6 +169,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerTagResult> Tags;
         /// <summary>
+        /// Access log information in the ALB instance
+        /// </summary>
+        public readonly Outputs.GetLoadBalancerTlsAccessLogResult TlsAccessLog;
+        /// <summary>
         /// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
         /// </summary>
         public readonly string Type;
@@ -215,6 +223,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 
             Outputs.GetLoadBalancerGlobalAcceleratorResult globalAccelerator,
 
+            Outputs.GetLoadBalancerHealthLogResult healthLog,
+
             string id,
 
             string ipv6BandwidthPackageId,
@@ -245,6 +255,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 
             ImmutableArray<Outputs.GetLoadBalancerTagResult> tags,
 
+            Outputs.GetLoadBalancerTlsAccessLogResult tlsAccessLog,
+
             string type,
 
             string updateTime,
@@ -269,6 +281,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             DnsName = dnsName;
             EipBillingConfig = eipBillingConfig;
             GlobalAccelerator = globalAccelerator;
+            HealthLog = healthLog;
             Id = id;
             Ipv6BandwidthPackageId = ipv6BandwidthPackageId;
             Ipv6EipBillingConfig = ipv6EipBillingConfig;
@@ -284,6 +297,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             ProxyProtocolEnabled = proxyProtocolEnabled;
             Status = status;
             Tags = tags;
+            TlsAccessLog = tlsAccessLog;
             Type = type;
             UpdateTime = updateTime;
             VpcId = vpcId;

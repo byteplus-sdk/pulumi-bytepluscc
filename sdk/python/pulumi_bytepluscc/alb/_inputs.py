@@ -40,10 +40,14 @@ __all__ = [
     'LoadBalancerEipBillingConfigArgsDict',
     'LoadBalancerGlobalAcceleratorArgs',
     'LoadBalancerGlobalAcceleratorArgsDict',
+    'LoadBalancerHealthLogArgs',
+    'LoadBalancerHealthLogArgsDict',
     'LoadBalancerIpv6EipBillingConfigArgs',
     'LoadBalancerIpv6EipBillingConfigArgsDict',
     'LoadBalancerTagArgs',
     'LoadBalancerTagArgsDict',
+    'LoadBalancerTlsAccessLogArgs',
+    'LoadBalancerTlsAccessLogArgsDict',
     'LoadBalancerZoneMappingArgs',
     'LoadBalancerZoneMappingArgsDict',
     'RuleForwardGroupConfigArgs',
@@ -923,6 +927,78 @@ class LoadBalancerGlobalAcceleratorArgs:
 
 
 if not MYPY:
+    class LoadBalancerHealthLogArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable access log
+        """
+        project_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        TLS project ID bound to access log
+        """
+        topic_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        TLS subject ID bound to access log
+        """
+elif False:
+    LoadBalancerHealthLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class LoadBalancerHealthLogArgs:
+    def __init__(__self__, *,
+                 enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 project_id: Optional[pulumi.Input[builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enabled: Whether to enable access log
+        :param pulumi.Input[builtins.str] project_id: TLS project ID bound to access log
+        :param pulumi.Input[builtins.str] topic_id: TLS subject ID bound to access log
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable access log
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        TLS project ID bound to access log
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        TLS subject ID bound to access log
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "topic_id", value)
+
+
+if not MYPY:
     class LoadBalancerIpv6EipBillingConfigArgsDict(TypedDict):
         bandwidth: NotRequired[pulumi.Input[builtins.int]]
         """
@@ -1044,6 +1120,78 @@ class LoadBalancerTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class LoadBalancerTlsAccessLogArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable access log
+        """
+        project_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        TLS project ID bound to access log
+        """
+        topic_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        TLS subject ID bound to access log
+        """
+elif False:
+    LoadBalancerTlsAccessLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class LoadBalancerTlsAccessLogArgs:
+    def __init__(__self__, *,
+                 enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 project_id: Optional[pulumi.Input[builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enabled: Whether to enable access log
+        :param pulumi.Input[builtins.str] project_id: TLS project ID bound to access log
+        :param pulumi.Input[builtins.str] topic_id: TLS subject ID bound to access log
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable access log
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        TLS project ID bound to access log
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        TLS subject ID bound to access log
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "topic_id", value)
 
 
 if not MYPY:

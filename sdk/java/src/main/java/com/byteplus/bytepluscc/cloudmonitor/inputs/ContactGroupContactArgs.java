@@ -16,14 +16,14 @@ public final class ContactGroupContactArgs extends com.pulumi.resources.Resource
     public static final ContactGroupContactArgs Empty = new ContactGroupContactArgs();
 
     /**
-     * 联系人ID。
+     * Contact ID
      * 
      */
     @Import(name="contactId")
     private @Nullable Output<String> contactId;
 
     /**
-     * @return 联系人ID。
+     * @return Contact ID
      * 
      */
     public Optional<Output<String>> contactId() {
@@ -55,7 +55,7 @@ public final class ContactGroupContactArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param contactId 联系人ID。
+         * @param contactId Contact ID
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ContactGroupContactArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param contactId 联系人ID。
+         * @param contactId Contact ID
          * 
          * @return builder
          * 

@@ -42,6 +42,8 @@ type LoadBalancer struct {
 	EipBillingConfig LoadBalancerEipBillingConfigOutput `pulumi:"eipBillingConfig"`
 	// Global accelerator configuration, used to improve cross-region access speed.
 	GlobalAccelerator LoadBalancerGlobalAcceleratorOutput `pulumi:"globalAccelerator"`
+	// Health check log information in the ALB instance
+	HealthLog LoadBalancerHealthLogOutput `pulumi:"healthLog"`
 	// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
 	Ipv6BandwidthPackageId pulumi.StringOutput `pulumi:"ipv6BandwidthPackageId"`
 	// Billing configuration for IPv6 public IP, only applicable to public instances.
@@ -69,6 +71,8 @@ type LoadBalancer struct {
 	// ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
 	Status pulumi.StringOutput        `pulumi:"status"`
 	Tags   LoadBalancerTagArrayOutput `pulumi:"tags"`
+	// Access log information in the ALB instance
+	TlsAccessLog LoadBalancerTlsAccessLogOutput `pulumi:"tlsAccessLog"`
 	// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// Last update time of the ALB instance.
@@ -140,6 +144,8 @@ type loadBalancerState struct {
 	EipBillingConfig *LoadBalancerEipBillingConfig `pulumi:"eipBillingConfig"`
 	// Global accelerator configuration, used to improve cross-region access speed.
 	GlobalAccelerator *LoadBalancerGlobalAccelerator `pulumi:"globalAccelerator"`
+	// Health check log information in the ALB instance
+	HealthLog *LoadBalancerHealthLog `pulumi:"healthLog"`
 	// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
 	Ipv6BandwidthPackageId *string `pulumi:"ipv6BandwidthPackageId"`
 	// Billing configuration for IPv6 public IP, only applicable to public instances.
@@ -167,6 +173,8 @@ type loadBalancerState struct {
 	// ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
 	Status *string           `pulumi:"status"`
 	Tags   []LoadBalancerTag `pulumi:"tags"`
+	// Access log information in the ALB instance
+	TlsAccessLog *LoadBalancerTlsAccessLog `pulumi:"tlsAccessLog"`
 	// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
 	Type *string `pulumi:"type"`
 	// Last update time of the ALB instance.
@@ -203,6 +211,8 @@ type LoadBalancerState struct {
 	EipBillingConfig LoadBalancerEipBillingConfigPtrInput
 	// Global accelerator configuration, used to improve cross-region access speed.
 	GlobalAccelerator LoadBalancerGlobalAcceleratorPtrInput
+	// Health check log information in the ALB instance
+	HealthLog LoadBalancerHealthLogPtrInput
 	// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
 	Ipv6BandwidthPackageId pulumi.StringPtrInput
 	// Billing configuration for IPv6 public IP, only applicable to public instances.
@@ -230,6 +240,8 @@ type LoadBalancerState struct {
 	// ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
 	Status pulumi.StringPtrInput
 	Tags   LoadBalancerTagArrayInput
+	// Access log information in the ALB instance
+	TlsAccessLog LoadBalancerTlsAccessLogPtrInput
 	// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
 	Type pulumi.StringPtrInput
 	// Last update time of the ALB instance.
@@ -262,6 +274,8 @@ type loadBalancerArgs struct {
 	EipBillingConfig *LoadBalancerEipBillingConfig `pulumi:"eipBillingConfig"`
 	// Global accelerator configuration, used to improve cross-region access speed.
 	GlobalAccelerator *LoadBalancerGlobalAccelerator `pulumi:"globalAccelerator"`
+	// Health check log information in the ALB instance
+	HealthLog *LoadBalancerHealthLog `pulumi:"healthLog"`
 	// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
 	Ipv6BandwidthPackageId *string `pulumi:"ipv6BandwidthPackageId"`
 	// Billing configuration for IPv6 public IP, only applicable to public instances.
@@ -281,6 +295,8 @@ type loadBalancerArgs struct {
 	// ALB supports the Proxy Protocol and records the client's real IP.
 	ProxyProtocolEnabled *string           `pulumi:"proxyProtocolEnabled"`
 	Tags                 []LoadBalancerTag `pulumi:"tags"`
+	// Access log information in the ALB instance
+	TlsAccessLog *LoadBalancerTlsAccessLog `pulumi:"tlsAccessLog"`
 	// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
 	Type string `pulumi:"type"`
 	// ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
@@ -308,6 +324,8 @@ type LoadBalancerArgs struct {
 	EipBillingConfig LoadBalancerEipBillingConfigPtrInput
 	// Global accelerator configuration, used to improve cross-region access speed.
 	GlobalAccelerator LoadBalancerGlobalAcceleratorPtrInput
+	// Health check log information in the ALB instance
+	HealthLog LoadBalancerHealthLogPtrInput
 	// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
 	Ipv6BandwidthPackageId pulumi.StringPtrInput
 	// Billing configuration for IPv6 public IP, only applicable to public instances.
@@ -327,6 +345,8 @@ type LoadBalancerArgs struct {
 	// ALB supports the Proxy Protocol and records the client's real IP.
 	ProxyProtocolEnabled pulumi.StringPtrInput
 	Tags                 LoadBalancerTagArrayInput
+	// Access log information in the ALB instance
+	TlsAccessLog LoadBalancerTlsAccessLogPtrInput
 	// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
 	Type pulumi.StringInput
 	// ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
@@ -477,6 +497,11 @@ func (o LoadBalancerOutput) GlobalAccelerator() LoadBalancerGlobalAcceleratorOut
 	return o.ApplyT(func(v *LoadBalancer) LoadBalancerGlobalAcceleratorOutput { return v.GlobalAccelerator }).(LoadBalancerGlobalAcceleratorOutput)
 }
 
+// Health check log information in the ALB instance
+func (o LoadBalancerOutput) HealthLog() LoadBalancerHealthLogOutput {
+	return o.ApplyT(func(v *LoadBalancer) LoadBalancerHealthLogOutput { return v.HealthLog }).(LoadBalancerHealthLogOutput)
+}
+
 // When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
 func (o LoadBalancerOutput) Ipv6BandwidthPackageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.Ipv6BandwidthPackageId }).(pulumi.StringOutput)
@@ -544,6 +569,11 @@ func (o LoadBalancerOutput) Status() pulumi.StringOutput {
 
 func (o LoadBalancerOutput) Tags() LoadBalancerTagArrayOutput {
 	return o.ApplyT(func(v *LoadBalancer) LoadBalancerTagArrayOutput { return v.Tags }).(LoadBalancerTagArrayOutput)
+}
+
+// Access log information in the ALB instance
+func (o LoadBalancerOutput) TlsAccessLog() LoadBalancerTlsAccessLogOutput {
+	return o.ApplyT(func(v *LoadBalancer) LoadBalancerTlsAccessLogOutput { return v.TlsAccessLog }).(LoadBalancerTlsAccessLogOutput)
 }
 
 // Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.

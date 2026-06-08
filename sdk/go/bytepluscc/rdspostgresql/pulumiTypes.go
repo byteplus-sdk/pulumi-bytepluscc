@@ -2899,6 +2899,464 @@ func (o InstanceNodeInfoArrayOutput) Index(i pulumi.IntInput) InstanceNodeInfoOu
 	}).(InstanceNodeInfoOutput)
 }
 
+type InstanceReplicationSlot struct {
+	// Database associated with the slot
+	Database *string `pulumi:"database"`
+	// Connected client IP address
+	IpAddress *string `pulumi:"ipAddress"`
+	// Plugin used by the slot
+	Plugin *string `pulumi:"plugin"`
+	// Slot name
+	SlotName *string `pulumi:"slotName"`
+	// Slot status
+	SlotStatus *string `pulumi:"slotStatus"`
+	// Slot type
+	SlotType *string `pulumi:"slotType"`
+	// Whether it is a temporary slot
+	Temporary *bool `pulumi:"temporary"`
+	// WAL delay size
+	WalDelay *int `pulumi:"walDelay"`
+}
+
+// InstanceReplicationSlotInput is an input type that accepts InstanceReplicationSlotArgs and InstanceReplicationSlotOutput values.
+// You can construct a concrete instance of `InstanceReplicationSlotInput` via:
+//
+//	InstanceReplicationSlotArgs{...}
+type InstanceReplicationSlotInput interface {
+	pulumi.Input
+
+	ToInstanceReplicationSlotOutput() InstanceReplicationSlotOutput
+	ToInstanceReplicationSlotOutputWithContext(context.Context) InstanceReplicationSlotOutput
+}
+
+type InstanceReplicationSlotArgs struct {
+	// Database associated with the slot
+	Database pulumi.StringPtrInput `pulumi:"database"`
+	// Connected client IP address
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Plugin used by the slot
+	Plugin pulumi.StringPtrInput `pulumi:"plugin"`
+	// Slot name
+	SlotName pulumi.StringPtrInput `pulumi:"slotName"`
+	// Slot status
+	SlotStatus pulumi.StringPtrInput `pulumi:"slotStatus"`
+	// Slot type
+	SlotType pulumi.StringPtrInput `pulumi:"slotType"`
+	// Whether it is a temporary slot
+	Temporary pulumi.BoolPtrInput `pulumi:"temporary"`
+	// WAL delay size
+	WalDelay pulumi.IntPtrInput `pulumi:"walDelay"`
+}
+
+func (InstanceReplicationSlotArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceReplicationSlot)(nil)).Elem()
+}
+
+func (i InstanceReplicationSlotArgs) ToInstanceReplicationSlotOutput() InstanceReplicationSlotOutput {
+	return i.ToInstanceReplicationSlotOutputWithContext(context.Background())
+}
+
+func (i InstanceReplicationSlotArgs) ToInstanceReplicationSlotOutputWithContext(ctx context.Context) InstanceReplicationSlotOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceReplicationSlotOutput)
+}
+
+// InstanceReplicationSlotArrayInput is an input type that accepts InstanceReplicationSlotArray and InstanceReplicationSlotArrayOutput values.
+// You can construct a concrete instance of `InstanceReplicationSlotArrayInput` via:
+//
+//	InstanceReplicationSlotArray{ InstanceReplicationSlotArgs{...} }
+type InstanceReplicationSlotArrayInput interface {
+	pulumi.Input
+
+	ToInstanceReplicationSlotArrayOutput() InstanceReplicationSlotArrayOutput
+	ToInstanceReplicationSlotArrayOutputWithContext(context.Context) InstanceReplicationSlotArrayOutput
+}
+
+type InstanceReplicationSlotArray []InstanceReplicationSlotInput
+
+func (InstanceReplicationSlotArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceReplicationSlot)(nil)).Elem()
+}
+
+func (i InstanceReplicationSlotArray) ToInstanceReplicationSlotArrayOutput() InstanceReplicationSlotArrayOutput {
+	return i.ToInstanceReplicationSlotArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceReplicationSlotArray) ToInstanceReplicationSlotArrayOutputWithContext(ctx context.Context) InstanceReplicationSlotArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceReplicationSlotArrayOutput)
+}
+
+type InstanceReplicationSlotOutput struct{ *pulumi.OutputState }
+
+func (InstanceReplicationSlotOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceReplicationSlot)(nil)).Elem()
+}
+
+func (o InstanceReplicationSlotOutput) ToInstanceReplicationSlotOutput() InstanceReplicationSlotOutput {
+	return o
+}
+
+func (o InstanceReplicationSlotOutput) ToInstanceReplicationSlotOutputWithContext(ctx context.Context) InstanceReplicationSlotOutput {
+	return o
+}
+
+// Database associated with the slot
+func (o InstanceReplicationSlotOutput) Database() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *string { return v.Database }).(pulumi.StringPtrOutput)
+}
+
+// Connected client IP address
+func (o InstanceReplicationSlotOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Plugin used by the slot
+func (o InstanceReplicationSlotOutput) Plugin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *string { return v.Plugin }).(pulumi.StringPtrOutput)
+}
+
+// Slot name
+func (o InstanceReplicationSlotOutput) SlotName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *string { return v.SlotName }).(pulumi.StringPtrOutput)
+}
+
+// Slot status
+func (o InstanceReplicationSlotOutput) SlotStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *string { return v.SlotStatus }).(pulumi.StringPtrOutput)
+}
+
+// Slot type
+func (o InstanceReplicationSlotOutput) SlotType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *string { return v.SlotType }).(pulumi.StringPtrOutput)
+}
+
+// Whether it is a temporary slot
+func (o InstanceReplicationSlotOutput) Temporary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *bool { return v.Temporary }).(pulumi.BoolPtrOutput)
+}
+
+// WAL delay size
+func (o InstanceReplicationSlotOutput) WalDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceReplicationSlot) *int { return v.WalDelay }).(pulumi.IntPtrOutput)
+}
+
+type InstanceReplicationSlotArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceReplicationSlotArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceReplicationSlot)(nil)).Elem()
+}
+
+func (o InstanceReplicationSlotArrayOutput) ToInstanceReplicationSlotArrayOutput() InstanceReplicationSlotArrayOutput {
+	return o
+}
+
+func (o InstanceReplicationSlotArrayOutput) ToInstanceReplicationSlotArrayOutputWithContext(ctx context.Context) InstanceReplicationSlotArrayOutput {
+	return o
+}
+
+func (o InstanceReplicationSlotArrayOutput) Index(i pulumi.IntInput) InstanceReplicationSlotOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceReplicationSlot {
+		return vs[0].([]InstanceReplicationSlot)[vs[1].(int)]
+	}).(InstanceReplicationSlotOutput)
+}
+
+type InstanceRestoreToExistedInstance struct {
+	// Backup set ID
+	BackupId  *string                                    `pulumi:"backupId"`
+	Databases []InstanceRestoreToExistedInstanceDatabase `pulumi:"databases"`
+	// Source instance ID
+	SourceDbInstanceId *string `pulumi:"sourceDbInstanceId"`
+	// Database account for the target instance
+	TargetDbInstanceAccount *string `pulumi:"targetDbInstanceAccount"`
+}
+
+// InstanceRestoreToExistedInstanceInput is an input type that accepts InstanceRestoreToExistedInstanceArgs and InstanceRestoreToExistedInstanceOutput values.
+// You can construct a concrete instance of `InstanceRestoreToExistedInstanceInput` via:
+//
+//	InstanceRestoreToExistedInstanceArgs{...}
+type InstanceRestoreToExistedInstanceInput interface {
+	pulumi.Input
+
+	ToInstanceRestoreToExistedInstanceOutput() InstanceRestoreToExistedInstanceOutput
+	ToInstanceRestoreToExistedInstanceOutputWithContext(context.Context) InstanceRestoreToExistedInstanceOutput
+}
+
+type InstanceRestoreToExistedInstanceArgs struct {
+	// Backup set ID
+	BackupId  pulumi.StringPtrInput                              `pulumi:"backupId"`
+	Databases InstanceRestoreToExistedInstanceDatabaseArrayInput `pulumi:"databases"`
+	// Source instance ID
+	SourceDbInstanceId pulumi.StringPtrInput `pulumi:"sourceDbInstanceId"`
+	// Database account for the target instance
+	TargetDbInstanceAccount pulumi.StringPtrInput `pulumi:"targetDbInstanceAccount"`
+}
+
+func (InstanceRestoreToExistedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRestoreToExistedInstance)(nil)).Elem()
+}
+
+func (i InstanceRestoreToExistedInstanceArgs) ToInstanceRestoreToExistedInstanceOutput() InstanceRestoreToExistedInstanceOutput {
+	return i.ToInstanceRestoreToExistedInstanceOutputWithContext(context.Background())
+}
+
+func (i InstanceRestoreToExistedInstanceArgs) ToInstanceRestoreToExistedInstanceOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRestoreToExistedInstanceOutput)
+}
+
+func (i InstanceRestoreToExistedInstanceArgs) ToInstanceRestoreToExistedInstancePtrOutput() InstanceRestoreToExistedInstancePtrOutput {
+	return i.ToInstanceRestoreToExistedInstancePtrOutputWithContext(context.Background())
+}
+
+func (i InstanceRestoreToExistedInstanceArgs) ToInstanceRestoreToExistedInstancePtrOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstancePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRestoreToExistedInstanceOutput).ToInstanceRestoreToExistedInstancePtrOutputWithContext(ctx)
+}
+
+// InstanceRestoreToExistedInstancePtrInput is an input type that accepts InstanceRestoreToExistedInstanceArgs, InstanceRestoreToExistedInstancePtr and InstanceRestoreToExistedInstancePtrOutput values.
+// You can construct a concrete instance of `InstanceRestoreToExistedInstancePtrInput` via:
+//
+//	        InstanceRestoreToExistedInstanceArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceRestoreToExistedInstancePtrInput interface {
+	pulumi.Input
+
+	ToInstanceRestoreToExistedInstancePtrOutput() InstanceRestoreToExistedInstancePtrOutput
+	ToInstanceRestoreToExistedInstancePtrOutputWithContext(context.Context) InstanceRestoreToExistedInstancePtrOutput
+}
+
+type instanceRestoreToExistedInstancePtrType InstanceRestoreToExistedInstanceArgs
+
+func InstanceRestoreToExistedInstancePtr(v *InstanceRestoreToExistedInstanceArgs) InstanceRestoreToExistedInstancePtrInput {
+	return (*instanceRestoreToExistedInstancePtrType)(v)
+}
+
+func (*instanceRestoreToExistedInstancePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceRestoreToExistedInstance)(nil)).Elem()
+}
+
+func (i *instanceRestoreToExistedInstancePtrType) ToInstanceRestoreToExistedInstancePtrOutput() InstanceRestoreToExistedInstancePtrOutput {
+	return i.ToInstanceRestoreToExistedInstancePtrOutputWithContext(context.Background())
+}
+
+func (i *instanceRestoreToExistedInstancePtrType) ToInstanceRestoreToExistedInstancePtrOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstancePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRestoreToExistedInstancePtrOutput)
+}
+
+type InstanceRestoreToExistedInstanceOutput struct{ *pulumi.OutputState }
+
+func (InstanceRestoreToExistedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRestoreToExistedInstance)(nil)).Elem()
+}
+
+func (o InstanceRestoreToExistedInstanceOutput) ToInstanceRestoreToExistedInstanceOutput() InstanceRestoreToExistedInstanceOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstanceOutput) ToInstanceRestoreToExistedInstanceOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstanceOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstanceOutput) ToInstanceRestoreToExistedInstancePtrOutput() InstanceRestoreToExistedInstancePtrOutput {
+	return o.ToInstanceRestoreToExistedInstancePtrOutputWithContext(context.Background())
+}
+
+func (o InstanceRestoreToExistedInstanceOutput) ToInstanceRestoreToExistedInstancePtrOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstancePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceRestoreToExistedInstance) *InstanceRestoreToExistedInstance {
+		return &v
+	}).(InstanceRestoreToExistedInstancePtrOutput)
+}
+
+// Backup set ID
+func (o InstanceRestoreToExistedInstanceOutput) BackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRestoreToExistedInstance) *string { return v.BackupId }).(pulumi.StringPtrOutput)
+}
+
+func (o InstanceRestoreToExistedInstanceOutput) Databases() InstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o.ApplyT(func(v InstanceRestoreToExistedInstance) []InstanceRestoreToExistedInstanceDatabase {
+		return v.Databases
+	}).(InstanceRestoreToExistedInstanceDatabaseArrayOutput)
+}
+
+// Source instance ID
+func (o InstanceRestoreToExistedInstanceOutput) SourceDbInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRestoreToExistedInstance) *string { return v.SourceDbInstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Database account for the target instance
+func (o InstanceRestoreToExistedInstanceOutput) TargetDbInstanceAccount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRestoreToExistedInstance) *string { return v.TargetDbInstanceAccount }).(pulumi.StringPtrOutput)
+}
+
+type InstanceRestoreToExistedInstancePtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceRestoreToExistedInstancePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceRestoreToExistedInstance)(nil)).Elem()
+}
+
+func (o InstanceRestoreToExistedInstancePtrOutput) ToInstanceRestoreToExistedInstancePtrOutput() InstanceRestoreToExistedInstancePtrOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstancePtrOutput) ToInstanceRestoreToExistedInstancePtrOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstancePtrOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstancePtrOutput) Elem() InstanceRestoreToExistedInstanceOutput {
+	return o.ApplyT(func(v *InstanceRestoreToExistedInstance) InstanceRestoreToExistedInstance {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceRestoreToExistedInstance
+		return ret
+	}).(InstanceRestoreToExistedInstanceOutput)
+}
+
+// Backup set ID
+func (o InstanceRestoreToExistedInstancePtrOutput) BackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceRestoreToExistedInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o InstanceRestoreToExistedInstancePtrOutput) Databases() InstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o.ApplyT(func(v *InstanceRestoreToExistedInstance) []InstanceRestoreToExistedInstanceDatabase {
+		if v == nil {
+			return nil
+		}
+		return v.Databases
+	}).(InstanceRestoreToExistedInstanceDatabaseArrayOutput)
+}
+
+// Source instance ID
+func (o InstanceRestoreToExistedInstancePtrOutput) SourceDbInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceRestoreToExistedInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceDbInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Database account for the target instance
+func (o InstanceRestoreToExistedInstancePtrOutput) TargetDbInstanceAccount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceRestoreToExistedInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TargetDbInstanceAccount
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceRestoreToExistedInstanceDatabase struct {
+	// Source database name
+	DbName *string `pulumi:"dbName"`
+	// Name of the new database after restoration
+	NewDbName *string `pulumi:"newDbName"`
+}
+
+// InstanceRestoreToExistedInstanceDatabaseInput is an input type that accepts InstanceRestoreToExistedInstanceDatabaseArgs and InstanceRestoreToExistedInstanceDatabaseOutput values.
+// You can construct a concrete instance of `InstanceRestoreToExistedInstanceDatabaseInput` via:
+//
+//	InstanceRestoreToExistedInstanceDatabaseArgs{...}
+type InstanceRestoreToExistedInstanceDatabaseInput interface {
+	pulumi.Input
+
+	ToInstanceRestoreToExistedInstanceDatabaseOutput() InstanceRestoreToExistedInstanceDatabaseOutput
+	ToInstanceRestoreToExistedInstanceDatabaseOutputWithContext(context.Context) InstanceRestoreToExistedInstanceDatabaseOutput
+}
+
+type InstanceRestoreToExistedInstanceDatabaseArgs struct {
+	// Source database name
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+	// Name of the new database after restoration
+	NewDbName pulumi.StringPtrInput `pulumi:"newDbName"`
+}
+
+func (InstanceRestoreToExistedInstanceDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (i InstanceRestoreToExistedInstanceDatabaseArgs) ToInstanceRestoreToExistedInstanceDatabaseOutput() InstanceRestoreToExistedInstanceDatabaseOutput {
+	return i.ToInstanceRestoreToExistedInstanceDatabaseOutputWithContext(context.Background())
+}
+
+func (i InstanceRestoreToExistedInstanceDatabaseArgs) ToInstanceRestoreToExistedInstanceDatabaseOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstanceDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRestoreToExistedInstanceDatabaseOutput)
+}
+
+// InstanceRestoreToExistedInstanceDatabaseArrayInput is an input type that accepts InstanceRestoreToExistedInstanceDatabaseArray and InstanceRestoreToExistedInstanceDatabaseArrayOutput values.
+// You can construct a concrete instance of `InstanceRestoreToExistedInstanceDatabaseArrayInput` via:
+//
+//	InstanceRestoreToExistedInstanceDatabaseArray{ InstanceRestoreToExistedInstanceDatabaseArgs{...} }
+type InstanceRestoreToExistedInstanceDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToInstanceRestoreToExistedInstanceDatabaseArrayOutput() InstanceRestoreToExistedInstanceDatabaseArrayOutput
+	ToInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(context.Context) InstanceRestoreToExistedInstanceDatabaseArrayOutput
+}
+
+type InstanceRestoreToExistedInstanceDatabaseArray []InstanceRestoreToExistedInstanceDatabaseInput
+
+func (InstanceRestoreToExistedInstanceDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (i InstanceRestoreToExistedInstanceDatabaseArray) ToInstanceRestoreToExistedInstanceDatabaseArrayOutput() InstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return i.ToInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceRestoreToExistedInstanceDatabaseArray) ToInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRestoreToExistedInstanceDatabaseArrayOutput)
+}
+
+type InstanceRestoreToExistedInstanceDatabaseOutput struct{ *pulumi.OutputState }
+
+func (InstanceRestoreToExistedInstanceDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (o InstanceRestoreToExistedInstanceDatabaseOutput) ToInstanceRestoreToExistedInstanceDatabaseOutput() InstanceRestoreToExistedInstanceDatabaseOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstanceDatabaseOutput) ToInstanceRestoreToExistedInstanceDatabaseOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstanceDatabaseOutput {
+	return o
+}
+
+// Source database name
+func (o InstanceRestoreToExistedInstanceDatabaseOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRestoreToExistedInstanceDatabase) *string { return v.DbName }).(pulumi.StringPtrOutput)
+}
+
+// Name of the new database after restoration
+func (o InstanceRestoreToExistedInstanceDatabaseOutput) NewDbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRestoreToExistedInstanceDatabase) *string { return v.NewDbName }).(pulumi.StringPtrOutput)
+}
+
+type InstanceRestoreToExistedInstanceDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceRestoreToExistedInstanceDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (o InstanceRestoreToExistedInstanceDatabaseArrayOutput) ToInstanceRestoreToExistedInstanceDatabaseArrayOutput() InstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstanceDatabaseArrayOutput) ToInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(ctx context.Context) InstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o
+}
+
+func (o InstanceRestoreToExistedInstanceDatabaseArrayOutput) Index(i pulumi.IntInput) InstanceRestoreToExistedInstanceDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceRestoreToExistedInstanceDatabase {
+		return vs[0].([]InstanceRestoreToExistedInstanceDatabase)[vs[1].(int)]
+	}).(InstanceRestoreToExistedInstanceDatabaseOutput)
+}
+
 type InstanceTag struct {
 	// Tag key
 	Key *string `pulumi:"key"`
@@ -5077,6 +5535,353 @@ func (o GetInstanceNodeInfoArrayOutput) Index(i pulumi.IntInput) GetInstanceNode
 	}).(GetInstanceNodeInfoOutput)
 }
 
+type GetInstanceReplicationSlot struct {
+	// Database associated with the slot
+	Database string `pulumi:"database"`
+	// Connected client IP address
+	IpAddress string `pulumi:"ipAddress"`
+	// Plugin used by the slot
+	Plugin string `pulumi:"plugin"`
+	// Slot name
+	SlotName string `pulumi:"slotName"`
+	// Slot status
+	SlotStatus string `pulumi:"slotStatus"`
+	// Slot type
+	SlotType string `pulumi:"slotType"`
+	// Whether it is a temporary slot
+	Temporary bool `pulumi:"temporary"`
+	// WAL delay size
+	WalDelay int `pulumi:"walDelay"`
+}
+
+// GetInstanceReplicationSlotInput is an input type that accepts GetInstanceReplicationSlotArgs and GetInstanceReplicationSlotOutput values.
+// You can construct a concrete instance of `GetInstanceReplicationSlotInput` via:
+//
+//	GetInstanceReplicationSlotArgs{...}
+type GetInstanceReplicationSlotInput interface {
+	pulumi.Input
+
+	ToGetInstanceReplicationSlotOutput() GetInstanceReplicationSlotOutput
+	ToGetInstanceReplicationSlotOutputWithContext(context.Context) GetInstanceReplicationSlotOutput
+}
+
+type GetInstanceReplicationSlotArgs struct {
+	// Database associated with the slot
+	Database pulumi.StringInput `pulumi:"database"`
+	// Connected client IP address
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Plugin used by the slot
+	Plugin pulumi.StringInput `pulumi:"plugin"`
+	// Slot name
+	SlotName pulumi.StringInput `pulumi:"slotName"`
+	// Slot status
+	SlotStatus pulumi.StringInput `pulumi:"slotStatus"`
+	// Slot type
+	SlotType pulumi.StringInput `pulumi:"slotType"`
+	// Whether it is a temporary slot
+	Temporary pulumi.BoolInput `pulumi:"temporary"`
+	// WAL delay size
+	WalDelay pulumi.IntInput `pulumi:"walDelay"`
+}
+
+func (GetInstanceReplicationSlotArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceReplicationSlot)(nil)).Elem()
+}
+
+func (i GetInstanceReplicationSlotArgs) ToGetInstanceReplicationSlotOutput() GetInstanceReplicationSlotOutput {
+	return i.ToGetInstanceReplicationSlotOutputWithContext(context.Background())
+}
+
+func (i GetInstanceReplicationSlotArgs) ToGetInstanceReplicationSlotOutputWithContext(ctx context.Context) GetInstanceReplicationSlotOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceReplicationSlotOutput)
+}
+
+// GetInstanceReplicationSlotArrayInput is an input type that accepts GetInstanceReplicationSlotArray and GetInstanceReplicationSlotArrayOutput values.
+// You can construct a concrete instance of `GetInstanceReplicationSlotArrayInput` via:
+//
+//	GetInstanceReplicationSlotArray{ GetInstanceReplicationSlotArgs{...} }
+type GetInstanceReplicationSlotArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceReplicationSlotArrayOutput() GetInstanceReplicationSlotArrayOutput
+	ToGetInstanceReplicationSlotArrayOutputWithContext(context.Context) GetInstanceReplicationSlotArrayOutput
+}
+
+type GetInstanceReplicationSlotArray []GetInstanceReplicationSlotInput
+
+func (GetInstanceReplicationSlotArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceReplicationSlot)(nil)).Elem()
+}
+
+func (i GetInstanceReplicationSlotArray) ToGetInstanceReplicationSlotArrayOutput() GetInstanceReplicationSlotArrayOutput {
+	return i.ToGetInstanceReplicationSlotArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceReplicationSlotArray) ToGetInstanceReplicationSlotArrayOutputWithContext(ctx context.Context) GetInstanceReplicationSlotArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceReplicationSlotArrayOutput)
+}
+
+type GetInstanceReplicationSlotOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceReplicationSlotOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceReplicationSlot)(nil)).Elem()
+}
+
+func (o GetInstanceReplicationSlotOutput) ToGetInstanceReplicationSlotOutput() GetInstanceReplicationSlotOutput {
+	return o
+}
+
+func (o GetInstanceReplicationSlotOutput) ToGetInstanceReplicationSlotOutputWithContext(ctx context.Context) GetInstanceReplicationSlotOutput {
+	return o
+}
+
+// Database associated with the slot
+func (o GetInstanceReplicationSlotOutput) Database() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) string { return v.Database }).(pulumi.StringOutput)
+}
+
+// Connected client IP address
+func (o GetInstanceReplicationSlotOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Plugin used by the slot
+func (o GetInstanceReplicationSlotOutput) Plugin() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) string { return v.Plugin }).(pulumi.StringOutput)
+}
+
+// Slot name
+func (o GetInstanceReplicationSlotOutput) SlotName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) string { return v.SlotName }).(pulumi.StringOutput)
+}
+
+// Slot status
+func (o GetInstanceReplicationSlotOutput) SlotStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) string { return v.SlotStatus }).(pulumi.StringOutput)
+}
+
+// Slot type
+func (o GetInstanceReplicationSlotOutput) SlotType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) string { return v.SlotType }).(pulumi.StringOutput)
+}
+
+// Whether it is a temporary slot
+func (o GetInstanceReplicationSlotOutput) Temporary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) bool { return v.Temporary }).(pulumi.BoolOutput)
+}
+
+// WAL delay size
+func (o GetInstanceReplicationSlotOutput) WalDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceReplicationSlot) int { return v.WalDelay }).(pulumi.IntOutput)
+}
+
+type GetInstanceReplicationSlotArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceReplicationSlotArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceReplicationSlot)(nil)).Elem()
+}
+
+func (o GetInstanceReplicationSlotArrayOutput) ToGetInstanceReplicationSlotArrayOutput() GetInstanceReplicationSlotArrayOutput {
+	return o
+}
+
+func (o GetInstanceReplicationSlotArrayOutput) ToGetInstanceReplicationSlotArrayOutputWithContext(ctx context.Context) GetInstanceReplicationSlotArrayOutput {
+	return o
+}
+
+func (o GetInstanceReplicationSlotArrayOutput) Index(i pulumi.IntInput) GetInstanceReplicationSlotOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceReplicationSlot {
+		return vs[0].([]GetInstanceReplicationSlot)[vs[1].(int)]
+	}).(GetInstanceReplicationSlotOutput)
+}
+
+type GetInstanceRestoreToExistedInstance struct {
+	// Backup set ID
+	BackupId string `pulumi:"backupId"`
+	// List of databases to restore
+	Databases []GetInstanceRestoreToExistedInstanceDatabase `pulumi:"databases"`
+	// Source instance ID
+	SourceDbInstanceId string `pulumi:"sourceDbInstanceId"`
+	// Database account for the target instance
+	TargetDbInstanceAccount string `pulumi:"targetDbInstanceAccount"`
+}
+
+// GetInstanceRestoreToExistedInstanceInput is an input type that accepts GetInstanceRestoreToExistedInstanceArgs and GetInstanceRestoreToExistedInstanceOutput values.
+// You can construct a concrete instance of `GetInstanceRestoreToExistedInstanceInput` via:
+//
+//	GetInstanceRestoreToExistedInstanceArgs{...}
+type GetInstanceRestoreToExistedInstanceInput interface {
+	pulumi.Input
+
+	ToGetInstanceRestoreToExistedInstanceOutput() GetInstanceRestoreToExistedInstanceOutput
+	ToGetInstanceRestoreToExistedInstanceOutputWithContext(context.Context) GetInstanceRestoreToExistedInstanceOutput
+}
+
+type GetInstanceRestoreToExistedInstanceArgs struct {
+	// Backup set ID
+	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// List of databases to restore
+	Databases GetInstanceRestoreToExistedInstanceDatabaseArrayInput `pulumi:"databases"`
+	// Source instance ID
+	SourceDbInstanceId pulumi.StringInput `pulumi:"sourceDbInstanceId"`
+	// Database account for the target instance
+	TargetDbInstanceAccount pulumi.StringInput `pulumi:"targetDbInstanceAccount"`
+}
+
+func (GetInstanceRestoreToExistedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRestoreToExistedInstance)(nil)).Elem()
+}
+
+func (i GetInstanceRestoreToExistedInstanceArgs) ToGetInstanceRestoreToExistedInstanceOutput() GetInstanceRestoreToExistedInstanceOutput {
+	return i.ToGetInstanceRestoreToExistedInstanceOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRestoreToExistedInstanceArgs) ToGetInstanceRestoreToExistedInstanceOutputWithContext(ctx context.Context) GetInstanceRestoreToExistedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRestoreToExistedInstanceOutput)
+}
+
+type GetInstanceRestoreToExistedInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRestoreToExistedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRestoreToExistedInstance)(nil)).Elem()
+}
+
+func (o GetInstanceRestoreToExistedInstanceOutput) ToGetInstanceRestoreToExistedInstanceOutput() GetInstanceRestoreToExistedInstanceOutput {
+	return o
+}
+
+func (o GetInstanceRestoreToExistedInstanceOutput) ToGetInstanceRestoreToExistedInstanceOutputWithContext(ctx context.Context) GetInstanceRestoreToExistedInstanceOutput {
+	return o
+}
+
+// Backup set ID
+func (o GetInstanceRestoreToExistedInstanceOutput) BackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRestoreToExistedInstance) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// List of databases to restore
+func (o GetInstanceRestoreToExistedInstanceOutput) Databases() GetInstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o.ApplyT(func(v GetInstanceRestoreToExistedInstance) []GetInstanceRestoreToExistedInstanceDatabase {
+		return v.Databases
+	}).(GetInstanceRestoreToExistedInstanceDatabaseArrayOutput)
+}
+
+// Source instance ID
+func (o GetInstanceRestoreToExistedInstanceOutput) SourceDbInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRestoreToExistedInstance) string { return v.SourceDbInstanceId }).(pulumi.StringOutput)
+}
+
+// Database account for the target instance
+func (o GetInstanceRestoreToExistedInstanceOutput) TargetDbInstanceAccount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRestoreToExistedInstance) string { return v.TargetDbInstanceAccount }).(pulumi.StringOutput)
+}
+
+type GetInstanceRestoreToExistedInstanceDatabase struct {
+	// Source database name
+	DbName string `pulumi:"dbName"`
+	// Name of the new database after restoration
+	NewDbName string `pulumi:"newDbName"`
+}
+
+// GetInstanceRestoreToExistedInstanceDatabaseInput is an input type that accepts GetInstanceRestoreToExistedInstanceDatabaseArgs and GetInstanceRestoreToExistedInstanceDatabaseOutput values.
+// You can construct a concrete instance of `GetInstanceRestoreToExistedInstanceDatabaseInput` via:
+//
+//	GetInstanceRestoreToExistedInstanceDatabaseArgs{...}
+type GetInstanceRestoreToExistedInstanceDatabaseInput interface {
+	pulumi.Input
+
+	ToGetInstanceRestoreToExistedInstanceDatabaseOutput() GetInstanceRestoreToExistedInstanceDatabaseOutput
+	ToGetInstanceRestoreToExistedInstanceDatabaseOutputWithContext(context.Context) GetInstanceRestoreToExistedInstanceDatabaseOutput
+}
+
+type GetInstanceRestoreToExistedInstanceDatabaseArgs struct {
+	// Source database name
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// Name of the new database after restoration
+	NewDbName pulumi.StringInput `pulumi:"newDbName"`
+}
+
+func (GetInstanceRestoreToExistedInstanceDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (i GetInstanceRestoreToExistedInstanceDatabaseArgs) ToGetInstanceRestoreToExistedInstanceDatabaseOutput() GetInstanceRestoreToExistedInstanceDatabaseOutput {
+	return i.ToGetInstanceRestoreToExistedInstanceDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRestoreToExistedInstanceDatabaseArgs) ToGetInstanceRestoreToExistedInstanceDatabaseOutputWithContext(ctx context.Context) GetInstanceRestoreToExistedInstanceDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRestoreToExistedInstanceDatabaseOutput)
+}
+
+// GetInstanceRestoreToExistedInstanceDatabaseArrayInput is an input type that accepts GetInstanceRestoreToExistedInstanceDatabaseArray and GetInstanceRestoreToExistedInstanceDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetInstanceRestoreToExistedInstanceDatabaseArrayInput` via:
+//
+//	GetInstanceRestoreToExistedInstanceDatabaseArray{ GetInstanceRestoreToExistedInstanceDatabaseArgs{...} }
+type GetInstanceRestoreToExistedInstanceDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutput() GetInstanceRestoreToExistedInstanceDatabaseArrayOutput
+	ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(context.Context) GetInstanceRestoreToExistedInstanceDatabaseArrayOutput
+}
+
+type GetInstanceRestoreToExistedInstanceDatabaseArray []GetInstanceRestoreToExistedInstanceDatabaseInput
+
+func (GetInstanceRestoreToExistedInstanceDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (i GetInstanceRestoreToExistedInstanceDatabaseArray) ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutput() GetInstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return i.ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRestoreToExistedInstanceDatabaseArray) ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(ctx context.Context) GetInstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRestoreToExistedInstanceDatabaseArrayOutput)
+}
+
+type GetInstanceRestoreToExistedInstanceDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRestoreToExistedInstanceDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (o GetInstanceRestoreToExistedInstanceDatabaseOutput) ToGetInstanceRestoreToExistedInstanceDatabaseOutput() GetInstanceRestoreToExistedInstanceDatabaseOutput {
+	return o
+}
+
+func (o GetInstanceRestoreToExistedInstanceDatabaseOutput) ToGetInstanceRestoreToExistedInstanceDatabaseOutputWithContext(ctx context.Context) GetInstanceRestoreToExistedInstanceDatabaseOutput {
+	return o
+}
+
+// Source database name
+func (o GetInstanceRestoreToExistedInstanceDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRestoreToExistedInstanceDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// Name of the new database after restoration
+func (o GetInstanceRestoreToExistedInstanceDatabaseOutput) NewDbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRestoreToExistedInstanceDatabase) string { return v.NewDbName }).(pulumi.StringOutput)
+}
+
+type GetInstanceRestoreToExistedInstanceDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRestoreToExistedInstanceDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceRestoreToExistedInstanceDatabase)(nil)).Elem()
+}
+
+func (o GetInstanceRestoreToExistedInstanceDatabaseArrayOutput) ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutput() GetInstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o
+}
+
+func (o GetInstanceRestoreToExistedInstanceDatabaseArrayOutput) ToGetInstanceRestoreToExistedInstanceDatabaseArrayOutputWithContext(ctx context.Context) GetInstanceRestoreToExistedInstanceDatabaseArrayOutput {
+	return o
+}
+
+func (o GetInstanceRestoreToExistedInstanceDatabaseArrayOutput) Index(i pulumi.IntInput) GetInstanceRestoreToExistedInstanceDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceRestoreToExistedInstanceDatabase {
+		return vs[0].([]GetInstanceRestoreToExistedInstanceDatabase)[vs[1].(int)]
+	}).(GetInstanceRestoreToExistedInstanceDatabaseOutput)
+}
+
 type GetInstanceTag struct {
 	// Tag key
 	Key string `pulumi:"key"`
@@ -5374,6 +6179,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput)(nil)).Elem(), InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeInfoInput)(nil)).Elem(), InstanceNodeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeInfoArrayInput)(nil)).Elem(), InstanceNodeInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceReplicationSlotInput)(nil)).Elem(), InstanceReplicationSlotArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceReplicationSlotArrayInput)(nil)).Elem(), InstanceReplicationSlotArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRestoreToExistedInstanceInput)(nil)).Elem(), InstanceRestoreToExistedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRestoreToExistedInstancePtrInput)(nil)).Elem(), InstanceRestoreToExistedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRestoreToExistedInstanceDatabaseInput)(nil)).Elem(), InstanceRestoreToExistedInstanceDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRestoreToExistedInstanceDatabaseArrayInput)(nil)).Elem(), InstanceRestoreToExistedInstanceDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ParameterTemplateTemplateParamInput)(nil)).Elem(), ParameterTemplateTemplateParamArgs{})
@@ -5402,6 +6213,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayInput)(nil)).Elem(), GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeInfoInput)(nil)).Elem(), GetInstanceNodeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeInfoArrayInput)(nil)).Elem(), GetInstanceNodeInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceReplicationSlotInput)(nil)).Elem(), GetInstanceReplicationSlotArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceReplicationSlotArrayInput)(nil)).Elem(), GetInstanceReplicationSlotArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRestoreToExistedInstanceInput)(nil)).Elem(), GetInstanceRestoreToExistedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRestoreToExistedInstanceDatabaseInput)(nil)).Elem(), GetInstanceRestoreToExistedInstanceDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRestoreToExistedInstanceDatabaseArrayInput)(nil)).Elem(), GetInstanceRestoreToExistedInstanceDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetParameterTemplateTemplateParamInput)(nil)).Elem(), GetParameterTemplateTemplateParamArgs{})
@@ -5436,6 +6252,12 @@ func init() {
 	pulumi.RegisterOutputType(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceNodeInfoOutput{})
 	pulumi.RegisterOutputType(InstanceNodeInfoArrayOutput{})
+	pulumi.RegisterOutputType(InstanceReplicationSlotOutput{})
+	pulumi.RegisterOutputType(InstanceReplicationSlotArrayOutput{})
+	pulumi.RegisterOutputType(InstanceRestoreToExistedInstanceOutput{})
+	pulumi.RegisterOutputType(InstanceRestoreToExistedInstancePtrOutput{})
+	pulumi.RegisterOutputType(InstanceRestoreToExistedInstanceDatabaseOutput{})
+	pulumi.RegisterOutputType(InstanceRestoreToExistedInstanceDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(ParameterTemplateTemplateParamOutput{})
@@ -5464,6 +6286,11 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceMaintenanceWindowDayOfWeekMaintenanceTimeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceReplicationSlotOutput{})
+	pulumi.RegisterOutputType(GetInstanceReplicationSlotArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceRestoreToExistedInstanceOutput{})
+	pulumi.RegisterOutputType(GetInstanceRestoreToExistedInstanceDatabaseOutput{})
+	pulumi.RegisterOutputType(GetInstanceRestoreToExistedInstanceDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetParameterTemplateTemplateParamOutput{})

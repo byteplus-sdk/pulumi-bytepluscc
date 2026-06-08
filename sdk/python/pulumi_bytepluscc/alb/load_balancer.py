@@ -30,6 +30,7 @@ class LoadBalancerArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input['LoadBalancerEipBillingConfigArgs']] = None,
                  global_accelerator: Optional[pulumi.Input['LoadBalancerGlobalAcceleratorArgs']] = None,
+                 health_log: Optional[pulumi.Input['LoadBalancerHealthLogArgs']] = None,
                  ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs']] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -40,6 +41,7 @@ class LoadBalancerArgs:
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerTagArgs']]]] = None,
+                 tls_access_log: Optional[pulumi.Input['LoadBalancerTlsAccessLogArgs']] = None,
                  waf_instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  waf_protected_domain: Optional[pulumi.Input[builtins.str]] = None,
                  waf_protection_enabled: Optional[pulumi.Input[builtins.str]] = None,
@@ -54,6 +56,7 @@ class LoadBalancerArgs:
         :param pulumi.Input[builtins.str] description: Description of the ALB instance.
         :param pulumi.Input['LoadBalancerEipBillingConfigArgs'] eip_billing_config: Billing configuration for public IP, only applicable to public instances.
         :param pulumi.Input['LoadBalancerGlobalAcceleratorArgs'] global_accelerator: Global accelerator configuration, used to improve cross-region access speed.
+        :param pulumi.Input['LoadBalancerHealthLogArgs'] health_log: Health check log information in the ALB instance
         :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         :param pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs'] ipv6_eip_billing_config: Billing configuration for IPv6 public IP, only applicable to public instances.
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
@@ -63,6 +66,7 @@ class LoadBalancerArgs:
         :param pulumi.Input[builtins.str] modification_protection_status: Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the instance belongs.
         :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB supports the Proxy Protocol and records the client's real IP.
+        :param pulumi.Input['LoadBalancerTlsAccessLogArgs'] tls_access_log: Access log information in the ALB instance
         :param pulumi.Input[builtins.str] waf_instance_id: ID of the WAF security protection instance bound to the ALB instance.
         :param pulumi.Input[builtins.str] waf_protected_domain: Domain name protected by WAF, used for precise rule matching.
         :param pulumi.Input[builtins.str] waf_protection_enabled: WAF security protection switch. on: enabled; off: disabled.
@@ -81,6 +85,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "eip_billing_config", eip_billing_config)
         if global_accelerator is not None:
             pulumi.set(__self__, "global_accelerator", global_accelerator)
+        if health_log is not None:
+            pulumi.set(__self__, "health_log", health_log)
         if ipv6_bandwidth_package_id is not None:
             pulumi.set(__self__, "ipv6_bandwidth_package_id", ipv6_bandwidth_package_id)
         if ipv6_eip_billing_config is not None:
@@ -101,6 +107,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "proxy_protocol_enabled", proxy_protocol_enabled)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tls_access_log is not None:
+            pulumi.set(__self__, "tls_access_log", tls_access_log)
         if waf_instance_id is not None:
             pulumi.set(__self__, "waf_instance_id", waf_instance_id)
         if waf_protected_domain is not None:
@@ -205,6 +213,18 @@ class LoadBalancerArgs:
     @global_accelerator.setter
     def global_accelerator(self, value: Optional[pulumi.Input['LoadBalancerGlobalAcceleratorArgs']]):
         pulumi.set(self, "global_accelerator", value)
+
+    @property
+    @pulumi.getter(name="healthLog")
+    def health_log(self) -> Optional[pulumi.Input['LoadBalancerHealthLogArgs']]:
+        """
+        Health check log information in the ALB instance
+        """
+        return pulumi.get(self, "health_log")
+
+    @health_log.setter
+    def health_log(self, value: Optional[pulumi.Input['LoadBalancerHealthLogArgs']]):
+        pulumi.set(self, "health_log", value)
 
     @property
     @pulumi.getter(name="ipv6BandwidthPackageId")
@@ -324,6 +344,18 @@ class LoadBalancerArgs:
         pulumi.set(self, "tags", value)
 
     @property
+    @pulumi.getter(name="tlsAccessLog")
+    def tls_access_log(self) -> Optional[pulumi.Input['LoadBalancerTlsAccessLogArgs']]:
+        """
+        Access log information in the ALB instance
+        """
+        return pulumi.get(self, "tls_access_log")
+
+    @tls_access_log.setter
+    def tls_access_log(self, value: Optional[pulumi.Input['LoadBalancerTlsAccessLogArgs']]):
+        pulumi.set(self, "tls_access_log", value)
+
+    @property
     @pulumi.getter(name="wafInstanceId")
     def waf_instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -382,6 +414,7 @@ class _LoadBalancerState:
                  dns_name: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input['LoadBalancerEipBillingConfigArgs']] = None,
                  global_accelerator: Optional[pulumi.Input['LoadBalancerGlobalAcceleratorArgs']] = None,
+                 health_log: Optional[pulumi.Input['LoadBalancerHealthLogArgs']] = None,
                  ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs']] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -396,6 +429,7 @@ class _LoadBalancerState:
                  proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerTagArgs']]]] = None,
+                 tls_access_log: Optional[pulumi.Input['LoadBalancerTlsAccessLogArgs']] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  update_time: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -415,6 +449,7 @@ class _LoadBalancerState:
         :param pulumi.Input[builtins.str] dns_name: DNS domain name.
         :param pulumi.Input['LoadBalancerEipBillingConfigArgs'] eip_billing_config: Billing configuration for public IP, only applicable to public instances.
         :param pulumi.Input['LoadBalancerGlobalAcceleratorArgs'] global_accelerator: Global accelerator configuration, used to improve cross-region access speed.
+        :param pulumi.Input['LoadBalancerHealthLogArgs'] health_log: Health check log information in the ALB instance
         :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         :param pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs'] ipv6_eip_billing_config: Billing configuration for IPv6 public IP, only applicable to public instances.
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
@@ -428,6 +463,7 @@ class _LoadBalancerState:
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the instance belongs.
         :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB supports the Proxy Protocol and records the client's real IP.
         :param pulumi.Input[builtins.str] status: ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
+        :param pulumi.Input['LoadBalancerTlsAccessLogArgs'] tls_access_log: Access log information in the ALB instance
         :param pulumi.Input[builtins.str] type: Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
         :param pulumi.Input[builtins.str] update_time: Last update time of the ALB instance.
         :param pulumi.Input[builtins.str] vpc_id: ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
@@ -455,6 +491,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "eip_billing_config", eip_billing_config)
         if global_accelerator is not None:
             pulumi.set(__self__, "global_accelerator", global_accelerator)
+        if health_log is not None:
+            pulumi.set(__self__, "health_log", health_log)
         if ipv6_bandwidth_package_id is not None:
             pulumi.set(__self__, "ipv6_bandwidth_package_id", ipv6_bandwidth_package_id)
         if ipv6_eip_billing_config is not None:
@@ -483,6 +521,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "status", status)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tls_access_log is not None:
+            pulumi.set(__self__, "tls_access_log", tls_access_log)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if update_time is not None:
@@ -617,6 +657,18 @@ class _LoadBalancerState:
     @global_accelerator.setter
     def global_accelerator(self, value: Optional[pulumi.Input['LoadBalancerGlobalAcceleratorArgs']]):
         pulumi.set(self, "global_accelerator", value)
+
+    @property
+    @pulumi.getter(name="healthLog")
+    def health_log(self) -> Optional[pulumi.Input['LoadBalancerHealthLogArgs']]:
+        """
+        Health check log information in the ALB instance
+        """
+        return pulumi.get(self, "health_log")
+
+    @health_log.setter
+    def health_log(self, value: Optional[pulumi.Input['LoadBalancerHealthLogArgs']]):
+        pulumi.set(self, "health_log", value)
 
     @property
     @pulumi.getter(name="ipv6BandwidthPackageId")
@@ -784,6 +836,18 @@ class _LoadBalancerState:
         pulumi.set(self, "tags", value)
 
     @property
+    @pulumi.getter(name="tlsAccessLog")
+    def tls_access_log(self) -> Optional[pulumi.Input['LoadBalancerTlsAccessLogArgs']]:
+        """
+        Access log information in the ALB instance
+        """
+        return pulumi.get(self, "tls_access_log")
+
+    @tls_access_log.setter
+    def tls_access_log(self, value: Optional[pulumi.Input['LoadBalancerTlsAccessLogArgs']]):
+        pulumi.set(self, "tls_access_log", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -877,6 +941,7 @@ class LoadBalancer(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']]] = None,
                  global_accelerator: Optional[pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']]] = None,
+                 health_log: Optional[pulumi.Input[Union['LoadBalancerHealthLogArgs', 'LoadBalancerHealthLogArgsDict']]] = None,
                  ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']]] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -887,6 +952,7 @@ class LoadBalancer(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerTagArgs', 'LoadBalancerTagArgsDict']]]]] = None,
+                 tls_access_log: Optional[pulumi.Input[Union['LoadBalancerTlsAccessLogArgs', 'LoadBalancerTlsAccessLogArgsDict']]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  waf_instance_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -911,6 +977,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: Description of the ALB instance.
         :param pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']] eip_billing_config: Billing configuration for public IP, only applicable to public instances.
         :param pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']] global_accelerator: Global accelerator configuration, used to improve cross-region access speed.
+        :param pulumi.Input[Union['LoadBalancerHealthLogArgs', 'LoadBalancerHealthLogArgsDict']] health_log: Health check log information in the ALB instance
         :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         :param pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']] ipv6_eip_billing_config: Billing configuration for IPv6 public IP, only applicable to public instances.
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
@@ -920,6 +987,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] modification_protection_status: Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the instance belongs.
         :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB supports the Proxy Protocol and records the client's real IP.
+        :param pulumi.Input[Union['LoadBalancerTlsAccessLogArgs', 'LoadBalancerTlsAccessLogArgsDict']] tls_access_log: Access log information in the ALB instance
         :param pulumi.Input[builtins.str] type: Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
         :param pulumi.Input[builtins.str] vpc_id: ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
         :param pulumi.Input[builtins.str] waf_instance_id: ID of the WAF security protection instance bound to the ALB instance.
@@ -962,6 +1030,7 @@ class LoadBalancer(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']]] = None,
                  global_accelerator: Optional[pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']]] = None,
+                 health_log: Optional[pulumi.Input[Union['LoadBalancerHealthLogArgs', 'LoadBalancerHealthLogArgsDict']]] = None,
                  ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']]] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -972,6 +1041,7 @@ class LoadBalancer(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerTagArgs', 'LoadBalancerTagArgsDict']]]]] = None,
+                 tls_access_log: Optional[pulumi.Input[Union['LoadBalancerTlsAccessLogArgs', 'LoadBalancerTlsAccessLogArgsDict']]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  waf_instance_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -993,6 +1063,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["eip_billing_config"] = eip_billing_config
             __props__.__dict__["global_accelerator"] = global_accelerator
+            __props__.__dict__["health_log"] = health_log
             __props__.__dict__["ipv6_bandwidth_package_id"] = ipv6_bandwidth_package_id
             __props__.__dict__["ipv6_eip_billing_config"] = ipv6_eip_billing_config
             __props__.__dict__["load_balancer_billing_type"] = load_balancer_billing_type
@@ -1003,6 +1074,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["proxy_protocol_enabled"] = proxy_protocol_enabled
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["tls_access_log"] = tls_access_log
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
@@ -1042,6 +1114,7 @@ class LoadBalancer(pulumi.CustomResource):
             dns_name: Optional[pulumi.Input[builtins.str]] = None,
             eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']]] = None,
             global_accelerator: Optional[pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']]] = None,
+            health_log: Optional[pulumi.Input[Union['LoadBalancerHealthLogArgs', 'LoadBalancerHealthLogArgsDict']]] = None,
             ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
             ipv6_eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']]] = None,
             load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -1056,6 +1129,7 @@ class LoadBalancer(pulumi.CustomResource):
             proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerTagArgs', 'LoadBalancerTagArgsDict']]]]] = None,
+            tls_access_log: Optional[pulumi.Input[Union['LoadBalancerTlsAccessLogArgs', 'LoadBalancerTlsAccessLogArgsDict']]] = None,
             type: Optional[pulumi.Input[builtins.str]] = None,
             update_time: Optional[pulumi.Input[builtins.str]] = None,
             vpc_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1080,6 +1154,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] dns_name: DNS domain name.
         :param pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']] eip_billing_config: Billing configuration for public IP, only applicable to public instances.
         :param pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']] global_accelerator: Global accelerator configuration, used to improve cross-region access speed.
+        :param pulumi.Input[Union['LoadBalancerHealthLogArgs', 'LoadBalancerHealthLogArgsDict']] health_log: Health check log information in the ALB instance
         :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         :param pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']] ipv6_eip_billing_config: Billing configuration for IPv6 public IP, only applicable to public instances.
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
@@ -1093,6 +1168,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] project_name: Name of the project to which the instance belongs.
         :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB supports the Proxy Protocol and records the client's real IP.
         :param pulumi.Input[builtins.str] status: ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
+        :param pulumi.Input[Union['LoadBalancerTlsAccessLogArgs', 'LoadBalancerTlsAccessLogArgsDict']] tls_access_log: Access log information in the ALB instance
         :param pulumi.Input[builtins.str] type: Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
         :param pulumi.Input[builtins.str] update_time: Last update time of the ALB instance.
         :param pulumi.Input[builtins.str] vpc_id: ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
@@ -1114,6 +1190,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["dns_name"] = dns_name
         __props__.__dict__["eip_billing_config"] = eip_billing_config
         __props__.__dict__["global_accelerator"] = global_accelerator
+        __props__.__dict__["health_log"] = health_log
         __props__.__dict__["ipv6_bandwidth_package_id"] = ipv6_bandwidth_package_id
         __props__.__dict__["ipv6_eip_billing_config"] = ipv6_eip_billing_config
         __props__.__dict__["load_balancer_billing_type"] = load_balancer_billing_type
@@ -1128,6 +1205,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["proxy_protocol_enabled"] = proxy_protocol_enabled
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
+        __props__.__dict__["tls_access_log"] = tls_access_log
         __props__.__dict__["type"] = type
         __props__.__dict__["update_time"] = update_time
         __props__.__dict__["vpc_id"] = vpc_id
@@ -1216,6 +1294,14 @@ class LoadBalancer(pulumi.CustomResource):
         Global accelerator configuration, used to improve cross-region access speed.
         """
         return pulumi.get(self, "global_accelerator")
+
+    @property
+    @pulumi.getter(name="healthLog")
+    def health_log(self) -> pulumi.Output['outputs.LoadBalancerHealthLog']:
+        """
+        Health check log information in the ALB instance
+        """
+        return pulumi.get(self, "health_log")
 
     @property
     @pulumi.getter(name="ipv6BandwidthPackageId")
@@ -1325,6 +1411,14 @@ class LoadBalancer(pulumi.CustomResource):
     @pulumi.getter
     def tags(self) -> pulumi.Output[Sequence['outputs.LoadBalancerTag']]:
         return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter(name="tlsAccessLog")
+    def tls_access_log(self) -> pulumi.Output['outputs.LoadBalancerTlsAccessLog']:
+        """
+        Access log information in the ALB instance
+        """
+        return pulumi.get(self, "tls_access_log")
 
     @property
     @pulumi.getter

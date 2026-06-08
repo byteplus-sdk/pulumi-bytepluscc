@@ -1525,6 +1525,181 @@ func (o LoadBalancerGlobalAcceleratorPtrOutput) Weight() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type LoadBalancerHealthLog struct {
+	// Whether to enable access log
+	Enabled *bool `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId *string `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId *string `pulumi:"topicId"`
+}
+
+// LoadBalancerHealthLogInput is an input type that accepts LoadBalancerHealthLogArgs and LoadBalancerHealthLogOutput values.
+// You can construct a concrete instance of `LoadBalancerHealthLogInput` via:
+//
+//	LoadBalancerHealthLogArgs{...}
+type LoadBalancerHealthLogInput interface {
+	pulumi.Input
+
+	ToLoadBalancerHealthLogOutput() LoadBalancerHealthLogOutput
+	ToLoadBalancerHealthLogOutputWithContext(context.Context) LoadBalancerHealthLogOutput
+}
+
+type LoadBalancerHealthLogArgs struct {
+	// Whether to enable access log
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (LoadBalancerHealthLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerHealthLog)(nil)).Elem()
+}
+
+func (i LoadBalancerHealthLogArgs) ToLoadBalancerHealthLogOutput() LoadBalancerHealthLogOutput {
+	return i.ToLoadBalancerHealthLogOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerHealthLogArgs) ToLoadBalancerHealthLogOutputWithContext(ctx context.Context) LoadBalancerHealthLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerHealthLogOutput)
+}
+
+func (i LoadBalancerHealthLogArgs) ToLoadBalancerHealthLogPtrOutput() LoadBalancerHealthLogPtrOutput {
+	return i.ToLoadBalancerHealthLogPtrOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerHealthLogArgs) ToLoadBalancerHealthLogPtrOutputWithContext(ctx context.Context) LoadBalancerHealthLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerHealthLogOutput).ToLoadBalancerHealthLogPtrOutputWithContext(ctx)
+}
+
+// LoadBalancerHealthLogPtrInput is an input type that accepts LoadBalancerHealthLogArgs, LoadBalancerHealthLogPtr and LoadBalancerHealthLogPtrOutput values.
+// You can construct a concrete instance of `LoadBalancerHealthLogPtrInput` via:
+//
+//	        LoadBalancerHealthLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type LoadBalancerHealthLogPtrInput interface {
+	pulumi.Input
+
+	ToLoadBalancerHealthLogPtrOutput() LoadBalancerHealthLogPtrOutput
+	ToLoadBalancerHealthLogPtrOutputWithContext(context.Context) LoadBalancerHealthLogPtrOutput
+}
+
+type loadBalancerHealthLogPtrType LoadBalancerHealthLogArgs
+
+func LoadBalancerHealthLogPtr(v *LoadBalancerHealthLogArgs) LoadBalancerHealthLogPtrInput {
+	return (*loadBalancerHealthLogPtrType)(v)
+}
+
+func (*loadBalancerHealthLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerHealthLog)(nil)).Elem()
+}
+
+func (i *loadBalancerHealthLogPtrType) ToLoadBalancerHealthLogPtrOutput() LoadBalancerHealthLogPtrOutput {
+	return i.ToLoadBalancerHealthLogPtrOutputWithContext(context.Background())
+}
+
+func (i *loadBalancerHealthLogPtrType) ToLoadBalancerHealthLogPtrOutputWithContext(ctx context.Context) LoadBalancerHealthLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerHealthLogPtrOutput)
+}
+
+type LoadBalancerHealthLogOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerHealthLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerHealthLog)(nil)).Elem()
+}
+
+func (o LoadBalancerHealthLogOutput) ToLoadBalancerHealthLogOutput() LoadBalancerHealthLogOutput {
+	return o
+}
+
+func (o LoadBalancerHealthLogOutput) ToLoadBalancerHealthLogOutputWithContext(ctx context.Context) LoadBalancerHealthLogOutput {
+	return o
+}
+
+func (o LoadBalancerHealthLogOutput) ToLoadBalancerHealthLogPtrOutput() LoadBalancerHealthLogPtrOutput {
+	return o.ToLoadBalancerHealthLogPtrOutputWithContext(context.Background())
+}
+
+func (o LoadBalancerHealthLogOutput) ToLoadBalancerHealthLogPtrOutputWithContext(ctx context.Context) LoadBalancerHealthLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LoadBalancerHealthLog) *LoadBalancerHealthLog {
+		return &v
+	}).(LoadBalancerHealthLogPtrOutput)
+}
+
+// Whether to enable access log
+func (o LoadBalancerHealthLogOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LoadBalancerHealthLog) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// TLS project ID bound to access log
+func (o LoadBalancerHealthLogOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerHealthLog) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// TLS subject ID bound to access log
+func (o LoadBalancerHealthLogOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerHealthLog) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerHealthLogPtrOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerHealthLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerHealthLog)(nil)).Elem()
+}
+
+func (o LoadBalancerHealthLogPtrOutput) ToLoadBalancerHealthLogPtrOutput() LoadBalancerHealthLogPtrOutput {
+	return o
+}
+
+func (o LoadBalancerHealthLogPtrOutput) ToLoadBalancerHealthLogPtrOutputWithContext(ctx context.Context) LoadBalancerHealthLogPtrOutput {
+	return o
+}
+
+func (o LoadBalancerHealthLogPtrOutput) Elem() LoadBalancerHealthLogOutput {
+	return o.ApplyT(func(v *LoadBalancerHealthLog) LoadBalancerHealthLog {
+		if v != nil {
+			return *v
+		}
+		var ret LoadBalancerHealthLog
+		return ret
+	}).(LoadBalancerHealthLogOutput)
+}
+
+// Whether to enable access log
+func (o LoadBalancerHealthLogPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerHealthLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TLS project ID bound to access log
+func (o LoadBalancerHealthLogPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerHealthLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// TLS subject ID bound to access log
+func (o LoadBalancerHealthLogPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerHealthLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
+}
+
 type LoadBalancerIpv6EipBillingConfig struct {
 	// Peak bandwidth of IPv6 EIP, in Mbps.
 	Bandwidth *int `pulumi:"bandwidth"`
@@ -1804,6 +1979,181 @@ func (o LoadBalancerTagArrayOutput) Index(i pulumi.IntInput) LoadBalancerTagOutp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LoadBalancerTag {
 		return vs[0].([]LoadBalancerTag)[vs[1].(int)]
 	}).(LoadBalancerTagOutput)
+}
+
+type LoadBalancerTlsAccessLog struct {
+	// Whether to enable access log
+	Enabled *bool `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId *string `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId *string `pulumi:"topicId"`
+}
+
+// LoadBalancerTlsAccessLogInput is an input type that accepts LoadBalancerTlsAccessLogArgs and LoadBalancerTlsAccessLogOutput values.
+// You can construct a concrete instance of `LoadBalancerTlsAccessLogInput` via:
+//
+//	LoadBalancerTlsAccessLogArgs{...}
+type LoadBalancerTlsAccessLogInput interface {
+	pulumi.Input
+
+	ToLoadBalancerTlsAccessLogOutput() LoadBalancerTlsAccessLogOutput
+	ToLoadBalancerTlsAccessLogOutputWithContext(context.Context) LoadBalancerTlsAccessLogOutput
+}
+
+type LoadBalancerTlsAccessLogArgs struct {
+	// Whether to enable access log
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (LoadBalancerTlsAccessLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerTlsAccessLog)(nil)).Elem()
+}
+
+func (i LoadBalancerTlsAccessLogArgs) ToLoadBalancerTlsAccessLogOutput() LoadBalancerTlsAccessLogOutput {
+	return i.ToLoadBalancerTlsAccessLogOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerTlsAccessLogArgs) ToLoadBalancerTlsAccessLogOutputWithContext(ctx context.Context) LoadBalancerTlsAccessLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerTlsAccessLogOutput)
+}
+
+func (i LoadBalancerTlsAccessLogArgs) ToLoadBalancerTlsAccessLogPtrOutput() LoadBalancerTlsAccessLogPtrOutput {
+	return i.ToLoadBalancerTlsAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerTlsAccessLogArgs) ToLoadBalancerTlsAccessLogPtrOutputWithContext(ctx context.Context) LoadBalancerTlsAccessLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerTlsAccessLogOutput).ToLoadBalancerTlsAccessLogPtrOutputWithContext(ctx)
+}
+
+// LoadBalancerTlsAccessLogPtrInput is an input type that accepts LoadBalancerTlsAccessLogArgs, LoadBalancerTlsAccessLogPtr and LoadBalancerTlsAccessLogPtrOutput values.
+// You can construct a concrete instance of `LoadBalancerTlsAccessLogPtrInput` via:
+//
+//	        LoadBalancerTlsAccessLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type LoadBalancerTlsAccessLogPtrInput interface {
+	pulumi.Input
+
+	ToLoadBalancerTlsAccessLogPtrOutput() LoadBalancerTlsAccessLogPtrOutput
+	ToLoadBalancerTlsAccessLogPtrOutputWithContext(context.Context) LoadBalancerTlsAccessLogPtrOutput
+}
+
+type loadBalancerTlsAccessLogPtrType LoadBalancerTlsAccessLogArgs
+
+func LoadBalancerTlsAccessLogPtr(v *LoadBalancerTlsAccessLogArgs) LoadBalancerTlsAccessLogPtrInput {
+	return (*loadBalancerTlsAccessLogPtrType)(v)
+}
+
+func (*loadBalancerTlsAccessLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerTlsAccessLog)(nil)).Elem()
+}
+
+func (i *loadBalancerTlsAccessLogPtrType) ToLoadBalancerTlsAccessLogPtrOutput() LoadBalancerTlsAccessLogPtrOutput {
+	return i.ToLoadBalancerTlsAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (i *loadBalancerTlsAccessLogPtrType) ToLoadBalancerTlsAccessLogPtrOutputWithContext(ctx context.Context) LoadBalancerTlsAccessLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerTlsAccessLogPtrOutput)
+}
+
+type LoadBalancerTlsAccessLogOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerTlsAccessLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerTlsAccessLog)(nil)).Elem()
+}
+
+func (o LoadBalancerTlsAccessLogOutput) ToLoadBalancerTlsAccessLogOutput() LoadBalancerTlsAccessLogOutput {
+	return o
+}
+
+func (o LoadBalancerTlsAccessLogOutput) ToLoadBalancerTlsAccessLogOutputWithContext(ctx context.Context) LoadBalancerTlsAccessLogOutput {
+	return o
+}
+
+func (o LoadBalancerTlsAccessLogOutput) ToLoadBalancerTlsAccessLogPtrOutput() LoadBalancerTlsAccessLogPtrOutput {
+	return o.ToLoadBalancerTlsAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (o LoadBalancerTlsAccessLogOutput) ToLoadBalancerTlsAccessLogPtrOutputWithContext(ctx context.Context) LoadBalancerTlsAccessLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LoadBalancerTlsAccessLog) *LoadBalancerTlsAccessLog {
+		return &v
+	}).(LoadBalancerTlsAccessLogPtrOutput)
+}
+
+// Whether to enable access log
+func (o LoadBalancerTlsAccessLogOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LoadBalancerTlsAccessLog) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// TLS project ID bound to access log
+func (o LoadBalancerTlsAccessLogOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerTlsAccessLog) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// TLS subject ID bound to access log
+func (o LoadBalancerTlsAccessLogOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerTlsAccessLog) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerTlsAccessLogPtrOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerTlsAccessLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerTlsAccessLog)(nil)).Elem()
+}
+
+func (o LoadBalancerTlsAccessLogPtrOutput) ToLoadBalancerTlsAccessLogPtrOutput() LoadBalancerTlsAccessLogPtrOutput {
+	return o
+}
+
+func (o LoadBalancerTlsAccessLogPtrOutput) ToLoadBalancerTlsAccessLogPtrOutputWithContext(ctx context.Context) LoadBalancerTlsAccessLogPtrOutput {
+	return o
+}
+
+func (o LoadBalancerTlsAccessLogPtrOutput) Elem() LoadBalancerTlsAccessLogOutput {
+	return o.ApplyT(func(v *LoadBalancerTlsAccessLog) LoadBalancerTlsAccessLog {
+		if v != nil {
+			return *v
+		}
+		var ret LoadBalancerTlsAccessLog
+		return ret
+	}).(LoadBalancerTlsAccessLogOutput)
+}
+
+// Whether to enable access log
+func (o LoadBalancerTlsAccessLogPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerTlsAccessLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TLS project ID bound to access log
+func (o LoadBalancerTlsAccessLogPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerTlsAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// TLS subject ID bound to access log
+func (o LoadBalancerTlsAccessLogPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerTlsAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
 }
 
 type LoadBalancerZoneMapping struct {
@@ -6938,6 +7288,76 @@ func (o GetLoadBalancerGlobalAcceleratorOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLoadBalancerGlobalAccelerator) int { return v.Weight }).(pulumi.IntOutput)
 }
 
+type GetLoadBalancerHealthLog struct {
+	// Whether to enable access log
+	Enabled bool `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId string `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetLoadBalancerHealthLogInput is an input type that accepts GetLoadBalancerHealthLogArgs and GetLoadBalancerHealthLogOutput values.
+// You can construct a concrete instance of `GetLoadBalancerHealthLogInput` via:
+//
+//	GetLoadBalancerHealthLogArgs{...}
+type GetLoadBalancerHealthLogInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerHealthLogOutput() GetLoadBalancerHealthLogOutput
+	ToGetLoadBalancerHealthLogOutputWithContext(context.Context) GetLoadBalancerHealthLogOutput
+}
+
+type GetLoadBalancerHealthLogArgs struct {
+	// Whether to enable access log
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetLoadBalancerHealthLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerHealthLog)(nil)).Elem()
+}
+
+func (i GetLoadBalancerHealthLogArgs) ToGetLoadBalancerHealthLogOutput() GetLoadBalancerHealthLogOutput {
+	return i.ToGetLoadBalancerHealthLogOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerHealthLogArgs) ToGetLoadBalancerHealthLogOutputWithContext(ctx context.Context) GetLoadBalancerHealthLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerHealthLogOutput)
+}
+
+type GetLoadBalancerHealthLogOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerHealthLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerHealthLog)(nil)).Elem()
+}
+
+func (o GetLoadBalancerHealthLogOutput) ToGetLoadBalancerHealthLogOutput() GetLoadBalancerHealthLogOutput {
+	return o
+}
+
+func (o GetLoadBalancerHealthLogOutput) ToGetLoadBalancerHealthLogOutputWithContext(ctx context.Context) GetLoadBalancerHealthLogOutput {
+	return o
+}
+
+// Whether to enable access log
+func (o GetLoadBalancerHealthLogOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLoadBalancerHealthLog) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// TLS project ID bound to access log
+func (o GetLoadBalancerHealthLogOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerHealthLog) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// TLS subject ID bound to access log
+func (o GetLoadBalancerHealthLogOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerHealthLog) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
 type GetLoadBalancerIpv6EipBillingConfig struct {
 	// Peak bandwidth of IPv6 EIP, in Mbps.
 	Bandwidth int `pulumi:"bandwidth"`
@@ -7112,6 +7532,76 @@ func (o GetLoadBalancerTagArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerT
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerTag {
 		return vs[0].([]GetLoadBalancerTag)[vs[1].(int)]
 	}).(GetLoadBalancerTagOutput)
+}
+
+type GetLoadBalancerTlsAccessLog struct {
+	// Whether to enable access log
+	Enabled bool `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId string `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetLoadBalancerTlsAccessLogInput is an input type that accepts GetLoadBalancerTlsAccessLogArgs and GetLoadBalancerTlsAccessLogOutput values.
+// You can construct a concrete instance of `GetLoadBalancerTlsAccessLogInput` via:
+//
+//	GetLoadBalancerTlsAccessLogArgs{...}
+type GetLoadBalancerTlsAccessLogInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerTlsAccessLogOutput() GetLoadBalancerTlsAccessLogOutput
+	ToGetLoadBalancerTlsAccessLogOutputWithContext(context.Context) GetLoadBalancerTlsAccessLogOutput
+}
+
+type GetLoadBalancerTlsAccessLogArgs struct {
+	// Whether to enable access log
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// TLS project ID bound to access log
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// TLS subject ID bound to access log
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetLoadBalancerTlsAccessLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerTlsAccessLog)(nil)).Elem()
+}
+
+func (i GetLoadBalancerTlsAccessLogArgs) ToGetLoadBalancerTlsAccessLogOutput() GetLoadBalancerTlsAccessLogOutput {
+	return i.ToGetLoadBalancerTlsAccessLogOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerTlsAccessLogArgs) ToGetLoadBalancerTlsAccessLogOutputWithContext(ctx context.Context) GetLoadBalancerTlsAccessLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerTlsAccessLogOutput)
+}
+
+type GetLoadBalancerTlsAccessLogOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerTlsAccessLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerTlsAccessLog)(nil)).Elem()
+}
+
+func (o GetLoadBalancerTlsAccessLogOutput) ToGetLoadBalancerTlsAccessLogOutput() GetLoadBalancerTlsAccessLogOutput {
+	return o
+}
+
+func (o GetLoadBalancerTlsAccessLogOutput) ToGetLoadBalancerTlsAccessLogOutputWithContext(ctx context.Context) GetLoadBalancerTlsAccessLogOutput {
+	return o
+}
+
+// Whether to enable access log
+func (o GetLoadBalancerTlsAccessLogOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLoadBalancerTlsAccessLog) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// TLS project ID bound to access log
+func (o GetLoadBalancerTlsAccessLogOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerTlsAccessLog) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// TLS subject ID bound to access log
+func (o GetLoadBalancerTlsAccessLogOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerTlsAccessLog) string { return v.TopicId }).(pulumi.StringOutput)
 }
 
 type GetLoadBalancerZoneMapping struct {
@@ -9770,10 +10260,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerEipBillingConfigPtrInput)(nil)).Elem(), LoadBalancerEipBillingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerGlobalAcceleratorInput)(nil)).Elem(), LoadBalancerGlobalAcceleratorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerGlobalAcceleratorPtrInput)(nil)).Elem(), LoadBalancerGlobalAcceleratorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerHealthLogInput)(nil)).Elem(), LoadBalancerHealthLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerHealthLogPtrInput)(nil)).Elem(), LoadBalancerHealthLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerIpv6EipBillingConfigInput)(nil)).Elem(), LoadBalancerIpv6EipBillingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerIpv6EipBillingConfigPtrInput)(nil)).Elem(), LoadBalancerIpv6EipBillingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTagInput)(nil)).Elem(), LoadBalancerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTagArrayInput)(nil)).Elem(), LoadBalancerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTlsAccessLogInput)(nil)).Elem(), LoadBalancerTlsAccessLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTlsAccessLogPtrInput)(nil)).Elem(), LoadBalancerTlsAccessLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerZoneMappingInput)(nil)).Elem(), LoadBalancerZoneMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerZoneMappingArrayInput)(nil)).Elem(), LoadBalancerZoneMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleForwardGroupConfigInput)(nil)).Elem(), RuleForwardGroupConfigArgs{})
@@ -9846,9 +10340,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerEipBillingConfigInput)(nil)).Elem(), GetLoadBalancerEipBillingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerGlobalAcceleratorInput)(nil)).Elem(), GetLoadBalancerGlobalAcceleratorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerHealthLogInput)(nil)).Elem(), GetLoadBalancerHealthLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerIpv6EipBillingConfigInput)(nil)).Elem(), GetLoadBalancerIpv6EipBillingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerTagInput)(nil)).Elem(), GetLoadBalancerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerTagArrayInput)(nil)).Elem(), GetLoadBalancerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerTlsAccessLogInput)(nil)).Elem(), GetLoadBalancerTlsAccessLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingInput)(nil)).Elem(), GetLoadBalancerZoneMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingArrayInput)(nil)).Elem(), GetLoadBalancerZoneMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressArgs{})
@@ -9913,10 +10409,14 @@ func init() {
 	pulumi.RegisterOutputType(LoadBalancerEipBillingConfigPtrOutput{})
 	pulumi.RegisterOutputType(LoadBalancerGlobalAcceleratorOutput{})
 	pulumi.RegisterOutputType(LoadBalancerGlobalAcceleratorPtrOutput{})
+	pulumi.RegisterOutputType(LoadBalancerHealthLogOutput{})
+	pulumi.RegisterOutputType(LoadBalancerHealthLogPtrOutput{})
 	pulumi.RegisterOutputType(LoadBalancerIpv6EipBillingConfigOutput{})
 	pulumi.RegisterOutputType(LoadBalancerIpv6EipBillingConfigPtrOutput{})
 	pulumi.RegisterOutputType(LoadBalancerTagOutput{})
 	pulumi.RegisterOutputType(LoadBalancerTagArrayOutput{})
+	pulumi.RegisterOutputType(LoadBalancerTlsAccessLogOutput{})
+	pulumi.RegisterOutputType(LoadBalancerTlsAccessLogPtrOutput{})
 	pulumi.RegisterOutputType(LoadBalancerZoneMappingOutput{})
 	pulumi.RegisterOutputType(LoadBalancerZoneMappingArrayOutput{})
 	pulumi.RegisterOutputType(RuleForwardGroupConfigOutput{})
@@ -9989,9 +10489,11 @@ func init() {
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerEipBillingConfigOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerGlobalAcceleratorOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerHealthLogOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerIpv6EipBillingConfigOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerTagOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerTlsAccessLogOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressOutput{})

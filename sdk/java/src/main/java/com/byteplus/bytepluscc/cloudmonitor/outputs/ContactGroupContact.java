@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContactGroupContact {
     /**
-     * @return 联系人ID。
+     * @return Contact ID
      * 
      */
     private @Nullable String contactId;
 
     private ContactGroupContact() {}
     /**
-     * @return 联系人ID。
+     * @return Contact ID
      * 
      */
     public Optional<String> contactId() {

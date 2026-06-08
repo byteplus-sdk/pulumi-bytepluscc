@@ -99,6 +99,14 @@ export interface GetInstanceResult {
      */
     readonly projectName: string;
     /**
+     * Replication slot list for the instance
+     */
+    readonly replicationSlots: outputs.rdspostgresql.GetInstanceReplicationSlot[];
+    /**
+     * Restore backup data to the current instance
+     */
+    readonly restoreToExistedInstance: outputs.rdspostgresql.GetInstanceRestoreToExistedInstance;
+    /**
      * Data file space used by the primary node. Unit: Byte
      */
     readonly storageDataUse: number;

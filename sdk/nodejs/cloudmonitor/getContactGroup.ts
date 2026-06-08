@@ -31,23 +31,23 @@ export interface GetContactGroupArgs {
  */
 export interface GetContactGroupResult {
     /**
-     * 创建本联系组的账号ID。
+     * Account ID that created this contact group
      */
     readonly accountId: string;
     /**
-     * 联系组的ID。
+     * Contact group ID
      */
     readonly contactGroupId: string;
     /**
-     * 联系组中的联系信息。
+     * Contact information in the contact group
      */
     readonly contacts: outputs.cloudmonitor.GetContactGroupContact[];
     /**
-     * 联系组的创建时间。
+     * Contact group creation time
      */
     readonly createdAt: string;
     /**
-     * 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      */
     readonly description: string;
     /**
@@ -55,11 +55,11 @@ export interface GetContactGroupResult {
      */
     readonly id: string;
     /**
-     * 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      */
     readonly name: string;
     /**
-     * 联系组的更新时间。
+     * Contact group update time
      */
     readonly updatedAt: string;
 }

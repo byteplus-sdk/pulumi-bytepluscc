@@ -8,6 +8,10 @@ import com.byteplus.bytepluscc.clb.inputs.GetAclArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetAclPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetCertificateArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetCertificatePlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetCheckLogProjectArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetCheckLogProjectPlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetCheckLogTopicArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetCheckLogTopicPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetClbArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetClbPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetListenerArgs;
@@ -28,6 +32,10 @@ import com.byteplus.bytepluscc.clb.outputs.GetAclResult;
 import com.byteplus.bytepluscc.clb.outputs.GetAclsResult;
 import com.byteplus.bytepluscc.clb.outputs.GetCertificateResult;
 import com.byteplus.bytepluscc.clb.outputs.GetCertificatesResult;
+import com.byteplus.bytepluscc.clb.outputs.GetCheckLogProjectResult;
+import com.byteplus.bytepluscc.clb.outputs.GetCheckLogProjectsResult;
+import com.byteplus.bytepluscc.clb.outputs.GetCheckLogTopicResult;
+import com.byteplus.bytepluscc.clb.outputs.GetCheckLogTopicsResult;
 import com.byteplus.bytepluscc.clb.outputs.GetClbResult;
 import com.byteplus.bytepluscc.clb.outputs.GetClbsResult;
 import com.byteplus.bytepluscc.clb.outputs.GetListenerResult;
@@ -220,6 +228,174 @@ public final class ClbFunctions {
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectResult> getCheckLogProject(GetCheckLogProjectArgs args) {
+        return getCheckLogProject(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static CompletableFuture<GetCheckLogProjectResult> getCheckLogProjectPlain(GetCheckLogProjectPlainArgs args) {
+        return getCheckLogProjectPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectResult> getCheckLogProject(GetCheckLogProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogProject:getCheckLogProject", TypeShape.of(GetCheckLogProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectResult> getCheckLogProject(GetCheckLogProjectArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogProject:getCheckLogProject", TypeShape.of(GetCheckLogProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static CompletableFuture<GetCheckLogProjectResult> getCheckLogProjectPlain(GetCheckLogProjectPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCheckLogProject:getCheckLogProject", TypeShape.of(GetCheckLogProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectsResult> getCheckLogProjects() {
+        return getCheckLogProjects(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static CompletableFuture<GetCheckLogProjectsResult> getCheckLogProjectsPlain() {
+        return getCheckLogProjectsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectsResult> getCheckLogProjects(InvokeArgs args) {
+        return getCheckLogProjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static CompletableFuture<GetCheckLogProjectsResult> getCheckLogProjectsPlain(InvokeArgs args) {
+        return getCheckLogProjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectsResult> getCheckLogProjects(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogProjects:getCheckLogProjects", TypeShape.of(GetCheckLogProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static Output<GetCheckLogProjectsResult> getCheckLogProjects(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogProjects:getCheckLogProjects", TypeShape.of(GetCheckLogProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogProject
+     * 
+     */
+    public static CompletableFuture<GetCheckLogProjectsResult> getCheckLogProjectsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCheckLogProjects:getCheckLogProjects", TypeShape.of(GetCheckLogProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicResult> getCheckLogTopic(GetCheckLogTopicArgs args) {
+        return getCheckLogTopic(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static CompletableFuture<GetCheckLogTopicResult> getCheckLogTopicPlain(GetCheckLogTopicPlainArgs args) {
+        return getCheckLogTopicPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicResult> getCheckLogTopic(GetCheckLogTopicArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogTopic:getCheckLogTopic", TypeShape.of(GetCheckLogTopicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicResult> getCheckLogTopic(GetCheckLogTopicArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogTopic:getCheckLogTopic", TypeShape.of(GetCheckLogTopicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static CompletableFuture<GetCheckLogTopicResult> getCheckLogTopicPlain(GetCheckLogTopicPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCheckLogTopic:getCheckLogTopic", TypeShape.of(GetCheckLogTopicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicsResult> getCheckLogTopics() {
+        return getCheckLogTopics(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static CompletableFuture<GetCheckLogTopicsResult> getCheckLogTopicsPlain() {
+        return getCheckLogTopicsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicsResult> getCheckLogTopics(InvokeArgs args) {
+        return getCheckLogTopics(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static CompletableFuture<GetCheckLogTopicsResult> getCheckLogTopicsPlain(InvokeArgs args) {
+        return getCheckLogTopicsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicsResult> getCheckLogTopics(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogTopics:getCheckLogTopics", TypeShape.of(GetCheckLogTopicsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static Output<GetCheckLogTopicsResult> getCheckLogTopics(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCheckLogTopics:getCheckLogTopics", TypeShape.of(GetCheckLogTopicsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::CheckLogTopic
+     * 
+     */
+    public static CompletableFuture<GetCheckLogTopicsResult> getCheckLogTopicsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCheckLogTopics:getCheckLogTopics", TypeShape.of(GetCheckLogTopicsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::CLB::CLB

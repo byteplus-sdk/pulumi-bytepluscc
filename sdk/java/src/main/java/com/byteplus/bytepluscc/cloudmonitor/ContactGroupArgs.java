@@ -26,14 +26,14 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      * 
      */
     public Optional<Output<String>> description() {
@@ -41,14 +41,14 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      * 
      */
     public Output<String> name() {
@@ -95,7 +95,7 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+         * @param description Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+         * @param description Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+         * @param name Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+         * @param name Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
          * 
          * @return builder
          * 

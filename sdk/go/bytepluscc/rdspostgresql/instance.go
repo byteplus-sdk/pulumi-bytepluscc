@@ -51,7 +51,10 @@ type Instance struct {
 	// Primary node specification
 	NodeSpec pulumi.StringOutput `pulumi:"nodeSpec"`
 	// Project. Default value: default project
-	ProjectName pulumi.StringOutput `pulumi:"projectName"`
+	ProjectName      pulumi.StringOutput                `pulumi:"projectName"`
+	ReplicationSlots InstanceReplicationSlotArrayOutput `pulumi:"replicationSlots"`
+	// Restore backup data to the current instance
+	RestoreToExistedInstance InstanceRestoreToExistedInstanceOutput `pulumi:"restoreToExistedInstance"`
 	// Data file space used by the primary node. Unit: Byte
 	StorageDataUse pulumi.Float64Output `pulumi:"storageDataUse"`
 	// Log file space used by the primary node. Unit: Byte
@@ -156,7 +159,10 @@ type instanceState struct {
 	// Primary node specification
 	NodeSpec *string `pulumi:"nodeSpec"`
 	// Project. Default value: default project
-	ProjectName *string `pulumi:"projectName"`
+	ProjectName      *string                   `pulumi:"projectName"`
+	ReplicationSlots []InstanceReplicationSlot `pulumi:"replicationSlots"`
+	// Restore backup data to the current instance
+	RestoreToExistedInstance *InstanceRestoreToExistedInstance `pulumi:"restoreToExistedInstance"`
 	// Data file space used by the primary node. Unit: Byte
 	StorageDataUse *float64 `pulumi:"storageDataUse"`
 	// Log file space used by the primary node. Unit: Byte
@@ -214,7 +220,10 @@ type InstanceState struct {
 	// Primary node specification
 	NodeSpec pulumi.StringPtrInput
 	// Project. Default value: default project
-	ProjectName pulumi.StringPtrInput
+	ProjectName      pulumi.StringPtrInput
+	ReplicationSlots InstanceReplicationSlotArrayInput
+	// Restore backup data to the current instance
+	RestoreToExistedInstance InstanceRestoreToExistedInstancePtrInput
 	// Data file space used by the primary node. Unit: Byte
 	StorageDataUse pulumi.Float64PtrInput
 	// Log file space used by the primary node. Unit: Byte
@@ -259,7 +268,10 @@ type instanceArgs struct {
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
 	NodeInfos         []InstanceNodeInfo         `pulumi:"nodeInfos"`
 	// Project. Default value: default project
-	ProjectName *string `pulumi:"projectName"`
+	ProjectName      *string                   `pulumi:"projectName"`
+	ReplicationSlots []InstanceReplicationSlot `pulumi:"replicationSlots"`
+	// Restore backup data to the current instance
+	RestoreToExistedInstance *InstanceRestoreToExistedInstance `pulumi:"restoreToExistedInstance"`
 	// Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
 	StorageSpace *float64 `pulumi:"storageSpace"`
 	// Instance storage type, fixed value LocalSSD (local SSD disk)
@@ -285,7 +297,10 @@ type InstanceArgs struct {
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
 	NodeInfos         InstanceNodeInfoArrayInput
 	// Project. Default value: default project
-	ProjectName pulumi.StringPtrInput
+	ProjectName      pulumi.StringPtrInput
+	ReplicationSlots InstanceReplicationSlotArrayInput
+	// Restore backup data to the current instance
+	RestoreToExistedInstance InstanceRestoreToExistedInstancePtrInput
 	// Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
 	StorageSpace pulumi.Float64PtrInput
 	// Instance storage type, fixed value LocalSSD (local SSD disk)
@@ -460,6 +475,15 @@ func (o InstanceOutput) NodeSpec() pulumi.StringOutput {
 // Project. Default value: default project
 func (o InstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+func (o InstanceOutput) ReplicationSlots() InstanceReplicationSlotArrayOutput {
+	return o.ApplyT(func(v *Instance) InstanceReplicationSlotArrayOutput { return v.ReplicationSlots }).(InstanceReplicationSlotArrayOutput)
+}
+
+// Restore backup data to the current instance
+func (o InstanceOutput) RestoreToExistedInstance() InstanceRestoreToExistedInstanceOutput {
+	return o.ApplyT(func(v *Instance) InstanceRestoreToExistedInstanceOutput { return v.RestoreToExistedInstance }).(InstanceRestoreToExistedInstanceOutput)
 }
 
 // Data file space used by the primary node. Unit: Byte

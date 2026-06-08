@@ -27,8 +27,8 @@ class ContactGroupArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a ContactGroup resource.
-        :param pulumi.Input[builtins.str] name: 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
-        :param pulumi.Input[builtins.str] description: 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        :param pulumi.Input[builtins.str] name: Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] description: Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         """
         pulumi.set(__self__, "name", name)
         if contacts is not None:
@@ -40,7 +40,7 @@ class ContactGroupArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -61,7 +61,7 @@ class ContactGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         """
         return pulumi.get(self, "description")
 
@@ -82,12 +82,12 @@ class _ContactGroupState:
                  updated_at: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContactGroup resources.
-        :param pulumi.Input[builtins.str] account_id: 创建本联系组的账号ID。
-        :param pulumi.Input[builtins.str] contact_group_id: 联系组的ID。
-        :param pulumi.Input[builtins.str] created_at: 联系组的创建时间。
-        :param pulumi.Input[builtins.str] description: 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
-        :param pulumi.Input[builtins.str] name: 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
-        :param pulumi.Input[builtins.str] updated_at: 联系组的更新时间。
+        :param pulumi.Input[builtins.str] account_id: Account ID that created this contact group
+        :param pulumi.Input[builtins.str] contact_group_id: Contact group ID
+        :param pulumi.Input[builtins.str] created_at: Contact group creation time
+        :param pulumi.Input[builtins.str] description: Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
+        :param pulumi.Input[builtins.str] name: Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] updated_at: Contact group update time
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -108,7 +108,7 @@ class _ContactGroupState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建本联系组的账号ID。
+        Account ID that created this contact group
         """
         return pulumi.get(self, "account_id")
 
@@ -120,7 +120,7 @@ class _ContactGroupState:
     @pulumi.getter(name="contactGroupId")
     def contact_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系组的ID。
+        Contact group ID
         """
         return pulumi.get(self, "contact_group_id")
 
@@ -141,7 +141,7 @@ class _ContactGroupState:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系组的创建时间。
+        Contact group creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -153,7 +153,7 @@ class _ContactGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         """
         return pulumi.get(self, "description")
 
@@ -165,7 +165,7 @@ class _ContactGroupState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -177,7 +177,7 @@ class _ContactGroupState:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系组的更新时间。
+        Contact group update time
         """
         return pulumi.get(self, "updated_at")
 
@@ -197,7 +197,7 @@ class ContactGroup(pulumi.CustomResource):
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        符合条件的联系组的详细信息。
+        Details of contact groups that meet the criteria
 
         ## Import
 
@@ -207,8 +207,8 @@ class ContactGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
-        :param pulumi.Input[builtins.str] name: 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        :param pulumi.Input[builtins.str] description: Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
+        :param pulumi.Input[builtins.str] name: Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         """
         ...
     @overload
@@ -217,7 +217,7 @@ class ContactGroup(pulumi.CustomResource):
                  args: ContactGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        符合条件的联系组的详细信息。
+        Details of contact groups that meet the criteria
 
         ## Import
 
@@ -285,12 +285,12 @@ class ContactGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 创建本联系组的账号ID。
-        :param pulumi.Input[builtins.str] contact_group_id: 联系组的ID。
-        :param pulumi.Input[builtins.str] created_at: 联系组的创建时间。
-        :param pulumi.Input[builtins.str] description: 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
-        :param pulumi.Input[builtins.str] name: 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
-        :param pulumi.Input[builtins.str] updated_at: 联系组的更新时间。
+        :param pulumi.Input[builtins.str] account_id: Account ID that created this contact group
+        :param pulumi.Input[builtins.str] contact_group_id: Contact group ID
+        :param pulumi.Input[builtins.str] created_at: Contact group creation time
+        :param pulumi.Input[builtins.str] description: Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
+        :param pulumi.Input[builtins.str] name: Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
+        :param pulumi.Input[builtins.str] updated_at: Contact group update time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -309,7 +309,7 @@ class ContactGroup(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        创建本联系组的账号ID。
+        Account ID that created this contact group
         """
         return pulumi.get(self, "account_id")
 
@@ -317,7 +317,7 @@ class ContactGroup(pulumi.CustomResource):
     @pulumi.getter(name="contactGroupId")
     def contact_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        联系组的ID。
+        Contact group ID
         """
         return pulumi.get(self, "contact_group_id")
 
@@ -330,7 +330,7 @@ class ContactGroup(pulumi.CustomResource):
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        联系组的创建时间。
+        Contact group creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -338,7 +338,7 @@ class ContactGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         """
         return pulumi.get(self, "description")
 
@@ -346,7 +346,7 @@ class ContactGroup(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -354,7 +354,7 @@ class ContactGroup(pulumi.CustomResource):
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> pulumi.Output[builtins.str]:
         """
-        联系组的更新时间。
+        Contact group update time
         """
         return pulumi.get(self, "updated_at")
 

@@ -15,6 +15,16 @@ export type Certificate = import("./certificate").Certificate;
 export const Certificate: typeof import("./certificate").Certificate = null as any;
 utilities.lazyLoad(exports, ["Certificate"], () => require("./certificate"));
 
+export { CheckLogProjectArgs, CheckLogProjectState } from "./checkLogProject";
+export type CheckLogProject = import("./checkLogProject").CheckLogProject;
+export const CheckLogProject: typeof import("./checkLogProject").CheckLogProject = null as any;
+utilities.lazyLoad(exports, ["CheckLogProject"], () => require("./checkLogProject"));
+
+export { CheckLogTopicArgs, CheckLogTopicState } from "./checkLogTopic";
+export type CheckLogTopic = import("./checkLogTopic").CheckLogTopic;
+export const CheckLogTopic: typeof import("./checkLogTopic").CheckLogTopic = null as any;
+utilities.lazyLoad(exports, ["CheckLogTopic"], () => require("./checkLogTopic"));
+
 export { ClbArgs, ClbState } from "./clb";
 export type Clb = import("./clb").Clb;
 export const Clb: typeof import("./clb").Clb = null as any;
@@ -39,6 +49,26 @@ export { GetCertificatesResult } from "./getCertificates";
 export const getCertificates: typeof import("./getCertificates").getCertificates = null as any;
 export const getCertificatesOutput: typeof import("./getCertificates").getCertificatesOutput = null as any;
 utilities.lazyLoad(exports, ["getCertificates","getCertificatesOutput"], () => require("./getCertificates"));
+
+export { GetCheckLogProjectArgs, GetCheckLogProjectResult, GetCheckLogProjectOutputArgs } from "./getCheckLogProject";
+export const getCheckLogProject: typeof import("./getCheckLogProject").getCheckLogProject = null as any;
+export const getCheckLogProjectOutput: typeof import("./getCheckLogProject").getCheckLogProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getCheckLogProject","getCheckLogProjectOutput"], () => require("./getCheckLogProject"));
+
+export { GetCheckLogProjectsResult } from "./getCheckLogProjects";
+export const getCheckLogProjects: typeof import("./getCheckLogProjects").getCheckLogProjects = null as any;
+export const getCheckLogProjectsOutput: typeof import("./getCheckLogProjects").getCheckLogProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getCheckLogProjects","getCheckLogProjectsOutput"], () => require("./getCheckLogProjects"));
+
+export { GetCheckLogTopicArgs, GetCheckLogTopicResult, GetCheckLogTopicOutputArgs } from "./getCheckLogTopic";
+export const getCheckLogTopic: typeof import("./getCheckLogTopic").getCheckLogTopic = null as any;
+export const getCheckLogTopicOutput: typeof import("./getCheckLogTopic").getCheckLogTopicOutput = null as any;
+utilities.lazyLoad(exports, ["getCheckLogTopic","getCheckLogTopicOutput"], () => require("./getCheckLogTopic"));
+
+export { GetCheckLogTopicsResult } from "./getCheckLogTopics";
+export const getCheckLogTopics: typeof import("./getCheckLogTopics").getCheckLogTopics = null as any;
+export const getCheckLogTopicsOutput: typeof import("./getCheckLogTopics").getCheckLogTopicsOutput = null as any;
+utilities.lazyLoad(exports, ["getCheckLogTopics","getCheckLogTopicsOutput"], () => require("./getCheckLogTopics"));
 
 export { GetClbArgs, GetClbResult, GetClbOutputArgs } from "./getClb";
 export const getClb: typeof import("./getClb").getClb = null as any;
@@ -164,6 +194,10 @@ const _module = {
                 return new Acl(name, <any>undefined, { urn })
             case "bytepluscc:clb/certificate:Certificate":
                 return new Certificate(name, <any>undefined, { urn })
+            case "bytepluscc:clb/checkLogProject:CheckLogProject":
+                return new CheckLogProject(name, <any>undefined, { urn })
+            case "bytepluscc:clb/checkLogTopic:CheckLogTopic":
+                return new CheckLogTopic(name, <any>undefined, { urn })
             case "bytepluscc:clb/clb:Clb":
                 return new Clb(name, <any>undefined, { urn })
             case "bytepluscc:clb/listener:Listener":
@@ -187,6 +221,8 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/acl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/certificate", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/checkLogProject", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/checkLogTopic", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/clb", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/listener", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlb", _module)

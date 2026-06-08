@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:transitrouter/peerAttachment:PeerAttachment":
 		r = &PeerAttachment{}
+	case "bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation":
+		r = &RouteTablePropagation{}
 	case "bytepluscc:transitrouter/transitRouter:TransitRouter":
 		r = &TransitRouter{}
 	case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
@@ -49,6 +51,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"transitrouter/peerAttachment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/routeTablePropagation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

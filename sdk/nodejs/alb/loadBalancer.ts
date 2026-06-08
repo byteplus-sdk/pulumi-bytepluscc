@@ -84,6 +84,10 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     public readonly globalAccelerator!: pulumi.Output<outputs.alb.LoadBalancerGlobalAccelerator>;
     /**
+     * Health check log information in the ALB instance
+     */
+    public readonly healthLog!: pulumi.Output<outputs.alb.LoadBalancerHealthLog>;
+    /**
      * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      */
     public readonly ipv6BandwidthPackageId!: pulumi.Output<string>;
@@ -137,6 +141,10 @@ export class LoadBalancer extends pulumi.CustomResource {
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.alb.LoadBalancerTag[]>;
     /**
+     * Access log information in the ALB instance
+     */
+    public readonly tlsAccessLog!: pulumi.Output<outputs.alb.LoadBalancerTlsAccessLog>;
+    /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */
     public readonly type!: pulumi.Output<string>;
@@ -185,6 +193,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["dnsName"] = state ? state.dnsName : undefined;
             resourceInputs["eipBillingConfig"] = state ? state.eipBillingConfig : undefined;
             resourceInputs["globalAccelerator"] = state ? state.globalAccelerator : undefined;
+            resourceInputs["healthLog"] = state ? state.healthLog : undefined;
             resourceInputs["ipv6BandwidthPackageId"] = state ? state.ipv6BandwidthPackageId : undefined;
             resourceInputs["ipv6EipBillingConfig"] = state ? state.ipv6EipBillingConfig : undefined;
             resourceInputs["loadBalancerBillingType"] = state ? state.loadBalancerBillingType : undefined;
@@ -199,6 +208,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["proxyProtocolEnabled"] = state ? state.proxyProtocolEnabled : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["tlsAccessLog"] = state ? state.tlsAccessLog : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["updateTime"] = state ? state.updateTime : undefined;
             resourceInputs["vpcId"] = state ? state.vpcId : undefined;
@@ -220,6 +230,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["eipBillingConfig"] = args ? args.eipBillingConfig : undefined;
             resourceInputs["globalAccelerator"] = args ? args.globalAccelerator : undefined;
+            resourceInputs["healthLog"] = args ? args.healthLog : undefined;
             resourceInputs["ipv6BandwidthPackageId"] = args ? args.ipv6BandwidthPackageId : undefined;
             resourceInputs["ipv6EipBillingConfig"] = args ? args.ipv6EipBillingConfig : undefined;
             resourceInputs["loadBalancerBillingType"] = args ? args.loadBalancerBillingType : undefined;
@@ -230,6 +241,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["proxyProtocolEnabled"] = args ? args.proxyProtocolEnabled : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["tlsAccessLog"] = args ? args.tlsAccessLog : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["vpcId"] = args ? args.vpcId : undefined;
             resourceInputs["wafInstanceId"] = args ? args.wafInstanceId : undefined;
@@ -296,6 +308,10 @@ export interface LoadBalancerState {
      */
     globalAccelerator?: pulumi.Input<inputs.alb.LoadBalancerGlobalAccelerator>;
     /**
+     * Health check log information in the ALB instance
+     */
+    healthLog?: pulumi.Input<inputs.alb.LoadBalancerHealthLog>;
+    /**
      * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      */
     ipv6BandwidthPackageId?: pulumi.Input<string>;
@@ -348,6 +364,10 @@ export interface LoadBalancerState {
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerTag>[]>;
+    /**
+     * Access log information in the ALB instance
+     */
+    tlsAccessLog?: pulumi.Input<inputs.alb.LoadBalancerTlsAccessLog>;
     /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */
@@ -404,6 +424,10 @@ export interface LoadBalancerArgs {
      */
     globalAccelerator?: pulumi.Input<inputs.alb.LoadBalancerGlobalAccelerator>;
     /**
+     * Health check log information in the ALB instance
+     */
+    healthLog?: pulumi.Input<inputs.alb.LoadBalancerHealthLog>;
+    /**
      * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      */
     ipv6BandwidthPackageId?: pulumi.Input<string>;
@@ -440,6 +464,10 @@ export interface LoadBalancerArgs {
      */
     proxyProtocolEnabled?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerTag>[]>;
+    /**
+     * Access log information in the ALB instance
+     */
+    tlsAccessLog?: pulumi.Input<inputs.alb.LoadBalancerTlsAccessLog>;
     /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      */

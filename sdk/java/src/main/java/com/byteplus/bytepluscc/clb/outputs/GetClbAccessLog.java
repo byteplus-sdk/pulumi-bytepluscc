@@ -17,15 +17,15 @@ public final class GetClbAccessLog {
      */
     private String bucketName;
     /**
-     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-     * 
-     */
-    private String deliveryType;
-    /**
-     * @return Enable access log (Layer 7) delivery to object storage TOS
+     * @return Enable access log TOS feature?
      * 
      */
     private Boolean enabled;
+    /**
+     * @return Enable access log TLS feature?
+     * 
+     */
+    private Boolean tlsEnabled;
     /**
      * @return Log project
      * 
@@ -46,18 +46,18 @@ public final class GetClbAccessLog {
         return this.bucketName;
     }
     /**
-     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-     * 
-     */
-    public String deliveryType() {
-        return this.deliveryType;
-    }
-    /**
-     * @return Enable access log (Layer 7) delivery to object storage TOS
+     * @return Enable access log TOS feature?
      * 
      */
     public Boolean enabled() {
         return this.enabled;
+    }
+    /**
+     * @return Enable access log TLS feature?
+     * 
+     */
+    public Boolean tlsEnabled() {
+        return this.tlsEnabled;
     }
     /**
      * @return Log project
@@ -84,16 +84,16 @@ public final class GetClbAccessLog {
     @CustomType.Builder
     public static final class Builder {
         private String bucketName;
-        private String deliveryType;
         private Boolean enabled;
+        private Boolean tlsEnabled;
         private String tlsProjectId;
         private String tlsTopicId;
         public Builder() {}
         public Builder(GetClbAccessLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucketName = defaults.bucketName;
-    	      this.deliveryType = defaults.deliveryType;
     	      this.enabled = defaults.enabled;
+    	      this.tlsEnabled = defaults.tlsEnabled;
     	      this.tlsProjectId = defaults.tlsProjectId;
     	      this.tlsTopicId = defaults.tlsTopicId;
         }
@@ -107,19 +107,19 @@ public final class GetClbAccessLog {
             return this;
         }
         @CustomType.Setter
-        public Builder deliveryType(String deliveryType) {
-            if (deliveryType == null) {
-              throw new MissingRequiredPropertyException("GetClbAccessLog", "deliveryType");
-            }
-            this.deliveryType = deliveryType;
-            return this;
-        }
-        @CustomType.Setter
         public Builder enabled(Boolean enabled) {
             if (enabled == null) {
               throw new MissingRequiredPropertyException("GetClbAccessLog", "enabled");
             }
             this.enabled = enabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsEnabled(Boolean tlsEnabled) {
+            if (tlsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetClbAccessLog", "tlsEnabled");
+            }
+            this.tlsEnabled = tlsEnabled;
             return this;
         }
         @CustomType.Setter
@@ -141,8 +141,8 @@ public final class GetClbAccessLog {
         public GetClbAccessLog build() {
             final var _resultValue = new GetClbAccessLog();
             _resultValue.bucketName = bucketName;
-            _resultValue.deliveryType = deliveryType;
             _resultValue.enabled = enabled;
+            _resultValue.tlsEnabled = tlsEnabled;
             _resultValue.tlsProjectId = tlsProjectId;
             _resultValue.tlsTopicId = tlsTopicId;
             return _resultValue;

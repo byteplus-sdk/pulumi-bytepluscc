@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 符合条件的联系组的详细信息。
+ * Details of contact groups that meet the criteria
  *
  * ## Import
  *
@@ -44,28 +44,28 @@ export class ContactGroup extends pulumi.CustomResource {
     }
 
     /**
-     * 创建本联系组的账号ID。
+     * Account ID that created this contact group
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 联系组的ID。
+     * Contact group ID
      */
     public /*out*/ readonly contactGroupId!: pulumi.Output<string>;
     public readonly contacts!: pulumi.Output<outputs.cloudmonitor.ContactGroupContact[]>;
     /**
-     * 联系组的创建时间。
+     * Contact group creation time
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 联系组的更新时间。
+     * Contact group update time
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
 
@@ -112,28 +112,28 @@ export class ContactGroup extends pulumi.CustomResource {
  */
 export interface ContactGroupState {
     /**
-     * 创建本联系组的账号ID。
+     * Account ID that created this contact group
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 联系组的ID。
+     * Contact group ID
      */
     contactGroupId?: pulumi.Input<string>;
     contacts?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.ContactGroupContact>[]>;
     /**
-     * 联系组的创建时间。
+     * Contact group creation time
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      */
     description?: pulumi.Input<string>;
     /**
-     * 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      */
     name?: pulumi.Input<string>;
     /**
-     * 联系组的更新时间。
+     * Contact group update time
      */
     updatedAt?: pulumi.Input<string>;
 }
@@ -144,11 +144,11 @@ export interface ContactGroupState {
 export interface ContactGroupArgs {
     contacts?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.ContactGroupContact>[]>;
     /**
-     * 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+     * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
      */
     description?: pulumi.Input<string>;
     /**
-     * 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+     * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
      */
     name: pulumi.Input<string>;
 }

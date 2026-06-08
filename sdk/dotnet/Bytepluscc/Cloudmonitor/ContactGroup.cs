@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 {
     /// <summary>
-    /// 符合条件的联系组的详细信息。
+    /// Details of contact groups that meet the criteria
     /// 
     /// ## Import
     /// 
@@ -23,13 +23,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
     public partial class ContactGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建本联系组的账号ID。
+        /// Account ID that created this contact group
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 联系组的ID。
+        /// Contact group ID
         /// </summary>
         [Output("contactGroupId")]
         public Output<string> ContactGroupId { get; private set; } = null!;
@@ -38,25 +38,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<ImmutableArray<Outputs.ContactGroupContact>> Contacts { get; private set; } = null!;
 
         /// <summary>
-        /// 联系组的创建时间。
+        /// Contact group creation time
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        /// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        /// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 联系组的更新时间。
+        /// Contact group update time
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
@@ -117,13 +117,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        /// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        /// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -137,13 +137,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
     public sealed class ContactGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建本联系组的账号ID。
+        /// Account ID that created this contact group
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 联系组的ID。
+        /// Contact group ID
         /// </summary>
         [Input("contactGroupId")]
         public Input<string>? ContactGroupId { get; set; }
@@ -157,25 +157,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         }
 
         /// <summary>
-        /// 联系组的创建时间。
+        /// Contact group creation time
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        /// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        /// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 联系组的更新时间。
+        /// Contact group update time
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }

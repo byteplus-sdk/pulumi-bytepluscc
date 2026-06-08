@@ -30,21 +30,21 @@ type LookupContactGroupArgs struct {
 
 // A collection of values returned by getContactGroup.
 type LookupContactGroupResult struct {
-	// 创建本联系组的账号ID。
+	// Account ID that created this contact group
 	AccountId string `pulumi:"accountId"`
-	// 联系组的ID。
+	// Contact group ID
 	ContactGroupId string `pulumi:"contactGroupId"`
-	// 联系组中的联系信息。
+	// Contact information in the contact group
 	Contacts []GetContactGroupContact `pulumi:"contacts"`
-	// 联系组的创建时间。
+	// Contact group creation time
 	CreatedAt string `pulumi:"createdAt"`
-	// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+	// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+	// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 	Name string `pulumi:"name"`
-	// 联系组的更新时间。
+	// Contact group update time
 	UpdatedAt string `pulumi:"updatedAt"`
 }
 
@@ -82,27 +82,27 @@ func (o LookupContactGroupResultOutput) ToLookupContactGroupResultOutputWithCont
 	return o
 }
 
-// 创建本联系组的账号ID。
+// Account ID that created this contact group
 func (o LookupContactGroupResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 联系组的ID。
+// Contact group ID
 func (o LookupContactGroupResultOutput) ContactGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.ContactGroupId }).(pulumi.StringOutput)
 }
 
-// 联系组中的联系信息。
+// Contact information in the contact group
 func (o LookupContactGroupResultOutput) Contacts() GetContactGroupContactArrayOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) []GetContactGroupContact { return v.Contacts }).(GetContactGroupContactArrayOutput)
 }
 
-// 联系组的创建时间。
+// Contact group creation time
 func (o LookupContactGroupResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+// Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
 func (o LookupContactGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -112,12 +112,12 @@ func (o LookupContactGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+// Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
 func (o LookupContactGroupResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 联系组的更新时间。
+// Contact group update time
 func (o LookupContactGroupResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContactGroupResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }

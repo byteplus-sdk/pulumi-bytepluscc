@@ -7,6 +7,8 @@ import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceChargeDetail;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceEndpoint;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceMaintenanceWindow;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceNodeInfo;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceReplicationSlot;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceRestoreToExistedInstance;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -102,6 +104,16 @@ public final class GetInstanceResult {
      * 
      */
     private String projectName;
+    /**
+     * @return Replication slot list for the instance
+     * 
+     */
+    private List<GetInstanceReplicationSlot> replicationSlots;
+    /**
+     * @return Restore backup data to the current instance
+     * 
+     */
+    private GetInstanceRestoreToExistedInstance restoreToExistedInstance;
     /**
      * @return Data file space used by the primary node. Unit: Byte
      * 
@@ -289,6 +301,20 @@ public final class GetInstanceResult {
         return this.projectName;
     }
     /**
+     * @return Replication slot list for the instance
+     * 
+     */
+    public List<GetInstanceReplicationSlot> replicationSlots() {
+        return this.replicationSlots;
+    }
+    /**
+     * @return Restore backup data to the current instance
+     * 
+     */
+    public GetInstanceRestoreToExistedInstance restoreToExistedInstance() {
+        return this.restoreToExistedInstance;
+    }
+    /**
      * @return Data file space used by the primary node. Unit: Byte
      * 
      */
@@ -406,6 +432,8 @@ public final class GetInstanceResult {
         private Double nodeNumber;
         private String nodeSpec;
         private String projectName;
+        private List<GetInstanceReplicationSlot> replicationSlots;
+        private GetInstanceRestoreToExistedInstance restoreToExistedInstance;
         private Double storageDataUse;
         private Double storageLogUse;
         private Double storageSpace;
@@ -439,6 +467,8 @@ public final class GetInstanceResult {
     	      this.nodeNumber = defaults.nodeNumber;
     	      this.nodeSpec = defaults.nodeSpec;
     	      this.projectName = defaults.projectName;
+    	      this.replicationSlots = defaults.replicationSlots;
+    	      this.restoreToExistedInstance = defaults.restoreToExistedInstance;
     	      this.storageDataUse = defaults.storageDataUse;
     	      this.storageLogUse = defaults.storageLogUse;
     	      this.storageSpace = defaults.storageSpace;
@@ -600,6 +630,25 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder replicationSlots(List<GetInstanceReplicationSlot> replicationSlots) {
+            if (replicationSlots == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "replicationSlots");
+            }
+            this.replicationSlots = replicationSlots;
+            return this;
+        }
+        public Builder replicationSlots(GetInstanceReplicationSlot... replicationSlots) {
+            return replicationSlots(List.of(replicationSlots));
+        }
+        @CustomType.Setter
+        public Builder restoreToExistedInstance(GetInstanceRestoreToExistedInstance restoreToExistedInstance) {
+            if (restoreToExistedInstance == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "restoreToExistedInstance");
+            }
+            this.restoreToExistedInstance = restoreToExistedInstance;
+            return this;
+        }
+        @CustomType.Setter
         public Builder storageDataUse(Double storageDataUse) {
             if (storageDataUse == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "storageDataUse");
@@ -725,6 +774,8 @@ public final class GetInstanceResult {
             _resultValue.nodeNumber = nodeNumber;
             _resultValue.nodeSpec = nodeSpec;
             _resultValue.projectName = projectName;
+            _resultValue.replicationSlots = replicationSlots;
+            _resultValue.restoreToExistedInstance = restoreToExistedInstance;
             _resultValue.storageDataUse = storageDataUse;
             _resultValue.storageLogUse = storageLogUse;
             _resultValue.storageSpace = storageSpace;

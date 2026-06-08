@@ -54,7 +54,7 @@ if not MYPY:
     class ContactGroupContactArgsDict(TypedDict):
         contact_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        联系人ID。
+        Contact ID
         """
 elif False:
     ContactGroupContactArgsDict: TypeAlias = Mapping[str, Any]
@@ -64,7 +64,7 @@ class ContactGroupContactArgs:
     def __init__(__self__, *,
                  contact_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] contact_id: 联系人ID。
+        :param pulumi.Input[builtins.str] contact_id: Contact ID
         """
         if contact_id is not None:
             pulumi.set(__self__, "contact_id", contact_id)
@@ -73,7 +73,7 @@ class ContactGroupContactArgs:
     @pulumi.getter(name="contactId")
     def contact_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        联系人ID。
+        Contact ID
         """
         return pulumi.get(self, "contact_id")
 

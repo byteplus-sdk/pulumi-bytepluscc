@@ -101,6 +101,11 @@ export class Instance extends pulumi.CustomResource {
      * Project. Default value: default project
      */
     public readonly projectName!: pulumi.Output<string>;
+    public readonly replicationSlots!: pulumi.Output<outputs.rdspostgresql.InstanceReplicationSlot[]>;
+    /**
+     * Restore backup data to the current instance
+     */
+    public readonly restoreToExistedInstance!: pulumi.Output<outputs.rdspostgresql.InstanceRestoreToExistedInstance>;
     /**
      * Data file space used by the primary node. Unit: Byte
      */
@@ -180,6 +185,8 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["nodeNumber"] = state ? state.nodeNumber : undefined;
             resourceInputs["nodeSpec"] = state ? state.nodeSpec : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
+            resourceInputs["replicationSlots"] = state ? state.replicationSlots : undefined;
+            resourceInputs["restoreToExistedInstance"] = state ? state.restoreToExistedInstance : undefined;
             resourceInputs["storageDataUse"] = state ? state.storageDataUse : undefined;
             resourceInputs["storageLogUse"] = state ? state.storageLogUse : undefined;
             resourceInputs["storageSpace"] = state ? state.storageSpace : undefined;
@@ -220,6 +227,8 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["nodeInfos"] = args ? args.nodeInfos : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
+            resourceInputs["replicationSlots"] = args ? args.replicationSlots : undefined;
+            resourceInputs["restoreToExistedInstance"] = args ? args.restoreToExistedInstance : undefined;
             resourceInputs["storageSpace"] = args ? args.storageSpace : undefined;
             resourceInputs["storageType"] = args ? args.storageType : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -310,6 +319,11 @@ export interface InstanceState {
      * Project. Default value: default project
      */
     projectName?: pulumi.Input<string>;
+    replicationSlots?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceReplicationSlot>[]>;
+    /**
+     * Restore backup data to the current instance
+     */
+    restoreToExistedInstance?: pulumi.Input<inputs.rdspostgresql.InstanceRestoreToExistedInstance>;
     /**
      * Data file space used by the primary node. Unit: Byte
      */
@@ -390,6 +404,11 @@ export interface InstanceArgs {
      * Project. Default value: default project
      */
     projectName?: pulumi.Input<string>;
+    replicationSlots?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceReplicationSlot>[]>;
+    /**
+     * Restore backup data to the current instance
+     */
+    restoreToExistedInstance?: pulumi.Input<inputs.rdspostgresql.InstanceRestoreToExistedInstance>;
     /**
      * Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
      */

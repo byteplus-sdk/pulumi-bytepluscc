@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetContactGroupContact {
     /**
-     * @return 联系人ID。
+     * @return Contact ID
      * 
      */
     private String contactId;
     /**
-     * @return 联系人邮箱地址。
+     * @return Contact email address
      * 
      */
     private String email;
     /**
-     * @return 联系人名称。
+     * @return Contact name
      * 
      */
     private String name;
     /**
-     * @return 联系人手机号码。
+     * @return Contact mobile number
      * 
      */
     private String phone;
 
     private GetContactGroupContact() {}
     /**
-     * @return 联系人ID。
+     * @return Contact ID
      * 
      */
     public String contactId() {
         return this.contactId;
     }
     /**
-     * @return 联系人邮箱地址。
+     * @return Contact email address
      * 
      */
     public String email() {
         return this.email;
     }
     /**
-     * @return 联系人名称。
+     * @return Contact name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 联系人手机号码。
+     * @return Contact mobile number
      * 
      */
     public String phone() {

@@ -391,18 +391,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Input<Inputs.ClbEipArgs>? Eip { get; set; }
 
         /// <summary>
-        /// Public IP address
-        /// </summary>
-        [Input("eipAddress")]
-        public Input<string>? EipAddress { get; set; }
-
-        /// <summary>
-        /// Public IP ID
-        /// </summary>
-        [Input("eipId")]
-        public Input<string>? EipId { get; set; }
-
-        /// <summary>
         /// Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
         /// </summary>
         [Input("eniAddressNum")]

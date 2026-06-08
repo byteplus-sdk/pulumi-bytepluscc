@@ -90,11 +90,11 @@ export class Clb extends pulumi.CustomResource {
     /**
      * Public IP address
      */
-    public readonly eipAddress!: pulumi.Output<string>;
+    public /*out*/ readonly eipAddress!: pulumi.Output<string>;
     /**
      * Public IP ID
      */
-    public readonly eipId!: pulumi.Output<string>;
+    public /*out*/ readonly eipId!: pulumi.Output<string>;
     /**
      * Enable status of the load balancer instance
      */
@@ -292,8 +292,6 @@ export class Clb extends pulumi.CustomResource {
             resourceInputs["bypassSecurityGroupEnabled"] = args ? args.bypassSecurityGroupEnabled : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["eip"] = args ? args.eip : undefined;
-            resourceInputs["eipAddress"] = args ? args.eipAddress : undefined;
-            resourceInputs["eipId"] = args ? args.eipId : undefined;
             resourceInputs["eniAddressNum"] = args ? args.eniAddressNum : undefined;
             resourceInputs["enis"] = args ? args.enis : undefined;
             resourceInputs["exclusiveClusterId"] = args ? args.exclusiveClusterId : undefined;
@@ -320,6 +318,8 @@ export class Clb extends pulumi.CustomResource {
             resourceInputs["businessStatus"] = undefined /*out*/;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["deletedTime"] = undefined /*out*/;
+            resourceInputs["eipAddress"] = undefined /*out*/;
+            resourceInputs["eipId"] = undefined /*out*/;
             resourceInputs["enabled"] = undefined /*out*/;
             resourceInputs["eni"] = undefined /*out*/;
             resourceInputs["eniIpv6Address"] = undefined /*out*/;
@@ -555,14 +555,6 @@ export interface ClbArgs {
      * Public IP information of the load balancer instance
      */
     eip?: pulumi.Input<inputs.clb.ClbEip>;
-    /**
-     * Public IP address
-     */
-    eipAddress?: pulumi.Input<string>;
-    /**
-     * Public IP ID
-     */
-    eipId?: pulumi.Input<string>;
     /**
      * Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
      */

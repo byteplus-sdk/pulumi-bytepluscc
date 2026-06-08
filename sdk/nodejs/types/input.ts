@@ -203,6 +203,21 @@ export namespace alb {
         weight?: pulumi.Input<number>;
     }
 
+    export interface LoadBalancerHealthLog {
+        /**
+         * Whether to enable access log
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * TLS project ID bound to access log
+         */
+        projectId?: pulumi.Input<string>;
+        /**
+         * TLS subject ID bound to access log
+         */
+        topicId?: pulumi.Input<string>;
+    }
+
     export interface LoadBalancerIpv6EipBillingConfig {
         /**
          * Peak bandwidth of IPv6 EIP, in Mbps.
@@ -227,6 +242,21 @@ export namespace alb {
          * Tag value used to identify the specific tag content.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface LoadBalancerTlsAccessLog {
+        /**
+         * Whether to enable access log
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * TLS project ID bound to access log
+         */
+        projectId?: pulumi.Input<string>;
+        /**
+         * TLS subject ID bound to access log
+         */
+        topicId?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerZoneMapping {
@@ -4165,13 +4195,13 @@ export namespace clb {
          */
         bucketName?: pulumi.Input<string>;
         /**
-         * Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-         */
-        deliveryType?: pulumi.Input<string>;
-        /**
-         * Enable access log (Layer 7) delivery to object storage TOS
+         * Enable access log TOS feature?
          */
         enabled?: pulumi.Input<boolean>;
+        /**
+         * Enable access log TLS feature?
+         */
+        tlsEnabled?: pulumi.Input<boolean>;
         /**
          * Log project
          */
@@ -4706,7 +4736,7 @@ export namespace cloudidentity {
 export namespace cloudmonitor {
     export interface ContactGroupContact {
         /**
-         * 联系人ID。
+         * Contact ID
          */
         contactId?: pulumi.Input<string>;
     }
@@ -9701,6 +9731,68 @@ export namespace rdspostgresql {
          * Availability zone of the node
          */
         zoneId: pulumi.Input<string>;
+    }
+
+    export interface InstanceReplicationSlot {
+        /**
+         * Database associated with the slot
+         */
+        database?: pulumi.Input<string>;
+        /**
+         * Connected client IP address
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * Plugin used by the slot
+         */
+        plugin?: pulumi.Input<string>;
+        /**
+         * Slot name
+         */
+        slotName?: pulumi.Input<string>;
+        /**
+         * Slot status
+         */
+        slotStatus?: pulumi.Input<string>;
+        /**
+         * Slot type
+         */
+        slotType?: pulumi.Input<string>;
+        /**
+         * Whether it is a temporary slot
+         */
+        temporary?: pulumi.Input<boolean>;
+        /**
+         * WAL delay size
+         */
+        walDelay?: pulumi.Input<number>;
+    }
+
+    export interface InstanceRestoreToExistedInstance {
+        /**
+         * Backup set ID
+         */
+        backupId?: pulumi.Input<string>;
+        databases?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.InstanceRestoreToExistedInstanceDatabase>[]>;
+        /**
+         * Source instance ID
+         */
+        sourceDbInstanceId?: pulumi.Input<string>;
+        /**
+         * Database account for the target instance
+         */
+        targetDbInstanceAccount?: pulumi.Input<string>;
+    }
+
+    export interface InstanceRestoreToExistedInstanceDatabase {
+        /**
+         * Source database name
+         */
+        dbName?: pulumi.Input<string>;
+        /**
+         * Name of the new database after restoration
+         */
+        newDbName?: pulumi.Input<string>;
     }
 
     export interface InstanceTag {

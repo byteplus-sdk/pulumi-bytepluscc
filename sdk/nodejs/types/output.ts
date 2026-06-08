@@ -272,6 +272,21 @@ export namespace alb {
         weight: number;
     }
 
+    export interface GetLoadBalancerHealthLog {
+        /**
+         * Whether to enable access log
+         */
+        enabled: boolean;
+        /**
+         * TLS project ID bound to access log
+         */
+        projectId: string;
+        /**
+         * TLS subject ID bound to access log
+         */
+        topicId: string;
+    }
+
     export interface GetLoadBalancerIpv6EipBillingConfig {
         /**
          * Peak bandwidth of IPv6 EIP, in Mbps.
@@ -296,6 +311,21 @@ export namespace alb {
          * Tag value used to identify the specific tag content.
          */
         value: string;
+    }
+
+    export interface GetLoadBalancerTlsAccessLog {
+        /**
+         * Whether to enable access log
+         */
+        enabled: boolean;
+        /**
+         * TLS project ID bound to access log
+         */
+        projectId: string;
+        /**
+         * TLS subject ID bound to access log
+         */
+        topicId: string;
     }
 
     export interface GetLoadBalancerZoneMapping {
@@ -875,6 +905,21 @@ export namespace alb {
         weight: number;
     }
 
+    export interface LoadBalancerHealthLog {
+        /**
+         * Whether to enable access log
+         */
+        enabled: boolean;
+        /**
+         * TLS project ID bound to access log
+         */
+        projectId: string;
+        /**
+         * TLS subject ID bound to access log
+         */
+        topicId: string;
+    }
+
     export interface LoadBalancerIpv6EipBillingConfig {
         /**
          * Peak bandwidth of IPv6 EIP, in Mbps.
@@ -899,6 +944,21 @@ export namespace alb {
          * Tag value used to identify the specific tag content.
          */
         value: string;
+    }
+
+    export interface LoadBalancerTlsAccessLog {
+        /**
+         * Whether to enable access log
+         */
+        enabled: boolean;
+        /**
+         * TLS project ID bound to access log
+         */
+        projectId: string;
+        /**
+         * TLS subject ID bound to access log
+         */
+        topicId: string;
     }
 
     export interface LoadBalancerZoneMapping {
@@ -8510,13 +8570,13 @@ export namespace clb {
          */
         bucketName: string;
         /**
-         * Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-         */
-        deliveryType: string;
-        /**
-         * Enable access log (Layer 7) delivery to object storage TOS
+         * Enable access log TOS feature?
          */
         enabled: boolean;
+        /**
+         * Enable access log TLS feature?
+         */
+        tlsEnabled: boolean;
         /**
          * Log project
          */
@@ -8694,13 +8754,13 @@ export namespace clb {
          */
         bucketName: string;
         /**
-         * Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
-         */
-        deliveryType: string;
-        /**
-         * Enable access log (Layer 7) delivery to object storage TOS
+         * Enable access log TOS feature?
          */
         enabled: boolean;
+        /**
+         * Enable access log TLS feature?
+         */
+        tlsEnabled: boolean;
         /**
          * Log project
          */
@@ -9698,26 +9758,26 @@ export namespace cloudidentity {
 export namespace cloudmonitor {
     export interface ContactGroupContact {
         /**
-         * 联系人ID。
+         * Contact ID
          */
         contactId: string;
     }
 
     export interface GetContactGroupContact {
         /**
-         * 联系人ID。
+         * Contact ID
          */
         contactId: string;
         /**
-         * 联系人邮箱地址。
+         * Contact email address
          */
         email: string;
         /**
-         * 联系人名称。
+         * Contact name
          */
         name: string;
         /**
-         * 联系人手机号码。
+         * Contact mobile number
          */
         phone: string;
     }
@@ -19925,6 +19985,71 @@ export namespace rdspostgresql {
         zoneId: string;
     }
 
+    export interface GetInstanceReplicationSlot {
+        /**
+         * Database associated with the slot
+         */
+        database: string;
+        /**
+         * Connected client IP address
+         */
+        ipAddress: string;
+        /**
+         * Plugin used by the slot
+         */
+        plugin: string;
+        /**
+         * Slot name
+         */
+        slotName: string;
+        /**
+         * Slot status
+         */
+        slotStatus: string;
+        /**
+         * Slot type
+         */
+        slotType: string;
+        /**
+         * Whether it is a temporary slot
+         */
+        temporary: boolean;
+        /**
+         * WAL delay size
+         */
+        walDelay: number;
+    }
+
+    export interface GetInstanceRestoreToExistedInstance {
+        /**
+         * Backup set ID
+         */
+        backupId: string;
+        /**
+         * List of databases to restore
+         */
+        databases: outputs.rdspostgresql.GetInstanceRestoreToExistedInstanceDatabase[];
+        /**
+         * Source instance ID
+         */
+        sourceDbInstanceId: string;
+        /**
+         * Database account for the target instance
+         */
+        targetDbInstanceAccount: string;
+    }
+
+    export interface GetInstanceRestoreToExistedInstanceDatabase {
+        /**
+         * Source database name
+         */
+        dbName: string;
+        /**
+         * Name of the new database after restoration
+         */
+        newDbName: string;
+    }
+
     export interface GetInstanceTag {
         /**
          * Tag key
@@ -20194,6 +20319,68 @@ export namespace rdspostgresql {
          * Availability zone of the node
          */
         zoneId: string;
+    }
+
+    export interface InstanceReplicationSlot {
+        /**
+         * Database associated with the slot
+         */
+        database: string;
+        /**
+         * Connected client IP address
+         */
+        ipAddress: string;
+        /**
+         * Plugin used by the slot
+         */
+        plugin: string;
+        /**
+         * Slot name
+         */
+        slotName: string;
+        /**
+         * Slot status
+         */
+        slotStatus: string;
+        /**
+         * Slot type
+         */
+        slotType: string;
+        /**
+         * Whether it is a temporary slot
+         */
+        temporary: boolean;
+        /**
+         * WAL delay size
+         */
+        walDelay: number;
+    }
+
+    export interface InstanceRestoreToExistedInstance {
+        /**
+         * Backup set ID
+         */
+        backupId: string;
+        databases: outputs.rdspostgresql.InstanceRestoreToExistedInstanceDatabase[];
+        /**
+         * Source instance ID
+         */
+        sourceDbInstanceId: string;
+        /**
+         * Database account for the target instance
+         */
+        targetDbInstanceAccount: string;
+    }
+
+    export interface InstanceRestoreToExistedInstanceDatabase {
+        /**
+         * Source database name
+         */
+        dbName: string;
+        /**
+         * Name of the new database after restoration
+         */
+        newDbName: string;
     }
 
     export interface InstanceTag {

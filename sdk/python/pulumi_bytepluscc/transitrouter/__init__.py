@@ -8,6 +8,8 @@ import typing
 # Export this package's modules as members:
 from .get_peer_attachment import *
 from .get_peer_attachments import *
+from .get_route_table_propagation import *
+from .get_route_table_propagations import *
 from .get_transit_router import *
 from .get_transit_router_route_entries import *
 from .get_transit_router_route_entry import *
@@ -19,6 +21,7 @@ from .get_vpc_attachments import *
 from .get_vpn_attachment import *
 from .get_vpn_attachments import *
 from .peer_attachment import *
+from .route_table_propagation import *
 from .transit_router import *
 from .transit_router_route_entry import *
 from .transit_router_route_table import *

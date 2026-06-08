@@ -58,7 +58,7 @@ class GetContactGroupResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        创建本联系组的账号ID。
+        Account ID that created this contact group
         """
         return pulumi.get(self, "account_id")
 
@@ -66,7 +66,7 @@ class GetContactGroupResult:
     @pulumi.getter(name="contactGroupId")
     def contact_group_id(self) -> builtins.str:
         """
-        联系组的ID。
+        Contact group ID
         """
         return pulumi.get(self, "contact_group_id")
 
@@ -74,7 +74,7 @@ class GetContactGroupResult:
     @pulumi.getter
     def contacts(self) -> Sequence['outputs.GetContactGroupContactResult']:
         """
-        联系组中的联系信息。
+        Contact information in the contact group
         """
         return pulumi.get(self, "contacts")
 
@@ -82,7 +82,7 @@ class GetContactGroupResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        联系组的创建时间。
+        Contact group creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -90,7 +90,7 @@ class GetContactGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        联系组的描述。若不填，默认为空字符串。长度限制在 1～255 字符之间。允许包含中文、英文、下划线等特殊字符。
+        Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
         """
         return pulumi.get(self, "description")
 
@@ -106,7 +106,7 @@ class GetContactGroupResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        联系组名称。不能以数字、中划线开头。只能包含中文、字母、数字、下划线_和中划线-。长度限制在 1～128 字符之间。
+        Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
         """
         return pulumi.get(self, "name")
 
@@ -114,7 +114,7 @@ class GetContactGroupResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        联系组的更新时间。
+        Contact group update time
         """
         return pulumi.get(self, "updated_at")
 
