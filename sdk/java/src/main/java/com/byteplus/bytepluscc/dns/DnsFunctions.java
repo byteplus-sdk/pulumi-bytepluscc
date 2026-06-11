@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.dns;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.dns.inputs.GetRecordArgs;
+import com.byteplus.bytepluscc.dns.inputs.GetRecordPlainArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetZoneArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetZonePlainArgs;
+import com.byteplus.bytepluscc.dns.outputs.GetRecordResult;
+import com.byteplus.bytepluscc.dns.outputs.GetRecordsResult;
 import com.byteplus.bytepluscc.dns.outputs.GetZoneResult;
 import com.byteplus.bytepluscc.dns.outputs.GetZonesResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DnsFunctions {
+    /**
+     * Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordResult> getRecord(GetRecordArgs args) {
+        return getRecord(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static CompletableFuture<GetRecordResult> getRecordPlain(GetRecordPlainArgs args) {
+        return getRecordPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordResult> getRecord(GetRecordArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getRecord:getRecord", TypeShape.of(GetRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordResult> getRecord(GetRecordArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getRecord:getRecord", TypeShape.of(GetRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static CompletableFuture<GetRecordResult> getRecordPlain(GetRecordPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:dns/getRecord:getRecord", TypeShape.of(GetRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordsResult> getRecords() {
+        return getRecords(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static CompletableFuture<GetRecordsResult> getRecordsPlain() {
+        return getRecordsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordsResult> getRecords(InvokeArgs args) {
+        return getRecords(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static CompletableFuture<GetRecordsResult> getRecordsPlain(InvokeArgs args) {
+        return getRecordsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordsResult> getRecords(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getRecords:getRecords", TypeShape.of(GetRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static Output<GetRecordsResult> getRecords(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getRecords:getRecords", TypeShape.of(GetRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Record
+     * 
+     */
+    public static CompletableFuture<GetRecordsResult> getRecordsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:dns/getRecords:getRecords", TypeShape.of(GetRecordsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::DNS::Zone
      * 

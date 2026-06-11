@@ -14,6 +14,8 @@ import com.byteplus.bytepluscc.rdsmysql.inputs.GetDbAccountArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetDbAccountPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPublicAddressArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPublicAddressPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplateArgs;
@@ -26,6 +28,8 @@ import com.byteplus.bytepluscc.rdsmysql.outputs.GetDatabaseResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDatabasesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDbAccountResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDbAccountsResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointPublicAddressResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointPublicAddressesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointsResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceResult;
@@ -411,6 +415,90 @@ public final class RdsmysqlFunctions {
      */
     public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressResult> getEndpointPublicAddress(GetEndpointPublicAddressArgs args) {
+        return getEndpointPublicAddress(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressResult> getEndpointPublicAddressPlain(GetEndpointPublicAddressPlainArgs args) {
+        return getEndpointPublicAddressPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressResult> getEndpointPublicAddress(GetEndpointPublicAddressArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpointPublicAddress:getEndpointPublicAddress", TypeShape.of(GetEndpointPublicAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressResult> getEndpointPublicAddress(GetEndpointPublicAddressArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpointPublicAddress:getEndpointPublicAddress", TypeShape.of(GetEndpointPublicAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressResult> getEndpointPublicAddressPlain(GetEndpointPublicAddressPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getEndpointPublicAddress:getEndpointPublicAddress", TypeShape.of(GetEndpointPublicAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses() {
+        return getEndpointPublicAddresses(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressesResult> getEndpointPublicAddressesPlain() {
+        return getEndpointPublicAddressesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses(InvokeArgs args) {
+        return getEndpointPublicAddresses(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressesResult> getEndpointPublicAddressesPlain(InvokeArgs args) {
+        return getEndpointPublicAddressesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpointPublicAddresses:getEndpointPublicAddresses", TypeShape.of(GetEndpointPublicAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpointPublicAddresses:getEndpointPublicAddresses", TypeShape.of(GetEndpointPublicAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressesResult> getEndpointPublicAddressesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getEndpointPublicAddresses:getEndpointPublicAddresses", TypeShape.of(GetEndpointPublicAddressesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint

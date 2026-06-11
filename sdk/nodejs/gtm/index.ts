@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetGtmArgs, GetGtmResult, GetGtmOutputArgs } from "./getGtm";
+export const getGtm: typeof import("./getGtm").getGtm = null as any;
+export const getGtmOutput: typeof import("./getGtm").getGtmOutput = null as any;
+utilities.lazyLoad(exports, ["getGtm","getGtmOutput"], () => require("./getGtm"));
+
+export { GetGtmsResult } from "./getGtms";
+export const getGtms: typeof import("./getGtms").getGtms = null as any;
+export const getGtmsOutput: typeof import("./getGtms").getGtmsOutput = null as any;
+utilities.lazyLoad(exports, ["getGtms","getGtmsOutput"], () => require("./getGtms"));
+
 export { GetPoolArgs, GetPoolResult, GetPoolOutputArgs } from "./getPool";
 export const getPool: typeof import("./getPool").getPool = null as any;
 export const getPoolOutput: typeof import("./getPool").getPoolOutput = null as any;
@@ -15,21 +25,65 @@ export const getPools: typeof import("./getPools").getPools = null as any;
 export const getPoolsOutput: typeof import("./getPools").getPoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getPools","getPoolsOutput"], () => require("./getPools"));
 
+export { GetRoutingArgs, GetRoutingResult, GetRoutingOutputArgs } from "./getRouting";
+export const getRouting: typeof import("./getRouting").getRouting = null as any;
+export const getRoutingOutput: typeof import("./getRouting").getRoutingOutput = null as any;
+utilities.lazyLoad(exports, ["getRouting","getRoutingOutput"], () => require("./getRouting"));
+
+export { GetRoutingsResult } from "./getRoutings";
+export const getRoutings: typeof import("./getRoutings").getRoutings = null as any;
+export const getRoutingsOutput: typeof import("./getRoutings").getRoutingsOutput = null as any;
+utilities.lazyLoad(exports, ["getRoutings","getRoutingsOutput"], () => require("./getRoutings"));
+
+export { GetRuleArgs, GetRuleResult, GetRuleOutputArgs } from "./getRule";
+export const getRule: typeof import("./getRule").getRule = null as any;
+export const getRuleOutput: typeof import("./getRule").getRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getRule","getRuleOutput"], () => require("./getRule"));
+
+export { GetRulesResult } from "./getRules";
+export const getRules: typeof import("./getRules").getRules = null as any;
+export const getRulesOutput: typeof import("./getRules").getRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getRules","getRulesOutput"], () => require("./getRules"));
+
+export { GtmArgs, GtmState } from "./gtm";
+export type Gtm = import("./gtm").Gtm;
+export const Gtm: typeof import("./gtm").Gtm = null as any;
+utilities.lazyLoad(exports, ["Gtm"], () => require("./gtm"));
+
 export { PoolArgs, PoolState } from "./pool";
 export type Pool = import("./pool").Pool;
 export const Pool: typeof import("./pool").Pool = null as any;
 utilities.lazyLoad(exports, ["Pool"], () => require("./pool"));
+
+export { RoutingArgs, RoutingState } from "./routing";
+export type Routing = import("./routing").Routing;
+export const Routing: typeof import("./routing").Routing = null as any;
+utilities.lazyLoad(exports, ["Routing"], () => require("./routing"));
+
+export { RuleArgs, RuleState } from "./rule";
+export type Rule = import("./rule").Rule;
+export const Rule: typeof import("./rule").Rule = null as any;
+utilities.lazyLoad(exports, ["Rule"], () => require("./rule"));
 
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:gtm/gtm:Gtm":
+                return new Gtm(name, <any>undefined, { urn })
             case "bytepluscc:gtm/pool:Pool":
                 return new Pool(name, <any>undefined, { urn })
+            case "bytepluscc:gtm/routing:Routing":
+                return new Routing(name, <any>undefined, { urn })
+            case "bytepluscc:gtm/rule:Rule":
+                return new Rule(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "gtm/gtm", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "gtm/pool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "gtm/routing", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "gtm/rule", _module)

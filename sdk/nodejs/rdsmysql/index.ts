@@ -30,6 +30,11 @@ export type Endpoint = import("./endpoint").Endpoint;
 export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
 utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
 
+export { EndpointPublicAddressArgs, EndpointPublicAddressState } from "./endpointPublicAddress";
+export type EndpointPublicAddress = import("./endpointPublicAddress").EndpointPublicAddress;
+export const EndpointPublicAddress: typeof import("./endpointPublicAddress").EndpointPublicAddress = null as any;
+utilities.lazyLoad(exports, ["EndpointPublicAddress"], () => require("./endpointPublicAddress"));
+
 export { GetAllowListArgs, GetAllowListResult, GetAllowListOutputArgs } from "./getAllowList";
 export const getAllowList: typeof import("./getAllowList").getAllowList = null as any;
 export const getAllowListOutput: typeof import("./getAllowList").getAllowListOutput = null as any;
@@ -74,6 +79,16 @@ export { GetEndpointArgs, GetEndpointResult, GetEndpointOutputArgs } from "./get
 export const getEndpoint: typeof import("./getEndpoint").getEndpoint = null as any;
 export const getEndpointOutput: typeof import("./getEndpoint").getEndpointOutput = null as any;
 utilities.lazyLoad(exports, ["getEndpoint","getEndpointOutput"], () => require("./getEndpoint"));
+
+export { GetEndpointPublicAddressArgs, GetEndpointPublicAddressResult, GetEndpointPublicAddressOutputArgs } from "./getEndpointPublicAddress";
+export const getEndpointPublicAddress: typeof import("./getEndpointPublicAddress").getEndpointPublicAddress = null as any;
+export const getEndpointPublicAddressOutput: typeof import("./getEndpointPublicAddress").getEndpointPublicAddressOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpointPublicAddress","getEndpointPublicAddressOutput"], () => require("./getEndpointPublicAddress"));
+
+export { GetEndpointPublicAddressesResult } from "./getEndpointPublicAddresses";
+export const getEndpointPublicAddresses: typeof import("./getEndpointPublicAddresses").getEndpointPublicAddresses = null as any;
+export const getEndpointPublicAddressesOutput: typeof import("./getEndpointPublicAddresses").getEndpointPublicAddressesOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpointPublicAddresses","getEndpointPublicAddressesOutput"], () => require("./getEndpointPublicAddresses"));
 
 export { GetEndpointsResult } from "./getEndpoints";
 export const getEndpoints: typeof import("./getEndpoints").getEndpoints = null as any;
@@ -125,6 +140,8 @@ const _module = {
                 return new DbAccount(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/endpoint:Endpoint":
                 return new Endpoint(name, <any>undefined, { urn })
+            case "bytepluscc:rdsmysql/endpointPublicAddress:EndpointPublicAddress":
+                return new EndpointPublicAddress(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
@@ -139,5 +156,6 @@ pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/backup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/database", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/dbAccount", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/endpoint", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/endpointPublicAddress", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/parameterTemplate", _module)

@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .fileset import *
+from .get_fileset import *
+from .get_filesets import *
 from .get_instance import *
 from .get_instances import *
 from .get_mount_service import *

@@ -18,6 +18,16 @@ from .. import _utilities
 __all__ = [
     'PoolAddressArgs',
     'PoolAddressArgsDict',
+    'RulePoolSetArgs',
+    'RulePoolSetArgsDict',
+    'RulePoolSetPoolArgs',
+    'RulePoolSetPoolArgsDict',
+    'RulePoolSetPoolAddressArgs',
+    'RulePoolSetPoolAddressArgsDict',
+    'RuleProbeArgs',
+    'RuleProbeArgsDict',
+    'RuleProbeHttpUsabilityCodeArgs',
+    'RuleProbeHttpUsabilityCodeArgsDict',
 ]
 
 MYPY = False
@@ -131,5 +141,704 @@ class PoolAddressArgs:
     @weight.setter
     def weight(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "weight", value)
+
+
+if not MYPY:
+    class RulePoolSetArgsDict(TypedDict):
+        active_addr_thr: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Minimum number of available addresses required for the address pool collection to be considered available.
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address pool name.
+        """
+        pools: NotRequired[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolArgsDict']]]]
+elif False:
+    RulePoolSetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RulePoolSetArgs:
+    def __init__(__self__, *,
+                 active_addr_thr: Optional[pulumi.Input[builtins.int]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 pools: Optional[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.int] active_addr_thr: Minimum number of available addresses required for the address pool collection to be considered available.
+        :param pulumi.Input[builtins.str] name: Address pool name.
+        """
+        if active_addr_thr is not None:
+            pulumi.set(__self__, "active_addr_thr", active_addr_thr)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if pools is not None:
+            pulumi.set(__self__, "pools", pools)
+
+    @property
+    @pulumi.getter(name="activeAddrThr")
+    def active_addr_thr(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Minimum number of available addresses required for the address pool collection to be considered available.
+        """
+        return pulumi.get(self, "active_addr_thr")
+
+    @active_addr_thr.setter
+    def active_addr_thr(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "active_addr_thr", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address pool name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def pools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolArgs']]]]:
+        return pulumi.get(self, "pools")
+
+    @pools.setter
+    def pools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolArgs']]]]):
+        pulumi.set(self, "pools", value)
+
+
+if not MYPY:
+    class RulePoolSetPoolArgsDict(TypedDict):
+        addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolAddressArgsDict']]]]
+        inactive_addr_count: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The number of unavailable addresses in the address pool.
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address pool name.
+        """
+        pool_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address pool ID.
+        """
+        weight: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Address pool weight.
+        """
+elif False:
+    RulePoolSetPoolArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RulePoolSetPoolArgs:
+    def __init__(__self__, *,
+                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolAddressArgs']]]] = None,
+                 inactive_addr_count: Optional[pulumi.Input[builtins.int]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 pool_id: Optional[pulumi.Input[builtins.str]] = None,
+                 weight: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] inactive_addr_count: The number of unavailable addresses in the address pool.
+        :param pulumi.Input[builtins.str] name: Address pool name.
+        :param pulumi.Input[builtins.str] pool_id: Address pool ID.
+        :param pulumi.Input[builtins.int] weight: Address pool weight.
+        """
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if inactive_addr_count is not None:
+            pulumi.set(__self__, "inactive_addr_count", inactive_addr_count)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolAddressArgs']]]]:
+        return pulumi.get(self, "addresses")
+
+    @addresses.setter
+    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RulePoolSetPoolAddressArgs']]]]):
+        pulumi.set(self, "addresses", value)
+
+    @property
+    @pulumi.getter(name="inactiveAddrCount")
+    def inactive_addr_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The number of unavailable addresses in the address pool.
+        """
+        return pulumi.get(self, "inactive_addr_count")
+
+    @inactive_addr_count.setter
+    def inactive_addr_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "inactive_addr_count", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address pool name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address pool ID.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "pool_id", value)
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Address pool weight.
+        """
+        return pulumi.get(self, "weight")
+
+    @weight.setter
+    def weight(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "weight", value)
+
+
+if not MYPY:
+    class RulePoolSetPoolAddressArgsDict(TypedDict):
+        active: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether the address is available. true: The address is available. false: The address is unavailable.
+        """
+        capacity: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+        """
+        geo: NotRequired[pulumi.Input[builtins.str]]
+        """
+        This parameter has no practical significance. You can ignore this parameter.
+        """
+        latency: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Latency (ms) for health check probe accessing the target address.
+        """
+        mode: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+        """
+        rectified_geos: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address.
+        """
+        weight: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+        """
+elif False:
+    RulePoolSetPoolAddressArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RulePoolSetPoolAddressArgs:
+    def __init__(__self__, *,
+                 active: Optional[pulumi.Input[builtins.bool]] = None,
+                 capacity: Optional[pulumi.Input[builtins.int]] = None,
+                 geo: Optional[pulumi.Input[builtins.str]] = None,
+                 latency: Optional[pulumi.Input[builtins.int]] = None,
+                 mode: Optional[pulumi.Input[builtins.str]] = None,
+                 rectified_geos: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None,
+                 weight: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.bool] active: Whether the address is available. true: The address is available. false: The address is unavailable.
+        :param pulumi.Input[builtins.int] capacity: The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+        :param pulumi.Input[builtins.str] geo: This parameter has no practical significance. You can ignore this parameter.
+        :param pulumi.Input[builtins.int] latency: Latency (ms) for health check probe accessing the target address.
+        :param pulumi.Input[builtins.str] mode: The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rectified_geos: The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+        :param pulumi.Input[builtins.str] value: Address.
+        :param pulumi.Input[builtins.int] weight: Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if capacity is not None:
+            pulumi.set(__self__, "capacity", capacity)
+        if geo is not None:
+            pulumi.set(__self__, "geo", geo)
+        if latency is not None:
+            pulumi.set(__self__, "latency", latency)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if rectified_geos is not None:
+            pulumi.set(__self__, "rectified_geos", rectified_geos)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether the address is available. true: The address is available. false: The address is unavailable.
+        """
+        return pulumi.get(self, "active")
+
+    @active.setter
+    def active(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+        """
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "capacity", value)
+
+    @property
+    @pulumi.getter
+    def geo(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        This parameter has no practical significance. You can ignore this parameter.
+        """
+        return pulumi.get(self, "geo")
+
+    @geo.setter
+    def geo(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "geo", value)
+
+    @property
+    @pulumi.getter
+    def latency(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Latency (ms) for health check probe accessing the target address.
+        """
+        return pulumi.get(self, "latency")
+
+    @latency.setter
+    def latency(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "latency", value)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+    @property
+    @pulumi.getter(name="rectifiedGeos")
+    def rectified_geos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+        """
+        return pulumi.get(self, "rectified_geos")
+
+    @rectified_geos.setter
+    def rectified_geos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "rectified_geos", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+        """
+        return pulumi.get(self, "weight")
+
+    @weight.setter
+    def weight(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "weight", value)
+
+
+if not MYPY:
+    class RuleProbeArgsDict(TypedDict):
+        advised_node_count: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Recommended number of health check probe points.
+        """
+        disable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether health checks are disabled. true: disabled. false: not disabled.
+        """
+        failed_count: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+        """
+        host: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        http_method: NotRequired[pulumi.Input[builtins.str]]
+        """
+        HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        http_usability_codes: NotRequired[pulumi.Input[Sequence[pulumi.Input['RuleProbeHttpUsabilityCodeArgsDict']]]]
+        interval: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The interval between each health check, in seconds.
+        """
+        is_manual_nodes: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+        """
+        nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        Health check probe point.
+        """
+        ping_count: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        """
+        ping_loss_percent: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        """
+        port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        protocol: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        """
+        timeout: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+        """
+        url: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+elif False:
+    RuleProbeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RuleProbeArgs:
+    def __init__(__self__, *,
+                 advised_node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 disable: Optional[pulumi.Input[builtins.bool]] = None,
+                 failed_count: Optional[pulumi.Input[builtins.int]] = None,
+                 host: Optional[pulumi.Input[builtins.str]] = None,
+                 http_method: Optional[pulumi.Input[builtins.str]] = None,
+                 http_usability_codes: Optional[pulumi.Input[Sequence[pulumi.Input['RuleProbeHttpUsabilityCodeArgs']]]] = None,
+                 interval: Optional[pulumi.Input[builtins.int]] = None,
+                 is_manual_nodes: Optional[pulumi.Input[builtins.bool]] = None,
+                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 ping_count: Optional[pulumi.Input[builtins.int]] = None,
+                 ping_loss_percent: Optional[pulumi.Input[builtins.int]] = None,
+                 port: Optional[pulumi.Input[builtins.int]] = None,
+                 protocol: Optional[pulumi.Input[builtins.str]] = None,
+                 timeout: Optional[pulumi.Input[builtins.int]] = None,
+                 url: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] advised_node_count: Recommended number of health check probe points.
+        :param pulumi.Input[builtins.bool] disable: Whether health checks are disabled. true: disabled. false: not disabled.
+        :param pulumi.Input[builtins.int] failed_count: The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+        :param pulumi.Input[builtins.str] host: Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] http_method: HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] interval: The interval between each health check, in seconds.
+        :param pulumi.Input[builtins.bool] is_manual_nodes: Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nodes: Health check probe point.
+        :param pulumi.Input[builtins.int] ping_count: Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        :param pulumi.Input[builtins.int] ping_loss_percent: Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        :param pulumi.Input[builtins.int] port: Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] protocol: Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        :param pulumi.Input[builtins.int] timeout: The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+        :param pulumi.Input[builtins.str] url: Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        if advised_node_count is not None:
+            pulumi.set(__self__, "advised_node_count", advised_node_count)
+        if disable is not None:
+            pulumi.set(__self__, "disable", disable)
+        if failed_count is not None:
+            pulumi.set(__self__, "failed_count", failed_count)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if http_method is not None:
+            pulumi.set(__self__, "http_method", http_method)
+        if http_usability_codes is not None:
+            pulumi.set(__self__, "http_usability_codes", http_usability_codes)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if is_manual_nodes is not None:
+            pulumi.set(__self__, "is_manual_nodes", is_manual_nodes)
+        if nodes is not None:
+            pulumi.set(__self__, "nodes", nodes)
+        if ping_count is not None:
+            pulumi.set(__self__, "ping_count", ping_count)
+        if ping_loss_percent is not None:
+            pulumi.set(__self__, "ping_loss_percent", ping_loss_percent)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="advisedNodeCount")
+    def advised_node_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Recommended number of health check probe points.
+        """
+        return pulumi.get(self, "advised_node_count")
+
+    @advised_node_count.setter
+    def advised_node_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "advised_node_count", value)
+
+    @property
+    @pulumi.getter
+    def disable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether health checks are disabled. true: disabled. false: not disabled.
+        """
+        return pulumi.get(self, "disable")
+
+    @disable.setter
+    def disable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "disable", value)
+
+    @property
+    @pulumi.getter(name="failedCount")
+    def failed_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+        """
+        return pulumi.get(self, "failed_count")
+
+    @failed_count.setter
+    def failed_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "failed_count", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter(name="httpMethod")
+    def http_method(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "http_method")
+
+    @http_method.setter
+    def http_method(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "http_method", value)
+
+    @property
+    @pulumi.getter(name="httpUsabilityCodes")
+    def http_usability_codes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RuleProbeHttpUsabilityCodeArgs']]]]:
+        return pulumi.get(self, "http_usability_codes")
+
+    @http_usability_codes.setter
+    def http_usability_codes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RuleProbeHttpUsabilityCodeArgs']]]]):
+        pulumi.set(self, "http_usability_codes", value)
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The interval between each health check, in seconds.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "interval", value)
+
+    @property
+    @pulumi.getter(name="isManualNodes")
+    def is_manual_nodes(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+        """
+        return pulumi.get(self, "is_manual_nodes")
+
+    @is_manual_nodes.setter
+    def is_manual_nodes(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_manual_nodes", value)
+
+    @property
+    @pulumi.getter
+    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Health check probe point.
+        """
+        return pulumi.get(self, "nodes")
+
+    @nodes.setter
+    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nodes", value)
+
+    @property
+    @pulumi.getter(name="pingCount")
+    def ping_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        """
+        return pulumi.get(self, "ping_count")
+
+    @ping_count.setter
+    def ping_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "ping_count", value)
+
+    @property
+    @pulumi.getter(name="pingLossPercent")
+    def ping_loss_percent(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        """
+        return pulumi.get(self, "ping_loss_percent")
+
+    @ping_loss_percent.setter
+    def ping_loss_percent(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "ping_loss_percent", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+        """
+        return pulumi.get(self, "timeout")
+
+    @timeout.setter
+    def timeout(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "timeout", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+if not MYPY:
+    class RuleProbeHttpUsabilityCodeArgsDict(TypedDict):
+        codes: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]
+        """
+        HTTP status code list.
+        """
+        operator: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+        """
+elif False:
+    RuleProbeHttpUsabilityCodeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RuleProbeHttpUsabilityCodeArgs:
+    def __init__(__self__, *,
+                 codes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]] = None,
+                 operator: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.int]]] codes: HTTP status code list.
+        :param pulumi.Input[builtins.str] operator: Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+        """
+        if codes is not None:
+            pulumi.set(__self__, "codes", codes)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+
+    @property
+    @pulumi.getter
+    def codes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]:
+        """
+        HTTP status code list.
+        """
+        return pulumi.get(self, "codes")
+
+    @codes.setter
+    def codes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.int]]]]):
+        pulumi.set(self, "codes", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+        """
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "operator", value)
 
 

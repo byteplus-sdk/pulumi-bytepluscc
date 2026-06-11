@@ -4,12 +4,16 @@
 package com.byteplus.bytepluscc.mongodb;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.mongodb.inputs.GetAccountArgs;
+import com.byteplus.bytepluscc.mongodb.inputs.GetAccountPlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetSslStateArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetSslStatePlainArgs;
+import com.byteplus.bytepluscc.mongodb.outputs.GetAccountResult;
+import com.byteplus.bytepluscc.mongodb.outputs.GetAccountsResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceResult;
@@ -25,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class MongodbFunctions {
+    /**
+     * Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args) {
+        return getAccount(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountResult> getAccountPlain(GetAccountPlainArgs args) {
+        return getAccountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountResult> getAccountPlain(GetAccountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts() {
+        return getAccounts(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain() {
+        return getAccountsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args) {
+        return getAccounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args) {
+        return getAccountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::MongoDB::AllowList
      * 

@@ -572,6 +572,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "directconnect/bgpPeer",
+  "fqn": "pulumi_bytepluscc.directconnect",
+  "classes": {
+   "bytepluscc:directconnect/bgpPeer:BgpPeer": "BgpPeer"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "directconnect/directConnectGateway",
   "fqn": "pulumi_bytepluscc.directconnect",
   "classes": {
@@ -592,6 +600,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.directconnect",
   "classes": {
    "bytepluscc:directconnect/virtualInterface:VirtualInterface": "VirtualInterface"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "dns/record",
+  "fqn": "pulumi_bytepluscc.dns",
+  "classes": {
+   "bytepluscc:dns/record:Record": "Record"
   }
  },
  {
@@ -748,10 +764,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "gtm/gtm",
+  "fqn": "pulumi_bytepluscc.gtm",
+  "classes": {
+   "bytepluscc:gtm/gtm:Gtm": "Gtm"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "gtm/pool",
   "fqn": "pulumi_bytepluscc.gtm",
   "classes": {
    "bytepluscc:gtm/pool:Pool": "Pool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "gtm/routing",
+  "fqn": "pulumi_bytepluscc.gtm",
+  "classes": {
+   "bytepluscc:gtm/routing:Routing": "Routing"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "gtm/rule",
+  "fqn": "pulumi_bytepluscc.gtm",
+  "classes": {
+   "bytepluscc:gtm/rule:Rule": "Rule"
   }
  },
  {
@@ -860,6 +900,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "kafka/user",
+  "fqn": "pulumi_bytepluscc.kafka",
+  "classes": {
+   "bytepluscc:kafka/user:User": "User"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "kms/key",
   "fqn": "pulumi_bytepluscc.kms",
   "classes": {
@@ -880,6 +928,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.kms",
   "classes": {
    "bytepluscc:kms/secret:Secret": "Secret"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "mongodb/account",
+  "fqn": "pulumi_bytepluscc.mongodb",
+  "classes": {
+   "bytepluscc:mongodb/account:Account": "Account"
   }
  },
  {
@@ -1120,6 +1176,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
    "bytepluscc:rdsmysql/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmysql/endpointPublicAddress",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/endpointPublicAddress:EndpointPublicAddress": "EndpointPublicAddress"
   }
  },
  {
@@ -1492,6 +1556,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vepfs/fileset",
+  "fqn": "pulumi_bytepluscc.vepfs",
+  "classes": {
+   "bytepluscc:vepfs/fileset:Fileset": "Fileset"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vepfs/instance",
   "fqn": "pulumi_bytepluscc.vepfs",
   "classes": {
@@ -1568,6 +1640,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vmp",
   "classes": {
    "bytepluscc:vmp/alertingRule:AlertingRule": "AlertingRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vmp/ruleFile",
+  "fqn": "pulumi_bytepluscc.vmp",
+  "classes": {
+   "bytepluscc:vmp/ruleFile:RuleFile": "RuleFile"
   }
  },
  {

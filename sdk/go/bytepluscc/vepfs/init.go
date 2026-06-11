@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:vepfs/fileset:Fileset":
+		r = &Fileset{}
 	case "bytepluscc:vepfs/instance:Instance":
 		r = &Instance{}
 	case "bytepluscc:vepfs/mountService:MountService":
@@ -38,6 +40,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vepfs/fileset",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vepfs/instance",

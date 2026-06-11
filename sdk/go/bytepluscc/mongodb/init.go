@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:mongodb/account:Account":
+		r = &Account{}
 	case "bytepluscc:mongodb/allowList:AllowList":
 		r = &AllowList{}
 	case "bytepluscc:mongodb/instance:Instance":
@@ -40,6 +42,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"mongodb/account",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"mongodb/allowList",

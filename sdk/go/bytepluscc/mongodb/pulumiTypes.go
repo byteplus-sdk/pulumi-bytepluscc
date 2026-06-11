@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AccountAccountPrivilege struct {
+	// Databases for which the account has permissions.
+	DbName *string `pulumi:"dbName"`
+	// Permissions the account has in the current database.
+	RoleName *string `pulumi:"roleName"`
+}
+
+// AccountAccountPrivilegeInput is an input type that accepts AccountAccountPrivilegeArgs and AccountAccountPrivilegeOutput values.
+// You can construct a concrete instance of `AccountAccountPrivilegeInput` via:
+//
+//	AccountAccountPrivilegeArgs{...}
+type AccountAccountPrivilegeInput interface {
+	pulumi.Input
+
+	ToAccountAccountPrivilegeOutput() AccountAccountPrivilegeOutput
+	ToAccountAccountPrivilegeOutputWithContext(context.Context) AccountAccountPrivilegeOutput
+}
+
+type AccountAccountPrivilegeArgs struct {
+	// Databases for which the account has permissions.
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+	// Permissions the account has in the current database.
+	RoleName pulumi.StringPtrInput `pulumi:"roleName"`
+}
+
+func (AccountAccountPrivilegeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AccountAccountPrivilege)(nil)).Elem()
+}
+
+func (i AccountAccountPrivilegeArgs) ToAccountAccountPrivilegeOutput() AccountAccountPrivilegeOutput {
+	return i.ToAccountAccountPrivilegeOutputWithContext(context.Background())
+}
+
+func (i AccountAccountPrivilegeArgs) ToAccountAccountPrivilegeOutputWithContext(ctx context.Context) AccountAccountPrivilegeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AccountAccountPrivilegeOutput)
+}
+
+// AccountAccountPrivilegeArrayInput is an input type that accepts AccountAccountPrivilegeArray and AccountAccountPrivilegeArrayOutput values.
+// You can construct a concrete instance of `AccountAccountPrivilegeArrayInput` via:
+//
+//	AccountAccountPrivilegeArray{ AccountAccountPrivilegeArgs{...} }
+type AccountAccountPrivilegeArrayInput interface {
+	pulumi.Input
+
+	ToAccountAccountPrivilegeArrayOutput() AccountAccountPrivilegeArrayOutput
+	ToAccountAccountPrivilegeArrayOutputWithContext(context.Context) AccountAccountPrivilegeArrayOutput
+}
+
+type AccountAccountPrivilegeArray []AccountAccountPrivilegeInput
+
+func (AccountAccountPrivilegeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AccountAccountPrivilege)(nil)).Elem()
+}
+
+func (i AccountAccountPrivilegeArray) ToAccountAccountPrivilegeArrayOutput() AccountAccountPrivilegeArrayOutput {
+	return i.ToAccountAccountPrivilegeArrayOutputWithContext(context.Background())
+}
+
+func (i AccountAccountPrivilegeArray) ToAccountAccountPrivilegeArrayOutputWithContext(ctx context.Context) AccountAccountPrivilegeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AccountAccountPrivilegeArrayOutput)
+}
+
+type AccountAccountPrivilegeOutput struct{ *pulumi.OutputState }
+
+func (AccountAccountPrivilegeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AccountAccountPrivilege)(nil)).Elem()
+}
+
+func (o AccountAccountPrivilegeOutput) ToAccountAccountPrivilegeOutput() AccountAccountPrivilegeOutput {
+	return o
+}
+
+func (o AccountAccountPrivilegeOutput) ToAccountAccountPrivilegeOutputWithContext(ctx context.Context) AccountAccountPrivilegeOutput {
+	return o
+}
+
+// Databases for which the account has permissions.
+func (o AccountAccountPrivilegeOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AccountAccountPrivilege) *string { return v.DbName }).(pulumi.StringPtrOutput)
+}
+
+// Permissions the account has in the current database.
+func (o AccountAccountPrivilegeOutput) RoleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AccountAccountPrivilege) *string { return v.RoleName }).(pulumi.StringPtrOutput)
+}
+
+type AccountAccountPrivilegeArrayOutput struct{ *pulumi.OutputState }
+
+func (AccountAccountPrivilegeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AccountAccountPrivilege)(nil)).Elem()
+}
+
+func (o AccountAccountPrivilegeArrayOutput) ToAccountAccountPrivilegeArrayOutput() AccountAccountPrivilegeArrayOutput {
+	return o
+}
+
+func (o AccountAccountPrivilegeArrayOutput) ToAccountAccountPrivilegeArrayOutputWithContext(ctx context.Context) AccountAccountPrivilegeArrayOutput {
+	return o
+}
+
+func (o AccountAccountPrivilegeArrayOutput) Index(i pulumi.IntInput) AccountAccountPrivilegeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AccountAccountPrivilege {
+		return vs[0].([]AccountAccountPrivilege)[vs[1].(int)]
+	}).(AccountAccountPrivilegeOutput)
+}
+
 type AllowListAssociatedInstance struct {
 	// Instance ID bound to the current allowlist.
 	InstanceId *string `pulumi:"instanceId"`
@@ -1277,6 +1383,112 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTag {
 		return vs[0].([]InstanceTag)[vs[1].(int)]
 	}).(InstanceTagOutput)
+}
+
+type GetAccountAccountPrivilege struct {
+	// Databases for which the account has permissions.
+	DbName string `pulumi:"dbName"`
+	// Permissions the account has in the current database.
+	RoleName string `pulumi:"roleName"`
+}
+
+// GetAccountAccountPrivilegeInput is an input type that accepts GetAccountAccountPrivilegeArgs and GetAccountAccountPrivilegeOutput values.
+// You can construct a concrete instance of `GetAccountAccountPrivilegeInput` via:
+//
+//	GetAccountAccountPrivilegeArgs{...}
+type GetAccountAccountPrivilegeInput interface {
+	pulumi.Input
+
+	ToGetAccountAccountPrivilegeOutput() GetAccountAccountPrivilegeOutput
+	ToGetAccountAccountPrivilegeOutputWithContext(context.Context) GetAccountAccountPrivilegeOutput
+}
+
+type GetAccountAccountPrivilegeArgs struct {
+	// Databases for which the account has permissions.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// Permissions the account has in the current database.
+	RoleName pulumi.StringInput `pulumi:"roleName"`
+}
+
+func (GetAccountAccountPrivilegeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccountAccountPrivilege)(nil)).Elem()
+}
+
+func (i GetAccountAccountPrivilegeArgs) ToGetAccountAccountPrivilegeOutput() GetAccountAccountPrivilegeOutput {
+	return i.ToGetAccountAccountPrivilegeOutputWithContext(context.Background())
+}
+
+func (i GetAccountAccountPrivilegeArgs) ToGetAccountAccountPrivilegeOutputWithContext(ctx context.Context) GetAccountAccountPrivilegeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccountAccountPrivilegeOutput)
+}
+
+// GetAccountAccountPrivilegeArrayInput is an input type that accepts GetAccountAccountPrivilegeArray and GetAccountAccountPrivilegeArrayOutput values.
+// You can construct a concrete instance of `GetAccountAccountPrivilegeArrayInput` via:
+//
+//	GetAccountAccountPrivilegeArray{ GetAccountAccountPrivilegeArgs{...} }
+type GetAccountAccountPrivilegeArrayInput interface {
+	pulumi.Input
+
+	ToGetAccountAccountPrivilegeArrayOutput() GetAccountAccountPrivilegeArrayOutput
+	ToGetAccountAccountPrivilegeArrayOutputWithContext(context.Context) GetAccountAccountPrivilegeArrayOutput
+}
+
+type GetAccountAccountPrivilegeArray []GetAccountAccountPrivilegeInput
+
+func (GetAccountAccountPrivilegeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccountAccountPrivilege)(nil)).Elem()
+}
+
+func (i GetAccountAccountPrivilegeArray) ToGetAccountAccountPrivilegeArrayOutput() GetAccountAccountPrivilegeArrayOutput {
+	return i.ToGetAccountAccountPrivilegeArrayOutputWithContext(context.Background())
+}
+
+func (i GetAccountAccountPrivilegeArray) ToGetAccountAccountPrivilegeArrayOutputWithContext(ctx context.Context) GetAccountAccountPrivilegeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAccountAccountPrivilegeArrayOutput)
+}
+
+type GetAccountAccountPrivilegeOutput struct{ *pulumi.OutputState }
+
+func (GetAccountAccountPrivilegeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAccountAccountPrivilege)(nil)).Elem()
+}
+
+func (o GetAccountAccountPrivilegeOutput) ToGetAccountAccountPrivilegeOutput() GetAccountAccountPrivilegeOutput {
+	return o
+}
+
+func (o GetAccountAccountPrivilegeOutput) ToGetAccountAccountPrivilegeOutputWithContext(ctx context.Context) GetAccountAccountPrivilegeOutput {
+	return o
+}
+
+// Databases for which the account has permissions.
+func (o GetAccountAccountPrivilegeOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccountAccountPrivilege) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// Permissions the account has in the current database.
+func (o GetAccountAccountPrivilegeOutput) RoleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccountAccountPrivilege) string { return v.RoleName }).(pulumi.StringOutput)
+}
+
+type GetAccountAccountPrivilegeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAccountAccountPrivilegeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAccountAccountPrivilege)(nil)).Elem()
+}
+
+func (o GetAccountAccountPrivilegeArrayOutput) ToGetAccountAccountPrivilegeArrayOutput() GetAccountAccountPrivilegeArrayOutput {
+	return o
+}
+
+func (o GetAccountAccountPrivilegeArrayOutput) ToGetAccountAccountPrivilegeArrayOutputWithContext(ctx context.Context) GetAccountAccountPrivilegeArrayOutput {
+	return o
+}
+
+func (o GetAccountAccountPrivilegeArrayOutput) Index(i pulumi.IntInput) GetAccountAccountPrivilegeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccountAccountPrivilege {
+		return vs[0].([]GetAccountAccountPrivilege)[vs[1].(int)]
+	}).(GetAccountAccountPrivilegeOutput)
 }
 
 type GetAllowListAssociatedInstance struct {
@@ -2603,6 +2815,8 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AccountAccountPrivilegeInput)(nil)).Elem(), AccountAccountPrivilegeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AccountAccountPrivilegeArrayInput)(nil)).Elem(), AccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerInput)(nil)).Elem(), InstanceConfigServerArgs{})
@@ -2621,6 +2835,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceShardNodeArrayInput)(nil)).Elem(), InstanceShardNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountAccountPrivilegeInput)(nil)).Elem(), GetAccountAccountPrivilegeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountAccountPrivilegeArrayInput)(nil)).Elem(), GetAccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerInput)(nil)).Elem(), GetInstanceConfigServerArgs{})
@@ -2639,6 +2855,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceShardNodeArrayInput)(nil)).Elem(), GetInstanceShardNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterOutputType(AccountAccountPrivilegeOutput{})
+	pulumi.RegisterOutputType(AccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerOutput{})
@@ -2657,6 +2875,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceShardNodeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAccountAccountPrivilegeOutput{})
+	pulumi.RegisterOutputType(GetAccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerOutput{})

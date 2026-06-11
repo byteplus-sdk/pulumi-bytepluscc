@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Instance{}
 	case "bytepluscc:kafka/topic:Topic":
 		r = &Topic{}
+	case "bytepluscc:kafka/user:User":
+		r = &User{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"kafka/topic",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"kafka/user",
 		&module{version},
 	)
 }
