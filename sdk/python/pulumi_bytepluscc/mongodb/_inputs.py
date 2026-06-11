@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AccountAccountPrivilegeArgs',
+    'AccountAccountPrivilegeArgsDict',
     'AllowListAssociatedInstanceArgs',
     'AllowListAssociatedInstanceArgsDict',
     'InstanceConfigServerArgs',
@@ -37,6 +39,58 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AccountAccountPrivilegeArgsDict(TypedDict):
+        db_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Databases for which the account has permissions.
+        """
+        role_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Permissions the account has in the current database.
+        """
+elif False:
+    AccountAccountPrivilegeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AccountAccountPrivilegeArgs:
+    def __init__(__self__, *,
+                 db_name: Optional[pulumi.Input[builtins.str]] = None,
+                 role_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] db_name: Databases for which the account has permissions.
+        :param pulumi.Input[builtins.str] role_name: Permissions the account has in the current database.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if role_name is not None:
+            pulumi.set(__self__, "role_name", role_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Databases for which the account has permissions.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "db_name", value)
+
+    @property
+    @pulumi.getter(name="roleName")
+    def role_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Permissions the account has in the current database.
+        """
+        return pulumi.get(self, "role_name")
+
+    @role_name.setter
+    def role_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "role_name", value)
+
 
 if not MYPY:
     class AllowListAssociatedInstanceArgsDict(TypedDict):

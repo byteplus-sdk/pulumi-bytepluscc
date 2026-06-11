@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BgpPeerArgs, BgpPeerState } from "./bgpPeer";
+export type BgpPeer = import("./bgpPeer").BgpPeer;
+export const BgpPeer: typeof import("./bgpPeer").BgpPeer = null as any;
+utilities.lazyLoad(exports, ["BgpPeer"], () => require("./bgpPeer"));
+
 export { DirectConnectGatewayArgs, DirectConnectGatewayState } from "./directConnectGateway";
 export type DirectConnectGateway = import("./directConnectGateway").DirectConnectGateway;
 export const DirectConnectGateway: typeof import("./directConnectGateway").DirectConnectGateway = null as any;
@@ -14,6 +19,16 @@ export { GatewayRouteArgs, GatewayRouteState } from "./gatewayRoute";
 export type GatewayRoute = import("./gatewayRoute").GatewayRoute;
 export const GatewayRoute: typeof import("./gatewayRoute").GatewayRoute = null as any;
 utilities.lazyLoad(exports, ["GatewayRoute"], () => require("./gatewayRoute"));
+
+export { GetBgpPeerArgs, GetBgpPeerResult, GetBgpPeerOutputArgs } from "./getBgpPeer";
+export const getBgpPeer: typeof import("./getBgpPeer").getBgpPeer = null as any;
+export const getBgpPeerOutput: typeof import("./getBgpPeer").getBgpPeerOutput = null as any;
+utilities.lazyLoad(exports, ["getBgpPeer","getBgpPeerOutput"], () => require("./getBgpPeer"));
+
+export { GetBgpPeersResult } from "./getBgpPeers";
+export const getBgpPeers: typeof import("./getBgpPeers").getBgpPeers = null as any;
+export const getBgpPeersOutput: typeof import("./getBgpPeers").getBgpPeersOutput = null as any;
+utilities.lazyLoad(exports, ["getBgpPeers","getBgpPeersOutput"], () => require("./getBgpPeers"));
 
 export { GetDirectConnectGatewayArgs, GetDirectConnectGatewayResult, GetDirectConnectGatewayOutputArgs } from "./getDirectConnectGateway";
 export const getDirectConnectGateway: typeof import("./getDirectConnectGateway").getDirectConnectGateway = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:directconnect/bgpPeer:BgpPeer":
+                return new BgpPeer(name, <any>undefined, { urn })
             case "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway":
                 return new DirectConnectGateway(name, <any>undefined, { urn })
             case "bytepluscc:directconnect/gatewayRoute:GatewayRoute":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/bgpPeer", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/directConnectGateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/gatewayRoute", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/virtualInterface", _module)

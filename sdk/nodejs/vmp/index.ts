@@ -20,6 +20,16 @@ export const getAlertingRules: typeof import("./getAlertingRules").getAlertingRu
 export const getAlertingRulesOutput: typeof import("./getAlertingRules").getAlertingRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getAlertingRules","getAlertingRulesOutput"], () => require("./getAlertingRules"));
 
+export { GetRuleFileArgs, GetRuleFileResult, GetRuleFileOutputArgs } from "./getRuleFile";
+export const getRuleFile: typeof import("./getRuleFile").getRuleFile = null as any;
+export const getRuleFileOutput: typeof import("./getRuleFile").getRuleFileOutput = null as any;
+utilities.lazyLoad(exports, ["getRuleFile","getRuleFileOutput"], () => require("./getRuleFile"));
+
+export { GetRuleFilesResult } from "./getRuleFiles";
+export const getRuleFiles: typeof import("./getRuleFiles").getRuleFiles = null as any;
+export const getRuleFilesOutput: typeof import("./getRuleFiles").getRuleFilesOutput = null as any;
+utilities.lazyLoad(exports, ["getRuleFiles","getRuleFilesOutput"], () => require("./getRuleFiles"));
+
 export { GetWorkspaceArgs, GetWorkspaceResult, GetWorkspaceOutputArgs } from "./getWorkspace";
 export const getWorkspace: typeof import("./getWorkspace").getWorkspace = null as any;
 export const getWorkspaceOutput: typeof import("./getWorkspace").getWorkspaceOutput = null as any;
@@ -29,6 +39,11 @@ export { GetWorkspacesResult } from "./getWorkspaces";
 export const getWorkspaces: typeof import("./getWorkspaces").getWorkspaces = null as any;
 export const getWorkspacesOutput: typeof import("./getWorkspaces").getWorkspacesOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaces","getWorkspacesOutput"], () => require("./getWorkspaces"));
+
+export { RuleFileArgs, RuleFileState } from "./ruleFile";
+export type RuleFile = import("./ruleFile").RuleFile;
+export const RuleFile: typeof import("./ruleFile").RuleFile = null as any;
+utilities.lazyLoad(exports, ["RuleFile"], () => require("./ruleFile"));
 
 export { WorkspaceArgs, WorkspaceState } from "./workspace";
 export type Workspace = import("./workspace").Workspace;
@@ -42,6 +57,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:vmp/alertingRule:AlertingRule":
                 return new AlertingRule(name, <any>undefined, { urn })
+            case "bytepluscc:vmp/ruleFile:RuleFile":
+                return new RuleFile(name, <any>undefined, { urn })
             case "bytepluscc:vmp/workspace:Workspace":
                 return new Workspace(name, <any>undefined, { urn })
             default:
@@ -50,4 +67,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vmp/alertingRule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vmp/ruleFile", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vmp/workspace", _module)

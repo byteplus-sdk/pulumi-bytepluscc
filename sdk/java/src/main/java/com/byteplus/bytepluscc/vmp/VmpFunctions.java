@@ -6,10 +6,14 @@ package com.byteplus.bytepluscc.vmp;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.vmp.inputs.GetAlertingRuleArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetAlertingRulePlainArgs;
+import com.byteplus.bytepluscc.vmp.inputs.GetRuleFileArgs;
+import com.byteplus.bytepluscc.vmp.inputs.GetRuleFilePlainArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetWorkspaceArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetWorkspacePlainArgs;
 import com.byteplus.bytepluscc.vmp.outputs.GetAlertingRuleResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetAlertingRulesResult;
+import com.byteplus.bytepluscc.vmp.outputs.GetRuleFileResult;
+import com.byteplus.bytepluscc.vmp.outputs.GetRuleFilesResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetWorkspaceResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetWorkspacesResult;
 import com.pulumi.core.Output;
@@ -104,6 +108,90 @@ public final class VmpFunctions {
      */
     public static CompletableFuture<GetAlertingRulesResult> getAlertingRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getAlertingRules:getAlertingRules", TypeShape.of(GetAlertingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFileResult> getRuleFile(GetRuleFileArgs args) {
+        return getRuleFile(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static CompletableFuture<GetRuleFileResult> getRuleFilePlain(GetRuleFilePlainArgs args) {
+        return getRuleFilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFileResult> getRuleFile(GetRuleFileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getRuleFile:getRuleFile", TypeShape.of(GetRuleFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFileResult> getRuleFile(GetRuleFileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getRuleFile:getRuleFile", TypeShape.of(GetRuleFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static CompletableFuture<GetRuleFileResult> getRuleFilePlain(GetRuleFilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getRuleFile:getRuleFile", TypeShape.of(GetRuleFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFilesResult> getRuleFiles() {
+        return getRuleFiles(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static CompletableFuture<GetRuleFilesResult> getRuleFilesPlain() {
+        return getRuleFilesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFilesResult> getRuleFiles(InvokeArgs args) {
+        return getRuleFiles(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static CompletableFuture<GetRuleFilesResult> getRuleFilesPlain(InvokeArgs args) {
+        return getRuleFilesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFilesResult> getRuleFiles(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getRuleFiles:getRuleFiles", TypeShape.of(GetRuleFilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static Output<GetRuleFilesResult> getRuleFiles(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getRuleFiles:getRuleFiles", TypeShape.of(GetRuleFilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::RuleFile
+     * 
+     */
+    public static CompletableFuture<GetRuleFilesResult> getRuleFilesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getRuleFiles:getRuleFiles", TypeShape.of(GetRuleFilesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VMP::Workspace

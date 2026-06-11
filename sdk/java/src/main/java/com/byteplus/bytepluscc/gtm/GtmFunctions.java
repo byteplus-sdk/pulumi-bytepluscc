@@ -4,10 +4,22 @@
 package com.byteplus.bytepluscc.gtm;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.gtm.inputs.GetGtmArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetGtmPlainArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetPoolArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetPoolPlainArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetRoutingArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetRoutingPlainArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetRuleArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetRulePlainArgs;
+import com.byteplus.bytepluscc.gtm.outputs.GetGtmResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetGtmsResult;
 import com.byteplus.bytepluscc.gtm.outputs.GetPoolResult;
 import com.byteplus.bytepluscc.gtm.outputs.GetPoolsResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetRoutingResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetRoutingsResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetRuleResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetRulesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -17,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class GtmFunctions {
+    /**
+     * Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmResult> getGtm(GetGtmArgs args) {
+        return getGtm(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static CompletableFuture<GetGtmResult> getGtmPlain(GetGtmPlainArgs args) {
+        return getGtmPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmResult> getGtm(GetGtmArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getGtm:getGtm", TypeShape.of(GetGtmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmResult> getGtm(GetGtmArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getGtm:getGtm", TypeShape.of(GetGtmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static CompletableFuture<GetGtmResult> getGtmPlain(GetGtmPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getGtm:getGtm", TypeShape.of(GetGtmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmsResult> getGtms() {
+        return getGtms(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static CompletableFuture<GetGtmsResult> getGtmsPlain() {
+        return getGtmsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmsResult> getGtms(InvokeArgs args) {
+        return getGtms(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static CompletableFuture<GetGtmsResult> getGtmsPlain(InvokeArgs args) {
+        return getGtmsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmsResult> getGtms(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getGtms:getGtms", TypeShape.of(GetGtmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static Output<GetGtmsResult> getGtms(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getGtms:getGtms", TypeShape.of(GetGtmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::GTM
+     * 
+     */
+    public static CompletableFuture<GetGtmsResult> getGtmsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getGtms:getGtms", TypeShape.of(GetGtmsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::GTM::Pool
      * 
@@ -100,5 +196,173 @@ public final class GtmFunctions {
      */
     public static CompletableFuture<GetPoolsResult> getPoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getPools:getPools", TypeShape.of(GetPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingResult> getRouting(GetRoutingArgs args) {
+        return getRouting(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static CompletableFuture<GetRoutingResult> getRoutingPlain(GetRoutingPlainArgs args) {
+        return getRoutingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingResult> getRouting(GetRoutingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRouting:getRouting", TypeShape.of(GetRoutingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingResult> getRouting(GetRoutingArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRouting:getRouting", TypeShape.of(GetRoutingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static CompletableFuture<GetRoutingResult> getRoutingPlain(GetRoutingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getRouting:getRouting", TypeShape.of(GetRoutingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingsResult> getRoutings() {
+        return getRoutings(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static CompletableFuture<GetRoutingsResult> getRoutingsPlain() {
+        return getRoutingsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingsResult> getRoutings(InvokeArgs args) {
+        return getRoutings(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static CompletableFuture<GetRoutingsResult> getRoutingsPlain(InvokeArgs args) {
+        return getRoutingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingsResult> getRoutings(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRoutings:getRoutings", TypeShape.of(GetRoutingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static Output<GetRoutingsResult> getRoutings(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRoutings:getRoutings", TypeShape.of(GetRoutingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Routing
+     * 
+     */
+    public static CompletableFuture<GetRoutingsResult> getRoutingsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getRoutings:getRoutings", TypeShape.of(GetRoutingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args) {
+        return getRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args) {
+        return getRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules() {
+        return getRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain() {
+        return getRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args) {
+        return getRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args) {
+        return getRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
     }
 }

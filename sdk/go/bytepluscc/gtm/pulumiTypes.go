@@ -146,6 +146,913 @@ func (o PoolAddressArrayOutput) Index(i pulumi.IntInput) PoolAddressOutput {
 	}).(PoolAddressOutput)
 }
 
+type RulePoolSet struct {
+	// Minimum number of available addresses required for the address pool collection to be considered available.
+	ActiveAddrThr *int `pulumi:"activeAddrThr"`
+	// Address pool name.
+	Name  *string           `pulumi:"name"`
+	Pools []RulePoolSetPool `pulumi:"pools"`
+}
+
+// RulePoolSetInput is an input type that accepts RulePoolSetArgs and RulePoolSetOutput values.
+// You can construct a concrete instance of `RulePoolSetInput` via:
+//
+//	RulePoolSetArgs{...}
+type RulePoolSetInput interface {
+	pulumi.Input
+
+	ToRulePoolSetOutput() RulePoolSetOutput
+	ToRulePoolSetOutputWithContext(context.Context) RulePoolSetOutput
+}
+
+type RulePoolSetArgs struct {
+	// Minimum number of available addresses required for the address pool collection to be considered available.
+	ActiveAddrThr pulumi.IntPtrInput `pulumi:"activeAddrThr"`
+	// Address pool name.
+	Name  pulumi.StringPtrInput     `pulumi:"name"`
+	Pools RulePoolSetPoolArrayInput `pulumi:"pools"`
+}
+
+func (RulePoolSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RulePoolSet)(nil)).Elem()
+}
+
+func (i RulePoolSetArgs) ToRulePoolSetOutput() RulePoolSetOutput {
+	return i.ToRulePoolSetOutputWithContext(context.Background())
+}
+
+func (i RulePoolSetArgs) ToRulePoolSetOutputWithContext(ctx context.Context) RulePoolSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RulePoolSetOutput)
+}
+
+// RulePoolSetArrayInput is an input type that accepts RulePoolSetArray and RulePoolSetArrayOutput values.
+// You can construct a concrete instance of `RulePoolSetArrayInput` via:
+//
+//	RulePoolSetArray{ RulePoolSetArgs{...} }
+type RulePoolSetArrayInput interface {
+	pulumi.Input
+
+	ToRulePoolSetArrayOutput() RulePoolSetArrayOutput
+	ToRulePoolSetArrayOutputWithContext(context.Context) RulePoolSetArrayOutput
+}
+
+type RulePoolSetArray []RulePoolSetInput
+
+func (RulePoolSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RulePoolSet)(nil)).Elem()
+}
+
+func (i RulePoolSetArray) ToRulePoolSetArrayOutput() RulePoolSetArrayOutput {
+	return i.ToRulePoolSetArrayOutputWithContext(context.Background())
+}
+
+func (i RulePoolSetArray) ToRulePoolSetArrayOutputWithContext(ctx context.Context) RulePoolSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RulePoolSetArrayOutput)
+}
+
+type RulePoolSetOutput struct{ *pulumi.OutputState }
+
+func (RulePoolSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RulePoolSet)(nil)).Elem()
+}
+
+func (o RulePoolSetOutput) ToRulePoolSetOutput() RulePoolSetOutput {
+	return o
+}
+
+func (o RulePoolSetOutput) ToRulePoolSetOutputWithContext(ctx context.Context) RulePoolSetOutput {
+	return o
+}
+
+// Minimum number of available addresses required for the address pool collection to be considered available.
+func (o RulePoolSetOutput) ActiveAddrThr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RulePoolSet) *int { return v.ActiveAddrThr }).(pulumi.IntPtrOutput)
+}
+
+// Address pool name.
+func (o RulePoolSetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RulePoolSet) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o RulePoolSetOutput) Pools() RulePoolSetPoolArrayOutput {
+	return o.ApplyT(func(v RulePoolSet) []RulePoolSetPool { return v.Pools }).(RulePoolSetPoolArrayOutput)
+}
+
+type RulePoolSetArrayOutput struct{ *pulumi.OutputState }
+
+func (RulePoolSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RulePoolSet)(nil)).Elem()
+}
+
+func (o RulePoolSetArrayOutput) ToRulePoolSetArrayOutput() RulePoolSetArrayOutput {
+	return o
+}
+
+func (o RulePoolSetArrayOutput) ToRulePoolSetArrayOutputWithContext(ctx context.Context) RulePoolSetArrayOutput {
+	return o
+}
+
+func (o RulePoolSetArrayOutput) Index(i pulumi.IntInput) RulePoolSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RulePoolSet {
+		return vs[0].([]RulePoolSet)[vs[1].(int)]
+	}).(RulePoolSetOutput)
+}
+
+type RulePoolSetPool struct {
+	Addresses []RulePoolSetPoolAddress `pulumi:"addresses"`
+	// The number of unavailable addresses in the address pool.
+	InactiveAddrCount *int `pulumi:"inactiveAddrCount"`
+	// Address pool name.
+	Name *string `pulumi:"name"`
+	// Address pool ID.
+	PoolId *string `pulumi:"poolId"`
+	// Address pool weight.
+	Weight *int `pulumi:"weight"`
+}
+
+// RulePoolSetPoolInput is an input type that accepts RulePoolSetPoolArgs and RulePoolSetPoolOutput values.
+// You can construct a concrete instance of `RulePoolSetPoolInput` via:
+//
+//	RulePoolSetPoolArgs{...}
+type RulePoolSetPoolInput interface {
+	pulumi.Input
+
+	ToRulePoolSetPoolOutput() RulePoolSetPoolOutput
+	ToRulePoolSetPoolOutputWithContext(context.Context) RulePoolSetPoolOutput
+}
+
+type RulePoolSetPoolArgs struct {
+	Addresses RulePoolSetPoolAddressArrayInput `pulumi:"addresses"`
+	// The number of unavailable addresses in the address pool.
+	InactiveAddrCount pulumi.IntPtrInput `pulumi:"inactiveAddrCount"`
+	// Address pool name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Address pool ID.
+	PoolId pulumi.StringPtrInput `pulumi:"poolId"`
+	// Address pool weight.
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (RulePoolSetPoolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RulePoolSetPool)(nil)).Elem()
+}
+
+func (i RulePoolSetPoolArgs) ToRulePoolSetPoolOutput() RulePoolSetPoolOutput {
+	return i.ToRulePoolSetPoolOutputWithContext(context.Background())
+}
+
+func (i RulePoolSetPoolArgs) ToRulePoolSetPoolOutputWithContext(ctx context.Context) RulePoolSetPoolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RulePoolSetPoolOutput)
+}
+
+// RulePoolSetPoolArrayInput is an input type that accepts RulePoolSetPoolArray and RulePoolSetPoolArrayOutput values.
+// You can construct a concrete instance of `RulePoolSetPoolArrayInput` via:
+//
+//	RulePoolSetPoolArray{ RulePoolSetPoolArgs{...} }
+type RulePoolSetPoolArrayInput interface {
+	pulumi.Input
+
+	ToRulePoolSetPoolArrayOutput() RulePoolSetPoolArrayOutput
+	ToRulePoolSetPoolArrayOutputWithContext(context.Context) RulePoolSetPoolArrayOutput
+}
+
+type RulePoolSetPoolArray []RulePoolSetPoolInput
+
+func (RulePoolSetPoolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RulePoolSetPool)(nil)).Elem()
+}
+
+func (i RulePoolSetPoolArray) ToRulePoolSetPoolArrayOutput() RulePoolSetPoolArrayOutput {
+	return i.ToRulePoolSetPoolArrayOutputWithContext(context.Background())
+}
+
+func (i RulePoolSetPoolArray) ToRulePoolSetPoolArrayOutputWithContext(ctx context.Context) RulePoolSetPoolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RulePoolSetPoolArrayOutput)
+}
+
+type RulePoolSetPoolOutput struct{ *pulumi.OutputState }
+
+func (RulePoolSetPoolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RulePoolSetPool)(nil)).Elem()
+}
+
+func (o RulePoolSetPoolOutput) ToRulePoolSetPoolOutput() RulePoolSetPoolOutput {
+	return o
+}
+
+func (o RulePoolSetPoolOutput) ToRulePoolSetPoolOutputWithContext(ctx context.Context) RulePoolSetPoolOutput {
+	return o
+}
+
+func (o RulePoolSetPoolOutput) Addresses() RulePoolSetPoolAddressArrayOutput {
+	return o.ApplyT(func(v RulePoolSetPool) []RulePoolSetPoolAddress { return v.Addresses }).(RulePoolSetPoolAddressArrayOutput)
+}
+
+// The number of unavailable addresses in the address pool.
+func (o RulePoolSetPoolOutput) InactiveAddrCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPool) *int { return v.InactiveAddrCount }).(pulumi.IntPtrOutput)
+}
+
+// Address pool name.
+func (o RulePoolSetPoolOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPool) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Address pool ID.
+func (o RulePoolSetPoolOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPool) *string { return v.PoolId }).(pulumi.StringPtrOutput)
+}
+
+// Address pool weight.
+func (o RulePoolSetPoolOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPool) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type RulePoolSetPoolArrayOutput struct{ *pulumi.OutputState }
+
+func (RulePoolSetPoolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RulePoolSetPool)(nil)).Elem()
+}
+
+func (o RulePoolSetPoolArrayOutput) ToRulePoolSetPoolArrayOutput() RulePoolSetPoolArrayOutput {
+	return o
+}
+
+func (o RulePoolSetPoolArrayOutput) ToRulePoolSetPoolArrayOutputWithContext(ctx context.Context) RulePoolSetPoolArrayOutput {
+	return o
+}
+
+func (o RulePoolSetPoolArrayOutput) Index(i pulumi.IntInput) RulePoolSetPoolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RulePoolSetPool {
+		return vs[0].([]RulePoolSetPool)[vs[1].(int)]
+	}).(RulePoolSetPoolOutput)
+}
+
+type RulePoolSetPoolAddress struct {
+	// Whether the address is available. true: The address is available. false: The address is unavailable.
+	Active *bool `pulumi:"active"`
+	// The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+	Capacity *int `pulumi:"capacity"`
+	// This parameter has no practical significance. You can ignore this parameter.
+	Geo *string `pulumi:"geo"`
+	// Latency (ms) for health check probe accessing the target address.
+	Latency *int `pulumi:"latency"`
+	// The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+	Mode *string `pulumi:"mode"`
+	// The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+	RectifiedGeos []string `pulumi:"rectifiedGeos"`
+	// Address.
+	Value *string `pulumi:"value"`
+	// Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+	Weight *int `pulumi:"weight"`
+}
+
+// RulePoolSetPoolAddressInput is an input type that accepts RulePoolSetPoolAddressArgs and RulePoolSetPoolAddressOutput values.
+// You can construct a concrete instance of `RulePoolSetPoolAddressInput` via:
+//
+//	RulePoolSetPoolAddressArgs{...}
+type RulePoolSetPoolAddressInput interface {
+	pulumi.Input
+
+	ToRulePoolSetPoolAddressOutput() RulePoolSetPoolAddressOutput
+	ToRulePoolSetPoolAddressOutputWithContext(context.Context) RulePoolSetPoolAddressOutput
+}
+
+type RulePoolSetPoolAddressArgs struct {
+	// Whether the address is available. true: The address is available. false: The address is unavailable.
+	Active pulumi.BoolPtrInput `pulumi:"active"`
+	// The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+	Capacity pulumi.IntPtrInput `pulumi:"capacity"`
+	// This parameter has no practical significance. You can ignore this parameter.
+	Geo pulumi.StringPtrInput `pulumi:"geo"`
+	// Latency (ms) for health check probe accessing the target address.
+	Latency pulumi.IntPtrInput `pulumi:"latency"`
+	// The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+	RectifiedGeos pulumi.StringArrayInput `pulumi:"rectifiedGeos"`
+	// Address.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+	// Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (RulePoolSetPoolAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (i RulePoolSetPoolAddressArgs) ToRulePoolSetPoolAddressOutput() RulePoolSetPoolAddressOutput {
+	return i.ToRulePoolSetPoolAddressOutputWithContext(context.Background())
+}
+
+func (i RulePoolSetPoolAddressArgs) ToRulePoolSetPoolAddressOutputWithContext(ctx context.Context) RulePoolSetPoolAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RulePoolSetPoolAddressOutput)
+}
+
+// RulePoolSetPoolAddressArrayInput is an input type that accepts RulePoolSetPoolAddressArray and RulePoolSetPoolAddressArrayOutput values.
+// You can construct a concrete instance of `RulePoolSetPoolAddressArrayInput` via:
+//
+//	RulePoolSetPoolAddressArray{ RulePoolSetPoolAddressArgs{...} }
+type RulePoolSetPoolAddressArrayInput interface {
+	pulumi.Input
+
+	ToRulePoolSetPoolAddressArrayOutput() RulePoolSetPoolAddressArrayOutput
+	ToRulePoolSetPoolAddressArrayOutputWithContext(context.Context) RulePoolSetPoolAddressArrayOutput
+}
+
+type RulePoolSetPoolAddressArray []RulePoolSetPoolAddressInput
+
+func (RulePoolSetPoolAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (i RulePoolSetPoolAddressArray) ToRulePoolSetPoolAddressArrayOutput() RulePoolSetPoolAddressArrayOutput {
+	return i.ToRulePoolSetPoolAddressArrayOutputWithContext(context.Background())
+}
+
+func (i RulePoolSetPoolAddressArray) ToRulePoolSetPoolAddressArrayOutputWithContext(ctx context.Context) RulePoolSetPoolAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RulePoolSetPoolAddressArrayOutput)
+}
+
+type RulePoolSetPoolAddressOutput struct{ *pulumi.OutputState }
+
+func (RulePoolSetPoolAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (o RulePoolSetPoolAddressOutput) ToRulePoolSetPoolAddressOutput() RulePoolSetPoolAddressOutput {
+	return o
+}
+
+func (o RulePoolSetPoolAddressOutput) ToRulePoolSetPoolAddressOutputWithContext(ctx context.Context) RulePoolSetPoolAddressOutput {
+	return o
+}
+
+// Whether the address is available. true: The address is available. false: The address is unavailable.
+func (o RulePoolSetPoolAddressOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+func (o RulePoolSetPoolAddressOutput) Capacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *int { return v.Capacity }).(pulumi.IntPtrOutput)
+}
+
+// This parameter has no practical significance. You can ignore this parameter.
+func (o RulePoolSetPoolAddressOutput) Geo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *string { return v.Geo }).(pulumi.StringPtrOutput)
+}
+
+// Latency (ms) for health check probe accessing the target address.
+func (o RulePoolSetPoolAddressOutput) Latency() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *int { return v.Latency }).(pulumi.IntPtrOutput)
+}
+
+// The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+func (o RulePoolSetPoolAddressOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+func (o RulePoolSetPoolAddressOutput) RectifiedGeos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) []string { return v.RectifiedGeos }).(pulumi.StringArrayOutput)
+}
+
+// Address.
+func (o RulePoolSetPoolAddressOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+// Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+func (o RulePoolSetPoolAddressOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RulePoolSetPoolAddress) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type RulePoolSetPoolAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (RulePoolSetPoolAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (o RulePoolSetPoolAddressArrayOutput) ToRulePoolSetPoolAddressArrayOutput() RulePoolSetPoolAddressArrayOutput {
+	return o
+}
+
+func (o RulePoolSetPoolAddressArrayOutput) ToRulePoolSetPoolAddressArrayOutputWithContext(ctx context.Context) RulePoolSetPoolAddressArrayOutput {
+	return o
+}
+
+func (o RulePoolSetPoolAddressArrayOutput) Index(i pulumi.IntInput) RulePoolSetPoolAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RulePoolSetPoolAddress {
+		return vs[0].([]RulePoolSetPoolAddress)[vs[1].(int)]
+	}).(RulePoolSetPoolAddressOutput)
+}
+
+type RuleProbe struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount *int `pulumi:"advisedNodeCount"`
+	// Whether health checks are disabled. true: disabled. false: not disabled.
+	Disable *bool `pulumi:"disable"`
+	// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+	FailedCount *int `pulumi:"failedCount"`
+	// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host *string `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod         *string                      `pulumi:"httpMethod"`
+	HttpUsabilityCodes []RuleProbeHttpUsabilityCode `pulumi:"httpUsabilityCodes"`
+	// The interval between each health check, in seconds.
+	Interval *int `pulumi:"interval"`
+	// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+	IsManualNodes *bool `pulumi:"isManualNodes"`
+	// Health check probe point.
+	Nodes []string `pulumi:"nodes"`
+	// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount *int `pulumi:"pingCount"`
+	// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent *int `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port *int `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol *string `pulumi:"protocol"`
+	// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+	Timeout *int `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url *string `pulumi:"url"`
+}
+
+// RuleProbeInput is an input type that accepts RuleProbeArgs and RuleProbeOutput values.
+// You can construct a concrete instance of `RuleProbeInput` via:
+//
+//	RuleProbeArgs{...}
+type RuleProbeInput interface {
+	pulumi.Input
+
+	ToRuleProbeOutput() RuleProbeOutput
+	ToRuleProbeOutputWithContext(context.Context) RuleProbeOutput
+}
+
+type RuleProbeArgs struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount pulumi.IntPtrInput `pulumi:"advisedNodeCount"`
+	// Whether health checks are disabled. true: disabled. false: not disabled.
+	Disable pulumi.BoolPtrInput `pulumi:"disable"`
+	// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+	FailedCount pulumi.IntPtrInput `pulumi:"failedCount"`
+	// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod         pulumi.StringPtrInput                `pulumi:"httpMethod"`
+	HttpUsabilityCodes RuleProbeHttpUsabilityCodeArrayInput `pulumi:"httpUsabilityCodes"`
+	// The interval between each health check, in seconds.
+	Interval pulumi.IntPtrInput `pulumi:"interval"`
+	// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+	IsManualNodes pulumi.BoolPtrInput `pulumi:"isManualNodes"`
+	// Health check probe point.
+	Nodes pulumi.StringArrayInput `pulumi:"nodes"`
+	// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount pulumi.IntPtrInput `pulumi:"pingCount"`
+	// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent pulumi.IntPtrInput `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (RuleProbeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleProbe)(nil)).Elem()
+}
+
+func (i RuleProbeArgs) ToRuleProbeOutput() RuleProbeOutput {
+	return i.ToRuleProbeOutputWithContext(context.Background())
+}
+
+func (i RuleProbeArgs) ToRuleProbeOutputWithContext(ctx context.Context) RuleProbeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleProbeOutput)
+}
+
+func (i RuleProbeArgs) ToRuleProbePtrOutput() RuleProbePtrOutput {
+	return i.ToRuleProbePtrOutputWithContext(context.Background())
+}
+
+func (i RuleProbeArgs) ToRuleProbePtrOutputWithContext(ctx context.Context) RuleProbePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleProbeOutput).ToRuleProbePtrOutputWithContext(ctx)
+}
+
+// RuleProbePtrInput is an input type that accepts RuleProbeArgs, RuleProbePtr and RuleProbePtrOutput values.
+// You can construct a concrete instance of `RuleProbePtrInput` via:
+//
+//	        RuleProbeArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleProbePtrInput interface {
+	pulumi.Input
+
+	ToRuleProbePtrOutput() RuleProbePtrOutput
+	ToRuleProbePtrOutputWithContext(context.Context) RuleProbePtrOutput
+}
+
+type ruleProbePtrType RuleProbeArgs
+
+func RuleProbePtr(v *RuleProbeArgs) RuleProbePtrInput {
+	return (*ruleProbePtrType)(v)
+}
+
+func (*ruleProbePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleProbe)(nil)).Elem()
+}
+
+func (i *ruleProbePtrType) ToRuleProbePtrOutput() RuleProbePtrOutput {
+	return i.ToRuleProbePtrOutputWithContext(context.Background())
+}
+
+func (i *ruleProbePtrType) ToRuleProbePtrOutputWithContext(ctx context.Context) RuleProbePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleProbePtrOutput)
+}
+
+type RuleProbeOutput struct{ *pulumi.OutputState }
+
+func (RuleProbeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleProbe)(nil)).Elem()
+}
+
+func (o RuleProbeOutput) ToRuleProbeOutput() RuleProbeOutput {
+	return o
+}
+
+func (o RuleProbeOutput) ToRuleProbeOutputWithContext(ctx context.Context) RuleProbeOutput {
+	return o
+}
+
+func (o RuleProbeOutput) ToRuleProbePtrOutput() RuleProbePtrOutput {
+	return o.ToRuleProbePtrOutputWithContext(context.Background())
+}
+
+func (o RuleProbeOutput) ToRuleProbePtrOutputWithContext(ctx context.Context) RuleProbePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleProbe) *RuleProbe {
+		return &v
+	}).(RuleProbePtrOutput)
+}
+
+// Recommended number of health check probe points.
+func (o RuleProbeOutput) AdvisedNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.AdvisedNodeCount }).(pulumi.IntPtrOutput)
+}
+
+// Whether health checks are disabled. true: disabled. false: not disabled.
+func (o RuleProbeOutput) Disable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *bool { return v.Disable }).(pulumi.BoolPtrOutput)
+}
+
+// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+func (o RuleProbeOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
+}
+
+// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbeOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbeOutput) HttpMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *string { return v.HttpMethod }).(pulumi.StringPtrOutput)
+}
+
+func (o RuleProbeOutput) HttpUsabilityCodes() RuleProbeHttpUsabilityCodeArrayOutput {
+	return o.ApplyT(func(v RuleProbe) []RuleProbeHttpUsabilityCode { return v.HttpUsabilityCodes }).(RuleProbeHttpUsabilityCodeArrayOutput)
+}
+
+// The interval between each health check, in seconds.
+func (o RuleProbeOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.Interval }).(pulumi.IntPtrOutput)
+}
+
+// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+func (o RuleProbeOutput) IsManualNodes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *bool { return v.IsManualNodes }).(pulumi.BoolPtrOutput)
+}
+
+// Health check probe point.
+func (o RuleProbeOutput) Nodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleProbe) []string { return v.Nodes }).(pulumi.StringArrayOutput)
+}
+
+// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+func (o RuleProbeOutput) PingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.PingCount }).(pulumi.IntPtrOutput)
+}
+
+// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+func (o RuleProbeOutput) PingLossPercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.PingLossPercent }).(pulumi.IntPtrOutput)
+}
+
+// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbeOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+func (o RuleProbeOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+func (o RuleProbeOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *int { return v.Timeout }).(pulumi.IntPtrOutput)
+}
+
+// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbeOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleProbe) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type RuleProbePtrOutput struct{ *pulumi.OutputState }
+
+func (RuleProbePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleProbe)(nil)).Elem()
+}
+
+func (o RuleProbePtrOutput) ToRuleProbePtrOutput() RuleProbePtrOutput {
+	return o
+}
+
+func (o RuleProbePtrOutput) ToRuleProbePtrOutputWithContext(ctx context.Context) RuleProbePtrOutput {
+	return o
+}
+
+func (o RuleProbePtrOutput) Elem() RuleProbeOutput {
+	return o.ApplyT(func(v *RuleProbe) RuleProbe {
+		if v != nil {
+			return *v
+		}
+		var ret RuleProbe
+		return ret
+	}).(RuleProbeOutput)
+}
+
+// Recommended number of health check probe points.
+func (o RuleProbePtrOutput) AdvisedNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AdvisedNodeCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether health checks are disabled. true: disabled. false: not disabled.
+func (o RuleProbePtrOutput) Disable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Disable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+func (o RuleProbePtrOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailedCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbePtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbePtrOutput) HttpMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpMethod
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o RuleProbePtrOutput) HttpUsabilityCodes() RuleProbeHttpUsabilityCodeArrayOutput {
+	return o.ApplyT(func(v *RuleProbe) []RuleProbeHttpUsabilityCode {
+		if v == nil {
+			return nil
+		}
+		return v.HttpUsabilityCodes
+	}).(RuleProbeHttpUsabilityCodeArrayOutput)
+}
+
+// The interval between each health check, in seconds.
+func (o RuleProbePtrOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Interval
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+func (o RuleProbePtrOutput) IsManualNodes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsManualNodes
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Health check probe point.
+func (o RuleProbePtrOutput) Nodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleProbe) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Nodes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+func (o RuleProbePtrOutput) PingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PingCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+func (o RuleProbePtrOutput) PingLossPercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PingLossPercent
+	}).(pulumi.IntPtrOutput)
+}
+
+// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbePtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
+// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+func (o RuleProbePtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+func (o RuleProbePtrOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Timeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o RuleProbePtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleProbeHttpUsabilityCode struct {
+	// HTTP status code list.
+	Codes []int `pulumi:"codes"`
+	// Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+	Operator *string `pulumi:"operator"`
+}
+
+// RuleProbeHttpUsabilityCodeInput is an input type that accepts RuleProbeHttpUsabilityCodeArgs and RuleProbeHttpUsabilityCodeOutput values.
+// You can construct a concrete instance of `RuleProbeHttpUsabilityCodeInput` via:
+//
+//	RuleProbeHttpUsabilityCodeArgs{...}
+type RuleProbeHttpUsabilityCodeInput interface {
+	pulumi.Input
+
+	ToRuleProbeHttpUsabilityCodeOutput() RuleProbeHttpUsabilityCodeOutput
+	ToRuleProbeHttpUsabilityCodeOutputWithContext(context.Context) RuleProbeHttpUsabilityCodeOutput
+}
+
+type RuleProbeHttpUsabilityCodeArgs struct {
+	// HTTP status code list.
+	Codes pulumi.IntArrayInput `pulumi:"codes"`
+	// Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+}
+
+func (RuleProbeHttpUsabilityCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i RuleProbeHttpUsabilityCodeArgs) ToRuleProbeHttpUsabilityCodeOutput() RuleProbeHttpUsabilityCodeOutput {
+	return i.ToRuleProbeHttpUsabilityCodeOutputWithContext(context.Background())
+}
+
+func (i RuleProbeHttpUsabilityCodeArgs) ToRuleProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) RuleProbeHttpUsabilityCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleProbeHttpUsabilityCodeOutput)
+}
+
+// RuleProbeHttpUsabilityCodeArrayInput is an input type that accepts RuleProbeHttpUsabilityCodeArray and RuleProbeHttpUsabilityCodeArrayOutput values.
+// You can construct a concrete instance of `RuleProbeHttpUsabilityCodeArrayInput` via:
+//
+//	RuleProbeHttpUsabilityCodeArray{ RuleProbeHttpUsabilityCodeArgs{...} }
+type RuleProbeHttpUsabilityCodeArrayInput interface {
+	pulumi.Input
+
+	ToRuleProbeHttpUsabilityCodeArrayOutput() RuleProbeHttpUsabilityCodeArrayOutput
+	ToRuleProbeHttpUsabilityCodeArrayOutputWithContext(context.Context) RuleProbeHttpUsabilityCodeArrayOutput
+}
+
+type RuleProbeHttpUsabilityCodeArray []RuleProbeHttpUsabilityCodeInput
+
+func (RuleProbeHttpUsabilityCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i RuleProbeHttpUsabilityCodeArray) ToRuleProbeHttpUsabilityCodeArrayOutput() RuleProbeHttpUsabilityCodeArrayOutput {
+	return i.ToRuleProbeHttpUsabilityCodeArrayOutputWithContext(context.Background())
+}
+
+func (i RuleProbeHttpUsabilityCodeArray) ToRuleProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) RuleProbeHttpUsabilityCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleProbeHttpUsabilityCodeArrayOutput)
+}
+
+type RuleProbeHttpUsabilityCodeOutput struct{ *pulumi.OutputState }
+
+func (RuleProbeHttpUsabilityCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o RuleProbeHttpUsabilityCodeOutput) ToRuleProbeHttpUsabilityCodeOutput() RuleProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+func (o RuleProbeHttpUsabilityCodeOutput) ToRuleProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) RuleProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+// HTTP status code list.
+func (o RuleProbeHttpUsabilityCodeOutput) Codes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v RuleProbeHttpUsabilityCode) []int { return v.Codes }).(pulumi.IntArrayOutput)
+}
+
+// Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+func (o RuleProbeHttpUsabilityCodeOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleProbeHttpUsabilityCode) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+type RuleProbeHttpUsabilityCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleProbeHttpUsabilityCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o RuleProbeHttpUsabilityCodeArrayOutput) ToRuleProbeHttpUsabilityCodeArrayOutput() RuleProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o RuleProbeHttpUsabilityCodeArrayOutput) ToRuleProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) RuleProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o RuleProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) RuleProbeHttpUsabilityCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleProbeHttpUsabilityCode {
+		return vs[0].([]RuleProbeHttpUsabilityCode)[vs[1].(int)]
+	}).(RuleProbeHttpUsabilityCodeOutput)
+}
+
 type GetPoolAddress struct {
 	// Address capacity
 	Capacity int `pulumi:"capacity"`
@@ -288,13 +1195,761 @@ func (o GetPoolAddressArrayOutput) Index(i pulumi.IntInput) GetPoolAddressOutput
 	}).(GetPoolAddressOutput)
 }
 
+type GetRulePoolSet struct {
+	// Whether the address pool is available. true: address is available. false: address is unavailable.
+	Active bool `pulumi:"active"`
+	// Minimum number of available addresses required for the address pool collection to be considered available.
+	ActiveAddrThr int `pulumi:"activeAddrThr"`
+	// Address pool name.
+	Name string `pulumi:"name"`
+	// Address pool set ID.
+	PoolSetId string `pulumi:"poolSetId"`
+	// Address pool list.
+	Pools []GetRulePoolSetPool `pulumi:"pools"`
+}
+
+// GetRulePoolSetInput is an input type that accepts GetRulePoolSetArgs and GetRulePoolSetOutput values.
+// You can construct a concrete instance of `GetRulePoolSetInput` via:
+//
+//	GetRulePoolSetArgs{...}
+type GetRulePoolSetInput interface {
+	pulumi.Input
+
+	ToGetRulePoolSetOutput() GetRulePoolSetOutput
+	ToGetRulePoolSetOutputWithContext(context.Context) GetRulePoolSetOutput
+}
+
+type GetRulePoolSetArgs struct {
+	// Whether the address pool is available. true: address is available. false: address is unavailable.
+	Active pulumi.BoolInput `pulumi:"active"`
+	// Minimum number of available addresses required for the address pool collection to be considered available.
+	ActiveAddrThr pulumi.IntInput `pulumi:"activeAddrThr"`
+	// Address pool name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Address pool set ID.
+	PoolSetId pulumi.StringInput `pulumi:"poolSetId"`
+	// Address pool list.
+	Pools GetRulePoolSetPoolArrayInput `pulumi:"pools"`
+}
+
+func (GetRulePoolSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRulePoolSet)(nil)).Elem()
+}
+
+func (i GetRulePoolSetArgs) ToGetRulePoolSetOutput() GetRulePoolSetOutput {
+	return i.ToGetRulePoolSetOutputWithContext(context.Background())
+}
+
+func (i GetRulePoolSetArgs) ToGetRulePoolSetOutputWithContext(ctx context.Context) GetRulePoolSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRulePoolSetOutput)
+}
+
+// GetRulePoolSetArrayInput is an input type that accepts GetRulePoolSetArray and GetRulePoolSetArrayOutput values.
+// You can construct a concrete instance of `GetRulePoolSetArrayInput` via:
+//
+//	GetRulePoolSetArray{ GetRulePoolSetArgs{...} }
+type GetRulePoolSetArrayInput interface {
+	pulumi.Input
+
+	ToGetRulePoolSetArrayOutput() GetRulePoolSetArrayOutput
+	ToGetRulePoolSetArrayOutputWithContext(context.Context) GetRulePoolSetArrayOutput
+}
+
+type GetRulePoolSetArray []GetRulePoolSetInput
+
+func (GetRulePoolSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRulePoolSet)(nil)).Elem()
+}
+
+func (i GetRulePoolSetArray) ToGetRulePoolSetArrayOutput() GetRulePoolSetArrayOutput {
+	return i.ToGetRulePoolSetArrayOutputWithContext(context.Background())
+}
+
+func (i GetRulePoolSetArray) ToGetRulePoolSetArrayOutputWithContext(ctx context.Context) GetRulePoolSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRulePoolSetArrayOutput)
+}
+
+type GetRulePoolSetOutput struct{ *pulumi.OutputState }
+
+func (GetRulePoolSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRulePoolSet)(nil)).Elem()
+}
+
+func (o GetRulePoolSetOutput) ToGetRulePoolSetOutput() GetRulePoolSetOutput {
+	return o
+}
+
+func (o GetRulePoolSetOutput) ToGetRulePoolSetOutputWithContext(ctx context.Context) GetRulePoolSetOutput {
+	return o
+}
+
+// Whether the address pool is available. true: address is available. false: address is unavailable.
+func (o GetRulePoolSetOutput) Active() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRulePoolSet) bool { return v.Active }).(pulumi.BoolOutput)
+}
+
+// Minimum number of available addresses required for the address pool collection to be considered available.
+func (o GetRulePoolSetOutput) ActiveAddrThr() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRulePoolSet) int { return v.ActiveAddrThr }).(pulumi.IntOutput)
+}
+
+// Address pool name.
+func (o GetRulePoolSetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Address pool set ID.
+func (o GetRulePoolSetOutput) PoolSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSet) string { return v.PoolSetId }).(pulumi.StringOutput)
+}
+
+// Address pool list.
+func (o GetRulePoolSetOutput) Pools() GetRulePoolSetPoolArrayOutput {
+	return o.ApplyT(func(v GetRulePoolSet) []GetRulePoolSetPool { return v.Pools }).(GetRulePoolSetPoolArrayOutput)
+}
+
+type GetRulePoolSetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRulePoolSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRulePoolSet)(nil)).Elem()
+}
+
+func (o GetRulePoolSetArrayOutput) ToGetRulePoolSetArrayOutput() GetRulePoolSetArrayOutput {
+	return o
+}
+
+func (o GetRulePoolSetArrayOutput) ToGetRulePoolSetArrayOutputWithContext(ctx context.Context) GetRulePoolSetArrayOutput {
+	return o
+}
+
+func (o GetRulePoolSetArrayOutput) Index(i pulumi.IntInput) GetRulePoolSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRulePoolSet {
+		return vs[0].([]GetRulePoolSet)[vs[1].(int)]
+	}).(GetRulePoolSetOutput)
+}
+
+type GetRulePoolSetPool struct {
+	// Address information under the address pool.
+	Addresses []GetRulePoolSetPoolAddress `pulumi:"addresses"`
+	// The number of unavailable addresses in the address pool.
+	InactiveAddrCount int `pulumi:"inactiveAddrCount"`
+	// Address pool name.
+	Name string `pulumi:"name"`
+	// Address pool ID.
+	PoolId string `pulumi:"poolId"`
+	// Address pool weight.
+	Weight int `pulumi:"weight"`
+}
+
+// GetRulePoolSetPoolInput is an input type that accepts GetRulePoolSetPoolArgs and GetRulePoolSetPoolOutput values.
+// You can construct a concrete instance of `GetRulePoolSetPoolInput` via:
+//
+//	GetRulePoolSetPoolArgs{...}
+type GetRulePoolSetPoolInput interface {
+	pulumi.Input
+
+	ToGetRulePoolSetPoolOutput() GetRulePoolSetPoolOutput
+	ToGetRulePoolSetPoolOutputWithContext(context.Context) GetRulePoolSetPoolOutput
+}
+
+type GetRulePoolSetPoolArgs struct {
+	// Address information under the address pool.
+	Addresses GetRulePoolSetPoolAddressArrayInput `pulumi:"addresses"`
+	// The number of unavailable addresses in the address pool.
+	InactiveAddrCount pulumi.IntInput `pulumi:"inactiveAddrCount"`
+	// Address pool name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Address pool ID.
+	PoolId pulumi.StringInput `pulumi:"poolId"`
+	// Address pool weight.
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetRulePoolSetPoolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRulePoolSetPool)(nil)).Elem()
+}
+
+func (i GetRulePoolSetPoolArgs) ToGetRulePoolSetPoolOutput() GetRulePoolSetPoolOutput {
+	return i.ToGetRulePoolSetPoolOutputWithContext(context.Background())
+}
+
+func (i GetRulePoolSetPoolArgs) ToGetRulePoolSetPoolOutputWithContext(ctx context.Context) GetRulePoolSetPoolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRulePoolSetPoolOutput)
+}
+
+// GetRulePoolSetPoolArrayInput is an input type that accepts GetRulePoolSetPoolArray and GetRulePoolSetPoolArrayOutput values.
+// You can construct a concrete instance of `GetRulePoolSetPoolArrayInput` via:
+//
+//	GetRulePoolSetPoolArray{ GetRulePoolSetPoolArgs{...} }
+type GetRulePoolSetPoolArrayInput interface {
+	pulumi.Input
+
+	ToGetRulePoolSetPoolArrayOutput() GetRulePoolSetPoolArrayOutput
+	ToGetRulePoolSetPoolArrayOutputWithContext(context.Context) GetRulePoolSetPoolArrayOutput
+}
+
+type GetRulePoolSetPoolArray []GetRulePoolSetPoolInput
+
+func (GetRulePoolSetPoolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRulePoolSetPool)(nil)).Elem()
+}
+
+func (i GetRulePoolSetPoolArray) ToGetRulePoolSetPoolArrayOutput() GetRulePoolSetPoolArrayOutput {
+	return i.ToGetRulePoolSetPoolArrayOutputWithContext(context.Background())
+}
+
+func (i GetRulePoolSetPoolArray) ToGetRulePoolSetPoolArrayOutputWithContext(ctx context.Context) GetRulePoolSetPoolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRulePoolSetPoolArrayOutput)
+}
+
+type GetRulePoolSetPoolOutput struct{ *pulumi.OutputState }
+
+func (GetRulePoolSetPoolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRulePoolSetPool)(nil)).Elem()
+}
+
+func (o GetRulePoolSetPoolOutput) ToGetRulePoolSetPoolOutput() GetRulePoolSetPoolOutput {
+	return o
+}
+
+func (o GetRulePoolSetPoolOutput) ToGetRulePoolSetPoolOutputWithContext(ctx context.Context) GetRulePoolSetPoolOutput {
+	return o
+}
+
+// Address information under the address pool.
+func (o GetRulePoolSetPoolOutput) Addresses() GetRulePoolSetPoolAddressArrayOutput {
+	return o.ApplyT(func(v GetRulePoolSetPool) []GetRulePoolSetPoolAddress { return v.Addresses }).(GetRulePoolSetPoolAddressArrayOutput)
+}
+
+// The number of unavailable addresses in the address pool.
+func (o GetRulePoolSetPoolOutput) InactiveAddrCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRulePoolSetPool) int { return v.InactiveAddrCount }).(pulumi.IntOutput)
+}
+
+// Address pool name.
+func (o GetRulePoolSetPoolOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSetPool) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Address pool ID.
+func (o GetRulePoolSetPoolOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSetPool) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
+// Address pool weight.
+func (o GetRulePoolSetPoolOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRulePoolSetPool) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetRulePoolSetPoolArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRulePoolSetPoolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRulePoolSetPool)(nil)).Elem()
+}
+
+func (o GetRulePoolSetPoolArrayOutput) ToGetRulePoolSetPoolArrayOutput() GetRulePoolSetPoolArrayOutput {
+	return o
+}
+
+func (o GetRulePoolSetPoolArrayOutput) ToGetRulePoolSetPoolArrayOutputWithContext(ctx context.Context) GetRulePoolSetPoolArrayOutput {
+	return o
+}
+
+func (o GetRulePoolSetPoolArrayOutput) Index(i pulumi.IntInput) GetRulePoolSetPoolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRulePoolSetPool {
+		return vs[0].([]GetRulePoolSetPool)[vs[1].(int)]
+	}).(GetRulePoolSetPoolOutput)
+}
+
+type GetRulePoolSetPoolAddress struct {
+	// Whether the address is available. true: The address is available. false: The address is unavailable.
+	Active bool `pulumi:"active"`
+	// The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+	Capacity int `pulumi:"capacity"`
+	// This parameter has no practical significance. You can ignore this parameter.
+	Geo string `pulumi:"geo"`
+	// Latency (ms) for health check probe accessing the target address.
+	Latency int `pulumi:"latency"`
+	// The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+	Mode string `pulumi:"mode"`
+	// The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+	RectifiedGeos []string `pulumi:"rectifiedGeos"`
+	// Address.
+	Value string `pulumi:"value"`
+	// Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+	Weight int `pulumi:"weight"`
+}
+
+// GetRulePoolSetPoolAddressInput is an input type that accepts GetRulePoolSetPoolAddressArgs and GetRulePoolSetPoolAddressOutput values.
+// You can construct a concrete instance of `GetRulePoolSetPoolAddressInput` via:
+//
+//	GetRulePoolSetPoolAddressArgs{...}
+type GetRulePoolSetPoolAddressInput interface {
+	pulumi.Input
+
+	ToGetRulePoolSetPoolAddressOutput() GetRulePoolSetPoolAddressOutput
+	ToGetRulePoolSetPoolAddressOutputWithContext(context.Context) GetRulePoolSetPoolAddressOutput
+}
+
+type GetRulePoolSetPoolAddressArgs struct {
+	// Whether the address is available. true: The address is available. false: The address is unavailable.
+	Active pulumi.BoolInput `pulumi:"active"`
+	// The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+	Capacity pulumi.IntInput `pulumi:"capacity"`
+	// This parameter has no practical significance. You can ignore this parameter.
+	Geo pulumi.StringInput `pulumi:"geo"`
+	// Latency (ms) for health check probe accessing the target address.
+	Latency pulumi.IntInput `pulumi:"latency"`
+	// The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+	RectifiedGeos pulumi.StringArrayInput `pulumi:"rectifiedGeos"`
+	// Address.
+	Value pulumi.StringInput `pulumi:"value"`
+	// Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetRulePoolSetPoolAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (i GetRulePoolSetPoolAddressArgs) ToGetRulePoolSetPoolAddressOutput() GetRulePoolSetPoolAddressOutput {
+	return i.ToGetRulePoolSetPoolAddressOutputWithContext(context.Background())
+}
+
+func (i GetRulePoolSetPoolAddressArgs) ToGetRulePoolSetPoolAddressOutputWithContext(ctx context.Context) GetRulePoolSetPoolAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRulePoolSetPoolAddressOutput)
+}
+
+// GetRulePoolSetPoolAddressArrayInput is an input type that accepts GetRulePoolSetPoolAddressArray and GetRulePoolSetPoolAddressArrayOutput values.
+// You can construct a concrete instance of `GetRulePoolSetPoolAddressArrayInput` via:
+//
+//	GetRulePoolSetPoolAddressArray{ GetRulePoolSetPoolAddressArgs{...} }
+type GetRulePoolSetPoolAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetRulePoolSetPoolAddressArrayOutput() GetRulePoolSetPoolAddressArrayOutput
+	ToGetRulePoolSetPoolAddressArrayOutputWithContext(context.Context) GetRulePoolSetPoolAddressArrayOutput
+}
+
+type GetRulePoolSetPoolAddressArray []GetRulePoolSetPoolAddressInput
+
+func (GetRulePoolSetPoolAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (i GetRulePoolSetPoolAddressArray) ToGetRulePoolSetPoolAddressArrayOutput() GetRulePoolSetPoolAddressArrayOutput {
+	return i.ToGetRulePoolSetPoolAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetRulePoolSetPoolAddressArray) ToGetRulePoolSetPoolAddressArrayOutputWithContext(ctx context.Context) GetRulePoolSetPoolAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRulePoolSetPoolAddressArrayOutput)
+}
+
+type GetRulePoolSetPoolAddressOutput struct{ *pulumi.OutputState }
+
+func (GetRulePoolSetPoolAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (o GetRulePoolSetPoolAddressOutput) ToGetRulePoolSetPoolAddressOutput() GetRulePoolSetPoolAddressOutput {
+	return o
+}
+
+func (o GetRulePoolSetPoolAddressOutput) ToGetRulePoolSetPoolAddressOutputWithContext(ctx context.Context) GetRulePoolSetPoolAddressOutput {
+	return o
+}
+
+// Whether the address is available. true: The address is available. false: The address is unavailable.
+func (o GetRulePoolSetPoolAddressOutput) Active() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) bool { return v.Active }).(pulumi.BoolOutput)
+}
+
+// The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+func (o GetRulePoolSetPoolAddressOutput) Capacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) int { return v.Capacity }).(pulumi.IntOutput)
+}
+
+// This parameter has no practical significance. You can ignore this parameter.
+func (o GetRulePoolSetPoolAddressOutput) Geo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) string { return v.Geo }).(pulumi.StringOutput)
+}
+
+// Latency (ms) for health check probe accessing the target address.
+func (o GetRulePoolSetPoolAddressOutput) Latency() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) int { return v.Latency }).(pulumi.IntOutput)
+}
+
+// The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+func (o GetRulePoolSetPoolAddressOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+func (o GetRulePoolSetPoolAddressOutput) RectifiedGeos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) []string { return v.RectifiedGeos }).(pulumi.StringArrayOutput)
+}
+
+// Address.
+func (o GetRulePoolSetPoolAddressOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+func (o GetRulePoolSetPoolAddressOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRulePoolSetPoolAddress) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetRulePoolSetPoolAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRulePoolSetPoolAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRulePoolSetPoolAddress)(nil)).Elem()
+}
+
+func (o GetRulePoolSetPoolAddressArrayOutput) ToGetRulePoolSetPoolAddressArrayOutput() GetRulePoolSetPoolAddressArrayOutput {
+	return o
+}
+
+func (o GetRulePoolSetPoolAddressArrayOutput) ToGetRulePoolSetPoolAddressArrayOutputWithContext(ctx context.Context) GetRulePoolSetPoolAddressArrayOutput {
+	return o
+}
+
+func (o GetRulePoolSetPoolAddressArrayOutput) Index(i pulumi.IntInput) GetRulePoolSetPoolAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRulePoolSetPoolAddress {
+		return vs[0].([]GetRulePoolSetPoolAddress)[vs[1].(int)]
+	}).(GetRulePoolSetPoolAddressOutput)
+}
+
+type GetRuleProbe struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount int `pulumi:"advisedNodeCount"`
+	// Whether health checks are disabled. true: disabled. false: not disabled.
+	Disable bool `pulumi:"disable"`
+	// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+	FailedCount int `pulumi:"failedCount"`
+	// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host string `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod string `pulumi:"httpMethod"`
+	// Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside this range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the routing rule, this parameter will not be returned.
+	HttpUsabilityCodes []GetRuleProbeHttpUsabilityCode `pulumi:"httpUsabilityCodes"`
+	// The interval between each health check, in seconds.
+	Interval int `pulumi:"interval"`
+	// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+	IsManualNodes bool `pulumi:"isManualNodes"`
+	// Health check probe point.
+	Nodes []string `pulumi:"nodes"`
+	// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount int `pulumi:"pingCount"`
+	// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent int `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port int `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol string `pulumi:"protocol"`
+	// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+	Timeout int `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url string `pulumi:"url"`
+}
+
+// GetRuleProbeInput is an input type that accepts GetRuleProbeArgs and GetRuleProbeOutput values.
+// You can construct a concrete instance of `GetRuleProbeInput` via:
+//
+//	GetRuleProbeArgs{...}
+type GetRuleProbeInput interface {
+	pulumi.Input
+
+	ToGetRuleProbeOutput() GetRuleProbeOutput
+	ToGetRuleProbeOutputWithContext(context.Context) GetRuleProbeOutput
+}
+
+type GetRuleProbeArgs struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount pulumi.IntInput `pulumi:"advisedNodeCount"`
+	// Whether health checks are disabled. true: disabled. false: not disabled.
+	Disable pulumi.BoolInput `pulumi:"disable"`
+	// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+	FailedCount pulumi.IntInput `pulumi:"failedCount"`
+	// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host pulumi.StringInput `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod pulumi.StringInput `pulumi:"httpMethod"`
+	// Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside this range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the routing rule, this parameter will not be returned.
+	HttpUsabilityCodes GetRuleProbeHttpUsabilityCodeArrayInput `pulumi:"httpUsabilityCodes"`
+	// The interval between each health check, in seconds.
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+	IsManualNodes pulumi.BoolInput `pulumi:"isManualNodes"`
+	// Health check probe point.
+	Nodes pulumi.StringArrayInput `pulumi:"nodes"`
+	// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount pulumi.IntInput `pulumi:"pingCount"`
+	// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent pulumi.IntInput `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port pulumi.IntInput `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetRuleProbeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleProbe)(nil)).Elem()
+}
+
+func (i GetRuleProbeArgs) ToGetRuleProbeOutput() GetRuleProbeOutput {
+	return i.ToGetRuleProbeOutputWithContext(context.Background())
+}
+
+func (i GetRuleProbeArgs) ToGetRuleProbeOutputWithContext(ctx context.Context) GetRuleProbeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleProbeOutput)
+}
+
+type GetRuleProbeOutput struct{ *pulumi.OutputState }
+
+func (GetRuleProbeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleProbe)(nil)).Elem()
+}
+
+func (o GetRuleProbeOutput) ToGetRuleProbeOutput() GetRuleProbeOutput {
+	return o
+}
+
+func (o GetRuleProbeOutput) ToGetRuleProbeOutputWithContext(ctx context.Context) GetRuleProbeOutput {
+	return o
+}
+
+// Recommended number of health check probe points.
+func (o GetRuleProbeOutput) AdvisedNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.AdvisedNodeCount }).(pulumi.IntOutput)
+}
+
+// Whether health checks are disabled. true: disabled. false: not disabled.
+func (o GetRuleProbeOutput) Disable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRuleProbe) bool { return v.Disable }).(pulumi.BoolOutput)
+}
+
+// The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+func (o GetRuleProbeOutput) FailedCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.FailedCount }).(pulumi.IntOutput)
+}
+
+// Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetRuleProbeOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleProbe) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetRuleProbeOutput) HttpMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleProbe) string { return v.HttpMethod }).(pulumi.StringOutput)
+}
+
+// Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside this range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the routing rule, this parameter will not be returned.
+func (o GetRuleProbeOutput) HttpUsabilityCodes() GetRuleProbeHttpUsabilityCodeArrayOutput {
+	return o.ApplyT(func(v GetRuleProbe) []GetRuleProbeHttpUsabilityCode { return v.HttpUsabilityCodes }).(GetRuleProbeHttpUsabilityCodeArrayOutput)
+}
+
+// The interval between each health check, in seconds.
+func (o GetRuleProbeOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+func (o GetRuleProbeOutput) IsManualNodes() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRuleProbe) bool { return v.IsManualNodes }).(pulumi.BoolOutput)
+}
+
+// Health check probe point.
+func (o GetRuleProbeOutput) Nodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleProbe) []string { return v.Nodes }).(pulumi.StringArrayOutput)
+}
+
+// Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+func (o GetRuleProbeOutput) PingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.PingCount }).(pulumi.IntOutput)
+}
+
+// Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+func (o GetRuleProbeOutput) PingLossPercent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.PingLossPercent }).(pulumi.IntOutput)
+}
+
+// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetRuleProbeOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+func (o GetRuleProbeOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleProbe) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+func (o GetRuleProbeOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleProbe) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetRuleProbeOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleProbe) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetRuleProbeHttpUsabilityCode struct {
+	// HTTP status code list.
+	Codes []int `pulumi:"codes"`
+	// Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+	Operator string `pulumi:"operator"`
+}
+
+// GetRuleProbeHttpUsabilityCodeInput is an input type that accepts GetRuleProbeHttpUsabilityCodeArgs and GetRuleProbeHttpUsabilityCodeOutput values.
+// You can construct a concrete instance of `GetRuleProbeHttpUsabilityCodeInput` via:
+//
+//	GetRuleProbeHttpUsabilityCodeArgs{...}
+type GetRuleProbeHttpUsabilityCodeInput interface {
+	pulumi.Input
+
+	ToGetRuleProbeHttpUsabilityCodeOutput() GetRuleProbeHttpUsabilityCodeOutput
+	ToGetRuleProbeHttpUsabilityCodeOutputWithContext(context.Context) GetRuleProbeHttpUsabilityCodeOutput
+}
+
+type GetRuleProbeHttpUsabilityCodeArgs struct {
+	// HTTP status code list.
+	Codes pulumi.IntArrayInput `pulumi:"codes"`
+	// Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+	Operator pulumi.StringInput `pulumi:"operator"`
+}
+
+func (GetRuleProbeHttpUsabilityCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i GetRuleProbeHttpUsabilityCodeArgs) ToGetRuleProbeHttpUsabilityCodeOutput() GetRuleProbeHttpUsabilityCodeOutput {
+	return i.ToGetRuleProbeHttpUsabilityCodeOutputWithContext(context.Background())
+}
+
+func (i GetRuleProbeHttpUsabilityCodeArgs) ToGetRuleProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) GetRuleProbeHttpUsabilityCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleProbeHttpUsabilityCodeOutput)
+}
+
+// GetRuleProbeHttpUsabilityCodeArrayInput is an input type that accepts GetRuleProbeHttpUsabilityCodeArray and GetRuleProbeHttpUsabilityCodeArrayOutput values.
+// You can construct a concrete instance of `GetRuleProbeHttpUsabilityCodeArrayInput` via:
+//
+//	GetRuleProbeHttpUsabilityCodeArray{ GetRuleProbeHttpUsabilityCodeArgs{...} }
+type GetRuleProbeHttpUsabilityCodeArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleProbeHttpUsabilityCodeArrayOutput() GetRuleProbeHttpUsabilityCodeArrayOutput
+	ToGetRuleProbeHttpUsabilityCodeArrayOutputWithContext(context.Context) GetRuleProbeHttpUsabilityCodeArrayOutput
+}
+
+type GetRuleProbeHttpUsabilityCodeArray []GetRuleProbeHttpUsabilityCodeInput
+
+func (GetRuleProbeHttpUsabilityCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i GetRuleProbeHttpUsabilityCodeArray) ToGetRuleProbeHttpUsabilityCodeArrayOutput() GetRuleProbeHttpUsabilityCodeArrayOutput {
+	return i.ToGetRuleProbeHttpUsabilityCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleProbeHttpUsabilityCodeArray) ToGetRuleProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) GetRuleProbeHttpUsabilityCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleProbeHttpUsabilityCodeArrayOutput)
+}
+
+type GetRuleProbeHttpUsabilityCodeOutput struct{ *pulumi.OutputState }
+
+func (GetRuleProbeHttpUsabilityCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o GetRuleProbeHttpUsabilityCodeOutput) ToGetRuleProbeHttpUsabilityCodeOutput() GetRuleProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+func (o GetRuleProbeHttpUsabilityCodeOutput) ToGetRuleProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) GetRuleProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+// HTTP status code list.
+func (o GetRuleProbeHttpUsabilityCodeOutput) Codes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetRuleProbeHttpUsabilityCode) []int { return v.Codes }).(pulumi.IntArrayOutput)
+}
+
+// Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+func (o GetRuleProbeHttpUsabilityCodeOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleProbeHttpUsabilityCode) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+type GetRuleProbeHttpUsabilityCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleProbeHttpUsabilityCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o GetRuleProbeHttpUsabilityCodeArrayOutput) ToGetRuleProbeHttpUsabilityCodeArrayOutput() GetRuleProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o GetRuleProbeHttpUsabilityCodeArrayOutput) ToGetRuleProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) GetRuleProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o GetRuleProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) GetRuleProbeHttpUsabilityCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleProbeHttpUsabilityCode {
+		return vs[0].([]GetRuleProbeHttpUsabilityCode)[vs[1].(int)]
+	}).(GetRuleProbeHttpUsabilityCodeOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PoolAddressInput)(nil)).Elem(), PoolAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PoolAddressArrayInput)(nil)).Elem(), PoolAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetInput)(nil)).Elem(), RulePoolSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetArrayInput)(nil)).Elem(), RulePoolSetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetPoolInput)(nil)).Elem(), RulePoolSetPoolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetPoolArrayInput)(nil)).Elem(), RulePoolSetPoolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetPoolAddressInput)(nil)).Elem(), RulePoolSetPoolAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetPoolAddressArrayInput)(nil)).Elem(), RulePoolSetPoolAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeInput)(nil)).Elem(), RuleProbeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbePtrInput)(nil)).Elem(), RuleProbeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeHttpUsabilityCodeInput)(nil)).Elem(), RuleProbeHttpUsabilityCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), RuleProbeHttpUsabilityCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolAddressInput)(nil)).Elem(), GetPoolAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolAddressArrayInput)(nil)).Elem(), GetPoolAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetInput)(nil)).Elem(), GetRulePoolSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetArrayInput)(nil)).Elem(), GetRulePoolSetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetPoolInput)(nil)).Elem(), GetRulePoolSetPoolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetPoolArrayInput)(nil)).Elem(), GetRulePoolSetPoolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetPoolAddressInput)(nil)).Elem(), GetRulePoolSetPoolAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetPoolAddressArrayInput)(nil)).Elem(), GetRulePoolSetPoolAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeInput)(nil)).Elem(), GetRuleProbeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeHttpUsabilityCodeInput)(nil)).Elem(), GetRuleProbeHttpUsabilityCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), GetRuleProbeHttpUsabilityCodeArray{})
 	pulumi.RegisterOutputType(PoolAddressOutput{})
 	pulumi.RegisterOutputType(PoolAddressArrayOutput{})
+	pulumi.RegisterOutputType(RulePoolSetOutput{})
+	pulumi.RegisterOutputType(RulePoolSetArrayOutput{})
+	pulumi.RegisterOutputType(RulePoolSetPoolOutput{})
+	pulumi.RegisterOutputType(RulePoolSetPoolArrayOutput{})
+	pulumi.RegisterOutputType(RulePoolSetPoolAddressOutput{})
+	pulumi.RegisterOutputType(RulePoolSetPoolAddressArrayOutput{})
+	pulumi.RegisterOutputType(RuleProbeOutput{})
+	pulumi.RegisterOutputType(RuleProbePtrOutput{})
+	pulumi.RegisterOutputType(RuleProbeHttpUsabilityCodeOutput{})
+	pulumi.RegisterOutputType(RuleProbeHttpUsabilityCodeArrayOutput{})
 	pulumi.RegisterOutputType(GetPoolAddressOutput{})
 	pulumi.RegisterOutputType(GetPoolAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetRulePoolSetOutput{})
+	pulumi.RegisterOutputType(GetRulePoolSetArrayOutput{})
+	pulumi.RegisterOutputType(GetRulePoolSetPoolOutput{})
+	pulumi.RegisterOutputType(GetRulePoolSetPoolArrayOutput{})
+	pulumi.RegisterOutputType(GetRulePoolSetPoolAddressOutput{})
+	pulumi.RegisterOutputType(GetRulePoolSetPoolAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleProbeOutput{})
+	pulumi.RegisterOutputType(GetRuleProbeHttpUsabilityCodeOutput{})
+	pulumi.RegisterOutputType(GetRuleProbeHttpUsabilityCodeArrayOutput{})
 }

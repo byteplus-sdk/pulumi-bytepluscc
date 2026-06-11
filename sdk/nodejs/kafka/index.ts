@@ -40,6 +40,16 @@ export const getTopics: typeof import("./getTopics").getTopics = null as any;
 export const getTopicsOutput: typeof import("./getTopics").getTopicsOutput = null as any;
 utilities.lazyLoad(exports, ["getTopics","getTopicsOutput"], () => require("./getTopics"));
 
+export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
+export const getUser: typeof import("./getUser").getUser = null as any;
+export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
+utilities.lazyLoad(exports, ["getUser","getUserOutput"], () => require("./getUser"));
+
+export { GetUsersResult } from "./getUsers";
+export const getUsers: typeof import("./getUsers").getUsers = null as any;
+export const getUsersOutput: typeof import("./getUsers").getUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getUsers","getUsersOutput"], () => require("./getUsers"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
@@ -49,6 +59,11 @@ export { TopicArgs, TopicState } from "./topic";
 export type Topic = import("./topic").Topic;
 export const Topic: typeof import("./topic").Topic = null as any;
 utilities.lazyLoad(exports, ["Topic"], () => require("./topic"));
+
+export { UserArgs, UserState } from "./user";
+export type User = import("./user").User;
+export const User: typeof import("./user").User = null as any;
+utilities.lazyLoad(exports, ["User"], () => require("./user"));
 
 
 const _module = {
@@ -61,6 +76,8 @@ const _module = {
                 return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:kafka/topic:Topic":
                 return new Topic(name, <any>undefined, { urn })
+            case "bytepluscc:kafka/user:User":
+                return new User(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -69,3 +86,4 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/topic", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "kafka/user", _module)

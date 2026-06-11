@@ -10,12 +10,16 @@ import com.byteplus.bytepluscc.kafka.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetTopicArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetTopicPlainArgs;
+import com.byteplus.bytepluscc.kafka.inputs.GetUserArgs;
+import com.byteplus.bytepluscc.kafka.inputs.GetUserPlainArgs;
 import com.byteplus.bytepluscc.kafka.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetTopicResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetTopicsResult;
+import com.byteplus.bytepluscc.kafka.outputs.GetUserResult;
+import com.byteplus.bytepluscc.kafka.outputs.GetUsersResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -276,5 +280,89 @@ public final class KafkaFunctions {
      */
     public static CompletableFuture<GetTopicsResult> getTopicsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getTopics:getTopics", TypeShape.of(GetTopicsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUserResult> getUser(GetUserArgs args) {
+        return getUser(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args) {
+        return getUserPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUserResult> getUser(GetUserArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getUser:getUser", TypeShape.of(GetUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUserResult> getUser(GetUserArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getUser:getUser", TypeShape.of(GetUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getUser:getUser", TypeShape.of(GetUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUsersResult> getUsers() {
+        return getUsers(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static CompletableFuture<GetUsersResult> getUsersPlain() {
+        return getUsersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUsersResult> getUsers(InvokeArgs args) {
+        return getUsers(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static CompletableFuture<GetUsersResult> getUsersPlain(InvokeArgs args) {
+        return getUsersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUsersResult> getUsers(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getUsers:getUsers", TypeShape.of(GetUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static Output<GetUsersResult> getUsers(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getUsers:getUsers", TypeShape.of(GetUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::User
+     * 
+     */
+    public static CompletableFuture<GetUsersResult> getUsersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getUsers:getUsers", TypeShape.of(GetUsersResult.class), args, Utilities.withVersion(options));
     }
 }

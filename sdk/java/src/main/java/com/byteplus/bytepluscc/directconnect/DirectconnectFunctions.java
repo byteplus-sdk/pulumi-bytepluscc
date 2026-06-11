@@ -4,12 +4,16 @@
 package com.byteplus.bytepluscc.directconnect;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.directconnect.inputs.GetBgpPeerArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetBgpPeerPlainArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetDirectConnectGatewayArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetDirectConnectGatewayPlainArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetGatewayRouteArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetGatewayRoutePlainArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetVirtualInterfaceArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetVirtualInterfacePlainArgs;
+import com.byteplus.bytepluscc.directconnect.outputs.GetBgpPeerResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetBgpPeersResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewayResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewaysResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetGatewayRouteResult;
@@ -25,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DirectconnectFunctions {
+    /**
+     * Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeerResult> getBgpPeer(GetBgpPeerArgs args) {
+        return getBgpPeer(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static CompletableFuture<GetBgpPeerResult> getBgpPeerPlain(GetBgpPeerPlainArgs args) {
+        return getBgpPeerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeerResult> getBgpPeer(GetBgpPeerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getBgpPeer:getBgpPeer", TypeShape.of(GetBgpPeerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeerResult> getBgpPeer(GetBgpPeerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getBgpPeer:getBgpPeer", TypeShape.of(GetBgpPeerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static CompletableFuture<GetBgpPeerResult> getBgpPeerPlain(GetBgpPeerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getBgpPeer:getBgpPeer", TypeShape.of(GetBgpPeerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeersResult> getBgpPeers() {
+        return getBgpPeers(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static CompletableFuture<GetBgpPeersResult> getBgpPeersPlain() {
+        return getBgpPeersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeersResult> getBgpPeers(InvokeArgs args) {
+        return getBgpPeers(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static CompletableFuture<GetBgpPeersResult> getBgpPeersPlain(InvokeArgs args) {
+        return getBgpPeersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeersResult> getBgpPeers(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getBgpPeers:getBgpPeers", TypeShape.of(GetBgpPeersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static Output<GetBgpPeersResult> getBgpPeers(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getBgpPeers:getBgpPeers", TypeShape.of(GetBgpPeersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::BgpPeer
+     * 
+     */
+    public static CompletableFuture<GetBgpPeersResult> getBgpPeersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getBgpPeers:getBgpPeers", TypeShape.of(GetBgpPeersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::DirectConnect::DirectConnectGateway
      * 

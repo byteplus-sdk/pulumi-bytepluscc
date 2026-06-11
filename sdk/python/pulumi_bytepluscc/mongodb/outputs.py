@@ -17,6 +17,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AccountAccountPrivilege',
     'AllowListAssociatedInstance',
     'InstanceConfigServer',
     'InstanceInstanceParameter',
@@ -26,6 +27,7 @@ __all__ = [
     'InstanceShard',
     'InstanceShardNode',
     'InstanceTag',
+    'GetAccountAccountPrivilegeResult',
     'GetAllowListAssociatedInstanceResult',
     'GetInstanceConfigServerResult',
     'GetInstanceInstanceParameterResult',
@@ -36,6 +38,56 @@ __all__ = [
     'GetInstanceShardNodeResult',
     'GetInstanceTagResult',
 ]
+
+@pulumi.output_type
+class AccountAccountPrivilege(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbName":
+            suggest = "db_name"
+        elif key == "roleName":
+            suggest = "role_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AccountAccountPrivilege. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AccountAccountPrivilege.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AccountAccountPrivilege.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_name: Optional[builtins.str] = None,
+                 role_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str db_name: Databases for which the account has permissions.
+        :param builtins.str role_name: Permissions the account has in the current database.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if role_name is not None:
+            pulumi.set(__self__, "role_name", role_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[builtins.str]:
+        """
+        Databases for which the account has permissions.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="roleName")
+    def role_name(self) -> Optional[builtins.str]:
+        """
+        Permissions the account has in the current database.
+        """
+        return pulumi.get(self, "role_name")
+
 
 @pulumi.output_type
 class AllowListAssociatedInstance(dict):
@@ -948,6 +1000,35 @@ class InstanceTag(dict):
         Tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAccountAccountPrivilegeResult(dict):
+    def __init__(__self__, *,
+                 db_name: builtins.str,
+                 role_name: builtins.str):
+        """
+        :param builtins.str db_name: Databases for which the account has permissions.
+        :param builtins.str role_name: Permissions the account has in the current database.
+        """
+        pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "role_name", role_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> builtins.str:
+        """
+        Databases for which the account has permissions.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="roleName")
+    def role_name(self) -> builtins.str:
+        """
+        Permissions the account has in the current database.
+        """
+        return pulumi.get(self, "role_name")
 
 
 @pulumi.output_type

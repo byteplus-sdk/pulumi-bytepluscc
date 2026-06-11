@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetRecordArgs, GetRecordResult, GetRecordOutputArgs } from "./getRecord";
+export const getRecord: typeof import("./getRecord").getRecord = null as any;
+export const getRecordOutput: typeof import("./getRecord").getRecordOutput = null as any;
+utilities.lazyLoad(exports, ["getRecord","getRecordOutput"], () => require("./getRecord"));
+
+export { GetRecordsResult } from "./getRecords";
+export const getRecords: typeof import("./getRecords").getRecords = null as any;
+export const getRecordsOutput: typeof import("./getRecords").getRecordsOutput = null as any;
+utilities.lazyLoad(exports, ["getRecords","getRecordsOutput"], () => require("./getRecords"));
+
 export { GetZoneArgs, GetZoneResult, GetZoneOutputArgs } from "./getZone";
 export const getZone: typeof import("./getZone").getZone = null as any;
 export const getZoneOutput: typeof import("./getZone").getZoneOutput = null as any;
@@ -14,6 +24,11 @@ export { GetZonesResult } from "./getZones";
 export const getZones: typeof import("./getZones").getZones = null as any;
 export const getZonesOutput: typeof import("./getZones").getZonesOutput = null as any;
 utilities.lazyLoad(exports, ["getZones","getZonesOutput"], () => require("./getZones"));
+
+export { RecordArgs, RecordState } from "./record";
+export type Record = import("./record").Record;
+export const Record: typeof import("./record").Record = null as any;
+utilities.lazyLoad(exports, ["Record"], () => require("./record"));
 
 export { ZoneArgs, ZoneState } from "./zone";
 export type Zone = import("./zone").Zone;
@@ -25,6 +40,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:dns/record:Record":
+                return new Record(name, <any>undefined, { urn })
             case "bytepluscc:dns/zone:Zone":
                 return new Zone(name, <any>undefined, { urn })
             default:
@@ -32,4 +49,5 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "dns/record", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "dns/zone", _module)

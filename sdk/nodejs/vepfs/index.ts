@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { FilesetArgs, FilesetState } from "./fileset";
+export type Fileset = import("./fileset").Fileset;
+export const Fileset: typeof import("./fileset").Fileset = null as any;
+utilities.lazyLoad(exports, ["Fileset"], () => require("./fileset"));
+
+export { GetFilesetArgs, GetFilesetResult, GetFilesetOutputArgs } from "./getFileset";
+export const getFileset: typeof import("./getFileset").getFileset = null as any;
+export const getFilesetOutput: typeof import("./getFileset").getFilesetOutput = null as any;
+utilities.lazyLoad(exports, ["getFileset","getFilesetOutput"], () => require("./getFileset"));
+
+export { GetFilesetsResult } from "./getFilesets";
+export const getFilesets: typeof import("./getFilesets").getFilesets = null as any;
+export const getFilesetsOutput: typeof import("./getFilesets").getFilesetsOutput = null as any;
+utilities.lazyLoad(exports, ["getFilesets","getFilesetsOutput"], () => require("./getFilesets"));
+
 export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
 export const getInstance: typeof import("./getInstance").getInstance = null as any;
 export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
@@ -40,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vepfs/fileset:Fileset":
+                return new Fileset(name, <any>undefined, { urn })
             case "bytepluscc:vepfs/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:vepfs/mountService:MountService":
@@ -49,5 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/fileset", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/mountService", _module)

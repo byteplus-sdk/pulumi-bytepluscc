@@ -7128,6 +7128,144 @@ export namespace gtm {
          */
         weight?: pulumi.Input<number>;
     }
+
+    export interface RulePoolSet {
+        /**
+         * Minimum number of available addresses required for the address pool collection to be considered available.
+         */
+        activeAddrThr?: pulumi.Input<number>;
+        /**
+         * Address pool name.
+         */
+        name?: pulumi.Input<string>;
+        pools?: pulumi.Input<pulumi.Input<inputs.gtm.RulePoolSetPool>[]>;
+    }
+
+    export interface RulePoolSetPool {
+        addresses?: pulumi.Input<pulumi.Input<inputs.gtm.RulePoolSetPoolAddress>[]>;
+        /**
+         * The number of unavailable addresses in the address pool.
+         */
+        inactiveAddrCount?: pulumi.Input<number>;
+        /**
+         * Address pool name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Address pool ID.
+         */
+        poolId?: pulumi.Input<string>;
+        /**
+         * Address pool weight.
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface RulePoolSetPoolAddress {
+        /**
+         * Whether the address is available. true: The address is available. false: The address is unavailable.
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+         */
+        capacity?: pulumi.Input<number>;
+        /**
+         * This parameter has no practical significance. You can ignore this parameter.
+         */
+        geo?: pulumi.Input<string>;
+        /**
+         * Latency (ms) for health check probe accessing the target address.
+         */
+        latency?: pulumi.Input<number>;
+        /**
+         * The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+         */
+        rectifiedGeos?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Address.
+         */
+        value?: pulumi.Input<string>;
+        /**
+         * Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface RuleProbe {
+        /**
+         * Recommended number of health check probe points.
+         */
+        advisedNodeCount?: pulumi.Input<number>;
+        /**
+         * Whether health checks are disabled. true: disabled. false: not disabled.
+         */
+        disable?: pulumi.Input<boolean>;
+        /**
+         * The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+         */
+        failedCount?: pulumi.Input<number>;
+        /**
+         * Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        httpMethod?: pulumi.Input<string>;
+        httpUsabilityCodes?: pulumi.Input<pulumi.Input<inputs.gtm.RuleProbeHttpUsabilityCode>[]>;
+        /**
+         * The interval between each health check, in seconds.
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+         */
+        isManualNodes?: pulumi.Input<boolean>;
+        /**
+         * Health check probe point.
+         */
+        nodes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingCount?: pulumi.Input<number>;
+        /**
+         * Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingLossPercent?: pulumi.Input<number>;
+        /**
+         * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+         */
+        timeout?: pulumi.Input<number>;
+        /**
+         * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        url?: pulumi.Input<string>;
+    }
+
+    export interface RuleProbeHttpUsabilityCode {
+        /**
+         * HTTP status code list.
+         */
+        codes?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+         */
+        operator?: pulumi.Input<string>;
+    }
 }
 
 export namespace hbase {
@@ -7868,6 +8006,17 @@ export namespace kms {
 }
 
 export namespace mongodb {
+    export interface AccountAccountPrivilege {
+        /**
+         * Databases for which the account has permissions.
+         */
+        dbName?: pulumi.Input<string>;
+        /**
+         * Permissions the account has in the current database.
+         */
+        roleName?: pulumi.Input<string>;
+    }
+
     export interface AllowListAssociatedInstance {
         /**
          * Instance ID bound to the current allowlist.

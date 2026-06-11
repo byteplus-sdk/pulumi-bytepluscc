@@ -4,10 +4,14 @@
 package com.byteplus.bytepluscc.vepfs;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vepfs.inputs.GetFilesetArgs;
+import com.byteplus.bytepluscc.vepfs.inputs.GetFilesetPlainArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetMountServiceArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetMountServicePlainArgs;
+import com.byteplus.bytepluscc.vepfs.outputs.GetFilesetResult;
+import com.byteplus.bytepluscc.vepfs.outputs.GetFilesetsResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetMountServiceResult;
@@ -21,6 +25,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VepfsFunctions {
+    /**
+     * Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetResult> getFileset(GetFilesetArgs args) {
+        return getFileset(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static CompletableFuture<GetFilesetResult> getFilesetPlain(GetFilesetPlainArgs args) {
+        return getFilesetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetResult> getFileset(GetFilesetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getFileset:getFileset", TypeShape.of(GetFilesetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetResult> getFileset(GetFilesetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getFileset:getFileset", TypeShape.of(GetFilesetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static CompletableFuture<GetFilesetResult> getFilesetPlain(GetFilesetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getFileset:getFileset", TypeShape.of(GetFilesetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetsResult> getFilesets() {
+        return getFilesets(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static CompletableFuture<GetFilesetsResult> getFilesetsPlain() {
+        return getFilesetsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetsResult> getFilesets(InvokeArgs args) {
+        return getFilesets(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static CompletableFuture<GetFilesetsResult> getFilesetsPlain(InvokeArgs args) {
+        return getFilesetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetsResult> getFilesets(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getFilesets:getFilesets", TypeShape.of(GetFilesetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static Output<GetFilesetsResult> getFilesets(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getFilesets:getFilesets", TypeShape.of(GetFilesetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::Fileset
+     * 
+     */
+    public static CompletableFuture<GetFilesetsResult> getFilesetsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getFilesets:getFilesets", TypeShape.of(GetFilesetsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VEPFS::Instance
      * 

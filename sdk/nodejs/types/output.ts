@@ -14616,6 +14616,161 @@ export namespace gtm {
         weight: number;
     }
 
+    export interface GetRulePoolSet {
+        /**
+         * Whether the address pool is available. true: address is available. false: address is unavailable.
+         */
+        active: boolean;
+        /**
+         * Minimum number of available addresses required for the address pool collection to be considered available.
+         */
+        activeAddrThr: number;
+        /**
+         * Address pool name.
+         */
+        name: string;
+        /**
+         * Address pool set ID.
+         */
+        poolSetId: string;
+        /**
+         * Address pool list.
+         */
+        pools: outputs.gtm.GetRulePoolSetPool[];
+    }
+
+    export interface GetRulePoolSetPool {
+        /**
+         * Address information under the address pool.
+         */
+        addresses: outputs.gtm.GetRulePoolSetPoolAddress[];
+        /**
+         * The number of unavailable addresses in the address pool.
+         */
+        inactiveAddrCount: number;
+        /**
+         * Address pool name.
+         */
+        name: string;
+        /**
+         * Address pool ID.
+         */
+        poolId: string;
+        /**
+         * Address pool weight.
+         */
+        weight: number;
+    }
+
+    export interface GetRulePoolSetPoolAddress {
+        /**
+         * Whether the address is available. true: The address is available. false: The address is unavailable.
+         */
+        active: boolean;
+        /**
+         * The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+         */
+        capacity: number;
+        /**
+         * This parameter has no practical significance. You can ignore this parameter.
+         */
+        geo: string;
+        /**
+         * Latency (ms) for health check probe accessing the target address.
+         */
+        latency: number;
+        /**
+         * The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+         */
+        mode: string;
+        /**
+         * The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+         */
+        rectifiedGeos: string[];
+        /**
+         * Address.
+         */
+        value: string;
+        /**
+         * Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+         */
+        weight: number;
+    }
+
+    export interface GetRuleProbe {
+        /**
+         * Recommended number of health check probe points.
+         */
+        advisedNodeCount: number;
+        /**
+         * Whether health checks are disabled. true: disabled. false: not disabled.
+         */
+        disable: boolean;
+        /**
+         * The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+         */
+        failedCount: number;
+        /**
+         * Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        host: string;
+        /**
+         * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        httpMethod: string;
+        /**
+         * Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside this range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the routing rule, this parameter will not be returned.
+         */
+        httpUsabilityCodes: outputs.gtm.GetRuleProbeHttpUsabilityCode[];
+        /**
+         * The interval between each health check, in seconds.
+         */
+        interval: number;
+        /**
+         * Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+         */
+        isManualNodes: boolean;
+        /**
+         * Health check probe point.
+         */
+        nodes: string[];
+        /**
+         * Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingCount: number;
+        /**
+         * Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingLossPercent: number;
+        /**
+         * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        port: number;
+        /**
+         * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+         */
+        protocol: string;
+        /**
+         * The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+         */
+        timeout: number;
+        /**
+         * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        url: string;
+    }
+
+    export interface GetRuleProbeHttpUsabilityCode {
+        /**
+         * HTTP status code list.
+         */
+        codes: number[];
+        /**
+         * Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+         */
+        operator: string;
+    }
+
     export interface PoolAddress {
         /**
          * Address capacity
@@ -14637,6 +14792,144 @@ export namespace gtm {
          * Address weight
          */
         weight: number;
+    }
+
+    export interface RulePoolSet {
+        /**
+         * Minimum number of available addresses required for the address pool collection to be considered available.
+         */
+        activeAddrThr: number;
+        /**
+         * Address pool name.
+         */
+        name: string;
+        pools: outputs.gtm.RulePoolSetPool[];
+    }
+
+    export interface RulePoolSetPool {
+        addresses: outputs.gtm.RulePoolSetPoolAddress[];
+        /**
+         * The number of unavailable addresses in the address pool.
+         */
+        inactiveAddrCount: number;
+        /**
+         * Address pool name.
+         */
+        name: string;
+        /**
+         * Address pool ID.
+         */
+        poolId: string;
+        /**
+         * Address pool weight.
+         */
+        weight: number;
+    }
+
+    export interface RulePoolSetPoolAddress {
+        /**
+         * Whether the address is available. true: The address is available. false: The address is unavailable.
+         */
+        active: boolean;
+        /**
+         * The capacity of the address. For addresses without a set capacity value, this parameter returns the default capacity value of 1000.
+         */
+        capacity: number;
+        /**
+         * This parameter has no practical significance. You can ignore this parameter.
+         */
+        geo: string;
+        /**
+         * Latency (ms) for health check probe accessing the target address.
+         */
+        latency: number;
+        /**
+         * The mechanism for determining whether an address is available. auto: automatic mode. Cloud Scheduling GTM determines address availability based on health check results. always*on: address is always available. always*off: address is always unavailable.
+         */
+        mode: string;
+        /**
+         * The assigned region for the target address. See line codes for the mapping between line codes and specific regions (i.e., lines).
+         */
+        rectifiedGeos: string[];
+        /**
+         * Address.
+         */
+        value: string;
+        /**
+         * Address weight. For addresses without a specified weight, this parameter returns the default weight value of 1.
+         */
+        weight: number;
+    }
+
+    export interface RuleProbe {
+        /**
+         * Recommended number of health check probe points.
+         */
+        advisedNodeCount: number;
+        /**
+         * Whether health checks are disabled. true: disabled. false: not disabled.
+         */
+        disable: boolean;
+        /**
+         * The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
+         */
+        failedCount: number;
+        /**
+         * Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        host: string;
+        /**
+         * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        httpMethod: string;
+        httpUsabilityCodes: outputs.gtm.RuleProbeHttpUsabilityCode[];
+        /**
+         * The interval between each health check, in seconds.
+         */
+        interval: number;
+        /**
+         * Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
+         */
+        isManualNodes: boolean;
+        /**
+         * Health check probe point.
+         */
+        nodes: string[];
+        /**
+         * Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingCount: number;
+        /**
+         * Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingLossPercent: number;
+        /**
+         * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        port: number;
+        /**
+         * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+         */
+        protocol: string;
+        /**
+         * The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
+         */
+        timeout: number;
+        /**
+         * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        url: string;
+    }
+
+    export interface RuleProbeHttpUsabilityCode {
+        /**
+         * HTTP status code list.
+         */
+        codes: number[];
+        /**
+         * Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+         */
+        operator: string;
     }
 
 }
@@ -16289,6 +16582,17 @@ export namespace kms {
 }
 
 export namespace mongodb {
+    export interface AccountAccountPrivilege {
+        /**
+         * Databases for which the account has permissions.
+         */
+        dbName: string;
+        /**
+         * Permissions the account has in the current database.
+         */
+        roleName: string;
+    }
+
     export interface AllowListAssociatedInstance {
         /**
          * Instance ID bound to the current allowlist.
@@ -16306,6 +16610,17 @@ export namespace mongodb {
          * Private network ID of the instance.
          */
         vpc: string;
+    }
+
+    export interface GetAccountAccountPrivilege {
+        /**
+         * Databases for which the account has permissions.
+         */
+        dbName: string;
+        /**
+         * Permissions the account has in the current database.
+         */
+        roleName: string;
     }
 
     export interface GetAllowListAssociatedInstance {
