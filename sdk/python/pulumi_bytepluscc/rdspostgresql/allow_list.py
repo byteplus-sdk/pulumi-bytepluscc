@@ -28,10 +28,12 @@ class AllowListArgs:
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]] = None,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListSecurityGroupBindInfoArgs']]]] = None,
                  update_security_group: Optional[pulumi.Input[builtins.bool]] = None,
+                 upgrade_allow_list_version: Optional[pulumi.Input[builtins.bool]] = None,
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a AllowList resource.
@@ -40,9 +42,11 @@ class AllowListArgs:
         :param pulumi.Input[builtins.str] allow_list_name: Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
         :param pulumi.Input[builtins.str] allow_list_type: Network protocol type used by the allowlist. Value: IPv4 (default).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_lists: IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
         :param pulumi.Input[builtins.str] ip_address: Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         :param pulumi.Input[builtins.str] modify_mode: Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
         :param pulumi.Input[builtins.bool] update_security_group: Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
+        :param pulumi.Input[builtins.bool] upgrade_allow_list_version: Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
         :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
         """
         if allow_list_category is not None:
@@ -57,6 +61,8 @@ class AllowListArgs:
             pulumi.set(__self__, "allow_lists", allow_lists)
         if associated_instances is not None:
             pulumi.set(__self__, "associated_instances", associated_instances)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
         if modify_mode is not None:
@@ -65,6 +71,8 @@ class AllowListArgs:
             pulumi.set(__self__, "security_group_bind_infos", security_group_bind_infos)
         if update_security_group is not None:
             pulumi.set(__self__, "update_security_group", update_security_group)
+        if upgrade_allow_list_version is not None:
+            pulumi.set(__self__, "upgrade_allow_list_version", upgrade_allow_list_version)
         if user_allow_list is not None:
             pulumi.set(__self__, "user_allow_list", user_allow_list)
 
@@ -138,6 +146,18 @@ class AllowListArgs:
         pulumi.set(self, "associated_instances", value)
 
     @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -183,6 +203,18 @@ class AllowListArgs:
         pulumi.set(self, "update_security_group", value)
 
     @property
+    @pulumi.getter(name="upgradeAllowListVersion")
+    def upgrade_allow_list_version(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        """
+        return pulumi.get(self, "upgrade_allow_list_version")
+
+    @upgrade_allow_list_version.setter
+    def upgrade_allow_list_version(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "upgrade_allow_list_version", value)
+
+    @property
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -207,10 +239,12 @@ class _AllowListState:
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]] = None,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListSecurityGroupBindInfoArgs']]]] = None,
                  update_security_group: Optional[pulumi.Input[builtins.bool]] = None,
+                 upgrade_allow_list_version: Optional[pulumi.Input[builtins.bool]] = None,
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering AllowList resources.
@@ -222,9 +256,11 @@ class _AllowListState:
         :param pulumi.Input[builtins.str] allow_list_type: Network protocol type used by the allowlist. Value: IPv4 (default).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_lists: IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
         :param pulumi.Input[builtins.int] associated_instance_num: Number of instances bound to this allowlist.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
         :param pulumi.Input[builtins.str] ip_address: Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         :param pulumi.Input[builtins.str] modify_mode: Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
         :param pulumi.Input[builtins.bool] update_security_group: Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
+        :param pulumi.Input[builtins.bool] upgrade_allow_list_version: Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
         :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
         """
         if allow_list_category is not None:
@@ -245,6 +281,8 @@ class _AllowListState:
             pulumi.set(__self__, "associated_instance_num", associated_instance_num)
         if associated_instances is not None:
             pulumi.set(__self__, "associated_instances", associated_instances)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
         if modify_mode is not None:
@@ -253,6 +291,8 @@ class _AllowListState:
             pulumi.set(__self__, "security_group_bind_infos", security_group_bind_infos)
         if update_security_group is not None:
             pulumi.set(__self__, "update_security_group", update_security_group)
+        if upgrade_allow_list_version is not None:
+            pulumi.set(__self__, "upgrade_allow_list_version", upgrade_allow_list_version)
         if user_allow_list is not None:
             pulumi.set(__self__, "user_allow_list", user_allow_list)
 
@@ -362,6 +402,18 @@ class _AllowListState:
         pulumi.set(self, "associated_instances", value)
 
     @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -407,6 +459,18 @@ class _AllowListState:
         pulumi.set(self, "update_security_group", value)
 
     @property
+    @pulumi.getter(name="upgradeAllowListVersion")
+    def upgrade_allow_list_version(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        """
+        return pulumi.get(self, "upgrade_allow_list_version")
+
+    @upgrade_allow_list_version.setter
+    def upgrade_allow_list_version(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "upgrade_allow_list_version", value)
+
+    @property
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -431,10 +495,12 @@ class AllowList(pulumi.CustomResource):
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListSecurityGroupBindInfoArgs', 'AllowListSecurityGroupBindInfoArgsDict']]]]] = None,
                  update_security_group: Optional[pulumi.Input[builtins.bool]] = None,
+                 upgrade_allow_list_version: Optional[pulumi.Input[builtins.bool]] = None,
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -453,9 +519,11 @@ class AllowList(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] allow_list_name: Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
         :param pulumi.Input[builtins.str] allow_list_type: Network protocol type used by the allowlist. Value: IPv4 (default).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_lists: IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
         :param pulumi.Input[builtins.str] ip_address: Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         :param pulumi.Input[builtins.str] modify_mode: Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
         :param pulumi.Input[builtins.bool] update_security_group: Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
+        :param pulumi.Input[builtins.bool] upgrade_allow_list_version: Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
         :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
         """
         ...
@@ -494,10 +562,12 @@ class AllowList(pulumi.CustomResource):
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListSecurityGroupBindInfoArgs', 'AllowListSecurityGroupBindInfoArgsDict']]]]] = None,
                  update_security_group: Optional[pulumi.Input[builtins.bool]] = None,
+                 upgrade_allow_list_version: Optional[pulumi.Input[builtins.bool]] = None,
                  user_allow_list: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -514,10 +584,12 @@ class AllowList(pulumi.CustomResource):
             __props__.__dict__["allow_list_type"] = allow_list_type
             __props__.__dict__["allow_lists"] = allow_lists
             __props__.__dict__["associated_instances"] = associated_instances
+            __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["ip_address"] = ip_address
             __props__.__dict__["modify_mode"] = modify_mode
             __props__.__dict__["security_group_bind_infos"] = security_group_bind_infos
             __props__.__dict__["update_security_group"] = update_security_group
+            __props__.__dict__["upgrade_allow_list_version"] = upgrade_allow_list_version
             __props__.__dict__["user_allow_list"] = user_allow_list
             __props__.__dict__["allow_list_id"] = None
             __props__.__dict__["allow_list_ip_num"] = None
@@ -541,10 +613,12 @@ class AllowList(pulumi.CustomResource):
             allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
             associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
+            instance_id: Optional[pulumi.Input[builtins.str]] = None,
             ip_address: Optional[pulumi.Input[builtins.str]] = None,
             modify_mode: Optional[pulumi.Input[builtins.str]] = None,
             security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListSecurityGroupBindInfoArgs', 'AllowListSecurityGroupBindInfoArgsDict']]]]] = None,
             update_security_group: Optional[pulumi.Input[builtins.bool]] = None,
+            upgrade_allow_list_version: Optional[pulumi.Input[builtins.bool]] = None,
             user_allow_list: Optional[pulumi.Input[builtins.str]] = None) -> 'AllowList':
         """
         Get an existing AllowList resource's state with the given name, id, and optional extra
@@ -561,9 +635,11 @@ class AllowList(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] allow_list_type: Network protocol type used by the allowlist. Value: IPv4 (default).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_lists: IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
         :param pulumi.Input[builtins.int] associated_instance_num: Number of instances bound to this allowlist.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
         :param pulumi.Input[builtins.str] ip_address: Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         :param pulumi.Input[builtins.str] modify_mode: Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
         :param pulumi.Input[builtins.bool] update_security_group: Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
+        :param pulumi.Input[builtins.bool] upgrade_allow_list_version: Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
         :param pulumi.Input[builtins.str] user_allow_list: IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -579,10 +655,12 @@ class AllowList(pulumi.CustomResource):
         __props__.__dict__["allow_lists"] = allow_lists
         __props__.__dict__["associated_instance_num"] = associated_instance_num
         __props__.__dict__["associated_instances"] = associated_instances
+        __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["ip_address"] = ip_address
         __props__.__dict__["modify_mode"] = modify_mode
         __props__.__dict__["security_group_bind_infos"] = security_group_bind_infos
         __props__.__dict__["update_security_group"] = update_security_group
+        __props__.__dict__["upgrade_allow_list_version"] = upgrade_allow_list_version
         __props__.__dict__["user_allow_list"] = user_allow_list
         return AllowList(resource_name, opts=opts, __props__=__props__)
 
@@ -656,6 +734,14 @@ class AllowList(pulumi.CustomResource):
         return pulumi.get(self, "associated_instances")
 
     @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> pulumi.Output[builtins.str]:
+        """
+        Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Output[builtins.str]:
         """
@@ -683,6 +769,14 @@ class AllowList(pulumi.CustomResource):
         Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
         """
         return pulumi.get(self, "update_security_group")
+
+    @property
+    @pulumi.getter(name="upgradeAllowListVersion")
+    def upgrade_allow_list_version(self) -> pulumi.Output[builtins.bool]:
+        """
+        Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        """
+        return pulumi.get(self, "upgrade_allow_list_version")
 
     @property
     @pulumi.getter(name="userAllowList")

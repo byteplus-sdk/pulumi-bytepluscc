@@ -243,6 +243,190 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 	}).(AllowListAssociatedInstanceOutput)
 }
 
+type EndpointDbAddress struct {
+	// Domain name of the connection address
+	AddressDomain *string `pulumi:"addressDomain"`
+	// IP corresponding to the connection address
+	AddressIp *string `pulumi:"addressIp"`
+	// Port number of the connection address
+	AddressPort *string `pulumi:"addressPort"`
+	// Connection address type of the node. Possible values:
+	//
+	//   Primary: Primary node connection address
+	//   Secondary: Secondary node connection address
+	//   Hidden: Hidden node connection address
+	//   ReadOnly: Read-only node connection address
+	//
+	//   **Note:**
+	//   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+	AddressType *string `pulumi:"addressType"`
+	// EIP ID bound to the instance's public address
+	//
+	//   **Note:**
+	//   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+	EipId *string `pulumi:"eipId"`
+	// Node ID associated with the connection address
+	NodeId *string `pulumi:"nodeId"`
+	// AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// EndpointDbAddressInput is an input type that accepts EndpointDbAddressArgs and EndpointDbAddressOutput values.
+// You can construct a concrete instance of `EndpointDbAddressInput` via:
+//
+//	EndpointDbAddressArgs{...}
+type EndpointDbAddressInput interface {
+	pulumi.Input
+
+	ToEndpointDbAddressOutput() EndpointDbAddressOutput
+	ToEndpointDbAddressOutputWithContext(context.Context) EndpointDbAddressOutput
+}
+
+type EndpointDbAddressArgs struct {
+	// Domain name of the connection address
+	AddressDomain pulumi.StringPtrInput `pulumi:"addressDomain"`
+	// IP corresponding to the connection address
+	AddressIp pulumi.StringPtrInput `pulumi:"addressIp"`
+	// Port number of the connection address
+	AddressPort pulumi.StringPtrInput `pulumi:"addressPort"`
+	// Connection address type of the node. Possible values:
+	//
+	//   Primary: Primary node connection address
+	//   Secondary: Secondary node connection address
+	//   Hidden: Hidden node connection address
+	//   ReadOnly: Read-only node connection address
+	//
+	//   **Note:**
+	//   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+	AddressType pulumi.StringPtrInput `pulumi:"addressType"`
+	// EIP ID bound to the instance's public address
+	//
+	//   **Note:**
+	//   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// Node ID associated with the connection address
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (EndpointDbAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointDbAddress)(nil)).Elem()
+}
+
+func (i EndpointDbAddressArgs) ToEndpointDbAddressOutput() EndpointDbAddressOutput {
+	return i.ToEndpointDbAddressOutputWithContext(context.Background())
+}
+
+func (i EndpointDbAddressArgs) ToEndpointDbAddressOutputWithContext(ctx context.Context) EndpointDbAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointDbAddressOutput)
+}
+
+// EndpointDbAddressArrayInput is an input type that accepts EndpointDbAddressArray and EndpointDbAddressArrayOutput values.
+// You can construct a concrete instance of `EndpointDbAddressArrayInput` via:
+//
+//	EndpointDbAddressArray{ EndpointDbAddressArgs{...} }
+type EndpointDbAddressArrayInput interface {
+	pulumi.Input
+
+	ToEndpointDbAddressArrayOutput() EndpointDbAddressArrayOutput
+	ToEndpointDbAddressArrayOutputWithContext(context.Context) EndpointDbAddressArrayOutput
+}
+
+type EndpointDbAddressArray []EndpointDbAddressInput
+
+func (EndpointDbAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointDbAddress)(nil)).Elem()
+}
+
+func (i EndpointDbAddressArray) ToEndpointDbAddressArrayOutput() EndpointDbAddressArrayOutput {
+	return i.ToEndpointDbAddressArrayOutputWithContext(context.Background())
+}
+
+func (i EndpointDbAddressArray) ToEndpointDbAddressArrayOutputWithContext(ctx context.Context) EndpointDbAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointDbAddressArrayOutput)
+}
+
+type EndpointDbAddressOutput struct{ *pulumi.OutputState }
+
+func (EndpointDbAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointDbAddress)(nil)).Elem()
+}
+
+func (o EndpointDbAddressOutput) ToEndpointDbAddressOutput() EndpointDbAddressOutput {
+	return o
+}
+
+func (o EndpointDbAddressOutput) ToEndpointDbAddressOutputWithContext(ctx context.Context) EndpointDbAddressOutput {
+	return o
+}
+
+// Domain name of the connection address
+func (o EndpointDbAddressOutput) AddressDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.AddressDomain }).(pulumi.StringPtrOutput)
+}
+
+// IP corresponding to the connection address
+func (o EndpointDbAddressOutput) AddressIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.AddressIp }).(pulumi.StringPtrOutput)
+}
+
+// Port number of the connection address
+func (o EndpointDbAddressOutput) AddressPort() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.AddressPort }).(pulumi.StringPtrOutput)
+}
+
+// Connection address type of the node. Possible values:
+//
+//	Primary: Primary node connection address
+//	Secondary: Secondary node connection address
+//	Hidden: Hidden node connection address
+//	ReadOnly: Read-only node connection address
+//
+//	**Note:**
+//	Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+func (o EndpointDbAddressOutput) AddressType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.AddressType }).(pulumi.StringPtrOutput)
+}
+
+// EIP ID bound to the instance's public address
+//
+//	**Note:**
+//	This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+func (o EndpointDbAddressOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// Node ID associated with the connection address
+func (o EndpointDbAddressOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+func (o EndpointDbAddressOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointDbAddress) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type EndpointDbAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (EndpointDbAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointDbAddress)(nil)).Elem()
+}
+
+func (o EndpointDbAddressArrayOutput) ToEndpointDbAddressArrayOutput() EndpointDbAddressArrayOutput {
+	return o
+}
+
+func (o EndpointDbAddressArrayOutput) ToEndpointDbAddressArrayOutputWithContext(ctx context.Context) EndpointDbAddressArrayOutput {
+	return o
+}
+
+func (o EndpointDbAddressArrayOutput) Index(i pulumi.IntInput) EndpointDbAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EndpointDbAddress {
+		return vs[0].([]EndpointDbAddress)[vs[1].(int)]
+	}).(EndpointDbAddressOutput)
+}
+
 type InstanceConfigServer struct {
 	// ConfigServer node ID
 	ConfigServerNodeId *string `pulumi:"configServerNodeId"`
@@ -1615,6 +1799,199 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 	}).(GetAllowListAssociatedInstanceOutput)
 }
 
+type GetEndpointDbAddress struct {
+	// Domain name of the connection address
+	AddressDomain string `pulumi:"addressDomain"`
+	// IP corresponding to the connection address
+	//
+	//   **Note:**
+	//   It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
+	AddressIp string `pulumi:"addressIp"`
+	// Port number of the connection address
+	AddressPort string `pulumi:"addressPort"`
+	// Connection address type of the node. Possible values:
+	//
+	//   Primary: Primary node connection address
+	//   Secondary: Secondary node connection address
+	//   Hidden: Hidden node connection address
+	//   ReadOnly: Read-only node connection address
+	//
+	//   **Note:**
+	//   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+	AddressType string `pulumi:"addressType"`
+	// EIP ID bound to the instance's public address
+	//
+	//   **Note:**
+	//   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+	EipId string `pulumi:"eipId"`
+	// Node ID associated with the connection address
+	NodeId string `pulumi:"nodeId"`
+	// AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetEndpointDbAddressInput is an input type that accepts GetEndpointDbAddressArgs and GetEndpointDbAddressOutput values.
+// You can construct a concrete instance of `GetEndpointDbAddressInput` via:
+//
+//	GetEndpointDbAddressArgs{...}
+type GetEndpointDbAddressInput interface {
+	pulumi.Input
+
+	ToGetEndpointDbAddressOutput() GetEndpointDbAddressOutput
+	ToGetEndpointDbAddressOutputWithContext(context.Context) GetEndpointDbAddressOutput
+}
+
+type GetEndpointDbAddressArgs struct {
+	// Domain name of the connection address
+	AddressDomain pulumi.StringInput `pulumi:"addressDomain"`
+	// IP corresponding to the connection address
+	//
+	//   **Note:**
+	//   It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
+	AddressIp pulumi.StringInput `pulumi:"addressIp"`
+	// Port number of the connection address
+	AddressPort pulumi.StringInput `pulumi:"addressPort"`
+	// Connection address type of the node. Possible values:
+	//
+	//   Primary: Primary node connection address
+	//   Secondary: Secondary node connection address
+	//   Hidden: Hidden node connection address
+	//   ReadOnly: Read-only node connection address
+	//
+	//   **Note:**
+	//   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+	AddressType pulumi.StringInput `pulumi:"addressType"`
+	// EIP ID bound to the instance's public address
+	//
+	//   **Note:**
+	//   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// Node ID associated with the connection address
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetEndpointDbAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointDbAddress)(nil)).Elem()
+}
+
+func (i GetEndpointDbAddressArgs) ToGetEndpointDbAddressOutput() GetEndpointDbAddressOutput {
+	return i.ToGetEndpointDbAddressOutputWithContext(context.Background())
+}
+
+func (i GetEndpointDbAddressArgs) ToGetEndpointDbAddressOutputWithContext(ctx context.Context) GetEndpointDbAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointDbAddressOutput)
+}
+
+// GetEndpointDbAddressArrayInput is an input type that accepts GetEndpointDbAddressArray and GetEndpointDbAddressArrayOutput values.
+// You can construct a concrete instance of `GetEndpointDbAddressArrayInput` via:
+//
+//	GetEndpointDbAddressArray{ GetEndpointDbAddressArgs{...} }
+type GetEndpointDbAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetEndpointDbAddressArrayOutput() GetEndpointDbAddressArrayOutput
+	ToGetEndpointDbAddressArrayOutputWithContext(context.Context) GetEndpointDbAddressArrayOutput
+}
+
+type GetEndpointDbAddressArray []GetEndpointDbAddressInput
+
+func (GetEndpointDbAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointDbAddress)(nil)).Elem()
+}
+
+func (i GetEndpointDbAddressArray) ToGetEndpointDbAddressArrayOutput() GetEndpointDbAddressArrayOutput {
+	return i.ToGetEndpointDbAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetEndpointDbAddressArray) ToGetEndpointDbAddressArrayOutputWithContext(ctx context.Context) GetEndpointDbAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointDbAddressArrayOutput)
+}
+
+type GetEndpointDbAddressOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointDbAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointDbAddress)(nil)).Elem()
+}
+
+func (o GetEndpointDbAddressOutput) ToGetEndpointDbAddressOutput() GetEndpointDbAddressOutput {
+	return o
+}
+
+func (o GetEndpointDbAddressOutput) ToGetEndpointDbAddressOutputWithContext(ctx context.Context) GetEndpointDbAddressOutput {
+	return o
+}
+
+// Domain name of the connection address
+func (o GetEndpointDbAddressOutput) AddressDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.AddressDomain }).(pulumi.StringOutput)
+}
+
+// IP corresponding to the connection address
+//
+//	**Note:**
+//	It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
+func (o GetEndpointDbAddressOutput) AddressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.AddressIp }).(pulumi.StringOutput)
+}
+
+// Port number of the connection address
+func (o GetEndpointDbAddressOutput) AddressPort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.AddressPort }).(pulumi.StringOutput)
+}
+
+// Connection address type of the node. Possible values:
+//
+//	Primary: Primary node connection address
+//	Secondary: Secondary node connection address
+//	Hidden: Hidden node connection address
+//	ReadOnly: Read-only node connection address
+//
+//	**Note:**
+//	Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+func (o GetEndpointDbAddressOutput) AddressType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.AddressType }).(pulumi.StringOutput)
+}
+
+// EIP ID bound to the instance's public address
+//
+//	**Note:**
+//	This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+func (o GetEndpointDbAddressOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// Node ID associated with the connection address
+func (o GetEndpointDbAddressOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+func (o GetEndpointDbAddressOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointDbAddress) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetEndpointDbAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointDbAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointDbAddress)(nil)).Elem()
+}
+
+func (o GetEndpointDbAddressArrayOutput) ToGetEndpointDbAddressArrayOutput() GetEndpointDbAddressArrayOutput {
+	return o
+}
+
+func (o GetEndpointDbAddressArrayOutput) ToGetEndpointDbAddressArrayOutputWithContext(ctx context.Context) GetEndpointDbAddressArrayOutput {
+	return o
+}
+
+func (o GetEndpointDbAddressArrayOutput) Index(i pulumi.IntInput) GetEndpointDbAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointDbAddress {
+		return vs[0].([]GetEndpointDbAddress)[vs[1].(int)]
+	}).(GetEndpointDbAddressOutput)
+}
+
 type GetInstanceConfigServer struct {
 	// ConfigServer node ID
 	ConfigServerNodeId string `pulumi:"configServerNodeId"`
@@ -2819,6 +3196,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountAccountPrivilegeArrayInput)(nil)).Elem(), AccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointDbAddressInput)(nil)).Elem(), EndpointDbAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointDbAddressArrayInput)(nil)).Elem(), EndpointDbAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerInput)(nil)).Elem(), InstanceConfigServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConfigServerArrayInput)(nil)).Elem(), InstanceConfigServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceInstanceParameterInput)(nil)).Elem(), InstanceInstanceParameterArgs{})
@@ -2839,6 +3218,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountAccountPrivilegeArrayInput)(nil)).Elem(), GetAccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointDbAddressInput)(nil)).Elem(), GetEndpointDbAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointDbAddressArrayInput)(nil)).Elem(), GetEndpointDbAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerInput)(nil)).Elem(), GetInstanceConfigServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigServerArrayInput)(nil)).Elem(), GetInstanceConfigServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceParameterInput)(nil)).Elem(), GetInstanceInstanceParameterArgs{})
@@ -2859,6 +3240,8 @@ func init() {
 	pulumi.RegisterOutputType(AccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(EndpointDbAddressOutput{})
+	pulumi.RegisterOutputType(EndpointDbAddressArrayOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerOutput{})
 	pulumi.RegisterOutputType(InstanceConfigServerArrayOutput{})
 	pulumi.RegisterOutputType(InstanceInstanceParameterOutput{})
@@ -2879,6 +3262,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetEndpointDbAddressOutput{})
+	pulumi.RegisterOutputType(GetEndpointDbAddressArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigServerArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceInstanceParameterOutput{})

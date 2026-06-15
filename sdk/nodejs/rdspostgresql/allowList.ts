@@ -77,6 +77,10 @@ export class AllowList extends pulumi.CustomResource {
     public /*out*/ readonly associatedInstanceNum!: pulumi.Output<number>;
     public readonly associatedInstances!: pulumi.Output<outputs.rdspostgresql.AllowListAssociatedInstance[]>;
     /**
+     * Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     */
+    public readonly instanceId!: pulumi.Output<string>;
+    /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      */
     public readonly ipAddress!: pulumi.Output<string>;
@@ -89,6 +93,10 @@ export class AllowList extends pulumi.CustomResource {
      * Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
      */
     public readonly updateSecurityGroup!: pulumi.Output<boolean>;
+    /**
+     * Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     */
+    public readonly upgradeAllowListVersion!: pulumi.Output<boolean>;
     /**
      * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      */
@@ -116,10 +124,12 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["allowLists"] = state ? state.allowLists : undefined;
             resourceInputs["associatedInstanceNum"] = state ? state.associatedInstanceNum : undefined;
             resourceInputs["associatedInstances"] = state ? state.associatedInstances : undefined;
+            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
             resourceInputs["modifyMode"] = state ? state.modifyMode : undefined;
             resourceInputs["securityGroupBindInfos"] = state ? state.securityGroupBindInfos : undefined;
             resourceInputs["updateSecurityGroup"] = state ? state.updateSecurityGroup : undefined;
+            resourceInputs["upgradeAllowListVersion"] = state ? state.upgradeAllowListVersion : undefined;
             resourceInputs["userAllowList"] = state ? state.userAllowList : undefined;
         } else {
             const args = argsOrState as AllowListArgs | undefined;
@@ -129,10 +139,12 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["allowListType"] = args ? args.allowListType : undefined;
             resourceInputs["allowLists"] = args ? args.allowLists : undefined;
             resourceInputs["associatedInstances"] = args ? args.associatedInstances : undefined;
+            resourceInputs["instanceId"] = args ? args.instanceId : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
             resourceInputs["modifyMode"] = args ? args.modifyMode : undefined;
             resourceInputs["securityGroupBindInfos"] = args ? args.securityGroupBindInfos : undefined;
             resourceInputs["updateSecurityGroup"] = args ? args.updateSecurityGroup : undefined;
+            resourceInputs["upgradeAllowListVersion"] = args ? args.upgradeAllowListVersion : undefined;
             resourceInputs["userAllowList"] = args ? args.userAllowList : undefined;
             resourceInputs["allowListId"] = undefined /*out*/;
             resourceInputs["allowListIpNum"] = undefined /*out*/;
@@ -181,6 +193,10 @@ export interface AllowListState {
     associatedInstanceNum?: pulumi.Input<number>;
     associatedInstances?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.AllowListAssociatedInstance>[]>;
     /**
+     * Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     */
+    instanceId?: pulumi.Input<string>;
+    /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      */
     ipAddress?: pulumi.Input<string>;
@@ -193,6 +209,10 @@ export interface AllowListState {
      * Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
      */
     updateSecurityGroup?: pulumi.Input<boolean>;
+    /**
+     * Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     */
+    upgradeAllowListVersion?: pulumi.Input<boolean>;
     /**
      * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      */
@@ -225,6 +245,10 @@ export interface AllowListArgs {
     allowLists?: pulumi.Input<pulumi.Input<string>[]>;
     associatedInstances?: pulumi.Input<pulumi.Input<inputs.rdspostgresql.AllowListAssociatedInstance>[]>;
     /**
+     * Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     */
+    instanceId?: pulumi.Input<string>;
+    /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      */
     ipAddress?: pulumi.Input<string>;
@@ -237,6 +261,10 @@ export interface AllowListArgs {
      * Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
      */
     updateSecurityGroup?: pulumi.Input<boolean>;
+    /**
+     * Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     */
+    upgradeAllowListVersion?: pulumi.Input<boolean>;
     /**
      * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      */

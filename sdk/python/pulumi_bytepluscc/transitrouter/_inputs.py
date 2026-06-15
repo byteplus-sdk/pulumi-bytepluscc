@@ -16,12 +16,18 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'DirectConnectGatewayAttachmentTagArgs',
+    'DirectConnectGatewayAttachmentTagArgsDict',
     'PeerAttachmentTagArgs',
     'PeerAttachmentTagArgsDict',
     'TransitRouterAttachmentArgs',
     'TransitRouterAttachmentArgsDict',
     'TransitRouterAttachmentTagArgs',
     'TransitRouterAttachmentTagArgsDict',
+    'TransitRouterBandwidthPackageAllocationArgs',
+    'TransitRouterBandwidthPackageAllocationArgsDict',
+    'TransitRouterBandwidthPackageTagArgs',
+    'TransitRouterBandwidthPackageTagArgsDict',
     'TransitRouterRouteTableTagArgs',
     'TransitRouterRouteTableTagArgsDict',
     'TransitRouterTagArgs',
@@ -35,6 +41,58 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class DirectConnectGatewayAttachmentTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    DirectConnectGatewayAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DirectConnectGatewayAttachmentTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class PeerAttachmentTagArgsDict(TypedDict):
@@ -517,6 +575,170 @@ class TransitRouterAttachmentTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         Tag value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class TransitRouterBandwidthPackageAllocationArgsDict(TypedDict):
+        allocate_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Time when the bandwidth package was associated with the cross-region connection.
+        """
+        bandwidth: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Bandwidth peak of the cross-region connection, in Mbps.
+        """
+        local_region_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Region ID of the local transit router instance in the cross-region connection.
+        """
+        peer_region_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Region ID of the peer transit router instance in the cross-region connection.
+        """
+        transit_router_peer_attachment_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ID of the cross-region connection.
+        """
+elif False:
+    TransitRouterBandwidthPackageAllocationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TransitRouterBandwidthPackageAllocationArgs:
+    def __init__(__self__, *,
+                 allocate_time: Optional[pulumi.Input[builtins.str]] = None,
+                 bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 local_region_id: Optional[pulumi.Input[builtins.str]] = None,
+                 peer_region_id: Optional[pulumi.Input[builtins.str]] = None,
+                 transit_router_peer_attachment_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] allocate_time: Time when the bandwidth package was associated with the cross-region connection.
+        :param pulumi.Input[builtins.int] bandwidth: Bandwidth peak of the cross-region connection, in Mbps.
+        :param pulumi.Input[builtins.str] local_region_id: Region ID of the local transit router instance in the cross-region connection.
+        :param pulumi.Input[builtins.str] peer_region_id: Region ID of the peer transit router instance in the cross-region connection.
+        :param pulumi.Input[builtins.str] transit_router_peer_attachment_id: ID of the cross-region connection.
+        """
+        if allocate_time is not None:
+            pulumi.set(__self__, "allocate_time", allocate_time)
+        if bandwidth is not None:
+            pulumi.set(__self__, "bandwidth", bandwidth)
+        if local_region_id is not None:
+            pulumi.set(__self__, "local_region_id", local_region_id)
+        if peer_region_id is not None:
+            pulumi.set(__self__, "peer_region_id", peer_region_id)
+        if transit_router_peer_attachment_id is not None:
+            pulumi.set(__self__, "transit_router_peer_attachment_id", transit_router_peer_attachment_id)
+
+    @property
+    @pulumi.getter(name="allocateTime")
+    def allocate_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Time when the bandwidth package was associated with the cross-region connection.
+        """
+        return pulumi.get(self, "allocate_time")
+
+    @allocate_time.setter
+    def allocate_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "allocate_time", value)
+
+    @property
+    @pulumi.getter
+    def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Bandwidth peak of the cross-region connection, in Mbps.
+        """
+        return pulumi.get(self, "bandwidth")
+
+    @bandwidth.setter
+    def bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "bandwidth", value)
+
+    @property
+    @pulumi.getter(name="localRegionId")
+    def local_region_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Region ID of the local transit router instance in the cross-region connection.
+        """
+        return pulumi.get(self, "local_region_id")
+
+    @local_region_id.setter
+    def local_region_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "local_region_id", value)
+
+    @property
+    @pulumi.getter(name="peerRegionId")
+    def peer_region_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Region ID of the peer transit router instance in the cross-region connection.
+        """
+        return pulumi.get(self, "peer_region_id")
+
+    @peer_region_id.setter
+    def peer_region_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "peer_region_id", value)
+
+    @property
+    @pulumi.getter(name="transitRouterPeerAttachmentId")
+    def transit_router_peer_attachment_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ID of the cross-region connection.
+        """
+        return pulumi.get(self, "transit_router_peer_attachment_id")
+
+    @transit_router_peer_attachment_id.setter
+    def transit_router_peer_attachment_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "transit_router_peer_attachment_id", value)
+
+
+if not MYPY:
+    class TransitRouterBandwidthPackageTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key of the tag.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    TransitRouterBandwidthPackageTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TransitRouterBandwidthPackageTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key of the tag.
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
         """
         return pulumi.get(self, "value")
 

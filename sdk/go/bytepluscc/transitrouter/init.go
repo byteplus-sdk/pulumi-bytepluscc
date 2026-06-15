@@ -21,16 +21,22 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:transitrouter/directConnectGatewayAttachment:DirectConnectGatewayAttachment":
+		r = &DirectConnectGatewayAttachment{}
 	case "bytepluscc:transitrouter/peerAttachment:PeerAttachment":
 		r = &PeerAttachment{}
 	case "bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation":
 		r = &RouteTablePropagation{}
 	case "bytepluscc:transitrouter/transitRouter:TransitRouter":
 		r = &TransitRouter{}
+	case "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage":
+		r = &TransitRouterBandwidthPackage{}
 	case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
 		r = &TransitRouterRouteEntry{}
 	case "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
 		r = &TransitRouterRouteTable{}
+	case "bytepluscc:transitrouter/transitRouterRouteTableAssociation:TransitRouterRouteTableAssociation":
+		r = &TransitRouterRouteTableAssociation{}
 	case "bytepluscc:transitrouter/vpcAttachment:VpcAttachment":
 		r = &VpcAttachment{}
 	case "bytepluscc:transitrouter/vpnAttachment:VpnAttachment":
@@ -50,6 +56,11 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"transitrouter/directConnectGatewayAttachment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"transitrouter/peerAttachment",
 		&module{version},
 	)
@@ -65,12 +76,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"transitrouter/transitRouterBandwidthPackage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"transitrouter/transitRouterRouteEntry",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"transitrouter/transitRouterRouteTable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/transitRouterRouteTableAssociation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

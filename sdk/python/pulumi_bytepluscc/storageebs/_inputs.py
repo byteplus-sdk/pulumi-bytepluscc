@@ -22,6 +22,8 @@ __all__ = [
     'SnapshotGroupSnapshotTagArgsDict',
     'SnapshotGroupTagArgs',
     'SnapshotGroupTagArgsDict',
+    'SnapshotPolicyTagArgs',
+    'SnapshotPolicyTagArgsDict',
     'SnapshotTagArgs',
     'SnapshotTagArgsDict',
     'VolumeBaselinePerformanceArgs',
@@ -528,6 +530,58 @@ elif False:
 
 @pulumi.input_type
 class SnapshotGroupTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class SnapshotPolicyTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    SnapshotPolicyTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SnapshotPolicyTagArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):

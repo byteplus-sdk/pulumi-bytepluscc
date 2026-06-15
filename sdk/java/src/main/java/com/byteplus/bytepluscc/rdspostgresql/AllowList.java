@@ -154,6 +154,20 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         return this.associatedInstances;
     }
     /**
+     * Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     * 
+     */
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
+    private Output<String> instanceId;
+
+    /**
+     * @return Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     * 
+     */
+    public Output<String> instanceId() {
+        return this.instanceId;
+    }
+    /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      * 
      */
@@ -200,6 +214,20 @@ public class AllowList extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> updateSecurityGroup() {
         return this.updateSecurityGroup;
+    }
+    /**
+     * Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     * 
+     */
+    @Export(name="upgradeAllowListVersion", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> upgradeAllowListVersion;
+
+    /**
+     * @return Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     * 
+     */
+    public Output<Boolean> upgradeAllowListVersion() {
+        return this.upgradeAllowListVersion;
     }
     /**
      * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.

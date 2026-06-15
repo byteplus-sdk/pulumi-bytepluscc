@@ -89,7 +89,7 @@ export class AllowList extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: AllowListArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args: AllowListArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AllowListArgs | AllowListState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -108,6 +108,9 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["securityGroupBindInfos"] = state ? state.securityGroupBindInfos : undefined;
         } else {
             const args = argsOrState as AllowListArgs | undefined;
+            if ((!args || args.allowListName === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'allowListName'");
+            }
             resourceInputs["allowList"] = args ? args.allowList : undefined;
             resourceInputs["allowListCategory"] = args ? args.allowListCategory : undefined;
             resourceInputs["allowListDesc"] = args ? args.allowListDesc : undefined;
@@ -188,7 +191,7 @@ export interface AllowListArgs {
     /**
      * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
      */
-    allowListName?: pulumi.Input<string>;
+    allowListName: pulumi.Input<string>;
     /**
      * List of instance IDs bound to the current allowlist
      */

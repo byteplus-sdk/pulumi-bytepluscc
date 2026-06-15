@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"errors"
 	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -47,9 +48,12 @@ type AllowList struct {
 func NewAllowList(ctx *pulumi.Context,
 	name string, args *AllowListArgs, opts ...pulumi.ResourceOption) (*AllowList, error) {
 	if args == nil {
-		args = &AllowListArgs{}
+		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.AllowListName == nil {
+		return nil, errors.New("invalid value for required argument 'AllowListName'")
+	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AllowList
 	err := ctx.RegisterResource("bytepluscc:redis/allowList:AllowList", name, args, &resource, opts...)
@@ -130,7 +134,7 @@ type allowListArgs struct {
 	// Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
 	AllowListDesc *string `pulumi:"allowListDesc"`
 	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-	AllowListName *string `pulumi:"allowListName"`
+	AllowListName string `pulumi:"allowListName"`
 	// List of instance IDs bound to the current allowlist
 	InstanceIds []string `pulumi:"instanceIds"`
 	// Project name associated with the allowlist
@@ -147,7 +151,7 @@ type AllowListArgs struct {
 	// Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
 	AllowListDesc pulumi.StringPtrInput
 	// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-	AllowListName pulumi.StringPtrInput
+	AllowListName pulumi.StringInput
 	// List of instance IDs bound to the current allowlist
 	InstanceIds pulumi.StringArrayInput
 	// Project name associated with the allowlist

@@ -155,6 +155,290 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 	}).(AllowListAssociatedInstanceOutput)
 }
 
+type BackupBackupDatabaseDetail struct {
+	// External network backup download link.
+	BackupDownloadLinkEip *string `pulumi:"backupDownloadLinkEip"`
+	// Internal network backup download link.
+	BackupDownloadLinkInner *string `pulumi:"backupDownloadLinkInner"`
+	// Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupEndTime *string `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName *string `pulumi:"backupFileName"`
+	// Backup file size (Bytes).
+	BackupFileSize *int `pulumi:"backupFileSize"`
+	// Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupStartTime *string `pulumi:"backupStartTime"`
+	// Backup type. Values: Full (full backup), Diff (differential backup).
+	BackupType *string `pulumi:"backupType"`
+	// Database name.
+	DatabaseName *string `pulumi:"databaseName"`
+	// Backup file preparation progress (%).
+	DownloadProgress *int `pulumi:"downloadProgress"`
+	// Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+	DownloadStatus *string `pulumi:"downloadStatus"`
+	// Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+	LinkExpiredTime *string `pulumi:"linkExpiredTime"`
+}
+
+// BackupBackupDatabaseDetailInput is an input type that accepts BackupBackupDatabaseDetailArgs and BackupBackupDatabaseDetailOutput values.
+// You can construct a concrete instance of `BackupBackupDatabaseDetailInput` via:
+//
+//	BackupBackupDatabaseDetailArgs{...}
+type BackupBackupDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToBackupBackupDatabaseDetailOutput() BackupBackupDatabaseDetailOutput
+	ToBackupBackupDatabaseDetailOutputWithContext(context.Context) BackupBackupDatabaseDetailOutput
+}
+
+type BackupBackupDatabaseDetailArgs struct {
+	// External network backup download link.
+	BackupDownloadLinkEip pulumi.StringPtrInput `pulumi:"backupDownloadLinkEip"`
+	// Internal network backup download link.
+	BackupDownloadLinkInner pulumi.StringPtrInput `pulumi:"backupDownloadLinkInner"`
+	// Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupEndTime pulumi.StringPtrInput `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName pulumi.StringPtrInput `pulumi:"backupFileName"`
+	// Backup file size (Bytes).
+	BackupFileSize pulumi.IntPtrInput `pulumi:"backupFileSize"`
+	// Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupStartTime pulumi.StringPtrInput `pulumi:"backupStartTime"`
+	// Backup type. Values: Full (full backup), Diff (differential backup).
+	BackupType pulumi.StringPtrInput `pulumi:"backupType"`
+	// Database name.
+	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
+	// Backup file preparation progress (%).
+	DownloadProgress pulumi.IntPtrInput `pulumi:"downloadProgress"`
+	// Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+	DownloadStatus pulumi.StringPtrInput `pulumi:"downloadStatus"`
+	// Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+	LinkExpiredTime pulumi.StringPtrInput `pulumi:"linkExpiredTime"`
+}
+
+func (BackupBackupDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (i BackupBackupDatabaseDetailArgs) ToBackupBackupDatabaseDetailOutput() BackupBackupDatabaseDetailOutput {
+	return i.ToBackupBackupDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i BackupBackupDatabaseDetailArgs) ToBackupBackupDatabaseDetailOutputWithContext(ctx context.Context) BackupBackupDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupDatabaseDetailOutput)
+}
+
+// BackupBackupDatabaseDetailArrayInput is an input type that accepts BackupBackupDatabaseDetailArray and BackupBackupDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `BackupBackupDatabaseDetailArrayInput` via:
+//
+//	BackupBackupDatabaseDetailArray{ BackupBackupDatabaseDetailArgs{...} }
+type BackupBackupDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToBackupBackupDatabaseDetailArrayOutput() BackupBackupDatabaseDetailArrayOutput
+	ToBackupBackupDatabaseDetailArrayOutputWithContext(context.Context) BackupBackupDatabaseDetailArrayOutput
+}
+
+type BackupBackupDatabaseDetailArray []BackupBackupDatabaseDetailInput
+
+func (BackupBackupDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (i BackupBackupDatabaseDetailArray) ToBackupBackupDatabaseDetailArrayOutput() BackupBackupDatabaseDetailArrayOutput {
+	return i.ToBackupBackupDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i BackupBackupDatabaseDetailArray) ToBackupBackupDatabaseDetailArrayOutputWithContext(ctx context.Context) BackupBackupDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupDatabaseDetailArrayOutput)
+}
+
+type BackupBackupDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (o BackupBackupDatabaseDetailOutput) ToBackupBackupDatabaseDetailOutput() BackupBackupDatabaseDetailOutput {
+	return o
+}
+
+func (o BackupBackupDatabaseDetailOutput) ToBackupBackupDatabaseDetailOutputWithContext(ctx context.Context) BackupBackupDatabaseDetailOutput {
+	return o
+}
+
+// External network backup download link.
+func (o BackupBackupDatabaseDetailOutput) BackupDownloadLinkEip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.BackupDownloadLinkEip }).(pulumi.StringPtrOutput)
+}
+
+// Internal network backup download link.
+func (o BackupBackupDatabaseDetailOutput) BackupDownloadLinkInner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.BackupDownloadLinkInner }).(pulumi.StringPtrOutput)
+}
+
+// Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+func (o BackupBackupDatabaseDetailOutput) BackupEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.BackupEndTime }).(pulumi.StringPtrOutput)
+}
+
+// Backup file name.
+func (o BackupBackupDatabaseDetailOutput) BackupFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.BackupFileName }).(pulumi.StringPtrOutput)
+}
+
+// Backup file size (Bytes).
+func (o BackupBackupDatabaseDetailOutput) BackupFileSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *int { return v.BackupFileSize }).(pulumi.IntPtrOutput)
+}
+
+// Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+func (o BackupBackupDatabaseDetailOutput) BackupStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.BackupStartTime }).(pulumi.StringPtrOutput)
+}
+
+// Backup type. Values: Full (full backup), Diff (differential backup).
+func (o BackupBackupDatabaseDetailOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.BackupType }).(pulumi.StringPtrOutput)
+}
+
+// Database name.
+func (o BackupBackupDatabaseDetailOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
+}
+
+// Backup file preparation progress (%).
+func (o BackupBackupDatabaseDetailOutput) DownloadProgress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *int { return v.DownloadProgress }).(pulumi.IntPtrOutput)
+}
+
+// Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+func (o BackupBackupDatabaseDetailOutput) DownloadStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.DownloadStatus }).(pulumi.StringPtrOutput)
+}
+
+// Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+func (o BackupBackupDatabaseDetailOutput) LinkExpiredTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupDatabaseDetail) *string { return v.LinkExpiredTime }).(pulumi.StringPtrOutput)
+}
+
+type BackupBackupDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (o BackupBackupDatabaseDetailArrayOutput) ToBackupBackupDatabaseDetailArrayOutput() BackupBackupDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o BackupBackupDatabaseDetailArrayOutput) ToBackupBackupDatabaseDetailArrayOutputWithContext(ctx context.Context) BackupBackupDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o BackupBackupDatabaseDetailArrayOutput) Index(i pulumi.IntInput) BackupBackupDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupBackupDatabaseDetail {
+		return vs[0].([]BackupBackupDatabaseDetail)[vs[1].(int)]
+	}).(BackupBackupDatabaseDetailOutput)
+}
+
+type BackupBackupMeta struct {
+	// Backup database name.
+	DbName *string `pulumi:"dbName"`
+}
+
+// BackupBackupMetaInput is an input type that accepts BackupBackupMetaArgs and BackupBackupMetaOutput values.
+// You can construct a concrete instance of `BackupBackupMetaInput` via:
+//
+//	BackupBackupMetaArgs{...}
+type BackupBackupMetaInput interface {
+	pulumi.Input
+
+	ToBackupBackupMetaOutput() BackupBackupMetaOutput
+	ToBackupBackupMetaOutputWithContext(context.Context) BackupBackupMetaOutput
+}
+
+type BackupBackupMetaArgs struct {
+	// Backup database name.
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+}
+
+func (BackupBackupMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupMeta)(nil)).Elem()
+}
+
+func (i BackupBackupMetaArgs) ToBackupBackupMetaOutput() BackupBackupMetaOutput {
+	return i.ToBackupBackupMetaOutputWithContext(context.Background())
+}
+
+func (i BackupBackupMetaArgs) ToBackupBackupMetaOutputWithContext(ctx context.Context) BackupBackupMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupMetaOutput)
+}
+
+// BackupBackupMetaArrayInput is an input type that accepts BackupBackupMetaArray and BackupBackupMetaArrayOutput values.
+// You can construct a concrete instance of `BackupBackupMetaArrayInput` via:
+//
+//	BackupBackupMetaArray{ BackupBackupMetaArgs{...} }
+type BackupBackupMetaArrayInput interface {
+	pulumi.Input
+
+	ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput
+	ToBackupBackupMetaArrayOutputWithContext(context.Context) BackupBackupMetaArrayOutput
+}
+
+type BackupBackupMetaArray []BackupBackupMetaInput
+
+func (BackupBackupMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupMeta)(nil)).Elem()
+}
+
+func (i BackupBackupMetaArray) ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput {
+	return i.ToBackupBackupMetaArrayOutputWithContext(context.Background())
+}
+
+func (i BackupBackupMetaArray) ToBackupBackupMetaArrayOutputWithContext(ctx context.Context) BackupBackupMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupMetaArrayOutput)
+}
+
+type BackupBackupMetaOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupMeta)(nil)).Elem()
+}
+
+func (o BackupBackupMetaOutput) ToBackupBackupMetaOutput() BackupBackupMetaOutput {
+	return o
+}
+
+func (o BackupBackupMetaOutput) ToBackupBackupMetaOutputWithContext(ctx context.Context) BackupBackupMetaOutput {
+	return o
+}
+
+// Backup database name.
+func (o BackupBackupMetaOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupMeta) *string { return v.DbName }).(pulumi.StringPtrOutput)
+}
+
+type BackupBackupMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupMeta)(nil)).Elem()
+}
+
+func (o BackupBackupMetaArrayOutput) ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o BackupBackupMetaArrayOutput) ToBackupBackupMetaArrayOutputWithContext(ctx context.Context) BackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o BackupBackupMetaArrayOutput) Index(i pulumi.IntInput) BackupBackupMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupBackupMeta {
+		return vs[0].([]BackupBackupMeta)[vs[1].(int)]
+	}).(BackupBackupMetaOutput)
+}
+
 type InstanceChargeInfo struct {
 	// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 	AutoRenew *bool `pulumi:"autoRenew"`
@@ -1178,6 +1462,290 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 	}).(GetAllowListAssociatedInstanceOutput)
 }
 
+type GetBackupBackupDatabaseDetail struct {
+	// External network backup download link.
+	BackupDownloadLinkEip string `pulumi:"backupDownloadLinkEip"`
+	// Internal network backup download link.
+	BackupDownloadLinkInner string `pulumi:"backupDownloadLinkInner"`
+	// Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupEndTime string `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName string `pulumi:"backupFileName"`
+	// Backup file size (Bytes).
+	BackupFileSize int `pulumi:"backupFileSize"`
+	// Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupStartTime string `pulumi:"backupStartTime"`
+	// Backup type. Values: Full (full backup), Diff (differential backup).
+	BackupType string `pulumi:"backupType"`
+	// Database name.
+	DatabaseName string `pulumi:"databaseName"`
+	// Backup file preparation progress (%).
+	DownloadProgress int `pulumi:"downloadProgress"`
+	// Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+	DownloadStatus string `pulumi:"downloadStatus"`
+	// Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+	LinkExpiredTime string `pulumi:"linkExpiredTime"`
+}
+
+// GetBackupBackupDatabaseDetailInput is an input type that accepts GetBackupBackupDatabaseDetailArgs and GetBackupBackupDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetBackupBackupDatabaseDetailInput` via:
+//
+//	GetBackupBackupDatabaseDetailArgs{...}
+type GetBackupBackupDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupDatabaseDetailOutput() GetBackupBackupDatabaseDetailOutput
+	ToGetBackupBackupDatabaseDetailOutputWithContext(context.Context) GetBackupBackupDatabaseDetailOutput
+}
+
+type GetBackupBackupDatabaseDetailArgs struct {
+	// External network backup download link.
+	BackupDownloadLinkEip pulumi.StringInput `pulumi:"backupDownloadLinkEip"`
+	// Internal network backup download link.
+	BackupDownloadLinkInner pulumi.StringInput `pulumi:"backupDownloadLinkInner"`
+	// Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupEndTime pulumi.StringInput `pulumi:"backupEndTime"`
+	// Backup file name.
+	BackupFileName pulumi.StringInput `pulumi:"backupFileName"`
+	// Backup file size (Bytes).
+	BackupFileSize pulumi.IntInput `pulumi:"backupFileSize"`
+	// Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+	BackupStartTime pulumi.StringInput `pulumi:"backupStartTime"`
+	// Backup type. Values: Full (full backup), Diff (differential backup).
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// Database name.
+	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	// Backup file preparation progress (%).
+	DownloadProgress pulumi.IntInput `pulumi:"downloadProgress"`
+	// Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+	DownloadStatus pulumi.StringInput `pulumi:"downloadStatus"`
+	// Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+	LinkExpiredTime pulumi.StringInput `pulumi:"linkExpiredTime"`
+}
+
+func (GetBackupBackupDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetBackupBackupDatabaseDetailArgs) ToGetBackupBackupDatabaseDetailOutput() GetBackupBackupDatabaseDetailOutput {
+	return i.ToGetBackupBackupDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupDatabaseDetailArgs) ToGetBackupBackupDatabaseDetailOutputWithContext(ctx context.Context) GetBackupBackupDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupDatabaseDetailOutput)
+}
+
+// GetBackupBackupDatabaseDetailArrayInput is an input type that accepts GetBackupBackupDatabaseDetailArray and GetBackupBackupDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetBackupBackupDatabaseDetailArrayInput` via:
+//
+//	GetBackupBackupDatabaseDetailArray{ GetBackupBackupDatabaseDetailArgs{...} }
+type GetBackupBackupDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupDatabaseDetailArrayOutput() GetBackupBackupDatabaseDetailArrayOutput
+	ToGetBackupBackupDatabaseDetailArrayOutputWithContext(context.Context) GetBackupBackupDatabaseDetailArrayOutput
+}
+
+type GetBackupBackupDatabaseDetailArray []GetBackupBackupDatabaseDetailInput
+
+func (GetBackupBackupDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetBackupBackupDatabaseDetailArray) ToGetBackupBackupDatabaseDetailArrayOutput() GetBackupBackupDatabaseDetailArrayOutput {
+	return i.ToGetBackupBackupDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupDatabaseDetailArray) ToGetBackupBackupDatabaseDetailArrayOutputWithContext(ctx context.Context) GetBackupBackupDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupDatabaseDetailArrayOutput)
+}
+
+type GetBackupBackupDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetBackupBackupDatabaseDetailOutput) ToGetBackupBackupDatabaseDetailOutput() GetBackupBackupDatabaseDetailOutput {
+	return o
+}
+
+func (o GetBackupBackupDatabaseDetailOutput) ToGetBackupBackupDatabaseDetailOutputWithContext(ctx context.Context) GetBackupBackupDatabaseDetailOutput {
+	return o
+}
+
+// External network backup download link.
+func (o GetBackupBackupDatabaseDetailOutput) BackupDownloadLinkEip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.BackupDownloadLinkEip }).(pulumi.StringOutput)
+}
+
+// Internal network backup download link.
+func (o GetBackupBackupDatabaseDetailOutput) BackupDownloadLinkInner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.BackupDownloadLinkInner }).(pulumi.StringOutput)
+}
+
+// Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+func (o GetBackupBackupDatabaseDetailOutput) BackupEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.BackupEndTime }).(pulumi.StringOutput)
+}
+
+// Backup file name.
+func (o GetBackupBackupDatabaseDetailOutput) BackupFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.BackupFileName }).(pulumi.StringOutput)
+}
+
+// Backup file size (Bytes).
+func (o GetBackupBackupDatabaseDetailOutput) BackupFileSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) int { return v.BackupFileSize }).(pulumi.IntOutput)
+}
+
+// Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+func (o GetBackupBackupDatabaseDetailOutput) BackupStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.BackupStartTime }).(pulumi.StringOutput)
+}
+
+// Backup type. Values: Full (full backup), Diff (differential backup).
+func (o GetBackupBackupDatabaseDetailOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Database name.
+func (o GetBackupBackupDatabaseDetailOutput) DatabaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.DatabaseName }).(pulumi.StringOutput)
+}
+
+// Backup file preparation progress (%).
+func (o GetBackupBackupDatabaseDetailOutput) DownloadProgress() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) int { return v.DownloadProgress }).(pulumi.IntOutput)
+}
+
+// Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+func (o GetBackupBackupDatabaseDetailOutput) DownloadStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.DownloadStatus }).(pulumi.StringOutput)
+}
+
+// Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+func (o GetBackupBackupDatabaseDetailOutput) LinkExpiredTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupDatabaseDetail) string { return v.LinkExpiredTime }).(pulumi.StringOutput)
+}
+
+type GetBackupBackupDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetBackupBackupDatabaseDetailArrayOutput) ToGetBackupBackupDatabaseDetailArrayOutput() GetBackupBackupDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupDatabaseDetailArrayOutput) ToGetBackupBackupDatabaseDetailArrayOutputWithContext(ctx context.Context) GetBackupBackupDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetBackupBackupDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupBackupDatabaseDetail {
+		return vs[0].([]GetBackupBackupDatabaseDetail)[vs[1].(int)]
+	}).(GetBackupBackupDatabaseDetailOutput)
+}
+
+type GetBackupBackupMeta struct {
+	// Backup database name.
+	DbName string `pulumi:"dbName"`
+}
+
+// GetBackupBackupMetaInput is an input type that accepts GetBackupBackupMetaArgs and GetBackupBackupMetaOutput values.
+// You can construct a concrete instance of `GetBackupBackupMetaInput` via:
+//
+//	GetBackupBackupMetaArgs{...}
+type GetBackupBackupMetaInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput
+	ToGetBackupBackupMetaOutputWithContext(context.Context) GetBackupBackupMetaOutput
+}
+
+type GetBackupBackupMetaArgs struct {
+	// Backup database name.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+}
+
+func (GetBackupBackupMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (i GetBackupBackupMetaArgs) ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput {
+	return i.ToGetBackupBackupMetaOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupMetaArgs) ToGetBackupBackupMetaOutputWithContext(ctx context.Context) GetBackupBackupMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupMetaOutput)
+}
+
+// GetBackupBackupMetaArrayInput is an input type that accepts GetBackupBackupMetaArray and GetBackupBackupMetaArrayOutput values.
+// You can construct a concrete instance of `GetBackupBackupMetaArrayInput` via:
+//
+//	GetBackupBackupMetaArray{ GetBackupBackupMetaArgs{...} }
+type GetBackupBackupMetaArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput
+	ToGetBackupBackupMetaArrayOutputWithContext(context.Context) GetBackupBackupMetaArrayOutput
+}
+
+type GetBackupBackupMetaArray []GetBackupBackupMetaInput
+
+func (GetBackupBackupMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (i GetBackupBackupMetaArray) ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput {
+	return i.ToGetBackupBackupMetaArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupMetaArray) ToGetBackupBackupMetaArrayOutputWithContext(ctx context.Context) GetBackupBackupMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupMetaArrayOutput)
+}
+
+type GetBackupBackupMetaOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutputWithContext(ctx context.Context) GetBackupBackupMetaOutput {
+	return o
+}
+
+// Backup database name.
+func (o GetBackupBackupMetaOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupMeta) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+type GetBackupBackupMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (o GetBackupBackupMetaArrayOutput) ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaArrayOutput) ToGetBackupBackupMetaArrayOutputWithContext(ctx context.Context) GetBackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaArrayOutput) Index(i pulumi.IntInput) GetBackupBackupMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupBackupMeta {
+		return vs[0].([]GetBackupBackupMeta)[vs[1].(int)]
+	}).(GetBackupBackupMetaOutput)
+}
+
 type GetInstanceChargeInfo struct {
 	// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
 	AutoRenew bool `pulumi:"autoRenew"`
@@ -1900,6 +2468,10 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupDatabaseDetailInput)(nil)).Elem(), BackupBackupDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupDatabaseDetailArrayInput)(nil)).Elem(), BackupBackupDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaInput)(nil)).Elem(), BackupBackupMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaArrayInput)(nil)).Elem(), BackupBackupMetaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoInput)(nil)).Elem(), InstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoPtrInput)(nil)).Elem(), InstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoInput)(nil)).Elem(), InstanceConnectionInfoArgs{})
@@ -1912,6 +2484,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupDatabaseDetailInput)(nil)).Elem(), GetBackupBackupDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupDatabaseDetailArrayInput)(nil)).Elem(), GetBackupBackupDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaInput)(nil)).Elem(), GetBackupBackupMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaArrayInput)(nil)).Elem(), GetBackupBackupMetaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeInfoInput)(nil)).Elem(), GetInstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoInput)(nil)).Elem(), GetInstanceConnectionInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoArrayInput)(nil)).Elem(), GetInstanceConnectionInfoArray{})
@@ -1923,6 +2499,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(BackupBackupDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(BackupBackupDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(BackupBackupMetaOutput{})
+	pulumi.RegisterOutputType(BackupBackupMetaArrayOutput{})
 	pulumi.RegisterOutputType(InstanceChargeInfoOutput{})
 	pulumi.RegisterOutputType(InstanceChargeInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceConnectionInfoOutput{})
@@ -1935,6 +2515,10 @@ func init() {
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupMetaOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupMetaArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoArrayOutput{})

@@ -15014,6 +15014,28 @@ export namespace hbase {
 }
 
 export namespace iam {
+    export interface AllowedIpAddressIpList {
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * IP address
+         */
+        ip: string;
+    }
+
+    export interface GetAllowedIpAddressIpList {
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * IP address
+         */
+        ip: string;
+    }
+
     export interface GetGroupAttachedPolicy {
         /**
          * Policy binding time.
@@ -16612,6 +16634,50 @@ export namespace mongodb {
         vpc: string;
     }
 
+    export interface EndpointDbAddress {
+        /**
+         * Domain name of the connection address
+         */
+        addressDomain: string;
+        /**
+         * IP corresponding to the connection address
+         */
+        addressIp: string;
+        /**
+         * Port number of the connection address
+         */
+        addressPort: string;
+        /**
+         * Connection address type of the node. Possible values:
+         *   
+         *   Primary: Primary node connection address
+         *   Secondary: Secondary node connection address
+         *   Hidden: Hidden node connection address
+         *   ReadOnly: Read-only node connection address
+         *   
+         *   
+         *   **Note:**
+         *   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+         */
+        addressType: string;
+        /**
+         * EIP ID bound to the instance's public address
+         *   
+         *   
+         *   **Note:**
+         *   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+         */
+        eipId: string;
+        /**
+         * Node ID associated with the connection address
+         */
+        nodeId: string;
+        /**
+         * AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+         */
+        zoneId: string;
+    }
+
     export interface GetAccountAccountPrivilege {
         /**
          * Databases for which the account has permissions.
@@ -16640,6 +16706,54 @@ export namespace mongodb {
          * Private network ID of the instance.
          */
         vpc: string;
+    }
+
+    export interface GetEndpointDbAddress {
+        /**
+         * Domain name of the connection address
+         */
+        addressDomain: string;
+        /**
+         * IP corresponding to the connection address
+         *   
+         *   
+         *   **Note:**
+         *   It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
+         */
+        addressIp: string;
+        /**
+         * Port number of the connection address
+         */
+        addressPort: string;
+        /**
+         * Connection address type of the node. Possible values:
+         *   
+         *   Primary: Primary node connection address
+         *   Secondary: Secondary node connection address
+         *   Hidden: Hidden node connection address
+         *   ReadOnly: Read-only node connection address
+         *   
+         *   
+         *   **Note:**
+         *   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+         */
+        addressType: string;
+        /**
+         * EIP ID bound to the instance's public address
+         *   
+         *   
+         *   **Note:**
+         *   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+         */
+        eipId: string;
+        /**
+         * Node ID associated with the connection address
+         */
+        nodeId: string;
+        /**
+         * AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+         */
+        zoneId: string;
     }
 
     export interface GetInstanceConfigServer {
@@ -17425,6 +17539,17 @@ export namespace privatelink {
         value: string;
     }
 
+    export interface GatewayEndpointTag {
+        /**
+         * Tag key of the endpoint tag
+         */
+        key: string;
+        /**
+         * Tag value of the endpoint tag
+         */
+        value: string;
+    }
+
     export interface GetEndpointServicePrivateDnsNameConfiguration {
         /**
          * Domain verification name.
@@ -17466,6 +17591,17 @@ export namespace privatelink {
         key: string;
         /**
          * Tag value of the endpoint service tag.
+         */
+        value: string;
+    }
+
+    export interface GetGatewayEndpointTag {
+        /**
+         * Tag key of the endpoint tag
+         */
+        key: string;
+        /**
+         * Tag value of the endpoint tag
          */
         value: string;
     }
@@ -18240,6 +18376,60 @@ export namespace rdsmssql {
         vpc: string;
     }
 
+    export interface BackupBackupDatabaseDetail {
+        /**
+         * External network backup download link.
+         */
+        backupDownloadLinkEip: string;
+        /**
+         * Internal network backup download link.
+         */
+        backupDownloadLinkInner: string;
+        /**
+         * Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+         */
+        backupEndTime: string;
+        /**
+         * Backup file name.
+         */
+        backupFileName: string;
+        /**
+         * Backup file size (Bytes).
+         */
+        backupFileSize: number;
+        /**
+         * Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+         */
+        backupStartTime: string;
+        /**
+         * Backup type. Values: Full (full backup), Diff (differential backup).
+         */
+        backupType: string;
+        /**
+         * Database name.
+         */
+        databaseName: string;
+        /**
+         * Backup file preparation progress (%).
+         */
+        downloadProgress: number;
+        /**
+         * Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+         */
+        downloadStatus: string;
+        /**
+         * Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+         */
+        linkExpiredTime: string;
+    }
+
+    export interface BackupBackupMeta {
+        /**
+         * Backup database name.
+         */
+        dbName: string;
+    }
+
     export interface GetAllowListAssociatedInstance {
         /**
          * Instance ID
@@ -18265,6 +18455,60 @@ export namespace rdsmssql {
          * VPC ID of the instance
          */
         vpc: string;
+    }
+
+    export interface GetBackupBackupDatabaseDetail {
+        /**
+         * External network backup download link.
+         */
+        backupDownloadLinkEip: string;
+        /**
+         * Internal network backup download link.
+         */
+        backupDownloadLinkInner: string;
+        /**
+         * Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+         */
+        backupEndTime: string;
+        /**
+         * Backup file name.
+         */
+        backupFileName: string;
+        /**
+         * Backup file size (Bytes).
+         */
+        backupFileSize: number;
+        /**
+         * Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+         */
+        backupStartTime: string;
+        /**
+         * Backup type. Values: Full (full backup), Diff (differential backup).
+         */
+        backupType: string;
+        /**
+         * Database name.
+         */
+        databaseName: string;
+        /**
+         * Backup file preparation progress (%).
+         */
+        downloadProgress: number;
+        /**
+         * Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+         */
+        downloadStatus: string;
+        /**
+         * Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+         */
+        linkExpiredTime: string;
+    }
+
+    export interface GetBackupBackupMeta {
+        /**
+         * Backup database name.
+         */
+        dbName: string;
     }
 
     export interface GetInstanceChargeInfo {
@@ -21194,6 +21438,17 @@ export namespace storageebs {
         value: string;
     }
 
+    export interface GetSnapshotPolicyTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
     export interface GetSnapshotTag {
         /**
          * User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
@@ -21349,6 +21604,17 @@ export namespace storageebs {
     }
 
     export interface SnapshotGroupTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface SnapshotPolicyTag {
         /**
          * Tag key
          */
@@ -24224,6 +24490,28 @@ export namespace tls {
 }
 
 export namespace transitrouter {
+    export interface DirectConnectGatewayAttachmentTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetDirectConnectGatewayAttachmentTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
     export interface GetPeerAttachmentTag {
         /**
          * Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
@@ -24321,6 +24609,40 @@ export namespace transitrouter {
         key: string;
         /**
          * Tag value.
+         */
+        value: string;
+    }
+
+    export interface GetTransitRouterBandwidthPackageAllocation {
+        /**
+         * Time when the bandwidth package was associated with the cross-region connection.
+         */
+        allocateTime: string;
+        /**
+         * Bandwidth peak of the cross-region connection, in Mbps.
+         */
+        bandwidth: number;
+        /**
+         * Region ID of the local transit router instance in the cross-region connection.
+         */
+        localRegionId: string;
+        /**
+         * Region ID of the peer transit router instance in the cross-region connection.
+         */
+        peerRegionId: string;
+        /**
+         * ID of the cross-region connection.
+         */
+        transitRouterPeerAttachmentId: string;
+    }
+
+    export interface GetTransitRouterBandwidthPackageTag {
+        /**
+         * Tag key of the tag.
+         */
+        key: string;
+        /**
+         * Tag value
          */
         value: string;
     }
@@ -24478,6 +24800,40 @@ export namespace transitrouter {
         key: string;
         /**
          * Tag value.
+         */
+        value: string;
+    }
+
+    export interface TransitRouterBandwidthPackageAllocation {
+        /**
+         * Time when the bandwidth package was associated with the cross-region connection.
+         */
+        allocateTime: string;
+        /**
+         * Bandwidth peak of the cross-region connection, in Mbps.
+         */
+        bandwidth: number;
+        /**
+         * Region ID of the local transit router instance in the cross-region connection.
+         */
+        localRegionId: string;
+        /**
+         * Region ID of the peer transit router instance in the cross-region connection.
+         */
+        peerRegionId: string;
+        /**
+         * ID of the cross-region connection.
+         */
+        transitRouterPeerAttachmentId: string;
+    }
+
+    export interface TransitRouterBandwidthPackageTag {
+        /**
+         * Tag key of the tag.
+         */
+        key: string;
+        /**
+         * Tag value
          */
         value: string;
     }

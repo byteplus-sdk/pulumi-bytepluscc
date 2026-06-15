@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AllowedIpAddressIpList struct {
+	// Description
+	Description string `pulumi:"description"`
+	// IP address
+	Ip string `pulumi:"ip"`
+}
+
+// AllowedIpAddressIpListInput is an input type that accepts AllowedIpAddressIpListArgs and AllowedIpAddressIpListOutput values.
+// You can construct a concrete instance of `AllowedIpAddressIpListInput` via:
+//
+//	AllowedIpAddressIpListArgs{...}
+type AllowedIpAddressIpListInput interface {
+	pulumi.Input
+
+	ToAllowedIpAddressIpListOutput() AllowedIpAddressIpListOutput
+	ToAllowedIpAddressIpListOutputWithContext(context.Context) AllowedIpAddressIpListOutput
+}
+
+type AllowedIpAddressIpListArgs struct {
+	// Description
+	Description pulumi.StringInput `pulumi:"description"`
+	// IP address
+	Ip pulumi.StringInput `pulumi:"ip"`
+}
+
+func (AllowedIpAddressIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (i AllowedIpAddressIpListArgs) ToAllowedIpAddressIpListOutput() AllowedIpAddressIpListOutput {
+	return i.ToAllowedIpAddressIpListOutputWithContext(context.Background())
+}
+
+func (i AllowedIpAddressIpListArgs) ToAllowedIpAddressIpListOutputWithContext(ctx context.Context) AllowedIpAddressIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowedIpAddressIpListOutput)
+}
+
+// AllowedIpAddressIpListArrayInput is an input type that accepts AllowedIpAddressIpListArray and AllowedIpAddressIpListArrayOutput values.
+// You can construct a concrete instance of `AllowedIpAddressIpListArrayInput` via:
+//
+//	AllowedIpAddressIpListArray{ AllowedIpAddressIpListArgs{...} }
+type AllowedIpAddressIpListArrayInput interface {
+	pulumi.Input
+
+	ToAllowedIpAddressIpListArrayOutput() AllowedIpAddressIpListArrayOutput
+	ToAllowedIpAddressIpListArrayOutputWithContext(context.Context) AllowedIpAddressIpListArrayOutput
+}
+
+type AllowedIpAddressIpListArray []AllowedIpAddressIpListInput
+
+func (AllowedIpAddressIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (i AllowedIpAddressIpListArray) ToAllowedIpAddressIpListArrayOutput() AllowedIpAddressIpListArrayOutput {
+	return i.ToAllowedIpAddressIpListArrayOutputWithContext(context.Background())
+}
+
+func (i AllowedIpAddressIpListArray) ToAllowedIpAddressIpListArrayOutputWithContext(ctx context.Context) AllowedIpAddressIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowedIpAddressIpListArrayOutput)
+}
+
+type AllowedIpAddressIpListOutput struct{ *pulumi.OutputState }
+
+func (AllowedIpAddressIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (o AllowedIpAddressIpListOutput) ToAllowedIpAddressIpListOutput() AllowedIpAddressIpListOutput {
+	return o
+}
+
+func (o AllowedIpAddressIpListOutput) ToAllowedIpAddressIpListOutputWithContext(ctx context.Context) AllowedIpAddressIpListOutput {
+	return o
+}
+
+// Description
+func (o AllowedIpAddressIpListOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v AllowedIpAddressIpList) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o AllowedIpAddressIpListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v AllowedIpAddressIpList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+type AllowedIpAddressIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (AllowedIpAddressIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (o AllowedIpAddressIpListArrayOutput) ToAllowedIpAddressIpListArrayOutput() AllowedIpAddressIpListArrayOutput {
+	return o
+}
+
+func (o AllowedIpAddressIpListArrayOutput) ToAllowedIpAddressIpListArrayOutputWithContext(ctx context.Context) AllowedIpAddressIpListArrayOutput {
+	return o
+}
+
+func (o AllowedIpAddressIpListArrayOutput) Index(i pulumi.IntInput) AllowedIpAddressIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowedIpAddressIpList {
+		return vs[0].([]AllowedIpAddressIpList)[vs[1].(int)]
+	}).(AllowedIpAddressIpListOutput)
+}
+
 type GroupAttachedPolicy struct {
 	// Policy name.
 	PolicyName   *string                          `pulumi:"policyName"`
@@ -2284,6 +2390,112 @@ func (o UserTagArrayOutput) Index(i pulumi.IntInput) UserTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UserTag {
 		return vs[0].([]UserTag)[vs[1].(int)]
 	}).(UserTagOutput)
+}
+
+type GetAllowedIpAddressIpList struct {
+	// Description
+	Description string `pulumi:"description"`
+	// IP address
+	Ip string `pulumi:"ip"`
+}
+
+// GetAllowedIpAddressIpListInput is an input type that accepts GetAllowedIpAddressIpListArgs and GetAllowedIpAddressIpListOutput values.
+// You can construct a concrete instance of `GetAllowedIpAddressIpListInput` via:
+//
+//	GetAllowedIpAddressIpListArgs{...}
+type GetAllowedIpAddressIpListInput interface {
+	pulumi.Input
+
+	ToGetAllowedIpAddressIpListOutput() GetAllowedIpAddressIpListOutput
+	ToGetAllowedIpAddressIpListOutputWithContext(context.Context) GetAllowedIpAddressIpListOutput
+}
+
+type GetAllowedIpAddressIpListArgs struct {
+	// Description
+	Description pulumi.StringInput `pulumi:"description"`
+	// IP address
+	Ip pulumi.StringInput `pulumi:"ip"`
+}
+
+func (GetAllowedIpAddressIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (i GetAllowedIpAddressIpListArgs) ToGetAllowedIpAddressIpListOutput() GetAllowedIpAddressIpListOutput {
+	return i.ToGetAllowedIpAddressIpListOutputWithContext(context.Background())
+}
+
+func (i GetAllowedIpAddressIpListArgs) ToGetAllowedIpAddressIpListOutputWithContext(ctx context.Context) GetAllowedIpAddressIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowedIpAddressIpListOutput)
+}
+
+// GetAllowedIpAddressIpListArrayInput is an input type that accepts GetAllowedIpAddressIpListArray and GetAllowedIpAddressIpListArrayOutput values.
+// You can construct a concrete instance of `GetAllowedIpAddressIpListArrayInput` via:
+//
+//	GetAllowedIpAddressIpListArray{ GetAllowedIpAddressIpListArgs{...} }
+type GetAllowedIpAddressIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetAllowedIpAddressIpListArrayOutput() GetAllowedIpAddressIpListArrayOutput
+	ToGetAllowedIpAddressIpListArrayOutputWithContext(context.Context) GetAllowedIpAddressIpListArrayOutput
+}
+
+type GetAllowedIpAddressIpListArray []GetAllowedIpAddressIpListInput
+
+func (GetAllowedIpAddressIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (i GetAllowedIpAddressIpListArray) ToGetAllowedIpAddressIpListArrayOutput() GetAllowedIpAddressIpListArrayOutput {
+	return i.ToGetAllowedIpAddressIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllowedIpAddressIpListArray) ToGetAllowedIpAddressIpListArrayOutputWithContext(ctx context.Context) GetAllowedIpAddressIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowedIpAddressIpListArrayOutput)
+}
+
+type GetAllowedIpAddressIpListOutput struct{ *pulumi.OutputState }
+
+func (GetAllowedIpAddressIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (o GetAllowedIpAddressIpListOutput) ToGetAllowedIpAddressIpListOutput() GetAllowedIpAddressIpListOutput {
+	return o
+}
+
+func (o GetAllowedIpAddressIpListOutput) ToGetAllowedIpAddressIpListOutputWithContext(ctx context.Context) GetAllowedIpAddressIpListOutput {
+	return o
+}
+
+// Description
+func (o GetAllowedIpAddressIpListOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowedIpAddressIpList) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// IP address
+func (o GetAllowedIpAddressIpListOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowedIpAddressIpList) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+type GetAllowedIpAddressIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllowedIpAddressIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowedIpAddressIpList)(nil)).Elem()
+}
+
+func (o GetAllowedIpAddressIpListArrayOutput) ToGetAllowedIpAddressIpListArrayOutput() GetAllowedIpAddressIpListArrayOutput {
+	return o
+}
+
+func (o GetAllowedIpAddressIpListArrayOutput) ToGetAllowedIpAddressIpListArrayOutputWithContext(ctx context.Context) GetAllowedIpAddressIpListArrayOutput {
+	return o
+}
+
+func (o GetAllowedIpAddressIpListArrayOutput) Index(i pulumi.IntInput) GetAllowedIpAddressIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllowedIpAddressIpList {
+		return vs[0].([]GetAllowedIpAddressIpList)[vs[1].(int)]
+	}).(GetAllowedIpAddressIpListOutput)
 }
 
 type GetGroupAttachedPolicy struct {
@@ -4654,6 +4866,8 @@ func (o GetUserTagArrayOutput) Index(i pulumi.IntInput) GetUserTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowedIpAddressIpListInput)(nil)).Elem(), AllowedIpAddressIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowedIpAddressIpListArrayInput)(nil)).Elem(), AllowedIpAddressIpListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GroupAttachedPolicyInput)(nil)).Elem(), GroupAttachedPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GroupAttachedPolicyArrayInput)(nil)).Elem(), GroupAttachedPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GroupAttachedPolicyPolicyScopeInput)(nil)).Elem(), GroupAttachedPolicyPolicyScopeArgs{})
@@ -4688,6 +4902,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UserSecurityConfigPtrInput)(nil)).Elem(), UserSecurityConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserTagInput)(nil)).Elem(), UserTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserTagArrayInput)(nil)).Elem(), UserTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowedIpAddressIpListInput)(nil)).Elem(), GetAllowedIpAddressIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowedIpAddressIpListArrayInput)(nil)).Elem(), GetAllowedIpAddressIpListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupAttachedPolicyInput)(nil)).Elem(), GetGroupAttachedPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupAttachedPolicyArrayInput)(nil)).Elem(), GetGroupAttachedPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupAttachedPolicyPolicyScopeInput)(nil)).Elem(), GetGroupAttachedPolicyPolicyScopeArgs{})
@@ -4722,6 +4938,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserSecurityConfigInput)(nil)).Elem(), GetUserSecurityConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserTagInput)(nil)).Elem(), GetUserTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserTagArrayInput)(nil)).Elem(), GetUserTagArray{})
+	pulumi.RegisterOutputType(AllowedIpAddressIpListOutput{})
+	pulumi.RegisterOutputType(AllowedIpAddressIpListArrayOutput{})
 	pulumi.RegisterOutputType(GroupAttachedPolicyOutput{})
 	pulumi.RegisterOutputType(GroupAttachedPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GroupAttachedPolicyPolicyScopeOutput{})
@@ -4756,6 +4974,8 @@ func init() {
 	pulumi.RegisterOutputType(UserSecurityConfigPtrOutput{})
 	pulumi.RegisterOutputType(UserTagOutput{})
 	pulumi.RegisterOutputType(UserTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAllowedIpAddressIpListOutput{})
+	pulumi.RegisterOutputType(GetAllowedIpAddressIpListArrayOutput{})
 	pulumi.RegisterOutputType(GetGroupAttachedPolicyOutput{})
 	pulumi.RegisterOutputType(GetGroupAttachedPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetGroupAttachedPolicyPolicyScopeOutput{})

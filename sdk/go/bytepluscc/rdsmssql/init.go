@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:rdsmssql/allowList:AllowList":
 		r = &AllowList{}
+	case "bytepluscc:rdsmssql/backup:Backup":
+		r = &Backup{}
 	case "bytepluscc:rdsmssql/instance:Instance":
 		r = &Instance{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdsmssql/allowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdsmssql/backup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

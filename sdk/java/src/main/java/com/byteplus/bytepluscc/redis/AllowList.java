@@ -185,7 +185,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AllowList(java.lang.String name, @Nullable AllowListArgs args) {
+    public AllowList(java.lang.String name, AllowListArgs args) {
         this(name, args, null);
     }
     /**
@@ -194,7 +194,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AllowList(java.lang.String name, @Nullable AllowListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public AllowList(java.lang.String name, AllowListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("bytepluscc:redis/allowList:AllowList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
@@ -202,7 +202,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         super("bytepluscc:redis/allowList:AllowList", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static AllowListArgs makeArgs(@Nullable AllowListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    private static AllowListArgs makeArgs(AllowListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         if (options != null && options.getUrn().isPresent()) {
             return null;
         }

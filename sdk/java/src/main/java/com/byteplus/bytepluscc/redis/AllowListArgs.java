@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.redis;
 import com.byteplus.bytepluscc.redis.inputs.AllowListSecurityGroupBindInfoArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -66,15 +67,15 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
      * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
      * 
      */
-    @Import(name="allowListName")
-    private @Nullable Output<String> allowListName;
+    @Import(name="allowListName", required=true)
+    private Output<String> allowListName;
 
     /**
      * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
      * 
      */
-    public Optional<Output<String>> allowListName() {
-        return Optional.ofNullable(this.allowListName);
+    public Output<String> allowListName() {
+        return this.allowListName;
     }
 
     /**
@@ -213,7 +214,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder allowListName(@Nullable Output<String> allowListName) {
+        public Builder allowListName(Output<String> allowListName) {
             $.allowListName = allowListName;
             return this;
         }
@@ -294,6 +295,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AllowListArgs build() {
+            if ($.allowListName == null) {
+                throw new MissingRequiredPropertyException("AllowListArgs", "allowListName");
+            }
             return $;
         }
     }

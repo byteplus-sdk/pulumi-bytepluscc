@@ -19,6 +19,7 @@ __all__ = [
     'EndpointServicePrivateDnsNameConfiguration',
     'EndpointServiceResource',
     'EndpointServiceTag',
+    'GatewayEndpointTag',
     'VpcEndpointConnectionResourcesAllocate',
     'VpcEndpointConnectionZone',
     'VpcEndpointTag',
@@ -26,6 +27,7 @@ __all__ = [
     'GetEndpointServicePrivateDnsNameConfigurationResult',
     'GetEndpointServiceResourceResult',
     'GetEndpointServiceTagResult',
+    'GetGatewayEndpointTagResult',
     'GetVpcEndpointConnectionResourcesAllocateResult',
     'GetVpcEndpointConnectionZoneResult',
     'GetVpcEndpointTagResult',
@@ -164,6 +166,37 @@ class EndpointServiceTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         Tag value of the endpoint service tag.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GatewayEndpointTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key of the endpoint tag
+        :param builtins.str value: Tag value of the endpoint tag
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key of the endpoint tag
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value of the endpoint tag
         """
         return pulumi.get(self, "value")
 
@@ -591,6 +624,35 @@ class GetEndpointServiceTagResult(dict):
     def value(self) -> builtins.str:
         """
         Tag value of the endpoint service tag.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGatewayEndpointTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key of the endpoint tag
+        :param builtins.str value: Tag value of the endpoint tag
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key of the endpoint tag
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value of the endpoint tag
         """
         return pulumi.get(self, "value")
 

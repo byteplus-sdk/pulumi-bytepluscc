@@ -499,6 +499,112 @@ func (o SnapshotGroupTagArrayOutput) Index(i pulumi.IntInput) SnapshotGroupTagOu
 	}).(SnapshotGroupTagOutput)
 }
 
+type SnapshotPolicyTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// SnapshotPolicyTagInput is an input type that accepts SnapshotPolicyTagArgs and SnapshotPolicyTagOutput values.
+// You can construct a concrete instance of `SnapshotPolicyTagInput` via:
+//
+//	SnapshotPolicyTagArgs{...}
+type SnapshotPolicyTagInput interface {
+	pulumi.Input
+
+	ToSnapshotPolicyTagOutput() SnapshotPolicyTagOutput
+	ToSnapshotPolicyTagOutputWithContext(context.Context) SnapshotPolicyTagOutput
+}
+
+type SnapshotPolicyTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SnapshotPolicyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotPolicyTag)(nil)).Elem()
+}
+
+func (i SnapshotPolicyTagArgs) ToSnapshotPolicyTagOutput() SnapshotPolicyTagOutput {
+	return i.ToSnapshotPolicyTagOutputWithContext(context.Background())
+}
+
+func (i SnapshotPolicyTagArgs) ToSnapshotPolicyTagOutputWithContext(ctx context.Context) SnapshotPolicyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotPolicyTagOutput)
+}
+
+// SnapshotPolicyTagArrayInput is an input type that accepts SnapshotPolicyTagArray and SnapshotPolicyTagArrayOutput values.
+// You can construct a concrete instance of `SnapshotPolicyTagArrayInput` via:
+//
+//	SnapshotPolicyTagArray{ SnapshotPolicyTagArgs{...} }
+type SnapshotPolicyTagArrayInput interface {
+	pulumi.Input
+
+	ToSnapshotPolicyTagArrayOutput() SnapshotPolicyTagArrayOutput
+	ToSnapshotPolicyTagArrayOutputWithContext(context.Context) SnapshotPolicyTagArrayOutput
+}
+
+type SnapshotPolicyTagArray []SnapshotPolicyTagInput
+
+func (SnapshotPolicyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotPolicyTag)(nil)).Elem()
+}
+
+func (i SnapshotPolicyTagArray) ToSnapshotPolicyTagArrayOutput() SnapshotPolicyTagArrayOutput {
+	return i.ToSnapshotPolicyTagArrayOutputWithContext(context.Background())
+}
+
+func (i SnapshotPolicyTagArray) ToSnapshotPolicyTagArrayOutputWithContext(ctx context.Context) SnapshotPolicyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotPolicyTagArrayOutput)
+}
+
+type SnapshotPolicyTagOutput struct{ *pulumi.OutputState }
+
+func (SnapshotPolicyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotPolicyTag)(nil)).Elem()
+}
+
+func (o SnapshotPolicyTagOutput) ToSnapshotPolicyTagOutput() SnapshotPolicyTagOutput {
+	return o
+}
+
+func (o SnapshotPolicyTagOutput) ToSnapshotPolicyTagOutputWithContext(ctx context.Context) SnapshotPolicyTagOutput {
+	return o
+}
+
+// Tag key
+func (o SnapshotPolicyTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotPolicyTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o SnapshotPolicyTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotPolicyTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SnapshotPolicyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SnapshotPolicyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotPolicyTag)(nil)).Elem()
+}
+
+func (o SnapshotPolicyTagArrayOutput) ToSnapshotPolicyTagArrayOutput() SnapshotPolicyTagArrayOutput {
+	return o
+}
+
+func (o SnapshotPolicyTagArrayOutput) ToSnapshotPolicyTagArrayOutputWithContext(ctx context.Context) SnapshotPolicyTagArrayOutput {
+	return o
+}
+
+func (o SnapshotPolicyTagArrayOutput) Index(i pulumi.IntInput) SnapshotPolicyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotPolicyTag {
+		return vs[0].([]SnapshotPolicyTag)[vs[1].(int)]
+	}).(SnapshotPolicyTagOutput)
+}
+
 type SnapshotTag struct {
 	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key *string `pulumi:"key"`
@@ -1687,6 +1793,112 @@ func (o GetSnapshotGroupTagArrayOutput) Index(i pulumi.IntInput) GetSnapshotGrou
 	}).(GetSnapshotGroupTagOutput)
 }
 
+type GetSnapshotPolicyTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetSnapshotPolicyTagInput is an input type that accepts GetSnapshotPolicyTagArgs and GetSnapshotPolicyTagOutput values.
+// You can construct a concrete instance of `GetSnapshotPolicyTagInput` via:
+//
+//	GetSnapshotPolicyTagArgs{...}
+type GetSnapshotPolicyTagInput interface {
+	pulumi.Input
+
+	ToGetSnapshotPolicyTagOutput() GetSnapshotPolicyTagOutput
+	ToGetSnapshotPolicyTagOutputWithContext(context.Context) GetSnapshotPolicyTagOutput
+}
+
+type GetSnapshotPolicyTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSnapshotPolicyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotPolicyTag)(nil)).Elem()
+}
+
+func (i GetSnapshotPolicyTagArgs) ToGetSnapshotPolicyTagOutput() GetSnapshotPolicyTagOutput {
+	return i.ToGetSnapshotPolicyTagOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotPolicyTagArgs) ToGetSnapshotPolicyTagOutputWithContext(ctx context.Context) GetSnapshotPolicyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotPolicyTagOutput)
+}
+
+// GetSnapshotPolicyTagArrayInput is an input type that accepts GetSnapshotPolicyTagArray and GetSnapshotPolicyTagArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotPolicyTagArrayInput` via:
+//
+//	GetSnapshotPolicyTagArray{ GetSnapshotPolicyTagArgs{...} }
+type GetSnapshotPolicyTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotPolicyTagArrayOutput() GetSnapshotPolicyTagArrayOutput
+	ToGetSnapshotPolicyTagArrayOutputWithContext(context.Context) GetSnapshotPolicyTagArrayOutput
+}
+
+type GetSnapshotPolicyTagArray []GetSnapshotPolicyTagInput
+
+func (GetSnapshotPolicyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotPolicyTag)(nil)).Elem()
+}
+
+func (i GetSnapshotPolicyTagArray) ToGetSnapshotPolicyTagArrayOutput() GetSnapshotPolicyTagArrayOutput {
+	return i.ToGetSnapshotPolicyTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotPolicyTagArray) ToGetSnapshotPolicyTagArrayOutputWithContext(ctx context.Context) GetSnapshotPolicyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotPolicyTagArrayOutput)
+}
+
+type GetSnapshotPolicyTagOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotPolicyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotPolicyTag)(nil)).Elem()
+}
+
+func (o GetSnapshotPolicyTagOutput) ToGetSnapshotPolicyTagOutput() GetSnapshotPolicyTagOutput {
+	return o
+}
+
+func (o GetSnapshotPolicyTagOutput) ToGetSnapshotPolicyTagOutputWithContext(ctx context.Context) GetSnapshotPolicyTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetSnapshotPolicyTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotPolicyTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetSnapshotPolicyTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotPolicyTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSnapshotPolicyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotPolicyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotPolicyTag)(nil)).Elem()
+}
+
+func (o GetSnapshotPolicyTagArrayOutput) ToGetSnapshotPolicyTagArrayOutput() GetSnapshotPolicyTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotPolicyTagArrayOutput) ToGetSnapshotPolicyTagArrayOutputWithContext(ctx context.Context) GetSnapshotPolicyTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotPolicyTagArrayOutput) Index(i pulumi.IntInput) GetSnapshotPolicyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotPolicyTag {
+		return vs[0].([]GetSnapshotPolicyTag)[vs[1].(int)]
+	}).(GetSnapshotPolicyTagOutput)
+}
+
 type GetSnapshotTag struct {
 	// User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key string `pulumi:"key"`
@@ -2098,6 +2310,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupSnapshotTagArrayInput)(nil)).Elem(), SnapshotGroupSnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupTagInput)(nil)).Elem(), SnapshotGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotGroupTagArrayInput)(nil)).Elem(), SnapshotGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotPolicyTagInput)(nil)).Elem(), SnapshotPolicyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotPolicyTagArrayInput)(nil)).Elem(), SnapshotPolicyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotTagInput)(nil)).Elem(), SnapshotTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotTagArrayInput)(nil)).Elem(), SnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBaselinePerformanceInput)(nil)).Elem(), VolumeBaselinePerformanceArgs{})
@@ -2114,6 +2328,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupSnapshotTagArrayInput)(nil)).Elem(), GetSnapshotGroupSnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupTagInput)(nil)).Elem(), GetSnapshotGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotGroupTagArrayInput)(nil)).Elem(), GetSnapshotGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotPolicyTagInput)(nil)).Elem(), GetSnapshotPolicyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotPolicyTagArrayInput)(nil)).Elem(), GetSnapshotPolicyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotTagInput)(nil)).Elem(), GetSnapshotTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotTagArrayInput)(nil)).Elem(), GetSnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBaselinePerformanceInput)(nil)).Elem(), GetVolumeBaselinePerformanceArgs{})
@@ -2127,6 +2343,8 @@ func init() {
 	pulumi.RegisterOutputType(SnapshotGroupSnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(SnapshotGroupTagOutput{})
 	pulumi.RegisterOutputType(SnapshotGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(SnapshotPolicyTagOutput{})
+	pulumi.RegisterOutputType(SnapshotPolicyTagArrayOutput{})
 	pulumi.RegisterOutputType(SnapshotTagOutput{})
 	pulumi.RegisterOutputType(SnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(VolumeBaselinePerformanceOutput{})
@@ -2143,6 +2361,8 @@ func init() {
 	pulumi.RegisterOutputType(GetSnapshotGroupSnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotGroupTagOutput{})
 	pulumi.RegisterOutputType(GetSnapshotGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotPolicyTagOutput{})
+	pulumi.RegisterOutputType(GetSnapshotPolicyTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotTagOutput{})
 	pulumi.RegisterOutputType(GetSnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBaselinePerformanceOutput{})

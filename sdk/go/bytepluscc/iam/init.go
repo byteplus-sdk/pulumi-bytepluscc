@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:iam/accesskey:Accesskey":
 		r = &Accesskey{}
+	case "bytepluscc:iam/allowedIpAddress:AllowedIpAddress":
+		r = &AllowedIpAddress{}
 	case "bytepluscc:iam/group:Group":
 		r = &Group{}
 	case "bytepluscc:iam/oidcProvider:OidcProvider":
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"iam/accesskey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"iam/allowedIpAddress",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

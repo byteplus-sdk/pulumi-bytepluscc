@@ -6,12 +6,16 @@ package com.byteplus.bytepluscc.privatelink;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.privatelink.inputs.GetEndpointServiceArgs;
 import com.byteplus.bytepluscc.privatelink.inputs.GetEndpointServicePlainArgs;
+import com.byteplus.bytepluscc.privatelink.inputs.GetGatewayEndpointArgs;
+import com.byteplus.bytepluscc.privatelink.inputs.GetGatewayEndpointPlainArgs;
 import com.byteplus.bytepluscc.privatelink.inputs.GetVpcEndpointArgs;
 import com.byteplus.bytepluscc.privatelink.inputs.GetVpcEndpointConnectionArgs;
 import com.byteplus.bytepluscc.privatelink.inputs.GetVpcEndpointConnectionPlainArgs;
 import com.byteplus.bytepluscc.privatelink.inputs.GetVpcEndpointPlainArgs;
 import com.byteplus.bytepluscc.privatelink.outputs.GetEndpointServiceResult;
 import com.byteplus.bytepluscc.privatelink.outputs.GetEndpointServicesResult;
+import com.byteplus.bytepluscc.privatelink.outputs.GetGatewayEndpointResult;
+import com.byteplus.bytepluscc.privatelink.outputs.GetGatewayEndpointsResult;
 import com.byteplus.bytepluscc.privatelink.outputs.GetVpcEndpointConnectionResult;
 import com.byteplus.bytepluscc.privatelink.outputs.GetVpcEndpointConnectionsResult;
 import com.byteplus.bytepluscc.privatelink.outputs.GetVpcEndpointResult;
@@ -108,6 +112,90 @@ public final class PrivatelinkFunctions {
      */
     public static CompletableFuture<GetEndpointServicesResult> getEndpointServicesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:privatelink/getEndpointServices:getEndpointServices", TypeShape.of(GetEndpointServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointResult> getGatewayEndpoint(GetGatewayEndpointArgs args) {
+        return getGatewayEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static CompletableFuture<GetGatewayEndpointResult> getGatewayEndpointPlain(GetGatewayEndpointPlainArgs args) {
+        return getGatewayEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointResult> getGatewayEndpoint(GetGatewayEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getGatewayEndpoint:getGatewayEndpoint", TypeShape.of(GetGatewayEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointResult> getGatewayEndpoint(GetGatewayEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getGatewayEndpoint:getGatewayEndpoint", TypeShape.of(GetGatewayEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static CompletableFuture<GetGatewayEndpointResult> getGatewayEndpointPlain(GetGatewayEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatelink/getGatewayEndpoint:getGatewayEndpoint", TypeShape.of(GetGatewayEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointsResult> getGatewayEndpoints() {
+        return getGatewayEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static CompletableFuture<GetGatewayEndpointsResult> getGatewayEndpointsPlain() {
+        return getGatewayEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointsResult> getGatewayEndpoints(InvokeArgs args) {
+        return getGatewayEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static CompletableFuture<GetGatewayEndpointsResult> getGatewayEndpointsPlain(InvokeArgs args) {
+        return getGatewayEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointsResult> getGatewayEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getGatewayEndpoints:getGatewayEndpoints", TypeShape.of(GetGatewayEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static Output<GetGatewayEndpointsResult> getGatewayEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:privatelink/getGatewayEndpoints:getGatewayEndpoints", TypeShape.of(GetGatewayEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::PrivateLink::GatewayEndpoint
+     * 
+     */
+    public static CompletableFuture<GetGatewayEndpointsResult> getGatewayEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:privatelink/getGatewayEndpoints:getGatewayEndpoints", TypeShape.of(GetGatewayEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::PrivateLink::VpcEndpoint

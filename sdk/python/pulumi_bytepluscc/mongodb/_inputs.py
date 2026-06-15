@@ -20,6 +20,8 @@ __all__ = [
     'AccountAccountPrivilegeArgsDict',
     'AllowListAssociatedInstanceArgs',
     'AllowListAssociatedInstanceArgsDict',
+    'EndpointDbAddressArgs',
+    'EndpointDbAddressArgsDict',
     'InstanceConfigServerArgs',
     'InstanceConfigServerArgsDict',
     'InstanceInstanceParameterArgs',
@@ -182,6 +184,197 @@ class AllowListAssociatedInstanceArgs:
     @vpc.setter
     def vpc(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "vpc", value)
+
+
+if not MYPY:
+    class EndpointDbAddressArgsDict(TypedDict):
+        address_domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Domain name of the connection address
+        """
+        address_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP corresponding to the connection address
+        """
+        address_port: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Port number of the connection address
+        """
+        address_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Connection address type of the node. Possible values:
+          
+          Primary: Primary node connection address
+          Secondary: Secondary node connection address
+          Hidden: Hidden node connection address
+          ReadOnly: Read-only node connection address
+          
+          
+          **Note:**
+          Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+        """
+        eip_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        EIP ID bound to the instance's public address
+          
+          
+          **Note:**
+          This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+        """
+        node_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Node ID associated with the connection address
+        """
+        zone_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+        """
+elif False:
+    EndpointDbAddressArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointDbAddressArgs:
+    def __init__(__self__, *,
+                 address_domain: Optional[pulumi.Input[builtins.str]] = None,
+                 address_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 address_port: Optional[pulumi.Input[builtins.str]] = None,
+                 address_type: Optional[pulumi.Input[builtins.str]] = None,
+                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
+                 node_id: Optional[pulumi.Input[builtins.str]] = None,
+                 zone_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address_domain: Domain name of the connection address
+        :param pulumi.Input[builtins.str] address_ip: IP corresponding to the connection address
+        :param pulumi.Input[builtins.str] address_port: Port number of the connection address
+        :param pulumi.Input[builtins.str] address_type: Connection address type of the node. Possible values:
+                 
+                 Primary: Primary node connection address
+                 Secondary: Secondary node connection address
+                 Hidden: Hidden node connection address
+                 ReadOnly: Read-only node connection address
+                 
+                 
+                 **Note:**
+                 Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+        :param pulumi.Input[builtins.str] eip_id: EIP ID bound to the instance's public address
+                 
+                 
+                 **Note:**
+                 This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+        :param pulumi.Input[builtins.str] node_id: Node ID associated with the connection address
+        :param pulumi.Input[builtins.str] zone_id: AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+        """
+        if address_domain is not None:
+            pulumi.set(__self__, "address_domain", address_domain)
+        if address_ip is not None:
+            pulumi.set(__self__, "address_ip", address_ip)
+        if address_port is not None:
+            pulumi.set(__self__, "address_port", address_port)
+        if address_type is not None:
+            pulumi.set(__self__, "address_type", address_type)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="addressDomain")
+    def address_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Domain name of the connection address
+        """
+        return pulumi.get(self, "address_domain")
+
+    @address_domain.setter
+    def address_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address_domain", value)
+
+    @property
+    @pulumi.getter(name="addressIp")
+    def address_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP corresponding to the connection address
+        """
+        return pulumi.get(self, "address_ip")
+
+    @address_ip.setter
+    def address_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address_ip", value)
+
+    @property
+    @pulumi.getter(name="addressPort")
+    def address_port(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Port number of the connection address
+        """
+        return pulumi.get(self, "address_port")
+
+    @address_port.setter
+    def address_port(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address_port", value)
+
+    @property
+    @pulumi.getter(name="addressType")
+    def address_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Connection address type of the node. Possible values:
+          
+          Primary: Primary node connection address
+          Secondary: Secondary node connection address
+          Hidden: Hidden node connection address
+          ReadOnly: Read-only node connection address
+          
+          
+          **Note:**
+          Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+        """
+        return pulumi.get(self, "address_type")
+
+    @address_type.setter
+    def address_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address_type", value)
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        EIP ID bound to the instance's public address
+          
+          
+          **Note:**
+          This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+        """
+        return pulumi.get(self, "eip_id")
+
+    @eip_id.setter
+    def eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eip_id", value)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Node ID associated with the connection address
+        """
+        return pulumi.get(self, "node_id")
+
+    @node_id.setter
+    def node_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_id", value)
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+        """
+        return pulumi.get(self, "zone_id")
+
+    @zone_id.setter
+    def zone_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "zone_id", value)
 
 
 if not MYPY:

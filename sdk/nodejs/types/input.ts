@@ -7309,6 +7309,17 @@ export namespace hbase {
 }
 
 export namespace iam {
+    export interface AllowedIpAddressIpList {
+        /**
+         * Description
+         */
+        description: pulumi.Input<string>;
+        /**
+         * IP address
+         */
+        ip: pulumi.Input<string>;
+    }
+
     export interface GroupAttachedPolicy {
         /**
          * Policy name.
@@ -8036,6 +8047,50 @@ export namespace mongodb {
         vpc?: pulumi.Input<string>;
     }
 
+    export interface EndpointDbAddress {
+        /**
+         * Domain name of the connection address
+         */
+        addressDomain?: pulumi.Input<string>;
+        /**
+         * IP corresponding to the connection address
+         */
+        addressIp?: pulumi.Input<string>;
+        /**
+         * Port number of the connection address
+         */
+        addressPort?: pulumi.Input<string>;
+        /**
+         * Connection address type of the node. Possible values:
+         *   
+         *   Primary: Primary node connection address
+         *   Secondary: Secondary node connection address
+         *   Hidden: Hidden node connection address
+         *   ReadOnly: Read-only node connection address
+         *   
+         *   
+         *   **Note:**
+         *   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
+         */
+        addressType?: pulumi.Input<string>;
+        /**
+         * EIP ID bound to the instance's public address
+         *   
+         *   
+         *   **Note:**
+         *   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * Node ID associated with the connection address
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
     export interface InstanceConfigServer {
         /**
          * ConfigServer node ID
@@ -8432,6 +8487,17 @@ export namespace privatelink {
         value?: pulumi.Input<string>;
     }
 
+    export interface GatewayEndpointTag {
+        /**
+         * Tag key of the endpoint tag
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value of the endpoint tag
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface VpcEndpointConnectionResourcesAllocate {
         /**
          * Specify the service resource for the endpoint connection
@@ -8808,6 +8874,60 @@ export namespace rdsmssql {
          * VPC ID of the instance
          */
         vpc?: pulumi.Input<string>;
+    }
+
+    export interface BackupBackupDatabaseDetail {
+        /**
+         * External network backup download link.
+         */
+        backupDownloadLinkEip?: pulumi.Input<string>;
+        /**
+         * Internal network backup download link.
+         */
+        backupDownloadLinkInner?: pulumi.Input<string>;
+        /**
+         * Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+         */
+        backupEndTime?: pulumi.Input<string>;
+        /**
+         * Backup file name.
+         */
+        backupFileName?: pulumi.Input<string>;
+        /**
+         * Backup file size (Bytes).
+         */
+        backupFileSize?: pulumi.Input<number>;
+        /**
+         * Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+         */
+        backupStartTime?: pulumi.Input<string>;
+        /**
+         * Backup type. Values: Full (full backup), Diff (differential backup).
+         */
+        backupType?: pulumi.Input<string>;
+        /**
+         * Database name.
+         */
+        databaseName?: pulumi.Input<string>;
+        /**
+         * Backup file preparation progress (%).
+         */
+        downloadProgress?: pulumi.Input<number>;
+        /**
+         * Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+         */
+        downloadStatus?: pulumi.Input<string>;
+        /**
+         * Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+         */
+        linkExpiredTime?: pulumi.Input<string>;
+    }
+
+    export interface BackupBackupMeta {
+        /**
+         * Backup database name.
+         */
+        dbName?: pulumi.Input<string>;
     }
 
     export interface InstanceChargeInfo {
@@ -10250,6 +10370,17 @@ export namespace storageebs {
         value?: pulumi.Input<string>;
     }
 
+    export interface SnapshotPolicyTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface SnapshotTag {
         /**
          * User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
@@ -11555,6 +11686,17 @@ export namespace tls {
 }
 
 export namespace transitrouter {
+    export interface DirectConnectGatewayAttachmentTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface PeerAttachmentTag {
         /**
          * Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
@@ -11649,6 +11791,40 @@ export namespace transitrouter {
         key?: pulumi.Input<string>;
         /**
          * Tag value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TransitRouterBandwidthPackageAllocation {
+        /**
+         * Time when the bandwidth package was associated with the cross-region connection.
+         */
+        allocateTime?: pulumi.Input<string>;
+        /**
+         * Bandwidth peak of the cross-region connection, in Mbps.
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * Region ID of the local transit router instance in the cross-region connection.
+         */
+        localRegionId?: pulumi.Input<string>;
+        /**
+         * Region ID of the peer transit router instance in the cross-region connection.
+         */
+        peerRegionId?: pulumi.Input<string>;
+        /**
+         * ID of the cross-region connection.
+         */
+        transitRouterPeerAttachmentId?: pulumi.Input<string>;
+    }
+
+    export interface TransitRouterBandwidthPackageTag {
+        /**
+         * Tag key of the tag.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
          */
         value?: pulumi.Input<string>;
     }

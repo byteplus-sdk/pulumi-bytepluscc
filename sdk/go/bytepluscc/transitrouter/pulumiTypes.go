@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type DirectConnectGatewayAttachmentTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// DirectConnectGatewayAttachmentTagInput is an input type that accepts DirectConnectGatewayAttachmentTagArgs and DirectConnectGatewayAttachmentTagOutput values.
+// You can construct a concrete instance of `DirectConnectGatewayAttachmentTagInput` via:
+//
+//	DirectConnectGatewayAttachmentTagArgs{...}
+type DirectConnectGatewayAttachmentTagInput interface {
+	pulumi.Input
+
+	ToDirectConnectGatewayAttachmentTagOutput() DirectConnectGatewayAttachmentTagOutput
+	ToDirectConnectGatewayAttachmentTagOutputWithContext(context.Context) DirectConnectGatewayAttachmentTagOutput
+}
+
+type DirectConnectGatewayAttachmentTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DirectConnectGatewayAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (i DirectConnectGatewayAttachmentTagArgs) ToDirectConnectGatewayAttachmentTagOutput() DirectConnectGatewayAttachmentTagOutput {
+	return i.ToDirectConnectGatewayAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i DirectConnectGatewayAttachmentTagArgs) ToDirectConnectGatewayAttachmentTagOutputWithContext(ctx context.Context) DirectConnectGatewayAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DirectConnectGatewayAttachmentTagOutput)
+}
+
+// DirectConnectGatewayAttachmentTagArrayInput is an input type that accepts DirectConnectGatewayAttachmentTagArray and DirectConnectGatewayAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `DirectConnectGatewayAttachmentTagArrayInput` via:
+//
+//	DirectConnectGatewayAttachmentTagArray{ DirectConnectGatewayAttachmentTagArgs{...} }
+type DirectConnectGatewayAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToDirectConnectGatewayAttachmentTagArrayOutput() DirectConnectGatewayAttachmentTagArrayOutput
+	ToDirectConnectGatewayAttachmentTagArrayOutputWithContext(context.Context) DirectConnectGatewayAttachmentTagArrayOutput
+}
+
+type DirectConnectGatewayAttachmentTagArray []DirectConnectGatewayAttachmentTagInput
+
+func (DirectConnectGatewayAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (i DirectConnectGatewayAttachmentTagArray) ToDirectConnectGatewayAttachmentTagArrayOutput() DirectConnectGatewayAttachmentTagArrayOutput {
+	return i.ToDirectConnectGatewayAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i DirectConnectGatewayAttachmentTagArray) ToDirectConnectGatewayAttachmentTagArrayOutputWithContext(ctx context.Context) DirectConnectGatewayAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DirectConnectGatewayAttachmentTagArrayOutput)
+}
+
+type DirectConnectGatewayAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (DirectConnectGatewayAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (o DirectConnectGatewayAttachmentTagOutput) ToDirectConnectGatewayAttachmentTagOutput() DirectConnectGatewayAttachmentTagOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAttachmentTagOutput) ToDirectConnectGatewayAttachmentTagOutputWithContext(ctx context.Context) DirectConnectGatewayAttachmentTagOutput {
+	return o
+}
+
+// Tag key
+func (o DirectConnectGatewayAttachmentTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DirectConnectGatewayAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o DirectConnectGatewayAttachmentTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DirectConnectGatewayAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DirectConnectGatewayAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (DirectConnectGatewayAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (o DirectConnectGatewayAttachmentTagArrayOutput) ToDirectConnectGatewayAttachmentTagArrayOutput() DirectConnectGatewayAttachmentTagArrayOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAttachmentTagArrayOutput) ToDirectConnectGatewayAttachmentTagArrayOutputWithContext(ctx context.Context) DirectConnectGatewayAttachmentTagArrayOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAttachmentTagArrayOutput) Index(i pulumi.IntInput) DirectConnectGatewayAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DirectConnectGatewayAttachmentTag {
+		return vs[0].([]DirectConnectGatewayAttachmentTag)[vs[1].(int)]
+	}).(DirectConnectGatewayAttachmentTagOutput)
+}
+
 type PeerAttachmentTag struct {
 	// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
 	Key *string `pulumi:"key"`
@@ -479,6 +585,245 @@ func (o TransitRouterAttachmentTagArrayOutput) Index(i pulumi.IntInput) TransitR
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TransitRouterAttachmentTag {
 		return vs[0].([]TransitRouterAttachmentTag)[vs[1].(int)]
 	}).(TransitRouterAttachmentTagOutput)
+}
+
+type TransitRouterBandwidthPackageAllocation struct {
+	// Time when the bandwidth package was associated with the cross-region connection.
+	AllocateTime *string `pulumi:"allocateTime"`
+	// Bandwidth peak of the cross-region connection, in Mbps.
+	Bandwidth *int `pulumi:"bandwidth"`
+	// Region ID of the local transit router instance in the cross-region connection.
+	LocalRegionId *string `pulumi:"localRegionId"`
+	// Region ID of the peer transit router instance in the cross-region connection.
+	PeerRegionId *string `pulumi:"peerRegionId"`
+	// ID of the cross-region connection.
+	TransitRouterPeerAttachmentId *string `pulumi:"transitRouterPeerAttachmentId"`
+}
+
+// TransitRouterBandwidthPackageAllocationInput is an input type that accepts TransitRouterBandwidthPackageAllocationArgs and TransitRouterBandwidthPackageAllocationOutput values.
+// You can construct a concrete instance of `TransitRouterBandwidthPackageAllocationInput` via:
+//
+//	TransitRouterBandwidthPackageAllocationArgs{...}
+type TransitRouterBandwidthPackageAllocationInput interface {
+	pulumi.Input
+
+	ToTransitRouterBandwidthPackageAllocationOutput() TransitRouterBandwidthPackageAllocationOutput
+	ToTransitRouterBandwidthPackageAllocationOutputWithContext(context.Context) TransitRouterBandwidthPackageAllocationOutput
+}
+
+type TransitRouterBandwidthPackageAllocationArgs struct {
+	// Time when the bandwidth package was associated with the cross-region connection.
+	AllocateTime pulumi.StringPtrInput `pulumi:"allocateTime"`
+	// Bandwidth peak of the cross-region connection, in Mbps.
+	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
+	// Region ID of the local transit router instance in the cross-region connection.
+	LocalRegionId pulumi.StringPtrInput `pulumi:"localRegionId"`
+	// Region ID of the peer transit router instance in the cross-region connection.
+	PeerRegionId pulumi.StringPtrInput `pulumi:"peerRegionId"`
+	// ID of the cross-region connection.
+	TransitRouterPeerAttachmentId pulumi.StringPtrInput `pulumi:"transitRouterPeerAttachmentId"`
+}
+
+func (TransitRouterBandwidthPackageAllocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (i TransitRouterBandwidthPackageAllocationArgs) ToTransitRouterBandwidthPackageAllocationOutput() TransitRouterBandwidthPackageAllocationOutput {
+	return i.ToTransitRouterBandwidthPackageAllocationOutputWithContext(context.Background())
+}
+
+func (i TransitRouterBandwidthPackageAllocationArgs) ToTransitRouterBandwidthPackageAllocationOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageAllocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TransitRouterBandwidthPackageAllocationOutput)
+}
+
+// TransitRouterBandwidthPackageAllocationArrayInput is an input type that accepts TransitRouterBandwidthPackageAllocationArray and TransitRouterBandwidthPackageAllocationArrayOutput values.
+// You can construct a concrete instance of `TransitRouterBandwidthPackageAllocationArrayInput` via:
+//
+//	TransitRouterBandwidthPackageAllocationArray{ TransitRouterBandwidthPackageAllocationArgs{...} }
+type TransitRouterBandwidthPackageAllocationArrayInput interface {
+	pulumi.Input
+
+	ToTransitRouterBandwidthPackageAllocationArrayOutput() TransitRouterBandwidthPackageAllocationArrayOutput
+	ToTransitRouterBandwidthPackageAllocationArrayOutputWithContext(context.Context) TransitRouterBandwidthPackageAllocationArrayOutput
+}
+
+type TransitRouterBandwidthPackageAllocationArray []TransitRouterBandwidthPackageAllocationInput
+
+func (TransitRouterBandwidthPackageAllocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (i TransitRouterBandwidthPackageAllocationArray) ToTransitRouterBandwidthPackageAllocationArrayOutput() TransitRouterBandwidthPackageAllocationArrayOutput {
+	return i.ToTransitRouterBandwidthPackageAllocationArrayOutputWithContext(context.Background())
+}
+
+func (i TransitRouterBandwidthPackageAllocationArray) ToTransitRouterBandwidthPackageAllocationArrayOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageAllocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TransitRouterBandwidthPackageAllocationArrayOutput)
+}
+
+type TransitRouterBandwidthPackageAllocationOutput struct{ *pulumi.OutputState }
+
+func (TransitRouterBandwidthPackageAllocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (o TransitRouterBandwidthPackageAllocationOutput) ToTransitRouterBandwidthPackageAllocationOutput() TransitRouterBandwidthPackageAllocationOutput {
+	return o
+}
+
+func (o TransitRouterBandwidthPackageAllocationOutput) ToTransitRouterBandwidthPackageAllocationOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageAllocationOutput {
+	return o
+}
+
+// Time when the bandwidth package was associated with the cross-region connection.
+func (o TransitRouterBandwidthPackageAllocationOutput) AllocateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageAllocation) *string { return v.AllocateTime }).(pulumi.StringPtrOutput)
+}
+
+// Bandwidth peak of the cross-region connection, in Mbps.
+func (o TransitRouterBandwidthPackageAllocationOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageAllocation) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
+}
+
+// Region ID of the local transit router instance in the cross-region connection.
+func (o TransitRouterBandwidthPackageAllocationOutput) LocalRegionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageAllocation) *string { return v.LocalRegionId }).(pulumi.StringPtrOutput)
+}
+
+// Region ID of the peer transit router instance in the cross-region connection.
+func (o TransitRouterBandwidthPackageAllocationOutput) PeerRegionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageAllocation) *string { return v.PeerRegionId }).(pulumi.StringPtrOutput)
+}
+
+// ID of the cross-region connection.
+func (o TransitRouterBandwidthPackageAllocationOutput) TransitRouterPeerAttachmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageAllocation) *string { return v.TransitRouterPeerAttachmentId }).(pulumi.StringPtrOutput)
+}
+
+type TransitRouterBandwidthPackageAllocationArrayOutput struct{ *pulumi.OutputState }
+
+func (TransitRouterBandwidthPackageAllocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (o TransitRouterBandwidthPackageAllocationArrayOutput) ToTransitRouterBandwidthPackageAllocationArrayOutput() TransitRouterBandwidthPackageAllocationArrayOutput {
+	return o
+}
+
+func (o TransitRouterBandwidthPackageAllocationArrayOutput) ToTransitRouterBandwidthPackageAllocationArrayOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageAllocationArrayOutput {
+	return o
+}
+
+func (o TransitRouterBandwidthPackageAllocationArrayOutput) Index(i pulumi.IntInput) TransitRouterBandwidthPackageAllocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TransitRouterBandwidthPackageAllocation {
+		return vs[0].([]TransitRouterBandwidthPackageAllocation)[vs[1].(int)]
+	}).(TransitRouterBandwidthPackageAllocationOutput)
+}
+
+type TransitRouterBandwidthPackageTag struct {
+	// Tag key of the tag.
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// TransitRouterBandwidthPackageTagInput is an input type that accepts TransitRouterBandwidthPackageTagArgs and TransitRouterBandwidthPackageTagOutput values.
+// You can construct a concrete instance of `TransitRouterBandwidthPackageTagInput` via:
+//
+//	TransitRouterBandwidthPackageTagArgs{...}
+type TransitRouterBandwidthPackageTagInput interface {
+	pulumi.Input
+
+	ToTransitRouterBandwidthPackageTagOutput() TransitRouterBandwidthPackageTagOutput
+	ToTransitRouterBandwidthPackageTagOutputWithContext(context.Context) TransitRouterBandwidthPackageTagOutput
+}
+
+type TransitRouterBandwidthPackageTagArgs struct {
+	// Tag key of the tag.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TransitRouterBandwidthPackageTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (i TransitRouterBandwidthPackageTagArgs) ToTransitRouterBandwidthPackageTagOutput() TransitRouterBandwidthPackageTagOutput {
+	return i.ToTransitRouterBandwidthPackageTagOutputWithContext(context.Background())
+}
+
+func (i TransitRouterBandwidthPackageTagArgs) ToTransitRouterBandwidthPackageTagOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TransitRouterBandwidthPackageTagOutput)
+}
+
+// TransitRouterBandwidthPackageTagArrayInput is an input type that accepts TransitRouterBandwidthPackageTagArray and TransitRouterBandwidthPackageTagArrayOutput values.
+// You can construct a concrete instance of `TransitRouterBandwidthPackageTagArrayInput` via:
+//
+//	TransitRouterBandwidthPackageTagArray{ TransitRouterBandwidthPackageTagArgs{...} }
+type TransitRouterBandwidthPackageTagArrayInput interface {
+	pulumi.Input
+
+	ToTransitRouterBandwidthPackageTagArrayOutput() TransitRouterBandwidthPackageTagArrayOutput
+	ToTransitRouterBandwidthPackageTagArrayOutputWithContext(context.Context) TransitRouterBandwidthPackageTagArrayOutput
+}
+
+type TransitRouterBandwidthPackageTagArray []TransitRouterBandwidthPackageTagInput
+
+func (TransitRouterBandwidthPackageTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (i TransitRouterBandwidthPackageTagArray) ToTransitRouterBandwidthPackageTagArrayOutput() TransitRouterBandwidthPackageTagArrayOutput {
+	return i.ToTransitRouterBandwidthPackageTagArrayOutputWithContext(context.Background())
+}
+
+func (i TransitRouterBandwidthPackageTagArray) ToTransitRouterBandwidthPackageTagArrayOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TransitRouterBandwidthPackageTagArrayOutput)
+}
+
+type TransitRouterBandwidthPackageTagOutput struct{ *pulumi.OutputState }
+
+func (TransitRouterBandwidthPackageTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (o TransitRouterBandwidthPackageTagOutput) ToTransitRouterBandwidthPackageTagOutput() TransitRouterBandwidthPackageTagOutput {
+	return o
+}
+
+func (o TransitRouterBandwidthPackageTagOutput) ToTransitRouterBandwidthPackageTagOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageTagOutput {
+	return o
+}
+
+// Tag key of the tag.
+func (o TransitRouterBandwidthPackageTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o TransitRouterBandwidthPackageTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterBandwidthPackageTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TransitRouterBandwidthPackageTagArrayOutput struct{ *pulumi.OutputState }
+
+func (TransitRouterBandwidthPackageTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (o TransitRouterBandwidthPackageTagArrayOutput) ToTransitRouterBandwidthPackageTagArrayOutput() TransitRouterBandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o TransitRouterBandwidthPackageTagArrayOutput) ToTransitRouterBandwidthPackageTagArrayOutputWithContext(ctx context.Context) TransitRouterBandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o TransitRouterBandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) TransitRouterBandwidthPackageTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TransitRouterBandwidthPackageTag {
+		return vs[0].([]TransitRouterBandwidthPackageTag)[vs[1].(int)]
+	}).(TransitRouterBandwidthPackageTagOutput)
 }
 
 type TransitRouterRouteTableTag struct {
@@ -1011,6 +1356,112 @@ func (o VpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) VpnAttachmentTagOu
 	}).(VpnAttachmentTagOutput)
 }
 
+type GetDirectConnectGatewayAttachmentTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetDirectConnectGatewayAttachmentTagInput is an input type that accepts GetDirectConnectGatewayAttachmentTagArgs and GetDirectConnectGatewayAttachmentTagOutput values.
+// You can construct a concrete instance of `GetDirectConnectGatewayAttachmentTagInput` via:
+//
+//	GetDirectConnectGatewayAttachmentTagArgs{...}
+type GetDirectConnectGatewayAttachmentTagInput interface {
+	pulumi.Input
+
+	ToGetDirectConnectGatewayAttachmentTagOutput() GetDirectConnectGatewayAttachmentTagOutput
+	ToGetDirectConnectGatewayAttachmentTagOutputWithContext(context.Context) GetDirectConnectGatewayAttachmentTagOutput
+}
+
+type GetDirectConnectGatewayAttachmentTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDirectConnectGatewayAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (i GetDirectConnectGatewayAttachmentTagArgs) ToGetDirectConnectGatewayAttachmentTagOutput() GetDirectConnectGatewayAttachmentTagOutput {
+	return i.ToGetDirectConnectGatewayAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i GetDirectConnectGatewayAttachmentTagArgs) ToGetDirectConnectGatewayAttachmentTagOutputWithContext(ctx context.Context) GetDirectConnectGatewayAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDirectConnectGatewayAttachmentTagOutput)
+}
+
+// GetDirectConnectGatewayAttachmentTagArrayInput is an input type that accepts GetDirectConnectGatewayAttachmentTagArray and GetDirectConnectGatewayAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `GetDirectConnectGatewayAttachmentTagArrayInput` via:
+//
+//	GetDirectConnectGatewayAttachmentTagArray{ GetDirectConnectGatewayAttachmentTagArgs{...} }
+type GetDirectConnectGatewayAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDirectConnectGatewayAttachmentTagArrayOutput() GetDirectConnectGatewayAttachmentTagArrayOutput
+	ToGetDirectConnectGatewayAttachmentTagArrayOutputWithContext(context.Context) GetDirectConnectGatewayAttachmentTagArrayOutput
+}
+
+type GetDirectConnectGatewayAttachmentTagArray []GetDirectConnectGatewayAttachmentTagInput
+
+func (GetDirectConnectGatewayAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (i GetDirectConnectGatewayAttachmentTagArray) ToGetDirectConnectGatewayAttachmentTagArrayOutput() GetDirectConnectGatewayAttachmentTagArrayOutput {
+	return i.ToGetDirectConnectGatewayAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDirectConnectGatewayAttachmentTagArray) ToGetDirectConnectGatewayAttachmentTagArrayOutputWithContext(ctx context.Context) GetDirectConnectGatewayAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDirectConnectGatewayAttachmentTagArrayOutput)
+}
+
+type GetDirectConnectGatewayAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (GetDirectConnectGatewayAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (o GetDirectConnectGatewayAttachmentTagOutput) ToGetDirectConnectGatewayAttachmentTagOutput() GetDirectConnectGatewayAttachmentTagOutput {
+	return o
+}
+
+func (o GetDirectConnectGatewayAttachmentTagOutput) ToGetDirectConnectGatewayAttachmentTagOutputWithContext(ctx context.Context) GetDirectConnectGatewayAttachmentTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetDirectConnectGatewayAttachmentTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDirectConnectGatewayAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetDirectConnectGatewayAttachmentTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDirectConnectGatewayAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDirectConnectGatewayAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDirectConnectGatewayAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDirectConnectGatewayAttachmentTag)(nil)).Elem()
+}
+
+func (o GetDirectConnectGatewayAttachmentTagArrayOutput) ToGetDirectConnectGatewayAttachmentTagArrayOutput() GetDirectConnectGatewayAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetDirectConnectGatewayAttachmentTagArrayOutput) ToGetDirectConnectGatewayAttachmentTagArrayOutputWithContext(ctx context.Context) GetDirectConnectGatewayAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetDirectConnectGatewayAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetDirectConnectGatewayAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDirectConnectGatewayAttachmentTag {
+		return vs[0].([]GetDirectConnectGatewayAttachmentTag)[vs[1].(int)]
+	}).(GetDirectConnectGatewayAttachmentTagOutput)
+}
+
 type GetPeerAttachmentTag struct {
 	// Tag key for cross-region connection user tags. Length must be between 1 and 128 characters. Case-sensitive; cannot start with any case combination of sys:. Cannot start or end with a space character. Allowed characters include letters, numbers, space character, underscore (_), period (.), colon (:), slash (/), equals sign (=), plus sign (+), minus sign (-), and @. Note: Tag keys for the same resource must be unique. If this parameter is not provided or no value is specified, the default is empty.
 	Key string `pulumi:"key"`
@@ -1480,6 +1931,245 @@ func (o GetTransitRouterAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetTr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTransitRouterAttachmentTag {
 		return vs[0].([]GetTransitRouterAttachmentTag)[vs[1].(int)]
 	}).(GetTransitRouterAttachmentTagOutput)
+}
+
+type GetTransitRouterBandwidthPackageAllocation struct {
+	// Time when the bandwidth package was associated with the cross-region connection.
+	AllocateTime string `pulumi:"allocateTime"`
+	// Bandwidth peak of the cross-region connection, in Mbps.
+	Bandwidth int `pulumi:"bandwidth"`
+	// Region ID of the local transit router instance in the cross-region connection.
+	LocalRegionId string `pulumi:"localRegionId"`
+	// Region ID of the peer transit router instance in the cross-region connection.
+	PeerRegionId string `pulumi:"peerRegionId"`
+	// ID of the cross-region connection.
+	TransitRouterPeerAttachmentId string `pulumi:"transitRouterPeerAttachmentId"`
+}
+
+// GetTransitRouterBandwidthPackageAllocationInput is an input type that accepts GetTransitRouterBandwidthPackageAllocationArgs and GetTransitRouterBandwidthPackageAllocationOutput values.
+// You can construct a concrete instance of `GetTransitRouterBandwidthPackageAllocationInput` via:
+//
+//	GetTransitRouterBandwidthPackageAllocationArgs{...}
+type GetTransitRouterBandwidthPackageAllocationInput interface {
+	pulumi.Input
+
+	ToGetTransitRouterBandwidthPackageAllocationOutput() GetTransitRouterBandwidthPackageAllocationOutput
+	ToGetTransitRouterBandwidthPackageAllocationOutputWithContext(context.Context) GetTransitRouterBandwidthPackageAllocationOutput
+}
+
+type GetTransitRouterBandwidthPackageAllocationArgs struct {
+	// Time when the bandwidth package was associated with the cross-region connection.
+	AllocateTime pulumi.StringInput `pulumi:"allocateTime"`
+	// Bandwidth peak of the cross-region connection, in Mbps.
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// Region ID of the local transit router instance in the cross-region connection.
+	LocalRegionId pulumi.StringInput `pulumi:"localRegionId"`
+	// Region ID of the peer transit router instance in the cross-region connection.
+	PeerRegionId pulumi.StringInput `pulumi:"peerRegionId"`
+	// ID of the cross-region connection.
+	TransitRouterPeerAttachmentId pulumi.StringInput `pulumi:"transitRouterPeerAttachmentId"`
+}
+
+func (GetTransitRouterBandwidthPackageAllocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (i GetTransitRouterBandwidthPackageAllocationArgs) ToGetTransitRouterBandwidthPackageAllocationOutput() GetTransitRouterBandwidthPackageAllocationOutput {
+	return i.ToGetTransitRouterBandwidthPackageAllocationOutputWithContext(context.Background())
+}
+
+func (i GetTransitRouterBandwidthPackageAllocationArgs) ToGetTransitRouterBandwidthPackageAllocationOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageAllocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTransitRouterBandwidthPackageAllocationOutput)
+}
+
+// GetTransitRouterBandwidthPackageAllocationArrayInput is an input type that accepts GetTransitRouterBandwidthPackageAllocationArray and GetTransitRouterBandwidthPackageAllocationArrayOutput values.
+// You can construct a concrete instance of `GetTransitRouterBandwidthPackageAllocationArrayInput` via:
+//
+//	GetTransitRouterBandwidthPackageAllocationArray{ GetTransitRouterBandwidthPackageAllocationArgs{...} }
+type GetTransitRouterBandwidthPackageAllocationArrayInput interface {
+	pulumi.Input
+
+	ToGetTransitRouterBandwidthPackageAllocationArrayOutput() GetTransitRouterBandwidthPackageAllocationArrayOutput
+	ToGetTransitRouterBandwidthPackageAllocationArrayOutputWithContext(context.Context) GetTransitRouterBandwidthPackageAllocationArrayOutput
+}
+
+type GetTransitRouterBandwidthPackageAllocationArray []GetTransitRouterBandwidthPackageAllocationInput
+
+func (GetTransitRouterBandwidthPackageAllocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (i GetTransitRouterBandwidthPackageAllocationArray) ToGetTransitRouterBandwidthPackageAllocationArrayOutput() GetTransitRouterBandwidthPackageAllocationArrayOutput {
+	return i.ToGetTransitRouterBandwidthPackageAllocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetTransitRouterBandwidthPackageAllocationArray) ToGetTransitRouterBandwidthPackageAllocationArrayOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageAllocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTransitRouterBandwidthPackageAllocationArrayOutput)
+}
+
+type GetTransitRouterBandwidthPackageAllocationOutput struct{ *pulumi.OutputState }
+
+func (GetTransitRouterBandwidthPackageAllocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (o GetTransitRouterBandwidthPackageAllocationOutput) ToGetTransitRouterBandwidthPackageAllocationOutput() GetTransitRouterBandwidthPackageAllocationOutput {
+	return o
+}
+
+func (o GetTransitRouterBandwidthPackageAllocationOutput) ToGetTransitRouterBandwidthPackageAllocationOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageAllocationOutput {
+	return o
+}
+
+// Time when the bandwidth package was associated with the cross-region connection.
+func (o GetTransitRouterBandwidthPackageAllocationOutput) AllocateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageAllocation) string { return v.AllocateTime }).(pulumi.StringOutput)
+}
+
+// Bandwidth peak of the cross-region connection, in Mbps.
+func (o GetTransitRouterBandwidthPackageAllocationOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageAllocation) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// Region ID of the local transit router instance in the cross-region connection.
+func (o GetTransitRouterBandwidthPackageAllocationOutput) LocalRegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageAllocation) string { return v.LocalRegionId }).(pulumi.StringOutput)
+}
+
+// Region ID of the peer transit router instance in the cross-region connection.
+func (o GetTransitRouterBandwidthPackageAllocationOutput) PeerRegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageAllocation) string { return v.PeerRegionId }).(pulumi.StringOutput)
+}
+
+// ID of the cross-region connection.
+func (o GetTransitRouterBandwidthPackageAllocationOutput) TransitRouterPeerAttachmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageAllocation) string { return v.TransitRouterPeerAttachmentId }).(pulumi.StringOutput)
+}
+
+type GetTransitRouterBandwidthPackageAllocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTransitRouterBandwidthPackageAllocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTransitRouterBandwidthPackageAllocation)(nil)).Elem()
+}
+
+func (o GetTransitRouterBandwidthPackageAllocationArrayOutput) ToGetTransitRouterBandwidthPackageAllocationArrayOutput() GetTransitRouterBandwidthPackageAllocationArrayOutput {
+	return o
+}
+
+func (o GetTransitRouterBandwidthPackageAllocationArrayOutput) ToGetTransitRouterBandwidthPackageAllocationArrayOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageAllocationArrayOutput {
+	return o
+}
+
+func (o GetTransitRouterBandwidthPackageAllocationArrayOutput) Index(i pulumi.IntInput) GetTransitRouterBandwidthPackageAllocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTransitRouterBandwidthPackageAllocation {
+		return vs[0].([]GetTransitRouterBandwidthPackageAllocation)[vs[1].(int)]
+	}).(GetTransitRouterBandwidthPackageAllocationOutput)
+}
+
+type GetTransitRouterBandwidthPackageTag struct {
+	// Tag key of the tag.
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetTransitRouterBandwidthPackageTagInput is an input type that accepts GetTransitRouterBandwidthPackageTagArgs and GetTransitRouterBandwidthPackageTagOutput values.
+// You can construct a concrete instance of `GetTransitRouterBandwidthPackageTagInput` via:
+//
+//	GetTransitRouterBandwidthPackageTagArgs{...}
+type GetTransitRouterBandwidthPackageTagInput interface {
+	pulumi.Input
+
+	ToGetTransitRouterBandwidthPackageTagOutput() GetTransitRouterBandwidthPackageTagOutput
+	ToGetTransitRouterBandwidthPackageTagOutputWithContext(context.Context) GetTransitRouterBandwidthPackageTagOutput
+}
+
+type GetTransitRouterBandwidthPackageTagArgs struct {
+	// Tag key of the tag.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTransitRouterBandwidthPackageTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (i GetTransitRouterBandwidthPackageTagArgs) ToGetTransitRouterBandwidthPackageTagOutput() GetTransitRouterBandwidthPackageTagOutput {
+	return i.ToGetTransitRouterBandwidthPackageTagOutputWithContext(context.Background())
+}
+
+func (i GetTransitRouterBandwidthPackageTagArgs) ToGetTransitRouterBandwidthPackageTagOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTransitRouterBandwidthPackageTagOutput)
+}
+
+// GetTransitRouterBandwidthPackageTagArrayInput is an input type that accepts GetTransitRouterBandwidthPackageTagArray and GetTransitRouterBandwidthPackageTagArrayOutput values.
+// You can construct a concrete instance of `GetTransitRouterBandwidthPackageTagArrayInput` via:
+//
+//	GetTransitRouterBandwidthPackageTagArray{ GetTransitRouterBandwidthPackageTagArgs{...} }
+type GetTransitRouterBandwidthPackageTagArrayInput interface {
+	pulumi.Input
+
+	ToGetTransitRouterBandwidthPackageTagArrayOutput() GetTransitRouterBandwidthPackageTagArrayOutput
+	ToGetTransitRouterBandwidthPackageTagArrayOutputWithContext(context.Context) GetTransitRouterBandwidthPackageTagArrayOutput
+}
+
+type GetTransitRouterBandwidthPackageTagArray []GetTransitRouterBandwidthPackageTagInput
+
+func (GetTransitRouterBandwidthPackageTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (i GetTransitRouterBandwidthPackageTagArray) ToGetTransitRouterBandwidthPackageTagArrayOutput() GetTransitRouterBandwidthPackageTagArrayOutput {
+	return i.ToGetTransitRouterBandwidthPackageTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetTransitRouterBandwidthPackageTagArray) ToGetTransitRouterBandwidthPackageTagArrayOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTransitRouterBandwidthPackageTagArrayOutput)
+}
+
+type GetTransitRouterBandwidthPackageTagOutput struct{ *pulumi.OutputState }
+
+func (GetTransitRouterBandwidthPackageTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (o GetTransitRouterBandwidthPackageTagOutput) ToGetTransitRouterBandwidthPackageTagOutput() GetTransitRouterBandwidthPackageTagOutput {
+	return o
+}
+
+func (o GetTransitRouterBandwidthPackageTagOutput) ToGetTransitRouterBandwidthPackageTagOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageTagOutput {
+	return o
+}
+
+// Tag key of the tag.
+func (o GetTransitRouterBandwidthPackageTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetTransitRouterBandwidthPackageTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterBandwidthPackageTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTransitRouterBandwidthPackageTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTransitRouterBandwidthPackageTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTransitRouterBandwidthPackageTag)(nil)).Elem()
+}
+
+func (o GetTransitRouterBandwidthPackageTagArrayOutput) ToGetTransitRouterBandwidthPackageTagArrayOutput() GetTransitRouterBandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o GetTransitRouterBandwidthPackageTagArrayOutput) ToGetTransitRouterBandwidthPackageTagArrayOutputWithContext(ctx context.Context) GetTransitRouterBandwidthPackageTagArrayOutput {
+	return o
+}
+
+func (o GetTransitRouterBandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) GetTransitRouterBandwidthPackageTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTransitRouterBandwidthPackageTag {
+		return vs[0].([]GetTransitRouterBandwidthPackageTag)[vs[1].(int)]
+	}).(GetTransitRouterBandwidthPackageTagOutput)
 }
 
 type GetTransitRouterRouteTableTag struct {
@@ -2022,12 +2712,18 @@ func (o GetVpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetVpnAttachmen
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAttachmentTagInput)(nil)).Elem(), DirectConnectGatewayAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAttachmentTagArrayInput)(nil)).Elem(), DirectConnectGatewayAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PeerAttachmentTagInput)(nil)).Elem(), PeerAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PeerAttachmentTagArrayInput)(nil)).Elem(), PeerAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentInput)(nil)).Elem(), TransitRouterAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentArrayInput)(nil)).Elem(), TransitRouterAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentTagInput)(nil)).Elem(), TransitRouterAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentTagArrayInput)(nil)).Elem(), TransitRouterAttachmentTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageAllocationInput)(nil)).Elem(), TransitRouterBandwidthPackageAllocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageAllocationArrayInput)(nil)).Elem(), TransitRouterBandwidthPackageAllocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageTagInput)(nil)).Elem(), TransitRouterBandwidthPackageTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageTagArrayInput)(nil)).Elem(), TransitRouterBandwidthPackageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterRouteTableTagInput)(nil)).Elem(), TransitRouterRouteTableTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterRouteTableTagArrayInput)(nil)).Elem(), TransitRouterRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterTagInput)(nil)).Elem(), TransitRouterTagArgs{})
@@ -2038,12 +2734,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAttachmentTagArrayInput)(nil)).Elem(), VpcAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnAttachmentTagInput)(nil)).Elem(), VpnAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnAttachmentTagArrayInput)(nil)).Elem(), VpnAttachmentTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAttachmentTagInput)(nil)).Elem(), GetDirectConnectGatewayAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAttachmentTagArrayInput)(nil)).Elem(), GetDirectConnectGatewayAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerAttachmentTagInput)(nil)).Elem(), GetPeerAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPeerAttachmentTagArrayInput)(nil)).Elem(), GetPeerAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentInput)(nil)).Elem(), GetTransitRouterAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentArrayInput)(nil)).Elem(), GetTransitRouterAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentTagInput)(nil)).Elem(), GetTransitRouterAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentTagArrayInput)(nil)).Elem(), GetTransitRouterAttachmentTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageAllocationInput)(nil)).Elem(), GetTransitRouterBandwidthPackageAllocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageAllocationArrayInput)(nil)).Elem(), GetTransitRouterBandwidthPackageAllocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageTagInput)(nil)).Elem(), GetTransitRouterBandwidthPackageTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageTagArrayInput)(nil)).Elem(), GetTransitRouterBandwidthPackageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterRouteTableTagInput)(nil)).Elem(), GetTransitRouterRouteTableTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterRouteTableTagArrayInput)(nil)).Elem(), GetTransitRouterRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterTagInput)(nil)).Elem(), GetTransitRouterTagArgs{})
@@ -2054,12 +2756,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAttachmentTagArrayInput)(nil)).Elem(), GetVpcAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnAttachmentTagInput)(nil)).Elem(), GetVpnAttachmentTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnAttachmentTagArrayInput)(nil)).Elem(), GetVpnAttachmentTagArray{})
+	pulumi.RegisterOutputType(DirectConnectGatewayAttachmentTagOutput{})
+	pulumi.RegisterOutputType(DirectConnectGatewayAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(PeerAttachmentTagOutput{})
 	pulumi.RegisterOutputType(PeerAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentTagOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentTagArrayOutput{})
+	pulumi.RegisterOutputType(TransitRouterBandwidthPackageAllocationOutput{})
+	pulumi.RegisterOutputType(TransitRouterBandwidthPackageAllocationArrayOutput{})
+	pulumi.RegisterOutputType(TransitRouterBandwidthPackageTagOutput{})
+	pulumi.RegisterOutputType(TransitRouterBandwidthPackageTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterRouteTableTagOutput{})
 	pulumi.RegisterOutputType(TransitRouterRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterTagOutput{})
@@ -2070,12 +2778,18 @@ func init() {
 	pulumi.RegisterOutputType(VpcAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(VpnAttachmentTagOutput{})
 	pulumi.RegisterOutputType(VpnAttachmentTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDirectConnectGatewayAttachmentTagOutput{})
+	pulumi.RegisterOutputType(GetDirectConnectGatewayAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(GetPeerAttachmentTagOutput{})
 	pulumi.RegisterOutputType(GetPeerAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentTagOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentTagArrayOutput{})
+	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageAllocationOutput{})
+	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageAllocationArrayOutput{})
+	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageTagOutput{})
+	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterRouteTableTagOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterTagOutput{})

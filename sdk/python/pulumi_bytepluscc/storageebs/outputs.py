@@ -20,6 +20,7 @@ __all__ = [
     'SnapshotGroupSnapshot',
     'SnapshotGroupSnapshotTag',
     'SnapshotGroupTag',
+    'SnapshotPolicyTag',
     'SnapshotTag',
     'VolumeBaselinePerformance',
     'VolumeExtraPerformance',
@@ -28,6 +29,7 @@ __all__ = [
     'GetSnapshotGroupSnapshotResult',
     'GetSnapshotGroupSnapshotTagResult',
     'GetSnapshotGroupTagResult',
+    'GetSnapshotPolicyTagResult',
     'GetSnapshotTagResult',
     'GetVolumeBaselinePerformanceResult',
     'GetVolumeExtraPerformanceResult',
@@ -370,6 +372,37 @@ class SnapshotGroupSnapshotTag(dict):
 
 @pulumi.output_type
 class SnapshotGroupTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SnapshotPolicyTag(dict):
     def __init__(__self__, *,
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
@@ -852,6 +885,35 @@ class GetSnapshotGroupSnapshotTagResult(dict):
 
 @pulumi.output_type
 class GetSnapshotGroupTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSnapshotPolicyTagResult(dict):
     def __init__(__self__, *,
                  key: builtins.str,
                  value: builtins.str):

@@ -22,6 +22,8 @@ __all__ = [
     'EndpointServiceResourceArgsDict',
     'EndpointServiceTagArgs',
     'EndpointServiceTagArgsDict',
+    'GatewayEndpointTagArgs',
+    'GatewayEndpointTagArgsDict',
     'VpcEndpointConnectionResourcesAllocateArgs',
     'VpcEndpointConnectionResourcesAllocateArgsDict',
     'VpcEndpointConnectionZoneArgs',
@@ -222,6 +224,58 @@ class EndpointServiceTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         Tag value of the endpoint service tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class GatewayEndpointTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key of the endpoint tag
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value of the endpoint tag
+        """
+elif False:
+    GatewayEndpointTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayEndpointTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key of the endpoint tag
+        :param pulumi.Input[builtins.str] value: Tag value of the endpoint tag
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key of the endpoint tag
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value of the endpoint tag
         """
         return pulumi.get(self, "value")
 

@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AllowedIpAddressIpListArgs',
+    'AllowedIpAddressIpListArgsDict',
     'GroupAttachedPolicyArgs',
     'GroupAttachedPolicyArgsDict',
     'GroupAttachedPolicyPolicyScopeArgs',
@@ -53,6 +55,56 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AllowedIpAddressIpListArgsDict(TypedDict):
+        description: pulumi.Input[builtins.str]
+        """
+        Description
+        """
+        ip: pulumi.Input[builtins.str]
+        """
+        IP address
+        """
+elif False:
+    AllowedIpAddressIpListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AllowedIpAddressIpListArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[builtins.str],
+                 ip: pulumi.Input[builtins.str]):
+        """
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] ip: IP address
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "ip", ip)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[builtins.str]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def ip(self) -> pulumi.Input[builtins.str]:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip")
+
+    @ip.setter
+    def ip(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "ip", value)
+
 
 if not MYPY:
     class GroupAttachedPolicyArgsDict(TypedDict):

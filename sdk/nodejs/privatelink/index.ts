@@ -10,6 +10,11 @@ export type EndpointService = import("./endpointService").EndpointService;
 export const EndpointService: typeof import("./endpointService").EndpointService = null as any;
 utilities.lazyLoad(exports, ["EndpointService"], () => require("./endpointService"));
 
+export { GatewayEndpointArgs, GatewayEndpointState } from "./gatewayEndpoint";
+export type GatewayEndpoint = import("./gatewayEndpoint").GatewayEndpoint;
+export const GatewayEndpoint: typeof import("./gatewayEndpoint").GatewayEndpoint = null as any;
+utilities.lazyLoad(exports, ["GatewayEndpoint"], () => require("./gatewayEndpoint"));
+
 export { GetEndpointServiceArgs, GetEndpointServiceResult, GetEndpointServiceOutputArgs } from "./getEndpointService";
 export const getEndpointService: typeof import("./getEndpointService").getEndpointService = null as any;
 export const getEndpointServiceOutput: typeof import("./getEndpointService").getEndpointServiceOutput = null as any;
@@ -19,6 +24,16 @@ export { GetEndpointServicesResult } from "./getEndpointServices";
 export const getEndpointServices: typeof import("./getEndpointServices").getEndpointServices = null as any;
 export const getEndpointServicesOutput: typeof import("./getEndpointServices").getEndpointServicesOutput = null as any;
 utilities.lazyLoad(exports, ["getEndpointServices","getEndpointServicesOutput"], () => require("./getEndpointServices"));
+
+export { GetGatewayEndpointArgs, GetGatewayEndpointResult, GetGatewayEndpointOutputArgs } from "./getGatewayEndpoint";
+export const getGatewayEndpoint: typeof import("./getGatewayEndpoint").getGatewayEndpoint = null as any;
+export const getGatewayEndpointOutput: typeof import("./getGatewayEndpoint").getGatewayEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getGatewayEndpoint","getGatewayEndpointOutput"], () => require("./getGatewayEndpoint"));
+
+export { GetGatewayEndpointsResult } from "./getGatewayEndpoints";
+export const getGatewayEndpoints: typeof import("./getGatewayEndpoints").getGatewayEndpoints = null as any;
+export const getGatewayEndpointsOutput: typeof import("./getGatewayEndpoints").getGatewayEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getGatewayEndpoints","getGatewayEndpointsOutput"], () => require("./getGatewayEndpoints"));
 
 export { GetVpcEndpointArgs, GetVpcEndpointResult, GetVpcEndpointOutputArgs } from "./getVpcEndpoint";
 export const getVpcEndpoint: typeof import("./getVpcEndpoint").getVpcEndpoint = null as any;
@@ -57,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:privatelink/endpointService:EndpointService":
                 return new EndpointService(name, <any>undefined, { urn })
+            case "bytepluscc:privatelink/gatewayEndpoint:GatewayEndpoint":
+                return new GatewayEndpoint(name, <any>undefined, { urn })
             case "bytepluscc:privatelink/vpcEndpoint:VpcEndpoint":
                 return new VpcEndpoint(name, <any>undefined, { urn })
             case "bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection":
@@ -67,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/endpointService", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/gatewayEndpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/vpcEndpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatelink/vpcEndpointConnection", _module)
