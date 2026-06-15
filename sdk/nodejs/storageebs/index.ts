@@ -20,6 +20,16 @@ export const getSnapshotGroups: typeof import("./getSnapshotGroups").getSnapshot
 export const getSnapshotGroupsOutput: typeof import("./getSnapshotGroups").getSnapshotGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getSnapshotGroups","getSnapshotGroupsOutput"], () => require("./getSnapshotGroups"));
 
+export { GetSnapshotPoliciesResult } from "./getSnapshotPolicies";
+export const getSnapshotPolicies: typeof import("./getSnapshotPolicies").getSnapshotPolicies = null as any;
+export const getSnapshotPoliciesOutput: typeof import("./getSnapshotPolicies").getSnapshotPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getSnapshotPolicies","getSnapshotPoliciesOutput"], () => require("./getSnapshotPolicies"));
+
+export { GetSnapshotPolicyArgs, GetSnapshotPolicyResult, GetSnapshotPolicyOutputArgs } from "./getSnapshotPolicy";
+export const getSnapshotPolicy: typeof import("./getSnapshotPolicy").getSnapshotPolicy = null as any;
+export const getSnapshotPolicyOutput: typeof import("./getSnapshotPolicy").getSnapshotPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getSnapshotPolicy","getSnapshotPolicyOutput"], () => require("./getSnapshotPolicy"));
+
 export { GetSnapshotsResult } from "./getSnapshots";
 export const getSnapshots: typeof import("./getSnapshots").getSnapshots = null as any;
 export const getSnapshotsOutput: typeof import("./getSnapshots").getSnapshotsOutput = null as any;
@@ -45,6 +55,11 @@ export type SnapshotGroup = import("./snapshotGroup").SnapshotGroup;
 export const SnapshotGroup: typeof import("./snapshotGroup").SnapshotGroup = null as any;
 utilities.lazyLoad(exports, ["SnapshotGroup"], () => require("./snapshotGroup"));
 
+export { SnapshotPolicyArgs, SnapshotPolicyState } from "./snapshotPolicy";
+export type SnapshotPolicy = import("./snapshotPolicy").SnapshotPolicy;
+export const SnapshotPolicy: typeof import("./snapshotPolicy").SnapshotPolicy = null as any;
+utilities.lazyLoad(exports, ["SnapshotPolicy"], () => require("./snapshotPolicy"));
+
 export { VolumeArgs, VolumeState } from "./volume";
 export type Volume = import("./volume").Volume;
 export const Volume: typeof import("./volume").Volume = null as any;
@@ -59,6 +74,8 @@ const _module = {
                 return new Snapshot(name, <any>undefined, { urn })
             case "bytepluscc:storageebs/snapshotGroup:SnapshotGroup":
                 return new SnapshotGroup(name, <any>undefined, { urn })
+            case "bytepluscc:storageebs/snapshotPolicy:SnapshotPolicy":
+                return new SnapshotPolicy(name, <any>undefined, { urn })
             case "bytepluscc:storageebs/volume:Volume":
                 return new Volume(name, <any>undefined, { urn })
             default:
@@ -68,4 +85,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "storageebs/snapshot", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "storageebs/snapshotGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "storageebs/snapshotPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "storageebs/volume", _module)

@@ -28,7 +28,7 @@ class GetAllowListResult:
     """
     A collection of values returned by getAllowList.
     """
-    def __init__(__self__, allow_list_category=None, allow_list_desc=None, allow_list_id=None, allow_list_ip_num=None, allow_list_name=None, allow_list_type=None, allow_lists=None, associated_instance_num=None, associated_instances=None, id=None, ip_address=None, modify_mode=None, security_group_bind_infos=None, update_security_group=None, user_allow_list=None):
+    def __init__(__self__, allow_list_category=None, allow_list_desc=None, allow_list_id=None, allow_list_ip_num=None, allow_list_name=None, allow_list_type=None, allow_lists=None, associated_instance_num=None, associated_instances=None, id=None, instance_id=None, ip_address=None, modify_mode=None, security_group_bind_infos=None, update_security_group=None, upgrade_allow_list_version=None, user_allow_list=None):
         if allow_list_category and not isinstance(allow_list_category, str):
             raise TypeError("Expected argument 'allow_list_category' to be a str")
         pulumi.set(__self__, "allow_list_category", allow_list_category)
@@ -59,6 +59,9 @@ class GetAllowListResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if instance_id and not isinstance(instance_id, str):
+            raise TypeError("Expected argument 'instance_id' to be a str")
+        pulumi.set(__self__, "instance_id", instance_id)
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
@@ -71,6 +74,9 @@ class GetAllowListResult:
         if update_security_group and not isinstance(update_security_group, bool):
             raise TypeError("Expected argument 'update_security_group' to be a bool")
         pulumi.set(__self__, "update_security_group", update_security_group)
+        if upgrade_allow_list_version and not isinstance(upgrade_allow_list_version, bool):
+            raise TypeError("Expected argument 'upgrade_allow_list_version' to be a bool")
+        pulumi.set(__self__, "upgrade_allow_list_version", upgrade_allow_list_version)
         if user_allow_list and not isinstance(user_allow_list, str):
             raise TypeError("Expected argument 'user_allow_list' to be a str")
         pulumi.set(__self__, "user_allow_list", user_allow_list)
@@ -156,6 +162,14 @@ class GetAllowListResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> builtins.str:
         """
@@ -188,6 +202,14 @@ class GetAllowListResult:
         return pulumi.get(self, "update_security_group")
 
     @property
+    @pulumi.getter(name="upgradeAllowListVersion")
+    def upgrade_allow_list_version(self) -> builtins.bool:
+        """
+        Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        """
+        return pulumi.get(self, "upgrade_allow_list_version")
+
+    @property
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> builtins.str:
         """
@@ -212,10 +234,12 @@ class AwaitableGetAllowListResult(GetAllowListResult):
             associated_instance_num=self.associated_instance_num,
             associated_instances=self.associated_instances,
             id=self.id,
+            instance_id=self.instance_id,
             ip_address=self.ip_address,
             modify_mode=self.modify_mode,
             security_group_bind_infos=self.security_group_bind_infos,
             update_security_group=self.update_security_group,
+            upgrade_allow_list_version=self.upgrade_allow_list_version,
             user_allow_list=self.user_allow_list)
 
 
@@ -243,10 +267,12 @@ def get_allow_list(id: Optional[builtins.str] = None,
         associated_instance_num=pulumi.get(__ret__, 'associated_instance_num'),
         associated_instances=pulumi.get(__ret__, 'associated_instances'),
         id=pulumi.get(__ret__, 'id'),
+        instance_id=pulumi.get(__ret__, 'instance_id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
         modify_mode=pulumi.get(__ret__, 'modify_mode'),
         security_group_bind_infos=pulumi.get(__ret__, 'security_group_bind_infos'),
         update_security_group=pulumi.get(__ret__, 'update_security_group'),
+        upgrade_allow_list_version=pulumi.get(__ret__, 'upgrade_allow_list_version'),
         user_allow_list=pulumi.get(__ret__, 'user_allow_list'))
 def get_allow_list_output(id: Optional[pulumi.Input[builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAllowListResult]:
@@ -271,8 +297,10 @@ def get_allow_list_output(id: Optional[pulumi.Input[builtins.str]] = None,
         associated_instance_num=pulumi.get(__response__, 'associated_instance_num'),
         associated_instances=pulumi.get(__response__, 'associated_instances'),
         id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
         modify_mode=pulumi.get(__response__, 'modify_mode'),
         security_group_bind_infos=pulumi.get(__response__, 'security_group_bind_infos'),
         update_security_group=pulumi.get(__response__, 'update_security_group'),
+        upgrade_allow_list_version=pulumi.get(__response__, 'upgrade_allow_list_version'),
         user_allow_list=pulumi.get(__response__, 'user_allow_list')))

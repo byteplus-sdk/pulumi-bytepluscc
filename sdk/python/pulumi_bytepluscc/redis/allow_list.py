@@ -22,36 +22,47 @@ __all__ = ['AllowListArgs', 'AllowList']
 @pulumi.input_type
 class AllowListArgs:
     def __init__(__self__, *,
+                 allow_list_name: pulumi.Input[builtins.str],
                  allow_list: Optional[pulumi.Input[builtins.str]] = None,
                  allow_list_category: Optional[pulumi.Input[builtins.str]] = None,
                  allow_list_desc: Optional[pulumi.Input[builtins.str]] = None,
-                 allow_list_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  security_group_bind_infos: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListSecurityGroupBindInfoArgs']]]] = None):
         """
         The set of arguments for constructing a AllowList resource.
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
         :param pulumi.Input[builtins.str] allow_list: Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
         :param pulumi.Input[builtins.str] allow_list_category: Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
         :param pulumi.Input[builtins.str] allow_list_desc: Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: List of instance IDs bound to the current allowlist
         :param pulumi.Input[builtins.str] project_name: Project name associated with the allowlist
         """
+        pulumi.set(__self__, "allow_list_name", allow_list_name)
         if allow_list is not None:
             pulumi.set(__self__, "allow_list", allow_list)
         if allow_list_category is not None:
             pulumi.set(__self__, "allow_list_category", allow_list_category)
         if allow_list_desc is not None:
             pulumi.set(__self__, "allow_list_desc", allow_list_desc)
-        if allow_list_name is not None:
-            pulumi.set(__self__, "allow_list_name", allow_list_name)
         if instance_ids is not None:
             pulumi.set(__self__, "instance_ids", instance_ids)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if security_group_bind_infos is not None:
             pulumi.set(__self__, "security_group_bind_infos", security_group_bind_infos)
+
+    @property
+    @pulumi.getter(name="allowListName")
+    def allow_list_name(self) -> pulumi.Input[builtins.str]:
+        """
+        Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
+        """
+        return pulumi.get(self, "allow_list_name")
+
+    @allow_list_name.setter
+    def allow_list_name(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "allow_list_name", value)
 
     @property
     @pulumi.getter(name="allowList")
@@ -88,18 +99,6 @@ class AllowListArgs:
     @allow_list_desc.setter
     def allow_list_desc(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "allow_list_desc", value)
-
-    @property
-    @pulumi.getter(name="allowListName")
-    def allow_list_name(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-        """
-        return pulumi.get(self, "allow_list_name")
-
-    @allow_list_name.setter
-    def allow_list_name(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "allow_list_name", value)
 
     @property
     @pulumi.getter(name="instanceIds")
@@ -347,7 +346,7 @@ class AllowList(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: Optional[AllowListArgs] = None,
+                 args: AllowListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         After a Redis cache database instance is created, you can set an allowlist for the instance to permit devices to access it.
@@ -392,6 +391,8 @@ class AllowList(pulumi.CustomResource):
             __props__.__dict__["allow_list"] = allow_list
             __props__.__dict__["allow_list_category"] = allow_list_category
             __props__.__dict__["allow_list_desc"] = allow_list_desc
+            if allow_list_name is None and not opts.urn:
+                raise TypeError("Missing required property 'allow_list_name'")
             __props__.__dict__["allow_list_name"] = allow_list_name
             __props__.__dict__["instance_ids"] = instance_ids
             __props__.__dict__["project_name"] = project_name

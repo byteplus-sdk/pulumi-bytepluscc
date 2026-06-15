@@ -4,10 +4,14 @@
 package com.byteplus.bytepluscc.dns;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.dns.inputs.GetBackupArgs;
+import com.byteplus.bytepluscc.dns.inputs.GetBackupPlainArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetRecordArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetRecordPlainArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetZoneArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetZonePlainArgs;
+import com.byteplus.bytepluscc.dns.outputs.GetBackupResult;
+import com.byteplus.bytepluscc.dns.outputs.GetBackupsResult;
 import com.byteplus.bytepluscc.dns.outputs.GetRecordResult;
 import com.byteplus.bytepluscc.dns.outputs.GetRecordsResult;
 import com.byteplus.bytepluscc.dns.outputs.GetZoneResult;
@@ -21,6 +25,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DnsFunctions {
+    /**
+     * Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args) {
+        return getBackup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args) {
+        return getBackupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:dns/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups() {
+        return getBackups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupsResult> getBackupsPlain() {
+        return getBackupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups(InvokeArgs args) {
+        return getBackups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupsResult> getBackupsPlain(InvokeArgs args) {
+        return getBackupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupsResult> getBackupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:dns/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::DNS::Record
      * 

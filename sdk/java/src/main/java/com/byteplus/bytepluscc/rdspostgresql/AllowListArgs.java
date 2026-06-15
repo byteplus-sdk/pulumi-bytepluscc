@@ -102,6 +102,21 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     * 
+     */
+    @Import(name="instanceId")
+    private @Nullable Output<String> instanceId;
+
+    /**
+     * @return Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     * 
+     */
+    public Optional<Output<String>> instanceId() {
+        return Optional.ofNullable(this.instanceId);
+    }
+
+    /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      * 
      */
@@ -154,6 +169,21 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     * 
+     */
+    @Import(name="upgradeAllowListVersion")
+    private @Nullable Output<Boolean> upgradeAllowListVersion;
+
+    /**
+     * @return Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     * 
+     */
+    public Optional<Output<Boolean>> upgradeAllowListVersion() {
+        return Optional.ofNullable(this.upgradeAllowListVersion);
+    }
+
+    /**
      * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      * 
      */
@@ -177,10 +207,12 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         this.allowListType = $.allowListType;
         this.allowLists = $.allowLists;
         this.associatedInstances = $.associatedInstances;
+        this.instanceId = $.instanceId;
         this.ipAddress = $.ipAddress;
         this.modifyMode = $.modifyMode;
         this.securityGroupBindInfos = $.securityGroupBindInfos;
         this.updateSecurityGroup = $.updateSecurityGroup;
+        this.upgradeAllowListVersion = $.upgradeAllowListVersion;
         this.userAllowList = $.userAllowList;
     }
 
@@ -331,6 +363,27 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param instanceId Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceId(@Nullable Output<String> instanceId) {
+            $.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * @param instanceId Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceId(String instanceId) {
+            return instanceId(Output.of(instanceId));
+        }
+
+        /**
          * @param ipAddress Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
          * 
          * @return builder
@@ -404,6 +457,27 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder updateSecurityGroup(Boolean updateSecurityGroup) {
             return updateSecurityGroup(Output.of(updateSecurityGroup));
+        }
+
+        /**
+         * @param upgradeAllowListVersion Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeAllowListVersion(@Nullable Output<Boolean> upgradeAllowListVersion) {
+            $.upgradeAllowListVersion = upgradeAllowListVersion;
+            return this;
+        }
+
+        /**
+         * @param upgradeAllowListVersion Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeAllowListVersion(Boolean upgradeAllowListVersion) {
+            return upgradeAllowListVersion(Output.of(upgradeAllowListVersion));
         }
 
         /**

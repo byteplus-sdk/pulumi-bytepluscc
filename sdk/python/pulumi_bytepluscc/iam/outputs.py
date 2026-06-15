@@ -17,6 +17,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AllowedIpAddressIpList',
     'GroupAttachedPolicy',
     'GroupAttachedPolicyPolicyScope',
     'GroupUser',
@@ -34,6 +35,7 @@ __all__ = [
     'UserPolicy',
     'UserSecurityConfig',
     'UserTag',
+    'GetAllowedIpAddressIpListResult',
     'GetGroupAttachedPolicyResult',
     'GetGroupAttachedPolicyPolicyScopeResult',
     'GetGroupUserResult',
@@ -53,6 +55,35 @@ __all__ = [
     'GetUserSecurityConfigResult',
     'GetUserTagResult',
 ]
+
+@pulumi.output_type
+class AllowedIpAddressIpList(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 ip: builtins.str):
+        """
+        :param builtins.str description: Description
+        :param builtins.str ip: IP address
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "ip", ip)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip")
+
 
 @pulumi.output_type
 class GroupAttachedPolicy(dict):
@@ -1206,6 +1237,35 @@ class UserTag(dict):
         Tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAllowedIpAddressIpListResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 ip: builtins.str):
+        """
+        :param builtins.str description: Description
+        :param builtins.str ip: IP address
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "ip", ip)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        IP address
+        """
+        return pulumi.get(self, "ip")
 
 
 @pulumi.output_type

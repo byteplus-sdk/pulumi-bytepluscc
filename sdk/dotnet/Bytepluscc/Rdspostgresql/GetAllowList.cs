@@ -105,6 +105,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        /// </summary>
+        public readonly string InstanceId;
+        /// <summary>
         /// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         /// </summary>
         public readonly string IpAddress;
@@ -120,6 +124,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
         /// </summary>
         public readonly bool UpdateSecurityGroup;
+        /// <summary>
+        /// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        /// </summary>
+        public readonly bool UpgradeAllowListVersion;
         /// <summary>
         /// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
         /// </summary>
@@ -147,6 +155,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 
             string id,
 
+            string instanceId,
+
             string ipAddress,
 
             string modifyMode,
@@ -154,6 +164,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             ImmutableArray<Outputs.GetAllowListSecurityGroupBindInfoResult> securityGroupBindInfos,
 
             bool updateSecurityGroup,
+
+            bool upgradeAllowListVersion,
 
             string userAllowList)
         {
@@ -167,10 +179,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             AssociatedInstanceNum = associatedInstanceNum;
             AssociatedInstances = associatedInstances;
             Id = id;
+            InstanceId = instanceId;
             IpAddress = ipAddress;
             ModifyMode = modifyMode;
             SecurityGroupBindInfos = securityGroupBindInfos;
             UpdateSecurityGroup = updateSecurityGroup;
+            UpgradeAllowListVersion = upgradeAllowListVersion;
             UserAllowList = userAllowList;
         }
     }

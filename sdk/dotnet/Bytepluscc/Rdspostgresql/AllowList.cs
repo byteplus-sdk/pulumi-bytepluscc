@@ -74,6 +74,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Output<ImmutableArray<Outputs.AllowListAssociatedInstance>> AssociatedInstances { get; private set; } = null!;
 
         /// <summary>
+        /// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        /// </summary>
+        [Output("instanceId")]
+        public Output<string> InstanceId { get; private set; } = null!;
+
+        /// <summary>
         /// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         /// </summary>
         [Output("ipAddress")]
@@ -93,6 +99,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Output("updateSecurityGroup")]
         public Output<bool> UpdateSecurityGroup { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        /// </summary>
+        [Output("upgradeAllowListVersion")]
+        public Output<bool> UpgradeAllowListVersion { get; private set; } = null!;
 
         /// <summary>
         /// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
@@ -192,6 +204,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         }
 
         /// <summary>
+        /// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        /// </summary>
+        [Input("instanceId")]
+        public Input<string>? InstanceId { get; set; }
+
+        /// <summary>
         /// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         /// </summary>
         [Input("ipAddress")]
@@ -216,6 +234,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Input("updateSecurityGroup")]
         public Input<bool>? UpdateSecurityGroup { get; set; }
+
+        /// <summary>
+        /// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        /// </summary>
+        [Input("upgradeAllowListVersion")]
+        public Input<bool>? UpgradeAllowListVersion { get; set; }
 
         /// <summary>
         /// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
@@ -294,6 +318,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         }
 
         /// <summary>
+        /// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+        /// </summary>
+        [Input("instanceId")]
+        public Input<string>? InstanceId { get; set; }
+
+        /// <summary>
         /// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
         /// </summary>
         [Input("ipAddress")]
@@ -318,6 +348,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         /// </summary>
         [Input("updateSecurityGroup")]
         public Input<bool>? UpdateSecurityGroup { get; set; }
+
+        /// <summary>
+        /// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+        /// </summary>
+        [Input("upgradeAllowListVersion")]
+        public Input<bool>? UpgradeAllowListVersion { get; set; }
 
         /// <summary>
         /// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.

@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.iam;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyPlainArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetAllowedIpAddressArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetAllowedIpAddressPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetOidcProviderArgs;
@@ -22,6 +24,8 @@ import com.byteplus.bytepluscc.iam.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserPlainArgs;
 import com.byteplus.bytepluscc.iam.outputs.GetAccesskeyResult;
 import com.byteplus.bytepluscc.iam.outputs.GetAccesskeysResult;
+import com.byteplus.bytepluscc.iam.outputs.GetAllowedIpAddressResult;
+import com.byteplus.bytepluscc.iam.outputs.GetAllowedIpAddressesResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupsResult;
 import com.byteplus.bytepluscc.iam.outputs.GetOidcProviderResult;
@@ -128,6 +132,90 @@ public final class IamFunctions {
      */
     public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAccesskeys:getAccesskeys", TypeShape.of(GetAccesskeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressResult> getAllowedIpAddress(GetAllowedIpAddressArgs args) {
+        return getAllowedIpAddress(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static CompletableFuture<GetAllowedIpAddressResult> getAllowedIpAddressPlain(GetAllowedIpAddressPlainArgs args) {
+        return getAllowedIpAddressPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressResult> getAllowedIpAddress(GetAllowedIpAddressArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAllowedIpAddress:getAllowedIpAddress", TypeShape.of(GetAllowedIpAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressResult> getAllowedIpAddress(GetAllowedIpAddressArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAllowedIpAddress:getAllowedIpAddress", TypeShape.of(GetAllowedIpAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static CompletableFuture<GetAllowedIpAddressResult> getAllowedIpAddressPlain(GetAllowedIpAddressPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAllowedIpAddress:getAllowedIpAddress", TypeShape.of(GetAllowedIpAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressesResult> getAllowedIpAddresses() {
+        return getAllowedIpAddresses(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static CompletableFuture<GetAllowedIpAddressesResult> getAllowedIpAddressesPlain() {
+        return getAllowedIpAddressesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressesResult> getAllowedIpAddresses(InvokeArgs args) {
+        return getAllowedIpAddresses(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static CompletableFuture<GetAllowedIpAddressesResult> getAllowedIpAddressesPlain(InvokeArgs args) {
+        return getAllowedIpAddressesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressesResult> getAllowedIpAddresses(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAllowedIpAddresses:getAllowedIpAddresses", TypeShape.of(GetAllowedIpAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static Output<GetAllowedIpAddressesResult> getAllowedIpAddresses(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAllowedIpAddresses:getAllowedIpAddresses", TypeShape.of(GetAllowedIpAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AllowedIpAddress
+     * 
+     */
+    public static CompletableFuture<GetAllowedIpAddressesResult> getAllowedIpAddressesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAllowedIpAddresses:getAllowedIpAddresses", TypeShape.of(GetAllowedIpAddressesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::IAM::Group

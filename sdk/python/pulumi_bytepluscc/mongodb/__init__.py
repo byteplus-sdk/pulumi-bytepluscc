@@ -8,10 +8,13 @@ import typing
 # Export this package's modules as members:
 from .account import *
 from .allow_list import *
+from .endpoint import *
 from .get_account import *
 from .get_accounts import *
 from .get_allow_list import *
 from .get_allow_lists import *
+from .get_endpoint import *
+from .get_endpoints import *
 from .get_instance import *
 from .get_instances import *
 from .get_ssl_state import *

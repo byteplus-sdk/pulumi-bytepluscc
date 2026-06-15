@@ -38,6 +38,8 @@ type AllowList struct {
 	// Number of instances bound to this allowlist.
 	AssociatedInstanceNum pulumi.IntOutput                       `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   AllowListAssociatedInstanceArrayOutput `pulumi:"associatedInstances"`
+	// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
@@ -45,6 +47,8 @@ type AllowList struct {
 	SecurityGroupBindInfos AllowListSecurityGroupBindInfoArrayOutput `pulumi:"securityGroupBindInfos"`
 	// Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
 	UpdateSecurityGroup pulumi.BoolOutput `pulumi:"updateSecurityGroup"`
+	// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+	UpgradeAllowListVersion pulumi.BoolOutput `pulumi:"upgradeAllowListVersion"`
 	// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
 	UserAllowList pulumi.StringOutput `pulumi:"userAllowList"`
 }
@@ -96,6 +100,8 @@ type allowListState struct {
 	// Number of instances bound to this allowlist.
 	AssociatedInstanceNum *int                          `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   []AllowListAssociatedInstance `pulumi:"associatedInstances"`
+	// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+	InstanceId *string `pulumi:"instanceId"`
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress *string `pulumi:"ipAddress"`
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
@@ -103,6 +109,8 @@ type allowListState struct {
 	SecurityGroupBindInfos []AllowListSecurityGroupBindInfo `pulumi:"securityGroupBindInfos"`
 	// Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
 	UpdateSecurityGroup *bool `pulumi:"updateSecurityGroup"`
+	// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+	UpgradeAllowListVersion *bool `pulumi:"upgradeAllowListVersion"`
 	// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
 	UserAllowList *string `pulumi:"userAllowList"`
 }
@@ -125,6 +133,8 @@ type AllowListState struct {
 	// Number of instances bound to this allowlist.
 	AssociatedInstanceNum pulumi.IntPtrInput
 	AssociatedInstances   AllowListAssociatedInstanceArrayInput
+	// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+	InstanceId pulumi.StringPtrInput
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress pulumi.StringPtrInput
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
@@ -132,6 +142,8 @@ type AllowListState struct {
 	SecurityGroupBindInfos AllowListSecurityGroupBindInfoArrayInput
 	// Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
 	UpdateSecurityGroup pulumi.BoolPtrInput
+	// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+	UpgradeAllowListVersion pulumi.BoolPtrInput
 	// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
 	UserAllowList pulumi.StringPtrInput
 }
@@ -152,6 +164,8 @@ type allowListArgs struct {
 	// IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
 	AllowLists          []string                      `pulumi:"allowLists"`
 	AssociatedInstances []AllowListAssociatedInstance `pulumi:"associatedInstances"`
+	// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+	InstanceId *string `pulumi:"instanceId"`
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress *string `pulumi:"ipAddress"`
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
@@ -159,6 +173,8 @@ type allowListArgs struct {
 	SecurityGroupBindInfos []AllowListSecurityGroupBindInfo `pulumi:"securityGroupBindInfos"`
 	// Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
 	UpdateSecurityGroup *bool `pulumi:"updateSecurityGroup"`
+	// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+	UpgradeAllowListVersion *bool `pulumi:"upgradeAllowListVersion"`
 	// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
 	UserAllowList *string `pulumi:"userAllowList"`
 }
@@ -176,6 +192,8 @@ type AllowListArgs struct {
 	// IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
 	AllowLists          pulumi.StringArrayInput
 	AssociatedInstances AllowListAssociatedInstanceArrayInput
+	// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+	InstanceId pulumi.StringPtrInput
 	// Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 	IpAddress pulumi.StringPtrInput
 	// Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
@@ -183,6 +201,8 @@ type AllowListArgs struct {
 	SecurityGroupBindInfos AllowListSecurityGroupBindInfoArrayInput
 	// Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
 	UpdateSecurityGroup pulumi.BoolPtrInput
+	// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+	UpgradeAllowListVersion pulumi.BoolPtrInput
 	// IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
 	UserAllowList pulumi.StringPtrInput
 }
@@ -318,6 +338,11 @@ func (o AllowListOutput) AssociatedInstances() AllowListAssociatedInstanceArrayO
 	return o.ApplyT(func(v *AllowList) AllowListAssociatedInstanceArrayOutput { return v.AssociatedInstances }).(AllowListAssociatedInstanceArrayOutput)
 }
 
+// Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+func (o AllowListOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
+}
+
 // Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
 func (o AllowListOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
@@ -335,6 +360,11 @@ func (o AllowListOutput) SecurityGroupBindInfos() AllowListSecurityGroupBindInfo
 // Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
 func (o AllowListOutput) UpdateSecurityGroup() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.BoolOutput { return v.UpdateSecurityGroup }).(pulumi.BoolOutput)
+}
+
+// Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+func (o AllowListOutput) UpgradeAllowListVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AllowList) pulumi.BoolOutput { return v.UpgradeAllowListVersion }).(pulumi.BoolOutput)
 }
 
 // IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.

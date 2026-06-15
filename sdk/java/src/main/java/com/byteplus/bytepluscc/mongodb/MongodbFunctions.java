@@ -8,6 +8,8 @@ import com.byteplus.bytepluscc.mongodb.inputs.GetAccountArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetAccountPlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetAllowListPlainArgs;
+import com.byteplus.bytepluscc.mongodb.inputs.GetEndpointArgs;
+import com.byteplus.bytepluscc.mongodb.inputs.GetEndpointPlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.mongodb.inputs.GetSslStateArgs;
@@ -16,6 +18,8 @@ import com.byteplus.bytepluscc.mongodb.outputs.GetAccountResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAccountsResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetAllowListsResult;
+import com.byteplus.bytepluscc.mongodb.outputs.GetEndpointResult;
+import com.byteplus.bytepluscc.mongodb.outputs.GetEndpointsResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.mongodb.outputs.GetSslStateResult;
@@ -196,6 +200,90 @@ public final class MongodbFunctions {
      */
     public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args) {
+        return getEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args) {
+        return getEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints() {
+        return getEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain() {
+        return getEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args) {
+        return getEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(InvokeArgs args) {
+        return getEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:mongodb/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::MongoDB::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:mongodb/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::MongoDB::Instance

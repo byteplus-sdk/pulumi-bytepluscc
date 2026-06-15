@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Snapshot{}
 	case "bytepluscc:storageebs/snapshotGroup:SnapshotGroup":
 		r = &SnapshotGroup{}
+	case "bytepluscc:storageebs/snapshotPolicy:SnapshotPolicy":
+		r = &SnapshotPolicy{}
 	case "bytepluscc:storageebs/volume:Volume":
 		r = &Volume{}
 	default:
@@ -48,6 +50,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"storageebs/snapshotGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"storageebs/snapshotPolicy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

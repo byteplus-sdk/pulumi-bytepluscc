@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .backup import *
+from .get_backup import *
+from .get_backups import *
 from .get_record import *
 from .get_records import *
 from .get_zone import *

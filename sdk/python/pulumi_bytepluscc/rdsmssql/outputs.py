@@ -18,12 +18,16 @@ from . import outputs
 
 __all__ = [
     'AllowListAssociatedInstance',
+    'BackupBackupDatabaseDetail',
+    'BackupBackupMeta',
     'InstanceChargeInfo',
     'InstanceConnectionInfo',
     'InstanceConnectionInfoAddress',
     'InstanceNodeDetailInfo',
     'InstanceTag',
     'GetAllowListAssociatedInstanceResult',
+    'GetBackupBackupDatabaseDetailResult',
+    'GetBackupBackupMetaResult',
     'GetInstanceChargeInfoResult',
     'GetInstanceConnectionInfoResult',
     'GetInstanceConnectionInfoAddressResult',
@@ -133,6 +137,218 @@ class AllowListAssociatedInstance(dict):
         VPC ID of the instance
         """
         return pulumi.get(self, "vpc")
+
+
+@pulumi.output_type
+class BackupBackupDatabaseDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupDownloadLinkEip":
+            suggest = "backup_download_link_eip"
+        elif key == "backupDownloadLinkInner":
+            suggest = "backup_download_link_inner"
+        elif key == "backupEndTime":
+            suggest = "backup_end_time"
+        elif key == "backupFileName":
+            suggest = "backup_file_name"
+        elif key == "backupFileSize":
+            suggest = "backup_file_size"
+        elif key == "backupStartTime":
+            suggest = "backup_start_time"
+        elif key == "backupType":
+            suggest = "backup_type"
+        elif key == "databaseName":
+            suggest = "database_name"
+        elif key == "downloadProgress":
+            suggest = "download_progress"
+        elif key == "downloadStatus":
+            suggest = "download_status"
+        elif key == "linkExpiredTime":
+            suggest = "link_expired_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupBackupDatabaseDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupBackupDatabaseDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupBackupDatabaseDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_download_link_eip: Optional[builtins.str] = None,
+                 backup_download_link_inner: Optional[builtins.str] = None,
+                 backup_end_time: Optional[builtins.str] = None,
+                 backup_file_name: Optional[builtins.str] = None,
+                 backup_file_size: Optional[builtins.int] = None,
+                 backup_start_time: Optional[builtins.str] = None,
+                 backup_type: Optional[builtins.str] = None,
+                 database_name: Optional[builtins.str] = None,
+                 download_progress: Optional[builtins.int] = None,
+                 download_status: Optional[builtins.str] = None,
+                 link_expired_time: Optional[builtins.str] = None):
+        """
+        :param builtins.str backup_download_link_eip: External network backup download link.
+        :param builtins.str backup_download_link_inner: Internal network backup download link.
+        :param builtins.str backup_end_time: Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        :param builtins.str backup_file_name: Backup file name.
+        :param builtins.int backup_file_size: Backup file size (Bytes).
+        :param builtins.str backup_start_time: Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        :param builtins.str backup_type: Backup type. Values: Full (full backup), Diff (differential backup).
+        :param builtins.str database_name: Database name.
+        :param builtins.int download_progress: Backup file preparation progress (%).
+        :param builtins.str download_status: Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+        :param builtins.str link_expired_time: Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+        """
+        if backup_download_link_eip is not None:
+            pulumi.set(__self__, "backup_download_link_eip", backup_download_link_eip)
+        if backup_download_link_inner is not None:
+            pulumi.set(__self__, "backup_download_link_inner", backup_download_link_inner)
+        if backup_end_time is not None:
+            pulumi.set(__self__, "backup_end_time", backup_end_time)
+        if backup_file_name is not None:
+            pulumi.set(__self__, "backup_file_name", backup_file_name)
+        if backup_file_size is not None:
+            pulumi.set(__self__, "backup_file_size", backup_file_size)
+        if backup_start_time is not None:
+            pulumi.set(__self__, "backup_start_time", backup_start_time)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if download_progress is not None:
+            pulumi.set(__self__, "download_progress", download_progress)
+        if download_status is not None:
+            pulumi.set(__self__, "download_status", download_status)
+        if link_expired_time is not None:
+            pulumi.set(__self__, "link_expired_time", link_expired_time)
+
+    @property
+    @pulumi.getter(name="backupDownloadLinkEip")
+    def backup_download_link_eip(self) -> Optional[builtins.str]:
+        """
+        External network backup download link.
+        """
+        return pulumi.get(self, "backup_download_link_eip")
+
+    @property
+    @pulumi.getter(name="backupDownloadLinkInner")
+    def backup_download_link_inner(self) -> Optional[builtins.str]:
+        """
+        Internal network backup download link.
+        """
+        return pulumi.get(self, "backup_download_link_inner")
+
+    @property
+    @pulumi.getter(name="backupEndTime")
+    def backup_end_time(self) -> Optional[builtins.str]:
+        """
+        Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        """
+        return pulumi.get(self, "backup_end_time")
+
+    @property
+    @pulumi.getter(name="backupFileName")
+    def backup_file_name(self) -> Optional[builtins.str]:
+        """
+        Backup file name.
+        """
+        return pulumi.get(self, "backup_file_name")
+
+    @property
+    @pulumi.getter(name="backupFileSize")
+    def backup_file_size(self) -> Optional[builtins.int]:
+        """
+        Backup file size (Bytes).
+        """
+        return pulumi.get(self, "backup_file_size")
+
+    @property
+    @pulumi.getter(name="backupStartTime")
+    def backup_start_time(self) -> Optional[builtins.str]:
+        """
+        Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        """
+        return pulumi.get(self, "backup_start_time")
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> Optional[builtins.str]:
+        """
+        Backup type. Values: Full (full backup), Diff (differential backup).
+        """
+        return pulumi.get(self, "backup_type")
+
+    @property
+    @pulumi.getter(name="databaseName")
+    def database_name(self) -> Optional[builtins.str]:
+        """
+        Database name.
+        """
+        return pulumi.get(self, "database_name")
+
+    @property
+    @pulumi.getter(name="downloadProgress")
+    def download_progress(self) -> Optional[builtins.int]:
+        """
+        Backup file preparation progress (%).
+        """
+        return pulumi.get(self, "download_progress")
+
+    @property
+    @pulumi.getter(name="downloadStatus")
+    def download_status(self) -> Optional[builtins.str]:
+        """
+        Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+        """
+        return pulumi.get(self, "download_status")
+
+    @property
+    @pulumi.getter(name="linkExpiredTime")
+    def link_expired_time(self) -> Optional[builtins.str]:
+        """
+        Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+        """
+        return pulumi.get(self, "link_expired_time")
+
+
+@pulumi.output_type
+class BackupBackupMeta(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbName":
+            suggest = "db_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackupBackupMeta. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackupBackupMeta.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackupBackupMeta.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str db_name: Backup database name.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[builtins.str]:
+        """
+        Backup database name.
+        """
+        return pulumi.get(self, "db_name")
 
 
 @pulumi.output_type
@@ -783,6 +999,152 @@ class GetAllowListAssociatedInstanceResult(dict):
         VPC ID of the instance
         """
         return pulumi.get(self, "vpc")
+
+
+@pulumi.output_type
+class GetBackupBackupDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_download_link_eip: builtins.str,
+                 backup_download_link_inner: builtins.str,
+                 backup_end_time: builtins.str,
+                 backup_file_name: builtins.str,
+                 backup_file_size: builtins.int,
+                 backup_start_time: builtins.str,
+                 backup_type: builtins.str,
+                 database_name: builtins.str,
+                 download_progress: builtins.int,
+                 download_status: builtins.str,
+                 link_expired_time: builtins.str):
+        """
+        :param builtins.str backup_download_link_eip: External network backup download link.
+        :param builtins.str backup_download_link_inner: Internal network backup download link.
+        :param builtins.str backup_end_time: Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        :param builtins.str backup_file_name: Backup file name.
+        :param builtins.int backup_file_size: Backup file size (Bytes).
+        :param builtins.str backup_start_time: Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        :param builtins.str backup_type: Backup type. Values: Full (full backup), Diff (differential backup).
+        :param builtins.str database_name: Database name.
+        :param builtins.int download_progress: Backup file preparation progress (%).
+        :param builtins.str download_status: Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+        :param builtins.str link_expired_time: Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+        """
+        pulumi.set(__self__, "backup_download_link_eip", backup_download_link_eip)
+        pulumi.set(__self__, "backup_download_link_inner", backup_download_link_inner)
+        pulumi.set(__self__, "backup_end_time", backup_end_time)
+        pulumi.set(__self__, "backup_file_name", backup_file_name)
+        pulumi.set(__self__, "backup_file_size", backup_file_size)
+        pulumi.set(__self__, "backup_start_time", backup_start_time)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "database_name", database_name)
+        pulumi.set(__self__, "download_progress", download_progress)
+        pulumi.set(__self__, "download_status", download_status)
+        pulumi.set(__self__, "link_expired_time", link_expired_time)
+
+    @property
+    @pulumi.getter(name="backupDownloadLinkEip")
+    def backup_download_link_eip(self) -> builtins.str:
+        """
+        External network backup download link.
+        """
+        return pulumi.get(self, "backup_download_link_eip")
+
+    @property
+    @pulumi.getter(name="backupDownloadLinkInner")
+    def backup_download_link_inner(self) -> builtins.str:
+        """
+        Internal network backup download link.
+        """
+        return pulumi.get(self, "backup_download_link_inner")
+
+    @property
+    @pulumi.getter(name="backupEndTime")
+    def backup_end_time(self) -> builtins.str:
+        """
+        Backup end time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        """
+        return pulumi.get(self, "backup_end_time")
+
+    @property
+    @pulumi.getter(name="backupFileName")
+    def backup_file_name(self) -> builtins.str:
+        """
+        Backup file name.
+        """
+        return pulumi.get(self, "backup_file_name")
+
+    @property
+    @pulumi.getter(name="backupFileSize")
+    def backup_file_size(self) -> builtins.int:
+        """
+        Backup file size (Bytes).
+        """
+        return pulumi.get(self, "backup_file_size")
+
+    @property
+    @pulumi.getter(name="backupStartTime")
+    def backup_start_time(self) -> builtins.str:
+        """
+        Backup start time. Format: yyyy-MM-ddTHH:mm:ss.sZ (UTC time).
+        """
+        return pulumi.get(self, "backup_start_time")
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> builtins.str:
+        """
+        Backup type. Values: Full (full backup), Diff (differential backup).
+        """
+        return pulumi.get(self, "backup_type")
+
+    @property
+    @pulumi.getter(name="databaseName")
+    def database_name(self) -> builtins.str:
+        """
+        Database name.
+        """
+        return pulumi.get(self, "database_name")
+
+    @property
+    @pulumi.getter(name="downloadProgress")
+    def download_progress(self) -> builtins.int:
+        """
+        Backup file preparation progress (%).
+        """
+        return pulumi.get(self, "download_progress")
+
+    @property
+    @pulumi.getter(name="downloadStatus")
+    def download_status(self) -> builtins.str:
+        """
+        Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
+        """
+        return pulumi.get(self, "download_status")
+
+    @property
+    @pulumi.getter(name="linkExpiredTime")
+    def link_expired_time(self) -> builtins.str:
+        """
+        Download link expiration time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
+        """
+        return pulumi.get(self, "link_expired_time")
+
+
+@pulumi.output_type
+class GetBackupBackupMetaResult(dict):
+    def __init__(__self__, *,
+                 db_name: builtins.str):
+        """
+        :param builtins.str db_name: Backup database name.
+        """
+        pulumi.set(__self__, "db_name", db_name)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> builtins.str:
+        """
+        Backup database name.
+        """
+        return pulumi.get(self, "db_name")
 
 
 @pulumi.output_type

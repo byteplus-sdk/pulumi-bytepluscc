@@ -66,6 +66,11 @@ public final class GetAllowListResult {
      */
     private String id;
     /**
+     * @return Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     * 
+     */
+    private String instanceId;
+    /**
      * @return Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      * 
      */
@@ -85,6 +90,11 @@ public final class GetAllowListResult {
      * 
      */
     private Boolean updateSecurityGroup;
+    /**
+     * @return Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     * 
+     */
+    private Boolean upgradeAllowListVersion;
     /**
      * @return IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      * 
@@ -163,6 +173,13 @@ public final class GetAllowListResult {
         return this.id;
     }
     /**
+     * @return Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
+     * 
+     */
+    public String instanceId() {
+        return this.instanceId;
+    }
+    /**
      * @return Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
      * 
      */
@@ -191,6 +208,13 @@ public final class GetAllowListResult {
         return this.updateSecurityGroup;
     }
     /**
+     * @return Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
+     * 
+     */
+    public Boolean upgradeAllowListVersion() {
+        return this.upgradeAllowListVersion;
+    }
+    /**
      * @return IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
      * 
      */
@@ -217,10 +241,12 @@ public final class GetAllowListResult {
         private Integer associatedInstanceNum;
         private List<GetAllowListAssociatedInstance> associatedInstances;
         private String id;
+        private String instanceId;
         private String ipAddress;
         private String modifyMode;
         private List<GetAllowListSecurityGroupBindInfo> securityGroupBindInfos;
         private Boolean updateSecurityGroup;
+        private Boolean upgradeAllowListVersion;
         private String userAllowList;
         public Builder() {}
         public Builder(GetAllowListResult defaults) {
@@ -235,10 +261,12 @@ public final class GetAllowListResult {
     	      this.associatedInstanceNum = defaults.associatedInstanceNum;
     	      this.associatedInstances = defaults.associatedInstances;
     	      this.id = defaults.id;
+    	      this.instanceId = defaults.instanceId;
     	      this.ipAddress = defaults.ipAddress;
     	      this.modifyMode = defaults.modifyMode;
     	      this.securityGroupBindInfos = defaults.securityGroupBindInfos;
     	      this.updateSecurityGroup = defaults.updateSecurityGroup;
+    	      this.upgradeAllowListVersion = defaults.upgradeAllowListVersion;
     	      this.userAllowList = defaults.userAllowList;
         }
 
@@ -329,6 +357,14 @@ public final class GetAllowListResult {
             return this;
         }
         @CustomType.Setter
+        public Builder instanceId(String instanceId) {
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetAllowListResult", "instanceId");
+            }
+            this.instanceId = instanceId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             if (ipAddress == null) {
               throw new MissingRequiredPropertyException("GetAllowListResult", "ipAddress");
@@ -364,6 +400,14 @@ public final class GetAllowListResult {
             return this;
         }
         @CustomType.Setter
+        public Builder upgradeAllowListVersion(Boolean upgradeAllowListVersion) {
+            if (upgradeAllowListVersion == null) {
+              throw new MissingRequiredPropertyException("GetAllowListResult", "upgradeAllowListVersion");
+            }
+            this.upgradeAllowListVersion = upgradeAllowListVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userAllowList(String userAllowList) {
             if (userAllowList == null) {
               throw new MissingRequiredPropertyException("GetAllowListResult", "userAllowList");
@@ -383,10 +427,12 @@ public final class GetAllowListResult {
             _resultValue.associatedInstanceNum = associatedInstanceNum;
             _resultValue.associatedInstances = associatedInstances;
             _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
             _resultValue.ipAddress = ipAddress;
             _resultValue.modifyMode = modifyMode;
             _resultValue.securityGroupBindInfos = securityGroupBindInfos;
             _resultValue.updateSecurityGroup = updateSecurityGroup;
+            _resultValue.upgradeAllowListVersion = upgradeAllowListVersion;
             _resultValue.userAllowList = userAllowList;
             return _resultValue;
         }

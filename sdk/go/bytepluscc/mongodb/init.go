@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Account{}
 	case "bytepluscc:mongodb/allowList:AllowList":
 		r = &AllowList{}
+	case "bytepluscc:mongodb/endpoint:Endpoint":
+		r = &Endpoint{}
 	case "bytepluscc:mongodb/instance:Instance":
 		r = &Instance{}
 	case "bytepluscc:mongodb/sslState:SslState":
@@ -50,6 +52,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"mongodb/allowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"mongodb/endpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

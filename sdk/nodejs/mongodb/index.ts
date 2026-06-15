@@ -15,6 +15,11 @@ export type AllowList = import("./allowList").AllowList;
 export const AllowList: typeof import("./allowList").AllowList = null as any;
 utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
 
+export { EndpointArgs, EndpointState } from "./endpoint";
+export type Endpoint = import("./endpoint").Endpoint;
+export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
+utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
+
 export { GetAccountArgs, GetAccountResult, GetAccountOutputArgs } from "./getAccount";
 export const getAccount: typeof import("./getAccount").getAccount = null as any;
 export const getAccountOutput: typeof import("./getAccount").getAccountOutput = null as any;
@@ -34,6 +39,16 @@ export { GetAllowListsResult } from "./getAllowLists";
 export const getAllowLists: typeof import("./getAllowLists").getAllowLists = null as any;
 export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
 utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
+
+export { GetEndpointArgs, GetEndpointResult, GetEndpointOutputArgs } from "./getEndpoint";
+export const getEndpoint: typeof import("./getEndpoint").getEndpoint = null as any;
+export const getEndpointOutput: typeof import("./getEndpoint").getEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpoint","getEndpointOutput"], () => require("./getEndpoint"));
+
+export { GetEndpointsResult } from "./getEndpoints";
+export const getEndpoints: typeof import("./getEndpoints").getEndpoints = null as any;
+export const getEndpointsOutput: typeof import("./getEndpoints").getEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpoints","getEndpointsOutput"], () => require("./getEndpoints"));
 
 export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
 export const getInstance: typeof import("./getInstance").getInstance = null as any;
@@ -74,6 +89,8 @@ const _module = {
                 return new Account(name, <any>undefined, { urn })
             case "bytepluscc:mongodb/allowList:AllowList":
                 return new AllowList(name, <any>undefined, { urn })
+            case "bytepluscc:mongodb/endpoint:Endpoint":
+                return new Endpoint(name, <any>undefined, { urn })
             case "bytepluscc:mongodb/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:mongodb/sslState:SslState":
@@ -85,5 +102,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/account", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/allowList", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/endpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "mongodb/sslState", _module)

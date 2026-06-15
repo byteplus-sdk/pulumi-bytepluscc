@@ -7,8 +7,11 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .endpoint_service import *
+from .gateway_endpoint import *
 from .get_endpoint_service import *
 from .get_endpoint_services import *
+from .get_gateway_endpoint import *
+from .get_gateway_endpoints import *
 from .get_vpc_endpoint import *
 from .get_vpc_endpoint_connection import *
 from .get_vpc_endpoint_connections import *

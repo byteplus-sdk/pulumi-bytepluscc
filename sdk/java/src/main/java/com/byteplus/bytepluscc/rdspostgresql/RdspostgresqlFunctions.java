@@ -16,6 +16,8 @@ import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbEndpointArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbEndpointPlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetInstanceSslArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetInstanceSslPlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetParameterTemplateArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetParameterTemplatePlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetSchemaArgs;
@@ -31,6 +33,8 @@ import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbAccountsResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointsResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceSslResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceSslsResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetParameterTemplateResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetParameterTemplatesResult;
@@ -499,6 +503,90 @@ public final class RdspostgresqlFunctions {
      */
     public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslResult> getInstanceSsl(GetInstanceSslArgs args) {
+        return getInstanceSsl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static CompletableFuture<GetInstanceSslResult> getInstanceSslPlain(GetInstanceSslPlainArgs args) {
+        return getInstanceSslPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslResult> getInstanceSsl(GetInstanceSslArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getInstanceSsl:getInstanceSsl", TypeShape.of(GetInstanceSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslResult> getInstanceSsl(GetInstanceSslArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getInstanceSsl:getInstanceSsl", TypeShape.of(GetInstanceSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static CompletableFuture<GetInstanceSslResult> getInstanceSslPlain(GetInstanceSslPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getInstanceSsl:getInstanceSsl", TypeShape.of(GetInstanceSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslsResult> getInstanceSsls() {
+        return getInstanceSsls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static CompletableFuture<GetInstanceSslsResult> getInstanceSslsPlain() {
+        return getInstanceSslsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslsResult> getInstanceSsls(InvokeArgs args) {
+        return getInstanceSsls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static CompletableFuture<GetInstanceSslsResult> getInstanceSslsPlain(InvokeArgs args) {
+        return getInstanceSslsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslsResult> getInstanceSsls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getInstanceSsls:getInstanceSsls", TypeShape.of(GetInstanceSslsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static Output<GetInstanceSslsResult> getInstanceSsls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getInstanceSsls:getInstanceSsls", TypeShape.of(GetInstanceSslsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::InstanceSSL
+     * 
+     */
+    public static CompletableFuture<GetInstanceSslsResult> getInstanceSslsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getInstanceSsls:getInstanceSsls", TypeShape.of(GetInstanceSslsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::RDSPostgreSQL::Instance

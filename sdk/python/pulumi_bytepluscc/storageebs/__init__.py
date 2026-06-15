@@ -9,11 +9,14 @@ import typing
 from .get_snapshot import *
 from .get_snapshot_group import *
 from .get_snapshot_groups import *
+from .get_snapshot_policies import *
+from .get_snapshot_policy import *
 from .get_snapshots import *
 from .get_volume import *
 from .get_volumes import *
 from .snapshot import *
 from .snapshot_group import *
+from .snapshot_policy import *
 from .volume import *
 from ._inputs import *
 from . import outputs

@@ -604,6 +604,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "dns/backup",
+  "fqn": "pulumi_bytepluscc.dns",
+  "classes": {
+   "bytepluscc:dns/backup:Backup": "Backup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "dns/record",
   "fqn": "pulumi_bytepluscc.dns",
   "classes": {
@@ -812,6 +820,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "iam/allowedIpAddress",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/allowedIpAddress:AllowedIpAddress": "AllowedIpAddress"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "iam/group",
   "fqn": "pulumi_bytepluscc.iam",
   "classes": {
@@ -948,6 +964,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "mongodb/endpoint",
+  "fqn": "pulumi_bytepluscc.mongodb",
+  "classes": {
+   "bytepluscc:mongodb/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "mongodb/instance",
   "fqn": "pulumi_bytepluscc.mongodb",
   "classes": {
@@ -1032,6 +1056,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.privatelink",
   "classes": {
    "bytepluscc:privatelink/endpointService:EndpointService": "EndpointService"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "privatelink/gatewayEndpoint",
+  "fqn": "pulumi_bytepluscc.privatelink",
+  "classes": {
+   "bytepluscc:privatelink/gatewayEndpoint:GatewayEndpoint": "GatewayEndpoint"
   }
  },
  {
@@ -1128,6 +1160,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.rdsmssql",
   "classes": {
    "bytepluscc:rdsmssql/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmssql/backup",
+  "fqn": "pulumi_bytepluscc.rdsmssql",
+  "classes": {
+   "bytepluscc:rdsmssql/backup:Backup": "Backup"
   }
  },
  {
@@ -1252,6 +1292,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdspostgresql/instanceSsl",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/instanceSsl:InstanceSsl": "InstanceSsl"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdspostgresql/parameterTemplate",
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {
@@ -1320,6 +1368,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
    "bytepluscc:storageebs/snapshotGroup:SnapshotGroup": "SnapshotGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "storageebs/snapshotPolicy",
+  "fqn": "pulumi_bytepluscc.storageebs",
+  "classes": {
+   "bytepluscc:storageebs/snapshotPolicy:SnapshotPolicy": "SnapshotPolicy"
   }
  },
  {
@@ -1412,6 +1468,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "transitrouter/directConnectGatewayAttachment",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/directConnectGatewayAttachment:DirectConnectGatewayAttachment": "DirectConnectGatewayAttachment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "transitrouter/peerAttachment",
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
@@ -1436,6 +1500,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterBandwidthPackage",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage": "TransitRouterBandwidthPackage"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "transitrouter/transitRouterRouteEntry",
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
@@ -1448,6 +1520,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable": "TransitRouterRouteTable"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterRouteTableAssociation",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterRouteTableAssociation:TransitRouterRouteTableAssociation": "TransitRouterRouteTableAssociation"
   }
  },
  {

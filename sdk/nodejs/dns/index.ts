@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BackupArgs, BackupState } from "./backup";
+export type Backup = import("./backup").Backup;
+export const Backup: typeof import("./backup").Backup = null as any;
+utilities.lazyLoad(exports, ["Backup"], () => require("./backup"));
+
+export { GetBackupArgs, GetBackupResult, GetBackupOutputArgs } from "./getBackup";
+export const getBackup: typeof import("./getBackup").getBackup = null as any;
+export const getBackupOutput: typeof import("./getBackup").getBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getBackup","getBackupOutput"], () => require("./getBackup"));
+
+export { GetBackupsResult } from "./getBackups";
+export const getBackups: typeof import("./getBackups").getBackups = null as any;
+export const getBackupsOutput: typeof import("./getBackups").getBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getBackups","getBackupsOutput"], () => require("./getBackups"));
+
 export { GetRecordArgs, GetRecordResult, GetRecordOutputArgs } from "./getRecord";
 export const getRecord: typeof import("./getRecord").getRecord = null as any;
 export const getRecordOutput: typeof import("./getRecord").getRecordOutput = null as any;
@@ -40,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:dns/backup:Backup":
+                return new Backup(name, <any>undefined, { urn })
             case "bytepluscc:dns/record:Record":
                 return new Record(name, <any>undefined, { urn })
             case "bytepluscc:dns/zone:Zone":
@@ -49,5 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "dns/backup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "dns/record", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "dns/zone", _module)

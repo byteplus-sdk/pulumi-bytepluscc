@@ -90,7 +90,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public AllowList(string name, AllowListArgs? args = null, CustomResourceOptions? options = null)
+        public AllowList(string name, AllowListArgs args, CustomResourceOptions? options = null)
             : base("bytepluscc:redis/allowList:AllowList", name, args ?? new AllowListArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -150,8 +150,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// <summary>
         /// Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
         /// </summary>
-        [Input("allowListName")]
-        public Input<string>? AllowListName { get; set; }
+        [Input("allowListName", required: true)]
+        public Input<string> AllowListName { get; set; } = null!;
 
         [Input("instanceIds")]
         private InputList<string>? _instanceIds;

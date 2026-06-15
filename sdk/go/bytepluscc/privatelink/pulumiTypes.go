@@ -419,6 +419,112 @@ func (o EndpointServiceTagArrayOutput) Index(i pulumi.IntInput) EndpointServiceT
 	}).(EndpointServiceTagOutput)
 }
 
+type GatewayEndpointTag struct {
+	// Tag key of the endpoint tag
+	Key *string `pulumi:"key"`
+	// Tag value of the endpoint tag
+	Value *string `pulumi:"value"`
+}
+
+// GatewayEndpointTagInput is an input type that accepts GatewayEndpointTagArgs and GatewayEndpointTagOutput values.
+// You can construct a concrete instance of `GatewayEndpointTagInput` via:
+//
+//	GatewayEndpointTagArgs{...}
+type GatewayEndpointTagInput interface {
+	pulumi.Input
+
+	ToGatewayEndpointTagOutput() GatewayEndpointTagOutput
+	ToGatewayEndpointTagOutputWithContext(context.Context) GatewayEndpointTagOutput
+}
+
+type GatewayEndpointTagArgs struct {
+	// Tag key of the endpoint tag
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value of the endpoint tag
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GatewayEndpointTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayEndpointTag)(nil)).Elem()
+}
+
+func (i GatewayEndpointTagArgs) ToGatewayEndpointTagOutput() GatewayEndpointTagOutput {
+	return i.ToGatewayEndpointTagOutputWithContext(context.Background())
+}
+
+func (i GatewayEndpointTagArgs) ToGatewayEndpointTagOutputWithContext(ctx context.Context) GatewayEndpointTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayEndpointTagOutput)
+}
+
+// GatewayEndpointTagArrayInput is an input type that accepts GatewayEndpointTagArray and GatewayEndpointTagArrayOutput values.
+// You can construct a concrete instance of `GatewayEndpointTagArrayInput` via:
+//
+//	GatewayEndpointTagArray{ GatewayEndpointTagArgs{...} }
+type GatewayEndpointTagArrayInput interface {
+	pulumi.Input
+
+	ToGatewayEndpointTagArrayOutput() GatewayEndpointTagArrayOutput
+	ToGatewayEndpointTagArrayOutputWithContext(context.Context) GatewayEndpointTagArrayOutput
+}
+
+type GatewayEndpointTagArray []GatewayEndpointTagInput
+
+func (GatewayEndpointTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayEndpointTag)(nil)).Elem()
+}
+
+func (i GatewayEndpointTagArray) ToGatewayEndpointTagArrayOutput() GatewayEndpointTagArrayOutput {
+	return i.ToGatewayEndpointTagArrayOutputWithContext(context.Background())
+}
+
+func (i GatewayEndpointTagArray) ToGatewayEndpointTagArrayOutputWithContext(ctx context.Context) GatewayEndpointTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayEndpointTagArrayOutput)
+}
+
+type GatewayEndpointTagOutput struct{ *pulumi.OutputState }
+
+func (GatewayEndpointTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayEndpointTag)(nil)).Elem()
+}
+
+func (o GatewayEndpointTagOutput) ToGatewayEndpointTagOutput() GatewayEndpointTagOutput {
+	return o
+}
+
+func (o GatewayEndpointTagOutput) ToGatewayEndpointTagOutputWithContext(ctx context.Context) GatewayEndpointTagOutput {
+	return o
+}
+
+// Tag key of the endpoint tag
+func (o GatewayEndpointTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayEndpointTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value of the endpoint tag
+func (o GatewayEndpointTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayEndpointTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GatewayEndpointTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GatewayEndpointTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayEndpointTag)(nil)).Elem()
+}
+
+func (o GatewayEndpointTagArrayOutput) ToGatewayEndpointTagArrayOutput() GatewayEndpointTagArrayOutput {
+	return o
+}
+
+func (o GatewayEndpointTagArrayOutput) ToGatewayEndpointTagArrayOutputWithContext(ctx context.Context) GatewayEndpointTagArrayOutput {
+	return o
+}
+
+func (o GatewayEndpointTagArrayOutput) Index(i pulumi.IntInput) GatewayEndpointTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GatewayEndpointTag {
+		return vs[0].([]GatewayEndpointTag)[vs[1].(int)]
+	}).(GatewayEndpointTagOutput)
+}
+
 type VpcEndpointConnectionResourcesAllocate struct {
 	// Specify the service resource for the endpoint connection
 	ResourceId *string `pulumi:"resourceId"`
@@ -1224,6 +1330,112 @@ func (o GetEndpointServiceTagArrayOutput) Index(i pulumi.IntInput) GetEndpointSe
 	}).(GetEndpointServiceTagOutput)
 }
 
+type GetGatewayEndpointTag struct {
+	// Tag key of the endpoint tag
+	Key string `pulumi:"key"`
+	// Tag value of the endpoint tag
+	Value string `pulumi:"value"`
+}
+
+// GetGatewayEndpointTagInput is an input type that accepts GetGatewayEndpointTagArgs and GetGatewayEndpointTagOutput values.
+// You can construct a concrete instance of `GetGatewayEndpointTagInput` via:
+//
+//	GetGatewayEndpointTagArgs{...}
+type GetGatewayEndpointTagInput interface {
+	pulumi.Input
+
+	ToGetGatewayEndpointTagOutput() GetGatewayEndpointTagOutput
+	ToGetGatewayEndpointTagOutputWithContext(context.Context) GetGatewayEndpointTagOutput
+}
+
+type GetGatewayEndpointTagArgs struct {
+	// Tag key of the endpoint tag
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value of the endpoint tag
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGatewayEndpointTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayEndpointTag)(nil)).Elem()
+}
+
+func (i GetGatewayEndpointTagArgs) ToGetGatewayEndpointTagOutput() GetGatewayEndpointTagOutput {
+	return i.ToGetGatewayEndpointTagOutputWithContext(context.Background())
+}
+
+func (i GetGatewayEndpointTagArgs) ToGetGatewayEndpointTagOutputWithContext(ctx context.Context) GetGatewayEndpointTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayEndpointTagOutput)
+}
+
+// GetGatewayEndpointTagArrayInput is an input type that accepts GetGatewayEndpointTagArray and GetGatewayEndpointTagArrayOutput values.
+// You can construct a concrete instance of `GetGatewayEndpointTagArrayInput` via:
+//
+//	GetGatewayEndpointTagArray{ GetGatewayEndpointTagArgs{...} }
+type GetGatewayEndpointTagArrayInput interface {
+	pulumi.Input
+
+	ToGetGatewayEndpointTagArrayOutput() GetGatewayEndpointTagArrayOutput
+	ToGetGatewayEndpointTagArrayOutputWithContext(context.Context) GetGatewayEndpointTagArrayOutput
+}
+
+type GetGatewayEndpointTagArray []GetGatewayEndpointTagInput
+
+func (GetGatewayEndpointTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayEndpointTag)(nil)).Elem()
+}
+
+func (i GetGatewayEndpointTagArray) ToGetGatewayEndpointTagArrayOutput() GetGatewayEndpointTagArrayOutput {
+	return i.ToGetGatewayEndpointTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetGatewayEndpointTagArray) ToGetGatewayEndpointTagArrayOutputWithContext(ctx context.Context) GetGatewayEndpointTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayEndpointTagArrayOutput)
+}
+
+type GetGatewayEndpointTagOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayEndpointTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayEndpointTag)(nil)).Elem()
+}
+
+func (o GetGatewayEndpointTagOutput) ToGetGatewayEndpointTagOutput() GetGatewayEndpointTagOutput {
+	return o
+}
+
+func (o GetGatewayEndpointTagOutput) ToGetGatewayEndpointTagOutputWithContext(ctx context.Context) GetGatewayEndpointTagOutput {
+	return o
+}
+
+// Tag key of the endpoint tag
+func (o GetGatewayEndpointTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayEndpointTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value of the endpoint tag
+func (o GetGatewayEndpointTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayEndpointTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetGatewayEndpointTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayEndpointTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayEndpointTag)(nil)).Elem()
+}
+
+func (o GetGatewayEndpointTagArrayOutput) ToGetGatewayEndpointTagArrayOutput() GetGatewayEndpointTagArrayOutput {
+	return o
+}
+
+func (o GetGatewayEndpointTagArrayOutput) ToGetGatewayEndpointTagArrayOutputWithContext(ctx context.Context) GetGatewayEndpointTagArrayOutput {
+	return o
+}
+
+func (o GetGatewayEndpointTagArrayOutput) Index(i pulumi.IntInput) GetGatewayEndpointTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGatewayEndpointTag {
+		return vs[0].([]GetGatewayEndpointTag)[vs[1].(int)]
+	}).(GetGatewayEndpointTagOutput)
+}
+
 type GetVpcEndpointConnectionResourcesAllocate struct {
 	// Specify the service resource for the endpoint connection
 	ResourceId string `pulumi:"resourceId"`
@@ -1781,6 +1993,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceResourceArrayInput)(nil)).Elem(), EndpointServiceResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceTagInput)(nil)).Elem(), EndpointServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointServiceTagArrayInput)(nil)).Elem(), EndpointServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayEndpointTagInput)(nil)).Elem(), GatewayEndpointTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayEndpointTagArrayInput)(nil)).Elem(), GatewayEndpointTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionResourcesAllocateInput)(nil)).Elem(), VpcEndpointConnectionResourcesAllocateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionResourcesAllocateArrayInput)(nil)).Elem(), VpcEndpointConnectionResourcesAllocateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointConnectionZoneInput)(nil)).Elem(), VpcEndpointConnectionZoneArgs{})
@@ -1794,6 +2008,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceResourceArrayInput)(nil)).Elem(), GetEndpointServiceResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceTagInput)(nil)).Elem(), GetEndpointServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointServiceTagArrayInput)(nil)).Elem(), GetEndpointServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayEndpointTagInput)(nil)).Elem(), GetGatewayEndpointTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayEndpointTagArrayInput)(nil)).Elem(), GetGatewayEndpointTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionResourcesAllocateInput)(nil)).Elem(), GetVpcEndpointConnectionResourcesAllocateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionResourcesAllocateArrayInput)(nil)).Elem(), GetVpcEndpointConnectionResourcesAllocateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointConnectionZoneInput)(nil)).Elem(), GetVpcEndpointConnectionZoneArgs{})
@@ -1808,6 +2024,8 @@ func init() {
 	pulumi.RegisterOutputType(EndpointServiceResourceArrayOutput{})
 	pulumi.RegisterOutputType(EndpointServiceTagOutput{})
 	pulumi.RegisterOutputType(EndpointServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(GatewayEndpointTagOutput{})
+	pulumi.RegisterOutputType(GatewayEndpointTagArrayOutput{})
 	pulumi.RegisterOutputType(VpcEndpointConnectionResourcesAllocateOutput{})
 	pulumi.RegisterOutputType(VpcEndpointConnectionResourcesAllocateArrayOutput{})
 	pulumi.RegisterOutputType(VpcEndpointConnectionZoneOutput{})
@@ -1821,6 +2039,8 @@ func init() {
 	pulumi.RegisterOutputType(GetEndpointServiceResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceTagOutput{})
 	pulumi.RegisterOutputType(GetEndpointServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayEndpointTagOutput{})
+	pulumi.RegisterOutputType(GetGatewayEndpointTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointConnectionResourcesAllocateOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointConnectionResourcesAllocateArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointConnectionZoneOutput{})
