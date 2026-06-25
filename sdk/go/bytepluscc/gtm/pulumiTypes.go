@@ -13,6 +13,259 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type PolicyStatistics struct {
+	// Number of available addresses
+	ActiveAddr *int `pulumi:"activeAddr"`
+	// Number of unavailable addresses
+	InactiveAddr *int `pulumi:"inactiveAddr"`
+}
+
+// PolicyStatisticsInput is an input type that accepts PolicyStatisticsArgs and PolicyStatisticsOutput values.
+// You can construct a concrete instance of `PolicyStatisticsInput` via:
+//
+//	PolicyStatisticsArgs{...}
+type PolicyStatisticsInput interface {
+	pulumi.Input
+
+	ToPolicyStatisticsOutput() PolicyStatisticsOutput
+	ToPolicyStatisticsOutputWithContext(context.Context) PolicyStatisticsOutput
+}
+
+type PolicyStatisticsArgs struct {
+	// Number of available addresses
+	ActiveAddr pulumi.IntPtrInput `pulumi:"activeAddr"`
+	// Number of unavailable addresses
+	InactiveAddr pulumi.IntPtrInput `pulumi:"inactiveAddr"`
+}
+
+func (PolicyStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PolicyStatistics)(nil)).Elem()
+}
+
+func (i PolicyStatisticsArgs) ToPolicyStatisticsOutput() PolicyStatisticsOutput {
+	return i.ToPolicyStatisticsOutputWithContext(context.Background())
+}
+
+func (i PolicyStatisticsArgs) ToPolicyStatisticsOutputWithContext(ctx context.Context) PolicyStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PolicyStatisticsOutput)
+}
+
+func (i PolicyStatisticsArgs) ToPolicyStatisticsPtrOutput() PolicyStatisticsPtrOutput {
+	return i.ToPolicyStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i PolicyStatisticsArgs) ToPolicyStatisticsPtrOutputWithContext(ctx context.Context) PolicyStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PolicyStatisticsOutput).ToPolicyStatisticsPtrOutputWithContext(ctx)
+}
+
+// PolicyStatisticsPtrInput is an input type that accepts PolicyStatisticsArgs, PolicyStatisticsPtr and PolicyStatisticsPtrOutput values.
+// You can construct a concrete instance of `PolicyStatisticsPtrInput` via:
+//
+//	        PolicyStatisticsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PolicyStatisticsPtrInput interface {
+	pulumi.Input
+
+	ToPolicyStatisticsPtrOutput() PolicyStatisticsPtrOutput
+	ToPolicyStatisticsPtrOutputWithContext(context.Context) PolicyStatisticsPtrOutput
+}
+
+type policyStatisticsPtrType PolicyStatisticsArgs
+
+func PolicyStatisticsPtr(v *PolicyStatisticsArgs) PolicyStatisticsPtrInput {
+	return (*policyStatisticsPtrType)(v)
+}
+
+func (*policyStatisticsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PolicyStatistics)(nil)).Elem()
+}
+
+func (i *policyStatisticsPtrType) ToPolicyStatisticsPtrOutput() PolicyStatisticsPtrOutput {
+	return i.ToPolicyStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i *policyStatisticsPtrType) ToPolicyStatisticsPtrOutputWithContext(ctx context.Context) PolicyStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PolicyStatisticsPtrOutput)
+}
+
+type PolicyStatisticsOutput struct{ *pulumi.OutputState }
+
+func (PolicyStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PolicyStatistics)(nil)).Elem()
+}
+
+func (o PolicyStatisticsOutput) ToPolicyStatisticsOutput() PolicyStatisticsOutput {
+	return o
+}
+
+func (o PolicyStatisticsOutput) ToPolicyStatisticsOutputWithContext(ctx context.Context) PolicyStatisticsOutput {
+	return o
+}
+
+func (o PolicyStatisticsOutput) ToPolicyStatisticsPtrOutput() PolicyStatisticsPtrOutput {
+	return o.ToPolicyStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (o PolicyStatisticsOutput) ToPolicyStatisticsPtrOutputWithContext(ctx context.Context) PolicyStatisticsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyStatistics) *PolicyStatistics {
+		return &v
+	}).(PolicyStatisticsPtrOutput)
+}
+
+// Number of available addresses
+func (o PolicyStatisticsOutput) ActiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PolicyStatistics) *int { return v.ActiveAddr }).(pulumi.IntPtrOutput)
+}
+
+// Number of unavailable addresses
+func (o PolicyStatisticsOutput) InactiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PolicyStatistics) *int { return v.InactiveAddr }).(pulumi.IntPtrOutput)
+}
+
+type PolicyStatisticsPtrOutput struct{ *pulumi.OutputState }
+
+func (PolicyStatisticsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PolicyStatistics)(nil)).Elem()
+}
+
+func (o PolicyStatisticsPtrOutput) ToPolicyStatisticsPtrOutput() PolicyStatisticsPtrOutput {
+	return o
+}
+
+func (o PolicyStatisticsPtrOutput) ToPolicyStatisticsPtrOutputWithContext(ctx context.Context) PolicyStatisticsPtrOutput {
+	return o
+}
+
+func (o PolicyStatisticsPtrOutput) Elem() PolicyStatisticsOutput {
+	return o.ApplyT(func(v *PolicyStatistics) PolicyStatistics {
+		if v != nil {
+			return *v
+		}
+		var ret PolicyStatistics
+		return ret
+	}).(PolicyStatisticsOutput)
+}
+
+// Number of available addresses
+func (o PolicyStatisticsPtrOutput) ActiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PolicyStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActiveAddr
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of unavailable addresses
+func (o PolicyStatisticsPtrOutput) InactiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PolicyStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InactiveAddr
+	}).(pulumi.IntPtrOutput)
+}
+
+type PolicyTarget struct {
+	// Address pool ID.
+	PoolId *string `pulumi:"poolId"`
+}
+
+// PolicyTargetInput is an input type that accepts PolicyTargetArgs and PolicyTargetOutput values.
+// You can construct a concrete instance of `PolicyTargetInput` via:
+//
+//	PolicyTargetArgs{...}
+type PolicyTargetInput interface {
+	pulumi.Input
+
+	ToPolicyTargetOutput() PolicyTargetOutput
+	ToPolicyTargetOutputWithContext(context.Context) PolicyTargetOutput
+}
+
+type PolicyTargetArgs struct {
+	// Address pool ID.
+	PoolId pulumi.StringPtrInput `pulumi:"poolId"`
+}
+
+func (PolicyTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PolicyTarget)(nil)).Elem()
+}
+
+func (i PolicyTargetArgs) ToPolicyTargetOutput() PolicyTargetOutput {
+	return i.ToPolicyTargetOutputWithContext(context.Background())
+}
+
+func (i PolicyTargetArgs) ToPolicyTargetOutputWithContext(ctx context.Context) PolicyTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PolicyTargetOutput)
+}
+
+// PolicyTargetArrayInput is an input type that accepts PolicyTargetArray and PolicyTargetArrayOutput values.
+// You can construct a concrete instance of `PolicyTargetArrayInput` via:
+//
+//	PolicyTargetArray{ PolicyTargetArgs{...} }
+type PolicyTargetArrayInput interface {
+	pulumi.Input
+
+	ToPolicyTargetArrayOutput() PolicyTargetArrayOutput
+	ToPolicyTargetArrayOutputWithContext(context.Context) PolicyTargetArrayOutput
+}
+
+type PolicyTargetArray []PolicyTargetInput
+
+func (PolicyTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PolicyTarget)(nil)).Elem()
+}
+
+func (i PolicyTargetArray) ToPolicyTargetArrayOutput() PolicyTargetArrayOutput {
+	return i.ToPolicyTargetArrayOutputWithContext(context.Background())
+}
+
+func (i PolicyTargetArray) ToPolicyTargetArrayOutputWithContext(ctx context.Context) PolicyTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PolicyTargetArrayOutput)
+}
+
+type PolicyTargetOutput struct{ *pulumi.OutputState }
+
+func (PolicyTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PolicyTarget)(nil)).Elem()
+}
+
+func (o PolicyTargetOutput) ToPolicyTargetOutput() PolicyTargetOutput {
+	return o
+}
+
+func (o PolicyTargetOutput) ToPolicyTargetOutputWithContext(ctx context.Context) PolicyTargetOutput {
+	return o
+}
+
+// Address pool ID.
+func (o PolicyTargetOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PolicyTarget) *string { return v.PoolId }).(pulumi.StringPtrOutput)
+}
+
+type PolicyTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (PolicyTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PolicyTarget)(nil)).Elem()
+}
+
+func (o PolicyTargetArrayOutput) ToPolicyTargetArrayOutput() PolicyTargetArrayOutput {
+	return o
+}
+
+func (o PolicyTargetArrayOutput) ToPolicyTargetArrayOutputWithContext(ctx context.Context) PolicyTargetArrayOutput {
+	return o
+}
+
+func (o PolicyTargetArrayOutput) Index(i pulumi.IntInput) PolicyTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyTarget {
+		return vs[0].([]PolicyTarget)[vs[1].(int)]
+	}).(PolicyTargetOutput)
+}
+
 type PoolAddress struct {
 	// Address capacity
 	Capacity *int `pulumi:"capacity"`
@@ -1053,6 +1306,164 @@ func (o RuleProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) RuleProb
 	}).(RuleProbeHttpUsabilityCodeOutput)
 }
 
+type GetPolicyStatistics struct {
+	// Number of available addresses
+	ActiveAddr int `pulumi:"activeAddr"`
+	// Number of unavailable addresses
+	InactiveAddr int `pulumi:"inactiveAddr"`
+}
+
+// GetPolicyStatisticsInput is an input type that accepts GetPolicyStatisticsArgs and GetPolicyStatisticsOutput values.
+// You can construct a concrete instance of `GetPolicyStatisticsInput` via:
+//
+//	GetPolicyStatisticsArgs{...}
+type GetPolicyStatisticsInput interface {
+	pulumi.Input
+
+	ToGetPolicyStatisticsOutput() GetPolicyStatisticsOutput
+	ToGetPolicyStatisticsOutputWithContext(context.Context) GetPolicyStatisticsOutput
+}
+
+type GetPolicyStatisticsArgs struct {
+	// Number of available addresses
+	ActiveAddr pulumi.IntInput `pulumi:"activeAddr"`
+	// Number of unavailable addresses
+	InactiveAddr pulumi.IntInput `pulumi:"inactiveAddr"`
+}
+
+func (GetPolicyStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPolicyStatistics)(nil)).Elem()
+}
+
+func (i GetPolicyStatisticsArgs) ToGetPolicyStatisticsOutput() GetPolicyStatisticsOutput {
+	return i.ToGetPolicyStatisticsOutputWithContext(context.Background())
+}
+
+func (i GetPolicyStatisticsArgs) ToGetPolicyStatisticsOutputWithContext(ctx context.Context) GetPolicyStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPolicyStatisticsOutput)
+}
+
+type GetPolicyStatisticsOutput struct{ *pulumi.OutputState }
+
+func (GetPolicyStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPolicyStatistics)(nil)).Elem()
+}
+
+func (o GetPolicyStatisticsOutput) ToGetPolicyStatisticsOutput() GetPolicyStatisticsOutput {
+	return o
+}
+
+func (o GetPolicyStatisticsOutput) ToGetPolicyStatisticsOutputWithContext(ctx context.Context) GetPolicyStatisticsOutput {
+	return o
+}
+
+// Number of available addresses
+func (o GetPolicyStatisticsOutput) ActiveAddr() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPolicyStatistics) int { return v.ActiveAddr }).(pulumi.IntOutput)
+}
+
+// Number of unavailable addresses
+func (o GetPolicyStatisticsOutput) InactiveAddr() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPolicyStatistics) int { return v.InactiveAddr }).(pulumi.IntOutput)
+}
+
+type GetPolicyTarget struct {
+	// Address pool ID.
+	PoolId string `pulumi:"poolId"`
+}
+
+// GetPolicyTargetInput is an input type that accepts GetPolicyTargetArgs and GetPolicyTargetOutput values.
+// You can construct a concrete instance of `GetPolicyTargetInput` via:
+//
+//	GetPolicyTargetArgs{...}
+type GetPolicyTargetInput interface {
+	pulumi.Input
+
+	ToGetPolicyTargetOutput() GetPolicyTargetOutput
+	ToGetPolicyTargetOutputWithContext(context.Context) GetPolicyTargetOutput
+}
+
+type GetPolicyTargetArgs struct {
+	// Address pool ID.
+	PoolId pulumi.StringInput `pulumi:"poolId"`
+}
+
+func (GetPolicyTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPolicyTarget)(nil)).Elem()
+}
+
+func (i GetPolicyTargetArgs) ToGetPolicyTargetOutput() GetPolicyTargetOutput {
+	return i.ToGetPolicyTargetOutputWithContext(context.Background())
+}
+
+func (i GetPolicyTargetArgs) ToGetPolicyTargetOutputWithContext(ctx context.Context) GetPolicyTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPolicyTargetOutput)
+}
+
+// GetPolicyTargetArrayInput is an input type that accepts GetPolicyTargetArray and GetPolicyTargetArrayOutput values.
+// You can construct a concrete instance of `GetPolicyTargetArrayInput` via:
+//
+//	GetPolicyTargetArray{ GetPolicyTargetArgs{...} }
+type GetPolicyTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetPolicyTargetArrayOutput() GetPolicyTargetArrayOutput
+	ToGetPolicyTargetArrayOutputWithContext(context.Context) GetPolicyTargetArrayOutput
+}
+
+type GetPolicyTargetArray []GetPolicyTargetInput
+
+func (GetPolicyTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPolicyTarget)(nil)).Elem()
+}
+
+func (i GetPolicyTargetArray) ToGetPolicyTargetArrayOutput() GetPolicyTargetArrayOutput {
+	return i.ToGetPolicyTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetPolicyTargetArray) ToGetPolicyTargetArrayOutputWithContext(ctx context.Context) GetPolicyTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPolicyTargetArrayOutput)
+}
+
+type GetPolicyTargetOutput struct{ *pulumi.OutputState }
+
+func (GetPolicyTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPolicyTarget)(nil)).Elem()
+}
+
+func (o GetPolicyTargetOutput) ToGetPolicyTargetOutput() GetPolicyTargetOutput {
+	return o
+}
+
+func (o GetPolicyTargetOutput) ToGetPolicyTargetOutputWithContext(ctx context.Context) GetPolicyTargetOutput {
+	return o
+}
+
+// Address pool ID.
+func (o GetPolicyTargetOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPolicyTarget) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
+type GetPolicyTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPolicyTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPolicyTarget)(nil)).Elem()
+}
+
+func (o GetPolicyTargetArrayOutput) ToGetPolicyTargetArrayOutput() GetPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GetPolicyTargetArrayOutput) ToGetPolicyTargetArrayOutputWithContext(ctx context.Context) GetPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GetPolicyTargetArrayOutput) Index(i pulumi.IntInput) GetPolicyTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPolicyTarget {
+		return vs[0].([]GetPolicyTarget)[vs[1].(int)]
+	}).(GetPolicyTargetOutput)
+}
+
 type GetPoolAddress struct {
 	// Address capacity
 	Capacity int `pulumi:"capacity"`
@@ -1906,6 +2317,10 @@ func (o GetRuleProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) GetRu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PolicyStatisticsInput)(nil)).Elem(), PolicyStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PolicyStatisticsPtrInput)(nil)).Elem(), PolicyStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PolicyTargetInput)(nil)).Elem(), PolicyTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PolicyTargetArrayInput)(nil)).Elem(), PolicyTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PoolAddressInput)(nil)).Elem(), PoolAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PoolAddressArrayInput)(nil)).Elem(), PoolAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RulePoolSetInput)(nil)).Elem(), RulePoolSetArgs{})
@@ -1918,6 +2333,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbePtrInput)(nil)).Elem(), RuleProbeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeHttpUsabilityCodeInput)(nil)).Elem(), RuleProbeHttpUsabilityCodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), RuleProbeHttpUsabilityCodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyStatisticsInput)(nil)).Elem(), GetPolicyStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyTargetInput)(nil)).Elem(), GetPolicyTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyTargetArrayInput)(nil)).Elem(), GetPolicyTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolAddressInput)(nil)).Elem(), GetPoolAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPoolAddressArrayInput)(nil)).Elem(), GetPoolAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRulePoolSetInput)(nil)).Elem(), GetRulePoolSetArgs{})
@@ -1929,6 +2347,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeInput)(nil)).Elem(), GetRuleProbeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeHttpUsabilityCodeInput)(nil)).Elem(), GetRuleProbeHttpUsabilityCodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), GetRuleProbeHttpUsabilityCodeArray{})
+	pulumi.RegisterOutputType(PolicyStatisticsOutput{})
+	pulumi.RegisterOutputType(PolicyStatisticsPtrOutput{})
+	pulumi.RegisterOutputType(PolicyTargetOutput{})
+	pulumi.RegisterOutputType(PolicyTargetArrayOutput{})
 	pulumi.RegisterOutputType(PoolAddressOutput{})
 	pulumi.RegisterOutputType(PoolAddressArrayOutput{})
 	pulumi.RegisterOutputType(RulePoolSetOutput{})
@@ -1941,6 +2363,9 @@ func init() {
 	pulumi.RegisterOutputType(RuleProbePtrOutput{})
 	pulumi.RegisterOutputType(RuleProbeHttpUsabilityCodeOutput{})
 	pulumi.RegisterOutputType(RuleProbeHttpUsabilityCodeArrayOutput{})
+	pulumi.RegisterOutputType(GetPolicyStatisticsOutput{})
+	pulumi.RegisterOutputType(GetPolicyTargetOutput{})
+	pulumi.RegisterOutputType(GetPolicyTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetPoolAddressOutput{})
 	pulumi.RegisterOutputType(GetPoolAddressArrayOutput{})
 	pulumi.RegisterOutputType(GetRulePoolSetOutput{})

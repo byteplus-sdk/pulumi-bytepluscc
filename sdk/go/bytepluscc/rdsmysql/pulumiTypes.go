@@ -16,14 +16,6 @@ var _ = internal.GetEnvOrDefault
 type AllowListAssociatedInstance struct {
 	// Instance ID bound to the current allowlist.
 	InstanceId *string `pulumi:"instanceId"`
-	// Instance name bound to the current allowlist.
-	InstanceName *string `pulumi:"instanceName"`
-	// Instance status.
-	InstanceStatus *string `pulumi:"instanceStatus"`
-	// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-	IsLatest *bool `pulumi:"isLatest"`
-	// Private network ID of the instance.
-	Vpc *string `pulumi:"vpc"`
 }
 
 // AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
@@ -40,14 +32,6 @@ type AllowListAssociatedInstanceInput interface {
 type AllowListAssociatedInstanceArgs struct {
 	// Instance ID bound to the current allowlist.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// Instance name bound to the current allowlist.
-	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// Instance status.
-	InstanceStatus pulumi.StringPtrInput `pulumi:"instanceStatus"`
-	// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
-	// Private network ID of the instance.
-	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
 func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
@@ -106,26 +90,6 @@ func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// Instance name bound to the current allowlist.
-func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
-}
-
-// Instance status.
-func (o AllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceStatus }).(pulumi.StringPtrOutput)
-}
-
-// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-func (o AllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
-}
-
-// Private network ID of the instance.
-func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
-}
-
 type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
 
 func (AllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
@@ -149,8 +113,6 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 type AllowListSecurityGroupBindInfo struct {
 	// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 	BindMode *string `pulumi:"bindMode"`
-	// Security group IP address list.
-	IpLists []string `pulumi:"ipLists"`
 	// Security group ID.
 	SecurityGroupId *string `pulumi:"securityGroupId"`
 	// Security group name.
@@ -171,8 +133,6 @@ type AllowListSecurityGroupBindInfoInput interface {
 type AllowListSecurityGroupBindInfoArgs struct {
 	// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 	BindMode pulumi.StringPtrInput `pulumi:"bindMode"`
-	// Security group IP address list.
-	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
 	// Security group ID.
 	SecurityGroupId pulumi.StringPtrInput `pulumi:"securityGroupId"`
 	// Security group name.
@@ -233,11 +193,6 @@ func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOu
 // Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 func (o AllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.BindMode }).(pulumi.StringPtrOutput)
-}
-
-// Security group IP address list.
-func (o AllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
 }
 
 // Security group ID.

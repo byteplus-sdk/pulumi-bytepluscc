@@ -18,40 +18,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
         /// Instance ID bound to the current allowlist.
         /// </summary>
         public readonly string? InstanceId;
-        /// <summary>
-        /// Instance name bound to the current allowlist.
-        /// </summary>
-        public readonly string? InstanceName;
-        /// <summary>
-        /// Instance status.
-        /// </summary>
-        public readonly string? InstanceStatus;
-        /// <summary>
-        /// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-        /// </summary>
-        public readonly bool? IsLatest;
-        /// <summary>
-        /// Private network ID of the instance.
-        /// </summary>
-        public readonly string? Vpc;
 
         [OutputConstructor]
-        private AllowListAssociatedInstance(
-            string? instanceId,
-
-            string? instanceName,
-
-            string? instanceStatus,
-
-            bool? isLatest,
-
-            string? vpc)
+        private AllowListAssociatedInstance(string? instanceId)
         {
             InstanceId = instanceId;
-            InstanceName = instanceName;
-            InstanceStatus = instanceStatus;
-            IsLatest = isLatest;
-            Vpc = vpc;
         }
     }
 }

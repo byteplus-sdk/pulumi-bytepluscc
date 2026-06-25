@@ -16,6 +16,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'PolicyStatisticsArgs',
+    'PolicyStatisticsArgsDict',
+    'PolicyTargetArgs',
+    'PolicyTargetArgsDict',
     'PoolAddressArgs',
     'PoolAddressArgsDict',
     'RulePoolSetArgs',
@@ -31,6 +35,90 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class PolicyStatisticsArgsDict(TypedDict):
+        active_addr: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Number of available addresses
+        """
+        inactive_addr: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Number of unavailable addresses
+        """
+elif False:
+    PolicyStatisticsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PolicyStatisticsArgs:
+    def __init__(__self__, *,
+                 active_addr: Optional[pulumi.Input[builtins.int]] = None,
+                 inactive_addr: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] active_addr: Number of available addresses
+        :param pulumi.Input[builtins.int] inactive_addr: Number of unavailable addresses
+        """
+        if active_addr is not None:
+            pulumi.set(__self__, "active_addr", active_addr)
+        if inactive_addr is not None:
+            pulumi.set(__self__, "inactive_addr", inactive_addr)
+
+    @property
+    @pulumi.getter(name="activeAddr")
+    def active_addr(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Number of available addresses
+        """
+        return pulumi.get(self, "active_addr")
+
+    @active_addr.setter
+    def active_addr(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "active_addr", value)
+
+    @property
+    @pulumi.getter(name="inactiveAddr")
+    def inactive_addr(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Number of unavailable addresses
+        """
+        return pulumi.get(self, "inactive_addr")
+
+    @inactive_addr.setter
+    def inactive_addr(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "inactive_addr", value)
+
+
+if not MYPY:
+    class PolicyTargetArgsDict(TypedDict):
+        pool_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address pool ID.
+        """
+elif False:
+    PolicyTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PolicyTargetArgs:
+    def __init__(__self__, *,
+                 pool_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] pool_id: Address pool ID.
+        """
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
+
+    @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address pool ID.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "pool_id", value)
+
 
 if not MYPY:
     class PoolAddressArgsDict(TypedDict):

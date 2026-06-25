@@ -1216,6 +1216,14 @@
                     }
                 }
             },
+            "bytepluscc_cloudmonitor_event_rule": {
+                "current": "bytepluscc:cloudmonitor/eventRule:EventRule",
+                "fields": {
+                    "event_type": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_rule": {
                 "current": "bytepluscc:cloudmonitor/rule:Rule",
                 "fields": {
@@ -1329,6 +1337,14 @@
             "bytepluscc_cr_repository": {
                 "current": "bytepluscc:cr/repository:Repository"
             },
+            "bytepluscc_cr_vpc_endpoint": {
+                "current": "bytepluscc:cr/vpcEndpoint:VpcEndpoint",
+                "fields": {
+                    "vpcs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_directconnect_bgp_peer": {
                 "current": "bytepluscc:directconnect/bgpPeer:BgpPeer"
             },
@@ -1356,6 +1372,9 @@
             },
             "bytepluscc_dns_backup": {
                 "current": "bytepluscc:dns/backup:Backup"
+            },
+            "bytepluscc_dns_backup_schedule": {
+                "current": "bytepluscc:dns/backupSchedule:BackupSchedule"
             },
             "bytepluscc_dns_record": {
                 "current": "bytepluscc:dns/record:Record",
@@ -1830,6 +1849,14 @@
             "bytepluscc_gtm_gtm": {
                 "current": "bytepluscc:gtm/gtm:Gtm"
             },
+            "bytepluscc_gtm_policy": {
+                "current": "bytepluscc:gtm/policy:Policy",
+                "fields": {
+                    "targets": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_gtm_pool": {
                 "current": "bytepluscc:gtm/pool:Pool",
                 "fields": {
@@ -2055,6 +2082,14 @@
                 "current": "bytepluscc:kafka/allowList:AllowList",
                 "fields": {
                     "associated_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kafka_group": {
+                "current": "bytepluscc:kafka/group:Group",
+                "fields": {
+                    "tags": {
                         "maxItemsOne": false
                     }
                 }
@@ -2443,14 +2478,7 @@
                         "maxItemsOne": false
                     },
                     "security_group_bind_infos": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "ip_list": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
+                        "maxItemsOne": false
                     },
                     "security_group_ids": {
                         "maxItemsOne": false
@@ -2932,6 +2960,103 @@
                 "fields": {
                     "topic_id_list": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_etl": {
+                "current": "bytepluscc:tls/etl:Etl",
+                "fields": {
+                    "target_resources": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_host": {
+                "current": "bytepluscc:tls/host:Host"
+            },
+            "bytepluscc_tls_host_group": {
+                "current": "bytepluscc:tls/hostGroup:HostGroup",
+                "fields": {
+                    "host_ip_list": {
+                        "maxItemsOne": false
+                    },
+                    "rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "container_rule": {
+                                    "fields": {
+                                        "env_tag": {
+                                            "maxItemsOne": false
+                                        },
+                                        "exclude_container_env_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "exclude_container_label_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "include_container_env_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "include_container_label_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "kubernetes_rule": {
+                                            "fields": {
+                                                "annotation_tag": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "exclude_pod_annotation_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "exclude_pod_label_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "include_pod_annotation_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "include_pod_label_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "label_tag": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "exclude_paths": {
+                                    "maxItemsOne": false
+                                },
+                                "extract_rule": {
+                                    "fields": {
+                                        "filter_key_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "keys": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "paths": {
+                                    "maxItemsOne": false
+                                },
+                                "user_define_rule": {
+                                    "fields": {
+                                        "fields": {
+                                            "maxItemsOne": false
+                                        },
+                                        "parse_path_rule": {
+                                            "fields": {
+                                                "keys": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -5631,6 +5756,22 @@
                     }
                 }
             },
+            "bytepluscc_cloudmonitor_event_rule": {
+                "current": "bytepluscc:cloudmonitor/getEventRule:getEventRule",
+                "fields": {
+                    "event_type": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudmonitor_event_rules": {
+                "current": "bytepluscc:cloudmonitor/getEventRules:getEventRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_rule": {
                 "current": "bytepluscc:cloudmonitor/getRule:getRule",
                 "fields": {
@@ -5784,6 +5925,22 @@
             "bytepluscc_cr_repository": {
                 "current": "bytepluscc:cr/getRepository:getRepository"
             },
+            "bytepluscc_cr_vpc_endpoint": {
+                "current": "bytepluscc:cr/getVpcEndpoint:getVpcEndpoint",
+                "fields": {
+                    "vpcs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cr_vpc_endpoints": {
+                "current": "bytepluscc:cr/getVpcEndpoints:getVpcEndpoints",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_directconnect_bgp_peer": {
                 "current": "bytepluscc:directconnect/getBgpPeer:getBgpPeer"
             },
@@ -5843,6 +6000,17 @@
             },
             "bytepluscc_dns_backup": {
                 "current": "bytepluscc:dns/getBackup:getBackup"
+            },
+            "bytepluscc_dns_backup_schedule": {
+                "current": "bytepluscc:dns/getBackupSchedule:getBackupSchedule"
+            },
+            "bytepluscc_dns_backup_schedules": {
+                "current": "bytepluscc:dns/getBackupSchedules:getBackupSchedules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_dns_backups": {
                 "current": "bytepluscc:dns/getBackups:getBackups",
@@ -6496,6 +6664,22 @@
                     }
                 }
             },
+            "bytepluscc_gtm_policies": {
+                "current": "bytepluscc:gtm/getPolicies:getPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_gtm_policy": {
+                "current": "bytepluscc:gtm/getPolicy:getPolicy",
+                "fields": {
+                    "targets": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_gtm_pool": {
                 "current": "bytepluscc:gtm/getPool:getPool",
                 "fields": {
@@ -6846,6 +7030,22 @@
             },
             "bytepluscc_kafka_allow_lists": {
                 "current": "bytepluscc:kafka/getAllowLists:getAllowLists",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kafka_group": {
+                "current": "bytepluscc:kafka/getGroup:getGroup",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kafka_groups": {
+                "current": "bytepluscc:kafka/getGroups:getGroups",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -8299,6 +8499,127 @@
             },
             "bytepluscc_tls_consumer_groups": {
                 "current": "bytepluscc:tls/getConsumerGroups:getConsumerGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_etl": {
+                "current": "bytepluscc:tls/getEtl:getEtl",
+                "fields": {
+                    "target_resources": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_etls": {
+                "current": "bytepluscc:tls/getEtls:getEtls",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_host": {
+                "current": "bytepluscc:tls/getHost:getHost"
+            },
+            "bytepluscc_tls_host_group": {
+                "current": "bytepluscc:tls/getHostGroup:getHostGroup",
+                "fields": {
+                    "host_ip_list": {
+                        "maxItemsOne": false
+                    },
+                    "rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "container_rule": {
+                                    "fields": {
+                                        "env_tag": {
+                                            "maxItemsOne": false
+                                        },
+                                        "exclude_container_env_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "exclude_container_label_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "include_container_env_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "include_container_label_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "kubernetes_rule": {
+                                            "fields": {
+                                                "annotation_tag": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "exclude_pod_annotation_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "exclude_pod_label_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "include_pod_annotation_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "include_pod_label_regex": {
+                                                    "maxItemsOne": false
+                                                },
+                                                "label_tag": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "exclude_paths": {
+                                    "maxItemsOne": false
+                                },
+                                "extract_rule": {
+                                    "fields": {
+                                        "filter_key_regex": {
+                                            "maxItemsOne": false
+                                        },
+                                        "keys": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "paths": {
+                                    "maxItemsOne": false
+                                },
+                                "user_define_rule": {
+                                    "fields": {
+                                        "fields": {
+                                            "maxItemsOne": false
+                                        },
+                                        "parse_path_rule": {
+                                            "fields": {
+                                                "keys": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tls_host_groups": {
+                "current": "bytepluscc:tls/getHostGroups:getHostGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_hosts": {
+                "current": "bytepluscc:tls/getHosts:getHosts",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

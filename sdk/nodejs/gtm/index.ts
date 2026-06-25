@@ -15,6 +15,16 @@ export const getGtms: typeof import("./getGtms").getGtms = null as any;
 export const getGtmsOutput: typeof import("./getGtms").getGtmsOutput = null as any;
 utilities.lazyLoad(exports, ["getGtms","getGtmsOutput"], () => require("./getGtms"));
 
+export { GetPoliciesResult } from "./getPolicies";
+export const getPolicies: typeof import("./getPolicies").getPolicies = null as any;
+export const getPoliciesOutput: typeof import("./getPolicies").getPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getPolicies","getPoliciesOutput"], () => require("./getPolicies"));
+
+export { GetPolicyArgs, GetPolicyResult, GetPolicyOutputArgs } from "./getPolicy";
+export const getPolicy: typeof import("./getPolicy").getPolicy = null as any;
+export const getPolicyOutput: typeof import("./getPolicy").getPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getPolicy","getPolicyOutput"], () => require("./getPolicy"));
+
 export { GetPoolArgs, GetPoolResult, GetPoolOutputArgs } from "./getPool";
 export const getPool: typeof import("./getPool").getPool = null as any;
 export const getPoolOutput: typeof import("./getPool").getPoolOutput = null as any;
@@ -50,6 +60,11 @@ export type Gtm = import("./gtm").Gtm;
 export const Gtm: typeof import("./gtm").Gtm = null as any;
 utilities.lazyLoad(exports, ["Gtm"], () => require("./gtm"));
 
+export { PolicyArgs, PolicyState } from "./policy";
+export type Policy = import("./policy").Policy;
+export const Policy: typeof import("./policy").Policy = null as any;
+utilities.lazyLoad(exports, ["Policy"], () => require("./policy"));
+
 export { PoolArgs, PoolState } from "./pool";
 export type Pool = import("./pool").Pool;
 export const Pool: typeof import("./pool").Pool = null as any;
@@ -72,6 +87,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:gtm/gtm:Gtm":
                 return new Gtm(name, <any>undefined, { urn })
+            case "bytepluscc:gtm/policy:Policy":
+                return new Policy(name, <any>undefined, { urn })
             case "bytepluscc:gtm/pool:Pool":
                 return new Pool(name, <any>undefined, { urn })
             case "bytepluscc:gtm/routing:Routing":
@@ -84,6 +101,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "gtm/gtm", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "gtm/policy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "gtm/pool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "gtm/routing", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "gtm/rule", _module)

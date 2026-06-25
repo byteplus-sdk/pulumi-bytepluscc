@@ -28,6 +28,31 @@ __all__ = [
     'AlarmQueryRequest',
     'AlarmRequestCycle',
     'AlarmTriggerCondition',
+    'EtlTargetResource',
+    'HostGroupRule',
+    'HostGroupRuleContainerRule',
+    'HostGroupRuleContainerRuleEnvTag',
+    'HostGroupRuleContainerRuleExcludeContainerEnvRegex',
+    'HostGroupRuleContainerRuleExcludeContainerLabelRegex',
+    'HostGroupRuleContainerRuleIncludeContainerEnvRegex',
+    'HostGroupRuleContainerRuleIncludeContainerLabelRegex',
+    'HostGroupRuleContainerRuleKubernetesRule',
+    'HostGroupRuleContainerRuleKubernetesRuleAnnotationTag',
+    'HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex',
+    'HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex',
+    'HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex',
+    'HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex',
+    'HostGroupRuleContainerRuleKubernetesRuleLabelTag',
+    'HostGroupRuleExcludePath',
+    'HostGroupRuleExtractRule',
+    'HostGroupRuleExtractRuleFilterKeyRegex',
+    'HostGroupRuleExtractRuleLogTemplate',
+    'HostGroupRuleUserDefineRule',
+    'HostGroupRuleUserDefineRuleAdvanced',
+    'HostGroupRuleUserDefineRuleField',
+    'HostGroupRuleUserDefineRuleParsePathRule',
+    'HostGroupRuleUserDefineRulePlugin',
+    'HostGroupRuleUserDefineRuleShardHashKey',
     'ImportTaskImportSourceInfo',
     'ImportTaskImportSourceInfoKafkaSourceInfo',
     'ImportTaskImportSourceInfoTosSourceInfo',
@@ -94,6 +119,31 @@ __all__ = [
     'GetAlarmQueryRequestResult',
     'GetAlarmRequestCycleResult',
     'GetAlarmTriggerConditionResult',
+    'GetEtlTargetResourceResult',
+    'GetHostGroupRuleResult',
+    'GetHostGroupRuleContainerRuleResult',
+    'GetHostGroupRuleContainerRuleEnvTagResult',
+    'GetHostGroupRuleContainerRuleExcludeContainerEnvRegexResult',
+    'GetHostGroupRuleContainerRuleExcludeContainerLabelRegexResult',
+    'GetHostGroupRuleContainerRuleIncludeContainerEnvRegexResult',
+    'GetHostGroupRuleContainerRuleIncludeContainerLabelRegexResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexResult',
+    'GetHostGroupRuleContainerRuleKubernetesRuleLabelTagResult',
+    'GetHostGroupRuleExcludePathResult',
+    'GetHostGroupRuleExtractRuleResult',
+    'GetHostGroupRuleExtractRuleFilterKeyRegexResult',
+    'GetHostGroupRuleExtractRuleLogTemplateResult',
+    'GetHostGroupRuleUserDefineRuleResult',
+    'GetHostGroupRuleUserDefineRuleAdvancedResult',
+    'GetHostGroupRuleUserDefineRuleFieldResult',
+    'GetHostGroupRuleUserDefineRuleParsePathRuleResult',
+    'GetHostGroupRuleUserDefineRulePluginResult',
+    'GetHostGroupRuleUserDefineRuleShardHashKeyResult',
     'GetImportTaskImportSourceInfoResult',
     'GetImportTaskImportSourceInfoKafkaSourceInfoResult',
     'GetImportTaskImportSourceInfoTosSourceInfoResult',
@@ -1186,6 +1236,1695 @@ class AlarmTriggerCondition(dict):
         Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
         """
         return pulumi.get(self, "severity")
+
+
+@pulumi.output_type
+class EtlTargetResource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "topicId":
+            suggest = "topic_id"
+        elif key == "roleTrn":
+            suggest = "role_trn"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EtlTargetResource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EtlTargetResource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EtlTargetResource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 alias: builtins.str,
+                 region: builtins.str,
+                 topic_id: builtins.str,
+                 role_trn: Optional[builtins.str] = None):
+        """
+        :param builtins.str alias: Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+        :param builtins.str region: Region of the log topic for storing processed logs
+        :param builtins.str topic_id: Log topic ID for storing processed logs
+        :param builtins.str role_trn: Cross-account authorization role name
+        """
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "topic_id", topic_id)
+        if role_trn is not None:
+            pulumi.set(__self__, "role_trn", role_trn)
+
+    @property
+    @pulumi.getter
+    def alias(self) -> builtins.str:
+        """
+        Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+        """
+        return pulumi.get(self, "alias")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        Region of the log topic for storing processed logs
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        Log topic ID for storing processed logs
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="roleTrn")
+    def role_trn(self) -> Optional[builtins.str]:
+        """
+        Cross-account authorization role name
+        """
+        return pulumi.get(self, "role_trn")
+
+
+@pulumi.output_type
+class HostGroupRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containerRule":
+            suggest = "container_rule"
+        elif key == "createTime":
+            suggest = "create_time"
+        elif key == "excludePaths":
+            suggest = "exclude_paths"
+        elif key == "extractRule":
+            suggest = "extract_rule"
+        elif key == "inputType":
+            suggest = "input_type"
+        elif key == "logSample":
+            suggest = "log_sample"
+        elif key == "logType":
+            suggest = "log_type"
+        elif key == "modifyTime":
+            suggest = "modify_time"
+        elif key == "ruleId":
+            suggest = "rule_id"
+        elif key == "ruleName":
+            suggest = "rule_name"
+        elif key == "topicId":
+            suggest = "topic_id"
+        elif key == "topicName":
+            suggest = "topic_name"
+        elif key == "userDefineRule":
+            suggest = "user_define_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 container_rule: Optional['outputs.HostGroupRuleContainerRule'] = None,
+                 create_time: Optional[builtins.str] = None,
+                 exclude_paths: Optional[Sequence['outputs.HostGroupRuleExcludePath']] = None,
+                 extract_rule: Optional['outputs.HostGroupRuleExtractRule'] = None,
+                 input_type: Optional[builtins.int] = None,
+                 log_sample: Optional[builtins.str] = None,
+                 log_type: Optional[builtins.str] = None,
+                 modify_time: Optional[builtins.str] = None,
+                 paths: Optional[Sequence[builtins.str]] = None,
+                 pause: Optional[builtins.int] = None,
+                 rule_id: Optional[builtins.str] = None,
+                 rule_name: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None,
+                 topic_name: Optional[builtins.str] = None,
+                 user_define_rule: Optional['outputs.HostGroupRuleUserDefineRule'] = None):
+        """
+        :param 'HostGroupRuleContainerRuleArgs' container_rule: Container collection rules
+        :param builtins.str create_time: Time when the collection configuration was created.
+        :param 'HostGroupRuleExtractRuleArgs' extract_rule: Extraction rules
+        :param builtins.int input_type: Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+        :param builtins.str log_sample: Log sample.
+        :param builtins.str log_type: Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+        :param builtins.str modify_time: Time when the collection configuration was modified.
+        :param Sequence[builtins.str] paths: Data collection path list
+        :param builtins.int pause: Running status of the collection configuration. 0: Running. 1: Paused.
+        :param builtins.str rule_id: Collection configuration ID.
+        :param builtins.str rule_name: Name of the collection configuration.
+        :param builtins.str topic_id: ID of the log topic to which the collection configuration belongs.
+        :param builtins.str topic_name: Name of the log topic associated with the collection configuration
+        :param 'HostGroupRuleUserDefineRuleArgs' user_define_rule: User-defined collection rules.
+        """
+        if container_rule is not None:
+            pulumi.set(__self__, "container_rule", container_rule)
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if exclude_paths is not None:
+            pulumi.set(__self__, "exclude_paths", exclude_paths)
+        if extract_rule is not None:
+            pulumi.set(__self__, "extract_rule", extract_rule)
+        if input_type is not None:
+            pulumi.set(__self__, "input_type", input_type)
+        if log_sample is not None:
+            pulumi.set(__self__, "log_sample", log_sample)
+        if log_type is not None:
+            pulumi.set(__self__, "log_type", log_type)
+        if modify_time is not None:
+            pulumi.set(__self__, "modify_time", modify_time)
+        if paths is not None:
+            pulumi.set(__self__, "paths", paths)
+        if pause is not None:
+            pulumi.set(__self__, "pause", pause)
+        if rule_id is not None:
+            pulumi.set(__self__, "rule_id", rule_id)
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+        if topic_name is not None:
+            pulumi.set(__self__, "topic_name", topic_name)
+        if user_define_rule is not None:
+            pulumi.set(__self__, "user_define_rule", user_define_rule)
+
+    @property
+    @pulumi.getter(name="containerRule")
+    def container_rule(self) -> Optional['outputs.HostGroupRuleContainerRule']:
+        """
+        Container collection rules
+        """
+        return pulumi.get(self, "container_rule")
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[builtins.str]:
+        """
+        Time when the collection configuration was created.
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Optional[Sequence['outputs.HostGroupRuleExcludePath']]:
+        return pulumi.get(self, "exclude_paths")
+
+    @property
+    @pulumi.getter(name="extractRule")
+    def extract_rule(self) -> Optional['outputs.HostGroupRuleExtractRule']:
+        """
+        Extraction rules
+        """
+        return pulumi.get(self, "extract_rule")
+
+    @property
+    @pulumi.getter(name="inputType")
+    def input_type(self) -> Optional[builtins.int]:
+        """
+        Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+        """
+        return pulumi.get(self, "input_type")
+
+    @property
+    @pulumi.getter(name="logSample")
+    def log_sample(self) -> Optional[builtins.str]:
+        """
+        Log sample.
+        """
+        return pulumi.get(self, "log_sample")
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> Optional[builtins.str]:
+        """
+        Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+        """
+        return pulumi.get(self, "log_type")
+
+    @property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> Optional[builtins.str]:
+        """
+        Time when the collection configuration was modified.
+        """
+        return pulumi.get(self, "modify_time")
+
+    @property
+    @pulumi.getter
+    def paths(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Data collection path list
+        """
+        return pulumi.get(self, "paths")
+
+    @property
+    @pulumi.getter
+    def pause(self) -> Optional[builtins.int]:
+        """
+        Running status of the collection configuration. 0: Running. 1: Paused.
+        """
+        return pulumi.get(self, "pause")
+
+    @property
+    @pulumi.getter(name="ruleId")
+    def rule_id(self) -> Optional[builtins.str]:
+        """
+        Collection configuration ID.
+        """
+        return pulumi.get(self, "rule_id")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[builtins.str]:
+        """
+        Name of the collection configuration.
+        """
+        return pulumi.get(self, "rule_name")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        ID of the log topic to which the collection configuration belongs.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> Optional[builtins.str]:
+        """
+        Name of the log topic associated with the collection configuration
+        """
+        return pulumi.get(self, "topic_name")
+
+    @property
+    @pulumi.getter(name="userDefineRule")
+    def user_define_rule(self) -> Optional['outputs.HostGroupRuleUserDefineRule']:
+        """
+        User-defined collection rules.
+        """
+        return pulumi.get(self, "user_define_rule")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containerNameRegex":
+            suggest = "container_name_regex"
+        elif key == "envTags":
+            suggest = "env_tags"
+        elif key == "excludeContainerEnvRegexes":
+            suggest = "exclude_container_env_regexes"
+        elif key == "excludeContainerLabelRegexes":
+            suggest = "exclude_container_label_regexes"
+        elif key == "includeContainerEnvRegexes":
+            suggest = "include_container_env_regexes"
+        elif key == "includeContainerLabelRegexes":
+            suggest = "include_container_label_regexes"
+        elif key == "kubernetesRule":
+            suggest = "kubernetes_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleContainerRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleContainerRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleContainerRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 container_name_regex: Optional[builtins.str] = None,
+                 env_tags: Optional[Sequence['outputs.HostGroupRuleContainerRuleEnvTag']] = None,
+                 exclude_container_env_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleExcludeContainerEnvRegex']] = None,
+                 exclude_container_label_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleExcludeContainerLabelRegex']] = None,
+                 include_container_env_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleIncludeContainerEnvRegex']] = None,
+                 include_container_label_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleIncludeContainerLabelRegex']] = None,
+                 kubernetes_rule: Optional['outputs.HostGroupRuleContainerRuleKubernetesRule'] = None,
+                 stream: Optional[builtins.str] = None):
+        """
+        :param builtins.str container_name_regex: Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+        :param 'HostGroupRuleContainerRuleKubernetesRuleArgs' kubernetes_rule: Kubernetes container collection rules.
+        :param builtins.str stream: Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+        """
+        if container_name_regex is not None:
+            pulumi.set(__self__, "container_name_regex", container_name_regex)
+        if env_tags is not None:
+            pulumi.set(__self__, "env_tags", env_tags)
+        if exclude_container_env_regexes is not None:
+            pulumi.set(__self__, "exclude_container_env_regexes", exclude_container_env_regexes)
+        if exclude_container_label_regexes is not None:
+            pulumi.set(__self__, "exclude_container_label_regexes", exclude_container_label_regexes)
+        if include_container_env_regexes is not None:
+            pulumi.set(__self__, "include_container_env_regexes", include_container_env_regexes)
+        if include_container_label_regexes is not None:
+            pulumi.set(__self__, "include_container_label_regexes", include_container_label_regexes)
+        if kubernetes_rule is not None:
+            pulumi.set(__self__, "kubernetes_rule", kubernetes_rule)
+        if stream is not None:
+            pulumi.set(__self__, "stream", stream)
+
+    @property
+    @pulumi.getter(name="containerNameRegex")
+    def container_name_regex(self) -> Optional[builtins.str]:
+        """
+        Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+        """
+        return pulumi.get(self, "container_name_regex")
+
+    @property
+    @pulumi.getter(name="envTags")
+    def env_tags(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleEnvTag']]:
+        return pulumi.get(self, "env_tags")
+
+    @property
+    @pulumi.getter(name="excludeContainerEnvRegexes")
+    def exclude_container_env_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleExcludeContainerEnvRegex']]:
+        return pulumi.get(self, "exclude_container_env_regexes")
+
+    @property
+    @pulumi.getter(name="excludeContainerLabelRegexes")
+    def exclude_container_label_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleExcludeContainerLabelRegex']]:
+        return pulumi.get(self, "exclude_container_label_regexes")
+
+    @property
+    @pulumi.getter(name="includeContainerEnvRegexes")
+    def include_container_env_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleIncludeContainerEnvRegex']]:
+        return pulumi.get(self, "include_container_env_regexes")
+
+    @property
+    @pulumi.getter(name="includeContainerLabelRegexes")
+    def include_container_label_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleIncludeContainerLabelRegex']]:
+        return pulumi.get(self, "include_container_label_regexes")
+
+    @property
+    @pulumi.getter(name="kubernetesRule")
+    def kubernetes_rule(self) -> Optional['outputs.HostGroupRuleContainerRuleKubernetesRule']:
+        """
+        Kubernetes container collection rules.
+        """
+        return pulumi.get(self, "kubernetes_rule")
+
+    @property
+    @pulumi.getter
+    def stream(self) -> Optional[builtins.str]:
+        """
+        Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+        """
+        return pulumi.get(self, "stream")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleEnvTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleExcludeContainerEnvRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleExcludeContainerLabelRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleIncludeContainerEnvRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleIncludeContainerLabelRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "annotationTags":
+            suggest = "annotation_tags"
+        elif key == "enableAllLabelTag":
+            suggest = "enable_all_label_tag"
+        elif key == "excludePodAnnotationRegexes":
+            suggest = "exclude_pod_annotation_regexes"
+        elif key == "excludePodLabelRegexes":
+            suggest = "exclude_pod_label_regexes"
+        elif key == "includePodAnnotationRegexes":
+            suggest = "include_pod_annotation_regexes"
+        elif key == "includePodLabelRegexes":
+            suggest = "include_pod_label_regexes"
+        elif key == "labelTags":
+            suggest = "label_tags"
+        elif key == "namespaceNameRegex":
+            suggest = "namespace_name_regex"
+        elif key == "podNameRegex":
+            suggest = "pod_name_regex"
+        elif key == "workloadNameRegex":
+            suggest = "workload_name_regex"
+        elif key == "workloadType":
+            suggest = "workload_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleContainerRuleKubernetesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleContainerRuleKubernetesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleContainerRuleKubernetesRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 annotation_tags: Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleAnnotationTag']] = None,
+                 enable_all_label_tag: Optional[builtins.bool] = None,
+                 exclude_pod_annotation_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex']] = None,
+                 exclude_pod_label_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex']] = None,
+                 include_pod_annotation_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex']] = None,
+                 include_pod_label_regexes: Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex']] = None,
+                 label_tags: Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleLabelTag']] = None,
+                 namespace_name_regex: Optional[builtins.str] = None,
+                 pod_name_regex: Optional[builtins.str] = None,
+                 workload_name_regex: Optional[builtins.str] = None,
+                 workload_type: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_all_label_tag: Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+        :param builtins.str namespace_name_regex: Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+        :param builtins.str pod_name_regex: Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+        :param builtins.str workload_name_regex: Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+        :param builtins.str workload_type: Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+        """
+        if annotation_tags is not None:
+            pulumi.set(__self__, "annotation_tags", annotation_tags)
+        if enable_all_label_tag is not None:
+            pulumi.set(__self__, "enable_all_label_tag", enable_all_label_tag)
+        if exclude_pod_annotation_regexes is not None:
+            pulumi.set(__self__, "exclude_pod_annotation_regexes", exclude_pod_annotation_regexes)
+        if exclude_pod_label_regexes is not None:
+            pulumi.set(__self__, "exclude_pod_label_regexes", exclude_pod_label_regexes)
+        if include_pod_annotation_regexes is not None:
+            pulumi.set(__self__, "include_pod_annotation_regexes", include_pod_annotation_regexes)
+        if include_pod_label_regexes is not None:
+            pulumi.set(__self__, "include_pod_label_regexes", include_pod_label_regexes)
+        if label_tags is not None:
+            pulumi.set(__self__, "label_tags", label_tags)
+        if namespace_name_regex is not None:
+            pulumi.set(__self__, "namespace_name_regex", namespace_name_regex)
+        if pod_name_regex is not None:
+            pulumi.set(__self__, "pod_name_regex", pod_name_regex)
+        if workload_name_regex is not None:
+            pulumi.set(__self__, "workload_name_regex", workload_name_regex)
+        if workload_type is not None:
+            pulumi.set(__self__, "workload_type", workload_type)
+
+    @property
+    @pulumi.getter(name="annotationTags")
+    def annotation_tags(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleAnnotationTag']]:
+        return pulumi.get(self, "annotation_tags")
+
+    @property
+    @pulumi.getter(name="enableAllLabelTag")
+    def enable_all_label_tag(self) -> Optional[builtins.bool]:
+        """
+        Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+        """
+        return pulumi.get(self, "enable_all_label_tag")
+
+    @property
+    @pulumi.getter(name="excludePodAnnotationRegexes")
+    def exclude_pod_annotation_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex']]:
+        return pulumi.get(self, "exclude_pod_annotation_regexes")
+
+    @property
+    @pulumi.getter(name="excludePodLabelRegexes")
+    def exclude_pod_label_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex']]:
+        return pulumi.get(self, "exclude_pod_label_regexes")
+
+    @property
+    @pulumi.getter(name="includePodAnnotationRegexes")
+    def include_pod_annotation_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex']]:
+        return pulumi.get(self, "include_pod_annotation_regexes")
+
+    @property
+    @pulumi.getter(name="includePodLabelRegexes")
+    def include_pod_label_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex']]:
+        return pulumi.get(self, "include_pod_label_regexes")
+
+    @property
+    @pulumi.getter(name="labelTags")
+    def label_tags(self) -> Optional[Sequence['outputs.HostGroupRuleContainerRuleKubernetesRuleLabelTag']]:
+        return pulumi.get(self, "label_tags")
+
+    @property
+    @pulumi.getter(name="namespaceNameRegex")
+    def namespace_name_regex(self) -> Optional[builtins.str]:
+        """
+        Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+        """
+        return pulumi.get(self, "namespace_name_regex")
+
+    @property
+    @pulumi.getter(name="podNameRegex")
+    def pod_name_regex(self) -> Optional[builtins.str]:
+        """
+        Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+        """
+        return pulumi.get(self, "pod_name_regex")
+
+    @property
+    @pulumi.getter(name="workloadNameRegex")
+    def workload_name_regex(self) -> Optional[builtins.str]:
+        """
+        Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+        """
+        return pulumi.get(self, "workload_name_regex")
+
+    @property
+    @pulumi.getter(name="workloadType")
+    def workload_type(self) -> Optional[builtins.str]:
+        """
+        Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+        """
+        return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRuleAnnotationTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleContainerRuleKubernetesRuleLabelTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleExcludePath(dict):
+    def __init__(__self__, *,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str type: Collection path type. File: file name. Path: directory.
+        :param builtins.str value: Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Collection path type. File: file name. Path: directory.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class HostGroupRuleExtractRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "beginRegex":
+            suggest = "begin_regex"
+        elif key == "enableNanosecond":
+            suggest = "enable_nanosecond"
+        elif key == "filterKeyRegexes":
+            suggest = "filter_key_regexes"
+        elif key == "logRegex":
+            suggest = "log_regex"
+        elif key == "logTemplate":
+            suggest = "log_template"
+        elif key == "timeExtractRegex":
+            suggest = "time_extract_regex"
+        elif key == "timeFormat":
+            suggest = "time_format"
+        elif key == "timeKey":
+            suggest = "time_key"
+        elif key == "timeSample":
+            suggest = "time_sample"
+        elif key == "timeZone":
+            suggest = "time_zone"
+        elif key == "unMatchLogKey":
+            suggest = "un_match_log_key"
+        elif key == "unMatchUpLoadSwitch":
+            suggest = "un_match_up_load_switch"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleExtractRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleExtractRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleExtractRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 begin_regex: Optional[builtins.str] = None,
+                 delimiter: Optional[builtins.str] = None,
+                 enable_nanosecond: Optional[builtins.bool] = None,
+                 filter_key_regexes: Optional[Sequence['outputs.HostGroupRuleExtractRuleFilterKeyRegex']] = None,
+                 keys: Optional[Sequence[builtins.str]] = None,
+                 log_regex: Optional[builtins.str] = None,
+                 log_template: Optional['outputs.HostGroupRuleExtractRuleLogTemplate'] = None,
+                 quote: Optional[builtins.str] = None,
+                 time_extract_regex: Optional[builtins.str] = None,
+                 time_format: Optional[builtins.str] = None,
+                 time_key: Optional[builtins.str] = None,
+                 time_sample: Optional[builtins.str] = None,
+                 time_zone: Optional[builtins.str] = None,
+                 un_match_log_key: Optional[builtins.str] = None,
+                 un_match_up_load_switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str begin_regex: The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+        :param builtins.str delimiter: Log delimiter. Valid only when LogType is delimiter_log.
+        :param builtins.bool enable_nanosecond: Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+        :param Sequence[builtins.str] keys: List of log field names (Keys).
+        :param builtins.str log_regex: The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+        :param 'HostGroupRuleExtractRuleLogTemplateArgs' log_template: Automatically extract log fields based on the specified log template.
+        :param builtins.str quote: Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+        :param builtins.str time_extract_regex: Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+        :param builtins.str time_format: Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        :param builtins.str time_key: Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        :param builtins.str time_sample: Sample time. Used to verify whether the specified time parsing format is correct.
+        :param builtins.str time_zone: Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+        :param builtins.str un_match_log_key: Key name for logs that failed to parse when uploading
+        :param builtins.bool un_match_up_load_switch: Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        if begin_regex is not None:
+            pulumi.set(__self__, "begin_regex", begin_regex)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if enable_nanosecond is not None:
+            pulumi.set(__self__, "enable_nanosecond", enable_nanosecond)
+        if filter_key_regexes is not None:
+            pulumi.set(__self__, "filter_key_regexes", filter_key_regexes)
+        if keys is not None:
+            pulumi.set(__self__, "keys", keys)
+        if log_regex is not None:
+            pulumi.set(__self__, "log_regex", log_regex)
+        if log_template is not None:
+            pulumi.set(__self__, "log_template", log_template)
+        if quote is not None:
+            pulumi.set(__self__, "quote", quote)
+        if time_extract_regex is not None:
+            pulumi.set(__self__, "time_extract_regex", time_extract_regex)
+        if time_format is not None:
+            pulumi.set(__self__, "time_format", time_format)
+        if time_key is not None:
+            pulumi.set(__self__, "time_key", time_key)
+        if time_sample is not None:
+            pulumi.set(__self__, "time_sample", time_sample)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+        if un_match_log_key is not None:
+            pulumi.set(__self__, "un_match_log_key", un_match_log_key)
+        if un_match_up_load_switch is not None:
+            pulumi.set(__self__, "un_match_up_load_switch", un_match_up_load_switch)
+
+    @property
+    @pulumi.getter(name="beginRegex")
+    def begin_regex(self) -> Optional[builtins.str]:
+        """
+        The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+        """
+        return pulumi.get(self, "begin_regex")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[builtins.str]:
+        """
+        Log delimiter. Valid only when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="enableNanosecond")
+    def enable_nanosecond(self) -> Optional[builtins.bool]:
+        """
+        Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+        """
+        return pulumi.get(self, "enable_nanosecond")
+
+    @property
+    @pulumi.getter(name="filterKeyRegexes")
+    def filter_key_regexes(self) -> Optional[Sequence['outputs.HostGroupRuleExtractRuleFilterKeyRegex']]:
+        return pulumi.get(self, "filter_key_regexes")
+
+    @property
+    @pulumi.getter
+    def keys(self) -> Optional[Sequence[builtins.str]]:
+        """
+        List of log field names (Keys).
+        """
+        return pulumi.get(self, "keys")
+
+    @property
+    @pulumi.getter(name="logRegex")
+    def log_regex(self) -> Optional[builtins.str]:
+        """
+        The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+        """
+        return pulumi.get(self, "log_regex")
+
+    @property
+    @pulumi.getter(name="logTemplate")
+    def log_template(self) -> Optional['outputs.HostGroupRuleExtractRuleLogTemplate']:
+        """
+        Automatically extract log fields based on the specified log template.
+        """
+        return pulumi.get(self, "log_template")
+
+    @property
+    @pulumi.getter
+    def quote(self) -> Optional[builtins.str]:
+        """
+        Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "quote")
+
+    @property
+    @pulumi.getter(name="timeExtractRegex")
+    def time_extract_regex(self) -> Optional[builtins.str]:
+        """
+        Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+        """
+        return pulumi.get(self, "time_extract_regex")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> Optional[builtins.str]:
+        """
+        Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeKey")
+    def time_key(self) -> Optional[builtins.str]:
+        """
+        Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        """
+        return pulumi.get(self, "time_key")
+
+    @property
+    @pulumi.getter(name="timeSample")
+    def time_sample(self) -> Optional[builtins.str]:
+        """
+        Sample time. Used to verify whether the specified time parsing format is correct.
+        """
+        return pulumi.get(self, "time_sample")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[builtins.str]:
+        """
+        Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="unMatchLogKey")
+    def un_match_log_key(self) -> Optional[builtins.str]:
+        """
+        Key name for logs that failed to parse when uploading
+        """
+        return pulumi.get(self, "un_match_log_key")
+
+    @property
+    @pulumi.getter(name="unMatchUpLoadSwitch")
+    def un_match_up_load_switch(self) -> Optional[builtins.bool]:
+        """
+        Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        return pulumi.get(self, "un_match_up_load_switch")
+
+
+@pulumi.output_type
+class HostGroupRuleExtractRuleFilterKeyRegex(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 regex: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Name of the filter field.
+        :param builtins.str regex: The log content of the filter field must match the specified regular expression.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Name of the filter field.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.str]:
+        """
+        The log content of the filter field must match the specified regular expression.
+        """
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class HostGroupRuleExtractRuleLogTemplate(dict):
+    def __init__(__self__, *,
+                 format: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str format: Log template format
+        :param builtins.str type: Log template type. Supported types: Nginx (Nginx log template type).
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def format(self) -> Optional[builtins.str]:
+        """
+        Log template format
+        """
+        return pulumi.get(self, "format")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Log template type. Supported types: Nginx (Nginx log template type).
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class HostGroupRuleUserDefineRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableHostGroupLabel":
+            suggest = "enable_host_group_label"
+        elif key == "enableHostname":
+            suggest = "enable_hostname"
+        elif key == "enableRawLog":
+            suggest = "enable_raw_log"
+        elif key == "hostGroupLabelKey":
+            suggest = "host_group_label_key"
+        elif key == "hostnameKey":
+            suggest = "hostname_key"
+        elif key == "ignoreOlder":
+            suggest = "ignore_older"
+        elif key == "multiCollectsType":
+            suggest = "multi_collects_type"
+        elif key == "parsePathRule":
+            suggest = "parse_path_rule"
+        elif key == "rawLogKey":
+            suggest = "raw_log_key"
+        elif key == "shardHashKey":
+            suggest = "shard_hash_key"
+        elif key == "tailFiles":
+            suggest = "tail_files"
+        elif key == "tailSizeKb":
+            suggest = "tail_size_kb"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleUserDefineRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleUserDefineRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleUserDefineRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 advanced: Optional['outputs.HostGroupRuleUserDefineRuleAdvanced'] = None,
+                 enable_host_group_label: Optional[builtins.bool] = None,
+                 enable_hostname: Optional[builtins.bool] = None,
+                 enable_raw_log: Optional[builtins.bool] = None,
+                 fields: Optional[Sequence['outputs.HostGroupRuleUserDefineRuleField']] = None,
+                 host_group_label_key: Optional[builtins.str] = None,
+                 hostname_key: Optional[builtins.str] = None,
+                 ignore_older: Optional[builtins.int] = None,
+                 multi_collects_type: Optional[builtins.str] = None,
+                 parse_path_rule: Optional['outputs.HostGroupRuleUserDefineRuleParsePathRule'] = None,
+                 plugin: Optional['outputs.HostGroupRuleUserDefineRulePlugin'] = None,
+                 raw_log_key: Optional[builtins.str] = None,
+                 shard_hash_key: Optional['outputs.HostGroupRuleUserDefineRuleShardHashKey'] = None,
+                 tail_files: Optional[builtins.bool] = None,
+                 tail_size_kb: Optional[builtins.int] = None):
+        """
+        :param 'HostGroupRuleUserDefineRuleAdvancedArgs' advanced: Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+        :param builtins.bool enable_host_group_label: Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+        :param builtins.bool enable_hostname: Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+        :param builtins.bool enable_raw_log: Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+        :param builtins.str host_group_label_key: Field name used to store machine group label information.
+        :param builtins.str hostname_key: hostname field name. Only required when EnableHostname is set to true.
+        :param builtins.int ignore_older: Ignore log files that have not been updated for a specified duration, in hours.
+        :param builtins.str multi_collects_type: Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+        :param 'HostGroupRuleUserDefineRuleParsePathRuleArgs' parse_path_rule: Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+        :param 'HostGroupRuleUserDefineRulePluginArgs' plugin: LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+        :param builtins.str raw_log_key: Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+        :param 'HostGroupRuleUserDefineRuleShardHashKeyArgs' shard_hash_key: Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+        :param builtins.bool tail_files: LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+        :param builtins.int tail_size_kb: Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+        """
+        if advanced is not None:
+            pulumi.set(__self__, "advanced", advanced)
+        if enable_host_group_label is not None:
+            pulumi.set(__self__, "enable_host_group_label", enable_host_group_label)
+        if enable_hostname is not None:
+            pulumi.set(__self__, "enable_hostname", enable_hostname)
+        if enable_raw_log is not None:
+            pulumi.set(__self__, "enable_raw_log", enable_raw_log)
+        if fields is not None:
+            pulumi.set(__self__, "fields", fields)
+        if host_group_label_key is not None:
+            pulumi.set(__self__, "host_group_label_key", host_group_label_key)
+        if hostname_key is not None:
+            pulumi.set(__self__, "hostname_key", hostname_key)
+        if ignore_older is not None:
+            pulumi.set(__self__, "ignore_older", ignore_older)
+        if multi_collects_type is not None:
+            pulumi.set(__self__, "multi_collects_type", multi_collects_type)
+        if parse_path_rule is not None:
+            pulumi.set(__self__, "parse_path_rule", parse_path_rule)
+        if plugin is not None:
+            pulumi.set(__self__, "plugin", plugin)
+        if raw_log_key is not None:
+            pulumi.set(__self__, "raw_log_key", raw_log_key)
+        if shard_hash_key is not None:
+            pulumi.set(__self__, "shard_hash_key", shard_hash_key)
+        if tail_files is not None:
+            pulumi.set(__self__, "tail_files", tail_files)
+        if tail_size_kb is not None:
+            pulumi.set(__self__, "tail_size_kb", tail_size_kb)
+
+    @property
+    @pulumi.getter
+    def advanced(self) -> Optional['outputs.HostGroupRuleUserDefineRuleAdvanced']:
+        """
+        Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+        """
+        return pulumi.get(self, "advanced")
+
+    @property
+    @pulumi.getter(name="enableHostGroupLabel")
+    def enable_host_group_label(self) -> Optional[builtins.bool]:
+        """
+        Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+        """
+        return pulumi.get(self, "enable_host_group_label")
+
+    @property
+    @pulumi.getter(name="enableHostname")
+    def enable_hostname(self) -> Optional[builtins.bool]:
+        """
+        Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+        """
+        return pulumi.get(self, "enable_hostname")
+
+    @property
+    @pulumi.getter(name="enableRawLog")
+    def enable_raw_log(self) -> Optional[builtins.bool]:
+        """
+        Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+        """
+        return pulumi.get(self, "enable_raw_log")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Optional[Sequence['outputs.HostGroupRuleUserDefineRuleField']]:
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter(name="hostGroupLabelKey")
+    def host_group_label_key(self) -> Optional[builtins.str]:
+        """
+        Field name used to store machine group label information.
+        """
+        return pulumi.get(self, "host_group_label_key")
+
+    @property
+    @pulumi.getter(name="hostnameKey")
+    def hostname_key(self) -> Optional[builtins.str]:
+        """
+        hostname field name. Only required when EnableHostname is set to true.
+        """
+        return pulumi.get(self, "hostname_key")
+
+    @property
+    @pulumi.getter(name="ignoreOlder")
+    def ignore_older(self) -> Optional[builtins.int]:
+        """
+        Ignore log files that have not been updated for a specified duration, in hours.
+        """
+        return pulumi.get(self, "ignore_older")
+
+    @property
+    @pulumi.getter(name="multiCollectsType")
+    def multi_collects_type(self) -> Optional[builtins.str]:
+        """
+        Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+        """
+        return pulumi.get(self, "multi_collects_type")
+
+    @property
+    @pulumi.getter(name="parsePathRule")
+    def parse_path_rule(self) -> Optional['outputs.HostGroupRuleUserDefineRuleParsePathRule']:
+        """
+        Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+        """
+        return pulumi.get(self, "parse_path_rule")
+
+    @property
+    @pulumi.getter
+    def plugin(self) -> Optional['outputs.HostGroupRuleUserDefineRulePlugin']:
+        """
+        LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+        """
+        return pulumi.get(self, "plugin")
+
+    @property
+    @pulumi.getter(name="rawLogKey")
+    def raw_log_key(self) -> Optional[builtins.str]:
+        """
+        Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+        """
+        return pulumi.get(self, "raw_log_key")
+
+    @property
+    @pulumi.getter(name="shardHashKey")
+    def shard_hash_key(self) -> Optional['outputs.HostGroupRuleUserDefineRuleShardHashKey']:
+        """
+        Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+        """
+        return pulumi.get(self, "shard_hash_key")
+
+    @property
+    @pulumi.getter(name="tailFiles")
+    def tail_files(self) -> Optional[builtins.bool]:
+        """
+        LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+        """
+        return pulumi.get(self, "tail_files")
+
+    @property
+    @pulumi.getter(name="tailSizeKb")
+    def tail_size_kb(self) -> Optional[builtins.int]:
+        """
+        Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+        """
+        return pulumi.get(self, "tail_size_kb")
+
+
+@pulumi.output_type
+class HostGroupRuleUserDefineRuleAdvanced(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "closeEof":
+            suggest = "close_eof"
+        elif key == "closeInactive":
+            suggest = "close_inactive"
+        elif key == "closeRemoved":
+            suggest = "close_removed"
+        elif key == "closeRenamed":
+            suggest = "close_renamed"
+        elif key == "closeTimeout":
+            suggest = "close_timeout"
+        elif key == "noLineTerminatorEofMaxTime":
+            suggest = "no_line_terminator_eof_max_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleUserDefineRuleAdvanced. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleUserDefineRuleAdvanced.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleUserDefineRuleAdvanced.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 close_eof: Optional[builtins.bool] = None,
+                 close_inactive: Optional[builtins.int] = None,
+                 close_removed: Optional[builtins.bool] = None,
+                 close_renamed: Optional[builtins.bool] = None,
+                 close_timeout: Optional[builtins.int] = None,
+                 no_line_terminator_eof_max_time: Optional[builtins.int] = None):
+        """
+        :param builtins.bool close_eof: After reading to the end of the log file, whether to release the file handle. Default is false.
+        :param builtins.int close_inactive: Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+        :param builtins.bool close_removed: Whether to release the handle of the log file after it is removed. Default is false.
+        :param builtins.bool close_renamed: Whether to release the handle of the log file after it is renamed. Default is false.
+        :param builtins.int close_timeout: Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+        :param builtins.int no_line_terminator_eof_max_time: Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+        """
+        if close_eof is not None:
+            pulumi.set(__self__, "close_eof", close_eof)
+        if close_inactive is not None:
+            pulumi.set(__self__, "close_inactive", close_inactive)
+        if close_removed is not None:
+            pulumi.set(__self__, "close_removed", close_removed)
+        if close_renamed is not None:
+            pulumi.set(__self__, "close_renamed", close_renamed)
+        if close_timeout is not None:
+            pulumi.set(__self__, "close_timeout", close_timeout)
+        if no_line_terminator_eof_max_time is not None:
+            pulumi.set(__self__, "no_line_terminator_eof_max_time", no_line_terminator_eof_max_time)
+
+    @property
+    @pulumi.getter(name="closeEof")
+    def close_eof(self) -> Optional[builtins.bool]:
+        """
+        After reading to the end of the log file, whether to release the file handle. Default is false.
+        """
+        return pulumi.get(self, "close_eof")
+
+    @property
+    @pulumi.getter(name="closeInactive")
+    def close_inactive(self) -> Optional[builtins.int]:
+        """
+        Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+        """
+        return pulumi.get(self, "close_inactive")
+
+    @property
+    @pulumi.getter(name="closeRemoved")
+    def close_removed(self) -> Optional[builtins.bool]:
+        """
+        Whether to release the handle of the log file after it is removed. Default is false.
+        """
+        return pulumi.get(self, "close_removed")
+
+    @property
+    @pulumi.getter(name="closeRenamed")
+    def close_renamed(self) -> Optional[builtins.bool]:
+        """
+        Whether to release the handle of the log file after it is renamed. Default is false.
+        """
+        return pulumi.get(self, "close_renamed")
+
+    @property
+    @pulumi.getter(name="closeTimeout")
+    def close_timeout(self) -> Optional[builtins.int]:
+        """
+        Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+        """
+        return pulumi.get(self, "close_timeout")
+
+    @property
+    @pulumi.getter(name="noLineTerminatorEofMaxTime")
+    def no_line_terminator_eof_max_time(self) -> Optional[builtins.int]:
+        """
+        Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+        """
+        return pulumi.get(self, "no_line_terminator_eof_max_time")
+
+
+@pulumi.output_type
+class HostGroupRuleUserDefineRuleField(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 val: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if val is not None:
+            pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> Optional[builtins.str]:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class HostGroupRuleUserDefineRuleParsePathRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "pathSample":
+            suggest = "path_sample"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleUserDefineRuleParsePathRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleUserDefineRuleParsePathRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleUserDefineRuleParsePathRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 keys: Optional[Sequence[builtins.str]] = None,
+                 path_sample: Optional[builtins.str] = None,
+                 regex: Optional[builtins.str] = None):
+        """
+        :param Sequence[builtins.str] keys: List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+        :param builtins.str path_sample: Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+        :param builtins.str regex: Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+        """
+        if keys is not None:
+            pulumi.set(__self__, "keys", keys)
+        if path_sample is not None:
+            pulumi.set(__self__, "path_sample", path_sample)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def keys(self) -> Optional[Sequence[builtins.str]]:
+        """
+        List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+        """
+        return pulumi.get(self, "keys")
+
+    @property
+    @pulumi.getter(name="pathSample")
+    def path_sample(self) -> Optional[builtins.str]:
+        """
+        Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+        """
+        return pulumi.get(self, "path_sample")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.str]:
+        """
+        Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+        """
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class HostGroupRuleUserDefineRulePlugin(dict):
+    def __init__(__self__, *,
+                 processors: Optional[builtins.str] = None):
+        """
+        :param builtins.str processors: LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+        """
+        if processors is not None:
+            pulumi.set(__self__, "processors", processors)
+
+    @property
+    @pulumi.getter
+    def processors(self) -> Optional[builtins.str]:
+        """
+        LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+        """
+        return pulumi.get(self, "processors")
+
+
+@pulumi.output_type
+class HostGroupRuleUserDefineRuleShardHashKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hashKey":
+            suggest = "hash_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRuleUserDefineRuleShardHashKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRuleUserDefineRuleShardHashKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRuleUserDefineRuleShardHashKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 hash_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str hash_key: The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+        """
+        if hash_key is not None:
+            pulumi.set(__self__, "hash_key", hash_key)
+
+    @property
+    @pulumi.getter(name="hashKey")
+    def hash_key(self) -> Optional[builtins.str]:
+        """
+        The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+        """
+        return pulumi.get(self, "hash_key")
 
 
 @pulumi.output_type
@@ -5993,6 +7732,1413 @@ class GetAlarmTriggerConditionResult(dict):
         Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
         """
         return pulumi.get(self, "severity")
+
+
+@pulumi.output_type
+class GetEtlTargetResourceResult(dict):
+    def __init__(__self__, *,
+                 alias: builtins.str,
+                 project_id: builtins.str,
+                 project_name: builtins.str,
+                 region: builtins.str,
+                 role_trn: builtins.str,
+                 topic_id: builtins.str,
+                 topic_name: builtins.str):
+        """
+        :param builtins.str alias: Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+        :param builtins.str project_id: Log project ID for storing processed logs
+        :param builtins.str project_name: Log project name for storing processed logs
+        :param builtins.str region: Region of the log topic for storing processed logs
+        :param builtins.str role_trn: Cross-account authorization role name
+        :param builtins.str topic_id: Log topic ID for storing processed logs
+        :param builtins.str topic_name: Log topic name for storing processed logs
+        """
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "project_name", project_name)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "role_trn", role_trn)
+        pulumi.set(__self__, "topic_id", topic_id)
+        pulumi.set(__self__, "topic_name", topic_name)
+
+    @property
+    @pulumi.getter
+    def alias(self) -> builtins.str:
+        """
+        Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+        """
+        return pulumi.get(self, "alias")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        Log project ID for storing processed logs
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> builtins.str:
+        """
+        Log project name for storing processed logs
+        """
+        return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        Region of the log topic for storing processed logs
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="roleTrn")
+    def role_trn(self) -> builtins.str:
+        """
+        Cross-account authorization role name
+        """
+        return pulumi.get(self, "role_trn")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        Log topic ID for storing processed logs
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> builtins.str:
+        """
+        Log topic name for storing processed logs
+        """
+        return pulumi.get(self, "topic_name")
+
+
+@pulumi.output_type
+class GetHostGroupRuleResult(dict):
+    def __init__(__self__, *,
+                 container_rule: 'outputs.GetHostGroupRuleContainerRuleResult',
+                 create_time: builtins.str,
+                 exclude_paths: Sequence['outputs.GetHostGroupRuleExcludePathResult'],
+                 extract_rule: 'outputs.GetHostGroupRuleExtractRuleResult',
+                 input_type: builtins.int,
+                 log_sample: builtins.str,
+                 log_type: builtins.str,
+                 modify_time: builtins.str,
+                 paths: Sequence[builtins.str],
+                 pause: builtins.int,
+                 rule_id: builtins.str,
+                 rule_name: builtins.str,
+                 topic_id: builtins.str,
+                 topic_name: builtins.str,
+                 user_define_rule: 'outputs.GetHostGroupRuleUserDefineRuleResult'):
+        """
+        :param 'GetHostGroupRuleContainerRuleArgs' container_rule: Container collection rules
+        :param builtins.str create_time: Time when the collection configuration was created.
+        :param Sequence['GetHostGroupRuleExcludePathArgs'] exclude_paths: Extraction rule list.
+        :param 'GetHostGroupRuleExtractRuleArgs' extract_rule: Extraction rules
+        :param builtins.int input_type: Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+        :param builtins.str log_sample: Log sample.
+        :param builtins.str log_type: Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+        :param builtins.str modify_time: Time when the collection configuration was modified.
+        :param Sequence[builtins.str] paths: Data collection path list
+        :param builtins.int pause: Running status of the collection configuration. 0: Running. 1: Paused.
+        :param builtins.str rule_id: Collection configuration ID.
+        :param builtins.str rule_name: Name of the collection configuration.
+        :param builtins.str topic_id: ID of the log topic to which the collection configuration belongs.
+        :param builtins.str topic_name: Name of the log topic associated with the collection configuration
+        :param 'GetHostGroupRuleUserDefineRuleArgs' user_define_rule: User-defined collection rules.
+        """
+        pulumi.set(__self__, "container_rule", container_rule)
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "extract_rule", extract_rule)
+        pulumi.set(__self__, "input_type", input_type)
+        pulumi.set(__self__, "log_sample", log_sample)
+        pulumi.set(__self__, "log_type", log_type)
+        pulumi.set(__self__, "modify_time", modify_time)
+        pulumi.set(__self__, "paths", paths)
+        pulumi.set(__self__, "pause", pause)
+        pulumi.set(__self__, "rule_id", rule_id)
+        pulumi.set(__self__, "rule_name", rule_name)
+        pulumi.set(__self__, "topic_id", topic_id)
+        pulumi.set(__self__, "topic_name", topic_name)
+        pulumi.set(__self__, "user_define_rule", user_define_rule)
+
+    @property
+    @pulumi.getter(name="containerRule")
+    def container_rule(self) -> 'outputs.GetHostGroupRuleContainerRuleResult':
+        """
+        Container collection rules
+        """
+        return pulumi.get(self, "container_rule")
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        Time when the collection configuration was created.
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence['outputs.GetHostGroupRuleExcludePathResult']:
+        """
+        Extraction rule list.
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @property
+    @pulumi.getter(name="extractRule")
+    def extract_rule(self) -> 'outputs.GetHostGroupRuleExtractRuleResult':
+        """
+        Extraction rules
+        """
+        return pulumi.get(self, "extract_rule")
+
+    @property
+    @pulumi.getter(name="inputType")
+    def input_type(self) -> builtins.int:
+        """
+        Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+        """
+        return pulumi.get(self, "input_type")
+
+    @property
+    @pulumi.getter(name="logSample")
+    def log_sample(self) -> builtins.str:
+        """
+        Log sample.
+        """
+        return pulumi.get(self, "log_sample")
+
+    @property
+    @pulumi.getter(name="logType")
+    def log_type(self) -> builtins.str:
+        """
+        Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+        """
+        return pulumi.get(self, "log_type")
+
+    @property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> builtins.str:
+        """
+        Time when the collection configuration was modified.
+        """
+        return pulumi.get(self, "modify_time")
+
+    @property
+    @pulumi.getter
+    def paths(self) -> Sequence[builtins.str]:
+        """
+        Data collection path list
+        """
+        return pulumi.get(self, "paths")
+
+    @property
+    @pulumi.getter
+    def pause(self) -> builtins.int:
+        """
+        Running status of the collection configuration. 0: Running. 1: Paused.
+        """
+        return pulumi.get(self, "pause")
+
+    @property
+    @pulumi.getter(name="ruleId")
+    def rule_id(self) -> builtins.str:
+        """
+        Collection configuration ID.
+        """
+        return pulumi.get(self, "rule_id")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> builtins.str:
+        """
+        Name of the collection configuration.
+        """
+        return pulumi.get(self, "rule_name")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        ID of the log topic to which the collection configuration belongs.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> builtins.str:
+        """
+        Name of the log topic associated with the collection configuration
+        """
+        return pulumi.get(self, "topic_name")
+
+    @property
+    @pulumi.getter(name="userDefineRule")
+    def user_define_rule(self) -> 'outputs.GetHostGroupRuleUserDefineRuleResult':
+        """
+        User-defined collection rules.
+        """
+        return pulumi.get(self, "user_define_rule")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleResult(dict):
+    def __init__(__self__, *,
+                 container_name_regex: builtins.str,
+                 env_tags: Sequence['outputs.GetHostGroupRuleContainerRuleEnvTagResult'],
+                 exclude_container_env_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleExcludeContainerEnvRegexResult'],
+                 exclude_container_label_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleExcludeContainerLabelRegexResult'],
+                 include_container_env_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleIncludeContainerEnvRegexResult'],
+                 include_container_label_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleIncludeContainerLabelRegexResult'],
+                 kubernetes_rule: 'outputs.GetHostGroupRuleContainerRuleKubernetesRuleResult',
+                 stream: builtins.str):
+        """
+        :param builtins.str container_name_regex: Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+        :param Sequence['GetHostGroupRuleContainerRuleEnvTagArgs'] env_tags: Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
+        :param Sequence['GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs'] exclude_container_env_regexes: Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
+        :param Sequence['GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs'] exclude_container_label_regexes: The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
+        :param Sequence['GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs'] include_container_env_regexes: The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
+        :param Sequence['GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs'] include_container_label_regexes: The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
+        :param 'GetHostGroupRuleContainerRuleKubernetesRuleArgs' kubernetes_rule: Kubernetes container collection rules.
+        :param builtins.str stream: Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+        """
+        pulumi.set(__self__, "container_name_regex", container_name_regex)
+        pulumi.set(__self__, "env_tags", env_tags)
+        pulumi.set(__self__, "exclude_container_env_regexes", exclude_container_env_regexes)
+        pulumi.set(__self__, "exclude_container_label_regexes", exclude_container_label_regexes)
+        pulumi.set(__self__, "include_container_env_regexes", include_container_env_regexes)
+        pulumi.set(__self__, "include_container_label_regexes", include_container_label_regexes)
+        pulumi.set(__self__, "kubernetes_rule", kubernetes_rule)
+        pulumi.set(__self__, "stream", stream)
+
+    @property
+    @pulumi.getter(name="containerNameRegex")
+    def container_name_regex(self) -> builtins.str:
+        """
+        Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+        """
+        return pulumi.get(self, "container_name_regex")
+
+    @property
+    @pulumi.getter(name="envTags")
+    def env_tags(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleEnvTagResult']:
+        """
+        Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
+        """
+        return pulumi.get(self, "env_tags")
+
+    @property
+    @pulumi.getter(name="excludeContainerEnvRegexes")
+    def exclude_container_env_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleExcludeContainerEnvRegexResult']:
+        """
+        Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
+        """
+        return pulumi.get(self, "exclude_container_env_regexes")
+
+    @property
+    @pulumi.getter(name="excludeContainerLabelRegexes")
+    def exclude_container_label_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleExcludeContainerLabelRegexResult']:
+        """
+        The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
+        """
+        return pulumi.get(self, "exclude_container_label_regexes")
+
+    @property
+    @pulumi.getter(name="includeContainerEnvRegexes")
+    def include_container_env_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleIncludeContainerEnvRegexResult']:
+        """
+        The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
+        """
+        return pulumi.get(self, "include_container_env_regexes")
+
+    @property
+    @pulumi.getter(name="includeContainerLabelRegexes")
+    def include_container_label_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleIncludeContainerLabelRegexResult']:
+        """
+        The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
+        """
+        return pulumi.get(self, "include_container_label_regexes")
+
+    @property
+    @pulumi.getter(name="kubernetesRule")
+    def kubernetes_rule(self) -> 'outputs.GetHostGroupRuleContainerRuleKubernetesRuleResult':
+        """
+        Kubernetes container collection rules.
+        """
+        return pulumi.get(self, "kubernetes_rule")
+
+    @property
+    @pulumi.getter
+    def stream(self) -> builtins.str:
+        """
+        Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+        """
+        return pulumi.get(self, "stream")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleEnvTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleExcludeContainerEnvRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleExcludeContainerLabelRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleIncludeContainerEnvRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleIncludeContainerLabelRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleResult(dict):
+    def __init__(__self__, *,
+                 annotation_tags: Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagResult'],
+                 enable_all_label_tag: builtins.bool,
+                 exclude_pod_annotation_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexResult'],
+                 exclude_pod_label_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexResult'],
+                 include_pod_annotation_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexResult'],
+                 include_pod_label_regexes: Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexResult'],
+                 label_tags: Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleLabelTagResult'],
+                 namespace_name_regex: builtins.str,
+                 pod_name_regex: builtins.str,
+                 workload_name_regex: builtins.str,
+                 workload_type: builtins.str):
+        """
+        :param Sequence['GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs'] annotation_tags: Whether to add Kubernetes Annotations as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod Annotation fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to sink and Value to data_sink. If the Pod contains the Annotation sink=ck, the log will include the field **tag**data_sink_*: ck.
+        :param builtins.bool enable_all_label_tag: Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+        :param Sequence['GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs'] exclude_pod_annotation_regexes: Pod Annotation denylist is used to specify containers that are not collected. If you need to set a Pod Annotation denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the Key will be excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the Value will be excluded. By default, Value uses string matching, meaning only when Value and the Pod Annotation value are exactly the same will it match. If the value starts with ^ and ends with $, it is treated as a regular expression match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods whose Pod Annotation contains app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as the Pod Annotation matches any pair, it will be included in the collection scope. When enabling the Pod Annotation denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches strings that start with http
+        :param Sequence['GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs'] exclude_pod_label_regexes: Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in the Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR, meaning any Pod Label matching any pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches any string starting with http.
+        :param Sequence['GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs'] include_pod_annotation_regexes: Pod Annotation Allowlist specifies which containers to collect. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers in Pods with the specified Key in their Pod Annotation are matched. If Value is not empty, only containers in Pods where the Pod Annotation contains the Key and its value matches Value are matched. By default, Value uses string matching, meaning only exact matches between Value and the Pod Annotation value are considered. If Value starts with ^ and ends with $, it uses regex matching. For example, set Key to app and Value to ^(test1|test2)$ to match containers in Pods with Pod Annotation app:test1 or app:test2. Note: Multiple Key-Value pairs use logical OR, so any Pod Annotation matching any pair will be included in the collection scope. When enabling the Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches values starting with http
+        :param Sequence['GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs'] include_pod_label_regexes: Pod label allowlist specifies which containers to collect. If the Pod label allowlist is not enabled, all containers are collected. To set a Pod label allowlist, Key is required. If Value is empty, all containers with the Key in their Pod label are collected. If Value is not empty, only containers with the Key in their Pod label and a Value matching the specified pattern are collected. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their Pod label. Note: The logical relationship between multiple key-value pairs is OR, meaning any matching pair will include the Pod in the collection scope. When the Pod label allowlist is enabled, Keys must be unique. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+        :param Sequence['GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs'] label_tags: Choose whether to add Kubernetes labels as log tags to the original log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+        :param builtins.str namespace_name_regex: Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+        :param builtins.str pod_name_regex: Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+        :param builtins.str workload_name_regex: Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+        :param builtins.str workload_type: Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+        """
+        pulumi.set(__self__, "annotation_tags", annotation_tags)
+        pulumi.set(__self__, "enable_all_label_tag", enable_all_label_tag)
+        pulumi.set(__self__, "exclude_pod_annotation_regexes", exclude_pod_annotation_regexes)
+        pulumi.set(__self__, "exclude_pod_label_regexes", exclude_pod_label_regexes)
+        pulumi.set(__self__, "include_pod_annotation_regexes", include_pod_annotation_regexes)
+        pulumi.set(__self__, "include_pod_label_regexes", include_pod_label_regexes)
+        pulumi.set(__self__, "label_tags", label_tags)
+        pulumi.set(__self__, "namespace_name_regex", namespace_name_regex)
+        pulumi.set(__self__, "pod_name_regex", pod_name_regex)
+        pulumi.set(__self__, "workload_name_regex", workload_name_regex)
+        pulumi.set(__self__, "workload_type", workload_type)
+
+    @property
+    @pulumi.getter(name="annotationTags")
+    def annotation_tags(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagResult']:
+        """
+        Whether to add Kubernetes Annotations as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod Annotation fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to sink and Value to data_sink. If the Pod contains the Annotation sink=ck, the log will include the field **tag**data_sink_*: ck.
+        """
+        return pulumi.get(self, "annotation_tags")
+
+    @property
+    @pulumi.getter(name="enableAllLabelTag")
+    def enable_all_label_tag(self) -> builtins.bool:
+        """
+        Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+        """
+        return pulumi.get(self, "enable_all_label_tag")
+
+    @property
+    @pulumi.getter(name="excludePodAnnotationRegexes")
+    def exclude_pod_annotation_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexResult']:
+        """
+        Pod Annotation denylist is used to specify containers that are not collected. If you need to set a Pod Annotation denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the Key will be excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the Value will be excluded. By default, Value uses string matching, meaning only when Value and the Pod Annotation value are exactly the same will it match. If the value starts with ^ and ends with $, it is treated as a regular expression match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods whose Pod Annotation contains app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as the Pod Annotation matches any pair, it will be included in the collection scope. When enabling the Pod Annotation denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches strings that start with http
+        """
+        return pulumi.get(self, "exclude_pod_annotation_regexes")
+
+    @property
+    @pulumi.getter(name="excludePodLabelRegexes")
+    def exclude_pod_label_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexResult']:
+        """
+        Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in the Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR, meaning any Pod Label matching any pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches any string starting with http.
+        """
+        return pulumi.get(self, "exclude_pod_label_regexes")
+
+    @property
+    @pulumi.getter(name="includePodAnnotationRegexes")
+    def include_pod_annotation_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexResult']:
+        """
+        Pod Annotation Allowlist specifies which containers to collect. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers in Pods with the specified Key in their Pod Annotation are matched. If Value is not empty, only containers in Pods where the Pod Annotation contains the Key and its value matches Value are matched. By default, Value uses string matching, meaning only exact matches between Value and the Pod Annotation value are considered. If Value starts with ^ and ends with $, it uses regex matching. For example, set Key to app and Value to ^(test1|test2)$ to match containers in Pods with Pod Annotation app:test1 or app:test2. Note: Multiple Key-Value pairs use logical OR, so any Pod Annotation matching any pair will be included in the collection scope. When enabling the Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches values starting with http
+        """
+        return pulumi.get(self, "include_pod_annotation_regexes")
+
+    @property
+    @pulumi.getter(name="includePodLabelRegexes")
+    def include_pod_label_regexes(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexResult']:
+        """
+        Pod label allowlist specifies which containers to collect. If the Pod label allowlist is not enabled, all containers are collected. To set a Pod label allowlist, Key is required. If Value is empty, all containers with the Key in their Pod label are collected. If Value is not empty, only containers with the Key in their Pod label and a Value matching the specified pattern are collected. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their Pod label. Note: The logical relationship between multiple key-value pairs is OR, meaning any matching pair will include the Pod in the collection scope. When the Pod label allowlist is enabled, Keys must be unique. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+        """
+        return pulumi.get(self, "include_pod_label_regexes")
+
+    @property
+    @pulumi.getter(name="labelTags")
+    def label_tags(self) -> Sequence['outputs.GetHostGroupRuleContainerRuleKubernetesRuleLabelTagResult']:
+        """
+        Choose whether to add Kubernetes labels as log tags to the original log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+        """
+        return pulumi.get(self, "label_tags")
+
+    @property
+    @pulumi.getter(name="namespaceNameRegex")
+    def namespace_name_regex(self) -> builtins.str:
+        """
+        Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+        """
+        return pulumi.get(self, "namespace_name_regex")
+
+    @property
+    @pulumi.getter(name="podNameRegex")
+    def pod_name_regex(self) -> builtins.str:
+        """
+        Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+        """
+        return pulumi.get(self, "pod_name_regex")
+
+    @property
+    @pulumi.getter(name="workloadNameRegex")
+    def workload_name_regex(self) -> builtins.str:
+        """
+        Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+        """
+        return pulumi.get(self, "workload_name_regex")
+
+    @property
+    @pulumi.getter(name="workloadType")
+    def workload_type(self) -> builtins.str:
+        """
+        Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+        """
+        return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleContainerRuleKubernetesRuleLabelTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleExcludePathResult(dict):
+    def __init__(__self__, *,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str type: Collection path type. File: file name. Path: directory.
+        :param builtins.str value: Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Collection path type. File: file name. Path: directory.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetHostGroupRuleExtractRuleResult(dict):
+    def __init__(__self__, *,
+                 begin_regex: builtins.str,
+                 delimiter: builtins.str,
+                 enable_nanosecond: builtins.bool,
+                 filter_key_regexes: Sequence['outputs.GetHostGroupRuleExtractRuleFilterKeyRegexResult'],
+                 keys: Sequence[builtins.str],
+                 log_regex: builtins.str,
+                 log_template: 'outputs.GetHostGroupRuleExtractRuleLogTemplateResult',
+                 quote: builtins.str,
+                 time_extract_regex: builtins.str,
+                 time_format: builtins.str,
+                 time_key: builtins.str,
+                 time_sample: builtins.str,
+                 time_zone: builtins.str,
+                 un_match_log_key: builtins.str,
+                 un_match_up_load_switch: builtins.bool):
+        """
+        :param builtins.str begin_regex: The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+        :param builtins.str delimiter: Log delimiter. Valid only when LogType is delimiter_log.
+        :param builtins.bool enable_nanosecond: Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+        :param Sequence['GetHostGroupRuleExtractRuleFilterKeyRegexArgs'] filter_key_regexes: Filter rule list.
+        :param Sequence[builtins.str] keys: List of log field names (Keys).
+        :param builtins.str log_regex: The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+        :param 'GetHostGroupRuleExtractRuleLogTemplateArgs' log_template: Automatically extract log fields based on the specified log template.
+        :param builtins.str quote: Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+        :param builtins.str time_extract_regex: Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+        :param builtins.str time_format: Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        :param builtins.str time_key: Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        :param builtins.str time_sample: Sample time. Used to verify whether the specified time parsing format is correct.
+        :param builtins.str time_zone: Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+        :param builtins.str un_match_log_key: Key name for logs that failed to parse when uploading
+        :param builtins.bool un_match_up_load_switch: Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        pulumi.set(__self__, "begin_regex", begin_regex)
+        pulumi.set(__self__, "delimiter", delimiter)
+        pulumi.set(__self__, "enable_nanosecond", enable_nanosecond)
+        pulumi.set(__self__, "filter_key_regexes", filter_key_regexes)
+        pulumi.set(__self__, "keys", keys)
+        pulumi.set(__self__, "log_regex", log_regex)
+        pulumi.set(__self__, "log_template", log_template)
+        pulumi.set(__self__, "quote", quote)
+        pulumi.set(__self__, "time_extract_regex", time_extract_regex)
+        pulumi.set(__self__, "time_format", time_format)
+        pulumi.set(__self__, "time_key", time_key)
+        pulumi.set(__self__, "time_sample", time_sample)
+        pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "un_match_log_key", un_match_log_key)
+        pulumi.set(__self__, "un_match_up_load_switch", un_match_up_load_switch)
+
+    @property
+    @pulumi.getter(name="beginRegex")
+    def begin_regex(self) -> builtins.str:
+        """
+        The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+        """
+        return pulumi.get(self, "begin_regex")
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> builtins.str:
+        """
+        Log delimiter. Valid only when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="enableNanosecond")
+    def enable_nanosecond(self) -> builtins.bool:
+        """
+        Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+        """
+        return pulumi.get(self, "enable_nanosecond")
+
+    @property
+    @pulumi.getter(name="filterKeyRegexes")
+    def filter_key_regexes(self) -> Sequence['outputs.GetHostGroupRuleExtractRuleFilterKeyRegexResult']:
+        """
+        Filter rule list.
+        """
+        return pulumi.get(self, "filter_key_regexes")
+
+    @property
+    @pulumi.getter
+    def keys(self) -> Sequence[builtins.str]:
+        """
+        List of log field names (Keys).
+        """
+        return pulumi.get(self, "keys")
+
+    @property
+    @pulumi.getter(name="logRegex")
+    def log_regex(self) -> builtins.str:
+        """
+        The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+        """
+        return pulumi.get(self, "log_regex")
+
+    @property
+    @pulumi.getter(name="logTemplate")
+    def log_template(self) -> 'outputs.GetHostGroupRuleExtractRuleLogTemplateResult':
+        """
+        Automatically extract log fields based on the specified log template.
+        """
+        return pulumi.get(self, "log_template")
+
+    @property
+    @pulumi.getter
+    def quote(self) -> builtins.str:
+        """
+        Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+        """
+        return pulumi.get(self, "quote")
+
+    @property
+    @pulumi.getter(name="timeExtractRegex")
+    def time_extract_regex(self) -> builtins.str:
+        """
+        Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+        """
+        return pulumi.get(self, "time_extract_regex")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> builtins.str:
+        """
+        Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeKey")
+    def time_key(self) -> builtins.str:
+        """
+        Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+        """
+        return pulumi.get(self, "time_key")
+
+    @property
+    @pulumi.getter(name="timeSample")
+    def time_sample(self) -> builtins.str:
+        """
+        Sample time. Used to verify whether the specified time parsing format is correct.
+        """
+        return pulumi.get(self, "time_sample")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> builtins.str:
+        """
+        Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="unMatchLogKey")
+    def un_match_log_key(self) -> builtins.str:
+        """
+        Key name for logs that failed to parse when uploading
+        """
+        return pulumi.get(self, "un_match_log_key")
+
+    @property
+    @pulumi.getter(name="unMatchUpLoadSwitch")
+    def un_match_up_load_switch(self) -> builtins.bool:
+        """
+        Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+        """
+        return pulumi.get(self, "un_match_up_load_switch")
+
+
+@pulumi.output_type
+class GetHostGroupRuleExtractRuleFilterKeyRegexResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 regex: builtins.str):
+        """
+        :param builtins.str key: Name of the filter field.
+        :param builtins.str regex: The log content of the filter field must match the specified regular expression.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Name of the filter field.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> builtins.str:
+        """
+        The log content of the filter field must match the specified regular expression.
+        """
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetHostGroupRuleExtractRuleLogTemplateResult(dict):
+    def __init__(__self__, *,
+                 format: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str format: Log template format
+        :param builtins.str type: Log template type. Supported types: Nginx (Nginx log template type).
+        """
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def format(self) -> builtins.str:
+        """
+        Log template format
+        """
+        return pulumi.get(self, "format")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Log template type. Supported types: Nginx (Nginx log template type).
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetHostGroupRuleUserDefineRuleResult(dict):
+    def __init__(__self__, *,
+                 advanced: 'outputs.GetHostGroupRuleUserDefineRuleAdvancedResult',
+                 enable_host_group_label: builtins.bool,
+                 enable_hostname: builtins.bool,
+                 enable_raw_log: builtins.bool,
+                 fields: Sequence['outputs.GetHostGroupRuleUserDefineRuleFieldResult'],
+                 host_group_label_key: builtins.str,
+                 hostname_key: builtins.str,
+                 ignore_older: builtins.int,
+                 multi_collects_type: builtins.str,
+                 parse_path_rule: 'outputs.GetHostGroupRuleUserDefineRuleParsePathRuleResult',
+                 plugin: 'outputs.GetHostGroupRuleUserDefineRulePluginResult',
+                 raw_log_key: builtins.str,
+                 shard_hash_key: 'outputs.GetHostGroupRuleUserDefineRuleShardHashKeyResult',
+                 tail_files: builtins.bool,
+                 tail_size_kb: builtins.int):
+        """
+        :param 'GetHostGroupRuleUserDefineRuleAdvancedArgs' advanced: Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+        :param builtins.bool enable_host_group_label: Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+        :param builtins.bool enable_hostname: Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+        :param builtins.bool enable_raw_log: Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+        :param Sequence['GetHostGroupRuleUserDefineRuleFieldArgs'] fields: Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+        :param builtins.str host_group_label_key: Field name used to store machine group label information.
+        :param builtins.str hostname_key: hostname field name. Only required when EnableHostname is set to true.
+        :param builtins.int ignore_older: Ignore log files that have not been updated for a specified duration, in hours.
+        :param builtins.str multi_collects_type: Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+        :param 'GetHostGroupRuleUserDefineRuleParsePathRuleArgs' parse_path_rule: Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+        :param 'GetHostGroupRuleUserDefineRulePluginArgs' plugin: LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+        :param builtins.str raw_log_key: Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+        :param 'GetHostGroupRuleUserDefineRuleShardHashKeyArgs' shard_hash_key: Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+        :param builtins.bool tail_files: LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+        :param builtins.int tail_size_kb: Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+        """
+        pulumi.set(__self__, "advanced", advanced)
+        pulumi.set(__self__, "enable_host_group_label", enable_host_group_label)
+        pulumi.set(__self__, "enable_hostname", enable_hostname)
+        pulumi.set(__self__, "enable_raw_log", enable_raw_log)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "host_group_label_key", host_group_label_key)
+        pulumi.set(__self__, "hostname_key", hostname_key)
+        pulumi.set(__self__, "ignore_older", ignore_older)
+        pulumi.set(__self__, "multi_collects_type", multi_collects_type)
+        pulumi.set(__self__, "parse_path_rule", parse_path_rule)
+        pulumi.set(__self__, "plugin", plugin)
+        pulumi.set(__self__, "raw_log_key", raw_log_key)
+        pulumi.set(__self__, "shard_hash_key", shard_hash_key)
+        pulumi.set(__self__, "tail_files", tail_files)
+        pulumi.set(__self__, "tail_size_kb", tail_size_kb)
+
+    @property
+    @pulumi.getter
+    def advanced(self) -> 'outputs.GetHostGroupRuleUserDefineRuleAdvancedResult':
+        """
+        Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+        """
+        return pulumi.get(self, "advanced")
+
+    @property
+    @pulumi.getter(name="enableHostGroupLabel")
+    def enable_host_group_label(self) -> builtins.bool:
+        """
+        Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+        """
+        return pulumi.get(self, "enable_host_group_label")
+
+    @property
+    @pulumi.getter(name="enableHostname")
+    def enable_hostname(self) -> builtins.bool:
+        """
+        Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+        """
+        return pulumi.get(self, "enable_hostname")
+
+    @property
+    @pulumi.getter(name="enableRawLog")
+    def enable_raw_log(self) -> builtins.bool:
+        """
+        Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+        """
+        return pulumi.get(self, "enable_raw_log")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Sequence['outputs.GetHostGroupRuleUserDefineRuleFieldResult']:
+        """
+        Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter(name="hostGroupLabelKey")
+    def host_group_label_key(self) -> builtins.str:
+        """
+        Field name used to store machine group label information.
+        """
+        return pulumi.get(self, "host_group_label_key")
+
+    @property
+    @pulumi.getter(name="hostnameKey")
+    def hostname_key(self) -> builtins.str:
+        """
+        hostname field name. Only required when EnableHostname is set to true.
+        """
+        return pulumi.get(self, "hostname_key")
+
+    @property
+    @pulumi.getter(name="ignoreOlder")
+    def ignore_older(self) -> builtins.int:
+        """
+        Ignore log files that have not been updated for a specified duration, in hours.
+        """
+        return pulumi.get(self, "ignore_older")
+
+    @property
+    @pulumi.getter(name="multiCollectsType")
+    def multi_collects_type(self) -> builtins.str:
+        """
+        Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+        """
+        return pulumi.get(self, "multi_collects_type")
+
+    @property
+    @pulumi.getter(name="parsePathRule")
+    def parse_path_rule(self) -> 'outputs.GetHostGroupRuleUserDefineRuleParsePathRuleResult':
+        """
+        Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+        """
+        return pulumi.get(self, "parse_path_rule")
+
+    @property
+    @pulumi.getter
+    def plugin(self) -> 'outputs.GetHostGroupRuleUserDefineRulePluginResult':
+        """
+        LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+        """
+        return pulumi.get(self, "plugin")
+
+    @property
+    @pulumi.getter(name="rawLogKey")
+    def raw_log_key(self) -> builtins.str:
+        """
+        Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+        """
+        return pulumi.get(self, "raw_log_key")
+
+    @property
+    @pulumi.getter(name="shardHashKey")
+    def shard_hash_key(self) -> 'outputs.GetHostGroupRuleUserDefineRuleShardHashKeyResult':
+        """
+        Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+        """
+        return pulumi.get(self, "shard_hash_key")
+
+    @property
+    @pulumi.getter(name="tailFiles")
+    def tail_files(self) -> builtins.bool:
+        """
+        LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+        """
+        return pulumi.get(self, "tail_files")
+
+    @property
+    @pulumi.getter(name="tailSizeKb")
+    def tail_size_kb(self) -> builtins.int:
+        """
+        Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+        """
+        return pulumi.get(self, "tail_size_kb")
+
+
+@pulumi.output_type
+class GetHostGroupRuleUserDefineRuleAdvancedResult(dict):
+    def __init__(__self__, *,
+                 close_eof: builtins.bool,
+                 close_inactive: builtins.int,
+                 close_removed: builtins.bool,
+                 close_renamed: builtins.bool,
+                 close_timeout: builtins.int,
+                 no_line_terminator_eof_max_time: builtins.int):
+        """
+        :param builtins.bool close_eof: After reading to the end of the log file, whether to release the file handle. Default is false.
+        :param builtins.int close_inactive: Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+        :param builtins.bool close_removed: Whether to release the handle of the log file after it is removed. Default is false.
+        :param builtins.bool close_renamed: Whether to release the handle of the log file after it is renamed. Default is false.
+        :param builtins.int close_timeout: Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+        :param builtins.int no_line_terminator_eof_max_time: Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+        """
+        pulumi.set(__self__, "close_eof", close_eof)
+        pulumi.set(__self__, "close_inactive", close_inactive)
+        pulumi.set(__self__, "close_removed", close_removed)
+        pulumi.set(__self__, "close_renamed", close_renamed)
+        pulumi.set(__self__, "close_timeout", close_timeout)
+        pulumi.set(__self__, "no_line_terminator_eof_max_time", no_line_terminator_eof_max_time)
+
+    @property
+    @pulumi.getter(name="closeEof")
+    def close_eof(self) -> builtins.bool:
+        """
+        After reading to the end of the log file, whether to release the file handle. Default is false.
+        """
+        return pulumi.get(self, "close_eof")
+
+    @property
+    @pulumi.getter(name="closeInactive")
+    def close_inactive(self) -> builtins.int:
+        """
+        Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+        """
+        return pulumi.get(self, "close_inactive")
+
+    @property
+    @pulumi.getter(name="closeRemoved")
+    def close_removed(self) -> builtins.bool:
+        """
+        Whether to release the handle of the log file after it is removed. Default is false.
+        """
+        return pulumi.get(self, "close_removed")
+
+    @property
+    @pulumi.getter(name="closeRenamed")
+    def close_renamed(self) -> builtins.bool:
+        """
+        Whether to release the handle of the log file after it is renamed. Default is false.
+        """
+        return pulumi.get(self, "close_renamed")
+
+    @property
+    @pulumi.getter(name="closeTimeout")
+    def close_timeout(self) -> builtins.int:
+        """
+        Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+        """
+        return pulumi.get(self, "close_timeout")
+
+    @property
+    @pulumi.getter(name="noLineTerminatorEofMaxTime")
+    def no_line_terminator_eof_max_time(self) -> builtins.int:
+        """
+        Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+        """
+        return pulumi.get(self, "no_line_terminator_eof_max_time")
+
+
+@pulumi.output_type
+class GetHostGroupRuleUserDefineRuleFieldResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 val: builtins.str):
+        """
+        :param builtins.str key: Key.
+        :param builtins.str val: Value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "val", val)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def val(self) -> builtins.str:
+        """
+        Value.
+        """
+        return pulumi.get(self, "val")
+
+
+@pulumi.output_type
+class GetHostGroupRuleUserDefineRuleParsePathRuleResult(dict):
+    def __init__(__self__, *,
+                 keys: Sequence[builtins.str],
+                 path_sample: builtins.str,
+                 regex: builtins.str):
+        """
+        :param Sequence[builtins.str] keys: List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+        :param builtins.str path_sample: Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+        :param builtins.str regex: Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+        """
+        pulumi.set(__self__, "keys", keys)
+        pulumi.set(__self__, "path_sample", path_sample)
+        pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def keys(self) -> Sequence[builtins.str]:
+        """
+        List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+        """
+        return pulumi.get(self, "keys")
+
+    @property
+    @pulumi.getter(name="pathSample")
+    def path_sample(self) -> builtins.str:
+        """
+        Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+        """
+        return pulumi.get(self, "path_sample")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> builtins.str:
+        """
+        Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+        """
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetHostGroupRuleUserDefineRulePluginResult(dict):
+    def __init__(__self__, *,
+                 processors: builtins.str):
+        """
+        :param builtins.str processors: LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+        """
+        pulumi.set(__self__, "processors", processors)
+
+    @property
+    @pulumi.getter
+    def processors(self) -> builtins.str:
+        """
+        LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+        """
+        return pulumi.get(self, "processors")
+
+
+@pulumi.output_type
+class GetHostGroupRuleUserDefineRuleShardHashKeyResult(dict):
+    def __init__(__self__, *,
+                 hash_key: builtins.str):
+        """
+        :param builtins.str hash_key: The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+        """
+        pulumi.set(__self__, "hash_key", hash_key)
+
+    @property
+    @pulumi.getter(name="hashKey")
+    def hash_key(self) -> builtins.str:
+        """
+        The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+        """
+        return pulumi.get(self, "hash_key")
 
 
 @pulumi.output_type

@@ -213,6 +213,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         [Input("associatedInstanceNum")]
         public Input<int>? AssociatedInstanceNum { get; set; }
 
+        [Input("associatedInstances")]
+        private InputList<Inputs.AllowListAssociatedInstanceArgs>? _associatedInstances;
+        public InputList<Inputs.AllowListAssociatedInstanceArgs> AssociatedInstances
+        {
+            get => _associatedInstances ?? (_associatedInstances = new InputList<Inputs.AllowListAssociatedInstanceArgs>());
+            set => _associatedInstances = value;
+        }
+
         /// <summary>
         /// Ignore instance status check. Values: true: Yes. false: No. Default value.
         /// </summary>

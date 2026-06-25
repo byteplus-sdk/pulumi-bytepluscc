@@ -75,7 +75,7 @@ export class AllowList extends pulumi.CustomResource {
      * Total number of instances bound to the allowlist.
      */
     public readonly associatedInstanceNum!: pulumi.Output<number>;
-    public /*out*/ readonly associatedInstances!: pulumi.Output<outputs.rdsmysql.AllowListAssociatedInstance[]>;
+    public readonly associatedInstances!: pulumi.Output<outputs.rdsmysql.AllowListAssociatedInstance[]>;
     /**
      * Ignore instance status check. Values: true: Yes. false: No. Default value.
      */
@@ -149,6 +149,7 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["allowListType"] = args ? args.allowListType : undefined;
             resourceInputs["allowLists"] = args ? args.allowLists : undefined;
             resourceInputs["associatedInstanceNum"] = args ? args.associatedInstanceNum : undefined;
+            resourceInputs["associatedInstances"] = args ? args.associatedInstances : undefined;
             resourceInputs["ignoreInstanceStatus"] = args ? args.ignoreInstanceStatus : undefined;
             resourceInputs["instanceId"] = args ? args.instanceId : undefined;
             resourceInputs["modifyMode"] = args ? args.modifyMode : undefined;
@@ -159,7 +160,6 @@ export class AllowList extends pulumi.CustomResource {
             resourceInputs["userAllowLists"] = args ? args.userAllowLists : undefined;
             resourceInputs["allowListId"] = undefined /*out*/;
             resourceInputs["allowListIpNum"] = undefined /*out*/;
-            resourceInputs["associatedInstances"] = undefined /*out*/;
             resourceInputs["ipLists"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -267,6 +267,7 @@ export interface AllowListArgs {
      * Total number of instances bound to the allowlist.
      */
     associatedInstanceNum?: pulumi.Input<number>;
+    associatedInstances?: pulumi.Input<pulumi.Input<inputs.rdsmysql.AllowListAssociatedInstance>[]>;
     /**
      * Ignore instance status check. Values: true: Yes. false: No. Default value.
      */

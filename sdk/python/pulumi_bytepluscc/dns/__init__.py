@@ -7,7 +7,10 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .backup import *
+from .backup_schedule import *
 from .get_backup import *
+from .get_backup_schedule import *
+from .get_backup_schedules import *
 from .get_backups import *
 from .get_record import *
 from .get_records import *

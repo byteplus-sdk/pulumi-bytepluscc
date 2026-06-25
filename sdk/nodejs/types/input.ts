@@ -4990,6 +4990,21 @@ export namespace cr {
          */
         value?: pulumi.Input<string>;
     }
+
+    export interface VpcEndpointVpc {
+        /**
+         * Primary account ID for the VPC
+         */
+        accountId?: pulumi.Input<number>;
+        /**
+         * Subnet ID
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * VPC ID。
+         */
+        vpcId?: pulumi.Input<string>;
+    }
 }
 
 export namespace directconnect {
@@ -7106,6 +7121,24 @@ export namespace fwcenter {
 }
 
 export namespace gtm {
+    export interface PolicyStatistics {
+        /**
+         * Number of available addresses
+         */
+        activeAddr?: pulumi.Input<number>;
+        /**
+         * Number of unavailable addresses
+         */
+        inactiveAddr?: pulumi.Input<number>;
+    }
+
+    export interface PolicyTarget {
+        /**
+         * Address pool ID.
+         */
+        poolId?: pulumi.Input<string>;
+    }
+
     export interface PoolAddress {
         /**
          * Address capacity
@@ -7768,6 +7801,17 @@ export namespace kafka {
          * ID of the instance bound to the allowlist
          */
         instanceId?: pulumi.Input<string>;
+    }
+
+    export interface GroupTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface InstanceChargeInfo {
@@ -9093,22 +9137,6 @@ export namespace rdsmysql {
          * Instance ID bound to the current allowlist.
          */
         instanceId?: pulumi.Input<string>;
-        /**
-         * Instance name bound to the current allowlist.
-         */
-        instanceName?: pulumi.Input<string>;
-        /**
-         * Instance status.
-         */
-        instanceStatus?: pulumi.Input<string>;
-        /**
-         * Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-         */
-        isLatest?: pulumi.Input<boolean>;
-        /**
-         * Private network ID of the instance.
-         */
-        vpc?: pulumi.Input<string>;
     }
 
     export interface AllowListSecurityGroupBindInfo {
@@ -9116,10 +9144,6 @@ export namespace rdsmysql {
          * Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
          */
         bindMode?: pulumi.Input<string>;
-        /**
-         * Security group IP address list.
-         */
-        ipLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * Security group ID.
          */
@@ -10712,6 +10736,475 @@ export namespace tls {
          * Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
          */
         severity?: pulumi.Input<string>;
+    }
+
+    export interface EtlTargetResource {
+        /**
+         * Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+         */
+        alias: pulumi.Input<string>;
+        /**
+         * Region of the log topic for storing processed logs
+         */
+        region: pulumi.Input<string>;
+        /**
+         * Cross-account authorization role name
+         */
+        roleTrn?: pulumi.Input<string>;
+        /**
+         * Log topic ID for storing processed logs
+         */
+        topicId: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRule {
+        /**
+         * Container collection rules
+         */
+        containerRule?: pulumi.Input<inputs.tls.HostGroupRuleContainerRule>;
+        /**
+         * Time when the collection configuration was created.
+         */
+        createTime?: pulumi.Input<string>;
+        excludePaths?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleExcludePath>[]>;
+        /**
+         * Extraction rules
+         */
+        extractRule?: pulumi.Input<inputs.tls.HostGroupRuleExtractRule>;
+        /**
+         * Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+         */
+        inputType?: pulumi.Input<number>;
+        /**
+         * Log sample.
+         */
+        logSample?: pulumi.Input<string>;
+        /**
+         * Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+         */
+        logType?: pulumi.Input<string>;
+        /**
+         * Time when the collection configuration was modified.
+         */
+        modifyTime?: pulumi.Input<string>;
+        /**
+         * Data collection path list
+         */
+        paths?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Running status of the collection configuration. 0: Running. 1: Paused.
+         */
+        pause?: pulumi.Input<number>;
+        /**
+         * Collection configuration ID.
+         */
+        ruleId?: pulumi.Input<string>;
+        /**
+         * Name of the collection configuration.
+         */
+        ruleName?: pulumi.Input<string>;
+        /**
+         * ID of the log topic to which the collection configuration belongs.
+         */
+        topicId?: pulumi.Input<string>;
+        /**
+         * Name of the log topic associated with the collection configuration
+         */
+        topicName?: pulumi.Input<string>;
+        /**
+         * User-defined collection rules.
+         */
+        userDefineRule?: pulumi.Input<inputs.tls.HostGroupRuleUserDefineRule>;
+    }
+
+    export interface HostGroupRuleContainerRule {
+        /**
+         * Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+         */
+        containerNameRegex?: pulumi.Input<string>;
+        envTags?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleEnvTag>[]>;
+        excludeContainerEnvRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleExcludeContainerEnvRegex>[]>;
+        excludeContainerLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleExcludeContainerLabelRegex>[]>;
+        includeContainerEnvRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleIncludeContainerEnvRegex>[]>;
+        includeContainerLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleIncludeContainerLabelRegex>[]>;
+        /**
+         * Kubernetes container collection rules.
+         */
+        kubernetesRule?: pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRule>;
+        /**
+         * Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+         */
+        stream?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleEnvTag {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleExcludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleExcludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleIncludeContainerEnvRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleIncludeContainerLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRule {
+        annotationTags?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRuleAnnotationTag>[]>;
+        /**
+         * Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+         */
+        enableAllLabelTag?: pulumi.Input<boolean>;
+        excludePodAnnotationRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex>[]>;
+        excludePodLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex>[]>;
+        includePodAnnotationRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex>[]>;
+        includePodLabelRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex>[]>;
+        labelTags?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleContainerRuleKubernetesRuleLabelTag>[]>;
+        /**
+         * Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+         */
+        namespaceNameRegex?: pulumi.Input<string>;
+        /**
+         * Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+         */
+        podNameRegex?: pulumi.Input<string>;
+        /**
+         * Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+         */
+        workloadNameRegex?: pulumi.Input<string>;
+        /**
+         * Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+         */
+        workloadType?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRuleAnnotationTag {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleContainerRuleKubernetesRuleLabelTag {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleExcludePath {
+        /**
+         * Collection path type. File: file name. Path: directory.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleExtractRule {
+        /**
+         * The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+         */
+        beginRegex?: pulumi.Input<string>;
+        /**
+         * Log delimiter. Valid only when LogType is delimiter_log.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+         */
+        enableNanosecond?: pulumi.Input<boolean>;
+        filterKeyRegexes?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleExtractRuleFilterKeyRegex>[]>;
+        /**
+         * List of log field names (Keys).
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+         */
+        logRegex?: pulumi.Input<string>;
+        /**
+         * Automatically extract log fields based on the specified log template.
+         */
+        logTemplate?: pulumi.Input<inputs.tls.HostGroupRuleExtractRuleLogTemplate>;
+        /**
+         * Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+         */
+        quote?: pulumi.Input<string>;
+        /**
+         * Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+         */
+        timeExtractRegex?: pulumi.Input<string>;
+        /**
+         * Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+         */
+        timeKey?: pulumi.Input<string>;
+        /**
+         * Sample time. Used to verify whether the specified time parsing format is correct.
+         */
+        timeSample?: pulumi.Input<string>;
+        /**
+         * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+         */
+        timeZone?: pulumi.Input<string>;
+        /**
+         * Key name for logs that failed to parse when uploading
+         */
+        unMatchLogKey?: pulumi.Input<string>;
+        /**
+         * Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+         */
+        unMatchUpLoadSwitch?: pulumi.Input<boolean>;
+    }
+
+    export interface HostGroupRuleExtractRuleFilterKeyRegex {
+        /**
+         * Name of the filter field.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * The log content of the filter field must match the specified regular expression.
+         */
+        regex?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleExtractRuleLogTemplate {
+        /**
+         * Log template format
+         */
+        format?: pulumi.Input<string>;
+        /**
+         * Log template type. Supported types: Nginx (Nginx log template type).
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleUserDefineRule {
+        /**
+         * Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+         */
+        advanced?: pulumi.Input<inputs.tls.HostGroupRuleUserDefineRuleAdvanced>;
+        /**
+         * Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+         */
+        enableHostGroupLabel?: pulumi.Input<boolean>;
+        /**
+         * Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+         */
+        enableHostname?: pulumi.Input<boolean>;
+        /**
+         * Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+         */
+        enableRawLog?: pulumi.Input<boolean>;
+        fields?: pulumi.Input<pulumi.Input<inputs.tls.HostGroupRuleUserDefineRuleField>[]>;
+        /**
+         * Field name used to store machine group label information.
+         */
+        hostGroupLabelKey?: pulumi.Input<string>;
+        /**
+         * hostname field name. Only required when EnableHostname is set to true.
+         */
+        hostnameKey?: pulumi.Input<string>;
+        /**
+         * Ignore log files that have not been updated for a specified duration, in hours.
+         */
+        ignoreOlder?: pulumi.Input<number>;
+        /**
+         * Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+         */
+        multiCollectsType?: pulumi.Input<string>;
+        /**
+         * Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+         */
+        parsePathRule?: pulumi.Input<inputs.tls.HostGroupRuleUserDefineRuleParsePathRule>;
+        /**
+         * LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+         */
+        plugin?: pulumi.Input<inputs.tls.HostGroupRuleUserDefineRulePlugin>;
+        /**
+         * Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+         */
+        rawLogKey?: pulumi.Input<string>;
+        /**
+         * Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+         */
+        shardHashKey?: pulumi.Input<inputs.tls.HostGroupRuleUserDefineRuleShardHashKey>;
+        /**
+         * LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+         */
+        tailFiles?: pulumi.Input<boolean>;
+        /**
+         * Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+         */
+        tailSizeKb?: pulumi.Input<number>;
+    }
+
+    export interface HostGroupRuleUserDefineRuleAdvanced {
+        /**
+         * After reading to the end of the log file, whether to release the file handle. Default is false.
+         */
+        closeEof?: pulumi.Input<boolean>;
+        /**
+         * Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+         */
+        closeInactive?: pulumi.Input<number>;
+        /**
+         * Whether to release the handle of the log file after it is removed. Default is false.
+         */
+        closeRemoved?: pulumi.Input<boolean>;
+        /**
+         * Whether to release the handle of the log file after it is renamed. Default is false.
+         */
+        closeRenamed?: pulumi.Input<boolean>;
+        /**
+         * Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+         */
+        closeTimeout?: pulumi.Input<number>;
+        /**
+         * Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+         */
+        noLineTerminatorEofMaxTime?: pulumi.Input<number>;
+    }
+
+    export interface HostGroupRuleUserDefineRuleField {
+        /**
+         * Key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value.
+         */
+        val?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleUserDefineRuleParsePathRule {
+        /**
+         * List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+         */
+        pathSample?: pulumi.Input<string>;
+        /**
+         * Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+         */
+        regex?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleUserDefineRulePlugin {
+        /**
+         * LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+         */
+        processors?: pulumi.Input<string>;
+    }
+
+    export interface HostGroupRuleUserDefineRuleShardHashKey {
+        /**
+         * The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+         */
+        hashKey?: pulumi.Input<string>;
     }
 
     export interface ImportTaskImportSourceInfo {

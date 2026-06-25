@@ -6,10 +6,14 @@ package com.byteplus.bytepluscc.cloudmonitor;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactGroupArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetContactGroupPlainArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetEventRuleArgs;
+import com.byteplus.bytepluscc.cloudmonitor.inputs.GetEventRulePlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.cloudmonitor.inputs.GetRulePlainArgs;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetContactGroupsResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetEventRuleResult;
+import com.byteplus.bytepluscc.cloudmonitor.outputs.GetEventRulesResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetRuleResult;
 import com.byteplus.bytepluscc.cloudmonitor.outputs.GetRulesResult;
 import com.pulumi.core.Output;
@@ -104,6 +108,90 @@ public final class CloudmonitorFunctions {
      */
     public static CompletableFuture<GetContactGroupsResult> getContactGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getContactGroups:getContactGroups", TypeShape.of(GetContactGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRuleResult> getEventRule(GetEventRuleArgs args) {
+        return getEventRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static CompletableFuture<GetEventRuleResult> getEventRulePlain(GetEventRulePlainArgs args) {
+        return getEventRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRuleResult> getEventRule(GetEventRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getEventRule:getEventRule", TypeShape.of(GetEventRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRuleResult> getEventRule(GetEventRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getEventRule:getEventRule", TypeShape.of(GetEventRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static CompletableFuture<GetEventRuleResult> getEventRulePlain(GetEventRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getEventRule:getEventRule", TypeShape.of(GetEventRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRulesResult> getEventRules() {
+        return getEventRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static CompletableFuture<GetEventRulesResult> getEventRulesPlain() {
+        return getEventRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRulesResult> getEventRules(InvokeArgs args) {
+        return getEventRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static CompletableFuture<GetEventRulesResult> getEventRulesPlain(InvokeArgs args) {
+        return getEventRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRulesResult> getEventRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getEventRules:getEventRules", TypeShape.of(GetEventRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static Output<GetEventRulesResult> getEventRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudmonitor/getEventRules:getEventRules", TypeShape.of(GetEventRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudMonitor::EventRule
+     * 
+     */
+    public static CompletableFuture<GetEventRulesResult> getEventRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudmonitor/getEventRules:getEventRules", TypeShape.of(GetEventRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::CloudMonitor::Rule

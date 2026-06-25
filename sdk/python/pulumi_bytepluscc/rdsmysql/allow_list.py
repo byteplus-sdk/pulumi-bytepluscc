@@ -28,6 +28,7 @@ class AllowListArgs:
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
+                 associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]] = None,
                  ignore_instance_status: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
@@ -64,6 +65,8 @@ class AllowListArgs:
             pulumi.set(__self__, "allow_lists", allow_lists)
         if associated_instance_num is not None:
             pulumi.set(__self__, "associated_instance_num", associated_instance_num)
+        if associated_instances is not None:
+            pulumi.set(__self__, "associated_instances", associated_instances)
         if ignore_instance_status is not None:
             pulumi.set(__self__, "ignore_instance_status", ignore_instance_status)
         if instance_id is not None:
@@ -152,6 +155,15 @@ class AllowListArgs:
     @associated_instance_num.setter
     def associated_instance_num(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "associated_instance_num", value)
+
+    @property
+    @pulumi.getter(name="associatedInstances")
+    def associated_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]]:
+        return pulumi.get(self, "associated_instances")
+
+    @associated_instances.setter
+    def associated_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AllowListAssociatedInstanceArgs']]]]):
+        pulumi.set(self, "associated_instances", value)
 
     @property
     @pulumi.getter(name="ignoreInstanceStatus")
@@ -547,6 +559,7 @@ class AllowList(pulumi.CustomResource):
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
+                 associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
                  ignore_instance_status: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
@@ -617,6 +630,7 @@ class AllowList(pulumi.CustomResource):
                  allow_list_type: Optional[pulumi.Input[builtins.str]] = None,
                  allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  associated_instance_num: Optional[pulumi.Input[builtins.int]] = None,
+                 associated_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AllowListAssociatedInstanceArgs', 'AllowListAssociatedInstanceArgsDict']]]]] = None,
                  ignore_instance_status: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  modify_mode: Optional[pulumi.Input[builtins.str]] = None,
@@ -640,6 +654,7 @@ class AllowList(pulumi.CustomResource):
             __props__.__dict__["allow_list_type"] = allow_list_type
             __props__.__dict__["allow_lists"] = allow_lists
             __props__.__dict__["associated_instance_num"] = associated_instance_num
+            __props__.__dict__["associated_instances"] = associated_instances
             __props__.__dict__["ignore_instance_status"] = ignore_instance_status
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["modify_mode"] = modify_mode
@@ -650,7 +665,6 @@ class AllowList(pulumi.CustomResource):
             __props__.__dict__["user_allow_lists"] = user_allow_lists
             __props__.__dict__["allow_list_id"] = None
             __props__.__dict__["allow_list_ip_num"] = None
-            __props__.__dict__["associated_instances"] = None
             __props__.__dict__["ip_lists"] = None
         super(AllowList, __self__).__init__(
             'bytepluscc:rdsmysql/allowList:AllowList',

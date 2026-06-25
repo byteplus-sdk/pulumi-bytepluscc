@@ -1674,6 +1674,4042 @@ func (o AlarmTriggerConditionArrayOutput) Index(i pulumi.IntInput) AlarmTriggerC
 	}).(AlarmTriggerConditionOutput)
 }
 
+type EtlTargetResource struct {
+	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+	Alias string `pulumi:"alias"`
+	// Region of the log topic for storing processed logs
+	Region string `pulumi:"region"`
+	// Cross-account authorization role name
+	RoleTrn *string `pulumi:"roleTrn"`
+	// Log topic ID for storing processed logs
+	TopicId string `pulumi:"topicId"`
+}
+
+// EtlTargetResourceInput is an input type that accepts EtlTargetResourceArgs and EtlTargetResourceOutput values.
+// You can construct a concrete instance of `EtlTargetResourceInput` via:
+//
+//	EtlTargetResourceArgs{...}
+type EtlTargetResourceInput interface {
+	pulumi.Input
+
+	ToEtlTargetResourceOutput() EtlTargetResourceOutput
+	ToEtlTargetResourceOutputWithContext(context.Context) EtlTargetResourceOutput
+}
+
+type EtlTargetResourceArgs struct {
+	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+	Alias pulumi.StringInput `pulumi:"alias"`
+	// Region of the log topic for storing processed logs
+	Region pulumi.StringInput `pulumi:"region"`
+	// Cross-account authorization role name
+	RoleTrn pulumi.StringPtrInput `pulumi:"roleTrn"`
+	// Log topic ID for storing processed logs
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (EtlTargetResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EtlTargetResource)(nil)).Elem()
+}
+
+func (i EtlTargetResourceArgs) ToEtlTargetResourceOutput() EtlTargetResourceOutput {
+	return i.ToEtlTargetResourceOutputWithContext(context.Background())
+}
+
+func (i EtlTargetResourceArgs) ToEtlTargetResourceOutputWithContext(ctx context.Context) EtlTargetResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EtlTargetResourceOutput)
+}
+
+// EtlTargetResourceArrayInput is an input type that accepts EtlTargetResourceArray and EtlTargetResourceArrayOutput values.
+// You can construct a concrete instance of `EtlTargetResourceArrayInput` via:
+//
+//	EtlTargetResourceArray{ EtlTargetResourceArgs{...} }
+type EtlTargetResourceArrayInput interface {
+	pulumi.Input
+
+	ToEtlTargetResourceArrayOutput() EtlTargetResourceArrayOutput
+	ToEtlTargetResourceArrayOutputWithContext(context.Context) EtlTargetResourceArrayOutput
+}
+
+type EtlTargetResourceArray []EtlTargetResourceInput
+
+func (EtlTargetResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EtlTargetResource)(nil)).Elem()
+}
+
+func (i EtlTargetResourceArray) ToEtlTargetResourceArrayOutput() EtlTargetResourceArrayOutput {
+	return i.ToEtlTargetResourceArrayOutputWithContext(context.Background())
+}
+
+func (i EtlTargetResourceArray) ToEtlTargetResourceArrayOutputWithContext(ctx context.Context) EtlTargetResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EtlTargetResourceArrayOutput)
+}
+
+type EtlTargetResourceOutput struct{ *pulumi.OutputState }
+
+func (EtlTargetResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EtlTargetResource)(nil)).Elem()
+}
+
+func (o EtlTargetResourceOutput) ToEtlTargetResourceOutput() EtlTargetResourceOutput {
+	return o
+}
+
+func (o EtlTargetResourceOutput) ToEtlTargetResourceOutputWithContext(ctx context.Context) EtlTargetResourceOutput {
+	return o
+}
+
+// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+func (o EtlTargetResourceOutput) Alias() pulumi.StringOutput {
+	return o.ApplyT(func(v EtlTargetResource) string { return v.Alias }).(pulumi.StringOutput)
+}
+
+// Region of the log topic for storing processed logs
+func (o EtlTargetResourceOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v EtlTargetResource) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Cross-account authorization role name
+func (o EtlTargetResourceOutput) RoleTrn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EtlTargetResource) *string { return v.RoleTrn }).(pulumi.StringPtrOutput)
+}
+
+// Log topic ID for storing processed logs
+func (o EtlTargetResourceOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v EtlTargetResource) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type EtlTargetResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (EtlTargetResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EtlTargetResource)(nil)).Elem()
+}
+
+func (o EtlTargetResourceArrayOutput) ToEtlTargetResourceArrayOutput() EtlTargetResourceArrayOutput {
+	return o
+}
+
+func (o EtlTargetResourceArrayOutput) ToEtlTargetResourceArrayOutputWithContext(ctx context.Context) EtlTargetResourceArrayOutput {
+	return o
+}
+
+func (o EtlTargetResourceArrayOutput) Index(i pulumi.IntInput) EtlTargetResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EtlTargetResource {
+		return vs[0].([]EtlTargetResource)[vs[1].(int)]
+	}).(EtlTargetResourceOutput)
+}
+
+type HostGroupRule struct {
+	// Container collection rules
+	ContainerRule *HostGroupRuleContainerRule `pulumi:"containerRule"`
+	// Time when the collection configuration was created.
+	CreateTime   *string                    `pulumi:"createTime"`
+	ExcludePaths []HostGroupRuleExcludePath `pulumi:"excludePaths"`
+	// Extraction rules
+	ExtractRule *HostGroupRuleExtractRule `pulumi:"extractRule"`
+	// Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+	InputType *int `pulumi:"inputType"`
+	// Log sample.
+	LogSample *string `pulumi:"logSample"`
+	// Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+	LogType *string `pulumi:"logType"`
+	// Time when the collection configuration was modified.
+	ModifyTime *string `pulumi:"modifyTime"`
+	// Data collection path list
+	Paths []string `pulumi:"paths"`
+	// Running status of the collection configuration. 0: Running. 1: Paused.
+	Pause *int `pulumi:"pause"`
+	// Collection configuration ID.
+	RuleId *string `pulumi:"ruleId"`
+	// Name of the collection configuration.
+	RuleName *string `pulumi:"ruleName"`
+	// ID of the log topic to which the collection configuration belongs.
+	TopicId *string `pulumi:"topicId"`
+	// Name of the log topic associated with the collection configuration
+	TopicName *string `pulumi:"topicName"`
+	// User-defined collection rules.
+	UserDefineRule *HostGroupRuleUserDefineRule `pulumi:"userDefineRule"`
+}
+
+// HostGroupRuleInput is an input type that accepts HostGroupRuleArgs and HostGroupRuleOutput values.
+// You can construct a concrete instance of `HostGroupRuleInput` via:
+//
+//	HostGroupRuleArgs{...}
+type HostGroupRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleOutput() HostGroupRuleOutput
+	ToHostGroupRuleOutputWithContext(context.Context) HostGroupRuleOutput
+}
+
+type HostGroupRuleArgs struct {
+	// Container collection rules
+	ContainerRule HostGroupRuleContainerRulePtrInput `pulumi:"containerRule"`
+	// Time when the collection configuration was created.
+	CreateTime   pulumi.StringPtrInput              `pulumi:"createTime"`
+	ExcludePaths HostGroupRuleExcludePathArrayInput `pulumi:"excludePaths"`
+	// Extraction rules
+	ExtractRule HostGroupRuleExtractRulePtrInput `pulumi:"extractRule"`
+	// Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+	InputType pulumi.IntPtrInput `pulumi:"inputType"`
+	// Log sample.
+	LogSample pulumi.StringPtrInput `pulumi:"logSample"`
+	// Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+	LogType pulumi.StringPtrInput `pulumi:"logType"`
+	// Time when the collection configuration was modified.
+	ModifyTime pulumi.StringPtrInput `pulumi:"modifyTime"`
+	// Data collection path list
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
+	// Running status of the collection configuration. 0: Running. 1: Paused.
+	Pause pulumi.IntPtrInput `pulumi:"pause"`
+	// Collection configuration ID.
+	RuleId pulumi.StringPtrInput `pulumi:"ruleId"`
+	// Name of the collection configuration.
+	RuleName pulumi.StringPtrInput `pulumi:"ruleName"`
+	// ID of the log topic to which the collection configuration belongs.
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+	// Name of the log topic associated with the collection configuration
+	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
+	// User-defined collection rules.
+	UserDefineRule HostGroupRuleUserDefineRulePtrInput `pulumi:"userDefineRule"`
+}
+
+func (HostGroupRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleArgs) ToHostGroupRuleOutput() HostGroupRuleOutput {
+	return i.ToHostGroupRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleArgs) ToHostGroupRuleOutputWithContext(ctx context.Context) HostGroupRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleOutput)
+}
+
+// HostGroupRuleArrayInput is an input type that accepts HostGroupRuleArray and HostGroupRuleArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleArrayInput` via:
+//
+//	HostGroupRuleArray{ HostGroupRuleArgs{...} }
+type HostGroupRuleArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleArrayOutput() HostGroupRuleArrayOutput
+	ToHostGroupRuleArrayOutputWithContext(context.Context) HostGroupRuleArrayOutput
+}
+
+type HostGroupRuleArray []HostGroupRuleInput
+
+func (HostGroupRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleArray) ToHostGroupRuleArrayOutput() HostGroupRuleArrayOutput {
+	return i.ToHostGroupRuleArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleArray) ToHostGroupRuleArrayOutputWithContext(ctx context.Context) HostGroupRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleArrayOutput)
+}
+
+type HostGroupRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleOutput) ToHostGroupRuleOutput() HostGroupRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleOutput) ToHostGroupRuleOutputWithContext(ctx context.Context) HostGroupRuleOutput {
+	return o
+}
+
+// Container collection rules
+func (o HostGroupRuleOutput) ContainerRule() HostGroupRuleContainerRulePtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *HostGroupRuleContainerRule { return v.ContainerRule }).(HostGroupRuleContainerRulePtrOutput)
+}
+
+// Time when the collection configuration was created.
+func (o HostGroupRuleOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
+}
+
+func (o HostGroupRuleOutput) ExcludePaths() HostGroupRuleExcludePathArrayOutput {
+	return o.ApplyT(func(v HostGroupRule) []HostGroupRuleExcludePath { return v.ExcludePaths }).(HostGroupRuleExcludePathArrayOutput)
+}
+
+// Extraction rules
+func (o HostGroupRuleOutput) ExtractRule() HostGroupRuleExtractRulePtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *HostGroupRuleExtractRule { return v.ExtractRule }).(HostGroupRuleExtractRulePtrOutput)
+}
+
+// Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+func (o HostGroupRuleOutput) InputType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *int { return v.InputType }).(pulumi.IntPtrOutput)
+}
+
+// Log sample.
+func (o HostGroupRuleOutput) LogSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.LogSample }).(pulumi.StringPtrOutput)
+}
+
+// Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+func (o HostGroupRuleOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.LogType }).(pulumi.StringPtrOutput)
+}
+
+// Time when the collection configuration was modified.
+func (o HostGroupRuleOutput) ModifyTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.ModifyTime }).(pulumi.StringPtrOutput)
+}
+
+// Data collection path list
+func (o HostGroupRuleOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v HostGroupRule) []string { return v.Paths }).(pulumi.StringArrayOutput)
+}
+
+// Running status of the collection configuration. 0: Running. 1: Paused.
+func (o HostGroupRuleOutput) Pause() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *int { return v.Pause }).(pulumi.IntPtrOutput)
+}
+
+// Collection configuration ID.
+func (o HostGroupRuleOutput) RuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.RuleId }).(pulumi.StringPtrOutput)
+}
+
+// Name of the collection configuration.
+func (o HostGroupRuleOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.RuleName }).(pulumi.StringPtrOutput)
+}
+
+// ID of the log topic to which the collection configuration belongs.
+func (o HostGroupRuleOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+// Name of the log topic associated with the collection configuration
+func (o HostGroupRuleOutput) TopicName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *string { return v.TopicName }).(pulumi.StringPtrOutput)
+}
+
+// User-defined collection rules.
+func (o HostGroupRuleOutput) UserDefineRule() HostGroupRuleUserDefineRulePtrOutput {
+	return o.ApplyT(func(v HostGroupRule) *HostGroupRuleUserDefineRule { return v.UserDefineRule }).(HostGroupRuleUserDefineRulePtrOutput)
+}
+
+type HostGroupRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleArrayOutput) ToHostGroupRuleArrayOutput() HostGroupRuleArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleArrayOutput) ToHostGroupRuleArrayOutputWithContext(ctx context.Context) HostGroupRuleArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleArrayOutput) Index(i pulumi.IntInput) HostGroupRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRule {
+		return vs[0].([]HostGroupRule)[vs[1].(int)]
+	}).(HostGroupRuleOutput)
+}
+
+type HostGroupRuleContainerRule struct {
+	// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+	ContainerNameRegex           *string                                                `pulumi:"containerNameRegex"`
+	EnvTags                      []HostGroupRuleContainerRuleEnvTag                     `pulumi:"envTags"`
+	ExcludeContainerEnvRegexes   []HostGroupRuleContainerRuleExcludeContainerEnvRegex   `pulumi:"excludeContainerEnvRegexes"`
+	ExcludeContainerLabelRegexes []HostGroupRuleContainerRuleExcludeContainerLabelRegex `pulumi:"excludeContainerLabelRegexes"`
+	IncludeContainerEnvRegexes   []HostGroupRuleContainerRuleIncludeContainerEnvRegex   `pulumi:"includeContainerEnvRegexes"`
+	IncludeContainerLabelRegexes []HostGroupRuleContainerRuleIncludeContainerLabelRegex `pulumi:"includeContainerLabelRegexes"`
+	// Kubernetes container collection rules.
+	KubernetesRule *HostGroupRuleContainerRuleKubernetesRule `pulumi:"kubernetesRule"`
+	// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+	Stream *string `pulumi:"stream"`
+}
+
+// HostGroupRuleContainerRuleInput is an input type that accepts HostGroupRuleContainerRuleArgs and HostGroupRuleContainerRuleOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleInput` via:
+//
+//	HostGroupRuleContainerRuleArgs{...}
+type HostGroupRuleContainerRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleOutput() HostGroupRuleContainerRuleOutput
+	ToHostGroupRuleContainerRuleOutputWithContext(context.Context) HostGroupRuleContainerRuleOutput
+}
+
+type HostGroupRuleContainerRuleArgs struct {
+	// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+	ContainerNameRegex           pulumi.StringPtrInput                                          `pulumi:"containerNameRegex"`
+	EnvTags                      HostGroupRuleContainerRuleEnvTagArrayInput                     `pulumi:"envTags"`
+	ExcludeContainerEnvRegexes   HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput   `pulumi:"excludeContainerEnvRegexes"`
+	ExcludeContainerLabelRegexes HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput `pulumi:"excludeContainerLabelRegexes"`
+	IncludeContainerEnvRegexes   HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput   `pulumi:"includeContainerEnvRegexes"`
+	IncludeContainerLabelRegexes HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput `pulumi:"includeContainerLabelRegexes"`
+	// Kubernetes container collection rules.
+	KubernetesRule HostGroupRuleContainerRuleKubernetesRulePtrInput `pulumi:"kubernetesRule"`
+	// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+	Stream pulumi.StringPtrInput `pulumi:"stream"`
+}
+
+func (HostGroupRuleContainerRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleArgs) ToHostGroupRuleContainerRuleOutput() HostGroupRuleContainerRuleOutput {
+	return i.ToHostGroupRuleContainerRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleArgs) ToHostGroupRuleContainerRuleOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleOutput)
+}
+
+func (i HostGroupRuleContainerRuleArgs) ToHostGroupRuleContainerRulePtrOutput() HostGroupRuleContainerRulePtrOutput {
+	return i.ToHostGroupRuleContainerRulePtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleArgs) ToHostGroupRuleContainerRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleOutput).ToHostGroupRuleContainerRulePtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleContainerRulePtrInput is an input type that accepts HostGroupRuleContainerRuleArgs, HostGroupRuleContainerRulePtr and HostGroupRuleContainerRulePtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRulePtrInput` via:
+//
+//	        HostGroupRuleContainerRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleContainerRulePtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRulePtrOutput() HostGroupRuleContainerRulePtrOutput
+	ToHostGroupRuleContainerRulePtrOutputWithContext(context.Context) HostGroupRuleContainerRulePtrOutput
+}
+
+type hostGroupRuleContainerRulePtrType HostGroupRuleContainerRuleArgs
+
+func HostGroupRuleContainerRulePtr(v *HostGroupRuleContainerRuleArgs) HostGroupRuleContainerRulePtrInput {
+	return (*hostGroupRuleContainerRulePtrType)(v)
+}
+
+func (*hostGroupRuleContainerRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleContainerRule)(nil)).Elem()
+}
+
+func (i *hostGroupRuleContainerRulePtrType) ToHostGroupRuleContainerRulePtrOutput() HostGroupRuleContainerRulePtrOutput {
+	return i.ToHostGroupRuleContainerRulePtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleContainerRulePtrType) ToHostGroupRuleContainerRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRulePtrOutput)
+}
+
+type HostGroupRuleContainerRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleOutput) ToHostGroupRuleContainerRuleOutput() HostGroupRuleContainerRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleOutput) ToHostGroupRuleContainerRuleOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleOutput) ToHostGroupRuleContainerRulePtrOutput() HostGroupRuleContainerRulePtrOutput {
+	return o.ToHostGroupRuleContainerRulePtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleContainerRuleOutput) ToHostGroupRuleContainerRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleContainerRule) *HostGroupRuleContainerRule {
+		return &v
+	}).(HostGroupRuleContainerRulePtrOutput)
+}
+
+// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+func (o HostGroupRuleContainerRuleOutput) ContainerNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) *string { return v.ContainerNameRegex }).(pulumi.StringPtrOutput)
+}
+
+func (o HostGroupRuleContainerRuleOutput) EnvTags() HostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) []HostGroupRuleContainerRuleEnvTag { return v.EnvTags }).(HostGroupRuleContainerRuleEnvTagArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleOutput) ExcludeContainerEnvRegexes() HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) []HostGroupRuleContainerRuleExcludeContainerEnvRegex {
+		return v.ExcludeContainerEnvRegexes
+	}).(HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleOutput) ExcludeContainerLabelRegexes() HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) []HostGroupRuleContainerRuleExcludeContainerLabelRegex {
+		return v.ExcludeContainerLabelRegexes
+	}).(HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleOutput) IncludeContainerEnvRegexes() HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) []HostGroupRuleContainerRuleIncludeContainerEnvRegex {
+		return v.IncludeContainerEnvRegexes
+	}).(HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleOutput) IncludeContainerLabelRegexes() HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) []HostGroupRuleContainerRuleIncludeContainerLabelRegex {
+		return v.IncludeContainerLabelRegexes
+	}).(HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput)
+}
+
+// Kubernetes container collection rules.
+func (o HostGroupRuleContainerRuleOutput) KubernetesRule() HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) *HostGroupRuleContainerRuleKubernetesRule { return v.KubernetesRule }).(HostGroupRuleContainerRuleKubernetesRulePtrOutput)
+}
+
+// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+func (o HostGroupRuleContainerRuleOutput) Stream() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRule) *string { return v.Stream }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRulePtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleContainerRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) ToHostGroupRuleContainerRulePtrOutput() HostGroupRuleContainerRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) ToHostGroupRuleContainerRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) Elem() HostGroupRuleContainerRuleOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) HostGroupRuleContainerRule {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleContainerRule
+		return ret
+	}).(HostGroupRuleContainerRuleOutput)
+}
+
+// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+func (o HostGroupRuleContainerRulePtrOutput) ContainerNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContainerNameRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) EnvTags() HostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) []HostGroupRuleContainerRuleEnvTag {
+		if v == nil {
+			return nil
+		}
+		return v.EnvTags
+	}).(HostGroupRuleContainerRuleEnvTagArrayOutput)
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) ExcludeContainerEnvRegexes() HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) []HostGroupRuleContainerRuleExcludeContainerEnvRegex {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeContainerEnvRegexes
+	}).(HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) ExcludeContainerLabelRegexes() HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) []HostGroupRuleContainerRuleExcludeContainerLabelRegex {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeContainerLabelRegexes
+	}).(HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) IncludeContainerEnvRegexes() HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) []HostGroupRuleContainerRuleIncludeContainerEnvRegex {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeContainerEnvRegexes
+	}).(HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRulePtrOutput) IncludeContainerLabelRegexes() HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) []HostGroupRuleContainerRuleIncludeContainerLabelRegex {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeContainerLabelRegexes
+	}).(HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput)
+}
+
+// Kubernetes container collection rules.
+func (o HostGroupRuleContainerRulePtrOutput) KubernetesRule() HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) *HostGroupRuleContainerRuleKubernetesRule {
+		if v == nil {
+			return nil
+		}
+		return v.KubernetesRule
+	}).(HostGroupRuleContainerRuleKubernetesRulePtrOutput)
+}
+
+// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+func (o HostGroupRuleContainerRulePtrOutput) Stream() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Stream
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleEnvTag struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleEnvTagInput is an input type that accepts HostGroupRuleContainerRuleEnvTagArgs and HostGroupRuleContainerRuleEnvTagOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleEnvTagInput` via:
+//
+//	HostGroupRuleContainerRuleEnvTagArgs{...}
+type HostGroupRuleContainerRuleEnvTagInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleEnvTagOutput() HostGroupRuleContainerRuleEnvTagOutput
+	ToHostGroupRuleContainerRuleEnvTagOutputWithContext(context.Context) HostGroupRuleContainerRuleEnvTagOutput
+}
+
+type HostGroupRuleContainerRuleEnvTagArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleEnvTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleEnvTagArgs) ToHostGroupRuleContainerRuleEnvTagOutput() HostGroupRuleContainerRuleEnvTagOutput {
+	return i.ToHostGroupRuleContainerRuleEnvTagOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleEnvTagArgs) ToHostGroupRuleContainerRuleEnvTagOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleEnvTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleEnvTagOutput)
+}
+
+// HostGroupRuleContainerRuleEnvTagArrayInput is an input type that accepts HostGroupRuleContainerRuleEnvTagArray and HostGroupRuleContainerRuleEnvTagArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleEnvTagArrayInput` via:
+//
+//	HostGroupRuleContainerRuleEnvTagArray{ HostGroupRuleContainerRuleEnvTagArgs{...} }
+type HostGroupRuleContainerRuleEnvTagArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleEnvTagArrayOutput() HostGroupRuleContainerRuleEnvTagArrayOutput
+	ToHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleEnvTagArrayOutput
+}
+
+type HostGroupRuleContainerRuleEnvTagArray []HostGroupRuleContainerRuleEnvTagInput
+
+func (HostGroupRuleContainerRuleEnvTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleEnvTagArray) ToHostGroupRuleContainerRuleEnvTagArrayOutput() HostGroupRuleContainerRuleEnvTagArrayOutput {
+	return i.ToHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleEnvTagArray) ToHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleEnvTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleEnvTagArrayOutput)
+}
+
+type HostGroupRuleContainerRuleEnvTagOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleEnvTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleEnvTagOutput) ToHostGroupRuleContainerRuleEnvTagOutput() HostGroupRuleContainerRuleEnvTagOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleEnvTagOutput) ToHostGroupRuleContainerRuleEnvTagOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleEnvTagOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleEnvTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleEnvTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleEnvTagOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleEnvTag) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleEnvTagArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleEnvTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleEnvTagArrayOutput) ToHostGroupRuleContainerRuleEnvTagArrayOutput() HostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleEnvTagArrayOutput) ToHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleEnvTagArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleEnvTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleEnvTag {
+		return vs[0].([]HostGroupRuleContainerRuleEnvTag)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleEnvTagOutput)
+}
+
+type HostGroupRuleContainerRuleExcludeContainerEnvRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleExcludeContainerEnvRegexInput is an input type that accepts HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs and HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleExcludeContainerEnvRegexInput` via:
+//
+//	HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs{...}
+type HostGroupRuleContainerRuleExcludeContainerEnvRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput() HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput
+	ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput
+}
+
+type HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput() HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return i.ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput)
+}
+
+// HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleExcludeContainerEnvRegexArray and HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleExcludeContainerEnvRegexArray{ HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs{...} }
+type HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput() HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput
+	ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleExcludeContainerEnvRegexArray []HostGroupRuleContainerRuleExcludeContainerEnvRegexInput
+
+func (HostGroupRuleContainerRuleExcludeContainerEnvRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerEnvRegexArray) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput() HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerEnvRegexArray) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput() HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleExcludeContainerEnvRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleExcludeContainerEnvRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput() HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) ToHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleExcludeContainerEnvRegex {
+		return vs[0].([]HostGroupRuleContainerRuleExcludeContainerEnvRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput)
+}
+
+type HostGroupRuleContainerRuleExcludeContainerLabelRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleExcludeContainerLabelRegexInput is an input type that accepts HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs and HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleExcludeContainerLabelRegexInput` via:
+//
+//	HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs{...}
+type HostGroupRuleContainerRuleExcludeContainerLabelRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput() HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput
+	ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput
+}
+
+type HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput() HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return i.ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput)
+}
+
+// HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleExcludeContainerLabelRegexArray and HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleExcludeContainerLabelRegexArray{ HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs{...} }
+type HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput() HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput
+	ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleExcludeContainerLabelRegexArray []HostGroupRuleContainerRuleExcludeContainerLabelRegexInput
+
+func (HostGroupRuleContainerRuleExcludeContainerLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerLabelRegexArray) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput() HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleExcludeContainerLabelRegexArray) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput() HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleExcludeContainerLabelRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleExcludeContainerLabelRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput() HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) ToHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleExcludeContainerLabelRegex {
+		return vs[0].([]HostGroupRuleContainerRuleExcludeContainerLabelRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput)
+}
+
+type HostGroupRuleContainerRuleIncludeContainerEnvRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleIncludeContainerEnvRegexInput is an input type that accepts HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs and HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleIncludeContainerEnvRegexInput` via:
+//
+//	HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs{...}
+type HostGroupRuleContainerRuleIncludeContainerEnvRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput() HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput
+	ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput
+}
+
+type HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput() HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return i.ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput)
+}
+
+// HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleIncludeContainerEnvRegexArray and HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleIncludeContainerEnvRegexArray{ HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs{...} }
+type HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput() HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput
+	ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleIncludeContainerEnvRegexArray []HostGroupRuleContainerRuleIncludeContainerEnvRegexInput
+
+func (HostGroupRuleContainerRuleIncludeContainerEnvRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerEnvRegexArray) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput() HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerEnvRegexArray) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput() HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleIncludeContainerEnvRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleIncludeContainerEnvRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput() HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) ToHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleIncludeContainerEnvRegex {
+		return vs[0].([]HostGroupRuleContainerRuleIncludeContainerEnvRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput)
+}
+
+type HostGroupRuleContainerRuleIncludeContainerLabelRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleIncludeContainerLabelRegexInput is an input type that accepts HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs and HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleIncludeContainerLabelRegexInput` via:
+//
+//	HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs{...}
+type HostGroupRuleContainerRuleIncludeContainerLabelRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput() HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput
+	ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput
+}
+
+type HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput() HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return i.ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput)
+}
+
+// HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleIncludeContainerLabelRegexArray and HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleIncludeContainerLabelRegexArray{ HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs{...} }
+type HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput() HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput
+	ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleIncludeContainerLabelRegexArray []HostGroupRuleContainerRuleIncludeContainerLabelRegexInput
+
+func (HostGroupRuleContainerRuleIncludeContainerLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerLabelRegexArray) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput() HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleIncludeContainerLabelRegexArray) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput() HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleIncludeContainerLabelRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleIncludeContainerLabelRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput() HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) ToHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleIncludeContainerLabelRegex {
+		return vs[0].([]HostGroupRuleContainerRuleIncludeContainerLabelRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRule struct {
+	AnnotationTags []HostGroupRuleContainerRuleKubernetesRuleAnnotationTag `pulumi:"annotationTags"`
+	// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+	EnableAllLabelTag           *bool                                                               `pulumi:"enableAllLabelTag"`
+	ExcludePodAnnotationRegexes []HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex `pulumi:"excludePodAnnotationRegexes"`
+	ExcludePodLabelRegexes      []HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex      `pulumi:"excludePodLabelRegexes"`
+	IncludePodAnnotationRegexes []HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex `pulumi:"includePodAnnotationRegexes"`
+	IncludePodLabelRegexes      []HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex      `pulumi:"includePodLabelRegexes"`
+	LabelTags                   []HostGroupRuleContainerRuleKubernetesRuleLabelTag                  `pulumi:"labelTags"`
+	// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+	NamespaceNameRegex *string `pulumi:"namespaceNameRegex"`
+	// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+	PodNameRegex *string `pulumi:"podNameRegex"`
+	// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+	WorkloadNameRegex *string `pulumi:"workloadNameRegex"`
+	// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+	WorkloadType *string `pulumi:"workloadType"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleArgs and HostGroupRuleContainerRuleKubernetesRuleOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleOutput() HostGroupRuleContainerRuleKubernetesRuleOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleArgs struct {
+	AnnotationTags HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput `pulumi:"annotationTags"`
+	// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+	EnableAllLabelTag           pulumi.BoolPtrInput                                                         `pulumi:"enableAllLabelTag"`
+	ExcludePodAnnotationRegexes HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput `pulumi:"excludePodAnnotationRegexes"`
+	ExcludePodLabelRegexes      HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput      `pulumi:"excludePodLabelRegexes"`
+	IncludePodAnnotationRegexes HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput `pulumi:"includePodAnnotationRegexes"`
+	IncludePodLabelRegexes      HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput      `pulumi:"includePodLabelRegexes"`
+	LabelTags                   HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput                  `pulumi:"labelTags"`
+	// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+	NamespaceNameRegex pulumi.StringPtrInput `pulumi:"namespaceNameRegex"`
+	// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+	PodNameRegex pulumi.StringPtrInput `pulumi:"podNameRegex"`
+	// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+	WorkloadNameRegex pulumi.StringPtrInput `pulumi:"workloadNameRegex"`
+	// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+	WorkloadType pulumi.StringPtrInput `pulumi:"workloadType"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleArgs) ToHostGroupRuleContainerRuleKubernetesRuleOutput() HostGroupRuleContainerRuleKubernetesRuleOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleArgs) ToHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleOutput)
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleArgs) ToHostGroupRuleContainerRuleKubernetesRulePtrOutput() HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleArgs) ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleOutput).ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleContainerRuleKubernetesRulePtrInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleArgs, HostGroupRuleContainerRuleKubernetesRulePtr and HostGroupRuleContainerRuleKubernetesRulePtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRulePtrInput` via:
+//
+//	        HostGroupRuleContainerRuleKubernetesRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleContainerRuleKubernetesRulePtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRulePtrOutput() HostGroupRuleContainerRuleKubernetesRulePtrOutput
+	ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRulePtrOutput
+}
+
+type hostGroupRuleContainerRuleKubernetesRulePtrType HostGroupRuleContainerRuleKubernetesRuleArgs
+
+func HostGroupRuleContainerRuleKubernetesRulePtr(v *HostGroupRuleContainerRuleKubernetesRuleArgs) HostGroupRuleContainerRuleKubernetesRulePtrInput {
+	return (*hostGroupRuleContainerRuleKubernetesRulePtrType)(v)
+}
+
+func (*hostGroupRuleContainerRuleKubernetesRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleContainerRuleKubernetesRule)(nil)).Elem()
+}
+
+func (i *hostGroupRuleContainerRuleKubernetesRulePtrType) ToHostGroupRuleContainerRuleKubernetesRulePtrOutput() HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleContainerRuleKubernetesRulePtrType) ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRulePtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) ToHostGroupRuleContainerRuleKubernetesRuleOutput() HostGroupRuleContainerRuleKubernetesRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) ToHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) ToHostGroupRuleContainerRuleKubernetesRulePtrOutput() HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return o.ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleContainerRuleKubernetesRule) *HostGroupRuleContainerRuleKubernetesRule {
+		return &v
+	}).(HostGroupRuleContainerRuleKubernetesRulePtrOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) AnnotationTags() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleAnnotationTag {
+		return v.AnnotationTags
+	}).(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput)
+}
+
+// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) EnableAllLabelTag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) *bool { return v.EnableAllLabelTag }).(pulumi.BoolPtrOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) ExcludePodAnnotationRegexes() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+		return v.ExcludePodAnnotationRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) ExcludePodLabelRegexes() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+		return v.ExcludePodLabelRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) IncludePodAnnotationRegexes() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+		return v.IncludePodAnnotationRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) IncludePodLabelRegexes() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+		return v.IncludePodLabelRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) LabelTags() HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleLabelTag {
+		return v.LabelTags
+	}).(HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput)
+}
+
+// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) NamespaceNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) *string { return v.NamespaceNameRegex }).(pulumi.StringPtrOutput)
+}
+
+// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) PodNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) *string { return v.PodNameRegex }).(pulumi.StringPtrOutput)
+}
+
+// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) WorkloadNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) *string { return v.WorkloadNameRegex }).(pulumi.StringPtrOutput)
+}
+
+// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+func (o HostGroupRuleContainerRuleKubernetesRuleOutput) WorkloadType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRule) *string { return v.WorkloadType }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRulePtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleContainerRuleKubernetesRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) ToHostGroupRuleContainerRuleKubernetesRulePtrOutput() HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) ToHostGroupRuleContainerRuleKubernetesRulePtrOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) Elem() HostGroupRuleContainerRuleKubernetesRuleOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) HostGroupRuleContainerRuleKubernetesRule {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleContainerRuleKubernetesRule
+		return ret
+	}).(HostGroupRuleContainerRuleKubernetesRuleOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) AnnotationTags() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleAnnotationTag {
+		if v == nil {
+			return nil
+		}
+		return v.AnnotationTags
+	}).(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput)
+}
+
+// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) EnableAllLabelTag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableAllLabelTag
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) ExcludePodAnnotationRegexes() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludePodAnnotationRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) ExcludePodLabelRegexes() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludePodLabelRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) IncludePodAnnotationRegexes() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+		if v == nil {
+			return nil
+		}
+		return v.IncludePodAnnotationRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) IncludePodLabelRegexes() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+		if v == nil {
+			return nil
+		}
+		return v.IncludePodLabelRegexes
+	}).(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput)
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) LabelTags() HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) []HostGroupRuleContainerRuleKubernetesRuleLabelTag {
+		if v == nil {
+			return nil
+		}
+		return v.LabelTags
+	}).(HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput)
+}
+
+// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) NamespaceNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NamespaceNameRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) PodNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PodNameRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) WorkloadNameRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WorkloadNameRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+func (o HostGroupRuleContainerRuleKubernetesRulePtrOutput) WorkloadType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleContainerRuleKubernetesRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WorkloadType
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTag struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs and HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput)
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray and HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray{ HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs{...} }
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray []HostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput
+
+func (HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleAnnotationTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleAnnotationTag) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput() HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleKubernetesRuleAnnotationTag {
+		return vs[0].([]HostGroupRuleContainerRuleKubernetesRuleAnnotationTag)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs and HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput)
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray and HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray{ HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs{...} }
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray []HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+		return vs[0].([]HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs and HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput)
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray and HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray{ HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs{...} }
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray []HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+		return vs[0].([]HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs and HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput)
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray and HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray{ HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs{...} }
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray []HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+		return vs[0].([]HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs and HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput)
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray and HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray{ HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs{...} }
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray []HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput() HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+		return vs[0].([]HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleLabelTag struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleLabelTagInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs and HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleLabelTagInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs{...}
+type HostGroupRuleContainerRuleKubernetesRuleLabelTagInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput() HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput() HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput)
+}
+
+// HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput is an input type that accepts HostGroupRuleContainerRuleKubernetesRuleLabelTagArray and HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput` via:
+//
+//	HostGroupRuleContainerRuleKubernetesRuleLabelTagArray{ HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs{...} }
+type HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput() HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput
+	ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(context.Context) HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleLabelTagArray []HostGroupRuleContainerRuleKubernetesRuleLabelTagInput
+
+func (HostGroupRuleContainerRuleKubernetesRuleLabelTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleLabelTagArray) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput() HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return i.ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleContainerRuleKubernetesRuleLabelTagArray) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput() HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleLabelTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleContainerRuleKubernetesRuleLabelTag) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput() HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) ToHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(ctx context.Context) HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) Index(i pulumi.IntInput) HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleContainerRuleKubernetesRuleLabelTag {
+		return vs[0].([]HostGroupRuleContainerRuleKubernetesRuleLabelTag)[vs[1].(int)]
+	}).(HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput)
+}
+
+type HostGroupRuleExcludePath struct {
+	// Collection path type. File: file name. Path: directory.
+	Type *string `pulumi:"type"`
+	// Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+	Value *string `pulumi:"value"`
+}
+
+// HostGroupRuleExcludePathInput is an input type that accepts HostGroupRuleExcludePathArgs and HostGroupRuleExcludePathOutput values.
+// You can construct a concrete instance of `HostGroupRuleExcludePathInput` via:
+//
+//	HostGroupRuleExcludePathArgs{...}
+type HostGroupRuleExcludePathInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExcludePathOutput() HostGroupRuleExcludePathOutput
+	ToHostGroupRuleExcludePathOutputWithContext(context.Context) HostGroupRuleExcludePathOutput
+}
+
+type HostGroupRuleExcludePathArgs struct {
+	// Collection path type. File: file name. Path: directory.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (HostGroupRuleExcludePathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (i HostGroupRuleExcludePathArgs) ToHostGroupRuleExcludePathOutput() HostGroupRuleExcludePathOutput {
+	return i.ToHostGroupRuleExcludePathOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExcludePathArgs) ToHostGroupRuleExcludePathOutputWithContext(ctx context.Context) HostGroupRuleExcludePathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExcludePathOutput)
+}
+
+// HostGroupRuleExcludePathArrayInput is an input type that accepts HostGroupRuleExcludePathArray and HostGroupRuleExcludePathArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleExcludePathArrayInput` via:
+//
+//	HostGroupRuleExcludePathArray{ HostGroupRuleExcludePathArgs{...} }
+type HostGroupRuleExcludePathArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExcludePathArrayOutput() HostGroupRuleExcludePathArrayOutput
+	ToHostGroupRuleExcludePathArrayOutputWithContext(context.Context) HostGroupRuleExcludePathArrayOutput
+}
+
+type HostGroupRuleExcludePathArray []HostGroupRuleExcludePathInput
+
+func (HostGroupRuleExcludePathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (i HostGroupRuleExcludePathArray) ToHostGroupRuleExcludePathArrayOutput() HostGroupRuleExcludePathArrayOutput {
+	return i.ToHostGroupRuleExcludePathArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExcludePathArray) ToHostGroupRuleExcludePathArrayOutputWithContext(ctx context.Context) HostGroupRuleExcludePathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExcludePathArrayOutput)
+}
+
+type HostGroupRuleExcludePathOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExcludePathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (o HostGroupRuleExcludePathOutput) ToHostGroupRuleExcludePathOutput() HostGroupRuleExcludePathOutput {
+	return o
+}
+
+func (o HostGroupRuleExcludePathOutput) ToHostGroupRuleExcludePathOutputWithContext(ctx context.Context) HostGroupRuleExcludePathOutput {
+	return o
+}
+
+// Collection path type. File: file name. Path: directory.
+func (o HostGroupRuleExcludePathOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExcludePath) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+func (o HostGroupRuleExcludePathOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExcludePath) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleExcludePathArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExcludePathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (o HostGroupRuleExcludePathArrayOutput) ToHostGroupRuleExcludePathArrayOutput() HostGroupRuleExcludePathArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleExcludePathArrayOutput) ToHostGroupRuleExcludePathArrayOutputWithContext(ctx context.Context) HostGroupRuleExcludePathArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleExcludePathArrayOutput) Index(i pulumi.IntInput) HostGroupRuleExcludePathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleExcludePath {
+		return vs[0].([]HostGroupRuleExcludePath)[vs[1].(int)]
+	}).(HostGroupRuleExcludePathOutput)
+}
+
+type HostGroupRuleExtractRule struct {
+	// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+	BeginRegex *string `pulumi:"beginRegex"`
+	// Log delimiter. Valid only when LogType is delimiter_log.
+	Delimiter *string `pulumi:"delimiter"`
+	// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+	EnableNanosecond *bool                                    `pulumi:"enableNanosecond"`
+	FilterKeyRegexes []HostGroupRuleExtractRuleFilterKeyRegex `pulumi:"filterKeyRegexes"`
+	// List of log field names (Keys).
+	Keys []string `pulumi:"keys"`
+	// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+	LogRegex *string `pulumi:"logRegex"`
+	// Automatically extract log fields based on the specified log template.
+	LogTemplate *HostGroupRuleExtractRuleLogTemplate `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+	Quote *string `pulumi:"quote"`
+	// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+	TimeExtractRegex *string `pulumi:"timeExtractRegex"`
+	// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeKey *string `pulumi:"timeKey"`
+	// Sample time. Used to verify whether the specified time parsing format is correct.
+	TimeSample *string `pulumi:"timeSample"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+	TimeZone *string `pulumi:"timeZone"`
+	// Key name for logs that failed to parse when uploading
+	UnMatchLogKey *string `pulumi:"unMatchLogKey"`
+	// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch *bool `pulumi:"unMatchUpLoadSwitch"`
+}
+
+// HostGroupRuleExtractRuleInput is an input type that accepts HostGroupRuleExtractRuleArgs and HostGroupRuleExtractRuleOutput values.
+// You can construct a concrete instance of `HostGroupRuleExtractRuleInput` via:
+//
+//	HostGroupRuleExtractRuleArgs{...}
+type HostGroupRuleExtractRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExtractRuleOutput() HostGroupRuleExtractRuleOutput
+	ToHostGroupRuleExtractRuleOutputWithContext(context.Context) HostGroupRuleExtractRuleOutput
+}
+
+type HostGroupRuleExtractRuleArgs struct {
+	// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+	BeginRegex pulumi.StringPtrInput `pulumi:"beginRegex"`
+	// Log delimiter. Valid only when LogType is delimiter_log.
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+	EnableNanosecond pulumi.BoolPtrInput                              `pulumi:"enableNanosecond"`
+	FilterKeyRegexes HostGroupRuleExtractRuleFilterKeyRegexArrayInput `pulumi:"filterKeyRegexes"`
+	// List of log field names (Keys).
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+	LogRegex pulumi.StringPtrInput `pulumi:"logRegex"`
+	// Automatically extract log fields based on the specified log template.
+	LogTemplate HostGroupRuleExtractRuleLogTemplatePtrInput `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+	Quote pulumi.StringPtrInput `pulumi:"quote"`
+	// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+	TimeExtractRegex pulumi.StringPtrInput `pulumi:"timeExtractRegex"`
+	// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeKey pulumi.StringPtrInput `pulumi:"timeKey"`
+	// Sample time. Used to verify whether the specified time parsing format is correct.
+	TimeSample pulumi.StringPtrInput `pulumi:"timeSample"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
+	// Key name for logs that failed to parse when uploading
+	UnMatchLogKey pulumi.StringPtrInput `pulumi:"unMatchLogKey"`
+	// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch pulumi.BoolPtrInput `pulumi:"unMatchUpLoadSwitch"`
+}
+
+func (HostGroupRuleExtractRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExtractRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleExtractRuleArgs) ToHostGroupRuleExtractRuleOutput() HostGroupRuleExtractRuleOutput {
+	return i.ToHostGroupRuleExtractRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExtractRuleArgs) ToHostGroupRuleExtractRuleOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleOutput)
+}
+
+func (i HostGroupRuleExtractRuleArgs) ToHostGroupRuleExtractRulePtrOutput() HostGroupRuleExtractRulePtrOutput {
+	return i.ToHostGroupRuleExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExtractRuleArgs) ToHostGroupRuleExtractRulePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleOutput).ToHostGroupRuleExtractRulePtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleExtractRulePtrInput is an input type that accepts HostGroupRuleExtractRuleArgs, HostGroupRuleExtractRulePtr and HostGroupRuleExtractRulePtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleExtractRulePtrInput` via:
+//
+//	        HostGroupRuleExtractRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleExtractRulePtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExtractRulePtrOutput() HostGroupRuleExtractRulePtrOutput
+	ToHostGroupRuleExtractRulePtrOutputWithContext(context.Context) HostGroupRuleExtractRulePtrOutput
+}
+
+type hostGroupRuleExtractRulePtrType HostGroupRuleExtractRuleArgs
+
+func HostGroupRuleExtractRulePtr(v *HostGroupRuleExtractRuleArgs) HostGroupRuleExtractRulePtrInput {
+	return (*hostGroupRuleExtractRulePtrType)(v)
+}
+
+func (*hostGroupRuleExtractRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleExtractRule)(nil)).Elem()
+}
+
+func (i *hostGroupRuleExtractRulePtrType) ToHostGroupRuleExtractRulePtrOutput() HostGroupRuleExtractRulePtrOutput {
+	return i.ToHostGroupRuleExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleExtractRulePtrType) ToHostGroupRuleExtractRulePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRulePtrOutput)
+}
+
+type HostGroupRuleExtractRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExtractRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExtractRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleExtractRuleOutput) ToHostGroupRuleExtractRuleOutput() HostGroupRuleExtractRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleOutput) ToHostGroupRuleExtractRuleOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleOutput) ToHostGroupRuleExtractRulePtrOutput() HostGroupRuleExtractRulePtrOutput {
+	return o.ToHostGroupRuleExtractRulePtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleExtractRuleOutput) ToHostGroupRuleExtractRulePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleExtractRule) *HostGroupRuleExtractRule {
+		return &v
+	}).(HostGroupRuleExtractRulePtrOutput)
+}
+
+// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+func (o HostGroupRuleExtractRuleOutput) BeginRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.BeginRegex }).(pulumi.StringPtrOutput)
+}
+
+// Log delimiter. Valid only when LogType is delimiter_log.
+func (o HostGroupRuleExtractRuleOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+func (o HostGroupRuleExtractRuleOutput) EnableNanosecond() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *bool { return v.EnableNanosecond }).(pulumi.BoolPtrOutput)
+}
+
+func (o HostGroupRuleExtractRuleOutput) FilterKeyRegexes() HostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) []HostGroupRuleExtractRuleFilterKeyRegex { return v.FilterKeyRegexes }).(HostGroupRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+// List of log field names (Keys).
+func (o HostGroupRuleExtractRuleOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) []string { return v.Keys }).(pulumi.StringArrayOutput)
+}
+
+// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+func (o HostGroupRuleExtractRuleOutput) LogRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.LogRegex }).(pulumi.StringPtrOutput)
+}
+
+// Automatically extract log fields based on the specified log template.
+func (o HostGroupRuleExtractRuleOutput) LogTemplate() HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *HostGroupRuleExtractRuleLogTemplate { return v.LogTemplate }).(HostGroupRuleExtractRuleLogTemplatePtrOutput)
+}
+
+// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+func (o HostGroupRuleExtractRuleOutput) Quote() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.Quote }).(pulumi.StringPtrOutput)
+}
+
+// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+func (o HostGroupRuleExtractRuleOutput) TimeExtractRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.TimeExtractRegex }).(pulumi.StringPtrOutput)
+}
+
+// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+func (o HostGroupRuleExtractRuleOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.TimeFormat }).(pulumi.StringPtrOutput)
+}
+
+// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+func (o HostGroupRuleExtractRuleOutput) TimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.TimeKey }).(pulumi.StringPtrOutput)
+}
+
+// Sample time. Used to verify whether the specified time parsing format is correct.
+func (o HostGroupRuleExtractRuleOutput) TimeSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.TimeSample }).(pulumi.StringPtrOutput)
+}
+
+// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+func (o HostGroupRuleExtractRuleOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
+}
+
+// Key name for logs that failed to parse when uploading
+func (o HostGroupRuleExtractRuleOutput) UnMatchLogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *string { return v.UnMatchLogKey }).(pulumi.StringPtrOutput)
+}
+
+// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+func (o HostGroupRuleExtractRuleOutput) UnMatchUpLoadSwitch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRule) *bool { return v.UnMatchUpLoadSwitch }).(pulumi.BoolPtrOutput)
+}
+
+type HostGroupRuleExtractRulePtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExtractRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleExtractRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleExtractRulePtrOutput) ToHostGroupRuleExtractRulePtrOutput() HostGroupRuleExtractRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRulePtrOutput) ToHostGroupRuleExtractRulePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRulePtrOutput) Elem() HostGroupRuleExtractRuleOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) HostGroupRuleExtractRule {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleExtractRule
+		return ret
+	}).(HostGroupRuleExtractRuleOutput)
+}
+
+// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+func (o HostGroupRuleExtractRulePtrOutput) BeginRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BeginRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Log delimiter. Valid only when LogType is delimiter_log.
+func (o HostGroupRuleExtractRulePtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+func (o HostGroupRuleExtractRulePtrOutput) EnableNanosecond() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableNanosecond
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o HostGroupRuleExtractRulePtrOutput) FilterKeyRegexes() HostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) []HostGroupRuleExtractRuleFilterKeyRegex {
+		if v == nil {
+			return nil
+		}
+		return v.FilterKeyRegexes
+	}).(HostGroupRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+// List of log field names (Keys).
+func (o HostGroupRuleExtractRulePtrOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+func (o HostGroupRuleExtractRulePtrOutput) LogRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Automatically extract log fields based on the specified log template.
+func (o HostGroupRuleExtractRulePtrOutput) LogTemplate() HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *HostGroupRuleExtractRuleLogTemplate {
+		if v == nil {
+			return nil
+		}
+		return v.LogTemplate
+	}).(HostGroupRuleExtractRuleLogTemplatePtrOutput)
+}
+
+// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+func (o HostGroupRuleExtractRulePtrOutput) Quote() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Quote
+	}).(pulumi.StringPtrOutput)
+}
+
+// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+func (o HostGroupRuleExtractRulePtrOutput) TimeExtractRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeExtractRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+func (o HostGroupRuleExtractRulePtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+func (o HostGroupRuleExtractRulePtrOutput) TimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Sample time. Used to verify whether the specified time parsing format is correct.
+func (o HostGroupRuleExtractRulePtrOutput) TimeSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeSample
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+func (o HostGroupRuleExtractRulePtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// Key name for logs that failed to parse when uploading
+func (o HostGroupRuleExtractRulePtrOutput) UnMatchLogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UnMatchLogKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+func (o HostGroupRuleExtractRulePtrOutput) UnMatchUpLoadSwitch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UnMatchUpLoadSwitch
+	}).(pulumi.BoolPtrOutput)
+}
+
+type HostGroupRuleExtractRuleFilterKeyRegex struct {
+	// Name of the filter field.
+	Key *string `pulumi:"key"`
+	// The log content of the filter field must match the specified regular expression.
+	Regex *string `pulumi:"regex"`
+}
+
+// HostGroupRuleExtractRuleFilterKeyRegexInput is an input type that accepts HostGroupRuleExtractRuleFilterKeyRegexArgs and HostGroupRuleExtractRuleFilterKeyRegexOutput values.
+// You can construct a concrete instance of `HostGroupRuleExtractRuleFilterKeyRegexInput` via:
+//
+//	HostGroupRuleExtractRuleFilterKeyRegexArgs{...}
+type HostGroupRuleExtractRuleFilterKeyRegexInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExtractRuleFilterKeyRegexOutput() HostGroupRuleExtractRuleFilterKeyRegexOutput
+	ToHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(context.Context) HostGroupRuleExtractRuleFilterKeyRegexOutput
+}
+
+type HostGroupRuleExtractRuleFilterKeyRegexArgs struct {
+	// Name of the filter field.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// The log content of the filter field must match the specified regular expression.
+	Regex pulumi.StringPtrInput `pulumi:"regex"`
+}
+
+func (HostGroupRuleExtractRuleFilterKeyRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleExtractRuleFilterKeyRegexArgs) ToHostGroupRuleExtractRuleFilterKeyRegexOutput() HostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return i.ToHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExtractRuleFilterKeyRegexArgs) ToHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleFilterKeyRegexOutput)
+}
+
+// HostGroupRuleExtractRuleFilterKeyRegexArrayInput is an input type that accepts HostGroupRuleExtractRuleFilterKeyRegexArray and HostGroupRuleExtractRuleFilterKeyRegexArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleExtractRuleFilterKeyRegexArrayInput` via:
+//
+//	HostGroupRuleExtractRuleFilterKeyRegexArray{ HostGroupRuleExtractRuleFilterKeyRegexArgs{...} }
+type HostGroupRuleExtractRuleFilterKeyRegexArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutput() HostGroupRuleExtractRuleFilterKeyRegexArrayOutput
+	ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Context) HostGroupRuleExtractRuleFilterKeyRegexArrayOutput
+}
+
+type HostGroupRuleExtractRuleFilterKeyRegexArray []HostGroupRuleExtractRuleFilterKeyRegexInput
+
+func (HostGroupRuleExtractRuleFilterKeyRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i HostGroupRuleExtractRuleFilterKeyRegexArray) ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutput() HostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return i.ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExtractRuleFilterKeyRegexArray) ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+type HostGroupRuleExtractRuleFilterKeyRegexOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExtractRuleFilterKeyRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleExtractRuleFilterKeyRegexOutput) ToHostGroupRuleExtractRuleFilterKeyRegexOutput() HostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleFilterKeyRegexOutput) ToHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+// Name of the filter field.
+func (o HostGroupRuleExtractRuleFilterKeyRegexOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRuleFilterKeyRegex) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// The log content of the filter field must match the specified regular expression.
+func (o HostGroupRuleExtractRuleFilterKeyRegexOutput) Regex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRuleFilterKeyRegex) *string { return v.Regex }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleExtractRuleFilterKeyRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExtractRuleFilterKeyRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o HostGroupRuleExtractRuleFilterKeyRegexArrayOutput) ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutput() HostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleFilterKeyRegexArrayOutput) ToHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleFilterKeyRegexArrayOutput) Index(i pulumi.IntInput) HostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleExtractRuleFilterKeyRegex {
+		return vs[0].([]HostGroupRuleExtractRuleFilterKeyRegex)[vs[1].(int)]
+	}).(HostGroupRuleExtractRuleFilterKeyRegexOutput)
+}
+
+type HostGroupRuleExtractRuleLogTemplate struct {
+	// Log template format
+	Format *string `pulumi:"format"`
+	// Log template type. Supported types: Nginx (Nginx log template type).
+	Type *string `pulumi:"type"`
+}
+
+// HostGroupRuleExtractRuleLogTemplateInput is an input type that accepts HostGroupRuleExtractRuleLogTemplateArgs and HostGroupRuleExtractRuleLogTemplateOutput values.
+// You can construct a concrete instance of `HostGroupRuleExtractRuleLogTemplateInput` via:
+//
+//	HostGroupRuleExtractRuleLogTemplateArgs{...}
+type HostGroupRuleExtractRuleLogTemplateInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExtractRuleLogTemplateOutput() HostGroupRuleExtractRuleLogTemplateOutput
+	ToHostGroupRuleExtractRuleLogTemplateOutputWithContext(context.Context) HostGroupRuleExtractRuleLogTemplateOutput
+}
+
+type HostGroupRuleExtractRuleLogTemplateArgs struct {
+	// Log template format
+	Format pulumi.StringPtrInput `pulumi:"format"`
+	// Log template type. Supported types: Nginx (Nginx log template type).
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (HostGroupRuleExtractRuleLogTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (i HostGroupRuleExtractRuleLogTemplateArgs) ToHostGroupRuleExtractRuleLogTemplateOutput() HostGroupRuleExtractRuleLogTemplateOutput {
+	return i.ToHostGroupRuleExtractRuleLogTemplateOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExtractRuleLogTemplateArgs) ToHostGroupRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleLogTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleLogTemplateOutput)
+}
+
+func (i HostGroupRuleExtractRuleLogTemplateArgs) ToHostGroupRuleExtractRuleLogTemplatePtrOutput() HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return i.ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleExtractRuleLogTemplateArgs) ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleLogTemplateOutput).ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleExtractRuleLogTemplatePtrInput is an input type that accepts HostGroupRuleExtractRuleLogTemplateArgs, HostGroupRuleExtractRuleLogTemplatePtr and HostGroupRuleExtractRuleLogTemplatePtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleExtractRuleLogTemplatePtrInput` via:
+//
+//	        HostGroupRuleExtractRuleLogTemplateArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleExtractRuleLogTemplatePtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleExtractRuleLogTemplatePtrOutput() HostGroupRuleExtractRuleLogTemplatePtrOutput
+	ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(context.Context) HostGroupRuleExtractRuleLogTemplatePtrOutput
+}
+
+type hostGroupRuleExtractRuleLogTemplatePtrType HostGroupRuleExtractRuleLogTemplateArgs
+
+func HostGroupRuleExtractRuleLogTemplatePtr(v *HostGroupRuleExtractRuleLogTemplateArgs) HostGroupRuleExtractRuleLogTemplatePtrInput {
+	return (*hostGroupRuleExtractRuleLogTemplatePtrType)(v)
+}
+
+func (*hostGroupRuleExtractRuleLogTemplatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (i *hostGroupRuleExtractRuleLogTemplatePtrType) ToHostGroupRuleExtractRuleLogTemplatePtrOutput() HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return i.ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleExtractRuleLogTemplatePtrType) ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleExtractRuleLogTemplatePtrOutput)
+}
+
+type HostGroupRuleExtractRuleLogTemplateOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExtractRuleLogTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (o HostGroupRuleExtractRuleLogTemplateOutput) ToHostGroupRuleExtractRuleLogTemplateOutput() HostGroupRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleLogTemplateOutput) ToHostGroupRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleLogTemplateOutput) ToHostGroupRuleExtractRuleLogTemplatePtrOutput() HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return o.ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleExtractRuleLogTemplateOutput) ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleExtractRuleLogTemplate) *HostGroupRuleExtractRuleLogTemplate {
+		return &v
+	}).(HostGroupRuleExtractRuleLogTemplatePtrOutput)
+}
+
+// Log template format
+func (o HostGroupRuleExtractRuleLogTemplateOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRuleLogTemplate) *string { return v.Format }).(pulumi.StringPtrOutput)
+}
+
+// Log template type. Supported types: Nginx (Nginx log template type).
+func (o HostGroupRuleExtractRuleLogTemplateOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleExtractRuleLogTemplate) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleExtractRuleLogTemplatePtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleExtractRuleLogTemplatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (o HostGroupRuleExtractRuleLogTemplatePtrOutput) ToHostGroupRuleExtractRuleLogTemplatePtrOutput() HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleLogTemplatePtrOutput) ToHostGroupRuleExtractRuleLogTemplatePtrOutputWithContext(ctx context.Context) HostGroupRuleExtractRuleLogTemplatePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleExtractRuleLogTemplatePtrOutput) Elem() HostGroupRuleExtractRuleLogTemplateOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRuleLogTemplate) HostGroupRuleExtractRuleLogTemplate {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleExtractRuleLogTemplate
+		return ret
+	}).(HostGroupRuleExtractRuleLogTemplateOutput)
+}
+
+// Log template format
+func (o HostGroupRuleExtractRuleLogTemplatePtrOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRuleLogTemplate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// Log template type. Supported types: Nginx (Nginx log template type).
+func (o HostGroupRuleExtractRuleLogTemplatePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleExtractRuleLogTemplate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRule struct {
+	// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+	Advanced *HostGroupRuleUserDefineRuleAdvanced `pulumi:"advanced"`
+	// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+	EnableHostGroupLabel *bool `pulumi:"enableHostGroupLabel"`
+	// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+	EnableHostname *bool `pulumi:"enableHostname"`
+	// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+	EnableRawLog *bool                              `pulumi:"enableRawLog"`
+	Fields       []HostGroupRuleUserDefineRuleField `pulumi:"fields"`
+	// Field name used to store machine group label information.
+	HostGroupLabelKey *string `pulumi:"hostGroupLabelKey"`
+	// hostname field name. Only required when EnableHostname is set to true.
+	HostnameKey *string `pulumi:"hostnameKey"`
+	// Ignore log files that have not been updated for a specified duration, in hours.
+	IgnoreOlder *int `pulumi:"ignoreOlder"`
+	// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+	MultiCollectsType *string `pulumi:"multiCollectsType"`
+	// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+	ParsePathRule *HostGroupRuleUserDefineRuleParsePathRule `pulumi:"parsePathRule"`
+	// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+	Plugin *HostGroupRuleUserDefineRulePlugin `pulumi:"plugin"`
+	// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+	RawLogKey *string `pulumi:"rawLogKey"`
+	// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+	ShardHashKey *HostGroupRuleUserDefineRuleShardHashKey `pulumi:"shardHashKey"`
+	// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+	TailFiles *bool `pulumi:"tailFiles"`
+	// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+	TailSizeKb *int `pulumi:"tailSizeKb"`
+}
+
+// HostGroupRuleUserDefineRuleInput is an input type that accepts HostGroupRuleUserDefineRuleArgs and HostGroupRuleUserDefineRuleOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleInput` via:
+//
+//	HostGroupRuleUserDefineRuleArgs{...}
+type HostGroupRuleUserDefineRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleOutput() HostGroupRuleUserDefineRuleOutput
+	ToHostGroupRuleUserDefineRuleOutputWithContext(context.Context) HostGroupRuleUserDefineRuleOutput
+}
+
+type HostGroupRuleUserDefineRuleArgs struct {
+	// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+	Advanced HostGroupRuleUserDefineRuleAdvancedPtrInput `pulumi:"advanced"`
+	// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+	EnableHostGroupLabel pulumi.BoolPtrInput `pulumi:"enableHostGroupLabel"`
+	// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+	EnableHostname pulumi.BoolPtrInput `pulumi:"enableHostname"`
+	// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+	EnableRawLog pulumi.BoolPtrInput                        `pulumi:"enableRawLog"`
+	Fields       HostGroupRuleUserDefineRuleFieldArrayInput `pulumi:"fields"`
+	// Field name used to store machine group label information.
+	HostGroupLabelKey pulumi.StringPtrInput `pulumi:"hostGroupLabelKey"`
+	// hostname field name. Only required when EnableHostname is set to true.
+	HostnameKey pulumi.StringPtrInput `pulumi:"hostnameKey"`
+	// Ignore log files that have not been updated for a specified duration, in hours.
+	IgnoreOlder pulumi.IntPtrInput `pulumi:"ignoreOlder"`
+	// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+	MultiCollectsType pulumi.StringPtrInput `pulumi:"multiCollectsType"`
+	// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+	ParsePathRule HostGroupRuleUserDefineRuleParsePathRulePtrInput `pulumi:"parsePathRule"`
+	// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+	Plugin HostGroupRuleUserDefineRulePluginPtrInput `pulumi:"plugin"`
+	// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+	RawLogKey pulumi.StringPtrInput `pulumi:"rawLogKey"`
+	// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+	ShardHashKey HostGroupRuleUserDefineRuleShardHashKeyPtrInput `pulumi:"shardHashKey"`
+	// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+	TailFiles pulumi.BoolPtrInput `pulumi:"tailFiles"`
+	// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+	TailSizeKb pulumi.IntPtrInput `pulumi:"tailSizeKb"`
+}
+
+func (HostGroupRuleUserDefineRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRuleArgs) ToHostGroupRuleUserDefineRuleOutput() HostGroupRuleUserDefineRuleOutput {
+	return i.ToHostGroupRuleUserDefineRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleArgs) ToHostGroupRuleUserDefineRuleOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleOutput)
+}
+
+func (i HostGroupRuleUserDefineRuleArgs) ToHostGroupRuleUserDefineRulePtrOutput() HostGroupRuleUserDefineRulePtrOutput {
+	return i.ToHostGroupRuleUserDefineRulePtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleArgs) ToHostGroupRuleUserDefineRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleOutput).ToHostGroupRuleUserDefineRulePtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleUserDefineRulePtrInput is an input type that accepts HostGroupRuleUserDefineRuleArgs, HostGroupRuleUserDefineRulePtr and HostGroupRuleUserDefineRulePtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRulePtrInput` via:
+//
+//	        HostGroupRuleUserDefineRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleUserDefineRulePtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRulePtrOutput() HostGroupRuleUserDefineRulePtrOutput
+	ToHostGroupRuleUserDefineRulePtrOutputWithContext(context.Context) HostGroupRuleUserDefineRulePtrOutput
+}
+
+type hostGroupRuleUserDefineRulePtrType HostGroupRuleUserDefineRuleArgs
+
+func HostGroupRuleUserDefineRulePtr(v *HostGroupRuleUserDefineRuleArgs) HostGroupRuleUserDefineRulePtrInput {
+	return (*hostGroupRuleUserDefineRulePtrType)(v)
+}
+
+func (*hostGroupRuleUserDefineRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRule)(nil)).Elem()
+}
+
+func (i *hostGroupRuleUserDefineRulePtrType) ToHostGroupRuleUserDefineRulePtrOutput() HostGroupRuleUserDefineRulePtrOutput {
+	return i.ToHostGroupRuleUserDefineRulePtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleUserDefineRulePtrType) ToHostGroupRuleUserDefineRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRulePtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleOutput) ToHostGroupRuleUserDefineRuleOutput() HostGroupRuleUserDefineRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleOutput) ToHostGroupRuleUserDefineRuleOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleOutput) ToHostGroupRuleUserDefineRulePtrOutput() HostGroupRuleUserDefineRulePtrOutput {
+	return o.ToHostGroupRuleUserDefineRulePtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleUserDefineRuleOutput) ToHostGroupRuleUserDefineRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRule {
+		return &v
+	}).(HostGroupRuleUserDefineRulePtrOutput)
+}
+
+// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+func (o HostGroupRuleUserDefineRuleOutput) Advanced() HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRuleAdvanced { return v.Advanced }).(HostGroupRuleUserDefineRuleAdvancedPtrOutput)
+}
+
+// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+func (o HostGroupRuleUserDefineRuleOutput) EnableHostGroupLabel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *bool { return v.EnableHostGroupLabel }).(pulumi.BoolPtrOutput)
+}
+
+// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+func (o HostGroupRuleUserDefineRuleOutput) EnableHostname() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *bool { return v.EnableHostname }).(pulumi.BoolPtrOutput)
+}
+
+// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+func (o HostGroupRuleUserDefineRuleOutput) EnableRawLog() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *bool { return v.EnableRawLog }).(pulumi.BoolPtrOutput)
+}
+
+func (o HostGroupRuleUserDefineRuleOutput) Fields() HostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) []HostGroupRuleUserDefineRuleField { return v.Fields }).(HostGroupRuleUserDefineRuleFieldArrayOutput)
+}
+
+// Field name used to store machine group label information.
+func (o HostGroupRuleUserDefineRuleOutput) HostGroupLabelKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *string { return v.HostGroupLabelKey }).(pulumi.StringPtrOutput)
+}
+
+// hostname field name. Only required when EnableHostname is set to true.
+func (o HostGroupRuleUserDefineRuleOutput) HostnameKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *string { return v.HostnameKey }).(pulumi.StringPtrOutput)
+}
+
+// Ignore log files that have not been updated for a specified duration, in hours.
+func (o HostGroupRuleUserDefineRuleOutput) IgnoreOlder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *int { return v.IgnoreOlder }).(pulumi.IntPtrOutput)
+}
+
+// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+func (o HostGroupRuleUserDefineRuleOutput) MultiCollectsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *string { return v.MultiCollectsType }).(pulumi.StringPtrOutput)
+}
+
+// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+func (o HostGroupRuleUserDefineRuleOutput) ParsePathRule() HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRuleParsePathRule { return v.ParsePathRule }).(HostGroupRuleUserDefineRuleParsePathRulePtrOutput)
+}
+
+// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+func (o HostGroupRuleUserDefineRuleOutput) Plugin() HostGroupRuleUserDefineRulePluginPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRulePlugin { return v.Plugin }).(HostGroupRuleUserDefineRulePluginPtrOutput)
+}
+
+// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+func (o HostGroupRuleUserDefineRuleOutput) RawLogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *string { return v.RawLogKey }).(pulumi.StringPtrOutput)
+}
+
+// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+func (o HostGroupRuleUserDefineRuleOutput) ShardHashKey() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRuleShardHashKey { return v.ShardHashKey }).(HostGroupRuleUserDefineRuleShardHashKeyPtrOutput)
+}
+
+// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+func (o HostGroupRuleUserDefineRuleOutput) TailFiles() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *bool { return v.TailFiles }).(pulumi.BoolPtrOutput)
+}
+
+// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+func (o HostGroupRuleUserDefineRuleOutput) TailSizeKb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRule) *int { return v.TailSizeKb }).(pulumi.IntPtrOutput)
+}
+
+type HostGroupRuleUserDefineRulePtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRulePtrOutput) ToHostGroupRuleUserDefineRulePtrOutput() HostGroupRuleUserDefineRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRulePtrOutput) ToHostGroupRuleUserDefineRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRulePtrOutput) Elem() HostGroupRuleUserDefineRuleOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) HostGroupRuleUserDefineRule {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleUserDefineRule
+		return ret
+	}).(HostGroupRuleUserDefineRuleOutput)
+}
+
+// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+func (o HostGroupRuleUserDefineRulePtrOutput) Advanced() HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRuleAdvanced {
+		if v == nil {
+			return nil
+		}
+		return v.Advanced
+	}).(HostGroupRuleUserDefineRuleAdvancedPtrOutput)
+}
+
+// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+func (o HostGroupRuleUserDefineRulePtrOutput) EnableHostGroupLabel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableHostGroupLabel
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+func (o HostGroupRuleUserDefineRulePtrOutput) EnableHostname() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableHostname
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+func (o HostGroupRuleUserDefineRulePtrOutput) EnableRawLog() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableRawLog
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o HostGroupRuleUserDefineRulePtrOutput) Fields() HostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) []HostGroupRuleUserDefineRuleField {
+		if v == nil {
+			return nil
+		}
+		return v.Fields
+	}).(HostGroupRuleUserDefineRuleFieldArrayOutput)
+}
+
+// Field name used to store machine group label information.
+func (o HostGroupRuleUserDefineRulePtrOutput) HostGroupLabelKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostGroupLabelKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// hostname field name. Only required when EnableHostname is set to true.
+func (o HostGroupRuleUserDefineRulePtrOutput) HostnameKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostnameKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Ignore log files that have not been updated for a specified duration, in hours.
+func (o HostGroupRuleUserDefineRulePtrOutput) IgnoreOlder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IgnoreOlder
+	}).(pulumi.IntPtrOutput)
+}
+
+// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+func (o HostGroupRuleUserDefineRulePtrOutput) MultiCollectsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MultiCollectsType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+func (o HostGroupRuleUserDefineRulePtrOutput) ParsePathRule() HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRuleParsePathRule {
+		if v == nil {
+			return nil
+		}
+		return v.ParsePathRule
+	}).(HostGroupRuleUserDefineRuleParsePathRulePtrOutput)
+}
+
+// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+func (o HostGroupRuleUserDefineRulePtrOutput) Plugin() HostGroupRuleUserDefineRulePluginPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRulePlugin {
+		if v == nil {
+			return nil
+		}
+		return v.Plugin
+	}).(HostGroupRuleUserDefineRulePluginPtrOutput)
+}
+
+// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+func (o HostGroupRuleUserDefineRulePtrOutput) RawLogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RawLogKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+func (o HostGroupRuleUserDefineRulePtrOutput) ShardHashKey() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *HostGroupRuleUserDefineRuleShardHashKey {
+		if v == nil {
+			return nil
+		}
+		return v.ShardHashKey
+	}).(HostGroupRuleUserDefineRuleShardHashKeyPtrOutput)
+}
+
+// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+func (o HostGroupRuleUserDefineRulePtrOutput) TailFiles() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TailFiles
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+func (o HostGroupRuleUserDefineRulePtrOutput) TailSizeKb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRule) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TailSizeKb
+	}).(pulumi.IntPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleAdvanced struct {
+	// After reading to the end of the log file, whether to release the file handle. Default is false.
+	CloseEof *bool `pulumi:"closeEof"`
+	// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+	CloseInactive *int `pulumi:"closeInactive"`
+	// Whether to release the handle of the log file after it is removed. Default is false.
+	CloseRemoved *bool `pulumi:"closeRemoved"`
+	// Whether to release the handle of the log file after it is renamed. Default is false.
+	CloseRenamed *bool `pulumi:"closeRenamed"`
+	// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+	CloseTimeout *int `pulumi:"closeTimeout"`
+	// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+	NoLineTerminatorEofMaxTime *int `pulumi:"noLineTerminatorEofMaxTime"`
+}
+
+// HostGroupRuleUserDefineRuleAdvancedInput is an input type that accepts HostGroupRuleUserDefineRuleAdvancedArgs and HostGroupRuleUserDefineRuleAdvancedOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleAdvancedInput` via:
+//
+//	HostGroupRuleUserDefineRuleAdvancedArgs{...}
+type HostGroupRuleUserDefineRuleAdvancedInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleAdvancedOutput() HostGroupRuleUserDefineRuleAdvancedOutput
+	ToHostGroupRuleUserDefineRuleAdvancedOutputWithContext(context.Context) HostGroupRuleUserDefineRuleAdvancedOutput
+}
+
+type HostGroupRuleUserDefineRuleAdvancedArgs struct {
+	// After reading to the end of the log file, whether to release the file handle. Default is false.
+	CloseEof pulumi.BoolPtrInput `pulumi:"closeEof"`
+	// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+	CloseInactive pulumi.IntPtrInput `pulumi:"closeInactive"`
+	// Whether to release the handle of the log file after it is removed. Default is false.
+	CloseRemoved pulumi.BoolPtrInput `pulumi:"closeRemoved"`
+	// Whether to release the handle of the log file after it is renamed. Default is false.
+	CloseRenamed pulumi.BoolPtrInput `pulumi:"closeRenamed"`
+	// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+	CloseTimeout pulumi.IntPtrInput `pulumi:"closeTimeout"`
+	// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+	NoLineTerminatorEofMaxTime pulumi.IntPtrInput `pulumi:"noLineTerminatorEofMaxTime"`
+}
+
+func (HostGroupRuleUserDefineRuleAdvancedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleAdvanced)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRuleAdvancedArgs) ToHostGroupRuleUserDefineRuleAdvancedOutput() HostGroupRuleUserDefineRuleAdvancedOutput {
+	return i.ToHostGroupRuleUserDefineRuleAdvancedOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleAdvancedArgs) ToHostGroupRuleUserDefineRuleAdvancedOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleAdvancedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleAdvancedOutput)
+}
+
+func (i HostGroupRuleUserDefineRuleAdvancedArgs) ToHostGroupRuleUserDefineRuleAdvancedPtrOutput() HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return i.ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleAdvancedArgs) ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleAdvancedOutput).ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleUserDefineRuleAdvancedPtrInput is an input type that accepts HostGroupRuleUserDefineRuleAdvancedArgs, HostGroupRuleUserDefineRuleAdvancedPtr and HostGroupRuleUserDefineRuleAdvancedPtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleAdvancedPtrInput` via:
+//
+//	        HostGroupRuleUserDefineRuleAdvancedArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleUserDefineRuleAdvancedPtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleAdvancedPtrOutput() HostGroupRuleUserDefineRuleAdvancedPtrOutput
+	ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(context.Context) HostGroupRuleUserDefineRuleAdvancedPtrOutput
+}
+
+type hostGroupRuleUserDefineRuleAdvancedPtrType HostGroupRuleUserDefineRuleAdvancedArgs
+
+func HostGroupRuleUserDefineRuleAdvancedPtr(v *HostGroupRuleUserDefineRuleAdvancedArgs) HostGroupRuleUserDefineRuleAdvancedPtrInput {
+	return (*hostGroupRuleUserDefineRuleAdvancedPtrType)(v)
+}
+
+func (*hostGroupRuleUserDefineRuleAdvancedPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRuleAdvanced)(nil)).Elem()
+}
+
+func (i *hostGroupRuleUserDefineRuleAdvancedPtrType) ToHostGroupRuleUserDefineRuleAdvancedPtrOutput() HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return i.ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleUserDefineRuleAdvancedPtrType) ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleAdvancedPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleAdvancedOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleAdvancedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleAdvanced)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) ToHostGroupRuleUserDefineRuleAdvancedOutput() HostGroupRuleUserDefineRuleAdvancedOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) ToHostGroupRuleUserDefineRuleAdvancedOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleAdvancedOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) ToHostGroupRuleUserDefineRuleAdvancedPtrOutput() HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return o.ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleUserDefineRuleAdvanced) *HostGroupRuleUserDefineRuleAdvanced {
+		return &v
+	}).(HostGroupRuleUserDefineRuleAdvancedPtrOutput)
+}
+
+// After reading to the end of the log file, whether to release the file handle. Default is false.
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) CloseEof() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleAdvanced) *bool { return v.CloseEof }).(pulumi.BoolPtrOutput)
+}
+
+// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) CloseInactive() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleAdvanced) *int { return v.CloseInactive }).(pulumi.IntPtrOutput)
+}
+
+// Whether to release the handle of the log file after it is removed. Default is false.
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) CloseRemoved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleAdvanced) *bool { return v.CloseRemoved }).(pulumi.BoolPtrOutput)
+}
+
+// Whether to release the handle of the log file after it is renamed. Default is false.
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) CloseRenamed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleAdvanced) *bool { return v.CloseRenamed }).(pulumi.BoolPtrOutput)
+}
+
+// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) CloseTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleAdvanced) *int { return v.CloseTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+func (o HostGroupRuleUserDefineRuleAdvancedOutput) NoLineTerminatorEofMaxTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleAdvanced) *int { return v.NoLineTerminatorEofMaxTime }).(pulumi.IntPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleAdvancedPtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleAdvancedPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRuleAdvanced)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) ToHostGroupRuleUserDefineRuleAdvancedPtrOutput() HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) ToHostGroupRuleUserDefineRuleAdvancedPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleAdvancedPtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) Elem() HostGroupRuleUserDefineRuleAdvancedOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) HostGroupRuleUserDefineRuleAdvanced {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleUserDefineRuleAdvanced
+		return ret
+	}).(HostGroupRuleUserDefineRuleAdvancedOutput)
+}
+
+// After reading to the end of the log file, whether to release the file handle. Default is false.
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) CloseEof() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CloseEof
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) CloseInactive() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CloseInactive
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether to release the handle of the log file after it is removed. Default is false.
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) CloseRemoved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CloseRemoved
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to release the handle of the log file after it is renamed. Default is false.
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) CloseRenamed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CloseRenamed
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) CloseTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CloseTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+func (o HostGroupRuleUserDefineRuleAdvancedPtrOutput) NoLineTerminatorEofMaxTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleAdvanced) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NoLineTerminatorEofMaxTime
+	}).(pulumi.IntPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleField struct {
+	// Key.
+	Key *string `pulumi:"key"`
+	// Value.
+	Val *string `pulumi:"val"`
+}
+
+// HostGroupRuleUserDefineRuleFieldInput is an input type that accepts HostGroupRuleUserDefineRuleFieldArgs and HostGroupRuleUserDefineRuleFieldOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleFieldInput` via:
+//
+//	HostGroupRuleUserDefineRuleFieldArgs{...}
+type HostGroupRuleUserDefineRuleFieldInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleFieldOutput() HostGroupRuleUserDefineRuleFieldOutput
+	ToHostGroupRuleUserDefineRuleFieldOutputWithContext(context.Context) HostGroupRuleUserDefineRuleFieldOutput
+}
+
+type HostGroupRuleUserDefineRuleFieldArgs struct {
+	// Key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringPtrInput `pulumi:"val"`
+}
+
+func (HostGroupRuleUserDefineRuleFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRuleFieldArgs) ToHostGroupRuleUserDefineRuleFieldOutput() HostGroupRuleUserDefineRuleFieldOutput {
+	return i.ToHostGroupRuleUserDefineRuleFieldOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleFieldArgs) ToHostGroupRuleUserDefineRuleFieldOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleFieldOutput)
+}
+
+// HostGroupRuleUserDefineRuleFieldArrayInput is an input type that accepts HostGroupRuleUserDefineRuleFieldArray and HostGroupRuleUserDefineRuleFieldArrayOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleFieldArrayInput` via:
+//
+//	HostGroupRuleUserDefineRuleFieldArray{ HostGroupRuleUserDefineRuleFieldArgs{...} }
+type HostGroupRuleUserDefineRuleFieldArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleFieldArrayOutput() HostGroupRuleUserDefineRuleFieldArrayOutput
+	ToHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(context.Context) HostGroupRuleUserDefineRuleFieldArrayOutput
+}
+
+type HostGroupRuleUserDefineRuleFieldArray []HostGroupRuleUserDefineRuleFieldInput
+
+func (HostGroupRuleUserDefineRuleFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRuleFieldArray) ToHostGroupRuleUserDefineRuleFieldArrayOutput() HostGroupRuleUserDefineRuleFieldArrayOutput {
+	return i.ToHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleFieldArray) ToHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleFieldArrayOutput)
+}
+
+type HostGroupRuleUserDefineRuleFieldOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleFieldOutput) ToHostGroupRuleUserDefineRuleFieldOutput() HostGroupRuleUserDefineRuleFieldOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleFieldOutput) ToHostGroupRuleUserDefineRuleFieldOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleFieldOutput {
+	return o
+}
+
+// Key.
+func (o HostGroupRuleUserDefineRuleFieldOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleField) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value.
+func (o HostGroupRuleUserDefineRuleFieldOutput) Val() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleField) *string { return v.Val }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleFieldArrayOutput) ToHostGroupRuleUserDefineRuleFieldArrayOutput() HostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleFieldArrayOutput) ToHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleFieldArrayOutput) Index(i pulumi.IntInput) HostGroupRuleUserDefineRuleFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRuleUserDefineRuleField {
+		return vs[0].([]HostGroupRuleUserDefineRuleField)[vs[1].(int)]
+	}).(HostGroupRuleUserDefineRuleFieldOutput)
+}
+
+type HostGroupRuleUserDefineRuleParsePathRule struct {
+	// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+	Keys []string `pulumi:"keys"`
+	// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+	PathSample *string `pulumi:"pathSample"`
+	// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+	Regex *string `pulumi:"regex"`
+}
+
+// HostGroupRuleUserDefineRuleParsePathRuleInput is an input type that accepts HostGroupRuleUserDefineRuleParsePathRuleArgs and HostGroupRuleUserDefineRuleParsePathRuleOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleParsePathRuleInput` via:
+//
+//	HostGroupRuleUserDefineRuleParsePathRuleArgs{...}
+type HostGroupRuleUserDefineRuleParsePathRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleParsePathRuleOutput() HostGroupRuleUserDefineRuleParsePathRuleOutput
+	ToHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(context.Context) HostGroupRuleUserDefineRuleParsePathRuleOutput
+}
+
+type HostGroupRuleUserDefineRuleParsePathRuleArgs struct {
+	// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+	PathSample pulumi.StringPtrInput `pulumi:"pathSample"`
+	// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+	Regex pulumi.StringPtrInput `pulumi:"regex"`
+}
+
+func (HostGroupRuleUserDefineRuleParsePathRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleParsePathRule)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRuleParsePathRuleArgs) ToHostGroupRuleUserDefineRuleParsePathRuleOutput() HostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return i.ToHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleParsePathRuleArgs) ToHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleParsePathRuleOutput)
+}
+
+func (i HostGroupRuleUserDefineRuleParsePathRuleArgs) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutput() HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return i.ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleParsePathRuleArgs) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleParsePathRuleOutput).ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleUserDefineRuleParsePathRulePtrInput is an input type that accepts HostGroupRuleUserDefineRuleParsePathRuleArgs, HostGroupRuleUserDefineRuleParsePathRulePtr and HostGroupRuleUserDefineRuleParsePathRulePtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleParsePathRulePtrInput` via:
+//
+//	        HostGroupRuleUserDefineRuleParsePathRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleUserDefineRuleParsePathRulePtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleParsePathRulePtrOutput() HostGroupRuleUserDefineRuleParsePathRulePtrOutput
+	ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(context.Context) HostGroupRuleUserDefineRuleParsePathRulePtrOutput
+}
+
+type hostGroupRuleUserDefineRuleParsePathRulePtrType HostGroupRuleUserDefineRuleParsePathRuleArgs
+
+func HostGroupRuleUserDefineRuleParsePathRulePtr(v *HostGroupRuleUserDefineRuleParsePathRuleArgs) HostGroupRuleUserDefineRuleParsePathRulePtrInput {
+	return (*hostGroupRuleUserDefineRuleParsePathRulePtrType)(v)
+}
+
+func (*hostGroupRuleUserDefineRuleParsePathRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRuleParsePathRule)(nil)).Elem()
+}
+
+func (i *hostGroupRuleUserDefineRuleParsePathRulePtrType) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutput() HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return i.ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleUserDefineRuleParsePathRulePtrType) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleParsePathRulePtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleParsePathRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleParsePathRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleParsePathRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) ToHostGroupRuleUserDefineRuleParsePathRuleOutput() HostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) ToHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutput() HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return o.ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleUserDefineRuleParsePathRule) *HostGroupRuleUserDefineRuleParsePathRule {
+		return &v
+	}).(HostGroupRuleUserDefineRuleParsePathRulePtrOutput)
+}
+
+// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleParsePathRule) []string { return v.Keys }).(pulumi.StringArrayOutput)
+}
+
+// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) PathSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleParsePathRule) *string { return v.PathSample }).(pulumi.StringPtrOutput)
+}
+
+// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+func (o HostGroupRuleUserDefineRuleParsePathRuleOutput) Regex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleParsePathRule) *string { return v.Regex }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleParsePathRulePtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleParsePathRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRuleParsePathRule)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRulePtrOutput) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutput() HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRulePtrOutput) ToHostGroupRuleUserDefineRuleParsePathRulePtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleParsePathRulePtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleParsePathRulePtrOutput) Elem() HostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleParsePathRule) HostGroupRuleUserDefineRuleParsePathRule {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleUserDefineRuleParsePathRule
+		return ret
+	}).(HostGroupRuleUserDefineRuleParsePathRuleOutput)
+}
+
+// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+func (o HostGroupRuleUserDefineRuleParsePathRulePtrOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleParsePathRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+func (o HostGroupRuleUserDefineRuleParsePathRulePtrOutput) PathSample() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleParsePathRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PathSample
+	}).(pulumi.StringPtrOutput)
+}
+
+// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+func (o HostGroupRuleUserDefineRuleParsePathRulePtrOutput) Regex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleParsePathRule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Regex
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRulePlugin struct {
+	// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+	Processors *string `pulumi:"processors"`
+}
+
+// HostGroupRuleUserDefineRulePluginInput is an input type that accepts HostGroupRuleUserDefineRulePluginArgs and HostGroupRuleUserDefineRulePluginOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRulePluginInput` via:
+//
+//	HostGroupRuleUserDefineRulePluginArgs{...}
+type HostGroupRuleUserDefineRulePluginInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRulePluginOutput() HostGroupRuleUserDefineRulePluginOutput
+	ToHostGroupRuleUserDefineRulePluginOutputWithContext(context.Context) HostGroupRuleUserDefineRulePluginOutput
+}
+
+type HostGroupRuleUserDefineRulePluginArgs struct {
+	// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+	Processors pulumi.StringPtrInput `pulumi:"processors"`
+}
+
+func (HostGroupRuleUserDefineRulePluginArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRulePlugin)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRulePluginArgs) ToHostGroupRuleUserDefineRulePluginOutput() HostGroupRuleUserDefineRulePluginOutput {
+	return i.ToHostGroupRuleUserDefineRulePluginOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRulePluginArgs) ToHostGroupRuleUserDefineRulePluginOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePluginOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRulePluginOutput)
+}
+
+func (i HostGroupRuleUserDefineRulePluginArgs) ToHostGroupRuleUserDefineRulePluginPtrOutput() HostGroupRuleUserDefineRulePluginPtrOutput {
+	return i.ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRulePluginArgs) ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePluginPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRulePluginOutput).ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleUserDefineRulePluginPtrInput is an input type that accepts HostGroupRuleUserDefineRulePluginArgs, HostGroupRuleUserDefineRulePluginPtr and HostGroupRuleUserDefineRulePluginPtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRulePluginPtrInput` via:
+//
+//	        HostGroupRuleUserDefineRulePluginArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleUserDefineRulePluginPtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRulePluginPtrOutput() HostGroupRuleUserDefineRulePluginPtrOutput
+	ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(context.Context) HostGroupRuleUserDefineRulePluginPtrOutput
+}
+
+type hostGroupRuleUserDefineRulePluginPtrType HostGroupRuleUserDefineRulePluginArgs
+
+func HostGroupRuleUserDefineRulePluginPtr(v *HostGroupRuleUserDefineRulePluginArgs) HostGroupRuleUserDefineRulePluginPtrInput {
+	return (*hostGroupRuleUserDefineRulePluginPtrType)(v)
+}
+
+func (*hostGroupRuleUserDefineRulePluginPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRulePlugin)(nil)).Elem()
+}
+
+func (i *hostGroupRuleUserDefineRulePluginPtrType) ToHostGroupRuleUserDefineRulePluginPtrOutput() HostGroupRuleUserDefineRulePluginPtrOutput {
+	return i.ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleUserDefineRulePluginPtrType) ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePluginPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRulePluginPtrOutput)
+}
+
+type HostGroupRuleUserDefineRulePluginOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRulePluginOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRulePlugin)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRulePluginOutput) ToHostGroupRuleUserDefineRulePluginOutput() HostGroupRuleUserDefineRulePluginOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRulePluginOutput) ToHostGroupRuleUserDefineRulePluginOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePluginOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRulePluginOutput) ToHostGroupRuleUserDefineRulePluginPtrOutput() HostGroupRuleUserDefineRulePluginPtrOutput {
+	return o.ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleUserDefineRulePluginOutput) ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePluginPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleUserDefineRulePlugin) *HostGroupRuleUserDefineRulePlugin {
+		return &v
+	}).(HostGroupRuleUserDefineRulePluginPtrOutput)
+}
+
+// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+func (o HostGroupRuleUserDefineRulePluginOutput) Processors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRulePlugin) *string { return v.Processors }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRulePluginPtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRulePluginPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRulePlugin)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRulePluginPtrOutput) ToHostGroupRuleUserDefineRulePluginPtrOutput() HostGroupRuleUserDefineRulePluginPtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRulePluginPtrOutput) ToHostGroupRuleUserDefineRulePluginPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRulePluginPtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRulePluginPtrOutput) Elem() HostGroupRuleUserDefineRulePluginOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRulePlugin) HostGroupRuleUserDefineRulePlugin {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleUserDefineRulePlugin
+		return ret
+	}).(HostGroupRuleUserDefineRulePluginOutput)
+}
+
+// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+func (o HostGroupRuleUserDefineRulePluginPtrOutput) Processors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRulePlugin) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Processors
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleShardHashKey struct {
+	// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+	HashKey *string `pulumi:"hashKey"`
+}
+
+// HostGroupRuleUserDefineRuleShardHashKeyInput is an input type that accepts HostGroupRuleUserDefineRuleShardHashKeyArgs and HostGroupRuleUserDefineRuleShardHashKeyOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleShardHashKeyInput` via:
+//
+//	HostGroupRuleUserDefineRuleShardHashKeyArgs{...}
+type HostGroupRuleUserDefineRuleShardHashKeyInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleShardHashKeyOutput() HostGroupRuleUserDefineRuleShardHashKeyOutput
+	ToHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(context.Context) HostGroupRuleUserDefineRuleShardHashKeyOutput
+}
+
+type HostGroupRuleUserDefineRuleShardHashKeyArgs struct {
+	// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+	HashKey pulumi.StringPtrInput `pulumi:"hashKey"`
+}
+
+func (HostGroupRuleUserDefineRuleShardHashKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleShardHashKey)(nil)).Elem()
+}
+
+func (i HostGroupRuleUserDefineRuleShardHashKeyArgs) ToHostGroupRuleUserDefineRuleShardHashKeyOutput() HostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return i.ToHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleShardHashKeyArgs) ToHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleShardHashKeyOutput)
+}
+
+func (i HostGroupRuleUserDefineRuleShardHashKeyArgs) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutput() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return i.ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(context.Background())
+}
+
+func (i HostGroupRuleUserDefineRuleShardHashKeyArgs) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleShardHashKeyOutput).ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(ctx)
+}
+
+// HostGroupRuleUserDefineRuleShardHashKeyPtrInput is an input type that accepts HostGroupRuleUserDefineRuleShardHashKeyArgs, HostGroupRuleUserDefineRuleShardHashKeyPtr and HostGroupRuleUserDefineRuleShardHashKeyPtrOutput values.
+// You can construct a concrete instance of `HostGroupRuleUserDefineRuleShardHashKeyPtrInput` via:
+//
+//	        HostGroupRuleUserDefineRuleShardHashKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostGroupRuleUserDefineRuleShardHashKeyPtrInput interface {
+	pulumi.Input
+
+	ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutput() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput
+	ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(context.Context) HostGroupRuleUserDefineRuleShardHashKeyPtrOutput
+}
+
+type hostGroupRuleUserDefineRuleShardHashKeyPtrType HostGroupRuleUserDefineRuleShardHashKeyArgs
+
+func HostGroupRuleUserDefineRuleShardHashKeyPtr(v *HostGroupRuleUserDefineRuleShardHashKeyArgs) HostGroupRuleUserDefineRuleShardHashKeyPtrInput {
+	return (*hostGroupRuleUserDefineRuleShardHashKeyPtrType)(v)
+}
+
+func (*hostGroupRuleUserDefineRuleShardHashKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRuleShardHashKey)(nil)).Elem()
+}
+
+func (i *hostGroupRuleUserDefineRuleShardHashKeyPtrType) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutput() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return i.ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *hostGroupRuleUserDefineRuleShardHashKeyPtrType) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRuleUserDefineRuleShardHashKeyPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleShardHashKeyOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleShardHashKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRuleUserDefineRuleShardHashKey)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyOutput) ToHostGroupRuleUserDefineRuleShardHashKeyOutput() HostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyOutput) ToHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyOutput) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutput() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return o.ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(context.Background())
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyOutput) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostGroupRuleUserDefineRuleShardHashKey) *HostGroupRuleUserDefineRuleShardHashKey {
+		return &v
+	}).(HostGroupRuleUserDefineRuleShardHashKeyPtrOutput)
+}
+
+// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+func (o HostGroupRuleUserDefineRuleShardHashKeyOutput) HashKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRuleUserDefineRuleShardHashKey) *string { return v.HashKey }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRuleUserDefineRuleShardHashKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRuleUserDefineRuleShardHashKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostGroupRuleUserDefineRuleShardHashKey)(nil)).Elem()
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyPtrOutput) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutput() HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyPtrOutput) ToHostGroupRuleUserDefineRuleShardHashKeyPtrOutputWithContext(ctx context.Context) HostGroupRuleUserDefineRuleShardHashKeyPtrOutput {
+	return o
+}
+
+func (o HostGroupRuleUserDefineRuleShardHashKeyPtrOutput) Elem() HostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleShardHashKey) HostGroupRuleUserDefineRuleShardHashKey {
+		if v != nil {
+			return *v
+		}
+		var ret HostGroupRuleUserDefineRuleShardHashKey
+		return ret
+	}).(HostGroupRuleUserDefineRuleShardHashKeyOutput)
+}
+
+// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+func (o HostGroupRuleUserDefineRuleShardHashKeyPtrOutput) HashKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostGroupRuleUserDefineRuleShardHashKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HashKey
+	}).(pulumi.StringPtrOutput)
+}
+
 type ImportTaskImportSourceInfo struct {
 	// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
 	KafkaSourceInfo *ImportTaskImportSourceInfoKafkaSourceInfo `pulumi:"kafkaSourceInfo"`
@@ -12871,6 +16907,2837 @@ func (o GetAlarmTriggerConditionArrayOutput) Index(i pulumi.IntInput) GetAlarmTr
 	}).(GetAlarmTriggerConditionOutput)
 }
 
+type GetEtlTargetResource struct {
+	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+	Alias string `pulumi:"alias"`
+	// Log project ID for storing processed logs
+	ProjectId string `pulumi:"projectId"`
+	// Log project name for storing processed logs
+	ProjectName string `pulumi:"projectName"`
+	// Region of the log topic for storing processed logs
+	Region string `pulumi:"region"`
+	// Cross-account authorization role name
+	RoleTrn string `pulumi:"roleTrn"`
+	// Log topic ID for storing processed logs
+	TopicId string `pulumi:"topicId"`
+	// Log topic name for storing processed logs
+	TopicName string `pulumi:"topicName"`
+}
+
+// GetEtlTargetResourceInput is an input type that accepts GetEtlTargetResourceArgs and GetEtlTargetResourceOutput values.
+// You can construct a concrete instance of `GetEtlTargetResourceInput` via:
+//
+//	GetEtlTargetResourceArgs{...}
+type GetEtlTargetResourceInput interface {
+	pulumi.Input
+
+	ToGetEtlTargetResourceOutput() GetEtlTargetResourceOutput
+	ToGetEtlTargetResourceOutputWithContext(context.Context) GetEtlTargetResourceOutput
+}
+
+type GetEtlTargetResourceArgs struct {
+	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+	Alias pulumi.StringInput `pulumi:"alias"`
+	// Log project ID for storing processed logs
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Log project name for storing processed logs
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// Region of the log topic for storing processed logs
+	Region pulumi.StringInput `pulumi:"region"`
+	// Cross-account authorization role name
+	RoleTrn pulumi.StringInput `pulumi:"roleTrn"`
+	// Log topic ID for storing processed logs
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+	// Log topic name for storing processed logs
+	TopicName pulumi.StringInput `pulumi:"topicName"`
+}
+
+func (GetEtlTargetResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEtlTargetResource)(nil)).Elem()
+}
+
+func (i GetEtlTargetResourceArgs) ToGetEtlTargetResourceOutput() GetEtlTargetResourceOutput {
+	return i.ToGetEtlTargetResourceOutputWithContext(context.Background())
+}
+
+func (i GetEtlTargetResourceArgs) ToGetEtlTargetResourceOutputWithContext(ctx context.Context) GetEtlTargetResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEtlTargetResourceOutput)
+}
+
+// GetEtlTargetResourceArrayInput is an input type that accepts GetEtlTargetResourceArray and GetEtlTargetResourceArrayOutput values.
+// You can construct a concrete instance of `GetEtlTargetResourceArrayInput` via:
+//
+//	GetEtlTargetResourceArray{ GetEtlTargetResourceArgs{...} }
+type GetEtlTargetResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetEtlTargetResourceArrayOutput() GetEtlTargetResourceArrayOutput
+	ToGetEtlTargetResourceArrayOutputWithContext(context.Context) GetEtlTargetResourceArrayOutput
+}
+
+type GetEtlTargetResourceArray []GetEtlTargetResourceInput
+
+func (GetEtlTargetResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEtlTargetResource)(nil)).Elem()
+}
+
+func (i GetEtlTargetResourceArray) ToGetEtlTargetResourceArrayOutput() GetEtlTargetResourceArrayOutput {
+	return i.ToGetEtlTargetResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetEtlTargetResourceArray) ToGetEtlTargetResourceArrayOutputWithContext(ctx context.Context) GetEtlTargetResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEtlTargetResourceArrayOutput)
+}
+
+type GetEtlTargetResourceOutput struct{ *pulumi.OutputState }
+
+func (GetEtlTargetResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEtlTargetResource)(nil)).Elem()
+}
+
+func (o GetEtlTargetResourceOutput) ToGetEtlTargetResourceOutput() GetEtlTargetResourceOutput {
+	return o
+}
+
+func (o GetEtlTargetResourceOutput) ToGetEtlTargetResourceOutputWithContext(ctx context.Context) GetEtlTargetResourceOutput {
+	return o
+}
+
+// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
+func (o GetEtlTargetResourceOutput) Alias() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.Alias }).(pulumi.StringOutput)
+}
+
+// Log project ID for storing processed logs
+func (o GetEtlTargetResourceOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Log project name for storing processed logs
+func (o GetEtlTargetResourceOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Region of the log topic for storing processed logs
+func (o GetEtlTargetResourceOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Cross-account authorization role name
+func (o GetEtlTargetResourceOutput) RoleTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.RoleTrn }).(pulumi.StringOutput)
+}
+
+// Log topic ID for storing processed logs
+func (o GetEtlTargetResourceOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+// Log topic name for storing processed logs
+func (o GetEtlTargetResourceOutput) TopicName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEtlTargetResource) string { return v.TopicName }).(pulumi.StringOutput)
+}
+
+type GetEtlTargetResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEtlTargetResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEtlTargetResource)(nil)).Elem()
+}
+
+func (o GetEtlTargetResourceArrayOutput) ToGetEtlTargetResourceArrayOutput() GetEtlTargetResourceArrayOutput {
+	return o
+}
+
+func (o GetEtlTargetResourceArrayOutput) ToGetEtlTargetResourceArrayOutputWithContext(ctx context.Context) GetEtlTargetResourceArrayOutput {
+	return o
+}
+
+func (o GetEtlTargetResourceArrayOutput) Index(i pulumi.IntInput) GetEtlTargetResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEtlTargetResource {
+		return vs[0].([]GetEtlTargetResource)[vs[1].(int)]
+	}).(GetEtlTargetResourceOutput)
+}
+
+type GetHostGroupRule struct {
+	// Container collection rules
+	ContainerRule GetHostGroupRuleContainerRule `pulumi:"containerRule"`
+	// Time when the collection configuration was created.
+	CreateTime string `pulumi:"createTime"`
+	// Extraction rule list.
+	ExcludePaths []GetHostGroupRuleExcludePath `pulumi:"excludePaths"`
+	// Extraction rules
+	ExtractRule GetHostGroupRuleExtractRule `pulumi:"extractRule"`
+	// Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+	InputType int `pulumi:"inputType"`
+	// Log sample.
+	LogSample string `pulumi:"logSample"`
+	// Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+	LogType string `pulumi:"logType"`
+	// Time when the collection configuration was modified.
+	ModifyTime string `pulumi:"modifyTime"`
+	// Data collection path list
+	Paths []string `pulumi:"paths"`
+	// Running status of the collection configuration. 0: Running. 1: Paused.
+	Pause int `pulumi:"pause"`
+	// Collection configuration ID.
+	RuleId string `pulumi:"ruleId"`
+	// Name of the collection configuration.
+	RuleName string `pulumi:"ruleName"`
+	// ID of the log topic to which the collection configuration belongs.
+	TopicId string `pulumi:"topicId"`
+	// Name of the log topic associated with the collection configuration
+	TopicName string `pulumi:"topicName"`
+	// User-defined collection rules.
+	UserDefineRule GetHostGroupRuleUserDefineRule `pulumi:"userDefineRule"`
+}
+
+// GetHostGroupRuleInput is an input type that accepts GetHostGroupRuleArgs and GetHostGroupRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleInput` via:
+//
+//	GetHostGroupRuleArgs{...}
+type GetHostGroupRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleOutput() GetHostGroupRuleOutput
+	ToGetHostGroupRuleOutputWithContext(context.Context) GetHostGroupRuleOutput
+}
+
+type GetHostGroupRuleArgs struct {
+	// Container collection rules
+	ContainerRule GetHostGroupRuleContainerRuleInput `pulumi:"containerRule"`
+	// Time when the collection configuration was created.
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// Extraction rule list.
+	ExcludePaths GetHostGroupRuleExcludePathArrayInput `pulumi:"excludePaths"`
+	// Extraction rules
+	ExtractRule GetHostGroupRuleExtractRuleInput `pulumi:"extractRule"`
+	// Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+	InputType pulumi.IntInput `pulumi:"inputType"`
+	// Log sample.
+	LogSample pulumi.StringInput `pulumi:"logSample"`
+	// Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+	LogType pulumi.StringInput `pulumi:"logType"`
+	// Time when the collection configuration was modified.
+	ModifyTime pulumi.StringInput `pulumi:"modifyTime"`
+	// Data collection path list
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
+	// Running status of the collection configuration. 0: Running. 1: Paused.
+	Pause pulumi.IntInput `pulumi:"pause"`
+	// Collection configuration ID.
+	RuleId pulumi.StringInput `pulumi:"ruleId"`
+	// Name of the collection configuration.
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// ID of the log topic to which the collection configuration belongs.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+	// Name of the log topic associated with the collection configuration
+	TopicName pulumi.StringInput `pulumi:"topicName"`
+	// User-defined collection rules.
+	UserDefineRule GetHostGroupRuleUserDefineRuleInput `pulumi:"userDefineRule"`
+}
+
+func (GetHostGroupRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleArgs) ToGetHostGroupRuleOutput() GetHostGroupRuleOutput {
+	return i.ToGetHostGroupRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleArgs) ToGetHostGroupRuleOutputWithContext(ctx context.Context) GetHostGroupRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleOutput)
+}
+
+// GetHostGroupRuleArrayInput is an input type that accepts GetHostGroupRuleArray and GetHostGroupRuleArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleArrayInput` via:
+//
+//	GetHostGroupRuleArray{ GetHostGroupRuleArgs{...} }
+type GetHostGroupRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleArrayOutput() GetHostGroupRuleArrayOutput
+	ToGetHostGroupRuleArrayOutputWithContext(context.Context) GetHostGroupRuleArrayOutput
+}
+
+type GetHostGroupRuleArray []GetHostGroupRuleInput
+
+func (GetHostGroupRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleArray) ToGetHostGroupRuleArrayOutput() GetHostGroupRuleArrayOutput {
+	return i.ToGetHostGroupRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleArray) ToGetHostGroupRuleArrayOutputWithContext(ctx context.Context) GetHostGroupRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleArrayOutput)
+}
+
+type GetHostGroupRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleOutput) ToGetHostGroupRuleOutput() GetHostGroupRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRuleOutput) ToGetHostGroupRuleOutputWithContext(ctx context.Context) GetHostGroupRuleOutput {
+	return o
+}
+
+// Container collection rules
+func (o GetHostGroupRuleOutput) ContainerRule() GetHostGroupRuleContainerRuleOutput {
+	return o.ApplyT(func(v GetHostGroupRule) GetHostGroupRuleContainerRule { return v.ContainerRule }).(GetHostGroupRuleContainerRuleOutput)
+}
+
+// Time when the collection configuration was created.
+func (o GetHostGroupRuleOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// Extraction rule list.
+func (o GetHostGroupRuleOutput) ExcludePaths() GetHostGroupRuleExcludePathArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRule) []GetHostGroupRuleExcludePath { return v.ExcludePaths }).(GetHostGroupRuleExcludePathArrayOutput)
+}
+
+// Extraction rules
+func (o GetHostGroupRuleOutput) ExtractRule() GetHostGroupRuleExtractRuleOutput {
+	return o.ApplyT(func(v GetHostGroupRule) GetHostGroupRuleExtractRule { return v.ExtractRule }).(GetHostGroupRuleExtractRuleOutput)
+}
+
+// Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
+func (o GetHostGroupRuleOutput) InputType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRule) int { return v.InputType }).(pulumi.IntOutput)
+}
+
+// Log sample.
+func (o GetHostGroupRuleOutput) LogSample() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.LogSample }).(pulumi.StringOutput)
+}
+
+// Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
+func (o GetHostGroupRuleOutput) LogType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.LogType }).(pulumi.StringOutput)
+}
+
+// Time when the collection configuration was modified.
+func (o GetHostGroupRuleOutput) ModifyTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.ModifyTime }).(pulumi.StringOutput)
+}
+
+// Data collection path list
+func (o GetHostGroupRuleOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRule) []string { return v.Paths }).(pulumi.StringArrayOutput)
+}
+
+// Running status of the collection configuration. 0: Running. 1: Paused.
+func (o GetHostGroupRuleOutput) Pause() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRule) int { return v.Pause }).(pulumi.IntOutput)
+}
+
+// Collection configuration ID.
+func (o GetHostGroupRuleOutput) RuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.RuleId }).(pulumi.StringOutput)
+}
+
+// Name of the collection configuration.
+func (o GetHostGroupRuleOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// ID of the log topic to which the collection configuration belongs.
+func (o GetHostGroupRuleOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+// Name of the log topic associated with the collection configuration
+func (o GetHostGroupRuleOutput) TopicName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRule) string { return v.TopicName }).(pulumi.StringOutput)
+}
+
+// User-defined collection rules.
+func (o GetHostGroupRuleOutput) UserDefineRule() GetHostGroupRuleUserDefineRuleOutput {
+	return o.ApplyT(func(v GetHostGroupRule) GetHostGroupRuleUserDefineRule { return v.UserDefineRule }).(GetHostGroupRuleUserDefineRuleOutput)
+}
+
+type GetHostGroupRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleArrayOutput) ToGetHostGroupRuleArrayOutput() GetHostGroupRuleArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleArrayOutput) ToGetHostGroupRuleArrayOutputWithContext(ctx context.Context) GetHostGroupRuleArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRule {
+		return vs[0].([]GetHostGroupRule)[vs[1].(int)]
+	}).(GetHostGroupRuleOutput)
+}
+
+type GetHostGroupRuleContainerRule struct {
+	// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+	ContainerNameRegex string `pulumi:"containerNameRegex"`
+	// Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
+	EnvTags []GetHostGroupRuleContainerRuleEnvTag `pulumi:"envTags"`
+	// Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
+	ExcludeContainerEnvRegexes []GetHostGroupRuleContainerRuleExcludeContainerEnvRegex `pulumi:"excludeContainerEnvRegexes"`
+	// The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
+	ExcludeContainerLabelRegexes []GetHostGroupRuleContainerRuleExcludeContainerLabelRegex `pulumi:"excludeContainerLabelRegexes"`
+	// The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
+	IncludeContainerEnvRegexes []GetHostGroupRuleContainerRuleIncludeContainerEnvRegex `pulumi:"includeContainerEnvRegexes"`
+	// The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
+	IncludeContainerLabelRegexes []GetHostGroupRuleContainerRuleIncludeContainerLabelRegex `pulumi:"includeContainerLabelRegexes"`
+	// Kubernetes container collection rules.
+	KubernetesRule GetHostGroupRuleContainerRuleKubernetesRule `pulumi:"kubernetesRule"`
+	// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+	Stream string `pulumi:"stream"`
+}
+
+// GetHostGroupRuleContainerRuleInput is an input type that accepts GetHostGroupRuleContainerRuleArgs and GetHostGroupRuleContainerRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleInput` via:
+//
+//	GetHostGroupRuleContainerRuleArgs{...}
+type GetHostGroupRuleContainerRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleOutput() GetHostGroupRuleContainerRuleOutput
+	ToGetHostGroupRuleContainerRuleOutputWithContext(context.Context) GetHostGroupRuleContainerRuleOutput
+}
+
+type GetHostGroupRuleContainerRuleArgs struct {
+	// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+	ContainerNameRegex pulumi.StringInput `pulumi:"containerNameRegex"`
+	// Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
+	EnvTags GetHostGroupRuleContainerRuleEnvTagArrayInput `pulumi:"envTags"`
+	// Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
+	ExcludeContainerEnvRegexes GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput `pulumi:"excludeContainerEnvRegexes"`
+	// The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
+	ExcludeContainerLabelRegexes GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput `pulumi:"excludeContainerLabelRegexes"`
+	// The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
+	IncludeContainerEnvRegexes GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput `pulumi:"includeContainerEnvRegexes"`
+	// The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
+	IncludeContainerLabelRegexes GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput `pulumi:"includeContainerLabelRegexes"`
+	// Kubernetes container collection rules.
+	KubernetesRule GetHostGroupRuleContainerRuleKubernetesRuleInput `pulumi:"kubernetesRule"`
+	// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+	Stream pulumi.StringInput `pulumi:"stream"`
+}
+
+func (GetHostGroupRuleContainerRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleArgs) ToGetHostGroupRuleContainerRuleOutput() GetHostGroupRuleContainerRuleOutput {
+	return i.ToGetHostGroupRuleContainerRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleArgs) ToGetHostGroupRuleContainerRuleOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleOutput)
+}
+
+type GetHostGroupRuleContainerRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleOutput) ToGetHostGroupRuleContainerRuleOutput() GetHostGroupRuleContainerRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleOutput) ToGetHostGroupRuleContainerRuleOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleOutput {
+	return o
+}
+
+// Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
+func (o GetHostGroupRuleContainerRuleOutput) ContainerNameRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) string { return v.ContainerNameRegex }).(pulumi.StringOutput)
+}
+
+// Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
+func (o GetHostGroupRuleContainerRuleOutput) EnvTags() GetHostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) []GetHostGroupRuleContainerRuleEnvTag { return v.EnvTags }).(GetHostGroupRuleContainerRuleEnvTagArrayOutput)
+}
+
+// Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
+func (o GetHostGroupRuleContainerRuleOutput) ExcludeContainerEnvRegexes() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) []GetHostGroupRuleContainerRuleExcludeContainerEnvRegex {
+		return v.ExcludeContainerEnvRegexes
+	}).(GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput)
+}
+
+// The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
+func (o GetHostGroupRuleContainerRuleOutput) ExcludeContainerLabelRegexes() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) []GetHostGroupRuleContainerRuleExcludeContainerLabelRegex {
+		return v.ExcludeContainerLabelRegexes
+	}).(GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput)
+}
+
+// The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
+func (o GetHostGroupRuleContainerRuleOutput) IncludeContainerEnvRegexes() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) []GetHostGroupRuleContainerRuleIncludeContainerEnvRegex {
+		return v.IncludeContainerEnvRegexes
+	}).(GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput)
+}
+
+// The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
+func (o GetHostGroupRuleContainerRuleOutput) IncludeContainerLabelRegexes() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) []GetHostGroupRuleContainerRuleIncludeContainerLabelRegex {
+		return v.IncludeContainerLabelRegexes
+	}).(GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput)
+}
+
+// Kubernetes container collection rules.
+func (o GetHostGroupRuleContainerRuleOutput) KubernetesRule() GetHostGroupRuleContainerRuleKubernetesRuleOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) GetHostGroupRuleContainerRuleKubernetesRule {
+		return v.KubernetesRule
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleOutput)
+}
+
+// Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
+func (o GetHostGroupRuleContainerRuleOutput) Stream() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRule) string { return v.Stream }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleEnvTag struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleEnvTagInput is an input type that accepts GetHostGroupRuleContainerRuleEnvTagArgs and GetHostGroupRuleContainerRuleEnvTagOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleEnvTagInput` via:
+//
+//	GetHostGroupRuleContainerRuleEnvTagArgs{...}
+type GetHostGroupRuleContainerRuleEnvTagInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleEnvTagOutput() GetHostGroupRuleContainerRuleEnvTagOutput
+	ToGetHostGroupRuleContainerRuleEnvTagOutputWithContext(context.Context) GetHostGroupRuleContainerRuleEnvTagOutput
+}
+
+type GetHostGroupRuleContainerRuleEnvTagArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleEnvTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleEnvTagArgs) ToGetHostGroupRuleContainerRuleEnvTagOutput() GetHostGroupRuleContainerRuleEnvTagOutput {
+	return i.ToGetHostGroupRuleContainerRuleEnvTagOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleEnvTagArgs) ToGetHostGroupRuleContainerRuleEnvTagOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleEnvTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleEnvTagOutput)
+}
+
+// GetHostGroupRuleContainerRuleEnvTagArrayInput is an input type that accepts GetHostGroupRuleContainerRuleEnvTagArray and GetHostGroupRuleContainerRuleEnvTagArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleEnvTagArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleEnvTagArray{ GetHostGroupRuleContainerRuleEnvTagArgs{...} }
+type GetHostGroupRuleContainerRuleEnvTagArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleEnvTagArrayOutput() GetHostGroupRuleContainerRuleEnvTagArrayOutput
+	ToGetHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleEnvTagArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleEnvTagArray []GetHostGroupRuleContainerRuleEnvTagInput
+
+func (GetHostGroupRuleContainerRuleEnvTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleEnvTagArray) ToGetHostGroupRuleContainerRuleEnvTagArrayOutput() GetHostGroupRuleContainerRuleEnvTagArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleEnvTagArray) ToGetHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleEnvTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleEnvTagArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleEnvTagOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleEnvTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleEnvTagOutput) ToGetHostGroupRuleContainerRuleEnvTagOutput() GetHostGroupRuleContainerRuleEnvTagOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleEnvTagOutput) ToGetHostGroupRuleContainerRuleEnvTagOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleEnvTagOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleEnvTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleEnvTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleEnvTagOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleEnvTag) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleEnvTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleEnvTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleEnvTag)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleEnvTagArrayOutput) ToGetHostGroupRuleContainerRuleEnvTagArrayOutput() GetHostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleEnvTagArrayOutput) ToGetHostGroupRuleContainerRuleEnvTagArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleEnvTagArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleEnvTagArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleEnvTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleEnvTag {
+		return vs[0].([]GetHostGroupRuleContainerRuleEnvTag)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleEnvTagOutput)
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleExcludeContainerEnvRegexInput is an input type that accepts GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs and GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleExcludeContainerEnvRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs{...}
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput
+	ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray and GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray{ GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs{...} }
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray []GetHostGroupRuleContainerRuleExcludeContainerEnvRegexInput
+
+func (GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleExcludeContainerEnvRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleExcludeContainerEnvRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleExcludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput() GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) ToGetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleExcludeContainerEnvRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleExcludeContainerEnvRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleExcludeContainerLabelRegexInput is an input type that accepts GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs and GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleExcludeContainerLabelRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs{...}
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput
+	ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray and GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray{ GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs{...} }
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray []GetHostGroupRuleContainerRuleExcludeContainerLabelRegexInput
+
+func (GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleExcludeContainerLabelRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleExcludeContainerLabelRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleExcludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput() GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleExcludeContainerLabelRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleExcludeContainerLabelRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleIncludeContainerEnvRegexInput is an input type that accepts GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs and GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleIncludeContainerEnvRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs{...}
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput
+	ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray and GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray{ GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs{...} }
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray []GetHostGroupRuleContainerRuleIncludeContainerEnvRegexInput
+
+func (GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleIncludeContainerEnvRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleIncludeContainerEnvRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleIncludeContainerEnvRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput() GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) ToGetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleIncludeContainerEnvRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleIncludeContainerEnvRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleIncludeContainerLabelRegexInput is an input type that accepts GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs and GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleIncludeContainerLabelRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs{...}
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput
+	ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray and GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray{ GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs{...} }
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray []GetHostGroupRuleContainerRuleIncludeContainerLabelRegexInput
+
+func (GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleIncludeContainerLabelRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleIncludeContainerLabelRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleIncludeContainerLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput() GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleIncludeContainerLabelRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleIncludeContainerLabelRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRule struct {
+	// Whether to add Kubernetes Annotations as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod Annotation fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to sink and Value to data_sink. If the Pod contains the Annotation sink=ck, the log will include the field **tag**data_sink_*: ck.
+	AnnotationTags []GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag `pulumi:"annotationTags"`
+	// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+	EnableAllLabelTag bool `pulumi:"enableAllLabelTag"`
+	// Pod Annotation denylist is used to specify containers that are not collected. If you need to set a Pod Annotation denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the Key will be excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the Value will be excluded. By default, Value uses string matching, meaning only when Value and the Pod Annotation value are exactly the same will it match. If the value starts with ^ and ends with $, it is treated as a regular expression match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods whose Pod Annotation contains app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as the Pod Annotation matches any pair, it will be included in the collection scope. When enabling the Pod Annotation denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches strings that start with http
+	ExcludePodAnnotationRegexes []GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex `pulumi:"excludePodAnnotationRegexes"`
+	// Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in the Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR, meaning any Pod Label matching any pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches any string starting with http.
+	ExcludePodLabelRegexes []GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex `pulumi:"excludePodLabelRegexes"`
+	// Pod Annotation Allowlist specifies which containers to collect. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers in Pods with the specified Key in their Pod Annotation are matched. If Value is not empty, only containers in Pods where the Pod Annotation contains the Key and its value matches Value are matched. By default, Value uses string matching, meaning only exact matches between Value and the Pod Annotation value are considered. If Value starts with ^ and ends with $, it uses regex matching. For example, set Key to app and Value to ^(test1|test2)$ to match containers in Pods with Pod Annotation app:test1 or app:test2. Note: Multiple Key-Value pairs use logical OR, so any Pod Annotation matching any pair will be included in the collection scope. When enabling the Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches values starting with http
+	IncludePodAnnotationRegexes []GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex `pulumi:"includePodAnnotationRegexes"`
+	// Pod label allowlist specifies which containers to collect. If the Pod label allowlist is not enabled, all containers are collected. To set a Pod label allowlist, Key is required. If Value is empty, all containers with the Key in their Pod label are collected. If Value is not empty, only containers with the Key in their Pod label and a Value matching the specified pattern are collected. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their Pod label. Note: The logical relationship between multiple key-value pairs is OR, meaning any matching pair will include the Pod in the collection scope. When the Pod label allowlist is enabled, Keys must be unique. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+	IncludePodLabelRegexes []GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex `pulumi:"includePodLabelRegexes"`
+	// Choose whether to add Kubernetes labels as log tags to the original log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+	LabelTags []GetHostGroupRuleContainerRuleKubernetesRuleLabelTag `pulumi:"labelTags"`
+	// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+	NamespaceNameRegex string `pulumi:"namespaceNameRegex"`
+	// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+	PodNameRegex string `pulumi:"podNameRegex"`
+	// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+	WorkloadNameRegex string `pulumi:"workloadNameRegex"`
+	// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+	WorkloadType string `pulumi:"workloadType"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleArgs and GetHostGroupRuleContainerRuleKubernetesRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleOutput() GetHostGroupRuleContainerRuleKubernetesRuleOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleArgs struct {
+	// Whether to add Kubernetes Annotations as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod Annotation fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to sink and Value to data_sink. If the Pod contains the Annotation sink=ck, the log will include the field **tag**data_sink_*: ck.
+	AnnotationTags GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput `pulumi:"annotationTags"`
+	// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+	EnableAllLabelTag pulumi.BoolInput `pulumi:"enableAllLabelTag"`
+	// Pod Annotation denylist is used to specify containers that are not collected. If you need to set a Pod Annotation denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the Key will be excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the Value will be excluded. By default, Value uses string matching, meaning only when Value and the Pod Annotation value are exactly the same will it match. If the value starts with ^ and ends with $, it is treated as a regular expression match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods whose Pod Annotation contains app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as the Pod Annotation matches any pair, it will be included in the collection scope. When enabling the Pod Annotation denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches strings that start with http
+	ExcludePodAnnotationRegexes GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput `pulumi:"excludePodAnnotationRegexes"`
+	// Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in the Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR, meaning any Pod Label matching any pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches any string starting with http.
+	ExcludePodLabelRegexes GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput `pulumi:"excludePodLabelRegexes"`
+	// Pod Annotation Allowlist specifies which containers to collect. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers in Pods with the specified Key in their Pod Annotation are matched. If Value is not empty, only containers in Pods where the Pod Annotation contains the Key and its value matches Value are matched. By default, Value uses string matching, meaning only exact matches between Value and the Pod Annotation value are considered. If Value starts with ^ and ends with $, it uses regex matching. For example, set Key to app and Value to ^(test1|test2)$ to match containers in Pods with Pod Annotation app:test1 or app:test2. Note: Multiple Key-Value pairs use logical OR, so any Pod Annotation matching any pair will be included in the collection scope. When enabling the Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches values starting with http
+	IncludePodAnnotationRegexes GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput `pulumi:"includePodAnnotationRegexes"`
+	// Pod label allowlist specifies which containers to collect. If the Pod label allowlist is not enabled, all containers are collected. To set a Pod label allowlist, Key is required. If Value is empty, all containers with the Key in their Pod label are collected. If Value is not empty, only containers with the Key in their Pod label and a Value matching the specified pattern are collected. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their Pod label. Note: The logical relationship between multiple key-value pairs is OR, meaning any matching pair will include the Pod in the collection scope. When the Pod label allowlist is enabled, Keys must be unique. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+	IncludePodLabelRegexes GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput `pulumi:"includePodLabelRegexes"`
+	// Choose whether to add Kubernetes labels as log tags to the original log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+	LabelTags GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput `pulumi:"labelTags"`
+	// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+	NamespaceNameRegex pulumi.StringInput `pulumi:"namespaceNameRegex"`
+	// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+	PodNameRegex pulumi.StringInput `pulumi:"podNameRegex"`
+	// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+	WorkloadNameRegex pulumi.StringInput `pulumi:"workloadNameRegex"`
+	// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+	WorkloadType pulumi.StringInput `pulumi:"workloadType"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleOutput() GetHostGroupRuleContainerRuleKubernetesRuleOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleOutput() GetHostGroupRuleContainerRuleKubernetesRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleOutput {
+	return o
+}
+
+// Whether to add Kubernetes Annotations as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod Annotation fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to sink and Value to data_sink. If the Pod contains the Annotation sink=ck, the log will include the field **tag**data_sink_*: ck.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) AnnotationTags() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) []GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag {
+		return v.AnnotationTags
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput)
+}
+
+// Whether to add all Kubernetes Labels as log tags to the raw log data. When enabled, the log service adds fields for all Labels in the Kubernetes Pod to the log. For example, if the Pod has Label source=DC and destination=CS, the log will include fields **tag**source__: DC and **tag**destination__: CS.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) EnableAllLabelTag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) bool { return v.EnableAllLabelTag }).(pulumi.BoolOutput)
+}
+
+// Pod Annotation denylist is used to specify containers that are not collected. If you need to set a Pod Annotation denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the Key will be excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the Value will be excluded. By default, Value uses string matching, meaning only when Value and the Pod Annotation value are exactly the same will it match. If the value starts with ^ and ends with $, it is treated as a regular expression match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods whose Pod Annotation contains app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as the Pod Annotation matches any pair, it will be included in the collection scope. When enabling the Pod Annotation denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches strings that start with http
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) ExcludePodAnnotationRegexes() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) []GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+		return v.ExcludePodAnnotationRegexes
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput)
+}
+
+// Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in the Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR, meaning any Pod Label matching any pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches any string starting with http.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) ExcludePodLabelRegexes() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) []GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+		return v.ExcludePodLabelRegexes
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput)
+}
+
+// Pod Annotation Allowlist specifies which containers to collect. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers in Pods with the specified Key in their Pod Annotation are matched. If Value is not empty, only containers in Pods where the Pod Annotation contains the Key and its value matches Value are matched. By default, Value uses string matching, meaning only exact matches between Value and the Pod Annotation value are considered. If Value starts with ^ and ends with $, it uses regex matching. For example, set Key to app and Value to ^(test1|test2)$ to match containers in Pods with Pod Annotation app:test1 or app:test2. Note: Multiple Key-Value pairs use logical OR, so any Pod Annotation matching any pair will be included in the collection scope. When enabling the Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches values starting with http
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) IncludePodAnnotationRegexes() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) []GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+		return v.IncludePodAnnotationRegexes
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput)
+}
+
+// Pod label allowlist specifies which containers to collect. If the Pod label allowlist is not enabled, all containers are collected. To set a Pod label allowlist, Key is required. If Value is empty, all containers with the Key in their Pod label are collected. If Value is not empty, only containers with the Key in their Pod label and a Value matching the specified pattern are collected. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their Pod label. Note: The logical relationship between multiple key-value pairs is OR, meaning any matching pair will include the Pod in the collection scope. When the Pod label allowlist is enabled, Keys must be unique. For fuzzy regex matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) IncludePodLabelRegexes() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) []GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+		return v.IncludePodLabelRegexes
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput)
+}
+
+// Choose whether to add Kubernetes labels as log tags to the original log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) LabelTags() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) []GetHostGroupRuleContainerRuleKubernetesRuleLabelTag {
+		return v.LabelTags
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput)
+}
+
+// Name of the Kubernetes Namespace to be collected. If not specified, all containers are collected. Namespace names support regular expression matching. For example, setting the Namespace name to ^(tcp|udp)$ collects all containers under the tcp and udp namespaces.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) NamespaceNameRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) string { return v.NamespaceNameRegex }).(pulumi.StringOutput)
+}
+
+// Pod name is used to specify the Pod(s) to be collected. If the Pod name is not specified, all containers are collected. Pod name supports regex matching. For example, setting the Pod name to ^(http.*)$ collects all containers under Pods whose names start with http.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) PodNameRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) string { return v.PodNameRegex }).(pulumi.StringOutput)
+}
+
+// Specify the container to collect by workload name. If no workload name is specified, all containers are collected. Workload names support regular expressions. For example, setting the workload name to ^(http.*)$ collects all containers under workloads starting with http.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) WorkloadNameRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) string { return v.WorkloadNameRegex }).(pulumi.StringOutput)
+}
+
+// Specify containers to collect by workload type. Only one type can be selected. If no type is specified, containers of all types will be collected. Supported workload types are: Deployment: stateless workload StatefulSet: stateful workload DaemonSet: daemon process Job: job CronJob: scheduled job
+func (o GetHostGroupRuleContainerRuleKubernetesRuleOutput) WorkloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRule) string { return v.WorkloadType }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs and GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput)
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray and GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray{ GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs{...} }
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray []GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag {
+		return vs[0].([]GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTag)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs and GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray and GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray{ GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs{...} }
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray []GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs and GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray and GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray{ GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs{...} }
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray []GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs and GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray and GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray{ GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs{...} }
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray []GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs and GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput)
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray and GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray{ GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs{...} }
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray []GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex {
+		return vs[0].([]GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTag struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleLabelTagInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs and GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleLabelTagInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs{...}
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTagInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput)
+}
+
+// GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput is an input type that accepts GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray and GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput` via:
+//
+//	GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray{ GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs{...} }
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput
+	ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(context.Context) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray []GetHostGroupRuleContainerRuleKubernetesRuleLabelTagInput
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return i.ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleLabelTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleContainerRuleKubernetesRuleLabelTag) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleContainerRuleKubernetesRuleLabelTag)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput() GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) ToGetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutputWithContext(ctx context.Context) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleContainerRuleKubernetesRuleLabelTag {
+		return vs[0].([]GetHostGroupRuleContainerRuleKubernetesRuleLabelTag)[vs[1].(int)]
+	}).(GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput)
+}
+
+type GetHostGroupRuleExcludePath struct {
+	// Collection path type. File: file name. Path: directory.
+	Type string `pulumi:"type"`
+	// Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+	Value string `pulumi:"value"`
+}
+
+// GetHostGroupRuleExcludePathInput is an input type that accepts GetHostGroupRuleExcludePathArgs and GetHostGroupRuleExcludePathOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleExcludePathInput` via:
+//
+//	GetHostGroupRuleExcludePathArgs{...}
+type GetHostGroupRuleExcludePathInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleExcludePathOutput() GetHostGroupRuleExcludePathOutput
+	ToGetHostGroupRuleExcludePathOutputWithContext(context.Context) GetHostGroupRuleExcludePathOutput
+}
+
+type GetHostGroupRuleExcludePathArgs struct {
+	// Collection path type. File: file name. Path: directory.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetHostGroupRuleExcludePathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleExcludePathArgs) ToGetHostGroupRuleExcludePathOutput() GetHostGroupRuleExcludePathOutput {
+	return i.ToGetHostGroupRuleExcludePathOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleExcludePathArgs) ToGetHostGroupRuleExcludePathOutputWithContext(ctx context.Context) GetHostGroupRuleExcludePathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleExcludePathOutput)
+}
+
+// GetHostGroupRuleExcludePathArrayInput is an input type that accepts GetHostGroupRuleExcludePathArray and GetHostGroupRuleExcludePathArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleExcludePathArrayInput` via:
+//
+//	GetHostGroupRuleExcludePathArray{ GetHostGroupRuleExcludePathArgs{...} }
+type GetHostGroupRuleExcludePathArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleExcludePathArrayOutput() GetHostGroupRuleExcludePathArrayOutput
+	ToGetHostGroupRuleExcludePathArrayOutputWithContext(context.Context) GetHostGroupRuleExcludePathArrayOutput
+}
+
+type GetHostGroupRuleExcludePathArray []GetHostGroupRuleExcludePathInput
+
+func (GetHostGroupRuleExcludePathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleExcludePathArray) ToGetHostGroupRuleExcludePathArrayOutput() GetHostGroupRuleExcludePathArrayOutput {
+	return i.ToGetHostGroupRuleExcludePathArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleExcludePathArray) ToGetHostGroupRuleExcludePathArrayOutputWithContext(ctx context.Context) GetHostGroupRuleExcludePathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleExcludePathArrayOutput)
+}
+
+type GetHostGroupRuleExcludePathOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleExcludePathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleExcludePathOutput) ToGetHostGroupRuleExcludePathOutput() GetHostGroupRuleExcludePathOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExcludePathOutput) ToGetHostGroupRuleExcludePathOutputWithContext(ctx context.Context) GetHostGroupRuleExcludePathOutput {
+	return o
+}
+
+// Collection path type. File: file name. Path: directory.
+func (o GetHostGroupRuleExcludePathOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExcludePath) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Collection path. Must be specified as an absolute path. When Type is Path, Value indicates a directory. When Type is File, Value indicates a file name.
+func (o GetHostGroupRuleExcludePathOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExcludePath) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleExcludePathArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleExcludePathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleExcludePath)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleExcludePathArrayOutput) ToGetHostGroupRuleExcludePathArrayOutput() GetHostGroupRuleExcludePathArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExcludePathArrayOutput) ToGetHostGroupRuleExcludePathArrayOutputWithContext(ctx context.Context) GetHostGroupRuleExcludePathArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExcludePathArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleExcludePathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleExcludePath {
+		return vs[0].([]GetHostGroupRuleExcludePath)[vs[1].(int)]
+	}).(GetHostGroupRuleExcludePathOutput)
+}
+
+type GetHostGroupRuleExtractRule struct {
+	// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+	BeginRegex string `pulumi:"beginRegex"`
+	// Log delimiter. Valid only when LogType is delimiter_log.
+	Delimiter string `pulumi:"delimiter"`
+	// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+	EnableNanosecond bool `pulumi:"enableNanosecond"`
+	// Filter rule list.
+	FilterKeyRegexes []GetHostGroupRuleExtractRuleFilterKeyRegex `pulumi:"filterKeyRegexes"`
+	// List of log field names (Keys).
+	Keys []string `pulumi:"keys"`
+	// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+	LogRegex string `pulumi:"logRegex"`
+	// Automatically extract log fields based on the specified log template.
+	LogTemplate GetHostGroupRuleExtractRuleLogTemplate `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+	Quote string `pulumi:"quote"`
+	// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+	TimeExtractRegex string `pulumi:"timeExtractRegex"`
+	// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeFormat string `pulumi:"timeFormat"`
+	// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeKey string `pulumi:"timeKey"`
+	// Sample time. Used to verify whether the specified time parsing format is correct.
+	TimeSample string `pulumi:"timeSample"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+	TimeZone string `pulumi:"timeZone"`
+	// Key name for logs that failed to parse when uploading
+	UnMatchLogKey string `pulumi:"unMatchLogKey"`
+	// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch bool `pulumi:"unMatchUpLoadSwitch"`
+}
+
+// GetHostGroupRuleExtractRuleInput is an input type that accepts GetHostGroupRuleExtractRuleArgs and GetHostGroupRuleExtractRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleExtractRuleInput` via:
+//
+//	GetHostGroupRuleExtractRuleArgs{...}
+type GetHostGroupRuleExtractRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleExtractRuleOutput() GetHostGroupRuleExtractRuleOutput
+	ToGetHostGroupRuleExtractRuleOutputWithContext(context.Context) GetHostGroupRuleExtractRuleOutput
+}
+
+type GetHostGroupRuleExtractRuleArgs struct {
+	// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+	BeginRegex pulumi.StringInput `pulumi:"beginRegex"`
+	// Log delimiter. Valid only when LogType is delimiter_log.
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+	EnableNanosecond pulumi.BoolInput `pulumi:"enableNanosecond"`
+	// Filter rule list.
+	FilterKeyRegexes GetHostGroupRuleExtractRuleFilterKeyRegexArrayInput `pulumi:"filterKeyRegexes"`
+	// List of log field names (Keys).
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+	LogRegex pulumi.StringInput `pulumi:"logRegex"`
+	// Automatically extract log fields based on the specified log template.
+	LogTemplate GetHostGroupRuleExtractRuleLogTemplateInput `pulumi:"logTemplate"`
+	// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+	Quote pulumi.StringInput `pulumi:"quote"`
+	// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+	TimeExtractRegex pulumi.StringInput `pulumi:"timeExtractRegex"`
+	// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+	TimeKey pulumi.StringInput `pulumi:"timeKey"`
+	// Sample time. Used to verify whether the specified time parsing format is correct.
+	TimeSample pulumi.StringInput `pulumi:"timeSample"`
+	// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// Key name for logs that failed to parse when uploading
+	UnMatchLogKey pulumi.StringInput `pulumi:"unMatchLogKey"`
+	// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+	UnMatchUpLoadSwitch pulumi.BoolInput `pulumi:"unMatchUpLoadSwitch"`
+}
+
+func (GetHostGroupRuleExtractRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExtractRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleExtractRuleArgs) ToGetHostGroupRuleExtractRuleOutput() GetHostGroupRuleExtractRuleOutput {
+	return i.ToGetHostGroupRuleExtractRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleExtractRuleArgs) ToGetHostGroupRuleExtractRuleOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleExtractRuleOutput)
+}
+
+type GetHostGroupRuleExtractRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleExtractRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExtractRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleExtractRuleOutput) ToGetHostGroupRuleExtractRuleOutput() GetHostGroupRuleExtractRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExtractRuleOutput) ToGetHostGroupRuleExtractRuleOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleOutput {
+	return o
+}
+
+// The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
+func (o GetHostGroupRuleExtractRuleOutput) BeginRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.BeginRegex }).(pulumi.StringOutput)
+}
+
+// Log delimiter. Valid only when LogType is delimiter_log.
+func (o GetHostGroupRuleExtractRuleOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
+func (o GetHostGroupRuleExtractRuleOutput) EnableNanosecond() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) bool { return v.EnableNanosecond }).(pulumi.BoolOutput)
+}
+
+// Filter rule list.
+func (o GetHostGroupRuleExtractRuleOutput) FilterKeyRegexes() GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) []GetHostGroupRuleExtractRuleFilterKeyRegex {
+		return v.FilterKeyRegexes
+	}).(GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+// List of log field names (Keys).
+func (o GetHostGroupRuleExtractRuleOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) []string { return v.Keys }).(pulumi.StringArrayOutput)
+}
+
+// The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
+func (o GetHostGroupRuleExtractRuleOutput) LogRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.LogRegex }).(pulumi.StringOutput)
+}
+
+// Automatically extract log fields based on the specified log template.
+func (o GetHostGroupRuleExtractRuleOutput) LogTemplate() GetHostGroupRuleExtractRuleLogTemplateOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) GetHostGroupRuleExtractRuleLogTemplate { return v.LogTemplate }).(GetHostGroupRuleExtractRuleLogTemplateOutput)
+}
+
+// Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
+func (o GetHostGroupRuleExtractRuleOutput) Quote() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.Quote }).(pulumi.StringOutput)
+}
+
+// Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
+func (o GetHostGroupRuleExtractRuleOutput) TimeExtractRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.TimeExtractRegex }).(pulumi.StringOutput)
+}
+
+// Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+func (o GetHostGroupRuleExtractRuleOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.TimeFormat }).(pulumi.StringOutput)
+}
+
+// Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
+func (o GetHostGroupRuleExtractRuleOutput) TimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.TimeKey }).(pulumi.StringOutput)
+}
+
+// Sample time. Used to verify whether the specified time parsing format is correct.
+func (o GetHostGroupRuleExtractRuleOutput) TimeSample() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.TimeSample }).(pulumi.StringOutput)
+}
+
+// Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
+func (o GetHostGroupRuleExtractRuleOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// Key name for logs that failed to parse when uploading
+func (o GetHostGroupRuleExtractRuleOutput) UnMatchLogKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) string { return v.UnMatchLogKey }).(pulumi.StringOutput)
+}
+
+// Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
+func (o GetHostGroupRuleExtractRuleOutput) UnMatchUpLoadSwitch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRule) bool { return v.UnMatchUpLoadSwitch }).(pulumi.BoolOutput)
+}
+
+type GetHostGroupRuleExtractRuleFilterKeyRegex struct {
+	// Name of the filter field.
+	Key string `pulumi:"key"`
+	// The log content of the filter field must match the specified regular expression.
+	Regex string `pulumi:"regex"`
+}
+
+// GetHostGroupRuleExtractRuleFilterKeyRegexInput is an input type that accepts GetHostGroupRuleExtractRuleFilterKeyRegexArgs and GetHostGroupRuleExtractRuleFilterKeyRegexOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleExtractRuleFilterKeyRegexInput` via:
+//
+//	GetHostGroupRuleExtractRuleFilterKeyRegexArgs{...}
+type GetHostGroupRuleExtractRuleFilterKeyRegexInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleExtractRuleFilterKeyRegexOutput() GetHostGroupRuleExtractRuleFilterKeyRegexOutput
+	ToGetHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(context.Context) GetHostGroupRuleExtractRuleFilterKeyRegexOutput
+}
+
+type GetHostGroupRuleExtractRuleFilterKeyRegexArgs struct {
+	// Name of the filter field.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The log content of the filter field must match the specified regular expression.
+	Regex pulumi.StringInput `pulumi:"regex"`
+}
+
+func (GetHostGroupRuleExtractRuleFilterKeyRegexArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleExtractRuleFilterKeyRegexArgs) ToGetHostGroupRuleExtractRuleFilterKeyRegexOutput() GetHostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return i.ToGetHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleExtractRuleFilterKeyRegexArgs) ToGetHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleExtractRuleFilterKeyRegexOutput)
+}
+
+// GetHostGroupRuleExtractRuleFilterKeyRegexArrayInput is an input type that accepts GetHostGroupRuleExtractRuleFilterKeyRegexArray and GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleExtractRuleFilterKeyRegexArrayInput` via:
+//
+//	GetHostGroupRuleExtractRuleFilterKeyRegexArray{ GetHostGroupRuleExtractRuleFilterKeyRegexArgs{...} }
+type GetHostGroupRuleExtractRuleFilterKeyRegexArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput() GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput
+	ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Context) GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput
+}
+
+type GetHostGroupRuleExtractRuleFilterKeyRegexArray []GetHostGroupRuleExtractRuleFilterKeyRegexInput
+
+func (GetHostGroupRuleExtractRuleFilterKeyRegexArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleExtractRuleFilterKeyRegexArray) ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput() GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return i.ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleExtractRuleFilterKeyRegexArray) ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput)
+}
+
+type GetHostGroupRuleExtractRuleFilterKeyRegexOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleExtractRuleFilterKeyRegexOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexOutput) ToGetHostGroupRuleExtractRuleFilterKeyRegexOutput() GetHostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexOutput) ToGetHostGroupRuleExtractRuleFilterKeyRegexOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return o
+}
+
+// Name of the filter field.
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRuleFilterKeyRegex) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The log content of the filter field must match the specified regular expression.
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexOutput) Regex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRuleFilterKeyRegex) string { return v.Regex }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleExtractRuleFilterKeyRegex)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput) ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput() GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput) ToGetHostGroupRuleExtractRuleFilterKeyRegexArrayOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleExtractRuleFilterKeyRegexOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleExtractRuleFilterKeyRegex {
+		return vs[0].([]GetHostGroupRuleExtractRuleFilterKeyRegex)[vs[1].(int)]
+	}).(GetHostGroupRuleExtractRuleFilterKeyRegexOutput)
+}
+
+type GetHostGroupRuleExtractRuleLogTemplate struct {
+	// Log template format
+	Format string `pulumi:"format"`
+	// Log template type. Supported types: Nginx (Nginx log template type).
+	Type string `pulumi:"type"`
+}
+
+// GetHostGroupRuleExtractRuleLogTemplateInput is an input type that accepts GetHostGroupRuleExtractRuleLogTemplateArgs and GetHostGroupRuleExtractRuleLogTemplateOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleExtractRuleLogTemplateInput` via:
+//
+//	GetHostGroupRuleExtractRuleLogTemplateArgs{...}
+type GetHostGroupRuleExtractRuleLogTemplateInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleExtractRuleLogTemplateOutput() GetHostGroupRuleExtractRuleLogTemplateOutput
+	ToGetHostGroupRuleExtractRuleLogTemplateOutputWithContext(context.Context) GetHostGroupRuleExtractRuleLogTemplateOutput
+}
+
+type GetHostGroupRuleExtractRuleLogTemplateArgs struct {
+	// Log template format
+	Format pulumi.StringInput `pulumi:"format"`
+	// Log template type. Supported types: Nginx (Nginx log template type).
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetHostGroupRuleExtractRuleLogTemplateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleExtractRuleLogTemplateArgs) ToGetHostGroupRuleExtractRuleLogTemplateOutput() GetHostGroupRuleExtractRuleLogTemplateOutput {
+	return i.ToGetHostGroupRuleExtractRuleLogTemplateOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleExtractRuleLogTemplateArgs) ToGetHostGroupRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleLogTemplateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleExtractRuleLogTemplateOutput)
+}
+
+type GetHostGroupRuleExtractRuleLogTemplateOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleExtractRuleLogTemplateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleExtractRuleLogTemplate)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleExtractRuleLogTemplateOutput) ToGetHostGroupRuleExtractRuleLogTemplateOutput() GetHostGroupRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+func (o GetHostGroupRuleExtractRuleLogTemplateOutput) ToGetHostGroupRuleExtractRuleLogTemplateOutputWithContext(ctx context.Context) GetHostGroupRuleExtractRuleLogTemplateOutput {
+	return o
+}
+
+// Log template format
+func (o GetHostGroupRuleExtractRuleLogTemplateOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRuleLogTemplate) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// Log template type. Supported types: Nginx (Nginx log template type).
+func (o GetHostGroupRuleExtractRuleLogTemplateOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleExtractRuleLogTemplate) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleUserDefineRule struct {
+	// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+	Advanced GetHostGroupRuleUserDefineRuleAdvanced `pulumi:"advanced"`
+	// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+	EnableHostGroupLabel bool `pulumi:"enableHostGroupLabel"`
+	// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+	EnableHostname bool `pulumi:"enableHostname"`
+	// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+	EnableRawLog bool `pulumi:"enableRawLog"`
+	// Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+	Fields []GetHostGroupRuleUserDefineRuleField `pulumi:"fields"`
+	// Field name used to store machine group label information.
+	HostGroupLabelKey string `pulumi:"hostGroupLabelKey"`
+	// hostname field name. Only required when EnableHostname is set to true.
+	HostnameKey string `pulumi:"hostnameKey"`
+	// Ignore log files that have not been updated for a specified duration, in hours.
+	IgnoreOlder int `pulumi:"ignoreOlder"`
+	// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+	MultiCollectsType string `pulumi:"multiCollectsType"`
+	// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+	ParsePathRule GetHostGroupRuleUserDefineRuleParsePathRule `pulumi:"parsePathRule"`
+	// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+	Plugin GetHostGroupRuleUserDefineRulePlugin `pulumi:"plugin"`
+	// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+	RawLogKey string `pulumi:"rawLogKey"`
+	// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+	ShardHashKey GetHostGroupRuleUserDefineRuleShardHashKey `pulumi:"shardHashKey"`
+	// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+	TailFiles bool `pulumi:"tailFiles"`
+	// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+	TailSizeKb int `pulumi:"tailSizeKb"`
+}
+
+// GetHostGroupRuleUserDefineRuleInput is an input type that accepts GetHostGroupRuleUserDefineRuleArgs and GetHostGroupRuleUserDefineRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRuleInput` via:
+//
+//	GetHostGroupRuleUserDefineRuleArgs{...}
+type GetHostGroupRuleUserDefineRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRuleOutput() GetHostGroupRuleUserDefineRuleOutput
+	ToGetHostGroupRuleUserDefineRuleOutputWithContext(context.Context) GetHostGroupRuleUserDefineRuleOutput
+}
+
+type GetHostGroupRuleUserDefineRuleArgs struct {
+	// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+	Advanced GetHostGroupRuleUserDefineRuleAdvancedInput `pulumi:"advanced"`
+	// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+	EnableHostGroupLabel pulumi.BoolInput `pulumi:"enableHostGroupLabel"`
+	// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+	EnableHostname pulumi.BoolInput `pulumi:"enableHostname"`
+	// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+	EnableRawLog pulumi.BoolInput `pulumi:"enableRawLog"`
+	// Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+	Fields GetHostGroupRuleUserDefineRuleFieldArrayInput `pulumi:"fields"`
+	// Field name used to store machine group label information.
+	HostGroupLabelKey pulumi.StringInput `pulumi:"hostGroupLabelKey"`
+	// hostname field name. Only required when EnableHostname is set to true.
+	HostnameKey pulumi.StringInput `pulumi:"hostnameKey"`
+	// Ignore log files that have not been updated for a specified duration, in hours.
+	IgnoreOlder pulumi.IntInput `pulumi:"ignoreOlder"`
+	// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+	MultiCollectsType pulumi.StringInput `pulumi:"multiCollectsType"`
+	// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+	ParsePathRule GetHostGroupRuleUserDefineRuleParsePathRuleInput `pulumi:"parsePathRule"`
+	// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+	Plugin GetHostGroupRuleUserDefineRulePluginInput `pulumi:"plugin"`
+	// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+	RawLogKey pulumi.StringInput `pulumi:"rawLogKey"`
+	// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+	ShardHashKey GetHostGroupRuleUserDefineRuleShardHashKeyInput `pulumi:"shardHashKey"`
+	// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+	TailFiles pulumi.BoolInput `pulumi:"tailFiles"`
+	// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+	TailSizeKb pulumi.IntInput `pulumi:"tailSizeKb"`
+}
+
+func (GetHostGroupRuleUserDefineRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRuleArgs) ToGetHostGroupRuleUserDefineRuleOutput() GetHostGroupRuleUserDefineRuleOutput {
+	return i.ToGetHostGroupRuleUserDefineRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRuleArgs) ToGetHostGroupRuleUserDefineRuleOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRuleOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRuleOutput) ToGetHostGroupRuleUserDefineRuleOutput() GetHostGroupRuleUserDefineRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleOutput) ToGetHostGroupRuleUserDefineRuleOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleOutput {
+	return o
+}
+
+// Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
+func (o GetHostGroupRuleUserDefineRuleOutput) Advanced() GetHostGroupRuleUserDefineRuleAdvancedOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) GetHostGroupRuleUserDefineRuleAdvanced { return v.Advanced }).(GetHostGroupRuleUserDefineRuleAdvancedOutput)
+}
+
+// Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
+func (o GetHostGroupRuleUserDefineRuleOutput) EnableHostGroupLabel() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) bool { return v.EnableHostGroupLabel }).(pulumi.BoolOutput)
+}
+
+// Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source's hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
+func (o GetHostGroupRuleUserDefineRuleOutput) EnableHostname() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) bool { return v.EnableHostname }).(pulumi.BoolOutput)
+}
+
+// Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
+func (o GetHostGroupRuleUserDefineRuleOutput) EnableRawLog() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) bool { return v.EnableRawLog }).(pulumi.BoolOutput)
+}
+
+// Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+func (o GetHostGroupRuleUserDefineRuleOutput) Fields() GetHostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) []GetHostGroupRuleUserDefineRuleField { return v.Fields }).(GetHostGroupRuleUserDefineRuleFieldArrayOutput)
+}
+
+// Field name used to store machine group label information.
+func (o GetHostGroupRuleUserDefineRuleOutput) HostGroupLabelKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) string { return v.HostGroupLabelKey }).(pulumi.StringOutput)
+}
+
+// hostname field name. Only required when EnableHostname is set to true.
+func (o GetHostGroupRuleUserDefineRuleOutput) HostnameKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) string { return v.HostnameKey }).(pulumi.StringOutput)
+}
+
+// Ignore log files that have not been updated for a specified duration, in hours.
+func (o GetHostGroupRuleUserDefineRuleOutput) IgnoreOlder() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) int { return v.IgnoreOlder }).(pulumi.IntOutput)
+}
+
+// Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
+func (o GetHostGroupRuleUserDefineRuleOutput) MultiCollectsType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) string { return v.MultiCollectsType }).(pulumi.StringOutput)
+}
+
+// Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
+func (o GetHostGroupRuleUserDefineRuleOutput) ParsePathRule() GetHostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) GetHostGroupRuleUserDefineRuleParsePathRule {
+		return v.ParsePathRule
+	}).(GetHostGroupRuleUserDefineRuleParsePathRuleOutput)
+}
+
+// LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
+func (o GetHostGroupRuleUserDefineRuleOutput) Plugin() GetHostGroupRuleUserDefineRulePluginOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) GetHostGroupRuleUserDefineRulePlugin { return v.Plugin }).(GetHostGroupRuleUserDefineRulePluginOutput)
+}
+
+// Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
+func (o GetHostGroupRuleUserDefineRuleOutput) RawLogKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) string { return v.RawLogKey }).(pulumi.StringOutput)
+}
+
+// Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
+func (o GetHostGroupRuleUserDefineRuleOutput) ShardHashKey() GetHostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) GetHostGroupRuleUserDefineRuleShardHashKey {
+		return v.ShardHashKey
+	}).(GetHostGroupRuleUserDefineRuleShardHashKeyOutput)
+}
+
+// LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
+func (o GetHostGroupRuleUserDefineRuleOutput) TailFiles() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) bool { return v.TailFiles }).(pulumi.BoolOutput)
+}
+
+// Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
+func (o GetHostGroupRuleUserDefineRuleOutput) TailSizeKb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRule) int { return v.TailSizeKb }).(pulumi.IntOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleAdvanced struct {
+	// After reading to the end of the log file, whether to release the file handle. Default is false.
+	CloseEof bool `pulumi:"closeEof"`
+	// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+	CloseInactive int `pulumi:"closeInactive"`
+	// Whether to release the handle of the log file after it is removed. Default is false.
+	CloseRemoved bool `pulumi:"closeRemoved"`
+	// Whether to release the handle of the log file after it is renamed. Default is false.
+	CloseRenamed bool `pulumi:"closeRenamed"`
+	// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+	CloseTimeout int `pulumi:"closeTimeout"`
+	// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+	NoLineTerminatorEofMaxTime int `pulumi:"noLineTerminatorEofMaxTime"`
+}
+
+// GetHostGroupRuleUserDefineRuleAdvancedInput is an input type that accepts GetHostGroupRuleUserDefineRuleAdvancedArgs and GetHostGroupRuleUserDefineRuleAdvancedOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRuleAdvancedInput` via:
+//
+//	GetHostGroupRuleUserDefineRuleAdvancedArgs{...}
+type GetHostGroupRuleUserDefineRuleAdvancedInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRuleAdvancedOutput() GetHostGroupRuleUserDefineRuleAdvancedOutput
+	ToGetHostGroupRuleUserDefineRuleAdvancedOutputWithContext(context.Context) GetHostGroupRuleUserDefineRuleAdvancedOutput
+}
+
+type GetHostGroupRuleUserDefineRuleAdvancedArgs struct {
+	// After reading to the end of the log file, whether to release the file handle. Default is false.
+	CloseEof pulumi.BoolInput `pulumi:"closeEof"`
+	// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+	CloseInactive pulumi.IntInput `pulumi:"closeInactive"`
+	// Whether to release the handle of the log file after it is removed. Default is false.
+	CloseRemoved pulumi.BoolInput `pulumi:"closeRemoved"`
+	// Whether to release the handle of the log file after it is renamed. Default is false.
+	CloseRenamed pulumi.BoolInput `pulumi:"closeRenamed"`
+	// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+	CloseTimeout pulumi.IntInput `pulumi:"closeTimeout"`
+	// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+	NoLineTerminatorEofMaxTime pulumi.IntInput `pulumi:"noLineTerminatorEofMaxTime"`
+}
+
+func (GetHostGroupRuleUserDefineRuleAdvancedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleAdvanced)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRuleAdvancedArgs) ToGetHostGroupRuleUserDefineRuleAdvancedOutput() GetHostGroupRuleUserDefineRuleAdvancedOutput {
+	return i.ToGetHostGroupRuleUserDefineRuleAdvancedOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRuleAdvancedArgs) ToGetHostGroupRuleUserDefineRuleAdvancedOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleAdvancedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRuleAdvancedOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleAdvancedOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRuleAdvancedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleAdvanced)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) ToGetHostGroupRuleUserDefineRuleAdvancedOutput() GetHostGroupRuleUserDefineRuleAdvancedOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) ToGetHostGroupRuleUserDefineRuleAdvancedOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleAdvancedOutput {
+	return o
+}
+
+// After reading to the end of the log file, whether to release the file handle. Default is false.
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) CloseEof() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleAdvanced) bool { return v.CloseEof }).(pulumi.BoolOutput)
+}
+
+// Wait time before releasing log file handles. If no new logs are written to a log file for the specified duration, the handle for that log file is released. Unit: seconds. Range: 1–300 seconds. Default: 60 seconds.
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) CloseInactive() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleAdvanced) int { return v.CloseInactive }).(pulumi.IntOutput)
+}
+
+// Whether to release the handle of the log file after it is removed. Default is false.
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) CloseRemoved() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleAdvanced) bool { return v.CloseRemoved }).(pulumi.BoolOutput)
+}
+
+// Whether to release the handle of the log file after it is renamed. Default is false.
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) CloseRenamed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleAdvanced) bool { return v.CloseRenamed }).(pulumi.BoolOutput)
+}
+
+// Maximum duration for LogCollector to monitor log files, in seconds. The default is 0 seconds, meaning LogCollector does not limit the monitoring duration. Timing starts when LogCollector begins monitoring the log file. After the specified duration is exceeded, regardless of whether the log file has been fully read, LogCollector immediately releases the file handle and stops monitoring.
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) CloseTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleAdvanced) int { return v.CloseTimeout }).(pulumi.IntOutput)
+}
+
+// Maximum wait time when LogCollector does not read a line break. Unit: seconds. Default: 5s. LogCollector starts timing when it begins reading log file content. If no line break is read within the specified time, it will send the buffered logs. If the file write interval is large, a complete log entry may be split into two parts and written separately. Adjust this parameter based on your log write interval.
+func (o GetHostGroupRuleUserDefineRuleAdvancedOutput) NoLineTerminatorEofMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleAdvanced) int { return v.NoLineTerminatorEofMaxTime }).(pulumi.IntOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleField struct {
+	// Key.
+	Key string `pulumi:"key"`
+	// Value.
+	Val string `pulumi:"val"`
+}
+
+// GetHostGroupRuleUserDefineRuleFieldInput is an input type that accepts GetHostGroupRuleUserDefineRuleFieldArgs and GetHostGroupRuleUserDefineRuleFieldOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRuleFieldInput` via:
+//
+//	GetHostGroupRuleUserDefineRuleFieldArgs{...}
+type GetHostGroupRuleUserDefineRuleFieldInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRuleFieldOutput() GetHostGroupRuleUserDefineRuleFieldOutput
+	ToGetHostGroupRuleUserDefineRuleFieldOutputWithContext(context.Context) GetHostGroupRuleUserDefineRuleFieldOutput
+}
+
+type GetHostGroupRuleUserDefineRuleFieldArgs struct {
+	// Key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value.
+	Val pulumi.StringInput `pulumi:"val"`
+}
+
+func (GetHostGroupRuleUserDefineRuleFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRuleFieldArgs) ToGetHostGroupRuleUserDefineRuleFieldOutput() GetHostGroupRuleUserDefineRuleFieldOutput {
+	return i.ToGetHostGroupRuleUserDefineRuleFieldOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRuleFieldArgs) ToGetHostGroupRuleUserDefineRuleFieldOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRuleFieldOutput)
+}
+
+// GetHostGroupRuleUserDefineRuleFieldArrayInput is an input type that accepts GetHostGroupRuleUserDefineRuleFieldArray and GetHostGroupRuleUserDefineRuleFieldArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRuleFieldArrayInput` via:
+//
+//	GetHostGroupRuleUserDefineRuleFieldArray{ GetHostGroupRuleUserDefineRuleFieldArgs{...} }
+type GetHostGroupRuleUserDefineRuleFieldArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRuleFieldArrayOutput() GetHostGroupRuleUserDefineRuleFieldArrayOutput
+	ToGetHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(context.Context) GetHostGroupRuleUserDefineRuleFieldArrayOutput
+}
+
+type GetHostGroupRuleUserDefineRuleFieldArray []GetHostGroupRuleUserDefineRuleFieldInput
+
+func (GetHostGroupRuleUserDefineRuleFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRuleFieldArray) ToGetHostGroupRuleUserDefineRuleFieldArrayOutput() GetHostGroupRuleUserDefineRuleFieldArrayOutput {
+	return i.ToGetHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRuleFieldArray) ToGetHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRuleFieldArrayOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleFieldOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRuleFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRuleFieldOutput) ToGetHostGroupRuleUserDefineRuleFieldOutput() GetHostGroupRuleUserDefineRuleFieldOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleFieldOutput) ToGetHostGroupRuleUserDefineRuleFieldOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleFieldOutput {
+	return o
+}
+
+// Key.
+func (o GetHostGroupRuleUserDefineRuleFieldOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleField) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value.
+func (o GetHostGroupRuleUserDefineRuleFieldOutput) Val() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleField) string { return v.Val }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRuleFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRuleUserDefineRuleField)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRuleFieldArrayOutput) ToGetHostGroupRuleUserDefineRuleFieldArrayOutput() GetHostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleFieldArrayOutput) ToGetHostGroupRuleUserDefineRuleFieldArrayOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleFieldArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleFieldArrayOutput) Index(i pulumi.IntInput) GetHostGroupRuleUserDefineRuleFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRuleUserDefineRuleField {
+		return vs[0].([]GetHostGroupRuleUserDefineRuleField)[vs[1].(int)]
+	}).(GetHostGroupRuleUserDefineRuleFieldOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleParsePathRule struct {
+	// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+	Keys []string `pulumi:"keys"`
+	// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+	PathSample string `pulumi:"pathSample"`
+	// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+	Regex string `pulumi:"regex"`
+}
+
+// GetHostGroupRuleUserDefineRuleParsePathRuleInput is an input type that accepts GetHostGroupRuleUserDefineRuleParsePathRuleArgs and GetHostGroupRuleUserDefineRuleParsePathRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRuleParsePathRuleInput` via:
+//
+//	GetHostGroupRuleUserDefineRuleParsePathRuleArgs{...}
+type GetHostGroupRuleUserDefineRuleParsePathRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRuleParsePathRuleOutput() GetHostGroupRuleUserDefineRuleParsePathRuleOutput
+	ToGetHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(context.Context) GetHostGroupRuleUserDefineRuleParsePathRuleOutput
+}
+
+type GetHostGroupRuleUserDefineRuleParsePathRuleArgs struct {
+	// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+	PathSample pulumi.StringInput `pulumi:"pathSample"`
+	// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+	Regex pulumi.StringInput `pulumi:"regex"`
+}
+
+func (GetHostGroupRuleUserDefineRuleParsePathRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleParsePathRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRuleParsePathRuleArgs) ToGetHostGroupRuleUserDefineRuleParsePathRuleOutput() GetHostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return i.ToGetHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRuleParsePathRuleArgs) ToGetHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRuleParsePathRuleOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleParsePathRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRuleParsePathRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleParsePathRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRuleParsePathRuleOutput) ToGetHostGroupRuleUserDefineRuleParsePathRuleOutput() GetHostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleParsePathRuleOutput) ToGetHostGroupRuleUserDefineRuleParsePathRuleOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleParsePathRuleOutput {
+	return o
+}
+
+// List of field names. Log Service parses PathSample into multiple fields using regular expressions (Regex). Keys specify the name of each field. You can configure up to 100 field names. Field names cannot be empty or duplicated.
+func (o GetHostGroupRuleUserDefineRuleParsePathRuleOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleParsePathRule) []string { return v.Keys }).(pulumi.StringArrayOutput)
+}
+
+// Sample collection path for actual scenarios. The sample path must be an absolute path. Wildcards *, ?, ** are not allowed in the sample path.
+func (o GetHostGroupRuleUserDefineRuleParsePathRuleOutput) PathSample() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleParsePathRule) string { return v.PathSample }).(pulumi.StringOutput)
+}
+
+// Regular expression used to extract the path field. It must match the example collection path; otherwise, extraction will fail.
+func (o GetHostGroupRuleUserDefineRuleParsePathRuleOutput) Regex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleParsePathRule) string { return v.Regex }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleUserDefineRulePlugin struct {
+	// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+	Processors string `pulumi:"processors"`
+}
+
+// GetHostGroupRuleUserDefineRulePluginInput is an input type that accepts GetHostGroupRuleUserDefineRulePluginArgs and GetHostGroupRuleUserDefineRulePluginOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRulePluginInput` via:
+//
+//	GetHostGroupRuleUserDefineRulePluginArgs{...}
+type GetHostGroupRuleUserDefineRulePluginInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRulePluginOutput() GetHostGroupRuleUserDefineRulePluginOutput
+	ToGetHostGroupRuleUserDefineRulePluginOutputWithContext(context.Context) GetHostGroupRuleUserDefineRulePluginOutput
+}
+
+type GetHostGroupRuleUserDefineRulePluginArgs struct {
+	// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+	Processors pulumi.StringInput `pulumi:"processors"`
+}
+
+func (GetHostGroupRuleUserDefineRulePluginArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRulePlugin)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRulePluginArgs) ToGetHostGroupRuleUserDefineRulePluginOutput() GetHostGroupRuleUserDefineRulePluginOutput {
+	return i.ToGetHostGroupRuleUserDefineRulePluginOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRulePluginArgs) ToGetHostGroupRuleUserDefineRulePluginOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRulePluginOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRulePluginOutput)
+}
+
+type GetHostGroupRuleUserDefineRulePluginOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRulePluginOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRulePlugin)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRulePluginOutput) ToGetHostGroupRuleUserDefineRulePluginOutput() GetHostGroupRuleUserDefineRulePluginOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRulePluginOutput) ToGetHostGroupRuleUserDefineRulePluginOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRulePluginOutput {
+	return o
+}
+
+// LogCollector plugins. For supported plugin lists and parameter descriptions, see LogCollector plugin overview.
+func (o GetHostGroupRuleUserDefineRulePluginOutput) Processors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRulePlugin) string { return v.Processors }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleShardHashKey struct {
+	// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+	HashKey string `pulumi:"hashKey"`
+}
+
+// GetHostGroupRuleUserDefineRuleShardHashKeyInput is an input type that accepts GetHostGroupRuleUserDefineRuleShardHashKeyArgs and GetHostGroupRuleUserDefineRuleShardHashKeyOutput values.
+// You can construct a concrete instance of `GetHostGroupRuleUserDefineRuleShardHashKeyInput` via:
+//
+//	GetHostGroupRuleUserDefineRuleShardHashKeyArgs{...}
+type GetHostGroupRuleUserDefineRuleShardHashKeyInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRuleUserDefineRuleShardHashKeyOutput() GetHostGroupRuleUserDefineRuleShardHashKeyOutput
+	ToGetHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(context.Context) GetHostGroupRuleUserDefineRuleShardHashKeyOutput
+}
+
+type GetHostGroupRuleUserDefineRuleShardHashKeyArgs struct {
+	// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+	HashKey pulumi.StringInput `pulumi:"hashKey"`
+}
+
+func (GetHostGroupRuleUserDefineRuleShardHashKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleShardHashKey)(nil)).Elem()
+}
+
+func (i GetHostGroupRuleUserDefineRuleShardHashKeyArgs) ToGetHostGroupRuleUserDefineRuleShardHashKeyOutput() GetHostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return i.ToGetHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRuleUserDefineRuleShardHashKeyArgs) ToGetHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRuleUserDefineRuleShardHashKeyOutput)
+}
+
+type GetHostGroupRuleUserDefineRuleShardHashKeyOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRuleUserDefineRuleShardHashKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRuleUserDefineRuleShardHashKey)(nil)).Elem()
+}
+
+func (o GetHostGroupRuleUserDefineRuleShardHashKeyOutput) ToGetHostGroupRuleUserDefineRuleShardHashKeyOutput() GetHostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return o
+}
+
+func (o GetHostGroupRuleUserDefineRuleShardHashKeyOutput) ToGetHostGroupRuleUserDefineRuleShardHashKeyOutputWithContext(ctx context.Context) GetHostGroupRuleUserDefineRuleShardHashKeyOutput {
+	return o
+}
+
+// The HashKey of the log group specifies the shard where the current log group will be written. The valid range for this parameter is [00000000000000000000000000000000-ffffffffffffffffffffffffffffffff).
+func (o GetHostGroupRuleUserDefineRuleShardHashKeyOutput) HashKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRuleUserDefineRuleShardHashKey) string { return v.HashKey }).(pulumi.StringOutput)
+}
+
 type GetImportTaskImportSourceInfo struct {
 	// Kafka data source information. When sourceType is kafka, the KafkaSourceInfo field is required
 	KafkaSourceInfo GetImportTaskImportSourceInfoKafkaSourceInfo `pulumi:"kafkaSourceInfo"`
@@ -18154,6 +25021,56 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmRequestCyclePtrInput)(nil)).Elem(), AlarmRequestCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionInput)(nil)).Elem(), AlarmTriggerConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionArrayInput)(nil)).Elem(), AlarmTriggerConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EtlTargetResourceInput)(nil)).Elem(), EtlTargetResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EtlTargetResourceArrayInput)(nil)).Elem(), EtlTargetResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleInput)(nil)).Elem(), HostGroupRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleArrayInput)(nil)).Elem(), HostGroupRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleInput)(nil)).Elem(), HostGroupRuleContainerRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRulePtrInput)(nil)).Elem(), HostGroupRuleContainerRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleEnvTagInput)(nil)).Elem(), HostGroupRuleContainerRuleEnvTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleEnvTagArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleEnvTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerEnvRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleExcludeContainerEnvRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleExcludeContainerEnvRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerLabelRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleExcludeContainerLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleExcludeContainerLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerEnvRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleIncludeContainerEnvRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleIncludeContainerEnvRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerLabelRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleIncludeContainerLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleIncludeContainerLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRulePtrInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleLabelTagInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleLabelTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput)(nil)).Elem(), HostGroupRuleContainerRuleKubernetesRuleLabelTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExcludePathInput)(nil)).Elem(), HostGroupRuleExcludePathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExcludePathArrayInput)(nil)).Elem(), HostGroupRuleExcludePathArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExtractRuleInput)(nil)).Elem(), HostGroupRuleExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExtractRulePtrInput)(nil)).Elem(), HostGroupRuleExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExtractRuleFilterKeyRegexInput)(nil)).Elem(), HostGroupRuleExtractRuleFilterKeyRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExtractRuleFilterKeyRegexArrayInput)(nil)).Elem(), HostGroupRuleExtractRuleFilterKeyRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExtractRuleLogTemplateInput)(nil)).Elem(), HostGroupRuleExtractRuleLogTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleExtractRuleLogTemplatePtrInput)(nil)).Elem(), HostGroupRuleExtractRuleLogTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleInput)(nil)).Elem(), HostGroupRuleUserDefineRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRulePtrInput)(nil)).Elem(), HostGroupRuleUserDefineRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleAdvancedInput)(nil)).Elem(), HostGroupRuleUserDefineRuleAdvancedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleAdvancedPtrInput)(nil)).Elem(), HostGroupRuleUserDefineRuleAdvancedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleFieldInput)(nil)).Elem(), HostGroupRuleUserDefineRuleFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleFieldArrayInput)(nil)).Elem(), HostGroupRuleUserDefineRuleFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleParsePathRuleInput)(nil)).Elem(), HostGroupRuleUserDefineRuleParsePathRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleParsePathRulePtrInput)(nil)).Elem(), HostGroupRuleUserDefineRuleParsePathRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRulePluginInput)(nil)).Elem(), HostGroupRuleUserDefineRulePluginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRulePluginPtrInput)(nil)).Elem(), HostGroupRuleUserDefineRulePluginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleShardHashKeyInput)(nil)).Elem(), HostGroupRuleUserDefineRuleShardHashKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleUserDefineRuleShardHashKeyPtrInput)(nil)).Elem(), HostGroupRuleUserDefineRuleShardHashKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoPtrInput)(nil)).Elem(), ImportTaskImportSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportTaskImportSourceInfoKafkaSourceInfoInput)(nil)).Elem(), ImportTaskImportSourceInfoKafkaSourceInfoArgs{})
@@ -18284,6 +25201,47 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmRequestCycleInput)(nil)).Elem(), GetAlarmRequestCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionInput)(nil)).Elem(), GetAlarmTriggerConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionArrayInput)(nil)).Elem(), GetAlarmTriggerConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEtlTargetResourceInput)(nil)).Elem(), GetEtlTargetResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEtlTargetResourceArrayInput)(nil)).Elem(), GetEtlTargetResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleInput)(nil)).Elem(), GetHostGroupRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleArrayInput)(nil)).Elem(), GetHostGroupRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleInput)(nil)).Elem(), GetHostGroupRuleContainerRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleEnvTagInput)(nil)).Elem(), GetHostGroupRuleContainerRuleEnvTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleEnvTagArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleEnvTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerEnvRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerLabelRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerEnvRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerLabelRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleLabelTagInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayInput)(nil)).Elem(), GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleExcludePathInput)(nil)).Elem(), GetHostGroupRuleExcludePathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleExcludePathArrayInput)(nil)).Elem(), GetHostGroupRuleExcludePathArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleExtractRuleInput)(nil)).Elem(), GetHostGroupRuleExtractRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleExtractRuleFilterKeyRegexInput)(nil)).Elem(), GetHostGroupRuleExtractRuleFilterKeyRegexArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleExtractRuleFilterKeyRegexArrayInput)(nil)).Elem(), GetHostGroupRuleExtractRuleFilterKeyRegexArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleExtractRuleLogTemplateInput)(nil)).Elem(), GetHostGroupRuleExtractRuleLogTemplateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRuleInput)(nil)).Elem(), GetHostGroupRuleUserDefineRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRuleAdvancedInput)(nil)).Elem(), GetHostGroupRuleUserDefineRuleAdvancedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRuleFieldInput)(nil)).Elem(), GetHostGroupRuleUserDefineRuleFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRuleFieldArrayInput)(nil)).Elem(), GetHostGroupRuleUserDefineRuleFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRuleParsePathRuleInput)(nil)).Elem(), GetHostGroupRuleUserDefineRuleParsePathRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRulePluginInput)(nil)).Elem(), GetHostGroupRuleUserDefineRulePluginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleUserDefineRuleShardHashKeyInput)(nil)).Elem(), GetHostGroupRuleUserDefineRuleShardHashKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoKafkaSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoKafkaSourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportTaskImportSourceInfoTosSourceInfoInput)(nil)).Elem(), GetImportTaskImportSourceInfoTosSourceInfoArgs{})
@@ -18378,6 +25336,56 @@ func init() {
 	pulumi.RegisterOutputType(AlarmRequestCyclePtrOutput{})
 	pulumi.RegisterOutputType(AlarmTriggerConditionOutput{})
 	pulumi.RegisterOutputType(AlarmTriggerConditionArrayOutput{})
+	pulumi.RegisterOutputType(EtlTargetResourceOutput{})
+	pulumi.RegisterOutputType(EtlTargetResourceArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRulePtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleEnvTagOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleEnvTagArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleExcludeContainerEnvRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleExcludeContainerLabelRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleIncludeContainerEnvRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleIncludeContainerLabelRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRulePtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleLabelTagOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExcludePathOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExcludePathArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExtractRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExtractRulePtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExtractRuleFilterKeyRegexOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExtractRuleFilterKeyRegexArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExtractRuleLogTemplateOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleExtractRuleLogTemplatePtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRulePtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleAdvancedOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleAdvancedPtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleFieldOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleFieldArrayOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleParsePathRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleParsePathRulePtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRulePluginOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRulePluginPtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleShardHashKeyOutput{})
+	pulumi.RegisterOutputType(HostGroupRuleUserDefineRuleShardHashKeyPtrOutput{})
 	pulumi.RegisterOutputType(ImportTaskImportSourceInfoOutput{})
 	pulumi.RegisterOutputType(ImportTaskImportSourceInfoPtrOutput{})
 	pulumi.RegisterOutputType(ImportTaskImportSourceInfoKafkaSourceInfoOutput{})
@@ -18508,6 +25516,47 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmRequestCycleOutput{})
 	pulumi.RegisterOutputType(GetAlarmTriggerConditionOutput{})
 	pulumi.RegisterOutputType(GetAlarmTriggerConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetEtlTargetResourceOutput{})
+	pulumi.RegisterOutputType(GetEtlTargetResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleEnvTagOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleEnvTagArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleExcludeContainerEnvRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleExcludeContainerEnvRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleExcludeContainerLabelRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleExcludeContainerLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleIncludeContainerEnvRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleIncludeContainerEnvRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleIncludeContainerLabelRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleIncludeContainerLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleAnnotationTagArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleExcludePodLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleIncludePodLabelRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleLabelTagOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleContainerRuleKubernetesRuleLabelTagArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleExcludePathOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleExcludePathArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleExtractRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleExtractRuleFilterKeyRegexOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleExtractRuleFilterKeyRegexArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleExtractRuleLogTemplateOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRuleAdvancedOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRuleFieldOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRuleFieldArrayOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRuleParsePathRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRulePluginOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRuleUserDefineRuleShardHashKeyOutput{})
 	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoOutput{})
 	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoKafkaSourceInfoOutput{})
 	pulumi.RegisterOutputType(GetImportTaskImportSourceInfoTosSourceInfoOutput{})

@@ -12,6 +12,8 @@ import com.byteplus.bytepluscc.cr.inputs.GetRegistryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRegistryPlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryPlainArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetVpcEndpointArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetVpcEndpointPlainArgs;
 import com.byteplus.bytepluscc.cr.outputs.GetEndpointAclPoliciesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetEndpointAclPolicyResult;
 import com.byteplus.bytepluscc.cr.outputs.GetNameSpaceResult;
@@ -20,6 +22,8 @@ import com.byteplus.bytepluscc.cr.outputs.GetRegistriesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRegistryResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRepositoriesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRepositoryResult;
+import com.byteplus.bytepluscc.cr.outputs.GetVpcEndpointResult;
+import com.byteplus.bytepluscc.cr.outputs.GetVpcEndpointsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -364,5 +368,89 @@ public final class CrFunctions {
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:cr/getRepository:getRepository", TypeShape.of(GetRepositoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointResult> getVpcEndpoint(GetVpcEndpointArgs args) {
+        return getVpcEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointResult> getVpcEndpointPlain(GetVpcEndpointPlainArgs args) {
+        return getVpcEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointResult> getVpcEndpoint(GetVpcEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getVpcEndpoint:getVpcEndpoint", TypeShape.of(GetVpcEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointResult> getVpcEndpoint(GetVpcEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getVpcEndpoint:getVpcEndpoint", TypeShape.of(GetVpcEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointResult> getVpcEndpointPlain(GetVpcEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getVpcEndpoint:getVpcEndpoint", TypeShape.of(GetVpcEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints() {
+        return getVpcEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointsResult> getVpcEndpointsPlain() {
+        return getVpcEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints(InvokeArgs args) {
+        return getVpcEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointsResult> getVpcEndpointsPlain(InvokeArgs args) {
+        return getVpcEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getVpcEndpoints:getVpcEndpoints", TypeShape.of(GetVpcEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static Output<GetVpcEndpointsResult> getVpcEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getVpcEndpoints:getVpcEndpoints", TypeShape.of(GetVpcEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::VpcEndpoint
+     * 
+     */
+    public static CompletableFuture<GetVpcEndpointsResult> getVpcEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getVpcEndpoints:getVpcEndpoints", TypeShape.of(GetVpcEndpointsResult.class), args, Utilities.withVersion(options));
     }
 }

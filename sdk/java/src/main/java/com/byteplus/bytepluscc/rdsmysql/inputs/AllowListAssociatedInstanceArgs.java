@@ -5,7 +5,6 @@ package com.byteplus.bytepluscc.rdsmysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,74 +30,10 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.instanceId);
     }
 
-    /**
-     * Instance name bound to the current allowlist.
-     * 
-     */
-    @Import(name="instanceName")
-    private @Nullable Output<String> instanceName;
-
-    /**
-     * @return Instance name bound to the current allowlist.
-     * 
-     */
-    public Optional<Output<String>> instanceName() {
-        return Optional.ofNullable(this.instanceName);
-    }
-
-    /**
-     * Instance status.
-     * 
-     */
-    @Import(name="instanceStatus")
-    private @Nullable Output<String> instanceStatus;
-
-    /**
-     * @return Instance status.
-     * 
-     */
-    public Optional<Output<String>> instanceStatus() {
-        return Optional.ofNullable(this.instanceStatus);
-    }
-
-    /**
-     * Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-     * 
-     */
-    @Import(name="isLatest")
-    private @Nullable Output<Boolean> isLatest;
-
-    /**
-     * @return Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-     * 
-     */
-    public Optional<Output<Boolean>> isLatest() {
-        return Optional.ofNullable(this.isLatest);
-    }
-
-    /**
-     * Private network ID of the instance.
-     * 
-     */
-    @Import(name="vpc")
-    private @Nullable Output<String> vpc;
-
-    /**
-     * @return Private network ID of the instance.
-     * 
-     */
-    public Optional<Output<String>> vpc() {
-        return Optional.ofNullable(this.vpc);
-    }
-
     private AllowListAssociatedInstanceArgs() {}
 
     private AllowListAssociatedInstanceArgs(AllowListAssociatedInstanceArgs $) {
         this.instanceId = $.instanceId;
-        this.instanceName = $.instanceName;
-        this.instanceStatus = $.instanceStatus;
-        this.isLatest = $.isLatest;
-        this.vpc = $.vpc;
     }
 
     public static Builder builder() {
@@ -138,90 +73,6 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
-        }
-
-        /**
-         * @param instanceName Instance name bound to the current allowlist.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceName(@Nullable Output<String> instanceName) {
-            $.instanceName = instanceName;
-            return this;
-        }
-
-        /**
-         * @param instanceName Instance name bound to the current allowlist.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceName(String instanceName) {
-            return instanceName(Output.of(instanceName));
-        }
-
-        /**
-         * @param instanceStatus Instance status.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceStatus(@Nullable Output<String> instanceStatus) {
-            $.instanceStatus = instanceStatus;
-            return this;
-        }
-
-        /**
-         * @param instanceStatus Instance status.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder instanceStatus(String instanceStatus) {
-            return instanceStatus(Output.of(instanceStatus));
-        }
-
-        /**
-         * @param isLatest Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isLatest(@Nullable Output<Boolean> isLatest) {
-            $.isLatest = isLatest;
-            return this;
-        }
-
-        /**
-         * @param isLatest Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isLatest(Boolean isLatest) {
-            return isLatest(Output.of(isLatest));
-        }
-
-        /**
-         * @param vpc Private network ID of the instance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpc(@Nullable Output<String> vpc) {
-            $.vpc = vpc;
-            return this;
-        }
-
-        /**
-         * @param vpc Private network ID of the instance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpc(String vpc) {
-            return vpc(Output.of(vpc));
         }
 
         public AllowListAssociatedInstanceArgs build() {

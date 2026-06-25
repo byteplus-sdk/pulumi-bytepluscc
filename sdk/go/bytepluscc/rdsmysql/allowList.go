@@ -176,7 +176,8 @@ type allowListArgs struct {
 	// IP address list in the allowlist
 	AllowLists []string `pulumi:"allowLists"`
 	// Total number of instances bound to the allowlist.
-	AssociatedInstanceNum *int `pulumi:"associatedInstanceNum"`
+	AssociatedInstanceNum *int                          `pulumi:"associatedInstanceNum"`
+	AssociatedInstances   []AllowListAssociatedInstance `pulumi:"associatedInstances"`
 	// Ignore instance status check. Values: true: Yes. false: No. Default value.
 	IgnoreInstanceStatus *bool `pulumi:"ignoreInstanceStatus"`
 	// Instance ID.
@@ -208,6 +209,7 @@ type AllowListArgs struct {
 	AllowLists pulumi.StringArrayInput
 	// Total number of instances bound to the allowlist.
 	AssociatedInstanceNum pulumi.IntPtrInput
+	AssociatedInstances   AllowListAssociatedInstanceArrayInput
 	// Ignore instance status check. Values: true: Yes. false: No. Default value.
 	IgnoreInstanceStatus pulumi.BoolPtrInput
 	// Instance ID.

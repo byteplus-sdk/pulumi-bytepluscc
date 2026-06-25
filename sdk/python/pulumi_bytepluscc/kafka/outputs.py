@@ -17,12 +17,14 @@ from .. import _utilities
 
 __all__ = [
     'AllowListAssociatedInstance',
+    'GroupTag',
     'InstanceChargeInfo',
     'InstanceConnectionInfo',
     'InstanceTag',
     'TopicAccessPolicy',
     'TopicTag',
     'GetAllowListAssociatedInstanceResult',
+    'GetGroupTagResult',
     'GetInstanceChargeInfoResult',
     'GetInstanceConnectionInfoResult',
     'GetInstanceTagResult',
@@ -64,6 +66,37 @@ class AllowListAssociatedInstance(dict):
         ID of the instance bound to the allowlist
         """
         return pulumi.get(self, "instance_id")
+
+
+@pulumi.output_type
+class GroupTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -429,6 +462,35 @@ class GetAllowListAssociatedInstanceResult(dict):
         Name of the instance bound to the allowlist
         """
         return pulumi.get(self, "instance_name")
+
+
+@pulumi.output_type
+class GetGroupTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.rdsmysql;
 
+import com.byteplus.bytepluscc.rdsmysql.inputs.AllowListAssociatedInstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.AllowListSecurityGroupBindInfoArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -107,6 +108,13 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> associatedInstanceNum() {
         return Optional.ofNullable(this.associatedInstanceNum);
+    }
+
+    @Import(name="associatedInstances")
+    private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
+
+    public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
+        return Optional.ofNullable(this.associatedInstances);
     }
 
     /**
@@ -230,6 +238,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         this.allowListType = $.allowListType;
         this.allowLists = $.allowLists;
         this.associatedInstanceNum = $.associatedInstanceNum;
+        this.associatedInstances = $.associatedInstances;
         this.ignoreInstanceStatus = $.ignoreInstanceStatus;
         this.instanceId = $.instanceId;
         this.modifyMode = $.modifyMode;
@@ -392,6 +401,19 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder associatedInstanceNum(Integer associatedInstanceNum) {
             return associatedInstanceNum(Output.of(associatedInstanceNum));
+        }
+
+        public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
+            $.associatedInstances = associatedInstances;
+            return this;
+        }
+
+        public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
+            return associatedInstances(Output.of(associatedInstances));
+        }
+
+        public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
+            return associatedInstances(List.of(associatedInstances));
         }
 
         /**
