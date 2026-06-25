@@ -10,10 +10,25 @@ export type Backup = import("./backup").Backup;
 export const Backup: typeof import("./backup").Backup = null as any;
 utilities.lazyLoad(exports, ["Backup"], () => require("./backup"));
 
+export { BackupScheduleArgs, BackupScheduleState } from "./backupSchedule";
+export type BackupSchedule = import("./backupSchedule").BackupSchedule;
+export const BackupSchedule: typeof import("./backupSchedule").BackupSchedule = null as any;
+utilities.lazyLoad(exports, ["BackupSchedule"], () => require("./backupSchedule"));
+
 export { GetBackupArgs, GetBackupResult, GetBackupOutputArgs } from "./getBackup";
 export const getBackup: typeof import("./getBackup").getBackup = null as any;
 export const getBackupOutput: typeof import("./getBackup").getBackupOutput = null as any;
 utilities.lazyLoad(exports, ["getBackup","getBackupOutput"], () => require("./getBackup"));
+
+export { GetBackupScheduleArgs, GetBackupScheduleResult, GetBackupScheduleOutputArgs } from "./getBackupSchedule";
+export const getBackupSchedule: typeof import("./getBackupSchedule").getBackupSchedule = null as any;
+export const getBackupScheduleOutput: typeof import("./getBackupSchedule").getBackupScheduleOutput = null as any;
+utilities.lazyLoad(exports, ["getBackupSchedule","getBackupScheduleOutput"], () => require("./getBackupSchedule"));
+
+export { GetBackupSchedulesResult } from "./getBackupSchedules";
+export const getBackupSchedules: typeof import("./getBackupSchedules").getBackupSchedules = null as any;
+export const getBackupSchedulesOutput: typeof import("./getBackupSchedules").getBackupSchedulesOutput = null as any;
+utilities.lazyLoad(exports, ["getBackupSchedules","getBackupSchedulesOutput"], () => require("./getBackupSchedules"));
 
 export { GetBackupsResult } from "./getBackups";
 export const getBackups: typeof import("./getBackups").getBackups = null as any;
@@ -57,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:dns/backup:Backup":
                 return new Backup(name, <any>undefined, { urn })
+            case "bytepluscc:dns/backupSchedule:BackupSchedule":
+                return new BackupSchedule(name, <any>undefined, { urn })
             case "bytepluscc:dns/record:Record":
                 return new Record(name, <any>undefined, { urn })
             case "bytepluscc:dns/zone:Zone":
@@ -67,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "dns/backup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "dns/backupSchedule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "dns/record", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "dns/zone", _module)

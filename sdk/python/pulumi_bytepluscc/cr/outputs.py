@@ -22,11 +22,13 @@ __all__ = [
     'RegistryProxyCache',
     'RegistryStatus',
     'RegistryTag',
+    'VpcEndpointVpc',
     'GetRegistryEndpointResult',
     'GetRegistryEndpointAclPolicyResult',
     'GetRegistryProxyCacheResult',
     'GetRegistryStatusResult',
     'GetRegistryTagResult',
+    'GetVpcEndpointVpcResult',
 ]
 
 @pulumi.output_type
@@ -198,6 +200,70 @@ class RegistryTag(dict):
 
 
 @pulumi.output_type
+class VpcEndpointVpc(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accountId":
+            suggest = "account_id"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "vpcId":
+            suggest = "vpc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VpcEndpointVpc. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VpcEndpointVpc.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VpcEndpointVpc.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 account_id: Optional[builtins.int] = None,
+                 subnet_id: Optional[builtins.str] = None,
+                 vpc_id: Optional[builtins.str] = None):
+        """
+        :param builtins.int account_id: Primary account ID for the VPC
+        :param builtins.str subnet_id: Subnet ID
+        :param builtins.str vpc_id: VPC ID。
+        """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[builtins.int]:
+        """
+        Primary account ID for the VPC
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[builtins.str]:
+        """
+        VPC ID。
+        """
+        return pulumi.get(self, "vpc_id")
+
+
+@pulumi.output_type
 class GetRegistryEndpointResult(dict):
     def __init__(__self__, *,
                  acl_policies: Sequence['outputs.GetRegistryEndpointAclPolicyResult'],
@@ -340,5 +406,89 @@ class GetRegistryTagResult(dict):
         List of tag values
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVpcEndpointVpcResult(dict):
+    def __init__(__self__, *,
+                 account_id: builtins.int,
+                 create_time: builtins.str,
+                 ip: builtins.str,
+                 region: builtins.str,
+                 status: builtins.str,
+                 subnet_id: builtins.str,
+                 vpc_id: builtins.str):
+        """
+        :param builtins.int account_id: Primary account ID for the VPC
+        :param builtins.str create_time: Creation time
+        :param builtins.str ip: IP address of the image repository within the VPC
+        :param builtins.str region: VPC region
+        :param builtins.str status: Access endpoint status: Enabling: in progress. Enabled: enabled. Disabling: in progress. Failed: failed.
+        :param builtins.str subnet_id: Subnet ID
+        :param builtins.str vpc_id: VPC ID。
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> builtins.int:
+        """
+        Primary account ID for the VPC
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        Creation time
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        IP address of the image repository within the VPC
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        VPC region
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        Access endpoint status: Enabling: in progress. Enabled: enabled. Disabling: in progress. Failed: failed.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> builtins.str:
+        """
+        VPC ID。
+        """
+        return pulumi.get(self, "vpc_id")
 
 

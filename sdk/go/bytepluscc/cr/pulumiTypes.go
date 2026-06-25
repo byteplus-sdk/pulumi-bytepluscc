@@ -689,6 +689,121 @@ func (o RegistryTagArrayOutput) Index(i pulumi.IntInput) RegistryTagOutput {
 	}).(RegistryTagOutput)
 }
 
+type VpcEndpointVpc struct {
+	// Primary account ID for the VPC
+	AccountId *int `pulumi:"accountId"`
+	// Subnet ID
+	SubnetId *string `pulumi:"subnetId"`
+	// VPC ID。
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// VpcEndpointVpcInput is an input type that accepts VpcEndpointVpcArgs and VpcEndpointVpcOutput values.
+// You can construct a concrete instance of `VpcEndpointVpcInput` via:
+//
+//	VpcEndpointVpcArgs{...}
+type VpcEndpointVpcInput interface {
+	pulumi.Input
+
+	ToVpcEndpointVpcOutput() VpcEndpointVpcOutput
+	ToVpcEndpointVpcOutputWithContext(context.Context) VpcEndpointVpcOutput
+}
+
+type VpcEndpointVpcArgs struct {
+	// Primary account ID for the VPC
+	AccountId pulumi.IntPtrInput `pulumi:"accountId"`
+	// Subnet ID
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// VPC ID。
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (VpcEndpointVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointVpc)(nil)).Elem()
+}
+
+func (i VpcEndpointVpcArgs) ToVpcEndpointVpcOutput() VpcEndpointVpcOutput {
+	return i.ToVpcEndpointVpcOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointVpcArgs) ToVpcEndpointVpcOutputWithContext(ctx context.Context) VpcEndpointVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointVpcOutput)
+}
+
+// VpcEndpointVpcArrayInput is an input type that accepts VpcEndpointVpcArray and VpcEndpointVpcArrayOutput values.
+// You can construct a concrete instance of `VpcEndpointVpcArrayInput` via:
+//
+//	VpcEndpointVpcArray{ VpcEndpointVpcArgs{...} }
+type VpcEndpointVpcArrayInput interface {
+	pulumi.Input
+
+	ToVpcEndpointVpcArrayOutput() VpcEndpointVpcArrayOutput
+	ToVpcEndpointVpcArrayOutputWithContext(context.Context) VpcEndpointVpcArrayOutput
+}
+
+type VpcEndpointVpcArray []VpcEndpointVpcInput
+
+func (VpcEndpointVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointVpc)(nil)).Elem()
+}
+
+func (i VpcEndpointVpcArray) ToVpcEndpointVpcArrayOutput() VpcEndpointVpcArrayOutput {
+	return i.ToVpcEndpointVpcArrayOutputWithContext(context.Background())
+}
+
+func (i VpcEndpointVpcArray) ToVpcEndpointVpcArrayOutputWithContext(ctx context.Context) VpcEndpointVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcEndpointVpcArrayOutput)
+}
+
+type VpcEndpointVpcOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcEndpointVpc)(nil)).Elem()
+}
+
+func (o VpcEndpointVpcOutput) ToVpcEndpointVpcOutput() VpcEndpointVpcOutput {
+	return o
+}
+
+func (o VpcEndpointVpcOutput) ToVpcEndpointVpcOutputWithContext(ctx context.Context) VpcEndpointVpcOutput {
+	return o
+}
+
+// Primary account ID for the VPC
+func (o VpcEndpointVpcOutput) AccountId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpcEndpointVpc) *int { return v.AccountId }).(pulumi.IntPtrOutput)
+}
+
+// Subnet ID
+func (o VpcEndpointVpcOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointVpc) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// VPC ID。
+func (o VpcEndpointVpcOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcEndpointVpc) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type VpcEndpointVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcEndpointVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcEndpointVpc)(nil)).Elem()
+}
+
+func (o VpcEndpointVpcArrayOutput) ToVpcEndpointVpcArrayOutput() VpcEndpointVpcArrayOutput {
+	return o
+}
+
+func (o VpcEndpointVpcArrayOutput) ToVpcEndpointVpcArrayOutputWithContext(ctx context.Context) VpcEndpointVpcArrayOutput {
+	return o
+}
+
+func (o VpcEndpointVpcArrayOutput) Index(i pulumi.IntInput) VpcEndpointVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcEndpointVpc {
+		return vs[0].([]VpcEndpointVpc)[vs[1].(int)]
+	}).(VpcEndpointVpcOutput)
+}
+
 type GetRegistryEndpoint struct {
 	// Public IP allowlist
 	AclPolicies []GetRegistryEndpointAclPolicy `pulumi:"aclPolicies"`
@@ -1084,6 +1199,157 @@ func (o GetRegistryTagArrayOutput) Index(i pulumi.IntInput) GetRegistryTagOutput
 	}).(GetRegistryTagOutput)
 }
 
+type GetVpcEndpointVpc struct {
+	// Primary account ID for the VPC
+	AccountId int `pulumi:"accountId"`
+	// Creation time
+	CreateTime string `pulumi:"createTime"`
+	// IP address of the image repository within the VPC
+	Ip string `pulumi:"ip"`
+	// VPC region
+	Region string `pulumi:"region"`
+	// Access endpoint status: Enabling: in progress. Enabled: enabled. Disabling: in progress. Failed: failed.
+	Status string `pulumi:"status"`
+	// Subnet ID
+	SubnetId string `pulumi:"subnetId"`
+	// VPC ID。
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetVpcEndpointVpcInput is an input type that accepts GetVpcEndpointVpcArgs and GetVpcEndpointVpcOutput values.
+// You can construct a concrete instance of `GetVpcEndpointVpcInput` via:
+//
+//	GetVpcEndpointVpcArgs{...}
+type GetVpcEndpointVpcInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointVpcOutput() GetVpcEndpointVpcOutput
+	ToGetVpcEndpointVpcOutputWithContext(context.Context) GetVpcEndpointVpcOutput
+}
+
+type GetVpcEndpointVpcArgs struct {
+	// Primary account ID for the VPC
+	AccountId pulumi.IntInput `pulumi:"accountId"`
+	// Creation time
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// IP address of the image repository within the VPC
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// VPC region
+	Region pulumi.StringInput `pulumi:"region"`
+	// Access endpoint status: Enabling: in progress. Enabled: enabled. Disabling: in progress. Failed: failed.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Subnet ID
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// VPC ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetVpcEndpointVpcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointVpc)(nil)).Elem()
+}
+
+func (i GetVpcEndpointVpcArgs) ToGetVpcEndpointVpcOutput() GetVpcEndpointVpcOutput {
+	return i.ToGetVpcEndpointVpcOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointVpcArgs) ToGetVpcEndpointVpcOutputWithContext(ctx context.Context) GetVpcEndpointVpcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointVpcOutput)
+}
+
+// GetVpcEndpointVpcArrayInput is an input type that accepts GetVpcEndpointVpcArray and GetVpcEndpointVpcArrayOutput values.
+// You can construct a concrete instance of `GetVpcEndpointVpcArrayInput` via:
+//
+//	GetVpcEndpointVpcArray{ GetVpcEndpointVpcArgs{...} }
+type GetVpcEndpointVpcArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcEndpointVpcArrayOutput() GetVpcEndpointVpcArrayOutput
+	ToGetVpcEndpointVpcArrayOutputWithContext(context.Context) GetVpcEndpointVpcArrayOutput
+}
+
+type GetVpcEndpointVpcArray []GetVpcEndpointVpcInput
+
+func (GetVpcEndpointVpcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointVpc)(nil)).Elem()
+}
+
+func (i GetVpcEndpointVpcArray) ToGetVpcEndpointVpcArrayOutput() GetVpcEndpointVpcArrayOutput {
+	return i.ToGetVpcEndpointVpcArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcEndpointVpcArray) ToGetVpcEndpointVpcArrayOutputWithContext(ctx context.Context) GetVpcEndpointVpcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcEndpointVpcArrayOutput)
+}
+
+type GetVpcEndpointVpcOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointVpcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcEndpointVpc)(nil)).Elem()
+}
+
+func (o GetVpcEndpointVpcOutput) ToGetVpcEndpointVpcOutput() GetVpcEndpointVpcOutput {
+	return o
+}
+
+func (o GetVpcEndpointVpcOutput) ToGetVpcEndpointVpcOutputWithContext(ctx context.Context) GetVpcEndpointVpcOutput {
+	return o
+}
+
+// Primary account ID for the VPC
+func (o GetVpcEndpointVpcOutput) AccountId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) int { return v.AccountId }).(pulumi.IntOutput)
+}
+
+// Creation time
+func (o GetVpcEndpointVpcOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// IP address of the image repository within the VPC
+func (o GetVpcEndpointVpcOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// VPC region
+func (o GetVpcEndpointVpcOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Access endpoint status: Enabling: in progress. Enabled: enabled. Disabling: in progress. Failed: failed.
+func (o GetVpcEndpointVpcOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Subnet ID
+func (o GetVpcEndpointVpcOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// VPC ID。
+func (o GetVpcEndpointVpcOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcEndpointVpc) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetVpcEndpointVpcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcEndpointVpcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcEndpointVpc)(nil)).Elem()
+}
+
+func (o GetVpcEndpointVpcArrayOutput) ToGetVpcEndpointVpcArrayOutput() GetVpcEndpointVpcArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointVpcArrayOutput) ToGetVpcEndpointVpcArrayOutputWithContext(ctx context.Context) GetVpcEndpointVpcArrayOutput {
+	return o
+}
+
+func (o GetVpcEndpointVpcArrayOutput) Index(i pulumi.IntInput) GetVpcEndpointVpcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcEndpointVpc {
+		return vs[0].([]GetVpcEndpointVpc)[vs[1].(int)]
+	}).(GetVpcEndpointVpcOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryEndpointInput)(nil)).Elem(), RegistryEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryEndpointPtrInput)(nil)).Elem(), RegistryEndpointArgs{})
@@ -1095,6 +1361,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryStatusPtrInput)(nil)).Elem(), RegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryTagInput)(nil)).Elem(), RegistryTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryTagArrayInput)(nil)).Elem(), RegistryTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointVpcInput)(nil)).Elem(), VpcEndpointVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointVpcArrayInput)(nil)).Elem(), VpcEndpointVpcArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointInput)(nil)).Elem(), GetRegistryEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointAclPolicyInput)(nil)).Elem(), GetRegistryEndpointAclPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointAclPolicyArrayInput)(nil)).Elem(), GetRegistryEndpointAclPolicyArray{})
@@ -1102,6 +1370,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryStatusInput)(nil)).Elem(), GetRegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryTagInput)(nil)).Elem(), GetRegistryTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryTagArrayInput)(nil)).Elem(), GetRegistryTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointVpcInput)(nil)).Elem(), GetVpcEndpointVpcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointVpcArrayInput)(nil)).Elem(), GetVpcEndpointVpcArray{})
 	pulumi.RegisterOutputType(RegistryEndpointOutput{})
 	pulumi.RegisterOutputType(RegistryEndpointPtrOutput{})
 	pulumi.RegisterOutputType(RegistryEndpointAclPolicyOutput{})
@@ -1112,6 +1382,8 @@ func init() {
 	pulumi.RegisterOutputType(RegistryStatusPtrOutput{})
 	pulumi.RegisterOutputType(RegistryTagOutput{})
 	pulumi.RegisterOutputType(RegistryTagArrayOutput{})
+	pulumi.RegisterOutputType(VpcEndpointVpcOutput{})
+	pulumi.RegisterOutputType(VpcEndpointVpcArrayOutput{})
 	pulumi.RegisterOutputType(GetRegistryEndpointOutput{})
 	pulumi.RegisterOutputType(GetRegistryEndpointAclPolicyOutput{})
 	pulumi.RegisterOutputType(GetRegistryEndpointAclPolicyArrayOutput{})
@@ -1119,4 +1391,6 @@ func init() {
 	pulumi.RegisterOutputType(GetRegistryStatusOutput{})
 	pulumi.RegisterOutputType(GetRegistryTagOutput{})
 	pulumi.RegisterOutputType(GetRegistryTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointVpcOutput{})
+	pulumi.RegisterOutputType(GetVpcEndpointVpcArrayOutput{})
 }

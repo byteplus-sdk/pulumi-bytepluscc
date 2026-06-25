@@ -5,7 +5,6 @@ package com.byteplus.bytepluscc.rdsmysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,11 +16,6 @@ public final class AllowListSecurityGroupBindInfo {
      * 
      */
     private @Nullable String bindMode;
-    /**
-     * @return Security group IP address list.
-     * 
-     */
-    private @Nullable List<String> ipLists;
     /**
      * @return Security group ID.
      * 
@@ -40,13 +34,6 @@ public final class AllowListSecurityGroupBindInfo {
      */
     public Optional<String> bindMode() {
         return Optional.ofNullable(this.bindMode);
-    }
-    /**
-     * @return Security group IP address list.
-     * 
-     */
-    public List<String> ipLists() {
-        return this.ipLists == null ? List.of() : this.ipLists;
     }
     /**
      * @return Security group ID.
@@ -73,14 +60,12 @@ public final class AllowListSecurityGroupBindInfo {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String bindMode;
-        private @Nullable List<String> ipLists;
         private @Nullable String securityGroupId;
         private @Nullable String securityGroupName;
         public Builder() {}
         public Builder(AllowListSecurityGroupBindInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bindMode = defaults.bindMode;
-    	      this.ipLists = defaults.ipLists;
     	      this.securityGroupId = defaults.securityGroupId;
     	      this.securityGroupName = defaults.securityGroupName;
         }
@@ -90,15 +75,6 @@ public final class AllowListSecurityGroupBindInfo {
 
             this.bindMode = bindMode;
             return this;
-        }
-        @CustomType.Setter
-        public Builder ipLists(@Nullable List<String> ipLists) {
-
-            this.ipLists = ipLists;
-            return this;
-        }
-        public Builder ipLists(String... ipLists) {
-            return ipLists(List.of(ipLists));
         }
         @CustomType.Setter
         public Builder securityGroupId(@Nullable String securityGroupId) {
@@ -115,7 +91,6 @@ public final class AllowListSecurityGroupBindInfo {
         public AllowListSecurityGroupBindInfo build() {
             final var _resultValue = new AllowListSecurityGroupBindInfo();
             _resultValue.bindMode = bindMode;
-            _resultValue.ipLists = ipLists;
             _resultValue.securityGroupId = securityGroupId;
             _resultValue.securityGroupName = securityGroupName;
             return _resultValue;

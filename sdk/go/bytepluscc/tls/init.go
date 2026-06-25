@@ -27,6 +27,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AlarmNotifyGroup{}
 	case "bytepluscc:tls/consumerGroup:ConsumerGroup":
 		r = &ConsumerGroup{}
+	case "bytepluscc:tls/etl:Etl":
+		r = &Etl{}
+	case "bytepluscc:tls/host:Host":
+		r = &Host{}
+	case "bytepluscc:tls/hostGroup:HostGroup":
+		r = &HostGroup{}
 	case "bytepluscc:tls/importTask:ImportTask":
 		r = &ImportTask{}
 	case "bytepluscc:tls/index:Index":
@@ -67,6 +73,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"tls/consumerGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/etl",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/host",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/hostGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

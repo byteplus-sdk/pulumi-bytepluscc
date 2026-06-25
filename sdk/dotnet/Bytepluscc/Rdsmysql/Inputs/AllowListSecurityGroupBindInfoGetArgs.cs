@@ -19,18 +19,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         [Input("bindMode")]
         public Input<string>? BindMode { get; set; }
 
-        [Input("ipLists")]
-        private InputList<string>? _ipLists;
-
-        /// <summary>
-        /// Security group IP address list.
-        /// </summary>
-        public InputList<string> IpLists
-        {
-            get => _ipLists ?? (_ipLists = new InputList<string>());
-            set => _ipLists = value;
-        }
-
         /// <summary>
         /// Security group ID.
         /// </summary>

@@ -20,6 +20,11 @@ export type ConsumerGroup = import("./consumerGroup").ConsumerGroup;
 export const ConsumerGroup: typeof import("./consumerGroup").ConsumerGroup = null as any;
 utilities.lazyLoad(exports, ["ConsumerGroup"], () => require("./consumerGroup"));
 
+export { EtlArgs, EtlState } from "./etl";
+export type Etl = import("./etl").Etl;
+export const Etl: typeof import("./etl").Etl = null as any;
+utilities.lazyLoad(exports, ["Etl"], () => require("./etl"));
+
 export { GetAlarmArgs, GetAlarmResult, GetAlarmOutputArgs } from "./getAlarm";
 export const getAlarm: typeof import("./getAlarm").getAlarm = null as any;
 export const getAlarmOutput: typeof import("./getAlarm").getAlarmOutput = null as any;
@@ -49,6 +54,36 @@ export { GetConsumerGroupsResult } from "./getConsumerGroups";
 export const getConsumerGroups: typeof import("./getConsumerGroups").getConsumerGroups = null as any;
 export const getConsumerGroupsOutput: typeof import("./getConsumerGroups").getConsumerGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getConsumerGroups","getConsumerGroupsOutput"], () => require("./getConsumerGroups"));
+
+export { GetEtlArgs, GetEtlResult, GetEtlOutputArgs } from "./getEtl";
+export const getEtl: typeof import("./getEtl").getEtl = null as any;
+export const getEtlOutput: typeof import("./getEtl").getEtlOutput = null as any;
+utilities.lazyLoad(exports, ["getEtl","getEtlOutput"], () => require("./getEtl"));
+
+export { GetEtlsResult } from "./getEtls";
+export const getEtls: typeof import("./getEtls").getEtls = null as any;
+export const getEtlsOutput: typeof import("./getEtls").getEtlsOutput = null as any;
+utilities.lazyLoad(exports, ["getEtls","getEtlsOutput"], () => require("./getEtls"));
+
+export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
+export const getHost: typeof import("./getHost").getHost = null as any;
+export const getHostOutput: typeof import("./getHost").getHostOutput = null as any;
+utilities.lazyLoad(exports, ["getHost","getHostOutput"], () => require("./getHost"));
+
+export { GetHostGroupArgs, GetHostGroupResult, GetHostGroupOutputArgs } from "./getHostGroup";
+export const getHostGroup: typeof import("./getHostGroup").getHostGroup = null as any;
+export const getHostGroupOutput: typeof import("./getHostGroup").getHostGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getHostGroup","getHostGroupOutput"], () => require("./getHostGroup"));
+
+export { GetHostGroupsResult } from "./getHostGroups";
+export const getHostGroups: typeof import("./getHostGroups").getHostGroups = null as any;
+export const getHostGroupsOutput: typeof import("./getHostGroups").getHostGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getHostGroups","getHostGroupsOutput"], () => require("./getHostGroups"));
+
+export { GetHostsResult } from "./getHosts";
+export const getHosts: typeof import("./getHosts").getHosts = null as any;
+export const getHostsOutput: typeof import("./getHosts").getHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getHosts","getHostsOutput"], () => require("./getHosts"));
 
 export { GetImportTaskArgs, GetImportTaskResult, GetImportTaskOutputArgs } from "./getImportTask";
 export const getImportTask: typeof import("./getImportTask").getImportTask = null as any;
@@ -120,6 +155,16 @@ export const getTopics: typeof import("./getTopics").getTopics = null as any;
 export const getTopicsOutput: typeof import("./getTopics").getTopicsOutput = null as any;
 utilities.lazyLoad(exports, ["getTopics","getTopicsOutput"], () => require("./getTopics"));
 
+export { HostArgs, HostState } from "./host";
+export type Host = import("./host").Host;
+export const Host: typeof import("./host").Host = null as any;
+utilities.lazyLoad(exports, ["Host"], () => require("./host"));
+
+export { HostGroupArgs, HostGroupState } from "./hostGroup";
+export type HostGroup = import("./hostGroup").HostGroup;
+export const HostGroup: typeof import("./hostGroup").HostGroup = null as any;
+utilities.lazyLoad(exports, ["HostGroup"], () => require("./hostGroup"));
+
 export { ImportTaskArgs, ImportTaskState } from "./importTask";
 export type ImportTask = import("./importTask").ImportTask;
 export const ImportTask: typeof import("./importTask").ImportTask = null as any;
@@ -166,6 +211,12 @@ const _module = {
                 return new AlarmNotifyGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/consumerGroup:ConsumerGroup":
                 return new ConsumerGroup(name, <any>undefined, { urn })
+            case "bytepluscc:tls/etl:Etl":
+                return new Etl(name, <any>undefined, { urn })
+            case "bytepluscc:tls/host:Host":
+                return new Host(name, <any>undefined, { urn })
+            case "bytepluscc:tls/hostGroup:HostGroup":
+                return new HostGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/importTask:ImportTask":
                 return new ImportTask(name, <any>undefined, { urn })
             case "bytepluscc:tls/index:Index":
@@ -188,6 +239,9 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarm", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmNotifyGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/etl", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/host", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/hostGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/importTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/index", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/project", _module)

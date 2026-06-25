@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.gtm;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.gtm.inputs.GetGtmArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetGtmPlainArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetPolicyArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GetPolicyPlainArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetPoolArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetPoolPlainArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetRoutingArgs;
@@ -14,6 +16,8 @@ import com.byteplus.bytepluscc.gtm.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GetRulePlainArgs;
 import com.byteplus.bytepluscc.gtm.outputs.GetGtmResult;
 import com.byteplus.bytepluscc.gtm.outputs.GetGtmsResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetPoliciesResult;
+import com.byteplus.bytepluscc.gtm.outputs.GetPolicyResult;
 import com.byteplus.bytepluscc.gtm.outputs.GetPoolResult;
 import com.byteplus.bytepluscc.gtm.outputs.GetPoolsResult;
 import com.byteplus.bytepluscc.gtm.outputs.GetRoutingResult;
@@ -112,6 +116,90 @@ public final class GtmFunctions {
      */
     public static CompletableFuture<GetGtmsResult> getGtmsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getGtms:getGtms", TypeShape.of(GetGtmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPoliciesResult> getPolicies() {
+        return getPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static CompletableFuture<GetPoliciesResult> getPoliciesPlain() {
+        return getPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPoliciesResult> getPolicies(InvokeArgs args) {
+        return getPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(InvokeArgs args) {
+        return getPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPoliciesResult> getPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getPolicies:getPolicies", TypeShape.of(GetPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPoliciesResult> getPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getPolicies:getPolicies", TypeShape.of(GetPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getPolicies:getPolicies", TypeShape.of(GetPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPolicyResult> getPolicy(GetPolicyArgs args) {
+        return getPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static CompletableFuture<GetPolicyResult> getPolicyPlain(GetPolicyPlainArgs args) {
+        return getPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPolicyResult> getPolicy(GetPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getPolicy:getPolicy", TypeShape.of(GetPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static Output<GetPolicyResult> getPolicy(GetPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:gtm/getPolicy:getPolicy", TypeShape.of(GetPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::GTM::Policy
+     * 
+     */
+    public static CompletableFuture<GetPolicyResult> getPolicyPlain(GetPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:gtm/getPolicy:getPolicy", TypeShape.of(GetPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::GTM::Pool

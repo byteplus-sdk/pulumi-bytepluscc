@@ -17,12 +17,16 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'PolicyStatistics',
+    'PolicyTarget',
     'PoolAddress',
     'RulePoolSet',
     'RulePoolSetPool',
     'RulePoolSetPoolAddress',
     'RuleProbe',
     'RuleProbeHttpUsabilityCode',
+    'GetPolicyStatisticsResult',
+    'GetPolicyTargetResult',
     'GetPoolAddressResult',
     'GetRulePoolSetResult',
     'GetRulePoolSetPoolResult',
@@ -30,6 +34,92 @@ __all__ = [
     'GetRuleProbeResult',
     'GetRuleProbeHttpUsabilityCodeResult',
 ]
+
+@pulumi.output_type
+class PolicyStatistics(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activeAddr":
+            suggest = "active_addr"
+        elif key == "inactiveAddr":
+            suggest = "inactive_addr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PolicyStatistics. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PolicyStatistics.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PolicyStatistics.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active_addr: Optional[builtins.int] = None,
+                 inactive_addr: Optional[builtins.int] = None):
+        """
+        :param builtins.int active_addr: Number of available addresses
+        :param builtins.int inactive_addr: Number of unavailable addresses
+        """
+        if active_addr is not None:
+            pulumi.set(__self__, "active_addr", active_addr)
+        if inactive_addr is not None:
+            pulumi.set(__self__, "inactive_addr", inactive_addr)
+
+    @property
+    @pulumi.getter(name="activeAddr")
+    def active_addr(self) -> Optional[builtins.int]:
+        """
+        Number of available addresses
+        """
+        return pulumi.get(self, "active_addr")
+
+    @property
+    @pulumi.getter(name="inactiveAddr")
+    def inactive_addr(self) -> Optional[builtins.int]:
+        """
+        Number of unavailable addresses
+        """
+        return pulumi.get(self, "inactive_addr")
+
+
+@pulumi.output_type
+class PolicyTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "poolId":
+            suggest = "pool_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PolicyTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PolicyTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PolicyTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 pool_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str pool_id: Address pool ID.
+        """
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
+
+    @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[builtins.str]:
+        """
+        Address pool ID.
+        """
+        return pulumi.get(self, "pool_id")
+
 
 @pulumi.output_type
 class PoolAddress(dict):
@@ -613,6 +703,53 @@ class RuleProbeHttpUsabilityCode(dict):
         Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
         """
         return pulumi.get(self, "operator")
+
+
+@pulumi.output_type
+class GetPolicyStatisticsResult(dict):
+    def __init__(__self__, *,
+                 active_addr: builtins.int,
+                 inactive_addr: builtins.int):
+        """
+        :param builtins.int active_addr: Number of available addresses
+        :param builtins.int inactive_addr: Number of unavailable addresses
+        """
+        pulumi.set(__self__, "active_addr", active_addr)
+        pulumi.set(__self__, "inactive_addr", inactive_addr)
+
+    @property
+    @pulumi.getter(name="activeAddr")
+    def active_addr(self) -> builtins.int:
+        """
+        Number of available addresses
+        """
+        return pulumi.get(self, "active_addr")
+
+    @property
+    @pulumi.getter(name="inactiveAddr")
+    def inactive_addr(self) -> builtins.int:
+        """
+        Number of unavailable addresses
+        """
+        return pulumi.get(self, "inactive_addr")
+
+
+@pulumi.output_type
+class GetPolicyTargetResult(dict):
+    def __init__(__self__, *,
+                 pool_id: builtins.str):
+        """
+        :param builtins.str pool_id: Address pool ID.
+        """
+        pulumi.set(__self__, "pool_id", pool_id)
+
+    @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> builtins.str:
+        """
+        Address pool ID.
+        """
+        return pulumi.get(self, "pool_id")
 
 
 @pulumi.output_type

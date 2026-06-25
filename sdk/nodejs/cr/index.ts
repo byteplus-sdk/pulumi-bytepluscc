@@ -50,6 +50,16 @@ export const getRepository: typeof import("./getRepository").getRepository = nul
 export const getRepositoryOutput: typeof import("./getRepository").getRepositoryOutput = null as any;
 utilities.lazyLoad(exports, ["getRepository","getRepositoryOutput"], () => require("./getRepository"));
 
+export { GetVpcEndpointArgs, GetVpcEndpointResult, GetVpcEndpointOutputArgs } from "./getVpcEndpoint";
+export const getVpcEndpoint: typeof import("./getVpcEndpoint").getVpcEndpoint = null as any;
+export const getVpcEndpointOutput: typeof import("./getVpcEndpoint").getVpcEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcEndpoint","getVpcEndpointOutput"], () => require("./getVpcEndpoint"));
+
+export { GetVpcEndpointsResult } from "./getVpcEndpoints";
+export const getVpcEndpoints: typeof import("./getVpcEndpoints").getVpcEndpoints = null as any;
+export const getVpcEndpointsOutput: typeof import("./getVpcEndpoints").getVpcEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcEndpoints","getVpcEndpointsOutput"], () => require("./getVpcEndpoints"));
+
 export { NameSpaceArgs, NameSpaceState } from "./nameSpace";
 export type NameSpace = import("./nameSpace").NameSpace;
 export const NameSpace: typeof import("./nameSpace").NameSpace = null as any;
@@ -65,6 +75,11 @@ export type Repository = import("./repository").Repository;
 export const Repository: typeof import("./repository").Repository = null as any;
 utilities.lazyLoad(exports, ["Repository"], () => require("./repository"));
 
+export { VpcEndpointArgs, VpcEndpointState } from "./vpcEndpoint";
+export type VpcEndpoint = import("./vpcEndpoint").VpcEndpoint;
+export const VpcEndpoint: typeof import("./vpcEndpoint").VpcEndpoint = null as any;
+utilities.lazyLoad(exports, ["VpcEndpoint"], () => require("./vpcEndpoint"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -78,6 +93,8 @@ const _module = {
                 return new Registry(name, <any>undefined, { urn })
             case "bytepluscc:cr/repository:Repository":
                 return new Repository(name, <any>undefined, { urn })
+            case "bytepluscc:cr/vpcEndpoint:VpcEndpoint":
+                return new VpcEndpoint(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -87,3 +104,4 @@ pulumi.runtime.registerResourceModule("bytepluscc", "cr/endpointAclPolicy", _mod
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/nameSpace", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/registry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/repository", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cr/vpcEndpoint", _module)

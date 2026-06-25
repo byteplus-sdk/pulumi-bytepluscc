@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.kafka;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.kafka.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetAllowListPlainArgs;
+import com.byteplus.bytepluscc.kafka.inputs.GetGroupArgs;
+import com.byteplus.bytepluscc.kafka.inputs.GetGroupPlainArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetTopicArgs;
@@ -14,6 +16,8 @@ import com.byteplus.bytepluscc.kafka.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetUserPlainArgs;
 import com.byteplus.bytepluscc.kafka.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetAllowListsResult;
+import com.byteplus.bytepluscc.kafka.outputs.GetGroupResult;
+import com.byteplus.bytepluscc.kafka.outputs.GetGroupsResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetTopicResult;
@@ -112,6 +116,90 @@ public final class KafkaFunctions {
      */
     public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args) {
+        return getGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args) {
+        return getGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups() {
+        return getGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain() {
+        return getGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args) {
+        return getGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args) {
+        return getGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::Kafka::Instance

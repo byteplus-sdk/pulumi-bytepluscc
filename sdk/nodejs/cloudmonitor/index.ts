@@ -10,6 +10,11 @@ export type ContactGroup = import("./contactGroup").ContactGroup;
 export const ContactGroup: typeof import("./contactGroup").ContactGroup = null as any;
 utilities.lazyLoad(exports, ["ContactGroup"], () => require("./contactGroup"));
 
+export { EventRuleArgs, EventRuleState } from "./eventRule";
+export type EventRule = import("./eventRule").EventRule;
+export const EventRule: typeof import("./eventRule").EventRule = null as any;
+utilities.lazyLoad(exports, ["EventRule"], () => require("./eventRule"));
+
 export { GetContactGroupArgs, GetContactGroupResult, GetContactGroupOutputArgs } from "./getContactGroup";
 export const getContactGroup: typeof import("./getContactGroup").getContactGroup = null as any;
 export const getContactGroupOutput: typeof import("./getContactGroup").getContactGroupOutput = null as any;
@@ -19,6 +24,16 @@ export { GetContactGroupsResult } from "./getContactGroups";
 export const getContactGroups: typeof import("./getContactGroups").getContactGroups = null as any;
 export const getContactGroupsOutput: typeof import("./getContactGroups").getContactGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getContactGroups","getContactGroupsOutput"], () => require("./getContactGroups"));
+
+export { GetEventRuleArgs, GetEventRuleResult, GetEventRuleOutputArgs } from "./getEventRule";
+export const getEventRule: typeof import("./getEventRule").getEventRule = null as any;
+export const getEventRuleOutput: typeof import("./getEventRule").getEventRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getEventRule","getEventRuleOutput"], () => require("./getEventRule"));
+
+export { GetEventRulesResult } from "./getEventRules";
+export const getEventRules: typeof import("./getEventRules").getEventRules = null as any;
+export const getEventRulesOutput: typeof import("./getEventRules").getEventRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getEventRules","getEventRulesOutput"], () => require("./getEventRules"));
 
 export { GetRuleArgs, GetRuleResult, GetRuleOutputArgs } from "./getRule";
 export const getRule: typeof import("./getRule").getRule = null as any;
@@ -42,6 +57,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:cloudmonitor/contactGroup:ContactGroup":
                 return new ContactGroup(name, <any>undefined, { urn })
+            case "bytepluscc:cloudmonitor/eventRule:EventRule":
+                return new EventRule(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/rule:Rule":
                 return new Rule(name, <any>undefined, { urn })
             default:
@@ -50,4 +67,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contactGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/eventRule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/rule", _module)

@@ -532,6 +532,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudmonitor/eventRule",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/eventRule:EventRule": "EventRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudmonitor/rule",
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
@@ -572,6 +580,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cr/vpcEndpoint",
+  "fqn": "pulumi_bytepluscc.cr",
+  "classes": {
+   "bytepluscc:cr/vpcEndpoint:VpcEndpoint": "VpcEndpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "directconnect/bgpPeer",
   "fqn": "pulumi_bytepluscc.directconnect",
   "classes": {
@@ -608,6 +624,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.dns",
   "classes": {
    "bytepluscc:dns/backup:Backup": "Backup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "dns/backupSchedule",
+  "fqn": "pulumi_bytepluscc.dns",
+  "classes": {
+   "bytepluscc:dns/backupSchedule:BackupSchedule": "BackupSchedule"
   }
  },
  {
@@ -780,6 +804,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "gtm/policy",
+  "fqn": "pulumi_bytepluscc.gtm",
+  "classes": {
+   "bytepluscc:gtm/policy:Policy": "Policy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "gtm/pool",
   "fqn": "pulumi_bytepluscc.gtm",
   "classes": {
@@ -896,6 +928,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.kafka",
   "classes": {
    "bytepluscc:kafka/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "kafka/group",
+  "fqn": "pulumi_bytepluscc.kafka",
+  "classes": {
+   "bytepluscc:kafka/group:Group": "Group"
   }
  },
  {
@@ -1408,6 +1448,30 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/consumerGroup:ConsumerGroup": "ConsumerGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/etl",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/etl:Etl": "Etl"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/host",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/host:Host": "Host"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/hostGroup",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/hostGroup:HostGroup": "HostGroup"
   }
  },
  {

@@ -20,6 +20,16 @@ export const getAllowLists: typeof import("./getAllowLists").getAllowLists = nul
 export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
 utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
 
+export { GetGroupArgs, GetGroupResult, GetGroupOutputArgs } from "./getGroup";
+export const getGroup: typeof import("./getGroup").getGroup = null as any;
+export const getGroupOutput: typeof import("./getGroup").getGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getGroup","getGroupOutput"], () => require("./getGroup"));
+
+export { GetGroupsResult } from "./getGroups";
+export const getGroups: typeof import("./getGroups").getGroups = null as any;
+export const getGroupsOutput: typeof import("./getGroups").getGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getGroups","getGroupsOutput"], () => require("./getGroups"));
+
 export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
 export const getInstance: typeof import("./getInstance").getInstance = null as any;
 export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
@@ -50,6 +60,11 @@ export const getUsers: typeof import("./getUsers").getUsers = null as any;
 export const getUsersOutput: typeof import("./getUsers").getUsersOutput = null as any;
 utilities.lazyLoad(exports, ["getUsers","getUsersOutput"], () => require("./getUsers"));
 
+export { GroupArgs, GroupState } from "./group";
+export type Group = import("./group").Group;
+export const Group: typeof import("./group").Group = null as any;
+utilities.lazyLoad(exports, ["Group"], () => require("./group"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
@@ -72,6 +87,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:kafka/allowList:AllowList":
                 return new AllowList(name, <any>undefined, { urn })
+            case "bytepluscc:kafka/group:Group":
+                return new Group(name, <any>undefined, { urn })
             case "bytepluscc:kafka/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:kafka/topic:Topic":
@@ -84,6 +101,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/allowList", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "kafka/group", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/topic", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/user", _module)

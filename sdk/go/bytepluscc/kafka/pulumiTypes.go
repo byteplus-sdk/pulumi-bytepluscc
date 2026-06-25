@@ -110,6 +110,112 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 	}).(AllowListAssociatedInstanceOutput)
 }
 
+type GroupTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// GroupTagInput is an input type that accepts GroupTagArgs and GroupTagOutput values.
+// You can construct a concrete instance of `GroupTagInput` via:
+//
+//	GroupTagArgs{...}
+type GroupTagInput interface {
+	pulumi.Input
+
+	ToGroupTagOutput() GroupTagOutput
+	ToGroupTagOutputWithContext(context.Context) GroupTagOutput
+}
+
+type GroupTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupTag)(nil)).Elem()
+}
+
+func (i GroupTagArgs) ToGroupTagOutput() GroupTagOutput {
+	return i.ToGroupTagOutputWithContext(context.Background())
+}
+
+func (i GroupTagArgs) ToGroupTagOutputWithContext(ctx context.Context) GroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupTagOutput)
+}
+
+// GroupTagArrayInput is an input type that accepts GroupTagArray and GroupTagArrayOutput values.
+// You can construct a concrete instance of `GroupTagArrayInput` via:
+//
+//	GroupTagArray{ GroupTagArgs{...} }
+type GroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGroupTagArrayOutput() GroupTagArrayOutput
+	ToGroupTagArrayOutputWithContext(context.Context) GroupTagArrayOutput
+}
+
+type GroupTagArray []GroupTagInput
+
+func (GroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupTag)(nil)).Elem()
+}
+
+func (i GroupTagArray) ToGroupTagArrayOutput() GroupTagArrayOutput {
+	return i.ToGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GroupTagArray) ToGroupTagArrayOutputWithContext(ctx context.Context) GroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupTagArrayOutput)
+}
+
+type GroupTagOutput struct{ *pulumi.OutputState }
+
+func (GroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupTag)(nil)).Elem()
+}
+
+func (o GroupTagOutput) ToGroupTagOutput() GroupTagOutput {
+	return o
+}
+
+func (o GroupTagOutput) ToGroupTagOutputWithContext(ctx context.Context) GroupTagOutput {
+	return o
+}
+
+// Tag key
+func (o GroupTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o GroupTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupTag)(nil)).Elem()
+}
+
+func (o GroupTagArrayOutput) ToGroupTagArrayOutput() GroupTagArrayOutput {
+	return o
+}
+
+func (o GroupTagArrayOutput) ToGroupTagArrayOutputWithContext(ctx context.Context) GroupTagArrayOutput {
+	return o
+}
+
+func (o GroupTagArrayOutput) Index(i pulumi.IntInput) GroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GroupTag {
+		return vs[0].([]GroupTag)[vs[1].(int)]
+	}).(GroupTagOutput)
+}
+
 type InstanceChargeInfo struct {
 	// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 	AutoRenew *bool `pulumi:"autoRenew"`
@@ -947,6 +1053,112 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 	}).(GetAllowListAssociatedInstanceOutput)
 }
 
+type GetGroupTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetGroupTagInput is an input type that accepts GetGroupTagArgs and GetGroupTagOutput values.
+// You can construct a concrete instance of `GetGroupTagInput` via:
+//
+//	GetGroupTagArgs{...}
+type GetGroupTagInput interface {
+	pulumi.Input
+
+	ToGetGroupTagOutput() GetGroupTagOutput
+	ToGetGroupTagOutputWithContext(context.Context) GetGroupTagOutput
+}
+
+type GetGroupTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupTag)(nil)).Elem()
+}
+
+func (i GetGroupTagArgs) ToGetGroupTagOutput() GetGroupTagOutput {
+	return i.ToGetGroupTagOutputWithContext(context.Background())
+}
+
+func (i GetGroupTagArgs) ToGetGroupTagOutputWithContext(ctx context.Context) GetGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupTagOutput)
+}
+
+// GetGroupTagArrayInput is an input type that accepts GetGroupTagArray and GetGroupTagArrayOutput values.
+// You can construct a concrete instance of `GetGroupTagArrayInput` via:
+//
+//	GetGroupTagArray{ GetGroupTagArgs{...} }
+type GetGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupTagArrayOutput() GetGroupTagArrayOutput
+	ToGetGroupTagArrayOutputWithContext(context.Context) GetGroupTagArrayOutput
+}
+
+type GetGroupTagArray []GetGroupTagInput
+
+func (GetGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupTag)(nil)).Elem()
+}
+
+func (i GetGroupTagArray) ToGetGroupTagArrayOutput() GetGroupTagArrayOutput {
+	return i.ToGetGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupTagArray) ToGetGroupTagArrayOutputWithContext(ctx context.Context) GetGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupTagArrayOutput)
+}
+
+type GetGroupTagOutput struct{ *pulumi.OutputState }
+
+func (GetGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupTag)(nil)).Elem()
+}
+
+func (o GetGroupTagOutput) ToGetGroupTagOutput() GetGroupTagOutput {
+	return o
+}
+
+func (o GetGroupTagOutput) ToGetGroupTagOutputWithContext(ctx context.Context) GetGroupTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetGroupTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetGroupTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupTag)(nil)).Elem()
+}
+
+func (o GetGroupTagArrayOutput) ToGetGroupTagArrayOutput() GetGroupTagArrayOutput {
+	return o
+}
+
+func (o GetGroupTagArrayOutput) ToGetGroupTagArrayOutputWithContext(ctx context.Context) GetGroupTagArrayOutput {
+	return o
+}
+
+func (o GetGroupTagArrayOutput) Index(i pulumi.IntInput) GetGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupTag {
+		return vs[0].([]GetGroupTag)[vs[1].(int)]
+	}).(GetGroupTagOutput)
+}
+
 type GetInstanceChargeInfo struct {
 	// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 	AutoRenew bool `pulumi:"autoRenew"`
@@ -1516,6 +1728,8 @@ func (o GetTopicTagArrayOutput) Index(i pulumi.IntInput) GetTopicTagOutput {
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupTagInput)(nil)).Elem(), GroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupTagArrayInput)(nil)).Elem(), GroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoInput)(nil)).Elem(), InstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoPtrInput)(nil)).Elem(), InstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoInput)(nil)).Elem(), InstanceConnectionInfoArgs{})
@@ -1528,6 +1742,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagArrayInput)(nil)).Elem(), TopicTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupTagInput)(nil)).Elem(), GetGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupTagArrayInput)(nil)).Elem(), GetGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeInfoInput)(nil)).Elem(), GetInstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoInput)(nil)).Elem(), GetInstanceConnectionInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoArrayInput)(nil)).Elem(), GetInstanceConnectionInfoArray{})
@@ -1539,6 +1755,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagArrayInput)(nil)).Elem(), GetTopicTagArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GroupTagOutput{})
+	pulumi.RegisterOutputType(GroupTagArrayOutput{})
 	pulumi.RegisterOutputType(InstanceChargeInfoOutput{})
 	pulumi.RegisterOutputType(InstanceChargeInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceConnectionInfoOutput{})
@@ -1551,6 +1769,8 @@ func init() {
 	pulumi.RegisterOutputType(TopicTagArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupTagOutput{})
+	pulumi.RegisterOutputType(GetGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoArrayOutput{})

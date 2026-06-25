@@ -76,12 +76,6 @@ class AllowListAssociatedInstance(dict):
         suggest = None
         if key == "instanceId":
             suggest = "instance_id"
-        elif key == "instanceName":
-            suggest = "instance_name"
-        elif key == "instanceStatus":
-            suggest = "instance_status"
-        elif key == "isLatest":
-            suggest = "is_latest"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
@@ -95,28 +89,12 @@ class AllowListAssociatedInstance(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_id: Optional[builtins.str] = None,
-                 instance_name: Optional[builtins.str] = None,
-                 instance_status: Optional[builtins.str] = None,
-                 is_latest: Optional[builtins.bool] = None,
-                 vpc: Optional[builtins.str] = None):
+                 instance_id: Optional[builtins.str] = None):
         """
         :param builtins.str instance_id: Instance ID bound to the current allowlist.
-        :param builtins.str instance_name: Instance name bound to the current allowlist.
-        :param builtins.str instance_status: Instance status.
-        :param builtins.bool is_latest: Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-        :param builtins.str vpc: Private network ID of the instance.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
-        if instance_name is not None:
-            pulumi.set(__self__, "instance_name", instance_name)
-        if instance_status is not None:
-            pulumi.set(__self__, "instance_status", instance_status)
-        if is_latest is not None:
-            pulumi.set(__self__, "is_latest", is_latest)
-        if vpc is not None:
-            pulumi.set(__self__, "vpc", vpc)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -126,38 +104,6 @@ class AllowListAssociatedInstance(dict):
         """
         return pulumi.get(self, "instance_id")
 
-    @property
-    @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[builtins.str]:
-        """
-        Instance name bound to the current allowlist.
-        """
-        return pulumi.get(self, "instance_name")
-
-    @property
-    @pulumi.getter(name="instanceStatus")
-    def instance_status(self) -> Optional[builtins.str]:
-        """
-        Instance status.
-        """
-        return pulumi.get(self, "instance_status")
-
-    @property
-    @pulumi.getter(name="isLatest")
-    def is_latest(self) -> Optional[builtins.bool]:
-        """
-        Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-        """
-        return pulumi.get(self, "is_latest")
-
-    @property
-    @pulumi.getter
-    def vpc(self) -> Optional[builtins.str]:
-        """
-        Private network ID of the instance.
-        """
-        return pulumi.get(self, "vpc")
-
 
 @pulumi.output_type
 class AllowListSecurityGroupBindInfo(dict):
@@ -166,8 +112,6 @@ class AllowListSecurityGroupBindInfo(dict):
         suggest = None
         if key == "bindMode":
             suggest = "bind_mode"
-        elif key == "ipLists":
-            suggest = "ip_lists"
         elif key == "securityGroupId":
             suggest = "security_group_id"
         elif key == "securityGroupName":
@@ -186,19 +130,15 @@ class AllowListSecurityGroupBindInfo(dict):
 
     def __init__(__self__, *,
                  bind_mode: Optional[builtins.str] = None,
-                 ip_lists: Optional[Sequence[builtins.str]] = None,
                  security_group_id: Optional[builtins.str] = None,
                  security_group_name: Optional[builtins.str] = None):
         """
         :param builtins.str bind_mode: Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
-        :param Sequence[builtins.str] ip_lists: Security group IP address list.
         :param builtins.str security_group_id: Security group ID.
         :param builtins.str security_group_name: Security group name.
         """
         if bind_mode is not None:
             pulumi.set(__self__, "bind_mode", bind_mode)
-        if ip_lists is not None:
-            pulumi.set(__self__, "ip_lists", ip_lists)
         if security_group_id is not None:
             pulumi.set(__self__, "security_group_id", security_group_id)
         if security_group_name is not None:
@@ -211,14 +151,6 @@ class AllowListSecurityGroupBindInfo(dict):
         Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
         """
         return pulumi.get(self, "bind_mode")
-
-    @property
-    @pulumi.getter(name="ipLists")
-    def ip_lists(self) -> Optional[Sequence[builtins.str]]:
-        """
-        Security group IP address list.
-        """
-        return pulumi.get(self, "ip_lists")
 
     @property
     @pulumi.getter(name="securityGroupId")

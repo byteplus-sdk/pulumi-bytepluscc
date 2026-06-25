@@ -26,6 +26,8 @@ __all__ = [
     'RegistryStatusArgsDict',
     'RegistryTagArgs',
     'RegistryTagArgsDict',
+    'VpcEndpointVpcArgs',
+    'VpcEndpointVpcArgsDict',
 ]
 
 MYPY = False
@@ -281,5 +283,77 @@ class RegistryTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class VpcEndpointVpcArgsDict(TypedDict):
+        account_id: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Primary account ID for the VPC
+        """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Subnet ID
+        """
+        vpc_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPC ID。
+        """
+elif False:
+    VpcEndpointVpcArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpcEndpointVpcArgs:
+    def __init__(__self__, *,
+                 account_id: Optional[pulumi.Input[builtins.int]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] account_id: Primary account ID for the VPC
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID。
+        """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Primary account ID for the VPC
+        """
+        return pulumi.get(self, "account_id")
+
+    @account_id.setter
+    def account_id(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "account_id", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        VPC ID。
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @vpc_id.setter
+    def vpc_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_id", value)
 
 

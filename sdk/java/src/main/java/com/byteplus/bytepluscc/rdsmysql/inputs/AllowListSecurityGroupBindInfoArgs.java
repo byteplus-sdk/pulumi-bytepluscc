@@ -6,7 +6,6 @@ package com.byteplus.bytepluscc.rdsmysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,21 +28,6 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
      */
     public Optional<Output<String>> bindMode() {
         return Optional.ofNullable(this.bindMode);
-    }
-
-    /**
-     * Security group IP address list.
-     * 
-     */
-    @Import(name="ipLists")
-    private @Nullable Output<List<String>> ipLists;
-
-    /**
-     * @return Security group IP address list.
-     * 
-     */
-    public Optional<Output<List<String>>> ipLists() {
-        return Optional.ofNullable(this.ipLists);
     }
 
     /**
@@ -80,7 +64,6 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
 
     private AllowListSecurityGroupBindInfoArgs(AllowListSecurityGroupBindInfoArgs $) {
         this.bindMode = $.bindMode;
-        this.ipLists = $.ipLists;
         this.securityGroupId = $.securityGroupId;
         this.securityGroupName = $.securityGroupName;
     }
@@ -122,37 +105,6 @@ public final class AllowListSecurityGroupBindInfoArgs extends com.pulumi.resourc
          */
         public Builder bindMode(String bindMode) {
             return bindMode(Output.of(bindMode));
-        }
-
-        /**
-         * @param ipLists Security group IP address list.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ipLists(@Nullable Output<List<String>> ipLists) {
-            $.ipLists = ipLists;
-            return this;
-        }
-
-        /**
-         * @param ipLists Security group IP address list.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ipLists(List<String> ipLists) {
-            return ipLists(Output.of(ipLists));
-        }
-
-        /**
-         * @param ipLists Security group IP address list.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder ipLists(String... ipLists) {
-            return ipLists(List.of(ipLists));
         }
 
         /**

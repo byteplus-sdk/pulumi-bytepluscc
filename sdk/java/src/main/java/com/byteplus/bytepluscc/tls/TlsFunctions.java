@@ -10,6 +10,12 @@ import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetEtlArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetEtlPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetHostArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetHostGroupArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetHostGroupPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetHostPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetImportTaskArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetImportTaskPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetIndexArgs;
@@ -30,6 +36,12 @@ import com.byteplus.bytepluscc.tls.outputs.GetAlarmResult;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetEtlResult;
+import com.byteplus.bytepluscc.tls.outputs.GetEtlsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetHostGroupResult;
+import com.byteplus.bytepluscc.tls.outputs.GetHostGroupsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetHostResult;
+import com.byteplus.bytepluscc.tls.outputs.GetHostsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetImportTaskResult;
 import com.byteplus.bytepluscc.tls.outputs.GetImportTasksResult;
 import com.byteplus.bytepluscc.tls.outputs.GetIndexResult;
@@ -304,6 +316,258 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlResult> getEtl(GetEtlArgs args) {
+        return getEtl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static CompletableFuture<GetEtlResult> getEtlPlain(GetEtlPlainArgs args) {
+        return getEtlPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlResult> getEtl(GetEtlArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getEtl:getEtl", TypeShape.of(GetEtlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlResult> getEtl(GetEtlArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getEtl:getEtl", TypeShape.of(GetEtlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static CompletableFuture<GetEtlResult> getEtlPlain(GetEtlPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getEtl:getEtl", TypeShape.of(GetEtlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlsResult> getEtls() {
+        return getEtls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static CompletableFuture<GetEtlsResult> getEtlsPlain() {
+        return getEtlsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlsResult> getEtls(InvokeArgs args) {
+        return getEtls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static CompletableFuture<GetEtlsResult> getEtlsPlain(InvokeArgs args) {
+        return getEtlsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlsResult> getEtls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getEtls:getEtls", TypeShape.of(GetEtlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static Output<GetEtlsResult> getEtls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getEtls:getEtls", TypeShape.of(GetEtlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Etl
+     * 
+     */
+    public static CompletableFuture<GetEtlsResult> getEtlsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getEtls:getEtls", TypeShape.of(GetEtlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostResult> getHost(GetHostArgs args) {
+        return getHost(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static CompletableFuture<GetHostResult> getHostPlain(GetHostPlainArgs args) {
+        return getHostPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostResult> getHost(GetHostArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHost:getHost", TypeShape.of(GetHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostResult> getHost(GetHostArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHost:getHost", TypeShape.of(GetHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static CompletableFuture<GetHostResult> getHostPlain(GetHostPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getHost:getHost", TypeShape.of(GetHostResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args) {
+        return getHostGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupResult> getHostGroupPlain(GetHostGroupPlainArgs args) {
+        return getHostGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupResult> getHostGroupPlain(GetHostGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups() {
+        return getHostGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain() {
+        return getHostGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args) {
+        return getHostGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args) {
+        return getHostGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostsResult> getHosts() {
+        return getHosts(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static CompletableFuture<GetHostsResult> getHostsPlain() {
+        return getHostsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostsResult> getHosts(InvokeArgs args) {
+        return getHosts(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static CompletableFuture<GetHostsResult> getHostsPlain(InvokeArgs args) {
+        return getHostsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostsResult> getHosts(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHosts:getHosts", TypeShape.of(GetHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static Output<GetHostsResult> getHosts(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getHosts:getHosts", TypeShape.of(GetHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Host
+     * 
+     */
+    public static CompletableFuture<GetHostsResult> getHostsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getHosts:getHosts", TypeShape.of(GetHostsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::TLS::ImportTask

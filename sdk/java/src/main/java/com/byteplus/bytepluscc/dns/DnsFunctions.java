@@ -6,11 +6,15 @@ package com.byteplus.bytepluscc.dns;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.dns.inputs.GetBackupArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetBackupPlainArgs;
+import com.byteplus.bytepluscc.dns.inputs.GetBackupScheduleArgs;
+import com.byteplus.bytepluscc.dns.inputs.GetBackupSchedulePlainArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetRecordArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetRecordPlainArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetZoneArgs;
 import com.byteplus.bytepluscc.dns.inputs.GetZonePlainArgs;
 import com.byteplus.bytepluscc.dns.outputs.GetBackupResult;
+import com.byteplus.bytepluscc.dns.outputs.GetBackupScheduleResult;
+import com.byteplus.bytepluscc.dns.outputs.GetBackupSchedulesResult;
 import com.byteplus.bytepluscc.dns.outputs.GetBackupsResult;
 import com.byteplus.bytepluscc.dns.outputs.GetRecordResult;
 import com.byteplus.bytepluscc.dns.outputs.GetRecordsResult;
@@ -59,6 +63,90 @@ public final class DnsFunctions {
      */
     public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:dns/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupScheduleResult> getBackupSchedule(GetBackupScheduleArgs args) {
+        return getBackupSchedule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static CompletableFuture<GetBackupScheduleResult> getBackupSchedulePlain(GetBackupSchedulePlainArgs args) {
+        return getBackupSchedulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupScheduleResult> getBackupSchedule(GetBackupScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackupSchedule:getBackupSchedule", TypeShape.of(GetBackupScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupScheduleResult> getBackupSchedule(GetBackupScheduleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackupSchedule:getBackupSchedule", TypeShape.of(GetBackupScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static CompletableFuture<GetBackupScheduleResult> getBackupSchedulePlain(GetBackupSchedulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:dns/getBackupSchedule:getBackupSchedule", TypeShape.of(GetBackupScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupSchedulesResult> getBackupSchedules() {
+        return getBackupSchedules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static CompletableFuture<GetBackupSchedulesResult> getBackupSchedulesPlain() {
+        return getBackupSchedulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupSchedulesResult> getBackupSchedules(InvokeArgs args) {
+        return getBackupSchedules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static CompletableFuture<GetBackupSchedulesResult> getBackupSchedulesPlain(InvokeArgs args) {
+        return getBackupSchedulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupSchedulesResult> getBackupSchedules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackupSchedules:getBackupSchedules", TypeShape.of(GetBackupSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static Output<GetBackupSchedulesResult> getBackupSchedules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:dns/getBackupSchedules:getBackupSchedules", TypeShape.of(GetBackupSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DNS::BackupSchedule
+     * 
+     */
+    public static CompletableFuture<GetBackupSchedulesResult> getBackupSchedulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:dns/getBackupSchedules:getBackupSchedules", TypeShape.of(GetBackupSchedulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::DNS::Backup

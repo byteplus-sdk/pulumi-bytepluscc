@@ -19,30 +19,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
-        /// <summary>
-        /// Instance name bound to the current allowlist.
-        /// </summary>
-        [Input("instanceName")]
-        public Input<string>? InstanceName { get; set; }
-
-        /// <summary>
-        /// Instance status.
-        /// </summary>
-        [Input("instanceStatus")]
-        public Input<string>? InstanceStatus { get; set; }
-
-        /// <summary>
-        /// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
-        /// </summary>
-        [Input("isLatest")]
-        public Input<bool>? IsLatest { get; set; }
-
-        /// <summary>
-        /// Private network ID of the instance.
-        /// </summary>
-        [Input("vpc")]
-        public Input<string>? Vpc { get; set; }
-
         public AllowListAssociatedInstanceArgs()
         {
         }

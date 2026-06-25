@@ -8,6 +8,8 @@ import typing
 # Export this package's modules as members:
 from .get_gtm import *
 from .get_gtms import *
+from .get_policies import *
+from .get_policy import *
 from .get_pool import *
 from .get_pools import *
 from .get_routing import *
@@ -15,6 +17,7 @@ from .get_routings import *
 from .get_rule import *
 from .get_rules import *
 from .gtm import *
+from .policy import *
 from .pool import *
 from .routing import *
 from .rule import *
