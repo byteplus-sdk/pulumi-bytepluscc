@@ -73,7 +73,7 @@ class GetRegistryResult:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+        Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         """
         return pulumi.get(self, "charge_type")
 
@@ -81,7 +81,7 @@ class GetRegistryResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Time when the container registry instance was created.
+        Creation time of the container registry instance
         """
         return pulumi.get(self, "created_time")
 
@@ -89,7 +89,7 @@ class GetRegistryResult:
     @pulumi.getter
     def endpoint(self) -> 'outputs.GetRegistryEndpointResult':
         """
-        Public endpoint information for the image repository instance
+        Public endpoint information for the image repository instance.
         """
         return pulumi.get(self, "endpoint")
 
@@ -97,7 +97,7 @@ class GetRegistryResult:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> builtins.str:
         """
-        Only applicable when the billing type is HybridCharge. Instance expiration time
+        Instance expiration time is only available for HybridCharge billing type
         """
         return pulumi.get(self, "expire_time")
 
@@ -113,7 +113,7 @@ class GetRegistryResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -121,7 +121,7 @@ class GetRegistryResult:
     @pulumi.getter
     def project(self) -> builtins.str:
         """
-        Specify the project to associate with the instance. Each instance can only be associated with one project
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -129,7 +129,7 @@ class GetRegistryResult:
     @pulumi.getter(name="proxyCache")
     def proxy_cache(self) -> 'outputs.GetRegistryProxyCacheResult':
         """
-        ProxyCache configuration. Required when set to ProxyCache
+        ProxyCache configuration. Required when set as ProxyCache
         """
         return pulumi.get(self, "proxy_cache")
 
@@ -137,7 +137,7 @@ class GetRegistryResult:
     @pulumi.getter(name="proxyCacheEnabled")
     def proxy_cache_enabled(self) -> builtins.bool:
         """
-        Whether to set as ProxyCache instance
+        Set as ProxyCache instance
         """
         return pulumi.get(self, "proxy_cache_enabled")
 
@@ -145,7 +145,7 @@ class GetRegistryResult:
     @pulumi.getter(name="renewType")
     def renew_type(self) -> builtins.str:
         """
-        Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+        Instance auto-renewal type is only available for HybridCharge billing type
         """
         return pulumi.get(self, "renew_type")
 
@@ -153,7 +153,7 @@ class GetRegistryResult:
     @pulumi.getter
     def status(self) -> 'outputs.GetRegistryStatusResult':
         """
-        Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -169,7 +169,7 @@ class GetRegistryResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 

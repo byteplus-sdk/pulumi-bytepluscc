@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class ServerGroupTag
     {
         /// <summary>
-        /// Tag key. Duplicate tag keys are not allowed for the same resource.
+        /// Tag key. Tag keys for the same resource must be unique.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// Tag value.
+        /// Tag value of the tag.
         /// </summary>
         public readonly string? Value;
 

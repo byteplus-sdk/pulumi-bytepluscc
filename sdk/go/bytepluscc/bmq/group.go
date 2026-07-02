@@ -11,42 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// A group of consumers with the same Group ID. When a Topic is consumed by multiple Consumers in the same Group, each message is delivered to only one Consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-byteplus/sdk/go/byteplus"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := byteplus.NewBmqGroup(ctx, "BMQGroupDemo", &byteplus.BmqGroupArgs{
-//				Description: "this is test group",
-//				GroupName:   "cBMQGroupDemo",
-//				InstanceId:  "bmq-4ld4vpjzd32tq1gxxxxx",
-//				ResetInfo: map[string]interface{}{
-//					"topicId":     "5f81fcab96cb46c7955659fdxxxxx",
-//					"resetBy":     "OFFSET",
-//					"offsetType":  "LATEST",
-//					"resetValue":  4,
-//					"partitionId": 1,
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
+// A group of consumers with the same Group ID. When multiple consumers in the same Group consume a Topic, each message is delivered to only one consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
 //
 // ## Import
 //
@@ -56,23 +21,23 @@ import (
 type Group struct {
 	pulumi.CustomResourceState
 
-	// Consumer Group creation time.
+	// Consumer Group creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// Consumer Group description.
+	// Consumer Group description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// Consumer Group ID.
+	// Consumer Group ID
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+	// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName pulumi.StringOutput `pulumi:"groupName"`
-	// BMQ instance ID.
+	// BMQ instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// User ID associated with the Consumer Group.
+	// User ID of the Consumer Group owner
 	OwnerId pulumi.StringOutput `pulumi:"ownerId"`
-	// Name of the user associated with the Consumer Group.
+	// Name of the Consumer Group owner
 	OwnerName pulumi.StringOutput `pulumi:"ownerName"`
-	// Reset consumption position information.
+	// Reset consumption offset information
 	ResetInfo GroupResetInfoOutput `pulumi:"resetInfo"`
-	// Consumer Group status.
+	// Consumer Group status
 	Status     pulumi.StringOutput       `pulumi:"status"`
 	TopicInfos GroupTopicInfoArrayOutput `pulumi:"topicInfos"`
 }
@@ -107,45 +72,45 @@ func GetGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Group resources.
 type groupState struct {
-	// Consumer Group creation time.
+	// Consumer Group creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// Consumer Group description.
+	// Consumer Group description
 	Description *string `pulumi:"description"`
-	// Consumer Group ID.
+	// Consumer Group ID
 	GroupId *string `pulumi:"groupId"`
-	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+	// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName *string `pulumi:"groupName"`
-	// BMQ instance ID.
+	// BMQ instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// User ID associated with the Consumer Group.
+	// User ID of the Consumer Group owner
 	OwnerId *string `pulumi:"ownerId"`
-	// Name of the user associated with the Consumer Group.
+	// Name of the Consumer Group owner
 	OwnerName *string `pulumi:"ownerName"`
-	// Reset consumption position information.
+	// Reset consumption offset information
 	ResetInfo *GroupResetInfo `pulumi:"resetInfo"`
-	// Consumer Group status.
+	// Consumer Group status
 	Status     *string          `pulumi:"status"`
 	TopicInfos []GroupTopicInfo `pulumi:"topicInfos"`
 }
 
 type GroupState struct {
-	// Consumer Group creation time.
+	// Consumer Group creation time
 	CreatedTime pulumi.StringPtrInput
-	// Consumer Group description.
+	// Consumer Group description
 	Description pulumi.StringPtrInput
-	// Consumer Group ID.
+	// Consumer Group ID
 	GroupId pulumi.StringPtrInput
-	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+	// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName pulumi.StringPtrInput
-	// BMQ instance ID.
+	// BMQ instance ID
 	InstanceId pulumi.StringPtrInput
-	// User ID associated with the Consumer Group.
+	// User ID of the Consumer Group owner
 	OwnerId pulumi.StringPtrInput
-	// Name of the user associated with the Consumer Group.
+	// Name of the Consumer Group owner
 	OwnerName pulumi.StringPtrInput
-	// Reset consumption position information.
+	// Reset consumption offset information
 	ResetInfo GroupResetInfoPtrInput
-	// Consumer Group status.
+	// Consumer Group status
 	Status     pulumi.StringPtrInput
 	TopicInfos GroupTopicInfoArrayInput
 }
@@ -155,25 +120,25 @@ func (GroupState) ElementType() reflect.Type {
 }
 
 type groupArgs struct {
-	// Consumer Group description.
+	// Consumer Group description
 	Description *string `pulumi:"description"`
-	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+	// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName *string `pulumi:"groupName"`
-	// BMQ instance ID.
+	// BMQ instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// Reset consumption position information.
+	// Reset consumption offset information
 	ResetInfo *GroupResetInfo `pulumi:"resetInfo"`
 }
 
 // The set of arguments for constructing a Group resource.
 type GroupArgs struct {
-	// Consumer Group description.
+	// Consumer Group description
 	Description pulumi.StringPtrInput
-	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+	// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName pulumi.StringPtrInput
-	// BMQ instance ID.
+	// BMQ instance ID
 	InstanceId pulumi.StringPtrInput
-	// Reset consumption position information.
+	// Reset consumption offset information
 	ResetInfo GroupResetInfoPtrInput
 }
 
@@ -264,47 +229,47 @@ func (o GroupOutput) ToGroupOutputWithContext(ctx context.Context) GroupOutput {
 	return o
 }
 
-// Consumer Group creation time.
+// Consumer Group creation time
 func (o GroupOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Consumer Group description.
+// Consumer Group description
 func (o GroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// Consumer Group ID.
+// Consumer Group ID
 func (o GroupOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 func (o GroupOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.GroupName }).(pulumi.StringOutput)
 }
 
-// BMQ instance ID.
+// BMQ instance ID
 func (o GroupOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// User ID associated with the Consumer Group.
+// User ID of the Consumer Group owner
 func (o GroupOutput) OwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.OwnerId }).(pulumi.StringOutput)
 }
 
-// Name of the user associated with the Consumer Group.
+// Name of the Consumer Group owner
 func (o GroupOutput) OwnerName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.OwnerName }).(pulumi.StringOutput)
 }
 
-// Reset consumption position information.
+// Reset consumption offset information
 func (o GroupOutput) ResetInfo() GroupResetInfoOutput {
 	return o.ApplyT(func(v *Group) GroupResetInfoOutput { return v.ResetInfo }).(GroupResetInfoOutput)
 }
 
-// Consumer Group status.
+// Consumer Group status
 func (o GroupOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

@@ -21,22 +21,22 @@ import (
 //
 // import (
 //
-//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc"
+//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cloudidentity"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := bytepluscc.NewCloudidentityUserprovisioning(ctx, "CloudIdentityUserProvisioningDemo", &bytepluscc.CloudidentityUserprovisioningArgs{
-//				TargetId:               "2103612***",
-//				PrincipalType:          "Group",
-//				PrincipalId:            "8990752****",
-//				DuplicationStrategy:    "KeepBoth",
-//				DeletionStrategy:       "Delete",
-//				IdentitySourceStrategy: "BindConflictUser",
-//				Description:            "ccapi-test",
-//				DuplicationSuffix:      "-cctest",
+//			_, err := cloudidentity.NewUserProvisioning(ctx, "CloudIdentityUserProvisioningDemo", &cloudidentity.UserProvisioningArgs{
+//				TargetId:               pulumi.String("2103612***"),
+//				PrincipalType:          pulumi.String("Group"),
+//				PrincipalId:            pulumi.String("8990752****"),
+//				DuplicationStrategy:    pulumi.String("KeepBoth"),
+//				DeletionStrategy:       pulumi.String("Delete"),
+//				IdentitySourceStrategy: pulumi.String("BindConflictUser"),
+//				Description:            pulumi.String("ccapi-test"),
+//				DuplicationSuffix:      pulumi.String("-cctest"),
 //			})
 //			if err != nil {
 //				return err

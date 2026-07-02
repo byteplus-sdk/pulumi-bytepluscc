@@ -16,7 +16,7 @@ public final class GetInstanceResourceTagTagKv {
      */
     private String key;
     /**
-     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+     * @return Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     private String type;
@@ -35,7 +35,7 @@ public final class GetInstanceResourceTagTagKv {
         return this.key;
     }
     /**
-     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+     * @return Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     public String type() {

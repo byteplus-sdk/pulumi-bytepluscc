@@ -620,7 +620,7 @@ func (o RuleDimensionConditionsMetaConditionPtrOutput) Metas() RuleDimensionCond
 }
 
 type RuleDimensionConditionsMetaConditionMeta struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator *string `pulumi:"comparator"`
 	// Tag key.
 	Key *string `pulumi:"key"`
@@ -640,7 +640,7 @@ type RuleDimensionConditionsMetaConditionMetaInput interface {
 }
 
 type RuleDimensionConditionsMetaConditionMetaArgs struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
 	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
@@ -699,7 +699,7 @@ func (o RuleDimensionConditionsMetaConditionMetaOutput) ToRuleDimensionCondition
 	return o
 }
 
-// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 func (o RuleDimensionConditionsMetaConditionMetaOutput) Comparator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsMetaConditionMeta) *string { return v.Comparator }).(pulumi.StringPtrOutput)
 }
@@ -1024,7 +1024,7 @@ func (o RuleDimensionConditionsTagConditionPtrOutput) Tags() RuleDimensionCondit
 }
 
 type RuleDimensionConditionsTagConditionTag struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator *string `pulumi:"comparator"`
 	// Tag key.
 	Key *string `pulumi:"key"`
@@ -1044,7 +1044,7 @@ type RuleDimensionConditionsTagConditionTagInput interface {
 }
 
 type RuleDimensionConditionsTagConditionTagArgs struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
 	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
@@ -1103,7 +1103,7 @@ func (o RuleDimensionConditionsTagConditionTagOutput) ToRuleDimensionConditionsT
 	return o
 }
 
-// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 func (o RuleDimensionConditionsTagConditionTagOutput) Comparator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleDimensionConditionsTagConditionTag) *string { return v.Comparator }).(pulumi.StringPtrOutput)
 }
@@ -1549,7 +1549,7 @@ func (o RuleNoDataPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
 }
 
 type RuleNotifyTemplate struct {
-	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+	// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
 	Channel *string `pulumi:"channel"`
 	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId *string `pulumi:"notifyTemplateId"`
@@ -1567,7 +1567,7 @@ type RuleNotifyTemplateInput interface {
 }
 
 type RuleNotifyTemplateArgs struct {
-	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+	// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
 	Channel pulumi.StringPtrInput `pulumi:"channel"`
 	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId pulumi.StringPtrInput `pulumi:"notifyTemplateId"`
@@ -1624,7 +1624,7 @@ func (o RuleNotifyTemplateOutput) ToRuleNotifyTemplateOutputWithContext(ctx cont
 	return o
 }
 
-// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
 func (o RuleNotifyTemplateOutput) Channel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleNotifyTemplate) *string { return v.Channel }).(pulumi.StringPtrOutput)
 }
@@ -2414,7 +2414,7 @@ type GetRuleDimensionConditionsMetaCondition struct {
 	AllDimensions bool `pulumi:"allDimensions"`
 	// Condition. and: All conditions met. or: Any condition met.
 	Condition string `pulumi:"condition"`
-	// Condition. and: All conditions met. or: Any condition met.
+	// Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
 	Metas []GetRuleDimensionConditionsMetaConditionMeta `pulumi:"metas"`
 }
 
@@ -2434,7 +2434,7 @@ type GetRuleDimensionConditionsMetaConditionArgs struct {
 	AllDimensions pulumi.BoolInput `pulumi:"allDimensions"`
 	// Condition. and: All conditions met. or: Any condition met.
 	Condition pulumi.StringInput `pulumi:"condition"`
-	// Condition. and: All conditions met. or: Any condition met.
+	// Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
 	Metas GetRuleDimensionConditionsMetaConditionMetaArrayInput `pulumi:"metas"`
 }
 
@@ -2474,7 +2474,7 @@ func (o GetRuleDimensionConditionsMetaConditionOutput) Condition() pulumi.String
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaCondition) string { return v.Condition }).(pulumi.StringOutput)
 }
 
-// Condition. and: All conditions met. or: Any condition met.
+// Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
 func (o GetRuleDimensionConditionsMetaConditionOutput) Metas() GetRuleDimensionConditionsMetaConditionMetaArrayOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaCondition) []GetRuleDimensionConditionsMetaConditionMeta {
 		return v.Metas
@@ -2482,7 +2482,7 @@ func (o GetRuleDimensionConditionsMetaConditionOutput) Metas() GetRuleDimensionC
 }
 
 type GetRuleDimensionConditionsMetaConditionMeta struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator string `pulumi:"comparator"`
 	// Tag key.
 	Key string `pulumi:"key"`
@@ -2502,7 +2502,7 @@ type GetRuleDimensionConditionsMetaConditionMetaInput interface {
 }
 
 type GetRuleDimensionConditionsMetaConditionMetaArgs struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator pulumi.StringInput `pulumi:"comparator"`
 	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
@@ -2561,7 +2561,7 @@ func (o GetRuleDimensionConditionsMetaConditionMetaOutput) ToGetRuleDimensionCon
 	return o
 }
 
-// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 func (o GetRuleDimensionConditionsMetaConditionMetaOutput) Comparator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsMetaConditionMeta) string { return v.Comparator }).(pulumi.StringOutput)
 }
@@ -2712,7 +2712,7 @@ func (o GetRuleDimensionConditionsTagConditionOutput) Tags() GetRuleDimensionCon
 }
 
 type GetRuleDimensionConditionsTagConditionTag struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator string `pulumi:"comparator"`
 	// Tag key.
 	Key string `pulumi:"key"`
@@ -2732,7 +2732,7 @@ type GetRuleDimensionConditionsTagConditionTagInput interface {
 }
 
 type GetRuleDimensionConditionsTagConditionTagArgs struct {
-	// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+	// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 	Comparator pulumi.StringInput `pulumi:"comparator"`
 	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
@@ -2791,7 +2791,7 @@ func (o GetRuleDimensionConditionsTagConditionTagOutput) ToGetRuleDimensionCondi
 	return o
 }
 
-// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
 func (o GetRuleDimensionConditionsTagConditionTagOutput) Comparator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleDimensionConditionsTagConditionTag) string { return v.Comparator }).(pulumi.StringOutput)
 }
@@ -3145,7 +3145,7 @@ func (o GetRuleNoDataOutput) EvaluationCount() pulumi.IntOutput {
 }
 
 type GetRuleNotifyTemplate struct {
-	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+	// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
 	Channel string `pulumi:"channel"`
 	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId string `pulumi:"notifyTemplateId"`
@@ -3163,7 +3163,7 @@ type GetRuleNotifyTemplateInput interface {
 }
 
 type GetRuleNotifyTemplateArgs struct {
-	// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+	// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
 	Channel pulumi.StringInput `pulumi:"channel"`
 	// Notification template ID. Note: Each notification channel supports only one notification template ID.
 	NotifyTemplateId pulumi.StringInput `pulumi:"notifyTemplateId"`
@@ -3220,7 +3220,7 @@ func (o GetRuleNotifyTemplateOutput) ToGetRuleNotifyTemplateOutputWithContext(ct
 	return o
 }
 
-// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
 func (o GetRuleNotifyTemplateOutput) Channel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleNotifyTemplate) string { return v.Channel }).(pulumi.StringOutput)
 }

@@ -32,17 +32,21 @@ class InstanceArgs:
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_storage_scaling_config: Optional[pulumi.Input['InstanceAutoStorageScalingConfigArgs']] = None,
                  auto_upgrade_minor_version: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_policy: Optional[pulumi.Input['InstanceBackupPolicyArgs']] = None,
                  cpu_num: Optional[pulumi.Input[builtins.int]] = None,
                  db_param_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  db_time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  deletion_protection: Optional[pulumi.Input[builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[builtins.str]] = None,
                  global_read_only: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  lower_case_table_names: Optional[pulumi.Input[builtins.str]] = None,
                  maintenance_window: Optional[pulumi.Input['InstanceMaintenanceWindowArgs']] = None,
                  node_spec: Optional[pulumi.Input[builtins.str]] = None,
+                 parameter_template_id: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
+                 private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  super_account_name: Optional[pulumi.Input[builtins.str]] = None,
                  super_account_password: Optional[pulumi.Input[builtins.str]] = None,
@@ -59,17 +63,21 @@ class InstanceArgs:
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: Auto scaling configuration
         :param pulumi.Input[builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input['InstanceBackupPolicyArgs'] backup_policy: Instance backup policy configuration.
         :param pulumi.Input[builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
         :param pulumi.Input[builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
         :param pulumi.Input[builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         :param pulumi.Input[builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[builtins.str] instance_name: Instance name.
         :param pulumi.Input[builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         :param pulumi.Input[builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[builtins.str] project_name: Project.
         :param pulumi.Input[builtins.str] super_account_name: High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         :param pulumi.Input[builtins.str] super_account_password: Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
@@ -88,6 +96,8 @@ class InstanceArgs:
             pulumi.set(__self__, "auto_storage_scaling_config", auto_storage_scaling_config)
         if auto_upgrade_minor_version is not None:
             pulumi.set(__self__, "auto_upgrade_minor_version", auto_upgrade_minor_version)
+        if backup_policy is not None:
+            pulumi.set(__self__, "backup_policy", backup_policy)
         if cpu_num is not None:
             pulumi.set(__self__, "cpu_num", cpu_num)
         if db_param_group_id is not None:
@@ -96,6 +106,8 @@ class InstanceArgs:
             pulumi.set(__self__, "db_time_zone", db_time_zone)
         if deletion_protection is not None:
             pulumi.set(__self__, "deletion_protection", deletion_protection)
+        if engine_type is not None:
+            pulumi.set(__self__, "engine_type", engine_type)
         if global_read_only is not None:
             pulumi.set(__self__, "global_read_only", global_read_only)
         if instance_name is not None:
@@ -108,8 +120,12 @@ class InstanceArgs:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if node_spec is not None:
             pulumi.set(__self__, "node_spec", node_spec)
+        if parameter_template_id is not None:
+            pulumi.set(__self__, "parameter_template_id", parameter_template_id)
         if port is not None:
             pulumi.set(__self__, "port", port)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if super_account_name is not None:
@@ -239,6 +255,18 @@ class InstanceArgs:
         pulumi.set(self, "auto_upgrade_minor_version", value)
 
     @property
+    @pulumi.getter(name="backupPolicy")
+    def backup_policy(self) -> Optional[pulumi.Input['InstanceBackupPolicyArgs']]:
+        """
+        Instance backup policy configuration.
+        """
+        return pulumi.get(self, "backup_policy")
+
+    @backup_policy.setter
+    def backup_policy(self, value: Optional[pulumi.Input['InstanceBackupPolicyArgs']]):
+        pulumi.set(self, "backup_policy", value)
+
+    @property
     @pulumi.getter(name="cpuNum")
     def cpu_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -285,6 +313,18 @@ class InstanceArgs:
     @deletion_protection.setter
     def deletion_protection(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "deletion_protection", value)
+
+    @property
+    @pulumi.getter(name="engineType")
+    def engine_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        """
+        return pulumi.get(self, "engine_type")
+
+    @engine_type.setter
+    def engine_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "engine_type", value)
 
     @property
     @pulumi.getter(name="globalReadOnly")
@@ -359,6 +399,18 @@ class InstanceArgs:
         pulumi.set(self, "node_spec", value)
 
     @property
+    @pulumi.getter(name="parameterTemplateId")
+    def parameter_template_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter template ID.
+        """
+        return pulumi.get(self, "parameter_template_id")
+
+    @parameter_template_id.setter
+    def parameter_template_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "parameter_template_id", value)
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -369,6 +421,18 @@ class InstanceArgs:
     @port.setter
     def port(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @private_ip_address.setter
+    def private_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "private_ip_address", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -442,6 +506,7 @@ class _InstanceState:
                  backup_error_log_size: Optional[pulumi.Input[builtins.int]] = None,
                  backup_free_quota_size: Optional[pulumi.Input[builtins.int]] = None,
                  backup_log_size: Optional[pulumi.Input[builtins.int]] = None,
+                 backup_policy: Optional[pulumi.Input['InstanceBackupPolicyArgs']] = None,
                  backup_slow_log_size: Optional[pulumi.Input[builtins.int]] = None,
                  backup_use: Optional[pulumi.Input[builtins.float]] = None,
                  basic_backup_binlog_size: Optional[pulumi.Input[builtins.int]] = None,
@@ -460,6 +525,7 @@ class _InstanceState:
                  dr_dts_task_status: Optional[pulumi.Input[builtins.str]] = None,
                  dr_seconds_behind_master: Optional[pulumi.Input[builtins.int]] = None,
                  endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointArgs']]]] = None,
+                 engine_type: Optional[pulumi.Input[builtins.str]] = None,
                  global_read_only: Optional[pulumi.Input[builtins.bool]] = None,
                  has_disaster_recovery_instances: Optional[pulumi.Input[builtins.bool]] = None,
                  has_green_instance: Optional[pulumi.Input[builtins.bool]] = None,
@@ -478,7 +544,9 @@ class _InstanceState:
                  node_space_used_percentage: Optional[pulumi.Input[builtins.float]] = None,
                  node_spec: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceNodeArgs']]]] = None,
+                 parameter_template_id: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
+                 private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_detail: Optional[pulumi.Input['InstanceProxyDetailArgs']] = None,
                  storage_audit_log_size: Optional[pulumi.Input[builtins.int]] = None,
@@ -513,6 +581,7 @@ class _InstanceState:
         :param pulumi.Input[builtins.int] backup_error_log_size: Space used by error logs in backups.
         :param pulumi.Input[builtins.int] backup_free_quota_size: Free backup storage space, in GB
         :param pulumi.Input[builtins.int] backup_log_size: Space used by logs in backups.
+        :param pulumi.Input['InstanceBackupPolicyArgs'] backup_policy: Instance backup policy configuration.
         :param pulumi.Input[builtins.int] backup_slow_log_size: Space used by slow logs in backups.
         :param pulumi.Input[builtins.float] backup_use: Backup space used by the instance, in GB
         :param pulumi.Input[builtins.int] basic_backup_binlog_size: Space used by Binlog logs in basic backups.
@@ -529,6 +598,7 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] dr_dts_task_name: Name of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[builtins.str] dr_dts_task_status: Status of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[builtins.int] dr_seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
+        :param pulumi.Input[builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[builtins.bool] has_disaster_recovery_instances: Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
         :param pulumi.Input[builtins.bool] has_green_instance: Is the instance in blue-green deployment? Values: true: yes. false: no.
@@ -546,7 +616,9 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] node_number: Number of nodes.
         :param pulumi.Input[builtins.float] node_space_used_percentage: Average disk usage of the primary node over the past minute
         :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[builtins.str] project_name: Project.
         :param pulumi.Input['InstanceProxyDetailArgs'] proxy_detail: proxy information
         :param pulumi.Input[builtins.int] storage_audit_log_size: Space used by audit logs in instance storage
@@ -591,6 +663,8 @@ class _InstanceState:
             pulumi.set(__self__, "backup_free_quota_size", backup_free_quota_size)
         if backup_log_size is not None:
             pulumi.set(__self__, "backup_log_size", backup_log_size)
+        if backup_policy is not None:
+            pulumi.set(__self__, "backup_policy", backup_policy)
         if backup_slow_log_size is not None:
             pulumi.set(__self__, "backup_slow_log_size", backup_slow_log_size)
         if backup_use is not None:
@@ -627,6 +701,8 @@ class _InstanceState:
             pulumi.set(__self__, "dr_seconds_behind_master", dr_seconds_behind_master)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
+        if engine_type is not None:
+            pulumi.set(__self__, "engine_type", engine_type)
         if global_read_only is not None:
             pulumi.set(__self__, "global_read_only", global_read_only)
         if has_disaster_recovery_instances is not None:
@@ -663,8 +739,12 @@ class _InstanceState:
             pulumi.set(__self__, "node_spec", node_spec)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
+        if parameter_template_id is not None:
+            pulumi.set(__self__, "parameter_template_id", parameter_template_id)
         if port is not None:
             pulumi.set(__self__, "port", port)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if proxy_detail is not None:
@@ -838,6 +918,18 @@ class _InstanceState:
     @backup_log_size.setter
     def backup_log_size(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "backup_log_size", value)
+
+    @property
+    @pulumi.getter(name="backupPolicy")
+    def backup_policy(self) -> Optional[pulumi.Input['InstanceBackupPolicyArgs']]:
+        """
+        Instance backup policy configuration.
+        """
+        return pulumi.get(self, "backup_policy")
+
+    @backup_policy.setter
+    def backup_policy(self, value: Optional[pulumi.Input['InstanceBackupPolicyArgs']]):
+        pulumi.set(self, "backup_policy", value)
 
     @property
     @pulumi.getter(name="backupSlowLogSize")
@@ -1048,6 +1140,18 @@ class _InstanceState:
     @endpoints.setter
     def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointArgs']]]]):
         pulumi.set(self, "endpoints", value)
+
+    @property
+    @pulumi.getter(name="engineType")
+    def engine_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        """
+        return pulumi.get(self, "engine_type")
+
+    @engine_type.setter
+    def engine_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "engine_type", value)
 
     @property
     @pulumi.getter(name="globalReadOnly")
@@ -1263,6 +1367,18 @@ class _InstanceState:
         pulumi.set(self, "nodes", value)
 
     @property
+    @pulumi.getter(name="parameterTemplateId")
+    def parameter_template_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter template ID.
+        """
+        return pulumi.get(self, "parameter_template_id")
+
+    @parameter_template_id.setter
+    def parameter_template_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "parameter_template_id", value)
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -1273,6 +1389,18 @@ class _InstanceState:
     @port.setter
     def port(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @private_ip_address.setter
+    def private_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "private_ip_address", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -1545,12 +1673,14 @@ class Instance(pulumi.CustomResource):
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_storage_scaling_config: Optional[pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']]] = None,
                  auto_upgrade_minor_version: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_policy: Optional[pulumi.Input[Union['InstanceBackupPolicyArgs', 'InstanceBackupPolicyArgsDict']]] = None,
                  charge_detail: Optional[pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']]] = None,
                  cpu_num: Optional[pulumi.Input[builtins.int]] = None,
                  db_engine_version: Optional[pulumi.Input[builtins.str]] = None,
                  db_param_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  db_time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  deletion_protection: Optional[pulumi.Input[builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[builtins.str]] = None,
                  global_read_only: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1558,7 +1688,9 @@ class Instance(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_spec: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]]] = None,
+                 parameter_template_id: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
+                 private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  storage_space: Optional[pulumi.Input[builtins.int]] = None,
                  storage_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1583,19 +1715,23 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: Auto scaling configuration
         :param pulumi.Input[builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[Union['InstanceBackupPolicyArgs', 'InstanceBackupPolicyArgsDict']] backup_policy: Instance backup policy configuration.
         :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Billing method
         :param pulumi.Input[builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
         :param pulumi.Input[builtins.str] db_engine_version: Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         :param pulumi.Input[builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
         :param pulumi.Input[builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         :param pulumi.Input[builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[builtins.str] instance_name: Instance name.
         :param pulumi.Input[builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         :param pulumi.Input[builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[builtins.str] project_name: Project.
         :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, in GB
         :param pulumi.Input[builtins.str] storage_type: Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
@@ -1638,12 +1774,14 @@ class Instance(pulumi.CustomResource):
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_storage_scaling_config: Optional[pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']]] = None,
                  auto_upgrade_minor_version: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_policy: Optional[pulumi.Input[Union['InstanceBackupPolicyArgs', 'InstanceBackupPolicyArgsDict']]] = None,
                  charge_detail: Optional[pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']]] = None,
                  cpu_num: Optional[pulumi.Input[builtins.int]] = None,
                  db_engine_version: Optional[pulumi.Input[builtins.str]] = None,
                  db_param_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  db_time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  deletion_protection: Optional[pulumi.Input[builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[builtins.str]] = None,
                  global_read_only: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1651,7 +1789,9 @@ class Instance(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_spec: Optional[pulumi.Input[builtins.str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]]] = None,
+                 parameter_template_id: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
+                 private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  storage_space: Optional[pulumi.Input[builtins.int]] = None,
                  storage_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1673,6 +1813,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["allow_list_ids"] = allow_list_ids
             __props__.__dict__["auto_storage_scaling_config"] = auto_storage_scaling_config
             __props__.__dict__["auto_upgrade_minor_version"] = auto_upgrade_minor_version
+            __props__.__dict__["backup_policy"] = backup_policy
             if charge_detail is None and not opts.urn:
                 raise TypeError("Missing required property 'charge_detail'")
             __props__.__dict__["charge_detail"] = charge_detail
@@ -1683,6 +1824,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["db_param_group_id"] = db_param_group_id
             __props__.__dict__["db_time_zone"] = db_time_zone
             __props__.__dict__["deletion_protection"] = deletion_protection
+            __props__.__dict__["engine_type"] = engine_type
             __props__.__dict__["global_read_only"] = global_read_only
             __props__.__dict__["instance_name"] = instance_name
             __props__.__dict__["instance_type"] = instance_type
@@ -1692,7 +1834,9 @@ class Instance(pulumi.CustomResource):
             if nodes is None and not opts.urn:
                 raise TypeError("Missing required property 'nodes'")
             __props__.__dict__["nodes"] = nodes
+            __props__.__dict__["parameter_template_id"] = parameter_template_id
             __props__.__dict__["port"] = port
+            __props__.__dict__["private_ip_address"] = private_ip_address
             __props__.__dict__["project_name"] = project_name
             if storage_space is None and not opts.urn:
                 raise TypeError("Missing required property 'storage_space'")
@@ -1775,6 +1919,7 @@ class Instance(pulumi.CustomResource):
             backup_error_log_size: Optional[pulumi.Input[builtins.int]] = None,
             backup_free_quota_size: Optional[pulumi.Input[builtins.int]] = None,
             backup_log_size: Optional[pulumi.Input[builtins.int]] = None,
+            backup_policy: Optional[pulumi.Input[Union['InstanceBackupPolicyArgs', 'InstanceBackupPolicyArgsDict']]] = None,
             backup_slow_log_size: Optional[pulumi.Input[builtins.int]] = None,
             backup_use: Optional[pulumi.Input[builtins.float]] = None,
             basic_backup_binlog_size: Optional[pulumi.Input[builtins.int]] = None,
@@ -1793,6 +1938,7 @@ class Instance(pulumi.CustomResource):
             dr_dts_task_status: Optional[pulumi.Input[builtins.str]] = None,
             dr_seconds_behind_master: Optional[pulumi.Input[builtins.int]] = None,
             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceEndpointArgs', 'InstanceEndpointArgsDict']]]]] = None,
+            engine_type: Optional[pulumi.Input[builtins.str]] = None,
             global_read_only: Optional[pulumi.Input[builtins.bool]] = None,
             has_disaster_recovery_instances: Optional[pulumi.Input[builtins.bool]] = None,
             has_green_instance: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1811,7 +1957,9 @@ class Instance(pulumi.CustomResource):
             node_space_used_percentage: Optional[pulumi.Input[builtins.float]] = None,
             node_spec: Optional[pulumi.Input[builtins.str]] = None,
             nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]]] = None,
+            parameter_template_id: Optional[pulumi.Input[builtins.str]] = None,
             port: Optional[pulumi.Input[builtins.int]] = None,
+            private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             proxy_detail: Optional[pulumi.Input[Union['InstanceProxyDetailArgs', 'InstanceProxyDetailArgsDict']]] = None,
             storage_audit_log_size: Optional[pulumi.Input[builtins.int]] = None,
@@ -1851,6 +1999,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] backup_error_log_size: Space used by error logs in backups.
         :param pulumi.Input[builtins.int] backup_free_quota_size: Free backup storage space, in GB
         :param pulumi.Input[builtins.int] backup_log_size: Space used by logs in backups.
+        :param pulumi.Input[Union['InstanceBackupPolicyArgs', 'InstanceBackupPolicyArgsDict']] backup_policy: Instance backup policy configuration.
         :param pulumi.Input[builtins.int] backup_slow_log_size: Space used by slow logs in backups.
         :param pulumi.Input[builtins.float] backup_use: Backup space used by the instance, in GB
         :param pulumi.Input[builtins.int] basic_backup_binlog_size: Space used by Binlog logs in basic backups.
@@ -1867,6 +2016,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] dr_dts_task_name: Name of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[builtins.str] dr_dts_task_status: Status of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[builtins.int] dr_seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
+        :param pulumi.Input[builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[builtins.bool] has_disaster_recovery_instances: Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
         :param pulumi.Input[builtins.bool] has_green_instance: Is the instance in blue-green deployment? Values: true: yes. false: no.
@@ -1884,7 +2034,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] node_number: Number of nodes.
         :param pulumi.Input[builtins.float] node_space_used_percentage: Average disk usage of the primary node over the past minute
         :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[builtins.str] project_name: Project.
         :param pulumi.Input[Union['InstanceProxyDetailArgs', 'InstanceProxyDetailArgsDict']] proxy_detail: proxy information
         :param pulumi.Input[builtins.int] storage_audit_log_size: Space used by audit logs in instance storage
@@ -1922,6 +2074,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["backup_error_log_size"] = backup_error_log_size
         __props__.__dict__["backup_free_quota_size"] = backup_free_quota_size
         __props__.__dict__["backup_log_size"] = backup_log_size
+        __props__.__dict__["backup_policy"] = backup_policy
         __props__.__dict__["backup_slow_log_size"] = backup_slow_log_size
         __props__.__dict__["backup_use"] = backup_use
         __props__.__dict__["basic_backup_binlog_size"] = basic_backup_binlog_size
@@ -1940,6 +2093,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["dr_dts_task_status"] = dr_dts_task_status
         __props__.__dict__["dr_seconds_behind_master"] = dr_seconds_behind_master
         __props__.__dict__["endpoints"] = endpoints
+        __props__.__dict__["engine_type"] = engine_type
         __props__.__dict__["global_read_only"] = global_read_only
         __props__.__dict__["has_disaster_recovery_instances"] = has_disaster_recovery_instances
         __props__.__dict__["has_green_instance"] = has_green_instance
@@ -1958,7 +2112,9 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["node_space_used_percentage"] = node_space_used_percentage
         __props__.__dict__["node_spec"] = node_spec
         __props__.__dict__["nodes"] = nodes
+        __props__.__dict__["parameter_template_id"] = parameter_template_id
         __props__.__dict__["port"] = port
+        __props__.__dict__["private_ip_address"] = private_ip_address
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["proxy_detail"] = proxy_detail
         __props__.__dict__["storage_audit_log_size"] = storage_audit_log_size
@@ -2067,6 +2223,14 @@ class Instance(pulumi.CustomResource):
         Space used by logs in backups.
         """
         return pulumi.get(self, "backup_log_size")
+
+    @property
+    @pulumi.getter(name="backupPolicy")
+    def backup_policy(self) -> pulumi.Output['outputs.InstanceBackupPolicy']:
+        """
+        Instance backup policy configuration.
+        """
+        return pulumi.get(self, "backup_policy")
 
     @property
     @pulumi.getter(name="backupSlowLogSize")
@@ -2205,6 +2369,14 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def endpoints(self) -> pulumi.Output[Sequence['outputs.InstanceEndpoint']]:
         return pulumi.get(self, "endpoints")
+
+    @property
+    @pulumi.getter(name="engineType")
+    def engine_type(self) -> pulumi.Output[builtins.str]:
+        """
+        Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        """
+        return pulumi.get(self, "engine_type")
 
     @property
     @pulumi.getter(name="globalReadOnly")
@@ -2348,12 +2520,28 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "nodes")
 
     @property
+    @pulumi.getter(name="parameterTemplateId")
+    def parameter_template_id(self) -> pulumi.Output[builtins.str]:
+        """
+        Parameter template ID.
+        """
+        return pulumi.get(self, "parameter_template_id")
+
+    @property
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
         Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         """
         return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> pulumi.Output[builtins.str]:
+        """
+        Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        """
+        return pulumi.get(self, "private_ip_address")
 
     @property
     @pulumi.getter(name="projectName")

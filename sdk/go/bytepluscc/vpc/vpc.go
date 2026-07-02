@@ -224,6 +224,8 @@ type vpcArgs struct {
 	// Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
 	SupportIpv4Gateway *bool    `pulumi:"supportIpv4Gateway"`
 	Tags               []VpcTag `pulumi:"tags"`
+	// User CIDR block of the VPC.
+	UserCidrBlocks []string `pulumi:"userCidrBlocks"`
 	// Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
 	VpcName *string `pulumi:"vpcName"`
 }
@@ -253,6 +255,8 @@ type VpcArgs struct {
 	// Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
 	SupportIpv4Gateway pulumi.BoolPtrInput
 	Tags               VpcTagArrayInput
+	// User CIDR block of the VPC.
+	UserCidrBlocks pulumi.StringArrayInput
 	// Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
 	VpcName pulumi.StringPtrInput
 }

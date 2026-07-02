@@ -85,6 +85,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly backupLogSize!: pulumi.Output<number>;
     /**
+     * Instance backup policy configuration.
+     */
+    public readonly backupPolicy!: pulumi.Output<outputs.rdsmysql.InstanceBackupPolicy>;
+    /**
      * Space used by slow logs in backups.
      */
     public /*out*/ readonly backupSlowLogSize!: pulumi.Output<number>;
@@ -150,6 +154,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly drSecondsBehindMaster!: pulumi.Output<number>;
     public /*out*/ readonly endpoints!: pulumi.Output<outputs.rdsmysql.InstanceEndpoint[]>;
+    /**
+     * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     */
+    public readonly engineType!: pulumi.Output<string>;
     /**
      * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
@@ -220,9 +228,17 @@ export class Instance extends pulumi.CustomResource {
     public readonly nodeSpec!: pulumi.Output<string>;
     public readonly nodes!: pulumi.Output<outputs.rdsmysql.InstanceNode[]>;
     /**
+     * Parameter template ID.
+     */
+    public readonly parameterTemplateId!: pulumi.Output<string>;
+    /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     public readonly port!: pulumi.Output<number>;
+    /**
+     * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     */
+    public readonly privateIpAddress!: pulumi.Output<string>;
     /**
      * Project.
      */
@@ -333,6 +349,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["backupErrorLogSize"] = state ? state.backupErrorLogSize : undefined;
             resourceInputs["backupFreeQuotaSize"] = state ? state.backupFreeQuotaSize : undefined;
             resourceInputs["backupLogSize"] = state ? state.backupLogSize : undefined;
+            resourceInputs["backupPolicy"] = state ? state.backupPolicy : undefined;
             resourceInputs["backupSlowLogSize"] = state ? state.backupSlowLogSize : undefined;
             resourceInputs["backupUse"] = state ? state.backupUse : undefined;
             resourceInputs["basicBackupBinlogSize"] = state ? state.basicBackupBinlogSize : undefined;
@@ -351,6 +368,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["drDtsTaskStatus"] = state ? state.drDtsTaskStatus : undefined;
             resourceInputs["drSecondsBehindMaster"] = state ? state.drSecondsBehindMaster : undefined;
             resourceInputs["endpoints"] = state ? state.endpoints : undefined;
+            resourceInputs["engineType"] = state ? state.engineType : undefined;
             resourceInputs["globalReadOnly"] = state ? state.globalReadOnly : undefined;
             resourceInputs["hasDisasterRecoveryInstances"] = state ? state.hasDisasterRecoveryInstances : undefined;
             resourceInputs["hasGreenInstance"] = state ? state.hasGreenInstance : undefined;
@@ -369,7 +387,9 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["nodeSpaceUsedPercentage"] = state ? state.nodeSpaceUsedPercentage : undefined;
             resourceInputs["nodeSpec"] = state ? state.nodeSpec : undefined;
             resourceInputs["nodes"] = state ? state.nodes : undefined;
+            resourceInputs["parameterTemplateId"] = state ? state.parameterTemplateId : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
+            resourceInputs["privateIpAddress"] = state ? state.privateIpAddress : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["proxyDetail"] = state ? state.proxyDetail : undefined;
             resourceInputs["storageAuditLogSize"] = state ? state.storageAuditLogSize : undefined;
@@ -418,12 +438,14 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["allowListIds"] = args ? args.allowListIds : undefined;
             resourceInputs["autoStorageScalingConfig"] = args ? args.autoStorageScalingConfig : undefined;
             resourceInputs["autoUpgradeMinorVersion"] = args ? args.autoUpgradeMinorVersion : undefined;
+            resourceInputs["backupPolicy"] = args ? args.backupPolicy : undefined;
             resourceInputs["chargeDetail"] = args ? args.chargeDetail : undefined;
             resourceInputs["cpuNum"] = args ? args.cpuNum : undefined;
             resourceInputs["dbEngineVersion"] = args ? args.dbEngineVersion : undefined;
             resourceInputs["dbParamGroupId"] = args ? args.dbParamGroupId : undefined;
             resourceInputs["dbTimeZone"] = args ? args.dbTimeZone : undefined;
             resourceInputs["deletionProtection"] = args ? args.deletionProtection : undefined;
+            resourceInputs["engineType"] = args ? args.engineType : undefined;
             resourceInputs["globalReadOnly"] = args ? args.globalReadOnly : undefined;
             resourceInputs["instanceName"] = args ? args.instanceName : undefined;
             resourceInputs["instanceType"] = args ? args.instanceType : undefined;
@@ -431,7 +453,9 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["nodeSpec"] = args ? args.nodeSpec : undefined;
             resourceInputs["nodes"] = args ? args.nodes : undefined;
+            resourceInputs["parameterTemplateId"] = args ? args.parameterTemplateId : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
+            resourceInputs["privateIpAddress"] = args ? args.privateIpAddress : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["storageSpace"] = args ? args.storageSpace : undefined;
             resourceInputs["storageType"] = args ? args.storageType : undefined;
@@ -537,6 +561,10 @@ export interface InstanceState {
      */
     backupLogSize?: pulumi.Input<number>;
     /**
+     * Instance backup policy configuration.
+     */
+    backupPolicy?: pulumi.Input<inputs.rdsmysql.InstanceBackupPolicy>;
+    /**
      * Space used by slow logs in backups.
      */
     backupSlowLogSize?: pulumi.Input<number>;
@@ -602,6 +630,10 @@ export interface InstanceState {
      */
     drSecondsBehindMaster?: pulumi.Input<number>;
     endpoints?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceEndpoint>[]>;
+    /**
+     * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     */
+    engineType?: pulumi.Input<string>;
     /**
      * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
@@ -672,9 +704,17 @@ export interface InstanceState {
     nodeSpec?: pulumi.Input<string>;
     nodes?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceNode>[]>;
     /**
+     * Parameter template ID.
+     */
+    parameterTemplateId?: pulumi.Input<string>;
+    /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     port?: pulumi.Input<number>;
+    /**
+     * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     */
+    privateIpAddress?: pulumi.Input<string>;
     /**
      * Project.
      */
@@ -779,6 +819,10 @@ export interface InstanceArgs {
      */
     autoUpgradeMinorVersion?: pulumi.Input<string>;
     /**
+     * Instance backup policy configuration.
+     */
+    backupPolicy?: pulumi.Input<inputs.rdsmysql.InstanceBackupPolicy>;
+    /**
      * Billing method
      */
     chargeDetail: pulumi.Input<inputs.rdsmysql.InstanceChargeDetail>;
@@ -802,6 +846,10 @@ export interface InstanceArgs {
      * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      */
     deletionProtection?: pulumi.Input<string>;
+    /**
+     * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     */
+    engineType?: pulumi.Input<string>;
     /**
      * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
@@ -828,9 +876,17 @@ export interface InstanceArgs {
     nodeSpec?: pulumi.Input<string>;
     nodes: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceNode>[]>;
     /**
+     * Parameter template ID.
+     */
+    parameterTemplateId?: pulumi.Input<string>;
+    /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     port?: pulumi.Input<number>;
+    /**
+     * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     */
+    privateIpAddress?: pulumi.Input<string>;
     /**
      * Project.
      */

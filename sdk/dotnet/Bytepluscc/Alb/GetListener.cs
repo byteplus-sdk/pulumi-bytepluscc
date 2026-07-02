@@ -65,7 +65,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class GetListenerResult
     {
         /// <summary>
-        /// Whether the listener has enabled 'Record custom header in access logs': on: enabled. off: not enabled.
+        /// Whether the listener has enabled the 'Log custom header in access logs' feature: on: Feature is enabled. off: Feature is not enabled.
         /// </summary>
         public readonly string AccessLogRecordCustomizedHeadersEnabled;
         /// <summary>
@@ -73,15 +73,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly ImmutableArray<string> AclIds;
         /// <summary>
-        /// Whether access control is enabled. Values: on: enabled. off: not enabled (default).
+        /// Enable access control. Values: on: enabled. off: disabled (default).
         /// </summary>
         public readonly string AclStatus;
         /// <summary>
-        /// Access control mode. Available values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges specified in the selected access control policy group. If no IP addresses are added to the selected policy group, the listener will forward all requests. When the AclStatus parameter is set to on, AclType is a required parameter.
+        /// Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
         /// </summary>
         public readonly string AclType;
         /// <summary>
-        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is alb, you must specify the CACertificateId parameter.
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
         /// </summary>
         public readonly string CaCertificateId;
         /// <summary>
@@ -89,7 +89,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string CaCertificateSource;
         /// <summary>
-        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is cert_center.
+        /// Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
         /// </summary>
         public readonly string CertCenterCertificateId;
         /// <summary>
@@ -97,7 +97,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string CertificateId;
         /// <summary>
-        /// Source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB; cert*center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center; pca*leaf: private leaf certificate purchased or uploaded via Volcano Engine Certificate Center.
+        /// The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
         /// </summary>
         public readonly string CertificateSource;
         /// <summary>
@@ -109,23 +109,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string CustomizedCfgId;
         /// <summary>
-        /// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1 to 255 characters. If not specified, defaults to an empty string.
+        /// Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// List of extension domains associated with the HTTPS listener. An HTTPS listener can be associated with up to 20 extension domains.
+        /// List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListenerDomainExtensionResult> DomainExtensions;
         /// <summary>
-        /// HTTP 2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled; off: disabled (default).
+        /// HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
         /// </summary>
         public readonly string EnableHttp2;
         /// <summary>
-        /// QUIC feature switch. This parameter is only valid for HTTPS listeners. Available values: on: enabled. off: disabled (default). Only Standard ALB instances support QUIC.
+        /// QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
         /// </summary>
         public readonly string EnableQuic;
         /// <summary>
-        /// Listener on/off status. Values: on: enabled (default); off: disabled.
+        /// Listener on/off status. Values: on: On (default). off: Off.
         /// </summary>
         public readonly string Enabled;
         /// <summary>
@@ -137,11 +137,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// Listener name. If not specified, it is named in the "protocol-port" format. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length limit: 1-128 characters.
+        /// Listener name. If not specified, named in the format 'protocol-port'. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         public readonly string ListenerName;
         /// <summary>
-        /// Load balancer instance ID associated with the listener.
+        /// Load balancer instance ID to which the listener belongs.
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
@@ -149,19 +149,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string PcaLeafCertificateId;
         /// <summary>
-        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication of the HTTPS listener. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
         /// </summary>
         public readonly string PcaRootCaCertificateId;
         /// <summary>
-        /// CA certificate ID associated with the HTTPS listener. This parameter is used for two-way authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
+        /// CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
         /// </summary>
         public readonly string PcaSubCaCertificateId;
         /// <summary>
-        /// Listener port. Value range: 1   - 65535.
+        /// The listener port. Values: 1   - 65535.
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// Project name to which the listener belongs.
+        /// Name of the project to which the listener belongs.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
@@ -177,15 +177,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListenerServerGroupResult> ServerGroups;
         /// <summary>
-        /// Listener status. Values: Creating: creating. Active: running. Pending: configuration changing. Disabled: stopped. Deleting: deleting.
+        /// Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Tags associated with the listener.
+        /// Listener tags.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListenerTagResult> Tags;
         /// <summary>
-        /// The most recent operation time of the listener.
+        /// Time of the listener's most recent operation.
         /// </summary>
         public readonly string UpdatedTime;
 

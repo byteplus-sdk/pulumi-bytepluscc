@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleDimensionConditionsMetaConditionMeta {
     /**
-     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+     * @return Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
      * 
      */
     private String comparator;
@@ -29,7 +29,7 @@ public final class GetRuleDimensionConditionsMetaConditionMeta {
 
     private GetRuleDimensionConditionsMetaConditionMeta() {}
     /**
-     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+     * @return Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
      * 
      */
     public String comparator() {

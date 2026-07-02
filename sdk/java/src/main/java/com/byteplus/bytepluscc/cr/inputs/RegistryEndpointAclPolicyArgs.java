@@ -16,14 +16,14 @@ public final class RegistryEndpointAclPolicyArgs extends com.pulumi.resources.Re
     public static final RegistryEndpointAclPolicyArgs Empty = new RegistryEndpointAclPolicyArgs();
 
     /**
-     * IP entry address
+     * IP entry address.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return IP entry address
+     * @return IP entry address.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class RegistryEndpointAclPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * IP entry description
+     * IP entry description.
      * 
      */
     @Import(name="entry")
     private @Nullable Output<String> entry;
 
     /**
-     * @return IP entry description
+     * @return IP entry description.
      * 
      */
     public Optional<Output<String>> entry() {
@@ -71,7 +71,7 @@ public final class RegistryEndpointAclPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description IP entry address
+         * @param description IP entry address.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RegistryEndpointAclPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description IP entry address
+         * @param description IP entry address.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class RegistryEndpointAclPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param entry IP entry description
+         * @param entry IP entry description.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class RegistryEndpointAclPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param entry IP entry description
+         * @param entry IP entry description.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetCertificateResult {
     /**
-     * @return Certificate ID
+     * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      * 
      */
     private String certificateId;
@@ -58,6 +58,11 @@ public final class GetCertificateResult {
      */
     private List<String> listeners;
     /**
+     * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    private String oldCertificateId;
+    /**
      * @return Server certificate private key. Required when certificate type is Server
      * 
      */
@@ -90,7 +95,7 @@ public final class GetCertificateResult {
 
     private GetCertificateResult() {}
     /**
-     * @return Certificate ID
+     * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      * 
      */
     public String certificateId() {
@@ -153,6 +158,13 @@ public final class GetCertificateResult {
         return this.listeners;
     }
     /**
+     * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    public String oldCertificateId() {
+        return this.oldCertificateId;
+    }
+    /**
      * @return Server certificate private key. Required when certificate type is Server
      * 
      */
@@ -213,6 +225,7 @@ public final class GetCertificateResult {
         private String expiredAt;
         private String id;
         private List<String> listeners;
+        private String oldCertificateId;
         private String privateKey;
         private String projectName;
         private String publicKey;
@@ -231,6 +244,7 @@ public final class GetCertificateResult {
     	      this.expiredAt = defaults.expiredAt;
     	      this.id = defaults.id;
     	      this.listeners = defaults.listeners;
+    	      this.oldCertificateId = defaults.oldCertificateId;
     	      this.privateKey = defaults.privateKey;
     	      this.projectName = defaults.projectName;
     	      this.publicKey = defaults.publicKey;
@@ -315,6 +329,14 @@ public final class GetCertificateResult {
             return listeners(List.of(listeners));
         }
         @CustomType.Setter
+        public Builder oldCertificateId(String oldCertificateId) {
+            if (oldCertificateId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "oldCertificateId");
+            }
+            this.oldCertificateId = oldCertificateId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder privateKey(String privateKey) {
             if (privateKey == null) {
               throw new MissingRequiredPropertyException("GetCertificateResult", "privateKey");
@@ -376,6 +398,7 @@ public final class GetCertificateResult {
             _resultValue.expiredAt = expiredAt;
             _resultValue.id = id;
             _resultValue.listeners = listeners;
+            _resultValue.oldCertificateId = oldCertificateId;
             _resultValue.privateKey = privateKey;
             _resultValue.projectName = projectName;
             _resultValue.publicKey = publicKey;

@@ -13,6 +13,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
 
     public sealed class InstanceEndpointGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("addresses")]
+        private InputList<Inputs.InstanceEndpointAddressGetArgs>? _addresses;
+        public InputList<Inputs.InstanceEndpointAddressGetArgs> Addresses
+        {
+            get => _addresses ?? (_addresses = new InputList<Inputs.InstanceEndpointAddressGetArgs>());
+            set => _addresses = value;
+        }
+
         /// <summary>
         /// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
         /// </summary>
@@ -42,6 +50,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         /// </summary>
         [Input("connectionPoolType")]
         public Input<string>? ConnectionPoolType { get; set; }
+
+        [Input("customRouteStrategies")]
+        private InputList<Inputs.InstanceEndpointCustomRouteStrategyGetArgs>? _customRouteStrategies;
+        public InputList<Inputs.InstanceEndpointCustomRouteStrategyGetArgs> CustomRouteStrategies
+        {
+            get => _customRouteStrategies ?? (_customRouteStrategies = new InputList<Inputs.InstanceEndpointCustomRouteStrategyGetArgs>());
+            set => _customRouteStrategies = value;
+        }
 
         /// <summary>
         /// Description of the connection endpoint

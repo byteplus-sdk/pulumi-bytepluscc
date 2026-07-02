@@ -5,10 +5,40 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AddressBookArgs, AddressBookState } from "./addressBook";
+export type AddressBook = import("./addressBook").AddressBook;
+export const AddressBook: typeof import("./addressBook").AddressBook = null as any;
+utilities.lazyLoad(exports, ["AddressBook"], () => require("./addressBook"));
+
+export { ControlPolicyArgs, ControlPolicyState } from "./controlPolicy";
+export type ControlPolicy = import("./controlPolicy").ControlPolicy;
+export const ControlPolicy: typeof import("./controlPolicy").ControlPolicy = null as any;
+utilities.lazyLoad(exports, ["ControlPolicy"], () => require("./controlPolicy"));
+
 export { DnsControlPolicyArgs, DnsControlPolicyState } from "./dnsControlPolicy";
 export type DnsControlPolicy = import("./dnsControlPolicy").DnsControlPolicy;
 export const DnsControlPolicy: typeof import("./dnsControlPolicy").DnsControlPolicy = null as any;
 utilities.lazyLoad(exports, ["DnsControlPolicy"], () => require("./dnsControlPolicy"));
+
+export { GetAddressBookArgs, GetAddressBookResult, GetAddressBookOutputArgs } from "./getAddressBook";
+export const getAddressBook: typeof import("./getAddressBook").getAddressBook = null as any;
+export const getAddressBookOutput: typeof import("./getAddressBook").getAddressBookOutput = null as any;
+utilities.lazyLoad(exports, ["getAddressBook","getAddressBookOutput"], () => require("./getAddressBook"));
+
+export { GetAddressBooksResult } from "./getAddressBooks";
+export const getAddressBooks: typeof import("./getAddressBooks").getAddressBooks = null as any;
+export const getAddressBooksOutput: typeof import("./getAddressBooks").getAddressBooksOutput = null as any;
+utilities.lazyLoad(exports, ["getAddressBooks","getAddressBooksOutput"], () => require("./getAddressBooks"));
+
+export { GetControlPoliciesResult } from "./getControlPolicies";
+export const getControlPolicies: typeof import("./getControlPolicies").getControlPolicies = null as any;
+export const getControlPoliciesOutput: typeof import("./getControlPolicies").getControlPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getControlPolicies","getControlPoliciesOutput"], () => require("./getControlPolicies"));
+
+export { GetControlPolicyArgs, GetControlPolicyResult, GetControlPolicyOutputArgs } from "./getControlPolicy";
+export const getControlPolicy: typeof import("./getControlPolicy").getControlPolicy = null as any;
+export const getControlPolicyOutput: typeof import("./getControlPolicy").getControlPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getControlPolicy","getControlPolicyOutput"], () => require("./getControlPolicy"));
 
 export { GetDnsControlPoliciesResult } from "./getDnsControlPolicies";
 export const getDnsControlPolicies: typeof import("./getDnsControlPolicies").getDnsControlPolicies = null as any;
@@ -20,16 +50,40 @@ export const getDnsControlPolicy: typeof import("./getDnsControlPolicy").getDnsC
 export const getDnsControlPolicyOutput: typeof import("./getDnsControlPolicy").getDnsControlPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getDnsControlPolicy","getDnsControlPolicyOutput"], () => require("./getDnsControlPolicy"));
 
+export { GetVpcFireWallAclRuleArgs, GetVpcFireWallAclRuleResult, GetVpcFireWallAclRuleOutputArgs } from "./getVpcFireWallAclRule";
+export const getVpcFireWallAclRule: typeof import("./getVpcFireWallAclRule").getVpcFireWallAclRule = null as any;
+export const getVpcFireWallAclRuleOutput: typeof import("./getVpcFireWallAclRule").getVpcFireWallAclRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcFireWallAclRule","getVpcFireWallAclRuleOutput"], () => require("./getVpcFireWallAclRule"));
+
+export { GetVpcFireWallAclRulesResult } from "./getVpcFireWallAclRules";
+export const getVpcFireWallAclRules: typeof import("./getVpcFireWallAclRules").getVpcFireWallAclRules = null as any;
+export const getVpcFireWallAclRulesOutput: typeof import("./getVpcFireWallAclRules").getVpcFireWallAclRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcFireWallAclRules","getVpcFireWallAclRulesOutput"], () => require("./getVpcFireWallAclRules"));
+
+export { VpcFireWallAclRuleArgs, VpcFireWallAclRuleState } from "./vpcFireWallAclRule";
+export type VpcFireWallAclRule = import("./vpcFireWallAclRule").VpcFireWallAclRule;
+export const VpcFireWallAclRule: typeof import("./vpcFireWallAclRule").VpcFireWallAclRule = null as any;
+utilities.lazyLoad(exports, ["VpcFireWallAclRule"], () => require("./vpcFireWallAclRule"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:fwcenter/addressBook:AddressBook":
+                return new AddressBook(name, <any>undefined, { urn })
+            case "bytepluscc:fwcenter/controlPolicy:ControlPolicy":
+                return new ControlPolicy(name, <any>undefined, { urn })
             case "bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy":
                 return new DnsControlPolicy(name, <any>undefined, { urn })
+            case "bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule":
+                return new VpcFireWallAclRule(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/addressBook", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/controlPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/dnsControlPolicy", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/vpcFireWallAclRule", _module)

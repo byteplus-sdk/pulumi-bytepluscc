@@ -22,40 +22,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.bytepluscc.rabbitmqAllowlist;
- * import com.pulumi.bytepluscc.rabbitmqAllowlistArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var rabbitMQAllowListDemo = new RabbitmqAllowlist("rabbitMQAllowListDemo", RabbitmqAllowlistArgs.builder()
- *             .allowListType("IPv4")
- *             .allowList("192.x.0.0/24")
- *             .allowListName("ccapi-test")
- *             .allowListDesc("test-desc")
- *             .associatedInstances(List.of(Map.of("instanceId", "rbtmq-a69238e***")))
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

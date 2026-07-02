@@ -22,7 +22,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         }
 
         /// <summary>
-        /// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+        /// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

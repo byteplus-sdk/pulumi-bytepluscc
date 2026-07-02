@@ -38,6 +38,8 @@ type LookupInstanceResult struct {
 	BackupPointName string `pulumi:"backupPointName"`
 	// Restore data from the backup set to the original Redis instance.
 	BackupRestore GetInstanceBackupRestore `pulumi:"backupRestore"`
+	// Backup list information for the instance
+	Backups []GetInstanceBackup `pulumi:"backups"`
 	// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
 	BlueGreenRole string `pulumi:"blueGreenRole"`
 	// Capacity information of the instance.
@@ -180,6 +182,11 @@ func (o LookupInstanceResultOutput) BackupPointName() pulumi.StringOutput {
 // Restore data from the backup set to the original Redis instance.
 func (o LookupInstanceResultOutput) BackupRestore() GetInstanceBackupRestoreOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceBackupRestore { return v.BackupRestore }).(GetInstanceBackupRestoreOutput)
+}
+
+// Backup list information for the instance
+func (o LookupInstanceResultOutput) Backups() GetInstanceBackupArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceBackup { return v.Backups }).(GetInstanceBackupArrayOutput)
 }
 
 // Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.

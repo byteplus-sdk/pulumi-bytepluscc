@@ -30,27 +30,27 @@ type LookupGroupArgs struct {
 
 // A collection of values returned by getGroup.
 type LookupGroupResult struct {
-	// Consumer Group creation time.
+	// Consumer Group creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// Consumer Group description.
+	// Consumer Group description
 	Description string `pulumi:"description"`
-	// Consumer Group ID.
+	// Consumer Group ID
 	GroupId string `pulumi:"groupId"`
-	// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+	// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 	GroupName string `pulumi:"groupName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// BMQ instance ID.
+	// BMQ instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// User ID associated with the Consumer Group.
+	// User ID of the Consumer Group owner
 	OwnerId string `pulumi:"ownerId"`
-	// Name of the user associated with the Consumer Group.
+	// Name of the Consumer Group owner
 	OwnerName string `pulumi:"ownerName"`
-	// Reset consumption position information.
+	// Reset consumption offset information
 	ResetInfo GetGroupResetInfo `pulumi:"resetInfo"`
-	// Consumer Group status.
+	// Consumer Group status
 	Status string `pulumi:"status"`
-	// Topic list.
+	// Topic list
 	TopicInfos []GetGroupTopicInfo `pulumi:"topicInfos"`
 }
 
@@ -88,22 +88,22 @@ func (o LookupGroupResultOutput) ToLookupGroupResultOutputWithContext(ctx contex
 	return o
 }
 
-// Consumer Group creation time.
+// Consumer Group creation time
 func (o LookupGroupResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Consumer Group description.
+// Consumer Group description
 func (o LookupGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Consumer Group ID.
+// Consumer Group ID
 func (o LookupGroupResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
 func (o LookupGroupResultOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.GroupName }).(pulumi.StringOutput)
 }
@@ -113,32 +113,32 @@ func (o LookupGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// BMQ instance ID.
+// BMQ instance ID
 func (o LookupGroupResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// User ID associated with the Consumer Group.
+// User ID of the Consumer Group owner
 func (o LookupGroupResultOutput) OwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.OwnerId }).(pulumi.StringOutput)
 }
 
-// Name of the user associated with the Consumer Group.
+// Name of the Consumer Group owner
 func (o LookupGroupResultOutput) OwnerName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.OwnerName }).(pulumi.StringOutput)
 }
 
-// Reset consumption position information.
+// Reset consumption offset information
 func (o LookupGroupResultOutput) ResetInfo() GetGroupResetInfoOutput {
 	return o.ApplyT(func(v LookupGroupResult) GetGroupResetInfo { return v.ResetInfo }).(GetGroupResetInfoOutput)
 }
 
-// Consumer Group status.
+// Consumer Group status
 func (o LookupGroupResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Topic list.
+// Topic list
 func (o LookupGroupResultOutput) TopicInfos() GetGroupTopicInfoArrayOutput {
 	return o.ApplyT(func(v LookupGroupResult) []GetGroupTopicInfo { return v.TopicInfos }).(GetGroupTopicInfoArrayOutput)
 }

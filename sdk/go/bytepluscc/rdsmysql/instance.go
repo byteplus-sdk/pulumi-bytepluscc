@@ -43,6 +43,8 @@ type Instance struct {
 	BackupFreeQuotaSize pulumi.IntOutput `pulumi:"backupFreeQuotaSize"`
 	// Space used by logs in backups.
 	BackupLogSize pulumi.IntOutput `pulumi:"backupLogSize"`
+	// Instance backup policy configuration.
+	BackupPolicy InstanceBackupPolicyOutput `pulumi:"backupPolicy"`
 	// Space used by slow logs in backups.
 	BackupSlowLogSize pulumi.IntOutput `pulumi:"backupSlowLogSize"`
 	// Backup space used by the instance, in GB
@@ -77,6 +79,8 @@ type Instance struct {
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster pulumi.IntOutput            `pulumi:"drSecondsBehindMaster"`
 	Endpoints             InstanceEndpointArrayOutput `pulumi:"endpoints"`
+	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+	EngineType pulumi.StringOutput `pulumi:"engineType"`
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly pulumi.BoolOutput `pulumi:"globalReadOnly"`
 	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
@@ -112,8 +116,12 @@ type Instance struct {
 	// Node specifications.
 	NodeSpec pulumi.StringOutput     `pulumi:"nodeSpec"`
 	Nodes    InstanceNodeArrayOutput `pulumi:"nodes"`
+	// Parameter template ID.
+	ParameterTemplateId pulumi.StringOutput `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntOutput `pulumi:"port"`
+	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+	PrivateIpAddress pulumi.StringOutput `pulumi:"privateIpAddress"`
 	// Project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// proxy information
@@ -231,6 +239,8 @@ type instanceState struct {
 	BackupFreeQuotaSize *int `pulumi:"backupFreeQuotaSize"`
 	// Space used by logs in backups.
 	BackupLogSize *int `pulumi:"backupLogSize"`
+	// Instance backup policy configuration.
+	BackupPolicy *InstanceBackupPolicy `pulumi:"backupPolicy"`
 	// Space used by slow logs in backups.
 	BackupSlowLogSize *int `pulumi:"backupSlowLogSize"`
 	// Backup space used by the instance, in GB
@@ -265,6 +275,8 @@ type instanceState struct {
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster *int               `pulumi:"drSecondsBehindMaster"`
 	Endpoints             []InstanceEndpoint `pulumi:"endpoints"`
+	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+	EngineType *string `pulumi:"engineType"`
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly *bool `pulumi:"globalReadOnly"`
 	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
@@ -300,8 +312,12 @@ type instanceState struct {
 	// Node specifications.
 	NodeSpec *string        `pulumi:"nodeSpec"`
 	Nodes    []InstanceNode `pulumi:"nodes"`
+	// Parameter template ID.
+	ParameterTemplateId *string `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port *int `pulumi:"port"`
+	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// Project.
 	ProjectName *string `pulumi:"projectName"`
 	// proxy information
@@ -369,6 +385,8 @@ type InstanceState struct {
 	BackupFreeQuotaSize pulumi.IntPtrInput
 	// Space used by logs in backups.
 	BackupLogSize pulumi.IntPtrInput
+	// Instance backup policy configuration.
+	BackupPolicy InstanceBackupPolicyPtrInput
 	// Space used by slow logs in backups.
 	BackupSlowLogSize pulumi.IntPtrInput
 	// Backup space used by the instance, in GB
@@ -403,6 +421,8 @@ type InstanceState struct {
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster pulumi.IntPtrInput
 	Endpoints             InstanceEndpointArrayInput
+	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+	EngineType pulumi.StringPtrInput
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly pulumi.BoolPtrInput
 	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
@@ -438,8 +458,12 @@ type InstanceState struct {
 	// Node specifications.
 	NodeSpec pulumi.StringPtrInput
 	Nodes    InstanceNodeArrayInput
+	// Parameter template ID.
+	ParameterTemplateId pulumi.StringPtrInput
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntPtrInput
+	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+	PrivateIpAddress pulumi.StringPtrInput
 	// Project.
 	ProjectName pulumi.StringPtrInput
 	// proxy information
@@ -496,6 +520,8 @@ type instanceArgs struct {
 	AutoStorageScalingConfig *InstanceAutoStorageScalingConfig `pulumi:"autoStorageScalingConfig"`
 	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion *string `pulumi:"autoUpgradeMinorVersion"`
+	// Instance backup policy configuration.
+	BackupPolicy *InstanceBackupPolicy `pulumi:"backupPolicy"`
 	// Billing method
 	ChargeDetail InstanceChargeDetail `pulumi:"chargeDetail"`
 	// Number of CPU cores for the database proxy service of the instance
@@ -508,6 +534,8 @@ type instanceArgs struct {
 	DbTimeZone *string `pulumi:"dbTimeZone"`
 	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection *string `pulumi:"deletionProtection"`
+	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+	EngineType *string `pulumi:"engineType"`
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly *bool `pulumi:"globalReadOnly"`
 	// Instance name.
@@ -521,8 +549,12 @@ type instanceArgs struct {
 	// Node specifications.
 	NodeSpec *string        `pulumi:"nodeSpec"`
 	Nodes    []InstanceNode `pulumi:"nodes"`
+	// Parameter template ID.
+	ParameterTemplateId *string `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port *int `pulumi:"port"`
+	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// Project.
 	ProjectName *string `pulumi:"projectName"`
 	// Total storage space of the instance, in GB
@@ -550,6 +582,8 @@ type InstanceArgs struct {
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigPtrInput
 	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion pulumi.StringPtrInput
+	// Instance backup policy configuration.
+	BackupPolicy InstanceBackupPolicyPtrInput
 	// Billing method
 	ChargeDetail InstanceChargeDetailInput
 	// Number of CPU cores for the database proxy service of the instance
@@ -562,6 +596,8 @@ type InstanceArgs struct {
 	DbTimeZone pulumi.StringPtrInput
 	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection pulumi.StringPtrInput
+	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+	EngineType pulumi.StringPtrInput
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly pulumi.BoolPtrInput
 	// Instance name.
@@ -575,8 +611,12 @@ type InstanceArgs struct {
 	// Node specifications.
 	NodeSpec pulumi.StringPtrInput
 	Nodes    InstanceNodeArrayInput
+	// Parameter template ID.
+	ParameterTemplateId pulumi.StringPtrInput
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntPtrInput
+	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+	PrivateIpAddress pulumi.StringPtrInput
 	// Project.
 	ProjectName pulumi.StringPtrInput
 	// Total storage space of the instance, in GB
@@ -737,6 +777,11 @@ func (o InstanceOutput) BackupLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupLogSize }).(pulumi.IntOutput)
 }
 
+// Instance backup policy configuration.
+func (o InstanceOutput) BackupPolicy() InstanceBackupPolicyOutput {
+	return o.ApplyT(func(v *Instance) InstanceBackupPolicyOutput { return v.BackupPolicy }).(InstanceBackupPolicyOutput)
+}
+
 // Space used by slow logs in backups.
 func (o InstanceOutput) BackupSlowLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupSlowLogSize }).(pulumi.IntOutput)
@@ -823,6 +868,11 @@ func (o InstanceOutput) DrSecondsBehindMaster() pulumi.IntOutput {
 
 func (o InstanceOutput) Endpoints() InstanceEndpointArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceEndpointArrayOutput { return v.Endpoints }).(InstanceEndpointArrayOutput)
+}
+
+// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+func (o InstanceOutput) EngineType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.EngineType }).(pulumi.StringOutput)
 }
 
 // Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -914,9 +964,19 @@ func (o InstanceOutput) Nodes() InstanceNodeArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceNodeArrayOutput { return v.Nodes }).(InstanceNodeArrayOutput)
 }
 
+// Parameter template ID.
+func (o InstanceOutput) ParameterTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ParameterTemplateId }).(pulumi.StringOutput)
+}
+
 // Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 func (o InstanceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+}
+
+// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+func (o InstanceOutput) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.PrivateIpAddress }).(pulumi.StringOutput)
 }
 
 // Project.

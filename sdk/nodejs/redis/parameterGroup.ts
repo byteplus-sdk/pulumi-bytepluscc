@@ -13,9 +13,9 @@ import * as utilities from "../utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@pulumi/bytepluscc";
+ * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
  *
- * const redisParameterGroupDemo = new bytepluscc.index.RedisParametergroup("RedisParameterGroupDemo", {
+ * const redisParameterGroupDemo = new bytepluscc.redis.ParameterGroup("RedisParameterGroupDemo", {
  *     engineVersion: "6.0",
  *     description: "用于测试的Redis 6.0自定义参数组",
  *     paramValues: [

@@ -106,11 +106,11 @@ if not MYPY:
     class AclAclEntryArgsDict(TypedDict):
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
         """
         entry: NotRequired[pulumi.Input[builtins.str]]
         """
-        IP entry address range. Only CIDR addresses are supported.
+        IP entry address range; only CIDR addresses are supported
         """
 elif False:
     AclAclEntryArgsDict: TypeAlias = Mapping[str, Any]
@@ -121,8 +121,8 @@ class AclAclEntryArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  entry: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] description: Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-        :param pulumi.Input[builtins.str] entry: IP entry address range. Only CIDR addresses are supported.
+        :param pulumi.Input[builtins.str] description: Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] entry: IP entry address range; only CIDR addresses are supported
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -133,7 +133,7 @@ class AclAclEntryArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -145,7 +145,7 @@ class AclAclEntryArgs:
     @pulumi.getter
     def entry(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP entry address range. Only CIDR addresses are supported.
+        IP entry address range; only CIDR addresses are supported
         """
         return pulumi.get(self, "entry")
 
@@ -158,7 +158,23 @@ if not MYPY:
     class AclListenerArgsDict(TypedDict):
         acl_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+        Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+        """
+        listener_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Listener ID
+        """
+        listener_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Listener name
+        """
+        port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Listener port
+        """
+        protocol: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Listener protocol
         """
 elif False:
     AclListenerArgsDict: TypeAlias = Mapping[str, Any]
@@ -166,18 +182,34 @@ elif False:
 @pulumi.input_type
 class AclListenerArgs:
     def __init__(__self__, *,
-                 acl_type: Optional[pulumi.Input[builtins.str]] = None):
+                 acl_type: Optional[pulumi.Input[builtins.str]] = None,
+                 listener_id: Optional[pulumi.Input[builtins.str]] = None,
+                 listener_name: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.int]] = None,
+                 protocol: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] acl_type: Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+        :param pulumi.Input[builtins.str] acl_type: Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+        :param pulumi.Input[builtins.str] listener_id: Listener ID
+        :param pulumi.Input[builtins.str] listener_name: Listener name
+        :param pulumi.Input[builtins.int] port: Listener port
+        :param pulumi.Input[builtins.str] protocol: Listener protocol
         """
         if acl_type is not None:
             pulumi.set(__self__, "acl_type", acl_type)
+        if listener_id is not None:
+            pulumi.set(__self__, "listener_id", listener_id)
+        if listener_name is not None:
+            pulumi.set(__self__, "listener_name", listener_name)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
 
     @property
     @pulumi.getter(name="aclType")
     def acl_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+        Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         """
         return pulumi.get(self, "acl_type")
 
@@ -185,16 +217,64 @@ class AclListenerArgs:
     def acl_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "acl_type", value)
 
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Listener ID
+        """
+        return pulumi.get(self, "listener_id")
+
+    @listener_id.setter
+    def listener_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "listener_id", value)
+
+    @property
+    @pulumi.getter(name="listenerName")
+    def listener_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Listener name
+        """
+        return pulumi.get(self, "listener_name")
+
+    @listener_name.setter
+    def listener_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "listener_name", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Listener port
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Listener protocol
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
 
 if not MYPY:
     class AclTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+        User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+        User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
 elif False:
     AclTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -205,8 +285,8 @@ class AclTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
-        :param pulumi.Input[builtins.str] value: User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+        :param pulumi.Input[builtins.str] key: User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
+        :param pulumi.Input[builtins.str] value: User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -217,7 +297,7 @@ class AclTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+        User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
         """
         return pulumi.get(self, "key")
 
@@ -229,7 +309,7 @@ class AclTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+        User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
         return pulumi.get(self, "value")
 
@@ -490,7 +570,7 @@ if not MYPY:
     class ListenerDomainExtensionArgsDict(TypedDict):
         cert_center_certificate_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+        Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         """
         certificate_id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -498,11 +578,11 @@ if not MYPY:
         """
         certificate_source: NotRequired[pulumi.Input[builtins.str]]
         """
-        Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+        Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
         """
         domain: NotRequired[pulumi.Input[builtins.str]]
         """
-        Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+        Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         """
         pca_leaf_certificate_id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -510,7 +590,7 @@ if not MYPY:
         """
         san: NotRequired[pulumi.Input[builtins.str]]
         """
-        If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+        If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
 elif False:
     ListenerDomainExtensionArgsDict: TypeAlias = Mapping[str, Any]
@@ -525,12 +605,12 @@ class ListenerDomainExtensionArgs:
                  pca_leaf_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  san: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cert_center_certificate_id: Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+        :param pulumi.Input[builtins.str] cert_center_certificate_id: Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         :param pulumi.Input[builtins.str] certificate_id: Server certificate ID used by the domain. Effective when the certificate source is alb.
-        :param pulumi.Input[builtins.str] certificate_source: Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
-        :param pulumi.Input[builtins.str] domain: Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+        :param pulumi.Input[builtins.str] certificate_source: Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+        :param pulumi.Input[builtins.str] domain: Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         :param pulumi.Input[builtins.str] pca_leaf_certificate_id: Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-        :param pulumi.Input[builtins.str] san: If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+        :param pulumi.Input[builtins.str] san: If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         if cert_center_certificate_id is not None:
             pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
@@ -549,7 +629,7 @@ class ListenerDomainExtensionArgs:
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+        Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -573,7 +653,7 @@ class ListenerDomainExtensionArgs:
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+        Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -585,7 +665,7 @@ class ListenerDomainExtensionArgs:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+        Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         """
         return pulumi.get(self, "domain")
 
@@ -609,7 +689,7 @@ class ListenerDomainExtensionArgs:
     @pulumi.getter
     def san(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+        If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         return pulumi.get(self, "san")
 
@@ -674,11 +754,11 @@ if not MYPY:
     class ListenerTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+        Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+        The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
 elif False:
     ListenerTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -689,8 +769,8 @@ class ListenerTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
-        :param pulumi.Input[builtins.str] value: User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+        :param pulumi.Input[builtins.str] key: Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+        :param pulumi.Input[builtins.str] value: The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -701,7 +781,7 @@ class ListenerTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+        Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -713,7 +793,7 @@ class ListenerTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+        The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
         return pulumi.get(self, "value")
 
@@ -2395,31 +2475,31 @@ if not MYPY:
     class ServerGroupHealthCheckArgsDict(TypedDict):
         domain: NotRequired[pulumi.Input[builtins.str]]
         """
-        The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+        Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
         """
         enabled: NotRequired[pulumi.Input[builtins.str]]
         """
-        Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+        Whether the listener enables health check. Values: on: enabled (default), off: disabled.
         """
         healthy_threshold: NotRequired[pulumi.Input[builtins.int]]
         """
-        Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+        Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
         """
         http_code: NotRequired[pulumi.Input[builtins.str]]
         """
-        HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         http_version: NotRequired[pulumi.Input[builtins.str]]
         """
-        HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+        Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
         """
         interval: NotRequired[pulumi.Input[builtins.int]]
         """
-        After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+        After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
         """
         method: NotRequired[pulumi.Input[builtins.str]]
         """
-        After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+        Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
         """
         port: NotRequired[pulumi.Input[builtins.int]]
         """
@@ -2431,15 +2511,15 @@ if not MYPY:
         """
         timeout: NotRequired[pulumi.Input[builtins.int]]
         """
-        Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+        Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
         """
         unhealthy_threshold: NotRequired[pulumi.Input[builtins.int]]
         """
-        Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+        Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
         """
         uri: NotRequired[pulumi.Input[builtins.str]]
         """
-        Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+        Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
 elif False:
     ServerGroupHealthCheckArgsDict: TypeAlias = Mapping[str, Any]
@@ -2460,18 +2540,18 @@ class ServerGroupHealthCheckArgs:
                  unhealthy_threshold: Optional[pulumi.Input[builtins.int]] = None,
                  uri: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] domain: The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
-        :param pulumi.Input[builtins.str] enabled: Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
-        :param pulumi.Input[builtins.int] healthy_threshold: Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
-        :param pulumi.Input[builtins.str] http_code: HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-        :param pulumi.Input[builtins.str] http_version: HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
-        :param pulumi.Input[builtins.int] interval: After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
-        :param pulumi.Input[builtins.str] method: After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+        :param pulumi.Input[builtins.str] domain: Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+        :param pulumi.Input[builtins.str] enabled: Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+        :param pulumi.Input[builtins.int] healthy_threshold: Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+        :param pulumi.Input[builtins.str] http_code: HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param pulumi.Input[builtins.str] http_version: Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+        :param pulumi.Input[builtins.int] interval: After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+        :param pulumi.Input[builtins.str] method: Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
         :param pulumi.Input[builtins.int] port: Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
         :param pulumi.Input[builtins.str] protocol: Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
-        :param pulumi.Input[builtins.int] timeout: Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
-        :param pulumi.Input[builtins.int] unhealthy_threshold: Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
-        :param pulumi.Input[builtins.str] uri: Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+        :param pulumi.Input[builtins.int] timeout: Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+        :param pulumi.Input[builtins.int] unhealthy_threshold: Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+        :param pulumi.Input[builtins.str] uri: Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
@@ -2502,7 +2582,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+        Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
         """
         return pulumi.get(self, "domain")
 
@@ -2514,7 +2594,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+        Whether the listener enables health check. Values: on: enabled (default), off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -2526,7 +2606,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+        Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
         """
         return pulumi.get(self, "healthy_threshold")
 
@@ -2538,7 +2618,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter(name="httpCode")
     def http_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         return pulumi.get(self, "http_code")
 
@@ -2550,7 +2630,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter(name="httpVersion")
     def http_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+        Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
         """
         return pulumi.get(self, "http_version")
 
@@ -2562,7 +2642,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter
     def interval(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+        After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
         """
         return pulumi.get(self, "interval")
 
@@ -2574,7 +2654,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter
     def method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+        Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
         """
         return pulumi.get(self, "method")
 
@@ -2610,7 +2690,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter
     def timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+        Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
         """
         return pulumi.get(self, "timeout")
 
@@ -2622,7 +2702,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+        Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
@@ -2634,7 +2714,7 @@ class ServerGroupHealthCheckArgs:
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+        Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
         return pulumi.get(self, "uri")
 
@@ -2683,7 +2763,7 @@ if not MYPY:
         """
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        ID of the cloud server instance or network interface.
+        ID of the cloud server instance or network interface card.
         """
         ip: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -2695,7 +2775,7 @@ if not MYPY:
         """
         remote_enabled: NotRequired[pulumi.Input[builtins.str]]
         """
-        Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+        Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         """
         server_id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -2703,11 +2783,11 @@ if not MYPY:
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+        Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
         """
         weight: NotRequired[pulumi.Input[builtins.int]]
         """
-        Backend server weight.
+        Weight of the backend server.
         """
 elif False:
     ServerGroupServerArgsDict: TypeAlias = Mapping[str, Any]
@@ -2725,13 +2805,13 @@ class ServerGroupServerArgs:
                  weight: Optional[pulumi.Input[builtins.int]] = None):
         """
         :param pulumi.Input[builtins.str] description: Description of the backend server.
-        :param pulumi.Input[builtins.str] instance_id: ID of the cloud server instance or network interface.
+        :param pulumi.Input[builtins.str] instance_id: ID of the cloud server instance or network interface card.
         :param pulumi.Input[builtins.str] ip: Private IP address of the backend server.
         :param pulumi.Input[builtins.int] port: Port number on which the backend server receives requests.
-        :param pulumi.Input[builtins.str] remote_enabled: Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] remote_enabled: Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         :param pulumi.Input[builtins.str] server_id: Backend server ID.
-        :param pulumi.Input[builtins.str] type: Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
-        :param pulumi.Input[builtins.int] weight: Backend server weight.
+        :param pulumi.Input[builtins.str] type: Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+        :param pulumi.Input[builtins.int] weight: Weight of the backend server.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -2766,7 +2846,7 @@ class ServerGroupServerArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ID of the cloud server instance or network interface.
+        ID of the cloud server instance or network interface card.
         """
         return pulumi.get(self, "instance_id")
 
@@ -2802,7 +2882,7 @@ class ServerGroupServerArgs:
     @pulumi.getter(name="remoteEnabled")
     def remote_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+        Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         """
         return pulumi.get(self, "remote_enabled")
 
@@ -2826,7 +2906,7 @@ class ServerGroupServerArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+        Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
         """
         return pulumi.get(self, "type")
 
@@ -2838,7 +2918,7 @@ class ServerGroupServerArgs:
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Backend server weight.
+        Weight of the backend server.
         """
         return pulumi.get(self, "weight")
 
@@ -2851,11 +2931,11 @@ if not MYPY:
     class ServerGroupStickySessionConfigArgsDict(TypedDict):
         cookie: NotRequired[pulumi.Input[builtins.str]]
         """
-        Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+        Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
         """
         cookie_timeout: NotRequired[pulumi.Input[builtins.int]]
         """
-        Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+        Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
         """
         sticky_session_enabled: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -2863,7 +2943,7 @@ if not MYPY:
         """
         sticky_session_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+        Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
 elif False:
     ServerGroupStickySessionConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -2876,10 +2956,10 @@ class ServerGroupStickySessionConfigArgs:
                  sticky_session_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  sticky_session_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] cookie: Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
-        :param pulumi.Input[builtins.int] cookie_timeout: Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+        :param pulumi.Input[builtins.str] cookie: Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+        :param pulumi.Input[builtins.int] cookie_timeout: Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
         :param pulumi.Input[builtins.str] sticky_session_enabled: Enable session persistence. on: Enable; off (default): Disable.
-        :param pulumi.Input[builtins.str] sticky_session_type: Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+        :param pulumi.Input[builtins.str] sticky_session_type: Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
         if cookie is not None:
             pulumi.set(__self__, "cookie", cookie)
@@ -2894,7 +2974,7 @@ class ServerGroupStickySessionConfigArgs:
     @pulumi.getter
     def cookie(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+        Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
         """
         return pulumi.get(self, "cookie")
 
@@ -2906,7 +2986,7 @@ class ServerGroupStickySessionConfigArgs:
     @pulumi.getter(name="cookieTimeout")
     def cookie_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+        Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
         """
         return pulumi.get(self, "cookie_timeout")
 
@@ -2930,7 +3010,7 @@ class ServerGroupStickySessionConfigArgs:
     @pulumi.getter(name="stickySessionType")
     def sticky_session_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+        Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
         return pulumi.get(self, "sticky_session_type")
 
@@ -2943,11 +3023,11 @@ if not MYPY:
     class ServerGroupTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        Tag key. Duplicate tag keys are not allowed for the same resource.
+        Tag key. Tag keys for the same resource must be unique.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        Tag value.
+        Tag value of the tag.
         """
 elif False:
     ServerGroupTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -2958,8 +3038,8 @@ class ServerGroupTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: Tag key. Duplicate tag keys are not allowed for the same resource.
-        :param pulumi.Input[builtins.str] value: Tag value.
+        :param pulumi.Input[builtins.str] key: Tag key. Tag keys for the same resource must be unique.
+        :param pulumi.Input[builtins.str] value: Tag value of the tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2970,7 +3050,7 @@ class ServerGroupTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Tag key. Duplicate tag keys are not allowed for the same resource.
+        Tag key. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -2982,7 +3062,7 @@ class ServerGroupTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Tag value.
+        Tag value of the tag.
         """
         return pulumi.get(self, "value")
 

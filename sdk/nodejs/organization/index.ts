@@ -40,6 +40,16 @@ export const getServiceControlPolicy: typeof import("./getServiceControlPolicy")
 export const getServiceControlPolicyOutput: typeof import("./getServiceControlPolicy").getServiceControlPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getServiceControlPolicy","getServiceControlPolicyOutput"], () => require("./getServiceControlPolicy"));
 
+export { GetServiceControlPolicyEnablerArgs, GetServiceControlPolicyEnablerResult, GetServiceControlPolicyEnablerOutputArgs } from "./getServiceControlPolicyEnabler";
+export const getServiceControlPolicyEnabler: typeof import("./getServiceControlPolicyEnabler").getServiceControlPolicyEnabler = null as any;
+export const getServiceControlPolicyEnablerOutput: typeof import("./getServiceControlPolicyEnabler").getServiceControlPolicyEnablerOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceControlPolicyEnabler","getServiceControlPolicyEnablerOutput"], () => require("./getServiceControlPolicyEnabler"));
+
+export { GetServiceControlPolicyEnablersResult } from "./getServiceControlPolicyEnablers";
+export const getServiceControlPolicyEnablers: typeof import("./getServiceControlPolicyEnablers").getServiceControlPolicyEnablers = null as any;
+export const getServiceControlPolicyEnablersOutput: typeof import("./getServiceControlPolicyEnablers").getServiceControlPolicyEnablersOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceControlPolicyEnablers","getServiceControlPolicyEnablersOutput"], () => require("./getServiceControlPolicyEnablers"));
+
 export { GetUnitArgs, GetUnitResult, GetUnitOutputArgs } from "./getUnit";
 export const getUnit: typeof import("./getUnit").getUnit = null as any;
 export const getUnitOutput: typeof import("./getUnit").getUnitOutput = null as any;
@@ -60,6 +70,11 @@ export type ServiceControlPolicy = import("./serviceControlPolicy").ServiceContr
 export const ServiceControlPolicy: typeof import("./serviceControlPolicy").ServiceControlPolicy = null as any;
 utilities.lazyLoad(exports, ["ServiceControlPolicy"], () => require("./serviceControlPolicy"));
 
+export { ServiceControlPolicyEnablerArgs, ServiceControlPolicyEnablerState } from "./serviceControlPolicyEnabler";
+export type ServiceControlPolicyEnabler = import("./serviceControlPolicyEnabler").ServiceControlPolicyEnabler;
+export const ServiceControlPolicyEnabler: typeof import("./serviceControlPolicyEnabler").ServiceControlPolicyEnabler = null as any;
+utilities.lazyLoad(exports, ["ServiceControlPolicyEnabler"], () => require("./serviceControlPolicyEnabler"));
+
 export { UnitArgs, UnitState } from "./unit";
 export type Unit = import("./unit").Unit;
 export const Unit: typeof import("./unit").Unit = null as any;
@@ -76,6 +91,8 @@ const _module = {
                 return new Organization(name, <any>undefined, { urn })
             case "bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy":
                 return new ServiceControlPolicy(name, <any>undefined, { urn })
+            case "bytepluscc:organization/serviceControlPolicyEnabler:ServiceControlPolicyEnabler":
+                return new ServiceControlPolicyEnabler(name, <any>undefined, { urn })
             case "bytepluscc:organization/unit:Unit":
                 return new Unit(name, <any>undefined, { urn })
             default:
@@ -86,4 +103,5 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/account", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/organization", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/serviceControlPolicy", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "organization/serviceControlPolicyEnabler", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/unit", _module)

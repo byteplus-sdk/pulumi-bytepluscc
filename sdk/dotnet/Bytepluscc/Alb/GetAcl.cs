@@ -65,27 +65,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class GetAclResult
     {
         /// <summary>
-        /// Detailed information about IP entries in the access control policy group.
+        /// Details of IP entries in the access control policy group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAclAclEntryResult> AclEntries;
         /// <summary>
-        /// Number of IP entries in the access control policy group.
+        /// Number of IP entries in the access control policy group
         /// </summary>
         public readonly int AclEntryCount;
         /// <summary>
-        /// Access control policy group ID.
+        /// Access control policy group ID
         /// </summary>
         public readonly string AclId;
         /// <summary>
-        /// Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        /// Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
         /// </summary>
         public readonly string AclName;
         /// <summary>
-        /// Creation time of the access control policy group.
+        /// Creation time of the access control policy group
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        /// Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -93,23 +93,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Detailed information about listeners associated with the access control policy group.
+        /// Details of listeners associated with the access control policy group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAclListenerResult> Listeners;
         /// <summary>
-        /// Name of the project to which the access control policy group belongs.
+        /// Project name to which the access control policy group belongs
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
+        /// Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Tags bound to the access control policy group.
+        /// Tags bound to the access control policy group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAclTagResult> Tags;
         /// <summary>
-        /// Most recent operation time for the access control policy group.
+        /// Last operation time of the access control policy group
         /// </summary>
         public readonly string UpdatedTime;
 

@@ -13,38 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
     /// <summary>
     /// When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Bytepluscc = Pulumi.Bytepluscc;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var kafkaAllowListDemo = new Bytepluscc.Index.KafkaAllowlist("KafkaAllowListDemo", new()
-    ///     {
-    ///         AllowList = "127.0.0.2",
-    ///         AllowListDesc = "test",
-    ///         AllowListName = "ccapi-text",
-    ///         AssociatedInstances = new[]
-    ///         {
-    ///             
-    ///             {
-    ///                 { "instanceId", "kafka-cnng9x9s***" },
-    ///             },
-    ///             
-    ///             {
-    ///                 { "instanceId", "kafka-cnnghf99**" },
-    ///             },
-    ///         },
-    ///         ApplyInstanceNum = 2,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ```sh

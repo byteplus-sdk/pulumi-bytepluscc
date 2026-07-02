@@ -9,5 +9,8 @@ import typing
 from .domain import *
 from .get_domain import *
 from .get_domains import *
+from .get_host_group import *
+from .get_host_groups import *
+from .host_group import *
 from ._inputs import *
 from . import outputs

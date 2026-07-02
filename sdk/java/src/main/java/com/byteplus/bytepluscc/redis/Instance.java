@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.redis;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.redis.InstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceState;
+import com.byteplus.bytepluscc.redis.outputs.InstanceBackup;
 import com.byteplus.bytepluscc.redis.outputs.InstanceBackupRestore;
 import com.byteplus.bytepluscc.redis.outputs.InstanceCapacity;
 import com.byteplus.bytepluscc.redis.outputs.InstanceConfigureNode;
@@ -83,6 +84,7 @@ import javax.annotation.Nullable;
  *             .noAuthMode("open")
  *             .parameterGroupId("DefaultParamGroupId-6.0")
  *             .continuousBackup(true)
+ *             .createBackup(true)
  *             .build());
  * 
  *     }
@@ -155,6 +157,12 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<InstanceBackupRestore> backupRestore() {
         return this.backupRestore;
+    }
+    @Export(name="backups", refs={List.class,InstanceBackup.class}, tree="[0,1]")
+    private Output<List<InstanceBackup>> backups;
+
+    public Output<List<InstanceBackup>> backups() {
+        return this.backups;
     }
     /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.

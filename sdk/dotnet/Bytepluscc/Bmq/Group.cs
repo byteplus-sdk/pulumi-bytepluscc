@@ -11,35 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Bmq
 {
     /// <summary>
-    /// A group of consumers with the same Group ID. When a Topic is consumed by multiple Consumers in the same Group, each message is delivered to only one Consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Byteplus = Pulumi.Byteplus;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var bMQGroupDemo = new Byteplus.Index.BmqGroup("BMQGroupDemo", new()
-    ///     {
-    ///         Description = "this is test group",
-    ///         GroupName = "cBMQGroupDemo",
-    ///         InstanceId = "bmq-4ld4vpjzd32tq1gxxxxx",
-    ///         ResetInfo = 
-    ///         {
-    ///             { "topicId", "5f81fcab96cb46c7955659fdxxxxx" },
-    ///             { "resetBy", "OFFSET" },
-    ///             { "offsetType", "LATEST" },
-    ///             { "resetValue", 4 },
-    ///             { "partitionId", 1 },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
+    /// A group of consumers with the same Group ID. When multiple consumers in the same Group consume a Topic, each message is delivered to only one consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
     /// 
     /// ## Import
     /// 
@@ -51,55 +23,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public partial class Group : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Consumer Group creation time.
+        /// Consumer Group creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Consumer Group description.
+        /// Consumer Group description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Consumer Group ID.
+        /// Consumer Group ID
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        /// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         /// </summary>
         [Output("groupName")]
         public Output<string> GroupName { get; private set; } = null!;
 
         /// <summary>
-        /// BMQ instance ID.
+        /// BMQ instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// User ID associated with the Consumer Group.
+        /// User ID of the Consumer Group owner
         /// </summary>
         [Output("ownerId")]
         public Output<string> OwnerId { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the user associated with the Consumer Group.
+        /// Name of the Consumer Group owner
         /// </summary>
         [Output("ownerName")]
         public Output<string> OwnerName { get; private set; } = null!;
 
         /// <summary>
-        /// Reset consumption position information.
+        /// Reset consumption offset information
         /// </summary>
         [Output("resetInfo")]
         public Output<Outputs.GroupResetInfo> ResetInfo { get; private set; } = null!;
 
         /// <summary>
-        /// Consumer Group status.
+        /// Consumer Group status
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -155,25 +127,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class GroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Consumer Group description.
+        /// Consumer Group description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        /// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         /// </summary>
         [Input("groupName")]
         public Input<string>? GroupName { get; set; }
 
         /// <summary>
-        /// BMQ instance ID.
+        /// BMQ instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// Reset consumption position information.
+        /// Reset consumption offset information
         /// </summary>
         [Input("resetInfo")]
         public Input<Inputs.GroupResetInfoArgs>? ResetInfo { get; set; }
@@ -187,55 +159,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class GroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Consumer Group creation time.
+        /// Consumer Group creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// Consumer Group description.
+        /// Consumer Group description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Consumer Group ID.
+        /// Consumer Group ID
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        /// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         /// </summary>
         [Input("groupName")]
         public Input<string>? GroupName { get; set; }
 
         /// <summary>
-        /// BMQ instance ID.
+        /// BMQ instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// User ID associated with the Consumer Group.
+        /// User ID of the Consumer Group owner
         /// </summary>
         [Input("ownerId")]
         public Input<string>? OwnerId { get; set; }
 
         /// <summary>
-        /// Name of the user associated with the Consumer Group.
+        /// Name of the Consumer Group owner
         /// </summary>
         [Input("ownerName")]
         public Input<string>? OwnerName { get; set; }
 
         /// <summary>
-        /// Reset consumption position information.
+        /// Reset consumption offset information
         /// </summary>
         [Input("resetInfo")]
         public Input<Inputs.GroupResetInfoGetArgs>? ResetInfo { get; set; }
 
         /// <summary>
-        /// Consumer Group status.
+        /// Consumer Group status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

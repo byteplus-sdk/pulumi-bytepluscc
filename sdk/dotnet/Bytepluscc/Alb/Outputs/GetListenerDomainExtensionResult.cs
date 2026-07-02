@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetListenerDomainExtensionResult
     {
         /// <summary>
-        /// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+        /// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         /// </summary>
         public readonly string CertCenterCertificateId;
         /// <summary>
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly string CertificateId;
         /// <summary>
-        /// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+        /// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
         /// </summary>
         public readonly string CertificateSource;
         /// <summary>
-        /// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+        /// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// Extension domain name ID.
+        /// Extended domain name ID.
         /// </summary>
         public readonly string DomainExtensionId;
         /// <summary>
-        /// Listener ID associated with the extended domain name.
+        /// Listener ID to which the extended domain name belongs.
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
@@ -43,7 +43,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly string PcaLeafCertificateId;
         /// <summary>
-        /// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+        /// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         /// </summary>
         public readonly string San;
 

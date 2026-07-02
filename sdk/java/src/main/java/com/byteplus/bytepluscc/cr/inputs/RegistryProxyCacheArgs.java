@@ -16,14 +16,14 @@ public final class RegistryProxyCacheArgs extends com.pulumi.resources.ResourceA
     public static final RegistryProxyCacheArgs Empty = new RegistryProxyCacheArgs();
 
     /**
-     * Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+     * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     public Optional<Output<String>> type() {
@@ -55,7 +55,7 @@ public final class RegistryProxyCacheArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+         * @param type Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class RegistryProxyCacheArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+         * @param type Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          * 
          * @return builder
          * 

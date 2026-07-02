@@ -32,15 +32,15 @@ type LookupServerGroupArgs struct {
 type LookupServerGroupResult struct {
 	// Creation time of the backend server group.
 	CreateTime string `pulumi:"createTime"`
-	// Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+	// Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
 	CrossZoneEnabled string `pulumi:"crossZoneEnabled"`
 	// Description of the backend server group.
 	Description string `pulumi:"description"`
-	// Health check configuration information for the server group.
+	// Server group health check configuration information.
 	HealthCheck GetServerGroupHealthCheck `pulumi:"healthCheck"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// IP address type of the server group. Currently, only IPv4 is supported.
+	// IP address type of the server group. Only IPv4 is supported.
 	IpAddressType string `pulumi:"ipAddressType"`
 	// Listener information associated with the backend server group.
 	Listeners []GetServerGroupListener `pulumi:"listeners"`
@@ -48,19 +48,19 @@ type LookupServerGroupResult struct {
 	ProjectName string `pulumi:"projectName"`
 	// Backend protocol: HTTP, HTTPS.
 	Protocol string `pulumi:"protocol"`
-	// Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+	// Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
 	Scheduler string `pulumi:"scheduler"`
 	// Number of backend servers in the server group.
 	ServerCount int `pulumi:"serverCount"`
-	// Backend server group ID.
+	// ID of the backend server group.
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// Backend server group name.
+	// Name of the backend server group.
 	ServerGroupName string `pulumi:"serverGroupName"`
-	// Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+	// Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
 	ServerGroupType string `pulumi:"serverGroupType"`
-	// Information about the servers in the backend server group.
+	// Information about servers in the backend server group.
 	Servers []GetServerGroupServer `pulumi:"servers"`
-	// Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+	// Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
 	Status string `pulumi:"status"`
 	// Session persistence parameter information.
 	StickySessionConfig GetServerGroupStickySessionConfig `pulumi:"stickySessionConfig"`
@@ -111,7 +111,7 @@ func (o LookupServerGroupResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+// Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
 func (o LookupServerGroupResultOutput) CrossZoneEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.CrossZoneEnabled }).(pulumi.StringOutput)
 }
@@ -121,7 +121,7 @@ func (o LookupServerGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Health check configuration information for the server group.
+// Server group health check configuration information.
 func (o LookupServerGroupResultOutput) HealthCheck() GetServerGroupHealthCheckOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) GetServerGroupHealthCheck { return v.HealthCheck }).(GetServerGroupHealthCheckOutput)
 }
@@ -131,7 +131,7 @@ func (o LookupServerGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// IP address type of the server group. Currently, only IPv4 is supported.
+// IP address type of the server group. Only IPv4 is supported.
 func (o LookupServerGroupResultOutput) IpAddressType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.IpAddressType }).(pulumi.StringOutput)
 }
@@ -151,7 +151,7 @@ func (o LookupServerGroupResultOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+// Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
 func (o LookupServerGroupResultOutput) Scheduler() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.Scheduler }).(pulumi.StringOutput)
 }
@@ -161,27 +161,27 @@ func (o LookupServerGroupResultOutput) ServerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) int { return v.ServerCount }).(pulumi.IntOutput)
 }
 
-// Backend server group ID.
+// ID of the backend server group.
 func (o LookupServerGroupResultOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// Backend server group name.
+// Name of the backend server group.
 func (o LookupServerGroupResultOutput) ServerGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.ServerGroupName }).(pulumi.StringOutput)
 }
 
-// Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+// Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
 func (o LookupServerGroupResultOutput) ServerGroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.ServerGroupType }).(pulumi.StringOutput)
 }
 
-// Information about the servers in the backend server group.
+// Information about servers in the backend server group.
 func (o LookupServerGroupResultOutput) Servers() GetServerGroupServerArrayOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) []GetServerGroupServer { return v.Servers }).(GetServerGroupServerArrayOutput)
 }
 
-// Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+// Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
 func (o LookupServerGroupResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.Status }).(pulumi.StringOutput)
 }

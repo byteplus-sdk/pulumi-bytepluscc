@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.rdsmysql.inputs;
 
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceAddressObjectArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceAutoStorageScalingConfigArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceBackupPolicyArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceChargeDetailArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceDisasterRecoveryInstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceEndpointArgs;
@@ -183,6 +184,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> backupLogSize() {
         return Optional.ofNullable(this.backupLogSize);
+    }
+
+    /**
+     * Instance backup policy configuration.
+     * 
+     */
+    @Import(name="backupPolicy")
+    private @Nullable Output<InstanceBackupPolicyArgs> backupPolicy;
+
+    /**
+     * @return Instance backup policy configuration.
+     * 
+     */
+    public Optional<Output<InstanceBackupPolicyArgs>> backupPolicy() {
+        return Optional.ofNullable(this.backupPolicy);
     }
 
     /**
@@ -437,6 +453,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<List<InstanceEndpointArgs>>> endpoints() {
         return Optional.ofNullable(this.endpoints);
+    }
+
+    /**
+     * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     * 
+     */
+    @Import(name="engineType")
+    private @Nullable Output<String> engineType;
+
+    /**
+     * @return Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     * 
+     */
+    public Optional<Output<String>> engineType() {
+        return Optional.ofNullable(this.engineType);
     }
 
     /**
@@ -702,6 +733,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Parameter template ID.
+     * 
+     */
+    @Import(name="parameterTemplateId")
+    private @Nullable Output<String> parameterTemplateId;
+
+    /**
+     * @return Parameter template ID.
+     * 
+     */
+    public Optional<Output<String>> parameterTemplateId() {
+        return Optional.ofNullable(this.parameterTemplateId);
+    }
+
+    /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
@@ -714,6 +760,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> port() {
         return Optional.ofNullable(this.port);
+    }
+
+    /**
+     * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     * 
+     */
+    @Import(name="privateIpAddress")
+    private @Nullable Output<String> privateIpAddress;
+
+    /**
+     * @return Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     * 
+     */
+    public Optional<Output<String>> privateIpAddress() {
+        return Optional.ofNullable(this.privateIpAddress);
     }
 
     /**
@@ -1052,6 +1113,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.backupErrorLogSize = $.backupErrorLogSize;
         this.backupFreeQuotaSize = $.backupFreeQuotaSize;
         this.backupLogSize = $.backupLogSize;
+        this.backupPolicy = $.backupPolicy;
         this.backupSlowLogSize = $.backupSlowLogSize;
         this.backupUse = $.backupUse;
         this.basicBackupBinlogSize = $.basicBackupBinlogSize;
@@ -1070,6 +1132,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.drDtsTaskStatus = $.drDtsTaskStatus;
         this.drSecondsBehindMaster = $.drSecondsBehindMaster;
         this.endpoints = $.endpoints;
+        this.engineType = $.engineType;
         this.globalReadOnly = $.globalReadOnly;
         this.hasDisasterRecoveryInstances = $.hasDisasterRecoveryInstances;
         this.hasGreenInstance = $.hasGreenInstance;
@@ -1088,7 +1151,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.nodeSpaceUsedPercentage = $.nodeSpaceUsedPercentage;
         this.nodeSpec = $.nodeSpec;
         this.nodes = $.nodes;
+        this.parameterTemplateId = $.parameterTemplateId;
         this.port = $.port;
+        this.privateIpAddress = $.privateIpAddress;
         this.projectName = $.projectName;
         this.proxyDetail = $.proxyDetail;
         this.storageAuditLogSize = $.storageAuditLogSize;
@@ -1362,6 +1427,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder backupLogSize(Integer backupLogSize) {
             return backupLogSize(Output.of(backupLogSize));
+        }
+
+        /**
+         * @param backupPolicy Instance backup policy configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupPolicy(@Nullable Output<InstanceBackupPolicyArgs> backupPolicy) {
+            $.backupPolicy = backupPolicy;
+            return this;
+        }
+
+        /**
+         * @param backupPolicy Instance backup policy configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupPolicy(InstanceBackupPolicyArgs backupPolicy) {
+            return backupPolicy(Output.of(backupPolicy));
         }
 
         /**
@@ -1724,6 +1810,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         public Builder endpoints(InstanceEndpointArgs... endpoints) {
             return endpoints(List.of(endpoints));
+        }
+
+        /**
+         * @param engineType Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder engineType(@Nullable Output<String> engineType) {
+            $.engineType = engineType;
+            return this;
+        }
+
+        /**
+         * @param engineType Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder engineType(String engineType) {
+            return engineType(Output.of(engineType));
         }
 
         /**
@@ -2097,6 +2204,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param parameterTemplateId Parameter template ID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameterTemplateId(@Nullable Output<String> parameterTemplateId) {
+            $.parameterTemplateId = parameterTemplateId;
+            return this;
+        }
+
+        /**
+         * @param parameterTemplateId Parameter template ID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameterTemplateId(String parameterTemplateId) {
+            return parameterTemplateId(Output.of(parameterTemplateId));
+        }
+
+        /**
          * @param port Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
          * 
          * @return builder
@@ -2115,6 +2243,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
+        }
+
+        /**
+         * @param privateIpAddress Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpAddress(@Nullable Output<String> privateIpAddress) {
+            $.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * @param privateIpAddress Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpAddress(String privateIpAddress) {
+            return privateIpAddress(Output.of(privateIpAddress));
         }
 
         /**

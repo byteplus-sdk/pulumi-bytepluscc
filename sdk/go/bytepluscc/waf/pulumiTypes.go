@@ -1033,6 +1033,121 @@ func (o DomainTlsFieldsConfigHeadersConfigPtrOutput) StatisticalKeyLists() pulum
 	}).(pulumi.StringArrayOutput)
 }
 
+type HostGroupRelatedRule struct {
+	// Rule name.
+	RuleName *string `pulumi:"ruleName"`
+	// Rule ID.
+	RuleTag *string `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+	RuleType *string `pulumi:"ruleType"`
+}
+
+// HostGroupRelatedRuleInput is an input type that accepts HostGroupRelatedRuleArgs and HostGroupRelatedRuleOutput values.
+// You can construct a concrete instance of `HostGroupRelatedRuleInput` via:
+//
+//	HostGroupRelatedRuleArgs{...}
+type HostGroupRelatedRuleInput interface {
+	pulumi.Input
+
+	ToHostGroupRelatedRuleOutput() HostGroupRelatedRuleOutput
+	ToHostGroupRelatedRuleOutputWithContext(context.Context) HostGroupRelatedRuleOutput
+}
+
+type HostGroupRelatedRuleArgs struct {
+	// Rule name.
+	RuleName pulumi.StringPtrInput `pulumi:"ruleName"`
+	// Rule ID.
+	RuleTag pulumi.StringPtrInput `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
+}
+
+func (HostGroupRelatedRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRelatedRule)(nil)).Elem()
+}
+
+func (i HostGroupRelatedRuleArgs) ToHostGroupRelatedRuleOutput() HostGroupRelatedRuleOutput {
+	return i.ToHostGroupRelatedRuleOutputWithContext(context.Background())
+}
+
+func (i HostGroupRelatedRuleArgs) ToHostGroupRelatedRuleOutputWithContext(ctx context.Context) HostGroupRelatedRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRelatedRuleOutput)
+}
+
+// HostGroupRelatedRuleArrayInput is an input type that accepts HostGroupRelatedRuleArray and HostGroupRelatedRuleArrayOutput values.
+// You can construct a concrete instance of `HostGroupRelatedRuleArrayInput` via:
+//
+//	HostGroupRelatedRuleArray{ HostGroupRelatedRuleArgs{...} }
+type HostGroupRelatedRuleArrayInput interface {
+	pulumi.Input
+
+	ToHostGroupRelatedRuleArrayOutput() HostGroupRelatedRuleArrayOutput
+	ToHostGroupRelatedRuleArrayOutputWithContext(context.Context) HostGroupRelatedRuleArrayOutput
+}
+
+type HostGroupRelatedRuleArray []HostGroupRelatedRuleInput
+
+func (HostGroupRelatedRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRelatedRule)(nil)).Elem()
+}
+
+func (i HostGroupRelatedRuleArray) ToHostGroupRelatedRuleArrayOutput() HostGroupRelatedRuleArrayOutput {
+	return i.ToHostGroupRelatedRuleArrayOutputWithContext(context.Background())
+}
+
+func (i HostGroupRelatedRuleArray) ToHostGroupRelatedRuleArrayOutputWithContext(ctx context.Context) HostGroupRelatedRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostGroupRelatedRuleArrayOutput)
+}
+
+type HostGroupRelatedRuleOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRelatedRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostGroupRelatedRule)(nil)).Elem()
+}
+
+func (o HostGroupRelatedRuleOutput) ToHostGroupRelatedRuleOutput() HostGroupRelatedRuleOutput {
+	return o
+}
+
+func (o HostGroupRelatedRuleOutput) ToHostGroupRelatedRuleOutputWithContext(ctx context.Context) HostGroupRelatedRuleOutput {
+	return o
+}
+
+// Rule name.
+func (o HostGroupRelatedRuleOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRelatedRule) *string { return v.RuleName }).(pulumi.StringPtrOutput)
+}
+
+// Rule ID.
+func (o HostGroupRelatedRuleOutput) RuleTag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRelatedRule) *string { return v.RuleTag }).(pulumi.StringPtrOutput)
+}
+
+// Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+func (o HostGroupRelatedRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostGroupRelatedRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
+}
+
+type HostGroupRelatedRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (HostGroupRelatedRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostGroupRelatedRule)(nil)).Elem()
+}
+
+func (o HostGroupRelatedRuleArrayOutput) ToHostGroupRelatedRuleArrayOutput() HostGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o HostGroupRelatedRuleArrayOutput) ToHostGroupRelatedRuleArrayOutputWithContext(ctx context.Context) HostGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o HostGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) HostGroupRelatedRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostGroupRelatedRule {
+		return vs[0].([]HostGroupRelatedRule)[vs[1].(int)]
+	}).(HostGroupRelatedRuleOutput)
+}
+
 type GetDomainBackendGroup struct {
 	// Access port number.
 	AccessPorts []int `pulumi:"accessPorts"`
@@ -1772,6 +1887,121 @@ func (o GetDomainTlsFieldsConfigHeadersConfigOutput) StatisticalKeyLists() pulum
 	return o.ApplyT(func(v GetDomainTlsFieldsConfigHeadersConfig) []string { return v.StatisticalKeyLists }).(pulumi.StringArrayOutput)
 }
 
+type GetHostGroupRelatedRule struct {
+	// Rule name.
+	RuleName string `pulumi:"ruleName"`
+	// Rule ID.
+	RuleTag string `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+	RuleType string `pulumi:"ruleType"`
+}
+
+// GetHostGroupRelatedRuleInput is an input type that accepts GetHostGroupRelatedRuleArgs and GetHostGroupRelatedRuleOutput values.
+// You can construct a concrete instance of `GetHostGroupRelatedRuleInput` via:
+//
+//	GetHostGroupRelatedRuleArgs{...}
+type GetHostGroupRelatedRuleInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRelatedRuleOutput() GetHostGroupRelatedRuleOutput
+	ToGetHostGroupRelatedRuleOutputWithContext(context.Context) GetHostGroupRelatedRuleOutput
+}
+
+type GetHostGroupRelatedRuleArgs struct {
+	// Rule name.
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// Rule ID.
+	RuleTag pulumi.StringInput `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+	RuleType pulumi.StringInput `pulumi:"ruleType"`
+}
+
+func (GetHostGroupRelatedRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRelatedRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRelatedRuleArgs) ToGetHostGroupRelatedRuleOutput() GetHostGroupRelatedRuleOutput {
+	return i.ToGetHostGroupRelatedRuleOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRelatedRuleArgs) ToGetHostGroupRelatedRuleOutputWithContext(ctx context.Context) GetHostGroupRelatedRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRelatedRuleOutput)
+}
+
+// GetHostGroupRelatedRuleArrayInput is an input type that accepts GetHostGroupRelatedRuleArray and GetHostGroupRelatedRuleArrayOutput values.
+// You can construct a concrete instance of `GetHostGroupRelatedRuleArrayInput` via:
+//
+//	GetHostGroupRelatedRuleArray{ GetHostGroupRelatedRuleArgs{...} }
+type GetHostGroupRelatedRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetHostGroupRelatedRuleArrayOutput() GetHostGroupRelatedRuleArrayOutput
+	ToGetHostGroupRelatedRuleArrayOutputWithContext(context.Context) GetHostGroupRelatedRuleArrayOutput
+}
+
+type GetHostGroupRelatedRuleArray []GetHostGroupRelatedRuleInput
+
+func (GetHostGroupRelatedRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRelatedRule)(nil)).Elem()
+}
+
+func (i GetHostGroupRelatedRuleArray) ToGetHostGroupRelatedRuleArrayOutput() GetHostGroupRelatedRuleArrayOutput {
+	return i.ToGetHostGroupRelatedRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostGroupRelatedRuleArray) ToGetHostGroupRelatedRuleArrayOutputWithContext(ctx context.Context) GetHostGroupRelatedRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostGroupRelatedRuleArrayOutput)
+}
+
+type GetHostGroupRelatedRuleOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRelatedRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostGroupRelatedRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRelatedRuleOutput) ToGetHostGroupRelatedRuleOutput() GetHostGroupRelatedRuleOutput {
+	return o
+}
+
+func (o GetHostGroupRelatedRuleOutput) ToGetHostGroupRelatedRuleOutputWithContext(ctx context.Context) GetHostGroupRelatedRuleOutput {
+	return o
+}
+
+// Rule name.
+func (o GetHostGroupRelatedRuleOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRelatedRule) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// Rule ID.
+func (o GetHostGroupRelatedRuleOutput) RuleTag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRelatedRule) string { return v.RuleTag }).(pulumi.StringOutput)
+}
+
+// Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+func (o GetHostGroupRelatedRuleOutput) RuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostGroupRelatedRule) string { return v.RuleType }).(pulumi.StringOutput)
+}
+
+type GetHostGroupRelatedRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostGroupRelatedRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostGroupRelatedRule)(nil)).Elem()
+}
+
+func (o GetHostGroupRelatedRuleArrayOutput) ToGetHostGroupRelatedRuleArrayOutput() GetHostGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRelatedRuleArrayOutput) ToGetHostGroupRelatedRuleArrayOutputWithContext(ctx context.Context) GetHostGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o GetHostGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) GetHostGroupRelatedRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostGroupRelatedRule {
+		return vs[0].([]GetHostGroupRelatedRule)[vs[1].(int)]
+	}).(GetHostGroupRelatedRuleOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupInput)(nil)).Elem(), DomainBackendGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupArrayInput)(nil)).Elem(), DomainBackendGroupArray{})
@@ -1787,6 +2017,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainTlsFieldsConfigPtrInput)(nil)).Elem(), DomainTlsFieldsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainTlsFieldsConfigHeadersConfigInput)(nil)).Elem(), DomainTlsFieldsConfigHeadersConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainTlsFieldsConfigHeadersConfigPtrInput)(nil)).Elem(), DomainTlsFieldsConfigHeadersConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleInput)(nil)).Elem(), HostGroupRelatedRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleArrayInput)(nil)).Elem(), HostGroupRelatedRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupInput)(nil)).Elem(), GetDomainBackendGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupArrayInput)(nil)).Elem(), GetDomainBackendGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupBackendInput)(nil)).Elem(), GetDomainBackendGroupBackendArgs{})
@@ -1798,6 +2030,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainTcpListenerConfigArrayInput)(nil)).Elem(), GetDomainTcpListenerConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainTlsFieldsConfigInput)(nil)).Elem(), GetDomainTlsFieldsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainTlsFieldsConfigHeadersConfigInput)(nil)).Elem(), GetDomainTlsFieldsConfigHeadersConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleInput)(nil)).Elem(), GetHostGroupRelatedRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleArrayInput)(nil)).Elem(), GetHostGroupRelatedRuleArray{})
 	pulumi.RegisterOutputType(DomainBackendGroupOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupArrayOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupBackendOutput{})
@@ -1812,6 +2046,8 @@ func init() {
 	pulumi.RegisterOutputType(DomainTlsFieldsConfigPtrOutput{})
 	pulumi.RegisterOutputType(DomainTlsFieldsConfigHeadersConfigOutput{})
 	pulumi.RegisterOutputType(DomainTlsFieldsConfigHeadersConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostGroupRelatedRuleOutput{})
+	pulumi.RegisterOutputType(HostGroupRelatedRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupBackendOutput{})
@@ -1823,4 +2059,6 @@ func init() {
 	pulumi.RegisterOutputType(GetDomainTcpListenerConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainTlsFieldsConfigOutput{})
 	pulumi.RegisterOutputType(GetDomainTlsFieldsConfigHeadersConfigOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRelatedRuleOutput{})
+	pulumi.RegisterOutputType(GetHostGroupRelatedRuleArrayOutput{})
 }

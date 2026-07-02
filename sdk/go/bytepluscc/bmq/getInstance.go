@@ -30,17 +30,17 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+	// Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
 	AutoRenew string `pulumi:"autoRenew"`
-	// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+	// Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
 	BillingPeriod string `pulumi:"billingPeriod"`
-	// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+	// Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
 	BillingType string `pulumi:"billingType"`
 	// Instance creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// Instance description statement
+	// Instance description
 	Description string `pulumi:"description"`
-	// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+	// Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
 	EipId string `pulumi:"eipId"`
 	// Response data for all instance endpoints
 	Endpoints GetInstanceEndpoints `pulumi:"endpoints"`
@@ -52,35 +52,35 @@ type LookupInstanceResult struct {
 	Id string `pulumi:"id"`
 	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// Message retention period for all topics under the instance, in hours
+	// Message retention period for all Topics under the instance, in hours
 	MessageRetention int `pulumi:"messageRetention"`
-	// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+	// Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
 	Name string `pulumi:"name"`
 	// Maximum number of partitions per instance
 	PartitionLimit int `pulumi:"partitionLimit"`
-	// Project name to which the instance belongs
+	// Project name associated with the instance
 	ProjectName string `pulumi:"projectName"`
 	// Instance resource tag list
 	ResourceTags []GetInstanceResourceTag `pulumi:"resourceTags"`
 	// Instance resource statistics response data
 	Resources GetInstanceResources `pulumi:"resources"`
-	// List of security groups used by the instance
+	// Security group list used by the instance
 	SecurityGroupIdLists []string `pulumi:"securityGroupIdLists"`
 	// Instance specification
 	Specification string `pulumi:"specification"`
 	// Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
 	Status string `pulumi:"status"`
-	// List of subnets used by the instance
+	// Subnet list used by the instance
 	SubnetIdLists []string `pulumi:"subnetIdLists"`
 	// Instance resource tag list
 	Tags []GetInstanceTag `pulumi:"tags"`
-	// Purchase duration for subscription instances, in months
+	// Purchase duration for yearly/monthly subscription instances, in months
 	Times int `pulumi:"times"`
-	// Maximum number of topics per instance
+	// Maximum number of Topics per instance
 	TopicLimit int `pulumi:"topicLimit"`
 	// VPC ID where the instance is located
 	VpcId string `pulumi:"vpcId"`
-	// List of availability zones where the instance is located
+	// List of availability zones for the instance
 	ZoneIdLists []string `pulumi:"zoneIdLists"`
 }
 
@@ -118,17 +118,17 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+// Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
 func (o LookupInstanceResultOutput) AutoRenew() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.AutoRenew }).(pulumi.StringOutput)
 }
 
-// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+// Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
 func (o LookupInstanceResultOutput) BillingPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BillingPeriod }).(pulumi.StringOutput)
 }
 
-// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+// Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
 func (o LookupInstanceResultOutput) BillingType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BillingType }).(pulumi.StringOutput)
 }
@@ -138,12 +138,12 @@ func (o LookupInstanceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// Instance description statement
+// Instance description
 func (o LookupInstanceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+// Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
 func (o LookupInstanceResultOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.EipId }).(pulumi.StringOutput)
 }
@@ -173,12 +173,12 @@ func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// Message retention period for all topics under the instance, in hours
+// Message retention period for all Topics under the instance, in hours
 func (o LookupInstanceResultOutput) MessageRetention() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.MessageRetention }).(pulumi.IntOutput)
 }
 
-// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+// Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
 func (o LookupInstanceResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -188,7 +188,7 @@ func (o LookupInstanceResultOutput) PartitionLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.PartitionLimit }).(pulumi.IntOutput)
 }
 
-// Project name to which the instance belongs
+// Project name associated with the instance
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -203,7 +203,7 @@ func (o LookupInstanceResultOutput) Resources() GetInstanceResourcesOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceResources { return v.Resources }).(GetInstanceResourcesOutput)
 }
 
-// List of security groups used by the instance
+// Security group list used by the instance
 func (o LookupInstanceResultOutput) SecurityGroupIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.SecurityGroupIdLists }).(pulumi.StringArrayOutput)
 }
@@ -218,7 +218,7 @@ func (o LookupInstanceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// List of subnets used by the instance
+// Subnet list used by the instance
 func (o LookupInstanceResultOutput) SubnetIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.SubnetIdLists }).(pulumi.StringArrayOutput)
 }
@@ -228,12 +228,12 @@ func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
 }
 
-// Purchase duration for subscription instances, in months
+// Purchase duration for yearly/monthly subscription instances, in months
 func (o LookupInstanceResultOutput) Times() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.Times }).(pulumi.IntOutput)
 }
 
-// Maximum number of topics per instance
+// Maximum number of Topics per instance
 func (o LookupInstanceResultOutput) TopicLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.TopicLimit }).(pulumi.IntOutput)
 }
@@ -243,7 +243,7 @@ func (o LookupInstanceResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// List of availability zones where the instance is located
+// List of availability zones for the instance
 func (o LookupInstanceResultOutput) ZoneIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.ZoneIdLists }).(pulumi.StringArrayOutput)
 }

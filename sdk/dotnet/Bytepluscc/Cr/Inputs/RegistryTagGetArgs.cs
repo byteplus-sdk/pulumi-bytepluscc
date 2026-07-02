@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Inputs
     public sealed class RegistryTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Tag key
+        /// Tag key values
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

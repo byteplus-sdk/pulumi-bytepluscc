@@ -124,7 +124,7 @@ export class Vpc extends pulumi.CustomResource {
     /**
      * User CIDR block of the VPC.
      */
-    public /*out*/ readonly userCidrBlocks!: pulumi.Output<string[]>;
+    public readonly userCidrBlocks!: pulumi.Output<string[]>;
     /**
      * ID of the VPC.
      */
@@ -185,6 +185,7 @@ export class Vpc extends pulumi.CustomResource {
             resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
             resourceInputs["supportIpv4Gateway"] = args ? args.supportIpv4Gateway : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["userCidrBlocks"] = args ? args.userCidrBlocks : undefined;
             resourceInputs["vpcName"] = args ? args.vpcName : undefined;
             resourceInputs["accountId"] = undefined /*out*/;
             resourceInputs["associateCens"] = undefined /*out*/;
@@ -195,7 +196,6 @@ export class Vpc extends pulumi.CustomResource {
             resourceInputs["securityGroupIds"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["updateTime"] = undefined /*out*/;
-            resourceInputs["userCidrBlocks"] = undefined /*out*/;
             resourceInputs["vpcId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -348,6 +348,10 @@ export interface VpcArgs {
      */
     supportIpv4Gateway?: pulumi.Input<boolean>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.VpcTag>[]>;
+    /**
+     * User CIDR block of the VPC.
+     */
+    userCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      */

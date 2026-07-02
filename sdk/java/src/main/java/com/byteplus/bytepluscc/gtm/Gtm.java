@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.gtm;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.gtm.GtmArgs;
 import com.byteplus.bytepluscc.gtm.inputs.GtmState;
+import com.byteplus.bytepluscc.gtm.outputs.GtmPolicy;
+import com.byteplus.bytepluscc.gtm.outputs.GtmProbe;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -182,6 +184,20 @@ public class Gtm extends com.pulumi.resources.CustomResource {
         return this.owner;
     }
     /**
+     * Detailed configuration of the scheduling policy for the GTM instance.
+     * 
+     */
+    @Export(name="policy", refs={GtmPolicy.class}, tree="[0]")
+    private Output<GtmPolicy> policy;
+
+    /**
+     * @return Detailed configuration of the scheduling policy for the GTM instance.
+     * 
+     */
+    public Output<GtmPolicy> policy() {
+        return this.policy;
+    }
+    /**
      * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
      * 
      */
@@ -194,6 +210,20 @@ public class Gtm extends com.pulumi.resources.CustomResource {
      */
     public Output<String> policyType() {
         return this.policyType;
+    }
+    /**
+     * Detailed configuration of the health check for the GTM instance.
+     * 
+     */
+    @Export(name="probe", refs={GtmProbe.class}, tree="[0]")
+    private Output<GtmProbe> probe;
+
+    /**
+     * @return Detailed configuration of the health check for the GTM instance.
+     * 
+     */
+    public Output<GtmProbe> probe() {
+        return this.probe;
     }
     /**
      * Project name to which the GTM instance belongs

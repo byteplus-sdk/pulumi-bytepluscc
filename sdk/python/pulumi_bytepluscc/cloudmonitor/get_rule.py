@@ -168,7 +168,7 @@ class GetRuleResult:
     @pulumi.getter(name="contactGroupIds")
     def contact_group_ids(self) -> Sequence[builtins.str]:
         """
-        Alert notification group ID bound to the alert policy.
+        When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
         """
         return pulumi.get(self, "contact_group_ids")
 
@@ -184,7 +184,7 @@ class GetRuleResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Alert policy description.
+        Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -192,7 +192,7 @@ class GetRuleResult:
     @pulumi.getter(name="dimensionConditions")
     def dimension_conditions(self) -> 'outputs.GetRuleDimensionConditionsResult':
         """
-        Dimension configuration.
+        Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
         """
         return pulumi.get(self, "dimension_conditions")
 
@@ -200,7 +200,7 @@ class GetRuleResult:
     @pulumi.getter(name="effectEndAt")
     def effect_end_at(self) -> builtins.str:
         """
-        Policy expiration time, in HH:MM format.
+        End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
         """
         return pulumi.get(self, "effect_end_at")
 
@@ -208,7 +208,7 @@ class GetRuleResult:
     @pulumi.getter(name="effectStartAt")
     def effect_start_at(self) -> builtins.str:
         """
-        Policy start time, in HH:MM format.
+        Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
         """
         return pulumi.get(self, "effect_start_at")
 
@@ -224,7 +224,7 @@ class GetRuleResult:
     @pulumi.getter(name="evaluationCount")
     def evaluation_count(self) -> builtins.int:
         """
-        Duration required to trigger an alert, in minutes.
+        Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
         """
         return pulumi.get(self, "evaluation_count")
 
@@ -264,7 +264,7 @@ class GetRuleResult:
     @pulumi.getter
     def namespace(self) -> builtins.str:
         """
-        Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+        The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
         """
         return pulumi.get(self, "namespace")
 
@@ -280,7 +280,7 @@ class GetRuleResult:
     @pulumi.getter(name="notificationId")
     def notification_id(self) -> builtins.str:
         """
-        Notification policy ID.
+        Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
         """
         return pulumi.get(self, "notification_id")
 
@@ -304,7 +304,7 @@ class GetRuleResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        Project to which the alert policy belongs.
+        Project name to which the alert policy belongs. If not specified, it defaults to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -320,7 +320,7 @@ class GetRuleResult:
     @pulumi.getter
     def regions(self) -> Sequence[builtins.str]:
         """
-        Availability zone ID of the cloud product.
+        Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
         """
         return pulumi.get(self, "regions")
 
@@ -344,7 +344,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> builtins.str:
         """
-        Alert policy name.
+        Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
         """
         return pulumi.get(self, "rule_name")
 

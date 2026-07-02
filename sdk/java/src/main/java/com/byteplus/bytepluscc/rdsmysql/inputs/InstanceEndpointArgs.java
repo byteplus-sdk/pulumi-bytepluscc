@@ -3,6 +3,8 @@
 
 package com.byteplus.bytepluscc.rdsmysql.inputs;
 
+import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceEndpointAddressArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceEndpointCustomRouteStrategyArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceEndpointReadOnlyNodeWeightArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -18,6 +20,13 @@ import javax.annotation.Nullable;
 public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final InstanceEndpointArgs Empty = new InstanceEndpointArgs();
+
+    @Import(name="addresses")
+    private @Nullable Output<List<InstanceEndpointAddressArgs>> addresses;
+
+    public Optional<Output<List<InstanceEndpointAddressArgs>>> addresses() {
+        return Optional.ofNullable(this.addresses);
+    }
 
     /**
      * When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
@@ -77,6 +86,13 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> connectionPoolType() {
         return Optional.ofNullable(this.connectionPoolType);
+    }
+
+    @Import(name="customRouteStrategies")
+    private @Nullable Output<List<InstanceEndpointCustomRouteStrategyArgs>> customRouteStrategies;
+
+    public Optional<Output<List<InstanceEndpointCustomRouteStrategyArgs>>> customRouteStrategies() {
+        return Optional.ofNullable(this.customRouteStrategies);
     }
 
     /**
@@ -329,10 +345,12 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     private InstanceEndpointArgs() {}
 
     private InstanceEndpointArgs(InstanceEndpointArgs $) {
+        this.addresses = $.addresses;
         this.autoAddNewNodes = $.autoAddNewNodes;
         this.connectionInfoTags = $.connectionInfoTags;
         this.connectionMode = $.connectionMode;
         this.connectionPoolType = $.connectionPoolType;
+        this.customRouteStrategies = $.customRouteStrategies;
         this.description = $.description;
         this.enableConnectionPersistent = $.enableConnectionPersistent;
         this.enableReadOnly = $.enableReadOnly;
@@ -368,6 +386,19 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         public Builder(InstanceEndpointArgs defaults) {
             $ = new InstanceEndpointArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder addresses(@Nullable Output<List<InstanceEndpointAddressArgs>> addresses) {
+            $.addresses = addresses;
+            return this;
+        }
+
+        public Builder addresses(List<InstanceEndpointAddressArgs> addresses) {
+            return addresses(Output.of(addresses));
+        }
+
+        public Builder addresses(InstanceEndpointAddressArgs... addresses) {
+            return addresses(List.of(addresses));
         }
 
         /**
@@ -462,6 +493,19 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder connectionPoolType(String connectionPoolType) {
             return connectionPoolType(Output.of(connectionPoolType));
+        }
+
+        public Builder customRouteStrategies(@Nullable Output<List<InstanceEndpointCustomRouteStrategyArgs>> customRouteStrategies) {
+            $.customRouteStrategies = customRouteStrategies;
+            return this;
+        }
+
+        public Builder customRouteStrategies(List<InstanceEndpointCustomRouteStrategyArgs> customRouteStrategies) {
+            return customRouteStrategies(Output.of(customRouteStrategies));
+        }
+
+        public Builder customRouteStrategies(InstanceEndpointCustomRouteStrategyArgs... customRouteStrategies) {
+            return customRouteStrategies(List.of(customRouteStrategies));
         }
 
         /**

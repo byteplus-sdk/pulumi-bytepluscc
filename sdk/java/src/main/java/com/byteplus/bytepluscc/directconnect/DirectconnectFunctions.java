@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.directconnect;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.directconnect.inputs.GetBgpPeerArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetBgpPeerPlainArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetConnectionArgs;
+import com.byteplus.bytepluscc.directconnect.inputs.GetConnectionPlainArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetDirectConnectGatewayArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetDirectConnectGatewayPlainArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetGatewayRouteArgs;
@@ -14,6 +16,8 @@ import com.byteplus.bytepluscc.directconnect.inputs.GetVirtualInterfaceArgs;
 import com.byteplus.bytepluscc.directconnect.inputs.GetVirtualInterfacePlainArgs;
 import com.byteplus.bytepluscc.directconnect.outputs.GetBgpPeerResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetBgpPeersResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetConnectionResult;
+import com.byteplus.bytepluscc.directconnect.outputs.GetConnectionsResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewayResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewaysResult;
 import com.byteplus.bytepluscc.directconnect.outputs.GetGatewayRouteResult;
@@ -112,6 +116,90 @@ public final class DirectconnectFunctions {
      */
     public static CompletableFuture<GetBgpPeersResult> getBgpPeersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getBgpPeers:getBgpPeers", TypeShape.of(GetBgpPeersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
+        return getConnection(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
+        return getConnectionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionsResult> getConnections() {
+        return getConnections(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static CompletableFuture<GetConnectionsResult> getConnectionsPlain() {
+        return getConnectionsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionsResult> getConnections(InvokeArgs args) {
+        return getConnections(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(InvokeArgs args) {
+        return getConnectionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionsResult> getConnections(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static Output<GetConnectionsResult> getConnections(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:directconnect/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::DirectConnect::Connection
+     * 
+     */
+    public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:directconnect/getConnections:getConnections", TypeShape.of(GetConnectionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::DirectConnect::DirectConnectGateway

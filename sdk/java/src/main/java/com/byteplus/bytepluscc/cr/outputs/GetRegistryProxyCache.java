@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryProxyCache {
     /**
-     * @return Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     private String type;
 
     private GetRegistryProxyCache() {}
     /**
-     * @return Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     public String type() {

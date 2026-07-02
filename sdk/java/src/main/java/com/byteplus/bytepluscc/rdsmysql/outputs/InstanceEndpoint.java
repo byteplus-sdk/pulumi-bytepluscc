@@ -3,6 +3,8 @@
 
 package com.byteplus.bytepluscc.rdsmysql.outputs;
 
+import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceEndpointAddress;
+import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceEndpointCustomRouteStrategy;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceEndpointReadOnlyNodeWeight;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
@@ -15,6 +17,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
      * 
@@ -35,6 +38,7 @@ public final class InstanceEndpoint {
      * 
      */
     private @Nullable String connectionPoolType;
+    private @Nullable List<InstanceEndpointCustomRouteStrategy> customRouteStrategies;
     /**
      * @return Description of the connection endpoint
      * 
@@ -118,6 +122,9 @@ public final class InstanceEndpoint {
     private @Nullable String readWriteMode;
 
     private InstanceEndpoint() {}
+    public List<InstanceEndpointAddress> addresses() {
+        return this.addresses == null ? List.of() : this.addresses;
+    }
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
      * 
@@ -145,6 +152,9 @@ public final class InstanceEndpoint {
      */
     public Optional<String> connectionPoolType() {
         return Optional.ofNullable(this.connectionPoolType);
+    }
+    public List<InstanceEndpointCustomRouteStrategy> customRouteStrategies() {
+        return this.customRouteStrategies == null ? List.of() : this.customRouteStrategies;
     }
     /**
      * @return Description of the connection endpoint
@@ -271,10 +281,12 @@ public final class InstanceEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<InstanceEndpointAddress> addresses;
         private @Nullable String autoAddNewNodes;
         private @Nullable List<String> connectionInfoTags;
         private @Nullable String connectionMode;
         private @Nullable String connectionPoolType;
+        private @Nullable List<InstanceEndpointCustomRouteStrategy> customRouteStrategies;
         private @Nullable String description;
         private @Nullable Boolean enableConnectionPersistent;
         private @Nullable String enableReadOnly;
@@ -295,10 +307,12 @@ public final class InstanceEndpoint {
         public Builder() {}
         public Builder(InstanceEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.addresses = defaults.addresses;
     	      this.autoAddNewNodes = defaults.autoAddNewNodes;
     	      this.connectionInfoTags = defaults.connectionInfoTags;
     	      this.connectionMode = defaults.connectionMode;
     	      this.connectionPoolType = defaults.connectionPoolType;
+    	      this.customRouteStrategies = defaults.customRouteStrategies;
     	      this.description = defaults.description;
     	      this.enableConnectionPersistent = defaults.enableConnectionPersistent;
     	      this.enableReadOnly = defaults.enableReadOnly;
@@ -318,6 +332,15 @@ public final class InstanceEndpoint {
     	      this.readWriteMode = defaults.readWriteMode;
         }
 
+        @CustomType.Setter
+        public Builder addresses(@Nullable List<InstanceEndpointAddress> addresses) {
+
+            this.addresses = addresses;
+            return this;
+        }
+        public Builder addresses(InstanceEndpointAddress... addresses) {
+            return addresses(List.of(addresses));
+        }
         @CustomType.Setter
         public Builder autoAddNewNodes(@Nullable String autoAddNewNodes) {
 
@@ -344,6 +367,15 @@ public final class InstanceEndpoint {
 
             this.connectionPoolType = connectionPoolType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder customRouteStrategies(@Nullable List<InstanceEndpointCustomRouteStrategy> customRouteStrategies) {
+
+            this.customRouteStrategies = customRouteStrategies;
+            return this;
+        }
+        public Builder customRouteStrategies(InstanceEndpointCustomRouteStrategy... customRouteStrategies) {
+            return customRouteStrategies(List.of(customRouteStrategies));
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
@@ -452,10 +484,12 @@ public final class InstanceEndpoint {
         }
         public InstanceEndpoint build() {
             final var _resultValue = new InstanceEndpoint();
+            _resultValue.addresses = addresses;
             _resultValue.autoAddNewNodes = autoAddNewNodes;
             _resultValue.connectionInfoTags = connectionInfoTags;
             _resultValue.connectionMode = connectionMode;
             _resultValue.connectionPoolType = connectionPoolType;
+            _resultValue.customRouteStrategies = customRouteStrategies;
             _resultValue.description = description;
             _resultValue.enableConnectionPersistent = enableConnectionPersistent;
             _resultValue.enableReadOnly = enableReadOnly;

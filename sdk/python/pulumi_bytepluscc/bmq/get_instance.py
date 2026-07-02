@@ -112,7 +112,7 @@ class GetInstanceResult:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.str:
         """
-        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -120,7 +120,7 @@ class GetInstanceResult:
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> builtins.str:
         """
-        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         """
         return pulumi.get(self, "billing_period")
 
@@ -128,7 +128,7 @@ class GetInstanceResult:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.str:
         """
-        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -144,7 +144,7 @@ class GetInstanceResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Instance description statement
+        Instance description
         """
         return pulumi.get(self, "description")
 
@@ -152,7 +152,7 @@ class GetInstanceResult:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -200,7 +200,7 @@ class GetInstanceResult:
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> builtins.int:
         """
-        Message retention period for all topics under the instance, in hours
+        Message retention period for all Topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -208,7 +208,7 @@ class GetInstanceResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -224,7 +224,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        Project name to which the instance belongs
+        Project name associated with the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -248,7 +248,7 @@ class GetInstanceResult:
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> Sequence[builtins.str]:
         """
-        List of security groups used by the instance
+        Security group list used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -272,7 +272,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> Sequence[builtins.str]:
         """
-        List of subnets used by the instance
+        Subnet list used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -288,7 +288,7 @@ class GetInstanceResult:
     @pulumi.getter
     def times(self) -> builtins.int:
         """
-        Purchase duration for subscription instances, in months
+        Purchase duration for yearly/monthly subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -296,7 +296,7 @@ class GetInstanceResult:
     @pulumi.getter(name="topicLimit")
     def topic_limit(self) -> builtins.int:
         """
-        Maximum number of topics per instance
+        Maximum number of Topics per instance
         """
         return pulumi.get(self, "topic_limit")
 
@@ -312,7 +312,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> Sequence[builtins.str]:
         """
-        List of availability zones where the instance is located
+        List of availability zones for the instance
         """
         return pulumi.get(self, "zone_id_lists")
 

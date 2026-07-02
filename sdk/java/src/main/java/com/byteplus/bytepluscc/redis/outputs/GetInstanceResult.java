@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.redis.outputs;
 
+import com.byteplus.bytepluscc.redis.outputs.GetInstanceBackup;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceBackupRestore;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceCapacity;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceConfigureNode;
@@ -39,6 +40,11 @@ public final class GetInstanceResult {
      * 
      */
     private GetInstanceBackupRestore backupRestore;
+    /**
+     * @return Backup list information for the instance
+     * 
+     */
+    private List<GetInstanceBackup> backups;
     /**
      * @return Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      * 
@@ -288,6 +294,13 @@ public final class GetInstanceResult {
      */
     public GetInstanceBackupRestore backupRestore() {
         return this.backupRestore;
+    }
+    /**
+     * @return Backup list information for the instance
+     * 
+     */
+    public List<GetInstanceBackup> backups() {
+        return this.backups;
     }
     /**
      * @return Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
@@ -611,6 +624,7 @@ public final class GetInstanceResult {
         private Boolean autoRenew;
         private String backupPointName;
         private GetInstanceBackupRestore backupRestore;
+        private List<GetInstanceBackup> backups;
         private String blueGreenRole;
         private GetInstanceCapacity capacity;
         private String chargeType;
@@ -662,6 +676,7 @@ public final class GetInstanceResult {
     	      this.autoRenew = defaults.autoRenew;
     	      this.backupPointName = defaults.backupPointName;
     	      this.backupRestore = defaults.backupRestore;
+    	      this.backups = defaults.backups;
     	      this.blueGreenRole = defaults.blueGreenRole;
     	      this.capacity = defaults.capacity;
     	      this.chargeType = defaults.chargeType;
@@ -742,6 +757,17 @@ public final class GetInstanceResult {
             }
             this.backupRestore = backupRestore;
             return this;
+        }
+        @CustomType.Setter
+        public Builder backups(List<GetInstanceBackup> backups) {
+            if (backups == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backups");
+            }
+            this.backups = backups;
+            return this;
+        }
+        public Builder backups(GetInstanceBackup... backups) {
+            return backups(List.of(backups));
         }
         @CustomType.Setter
         public Builder blueGreenRole(String blueGreenRole) {
@@ -1119,6 +1145,7 @@ public final class GetInstanceResult {
             _resultValue.autoRenew = autoRenew;
             _resultValue.backupPointName = backupPointName;
             _resultValue.backupRestore = backupRestore;
+            _resultValue.backups = backups;
             _resultValue.blueGreenRole = blueGreenRole;
             _resultValue.capacity = capacity;
             _resultValue.chargeType = chargeType;

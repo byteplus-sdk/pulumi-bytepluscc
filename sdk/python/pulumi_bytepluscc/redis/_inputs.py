@@ -20,6 +20,8 @@ __all__ = [
     'AllowListAssociatedInstanceArgsDict',
     'AllowListSecurityGroupBindInfoArgs',
     'AllowListSecurityGroupBindInfoArgsDict',
+    'InstanceBackupArgs',
+    'InstanceBackupArgsDict',
     'InstanceBackupRestoreArgs',
     'InstanceBackupRestoreArgsDict',
     'InstanceCapacityArgs',
@@ -184,6 +186,198 @@ class AllowListSecurityGroupBindInfoArgs:
     @security_group_id.setter
     def security_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "security_group_id", value)
+
+
+if not MYPY:
+    class InstanceBackupArgsDict(TypedDict):
+        backup_point_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup point ID
+        """
+        backup_point_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup point name
+        """
+        backup_strategy: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup policy
+        """
+        backup_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup type
+        """
+        end_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup end time
+        """
+        instance_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Instance ID
+        """
+        size: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Backup size (unit: Byte)
+        """
+        start_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup start time
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Backup status
+        """
+elif False:
+    InstanceBackupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceBackupArgs:
+    def __init__(__self__, *,
+                 backup_point_id: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_strategy: Optional[pulumi.Input[builtins.str]] = None,
+                 backup_type: Optional[pulumi.Input[builtins.str]] = None,
+                 end_time: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 size: Optional[pulumi.Input[builtins.int]] = None,
+                 start_time: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] backup_point_id: Backup point ID
+        :param pulumi.Input[builtins.str] backup_point_name: Backup point name
+        :param pulumi.Input[builtins.str] backup_strategy: Backup policy
+        :param pulumi.Input[builtins.str] backup_type: Backup type
+        :param pulumi.Input[builtins.str] end_time: Backup end time
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.int] size: Backup size (unit: Byte)
+        :param pulumi.Input[builtins.str] start_time: Backup start time
+        :param pulumi.Input[builtins.str] status: Backup status
+        """
+        if backup_point_id is not None:
+            pulumi.set(__self__, "backup_point_id", backup_point_id)
+        if backup_point_name is not None:
+            pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if backup_strategy is not None:
+            pulumi.set(__self__, "backup_strategy", backup_strategy)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if end_time is not None:
+            pulumi.set(__self__, "end_time", end_time)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="backupPointId")
+    def backup_point_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup point ID
+        """
+        return pulumi.get(self, "backup_point_id")
+
+    @backup_point_id.setter
+    def backup_point_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_point_id", value)
+
+    @property
+    @pulumi.getter(name="backupPointName")
+    def backup_point_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup point name
+        """
+        return pulumi.get(self, "backup_point_name")
+
+    @backup_point_name.setter
+    def backup_point_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_point_name", value)
+
+    @property
+    @pulumi.getter(name="backupStrategy")
+    def backup_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup policy
+        """
+        return pulumi.get(self, "backup_strategy")
+
+    @backup_strategy.setter
+    def backup_strategy(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_strategy", value)
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup type
+        """
+        return pulumi.get(self, "backup_type")
+
+    @backup_type.setter
+    def backup_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "backup_type", value)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup end time
+        """
+        return pulumi.get(self, "end_time")
+
+    @end_time.setter
+    def end_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "end_time", value)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Instance ID
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter
+    def size(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Backup size (unit: Byte)
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "size", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup start time
+        """
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Backup status
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
 
 
 if not MYPY:

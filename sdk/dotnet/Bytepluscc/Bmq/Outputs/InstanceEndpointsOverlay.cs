@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
         /// </summary>
         public readonly string? EipId;
         /// <summary>
-        /// Private network Plain endpoint
+        /// Private network Plain access point
         /// </summary>
         public readonly string? Plain;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
         /// </summary>
         public readonly int? PlainPort;
         /// <summary>
-        /// Private network SASL authentication endpoint
+        /// Private network SASL authentication access point
         /// </summary>
         public readonly string? Sasl;
         /// <summary>

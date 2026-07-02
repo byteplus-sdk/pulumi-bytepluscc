@@ -14,37 +14,37 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupTopicInfo {
     /**
-     * @return Topic creation time.
+     * @return Topic creation time
      * 
      */
     private String createTime;
     /**
-     * @return Topic description.
+     * @return Topic description
      * 
      */
     private String description;
     /**
-     * @return Number of unconsumed messages in the Topic.
+     * @return Number of unconsumed messages in the Topic
      * 
      */
     private Integer lag;
     /**
-     * @return Partition list.
+     * @return Partition list
      * 
      */
     private List<GetGroupTopicInfoPartitionInfo> partitionInfos;
     /**
-     * @return Number of Topic partitions.
+     * @return Number of Topic partitions
      * 
      */
     private Integer partitions;
     /**
-     * @return Retention period of data in the Topic, in hours.
+     * @return Retention period of data in the Topic, in hours
      * 
      */
     private Integer retention;
     /**
-     * @return Topic status.
+     * @return Topic status
      * 
      */
     private String status;
@@ -54,56 +54,56 @@ public final class GetGroupTopicInfo {
      */
     private String topicId;
     /**
-     * @return Topic name.
+     * @return Topic name
      * 
      */
     private String topicName;
 
     private GetGroupTopicInfo() {}
     /**
-     * @return Topic creation time.
+     * @return Topic creation time
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return Topic description.
+     * @return Topic description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Number of unconsumed messages in the Topic.
+     * @return Number of unconsumed messages in the Topic
      * 
      */
     public Integer lag() {
         return this.lag;
     }
     /**
-     * @return Partition list.
+     * @return Partition list
      * 
      */
     public List<GetGroupTopicInfoPartitionInfo> partitionInfos() {
         return this.partitionInfos;
     }
     /**
-     * @return Number of Topic partitions.
+     * @return Number of Topic partitions
      * 
      */
     public Integer partitions() {
         return this.partitions;
     }
     /**
-     * @return Retention period of data in the Topic, in hours.
+     * @return Retention period of data in the Topic, in hours
      * 
      */
     public Integer retention() {
         return this.retention;
     }
     /**
-     * @return Topic status.
+     * @return Topic status
      * 
      */
     public String status() {
@@ -117,7 +117,7 @@ public final class GetGroupTopicInfo {
         return this.topicId;
     }
     /**
-     * @return Topic name.
+     * @return Topic name
      * 
      */
     public String topicName() {

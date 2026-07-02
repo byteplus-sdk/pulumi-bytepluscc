@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ConnectionTag struct {
+	// Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+	Key *string `pulumi:"key"`
+	// Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+	Value *string `pulumi:"value"`
+}
+
+// ConnectionTagInput is an input type that accepts ConnectionTagArgs and ConnectionTagOutput values.
+// You can construct a concrete instance of `ConnectionTagInput` via:
+//
+//	ConnectionTagArgs{...}
+type ConnectionTagInput interface {
+	pulumi.Input
+
+	ToConnectionTagOutput() ConnectionTagOutput
+	ToConnectionTagOutputWithContext(context.Context) ConnectionTagOutput
+}
+
+type ConnectionTagArgs struct {
+	// Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ConnectionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionTag)(nil)).Elem()
+}
+
+func (i ConnectionTagArgs) ToConnectionTagOutput() ConnectionTagOutput {
+	return i.ToConnectionTagOutputWithContext(context.Background())
+}
+
+func (i ConnectionTagArgs) ToConnectionTagOutputWithContext(ctx context.Context) ConnectionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionTagOutput)
+}
+
+// ConnectionTagArrayInput is an input type that accepts ConnectionTagArray and ConnectionTagArrayOutput values.
+// You can construct a concrete instance of `ConnectionTagArrayInput` via:
+//
+//	ConnectionTagArray{ ConnectionTagArgs{...} }
+type ConnectionTagArrayInput interface {
+	pulumi.Input
+
+	ToConnectionTagArrayOutput() ConnectionTagArrayOutput
+	ToConnectionTagArrayOutputWithContext(context.Context) ConnectionTagArrayOutput
+}
+
+type ConnectionTagArray []ConnectionTagInput
+
+func (ConnectionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionTag)(nil)).Elem()
+}
+
+func (i ConnectionTagArray) ToConnectionTagArrayOutput() ConnectionTagArrayOutput {
+	return i.ToConnectionTagArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionTagArray) ToConnectionTagArrayOutputWithContext(ctx context.Context) ConnectionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionTagArrayOutput)
+}
+
+type ConnectionTagOutput struct{ *pulumi.OutputState }
+
+func (ConnectionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionTag)(nil)).Elem()
+}
+
+func (o ConnectionTagOutput) ToConnectionTagOutput() ConnectionTagOutput {
+	return o
+}
+
+func (o ConnectionTagOutput) ToConnectionTagOutputWithContext(ctx context.Context) ConnectionTagOutput {
+	return o
+}
+
+// Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+func (o ConnectionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+func (o ConnectionTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionTag)(nil)).Elem()
+}
+
+func (o ConnectionTagArrayOutput) ToConnectionTagArrayOutput() ConnectionTagArrayOutput {
+	return o
+}
+
+func (o ConnectionTagArrayOutput) ToConnectionTagArrayOutputWithContext(ctx context.Context) ConnectionTagArrayOutput {
+	return o
+}
+
+func (o ConnectionTagArrayOutput) Index(i pulumi.IntInput) ConnectionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionTag {
+		return vs[0].([]ConnectionTag)[vs[1].(int)]
+	}).(ConnectionTagOutput)
+}
+
 type DirectConnectGatewayAssociateCen struct {
 	// ID of CEN.
 	CenId *string `pulumi:"cenId"`
@@ -515,6 +621,112 @@ func (o VirtualInterfaceTagArrayOutput) Index(i pulumi.IntInput) VirtualInterfac
 	}).(VirtualInterfaceTagOutput)
 }
 
+type GetConnectionTag struct {
+	// Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+	Key string `pulumi:"key"`
+	// Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+	Value string `pulumi:"value"`
+}
+
+// GetConnectionTagInput is an input type that accepts GetConnectionTagArgs and GetConnectionTagOutput values.
+// You can construct a concrete instance of `GetConnectionTagInput` via:
+//
+//	GetConnectionTagArgs{...}
+type GetConnectionTagInput interface {
+	pulumi.Input
+
+	ToGetConnectionTagOutput() GetConnectionTagOutput
+	ToGetConnectionTagOutputWithContext(context.Context) GetConnectionTagOutput
+}
+
+type GetConnectionTagArgs struct {
+	// Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetConnectionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionTag)(nil)).Elem()
+}
+
+func (i GetConnectionTagArgs) ToGetConnectionTagOutput() GetConnectionTagOutput {
+	return i.ToGetConnectionTagOutputWithContext(context.Background())
+}
+
+func (i GetConnectionTagArgs) ToGetConnectionTagOutputWithContext(ctx context.Context) GetConnectionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionTagOutput)
+}
+
+// GetConnectionTagArrayInput is an input type that accepts GetConnectionTagArray and GetConnectionTagArrayOutput values.
+// You can construct a concrete instance of `GetConnectionTagArrayInput` via:
+//
+//	GetConnectionTagArray{ GetConnectionTagArgs{...} }
+type GetConnectionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionTagArrayOutput() GetConnectionTagArrayOutput
+	ToGetConnectionTagArrayOutputWithContext(context.Context) GetConnectionTagArrayOutput
+}
+
+type GetConnectionTagArray []GetConnectionTagInput
+
+func (GetConnectionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionTag)(nil)).Elem()
+}
+
+func (i GetConnectionTagArray) ToGetConnectionTagArrayOutput() GetConnectionTagArrayOutput {
+	return i.ToGetConnectionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionTagArray) ToGetConnectionTagArrayOutputWithContext(ctx context.Context) GetConnectionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionTagArrayOutput)
+}
+
+type GetConnectionTagOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionTag)(nil)).Elem()
+}
+
+func (o GetConnectionTagOutput) ToGetConnectionTagOutput() GetConnectionTagOutput {
+	return o
+}
+
+func (o GetConnectionTagOutput) ToGetConnectionTagOutputWithContext(ctx context.Context) GetConnectionTagOutput {
+	return o
+}
+
+// Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+func (o GetConnectionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+func (o GetConnectionTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetConnectionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionTag)(nil)).Elem()
+}
+
+func (o GetConnectionTagArrayOutput) ToGetConnectionTagArrayOutput() GetConnectionTagArrayOutput {
+	return o
+}
+
+func (o GetConnectionTagArrayOutput) ToGetConnectionTagArrayOutputWithContext(ctx context.Context) GetConnectionTagArrayOutput {
+	return o
+}
+
+func (o GetConnectionTagArrayOutput) Index(i pulumi.IntInput) GetConnectionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionTag {
+		return vs[0].([]GetConnectionTag)[vs[1].(int)]
+	}).(GetConnectionTagOutput)
+}
+
 type GetDirectConnectGatewayAssociateCen struct {
 	// ID of CEN.
 	CenId string `pulumi:"cenId"`
@@ -913,6 +1125,8 @@ func (o GetVirtualInterfaceTagArrayOutput) Index(i pulumi.IntInput) GetVirtualIn
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTagInput)(nil)).Elem(), ConnectionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTagArrayInput)(nil)).Elem(), ConnectionTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateCenInput)(nil)).Elem(), DirectConnectGatewayAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateCenArrayInput)(nil)).Elem(), DirectConnectGatewayAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateEicInput)(nil)).Elem(), DirectConnectGatewayAssociateEicArgs{})
@@ -921,6 +1135,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayTagArrayInput)(nil)).Elem(), DirectConnectGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualInterfaceTagInput)(nil)).Elem(), VirtualInterfaceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualInterfaceTagArrayInput)(nil)).Elem(), VirtualInterfaceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionTagInput)(nil)).Elem(), GetConnectionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionTagArrayInput)(nil)).Elem(), GetConnectionTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateCenInput)(nil)).Elem(), GetDirectConnectGatewayAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateCenArrayInput)(nil)).Elem(), GetDirectConnectGatewayAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateEicInput)(nil)).Elem(), GetDirectConnectGatewayAssociateEicArgs{})
@@ -928,6 +1144,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayTagArrayInput)(nil)).Elem(), GetDirectConnectGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualInterfaceTagInput)(nil)).Elem(), GetVirtualInterfaceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualInterfaceTagArrayInput)(nil)).Elem(), GetVirtualInterfaceTagArray{})
+	pulumi.RegisterOutputType(ConnectionTagOutput{})
+	pulumi.RegisterOutputType(ConnectionTagArrayOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateCenOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateEicOutput{})
@@ -936,6 +1154,8 @@ func init() {
 	pulumi.RegisterOutputType(DirectConnectGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(VirtualInterfaceTagOutput{})
 	pulumi.RegisterOutputType(VirtualInterfaceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionTagOutput{})
+	pulumi.RegisterOutputType(GetConnectionTagArrayOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateCenOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateEicOutput{})

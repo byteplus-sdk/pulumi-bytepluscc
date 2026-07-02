@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class RuleNotifyTemplateGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        /// Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
         /// </summary>
         [Input("channel")]
         public Input<string>? Channel { get; set; }

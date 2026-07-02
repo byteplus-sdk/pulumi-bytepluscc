@@ -7,15 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
+ * The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It offers a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service based on cloud-native architecture. Supports flexible and dynamic scaling, integrated stream and batch processing, and provides enterprise-grade real-time stream data processing capabilities for large-scale data. Helps you build the 'central nervous system' for data processing, widely used in scenarios such as log collection, data aggregation, and offline data analysis.
  *
  * ## Example Usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as byteplus from "@pulumi/byteplus";
+ * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
  *
- * const bMQInstanceDemo = new byteplus.index.BmqInstance("BMQInstanceDemo", {
+ * const bMQInstanceDemo = new bytepluscc.bmq.Instance("BMQInstanceDemo", {
  *     name: "BMQInstanceDemo",
  *     billingType: "POST",
  *     projectName: "default",
@@ -30,9 +30,9 @@ import * as utilities from "../utilities";
  *             vpcIds: ["vpc-miltj87lh2ww5smt1bxxxxx"],
  *         },
  *     },
- *     securityGroupIdList: ["sg-3nqnz9en1ucxs931eaxxxxx"],
- *     subnetIdList: ["subnet-w02wsq25fitc865ykaxxxxx"],
- *     zoneIdList: ["cn-beijing-a"],
+ *     securityGroupIdLists: ["sg-3nqnz9en1ucxs931eaxxxxx"],
+ *     subnetIdLists: ["subnet-w02wsq25fitc865ykaxxxxx"],
+ *     zoneIdLists: ["cn-beijing-a"],
  *     tags: [{
  *         key: "env",
  *         type: "CUSTOM",
@@ -76,15 +76,15 @@ export class Instance extends pulumi.CustomResource {
     }
 
     /**
-     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      */
     public readonly autoRenew!: pulumi.Output<string>;
     /**
-     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      */
     public readonly billingPeriod!: pulumi.Output<string>;
     /**
-     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      */
     public readonly billingType!: pulumi.Output<string>;
     /**
@@ -92,11 +92,11 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * Instance description statement
+     * Instance description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      */
     public readonly eipId!: pulumi.Output<string>;
     /**
@@ -116,11 +116,11 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly instanceId!: pulumi.Output<string>;
     /**
-     * Message retention period for all topics under the instance, in hours
+     * Message retention period for all Topics under the instance, in hours
      */
     public readonly messageRetention!: pulumi.Output<number>;
     /**
-     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -128,7 +128,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly partitionLimit!: pulumi.Output<number>;
     /**
-     * Project name to which the instance belongs
+     * Project name associated with the instance
      */
     public readonly projectName!: pulumi.Output<string>;
     public /*out*/ readonly resourceTags!: pulumi.Output<outputs.bmq.InstanceResourceTag[]>;
@@ -137,7 +137,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly resources!: pulumi.Output<outputs.bmq.InstanceResources>;
     /**
-     * List of security groups used by the instance
+     * Security group list used by the instance
      */
     public readonly securityGroupIdLists!: pulumi.Output<string[]>;
     /**
@@ -149,16 +149,16 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * List of subnets used by the instance
+     * Subnet list used by the instance
      */
     public readonly subnetIdLists!: pulumi.Output<string[]>;
     public readonly tags!: pulumi.Output<outputs.bmq.InstanceTag[]>;
     /**
-     * Purchase duration for subscription instances, in months
+     * Purchase duration for yearly/monthly subscription instances, in months
      */
     public readonly times!: pulumi.Output<number>;
     /**
-     * Maximum number of topics per instance
+     * Maximum number of Topics per instance
      */
     public /*out*/ readonly topicLimit!: pulumi.Output<number>;
     /**
@@ -166,7 +166,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * List of availability zones where the instance is located
+     * List of availability zones for the instance
      */
     public readonly zoneIdLists!: pulumi.Output<string[]>;
 
@@ -270,15 +270,15 @@ export class Instance extends pulumi.CustomResource {
  */
 export interface InstanceState {
     /**
-     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      */
     autoRenew?: pulumi.Input<string>;
     /**
-     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      */
     billingPeriod?: pulumi.Input<string>;
     /**
-     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      */
     billingType?: pulumi.Input<string>;
     /**
@@ -286,11 +286,11 @@ export interface InstanceState {
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * Instance description statement
+     * Instance description
      */
     description?: pulumi.Input<string>;
     /**
-     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      */
     eipId?: pulumi.Input<string>;
     /**
@@ -310,11 +310,11 @@ export interface InstanceState {
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * Message retention period for all topics under the instance, in hours
+     * Message retention period for all Topics under the instance, in hours
      */
     messageRetention?: pulumi.Input<number>;
     /**
-     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      */
     name?: pulumi.Input<string>;
     /**
@@ -322,7 +322,7 @@ export interface InstanceState {
      */
     partitionLimit?: pulumi.Input<number>;
     /**
-     * Project name to which the instance belongs
+     * Project name associated with the instance
      */
     projectName?: pulumi.Input<string>;
     resourceTags?: pulumi.Input<pulumi.Input<inputs.bmq.InstanceResourceTag>[]>;
@@ -331,7 +331,7 @@ export interface InstanceState {
      */
     resources?: pulumi.Input<inputs.bmq.InstanceResources>;
     /**
-     * List of security groups used by the instance
+     * Security group list used by the instance
      */
     securityGroupIdLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -343,16 +343,16 @@ export interface InstanceState {
      */
     status?: pulumi.Input<string>;
     /**
-     * List of subnets used by the instance
+     * Subnet list used by the instance
      */
     subnetIdLists?: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.bmq.InstanceTag>[]>;
     /**
-     * Purchase duration for subscription instances, in months
+     * Purchase duration for yearly/monthly subscription instances, in months
      */
     times?: pulumi.Input<number>;
     /**
-     * Maximum number of topics per instance
+     * Maximum number of Topics per instance
      */
     topicLimit?: pulumi.Input<number>;
     /**
@@ -360,7 +360,7 @@ export interface InstanceState {
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * List of availability zones where the instance is located
+     * List of availability zones for the instance
      */
     zoneIdLists?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -370,23 +370,23 @@ export interface InstanceState {
  */
 export interface InstanceArgs {
     /**
-     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      */
     autoRenew?: pulumi.Input<string>;
     /**
-     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      */
     billingPeriod?: pulumi.Input<string>;
     /**
-     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      */
     billingType: pulumi.Input<string>;
     /**
-     * Instance description statement
+     * Instance description
      */
     description?: pulumi.Input<string>;
     /**
-     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      */
     eipId?: pulumi.Input<string>;
     /**
@@ -394,19 +394,19 @@ export interface InstanceArgs {
      */
     endpoints?: pulumi.Input<inputs.bmq.InstanceEndpoints>;
     /**
-     * Message retention period for all topics under the instance, in hours
+     * Message retention period for all Topics under the instance, in hours
      */
     messageRetention?: pulumi.Input<number>;
     /**
-     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      */
     name: pulumi.Input<string>;
     /**
-     * Project name to which the instance belongs
+     * Project name associated with the instance
      */
     projectName: pulumi.Input<string>;
     /**
-     * List of security groups used by the instance
+     * Security group list used by the instance
      */
     securityGroupIdLists: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -414,12 +414,12 @@ export interface InstanceArgs {
      */
     specification: pulumi.Input<string>;
     /**
-     * List of subnets used by the instance
+     * Subnet list used by the instance
      */
     subnetIdLists: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.bmq.InstanceTag>[]>;
     /**
-     * Purchase duration for subscription instances, in months
+     * Purchase duration for yearly/monthly subscription instances, in months
      */
     times?: pulumi.Input<number>;
     /**
@@ -427,7 +427,7 @@ export interface InstanceArgs {
      */
     vpcId: pulumi.Input<string>;
     /**
-     * List of availability zones where the instance is located
+     * List of availability zones for the instance
      */
     zoneIdLists: pulumi.Input<pulumi.Input<string>[]>;
 }

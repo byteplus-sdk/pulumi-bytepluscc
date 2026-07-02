@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +30,21 @@ public final class InstanceAutoStorageScalingConfigArgs extends com.pulumi.resou
      */
     public Optional<Output<Boolean>> enableStorageAutoScale() {
         return Optional.ofNullable(this.enableStorageAutoScale);
+    }
+
+    /**
+     * Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+     * 
+     */
+    @Import(name="scalingDetectNode")
+    private @Nullable Output<String> scalingDetectNode;
+
+    /**
+     * @return Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+     * 
+     */
+    public Optional<Output<String>> scalingDetectNode() {
+        return Optional.ofNullable(this.scalingDetectNode);
     }
 
     /**
@@ -65,6 +81,7 @@ public final class InstanceAutoStorageScalingConfigArgs extends com.pulumi.resou
 
     private InstanceAutoStorageScalingConfigArgs(InstanceAutoStorageScalingConfigArgs $) {
         this.enableStorageAutoScale = $.enableStorageAutoScale;
+        this.scalingDetectNode = $.scalingDetectNode;
         this.storageThreshold = $.storageThreshold;
         this.storageUpperBound = $.storageUpperBound;
     }
@@ -106,6 +123,27 @@ public final class InstanceAutoStorageScalingConfigArgs extends com.pulumi.resou
          */
         public Builder enableStorageAutoScale(Boolean enableStorageAutoScale) {
             return enableStorageAutoScale(Output.of(enableStorageAutoScale));
+        }
+
+        /**
+         * @param scalingDetectNode Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scalingDetectNode(@Nullable Output<String> scalingDetectNode) {
+            $.scalingDetectNode = scalingDetectNode;
+            return this;
+        }
+
+        /**
+         * @param scalingDetectNode Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scalingDetectNode(String scalingDetectNode) {
+            return scalingDetectNode(Output.of(scalingDetectNode));
         }
 
         /**

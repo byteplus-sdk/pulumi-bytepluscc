@@ -66,6 +66,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     ///         NoAuthMode = "open",
     ///         ParameterGroupId = "DefaultParamGroupId-6.0",
     ///         ContinuousBackup = true,
+    ///         CreateBackup = true,
     ///     });
     /// 
     /// });
@@ -103,6 +104,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         [Output("backupRestore")]
         public Output<Outputs.InstanceBackupRestore> BackupRestore { get; private set; } = null!;
+
+        [Output("backups")]
+        public Output<ImmutableArray<Outputs.InstanceBackup>> Backups { get; private set; } = null!;
 
         /// <summary>
         /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
@@ -606,6 +610,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         [Input("backupRestore")]
         public Input<Inputs.InstanceBackupRestoreGetArgs>? BackupRestore { get; set; }
+
+        [Input("backups")]
+        private InputList<Inputs.InstanceBackupGetArgs>? _backups;
+        public InputList<Inputs.InstanceBackupGetArgs> Backups
+        {
+            get => _backups ?? (_backups = new InputList<Inputs.InstanceBackupGetArgs>());
+            set => _backups = value;
+        }
 
         /// <summary>
         /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.

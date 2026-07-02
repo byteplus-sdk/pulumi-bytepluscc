@@ -69,7 +69,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+        /// Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         /// </summary>
         public readonly string CrossZoneEnabled;
         /// <summary>
@@ -77,7 +77,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Health check configuration information for the server group.
+        /// Server group health check configuration information.
         /// </summary>
         public readonly Outputs.GetServerGroupHealthCheckResult HealthCheck;
         /// <summary>
@@ -85,7 +85,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// IP address type of the server group. Currently, only IPv4 is supported.
+        /// IP address type of the server group. Only IPv4 is supported.
         /// </summary>
         public readonly string IpAddressType;
         /// <summary>
@@ -101,7 +101,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+        /// Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         /// </summary>
         public readonly string Scheduler;
         /// <summary>
@@ -109,23 +109,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly int ServerCount;
         /// <summary>
-        /// Backend server group ID.
+        /// ID of the backend server group.
         /// </summary>
         public readonly string ServerGroupId;
         /// <summary>
-        /// Backend server group name.
+        /// Name of the backend server group.
         /// </summary>
         public readonly string ServerGroupName;
         /// <summary>
-        /// Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        /// Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         /// </summary>
         public readonly string ServerGroupType;
         /// <summary>
-        /// Information about the servers in the backend server group.
+        /// Information about servers in the backend server group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServerGroupServerResult> Servers;
         /// <summary>
-        /// Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+        /// Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         /// </summary>
         public readonly string Status;
         /// <summary>

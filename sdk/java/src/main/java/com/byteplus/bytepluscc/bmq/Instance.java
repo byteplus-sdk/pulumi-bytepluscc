@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the &#39;central nervous system&#39; for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
+ * The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It offers a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service based on cloud-native architecture. Supports flexible and dynamic scaling, integrated stream and batch processing, and provides enterprise-grade real-time stream data processing capabilities for large-scale data. Helps you build the &#39;central nervous system&#39; for data processing, widely used in scenarios such as log collection, data aggregation, and offline data analysis.
  * 
  * ## Example Usage
  * 
@@ -32,8 +32,12 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.byteplus.bmqInstance;
- * import com.pulumi.byteplus.bmqInstanceArgs;
+ * import com.byteplus.bytepluscc.bmq.Instance;
+ * import com.byteplus.bytepluscc.bmq.InstanceArgs;
+ * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsArgs;
+ * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsPublicArgs;
+ * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsOverlayArgs;
+ * import com.pulumi.bytepluscc.bmq.inputs.InstanceTagArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -47,25 +51,29 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var bMQInstanceDemo = new BmqInstance("bMQInstanceDemo", BmqInstanceArgs.builder()
+ *         var bMQInstanceDemo = new Instance("bMQInstanceDemo", InstanceArgs.builder()
  *             .name("BMQInstanceDemo")
  *             .billingType("POST")
  *             .projectName("default")
  *             .specification("bmq.standard")
  *             .vpcId("vpc-miltj87lh2ww5smt1bxxxxx")
  *             .messageRetention(1)
- *             .endpoints(Map.ofEntries(
- *                 Map.entry("public", Map.of("eipId", "eip-3nriu2y2ufwu8931exxxxx")),
- *                 Map.entry("overlay", Map.of("vpcIds", List.of("vpc-miltj87lh2ww5smt1bxxxxx")))
- *             ))
- *             .securityGroupIdList(List.of("sg-3nqnz9en1ucxs931eaxxxxx"))
- *             .subnetIdList(List.of("subnet-w02wsq25fitc865ykaxxxxx"))
- *             .zoneIdList(List.of("cn-beijing-a"))
- *             .tags(List.of(Map.ofEntries(
- *                 Map.entry("key", "env"),
- *                 Map.entry("type", "CUSTOM"),
- *                 Map.entry("value", "test")
- *             )))
+ *             .endpoints(InstanceEndpointsArgs.builder()
+ *                 .public_(InstanceEndpointsPublicArgs.builder()
+ *                     .eipId("eip-3nriu2y2ufwu8931exxxxx")
+ *                     .build())
+ *                 .overlay(InstanceEndpointsOverlayArgs.builder()
+ *                     .vpcIds("vpc-miltj87lh2ww5smt1bxxxxx")
+ *                     .build())
+ *                 .build())
+ *             .securityGroupIdLists("sg-3nqnz9en1ucxs931eaxxxxx")
+ *             .subnetIdLists("subnet-w02wsq25fitc865ykaxxxxx")
+ *             .zoneIdLists("cn-beijing-a")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .type("CUSTOM")
+ *                 .value("test")
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -84,42 +92,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:bmq/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      * 
      */
     @Export(name="autoRenew", refs={String.class}, tree="[0]")
     private Output<String> autoRenew;
 
     /**
-     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * @return Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      * 
      */
     public Output<String> autoRenew() {
         return this.autoRenew;
     }
     /**
-     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      * 
      */
     @Export(name="billingPeriod", refs={String.class}, tree="[0]")
     private Output<String> billingPeriod;
 
     /**
-     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * @return Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      * 
      */
     public Output<String> billingPeriod() {
         return this.billingPeriod;
     }
     /**
-     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      * 
      */
     @Export(name="billingType", refs={String.class}, tree="[0]")
     private Output<String> billingType;
 
     /**
-     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * @return Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      * 
      */
     public Output<String> billingType() {
@@ -140,28 +148,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.createdTime;
     }
     /**
-     * Instance description statement
+     * Instance description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Instance description statement
+     * @return Instance description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
-     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * @return Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      * 
      */
     public Output<String> eipId() {
@@ -224,28 +232,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.instanceId;
     }
     /**
-     * Message retention period for all topics under the instance, in hours
+     * Message retention period for all Topics under the instance, in hours
      * 
      */
     @Export(name="messageRetention", refs={Integer.class}, tree="[0]")
     private Output<Integer> messageRetention;
 
     /**
-     * @return Message retention period for all topics under the instance, in hours
+     * @return Message retention period for all Topics under the instance, in hours
      * 
      */
     public Output<Integer> messageRetention() {
         return this.messageRetention;
     }
     /**
-     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * @return Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public Output<String> name() {
@@ -266,14 +274,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.partitionLimit;
     }
     /**
-     * Project name to which the instance belongs
+     * Project name associated with the instance
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return Project name to which the instance belongs
+     * @return Project name associated with the instance
      * 
      */
     public Output<String> projectName() {
@@ -300,14 +308,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.resources;
     }
     /**
-     * List of security groups used by the instance
+     * Security group list used by the instance
      * 
      */
     @Export(name="securityGroupIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIdLists;
 
     /**
-     * @return List of security groups used by the instance
+     * @return Security group list used by the instance
      * 
      */
     public Output<List<String>> securityGroupIdLists() {
@@ -342,14 +350,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.status;
     }
     /**
-     * List of subnets used by the instance
+     * Subnet list used by the instance
      * 
      */
     @Export(name="subnetIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIdLists;
 
     /**
-     * @return List of subnets used by the instance
+     * @return Subnet list used by the instance
      * 
      */
     public Output<List<String>> subnetIdLists() {
@@ -362,28 +370,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * Purchase duration for subscription instances, in months
+     * Purchase duration for yearly/monthly subscription instances, in months
      * 
      */
     @Export(name="times", refs={Integer.class}, tree="[0]")
     private Output<Integer> times;
 
     /**
-     * @return Purchase duration for subscription instances, in months
+     * @return Purchase duration for yearly/monthly subscription instances, in months
      * 
      */
     public Output<Integer> times() {
         return this.times;
     }
     /**
-     * Maximum number of topics per instance
+     * Maximum number of Topics per instance
      * 
      */
     @Export(name="topicLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> topicLimit;
 
     /**
-     * @return Maximum number of topics per instance
+     * @return Maximum number of Topics per instance
      * 
      */
     public Output<Integer> topicLimit() {
@@ -404,14 +412,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.vpcId;
     }
     /**
-     * List of availability zones where the instance is located
+     * List of availability zones for the instance
      * 
      */
     @Export(name="zoneIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIdLists;
 
     /**
-     * @return List of availability zones where the instance is located
+     * @return List of availability zones for the instance
      * 
      */
     public Output<List<String>> zoneIdLists() {

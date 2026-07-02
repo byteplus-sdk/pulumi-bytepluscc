@@ -24,7 +24,7 @@ public final class GetRuleDimensionConditionsMetaCondition {
      */
     private String condition;
     /**
-     * @return Condition. and: All conditions met. or: Any condition met.
+     * @return Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
      * 
      */
     private List<GetRuleDimensionConditionsMetaConditionMeta> metas;
@@ -45,7 +45,7 @@ public final class GetRuleDimensionConditionsMetaCondition {
         return this.condition;
     }
     /**
-     * @return Condition. and: All conditions met. or: Any condition met.
+     * @return Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
      * 
      */
     public List<GetRuleDimensionConditionsMetaConditionMeta> metas() {

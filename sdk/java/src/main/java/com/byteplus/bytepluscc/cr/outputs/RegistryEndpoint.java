@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 public final class RegistryEndpoint {
     private @Nullable List<RegistryEndpointAclPolicy> aclPolicies;
     /**
-     * @return Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+     * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+     * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
      * 
      */
     private @Nullable String status;
@@ -31,14 +31,14 @@ public final class RegistryEndpoint {
         return this.aclPolicies == null ? List.of() : this.aclPolicies;
     }
     /**
-     * @return Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+     * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+     * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
      * 
      */
     public Optional<String> status() {

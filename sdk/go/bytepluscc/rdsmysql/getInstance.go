@@ -52,6 +52,8 @@ type LookupInstanceResult struct {
 	BackupFreeQuotaSize int `pulumi:"backupFreeQuotaSize"`
 	// Space used by logs in backups.
 	BackupLogSize int `pulumi:"backupLogSize"`
+	// Instance backup policy configuration.
+	BackupPolicy GetInstanceBackupPolicy `pulumi:"backupPolicy"`
 	// Space used by slow logs in backups.
 	BackupSlowLogSize int `pulumi:"backupSlowLogSize"`
 	// Backup space used by the instance, in GB
@@ -88,6 +90,8 @@ type LookupInstanceResult struct {
 	DrSecondsBehindMaster int `pulumi:"drSecondsBehindMaster"`
 	// Instance connection information.
 	Endpoints []GetInstanceEndpoint `pulumi:"endpoints"`
+	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+	EngineType string `pulumi:"engineType"`
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly bool `pulumi:"globalReadOnly"`
 	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
@@ -126,8 +130,12 @@ type LookupInstanceResult struct {
 	NodeSpec string `pulumi:"nodeSpec"`
 	// Instance node information.
 	Nodes []GetInstanceNode `pulumi:"nodes"`
+	// Parameter template ID.
+	ParameterTemplateId string `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port int `pulumi:"port"`
+	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+	PrivateIpAddress string `pulumi:"privateIpAddress"`
 	// Project.
 	ProjectName string `pulumi:"projectName"`
 	// proxy information
@@ -263,6 +271,11 @@ func (o LookupInstanceResultOutput) BackupLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.BackupLogSize }).(pulumi.IntOutput)
 }
 
+// Instance backup policy configuration.
+func (o LookupInstanceResultOutput) BackupPolicy() GetInstanceBackupPolicyOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceBackupPolicy { return v.BackupPolicy }).(GetInstanceBackupPolicyOutput)
+}
+
 // Space used by slow logs in backups.
 func (o LookupInstanceResultOutput) BackupSlowLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.BackupSlowLogSize }).(pulumi.IntOutput)
@@ -351,6 +364,11 @@ func (o LookupInstanceResultOutput) DrSecondsBehindMaster() pulumi.IntOutput {
 // Instance connection information.
 func (o LookupInstanceResultOutput) Endpoints() GetInstanceEndpointArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceEndpoint { return v.Endpoints }).(GetInstanceEndpointArrayOutput)
+}
+
+// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+func (o LookupInstanceResultOutput) EngineType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.EngineType }).(pulumi.StringOutput)
 }
 
 // Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -448,9 +466,19 @@ func (o LookupInstanceResultOutput) Nodes() GetInstanceNodeArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceNode { return v.Nodes }).(GetInstanceNodeArrayOutput)
 }
 
+// Parameter template ID.
+func (o LookupInstanceResultOutput) ParameterTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.ParameterTemplateId }).(pulumi.StringOutput)
+}
+
 // Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 func (o LookupInstanceResultOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+func (o LookupInstanceResultOutput) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
 }
 
 // Project.

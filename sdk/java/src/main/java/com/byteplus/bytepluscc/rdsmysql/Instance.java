@@ -8,6 +8,7 @@ import com.byteplus.bytepluscc.rdsmysql.InstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.InstanceState;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceAddressObject;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceAutoStorageScalingConfig;
+import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceBackupPolicy;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceChargeDetail;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceDisasterRecoveryInstance;
 import com.byteplus.bytepluscc.rdsmysql.outputs.InstanceEndpoint;
@@ -188,6 +189,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> backupLogSize() {
         return this.backupLogSize;
+    }
+    /**
+     * Instance backup policy configuration.
+     * 
+     */
+    @Export(name="backupPolicy", refs={InstanceBackupPolicy.class}, tree="[0]")
+    private Output<InstanceBackupPolicy> backupPolicy;
+
+    /**
+     * @return Instance backup policy configuration.
+     * 
+     */
+    public Output<InstanceBackupPolicy> backupPolicy() {
+        return this.backupPolicy;
     }
     /**
      * Space used by slow logs in backups.
@@ -424,6 +439,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
 
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
+    }
+    /**
+     * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     * 
+     */
+    @Export(name="engineType", refs={String.class}, tree="[0]")
+    private Output<String> engineType;
+
+    /**
+     * @return Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     * 
+     */
+    public Output<String> engineType() {
+        return this.engineType;
     }
     /**
      * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -670,6 +699,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.nodes;
     }
     /**
+     * Parameter template ID.
+     * 
+     */
+    @Export(name="parameterTemplateId", refs={String.class}, tree="[0]")
+    private Output<String> parameterTemplateId;
+
+    /**
+     * @return Parameter template ID.
+     * 
+     */
+    public Output<String> parameterTemplateId() {
+        return this.parameterTemplateId;
+    }
+    /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
@@ -682,6 +725,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> port() {
         return this.port;
+    }
+    /**
+     * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     * 
+     */
+    @Export(name="privateIpAddress", refs={String.class}, tree="[0]")
+    private Output<String> privateIpAddress;
+
+    /**
+     * @return Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     * 
+     */
+    public Output<String> privateIpAddress() {
+        return this.privateIpAddress;
     }
     /**
      * Project.

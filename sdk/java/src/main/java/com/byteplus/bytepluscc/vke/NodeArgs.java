@@ -144,15 +144,15 @@ public final class NodeArgs extends com.pulumi.resources.ResourceArgs {
      * Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
      * 
      */
-    @Import(name="nodePoolId", required=true)
-    private Output<String> nodePoolId;
+    @Import(name="nodePoolId")
+    private @Nullable Output<String> nodePoolId;
 
     /**
      * @return Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
      * 
      */
-    public Output<String> nodePoolId() {
-        return this.nodePoolId;
+    public Optional<Output<String>> nodePoolId() {
+        return Optional.ofNullable(this.nodePoolId);
     }
 
     private NodeArgs() {}
@@ -363,7 +363,7 @@ public final class NodeArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder nodePoolId(Output<String> nodePoolId) {
+        public Builder nodePoolId(@Nullable Output<String> nodePoolId) {
             $.nodePoolId = nodePoolId;
             return this;
         }
@@ -381,9 +381,6 @@ public final class NodeArgs extends com.pulumi.resources.ResourceArgs {
         public NodeArgs build() {
             if ($.clusterId == null) {
                 throw new MissingRequiredPropertyException("NodeArgs", "clusterId");
-            }
-            if ($.nodePoolId == null) {
-                throw new MissingRequiredPropertyException("NodeArgs", "nodePoolId");
             }
             return $;
         }

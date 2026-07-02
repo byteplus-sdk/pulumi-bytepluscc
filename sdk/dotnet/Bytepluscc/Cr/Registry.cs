@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
-    /// Container Registry (CR) provides secure, highly available hosting for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts.
+    /// Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
     /// 
     /// ## Example Usage
     /// 
@@ -55,61 +55,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public partial class Registry : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+        /// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// Time when the container registry instance was created.
+        /// Creation time of the container registry instance
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Public endpoint information for the image repository instance
+        /// Public endpoint information for the image repository instance.
         /// </summary>
         [Output("endpoint")]
         public Output<Outputs.RegistryEndpoint> Endpoint { get; private set; } = null!;
 
         /// <summary>
-        /// Only applicable when the billing type is HybridCharge. Instance expiration time
+        /// Instance expiration time is only available for HybridCharge billing type
         /// </summary>
         [Output("expireTime")]
         public Output<string> ExpireTime { get; private set; } = null!;
 
         /// <summary>
-        /// Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Specify the project to associate with the instance. Each instance can only be associated with one project
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         [Output("project")]
         public Output<string> Project { get; private set; } = null!;
 
         /// <summary>
-        /// ProxyCache configuration. Required when set to ProxyCache
+        /// ProxyCache configuration. Required when set as ProxyCache
         /// </summary>
         [Output("proxyCache")]
         public Output<Outputs.RegistryProxyCache> ProxyCache { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to set as ProxyCache instance
+        /// Set as ProxyCache instance
         /// </summary>
         [Output("proxyCacheEnabled")]
         public Output<bool> ProxyCacheEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+        /// Instance auto-renewal type is only available for HybridCharge billing type
         /// </summary>
         [Output("renewType")]
         public Output<string> RenewType { get; private set; } = null!;
 
         /// <summary>
-        /// Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         [Output("status")]
         public Output<Outputs.RegistryStatus> Status { get; private set; } = null!;
@@ -118,7 +118,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         public Output<ImmutableArray<Outputs.RegistryTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -171,25 +171,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class RegistryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Public endpoint information for the image repository instance
+        /// Public endpoint information for the image repository instance.
         /// </summary>
         [Input("endpoint")]
         public Input<Inputs.RegistryEndpointArgs>? Endpoint { get; set; }
 
         /// <summary>
-        /// Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Specify the project to associate with the instance. Each instance can only be associated with one project
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         [Input("status")]
         public Input<Inputs.RegistryStatusArgs>? Status { get; set; }
@@ -203,7 +203,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         }
 
         /// <summary>
-        /// If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -217,61 +217,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class RegistryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+        /// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// Time when the container registry instance was created.
+        /// Creation time of the container registry instance
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// Public endpoint information for the image repository instance
+        /// Public endpoint information for the image repository instance.
         /// </summary>
         [Input("endpoint")]
         public Input<Inputs.RegistryEndpointGetArgs>? Endpoint { get; set; }
 
         /// <summary>
-        /// Only applicable when the billing type is HybridCharge. Instance expiration time
+        /// Instance expiration time is only available for HybridCharge billing type
         /// </summary>
         [Input("expireTime")]
         public Input<string>? ExpireTime { get; set; }
 
         /// <summary>
-        /// Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Specify the project to associate with the instance. Each instance can only be associated with one project
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// ProxyCache configuration. Required when set to ProxyCache
+        /// ProxyCache configuration. Required when set as ProxyCache
         /// </summary>
         [Input("proxyCache")]
         public Input<Inputs.RegistryProxyCacheGetArgs>? ProxyCache { get; set; }
 
         /// <summary>
-        /// Whether to set as ProxyCache instance
+        /// Set as ProxyCache instance
         /// </summary>
         [Input("proxyCacheEnabled")]
         public Input<bool>? ProxyCacheEnabled { get; set; }
 
         /// <summary>
-        /// Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+        /// Instance auto-renewal type is only available for HybridCharge billing type
         /// </summary>
         [Input("renewType")]
         public Input<string>? RenewType { get; set; }
 
         /// <summary>
-        /// Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         [Input("status")]
         public Input<Inputs.RegistryStatusGetArgs>? Status { get; set; }
@@ -285,7 +285,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         }
 
         /// <summary>
-        /// If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

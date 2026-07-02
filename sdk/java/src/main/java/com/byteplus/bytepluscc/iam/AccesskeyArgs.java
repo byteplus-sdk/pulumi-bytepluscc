@@ -16,21 +16,6 @@ public final class AccesskeyArgs extends com.pulumi.resources.ResourceArgs {
     public static final AccesskeyArgs Empty = new AccesskeyArgs();
 
     /**
-     * Secret Access Key.
-     * 
-     */
-    @Import(name="secretAccessKey")
-    private @Nullable Output<String> secretAccessKey;
-
-    /**
-     * @return Secret Access Key.
-     * 
-     */
-    public Optional<Output<String>> secretAccessKey() {
-        return Optional.ofNullable(this.secretAccessKey);
-    }
-
-    /**
      * Key status. active means enabled, inactive means disabled.
      * 
      */
@@ -63,7 +48,6 @@ public final class AccesskeyArgs extends com.pulumi.resources.ResourceArgs {
     private AccesskeyArgs() {}
 
     private AccesskeyArgs(AccesskeyArgs $) {
-        this.secretAccessKey = $.secretAccessKey;
         this.status = $.status;
         this.userName = $.userName;
     }
@@ -84,27 +68,6 @@ public final class AccesskeyArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(AccesskeyArgs defaults) {
             $ = new AccesskeyArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @param secretAccessKey Secret Access Key.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder secretAccessKey(@Nullable Output<String> secretAccessKey) {
-            $.secretAccessKey = secretAccessKey;
-            return this;
-        }
-
-        /**
-         * @param secretAccessKey Secret Access Key.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder secretAccessKey(String secretAccessKey) {
-            return secretAccessKey(Output.of(secretAccessKey));
         }
 
         /**

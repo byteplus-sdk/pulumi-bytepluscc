@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryTag {
     /**
-     * @return Tag key
+     * @return Tag key values
      * 
      */
     private @Nullable String key;
@@ -24,7 +24,7 @@ public final class RegistryTag {
 
     private RegistryTag() {}
     /**
-     * @return Tag key
+     * @return Tag key values
      * 
      */
     public Optional<String> key() {

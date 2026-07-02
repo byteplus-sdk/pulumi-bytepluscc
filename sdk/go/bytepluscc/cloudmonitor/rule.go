@@ -29,47 +29,47 @@ type Rule struct {
 	// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 	ConditionOperator pulumi.StringOutput      `pulumi:"conditionOperator"`
 	Conditions        RuleConditionArrayOutput `pulumi:"conditions"`
-	// Alert notification group ID bound to the alert policy.
+	// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
 	ContactGroupIds pulumi.StringArrayOutput `pulumi:"contactGroupIds"`
 	// Alert policy creation time, in timestamp format.
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
-	// Alert policy description.
+	// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// Dimension configuration.
+	// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
 	DimensionConditions RuleDimensionConditionsOutput `pulumi:"dimensionConditions"`
-	// Policy expiration time, in HH:MM format.
+	// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
 	EffectEndAt pulumi.StringOutput `pulumi:"effectEndAt"`
-	// Policy start time, in HH:MM format.
+	// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
 	EffectStartAt pulumi.StringOutput `pulumi:"effectStartAt"`
 	// Alert policy status. enable: enabled, disable: disabled
 	EnableState pulumi.StringOutput `pulumi:"enableState"`
-	// Duration required to trigger an alert, in minutes.
+	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount pulumi.IntOutput `pulumi:"evaluationCount"`
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level           pulumi.StringOutput           `pulumi:"level"`
 	LevelConditions RuleLevelConditionArrayOutput `pulumi:"levelConditions"`
 	// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 	MultipleConditions pulumi.BoolOutput `pulumi:"multipleConditions"`
-	// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+	// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// No data alert.
 	NoData RuleNoDataOutput `pulumi:"noData"`
-	// Notification policy ID.
+	// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
 	NotificationId  pulumi.StringOutput           `pulumi:"notificationId"`
 	NotifyTemplates RuleNotifyTemplateArrayOutput `pulumi:"notifyTemplates"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions RuleOriginalDimensionsOutput `pulumi:"originalDimensions"`
-	// Project to which the alert policy belongs.
+	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// Alert recovery notification.
 	RecoveryNotify RuleRecoveryNotifyOutput `pulumi:"recoveryNotify"`
-	// Availability zone ID of the cloud product.
+	// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
 	Regions pulumi.StringArrayOutput `pulumi:"regions"`
 	// Resource type detected by the alert policy.
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// Alarm policy ID.
 	RuleId pulumi.StringOutput `pulumi:"ruleId"`
-	// Alert policy name.
+	// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
 	RuleName pulumi.StringOutput `pulumi:"ruleName"`
 	// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 	RuleType pulumi.StringOutput `pulumi:"ruleType"`
@@ -153,47 +153,47 @@ type ruleState struct {
 	// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 	ConditionOperator *string         `pulumi:"conditionOperator"`
 	Conditions        []RuleCondition `pulumi:"conditions"`
-	// Alert notification group ID bound to the alert policy.
+	// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
 	ContactGroupIds []string `pulumi:"contactGroupIds"`
 	// Alert policy creation time, in timestamp format.
 	CreatedAt *string `pulumi:"createdAt"`
-	// Alert policy description.
+	// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// Dimension configuration.
+	// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
 	DimensionConditions *RuleDimensionConditions `pulumi:"dimensionConditions"`
-	// Policy expiration time, in HH:MM format.
+	// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
 	EffectEndAt *string `pulumi:"effectEndAt"`
-	// Policy start time, in HH:MM format.
+	// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
 	EffectStartAt *string `pulumi:"effectStartAt"`
 	// Alert policy status. enable: enabled, disable: disabled
 	EnableState *string `pulumi:"enableState"`
-	// Duration required to trigger an alert, in minutes.
+	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount *int `pulumi:"evaluationCount"`
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level           *string              `pulumi:"level"`
 	LevelConditions []RuleLevelCondition `pulumi:"levelConditions"`
 	// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 	MultipleConditions *bool `pulumi:"multipleConditions"`
-	// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+	// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
 	Namespace *string `pulumi:"namespace"`
 	// No data alert.
 	NoData *RuleNoData `pulumi:"noData"`
-	// Notification policy ID.
+	// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
 	NotificationId  *string              `pulumi:"notificationId"`
 	NotifyTemplates []RuleNotifyTemplate `pulumi:"notifyTemplates"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions *RuleOriginalDimensions `pulumi:"originalDimensions"`
-	// Project to which the alert policy belongs.
+	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
 	ProjectName *string `pulumi:"projectName"`
 	// Alert recovery notification.
 	RecoveryNotify *RuleRecoveryNotify `pulumi:"recoveryNotify"`
-	// Availability zone ID of the cloud product.
+	// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
 	Regions []string `pulumi:"regions"`
 	// Resource type detected by the alert policy.
 	ResourceType *string `pulumi:"resourceType"`
 	// Alarm policy ID.
 	RuleId *string `pulumi:"ruleId"`
-	// Alert policy name.
+	// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
 	RuleName *string `pulumi:"ruleName"`
 	// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 	RuleType *string `pulumi:"ruleType"`
@@ -218,47 +218,47 @@ type RuleState struct {
 	// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 	ConditionOperator pulumi.StringPtrInput
 	Conditions        RuleConditionArrayInput
-	// Alert notification group ID bound to the alert policy.
+	// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
 	ContactGroupIds pulumi.StringArrayInput
 	// Alert policy creation time, in timestamp format.
 	CreatedAt pulumi.StringPtrInput
-	// Alert policy description.
+	// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput
-	// Dimension configuration.
+	// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
 	DimensionConditions RuleDimensionConditionsPtrInput
-	// Policy expiration time, in HH:MM format.
+	// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
 	EffectEndAt pulumi.StringPtrInput
-	// Policy start time, in HH:MM format.
+	// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
 	EffectStartAt pulumi.StringPtrInput
 	// Alert policy status. enable: enabled, disable: disabled
 	EnableState pulumi.StringPtrInput
-	// Duration required to trigger an alert, in minutes.
+	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount pulumi.IntPtrInput
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level           pulumi.StringPtrInput
 	LevelConditions RuleLevelConditionArrayInput
 	// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 	MultipleConditions pulumi.BoolPtrInput
-	// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+	// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
 	Namespace pulumi.StringPtrInput
 	// No data alert.
 	NoData RuleNoDataPtrInput
-	// Notification policy ID.
+	// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
 	NotificationId  pulumi.StringPtrInput
 	NotifyTemplates RuleNotifyTemplateArrayInput
 	// Resource ID detected by the alert policy.
 	OriginalDimensions RuleOriginalDimensionsPtrInput
-	// Project to which the alert policy belongs.
+	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
 	ProjectName pulumi.StringPtrInput
 	// Alert recovery notification.
 	RecoveryNotify RuleRecoveryNotifyPtrInput
-	// Availability zone ID of the cloud product.
+	// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
 	Regions pulumi.StringArrayInput
 	// Resource type detected by the alert policy.
 	ResourceType pulumi.StringPtrInput
 	// Alarm policy ID.
 	RuleId pulumi.StringPtrInput
-	// Alert policy name.
+	// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
 	RuleName pulumi.StringPtrInput
 	// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 	RuleType pulumi.StringPtrInput
@@ -285,41 +285,41 @@ type ruleArgs struct {
 	// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 	ConditionOperator *string         `pulumi:"conditionOperator"`
 	Conditions        []RuleCondition `pulumi:"conditions"`
-	// Alert notification group ID bound to the alert policy.
+	// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
 	ContactGroupIds []string `pulumi:"contactGroupIds"`
-	// Alert policy description.
+	// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// Dimension configuration.
+	// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
 	DimensionConditions *RuleDimensionConditions `pulumi:"dimensionConditions"`
-	// Policy expiration time, in HH:MM format.
+	// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
 	EffectEndAt string `pulumi:"effectEndAt"`
-	// Policy start time, in HH:MM format.
+	// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
 	EffectStartAt string `pulumi:"effectStartAt"`
 	// Alert policy status. enable: enabled, disable: disabled
 	EnableState string `pulumi:"enableState"`
-	// Duration required to trigger an alert, in minutes.
+	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount int `pulumi:"evaluationCount"`
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level           string               `pulumi:"level"`
 	LevelConditions []RuleLevelCondition `pulumi:"levelConditions"`
 	// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 	MultipleConditions *bool `pulumi:"multipleConditions"`
-	// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+	// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
 	Namespace string `pulumi:"namespace"`
 	// No data alert.
 	NoData *RuleNoData `pulumi:"noData"`
-	// Notification policy ID.
+	// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
 	NotificationId  *string              `pulumi:"notificationId"`
 	NotifyTemplates []RuleNotifyTemplate `pulumi:"notifyTemplates"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions *RuleOriginalDimensions `pulumi:"originalDimensions"`
-	// Project to which the alert policy belongs.
+	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
 	ProjectName *string `pulumi:"projectName"`
 	// Alert recovery notification.
 	RecoveryNotify *RuleRecoveryNotify `pulumi:"recoveryNotify"`
-	// Availability zone ID of the cloud product.
+	// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
 	Regions []string `pulumi:"regions"`
-	// Alert policy name.
+	// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
 	RuleName string `pulumi:"ruleName"`
 	// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 	RuleType string `pulumi:"ruleType"`
@@ -341,41 +341,41 @@ type RuleArgs struct {
 	// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 	ConditionOperator pulumi.StringPtrInput
 	Conditions        RuleConditionArrayInput
-	// Alert notification group ID bound to the alert policy.
+	// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
 	ContactGroupIds pulumi.StringArrayInput
-	// Alert policy description.
+	// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput
-	// Dimension configuration.
+	// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
 	DimensionConditions RuleDimensionConditionsPtrInput
-	// Policy expiration time, in HH:MM format.
+	// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
 	EffectEndAt pulumi.StringInput
-	// Policy start time, in HH:MM format.
+	// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
 	EffectStartAt pulumi.StringInput
 	// Alert policy status. enable: enabled, disable: disabled
 	EnableState pulumi.StringInput
-	// Duration required to trigger an alert, in minutes.
+	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount pulumi.IntInput
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level           pulumi.StringInput
 	LevelConditions RuleLevelConditionArrayInput
 	// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 	MultipleConditions pulumi.BoolPtrInput
-	// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+	// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
 	Namespace pulumi.StringInput
 	// No data alert.
 	NoData RuleNoDataPtrInput
-	// Notification policy ID.
+	// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
 	NotificationId  pulumi.StringPtrInput
 	NotifyTemplates RuleNotifyTemplateArrayInput
 	// Resource ID detected by the alert policy.
 	OriginalDimensions RuleOriginalDimensionsPtrInput
-	// Project to which the alert policy belongs.
+	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
 	ProjectName pulumi.StringPtrInput
 	// Alert recovery notification.
 	RecoveryNotify RuleRecoveryNotifyPtrInput
-	// Availability zone ID of the cloud product.
+	// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
 	Regions pulumi.StringArrayInput
-	// Alert policy name.
+	// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
 	RuleName pulumi.StringInput
 	// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 	RuleType pulumi.StringInput
@@ -496,7 +496,7 @@ func (o RuleOutput) Conditions() RuleConditionArrayOutput {
 	return o.ApplyT(func(v *Rule) RuleConditionArrayOutput { return v.Conditions }).(RuleConditionArrayOutput)
 }
 
-// Alert notification group ID bound to the alert policy.
+// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
 func (o RuleOutput) ContactGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringArrayOutput { return v.ContactGroupIds }).(pulumi.StringArrayOutput)
 }
@@ -506,22 +506,22 @@ func (o RuleOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// Alert policy description.
+// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
 func (o RuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// Dimension configuration.
+// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
 func (o RuleOutput) DimensionConditions() RuleDimensionConditionsOutput {
 	return o.ApplyT(func(v *Rule) RuleDimensionConditionsOutput { return v.DimensionConditions }).(RuleDimensionConditionsOutput)
 }
 
-// Policy expiration time, in HH:MM format.
+// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
 func (o RuleOutput) EffectEndAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.EffectEndAt }).(pulumi.StringOutput)
 }
 
-// Policy start time, in HH:MM format.
+// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
 func (o RuleOutput) EffectStartAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.EffectStartAt }).(pulumi.StringOutput)
 }
@@ -531,7 +531,7 @@ func (o RuleOutput) EnableState() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.EnableState }).(pulumi.StringOutput)
 }
 
-// Duration required to trigger an alert, in minutes.
+// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 func (o RuleOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Rule) pulumi.IntOutput { return v.EvaluationCount }).(pulumi.IntOutput)
 }
@@ -550,7 +550,7 @@ func (o RuleOutput) MultipleConditions() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Rule) pulumi.BoolOutput { return v.MultipleConditions }).(pulumi.BoolOutput)
 }
 
-// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
 func (o RuleOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -560,7 +560,7 @@ func (o RuleOutput) NoData() RuleNoDataOutput {
 	return o.ApplyT(func(v *Rule) RuleNoDataOutput { return v.NoData }).(RuleNoDataOutput)
 }
 
-// Notification policy ID.
+// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
 func (o RuleOutput) NotificationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.NotificationId }).(pulumi.StringOutput)
 }
@@ -574,7 +574,7 @@ func (o RuleOutput) OriginalDimensions() RuleOriginalDimensionsOutput {
 	return o.ApplyT(func(v *Rule) RuleOriginalDimensionsOutput { return v.OriginalDimensions }).(RuleOriginalDimensionsOutput)
 }
 
-// Project to which the alert policy belongs.
+// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
 func (o RuleOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -584,7 +584,7 @@ func (o RuleOutput) RecoveryNotify() RuleRecoveryNotifyOutput {
 	return o.ApplyT(func(v *Rule) RuleRecoveryNotifyOutput { return v.RecoveryNotify }).(RuleRecoveryNotifyOutput)
 }
 
-// Availability zone ID of the cloud product.
+// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
 func (o RuleOutput) Regions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringArrayOutput { return v.Regions }).(pulumi.StringArrayOutput)
 }
@@ -599,7 +599,7 @@ func (o RuleOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// Alert policy name.
+// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
 func (o RuleOutput) RuleName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.RuleName }).(pulumi.StringOutput)
 }

@@ -21,8 +21,14 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:fwcenter/addressBook:AddressBook":
+		r = &AddressBook{}
+	case "bytepluscc:fwcenter/controlPolicy:ControlPolicy":
+		r = &ControlPolicy{}
 	case "bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy":
 		r = &DnsControlPolicy{}
+	case "bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule":
+		r = &VpcFireWallAclRule{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -38,7 +44,22 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"fwcenter/addressBook",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"fwcenter/controlPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"fwcenter/dnsControlPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"fwcenter/vpcFireWallAclRule",
 		&module{version},
 	)
 }

@@ -57,7 +57,7 @@ export class Rule extends pulumi.CustomResource {
     public readonly conditionOperator!: pulumi.Output<string>;
     public readonly conditions!: pulumi.Output<outputs.cloudmonitor.RuleCondition[]>;
     /**
-     * Alert notification group ID bound to the alert policy.
+     * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      */
     public readonly contactGroupIds!: pulumi.Output<string[]>;
     /**
@@ -65,19 +65,19 @@ export class Rule extends pulumi.CustomResource {
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * Alert policy description.
+     * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Dimension configuration.
+     * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      */
     public readonly dimensionConditions!: pulumi.Output<outputs.cloudmonitor.RuleDimensionConditions>;
     /**
-     * Policy expiration time, in HH:MM format.
+     * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      */
     public readonly effectEndAt!: pulumi.Output<string>;
     /**
-     * Policy start time, in HH:MM format.
+     * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      */
     public readonly effectStartAt!: pulumi.Output<string>;
     /**
@@ -85,7 +85,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly enableState!: pulumi.Output<string>;
     /**
-     * Duration required to trigger an alert, in minutes.
+     * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      */
     public readonly evaluationCount!: pulumi.Output<number>;
     /**
@@ -98,7 +98,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly multipleConditions!: pulumi.Output<boolean>;
     /**
-     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
@@ -106,7 +106,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly noData!: pulumi.Output<outputs.cloudmonitor.RuleNoData>;
     /**
-     * Notification policy ID.
+     * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      */
     public readonly notificationId!: pulumi.Output<string>;
     public readonly notifyTemplates!: pulumi.Output<outputs.cloudmonitor.RuleNotifyTemplate[]>;
@@ -115,7 +115,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly originalDimensions!: pulumi.Output<outputs.cloudmonitor.RuleOriginalDimensions>;
     /**
-     * Project to which the alert policy belongs.
+     * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
@@ -123,7 +123,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly recoveryNotify!: pulumi.Output<outputs.cloudmonitor.RuleRecoveryNotify>;
     /**
-     * Availability zone ID of the cloud product.
+     * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      */
     public readonly regions!: pulumi.Output<string[]>;
     /**
@@ -135,7 +135,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public /*out*/ readonly ruleId!: pulumi.Output<string>;
     /**
-     * Alert policy name.
+     * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      */
     public readonly ruleName!: pulumi.Output<string>;
     /**
@@ -299,7 +299,7 @@ export interface RuleState {
     conditionOperator?: pulumi.Input<string>;
     conditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleCondition>[]>;
     /**
-     * Alert notification group ID bound to the alert policy.
+     * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      */
     contactGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -307,19 +307,19 @@ export interface RuleState {
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * Alert policy description.
+     * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * Dimension configuration.
+     * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      */
     dimensionConditions?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditions>;
     /**
-     * Policy expiration time, in HH:MM format.
+     * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      */
     effectEndAt?: pulumi.Input<string>;
     /**
-     * Policy start time, in HH:MM format.
+     * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      */
     effectStartAt?: pulumi.Input<string>;
     /**
@@ -327,7 +327,7 @@ export interface RuleState {
      */
     enableState?: pulumi.Input<string>;
     /**
-     * Duration required to trigger an alert, in minutes.
+     * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      */
     evaluationCount?: pulumi.Input<number>;
     /**
@@ -340,7 +340,7 @@ export interface RuleState {
      */
     multipleConditions?: pulumi.Input<boolean>;
     /**
-     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -348,7 +348,7 @@ export interface RuleState {
      */
     noData?: pulumi.Input<inputs.cloudmonitor.RuleNoData>;
     /**
-     * Notification policy ID.
+     * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      */
     notificationId?: pulumi.Input<string>;
     notifyTemplates?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleNotifyTemplate>[]>;
@@ -357,7 +357,7 @@ export interface RuleState {
      */
     originalDimensions?: pulumi.Input<inputs.cloudmonitor.RuleOriginalDimensions>;
     /**
-     * Project to which the alert policy belongs.
+     * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
@@ -365,7 +365,7 @@ export interface RuleState {
      */
     recoveryNotify?: pulumi.Input<inputs.cloudmonitor.RuleRecoveryNotify>;
     /**
-     * Availability zone ID of the cloud product.
+     * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      */
     regions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -377,7 +377,7 @@ export interface RuleState {
      */
     ruleId?: pulumi.Input<string>;
     /**
-     * Alert policy name.
+     * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      */
     ruleName?: pulumi.Input<string>;
     /**
@@ -421,23 +421,23 @@ export interface RuleArgs {
     conditionOperator?: pulumi.Input<string>;
     conditions?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleCondition>[]>;
     /**
-     * Alert notification group ID bound to the alert policy.
+     * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      */
     contactGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Alert policy description.
+     * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * Dimension configuration.
+     * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      */
     dimensionConditions?: pulumi.Input<inputs.cloudmonitor.RuleDimensionConditions>;
     /**
-     * Policy expiration time, in HH:MM format.
+     * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      */
     effectEndAt: pulumi.Input<string>;
     /**
-     * Policy start time, in HH:MM format.
+     * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      */
     effectStartAt: pulumi.Input<string>;
     /**
@@ -445,7 +445,7 @@ export interface RuleArgs {
      */
     enableState: pulumi.Input<string>;
     /**
-     * Duration required to trigger an alert, in minutes.
+     * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      */
     evaluationCount: pulumi.Input<number>;
     /**
@@ -458,7 +458,7 @@ export interface RuleArgs {
      */
     multipleConditions?: pulumi.Input<boolean>;
     /**
-     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      */
     namespace: pulumi.Input<string>;
     /**
@@ -466,7 +466,7 @@ export interface RuleArgs {
      */
     noData?: pulumi.Input<inputs.cloudmonitor.RuleNoData>;
     /**
-     * Notification policy ID.
+     * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      */
     notificationId?: pulumi.Input<string>;
     notifyTemplates?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleNotifyTemplate>[]>;
@@ -475,7 +475,7 @@ export interface RuleArgs {
      */
     originalDimensions?: pulumi.Input<inputs.cloudmonitor.RuleOriginalDimensions>;
     /**
-     * Project to which the alert policy belongs.
+     * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
@@ -483,11 +483,11 @@ export interface RuleArgs {
      */
     recoveryNotify?: pulumi.Input<inputs.cloudmonitor.RuleRecoveryNotify>;
     /**
-     * Availability zone ID of the cloud product.
+     * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      */
     regions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Alert policy name.
+     * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      */
     ruleName: pulumi.Input<string>;
     /**

@@ -63,9 +63,9 @@ export class Certificate extends pulumi.CustomResource {
     }
 
     /**
-     * Certificate ID
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      */
-    public /*out*/ readonly certificateId!: pulumi.Output<string>;
+    public readonly certificateId!: pulumi.Output<string>;
     /**
      * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      */
@@ -94,6 +94,10 @@ export class Certificate extends pulumi.CustomResource {
      * List of listeners associated with the certificate
      */
     public /*out*/ readonly listeners!: pulumi.Output<string[]>;
+    /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     */
+    public readonly oldCertificateId!: pulumi.Output<string>;
     /**
      * Server certificate private key. Required when certificate type is Server
      */
@@ -137,6 +141,7 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["domainName"] = state ? state.domainName : undefined;
             resourceInputs["expiredAt"] = state ? state.expiredAt : undefined;
             resourceInputs["listeners"] = state ? state.listeners : undefined;
+            resourceInputs["oldCertificateId"] = state ? state.oldCertificateId : undefined;
             resourceInputs["privateKey"] = state ? state.privateKey : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["publicKey"] = state ? state.publicKey : undefined;
@@ -148,17 +153,15 @@ export class Certificate extends pulumi.CustomResource {
             if ((!args || args.certificateType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'certificateType'");
             }
-            if ((!args || args.publicKey === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'publicKey'");
-            }
+            resourceInputs["certificateId"] = args ? args.certificateId : undefined;
             resourceInputs["certificateName"] = args ? args.certificateName : undefined;
             resourceInputs["certificateType"] = args ? args.certificateType : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["oldCertificateId"] = args ? args.oldCertificateId : undefined;
             resourceInputs["privateKey"] = args ? args.privateKey : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["publicKey"] = args ? args.publicKey : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["certificateId"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["domainName"] = undefined /*out*/;
             resourceInputs["expiredAt"] = undefined /*out*/;
@@ -176,7 +179,7 @@ export class Certificate extends pulumi.CustomResource {
  */
 export interface CertificateState {
     /**
-     * Certificate ID
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      */
     certificateId?: pulumi.Input<string>;
     /**
@@ -208,6 +211,10 @@ export interface CertificateState {
      */
     listeners?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     */
+    oldCertificateId?: pulumi.Input<string>;
+    /**
      * Server certificate private key. Required when certificate type is Server
      */
     privateKey?: pulumi.Input<string>;
@@ -235,6 +242,10 @@ export interface CertificateState {
  */
 export interface CertificateArgs {
     /**
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+     */
+    certificateId?: pulumi.Input<string>;
+    /**
      * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      */
     certificateName?: pulumi.Input<string>;
@@ -247,6 +258,10 @@ export interface CertificateArgs {
      */
     description?: pulumi.Input<string>;
     /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     */
+    oldCertificateId?: pulumi.Input<string>;
+    /**
      * Server certificate private key. Required when certificate type is Server
      */
     privateKey?: pulumi.Input<string>;
@@ -257,6 +272,6 @@ export interface CertificateArgs {
     /**
      * Server certificate public key
      */
-    publicKey: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.CertificateTag>[]>;
 }

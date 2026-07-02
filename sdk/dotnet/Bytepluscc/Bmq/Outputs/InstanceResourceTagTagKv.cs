@@ -19,7 +19,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        /// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         /// </summary>
         public readonly string? Type;
         /// <summary>

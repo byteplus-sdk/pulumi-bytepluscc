@@ -14,43 +14,6 @@ import (
 
 // When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := bytepluscc.NewKafkaAllowlist(ctx, "KafkaAllowListDemo", &bytepluscc.KafkaAllowlistArgs{
-//				AllowList:     "127.0.0.2",
-//				AllowListDesc: "test",
-//				AllowListName: "ccapi-text",
-//				AssociatedInstances: []map[string]interface{}{
-//					map[string]interface{}{
-//						"instanceId": "kafka-cnng9x9s***",
-//					},
-//					map[string]interface{}{
-//						"instanceId": "kafka-cnnghf99**",
-//					},
-//				},
-//				ApplyInstanceNum: 2,
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // ```sh

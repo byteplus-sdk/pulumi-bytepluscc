@@ -15,6 +15,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetInstanceEndpointResult
     {
         /// <summary>
+        /// Address list.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceEndpointAddressResult> Addresses;
+        /// <summary>
         /// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
         /// </summary>
         public readonly string AutoAddNewNodes;
@@ -30,6 +34,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
         /// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
         /// </summary>
         public readonly string ConnectionPoolType;
+        /// <summary>
+        /// Custom routing and forwarding rules for connected terminals.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceEndpointCustomRouteStrategyResult> CustomRouteStrategies;
         /// <summary>
         /// Description of the connection endpoint
         /// </summary>
@@ -101,6 +109,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
 
         [OutputConstructor]
         private GetInstanceEndpointResult(
+            ImmutableArray<Outputs.GetInstanceEndpointAddressResult> addresses,
+
             string autoAddNewNodes,
 
             ImmutableArray<string> connectionInfoTags,
@@ -108,6 +118,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
             string connectionMode,
 
             string connectionPoolType,
+
+            ImmutableArray<Outputs.GetInstanceEndpointCustomRouteStrategyResult> customRouteStrategies,
 
             string description,
 
@@ -143,10 +155,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
 
             string readWriteMode)
         {
+            Addresses = addresses;
             AutoAddNewNodes = autoAddNewNodes;
             ConnectionInfoTags = connectionInfoTags;
             ConnectionMode = connectionMode;
             ConnectionPoolType = connectionPoolType;
+            CustomRouteStrategies = customRouteStrategies;
             Description = description;
             EnableConnectionPersistent = enableConnectionPersistent;
             EnableReadOnly = enableReadOnly;

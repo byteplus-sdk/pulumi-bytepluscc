@@ -450,6 +450,7 @@ class _InstanceState:
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
                  backup_restore: Optional[pulumi.Input['InstanceBackupRestoreArgs']] = None,
+                 backups: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceBackupArgs']]]] = None,
                  blue_green_role: Optional[pulumi.Input[builtins.str]] = None,
                  capacity: Optional[pulumi.Input['InstanceCapacityArgs']] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -547,6 +548,8 @@ class _InstanceState:
             pulumi.set(__self__, "backup_point_name", backup_point_name)
         if backup_restore is not None:
             pulumi.set(__self__, "backup_restore", backup_restore)
+        if backups is not None:
+            pulumi.set(__self__, "backups", backups)
         if blue_green_role is not None:
             pulumi.set(__self__, "blue_green_role", blue_green_role)
         if capacity is not None:
@@ -681,6 +684,15 @@ class _InstanceState:
     @backup_restore.setter
     def backup_restore(self, value: Optional[pulumi.Input['InstanceBackupRestoreArgs']]):
         pulumi.set(self, "backup_restore", value)
+
+    @property
+    @pulumi.getter
+    def backups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceBackupArgs']]]]:
+        return pulumi.get(self, "backups")
+
+    @backups.setter
+    def backups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceBackupArgs']]]]):
+        pulumi.set(self, "backups", value)
 
     @property
     @pulumi.getter(name="blueGreenRole")
@@ -1261,7 +1273,8 @@ class Instance(pulumi.CustomResource):
             instance_name="ccapi-auto-test",
             no_auth_mode="open",
             parameter_group_id="DefaultParamGroupId-6.0",
-            continuous_backup=True)
+            continuous_backup=True,
+            create_backup=True)
         ```
 
         ## Import
@@ -1344,7 +1357,8 @@ class Instance(pulumi.CustomResource):
             instance_name="ccapi-auto-test",
             no_auth_mode="open",
             parameter_group_id="DefaultParamGroupId-6.0",
-            continuous_backup=True)
+            continuous_backup=True,
+            create_backup=True)
         ```
 
         ## Import
@@ -1447,6 +1461,7 @@ class Instance(pulumi.CustomResource):
             if vpc_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vpc_id'")
             __props__.__dict__["vpc_id"] = vpc_id
+            __props__.__dict__["backups"] = None
             __props__.__dict__["blue_green_role"] = None
             __props__.__dict__["capacity"] = None
             __props__.__dict__["create_time"] = None
@@ -1481,6 +1496,7 @@ class Instance(pulumi.CustomResource):
             auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
             backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
             backup_restore: Optional[pulumi.Input[Union['InstanceBackupRestoreArgs', 'InstanceBackupRestoreArgsDict']]] = None,
+            backups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceBackupArgs', 'InstanceBackupArgsDict']]]]] = None,
             blue_green_role: Optional[pulumi.Input[builtins.str]] = None,
             capacity: Optional[pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']]] = None,
             charge_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1583,6 +1599,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["auto_renew"] = auto_renew
         __props__.__dict__["backup_point_name"] = backup_point_name
         __props__.__dict__["backup_restore"] = backup_restore
+        __props__.__dict__["backups"] = backups
         __props__.__dict__["blue_green_role"] = blue_green_role
         __props__.__dict__["capacity"] = capacity
         __props__.__dict__["charge_type"] = charge_type
@@ -1659,6 +1676,11 @@ class Instance(pulumi.CustomResource):
         Restore data from the backup set to the original Redis instance.
         """
         return pulumi.get(self, "backup_restore")
+
+    @property
+    @pulumi.getter
+    def backups(self) -> pulumi.Output[Sequence['outputs.InstanceBackup']]:
+        return pulumi.get(self, "backups")
 
     @property
     @pulumi.getter(name="blueGreenRole")

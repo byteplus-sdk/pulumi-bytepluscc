@@ -17,14 +17,30 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
     public static final RegistryStatusArgs Empty = new RegistryStatusArgs();
 
     /**
-     * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+     * Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     @Import(name="conditions")
     private @Nullable Output<List<String>> conditions;
 
     /**
-     * @return Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     public Optional<Output<List<String>>> conditions() {
@@ -32,14 +48,30 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+     * Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     public Optional<Output<String>> phase() {
@@ -72,7 +104,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditions Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * @param conditions Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -83,7 +123,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditions Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * @param conditions Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -93,7 +141,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditions Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * @param conditions Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -103,7 +159,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * @param phase Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -114,7 +178,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * @param phase Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 

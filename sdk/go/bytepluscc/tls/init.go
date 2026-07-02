@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Alarm{}
 	case "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup":
 		r = &AlarmNotifyGroup{}
+	case "bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType":
+		r = &AlarmWebhookIntegrationType{}
 	case "bytepluscc:tls/consumerGroup:ConsumerGroup":
 		r = &ConsumerGroup{}
 	case "bytepluscc:tls/etl:Etl":
@@ -68,6 +70,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"tls/alarmNotifyGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"tls/alarmWebhookIntegrationType",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

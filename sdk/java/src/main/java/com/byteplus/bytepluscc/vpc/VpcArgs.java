@@ -191,6 +191,21 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * User CIDR block of the VPC.
+     * 
+     */
+    @Import(name="userCidrBlocks")
+    private @Nullable Output<List<String>> userCidrBlocks;
+
+    /**
+     * @return User CIDR block of the VPC.
+     * 
+     */
+    public Optional<Output<List<String>>> userCidrBlocks() {
+        return Optional.ofNullable(this.userCidrBlocks);
+    }
+
+    /**
      * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      * 
      */
@@ -220,6 +235,7 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
         this.subnetIds = $.subnetIds;
         this.supportIpv4Gateway = $.supportIpv4Gateway;
         this.tags = $.tags;
+        this.userCidrBlocks = $.userCidrBlocks;
         this.vpcName = $.vpcName;
     }
 
@@ -523,6 +539,37 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder tags(VpcTagArgs... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param userCidrBlocks User CIDR block of the VPC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userCidrBlocks(@Nullable Output<List<String>> userCidrBlocks) {
+            $.userCidrBlocks = userCidrBlocks;
+            return this;
+        }
+
+        /**
+         * @param userCidrBlocks User CIDR block of the VPC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userCidrBlocks(List<String> userCidrBlocks) {
+            return userCidrBlocks(Output.of(userCidrBlocks));
+        }
+
+        /**
+         * @param userCidrBlocks User CIDR block of the VPC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder userCidrBlocks(String... userCidrBlocks) {
+            return userCidrBlocks(List.of(userCidrBlocks));
         }
 
         /**

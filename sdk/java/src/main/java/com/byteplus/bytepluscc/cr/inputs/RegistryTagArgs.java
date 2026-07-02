@@ -16,14 +16,14 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final RegistryTagArgs Empty = new RegistryTagArgs();
 
     /**
-     * Tag key
+     * Tag key values
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return Tag key
+     * @return Tag key values
      * 
      */
     public Optional<Output<String>> key() {
@@ -71,7 +71,7 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key Tag key
+         * @param key Tag key values
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key Tag key
+         * @param key Tag key values
          * 
          * @return builder
          * 

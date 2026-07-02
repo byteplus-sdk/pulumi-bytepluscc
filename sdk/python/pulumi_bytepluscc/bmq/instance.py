@@ -40,21 +40,21 @@ class InstanceArgs:
                  times: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
-        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
+        :param pulumi.Input[builtins.str] name: Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: Security group list used by the instance
         :param pulumi.Input[builtins.str] specification: Instance specification
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: Subnet list used by the instance
         :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
-        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
-        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
-        :param pulumi.Input[builtins.str] description: Instance description statement
-        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones for the instance
+        :param pulumi.Input[builtins.str] auto_renew: Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
+        :param pulumi.Input[builtins.str] description: Instance description
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         :param pulumi.Input['InstanceEndpointsArgs'] endpoints: Response data for all instance endpoints
-        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
-        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all Topics under the instance, in hours
+        :param pulumi.Input[builtins.int] times: Purchase duration for yearly/monthly subscription instances, in months
         """
         pulumi.set(__self__, "billing_type", billing_type)
         pulumi.set(__self__, "name", name)
@@ -85,7 +85,7 @@ class InstanceArgs:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Input[builtins.str]:
         """
-        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -97,7 +97,7 @@ class InstanceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -109,7 +109,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[builtins.str]:
         """
-        Project name to which the instance belongs
+        Project name associated with the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -121,7 +121,7 @@ class InstanceArgs:
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        List of security groups used by the instance
+        Security group list used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -145,7 +145,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        List of subnets used by the instance
+        Subnet list used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -169,7 +169,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        List of availability zones where the instance is located
+        List of availability zones for the instance
         """
         return pulumi.get(self, "zone_id_lists")
 
@@ -181,7 +181,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -193,7 +193,7 @@ class InstanceArgs:
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         """
         return pulumi.get(self, "billing_period")
 
@@ -205,7 +205,7 @@ class InstanceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Instance description statement
+        Instance description
         """
         return pulumi.get(self, "description")
 
@@ -217,7 +217,7 @@ class InstanceArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -241,7 +241,7 @@ class InstanceArgs:
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Message retention period for all topics under the instance, in hours
+        Message retention period for all Topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -262,7 +262,7 @@ class InstanceArgs:
     @pulumi.getter
     def times(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Purchase duration for subscription instances, in months
+        Purchase duration for yearly/monthly subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -301,29 +301,29 @@ class _InstanceState:
                  zone_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
-        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
-        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        :param pulumi.Input[builtins.str] auto_renew: Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         :param pulumi.Input[builtins.str] created_time: Instance creation time
-        :param pulumi.Input[builtins.str] description: Instance description statement
-        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input[builtins.str] description: Instance description
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         :param pulumi.Input['InstanceEndpointsArgs'] endpoints: Response data for all instance endpoints
         :param pulumi.Input[builtins.str] expiration_time: Instance expiration time
         :param pulumi.Input[builtins.int] group_limit: Maximum number of consumer groups per instance
         :param pulumi.Input[builtins.str] instance_id: Instance ID
-        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
-        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all Topics under the instance, in hours
+        :param pulumi.Input[builtins.str] name: Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         :param pulumi.Input[builtins.int] partition_limit: Maximum number of partitions per instance
-        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the instance
         :param pulumi.Input['InstanceResourcesArgs'] resources: Instance resource statistics response data
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: Security group list used by the instance
         :param pulumi.Input[builtins.str] specification: Instance specification
         :param pulumi.Input[builtins.str] status: Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
-        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
-        :param pulumi.Input[builtins.int] topic_limit: Maximum number of topics per instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: Subnet list used by the instance
+        :param pulumi.Input[builtins.int] times: Purchase duration for yearly/monthly subscription instances, in months
+        :param pulumi.Input[builtins.int] topic_limit: Maximum number of Topics per instance
         :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones for the instance
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -380,7 +380,7 @@ class _InstanceState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -392,7 +392,7 @@ class _InstanceState:
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         """
         return pulumi.get(self, "billing_period")
 
@@ -404,7 +404,7 @@ class _InstanceState:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -428,7 +428,7 @@ class _InstanceState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Instance description statement
+        Instance description
         """
         return pulumi.get(self, "description")
 
@@ -440,7 +440,7 @@ class _InstanceState:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -500,7 +500,7 @@ class _InstanceState:
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Message retention period for all topics under the instance, in hours
+        Message retention period for all Topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -512,7 +512,7 @@ class _InstanceState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -536,7 +536,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Project name to which the instance belongs
+        Project name associated with the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -569,7 +569,7 @@ class _InstanceState:
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        List of security groups used by the instance
+        Security group list used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -605,7 +605,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        List of subnets used by the instance
+        Subnet list used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -626,7 +626,7 @@ class _InstanceState:
     @pulumi.getter
     def times(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Purchase duration for subscription instances, in months
+        Purchase duration for yearly/monthly subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -638,7 +638,7 @@ class _InstanceState:
     @pulumi.getter(name="topicLimit")
     def topic_limit(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Maximum number of topics per instance
+        Maximum number of Topics per instance
         """
         return pulumi.get(self, "topic_limit")
 
@@ -662,7 +662,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        List of availability zones where the instance is located
+        List of availability zones for the instance
         """
         return pulumi.get(self, "zone_id_lists")
 
@@ -695,36 +695,36 @@ class Instance(pulumi.CustomResource):
                  zone_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
         """
-        The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
+        The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It offers a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service based on cloud-native architecture. Supports flexible and dynamic scaling, integrated stream and batch processing, and provides enterprise-grade real-time stream data processing capabilities for large-scale data. Helps you build the 'central nervous system' for data processing, widely used in scenarios such as log collection, data aggregation, and offline data analysis.
 
         ## Example Usage
 
         ```python
         import pulumi
-        import pulumi_byteplus as byteplus
+        import pulumi_bytepluscc as bytepluscc
 
-        b_mq_instance_demo = byteplus.index.BmqInstance("BMQInstanceDemo",
-            name=BMQInstanceDemo,
-            billing_type=POST,
-            project_name=default,
-            specification=bmq.standard,
-            vpc_id=vpc-miltj87lh2ww5smt1bxxxxx,
+        b_mq_instance_demo = bytepluscc.bmq.Instance("BMQInstanceDemo",
+            name="BMQInstanceDemo",
+            billing_type="POST",
+            project_name="default",
+            specification="bmq.standard",
+            vpc_id="vpc-miltj87lh2ww5smt1bxxxxx",
             message_retention=1,
             endpoints={
-                public: {
-                    eipId: eip-3nriu2y2ufwu8931exxxxx,
+                "public": {
+                    "eip_id": "eip-3nriu2y2ufwu8931exxxxx",
                 },
-                overlay: {
-                    vpcIds: [vpc-miltj87lh2ww5smt1bxxxxx],
+                "overlay": {
+                    "vpc_ids": ["vpc-miltj87lh2ww5smt1bxxxxx"],
                 },
             },
-            security_group_id_list=[sg-3nqnz9en1ucxs931eaxxxxx],
-            subnet_id_list=[subnet-w02wsq25fitc865ykaxxxxx],
-            zone_id_list=[cn-beijing-a],
+            security_group_id_lists=["sg-3nqnz9en1ucxs931eaxxxxx"],
+            subnet_id_lists=["subnet-w02wsq25fitc865ykaxxxxx"],
+            zone_id_lists=["cn-beijing-a"],
             tags=[{
-                key: env,
-                type: CUSTOM,
-                value: test,
+                "key": "env",
+                "type": "CUSTOM",
+                "value": "test",
             }])
         ```
 
@@ -736,21 +736,21 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
-        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
-        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
-        :param pulumi.Input[builtins.str] description: Instance description statement
-        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input[builtins.str] auto_renew: Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
+        :param pulumi.Input[builtins.str] description: Instance description
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         :param pulumi.Input[Union['InstanceEndpointsArgs', 'InstanceEndpointsArgsDict']] endpoints: Response data for all instance endpoints
-        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
-        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all Topics under the instance, in hours
+        :param pulumi.Input[builtins.str] name: Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: Security group list used by the instance
         :param pulumi.Input[builtins.str] specification: Instance specification
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
-        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: Subnet list used by the instance
+        :param pulumi.Input[builtins.int] times: Purchase duration for yearly/monthly subscription instances, in months
         :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones for the instance
         """
         ...
     @overload
@@ -759,36 +759,36 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
+        The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It offers a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service based on cloud-native architecture. Supports flexible and dynamic scaling, integrated stream and batch processing, and provides enterprise-grade real-time stream data processing capabilities for large-scale data. Helps you build the 'central nervous system' for data processing, widely used in scenarios such as log collection, data aggregation, and offline data analysis.
 
         ## Example Usage
 
         ```python
         import pulumi
-        import pulumi_byteplus as byteplus
+        import pulumi_bytepluscc as bytepluscc
 
-        b_mq_instance_demo = byteplus.index.BmqInstance("BMQInstanceDemo",
-            name=BMQInstanceDemo,
-            billing_type=POST,
-            project_name=default,
-            specification=bmq.standard,
-            vpc_id=vpc-miltj87lh2ww5smt1bxxxxx,
+        b_mq_instance_demo = bytepluscc.bmq.Instance("BMQInstanceDemo",
+            name="BMQInstanceDemo",
+            billing_type="POST",
+            project_name="default",
+            specification="bmq.standard",
+            vpc_id="vpc-miltj87lh2ww5smt1bxxxxx",
             message_retention=1,
             endpoints={
-                public: {
-                    eipId: eip-3nriu2y2ufwu8931exxxxx,
+                "public": {
+                    "eip_id": "eip-3nriu2y2ufwu8931exxxxx",
                 },
-                overlay: {
-                    vpcIds: [vpc-miltj87lh2ww5smt1bxxxxx],
+                "overlay": {
+                    "vpc_ids": ["vpc-miltj87lh2ww5smt1bxxxxx"],
                 },
             },
-            security_group_id_list=[sg-3nqnz9en1ucxs931eaxxxxx],
-            subnet_id_list=[subnet-w02wsq25fitc865ykaxxxxx],
-            zone_id_list=[cn-beijing-a],
+            security_group_id_lists=["sg-3nqnz9en1ucxs931eaxxxxx"],
+            subnet_id_lists=["subnet-w02wsq25fitc865ykaxxxxx"],
+            zone_id_lists=["cn-beijing-a"],
             tags=[{
-                key: env,
-                type: CUSTOM,
-                value: test,
+                "key": "env",
+                "type": "CUSTOM",
+                "value": "test",
             }])
         ```
 
@@ -921,29 +921,29 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] auto_renew: Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
-        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
-        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        :param pulumi.Input[builtins.str] auto_renew: Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
+        :param pulumi.Input[builtins.str] billing_period: Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
+        :param pulumi.Input[builtins.str] billing_type: Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         :param pulumi.Input[builtins.str] created_time: Instance creation time
-        :param pulumi.Input[builtins.str] description: Instance description statement
-        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        :param pulumi.Input[builtins.str] description: Instance description
+        :param pulumi.Input[builtins.str] eip_id: Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         :param pulumi.Input[Union['InstanceEndpointsArgs', 'InstanceEndpointsArgsDict']] endpoints: Response data for all instance endpoints
         :param pulumi.Input[builtins.str] expiration_time: Instance expiration time
         :param pulumi.Input[builtins.int] group_limit: Maximum number of consumer groups per instance
         :param pulumi.Input[builtins.str] instance_id: Instance ID
-        :param pulumi.Input[builtins.int] message_retention: Message retention period for all topics under the instance, in hours
-        :param pulumi.Input[builtins.str] name: Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        :param pulumi.Input[builtins.int] message_retention: Message retention period for all Topics under the instance, in hours
+        :param pulumi.Input[builtins.str] name: Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         :param pulumi.Input[builtins.int] partition_limit: Maximum number of partitions per instance
-        :param pulumi.Input[builtins.str] project_name: Project name to which the instance belongs
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the instance
         :param pulumi.Input[Union['InstanceResourcesArgs', 'InstanceResourcesArgsDict']] resources: Instance resource statistics response data
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: List of security groups used by the instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_id_lists: Security group list used by the instance
         :param pulumi.Input[builtins.str] specification: Instance specification
         :param pulumi.Input[builtins.str] status: Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: List of subnets used by the instance
-        :param pulumi.Input[builtins.int] times: Purchase duration for subscription instances, in months
-        :param pulumi.Input[builtins.int] topic_limit: Maximum number of topics per instance
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_id_lists: Subnet list used by the instance
+        :param pulumi.Input[builtins.int] times: Purchase duration for yearly/monthly subscription instances, in months
+        :param pulumi.Input[builtins.int] topic_limit: Maximum number of Topics per instance
         :param pulumi.Input[builtins.str] vpc_id: VPC ID where the instance is located
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones where the instance is located
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_id_lists: List of availability zones for the instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -980,7 +980,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.str]:
         """
-        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -988,7 +988,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> pulumi.Output[builtins.str]:
         """
-        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         """
         return pulumi.get(self, "billing_period")
 
@@ -996,7 +996,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> pulumi.Output[builtins.str]:
         """
-        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -1012,7 +1012,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        Instance description statement
+        Instance description
         """
         return pulumi.get(self, "description")
 
@@ -1020,7 +1020,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Output[builtins.str]:
         """
-        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -1060,7 +1060,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> pulumi.Output[builtins.int]:
         """
-        Message retention period for all topics under the instance, in hours
+        Message retention period for all Topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -1068,7 +1068,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -1084,7 +1084,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        Project name to which the instance belongs
+        Project name associated with the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -1105,7 +1105,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        List of security groups used by the instance
+        Security group list used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -1129,7 +1129,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        List of subnets used by the instance
+        Subnet list used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -1142,7 +1142,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def times(self) -> pulumi.Output[builtins.int]:
         """
-        Purchase duration for subscription instances, in months
+        Purchase duration for yearly/monthly subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -1150,7 +1150,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="topicLimit")
     def topic_limit(self) -> pulumi.Output[builtins.int]:
         """
-        Maximum number of topics per instance
+        Maximum number of Topics per instance
         """
         return pulumi.get(self, "topic_limit")
 
@@ -1166,7 +1166,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        List of availability zones where the instance is located
+        List of availability zones for the instance
         """
         return pulumi.get(self, "zone_id_lists")
 

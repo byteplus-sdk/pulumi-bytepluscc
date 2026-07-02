@@ -19,11 +19,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Bytepluscc = Pulumi.Bytepluscc;
+    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var cloudIdentityUserProvisioningDemo = new Bytepluscc.Index.CloudidentityUserprovisioning("CloudIdentityUserProvisioningDemo", new()
+    ///     var cloudIdentityUserProvisioningDemo = new Bytepluscc.Cloudidentity.UserProvisioning("CloudIdentityUserProvisioningDemo", new()
     ///     {
     ///         TargetId = "2103612***",
     ///         PrincipalType = "Group",

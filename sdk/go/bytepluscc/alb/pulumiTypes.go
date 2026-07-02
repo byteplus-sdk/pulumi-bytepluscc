@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AclAclEntry struct {
-	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
 	Description *string `pulumi:"description"`
-	// IP entry address range. Only CIDR addresses are supported.
+	// IP entry address range; only CIDR addresses are supported
 	Entry *string `pulumi:"entry"`
 }
 
@@ -32,9 +32,9 @@ type AclAclEntryInput interface {
 }
 
 type AclAclEntryArgs struct {
-	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// IP entry address range. Only CIDR addresses are supported.
+	// IP entry address range; only CIDR addresses are supported
 	Entry pulumi.StringPtrInput `pulumi:"entry"`
 }
 
@@ -89,12 +89,12 @@ func (o AclAclEntryOutput) ToAclAclEntryOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
 func (o AclAclEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// IP entry address range. Only CIDR addresses are supported.
+// IP entry address range; only CIDR addresses are supported
 func (o AclAclEntryOutput) Entry() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclAclEntry) *string { return v.Entry }).(pulumi.StringPtrOutput)
 }
@@ -120,8 +120,16 @@ func (o AclAclEntryArrayOutput) Index(i pulumi.IntInput) AclAclEntryOutput {
 }
 
 type AclListener struct {
-	// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+	// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
 	AclType *string `pulumi:"aclType"`
+	// Listener ID
+	ListenerId *string `pulumi:"listenerId"`
+	// Listener name
+	ListenerName *string `pulumi:"listenerName"`
+	// Listener port
+	Port *int `pulumi:"port"`
+	// Listener protocol
+	Protocol *string `pulumi:"protocol"`
 }
 
 // AclListenerInput is an input type that accepts AclListenerArgs and AclListenerOutput values.
@@ -136,8 +144,16 @@ type AclListenerInput interface {
 }
 
 type AclListenerArgs struct {
-	// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+	// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
 	AclType pulumi.StringPtrInput `pulumi:"aclType"`
+	// Listener ID
+	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
+	// Listener name
+	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
+	// Listener port
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// Listener protocol
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
 func (AclListenerArgs) ElementType() reflect.Type {
@@ -191,9 +207,29 @@ func (o AclListenerOutput) ToAclListenerOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
 func (o AclListenerOutput) AclType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclListener) *string { return v.AclType }).(pulumi.StringPtrOutput)
+}
+
+// Listener ID
+func (o AclListenerOutput) ListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
+}
+
+// Listener name
+func (o AclListenerOutput) ListenerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
+}
+
+// Listener port
+func (o AclListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AclListener) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// Listener protocol
+func (o AclListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 type AclListenerArrayOutput struct{ *pulumi.OutputState }
@@ -217,9 +253,9 @@ func (o AclListenerArrayOutput) Index(i pulumi.IntInput) AclListenerOutput {
 }
 
 type AclTag struct {
-	// Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+	// User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
 	Key *string `pulumi:"key"`
-	// User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+	// User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
 	Value *string `pulumi:"value"`
 }
 
@@ -235,9 +271,9 @@ type AclTagInput interface {
 }
 
 type AclTagArgs struct {
-	// Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+	// User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+	// User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -292,12 +328,12 @@ func (o AclTagOutput) ToAclTagOutputWithContext(ctx context.Context) AclTagOutpu
 	return o
 }
 
-// Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+// User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
 func (o AclTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+// User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
 func (o AclTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -765,17 +801,17 @@ func (o HealthCheckTemplateTagArrayOutput) Index(i pulumi.IntInput) HealthCheckT
 }
 
 type ListenerDomainExtension struct {
-	// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+	// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
 	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
 	// Server certificate ID used by the domain. Effective when the certificate source is alb.
 	CertificateId *string `pulumi:"certificateId"`
-	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
 	CertificateSource *string `pulumi:"certificateSource"`
-	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
 	Domain *string `pulumi:"domain"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId *string `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
 	San *string `pulumi:"san"`
 }
 
@@ -791,17 +827,17 @@ type ListenerDomainExtensionInput interface {
 }
 
 type ListenerDomainExtensionArgs struct {
-	// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+	// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
 	CertCenterCertificateId pulumi.StringPtrInput `pulumi:"certCenterCertificateId"`
 	// Server certificate ID used by the domain. Effective when the certificate source is alb.
 	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
-	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
 	CertificateSource pulumi.StringPtrInput `pulumi:"certificateSource"`
-	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringPtrInput `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
 	San pulumi.StringPtrInput `pulumi:"san"`
 }
 
@@ -856,7 +892,7 @@ func (o ListenerDomainExtensionOutput) ToListenerDomainExtensionOutputWithContex
 	return o
 }
 
-// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
 func (o ListenerDomainExtensionOutput) CertCenterCertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.CertCenterCertificateId }).(pulumi.StringPtrOutput)
 }
@@ -866,12 +902,12 @@ func (o ListenerDomainExtensionOutput) CertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
-// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
 func (o ListenerDomainExtensionOutput) CertificateSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.CertificateSource }).(pulumi.StringPtrOutput)
 }
 
-// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
 func (o ListenerDomainExtensionOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
@@ -881,7 +917,7 @@ func (o ListenerDomainExtensionOutput) PcaLeafCertificateId() pulumi.StringPtrOu
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.PcaLeafCertificateId }).(pulumi.StringPtrOutput)
 }
 
-// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
 func (o ListenerDomainExtensionOutput) San() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.San }).(pulumi.StringPtrOutput)
 }
@@ -1013,9 +1049,9 @@ func (o ListenerServerGroupArrayOutput) Index(i pulumi.IntInput) ListenerServerG
 }
 
 type ListenerTag struct {
-	// User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+	// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
 	Key *string `pulumi:"key"`
-	// User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+	// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
 	Value *string `pulumi:"value"`
 }
 
@@ -1031,9 +1067,9 @@ type ListenerTagInput interface {
 }
 
 type ListenerTagArgs struct {
-	// User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+	// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+	// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1088,12 +1124,12 @@ func (o ListenerTagOutput) ToListenerTagOutputWithContext(ctx context.Context) L
 	return o
 }
 
-// User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
 func (o ListenerTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
 func (o ListenerTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -5060,29 +5096,29 @@ func (o RuleRuleConditionQueryStringConfigValueArrayOutput) Index(i pulumi.IntIn
 }
 
 type ServerGroupHealthCheck struct {
-	// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+	// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 	Domain *string `pulumi:"domain"`
-	// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+	// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 	Enabled *string `pulumi:"enabled"`
-	// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+	// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
-	// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+	// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HttpCode *string `pulumi:"httpCode"`
-	// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+	// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 	HttpVersion *string `pulumi:"httpVersion"`
-	// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+	// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 	Interval *int `pulumi:"interval"`
-	// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+	// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 	Method *string `pulumi:"method"`
 	// Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	Port *int `pulumi:"port"`
 	// Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
 	Protocol *string `pulumi:"protocol"`
-	// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 	Timeout *int `pulumi:"timeout"`
-	// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+	// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
-	// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+	// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 	Uri *string `pulumi:"uri"`
 }
 
@@ -5098,29 +5134,29 @@ type ServerGroupHealthCheckInput interface {
 }
 
 type ServerGroupHealthCheckArgs struct {
-	// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+	// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+	// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 	Enabled pulumi.StringPtrInput `pulumi:"enabled"`
-	// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+	// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
-	// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+	// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
-	// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+	// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 	HttpVersion pulumi.StringPtrInput `pulumi:"httpVersion"`
-	// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+	// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 	Interval pulumi.IntPtrInput `pulumi:"interval"`
-	// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+	// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 	Method pulumi.StringPtrInput `pulumi:"method"`
 	// Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
-	// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+	// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
-	// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+	// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
@@ -5201,37 +5237,37 @@ func (o ServerGroupHealthCheckOutput) ToServerGroupHealthCheckPtrOutputWithConte
 	}).(ServerGroupHealthCheckPtrOutput)
 }
 
-// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 func (o ServerGroupHealthCheckOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 func (o ServerGroupHealthCheckOutput) Enabled() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Enabled }).(pulumi.StringPtrOutput)
 }
 
-// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 func (o ServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
-// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 func (o ServerGroupHealthCheckOutput) HttpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
 }
 
-// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 func (o ServerGroupHealthCheckOutput) HttpVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.HttpVersion }).(pulumi.StringPtrOutput)
 }
 
-// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 func (o ServerGroupHealthCheckOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.Interval }).(pulumi.IntPtrOutput)
 }
 
-// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 func (o ServerGroupHealthCheckOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
@@ -5246,17 +5282,17 @@ func (o ServerGroupHealthCheckOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 func (o ServerGroupHealthCheckOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
-// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 func (o ServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
-// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 func (o ServerGroupHealthCheckOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
@@ -5285,7 +5321,7 @@ func (o ServerGroupHealthCheckPtrOutput) Elem() ServerGroupHealthCheckOutput {
 	}).(ServerGroupHealthCheckOutput)
 }
 
-// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 func (o ServerGroupHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
 		if v == nil {
@@ -5295,7 +5331,7 @@ func (o ServerGroupHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 func (o ServerGroupHealthCheckPtrOutput) Enabled() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
 		if v == nil {
@@ -5305,7 +5341,7 @@ func (o ServerGroupHealthCheckPtrOutput) Enabled() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 func (o ServerGroupHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
 		if v == nil {
@@ -5315,7 +5351,7 @@ func (o ServerGroupHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput 
 	}).(pulumi.IntPtrOutput)
 }
 
-// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 func (o ServerGroupHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
 		if v == nil {
@@ -5325,7 +5361,7 @@ func (o ServerGroupHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 func (o ServerGroupHealthCheckPtrOutput) HttpVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
 		if v == nil {
@@ -5335,7 +5371,7 @@ func (o ServerGroupHealthCheckPtrOutput) HttpVersion() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 func (o ServerGroupHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
 		if v == nil {
@@ -5345,7 +5381,7 @@ func (o ServerGroupHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 func (o ServerGroupHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
 		if v == nil {
@@ -5375,7 +5411,7 @@ func (o ServerGroupHealthCheckPtrOutput) Protocol() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 func (o ServerGroupHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
 		if v == nil {
@@ -5385,7 +5421,7 @@ func (o ServerGroupHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 func (o ServerGroupHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
 		if v == nil {
@@ -5395,7 +5431,7 @@ func (o ServerGroupHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
-// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 func (o ServerGroupHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
 		if v == nil {
@@ -5505,19 +5541,19 @@ func (o ServerGroupListenerArrayOutput) Index(i pulumi.IntInput) ServerGroupList
 type ServerGroupServer struct {
 	// Description of the backend server.
 	Description *string `pulumi:"description"`
-	// ID of the cloud server instance or network interface.
+	// ID of the cloud server instance or network interface card.
 	InstanceId *string `pulumi:"instanceId"`
 	// Private IP address of the backend server.
 	Ip *string `pulumi:"ip"`
 	// Port number on which the backend server receives requests.
 	Port *int `pulumi:"port"`
-	// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+	// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
 	RemoteEnabled *string `pulumi:"remoteEnabled"`
 	// Backend server ID.
 	ServerId *string `pulumi:"serverId"`
-	// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+	// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
 	Type *string `pulumi:"type"`
-	// Backend server weight.
+	// Weight of the backend server.
 	Weight *int `pulumi:"weight"`
 }
 
@@ -5535,19 +5571,19 @@ type ServerGroupServerInput interface {
 type ServerGroupServerArgs struct {
 	// Description of the backend server.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// ID of the cloud server instance or network interface.
+	// ID of the cloud server instance or network interface card.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 	// Private IP address of the backend server.
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
 	// Port number on which the backend server receives requests.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+	// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
 	RemoteEnabled pulumi.StringPtrInput `pulumi:"remoteEnabled"`
 	// Backend server ID.
 	ServerId pulumi.StringPtrInput `pulumi:"serverId"`
-	// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+	// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// Backend server weight.
+	// Weight of the backend server.
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -5607,7 +5643,7 @@ func (o ServerGroupServerOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// ID of the cloud server instance or network interface.
+// ID of the cloud server instance or network interface card.
 func (o ServerGroupServerOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
@@ -5622,7 +5658,7 @@ func (o ServerGroupServerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
 func (o ServerGroupServerOutput) RemoteEnabled() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.RemoteEnabled }).(pulumi.StringPtrOutput)
 }
@@ -5632,12 +5668,12 @@ func (o ServerGroupServerOutput) ServerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.ServerId }).(pulumi.StringPtrOutput)
 }
 
-// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
 func (o ServerGroupServerOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// Backend server weight.
+// Weight of the backend server.
 func (o ServerGroupServerOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -5663,13 +5699,13 @@ func (o ServerGroupServerArrayOutput) Index(i pulumi.IntInput) ServerGroupServer
 }
 
 type ServerGroupStickySessionConfig struct {
-	// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+	// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 	Cookie *string `pulumi:"cookie"`
-	// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+	// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 	CookieTimeout *int `pulumi:"cookieTimeout"`
 	// Enable session persistence. on: Enable; off (default): Disable.
 	StickySessionEnabled *string `pulumi:"stickySessionEnabled"`
-	// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+	// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 	StickySessionType *string `pulumi:"stickySessionType"`
 }
 
@@ -5685,13 +5721,13 @@ type ServerGroupStickySessionConfigInput interface {
 }
 
 type ServerGroupStickySessionConfigArgs struct {
-	// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+	// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 	Cookie pulumi.StringPtrInput `pulumi:"cookie"`
-	// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+	// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 	CookieTimeout pulumi.IntPtrInput `pulumi:"cookieTimeout"`
 	// Enable session persistence. on: Enable; off (default): Disable.
 	StickySessionEnabled pulumi.StringPtrInput `pulumi:"stickySessionEnabled"`
-	// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+	// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 	StickySessionType pulumi.StringPtrInput `pulumi:"stickySessionType"`
 }
 
@@ -5772,12 +5808,12 @@ func (o ServerGroupStickySessionConfigOutput) ToServerGroupStickySessionConfigPt
 	}).(ServerGroupStickySessionConfigPtrOutput)
 }
 
-// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 func (o ServerGroupStickySessionConfigOutput) Cookie() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupStickySessionConfig) *string { return v.Cookie }).(pulumi.StringPtrOutput)
 }
 
-// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 func (o ServerGroupStickySessionConfigOutput) CookieTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupStickySessionConfig) *int { return v.CookieTimeout }).(pulumi.IntPtrOutput)
 }
@@ -5787,7 +5823,7 @@ func (o ServerGroupStickySessionConfigOutput) StickySessionEnabled() pulumi.Stri
 	return o.ApplyT(func(v ServerGroupStickySessionConfig) *string { return v.StickySessionEnabled }).(pulumi.StringPtrOutput)
 }
 
-// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 func (o ServerGroupStickySessionConfigOutput) StickySessionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupStickySessionConfig) *string { return v.StickySessionType }).(pulumi.StringPtrOutput)
 }
@@ -5816,7 +5852,7 @@ func (o ServerGroupStickySessionConfigPtrOutput) Elem() ServerGroupStickySession
 	}).(ServerGroupStickySessionConfigOutput)
 }
 
-// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 func (o ServerGroupStickySessionConfigPtrOutput) Cookie() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *string {
 		if v == nil {
@@ -5826,7 +5862,7 @@ func (o ServerGroupStickySessionConfigPtrOutput) Cookie() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 func (o ServerGroupStickySessionConfigPtrOutput) CookieTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *int {
 		if v == nil {
@@ -5846,7 +5882,7 @@ func (o ServerGroupStickySessionConfigPtrOutput) StickySessionEnabled() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 func (o ServerGroupStickySessionConfigPtrOutput) StickySessionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *string {
 		if v == nil {
@@ -5857,9 +5893,9 @@ func (o ServerGroupStickySessionConfigPtrOutput) StickySessionType() pulumi.Stri
 }
 
 type ServerGroupTag struct {
-	// Tag key. Duplicate tag keys are not allowed for the same resource.
+	// Tag key. Tag keys for the same resource must be unique.
 	Key *string `pulumi:"key"`
-	// Tag value.
+	// Tag value of the tag.
 	Value *string `pulumi:"value"`
 }
 
@@ -5875,9 +5911,9 @@ type ServerGroupTagInput interface {
 }
 
 type ServerGroupTagArgs struct {
-	// Tag key. Duplicate tag keys are not allowed for the same resource.
+	// Tag key. Tag keys for the same resource must be unique.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Tag value.
+	// Tag value of the tag.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -5932,12 +5968,12 @@ func (o ServerGroupTagOutput) ToServerGroupTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Tag key. Duplicate tag keys are not allowed for the same resource.
+// Tag key. Tag keys for the same resource must be unique.
 func (o ServerGroupTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Tag value.
+// Tag value of the tag.
 func (o ServerGroupTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -5963,9 +5999,9 @@ func (o ServerGroupTagArrayOutput) Index(i pulumi.IntInput) ServerGroupTagOutput
 }
 
 type GetAclAclEntry struct {
-	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
 	Description string `pulumi:"description"`
-	// IP entry address range. Only CIDR addresses are supported.
+	// IP entry address range; only CIDR addresses are supported
 	Entry string `pulumi:"entry"`
 }
 
@@ -5981,9 +6017,9 @@ type GetAclAclEntryInput interface {
 }
 
 type GetAclAclEntryArgs struct {
-	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+	// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
 	Description pulumi.StringInput `pulumi:"description"`
-	// IP entry address range. Only CIDR addresses are supported.
+	// IP entry address range; only CIDR addresses are supported
 	Entry pulumi.StringInput `pulumi:"entry"`
 }
 
@@ -6038,12 +6074,12 @@ func (o GetAclAclEntryOutput) ToGetAclAclEntryOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
 func (o GetAclAclEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclAclEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// IP entry address range. Only CIDR addresses are supported.
+// IP entry address range; only CIDR addresses are supported
 func (o GetAclAclEntryOutput) Entry() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclAclEntry) string { return v.Entry }).(pulumi.StringOutput)
 }
@@ -6069,7 +6105,7 @@ func (o GetAclAclEntryArrayOutput) Index(i pulumi.IntInput) GetAclAclEntryOutput
 }
 
 type GetAclListener struct {
-	// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+	// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
 	AclType string `pulumi:"aclType"`
 	// Listener ID
 	ListenerId string `pulumi:"listenerId"`
@@ -6093,7 +6129,7 @@ type GetAclListenerInput interface {
 }
 
 type GetAclListenerArgs struct {
-	// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+	// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
 	AclType pulumi.StringInput `pulumi:"aclType"`
 	// Listener ID
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
@@ -6156,7 +6192,7 @@ func (o GetAclListenerOutput) ToGetAclListenerOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
 func (o GetAclListenerOutput) AclType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclListener) string { return v.AclType }).(pulumi.StringOutput)
 }
@@ -6202,9 +6238,9 @@ func (o GetAclListenerArrayOutput) Index(i pulumi.IntInput) GetAclListenerOutput
 }
 
 type GetAclTag struct {
-	// Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+	// User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
 	Key string `pulumi:"key"`
-	// User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+	// User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
 	Value string `pulumi:"value"`
 }
 
@@ -6220,9 +6256,9 @@ type GetAclTagInput interface {
 }
 
 type GetAclTagArgs struct {
-	// Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+	// User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
 	Key pulumi.StringInput `pulumi:"key"`
-	// User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+	// User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6277,12 +6313,12 @@ func (o GetAclTagOutput) ToGetAclTagOutputWithContext(ctx context.Context) GetAc
 	return o
 }
 
-// Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+// User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
 func (o GetAclTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+// User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
 func (o GetAclTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6750,21 +6786,21 @@ func (o GetHealthCheckTemplateTagArrayOutput) Index(i pulumi.IntInput) GetHealth
 }
 
 type GetListenerDomainExtension struct {
-	// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+	// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
 	CertCenterCertificateId string `pulumi:"certCenterCertificateId"`
 	// Server certificate ID used by the domain. Effective when the certificate source is alb.
 	CertificateId string `pulumi:"certificateId"`
-	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
 	CertificateSource string `pulumi:"certificateSource"`
-	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
 	Domain string `pulumi:"domain"`
-	// Extension domain name ID.
+	// Extended domain name ID.
 	DomainExtensionId string `pulumi:"domainExtensionId"`
-	// Listener ID associated with the extended domain name.
+	// Listener ID to which the extended domain name belongs.
 	ListenerId string `pulumi:"listenerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId string `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
 	San string `pulumi:"san"`
 }
 
@@ -6780,21 +6816,21 @@ type GetListenerDomainExtensionInput interface {
 }
 
 type GetListenerDomainExtensionArgs struct {
-	// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+	// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
 	CertCenterCertificateId pulumi.StringInput `pulumi:"certCenterCertificateId"`
 	// Server certificate ID used by the domain. Effective when the certificate source is alb.
 	CertificateId pulumi.StringInput `pulumi:"certificateId"`
-	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+	// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
 	CertificateSource pulumi.StringInput `pulumi:"certificateSource"`
-	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+	// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// Extension domain name ID.
+	// Extended domain name ID.
 	DomainExtensionId pulumi.StringInput `pulumi:"domainExtensionId"`
-	// Listener ID associated with the extended domain name.
+	// Listener ID to which the extended domain name belongs.
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringInput `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
 	San pulumi.StringInput `pulumi:"san"`
 }
 
@@ -6849,7 +6885,7 @@ func (o GetListenerDomainExtensionOutput) ToGetListenerDomainExtensionOutputWith
 	return o
 }
 
-// Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+// Server certificate ID used by the domain. Effective when the certificate source is cert_center.
 func (o GetListenerDomainExtensionOutput) CertCenterCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.CertCenterCertificateId }).(pulumi.StringOutput)
 }
@@ -6859,22 +6895,22 @@ func (o GetListenerDomainExtensionOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+// Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
 func (o GetListenerDomainExtensionOutput) CertificateSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.CertificateSource }).(pulumi.StringOutput)
 }
 
-// Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+// Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
 func (o GetListenerDomainExtensionOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// Extension domain name ID.
+// Extended domain name ID.
 func (o GetListenerDomainExtensionOutput) DomainExtensionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.DomainExtensionId }).(pulumi.StringOutput)
 }
 
-// Listener ID associated with the extended domain name.
+// Listener ID to which the extended domain name belongs.
 func (o GetListenerDomainExtensionOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.ListenerId }).(pulumi.StringOutput)
 }
@@ -6884,7 +6920,7 @@ func (o GetListenerDomainExtensionOutput) PcaLeafCertificateId() pulumi.StringOu
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.PcaLeafCertificateId }).(pulumi.StringOutput)
 }
 
-// If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
 func (o GetListenerDomainExtensionOutput) San() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.San }).(pulumi.StringOutput)
 }
@@ -7016,9 +7052,9 @@ func (o GetListenerServerGroupArrayOutput) Index(i pulumi.IntInput) GetListenerS
 }
 
 type GetListenerTag struct {
-	// User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+	// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
 	Key string `pulumi:"key"`
-	// User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+	// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
 	Value string `pulumi:"value"`
 }
 
@@ -7034,9 +7070,9 @@ type GetListenerTagInput interface {
 }
 
 type GetListenerTagArgs struct {
-	// User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+	// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
 	Key pulumi.StringInput `pulumi:"key"`
-	// User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+	// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -7091,12 +7127,12 @@ func (o GetListenerTagOutput) ToGetListenerTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
 func (o GetListenerTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
 func (o GetListenerTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9643,29 +9679,29 @@ func (o GetRuleRuleConditionQueryStringConfigValueArrayOutput) Index(i pulumi.In
 }
 
 type GetServerGroupHealthCheck struct {
-	// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+	// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 	Domain string `pulumi:"domain"`
-	// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+	// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 	Enabled string `pulumi:"enabled"`
-	// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+	// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 	HealthyThreshold int `pulumi:"healthyThreshold"`
-	// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+	// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HttpCode string `pulumi:"httpCode"`
-	// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+	// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 	HttpVersion string `pulumi:"httpVersion"`
-	// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+	// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 	Interval int `pulumi:"interval"`
-	// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+	// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 	Method string `pulumi:"method"`
 	// Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	Port int `pulumi:"port"`
 	// Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
 	Protocol string `pulumi:"protocol"`
-	// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 	Timeout int `pulumi:"timeout"`
-	// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+	// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
-	// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+	// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 	Uri string `pulumi:"uri"`
 }
 
@@ -9681,29 +9717,29 @@ type GetServerGroupHealthCheckInput interface {
 }
 
 type GetServerGroupHealthCheckArgs struct {
-	// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+	// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+	// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 	Enabled pulumi.StringInput `pulumi:"enabled"`
-	// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+	// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
-	// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+	// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 	HttpCode pulumi.StringInput `pulumi:"httpCode"`
-	// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+	// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 	HttpVersion pulumi.StringInput `pulumi:"httpVersion"`
-	// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+	// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 	Interval pulumi.IntInput `pulumi:"interval"`
-	// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+	// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 	Method pulumi.StringInput `pulumi:"method"`
 	// Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
 	Port pulumi.IntInput `pulumi:"port"`
 	// Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 	Timeout pulumi.IntInput `pulumi:"timeout"`
-	// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+	// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
-	// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+	// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 	Uri pulumi.StringInput `pulumi:"uri"`
 }
 
@@ -9733,37 +9769,37 @@ func (o GetServerGroupHealthCheckOutput) ToGetServerGroupHealthCheckOutputWithCo
 	return o
 }
 
-// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
 func (o GetServerGroupHealthCheckOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
 func (o GetServerGroupHealthCheckOutput) Enabled() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Enabled }).(pulumi.StringOutput)
 }
 
-// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
 func (o GetServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.HealthyThreshold }).(pulumi.IntOutput)
 }
 
-// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
 func (o GetServerGroupHealthCheckOutput) HttpCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.HttpCode }).(pulumi.StringOutput)
 }
 
-// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
 func (o GetServerGroupHealthCheckOutput) HttpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.HttpVersion }).(pulumi.StringOutput)
 }
 
-// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
 func (o GetServerGroupHealthCheckOutput) Interval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.Interval }).(pulumi.IntOutput)
 }
 
-// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
 func (o GetServerGroupHealthCheckOutput) Method() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Method }).(pulumi.StringOutput)
 }
@@ -9778,17 +9814,17 @@ func (o GetServerGroupHealthCheckOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
 func (o GetServerGroupHealthCheckOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
 func (o GetServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
 }
 
-// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
 func (o GetServerGroupHealthCheckOutput) Uri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Uri }).(pulumi.StringOutput)
 }
@@ -9893,19 +9929,19 @@ func (o GetServerGroupListenerArrayOutput) Index(i pulumi.IntInput) GetServerGro
 type GetServerGroupServer struct {
 	// Description of the backend server.
 	Description string `pulumi:"description"`
-	// ID of the cloud server instance or network interface.
+	// ID of the cloud server instance or network interface card.
 	InstanceId string `pulumi:"instanceId"`
 	// Private IP address of the backend server.
 	Ip string `pulumi:"ip"`
 	// Port number on which the backend server receives requests.
 	Port int `pulumi:"port"`
-	// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+	// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
 	RemoteEnabled string `pulumi:"remoteEnabled"`
 	// Backend server ID.
 	ServerId string `pulumi:"serverId"`
-	// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+	// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
 	Type string `pulumi:"type"`
-	// Backend server weight.
+	// Weight of the backend server.
 	Weight int `pulumi:"weight"`
 }
 
@@ -9923,19 +9959,19 @@ type GetServerGroupServerInput interface {
 type GetServerGroupServerArgs struct {
 	// Description of the backend server.
 	Description pulumi.StringInput `pulumi:"description"`
-	// ID of the cloud server instance or network interface.
+	// ID of the cloud server instance or network interface card.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// Private IP address of the backend server.
 	Ip pulumi.StringInput `pulumi:"ip"`
 	// Port number on which the backend server receives requests.
 	Port pulumi.IntInput `pulumi:"port"`
-	// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+	// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
 	RemoteEnabled pulumi.StringInput `pulumi:"remoteEnabled"`
 	// Backend server ID.
 	ServerId pulumi.StringInput `pulumi:"serverId"`
-	// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+	// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
 	Type pulumi.StringInput `pulumi:"type"`
-	// Backend server weight.
+	// Weight of the backend server.
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -9995,7 +10031,7 @@ func (o GetServerGroupServerOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ID of the cloud server instance or network interface.
+// ID of the cloud server instance or network interface card.
 func (o GetServerGroupServerOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.InstanceId }).(pulumi.StringOutput)
 }
@@ -10010,7 +10046,7 @@ func (o GetServerGroupServerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupServer) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
 func (o GetServerGroupServerOutput) RemoteEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.RemoteEnabled }).(pulumi.StringOutput)
 }
@@ -10020,12 +10056,12 @@ func (o GetServerGroupServerOutput) ServerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.ServerId }).(pulumi.StringOutput)
 }
 
-// Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
 func (o GetServerGroupServerOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Backend server weight.
+// Weight of the backend server.
 func (o GetServerGroupServerOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupServer) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -10051,13 +10087,13 @@ func (o GetServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetServerGroup
 }
 
 type GetServerGroupStickySessionConfig struct {
-	// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+	// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 	Cookie string `pulumi:"cookie"`
-	// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+	// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 	CookieTimeout int `pulumi:"cookieTimeout"`
 	// Enable session persistence. on: Enable; off (default): Disable.
 	StickySessionEnabled string `pulumi:"stickySessionEnabled"`
-	// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+	// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 	StickySessionType string `pulumi:"stickySessionType"`
 }
 
@@ -10073,13 +10109,13 @@ type GetServerGroupStickySessionConfigInput interface {
 }
 
 type GetServerGroupStickySessionConfigArgs struct {
-	// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+	// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 	Cookie pulumi.StringInput `pulumi:"cookie"`
-	// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+	// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 	CookieTimeout pulumi.IntInput `pulumi:"cookieTimeout"`
 	// Enable session persistence. on: Enable; off (default): Disable.
 	StickySessionEnabled pulumi.StringInput `pulumi:"stickySessionEnabled"`
-	// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+	// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 	StickySessionType pulumi.StringInput `pulumi:"stickySessionType"`
 }
 
@@ -10109,12 +10145,12 @@ func (o GetServerGroupStickySessionConfigOutput) ToGetServerGroupStickySessionCo
 	return o
 }
 
-// Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+// Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
 func (o GetServerGroupStickySessionConfigOutput) Cookie() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupStickySessionConfig) string { return v.Cookie }).(pulumi.StringOutput)
 }
 
-// Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+// Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
 func (o GetServerGroupStickySessionConfigOutput) CookieTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupStickySessionConfig) int { return v.CookieTimeout }).(pulumi.IntOutput)
 }
@@ -10124,15 +10160,15 @@ func (o GetServerGroupStickySessionConfigOutput) StickySessionEnabled() pulumi.S
 	return o.ApplyT(func(v GetServerGroupStickySessionConfig) string { return v.StickySessionEnabled }).(pulumi.StringOutput)
 }
 
-// Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+// Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
 func (o GetServerGroupStickySessionConfigOutput) StickySessionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupStickySessionConfig) string { return v.StickySessionType }).(pulumi.StringOutput)
 }
 
 type GetServerGroupTag struct {
-	// Tag key. Duplicate tag keys are not allowed for the same resource.
+	// Tag key. Tag keys for the same resource must be unique.
 	Key string `pulumi:"key"`
-	// Tag value.
+	// Tag value of the tag.
 	Value string `pulumi:"value"`
 }
 
@@ -10148,9 +10184,9 @@ type GetServerGroupTagInput interface {
 }
 
 type GetServerGroupTagArgs struct {
-	// Tag key. Duplicate tag keys are not allowed for the same resource.
+	// Tag key. Tag keys for the same resource must be unique.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Tag value.
+	// Tag value of the tag.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10205,12 +10241,12 @@ func (o GetServerGroupTagOutput) ToGetServerGroupTagOutputWithContext(ctx contex
 	return o
 }
 
-// Tag key. Duplicate tag keys are not allowed for the same resource.
+// Tag key. Tag keys for the same resource must be unique.
 func (o GetServerGroupTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Tag value.
+// Tag value of the tag.
 func (o GetServerGroupTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupTag) string { return v.Value }).(pulumi.StringOutput)
 }

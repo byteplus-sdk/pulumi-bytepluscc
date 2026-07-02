@@ -109,6 +109,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly int BackupLogSize;
         /// <summary>
+        /// Instance backup policy configuration.
+        /// </summary>
+        public readonly Outputs.GetInstanceBackupPolicyResult BackupPolicy;
+        /// <summary>
         /// Space used by slow logs in backups.
         /// </summary>
         public readonly int BackupSlowLogSize;
@@ -180,6 +184,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// Instance connection information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceEndpointResult> Endpoints;
+        /// <summary>
+        /// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        /// </summary>
+        public readonly string EngineType;
         /// <summary>
         /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         /// </summary>
@@ -257,9 +265,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceNodeResult> Nodes;
         /// <summary>
+        /// Parameter template ID.
+        /// </summary>
+        public readonly string ParameterTemplateId;
+        /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         public readonly int Port;
+        /// <summary>
+        /// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        /// </summary>
+        public readonly string PrivateIpAddress;
         /// <summary>
         /// Project.
         /// </summary>
@@ -373,6 +389,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 
             int backupLogSize,
 
+            Outputs.GetInstanceBackupPolicyResult backupPolicy,
+
             int backupSlowLogSize,
 
             double backupUse,
@@ -408,6 +426,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             int drSecondsBehindMaster,
 
             ImmutableArray<Outputs.GetInstanceEndpointResult> endpoints,
+
+            string engineType,
 
             bool globalReadOnly,
 
@@ -447,7 +467,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 
             ImmutableArray<Outputs.GetInstanceNodeResult> nodes,
 
+            string parameterTemplateId,
+
             int port,
+
+            string privateIpAddress,
 
             string projectName,
 
@@ -504,6 +528,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             BackupErrorLogSize = backupErrorLogSize;
             BackupFreeQuotaSize = backupFreeQuotaSize;
             BackupLogSize = backupLogSize;
+            BackupPolicy = backupPolicy;
             BackupSlowLogSize = backupSlowLogSize;
             BackupUse = backupUse;
             BasicBackupBinlogSize = basicBackupBinlogSize;
@@ -522,6 +547,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             DrDtsTaskStatus = drDtsTaskStatus;
             DrSecondsBehindMaster = drSecondsBehindMaster;
             Endpoints = endpoints;
+            EngineType = engineType;
             GlobalReadOnly = globalReadOnly;
             HasDisasterRecoveryInstances = hasDisasterRecoveryInstances;
             HasGreenInstance = hasGreenInstance;
@@ -541,7 +567,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             NodeSpaceUsedPercentage = nodeSpaceUsedPercentage;
             NodeSpec = nodeSpec;
             Nodes = nodes;
+            ParameterTemplateId = parameterTemplateId;
             Port = port;
+            PrivateIpAddress = privateIpAddress;
             ProjectName = projectName;
             ProxyDetail = proxyDetail;
             StorageAuditLogSize = storageAuditLogSize;

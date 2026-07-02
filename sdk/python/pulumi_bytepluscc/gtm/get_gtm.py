@@ -14,6 +14,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetGtmResult',
@@ -27,7 +28,7 @@ class GetGtmResult:
     """
     A collection of values returned by getGtm.
     """
-    def __init__(__self__, access_mode=None, alarm_id=None, cname=None, create_time=None, domain=None, gtm_id=None, id=None, last_operator=None, owner=None, policy_type=None, project_name=None, remark=None, spec_name=None, state=None, ttl=None, update_time=None, zone_type=None):
+    def __init__(__self__, access_mode=None, alarm_id=None, cname=None, create_time=None, domain=None, gtm_id=None, id=None, last_operator=None, owner=None, policy=None, policy_type=None, probe=None, project_name=None, remark=None, spec_name=None, state=None, ttl=None, update_time=None, zone_type=None):
         if access_mode and not isinstance(access_mode, str):
             raise TypeError("Expected argument 'access_mode' to be a str")
         pulumi.set(__self__, "access_mode", access_mode)
@@ -55,9 +56,15 @@ class GetGtmResult:
         if owner and not isinstance(owner, str):
             raise TypeError("Expected argument 'owner' to be a str")
         pulumi.set(__self__, "owner", owner)
+        if policy and not isinstance(policy, dict):
+            raise TypeError("Expected argument 'policy' to be a dict")
+        pulumi.set(__self__, "policy", policy)
         if policy_type and not isinstance(policy_type, str):
             raise TypeError("Expected argument 'policy_type' to be a str")
         pulumi.set(__self__, "policy_type", policy_type)
+        if probe and not isinstance(probe, dict):
+            raise TypeError("Expected argument 'probe' to be a dict")
+        pulumi.set(__self__, "probe", probe)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -153,12 +160,28 @@ class GetGtmResult:
         return pulumi.get(self, "owner")
 
     @property
+    @pulumi.getter
+    def policy(self) -> 'outputs.GetGtmPolicyResult':
+        """
+        Detailed configuration of the scheduling policy for the GTM instance.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> builtins.str:
         """
         Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
         """
         return pulumi.get(self, "policy_type")
+
+    @property
+    @pulumi.getter
+    def probe(self) -> 'outputs.GetGtmProbeResult':
+        """
+        Detailed configuration of the health check for the GTM instance.
+        """
+        return pulumi.get(self, "probe")
 
     @property
     @pulumi.getter(name="projectName")
@@ -232,7 +255,9 @@ class AwaitableGetGtmResult(GetGtmResult):
             id=self.id,
             last_operator=self.last_operator,
             owner=self.owner,
+            policy=self.policy,
             policy_type=self.policy_type,
+            probe=self.probe,
             project_name=self.project_name,
             remark=self.remark,
             spec_name=self.spec_name,
@@ -265,7 +290,9 @@ def get_gtm(id: Optional[builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         last_operator=pulumi.get(__ret__, 'last_operator'),
         owner=pulumi.get(__ret__, 'owner'),
+        policy=pulumi.get(__ret__, 'policy'),
         policy_type=pulumi.get(__ret__, 'policy_type'),
+        probe=pulumi.get(__ret__, 'probe'),
         project_name=pulumi.get(__ret__, 'project_name'),
         remark=pulumi.get(__ret__, 'remark'),
         spec_name=pulumi.get(__ret__, 'spec_name'),
@@ -295,7 +322,9 @@ def get_gtm_output(id: Optional[pulumi.Input[builtins.str]] = None,
         id=pulumi.get(__response__, 'id'),
         last_operator=pulumi.get(__response__, 'last_operator'),
         owner=pulumi.get(__response__, 'owner'),
+        policy=pulumi.get(__response__, 'policy'),
         policy_type=pulumi.get(__response__, 'policy_type'),
+        probe=pulumi.get(__response__, 'probe'),
         project_name=pulumi.get(__response__, 'project_name'),
         remark=pulumi.get(__response__, 'remark'),
         spec_name=pulumi.get(__response__, 'spec_name'),

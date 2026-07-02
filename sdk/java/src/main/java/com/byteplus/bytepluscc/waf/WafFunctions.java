@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.waf;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.waf.inputs.GetDomainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetDomainPlainArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetHostGroupArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetHostGroupPlainArgs;
 import com.byteplus.bytepluscc.waf.outputs.GetDomainResult;
 import com.byteplus.bytepluscc.waf.outputs.GetDomainsResult;
+import com.byteplus.bytepluscc.waf.outputs.GetHostGroupResult;
+import com.byteplus.bytepluscc.waf.outputs.GetHostGroupsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args) {
+        return getHostGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupResult> getHostGroupPlain(GetHostGroupPlainArgs args) {
+        return getHostGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupResult> getHostGroupPlain(GetHostGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups() {
+        return getHostGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain() {
+        return getHostGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args) {
+        return getHostGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args) {
+        return getHostGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::HostGroup
+     * 
+     */
+    public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
     }
 }

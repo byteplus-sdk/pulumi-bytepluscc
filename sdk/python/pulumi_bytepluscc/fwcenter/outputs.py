@@ -16,11 +16,218 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AddressBookAddressDetailList',
+    'AddressBookTag',
+    'ControlPolicyDestPortListV1',
+    'ControlPolicyDestinationCidrListV1',
+    'ControlPolicySourceCidrListV1',
     'DnsControlPolicyDomainListV1',
     'DnsControlPolicySource',
+    'VpcFireWallAclRuleDestPortListV1',
+    'VpcFireWallAclRuleDestinationCidrListV1',
+    'VpcFireWallAclRuleSourceCidrListV1',
+    'GetAddressBookAddressDetailListResult',
+    'GetAddressBookTagResult',
+    'GetControlPolicyDestPortListV1Result',
+    'GetControlPolicyDestinationCidrListV1Result',
+    'GetControlPolicySourceCidrListV1Result',
     'GetDnsControlPolicyDomainListV1Result',
     'GetDnsControlPolicySourceResult',
+    'GetVpcFireWallAclRuleDestPortListV1Result',
+    'GetVpcFireWallAclRuleDestinationCidrListV1Result',
+    'GetVpcFireWallAclRuleSourceCidrListV1Result',
 ]
+
+@pulumi.output_type
+class AddressBookAddressDetailList(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        :param builtins.str description: Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class AddressBookTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ControlPolicyDestPortListV1(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ControlPolicyDestinationCidrListV1(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ControlPolicySourceCidrListV1(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
 
 @pulumi.output_type
 class DnsControlPolicyDomainListV1(dict):
@@ -114,6 +321,324 @@ class DnsControlPolicySource(dict):
 
 
 @pulumi.output_type
+class VpcFireWallAclRuleDestPortListV1(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description.
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class VpcFireWallAclRuleDestinationCidrListV1(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description.
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class VpcFireWallAclRuleSourceCidrListV1(dict):
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description.
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAddressBookAddressDetailListResult(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        :param builtins.str description: Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        :param builtins.str type: Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAddressBookTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetControlPolicyDestPortListV1Result(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetControlPolicyDestinationCidrListV1Result(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetControlPolicySourceCidrListV1Result(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDnsControlPolicyDomainListV1Result(dict):
     def __init__(__self__, *,
                  address: builtins.str,
@@ -180,5 +705,125 @@ class GetDnsControlPolicySourceResult(dict):
         VPC ID。
         """
         return pulumi.get(self, "vpc_id")
+
+
+@pulumi.output_type
+class GetVpcFireWallAclRuleDestPortListV1Result(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description.
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetVpcFireWallAclRuleDestinationCidrListV1Result(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description.
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetVpcFireWallAclRuleSourceCidrListV1Result(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 description: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str address: Detailed address information.
+        :param builtins.str description: Description.
+        :param builtins.str type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
 
 

@@ -31,19 +31,19 @@ export interface GetGroupArgs {
  */
 export interface GetGroupResult {
     /**
-     * Consumer Group creation time.
+     * Consumer Group creation time
      */
     readonly createdTime: string;
     /**
-     * Consumer Group description.
+     * Consumer Group description
      */
     readonly description: string;
     /**
-     * Consumer Group ID.
+     * Consumer Group ID
      */
     readonly groupId: string;
     /**
-     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      */
     readonly groupName: string;
     /**
@@ -51,27 +51,27 @@ export interface GetGroupResult {
      */
     readonly id: string;
     /**
-     * BMQ instance ID.
+     * BMQ instance ID
      */
     readonly instanceId: string;
     /**
-     * User ID associated with the Consumer Group.
+     * User ID of the Consumer Group owner
      */
     readonly ownerId: string;
     /**
-     * Name of the user associated with the Consumer Group.
+     * Name of the Consumer Group owner
      */
     readonly ownerName: string;
     /**
-     * Reset consumption position information.
+     * Reset consumption offset information
      */
     readonly resetInfo: outputs.bmq.GetGroupResetInfo;
     /**
-     * Consumer Group status.
+     * Consumer Group status
      */
     readonly status: string;
     /**
-     * Topic list.
+     * Topic list
      */
     readonly topicInfos: outputs.bmq.GetGroupTopicInfo[];
 }

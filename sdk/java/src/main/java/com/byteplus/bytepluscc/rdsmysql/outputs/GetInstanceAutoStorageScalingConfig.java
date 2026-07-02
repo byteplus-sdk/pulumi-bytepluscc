@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
@@ -16,6 +17,11 @@ public final class GetInstanceAutoStorageScalingConfig {
      * 
      */
     private Boolean enableStorageAutoScale;
+    /**
+     * @return Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+     * 
+     */
+    private String scalingDetectNode;
     /**
      * @return Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
      * 
@@ -34,6 +40,13 @@ public final class GetInstanceAutoStorageScalingConfig {
      */
     public Boolean enableStorageAutoScale() {
         return this.enableStorageAutoScale;
+    }
+    /**
+     * @return Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+     * 
+     */
+    public String scalingDetectNode() {
+        return this.scalingDetectNode;
     }
     /**
      * @return Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
@@ -60,12 +73,14 @@ public final class GetInstanceAutoStorageScalingConfig {
     @CustomType.Builder
     public static final class Builder {
         private Boolean enableStorageAutoScale;
+        private String scalingDetectNode;
         private Integer storageThreshold;
         private Integer storageUpperBound;
         public Builder() {}
         public Builder(GetInstanceAutoStorageScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.enableStorageAutoScale = defaults.enableStorageAutoScale;
+    	      this.scalingDetectNode = defaults.scalingDetectNode;
     	      this.storageThreshold = defaults.storageThreshold;
     	      this.storageUpperBound = defaults.storageUpperBound;
         }
@@ -76,6 +91,14 @@ public final class GetInstanceAutoStorageScalingConfig {
               throw new MissingRequiredPropertyException("GetInstanceAutoStorageScalingConfig", "enableStorageAutoScale");
             }
             this.enableStorageAutoScale = enableStorageAutoScale;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scalingDetectNode(String scalingDetectNode) {
+            if (scalingDetectNode == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAutoStorageScalingConfig", "scalingDetectNode");
+            }
+            this.scalingDetectNode = scalingDetectNode;
             return this;
         }
         @CustomType.Setter
@@ -97,6 +120,7 @@ public final class GetInstanceAutoStorageScalingConfig {
         public GetInstanceAutoStorageScalingConfig build() {
             final var _resultValue = new GetInstanceAutoStorageScalingConfig();
             _resultValue.enableStorageAutoScale = enableStorageAutoScale;
+            _resultValue.scalingDetectNode = scalingDetectNode;
             _resultValue.storageThreshold = storageThreshold;
             _resultValue.storageUpperBound = storageUpperBound;
             return _resultValue;

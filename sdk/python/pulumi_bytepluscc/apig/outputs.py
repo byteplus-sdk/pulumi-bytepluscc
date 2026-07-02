@@ -2626,9 +2626,9 @@ class GetGatewayCustomLogResult(dict):
                  request_headers: Sequence['outputs.GetGatewayCustomLogRequestHeaderResult'],
                  response_headers: Sequence['outputs.GetGatewayCustomLogResponseHeaderResult']):
         """
-        :param Sequence['GetGatewayCustomLogCustomVariableArgs'] custom_variables: Custom variable information
-        :param Sequence['GetGatewayCustomLogRequestHeaderArgs'] request_headers: Request header information
-        :param Sequence['GetGatewayCustomLogResponseHeaderArgs'] response_headers: Response header information
+        :param Sequence['GetGatewayCustomLogCustomVariableArgs'] custom_variables: Custom Variable Information
+        :param Sequence['GetGatewayCustomLogRequestHeaderArgs'] request_headers: Request Header Information
+        :param Sequence['GetGatewayCustomLogResponseHeaderArgs'] response_headers: Response Header Information
         """
         pulumi.set(__self__, "custom_variables", custom_variables)
         pulumi.set(__self__, "request_headers", request_headers)
@@ -2638,7 +2638,7 @@ class GetGatewayCustomLogResult(dict):
     @pulumi.getter(name="customVariables")
     def custom_variables(self) -> Sequence['outputs.GetGatewayCustomLogCustomVariableResult']:
         """
-        Custom variable information
+        Custom Variable Information
         """
         return pulumi.get(self, "custom_variables")
 
@@ -2646,7 +2646,7 @@ class GetGatewayCustomLogResult(dict):
     @pulumi.getter(name="requestHeaders")
     def request_headers(self) -> Sequence['outputs.GetGatewayCustomLogRequestHeaderResult']:
         """
-        Request header information
+        Request Header Information
         """
         return pulumi.get(self, "request_headers")
 
@@ -2654,7 +2654,7 @@ class GetGatewayCustomLogResult(dict):
     @pulumi.getter(name="responseHeaders")
     def response_headers(self) -> Sequence['outputs.GetGatewayCustomLogResponseHeaderResult']:
         """
-        Response header information
+        Response Header Information
         """
         return pulumi.get(self, "response_headers")
 

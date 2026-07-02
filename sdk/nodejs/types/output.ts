@@ -8,29 +8,45 @@ import * as outputs from "../types/output";
 export namespace alb {
     export interface AclAclEntry {
         /**
-         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
          */
         description: string;
         /**
-         * IP entry address range. Only CIDR addresses are supported.
+         * IP entry address range; only CIDR addresses are supported
          */
         entry: string;
     }
 
     export interface AclListener {
         /**
-         * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+         * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
          */
         aclType: string;
+        /**
+         * Listener ID
+         */
+        listenerId: string;
+        /**
+         * Listener name
+         */
+        listenerName: string;
+        /**
+         * Listener port
+         */
+        port: number;
+        /**
+         * Listener protocol
+         */
+        protocol: string;
     }
 
     export interface AclTag {
         /**
-         * Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+         * User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
          */
         key: string;
         /**
-         * User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+         * User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
          */
         value: string;
     }
@@ -78,18 +94,18 @@ export namespace alb {
 
     export interface GetAclAclEntry {
         /**
-         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
          */
         description: string;
         /**
-         * IP entry address range. Only CIDR addresses are supported.
+         * IP entry address range; only CIDR addresses are supported
          */
         entry: string;
     }
 
     export interface GetAclListener {
         /**
-         * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+         * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
          */
         aclType: string;
         /**
@@ -112,11 +128,11 @@ export namespace alb {
 
     export interface GetAclTag {
         /**
-         * Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+         * User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
          */
         key: string;
         /**
-         * User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+         * User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
          */
         value: string;
     }
@@ -175,7 +191,7 @@ export namespace alb {
 
     export interface GetListenerDomainExtension {
         /**
-         * Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+         * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
          */
         certCenterCertificateId: string;
         /**
@@ -183,19 +199,19 @@ export namespace alb {
          */
         certificateId: string;
         /**
-         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
          */
         certificateSource: string;
         /**
-         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
          */
         domain: string;
         /**
-         * Extension domain name ID.
+         * Extended domain name ID.
          */
         domainExtensionId: string;
         /**
-         * Listener ID associated with the extended domain name.
+         * Listener ID to which the extended domain name belongs.
          */
         listenerId: string;
         /**
@@ -203,7 +219,7 @@ export namespace alb {
          */
         pcaLeafCertificateId: string;
         /**
-         * If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
          */
         san: string;
     }
@@ -221,11 +237,11 @@ export namespace alb {
 
     export interface GetListenerTag {
         /**
-         * User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+         * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
          */
         key: string;
         /**
-         * User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+         * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
          */
         value: string;
     }
@@ -682,31 +698,31 @@ export namespace alb {
 
     export interface GetServerGroupHealthCheck {
         /**
-         * The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+         * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          */
         domain: string;
         /**
-         * Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+         * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
          */
         enabled: string;
         /**
-         * Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+         * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
          */
         healthyThreshold: number;
         /**
-         * HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+         * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          */
         httpCode: string;
         /**
-         * HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+         * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
          */
         httpVersion: string;
         /**
-         * After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+         * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
          */
         interval: number;
         /**
-         * After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+         * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
          */
         method: string;
         /**
@@ -718,15 +734,15 @@ export namespace alb {
          */
         protocol: string;
         /**
-         * Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
          */
         timeout: number;
         /**
-         * Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+         * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
          */
         unhealthyThreshold: number;
         /**
-         * Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+         * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
          */
         uri: string;
     }
@@ -744,7 +760,7 @@ export namespace alb {
          */
         description: string;
         /**
-         * ID of the cloud server instance or network interface.
+         * ID of the cloud server instance or network interface card.
          */
         instanceId: string;
         /**
@@ -756,7 +772,7 @@ export namespace alb {
          */
         port: number;
         /**
-         * Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+         * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
          */
         remoteEnabled: string;
         /**
@@ -764,22 +780,22 @@ export namespace alb {
          */
         serverId: string;
         /**
-         * Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+         * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
          */
         type: string;
         /**
-         * Backend server weight.
+         * Weight of the backend server.
          */
         weight: number;
     }
 
     export interface GetServerGroupStickySessionConfig {
         /**
-         * Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+         * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
          */
         cookie: string;
         /**
-         * Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+         * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          */
         cookieTimeout: number;
         /**
@@ -787,18 +803,18 @@ export namespace alb {
          */
         stickySessionEnabled: string;
         /**
-         * Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+         * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
          */
         stickySessionType: string;
     }
 
     export interface GetServerGroupTag {
         /**
-         * Tag key. Duplicate tag keys are not allowed for the same resource.
+         * Tag key. Tag keys for the same resource must be unique.
          */
         key: string;
         /**
-         * Tag value.
+         * Tag value of the tag.
          */
         value: string;
     }
@@ -816,7 +832,7 @@ export namespace alb {
 
     export interface ListenerDomainExtension {
         /**
-         * Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+         * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
          */
         certCenterCertificateId: string;
         /**
@@ -824,11 +840,11 @@ export namespace alb {
          */
         certificateId: string;
         /**
-         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
          */
         certificateSource: string;
         /**
-         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
          */
         domain: string;
         /**
@@ -836,7 +852,7 @@ export namespace alb {
          */
         pcaLeafCertificateId: string;
         /**
-         * If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
          */
         san: string;
     }
@@ -854,11 +870,11 @@ export namespace alb {
 
     export interface ListenerTag {
         /**
-         * User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+         * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
          */
         key: string;
         /**
-         * User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+         * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
          */
         value: string;
     }
@@ -1210,31 +1226,31 @@ export namespace alb {
 
     export interface ServerGroupHealthCheck {
         /**
-         * The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+         * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          */
         domain: string;
         /**
-         * Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+         * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
          */
         enabled: string;
         /**
-         * Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+         * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
          */
         healthyThreshold: number;
         /**
-         * HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+         * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          */
         httpCode: string;
         /**
-         * HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+         * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
          */
         httpVersion: string;
         /**
-         * After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+         * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
          */
         interval: number;
         /**
-         * After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+         * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
          */
         method: string;
         /**
@@ -1246,15 +1262,15 @@ export namespace alb {
          */
         protocol: string;
         /**
-         * Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
          */
         timeout: number;
         /**
-         * Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+         * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
          */
         unhealthyThreshold: number;
         /**
-         * Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+         * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
          */
         uri: string;
     }
@@ -1272,7 +1288,7 @@ export namespace alb {
          */
         description: string;
         /**
-         * ID of the cloud server instance or network interface.
+         * ID of the cloud server instance or network interface card.
          */
         instanceId: string;
         /**
@@ -1284,7 +1300,7 @@ export namespace alb {
          */
         port: number;
         /**
-         * Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+         * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
          */
         remoteEnabled: string;
         /**
@@ -1292,22 +1308,22 @@ export namespace alb {
          */
         serverId: string;
         /**
-         * Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+         * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
          */
         type: string;
         /**
-         * Backend server weight.
+         * Weight of the backend server.
          */
         weight: number;
     }
 
     export interface ServerGroupStickySessionConfig {
         /**
-         * Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+         * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
          */
         cookie: string;
         /**
-         * Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+         * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          */
         cookieTimeout: number;
         /**
@@ -1315,18 +1331,18 @@ export namespace alb {
          */
         stickySessionEnabled: string;
         /**
-         * Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+         * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
          */
         stickySessionType: string;
     }
 
     export interface ServerGroupTag {
         /**
-         * Tag key. Duplicate tag keys are not allowed for the same resource.
+         * Tag key. Tag keys for the same resource must be unique.
          */
         key: string;
         /**
-         * Tag value.
+         * Tag value of the tag.
          */
         value: string;
     }
@@ -1595,15 +1611,15 @@ export namespace apig {
 
     export interface GetGatewayCustomLog {
         /**
-         * Custom variable information
+         * Custom Variable Information
          */
         customVariables: outputs.apig.GetGatewayCustomLogCustomVariable[];
         /**
-         * Request header information
+         * Request Header Information
          */
         requestHeaders: outputs.apig.GetGatewayCustomLogRequestHeader[];
         /**
-         * Response header information
+         * Response Header Information
          */
         responseHeaders: outputs.apig.GetGatewayCustomLogResponseHeader[];
     }
@@ -3385,19 +3401,19 @@ export namespace autoscaling {
 export namespace bmq {
     export interface GetGroupResetInfo {
         /**
-         * This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+         * If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
          */
         offsetType: string;
         /**
-         * Partition number.
+         * Partition number
          */
         partitionId: number;
         /**
-         * Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+         * Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
          */
         resetBy: string;
         /**
-         * Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+         * Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
          */
         resetValue: number;
         /**
@@ -3408,31 +3424,31 @@ export namespace bmq {
 
     export interface GetGroupTopicInfo {
         /**
-         * Topic creation time.
+         * Topic creation time
          */
         createTime: string;
         /**
-         * Topic description.
+         * Topic description
          */
         description: string;
         /**
-         * Number of unconsumed messages in the Topic.
+         * Number of unconsumed messages in the Topic
          */
         lag: number;
         /**
-         * Partition list.
+         * Partition list
          */
         partitionInfos: outputs.bmq.GetGroupTopicInfoPartitionInfo[];
         /**
-         * Number of Topic partitions.
+         * Number of Topic partitions
          */
         partitions: number;
         /**
-         * Retention period of data in the Topic, in hours.
+         * Retention period of data in the Topic, in hours
          */
         retention: number;
         /**
-         * Topic status.
+         * Topic status
          */
         status: string;
         /**
@@ -3440,34 +3456,34 @@ export namespace bmq {
          */
         topicId: string;
         /**
-         * Topic name.
+         * Topic name
          */
         topicName: string;
     }
 
     export interface GetGroupTopicInfoPartitionInfo {
         /**
-         * Current consumption position.
+         * Current consumption offset
          */
         currentOffset: number;
         /**
-         * Name of the Consumer Group.
+         * Consumer Group name
          */
         groupName: string;
         /**
-         * Number of unconsumed messages in the partition.
+         * Number of unconsumed messages in the partition
          */
         lag: number;
         /**
-         * Latest consumption position.
+         * Latest consumption offset
          */
         latestOffset: number;
         /**
-         * Partition number.
+         * Partition number
          */
         partitionId: number;
         /**
-         * Name of the Topic subscribed by the Consumer Group.
+         * Name of the Topic subscribed by the Consumer Group
          */
         topicName: string;
     }
@@ -3493,7 +3509,7 @@ export namespace bmq {
          */
         eipId: string;
         /**
-         * Private network Plain endpoint
+         * Private network Plain access point
          */
         plain: string;
         /**
@@ -3501,7 +3517,7 @@ export namespace bmq {
          */
         plainPort: number;
         /**
-         * Private network SASL authentication endpoint
+         * Private network SASL authentication access point
          */
         sasl: string;
         /**
@@ -3536,7 +3552,7 @@ export namespace bmq {
          */
         eipId: string;
         /**
-         * Private network Plain endpoint
+         * Private network Plain access point
          */
         plain: string;
         /**
@@ -3544,7 +3560,7 @@ export namespace bmq {
          */
         plainPort: number;
         /**
-         * Private network SASL authentication endpoint
+         * Private network SASL authentication access point
          */
         sasl: string;
         /**
@@ -3575,7 +3591,7 @@ export namespace bmq {
          */
         tagKvs: outputs.bmq.GetInstanceResourceTagTagKv[];
         /**
-         * Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+         * Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type: string;
     }
@@ -3586,7 +3602,7 @@ export namespace bmq {
          */
         key: string;
         /**
-         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type: string;
         /**
@@ -3619,7 +3635,7 @@ export namespace bmq {
          */
         key: string;
         /**
-         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type: string;
         /**
@@ -3630,19 +3646,19 @@ export namespace bmq {
 
     export interface GroupResetInfo {
         /**
-         * This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+         * If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
          */
         offsetType: string;
         /**
-         * Partition number.
+         * Partition number
          */
         partitionId: number;
         /**
-         * Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+         * Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
          */
         resetBy: string;
         /**
-         * Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+         * Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
          */
         resetValue: number;
         /**
@@ -3653,28 +3669,28 @@ export namespace bmq {
 
     export interface GroupTopicInfo {
         /**
-         * Topic creation time.
+         * Topic creation time
          */
         createTime: string;
         /**
-         * Topic description.
+         * Topic description
          */
         description: string;
         /**
-         * Number of unconsumed messages in the Topic.
+         * Number of unconsumed messages in the Topic
          */
         lag: number;
         partitionInfos: outputs.bmq.GroupTopicInfoPartitionInfo[];
         /**
-         * Number of Topic partitions.
+         * Number of Topic partitions
          */
         partitions: number;
         /**
-         * Retention period of data in the Topic, in hours.
+         * Retention period of data in the Topic, in hours
          */
         retention: number;
         /**
-         * Topic status.
+         * Topic status
          */
         status: string;
         /**
@@ -3682,34 +3698,34 @@ export namespace bmq {
          */
         topicId: string;
         /**
-         * Topic name.
+         * Topic name
          */
         topicName: string;
     }
 
     export interface GroupTopicInfoPartitionInfo {
         /**
-         * Current consumption position.
+         * Current consumption offset
          */
         currentOffset: number;
         /**
-         * Name of the Consumer Group.
+         * Consumer Group name
          */
         groupName: string;
         /**
-         * Number of unconsumed messages in the partition.
+         * Number of unconsumed messages in the partition
          */
         lag: number;
         /**
-         * Latest consumption position.
+         * Latest consumption offset
          */
         latestOffset: number;
         /**
-         * Partition number.
+         * Partition number
          */
         partitionId: number;
         /**
-         * Name of the Topic subscribed by the Consumer Group.
+         * Name of the Topic subscribed by the Consumer Group
          */
         topicName: string;
     }
@@ -3735,7 +3751,7 @@ export namespace bmq {
          */
         eipId: string;
         /**
-         * Private network Plain endpoint
+         * Private network Plain access point
          */
         plain: string;
         /**
@@ -3743,7 +3759,7 @@ export namespace bmq {
          */
         plainPort: number;
         /**
-         * Private network SASL authentication endpoint
+         * Private network SASL authentication access point
          */
         sasl: string;
         /**
@@ -3778,7 +3794,7 @@ export namespace bmq {
          */
         eipId: string;
         /**
-         * Private network Plain endpoint
+         * Private network Plain access point
          */
         plain: string;
         /**
@@ -3786,7 +3802,7 @@ export namespace bmq {
          */
         plainPort: number;
         /**
-         * Private network SASL authentication endpoint
+         * Private network SASL authentication access point
          */
         sasl: string;
         /**
@@ -3814,7 +3830,7 @@ export namespace bmq {
     export interface InstanceResourceTag {
         tagKvs: outputs.bmq.InstanceResourceTagTagKv[];
         /**
-         * Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+         * Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type: string;
     }
@@ -3825,7 +3841,7 @@ export namespace bmq {
          */
         key: string;
         /**
-         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type: string;
         /**
@@ -3858,7 +3874,7 @@ export namespace bmq {
          */
         key: string;
         /**
-         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type: string;
         /**
@@ -9842,14 +9858,14 @@ export namespace cloudmonitor {
          */
         condition: string;
         /**
-         * Condition. and: All conditions met. or: Any condition met.
+         * Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
          */
         metas: outputs.cloudmonitor.GetRuleDimensionConditionsMetaConditionMeta[];
     }
 
     export interface GetRuleDimensionConditionsMetaConditionMeta {
         /**
-         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          */
         comparator: string;
         /**
@@ -9882,7 +9898,7 @@ export namespace cloudmonitor {
 
     export interface GetRuleDimensionConditionsTagConditionTag {
         /**
-         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          */
         comparator: string;
         /**
@@ -9950,7 +9966,7 @@ export namespace cloudmonitor {
 
     export interface GetRuleNotifyTemplate {
         /**
-         * Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+         * Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
          */
         channel: string;
         /**
@@ -10048,7 +10064,7 @@ export namespace cloudmonitor {
 
     export interface RuleDimensionConditionsMetaConditionMeta {
         /**
-         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          */
         comparator: string;
         /**
@@ -10078,7 +10094,7 @@ export namespace cloudmonitor {
 
     export interface RuleDimensionConditionsTagConditionTag {
         /**
-         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          */
         comparator: string;
         /**
@@ -10143,7 +10159,7 @@ export namespace cloudmonitor {
 
     export interface RuleNotifyTemplate {
         /**
-         * Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+         * Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
          */
         channel: string;
         /**
@@ -10215,51 +10231,67 @@ export namespace config {
 export namespace cr {
     export interface GetRegistryEndpoint {
         /**
-         * Public IP allowlist
+         * Public IP allowlist list.
          */
         aclPolicies: outputs.cr.GetRegistryEndpointAclPolicy[];
         /**
-         * Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         * Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
          */
         enabled: boolean;
         /**
-         * Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         * Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
          */
         status: string;
     }
 
     export interface GetRegistryEndpointAclPolicy {
         /**
-         * IP entry address
+         * IP entry address.
          */
         description: string;
         /**
-         * IP entry description
+         * IP entry description.
          */
         entry: string;
     }
 
     export interface GetRegistryProxyCache {
         /**
-         * Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+         * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          */
         type: string;
     }
 
     export interface GetRegistryStatus {
         /**
-         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         conditions: string[];
         /**
-         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         phase: string;
     }
 
     export interface GetRegistryTag {
         /**
-         * Tag key
+         * Tag key values
          */
         key: string;
         /**
@@ -10302,47 +10334,63 @@ export namespace cr {
     export interface RegistryEndpoint {
         aclPolicies: outputs.cr.RegistryEndpointAclPolicy[];
         /**
-         * Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         * Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
          */
         enabled: boolean;
         /**
-         * Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         * Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
          */
         status: string;
     }
 
     export interface RegistryEndpointAclPolicy {
         /**
-         * IP entry address
+         * IP entry address.
          */
         description: string;
         /**
-         * IP entry description
+         * IP entry description.
          */
         entry: string;
     }
 
     export interface RegistryProxyCache {
         /**
-         * Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+         * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          */
         type: string;
     }
 
     export interface RegistryStatus {
         /**
-         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         conditions: string[];
         /**
-         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         phase: string;
     }
 
     export interface RegistryTag {
         /**
-         * Tag key
+         * Tag key values
          */
         key: string;
         /**
@@ -10369,6 +10417,17 @@ export namespace cr {
 }
 
 export namespace directconnect {
+    export interface ConnectionTag {
+        /**
+         * Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+         */
+        key: string;
+        /**
+         * Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+         */
+        value: string;
+    }
+
     export interface DirectConnectGatewayAssociateCen {
         /**
          * ID of CEN.
@@ -10406,6 +10465,17 @@ export namespace directconnect {
         key: string;
         /**
          * User label tag value. Length must be between 0 and 256 characters.
+         */
+        value: string;
+    }
+
+    export interface GetConnectionTag {
+        /**
+         * Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+         */
+        key: string;
+        /**
+         * Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
          */
         value: string;
     }
@@ -14580,6 +14650,73 @@ export namespace filenas {
 }
 
 export namespace fwcenter {
+    export interface AddressBookAddressDetailList {
+        /**
+         * Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+         */
+        address: string;
+        /**
+         * Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+         */
+        description: string;
+    }
+
+    export interface AddressBookTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
+         */
+        value: string;
+    }
+
+    export interface ControlPolicyDestPortListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type: string;
+    }
+
+    export interface ControlPolicyDestinationCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type: string;
+    }
+
+    export interface ControlPolicySourceCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type: string;
+    }
+
     export interface DnsControlPolicyDomainListV1 {
         /**
          * Specific address information.
@@ -14604,6 +14741,77 @@ export namespace fwcenter {
          * VPC ID。
          */
         vpcId: string;
+    }
+
+    export interface GetAddressBookAddressDetailList {
+        /**
+         * Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+         */
+        address: string;
+        /**
+         * Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+         */
+        description: string;
+        /**
+         * Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
+         */
+        type: string;
+    }
+
+    export interface GetAddressBookTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
+         */
+        value: string;
+    }
+
+    export interface GetControlPolicyDestPortListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type: string;
+    }
+
+    export interface GetControlPolicyDestinationCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type: string;
+    }
+
+    export interface GetControlPolicySourceCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type: string;
     }
 
     export interface GetDnsControlPolicyDomainListV1 {
@@ -14632,9 +14840,222 @@ export namespace fwcenter {
         vpcId: string;
     }
 
+    export interface GetVpcFireWallAclRuleDestPortListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface GetVpcFireWallAclRuleDestinationCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface GetVpcFireWallAclRuleSourceCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface VpcFireWallAclRuleDestPortListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface VpcFireWallAclRuleDestinationCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface VpcFireWallAclRuleSourceCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
 }
 
 export namespace gtm {
+    export interface GetGtmPolicy {
+        /**
+         * If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+         */
+        alarmOnly: boolean;
+        /**
+         * Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+         */
+        perfMode: string;
+        /**
+         * Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+         */
+        routingMode: string;
+        /**
+         * Statistics for addresses associated with the scheduling policy.
+         */
+        statistics: outputs.gtm.GetGtmPolicyStatistics;
+        /**
+         * List of target address pools associated with the scheduling policy.
+         */
+        targets: outputs.gtm.GetGtmPolicyTarget[];
+    }
+
+    export interface GetGtmPolicyStatistics {
+        /**
+         * Number of available addresses.
+         */
+        activeAddr: number;
+        /**
+         * Number of unavailable addresses.
+         */
+        inactiveAddr: number;
+    }
+
+    export interface GetGtmPolicyTarget {
+        /**
+         * Target address pool ID.
+         */
+        poolId: string;
+    }
+
+    export interface GetGtmProbe {
+        /**
+         * Recommended number of health check probe points.
+         */
+        advisedNodeCount: number;
+        /**
+         * Whether health check is disabled. true: disabled. false: enabled.
+         */
+        disable: boolean;
+        /**
+         * DNS record type for the health check.
+         */
+        dnsRecordType: string;
+        /**
+         * Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+         */
+        failedCount: number;
+        /**
+         * Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        host: string;
+        /**
+         * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        httpMethod: string;
+        /**
+         * Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         */
+        httpUsabilityCodes: outputs.gtm.GetGtmProbeHttpUsabilityCode[];
+        /**
+         * Interval between each health check, in seconds.
+         */
+        interval: number;
+        /**
+         * Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+         */
+        isManualNodes: boolean;
+        /**
+         * List of probe nodes used for health checks.
+         */
+        nodes: string[];
+        /**
+         * Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingCount: number;
+        /**
+         * Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingLossPercent: number;
+        /**
+         * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        port: number;
+        /**
+         * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+         */
+        protocol: string;
+        /**
+         * Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+         */
+        tcpConnTimeout: number;
+        /**
+         * Timeout for the health check task. Unit: seconds.
+         */
+        timeout: number;
+        /**
+         * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        url: string;
+    }
+
+    export interface GetGtmProbeHttpUsabilityCode {
+        /**
+         * List of HTTP status codes.
+         */
+        codes: number[];
+        /**
+         * Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+         */
+        operator: string;
+    }
+
     export interface GetPolicyStatistics {
         /**
          * Number of available addresses
@@ -14831,6 +15252,123 @@ export namespace gtm {
         codes: number[];
         /**
          * Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+         */
+        operator: string;
+    }
+
+    export interface GtmPolicy {
+        /**
+         * If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+         */
+        alarmOnly: boolean;
+        /**
+         * Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+         */
+        perfMode: string;
+        /**
+         * Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+         */
+        routingMode: string;
+        /**
+         * Statistics for addresses associated with the scheduling policy.
+         */
+        statistics: outputs.gtm.GtmPolicyStatistics;
+        targets: outputs.gtm.GtmPolicyTarget[];
+    }
+
+    export interface GtmPolicyStatistics {
+        /**
+         * Number of available addresses.
+         */
+        activeAddr: number;
+        /**
+         * Number of unavailable addresses.
+         */
+        inactiveAddr: number;
+    }
+
+    export interface GtmPolicyTarget {
+        /**
+         * Target address pool ID.
+         */
+        poolId: string;
+    }
+
+    export interface GtmProbe {
+        /**
+         * Recommended number of health check probe points.
+         */
+        advisedNodeCount: number;
+        /**
+         * Whether health check is disabled. true: disabled. false: enabled.
+         */
+        disable: boolean;
+        /**
+         * DNS record type for the health check.
+         */
+        dnsRecordType: string;
+        /**
+         * Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+         */
+        failedCount: number;
+        /**
+         * Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        host: string;
+        /**
+         * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        httpMethod: string;
+        httpUsabilityCodes: outputs.gtm.GtmProbeHttpUsabilityCode[];
+        /**
+         * Interval between each health check, in seconds.
+         */
+        interval: number;
+        /**
+         * Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+         */
+        isManualNodes: boolean;
+        /**
+         * List of probe nodes used for health checks.
+         */
+        nodes: string[];
+        /**
+         * Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingCount: number;
+        /**
+         * Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingLossPercent: number;
+        /**
+         * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        port: number;
+        /**
+         * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+         */
+        protocol: string;
+        /**
+         * Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+         */
+        tcpConnTimeout: number;
+        /**
+         * Timeout for the health check task. Unit: seconds.
+         */
+        timeout: number;
+        /**
+         * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        url: string;
+    }
+
+    export interface GtmProbeHttpUsabilityCode {
+        /**
+         * List of HTTP status codes.
+         */
+        codes: number[];
+        /**
+         * Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
          */
         operator: string;
     }
@@ -19343,6 +19881,10 @@ export namespace rdsmysql {
          */
         enableStorageAutoScale: boolean;
         /**
+         * Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+         */
+        scalingDetectNode: string;
+        /**
          * Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
          */
         storageThreshold: number;
@@ -19350,6 +19892,155 @@ export namespace rdsmysql {
          * Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
          */
         storageUpperBound: number;
+    }
+
+    export interface GetInstanceBackupPolicy {
+        /**
+         * List of destination regions available for cross-region backup.
+         */
+        availableCrossRegions: string[];
+        /**
+         * Basic backup policy.
+         */
+        backupPolicyBase: outputs.rdsmysql.GetInstanceBackupPolicyBackupPolicyBase;
+        /**
+         * Cross-region backup policy.
+         */
+        crossBackupPolicy: outputs.rdsmysql.GetInstanceBackupPolicyCrossBackupPolicy;
+    }
+
+    export interface GetInstanceBackupPolicyBackupPolicyBase {
+        /**
+         * Retain all log backups before releasing the instance. Values: true: yes. false: no.
+         */
+        binlogBackupAllRetention: boolean;
+        /**
+         * Enable log backup feature. Values: true: yes. false: no.
+         */
+        binlogBackupEnabled: boolean;
+        /**
+         * Whether to enable encryption for log backups. Values: true: Yes. false: No.
+         */
+        binlogBackupEncryptionEnabled: boolean;
+        /**
+         * Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+         */
+        binlogFileCountsEnable: boolean;
+        /**
+         * Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+         */
+        binlogLimitCount: number;
+        /**
+         * Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+         */
+        binlogLocalRetentionHour: number;
+        /**
+         * Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+         */
+        binlogSpaceLimitEnable: boolean;
+        /**
+         * Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+         */
+        binlogStoragePercentage: number;
+        /**
+         * Retain all data backups before releasing the instance. Values: true: yes. false: no.
+         */
+        dataBackupAllRetention: boolean;
+        /**
+         * Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+         */
+        dataBackupEncryptionEnabled: boolean;
+        /**
+         * Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+         */
+        dataBackupRetentionDay: number;
+        /**
+         * Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+         */
+        dataFullBackupPeriods: string[];
+        /**
+         * Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+         */
+        dataFullBackupStartUtcHour: number;
+        /**
+         * Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+         */
+        dataFullBackupTime: string;
+        /**
+         * Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+         */
+        dataIncrBackupPeriods: string[];
+        /**
+         * Number of days to retain data after instance release.
+         */
+        dataKeepDaysAfterReleased: number;
+        /**
+         * Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+         */
+        dataKeepPolicyAfterReleased: string;
+        /**
+         * Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+         */
+        highFrequencySnapshotBackupEnable: boolean;
+        /**
+         * Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+         */
+        highFrequencySnapshotBackupSecondPeriod: number;
+        /**
+         * Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+         */
+        hourlyIncrBackupEnable: boolean;
+        /**
+         * Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+         */
+        incrBackupHourPeriod: number;
+        /**
+         * Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+         */
+        keepCrossBackupEnableAfterReleased: boolean;
+        /**
+         * Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+         */
+        lockDdlTime: number;
+        /**
+         * Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+         */
+        lockDdlTimeSecond: number;
+        /**
+         * Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+         */
+        logBackupRetentionDay: number;
+        /**
+         * Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+         */
+        publicDownloadEnable: boolean;
+        /**
+         * Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+         */
+        retentionPolicySynced: boolean;
+    }
+
+    export interface GetInstanceBackupPolicyCrossBackupPolicy {
+        /**
+         * Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+         */
+        backupEnabled: boolean;
+        /**
+         * Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+         */
+        crossBackupAllRetention: boolean;
+        /**
+         * Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+         */
+        crossBackupRegion: string;
+        /**
+         * Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+         */
+        logBackupEnabled: boolean;
+        /**
+         * Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+         */
+        retention: number;
     }
 
     export interface GetInstanceChargeDetail {
@@ -19432,6 +20123,10 @@ export namespace rdsmysql {
 
     export interface GetInstanceEndpoint {
         /**
+         * Address list.
+         */
+        addresses: outputs.rdsmysql.GetInstanceEndpointAddress[];
+        /**
          * When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
          */
         autoAddNewNodes: string;
@@ -19447,6 +20142,10 @@ export namespace rdsmysql {
          * Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
          */
         connectionPoolType: string;
+        /**
+         * Custom routing and forwarding rules for connected terminals.
+         */
+        customRouteStrategies: outputs.rdsmysql.GetInstanceEndpointCustomRouteStrategy[];
         /**
          * Description of the connection endpoint
          */
@@ -19515,6 +20214,56 @@ export namespace rdsmysql {
          * Read/write mode: ReadWrite: read/write. ReadOnly: read-only
          */
         readWriteMode: string;
+    }
+
+    export interface GetInstanceEndpointAddress {
+        /**
+         * false: Private network resolution (default). true: Private and public network resolution.
+         */
+        dnsVisibility: boolean;
+        /**
+         * Connection domain name.
+         */
+        domain: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+         */
+        eipLocked: boolean;
+        /**
+         * IP protocol version. Value: IPv4.
+         */
+        internetProtocol: string;
+        /**
+         * IP address.
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private address. Public: public address.
+         */
+        networkType: string;
+        /**
+         * Port.
+         */
+        port: string;
+        /**
+         * Subnet ID, valid only for Private addresses.
+         */
+        subnetId: string;
+    }
+
+    export interface GetInstanceEndpointCustomRouteStrategy {
+        /**
+         * SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+         */
+        nodeType: string;
+        /**
+         * Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+         */
+        sqlKeyword: string;
     }
 
     export interface GetInstanceEndpointReadOnlyNodeWeight {
@@ -19703,6 +20452,10 @@ export namespace rdsmysql {
          */
         enableStorageAutoScale: boolean;
         /**
+         * Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+         */
+        scalingDetectNode: string;
+        /**
          * Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
          */
         storageThreshold: number;
@@ -19710,6 +20463,155 @@ export namespace rdsmysql {
          * Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
          */
         storageUpperBound: number;
+    }
+
+    export interface InstanceBackupPolicy {
+        /**
+         * List of destination regions available for cross-region backup.
+         */
+        availableCrossRegions: string[];
+        /**
+         * Basic backup policy.
+         */
+        backupPolicyBase: outputs.rdsmysql.InstanceBackupPolicyBackupPolicyBase;
+        /**
+         * Cross-region backup policy.
+         */
+        crossBackupPolicy: outputs.rdsmysql.InstanceBackupPolicyCrossBackupPolicy;
+    }
+
+    export interface InstanceBackupPolicyBackupPolicyBase {
+        /**
+         * Retain all log backups before releasing the instance. Values: true: yes. false: no.
+         */
+        binlogBackupAllRetention: boolean;
+        /**
+         * Enable log backup feature. Values: true: yes. false: no.
+         */
+        binlogBackupEnabled: boolean;
+        /**
+         * Whether to enable encryption for log backups. Values: true: Yes. false: No.
+         */
+        binlogBackupEncryptionEnabled: boolean;
+        /**
+         * Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+         */
+        binlogFileCountsEnable: boolean;
+        /**
+         * Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+         */
+        binlogLimitCount: number;
+        /**
+         * Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+         */
+        binlogLocalRetentionHour: number;
+        /**
+         * Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+         */
+        binlogSpaceLimitEnable: boolean;
+        /**
+         * Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+         */
+        binlogStoragePercentage: number;
+        /**
+         * Retain all data backups before releasing the instance. Values: true: yes. false: no.
+         */
+        dataBackupAllRetention: boolean;
+        /**
+         * Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+         */
+        dataBackupEncryptionEnabled: boolean;
+        /**
+         * Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+         */
+        dataBackupRetentionDay: number;
+        /**
+         * Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+         */
+        dataFullBackupPeriods: string[];
+        /**
+         * Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+         */
+        dataFullBackupStartUtcHour: number;
+        /**
+         * Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+         */
+        dataFullBackupTime: string;
+        /**
+         * Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+         */
+        dataIncrBackupPeriods: string[];
+        /**
+         * Number of days to retain data after instance release.
+         */
+        dataKeepDaysAfterReleased: number;
+        /**
+         * Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+         */
+        dataKeepPolicyAfterReleased: string;
+        /**
+         * Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+         */
+        highFrequencySnapshotBackupEnable: boolean;
+        /**
+         * Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+         */
+        highFrequencySnapshotBackupSecondPeriod: number;
+        /**
+         * Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+         */
+        hourlyIncrBackupEnable: boolean;
+        /**
+         * Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+         */
+        incrBackupHourPeriod: number;
+        /**
+         * Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+         */
+        keepCrossBackupEnableAfterReleased: boolean;
+        /**
+         * Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+         */
+        lockDdlTime: number;
+        /**
+         * Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+         */
+        lockDdlTimeSecond: number;
+        /**
+         * Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+         */
+        logBackupRetentionDay: number;
+        /**
+         * Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+         */
+        publicDownloadEnable: boolean;
+        /**
+         * Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+         */
+        retentionPolicySynced: boolean;
+    }
+
+    export interface InstanceBackupPolicyCrossBackupPolicy {
+        /**
+         * Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+         */
+        backupEnabled: boolean;
+        /**
+         * Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+         */
+        crossBackupAllRetention: boolean;
+        /**
+         * Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+         */
+        crossBackupRegion: string;
+        /**
+         * Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+         */
+        logBackupEnabled: boolean;
+        /**
+         * Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+         */
+        retention: number;
     }
 
     export interface InstanceChargeDetail {
@@ -19791,6 +20693,7 @@ export namespace rdsmysql {
     }
 
     export interface InstanceEndpoint {
+        addresses: outputs.rdsmysql.InstanceEndpointAddress[];
         /**
          * When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
          */
@@ -19807,6 +20710,7 @@ export namespace rdsmysql {
          * Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
          */
         connectionPoolType: string;
+        customRouteStrategies: outputs.rdsmysql.InstanceEndpointCustomRouteStrategy[];
         /**
          * Description of the connection endpoint
          */
@@ -19872,6 +20776,56 @@ export namespace rdsmysql {
          * Read/write mode: ReadWrite: read/write. ReadOnly: read-only
          */
         readWriteMode: string;
+    }
+
+    export interface InstanceEndpointAddress {
+        /**
+         * false: Private network resolution (default). true: Private and public network resolution.
+         */
+        dnsVisibility: boolean;
+        /**
+         * Connection domain name.
+         */
+        domain: string;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId: string;
+        /**
+         * Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+         */
+        eipLocked: boolean;
+        /**
+         * IP protocol version. Value: IPv4.
+         */
+        internetProtocol: string;
+        /**
+         * IP address.
+         */
+        ipAddress: string;
+        /**
+         * Network address type. Values: Private: private address. Public: public address.
+         */
+        networkType: string;
+        /**
+         * Port.
+         */
+        port: string;
+        /**
+         * Subnet ID, valid only for Private addresses.
+         */
+        subnetId: string;
+    }
+
+    export interface InstanceEndpointCustomRouteStrategy {
+        /**
+         * SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+         */
+        nodeType: string;
+        /**
+         * Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+         */
+        sqlKeyword: string;
     }
 
     export interface InstanceEndpointReadOnlyNodeWeight {
@@ -21119,6 +22073,45 @@ export namespace redis {
         securityGroupName: string;
     }
 
+    export interface GetInstanceBackup {
+        /**
+         * Backup point ID
+         */
+        backupPointId: string;
+        /**
+         * Backup point name
+         */
+        backupPointName: string;
+        /**
+         * Backup policy
+         */
+        backupStrategy: string;
+        /**
+         * Backup type
+         */
+        backupType: string;
+        /**
+         * Backup end time
+         */
+        endTime: string;
+        /**
+         * Instance ID
+         */
+        instanceId: string;
+        /**
+         * Backup size (unit: Byte)
+         */
+        size: number;
+        /**
+         * Backup start time
+         */
+        startTime: string;
+        /**
+         * Backup status
+         */
+        status: string;
+    }
+
     export interface GetInstanceBackupRestore {
         /**
          * Backup ID, used to specify which backup to use when restoring from a backup set
@@ -21264,6 +22257,45 @@ export namespace redis {
          * Parameter unit
          */
         unit: string;
+    }
+
+    export interface InstanceBackup {
+        /**
+         * Backup point ID
+         */
+        backupPointId: string;
+        /**
+         * Backup point name
+         */
+        backupPointName: string;
+        /**
+         * Backup policy
+         */
+        backupStrategy: string;
+        /**
+         * Backup type
+         */
+        backupType: string;
+        /**
+         * Backup end time
+         */
+        endTime: string;
+        /**
+         * Instance ID
+         */
+        instanceId: string;
+        /**
+         * Backup size (unit: Byte)
+         */
+        size: number;
+        /**
+         * Backup start time
+         */
+        startTime: string;
+        /**
+         * Backup status
+         */
+        status: string;
     }
 
     export interface InstanceBackupRestore {
@@ -22043,6 +23075,17 @@ export namespace tls {
         severity: string;
     }
 
+    export interface AlarmWebhookIntegrationTypeWebhookHeader {
+        /**
+         * Key for custom request header
+         */
+        key: string;
+        /**
+         * Value for custom request header
+         */
+        value: string;
+    }
+
     export interface EtlTargetResource {
         /**
          * Name of the custom output target. You must use this name to refer to the output target in the data processing rules
@@ -22540,6 +23583,17 @@ export namespace tls {
          * Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
          */
         severity: string;
+    }
+
+    export interface GetAlarmWebhookIntegrationTypeWebhookHeader {
+        /**
+         * Key for custom request header
+         */
+        key: string;
+        /**
+         * Value for custom request header
+         */
+        value: string;
     }
 
     export interface GetEtlTargetResource {
@@ -32629,6 +33683,36 @@ export namespace waf {
          * Statistics header fields. Use the specified fields for log analysis and alerts.
          */
         statisticalKeyLists: string[];
+    }
+
+    export interface GetHostGroupRelatedRule {
+        /**
+         * Rule name.
+         */
+        ruleName: string;
+        /**
+         * Rule ID.
+         */
+        ruleTag: string;
+        /**
+         * Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+         */
+        ruleType: string;
+    }
+
+    export interface HostGroupRelatedRule {
+        /**
+         * Rule name.
+         */
+        ruleName: string;
+        /**
+         * Rule ID.
+         */
+        ruleTag: string;
+        /**
+         * Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+         */
+        ruleType: string;
     }
 
 }

@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, address_objects=None, allow_list_ids=None, allow_list_version=None, auto_storage_scaling_config=None, auto_upgrade_minor_version=None, backup_audit_log_size=None, backup_bin_log_size=None, backup_data_size=None, backup_error_log_size=None, backup_free_quota_size=None, backup_log_size=None, backup_slow_log_size=None, backup_use=None, basic_backup_binlog_size=None, basic_backup_data_size=None, charge_detail=None, cpu_num=None, created_time=None, current_kernel_version=None, db_engine_version=None, db_param_group_id=None, db_time_zone=None, deletion_protection=None, disaster_recovery_instances=None, dr_dts_task_id=None, dr_dts_task_name=None, dr_dts_task_status=None, dr_seconds_behind_master=None, endpoints=None, global_read_only=None, has_disaster_recovery_instances=None, has_green_instance=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, lower_case_table_names=None, maintenance_window=None, master_instance_id=None, master_instance_name=None, memory=None, node_cpu_used_percentage=None, node_memory_used_percentage=None, node_number=None, node_space_used_percentage=None, node_spec=None, nodes=None, port=None, project_name=None, proxy_detail=None, storage_audit_log_size=None, storage_bin_log_size=None, storage_data_size=None, storage_error_log_size=None, storage_log_size=None, storage_slow_log_size=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_name=None, super_account_password=None, sync_mode=None, tags=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None, zone_ids=None):
+    def __init__(__self__, address_objects=None, allow_list_ids=None, allow_list_version=None, auto_storage_scaling_config=None, auto_upgrade_minor_version=None, backup_audit_log_size=None, backup_bin_log_size=None, backup_data_size=None, backup_error_log_size=None, backup_free_quota_size=None, backup_log_size=None, backup_policy=None, backup_slow_log_size=None, backup_use=None, basic_backup_binlog_size=None, basic_backup_data_size=None, charge_detail=None, cpu_num=None, created_time=None, current_kernel_version=None, db_engine_version=None, db_param_group_id=None, db_time_zone=None, deletion_protection=None, disaster_recovery_instances=None, dr_dts_task_id=None, dr_dts_task_name=None, dr_dts_task_status=None, dr_seconds_behind_master=None, endpoints=None, engine_type=None, global_read_only=None, has_disaster_recovery_instances=None, has_green_instance=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, lower_case_table_names=None, maintenance_window=None, master_instance_id=None, master_instance_name=None, memory=None, node_cpu_used_percentage=None, node_memory_used_percentage=None, node_number=None, node_space_used_percentage=None, node_spec=None, nodes=None, parameter_template_id=None, port=None, private_ip_address=None, project_name=None, proxy_detail=None, storage_audit_log_size=None, storage_bin_log_size=None, storage_data_size=None, storage_error_log_size=None, storage_log_size=None, storage_slow_log_size=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_name=None, super_account_password=None, sync_mode=None, tags=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None, zone_ids=None):
         if address_objects and not isinstance(address_objects, list):
             raise TypeError("Expected argument 'address_objects' to be a list")
         pulumi.set(__self__, "address_objects", address_objects)
@@ -62,6 +62,9 @@ class GetInstanceResult:
         if backup_log_size and not isinstance(backup_log_size, int):
             raise TypeError("Expected argument 'backup_log_size' to be a int")
         pulumi.set(__self__, "backup_log_size", backup_log_size)
+        if backup_policy and not isinstance(backup_policy, dict):
+            raise TypeError("Expected argument 'backup_policy' to be a dict")
+        pulumi.set(__self__, "backup_policy", backup_policy)
         if backup_slow_log_size and not isinstance(backup_slow_log_size, int):
             raise TypeError("Expected argument 'backup_slow_log_size' to be a int")
         pulumi.set(__self__, "backup_slow_log_size", backup_slow_log_size)
@@ -116,6 +119,9 @@ class GetInstanceResult:
         if endpoints and not isinstance(endpoints, list):
             raise TypeError("Expected argument 'endpoints' to be a list")
         pulumi.set(__self__, "endpoints", endpoints)
+        if engine_type and not isinstance(engine_type, str):
+            raise TypeError("Expected argument 'engine_type' to be a str")
+        pulumi.set(__self__, "engine_type", engine_type)
         if global_read_only and not isinstance(global_read_only, bool):
             raise TypeError("Expected argument 'global_read_only' to be a bool")
         pulumi.set(__self__, "global_read_only", global_read_only)
@@ -173,9 +179,15 @@ class GetInstanceResult:
         if nodes and not isinstance(nodes, list):
             raise TypeError("Expected argument 'nodes' to be a list")
         pulumi.set(__self__, "nodes", nodes)
+        if parameter_template_id and not isinstance(parameter_template_id, str):
+            raise TypeError("Expected argument 'parameter_template_id' to be a str")
+        pulumi.set(__self__, "parameter_template_id", parameter_template_id)
         if port and not isinstance(port, int):
             raise TypeError("Expected argument 'port' to be a int")
         pulumi.set(__self__, "port", port)
+        if private_ip_address and not isinstance(private_ip_address, str):
+            raise TypeError("Expected argument 'private_ip_address' to be a str")
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -332,6 +344,14 @@ class GetInstanceResult:
         return pulumi.get(self, "backup_log_size")
 
     @property
+    @pulumi.getter(name="backupPolicy")
+    def backup_policy(self) -> 'outputs.GetInstanceBackupPolicyResult':
+        """
+        Instance backup policy configuration.
+        """
+        return pulumi.get(self, "backup_policy")
+
+    @property
     @pulumi.getter(name="backupSlowLogSize")
     def backup_slow_log_size(self) -> builtins.int:
         """
@@ -474,6 +494,14 @@ class GetInstanceResult:
         Instance connection information.
         """
         return pulumi.get(self, "endpoints")
+
+    @property
+    @pulumi.getter(name="engineType")
+    def engine_type(self) -> builtins.str:
+        """
+        Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        """
+        return pulumi.get(self, "engine_type")
 
     @property
     @pulumi.getter(name="globalReadOnly")
@@ -628,12 +656,28 @@ class GetInstanceResult:
         return pulumi.get(self, "nodes")
 
     @property
+    @pulumi.getter(name="parameterTemplateId")
+    def parameter_template_id(self) -> builtins.str:
+        """
+        Parameter template ID.
+        """
+        return pulumi.get(self, "parameter_template_id")
+
+    @property
     @pulumi.getter
     def port(self) -> builtins.int:
         """
         Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         """
         return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> builtins.str:
+        """
+        Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        """
+        return pulumi.get(self, "private_ip_address")
 
     @property
     @pulumi.getter(name="projectName")
@@ -829,6 +873,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             backup_error_log_size=self.backup_error_log_size,
             backup_free_quota_size=self.backup_free_quota_size,
             backup_log_size=self.backup_log_size,
+            backup_policy=self.backup_policy,
             backup_slow_log_size=self.backup_slow_log_size,
             backup_use=self.backup_use,
             basic_backup_binlog_size=self.basic_backup_binlog_size,
@@ -847,6 +892,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             dr_dts_task_status=self.dr_dts_task_status,
             dr_seconds_behind_master=self.dr_seconds_behind_master,
             endpoints=self.endpoints,
+            engine_type=self.engine_type,
             global_read_only=self.global_read_only,
             has_disaster_recovery_instances=self.has_disaster_recovery_instances,
             has_green_instance=self.has_green_instance,
@@ -866,7 +912,9 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             node_space_used_percentage=self.node_space_used_percentage,
             node_spec=self.node_spec,
             nodes=self.nodes,
+            parameter_template_id=self.parameter_template_id,
             port=self.port,
+            private_ip_address=self.private_ip_address,
             project_name=self.project_name,
             proxy_detail=self.proxy_detail,
             storage_audit_log_size=self.storage_audit_log_size,
@@ -916,6 +964,7 @@ def get_instance(id: Optional[builtins.str] = None,
         backup_error_log_size=pulumi.get(__ret__, 'backup_error_log_size'),
         backup_free_quota_size=pulumi.get(__ret__, 'backup_free_quota_size'),
         backup_log_size=pulumi.get(__ret__, 'backup_log_size'),
+        backup_policy=pulumi.get(__ret__, 'backup_policy'),
         backup_slow_log_size=pulumi.get(__ret__, 'backup_slow_log_size'),
         backup_use=pulumi.get(__ret__, 'backup_use'),
         basic_backup_binlog_size=pulumi.get(__ret__, 'basic_backup_binlog_size'),
@@ -934,6 +983,7 @@ def get_instance(id: Optional[builtins.str] = None,
         dr_dts_task_status=pulumi.get(__ret__, 'dr_dts_task_status'),
         dr_seconds_behind_master=pulumi.get(__ret__, 'dr_seconds_behind_master'),
         endpoints=pulumi.get(__ret__, 'endpoints'),
+        engine_type=pulumi.get(__ret__, 'engine_type'),
         global_read_only=pulumi.get(__ret__, 'global_read_only'),
         has_disaster_recovery_instances=pulumi.get(__ret__, 'has_disaster_recovery_instances'),
         has_green_instance=pulumi.get(__ret__, 'has_green_instance'),
@@ -953,7 +1003,9 @@ def get_instance(id: Optional[builtins.str] = None,
         node_space_used_percentage=pulumi.get(__ret__, 'node_space_used_percentage'),
         node_spec=pulumi.get(__ret__, 'node_spec'),
         nodes=pulumi.get(__ret__, 'nodes'),
+        parameter_template_id=pulumi.get(__ret__, 'parameter_template_id'),
         port=pulumi.get(__ret__, 'port'),
+        private_ip_address=pulumi.get(__ret__, 'private_ip_address'),
         project_name=pulumi.get(__ret__, 'project_name'),
         proxy_detail=pulumi.get(__ret__, 'proxy_detail'),
         storage_audit_log_size=pulumi.get(__ret__, 'storage_audit_log_size'),
@@ -1000,6 +1052,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         backup_error_log_size=pulumi.get(__response__, 'backup_error_log_size'),
         backup_free_quota_size=pulumi.get(__response__, 'backup_free_quota_size'),
         backup_log_size=pulumi.get(__response__, 'backup_log_size'),
+        backup_policy=pulumi.get(__response__, 'backup_policy'),
         backup_slow_log_size=pulumi.get(__response__, 'backup_slow_log_size'),
         backup_use=pulumi.get(__response__, 'backup_use'),
         basic_backup_binlog_size=pulumi.get(__response__, 'basic_backup_binlog_size'),
@@ -1018,6 +1071,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         dr_dts_task_status=pulumi.get(__response__, 'dr_dts_task_status'),
         dr_seconds_behind_master=pulumi.get(__response__, 'dr_seconds_behind_master'),
         endpoints=pulumi.get(__response__, 'endpoints'),
+        engine_type=pulumi.get(__response__, 'engine_type'),
         global_read_only=pulumi.get(__response__, 'global_read_only'),
         has_disaster_recovery_instances=pulumi.get(__response__, 'has_disaster_recovery_instances'),
         has_green_instance=pulumi.get(__response__, 'has_green_instance'),
@@ -1037,7 +1091,9 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         node_space_used_percentage=pulumi.get(__response__, 'node_space_used_percentage'),
         node_spec=pulumi.get(__response__, 'node_spec'),
         nodes=pulumi.get(__response__, 'nodes'),
+        parameter_template_id=pulumi.get(__response__, 'parameter_template_id'),
         port=pulumi.get(__response__, 'port'),
+        private_ip_address=pulumi.get(__response__, 'private_ip_address'),
         project_name=pulumi.get(__response__, 'project_name'),
         proxy_detail=pulumi.get(__response__, 'proxy_detail'),
         storage_audit_log_size=pulumi.get(__response__, 'storage_audit_log_size'),

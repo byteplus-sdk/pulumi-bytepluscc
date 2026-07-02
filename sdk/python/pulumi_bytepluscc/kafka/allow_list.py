@@ -248,27 +248,6 @@ class AllowList(pulumi.CustomResource):
         """
         When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        kafka_allow_list_demo = bytepluscc.index.KafkaAllowlist("KafkaAllowListDemo",
-            allow_list=127.0.0.2,
-            allow_list_desc=test,
-            allow_list_name=ccapi-text,
-            associated_instances=[
-                {
-                    instanceId: kafka-cnng9x9s***,
-                },
-                {
-                    instanceId: kafka-cnnghf99**,
-                },
-            ],
-            apply_instance_num=2)
-        ```
-
         ## Import
 
         ```sh
@@ -290,27 +269,6 @@ class AllowList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        kafka_allow_list_demo = bytepluscc.index.KafkaAllowlist("KafkaAllowListDemo",
-            allow_list=127.0.0.2,
-            allow_list_desc=test,
-            allow_list_name=ccapi-text,
-            associated_instances=[
-                {
-                    instanceId: kafka-cnng9x9s***,
-                },
-                {
-                    instanceId: kafka-cnnghf99**,
-                },
-            ],
-            apply_instance_num=2)
-        ```
 
         ## Import
 

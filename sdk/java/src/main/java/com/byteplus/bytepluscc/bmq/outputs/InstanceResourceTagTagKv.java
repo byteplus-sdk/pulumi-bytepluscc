@@ -17,7 +17,7 @@ public final class InstanceResourceTagTagKv {
      */
     private @Nullable String key;
     /**
-     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+     * @return Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     private @Nullable String type;
@@ -36,7 +36,7 @@ public final class InstanceResourceTagTagKv {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+     * @return Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     public Optional<String> type() {

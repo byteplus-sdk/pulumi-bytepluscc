@@ -31,14 +31,14 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+     * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+     * @return Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     public Optional<Output<String>> type() {
@@ -108,7 +108,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * @param type Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class InstanceResourceTagTagKvArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * @param type Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          * 
          * @return builder
          * 

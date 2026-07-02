@@ -17,6 +17,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GtmPolicy',
+    'GtmPolicyStatistics',
+    'GtmPolicyTarget',
+    'GtmProbe',
+    'GtmProbeHttpUsabilityCode',
     'PolicyStatistics',
     'PolicyTarget',
     'PoolAddress',
@@ -25,6 +30,11 @@ __all__ = [
     'RulePoolSetPoolAddress',
     'RuleProbe',
     'RuleProbeHttpUsabilityCode',
+    'GetGtmPolicyResult',
+    'GetGtmPolicyStatisticsResult',
+    'GetGtmPolicyTargetResult',
+    'GetGtmProbeResult',
+    'GetGtmProbeHttpUsabilityCodeResult',
     'GetPolicyStatisticsResult',
     'GetPolicyTargetResult',
     'GetPoolAddressResult',
@@ -34,6 +44,447 @@ __all__ = [
     'GetRuleProbeResult',
     'GetRuleProbeHttpUsabilityCodeResult',
 ]
+
+@pulumi.output_type
+class GtmPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "alarmOnly":
+            suggest = "alarm_only"
+        elif key == "perfMode":
+            suggest = "perf_mode"
+        elif key == "routingMode":
+            suggest = "routing_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 alarm_only: Optional[builtins.bool] = None,
+                 perf_mode: Optional[builtins.str] = None,
+                 routing_mode: Optional[builtins.str] = None,
+                 statistics: Optional['outputs.GtmPolicyStatistics'] = None,
+                 targets: Optional[Sequence['outputs.GtmPolicyTarget']] = None):
+        """
+        :param builtins.bool alarm_only: If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+        :param builtins.str perf_mode: Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+        :param builtins.str routing_mode: Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+        :param 'GtmPolicyStatisticsArgs' statistics: Statistics for addresses associated with the scheduling policy.
+        """
+        if alarm_only is not None:
+            pulumi.set(__self__, "alarm_only", alarm_only)
+        if perf_mode is not None:
+            pulumi.set(__self__, "perf_mode", perf_mode)
+        if routing_mode is not None:
+            pulumi.set(__self__, "routing_mode", routing_mode)
+        if statistics is not None:
+            pulumi.set(__self__, "statistics", statistics)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @property
+    @pulumi.getter(name="alarmOnly")
+    def alarm_only(self) -> Optional[builtins.bool]:
+        """
+        If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+        """
+        return pulumi.get(self, "alarm_only")
+
+    @property
+    @pulumi.getter(name="perfMode")
+    def perf_mode(self) -> Optional[builtins.str]:
+        """
+        Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+        """
+        return pulumi.get(self, "perf_mode")
+
+    @property
+    @pulumi.getter(name="routingMode")
+    def routing_mode(self) -> Optional[builtins.str]:
+        """
+        Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+        """
+        return pulumi.get(self, "routing_mode")
+
+    @property
+    @pulumi.getter
+    def statistics(self) -> Optional['outputs.GtmPolicyStatistics']:
+        """
+        Statistics for addresses associated with the scheduling policy.
+        """
+        return pulumi.get(self, "statistics")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.GtmPolicyTarget']]:
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GtmPolicyStatistics(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activeAddr":
+            suggest = "active_addr"
+        elif key == "inactiveAddr":
+            suggest = "inactive_addr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmPolicyStatistics. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmPolicyStatistics.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmPolicyStatistics.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active_addr: Optional[builtins.int] = None,
+                 inactive_addr: Optional[builtins.int] = None):
+        """
+        :param builtins.int active_addr: Number of available addresses.
+        :param builtins.int inactive_addr: Number of unavailable addresses.
+        """
+        if active_addr is not None:
+            pulumi.set(__self__, "active_addr", active_addr)
+        if inactive_addr is not None:
+            pulumi.set(__self__, "inactive_addr", inactive_addr)
+
+    @property
+    @pulumi.getter(name="activeAddr")
+    def active_addr(self) -> Optional[builtins.int]:
+        """
+        Number of available addresses.
+        """
+        return pulumi.get(self, "active_addr")
+
+    @property
+    @pulumi.getter(name="inactiveAddr")
+    def inactive_addr(self) -> Optional[builtins.int]:
+        """
+        Number of unavailable addresses.
+        """
+        return pulumi.get(self, "inactive_addr")
+
+
+@pulumi.output_type
+class GtmPolicyTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "poolId":
+            suggest = "pool_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmPolicyTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmPolicyTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmPolicyTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 pool_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str pool_id: Target address pool ID.
+        """
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
+
+    @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> Optional[builtins.str]:
+        """
+        Target address pool ID.
+        """
+        return pulumi.get(self, "pool_id")
+
+
+@pulumi.output_type
+class GtmProbe(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "advisedNodeCount":
+            suggest = "advised_node_count"
+        elif key == "dnsRecordType":
+            suggest = "dns_record_type"
+        elif key == "failedCount":
+            suggest = "failed_count"
+        elif key == "httpMethod":
+            suggest = "http_method"
+        elif key == "httpUsabilityCodes":
+            suggest = "http_usability_codes"
+        elif key == "isManualNodes":
+            suggest = "is_manual_nodes"
+        elif key == "pingCount":
+            suggest = "ping_count"
+        elif key == "pingLossPercent":
+            suggest = "ping_loss_percent"
+        elif key == "tcpConnTimeout":
+            suggest = "tcp_conn_timeout"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GtmProbe. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GtmProbe.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GtmProbe.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 advised_node_count: Optional[builtins.int] = None,
+                 disable: Optional[builtins.bool] = None,
+                 dns_record_type: Optional[builtins.str] = None,
+                 failed_count: Optional[builtins.int] = None,
+                 host: Optional[builtins.str] = None,
+                 http_method: Optional[builtins.str] = None,
+                 http_usability_codes: Optional[Sequence['outputs.GtmProbeHttpUsabilityCode']] = None,
+                 interval: Optional[builtins.int] = None,
+                 is_manual_nodes: Optional[builtins.bool] = None,
+                 nodes: Optional[Sequence[builtins.str]] = None,
+                 ping_count: Optional[builtins.int] = None,
+                 ping_loss_percent: Optional[builtins.int] = None,
+                 port: Optional[builtins.int] = None,
+                 protocol: Optional[builtins.str] = None,
+                 tcp_conn_timeout: Optional[builtins.int] = None,
+                 timeout: Optional[builtins.int] = None,
+                 url: Optional[builtins.str] = None):
+        """
+        :param builtins.int advised_node_count: Recommended number of health check probe points.
+        :param builtins.bool disable: Whether health check is disabled. true: disabled. false: enabled.
+        :param builtins.str dns_record_type: DNS record type for the health check.
+        :param builtins.int failed_count: Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+        :param builtins.str host: Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param builtins.str http_method: HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param builtins.int interval: Interval between each health check, in seconds.
+        :param builtins.bool is_manual_nodes: Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+        :param Sequence[builtins.str] nodes: List of probe nodes used for health checks.
+        :param builtins.int ping_count: Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        :param builtins.int ping_loss_percent: Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        :param builtins.int port: Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param builtins.str protocol: Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        :param builtins.int tcp_conn_timeout: Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+        :param builtins.int timeout: Timeout for the health check task. Unit: seconds.
+        :param builtins.str url: Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        if advised_node_count is not None:
+            pulumi.set(__self__, "advised_node_count", advised_node_count)
+        if disable is not None:
+            pulumi.set(__self__, "disable", disable)
+        if dns_record_type is not None:
+            pulumi.set(__self__, "dns_record_type", dns_record_type)
+        if failed_count is not None:
+            pulumi.set(__self__, "failed_count", failed_count)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if http_method is not None:
+            pulumi.set(__self__, "http_method", http_method)
+        if http_usability_codes is not None:
+            pulumi.set(__self__, "http_usability_codes", http_usability_codes)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if is_manual_nodes is not None:
+            pulumi.set(__self__, "is_manual_nodes", is_manual_nodes)
+        if nodes is not None:
+            pulumi.set(__self__, "nodes", nodes)
+        if ping_count is not None:
+            pulumi.set(__self__, "ping_count", ping_count)
+        if ping_loss_percent is not None:
+            pulumi.set(__self__, "ping_loss_percent", ping_loss_percent)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if tcp_conn_timeout is not None:
+            pulumi.set(__self__, "tcp_conn_timeout", tcp_conn_timeout)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="advisedNodeCount")
+    def advised_node_count(self) -> Optional[builtins.int]:
+        """
+        Recommended number of health check probe points.
+        """
+        return pulumi.get(self, "advised_node_count")
+
+    @property
+    @pulumi.getter
+    def disable(self) -> Optional[builtins.bool]:
+        """
+        Whether health check is disabled. true: disabled. false: enabled.
+        """
+        return pulumi.get(self, "disable")
+
+    @property
+    @pulumi.getter(name="dnsRecordType")
+    def dns_record_type(self) -> Optional[builtins.str]:
+        """
+        DNS record type for the health check.
+        """
+        return pulumi.get(self, "dns_record_type")
+
+    @property
+    @pulumi.getter(name="failedCount")
+    def failed_count(self) -> Optional[builtins.int]:
+        """
+        Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+        """
+        return pulumi.get(self, "failed_count")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[builtins.str]:
+        """
+        Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="httpMethod")
+    def http_method(self) -> Optional[builtins.str]:
+        """
+        HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "http_method")
+
+    @property
+    @pulumi.getter(name="httpUsabilityCodes")
+    def http_usability_codes(self) -> Optional[Sequence['outputs.GtmProbeHttpUsabilityCode']]:
+        return pulumi.get(self, "http_usability_codes")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[builtins.int]:
+        """
+        Interval between each health check, in seconds.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="isManualNodes")
+    def is_manual_nodes(self) -> Optional[builtins.bool]:
+        """
+        Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+        """
+        return pulumi.get(self, "is_manual_nodes")
+
+    @property
+    @pulumi.getter
+    def nodes(self) -> Optional[Sequence[builtins.str]]:
+        """
+        List of probe nodes used for health checks.
+        """
+        return pulumi.get(self, "nodes")
+
+    @property
+    @pulumi.getter(name="pingCount")
+    def ping_count(self) -> Optional[builtins.int]:
+        """
+        Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        """
+        return pulumi.get(self, "ping_count")
+
+    @property
+    @pulumi.getter(name="pingLossPercent")
+    def ping_loss_percent(self) -> Optional[builtins.int]:
+        """
+        Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        """
+        return pulumi.get(self, "ping_loss_percent")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[builtins.str]:
+        """
+        Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="tcpConnTimeout")
+    def tcp_conn_timeout(self) -> Optional[builtins.int]:
+        """
+        Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+        """
+        return pulumi.get(self, "tcp_conn_timeout")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[builtins.int]:
+        """
+        Timeout for the health check task. Unit: seconds.
+        """
+        return pulumi.get(self, "timeout")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[builtins.str]:
+        """
+        Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GtmProbeHttpUsabilityCode(dict):
+    def __init__(__self__, *,
+                 codes: Optional[Sequence[builtins.int]] = None,
+                 operator: Optional[builtins.str] = None):
+        """
+        :param Sequence[builtins.int] codes: List of HTTP status codes.
+        :param builtins.str operator: Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+        """
+        if codes is not None:
+            pulumi.set(__self__, "codes", codes)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+
+    @property
+    @pulumi.getter
+    def codes(self) -> Optional[Sequence[builtins.int]]:
+        """
+        List of HTTP status codes.
+        """
+        return pulumi.get(self, "codes")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+        """
+        return pulumi.get(self, "operator")
+
 
 @pulumi.output_type
 class PolicyStatistics(dict):
@@ -701,6 +1152,338 @@ class RuleProbeHttpUsabilityCode(dict):
     def operator(self) -> Optional[builtins.str]:
         """
         Operator. interval: Matches values within the range. include: Matches specified values. exclude: Matches values other than the specified values.
+        """
+        return pulumi.get(self, "operator")
+
+
+@pulumi.output_type
+class GetGtmPolicyResult(dict):
+    def __init__(__self__, *,
+                 alarm_only: builtins.bool,
+                 perf_mode: builtins.str,
+                 routing_mode: builtins.str,
+                 statistics: 'outputs.GetGtmPolicyStatisticsResult',
+                 targets: Sequence['outputs.GetGtmPolicyTargetResult']):
+        """
+        :param builtins.bool alarm_only: If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+        :param builtins.str perf_mode: Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+        :param builtins.str routing_mode: Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+        :param 'GetGtmPolicyStatisticsArgs' statistics: Statistics for addresses associated with the scheduling policy.
+        :param Sequence['GetGtmPolicyTargetArgs'] targets: List of target address pools associated with the scheduling policy.
+        """
+        pulumi.set(__self__, "alarm_only", alarm_only)
+        pulumi.set(__self__, "perf_mode", perf_mode)
+        pulumi.set(__self__, "routing_mode", routing_mode)
+        pulumi.set(__self__, "statistics", statistics)
+        pulumi.set(__self__, "targets", targets)
+
+    @property
+    @pulumi.getter(name="alarmOnly")
+    def alarm_only(self) -> builtins.bool:
+        """
+        If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+        """
+        return pulumi.get(self, "alarm_only")
+
+    @property
+    @pulumi.getter(name="perfMode")
+    def perf_mode(self) -> builtins.str:
+        """
+        Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+        """
+        return pulumi.get(self, "perf_mode")
+
+    @property
+    @pulumi.getter(name="routingMode")
+    def routing_mode(self) -> builtins.str:
+        """
+        Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+        """
+        return pulumi.get(self, "routing_mode")
+
+    @property
+    @pulumi.getter
+    def statistics(self) -> 'outputs.GetGtmPolicyStatisticsResult':
+        """
+        Statistics for addresses associated with the scheduling policy.
+        """
+        return pulumi.get(self, "statistics")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetGtmPolicyTargetResult']:
+        """
+        List of target address pools associated with the scheduling policy.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetGtmPolicyStatisticsResult(dict):
+    def __init__(__self__, *,
+                 active_addr: builtins.int,
+                 inactive_addr: builtins.int):
+        """
+        :param builtins.int active_addr: Number of available addresses.
+        :param builtins.int inactive_addr: Number of unavailable addresses.
+        """
+        pulumi.set(__self__, "active_addr", active_addr)
+        pulumi.set(__self__, "inactive_addr", inactive_addr)
+
+    @property
+    @pulumi.getter(name="activeAddr")
+    def active_addr(self) -> builtins.int:
+        """
+        Number of available addresses.
+        """
+        return pulumi.get(self, "active_addr")
+
+    @property
+    @pulumi.getter(name="inactiveAddr")
+    def inactive_addr(self) -> builtins.int:
+        """
+        Number of unavailable addresses.
+        """
+        return pulumi.get(self, "inactive_addr")
+
+
+@pulumi.output_type
+class GetGtmPolicyTargetResult(dict):
+    def __init__(__self__, *,
+                 pool_id: builtins.str):
+        """
+        :param builtins.str pool_id: Target address pool ID.
+        """
+        pulumi.set(__self__, "pool_id", pool_id)
+
+    @property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> builtins.str:
+        """
+        Target address pool ID.
+        """
+        return pulumi.get(self, "pool_id")
+
+
+@pulumi.output_type
+class GetGtmProbeResult(dict):
+    def __init__(__self__, *,
+                 advised_node_count: builtins.int,
+                 disable: builtins.bool,
+                 dns_record_type: builtins.str,
+                 failed_count: builtins.int,
+                 host: builtins.str,
+                 http_method: builtins.str,
+                 http_usability_codes: Sequence['outputs.GetGtmProbeHttpUsabilityCodeResult'],
+                 interval: builtins.int,
+                 is_manual_nodes: builtins.bool,
+                 nodes: Sequence[builtins.str],
+                 ping_count: builtins.int,
+                 ping_loss_percent: builtins.int,
+                 port: builtins.int,
+                 protocol: builtins.str,
+                 tcp_conn_timeout: builtins.int,
+                 timeout: builtins.int,
+                 url: builtins.str):
+        """
+        :param builtins.int advised_node_count: Recommended number of health check probe points.
+        :param builtins.bool disable: Whether health check is disabled. true: disabled. false: enabled.
+        :param builtins.str dns_record_type: DNS record type for the health check.
+        :param builtins.int failed_count: Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+        :param builtins.str host: Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param builtins.str http_method: HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param Sequence['GetGtmProbeHttpUsabilityCodeArgs'] http_usability_codes: Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+        :param builtins.int interval: Interval between each health check, in seconds.
+        :param builtins.bool is_manual_nodes: Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+        :param Sequence[builtins.str] nodes: List of probe nodes used for health checks.
+        :param builtins.int ping_count: Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        :param builtins.int ping_loss_percent: Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        :param builtins.int port: Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        :param builtins.str protocol: Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        :param builtins.int tcp_conn_timeout: Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+        :param builtins.int timeout: Timeout for the health check task. Unit: seconds.
+        :param builtins.str url: Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        pulumi.set(__self__, "advised_node_count", advised_node_count)
+        pulumi.set(__self__, "disable", disable)
+        pulumi.set(__self__, "dns_record_type", dns_record_type)
+        pulumi.set(__self__, "failed_count", failed_count)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "http_method", http_method)
+        pulumi.set(__self__, "http_usability_codes", http_usability_codes)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "is_manual_nodes", is_manual_nodes)
+        pulumi.set(__self__, "nodes", nodes)
+        pulumi.set(__self__, "ping_count", ping_count)
+        pulumi.set(__self__, "ping_loss_percent", ping_loss_percent)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "tcp_conn_timeout", tcp_conn_timeout)
+        pulumi.set(__self__, "timeout", timeout)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="advisedNodeCount")
+    def advised_node_count(self) -> builtins.int:
+        """
+        Recommended number of health check probe points.
+        """
+        return pulumi.get(self, "advised_node_count")
+
+    @property
+    @pulumi.getter
+    def disable(self) -> builtins.bool:
+        """
+        Whether health check is disabled. true: disabled. false: enabled.
+        """
+        return pulumi.get(self, "disable")
+
+    @property
+    @pulumi.getter(name="dnsRecordType")
+    def dns_record_type(self) -> builtins.str:
+        """
+        DNS record type for the health check.
+        """
+        return pulumi.get(self, "dns_record_type")
+
+    @property
+    @pulumi.getter(name="failedCount")
+    def failed_count(self) -> builtins.int:
+        """
+        Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+        """
+        return pulumi.get(self, "failed_count")
+
+    @property
+    @pulumi.getter
+    def host(self) -> builtins.str:
+        """
+        Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="httpMethod")
+    def http_method(self) -> builtins.str:
+        """
+        HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "http_method")
+
+    @property
+    @pulumi.getter(name="httpUsabilityCodes")
+    def http_usability_codes(self) -> Sequence['outputs.GetGtmProbeHttpUsabilityCodeResult']:
+        """
+        Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+        """
+        return pulumi.get(self, "http_usability_codes")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> builtins.int:
+        """
+        Interval between each health check, in seconds.
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="isManualNodes")
+    def is_manual_nodes(self) -> builtins.bool:
+        """
+        Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+        """
+        return pulumi.get(self, "is_manual_nodes")
+
+    @property
+    @pulumi.getter
+    def nodes(self) -> Sequence[builtins.str]:
+        """
+        List of probe nodes used for health checks.
+        """
+        return pulumi.get(self, "nodes")
+
+    @property
+    @pulumi.getter(name="pingCount")
+    def ping_count(self) -> builtins.int:
+        """
+        Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+        """
+        return pulumi.get(self, "ping_count")
+
+    @property
+    @pulumi.getter(name="pingLossPercent")
+    def ping_loss_percent(self) -> builtins.int:
+        """
+        Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+        """
+        return pulumi.get(self, "ping_loss_percent")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> builtins.str:
+        """
+        Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="tcpConnTimeout")
+    def tcp_conn_timeout(self) -> builtins.int:
+        """
+        Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+        """
+        return pulumi.get(self, "tcp_conn_timeout")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> builtins.int:
+        """
+        Timeout for the health check task. Unit: seconds.
+        """
+        return pulumi.get(self, "timeout")
+
+    @property
+    @pulumi.getter
+    def url(self) -> builtins.str:
+        """
+        Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetGtmProbeHttpUsabilityCodeResult(dict):
+    def __init__(__self__, *,
+                 codes: Sequence[builtins.int],
+                 operator: builtins.str):
+        """
+        :param Sequence[builtins.int] codes: List of HTTP status codes.
+        :param builtins.str operator: Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+        """
+        pulumi.set(__self__, "codes", codes)
+        pulumi.set(__self__, "operator", operator)
+
+    @property
+    @pulumi.getter
+    def codes(self) -> Sequence[builtins.int]:
+        """
+        List of HTTP status codes.
+        """
+        return pulumi.get(self, "codes")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
         """
         return pulumi.get(self, "operator")
 

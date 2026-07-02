@@ -65,14 +65,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Alert notification group ID bound to the alert policy.
+     * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      * 
      */
     @Import(name="contactGroupIds")
     private @Nullable Output<List<String>> contactGroupIds;
 
     /**
-     * @return Alert notification group ID bound to the alert policy.
+     * @return When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      * 
      */
     public Optional<Output<List<String>>> contactGroupIds() {
@@ -80,14 +80,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Alert policy description.
+     * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Alert policy description.
+     * @return Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -95,14 +95,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Dimension configuration.
+     * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      * 
      */
     @Import(name="dimensionConditions")
     private @Nullable Output<RuleDimensionConditionsArgs> dimensionConditions;
 
     /**
-     * @return Dimension configuration.
+     * @return Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      * 
      */
     public Optional<Output<RuleDimensionConditionsArgs>> dimensionConditions() {
@@ -110,14 +110,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Policy expiration time, in HH:MM format.
+     * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      * 
      */
     @Import(name="effectEndAt", required=true)
     private Output<String> effectEndAt;
 
     /**
-     * @return Policy expiration time, in HH:MM format.
+     * @return End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      * 
      */
     public Output<String> effectEndAt() {
@@ -125,14 +125,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Policy start time, in HH:MM format.
+     * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      * 
      */
     @Import(name="effectStartAt", required=true)
     private Output<String> effectStartAt;
 
     /**
-     * @return Policy start time, in HH:MM format.
+     * @return Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      * 
      */
     public Output<String> effectStartAt() {
@@ -155,14 +155,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Duration required to trigger an alert, in minutes.
+     * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      * 
      */
     @Import(name="evaluationCount", required=true)
     private Output<Integer> evaluationCount;
 
     /**
-     * @return Duration required to trigger an alert, in minutes.
+     * @return Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      * 
      */
     public Output<Integer> evaluationCount() {
@@ -207,14 +207,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * @return The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      * 
      */
     public Output<String> namespace() {
@@ -237,14 +237,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Notification policy ID.
+     * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      * 
      */
     @Import(name="notificationId")
     private @Nullable Output<String> notificationId;
 
     /**
-     * @return Notification policy ID.
+     * @return Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      * 
      */
     public Optional<Output<String>> notificationId() {
@@ -274,14 +274,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Project to which the alert policy belongs.
+     * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return Project to which the alert policy belongs.
+     * @return Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -304,14 +304,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Availability zone ID of the cloud product.
+     * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      * 
      */
     @Import(name="regions")
     private @Nullable Output<List<String>> regions;
 
     /**
-     * @return Availability zone ID of the cloud product.
+     * @return Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      * 
      */
     public Optional<Output<List<String>>> regions() {
@@ -319,14 +319,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Alert policy name.
+     * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      * 
      */
     @Import(name="ruleName", required=true)
     private Output<String> ruleName;
 
     /**
-     * @return Alert policy name.
+     * @return Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      * 
      */
     public Output<String> ruleName() {
@@ -532,7 +532,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactGroupIds Alert notification group ID bound to the alert policy.
+         * @param contactGroupIds When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactGroupIds Alert notification group ID bound to the alert policy.
+         * @param contactGroupIds When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
          * 
          * @return builder
          * 
@@ -553,7 +553,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactGroupIds Alert notification group ID bound to the alert policy.
+         * @param contactGroupIds When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Alert policy description.
+         * @param description Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Alert policy description.
+         * @param description Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensionConditions Dimension configuration.
+         * @param dimensionConditions Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
          * 
          * @return builder
          * 
@@ -595,7 +595,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensionConditions Dimension configuration.
+         * @param dimensionConditions Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
          * 
          * @return builder
          * 
@@ -605,7 +605,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectEndAt Policy expiration time, in HH:MM format.
+         * @param effectEndAt End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectEndAt Policy expiration time, in HH:MM format.
+         * @param effectEndAt End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
          * 
          * @return builder
          * 
@@ -626,7 +626,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectStartAt Policy start time, in HH:MM format.
+         * @param effectStartAt Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param effectStartAt Policy start time, in HH:MM format.
+         * @param effectStartAt Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param evaluationCount Duration required to trigger an alert, in minutes.
+         * @param evaluationCount Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param evaluationCount Duration required to trigger an alert, in minutes.
+         * @param evaluationCount Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+         * @param namespace The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+         * @param namespace The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
          * 
          * @return builder
          * 
@@ -786,7 +786,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notificationId Notification policy ID.
+         * @param notificationId Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param notificationId Notification policy ID.
+         * @param notificationId Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName Project to which the alert policy belongs.
+         * @param projectName Project name to which the alert policy belongs. If not specified, it defaults to the default project.
          * 
          * @return builder
          * 
@@ -852,7 +852,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName Project to which the alert policy belongs.
+         * @param projectName Project name to which the alert policy belongs. If not specified, it defaults to the default project.
          * 
          * @return builder
          * 
@@ -883,7 +883,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regions Availability zone ID of the cloud product.
+         * @param regions Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
          * 
          * @return builder
          * 
@@ -894,7 +894,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regions Availability zone ID of the cloud product.
+         * @param regions Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
          * 
          * @return builder
          * 
@@ -904,7 +904,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param regions Availability zone ID of the cloud product.
+         * @param regions Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
          * 
          * @return builder
          * 
@@ -914,7 +914,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName Alert policy name.
+         * @param ruleName Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
          * 
          * @return builder
          * 
@@ -925,7 +925,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName Alert policy name.
+         * @param ruleName Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
          * 
          * @return builder
          * 

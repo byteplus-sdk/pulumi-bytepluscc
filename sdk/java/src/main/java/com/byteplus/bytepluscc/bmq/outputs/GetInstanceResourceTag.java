@@ -18,7 +18,7 @@ public final class GetInstanceResourceTag {
      */
     private List<GetInstanceResourceTagTagKv> tagKvs;
     /**
-     * @return Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+     * @return Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     private String type;
@@ -32,7 +32,7 @@ public final class GetInstanceResourceTag {
         return this.tagKvs;
     }
     /**
-     * @return Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+     * @return Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
      * 
      */
     public String type() {

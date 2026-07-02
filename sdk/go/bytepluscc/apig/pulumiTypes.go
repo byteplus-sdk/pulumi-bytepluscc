@@ -7042,11 +7042,11 @@ func (o GetGatewayBackendSpecOutput) VkePodCidr() pulumi.StringOutput {
 }
 
 type GetGatewayCustomLog struct {
-	// Custom variable information
+	// Custom Variable Information
 	CustomVariables []GetGatewayCustomLogCustomVariable `pulumi:"customVariables"`
-	// Request header information
+	// Request Header Information
 	RequestHeaders []GetGatewayCustomLogRequestHeader `pulumi:"requestHeaders"`
-	// Response header information
+	// Response Header Information
 	ResponseHeaders []GetGatewayCustomLogResponseHeader `pulumi:"responseHeaders"`
 }
 
@@ -7062,11 +7062,11 @@ type GetGatewayCustomLogInput interface {
 }
 
 type GetGatewayCustomLogArgs struct {
-	// Custom variable information
+	// Custom Variable Information
 	CustomVariables GetGatewayCustomLogCustomVariableArrayInput `pulumi:"customVariables"`
-	// Request header information
+	// Request Header Information
 	RequestHeaders GetGatewayCustomLogRequestHeaderArrayInput `pulumi:"requestHeaders"`
-	// Response header information
+	// Response Header Information
 	ResponseHeaders GetGatewayCustomLogResponseHeaderArrayInput `pulumi:"responseHeaders"`
 }
 
@@ -7096,17 +7096,17 @@ func (o GetGatewayCustomLogOutput) ToGetGatewayCustomLogOutputWithContext(ctx co
 	return o
 }
 
-// Custom variable information
+// Custom Variable Information
 func (o GetGatewayCustomLogOutput) CustomVariables() GetGatewayCustomLogCustomVariableArrayOutput {
 	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogCustomVariable { return v.CustomVariables }).(GetGatewayCustomLogCustomVariableArrayOutput)
 }
 
-// Request header information
+// Request Header Information
 func (o GetGatewayCustomLogOutput) RequestHeaders() GetGatewayCustomLogRequestHeaderArrayOutput {
 	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogRequestHeader { return v.RequestHeaders }).(GetGatewayCustomLogRequestHeaderArrayOutput)
 }
 
-// Response header information
+// Response Header Information
 func (o GetGatewayCustomLogOutput) ResponseHeaders() GetGatewayCustomLogResponseHeaderArrayOutput {
 	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogResponseHeader { return v.ResponseHeaders }).(GetGatewayCustomLogResponseHeaderArrayOutput)
 }

@@ -24,6 +24,7 @@ __all__ = [
     'DomainTcpListenerConfig',
     'DomainTlsFieldsConfig',
     'DomainTlsFieldsConfigHeadersConfig',
+    'HostGroupRelatedRule',
     'GetDomainBackendGroupResult',
     'GetDomainBackendGroupBackendResult',
     'GetDomainCloudAccessConfigResult',
@@ -31,6 +32,7 @@ __all__ = [
     'GetDomainTcpListenerConfigResult',
     'GetDomainTlsFieldsConfigResult',
     'GetDomainTlsFieldsConfigHeadersConfigResult',
+    'GetHostGroupRelatedRuleResult',
 ]
 
 @pulumi.output_type
@@ -528,6 +530,70 @@ class DomainTlsFieldsConfigHeadersConfig(dict):
 
 
 @pulumi.output_type
+class HostGroupRelatedRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleName":
+            suggest = "rule_name"
+        elif key == "ruleTag":
+            suggest = "rule_tag"
+        elif key == "ruleType":
+            suggest = "rule_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostGroupRelatedRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostGroupRelatedRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostGroupRelatedRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rule_name: Optional[builtins.str] = None,
+                 rule_tag: Optional[builtins.str] = None,
+                 rule_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str rule_name: Rule name.
+        :param builtins.str rule_tag: Rule ID.
+        :param builtins.str rule_type: Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
+        if rule_tag is not None:
+            pulumi.set(__self__, "rule_tag", rule_tag)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[builtins.str]:
+        """
+        Rule name.
+        """
+        return pulumi.get(self, "rule_name")
+
+    @property
+    @pulumi.getter(name="ruleTag")
+    def rule_tag(self) -> Optional[builtins.str]:
+        """
+        Rule ID.
+        """
+        return pulumi.get(self, "rule_tag")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        return pulumi.get(self, "rule_type")
+
+
+@pulumi.output_type
 class GetDomainBackendGroupResult(dict):
     def __init__(__self__, *,
                  access_ports: Sequence[builtins.int],
@@ -887,5 +953,45 @@ class GetDomainTlsFieldsConfigHeadersConfigResult(dict):
         Statistics header fields. Use the specified fields for log analysis and alerts.
         """
         return pulumi.get(self, "statistical_key_lists")
+
+
+@pulumi.output_type
+class GetHostGroupRelatedRuleResult(dict):
+    def __init__(__self__, *,
+                 rule_name: builtins.str,
+                 rule_tag: builtins.str,
+                 rule_type: builtins.str):
+        """
+        :param builtins.str rule_name: Rule name.
+        :param builtins.str rule_tag: Rule ID.
+        :param builtins.str rule_type: Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        pulumi.set(__self__, "rule_name", rule_name)
+        pulumi.set(__self__, "rule_tag", rule_tag)
+        pulumi.set(__self__, "rule_type", rule_type)
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> builtins.str:
+        """
+        Rule name.
+        """
+        return pulumi.get(self, "rule_name")
+
+    @property
+    @pulumi.getter(name="ruleTag")
+    def rule_tag(self) -> builtins.str:
+        """
+        Rule ID.
+        """
+        return pulumi.get(self, "rule_tag")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        return pulumi.get(self, "rule_type")
 
 

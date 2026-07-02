@@ -38,6 +38,8 @@ __all__ = [
     'AlarmRequestCycleArgsDict',
     'AlarmTriggerConditionArgs',
     'AlarmTriggerConditionArgsDict',
+    'AlarmWebhookIntegrationTypeWebhookHeaderArgs',
+    'AlarmWebhookIntegrationTypeWebhookHeaderArgsDict',
     'EtlTargetResourceArgs',
     'EtlTargetResourceArgsDict',
     'HostGroupRuleArgs',
@@ -1541,6 +1543,58 @@ class AlarmTriggerConditionArgs:
     @severity.setter
     def severity(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "severity", value)
+
+
+if not MYPY:
+    class AlarmWebhookIntegrationTypeWebhookHeaderArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Key for custom request header
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Value for custom request header
+        """
+elif False:
+    AlarmWebhookIntegrationTypeWebhookHeaderArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmWebhookIntegrationTypeWebhookHeaderArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Key for custom request header
+        :param pulumi.Input[builtins.str] value: Value for custom request header
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Key for custom request header
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Value for custom request header
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleNotifyTemplate {
     /**
-     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+     * @return Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
      * 
      */
     private String channel;
@@ -23,7 +23,7 @@ public final class GetRuleNotifyTemplate {
 
     private GetRuleNotifyTemplate() {}
     /**
-     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+     * @return Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
      * 
      */
     public String channel() {

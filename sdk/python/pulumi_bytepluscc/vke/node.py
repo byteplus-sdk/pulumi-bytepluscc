@@ -23,18 +23,17 @@ __all__ = ['NodeArgs', 'Node']
 class NodeArgs:
     def __init__(__self__, *,
                  cluster_id: pulumi.Input[builtins.str],
-                 node_pool_id: pulumi.Input[builtins.str],
                  additional_container_storage_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  container_storage_path: Optional[pulumi.Input[builtins.str]] = None,
                  image_id: Optional[pulumi.Input[builtins.str]] = None,
                  initialize_script: Optional[pulumi.Input[builtins.str]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  keep_instance_name: Optional[pulumi.Input[builtins.bool]] = None,
-                 kubernetes_config: Optional[pulumi.Input['NodeKubernetesConfigArgs']] = None):
+                 kubernetes_config: Optional[pulumi.Input['NodeKubernetesConfigArgs']] = None,
+                 node_pool_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Node resource.
         :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
-        :param pulumi.Input[builtins.str] node_pool_id: Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
         :param pulumi.Input[builtins.bool] additional_container_storage_enabled: Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool's data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool's data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
         :param pulumi.Input[builtins.str] container_storage_path: Use this data disk device to mount the container and image storage directory /var/lib/containerd.
                Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
@@ -43,9 +42,9 @@ class NodeArgs:
         :param pulumi.Input[builtins.str] instance_id: Cloud server instance ID corresponding to the node.
         :param pulumi.Input[builtins.bool] keep_instance_name: Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
         :param pulumi.Input['NodeKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
+        :param pulumi.Input[builtins.str] node_pool_id: Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
-        pulumi.set(__self__, "node_pool_id", node_pool_id)
         if additional_container_storage_enabled is not None:
             pulumi.set(__self__, "additional_container_storage_enabled", additional_container_storage_enabled)
         if container_storage_path is not None:
@@ -60,6 +59,8 @@ class NodeArgs:
             pulumi.set(__self__, "keep_instance_name", keep_instance_name)
         if kubernetes_config is not None:
             pulumi.set(__self__, "kubernetes_config", kubernetes_config)
+        if node_pool_id is not None:
+            pulumi.set(__self__, "node_pool_id", node_pool_id)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -72,18 +73,6 @@ class NodeArgs:
     @cluster_id.setter
     def cluster_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "cluster_id", value)
-
-    @property
-    @pulumi.getter(name="nodePoolId")
-    def node_pool_id(self) -> pulumi.Input[builtins.str]:
-        """
-        Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
-        """
-        return pulumi.get(self, "node_pool_id")
-
-    @node_pool_id.setter
-    def node_pool_id(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "node_pool_id", value)
 
     @property
     @pulumi.getter(name="additionalContainerStorageEnabled")
@@ -169,6 +158,18 @@ class NodeArgs:
     @kubernetes_config.setter
     def kubernetes_config(self, value: Optional[pulumi.Input['NodeKubernetesConfigArgs']]):
         pulumi.set(self, "kubernetes_config", value)
+
+    @property
+    @pulumi.getter(name="nodePoolId")
+    def node_pool_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
+        """
+        return pulumi.get(self, "node_pool_id")
+
+    @node_pool_id.setter
+    def node_pool_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_pool_id", value)
 
 
 @pulumi.input_type
@@ -579,8 +580,6 @@ class Node(pulumi.CustomResource):
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["keep_instance_name"] = keep_instance_name
             __props__.__dict__["kubernetes_config"] = kubernetes_config
-            if node_pool_id is None and not opts.urn:
-                raise TypeError("Missing required property 'node_pool_id'")
             __props__.__dict__["node_pool_id"] = node_pool_id
             __props__.__dict__["created_time"] = None
             __props__.__dict__["is_virtual"] = None

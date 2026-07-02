@@ -31,7 +31,7 @@ export interface GetCertificateArgs {
  */
 export interface GetCertificateResult {
     /**
-     * Certificate ID
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      */
     readonly certificateId: string;
     /**
@@ -66,6 +66,10 @@ export interface GetCertificateResult {
      * List of listeners associated with the certificate
      */
     readonly listeners: string[];
+    /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     */
+    readonly oldCertificateId: string;
     /**
      * Server certificate private key. Required when certificate type is Server
      */

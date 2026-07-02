@@ -17,22 +17,22 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryResult {
     /**
-     * @return Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+     * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
      * 
      */
     private String chargeType;
     /**
-     * @return Time when the container registry instance was created.
+     * @return Creation time of the container registry instance
      * 
      */
     private String createdTime;
     /**
-     * @return Public endpoint information for the image repository instance
+     * @return Public endpoint information for the image repository instance.
      * 
      */
     private GetRegistryEndpoint endpoint;
     /**
-     * @return Only applicable when the billing type is HybridCharge. Instance expiration time
+     * @return Instance expiration time is only available for HybridCharge billing type
      * 
      */
     private String expireTime;
@@ -42,32 +42,32 @@ public final class GetRegistryResult {
      */
     private String id;
     /**
-     * @return Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     private String name;
     /**
-     * @return Specify the project to associate with the instance. Each instance can only be associated with one project
+     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     private String project;
     /**
-     * @return ProxyCache configuration. Required when set to ProxyCache
+     * @return ProxyCache configuration. Required when set as ProxyCache
      * 
      */
     private GetRegistryProxyCache proxyCache;
     /**
-     * @return Whether to set as ProxyCache instance
+     * @return Set as ProxyCache instance
      * 
      */
     private Boolean proxyCacheEnabled;
     /**
-     * @return Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+     * @return Instance auto-renewal type is only available for HybridCharge billing type
      * 
      */
     private String renewType;
     /**
-     * @return Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     private GetRegistryStatus status;
@@ -77,35 +77,35 @@ public final class GetRegistryResult {
      */
     private List<GetRegistryTag> tags;
     /**
-     * @return If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     private String type;
 
     private GetRegistryResult() {}
     /**
-     * @return Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+     * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return Time when the container registry instance was created.
+     * @return Creation time of the container registry instance
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return Public endpoint information for the image repository instance
+     * @return Public endpoint information for the image repository instance.
      * 
      */
     public GetRegistryEndpoint endpoint() {
         return this.endpoint;
     }
     /**
-     * @return Only applicable when the billing type is HybridCharge. Instance expiration time
+     * @return Instance expiration time is only available for HybridCharge billing type
      * 
      */
     public String expireTime() {
@@ -119,42 +119,42 @@ public final class GetRegistryResult {
         return this.id;
     }
     /**
-     * @return Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return Specify the project to associate with the instance. Each instance can only be associated with one project
+     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     public String project() {
         return this.project;
     }
     /**
-     * @return ProxyCache configuration. Required when set to ProxyCache
+     * @return ProxyCache configuration. Required when set as ProxyCache
      * 
      */
     public GetRegistryProxyCache proxyCache() {
         return this.proxyCache;
     }
     /**
-     * @return Whether to set as ProxyCache instance
+     * @return Set as ProxyCache instance
      * 
      */
     public Boolean proxyCacheEnabled() {
         return this.proxyCacheEnabled;
     }
     /**
-     * @return Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+     * @return Instance auto-renewal type is only available for HybridCharge billing type
      * 
      */
     public String renewType() {
         return this.renewType;
     }
     /**
-     * @return Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     public GetRegistryStatus status() {
@@ -168,7 +168,7 @@ public final class GetRegistryResult {
         return this.tags;
     }
     /**
-     * @return If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     public String type() {

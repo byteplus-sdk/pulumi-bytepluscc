@@ -11,9 +11,9 @@ import * as utilities from "../utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@pulumi/bytepluscc";
+ * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
  *
- * const cloudIdentityUserProvisioningDemo = new bytepluscc.index.CloudidentityUserprovisioning("CloudIdentityUserProvisioningDemo", {
+ * const cloudIdentityUserProvisioningDemo = new bytepluscc.cloudidentity.UserProvisioning("CloudIdentityUserProvisioningDemo", {
  *     targetId: "2103612***",
  *     principalType: "Group",
  *     principalId: "8990752****",

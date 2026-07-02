@@ -18,14 +18,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     public static final CertificateState Empty = new CertificateState();
 
     /**
-     * Certificate ID
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return Certificate ID
+     * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -138,6 +138,21 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    @Import(name="oldCertificateId")
+    private @Nullable Output<String> oldCertificateId;
+
+    /**
+     * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    public Optional<Output<String>> oldCertificateId() {
+        return Optional.ofNullable(this.oldCertificateId);
+    }
+
+    /**
      * Server certificate private key. Required when certificate type is Server
      * 
      */
@@ -230,6 +245,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         this.domainName = $.domainName;
         this.expiredAt = $.expiredAt;
         this.listeners = $.listeners;
+        this.oldCertificateId = $.oldCertificateId;
         this.privateKey = $.privateKey;
         this.projectName = $.projectName;
         this.publicKey = $.publicKey;
@@ -257,7 +273,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId Certificate ID
+         * @param certificateId Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
          * 
          * @return builder
          * 
@@ -268,7 +284,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId Certificate ID
+         * @param certificateId Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
          * 
          * @return builder
          * 
@@ -432,6 +448,27 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder listeners(String... listeners) {
             return listeners(List.of(listeners));
+        }
+
+        /**
+         * @param oldCertificateId Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oldCertificateId(@Nullable Output<String> oldCertificateId) {
+            $.oldCertificateId = oldCertificateId;
+            return this;
+        }
+
+        /**
+         * @param oldCertificateId Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oldCertificateId(String oldCertificateId) {
+            return oldCertificateId(Output.of(oldCertificateId));
         }
 
         /**

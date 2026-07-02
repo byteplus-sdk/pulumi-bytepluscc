@@ -47,6 +47,7 @@ import * as utilities from "../utilities";
  *     noAuthMode: "open",
  *     parameterGroupId: "DefaultParamGroupId-6.0",
  *     continuousBackup: true,
+ *     createBackup: true,
  * });
  * ```
  *
@@ -100,6 +101,7 @@ export class Instance extends pulumi.CustomResource {
      * Restore data from the backup set to the original Redis instance.
      */
     public readonly backupRestore!: pulumi.Output<outputs.redis.InstanceBackupRestore>;
+    public /*out*/ readonly backups!: pulumi.Output<outputs.redis.InstanceBackup[]>;
     /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      */
@@ -278,6 +280,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["autoRenew"] = state ? state.autoRenew : undefined;
             resourceInputs["backupPointName"] = state ? state.backupPointName : undefined;
             resourceInputs["backupRestore"] = state ? state.backupRestore : undefined;
+            resourceInputs["backups"] = state ? state.backups : undefined;
             resourceInputs["blueGreenRole"] = state ? state.blueGreenRole : undefined;
             resourceInputs["capacity"] = state ? state.capacity : undefined;
             resourceInputs["chargeType"] = state ? state.chargeType : undefined;
@@ -374,6 +377,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["vpcId"] = args ? args.vpcId : undefined;
+            resourceInputs["backups"] = undefined /*out*/;
             resourceInputs["blueGreenRole"] = undefined /*out*/;
             resourceInputs["capacity"] = undefined /*out*/;
             resourceInputs["createTime"] = undefined /*out*/;
@@ -420,6 +424,7 @@ export interface InstanceState {
      * Restore data from the backup set to the original Redis instance.
      */
     backupRestore?: pulumi.Input<inputs.redis.InstanceBackupRestore>;
+    backups?: pulumi.Input<pulumi.Input<inputs.redis.InstanceBackup>[]>;
     /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      */

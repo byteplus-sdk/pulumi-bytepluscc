@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayCustomLogResult
     {
         /// <summary>
-        /// Custom variable information
+        /// Custom Variable Information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayCustomLogCustomVariableResult> CustomVariables;
         /// <summary>
-        /// Request header information
+        /// Request Header Information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayCustomLogRequestHeaderResult> RequestHeaders;
         /// <summary>
-        /// Response header information
+        /// Response Header Information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayCustomLogResponseHeaderResult> ResponseHeaders;
 

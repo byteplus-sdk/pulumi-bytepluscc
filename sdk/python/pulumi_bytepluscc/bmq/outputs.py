@@ -75,10 +75,10 @@ class GroupResetInfo(dict):
                  reset_value: Optional[builtins.int] = None,
                  topic_id: Optional[builtins.str] = None):
         """
-        :param builtins.str offset_type: This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
-        :param builtins.int partition_id: Partition number.
-        :param builtins.str reset_by: Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
-        :param builtins.int reset_value: Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+        :param builtins.str offset_type: If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
+        :param builtins.int partition_id: Partition number
+        :param builtins.str reset_by: Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
+        :param builtins.int reset_value: Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
         :param builtins.str topic_id: Topic ID。
         """
         if offset_type is not None:
@@ -96,7 +96,7 @@ class GroupResetInfo(dict):
     @pulumi.getter(name="offsetType")
     def offset_type(self) -> Optional[builtins.str]:
         """
-        This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+        If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
         """
         return pulumi.get(self, "offset_type")
 
@@ -104,7 +104,7 @@ class GroupResetInfo(dict):
     @pulumi.getter(name="partitionId")
     def partition_id(self) -> Optional[builtins.int]:
         """
-        Partition number.
+        Partition number
         """
         return pulumi.get(self, "partition_id")
 
@@ -112,7 +112,7 @@ class GroupResetInfo(dict):
     @pulumi.getter(name="resetBy")
     def reset_by(self) -> Optional[builtins.str]:
         """
-        Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+        Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
         """
         return pulumi.get(self, "reset_by")
 
@@ -120,7 +120,7 @@ class GroupResetInfo(dict):
     @pulumi.getter(name="resetValue")
     def reset_value(self) -> Optional[builtins.int]:
         """
-        Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+        Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
         """
         return pulumi.get(self, "reset_value")
 
@@ -169,14 +169,14 @@ class GroupTopicInfo(dict):
                  topic_id: Optional[builtins.str] = None,
                  topic_name: Optional[builtins.str] = None):
         """
-        :param builtins.str create_time: Topic creation time.
-        :param builtins.str description: Topic description.
-        :param builtins.int lag: Number of unconsumed messages in the Topic.
-        :param builtins.int partitions: Number of Topic partitions.
-        :param builtins.int retention: Retention period of data in the Topic, in hours.
-        :param builtins.str status: Topic status.
+        :param builtins.str create_time: Topic creation time
+        :param builtins.str description: Topic description
+        :param builtins.int lag: Number of unconsumed messages in the Topic
+        :param builtins.int partitions: Number of Topic partitions
+        :param builtins.int retention: Retention period of data in the Topic, in hours
+        :param builtins.str status: Topic status
         :param builtins.str topic_id: Topic ID。
-        :param builtins.str topic_name: Topic name.
+        :param builtins.str topic_name: Topic name
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -201,7 +201,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[builtins.str]:
         """
-        Topic creation time.
+        Topic creation time
         """
         return pulumi.get(self, "create_time")
 
@@ -209,7 +209,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        Topic description.
+        Topic description
         """
         return pulumi.get(self, "description")
 
@@ -217,7 +217,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter
     def lag(self) -> Optional[builtins.int]:
         """
-        Number of unconsumed messages in the Topic.
+        Number of unconsumed messages in the Topic
         """
         return pulumi.get(self, "lag")
 
@@ -230,7 +230,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter
     def partitions(self) -> Optional[builtins.int]:
         """
-        Number of Topic partitions.
+        Number of Topic partitions
         """
         return pulumi.get(self, "partitions")
 
@@ -238,7 +238,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter
     def retention(self) -> Optional[builtins.int]:
         """
-        Retention period of data in the Topic, in hours.
+        Retention period of data in the Topic, in hours
         """
         return pulumi.get(self, "retention")
 
@@ -246,7 +246,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        Topic status.
+        Topic status
         """
         return pulumi.get(self, "status")
 
@@ -262,7 +262,7 @@ class GroupTopicInfo(dict):
     @pulumi.getter(name="topicName")
     def topic_name(self) -> Optional[builtins.str]:
         """
-        Topic name.
+        Topic name
         """
         return pulumi.get(self, "topic_name")
 
@@ -302,12 +302,12 @@ class GroupTopicInfoPartitionInfo(dict):
                  partition_id: Optional[builtins.int] = None,
                  topic_name: Optional[builtins.str] = None):
         """
-        :param builtins.int current_offset: Current consumption position.
-        :param builtins.str group_name: Name of the Consumer Group.
-        :param builtins.int lag: Number of unconsumed messages in the partition.
-        :param builtins.int latest_offset: Latest consumption position.
-        :param builtins.int partition_id: Partition number.
-        :param builtins.str topic_name: Name of the Topic subscribed by the Consumer Group.
+        :param builtins.int current_offset: Current consumption offset
+        :param builtins.str group_name: Consumer Group name
+        :param builtins.int lag: Number of unconsumed messages in the partition
+        :param builtins.int latest_offset: Latest consumption offset
+        :param builtins.int partition_id: Partition number
+        :param builtins.str topic_name: Name of the Topic subscribed by the Consumer Group
         """
         if current_offset is not None:
             pulumi.set(__self__, "current_offset", current_offset)
@@ -326,7 +326,7 @@ class GroupTopicInfoPartitionInfo(dict):
     @pulumi.getter(name="currentOffset")
     def current_offset(self) -> Optional[builtins.int]:
         """
-        Current consumption position.
+        Current consumption offset
         """
         return pulumi.get(self, "current_offset")
 
@@ -334,7 +334,7 @@ class GroupTopicInfoPartitionInfo(dict):
     @pulumi.getter(name="groupName")
     def group_name(self) -> Optional[builtins.str]:
         """
-        Name of the Consumer Group.
+        Consumer Group name
         """
         return pulumi.get(self, "group_name")
 
@@ -342,7 +342,7 @@ class GroupTopicInfoPartitionInfo(dict):
     @pulumi.getter
     def lag(self) -> Optional[builtins.int]:
         """
-        Number of unconsumed messages in the partition.
+        Number of unconsumed messages in the partition
         """
         return pulumi.get(self, "lag")
 
@@ -350,7 +350,7 @@ class GroupTopicInfoPartitionInfo(dict):
     @pulumi.getter(name="latestOffset")
     def latest_offset(self) -> Optional[builtins.int]:
         """
-        Latest consumption position.
+        Latest consumption offset
         """
         return pulumi.get(self, "latest_offset")
 
@@ -358,7 +358,7 @@ class GroupTopicInfoPartitionInfo(dict):
     @pulumi.getter(name="partitionId")
     def partition_id(self) -> Optional[builtins.int]:
         """
-        Partition number.
+        Partition number
         """
         return pulumi.get(self, "partition_id")
 
@@ -366,7 +366,7 @@ class GroupTopicInfoPartitionInfo(dict):
     @pulumi.getter(name="topicName")
     def topic_name(self) -> Optional[builtins.str]:
         """
-        Name of the Topic subscribed by the Consumer Group.
+        Name of the Topic subscribed by the Consumer Group
         """
         return pulumi.get(self, "topic_name")
 
@@ -443,9 +443,9 @@ class InstanceEndpointsOverlay(dict):
         """
         :param builtins.str address: Domain mapping address
         :param builtins.str eip_id: ID of the EIP bound to the instance
-        :param builtins.str plain: Private network Plain endpoint
+        :param builtins.str plain: Private network Plain access point
         :param builtins.int plain_port: Standard endpoint port
-        :param builtins.str sasl: Private network SASL authentication endpoint
+        :param builtins.str sasl: Private network SASL authentication access point
         :param builtins.int sasl_port: Authentication endpoint port
         :param builtins.str ssl: Encrypted endpoint
         :param builtins.int ssl_port: Encrypted endpoint port
@@ -493,7 +493,7 @@ class InstanceEndpointsOverlay(dict):
     @pulumi.getter
     def plain(self) -> Optional[builtins.str]:
         """
-        Private network Plain endpoint
+        Private network Plain access point
         """
         return pulumi.get(self, "plain")
 
@@ -509,7 +509,7 @@ class InstanceEndpointsOverlay(dict):
     @pulumi.getter
     def sasl(self) -> Optional[builtins.str]:
         """
-        Private network SASL authentication endpoint
+        Private network SASL authentication access point
         """
         return pulumi.get(self, "sasl")
 
@@ -595,9 +595,9 @@ class InstanceEndpointsPublic(dict):
         """
         :param builtins.str address: Domain mapping address
         :param builtins.str eip_id: ID of the EIP bound to the instance
-        :param builtins.str plain: Private network Plain endpoint
+        :param builtins.str plain: Private network Plain access point
         :param builtins.int plain_port: Standard endpoint port
-        :param builtins.str sasl: Private network SASL authentication endpoint
+        :param builtins.str sasl: Private network SASL authentication access point
         :param builtins.int sasl_port: Authentication endpoint port
         :param builtins.str ssl: Encrypted endpoint
         :param builtins.int ssl_port: Encrypted endpoint port
@@ -645,7 +645,7 @@ class InstanceEndpointsPublic(dict):
     @pulumi.getter
     def plain(self) -> Optional[builtins.str]:
         """
-        Private network Plain endpoint
+        Private network Plain access point
         """
         return pulumi.get(self, "plain")
 
@@ -661,7 +661,7 @@ class InstanceEndpointsPublic(dict):
     @pulumi.getter
     def sasl(self) -> Optional[builtins.str]:
         """
-        Private network SASL authentication endpoint
+        Private network SASL authentication access point
         """
         return pulumi.get(self, "sasl")
 
@@ -729,7 +729,7 @@ class InstanceResourceTag(dict):
                  tag_kvs: Optional[Sequence['outputs.InstanceResourceTagTagKv']] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+        :param builtins.str type: Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         if tag_kvs is not None:
             pulumi.set(__self__, "tag_kvs", tag_kvs)
@@ -745,7 +745,7 @@ class InstanceResourceTag(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+        Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         return pulumi.get(self, "type")
 
@@ -758,7 +758,7 @@ class InstanceResourceTagTagKv(dict):
                  value: Optional[builtins.str] = None):
         """
         :param builtins.str key: Tag key
-        :param builtins.str type: Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        :param builtins.str type: Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         :param builtins.str value: Tag value
         """
         if key is not None:
@@ -780,7 +780,7 @@ class InstanceResourceTagTagKv(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         return pulumi.get(self, "type")
 
@@ -851,7 +851,7 @@ class InstanceTag(dict):
                  value: Optional[builtins.str] = None):
         """
         :param builtins.str key: Tag key
-        :param builtins.str type: Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        :param builtins.str type: Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         :param builtins.str value: Tag value
         """
         if key is not None:
@@ -873,7 +873,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         return pulumi.get(self, "type")
 
@@ -895,10 +895,10 @@ class GetGroupResetInfoResult(dict):
                  reset_value: builtins.int,
                  topic_id: builtins.str):
         """
-        :param builtins.str offset_type: This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
-        :param builtins.int partition_id: Partition number.
-        :param builtins.str reset_by: Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
-        :param builtins.int reset_value: Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+        :param builtins.str offset_type: If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
+        :param builtins.int partition_id: Partition number
+        :param builtins.str reset_by: Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
+        :param builtins.int reset_value: Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
         :param builtins.str topic_id: Topic ID。
         """
         pulumi.set(__self__, "offset_type", offset_type)
@@ -911,7 +911,7 @@ class GetGroupResetInfoResult(dict):
     @pulumi.getter(name="offsetType")
     def offset_type(self) -> builtins.str:
         """
-        This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+        If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
         """
         return pulumi.get(self, "offset_type")
 
@@ -919,7 +919,7 @@ class GetGroupResetInfoResult(dict):
     @pulumi.getter(name="partitionId")
     def partition_id(self) -> builtins.int:
         """
-        Partition number.
+        Partition number
         """
         return pulumi.get(self, "partition_id")
 
@@ -927,7 +927,7 @@ class GetGroupResetInfoResult(dict):
     @pulumi.getter(name="resetBy")
     def reset_by(self) -> builtins.str:
         """
-        Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+        Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
         """
         return pulumi.get(self, "reset_by")
 
@@ -935,7 +935,7 @@ class GetGroupResetInfoResult(dict):
     @pulumi.getter(name="resetValue")
     def reset_value(self) -> builtins.int:
         """
-        Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+        Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
         """
         return pulumi.get(self, "reset_value")
 
@@ -961,15 +961,15 @@ class GetGroupTopicInfoResult(dict):
                  topic_id: builtins.str,
                  topic_name: builtins.str):
         """
-        :param builtins.str create_time: Topic creation time.
-        :param builtins.str description: Topic description.
-        :param builtins.int lag: Number of unconsumed messages in the Topic.
-        :param Sequence['GetGroupTopicInfoPartitionInfoArgs'] partition_infos: Partition list.
-        :param builtins.int partitions: Number of Topic partitions.
-        :param builtins.int retention: Retention period of data in the Topic, in hours.
-        :param builtins.str status: Topic status.
+        :param builtins.str create_time: Topic creation time
+        :param builtins.str description: Topic description
+        :param builtins.int lag: Number of unconsumed messages in the Topic
+        :param Sequence['GetGroupTopicInfoPartitionInfoArgs'] partition_infos: Partition list
+        :param builtins.int partitions: Number of Topic partitions
+        :param builtins.int retention: Retention period of data in the Topic, in hours
+        :param builtins.str status: Topic status
         :param builtins.str topic_id: Topic ID。
-        :param builtins.str topic_name: Topic name.
+        :param builtins.str topic_name: Topic name
         """
         pulumi.set(__self__, "create_time", create_time)
         pulumi.set(__self__, "description", description)
@@ -985,7 +985,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        Topic creation time.
+        Topic creation time
         """
         return pulumi.get(self, "create_time")
 
@@ -993,7 +993,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Topic description.
+        Topic description
         """
         return pulumi.get(self, "description")
 
@@ -1001,7 +1001,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter
     def lag(self) -> builtins.int:
         """
-        Number of unconsumed messages in the Topic.
+        Number of unconsumed messages in the Topic
         """
         return pulumi.get(self, "lag")
 
@@ -1009,7 +1009,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter(name="partitionInfos")
     def partition_infos(self) -> Sequence['outputs.GetGroupTopicInfoPartitionInfoResult']:
         """
-        Partition list.
+        Partition list
         """
         return pulumi.get(self, "partition_infos")
 
@@ -1017,7 +1017,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter
     def partitions(self) -> builtins.int:
         """
-        Number of Topic partitions.
+        Number of Topic partitions
         """
         return pulumi.get(self, "partitions")
 
@@ -1025,7 +1025,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter
     def retention(self) -> builtins.int:
         """
-        Retention period of data in the Topic, in hours.
+        Retention period of data in the Topic, in hours
         """
         return pulumi.get(self, "retention")
 
@@ -1033,7 +1033,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Topic status.
+        Topic status
         """
         return pulumi.get(self, "status")
 
@@ -1049,7 +1049,7 @@ class GetGroupTopicInfoResult(dict):
     @pulumi.getter(name="topicName")
     def topic_name(self) -> builtins.str:
         """
-        Topic name.
+        Topic name
         """
         return pulumi.get(self, "topic_name")
 
@@ -1064,12 +1064,12 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
                  partition_id: builtins.int,
                  topic_name: builtins.str):
         """
-        :param builtins.int current_offset: Current consumption position.
-        :param builtins.str group_name: Name of the Consumer Group.
-        :param builtins.int lag: Number of unconsumed messages in the partition.
-        :param builtins.int latest_offset: Latest consumption position.
-        :param builtins.int partition_id: Partition number.
-        :param builtins.str topic_name: Name of the Topic subscribed by the Consumer Group.
+        :param builtins.int current_offset: Current consumption offset
+        :param builtins.str group_name: Consumer Group name
+        :param builtins.int lag: Number of unconsumed messages in the partition
+        :param builtins.int latest_offset: Latest consumption offset
+        :param builtins.int partition_id: Partition number
+        :param builtins.str topic_name: Name of the Topic subscribed by the Consumer Group
         """
         pulumi.set(__self__, "current_offset", current_offset)
         pulumi.set(__self__, "group_name", group_name)
@@ -1082,7 +1082,7 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
     @pulumi.getter(name="currentOffset")
     def current_offset(self) -> builtins.int:
         """
-        Current consumption position.
+        Current consumption offset
         """
         return pulumi.get(self, "current_offset")
 
@@ -1090,7 +1090,7 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
     @pulumi.getter(name="groupName")
     def group_name(self) -> builtins.str:
         """
-        Name of the Consumer Group.
+        Consumer Group name
         """
         return pulumi.get(self, "group_name")
 
@@ -1098,7 +1098,7 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
     @pulumi.getter
     def lag(self) -> builtins.int:
         """
-        Number of unconsumed messages in the partition.
+        Number of unconsumed messages in the partition
         """
         return pulumi.get(self, "lag")
 
@@ -1106,7 +1106,7 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
     @pulumi.getter(name="latestOffset")
     def latest_offset(self) -> builtins.int:
         """
-        Latest consumption position.
+        Latest consumption offset
         """
         return pulumi.get(self, "latest_offset")
 
@@ -1114,7 +1114,7 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
     @pulumi.getter(name="partitionId")
     def partition_id(self) -> builtins.int:
         """
-        Partition number.
+        Partition number
         """
         return pulumi.get(self, "partition_id")
 
@@ -1122,7 +1122,7 @@ class GetGroupTopicInfoPartitionInfoResult(dict):
     @pulumi.getter(name="topicName")
     def topic_name(self) -> builtins.str:
         """
-        Name of the Topic subscribed by the Consumer Group.
+        Name of the Topic subscribed by the Consumer Group
         """
         return pulumi.get(self, "topic_name")
 
@@ -1172,9 +1172,9 @@ class GetInstanceEndpointsOverlayResult(dict):
         """
         :param builtins.str address: Domain mapping address
         :param builtins.str eip_id: ID of the EIP bound to the instance
-        :param builtins.str plain: Private network Plain endpoint
+        :param builtins.str plain: Private network Plain access point
         :param builtins.int plain_port: Standard endpoint port
-        :param builtins.str sasl: Private network SASL authentication endpoint
+        :param builtins.str sasl: Private network SASL authentication access point
         :param builtins.int sasl_port: Authentication endpoint port
         :param builtins.str ssl: Encrypted endpoint
         :param builtins.int ssl_port: Encrypted endpoint port
@@ -1212,7 +1212,7 @@ class GetInstanceEndpointsOverlayResult(dict):
     @pulumi.getter
     def plain(self) -> builtins.str:
         """
-        Private network Plain endpoint
+        Private network Plain access point
         """
         return pulumi.get(self, "plain")
 
@@ -1228,7 +1228,7 @@ class GetInstanceEndpointsOverlayResult(dict):
     @pulumi.getter
     def sasl(self) -> builtins.str:
         """
-        Private network SASL authentication endpoint
+        Private network SASL authentication access point
         """
         return pulumi.get(self, "sasl")
 
@@ -1289,9 +1289,9 @@ class GetInstanceEndpointsPublicResult(dict):
         """
         :param builtins.str address: Domain mapping address
         :param builtins.str eip_id: ID of the EIP bound to the instance
-        :param builtins.str plain: Private network Plain endpoint
+        :param builtins.str plain: Private network Plain access point
         :param builtins.int plain_port: Standard endpoint port
-        :param builtins.str sasl: Private network SASL authentication endpoint
+        :param builtins.str sasl: Private network SASL authentication access point
         :param builtins.int sasl_port: Authentication endpoint port
         :param builtins.str ssl: Encrypted endpoint
         :param builtins.int ssl_port: Encrypted endpoint port
@@ -1329,7 +1329,7 @@ class GetInstanceEndpointsPublicResult(dict):
     @pulumi.getter
     def plain(self) -> builtins.str:
         """
-        Private network Plain endpoint
+        Private network Plain access point
         """
         return pulumi.get(self, "plain")
 
@@ -1345,7 +1345,7 @@ class GetInstanceEndpointsPublicResult(dict):
     @pulumi.getter
     def sasl(self) -> builtins.str:
         """
-        Private network SASL authentication endpoint
+        Private network SASL authentication access point
         """
         return pulumi.get(self, "sasl")
 
@@ -1397,7 +1397,7 @@ class GetInstanceResourceTagResult(dict):
                  type: builtins.str):
         """
         :param Sequence['GetInstanceResourceTagTagKvArgs'] tag_kvs: Tag key-value pair
-        :param builtins.str type: Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+        :param builtins.str type: Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         pulumi.set(__self__, "tag_kvs", tag_kvs)
         pulumi.set(__self__, "type", type)
@@ -1414,7 +1414,7 @@ class GetInstanceResourceTagResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+        Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         return pulumi.get(self, "type")
 
@@ -1427,7 +1427,7 @@ class GetInstanceResourceTagTagKvResult(dict):
                  value: builtins.str):
         """
         :param builtins.str key: Tag key
-        :param builtins.str type: Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        :param builtins.str type: Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
@@ -1446,7 +1446,7 @@ class GetInstanceResourceTagTagKvResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         return pulumi.get(self, "type")
 
@@ -1514,7 +1514,7 @@ class GetInstanceTagResult(dict):
                  value: builtins.str):
         """
         :param builtins.str key: Tag key
-        :param builtins.str type: Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        :param builtins.str type: Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
@@ -1533,7 +1533,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         """
         return pulumi.get(self, "type")
 

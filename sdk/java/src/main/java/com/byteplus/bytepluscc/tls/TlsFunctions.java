@@ -8,6 +8,8 @@ import com.byteplus.bytepluscc.tls.inputs.GetAlarmArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmNotifyGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetAlarmWebhookIntegrationTypeArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetAlarmWebhookIntegrationTypePlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetEtlArgs;
@@ -33,6 +35,8 @@ import com.byteplus.bytepluscc.tls.inputs.GetTopicPlainArgs;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmNotifyGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmNotifyGroupsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmResult;
+import com.byteplus.bytepluscc.tls.outputs.GetAlarmWebhookIntegrationTypeResult;
+import com.byteplus.bytepluscc.tls.outputs.GetAlarmWebhookIntegrationTypesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupsResult;
@@ -183,6 +187,90 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetAlarmNotifyGroupsResult> getAlarmNotifyGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarmNotifyGroups:getAlarmNotifyGroups", TypeShape.of(GetAlarmNotifyGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypeResult> getAlarmWebhookIntegrationType(GetAlarmWebhookIntegrationTypeArgs args) {
+        return getAlarmWebhookIntegrationType(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static CompletableFuture<GetAlarmWebhookIntegrationTypeResult> getAlarmWebhookIntegrationTypePlain(GetAlarmWebhookIntegrationTypePlainArgs args) {
+        return getAlarmWebhookIntegrationTypePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypeResult> getAlarmWebhookIntegrationType(GetAlarmWebhookIntegrationTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmWebhookIntegrationType:getAlarmWebhookIntegrationType", TypeShape.of(GetAlarmWebhookIntegrationTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypeResult> getAlarmWebhookIntegrationType(GetAlarmWebhookIntegrationTypeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmWebhookIntegrationType:getAlarmWebhookIntegrationType", TypeShape.of(GetAlarmWebhookIntegrationTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static CompletableFuture<GetAlarmWebhookIntegrationTypeResult> getAlarmWebhookIntegrationTypePlain(GetAlarmWebhookIntegrationTypePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarmWebhookIntegrationType:getAlarmWebhookIntegrationType", TypeShape.of(GetAlarmWebhookIntegrationTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypes() {
+        return getAlarmWebhookIntegrationTypes(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static CompletableFuture<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypesPlain() {
+        return getAlarmWebhookIntegrationTypesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypes(InvokeArgs args) {
+        return getAlarmWebhookIntegrationTypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static CompletableFuture<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypesPlain(InvokeArgs args) {
+        return getAlarmWebhookIntegrationTypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypes(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmWebhookIntegrationTypes:getAlarmWebhookIntegrationTypes", TypeShape.of(GetAlarmWebhookIntegrationTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static Output<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypes(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getAlarmWebhookIntegrationTypes:getAlarmWebhookIntegrationTypes", TypeShape.of(GetAlarmWebhookIntegrationTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::AlarmWebhookIntegrationType
+     * 
+     */
+    public static CompletableFuture<GetAlarmWebhookIntegrationTypesResult> getAlarmWebhookIntegrationTypesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getAlarmWebhookIntegrationTypes:getAlarmWebhookIntegrationTypes", TypeShape.of(GetAlarmWebhookIntegrationTypesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::TLS::Alarm

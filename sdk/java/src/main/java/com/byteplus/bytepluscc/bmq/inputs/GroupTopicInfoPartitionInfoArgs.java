@@ -17,14 +17,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     public static final GroupTopicInfoPartitionInfoArgs Empty = new GroupTopicInfoPartitionInfoArgs();
 
     /**
-     * Current consumption position.
+     * Current consumption offset
      * 
      */
     @Import(name="currentOffset")
     private @Nullable Output<Integer> currentOffset;
 
     /**
-     * @return Current consumption position.
+     * @return Current consumption offset
      * 
      */
     public Optional<Output<Integer>> currentOffset() {
@@ -32,14 +32,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Name of the Consumer Group.
+     * Consumer Group name
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return Name of the Consumer Group.
+     * @return Consumer Group name
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -47,14 +47,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Number of unconsumed messages in the partition.
+     * Number of unconsumed messages in the partition
      * 
      */
     @Import(name="lag")
     private @Nullable Output<Integer> lag;
 
     /**
-     * @return Number of unconsumed messages in the partition.
+     * @return Number of unconsumed messages in the partition
      * 
      */
     public Optional<Output<Integer>> lag() {
@@ -62,14 +62,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Latest consumption position.
+     * Latest consumption offset
      * 
      */
     @Import(name="latestOffset")
     private @Nullable Output<Integer> latestOffset;
 
     /**
-     * @return Latest consumption position.
+     * @return Latest consumption offset
      * 
      */
     public Optional<Output<Integer>> latestOffset() {
@@ -77,14 +77,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Partition number.
+     * Partition number
      * 
      */
     @Import(name="partitionId")
     private @Nullable Output<Integer> partitionId;
 
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     public Optional<Output<Integer>> partitionId() {
@@ -92,14 +92,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Name of the Topic subscribed by the Consumer Group.
+     * Name of the Topic subscribed by the Consumer Group
      * 
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
-     * @return Name of the Topic subscribed by the Consumer Group.
+     * @return Name of the Topic subscribed by the Consumer Group
      * 
      */
     public Optional<Output<String>> topicName() {
@@ -136,7 +136,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param currentOffset Current consumption position.
+         * @param currentOffset Current consumption offset
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param currentOffset Current consumption position.
+         * @param currentOffset Current consumption offset
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param groupName Name of the Consumer Group.
+         * @param groupName Consumer Group name
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param groupName Name of the Consumer Group.
+         * @param groupName Consumer Group name
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param lag Number of unconsumed messages in the partition.
+         * @param lag Number of unconsumed messages in the partition
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param lag Number of unconsumed messages in the partition.
+         * @param lag Number of unconsumed messages in the partition
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param latestOffset Latest consumption position.
+         * @param latestOffset Latest consumption offset
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param latestOffset Latest consumption position.
+         * @param latestOffset Latest consumption offset
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param partitionId Partition number.
+         * @param partitionId Partition number
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param partitionId Partition number.
+         * @param partitionId Partition number
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param topicName Name of the Topic subscribed by the Consumer Group.
+         * @param topicName Name of the Topic subscribed by the Consumer Group
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param topicName Name of the Topic subscribed by the Consumer Group.
+         * @param topicName Name of the Topic subscribed by the Consumer Group
          * 
          * @return builder
          * 

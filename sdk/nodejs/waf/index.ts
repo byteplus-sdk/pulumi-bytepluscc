@@ -20,6 +20,21 @@ export const getDomains: typeof import("./getDomains").getDomains = null as any;
 export const getDomainsOutput: typeof import("./getDomains").getDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomains","getDomainsOutput"], () => require("./getDomains"));
 
+export { GetHostGroupArgs, GetHostGroupResult, GetHostGroupOutputArgs } from "./getHostGroup";
+export const getHostGroup: typeof import("./getHostGroup").getHostGroup = null as any;
+export const getHostGroupOutput: typeof import("./getHostGroup").getHostGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getHostGroup","getHostGroupOutput"], () => require("./getHostGroup"));
+
+export { GetHostGroupsResult } from "./getHostGroups";
+export const getHostGroups: typeof import("./getHostGroups").getHostGroups = null as any;
+export const getHostGroupsOutput: typeof import("./getHostGroups").getHostGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getHostGroups","getHostGroupsOutput"], () => require("./getHostGroups"));
+
+export { HostGroupArgs, HostGroupState } from "./hostGroup";
+export type HostGroup = import("./hostGroup").HostGroup;
+export const HostGroup: typeof import("./hostGroup").HostGroup = null as any;
+utilities.lazyLoad(exports, ["HostGroup"], () => require("./hostGroup"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:waf/domain:Domain":
                 return new Domain(name, <any>undefined, { urn })
+            case "bytepluscc:waf/hostGroup:HostGroup":
+                return new HostGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/domain", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/hostGroup", _module)

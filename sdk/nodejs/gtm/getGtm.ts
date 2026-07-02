@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -65,9 +67,17 @@ export interface GetGtmResult {
      */
     readonly owner: string;
     /**
+     * Detailed configuration of the scheduling policy for the GTM instance.
+     */
+    readonly policy: outputs.gtm.GetGtmPolicy;
+    /**
      * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
      */
     readonly policyType: string;
+    /**
+     * Detailed configuration of the health check for the GTM instance.
+     */
+    readonly probe: outputs.gtm.GetGtmProbe;
     /**
      * Project name to which the GTM instance belongs
      */

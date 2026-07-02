@@ -19,14 +19,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     public static final GroupState Empty = new GroupState();
 
     /**
-     * Consumer Group creation time.
+     * Consumer Group creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return Consumer Group creation time.
+     * @return Consumer Group creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -34,14 +34,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group description.
+     * Consumer Group description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Consumer Group description.
+     * @return Consumer Group description
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group ID.
+     * Consumer Group ID
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return Consumer Group ID.
+     * @return Consumer Group ID
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -64,14 +64,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * @return Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -79,14 +79,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * BMQ instance ID.
+     * BMQ instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return BMQ instance ID.
+     * @return BMQ instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -94,14 +94,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * User ID associated with the Consumer Group.
+     * User ID of the Consumer Group owner
      * 
      */
     @Import(name="ownerId")
     private @Nullable Output<String> ownerId;
 
     /**
-     * @return User ID associated with the Consumer Group.
+     * @return User ID of the Consumer Group owner
      * 
      */
     public Optional<Output<String>> ownerId() {
@@ -109,14 +109,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name of the user associated with the Consumer Group.
+     * Name of the Consumer Group owner
      * 
      */
     @Import(name="ownerName")
     private @Nullable Output<String> ownerName;
 
     /**
-     * @return Name of the user associated with the Consumer Group.
+     * @return Name of the Consumer Group owner
      * 
      */
     public Optional<Output<String>> ownerName() {
@@ -124,14 +124,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Reset consumption position information.
+     * Reset consumption offset information
      * 
      */
     @Import(name="resetInfo")
     private @Nullable Output<GroupResetInfoArgs> resetInfo;
 
     /**
-     * @return Reset consumption position information.
+     * @return Reset consumption offset information
      * 
      */
     public Optional<Output<GroupResetInfoArgs>> resetInfo() {
@@ -139,14 +139,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group status.
+     * Consumer Group status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Consumer Group status.
+     * @return Consumer Group status
      * 
      */
     public Optional<Output<String>> status() {
@@ -194,7 +194,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Consumer Group creation time.
+         * @param createdTime Consumer Group creation time
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Consumer Group creation time.
+         * @param createdTime Consumer Group creation time
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group description.
+         * @param description Consumer Group description
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group description.
+         * @param description Consumer Group description
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Consumer Group ID.
+         * @param groupId Consumer Group ID
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Consumer Group ID.
+         * @param groupId Consumer Group ID
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+         * @param groupName Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+         * @param groupName Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId BMQ instance ID.
+         * @param instanceId BMQ instance ID
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId BMQ instance ID.
+         * @param instanceId BMQ instance ID
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerId User ID associated with the Consumer Group.
+         * @param ownerId User ID of the Consumer Group owner
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerId User ID associated with the Consumer Group.
+         * @param ownerId User ID of the Consumer Group owner
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerName Name of the user associated with the Consumer Group.
+         * @param ownerName Name of the Consumer Group owner
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerName Name of the user associated with the Consumer Group.
+         * @param ownerName Name of the Consumer Group owner
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo Reset consumption position information.
+         * @param resetInfo Reset consumption offset information
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo Reset consumption position information.
+         * @param resetInfo Reset consumption offset information
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Consumer Group status.
+         * @param status Consumer Group status
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Consumer Group status.
+         * @param status Consumer Group status
          * 
          * @return builder
          * 

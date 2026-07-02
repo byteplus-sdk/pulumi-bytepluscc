@@ -13,6 +13,1011 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GtmPolicy struct {
+	// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+	AlarmOnly *bool `pulumi:"alarmOnly"`
+	// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+	PerfMode *string `pulumi:"perfMode"`
+	// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+	RoutingMode *string `pulumi:"routingMode"`
+	// Statistics for addresses associated with the scheduling policy.
+	Statistics *GtmPolicyStatistics `pulumi:"statistics"`
+	Targets    []GtmPolicyTarget    `pulumi:"targets"`
+}
+
+// GtmPolicyInput is an input type that accepts GtmPolicyArgs and GtmPolicyOutput values.
+// You can construct a concrete instance of `GtmPolicyInput` via:
+//
+//	GtmPolicyArgs{...}
+type GtmPolicyInput interface {
+	pulumi.Input
+
+	ToGtmPolicyOutput() GtmPolicyOutput
+	ToGtmPolicyOutputWithContext(context.Context) GtmPolicyOutput
+}
+
+type GtmPolicyArgs struct {
+	// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+	AlarmOnly pulumi.BoolPtrInput `pulumi:"alarmOnly"`
+	// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+	PerfMode pulumi.StringPtrInput `pulumi:"perfMode"`
+	// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+	RoutingMode pulumi.StringPtrInput `pulumi:"routingMode"`
+	// Statistics for addresses associated with the scheduling policy.
+	Statistics GtmPolicyStatisticsPtrInput `pulumi:"statistics"`
+	Targets    GtmPolicyTargetArrayInput   `pulumi:"targets"`
+}
+
+func (GtmPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPolicy)(nil)).Elem()
+}
+
+func (i GtmPolicyArgs) ToGtmPolicyOutput() GtmPolicyOutput {
+	return i.ToGtmPolicyOutputWithContext(context.Background())
+}
+
+func (i GtmPolicyArgs) ToGtmPolicyOutputWithContext(ctx context.Context) GtmPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyOutput)
+}
+
+func (i GtmPolicyArgs) ToGtmPolicyPtrOutput() GtmPolicyPtrOutput {
+	return i.ToGtmPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i GtmPolicyArgs) ToGtmPolicyPtrOutputWithContext(ctx context.Context) GtmPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyOutput).ToGtmPolicyPtrOutputWithContext(ctx)
+}
+
+// GtmPolicyPtrInput is an input type that accepts GtmPolicyArgs, GtmPolicyPtr and GtmPolicyPtrOutput values.
+// You can construct a concrete instance of `GtmPolicyPtrInput` via:
+//
+//	        GtmPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type GtmPolicyPtrInput interface {
+	pulumi.Input
+
+	ToGtmPolicyPtrOutput() GtmPolicyPtrOutput
+	ToGtmPolicyPtrOutputWithContext(context.Context) GtmPolicyPtrOutput
+}
+
+type gtmPolicyPtrType GtmPolicyArgs
+
+func GtmPolicyPtr(v *GtmPolicyArgs) GtmPolicyPtrInput {
+	return (*gtmPolicyPtrType)(v)
+}
+
+func (*gtmPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmPolicy)(nil)).Elem()
+}
+
+func (i *gtmPolicyPtrType) ToGtmPolicyPtrOutput() GtmPolicyPtrOutput {
+	return i.ToGtmPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmPolicyPtrType) ToGtmPolicyPtrOutputWithContext(ctx context.Context) GtmPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyPtrOutput)
+}
+
+type GtmPolicyOutput struct{ *pulumi.OutputState }
+
+func (GtmPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPolicy)(nil)).Elem()
+}
+
+func (o GtmPolicyOutput) ToGtmPolicyOutput() GtmPolicyOutput {
+	return o
+}
+
+func (o GtmPolicyOutput) ToGtmPolicyOutputWithContext(ctx context.Context) GtmPolicyOutput {
+	return o
+}
+
+func (o GtmPolicyOutput) ToGtmPolicyPtrOutput() GtmPolicyPtrOutput {
+	return o.ToGtmPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o GtmPolicyOutput) ToGtmPolicyPtrOutputWithContext(ctx context.Context) GtmPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmPolicy) *GtmPolicy {
+		return &v
+	}).(GtmPolicyPtrOutput)
+}
+
+// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+func (o GtmPolicyOutput) AlarmOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmPolicy) *bool { return v.AlarmOnly }).(pulumi.BoolPtrOutput)
+}
+
+// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+func (o GtmPolicyOutput) PerfMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPolicy) *string { return v.PerfMode }).(pulumi.StringPtrOutput)
+}
+
+// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+func (o GtmPolicyOutput) RoutingMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPolicy) *string { return v.RoutingMode }).(pulumi.StringPtrOutput)
+}
+
+// Statistics for addresses associated with the scheduling policy.
+func (o GtmPolicyOutput) Statistics() GtmPolicyStatisticsPtrOutput {
+	return o.ApplyT(func(v GtmPolicy) *GtmPolicyStatistics { return v.Statistics }).(GtmPolicyStatisticsPtrOutput)
+}
+
+func (o GtmPolicyOutput) Targets() GtmPolicyTargetArrayOutput {
+	return o.ApplyT(func(v GtmPolicy) []GtmPolicyTarget { return v.Targets }).(GtmPolicyTargetArrayOutput)
+}
+
+type GtmPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (GtmPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmPolicy)(nil)).Elem()
+}
+
+func (o GtmPolicyPtrOutput) ToGtmPolicyPtrOutput() GtmPolicyPtrOutput {
+	return o
+}
+
+func (o GtmPolicyPtrOutput) ToGtmPolicyPtrOutputWithContext(ctx context.Context) GtmPolicyPtrOutput {
+	return o
+}
+
+func (o GtmPolicyPtrOutput) Elem() GtmPolicyOutput {
+	return o.ApplyT(func(v *GtmPolicy) GtmPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret GtmPolicy
+		return ret
+	}).(GtmPolicyOutput)
+}
+
+// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+func (o GtmPolicyPtrOutput) AlarmOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AlarmOnly
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+func (o GtmPolicyPtrOutput) PerfMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerfMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+func (o GtmPolicyPtrOutput) RoutingMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RoutingMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Statistics for addresses associated with the scheduling policy.
+func (o GtmPolicyPtrOutput) Statistics() GtmPolicyStatisticsPtrOutput {
+	return o.ApplyT(func(v *GtmPolicy) *GtmPolicyStatistics {
+		if v == nil {
+			return nil
+		}
+		return v.Statistics
+	}).(GtmPolicyStatisticsPtrOutput)
+}
+
+func (o GtmPolicyPtrOutput) Targets() GtmPolicyTargetArrayOutput {
+	return o.ApplyT(func(v *GtmPolicy) []GtmPolicyTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(GtmPolicyTargetArrayOutput)
+}
+
+type GtmPolicyStatistics struct {
+	// Number of available addresses.
+	ActiveAddr *int `pulumi:"activeAddr"`
+	// Number of unavailable addresses.
+	InactiveAddr *int `pulumi:"inactiveAddr"`
+}
+
+// GtmPolicyStatisticsInput is an input type that accepts GtmPolicyStatisticsArgs and GtmPolicyStatisticsOutput values.
+// You can construct a concrete instance of `GtmPolicyStatisticsInput` via:
+//
+//	GtmPolicyStatisticsArgs{...}
+type GtmPolicyStatisticsInput interface {
+	pulumi.Input
+
+	ToGtmPolicyStatisticsOutput() GtmPolicyStatisticsOutput
+	ToGtmPolicyStatisticsOutputWithContext(context.Context) GtmPolicyStatisticsOutput
+}
+
+type GtmPolicyStatisticsArgs struct {
+	// Number of available addresses.
+	ActiveAddr pulumi.IntPtrInput `pulumi:"activeAddr"`
+	// Number of unavailable addresses.
+	InactiveAddr pulumi.IntPtrInput `pulumi:"inactiveAddr"`
+}
+
+func (GtmPolicyStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPolicyStatistics)(nil)).Elem()
+}
+
+func (i GtmPolicyStatisticsArgs) ToGtmPolicyStatisticsOutput() GtmPolicyStatisticsOutput {
+	return i.ToGtmPolicyStatisticsOutputWithContext(context.Background())
+}
+
+func (i GtmPolicyStatisticsArgs) ToGtmPolicyStatisticsOutputWithContext(ctx context.Context) GtmPolicyStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyStatisticsOutput)
+}
+
+func (i GtmPolicyStatisticsArgs) ToGtmPolicyStatisticsPtrOutput() GtmPolicyStatisticsPtrOutput {
+	return i.ToGtmPolicyStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i GtmPolicyStatisticsArgs) ToGtmPolicyStatisticsPtrOutputWithContext(ctx context.Context) GtmPolicyStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyStatisticsOutput).ToGtmPolicyStatisticsPtrOutputWithContext(ctx)
+}
+
+// GtmPolicyStatisticsPtrInput is an input type that accepts GtmPolicyStatisticsArgs, GtmPolicyStatisticsPtr and GtmPolicyStatisticsPtrOutput values.
+// You can construct a concrete instance of `GtmPolicyStatisticsPtrInput` via:
+//
+//	        GtmPolicyStatisticsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GtmPolicyStatisticsPtrInput interface {
+	pulumi.Input
+
+	ToGtmPolicyStatisticsPtrOutput() GtmPolicyStatisticsPtrOutput
+	ToGtmPolicyStatisticsPtrOutputWithContext(context.Context) GtmPolicyStatisticsPtrOutput
+}
+
+type gtmPolicyStatisticsPtrType GtmPolicyStatisticsArgs
+
+func GtmPolicyStatisticsPtr(v *GtmPolicyStatisticsArgs) GtmPolicyStatisticsPtrInput {
+	return (*gtmPolicyStatisticsPtrType)(v)
+}
+
+func (*gtmPolicyStatisticsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmPolicyStatistics)(nil)).Elem()
+}
+
+func (i *gtmPolicyStatisticsPtrType) ToGtmPolicyStatisticsPtrOutput() GtmPolicyStatisticsPtrOutput {
+	return i.ToGtmPolicyStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i *gtmPolicyStatisticsPtrType) ToGtmPolicyStatisticsPtrOutputWithContext(ctx context.Context) GtmPolicyStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyStatisticsPtrOutput)
+}
+
+type GtmPolicyStatisticsOutput struct{ *pulumi.OutputState }
+
+func (GtmPolicyStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPolicyStatistics)(nil)).Elem()
+}
+
+func (o GtmPolicyStatisticsOutput) ToGtmPolicyStatisticsOutput() GtmPolicyStatisticsOutput {
+	return o
+}
+
+func (o GtmPolicyStatisticsOutput) ToGtmPolicyStatisticsOutputWithContext(ctx context.Context) GtmPolicyStatisticsOutput {
+	return o
+}
+
+func (o GtmPolicyStatisticsOutput) ToGtmPolicyStatisticsPtrOutput() GtmPolicyStatisticsPtrOutput {
+	return o.ToGtmPolicyStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (o GtmPolicyStatisticsOutput) ToGtmPolicyStatisticsPtrOutputWithContext(ctx context.Context) GtmPolicyStatisticsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmPolicyStatistics) *GtmPolicyStatistics {
+		return &v
+	}).(GtmPolicyStatisticsPtrOutput)
+}
+
+// Number of available addresses.
+func (o GtmPolicyStatisticsOutput) ActiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmPolicyStatistics) *int { return v.ActiveAddr }).(pulumi.IntPtrOutput)
+}
+
+// Number of unavailable addresses.
+func (o GtmPolicyStatisticsOutput) InactiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmPolicyStatistics) *int { return v.InactiveAddr }).(pulumi.IntPtrOutput)
+}
+
+type GtmPolicyStatisticsPtrOutput struct{ *pulumi.OutputState }
+
+func (GtmPolicyStatisticsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmPolicyStatistics)(nil)).Elem()
+}
+
+func (o GtmPolicyStatisticsPtrOutput) ToGtmPolicyStatisticsPtrOutput() GtmPolicyStatisticsPtrOutput {
+	return o
+}
+
+func (o GtmPolicyStatisticsPtrOutput) ToGtmPolicyStatisticsPtrOutputWithContext(ctx context.Context) GtmPolicyStatisticsPtrOutput {
+	return o
+}
+
+func (o GtmPolicyStatisticsPtrOutput) Elem() GtmPolicyStatisticsOutput {
+	return o.ApplyT(func(v *GtmPolicyStatistics) GtmPolicyStatistics {
+		if v != nil {
+			return *v
+		}
+		var ret GtmPolicyStatistics
+		return ret
+	}).(GtmPolicyStatisticsOutput)
+}
+
+// Number of available addresses.
+func (o GtmPolicyStatisticsPtrOutput) ActiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmPolicyStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActiveAddr
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of unavailable addresses.
+func (o GtmPolicyStatisticsPtrOutput) InactiveAddr() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmPolicyStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InactiveAddr
+	}).(pulumi.IntPtrOutput)
+}
+
+type GtmPolicyTarget struct {
+	// Target address pool ID.
+	PoolId *string `pulumi:"poolId"`
+}
+
+// GtmPolicyTargetInput is an input type that accepts GtmPolicyTargetArgs and GtmPolicyTargetOutput values.
+// You can construct a concrete instance of `GtmPolicyTargetInput` via:
+//
+//	GtmPolicyTargetArgs{...}
+type GtmPolicyTargetInput interface {
+	pulumi.Input
+
+	ToGtmPolicyTargetOutput() GtmPolicyTargetOutput
+	ToGtmPolicyTargetOutputWithContext(context.Context) GtmPolicyTargetOutput
+}
+
+type GtmPolicyTargetArgs struct {
+	// Target address pool ID.
+	PoolId pulumi.StringPtrInput `pulumi:"poolId"`
+}
+
+func (GtmPolicyTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPolicyTarget)(nil)).Elem()
+}
+
+func (i GtmPolicyTargetArgs) ToGtmPolicyTargetOutput() GtmPolicyTargetOutput {
+	return i.ToGtmPolicyTargetOutputWithContext(context.Background())
+}
+
+func (i GtmPolicyTargetArgs) ToGtmPolicyTargetOutputWithContext(ctx context.Context) GtmPolicyTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyTargetOutput)
+}
+
+// GtmPolicyTargetArrayInput is an input type that accepts GtmPolicyTargetArray and GtmPolicyTargetArrayOutput values.
+// You can construct a concrete instance of `GtmPolicyTargetArrayInput` via:
+//
+//	GtmPolicyTargetArray{ GtmPolicyTargetArgs{...} }
+type GtmPolicyTargetArrayInput interface {
+	pulumi.Input
+
+	ToGtmPolicyTargetArrayOutput() GtmPolicyTargetArrayOutput
+	ToGtmPolicyTargetArrayOutputWithContext(context.Context) GtmPolicyTargetArrayOutput
+}
+
+type GtmPolicyTargetArray []GtmPolicyTargetInput
+
+func (GtmPolicyTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPolicyTarget)(nil)).Elem()
+}
+
+func (i GtmPolicyTargetArray) ToGtmPolicyTargetArrayOutput() GtmPolicyTargetArrayOutput {
+	return i.ToGtmPolicyTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GtmPolicyTargetArray) ToGtmPolicyTargetArrayOutputWithContext(ctx context.Context) GtmPolicyTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmPolicyTargetArrayOutput)
+}
+
+type GtmPolicyTargetOutput struct{ *pulumi.OutputState }
+
+func (GtmPolicyTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmPolicyTarget)(nil)).Elem()
+}
+
+func (o GtmPolicyTargetOutput) ToGtmPolicyTargetOutput() GtmPolicyTargetOutput {
+	return o
+}
+
+func (o GtmPolicyTargetOutput) ToGtmPolicyTargetOutputWithContext(ctx context.Context) GtmPolicyTargetOutput {
+	return o
+}
+
+// Target address pool ID.
+func (o GtmPolicyTargetOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmPolicyTarget) *string { return v.PoolId }).(pulumi.StringPtrOutput)
+}
+
+type GtmPolicyTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmPolicyTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmPolicyTarget)(nil)).Elem()
+}
+
+func (o GtmPolicyTargetArrayOutput) ToGtmPolicyTargetArrayOutput() GtmPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GtmPolicyTargetArrayOutput) ToGtmPolicyTargetArrayOutputWithContext(ctx context.Context) GtmPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GtmPolicyTargetArrayOutput) Index(i pulumi.IntInput) GtmPolicyTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmPolicyTarget {
+		return vs[0].([]GtmPolicyTarget)[vs[1].(int)]
+	}).(GtmPolicyTargetOutput)
+}
+
+type GtmProbe struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount *int `pulumi:"advisedNodeCount"`
+	// Whether health check is disabled. true: disabled. false: enabled.
+	Disable *bool `pulumi:"disable"`
+	// DNS record type for the health check.
+	DnsRecordType *string `pulumi:"dnsRecordType"`
+	// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+	FailedCount *int `pulumi:"failedCount"`
+	// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host *string `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod         *string                     `pulumi:"httpMethod"`
+	HttpUsabilityCodes []GtmProbeHttpUsabilityCode `pulumi:"httpUsabilityCodes"`
+	// Interval between each health check, in seconds.
+	Interval *int `pulumi:"interval"`
+	// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+	IsManualNodes *bool `pulumi:"isManualNodes"`
+	// List of probe nodes used for health checks.
+	Nodes []string `pulumi:"nodes"`
+	// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount *int `pulumi:"pingCount"`
+	// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent *int `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port *int `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol *string `pulumi:"protocol"`
+	// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+	TcpConnTimeout *int `pulumi:"tcpConnTimeout"`
+	// Timeout for the health check task. Unit: seconds.
+	Timeout *int `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url *string `pulumi:"url"`
+}
+
+// GtmProbeInput is an input type that accepts GtmProbeArgs and GtmProbeOutput values.
+// You can construct a concrete instance of `GtmProbeInput` via:
+//
+//	GtmProbeArgs{...}
+type GtmProbeInput interface {
+	pulumi.Input
+
+	ToGtmProbeOutput() GtmProbeOutput
+	ToGtmProbeOutputWithContext(context.Context) GtmProbeOutput
+}
+
+type GtmProbeArgs struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount pulumi.IntPtrInput `pulumi:"advisedNodeCount"`
+	// Whether health check is disabled. true: disabled. false: enabled.
+	Disable pulumi.BoolPtrInput `pulumi:"disable"`
+	// DNS record type for the health check.
+	DnsRecordType pulumi.StringPtrInput `pulumi:"dnsRecordType"`
+	// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+	FailedCount pulumi.IntPtrInput `pulumi:"failedCount"`
+	// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod         pulumi.StringPtrInput               `pulumi:"httpMethod"`
+	HttpUsabilityCodes GtmProbeHttpUsabilityCodeArrayInput `pulumi:"httpUsabilityCodes"`
+	// Interval between each health check, in seconds.
+	Interval pulumi.IntPtrInput `pulumi:"interval"`
+	// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+	IsManualNodes pulumi.BoolPtrInput `pulumi:"isManualNodes"`
+	// List of probe nodes used for health checks.
+	Nodes pulumi.StringArrayInput `pulumi:"nodes"`
+	// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount pulumi.IntPtrInput `pulumi:"pingCount"`
+	// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent pulumi.IntPtrInput `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+	TcpConnTimeout pulumi.IntPtrInput `pulumi:"tcpConnTimeout"`
+	// Timeout for the health check task. Unit: seconds.
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (GtmProbeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmProbe)(nil)).Elem()
+}
+
+func (i GtmProbeArgs) ToGtmProbeOutput() GtmProbeOutput {
+	return i.ToGtmProbeOutputWithContext(context.Background())
+}
+
+func (i GtmProbeArgs) ToGtmProbeOutputWithContext(ctx context.Context) GtmProbeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmProbeOutput)
+}
+
+func (i GtmProbeArgs) ToGtmProbePtrOutput() GtmProbePtrOutput {
+	return i.ToGtmProbePtrOutputWithContext(context.Background())
+}
+
+func (i GtmProbeArgs) ToGtmProbePtrOutputWithContext(ctx context.Context) GtmProbePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmProbeOutput).ToGtmProbePtrOutputWithContext(ctx)
+}
+
+// GtmProbePtrInput is an input type that accepts GtmProbeArgs, GtmProbePtr and GtmProbePtrOutput values.
+// You can construct a concrete instance of `GtmProbePtrInput` via:
+//
+//	        GtmProbeArgs{...}
+//
+//	or:
+//
+//	        nil
+type GtmProbePtrInput interface {
+	pulumi.Input
+
+	ToGtmProbePtrOutput() GtmProbePtrOutput
+	ToGtmProbePtrOutputWithContext(context.Context) GtmProbePtrOutput
+}
+
+type gtmProbePtrType GtmProbeArgs
+
+func GtmProbePtr(v *GtmProbeArgs) GtmProbePtrInput {
+	return (*gtmProbePtrType)(v)
+}
+
+func (*gtmProbePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmProbe)(nil)).Elem()
+}
+
+func (i *gtmProbePtrType) ToGtmProbePtrOutput() GtmProbePtrOutput {
+	return i.ToGtmProbePtrOutputWithContext(context.Background())
+}
+
+func (i *gtmProbePtrType) ToGtmProbePtrOutputWithContext(ctx context.Context) GtmProbePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmProbePtrOutput)
+}
+
+type GtmProbeOutput struct{ *pulumi.OutputState }
+
+func (GtmProbeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmProbe)(nil)).Elem()
+}
+
+func (o GtmProbeOutput) ToGtmProbeOutput() GtmProbeOutput {
+	return o
+}
+
+func (o GtmProbeOutput) ToGtmProbeOutputWithContext(ctx context.Context) GtmProbeOutput {
+	return o
+}
+
+func (o GtmProbeOutput) ToGtmProbePtrOutput() GtmProbePtrOutput {
+	return o.ToGtmProbePtrOutputWithContext(context.Background())
+}
+
+func (o GtmProbeOutput) ToGtmProbePtrOutputWithContext(ctx context.Context) GtmProbePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GtmProbe) *GtmProbe {
+		return &v
+	}).(GtmProbePtrOutput)
+}
+
+// Recommended number of health check probe points.
+func (o GtmProbeOutput) AdvisedNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.AdvisedNodeCount }).(pulumi.IntPtrOutput)
+}
+
+// Whether health check is disabled. true: disabled. false: enabled.
+func (o GtmProbeOutput) Disable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *bool { return v.Disable }).(pulumi.BoolPtrOutput)
+}
+
+// DNS record type for the health check.
+func (o GtmProbeOutput) DnsRecordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *string { return v.DnsRecordType }).(pulumi.StringPtrOutput)
+}
+
+// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+func (o GtmProbeOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
+}
+
+// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbeOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbeOutput) HttpMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *string { return v.HttpMethod }).(pulumi.StringPtrOutput)
+}
+
+func (o GtmProbeOutput) HttpUsabilityCodes() GtmProbeHttpUsabilityCodeArrayOutput {
+	return o.ApplyT(func(v GtmProbe) []GtmProbeHttpUsabilityCode { return v.HttpUsabilityCodes }).(GtmProbeHttpUsabilityCodeArrayOutput)
+}
+
+// Interval between each health check, in seconds.
+func (o GtmProbeOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.Interval }).(pulumi.IntPtrOutput)
+}
+
+// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+func (o GtmProbeOutput) IsManualNodes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *bool { return v.IsManualNodes }).(pulumi.BoolPtrOutput)
+}
+
+// List of probe nodes used for health checks.
+func (o GtmProbeOutput) Nodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GtmProbe) []string { return v.Nodes }).(pulumi.StringArrayOutput)
+}
+
+// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+func (o GtmProbeOutput) PingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.PingCount }).(pulumi.IntPtrOutput)
+}
+
+// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+func (o GtmProbeOutput) PingLossPercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.PingLossPercent }).(pulumi.IntPtrOutput)
+}
+
+// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbeOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+func (o GtmProbeOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+func (o GtmProbeOutput) TcpConnTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.TcpConnTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Timeout for the health check task. Unit: seconds.
+func (o GtmProbeOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *int { return v.Timeout }).(pulumi.IntPtrOutput)
+}
+
+// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbeOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmProbe) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type GtmProbePtrOutput struct{ *pulumi.OutputState }
+
+func (GtmProbePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GtmProbe)(nil)).Elem()
+}
+
+func (o GtmProbePtrOutput) ToGtmProbePtrOutput() GtmProbePtrOutput {
+	return o
+}
+
+func (o GtmProbePtrOutput) ToGtmProbePtrOutputWithContext(ctx context.Context) GtmProbePtrOutput {
+	return o
+}
+
+func (o GtmProbePtrOutput) Elem() GtmProbeOutput {
+	return o.ApplyT(func(v *GtmProbe) GtmProbe {
+		if v != nil {
+			return *v
+		}
+		var ret GtmProbe
+		return ret
+	}).(GtmProbeOutput)
+}
+
+// Recommended number of health check probe points.
+func (o GtmProbePtrOutput) AdvisedNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AdvisedNodeCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether health check is disabled. true: disabled. false: enabled.
+func (o GtmProbePtrOutput) Disable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Disable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DNS record type for the health check.
+func (o GtmProbePtrOutput) DnsRecordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DnsRecordType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+func (o GtmProbePtrOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailedCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbePtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbePtrOutput) HttpMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpMethod
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o GtmProbePtrOutput) HttpUsabilityCodes() GtmProbeHttpUsabilityCodeArrayOutput {
+	return o.ApplyT(func(v *GtmProbe) []GtmProbeHttpUsabilityCode {
+		if v == nil {
+			return nil
+		}
+		return v.HttpUsabilityCodes
+	}).(GtmProbeHttpUsabilityCodeArrayOutput)
+}
+
+// Interval between each health check, in seconds.
+func (o GtmProbePtrOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Interval
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+func (o GtmProbePtrOutput) IsManualNodes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsManualNodes
+	}).(pulumi.BoolPtrOutput)
+}
+
+// List of probe nodes used for health checks.
+func (o GtmProbePtrOutput) Nodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GtmProbe) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Nodes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+func (o GtmProbePtrOutput) PingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PingCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+func (o GtmProbePtrOutput) PingLossPercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PingLossPercent
+	}).(pulumi.IntPtrOutput)
+}
+
+// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbePtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
+// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+func (o GtmProbePtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+func (o GtmProbePtrOutput) TcpConnTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TcpConnTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Timeout for the health check task. Unit: seconds.
+func (o GtmProbePtrOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Timeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GtmProbePtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GtmProbe) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+type GtmProbeHttpUsabilityCode struct {
+	// List of HTTP status codes.
+	Codes []int `pulumi:"codes"`
+	// Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+	Operator *string `pulumi:"operator"`
+}
+
+// GtmProbeHttpUsabilityCodeInput is an input type that accepts GtmProbeHttpUsabilityCodeArgs and GtmProbeHttpUsabilityCodeOutput values.
+// You can construct a concrete instance of `GtmProbeHttpUsabilityCodeInput` via:
+//
+//	GtmProbeHttpUsabilityCodeArgs{...}
+type GtmProbeHttpUsabilityCodeInput interface {
+	pulumi.Input
+
+	ToGtmProbeHttpUsabilityCodeOutput() GtmProbeHttpUsabilityCodeOutput
+	ToGtmProbeHttpUsabilityCodeOutputWithContext(context.Context) GtmProbeHttpUsabilityCodeOutput
+}
+
+type GtmProbeHttpUsabilityCodeArgs struct {
+	// List of HTTP status codes.
+	Codes pulumi.IntArrayInput `pulumi:"codes"`
+	// Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+}
+
+func (GtmProbeHttpUsabilityCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i GtmProbeHttpUsabilityCodeArgs) ToGtmProbeHttpUsabilityCodeOutput() GtmProbeHttpUsabilityCodeOutput {
+	return i.ToGtmProbeHttpUsabilityCodeOutputWithContext(context.Background())
+}
+
+func (i GtmProbeHttpUsabilityCodeArgs) ToGtmProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) GtmProbeHttpUsabilityCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmProbeHttpUsabilityCodeOutput)
+}
+
+// GtmProbeHttpUsabilityCodeArrayInput is an input type that accepts GtmProbeHttpUsabilityCodeArray and GtmProbeHttpUsabilityCodeArrayOutput values.
+// You can construct a concrete instance of `GtmProbeHttpUsabilityCodeArrayInput` via:
+//
+//	GtmProbeHttpUsabilityCodeArray{ GtmProbeHttpUsabilityCodeArgs{...} }
+type GtmProbeHttpUsabilityCodeArrayInput interface {
+	pulumi.Input
+
+	ToGtmProbeHttpUsabilityCodeArrayOutput() GtmProbeHttpUsabilityCodeArrayOutput
+	ToGtmProbeHttpUsabilityCodeArrayOutputWithContext(context.Context) GtmProbeHttpUsabilityCodeArrayOutput
+}
+
+type GtmProbeHttpUsabilityCodeArray []GtmProbeHttpUsabilityCodeInput
+
+func (GtmProbeHttpUsabilityCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i GtmProbeHttpUsabilityCodeArray) ToGtmProbeHttpUsabilityCodeArrayOutput() GtmProbeHttpUsabilityCodeArrayOutput {
+	return i.ToGtmProbeHttpUsabilityCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GtmProbeHttpUsabilityCodeArray) ToGtmProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) GtmProbeHttpUsabilityCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GtmProbeHttpUsabilityCodeArrayOutput)
+}
+
+type GtmProbeHttpUsabilityCodeOutput struct{ *pulumi.OutputState }
+
+func (GtmProbeHttpUsabilityCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o GtmProbeHttpUsabilityCodeOutput) ToGtmProbeHttpUsabilityCodeOutput() GtmProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+func (o GtmProbeHttpUsabilityCodeOutput) ToGtmProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) GtmProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+// List of HTTP status codes.
+func (o GtmProbeHttpUsabilityCodeOutput) Codes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GtmProbeHttpUsabilityCode) []int { return v.Codes }).(pulumi.IntArrayOutput)
+}
+
+// Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+func (o GtmProbeHttpUsabilityCodeOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GtmProbeHttpUsabilityCode) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+type GtmProbeHttpUsabilityCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GtmProbeHttpUsabilityCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o GtmProbeHttpUsabilityCodeArrayOutput) ToGtmProbeHttpUsabilityCodeArrayOutput() GtmProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o GtmProbeHttpUsabilityCodeArrayOutput) ToGtmProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) GtmProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o GtmProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) GtmProbeHttpUsabilityCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GtmProbeHttpUsabilityCode {
+		return vs[0].([]GtmProbeHttpUsabilityCode)[vs[1].(int)]
+	}).(GtmProbeHttpUsabilityCodeOutput)
+}
+
 type PolicyStatistics struct {
 	// Number of available addresses
 	ActiveAddr *int `pulumi:"activeAddr"`
@@ -1306,6 +2311,554 @@ func (o RuleProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) RuleProb
 	}).(RuleProbeHttpUsabilityCodeOutput)
 }
 
+type GetGtmPolicy struct {
+	// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+	AlarmOnly bool `pulumi:"alarmOnly"`
+	// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+	PerfMode string `pulumi:"perfMode"`
+	// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+	RoutingMode string `pulumi:"routingMode"`
+	// Statistics for addresses associated with the scheduling policy.
+	Statistics GetGtmPolicyStatistics `pulumi:"statistics"`
+	// List of target address pools associated with the scheduling policy.
+	Targets []GetGtmPolicyTarget `pulumi:"targets"`
+}
+
+// GetGtmPolicyInput is an input type that accepts GetGtmPolicyArgs and GetGtmPolicyOutput values.
+// You can construct a concrete instance of `GetGtmPolicyInput` via:
+//
+//	GetGtmPolicyArgs{...}
+type GetGtmPolicyInput interface {
+	pulumi.Input
+
+	ToGetGtmPolicyOutput() GetGtmPolicyOutput
+	ToGetGtmPolicyOutputWithContext(context.Context) GetGtmPolicyOutput
+}
+
+type GetGtmPolicyArgs struct {
+	// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+	AlarmOnly pulumi.BoolInput `pulumi:"alarmOnly"`
+	// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+	PerfMode pulumi.StringInput `pulumi:"perfMode"`
+	// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+	RoutingMode pulumi.StringInput `pulumi:"routingMode"`
+	// Statistics for addresses associated with the scheduling policy.
+	Statistics GetGtmPolicyStatisticsInput `pulumi:"statistics"`
+	// List of target address pools associated with the scheduling policy.
+	Targets GetGtmPolicyTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetGtmPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmPolicy)(nil)).Elem()
+}
+
+func (i GetGtmPolicyArgs) ToGetGtmPolicyOutput() GetGtmPolicyOutput {
+	return i.ToGetGtmPolicyOutputWithContext(context.Background())
+}
+
+func (i GetGtmPolicyArgs) ToGetGtmPolicyOutputWithContext(ctx context.Context) GetGtmPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmPolicyOutput)
+}
+
+type GetGtmPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetGtmPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmPolicy)(nil)).Elem()
+}
+
+func (o GetGtmPolicyOutput) ToGetGtmPolicyOutput() GetGtmPolicyOutput {
+	return o
+}
+
+func (o GetGtmPolicyOutput) ToGetGtmPolicyOutputWithContext(ctx context.Context) GetGtmPolicyOutput {
+	return o
+}
+
+// If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+func (o GetGtmPolicyOutput) AlarmOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGtmPolicy) bool { return v.AlarmOnly }).(pulumi.BoolOutput)
+}
+
+// Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+func (o GetGtmPolicyOutput) PerfMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmPolicy) string { return v.PerfMode }).(pulumi.StringOutput)
+}
+
+// Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+func (o GetGtmPolicyOutput) RoutingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmPolicy) string { return v.RoutingMode }).(pulumi.StringOutput)
+}
+
+// Statistics for addresses associated with the scheduling policy.
+func (o GetGtmPolicyOutput) Statistics() GetGtmPolicyStatisticsOutput {
+	return o.ApplyT(func(v GetGtmPolicy) GetGtmPolicyStatistics { return v.Statistics }).(GetGtmPolicyStatisticsOutput)
+}
+
+// List of target address pools associated with the scheduling policy.
+func (o GetGtmPolicyOutput) Targets() GetGtmPolicyTargetArrayOutput {
+	return o.ApplyT(func(v GetGtmPolicy) []GetGtmPolicyTarget { return v.Targets }).(GetGtmPolicyTargetArrayOutput)
+}
+
+type GetGtmPolicyStatistics struct {
+	// Number of available addresses.
+	ActiveAddr int `pulumi:"activeAddr"`
+	// Number of unavailable addresses.
+	InactiveAddr int `pulumi:"inactiveAddr"`
+}
+
+// GetGtmPolicyStatisticsInput is an input type that accepts GetGtmPolicyStatisticsArgs and GetGtmPolicyStatisticsOutput values.
+// You can construct a concrete instance of `GetGtmPolicyStatisticsInput` via:
+//
+//	GetGtmPolicyStatisticsArgs{...}
+type GetGtmPolicyStatisticsInput interface {
+	pulumi.Input
+
+	ToGetGtmPolicyStatisticsOutput() GetGtmPolicyStatisticsOutput
+	ToGetGtmPolicyStatisticsOutputWithContext(context.Context) GetGtmPolicyStatisticsOutput
+}
+
+type GetGtmPolicyStatisticsArgs struct {
+	// Number of available addresses.
+	ActiveAddr pulumi.IntInput `pulumi:"activeAddr"`
+	// Number of unavailable addresses.
+	InactiveAddr pulumi.IntInput `pulumi:"inactiveAddr"`
+}
+
+func (GetGtmPolicyStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmPolicyStatistics)(nil)).Elem()
+}
+
+func (i GetGtmPolicyStatisticsArgs) ToGetGtmPolicyStatisticsOutput() GetGtmPolicyStatisticsOutput {
+	return i.ToGetGtmPolicyStatisticsOutputWithContext(context.Background())
+}
+
+func (i GetGtmPolicyStatisticsArgs) ToGetGtmPolicyStatisticsOutputWithContext(ctx context.Context) GetGtmPolicyStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmPolicyStatisticsOutput)
+}
+
+type GetGtmPolicyStatisticsOutput struct{ *pulumi.OutputState }
+
+func (GetGtmPolicyStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmPolicyStatistics)(nil)).Elem()
+}
+
+func (o GetGtmPolicyStatisticsOutput) ToGetGtmPolicyStatisticsOutput() GetGtmPolicyStatisticsOutput {
+	return o
+}
+
+func (o GetGtmPolicyStatisticsOutput) ToGetGtmPolicyStatisticsOutputWithContext(ctx context.Context) GetGtmPolicyStatisticsOutput {
+	return o
+}
+
+// Number of available addresses.
+func (o GetGtmPolicyStatisticsOutput) ActiveAddr() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmPolicyStatistics) int { return v.ActiveAddr }).(pulumi.IntOutput)
+}
+
+// Number of unavailable addresses.
+func (o GetGtmPolicyStatisticsOutput) InactiveAddr() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmPolicyStatistics) int { return v.InactiveAddr }).(pulumi.IntOutput)
+}
+
+type GetGtmPolicyTarget struct {
+	// Target address pool ID.
+	PoolId string `pulumi:"poolId"`
+}
+
+// GetGtmPolicyTargetInput is an input type that accepts GetGtmPolicyTargetArgs and GetGtmPolicyTargetOutput values.
+// You can construct a concrete instance of `GetGtmPolicyTargetInput` via:
+//
+//	GetGtmPolicyTargetArgs{...}
+type GetGtmPolicyTargetInput interface {
+	pulumi.Input
+
+	ToGetGtmPolicyTargetOutput() GetGtmPolicyTargetOutput
+	ToGetGtmPolicyTargetOutputWithContext(context.Context) GetGtmPolicyTargetOutput
+}
+
+type GetGtmPolicyTargetArgs struct {
+	// Target address pool ID.
+	PoolId pulumi.StringInput `pulumi:"poolId"`
+}
+
+func (GetGtmPolicyTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmPolicyTarget)(nil)).Elem()
+}
+
+func (i GetGtmPolicyTargetArgs) ToGetGtmPolicyTargetOutput() GetGtmPolicyTargetOutput {
+	return i.ToGetGtmPolicyTargetOutputWithContext(context.Background())
+}
+
+func (i GetGtmPolicyTargetArgs) ToGetGtmPolicyTargetOutputWithContext(ctx context.Context) GetGtmPolicyTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmPolicyTargetOutput)
+}
+
+// GetGtmPolicyTargetArrayInput is an input type that accepts GetGtmPolicyTargetArray and GetGtmPolicyTargetArrayOutput values.
+// You can construct a concrete instance of `GetGtmPolicyTargetArrayInput` via:
+//
+//	GetGtmPolicyTargetArray{ GetGtmPolicyTargetArgs{...} }
+type GetGtmPolicyTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetGtmPolicyTargetArrayOutput() GetGtmPolicyTargetArrayOutput
+	ToGetGtmPolicyTargetArrayOutputWithContext(context.Context) GetGtmPolicyTargetArrayOutput
+}
+
+type GetGtmPolicyTargetArray []GetGtmPolicyTargetInput
+
+func (GetGtmPolicyTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGtmPolicyTarget)(nil)).Elem()
+}
+
+func (i GetGtmPolicyTargetArray) ToGetGtmPolicyTargetArrayOutput() GetGtmPolicyTargetArrayOutput {
+	return i.ToGetGtmPolicyTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetGtmPolicyTargetArray) ToGetGtmPolicyTargetArrayOutputWithContext(ctx context.Context) GetGtmPolicyTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmPolicyTargetArrayOutput)
+}
+
+type GetGtmPolicyTargetOutput struct{ *pulumi.OutputState }
+
+func (GetGtmPolicyTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmPolicyTarget)(nil)).Elem()
+}
+
+func (o GetGtmPolicyTargetOutput) ToGetGtmPolicyTargetOutput() GetGtmPolicyTargetOutput {
+	return o
+}
+
+func (o GetGtmPolicyTargetOutput) ToGetGtmPolicyTargetOutputWithContext(ctx context.Context) GetGtmPolicyTargetOutput {
+	return o
+}
+
+// Target address pool ID.
+func (o GetGtmPolicyTargetOutput) PoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmPolicyTarget) string { return v.PoolId }).(pulumi.StringOutput)
+}
+
+type GetGtmPolicyTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGtmPolicyTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGtmPolicyTarget)(nil)).Elem()
+}
+
+func (o GetGtmPolicyTargetArrayOutput) ToGetGtmPolicyTargetArrayOutput() GetGtmPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GetGtmPolicyTargetArrayOutput) ToGetGtmPolicyTargetArrayOutputWithContext(ctx context.Context) GetGtmPolicyTargetArrayOutput {
+	return o
+}
+
+func (o GetGtmPolicyTargetArrayOutput) Index(i pulumi.IntInput) GetGtmPolicyTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGtmPolicyTarget {
+		return vs[0].([]GetGtmPolicyTarget)[vs[1].(int)]
+	}).(GetGtmPolicyTargetOutput)
+}
+
+type GetGtmProbe struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount int `pulumi:"advisedNodeCount"`
+	// Whether health check is disabled. true: disabled. false: enabled.
+	Disable bool `pulumi:"disable"`
+	// DNS record type for the health check.
+	DnsRecordType string `pulumi:"dnsRecordType"`
+	// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+	FailedCount int `pulumi:"failedCount"`
+	// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host string `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod string `pulumi:"httpMethod"`
+	// Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+	HttpUsabilityCodes []GetGtmProbeHttpUsabilityCode `pulumi:"httpUsabilityCodes"`
+	// Interval between each health check, in seconds.
+	Interval int `pulumi:"interval"`
+	// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+	IsManualNodes bool `pulumi:"isManualNodes"`
+	// List of probe nodes used for health checks.
+	Nodes []string `pulumi:"nodes"`
+	// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount int `pulumi:"pingCount"`
+	// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent int `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port int `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol string `pulumi:"protocol"`
+	// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+	TcpConnTimeout int `pulumi:"tcpConnTimeout"`
+	// Timeout for the health check task. Unit: seconds.
+	Timeout int `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url string `pulumi:"url"`
+}
+
+// GetGtmProbeInput is an input type that accepts GetGtmProbeArgs and GetGtmProbeOutput values.
+// You can construct a concrete instance of `GetGtmProbeInput` via:
+//
+//	GetGtmProbeArgs{...}
+type GetGtmProbeInput interface {
+	pulumi.Input
+
+	ToGetGtmProbeOutput() GetGtmProbeOutput
+	ToGetGtmProbeOutputWithContext(context.Context) GetGtmProbeOutput
+}
+
+type GetGtmProbeArgs struct {
+	// Recommended number of health check probe points.
+	AdvisedNodeCount pulumi.IntInput `pulumi:"advisedNodeCount"`
+	// Whether health check is disabled. true: disabled. false: enabled.
+	Disable pulumi.BoolInput `pulumi:"disable"`
+	// DNS record type for the health check.
+	DnsRecordType pulumi.StringInput `pulumi:"dnsRecordType"`
+	// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+	FailedCount pulumi.IntInput `pulumi:"failedCount"`
+	// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Host pulumi.StringInput `pulumi:"host"`
+	// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	HttpMethod pulumi.StringInput `pulumi:"httpMethod"`
+	// Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+	HttpUsabilityCodes GetGtmProbeHttpUsabilityCodeArrayInput `pulumi:"httpUsabilityCodes"`
+	// Interval between each health check, in seconds.
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+	IsManualNodes pulumi.BoolInput `pulumi:"isManualNodes"`
+	// List of probe nodes used for health checks.
+	Nodes pulumi.StringArrayInput `pulumi:"nodes"`
+	// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+	PingCount pulumi.IntInput `pulumi:"pingCount"`
+	// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+	PingLossPercent pulumi.IntInput `pulumi:"pingLossPercent"`
+	// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Port pulumi.IntInput `pulumi:"port"`
+	// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+	TcpConnTimeout pulumi.IntInput `pulumi:"tcpConnTimeout"`
+	// Timeout for the health check task. Unit: seconds.
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+	// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetGtmProbeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmProbe)(nil)).Elem()
+}
+
+func (i GetGtmProbeArgs) ToGetGtmProbeOutput() GetGtmProbeOutput {
+	return i.ToGetGtmProbeOutputWithContext(context.Background())
+}
+
+func (i GetGtmProbeArgs) ToGetGtmProbeOutputWithContext(ctx context.Context) GetGtmProbeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmProbeOutput)
+}
+
+type GetGtmProbeOutput struct{ *pulumi.OutputState }
+
+func (GetGtmProbeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmProbe)(nil)).Elem()
+}
+
+func (o GetGtmProbeOutput) ToGetGtmProbeOutput() GetGtmProbeOutput {
+	return o
+}
+
+func (o GetGtmProbeOutput) ToGetGtmProbeOutputWithContext(ctx context.Context) GetGtmProbeOutput {
+	return o
+}
+
+// Recommended number of health check probe points.
+func (o GetGtmProbeOutput) AdvisedNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.AdvisedNodeCount }).(pulumi.IntOutput)
+}
+
+// Whether health check is disabled. true: disabled. false: enabled.
+func (o GetGtmProbeOutput) Disable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGtmProbe) bool { return v.Disable }).(pulumi.BoolOutput)
+}
+
+// DNS record type for the health check.
+func (o GetGtmProbeOutput) DnsRecordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmProbe) string { return v.DnsRecordType }).(pulumi.StringOutput)
+}
+
+// Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+func (o GetGtmProbeOutput) FailedCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.FailedCount }).(pulumi.IntOutput)
+}
+
+// Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetGtmProbeOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmProbe) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetGtmProbeOutput) HttpMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmProbe) string { return v.HttpMethod }).(pulumi.StringOutput)
+}
+
+// Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+func (o GetGtmProbeOutput) HttpUsabilityCodes() GetGtmProbeHttpUsabilityCodeArrayOutput {
+	return o.ApplyT(func(v GetGtmProbe) []GetGtmProbeHttpUsabilityCode { return v.HttpUsabilityCodes }).(GetGtmProbeHttpUsabilityCodeArrayOutput)
+}
+
+// Interval between each health check, in seconds.
+func (o GetGtmProbeOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+func (o GetGtmProbeOutput) IsManualNodes() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGtmProbe) bool { return v.IsManualNodes }).(pulumi.BoolOutput)
+}
+
+// List of probe nodes used for health checks.
+func (o GetGtmProbeOutput) Nodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGtmProbe) []string { return v.Nodes }).(pulumi.StringArrayOutput)
+}
+
+// Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+func (o GetGtmProbeOutput) PingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.PingCount }).(pulumi.IntOutput)
+}
+
+// Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+func (o GetGtmProbeOutput) PingLossPercent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.PingLossPercent }).(pulumi.IntOutput)
+}
+
+// Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetGtmProbeOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+func (o GetGtmProbeOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmProbe) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+func (o GetGtmProbeOutput) TcpConnTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.TcpConnTimeout }).(pulumi.IntOutput)
+}
+
+// Timeout for the health check task. Unit: seconds.
+func (o GetGtmProbeOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGtmProbe) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+// Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+func (o GetGtmProbeOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmProbe) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetGtmProbeHttpUsabilityCode struct {
+	// List of HTTP status codes.
+	Codes []int `pulumi:"codes"`
+	// Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+	Operator string `pulumi:"operator"`
+}
+
+// GetGtmProbeHttpUsabilityCodeInput is an input type that accepts GetGtmProbeHttpUsabilityCodeArgs and GetGtmProbeHttpUsabilityCodeOutput values.
+// You can construct a concrete instance of `GetGtmProbeHttpUsabilityCodeInput` via:
+//
+//	GetGtmProbeHttpUsabilityCodeArgs{...}
+type GetGtmProbeHttpUsabilityCodeInput interface {
+	pulumi.Input
+
+	ToGetGtmProbeHttpUsabilityCodeOutput() GetGtmProbeHttpUsabilityCodeOutput
+	ToGetGtmProbeHttpUsabilityCodeOutputWithContext(context.Context) GetGtmProbeHttpUsabilityCodeOutput
+}
+
+type GetGtmProbeHttpUsabilityCodeArgs struct {
+	// List of HTTP status codes.
+	Codes pulumi.IntArrayInput `pulumi:"codes"`
+	// Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+	Operator pulumi.StringInput `pulumi:"operator"`
+}
+
+func (GetGtmProbeHttpUsabilityCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i GetGtmProbeHttpUsabilityCodeArgs) ToGetGtmProbeHttpUsabilityCodeOutput() GetGtmProbeHttpUsabilityCodeOutput {
+	return i.ToGetGtmProbeHttpUsabilityCodeOutputWithContext(context.Background())
+}
+
+func (i GetGtmProbeHttpUsabilityCodeArgs) ToGetGtmProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) GetGtmProbeHttpUsabilityCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmProbeHttpUsabilityCodeOutput)
+}
+
+// GetGtmProbeHttpUsabilityCodeArrayInput is an input type that accepts GetGtmProbeHttpUsabilityCodeArray and GetGtmProbeHttpUsabilityCodeArrayOutput values.
+// You can construct a concrete instance of `GetGtmProbeHttpUsabilityCodeArrayInput` via:
+//
+//	GetGtmProbeHttpUsabilityCodeArray{ GetGtmProbeHttpUsabilityCodeArgs{...} }
+type GetGtmProbeHttpUsabilityCodeArrayInput interface {
+	pulumi.Input
+
+	ToGetGtmProbeHttpUsabilityCodeArrayOutput() GetGtmProbeHttpUsabilityCodeArrayOutput
+	ToGetGtmProbeHttpUsabilityCodeArrayOutputWithContext(context.Context) GetGtmProbeHttpUsabilityCodeArrayOutput
+}
+
+type GetGtmProbeHttpUsabilityCodeArray []GetGtmProbeHttpUsabilityCodeInput
+
+func (GetGtmProbeHttpUsabilityCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (i GetGtmProbeHttpUsabilityCodeArray) ToGetGtmProbeHttpUsabilityCodeArrayOutput() GetGtmProbeHttpUsabilityCodeArrayOutput {
+	return i.ToGetGtmProbeHttpUsabilityCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGtmProbeHttpUsabilityCodeArray) ToGetGtmProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) GetGtmProbeHttpUsabilityCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGtmProbeHttpUsabilityCodeArrayOutput)
+}
+
+type GetGtmProbeHttpUsabilityCodeOutput struct{ *pulumi.OutputState }
+
+func (GetGtmProbeHttpUsabilityCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o GetGtmProbeHttpUsabilityCodeOutput) ToGetGtmProbeHttpUsabilityCodeOutput() GetGtmProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+func (o GetGtmProbeHttpUsabilityCodeOutput) ToGetGtmProbeHttpUsabilityCodeOutputWithContext(ctx context.Context) GetGtmProbeHttpUsabilityCodeOutput {
+	return o
+}
+
+// List of HTTP status codes.
+func (o GetGtmProbeHttpUsabilityCodeOutput) Codes() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetGtmProbeHttpUsabilityCode) []int { return v.Codes }).(pulumi.IntArrayOutput)
+}
+
+// Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+func (o GetGtmProbeHttpUsabilityCodeOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGtmProbeHttpUsabilityCode) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+type GetGtmProbeHttpUsabilityCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGtmProbeHttpUsabilityCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGtmProbeHttpUsabilityCode)(nil)).Elem()
+}
+
+func (o GetGtmProbeHttpUsabilityCodeArrayOutput) ToGetGtmProbeHttpUsabilityCodeArrayOutput() GetGtmProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o GetGtmProbeHttpUsabilityCodeArrayOutput) ToGetGtmProbeHttpUsabilityCodeArrayOutputWithContext(ctx context.Context) GetGtmProbeHttpUsabilityCodeArrayOutput {
+	return o
+}
+
+func (o GetGtmProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) GetGtmProbeHttpUsabilityCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGtmProbeHttpUsabilityCode {
+		return vs[0].([]GetGtmProbeHttpUsabilityCode)[vs[1].(int)]
+	}).(GetGtmProbeHttpUsabilityCodeOutput)
+}
+
 type GetPolicyStatistics struct {
 	// Number of available addresses
 	ActiveAddr int `pulumi:"activeAddr"`
@@ -2317,6 +3870,16 @@ func (o GetRuleProbeHttpUsabilityCodeArrayOutput) Index(i pulumi.IntInput) GetRu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPolicyInput)(nil)).Elem(), GtmPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPolicyPtrInput)(nil)).Elem(), GtmPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPolicyStatisticsInput)(nil)).Elem(), GtmPolicyStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPolicyStatisticsPtrInput)(nil)).Elem(), GtmPolicyStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPolicyTargetInput)(nil)).Elem(), GtmPolicyTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmPolicyTargetArrayInput)(nil)).Elem(), GtmPolicyTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmProbeInput)(nil)).Elem(), GtmProbeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmProbePtrInput)(nil)).Elem(), GtmProbeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmProbeHttpUsabilityCodeInput)(nil)).Elem(), GtmProbeHttpUsabilityCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GtmProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), GtmProbeHttpUsabilityCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PolicyStatisticsInput)(nil)).Elem(), PolicyStatisticsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PolicyStatisticsPtrInput)(nil)).Elem(), PolicyStatisticsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PolicyTargetInput)(nil)).Elem(), PolicyTargetArgs{})
@@ -2333,6 +3896,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbePtrInput)(nil)).Elem(), RuleProbeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeHttpUsabilityCodeInput)(nil)).Elem(), RuleProbeHttpUsabilityCodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), RuleProbeHttpUsabilityCodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmPolicyInput)(nil)).Elem(), GetGtmPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmPolicyStatisticsInput)(nil)).Elem(), GetGtmPolicyStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmPolicyTargetInput)(nil)).Elem(), GetGtmPolicyTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmPolicyTargetArrayInput)(nil)).Elem(), GetGtmPolicyTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmProbeInput)(nil)).Elem(), GetGtmProbeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmProbeHttpUsabilityCodeInput)(nil)).Elem(), GetGtmProbeHttpUsabilityCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGtmProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), GetGtmProbeHttpUsabilityCodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyStatisticsInput)(nil)).Elem(), GetPolicyStatisticsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyTargetInput)(nil)).Elem(), GetPolicyTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPolicyTargetArrayInput)(nil)).Elem(), GetPolicyTargetArray{})
@@ -2347,6 +3917,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeInput)(nil)).Elem(), GetRuleProbeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeHttpUsabilityCodeInput)(nil)).Elem(), GetRuleProbeHttpUsabilityCodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleProbeHttpUsabilityCodeArrayInput)(nil)).Elem(), GetRuleProbeHttpUsabilityCodeArray{})
+	pulumi.RegisterOutputType(GtmPolicyOutput{})
+	pulumi.RegisterOutputType(GtmPolicyPtrOutput{})
+	pulumi.RegisterOutputType(GtmPolicyStatisticsOutput{})
+	pulumi.RegisterOutputType(GtmPolicyStatisticsPtrOutput{})
+	pulumi.RegisterOutputType(GtmPolicyTargetOutput{})
+	pulumi.RegisterOutputType(GtmPolicyTargetArrayOutput{})
+	pulumi.RegisterOutputType(GtmProbeOutput{})
+	pulumi.RegisterOutputType(GtmProbePtrOutput{})
+	pulumi.RegisterOutputType(GtmProbeHttpUsabilityCodeOutput{})
+	pulumi.RegisterOutputType(GtmProbeHttpUsabilityCodeArrayOutput{})
 	pulumi.RegisterOutputType(PolicyStatisticsOutput{})
 	pulumi.RegisterOutputType(PolicyStatisticsPtrOutput{})
 	pulumi.RegisterOutputType(PolicyTargetOutput{})
@@ -2363,6 +3943,13 @@ func init() {
 	pulumi.RegisterOutputType(RuleProbePtrOutput{})
 	pulumi.RegisterOutputType(RuleProbeHttpUsabilityCodeOutput{})
 	pulumi.RegisterOutputType(RuleProbeHttpUsabilityCodeArrayOutput{})
+	pulumi.RegisterOutputType(GetGtmPolicyOutput{})
+	pulumi.RegisterOutputType(GetGtmPolicyStatisticsOutput{})
+	pulumi.RegisterOutputType(GetGtmPolicyTargetOutput{})
+	pulumi.RegisterOutputType(GetGtmPolicyTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetGtmProbeOutput{})
+	pulumi.RegisterOutputType(GetGtmProbeHttpUsabilityCodeOutput{})
+	pulumi.RegisterOutputType(GetGtmProbeHttpUsabilityCodeArrayOutput{})
 	pulumi.RegisterOutputType(GetPolicyStatisticsOutput{})
 	pulumi.RegisterOutputType(GetPolicyTargetOutput{})
 	pulumi.RegisterOutputType(GetPolicyTargetArrayOutput{})

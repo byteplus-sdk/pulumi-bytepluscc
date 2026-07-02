@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Bmq
 {
     /// <summary>
-    /// The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the 'central nervous system' for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
+    /// The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It offers a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service based on cloud-native architecture. Supports flexible and dynamic scaling, integrated stream and batch processing, and provides enterprise-grade real-time stream data processing capabilities for large-scale data. Helps you build the 'central nervous system' for data processing, widely used in scenarios such as log collection, data aggregation, and offline data analysis.
     /// 
     /// ## Example Usage
     /// 
@@ -19,11 +19,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Byteplus = Pulumi.Byteplus;
+    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var bMQInstanceDemo = new Byteplus.Index.BmqInstance("BMQInstanceDemo", new()
+    ///     var bMQInstanceDemo = new Bytepluscc.Bmq.Instance("BMQInstanceDemo", new()
     ///     {
     ///         Name = "BMQInstanceDemo",
     ///         BillingType = "POST",
@@ -31,39 +31,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     ///         Specification = "bmq.standard",
     ///         VpcId = "vpc-miltj87lh2ww5smt1bxxxxx",
     ///         MessageRetention = 1,
-    ///         Endpoints = 
+    ///         Endpoints = new Bytepluscc.Bmq.Inputs.InstanceEndpointsArgs
     ///         {
-    ///             { "public", 
+    ///             Public = new Bytepluscc.Bmq.Inputs.InstanceEndpointsPublicArgs
     ///             {
-    ///                 { "eipId", "eip-3nriu2y2ufwu8931exxxxx" },
-    ///             } },
-    ///             { "overlay", 
+    ///                 EipId = "eip-3nriu2y2ufwu8931exxxxx",
+    ///             },
+    ///             Overlay = new Bytepluscc.Bmq.Inputs.InstanceEndpointsOverlayArgs
     ///             {
-    ///                 { "vpcIds", new[]
+    ///                 VpcIds = new[]
     ///                 {
     ///                     "vpc-miltj87lh2ww5smt1bxxxxx",
-    ///                 } },
-    ///             } },
+    ///                 },
+    ///             },
     ///         },
-    ///         SecurityGroupIdList = new[]
+    ///         SecurityGroupIdLists = new[]
     ///         {
     ///             "sg-3nqnz9en1ucxs931eaxxxxx",
     ///         },
-    ///         SubnetIdList = new[]
+    ///         SubnetIdLists = new[]
     ///         {
     ///             "subnet-w02wsq25fitc865ykaxxxxx",
     ///         },
-    ///         ZoneIdList = new[]
+    ///         ZoneIdLists = new[]
     ///         {
     ///             "cn-beijing-a",
     ///         },
     ///         Tags = new[]
     ///         {
-    ///             
+    ///             new Bytepluscc.Bmq.Inputs.InstanceTagArgs
     ///             {
-    ///                 { "key", "env" },
-    ///                 { "type", "CUSTOM" },
-    ///                 { "value", "test" },
+    ///                 Key = "env",
+    ///                 Type = "CUSTOM",
+    ///                 Value = "test",
     ///             },
     ///         },
     ///     });
@@ -81,19 +81,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        /// Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         /// </summary>
         [Output("autoRenew")]
         public Output<string> AutoRenew { get; private set; } = null!;
 
         /// <summary>
-        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        /// Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         /// </summary>
         [Output("billingPeriod")]
         public Output<string> BillingPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        /// Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         /// </summary>
         [Output("billingType")]
         public Output<string> BillingType { get; private set; } = null!;
@@ -105,13 +105,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Instance description statement
+        /// Instance description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        /// Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         /// </summary>
         [Output("eipId")]
         public Output<string> EipId { get; private set; } = null!;
@@ -141,13 +141,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// Message retention period for all topics under the instance, in hours
+        /// Message retention period for all Topics under the instance, in hours
         /// </summary>
         [Output("messageRetention")]
         public Output<int> MessageRetention { get; private set; } = null!;
 
         /// <summary>
-        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        /// Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -159,7 +159,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<int> PartitionLimit { get; private set; } = null!;
 
         /// <summary>
-        /// Project name to which the instance belongs
+        /// Project name associated with the instance
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -174,7 +174,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<Outputs.InstanceResources> Resources { get; private set; } = null!;
 
         /// <summary>
-        /// List of security groups used by the instance
+        /// Security group list used by the instance
         /// </summary>
         [Output("securityGroupIdLists")]
         public Output<ImmutableArray<string>> SecurityGroupIdLists { get; private set; } = null!;
@@ -192,7 +192,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// List of subnets used by the instance
+        /// Subnet list used by the instance
         /// </summary>
         [Output("subnetIdLists")]
         public Output<ImmutableArray<string>> SubnetIdLists { get; private set; } = null!;
@@ -201,13 +201,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// Purchase duration for subscription instances, in months
+        /// Purchase duration for yearly/monthly subscription instances, in months
         /// </summary>
         [Output("times")]
         public Output<int> Times { get; private set; } = null!;
 
         /// <summary>
-        /// Maximum number of topics per instance
+        /// Maximum number of Topics per instance
         /// </summary>
         [Output("topicLimit")]
         public Output<int> TopicLimit { get; private set; } = null!;
@@ -219,7 +219,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// List of availability zones where the instance is located
+        /// List of availability zones for the instance
         /// </summary>
         [Output("zoneIdLists")]
         public Output<ImmutableArray<string>> ZoneIdLists { get; private set; } = null!;
@@ -272,31 +272,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        /// Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         /// </summary>
         [Input("autoRenew")]
         public Input<string>? AutoRenew { get; set; }
 
         /// <summary>
-        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        /// Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         /// </summary>
         [Input("billingPeriod")]
         public Input<string>? BillingPeriod { get; set; }
 
         /// <summary>
-        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        /// Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         /// </summary>
         [Input("billingType", required: true)]
         public Input<string> BillingType { get; set; } = null!;
 
         /// <summary>
-        /// Instance description statement
+        /// Instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        /// Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
@@ -308,19 +308,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Input<Inputs.InstanceEndpointsArgs>? Endpoints { get; set; }
 
         /// <summary>
-        /// Message retention period for all topics under the instance, in hours
+        /// Message retention period for all Topics under the instance, in hours
         /// </summary>
         [Input("messageRetention")]
         public Input<int>? MessageRetention { get; set; }
 
         /// <summary>
-        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        /// Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Project name to which the instance belongs
+        /// Project name associated with the instance
         /// </summary>
         [Input("projectName", required: true)]
         public Input<string> ProjectName { get; set; } = null!;
@@ -329,7 +329,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _securityGroupIdLists;
 
         /// <summary>
-        /// List of security groups used by the instance
+        /// Security group list used by the instance
         /// </summary>
         public InputList<string> SecurityGroupIdLists
         {
@@ -347,7 +347,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _subnetIdLists;
 
         /// <summary>
-        /// List of subnets used by the instance
+        /// Subnet list used by the instance
         /// </summary>
         public InputList<string> SubnetIdLists
         {
@@ -364,7 +364,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// Purchase duration for subscription instances, in months
+        /// Purchase duration for yearly/monthly subscription instances, in months
         /// </summary>
         [Input("times")]
         public Input<int>? Times { get; set; }
@@ -379,7 +379,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _zoneIdLists;
 
         /// <summary>
-        /// List of availability zones where the instance is located
+        /// List of availability zones for the instance
         /// </summary>
         public InputList<string> ZoneIdLists
         {
@@ -396,19 +396,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        /// Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         /// </summary>
         [Input("autoRenew")]
         public Input<string>? AutoRenew { get; set; }
 
         /// <summary>
-        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        /// Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         /// </summary>
         [Input("billingPeriod")]
         public Input<string>? BillingPeriod { get; set; }
 
         /// <summary>
-        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        /// Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         /// </summary>
         [Input("billingType")]
         public Input<string>? BillingType { get; set; }
@@ -420,13 +420,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// Instance description statement
+        /// Instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        /// Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
@@ -456,13 +456,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// Message retention period for all topics under the instance, in hours
+        /// Message retention period for all Topics under the instance, in hours
         /// </summary>
         [Input("messageRetention")]
         public Input<int>? MessageRetention { get; set; }
 
         /// <summary>
-        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        /// Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -474,7 +474,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         public Input<int>? PartitionLimit { get; set; }
 
         /// <summary>
-        /// Project name to which the instance belongs
+        /// Project name associated with the instance
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -497,7 +497,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _securityGroupIdLists;
 
         /// <summary>
-        /// List of security groups used by the instance
+        /// Security group list used by the instance
         /// </summary>
         public InputList<string> SecurityGroupIdLists
         {
@@ -521,7 +521,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _subnetIdLists;
 
         /// <summary>
-        /// List of subnets used by the instance
+        /// Subnet list used by the instance
         /// </summary>
         public InputList<string> SubnetIdLists
         {
@@ -538,13 +538,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         }
 
         /// <summary>
-        /// Purchase duration for subscription instances, in months
+        /// Purchase duration for yearly/monthly subscription instances, in months
         /// </summary>
         [Input("times")]
         public Input<int>? Times { get; set; }
 
         /// <summary>
-        /// Maximum number of topics per instance
+        /// Maximum number of Topics per instance
         /// </summary>
         [Input("topicLimit")]
         public Input<int>? TopicLimit { get; set; }
@@ -559,7 +559,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         private InputList<string>? _zoneIdLists;
 
         /// <summary>
-        /// List of availability zones where the instance is located
+        /// List of availability zones for the instance
         /// </summary>
         public InputList<string> ZoneIdLists
         {
