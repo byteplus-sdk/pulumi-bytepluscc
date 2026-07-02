@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// Private network Plain endpoint
+        /// Private network Plain access point
         /// </summary>
         [Input("plain")]
         public Input<string>? Plain { get; set; }
@@ -38,7 +38,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         public Input<int>? PlainPort { get; set; }
 
         /// <summary>
-        /// Private network SASL authentication endpoint
+        /// Private network SASL authentication access point
         /// </summary>
         [Input("sasl")]
         public Input<string>? Sasl { get; set; }

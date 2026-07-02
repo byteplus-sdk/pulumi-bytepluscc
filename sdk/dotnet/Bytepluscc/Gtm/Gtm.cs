@@ -97,10 +97,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
+        /// Detailed configuration of the scheduling policy for the GTM instance.
+        /// </summary>
+        [Output("policy")]
+        public Output<Outputs.GtmPolicy> Policy { get; private set; } = null!;
+
+        /// <summary>
         /// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
         /// </summary>
         [Output("policyType")]
         public Output<string> PolicyType { get; private set; } = null!;
+
+        /// <summary>
+        /// Detailed configuration of the health check for the GTM instance.
+        /// </summary>
+        [Output("probe")]
+        public Output<Outputs.GtmProbe> Probe { get; private set; } = null!;
 
         /// <summary>
         /// Project name to which the GTM instance belongs
@@ -302,10 +314,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
         public Input<string>? Owner { get; set; }
 
         /// <summary>
+        /// Detailed configuration of the scheduling policy for the GTM instance.
+        /// </summary>
+        [Input("policy")]
+        public Input<Inputs.GtmPolicyGetArgs>? Policy { get; set; }
+
+        /// <summary>
         /// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
         /// </summary>
         [Input("policyType")]
         public Input<string>? PolicyType { get; set; }
+
+        /// <summary>
+        /// Detailed configuration of the health check for the GTM instance.
+        /// </summary>
+        [Input("probe")]
+        public Input<Inputs.GtmProbeGetArgs>? Probe { get; set; }
 
         /// <summary>
         /// Project name to which the GTM instance belongs

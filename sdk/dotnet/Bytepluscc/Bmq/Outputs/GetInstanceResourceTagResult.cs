@@ -19,7 +19,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceResourceTagTagKvResult> TagKvs;
         /// <summary>
-        /// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+        /// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
         /// </summary>
         public readonly string Type;
 

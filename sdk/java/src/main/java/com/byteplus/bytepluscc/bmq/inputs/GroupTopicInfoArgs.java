@@ -19,14 +19,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     public static final GroupTopicInfoArgs Empty = new GroupTopicInfoArgs();
 
     /**
-     * Topic creation time.
+     * Topic creation time
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return Topic creation time.
+     * @return Topic creation time
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -34,14 +34,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Topic description.
+     * Topic description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Topic description.
+     * @return Topic description
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Number of unconsumed messages in the Topic.
+     * Number of unconsumed messages in the Topic
      * 
      */
     @Import(name="lag")
     private @Nullable Output<Integer> lag;
 
     /**
-     * @return Number of unconsumed messages in the Topic.
+     * @return Number of unconsumed messages in the Topic
      * 
      */
     public Optional<Output<Integer>> lag() {
@@ -71,14 +71,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Number of Topic partitions.
+     * Number of Topic partitions
      * 
      */
     @Import(name="partitions")
     private @Nullable Output<Integer> partitions;
 
     /**
-     * @return Number of Topic partitions.
+     * @return Number of Topic partitions
      * 
      */
     public Optional<Output<Integer>> partitions() {
@@ -86,14 +86,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Retention period of data in the Topic, in hours.
+     * Retention period of data in the Topic, in hours
      * 
      */
     @Import(name="retention")
     private @Nullable Output<Integer> retention;
 
     /**
-     * @return Retention period of data in the Topic, in hours.
+     * @return Retention period of data in the Topic, in hours
      * 
      */
     public Optional<Output<Integer>> retention() {
@@ -101,14 +101,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Topic status.
+     * Topic status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Topic status.
+     * @return Topic status
      * 
      */
     public Optional<Output<String>> status() {
@@ -131,14 +131,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Topic name.
+     * Topic name
      * 
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
-     * @return Topic name.
+     * @return Topic name
      * 
      */
     public Optional<Output<String>> topicName() {
@@ -178,7 +178,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createTime Topic creation time.
+         * @param createTime Topic creation time
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createTime Topic creation time.
+         * @param createTime Topic creation time
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description Topic description.
+         * @param description Topic description
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description Topic description.
+         * @param description Topic description
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param lag Number of unconsumed messages in the Topic.
+         * @param lag Number of unconsumed messages in the Topic
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param lag Number of unconsumed messages in the Topic.
+         * @param lag Number of unconsumed messages in the Topic
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param partitions Number of Topic partitions.
+         * @param partitions Number of Topic partitions
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param partitions Number of Topic partitions.
+         * @param partitions Number of Topic partitions
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param retention Retention period of data in the Topic, in hours.
+         * @param retention Retention period of data in the Topic, in hours
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param retention Retention period of data in the Topic, in hours.
+         * @param retention Retention period of data in the Topic, in hours
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param status Topic status.
+         * @param status Topic status
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param status Topic status.
+         * @param status Topic status
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param topicName Topic name.
+         * @param topicName Topic name
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param topicName Topic name.
+         * @param topicName Topic name
          * 
          * @return builder
          * 

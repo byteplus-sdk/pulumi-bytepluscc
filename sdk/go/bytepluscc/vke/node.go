@@ -100,9 +100,6 @@ func NewNode(ctx *pulumi.Context,
 	if args.ClusterId == nil {
 		return nil, errors.New("invalid value for required argument 'ClusterId'")
 	}
-	if args.NodePoolId == nil {
-		return nil, errors.New("invalid value for required argument 'NodePoolId'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Node
 	err := ctx.RegisterResource("bytepluscc:vke/node:Node", name, args, &resource, opts...)
@@ -224,7 +221,7 @@ type nodeArgs struct {
 	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig *NodeKubernetesConfig `pulumi:"kubernetesConfig"`
 	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
-	NodePoolId string `pulumi:"nodePoolId"`
+	NodePoolId *string `pulumi:"nodePoolId"`
 }
 
 // The set of arguments for constructing a Node resource.
@@ -247,7 +244,7 @@ type NodeArgs struct {
 	// Kubernetes-related configuration for the node. If empty, the node inherits the default node pool's Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool's Kubernetes configuration.
 	KubernetesConfig NodeKubernetesConfigPtrInput
 	// Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
-	NodePoolId pulumi.StringInput
+	NodePoolId pulumi.StringPtrInput
 }
 
 func (NodeArgs) ElementType() reflect.Type {

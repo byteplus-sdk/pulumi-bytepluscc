@@ -81,7 +81,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleConditionResult> Conditions;
         /// <summary>
-        /// Alert notification group ID bound to the alert policy.
+        /// When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
         /// </summary>
         public readonly ImmutableArray<string> ContactGroupIds;
         /// <summary>
@@ -89,19 +89,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly string CreatedAt;
         /// <summary>
-        /// Alert policy description.
+        /// Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Dimension configuration.
+        /// Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
         /// </summary>
         public readonly Outputs.GetRuleDimensionConditionsResult DimensionConditions;
         /// <summary>
-        /// Policy expiration time, in HH:MM format.
+        /// End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
         /// </summary>
         public readonly string EffectEndAt;
         /// <summary>
-        /// Policy start time, in HH:MM format.
+        /// Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
         /// </summary>
         public readonly string EffectStartAt;
         /// <summary>
@@ -109,7 +109,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly string EnableState;
         /// <summary>
-        /// Duration required to trigger an alert, in minutes.
+        /// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
         /// </summary>
         public readonly int EvaluationCount;
         /// <summary>
@@ -129,7 +129,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly bool MultipleConditions;
         /// <summary>
-        /// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+        /// The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
         /// </summary>
         public readonly string Namespace;
         /// <summary>
@@ -137,7 +137,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly Outputs.GetRuleNoDataResult NoData;
         /// <summary>
-        /// Notification policy ID.
+        /// Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
         /// </summary>
         public readonly string NotificationId;
         /// <summary>
@@ -149,7 +149,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly Outputs.GetRuleOriginalDimensionsResult OriginalDimensions;
         /// <summary>
-        /// Project to which the alert policy belongs.
+        /// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
@@ -157,7 +157,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly Outputs.GetRuleRecoveryNotifyResult RecoveryNotify;
         /// <summary>
-        /// Availability zone ID of the cloud product.
+        /// Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
         /// </summary>
         public readonly ImmutableArray<string> Regions;
         /// <summary>
@@ -169,7 +169,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly string RuleId;
         /// <summary>
-        /// Alert policy name.
+        /// Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
         /// </summary>
         public readonly string RuleName;
         /// <summary>

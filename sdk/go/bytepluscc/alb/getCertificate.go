@@ -30,7 +30,7 @@ type LookupCertificateArgs struct {
 
 // A collection of values returned by getCertificate.
 type LookupCertificateResult struct {
-	// Certificate ID
+	// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
 	CertificateId string `pulumi:"certificateId"`
 	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName string `pulumi:"certificateName"`
@@ -48,6 +48,8 @@ type LookupCertificateResult struct {
 	Id string `pulumi:"id"`
 	// List of listeners associated with the certificate
 	Listeners []string `pulumi:"listeners"`
+	// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+	OldCertificateId string `pulumi:"oldCertificateId"`
 	// Server certificate private key. Required when certificate type is Server
 	PrivateKey string `pulumi:"privateKey"`
 	// Project name
@@ -96,7 +98,7 @@ func (o LookupCertificateResultOutput) ToLookupCertificateResultOutputWithContex
 	return o
 }
 
-// Certificate ID
+// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
 func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateId }).(pulumi.StringOutput)
 }
@@ -139,6 +141,11 @@ func (o LookupCertificateResultOutput) Id() pulumi.StringOutput {
 // List of listeners associated with the certificate
 func (o LookupCertificateResultOutput) Listeners() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []string { return v.Listeners }).(pulumi.StringArrayOutput)
+}
+
+// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+func (o LookupCertificateResultOutput) OldCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCertificateResult) string { return v.OldCertificateId }).(pulumi.StringOutput)
 }
 
 // Server certificate private key. Required when certificate type is Server

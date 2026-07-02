@@ -14,6 +14,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['GtmArgs', 'Gtm']
 
@@ -178,7 +180,9 @@ class _GtmState:
                  gtm_id: Optional[pulumi.Input[builtins.str]] = None,
                  last_operator: Optional[pulumi.Input[builtins.str]] = None,
                  owner: Optional[pulumi.Input[builtins.str]] = None,
+                 policy: Optional[pulumi.Input['GtmPolicyArgs']] = None,
                  policy_type: Optional[pulumi.Input[builtins.str]] = None,
+                 probe: Optional[pulumi.Input['GtmProbeArgs']] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  remark: Optional[pulumi.Input[builtins.str]] = None,
                  spec_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -196,7 +200,9 @@ class _GtmState:
         :param pulumi.Input[builtins.str] gtm_id: UUID of the GTM instance
         :param pulumi.Input[builtins.str] last_operator: Account that last operated the GTM instance
         :param pulumi.Input[builtins.str] owner: Account that created the GTM instance
+        :param pulumi.Input['GtmPolicyArgs'] policy: Detailed configuration of the scheduling policy for the GTM instance.
         :param pulumi.Input[builtins.str] policy_type: Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+        :param pulumi.Input['GtmProbeArgs'] probe: Detailed configuration of the health check for the GTM instance.
         :param pulumi.Input[builtins.str] project_name: Project name to which the GTM instance belongs
         :param pulumi.Input[builtins.str] remark: Remark information for the GTM instance
         :param pulumi.Input[builtins.str] spec_name: Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
@@ -221,8 +227,12 @@ class _GtmState:
             pulumi.set(__self__, "last_operator", last_operator)
         if owner is not None:
             pulumi.set(__self__, "owner", owner)
+        if policy is not None:
+            pulumi.set(__self__, "policy", policy)
         if policy_type is not None:
             pulumi.set(__self__, "policy_type", policy_type)
+        if probe is not None:
+            pulumi.set(__self__, "probe", probe)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if remark is not None:
@@ -335,6 +345,18 @@ class _GtmState:
         pulumi.set(self, "owner", value)
 
     @property
+    @pulumi.getter
+    def policy(self) -> Optional[pulumi.Input['GtmPolicyArgs']]:
+        """
+        Detailed configuration of the scheduling policy for the GTM instance.
+        """
+        return pulumi.get(self, "policy")
+
+    @policy.setter
+    def policy(self, value: Optional[pulumi.Input['GtmPolicyArgs']]):
+        pulumi.set(self, "policy", value)
+
+    @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -345,6 +367,18 @@ class _GtmState:
     @policy_type.setter
     def policy_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "policy_type", value)
+
+    @property
+    @pulumi.getter
+    def probe(self) -> Optional[pulumi.Input['GtmProbeArgs']]:
+        """
+        Detailed configuration of the health check for the GTM instance.
+        """
+        return pulumi.get(self, "probe")
+
+    @probe.setter
+    def probe(self, value: Optional[pulumi.Input['GtmProbeArgs']]):
+        pulumi.set(self, "probe", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -569,6 +603,8 @@ class Gtm(pulumi.CustomResource):
             __props__.__dict__["gtm_id"] = None
             __props__.__dict__["last_operator"] = None
             __props__.__dict__["owner"] = None
+            __props__.__dict__["policy"] = None
+            __props__.__dict__["probe"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["update_time"] = None
             __props__.__dict__["zone_type"] = None
@@ -590,7 +626,9 @@ class Gtm(pulumi.CustomResource):
             gtm_id: Optional[pulumi.Input[builtins.str]] = None,
             last_operator: Optional[pulumi.Input[builtins.str]] = None,
             owner: Optional[pulumi.Input[builtins.str]] = None,
+            policy: Optional[pulumi.Input[Union['GtmPolicyArgs', 'GtmPolicyArgsDict']]] = None,
             policy_type: Optional[pulumi.Input[builtins.str]] = None,
+            probe: Optional[pulumi.Input[Union['GtmProbeArgs', 'GtmProbeArgsDict']]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             remark: Optional[pulumi.Input[builtins.str]] = None,
             spec_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -613,7 +651,9 @@ class Gtm(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] gtm_id: UUID of the GTM instance
         :param pulumi.Input[builtins.str] last_operator: Account that last operated the GTM instance
         :param pulumi.Input[builtins.str] owner: Account that created the GTM instance
+        :param pulumi.Input[Union['GtmPolicyArgs', 'GtmPolicyArgsDict']] policy: Detailed configuration of the scheduling policy for the GTM instance.
         :param pulumi.Input[builtins.str] policy_type: Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+        :param pulumi.Input[Union['GtmProbeArgs', 'GtmProbeArgsDict']] probe: Detailed configuration of the health check for the GTM instance.
         :param pulumi.Input[builtins.str] project_name: Project name to which the GTM instance belongs
         :param pulumi.Input[builtins.str] remark: Remark information for the GTM instance
         :param pulumi.Input[builtins.str] spec_name: Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
@@ -634,7 +674,9 @@ class Gtm(pulumi.CustomResource):
         __props__.__dict__["gtm_id"] = gtm_id
         __props__.__dict__["last_operator"] = last_operator
         __props__.__dict__["owner"] = owner
+        __props__.__dict__["policy"] = policy
         __props__.__dict__["policy_type"] = policy_type
+        __props__.__dict__["probe"] = probe
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["remark"] = remark
         __props__.__dict__["spec_name"] = spec_name
@@ -709,12 +751,28 @@ class Gtm(pulumi.CustomResource):
         return pulumi.get(self, "owner")
 
     @property
+    @pulumi.getter
+    def policy(self) -> pulumi.Output['outputs.GtmPolicy']:
+        """
+        Detailed configuration of the scheduling policy for the GTM instance.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Output[builtins.str]:
         """
         Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
         """
         return pulumi.get(self, "policy_type")
+
+    @property
+    @pulumi.getter
+    def probe(self) -> pulumi.Output['outputs.GtmProbe']:
+        """
+        Detailed configuration of the health check for the GTM instance.
+        """
+        return pulumi.get(self, "probe")
 
     @property
     @pulumi.getter(name="projectName")

@@ -27,8 +27,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.bytepluscc.vmpRulefile;
- * import com.pulumi.bytepluscc.vmpRulefileArgs;
+ * import com.byteplus.bytepluscc.vmp.RuleFile;
+ * import com.byteplus.bytepluscc.vmp.RuleFileArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var vMPRuleFileDemo = new VmpRulefile("vMPRuleFileDemo", VmpRulefileArgs.builder()
+ *         var vMPRuleFileDemo = new RuleFile("vMPRuleFileDemo", RuleFileArgs.builder()
  *             .description("这是一个测试规则文件")
  *             .targetWorkspaceId("3ba7844b-e7fc-4688-a869-****")
  *             .content("""

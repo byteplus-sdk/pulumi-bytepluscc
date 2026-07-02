@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * Container Registry (CR) provides secure, highly available hosting for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts.
+ * Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
  * 
  * ## Example Usage
  * 
@@ -78,140 +78,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cr/registry:Registry")
 public class Registry extends com.pulumi.resources.CustomResource {
     /**
-     * Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+     * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
      * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
-     * @return Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+     * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
      * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
-     * Time when the container registry instance was created.
+     * Creation time of the container registry instance
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return Time when the container registry instance was created.
+     * @return Creation time of the container registry instance
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * Public endpoint information for the image repository instance
+     * Public endpoint information for the image repository instance.
      * 
      */
     @Export(name="endpoint", refs={RegistryEndpoint.class}, tree="[0]")
     private Output<RegistryEndpoint> endpoint;
 
     /**
-     * @return Public endpoint information for the image repository instance
+     * @return Public endpoint information for the image repository instance.
      * 
      */
     public Output<RegistryEndpoint> endpoint() {
         return this.endpoint;
     }
     /**
-     * Only applicable when the billing type is HybridCharge. Instance expiration time
+     * Instance expiration time is only available for HybridCharge billing type
      * 
      */
     @Export(name="expireTime", refs={String.class}, tree="[0]")
     private Output<String> expireTime;
 
     /**
-     * @return Only applicable when the billing type is HybridCharge. Instance expiration time
+     * @return Instance expiration time is only available for HybridCharge billing type
      * 
      */
     public Output<String> expireTime() {
         return this.expireTime;
     }
     /**
-     * Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * Specify the project to associate with the instance. Each instance can only be associated with one project
+     * Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
-     * @return Specify the project to associate with the instance. Each instance can only be associated with one project
+     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
-     * ProxyCache configuration. Required when set to ProxyCache
+     * ProxyCache configuration. Required when set as ProxyCache
      * 
      */
     @Export(name="proxyCache", refs={RegistryProxyCache.class}, tree="[0]")
     private Output<RegistryProxyCache> proxyCache;
 
     /**
-     * @return ProxyCache configuration. Required when set to ProxyCache
+     * @return ProxyCache configuration. Required when set as ProxyCache
      * 
      */
     public Output<RegistryProxyCache> proxyCache() {
         return this.proxyCache;
     }
     /**
-     * Whether to set as ProxyCache instance
+     * Set as ProxyCache instance
      * 
      */
     @Export(name="proxyCacheEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> proxyCacheEnabled;
 
     /**
-     * @return Whether to set as ProxyCache instance
+     * @return Set as ProxyCache instance
      * 
      */
     public Output<Boolean> proxyCacheEnabled() {
         return this.proxyCacheEnabled;
     }
     /**
-     * Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+     * Instance auto-renewal type is only available for HybridCharge billing type
      * 
      */
     @Export(name="renewType", refs={String.class}, tree="[0]")
     private Output<String> renewType;
 
     /**
-     * @return Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+     * @return Instance auto-renewal type is only available for HybridCharge billing type
      * 
      */
     public Output<String> renewType() {
         return this.renewType;
     }
     /**
-     * Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     @Export(name="status", refs={RegistryStatus.class}, tree="[0]")
     private Output<RegistryStatus> status;
 
     /**
-     * @return Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     public Output<RegistryStatus> status() {
@@ -224,14 +224,14 @@ public class Registry extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     public Output<String> type() {

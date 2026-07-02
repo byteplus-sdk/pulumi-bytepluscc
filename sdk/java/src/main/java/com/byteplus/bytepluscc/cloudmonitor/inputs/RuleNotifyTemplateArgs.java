@@ -16,14 +16,14 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
     public static final RuleNotifyTemplateArgs Empty = new RuleNotifyTemplateArgs();
 
     /**
-     * Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+     * Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
      * 
      */
     @Import(name="channel")
     private @Nullable Output<String> channel;
 
     /**
-     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+     * @return Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
      * 
      */
     public Optional<Output<String>> channel() {
@@ -71,7 +71,7 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param channel Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+         * @param channel Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RuleNotifyTemplateArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param channel Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+         * @param channel Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
          * 
          * @return builder
          * 

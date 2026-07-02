@@ -81,6 +81,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly Outputs.GetInstanceBackupRestoreResult BackupRestore;
         /// <summary>
+        /// Backup list information for the instance
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceBackupResult> Backups;
+        /// <summary>
         /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         /// </summary>
         public readonly string BlueGreenRole;
@@ -267,6 +271,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
             Outputs.GetInstanceBackupRestoreResult backupRestore,
 
+            ImmutableArray<Outputs.GetInstanceBackupResult> backups,
+
             string blueGreenRole,
 
             Outputs.GetInstanceCapacityResult capacity,
@@ -359,6 +365,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             AutoRenew = autoRenew;
             BackupPointName = backupPointName;
             BackupRestore = backupRestore;
+            Backups = backups;
             BlueGreenRole = blueGreenRole;
             Capacity = capacity;
             ChargeType = chargeType;

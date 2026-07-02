@@ -12,22 +12,22 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupResetInfo {
     /**
-     * @return This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+     * @return If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
      * 
      */
     private String offsetType;
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     private Integer partitionId;
     /**
-     * @return Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+     * @return Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
      * 
      */
     private String resetBy;
     /**
-     * @return Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+     * @return Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
      * 
      */
     private Integer resetValue;
@@ -39,28 +39,28 @@ public final class GetGroupResetInfo {
 
     private GetGroupResetInfo() {}
     /**
-     * @return This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+     * @return If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
      * 
      */
     public String offsetType() {
         return this.offsetType;
     }
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     public Integer partitionId() {
         return this.partitionId;
     }
     /**
-     * @return Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+     * @return Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
      * 
      */
     public String resetBy() {
         return this.resetBy;
     }
     /**
-     * @return Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+     * @return Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
      * 
      */
     public Integer resetValue() {

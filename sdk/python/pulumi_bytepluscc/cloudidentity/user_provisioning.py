@@ -387,15 +387,15 @@ class UserProvisioning(pulumi.CustomResource):
         import pulumi
         import pulumi_bytepluscc as bytepluscc
 
-        cloud_identity_user_provisioning_demo = bytepluscc.index.CloudidentityUserprovisioning("CloudIdentityUserProvisioningDemo",
-            target_id=2103612***,
-            principal_type=Group,
-            principal_id=8990752****,
-            duplication_strategy=KeepBoth,
-            deletion_strategy=Delete,
-            identity_source_strategy=BindConflictUser,
-            description=ccapi-test,
-            duplication_suffix=-cctest)
+        cloud_identity_user_provisioning_demo = bytepluscc.cloudidentity.UserProvisioning("CloudIdentityUserProvisioningDemo",
+            target_id="2103612***",
+            principal_type="Group",
+            principal_id="8990752****",
+            duplication_strategy="KeepBoth",
+            deletion_strategy="Delete",
+            identity_source_strategy="BindConflictUser",
+            description="ccapi-test",
+            duplication_suffix="-cctest")
         ```
 
         ## Import
@@ -430,15 +430,15 @@ class UserProvisioning(pulumi.CustomResource):
         import pulumi
         import pulumi_bytepluscc as bytepluscc
 
-        cloud_identity_user_provisioning_demo = bytepluscc.index.CloudidentityUserprovisioning("CloudIdentityUserProvisioningDemo",
-            target_id=2103612***,
-            principal_type=Group,
-            principal_id=8990752****,
-            duplication_strategy=KeepBoth,
-            deletion_strategy=Delete,
-            identity_source_strategy=BindConflictUser,
-            description=ccapi-test,
-            duplication_suffix=-cctest)
+        cloud_identity_user_provisioning_demo = bytepluscc.cloudidentity.UserProvisioning("CloudIdentityUserProvisioningDemo",
+            target_id="2103612***",
+            principal_type="Group",
+            principal_id="8990752****",
+            duplication_strategy="KeepBoth",
+            deletion_strategy="Delete",
+            identity_source_strategy="BindConflictUser",
+            description="ccapi-test",
+            duplication_suffix="-cctest")
         ```
 
         ## Import

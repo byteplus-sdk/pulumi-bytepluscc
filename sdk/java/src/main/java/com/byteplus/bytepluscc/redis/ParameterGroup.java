@@ -30,8 +30,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.bytepluscc.redisParametergroup;
- * import com.pulumi.bytepluscc.redisParametergroupArgs;
+ * import com.byteplus.bytepluscc.redis.ParameterGroup;
+ * import com.byteplus.bytepluscc.redis.ParameterGroupArgs;
+ * import com.pulumi.bytepluscc.redis.inputs.ParameterGroupParamValueArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -45,18 +46,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var redisParameterGroupDemo = new RedisParametergroup("redisParameterGroupDemo", RedisParametergroupArgs.builder()
+ *         var redisParameterGroupDemo = new ParameterGroup("redisParameterGroupDemo", ParameterGroupArgs.builder()
  *             .engineVersion("6.0")
  *             .description("用于测试的Redis 6.0自定义参数组")
- *             .paramValues(List.of(            
- *                 Map.ofEntries(
- *                     Map.entry("value", "allkeys-lru"),
- *                     Map.entry("name", "maxmemory-policy")
- *                 ),
- *                 Map.ofEntries(
- *                     Map.entry("value", "300"),
- *                     Map.entry("name", "proxy-client-idle-timeout")
- *                 )))
+ *             .paramValues(            
+ *                 ParameterGroupParamValueArgs.builder()
+ *                     .value("allkeys-lru")
+ *                     .name("maxmemory-policy")
+ *                     .build(),
+ *                 ParameterGroupParamValueArgs.builder()
+ *                     .value("300")
+ *                     .name("proxy-client-idle-timeout")
+ *                     .build())
  *             .name("test-redis6-param-group")
  *             .build());
  * 

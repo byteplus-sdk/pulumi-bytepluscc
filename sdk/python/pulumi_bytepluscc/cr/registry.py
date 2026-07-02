@@ -30,11 +30,11 @@ class RegistryArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Registry resource.
-        :param pulumi.Input[builtins.str] name: Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
-        :param pulumi.Input['RegistryEndpointArgs'] endpoint: Public endpoint information for the image repository instance
-        :param pulumi.Input[builtins.str] project: Specify the project to associate with the instance. Each instance can only be associated with one project
-        :param pulumi.Input['RegistryStatusArgs'] status: Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
-        :param pulumi.Input[builtins.str] type: If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input['RegistryEndpointArgs'] endpoint: Public endpoint information for the image repository instance.
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input['RegistryStatusArgs'] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         pulumi.set(__self__, "name", name)
         if endpoint is not None:
@@ -52,7 +52,7 @@ class RegistryArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -64,7 +64,7 @@ class RegistryArgs:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input['RegistryEndpointArgs']]:
         """
-        Public endpoint information for the image repository instance
+        Public endpoint information for the image repository instance.
         """
         return pulumi.get(self, "endpoint")
 
@@ -76,7 +76,7 @@ class RegistryArgs:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Specify the project to associate with the instance. Each instance can only be associated with one project
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -88,7 +88,7 @@ class RegistryArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['RegistryStatusArgs']]:
         """
-        Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -109,7 +109,7 @@ class RegistryArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 
@@ -135,17 +135,17 @@ class _RegistryState:
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Registry resources.
-        :param pulumi.Input[builtins.str] charge_type: Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
-        :param pulumi.Input[builtins.str] created_time: Time when the container registry instance was created.
-        :param pulumi.Input['RegistryEndpointArgs'] endpoint: Public endpoint information for the image repository instance
-        :param pulumi.Input[builtins.str] expire_time: Only applicable when the billing type is HybridCharge. Instance expiration time
-        :param pulumi.Input[builtins.str] name: Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
-        :param pulumi.Input[builtins.str] project: Specify the project to associate with the instance. Each instance can only be associated with one project
-        :param pulumi.Input['RegistryProxyCacheArgs'] proxy_cache: ProxyCache configuration. Required when set to ProxyCache
-        :param pulumi.Input[builtins.bool] proxy_cache_enabled: Whether to set as ProxyCache instance
-        :param pulumi.Input[builtins.str] renew_type: Only applicable when the billing type is HybridCharge. Instance auto-renewal type
-        :param pulumi.Input['RegistryStatusArgs'] status: Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
-        :param pulumi.Input[builtins.str] type: If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        :param pulumi.Input[builtins.str] charge_type: Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+        :param pulumi.Input[builtins.str] created_time: Creation time of the container registry instance
+        :param pulumi.Input['RegistryEndpointArgs'] endpoint: Public endpoint information for the image repository instance.
+        :param pulumi.Input[builtins.str] expire_time: Instance expiration time is only available for HybridCharge billing type
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input['RegistryProxyCacheArgs'] proxy_cache: ProxyCache configuration. Required when set as ProxyCache
+        :param pulumi.Input[builtins.bool] proxy_cache_enabled: Set as ProxyCache instance
+        :param pulumi.Input[builtins.str] renew_type: Instance auto-renewal type is only available for HybridCharge billing type
+        :param pulumi.Input['RegistryStatusArgs'] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         if charge_type is not None:
             pulumi.set(__self__, "charge_type", charge_type)
@@ -176,7 +176,7 @@ class _RegistryState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+        Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         """
         return pulumi.get(self, "charge_type")
 
@@ -188,7 +188,7 @@ class _RegistryState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Time when the container registry instance was created.
+        Creation time of the container registry instance
         """
         return pulumi.get(self, "created_time")
 
@@ -200,7 +200,7 @@ class _RegistryState:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input['RegistryEndpointArgs']]:
         """
-        Public endpoint information for the image repository instance
+        Public endpoint information for the image repository instance.
         """
         return pulumi.get(self, "endpoint")
 
@@ -212,7 +212,7 @@ class _RegistryState:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Only applicable when the billing type is HybridCharge. Instance expiration time
+        Instance expiration time is only available for HybridCharge billing type
         """
         return pulumi.get(self, "expire_time")
 
@@ -224,7 +224,7 @@ class _RegistryState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -236,7 +236,7 @@ class _RegistryState:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Specify the project to associate with the instance. Each instance can only be associated with one project
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -248,7 +248,7 @@ class _RegistryState:
     @pulumi.getter(name="proxyCache")
     def proxy_cache(self) -> Optional[pulumi.Input['RegistryProxyCacheArgs']]:
         """
-        ProxyCache configuration. Required when set to ProxyCache
+        ProxyCache configuration. Required when set as ProxyCache
         """
         return pulumi.get(self, "proxy_cache")
 
@@ -260,7 +260,7 @@ class _RegistryState:
     @pulumi.getter(name="proxyCacheEnabled")
     def proxy_cache_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Whether to set as ProxyCache instance
+        Set as ProxyCache instance
         """
         return pulumi.get(self, "proxy_cache_enabled")
 
@@ -272,7 +272,7 @@ class _RegistryState:
     @pulumi.getter(name="renewType")
     def renew_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+        Instance auto-renewal type is only available for HybridCharge billing type
         """
         return pulumi.get(self, "renew_type")
 
@@ -284,7 +284,7 @@ class _RegistryState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['RegistryStatusArgs']]:
         """
-        Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -305,7 +305,7 @@ class _RegistryState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 
@@ -328,7 +328,7 @@ class Registry(pulumi.CustomResource):
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        Container Registry (CR) provides secure, highly available hosting for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts.
+        Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
 
         ## Example Usage
 
@@ -357,11 +357,11 @@ class Registry(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['RegistryEndpointArgs', 'RegistryEndpointArgsDict']] endpoint: Public endpoint information for the image repository instance
-        :param pulumi.Input[builtins.str] name: Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
-        :param pulumi.Input[builtins.str] project: Specify the project to associate with the instance. Each instance can only be associated with one project
-        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
-        :param pulumi.Input[builtins.str] type: If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        :param pulumi.Input[Union['RegistryEndpointArgs', 'RegistryEndpointArgsDict']] endpoint: Public endpoint information for the image repository instance.
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         ...
     @overload
@@ -370,7 +370,7 @@ class Registry(pulumi.CustomResource):
                  args: RegistryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Container Registry (CR) provides secure, highly available hosting for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts.
+        Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
 
         ## Example Usage
 
@@ -470,17 +470,17 @@ class Registry(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] charge_type: Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
-        :param pulumi.Input[builtins.str] created_time: Time when the container registry instance was created.
-        :param pulumi.Input[Union['RegistryEndpointArgs', 'RegistryEndpointArgsDict']] endpoint: Public endpoint information for the image repository instance
-        :param pulumi.Input[builtins.str] expire_time: Only applicable when the billing type is HybridCharge. Instance expiration time
-        :param pulumi.Input[builtins.str] name: Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
-        :param pulumi.Input[builtins.str] project: Specify the project to associate with the instance. Each instance can only be associated with one project
-        :param pulumi.Input[Union['RegistryProxyCacheArgs', 'RegistryProxyCacheArgsDict']] proxy_cache: ProxyCache configuration. Required when set to ProxyCache
-        :param pulumi.Input[builtins.bool] proxy_cache_enabled: Whether to set as ProxyCache instance
-        :param pulumi.Input[builtins.str] renew_type: Only applicable when the billing type is HybridCharge. Instance auto-renewal type
-        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
-        :param pulumi.Input[builtins.str] type: If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        :param pulumi.Input[builtins.str] charge_type: Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+        :param pulumi.Input[builtins.str] created_time: Creation time of the container registry instance
+        :param pulumi.Input[Union['RegistryEndpointArgs', 'RegistryEndpointArgsDict']] endpoint: Public endpoint information for the image repository instance.
+        :param pulumi.Input[builtins.str] expire_time: Instance expiration time is only available for HybridCharge billing type
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input[Union['RegistryProxyCacheArgs', 'RegistryProxyCacheArgsDict']] proxy_cache: ProxyCache configuration. Required when set as ProxyCache
+        :param pulumi.Input[builtins.bool] proxy_cache_enabled: Set as ProxyCache instance
+        :param pulumi.Input[builtins.str] renew_type: Instance auto-renewal type is only available for HybridCharge billing type
+        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -504,7 +504,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+        Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         """
         return pulumi.get(self, "charge_type")
 
@@ -512,7 +512,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        Time when the container registry instance was created.
+        Creation time of the container registry instance
         """
         return pulumi.get(self, "created_time")
 
@@ -520,7 +520,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def endpoint(self) -> pulumi.Output['outputs.RegistryEndpoint']:
         """
-        Public endpoint information for the image repository instance
+        Public endpoint information for the image repository instance.
         """
         return pulumi.get(self, "endpoint")
 
@@ -528,7 +528,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> pulumi.Output[builtins.str]:
         """
-        Only applicable when the billing type is HybridCharge. Instance expiration time
+        Instance expiration time is only available for HybridCharge billing type
         """
         return pulumi.get(self, "expire_time")
 
@@ -536,7 +536,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -544,7 +544,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def project(self) -> pulumi.Output[builtins.str]:
         """
-        Specify the project to associate with the instance. Each instance can only be associated with one project
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -552,7 +552,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="proxyCache")
     def proxy_cache(self) -> pulumi.Output['outputs.RegistryProxyCache']:
         """
-        ProxyCache configuration. Required when set to ProxyCache
+        ProxyCache configuration. Required when set as ProxyCache
         """
         return pulumi.get(self, "proxy_cache")
 
@@ -560,7 +560,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="proxyCacheEnabled")
     def proxy_cache_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        Whether to set as ProxyCache instance
+        Set as ProxyCache instance
         """
         return pulumi.get(self, "proxy_cache_enabled")
 
@@ -568,7 +568,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="renewType")
     def renew_type(self) -> pulumi.Output[builtins.str]:
         """
-        Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+        Instance auto-renewal type is only available for HybridCharge billing type
         """
         return pulumi.get(self, "renew_type")
 
@@ -576,7 +576,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output['outputs.RegistryStatus']:
         """
-        Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -589,7 +589,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 

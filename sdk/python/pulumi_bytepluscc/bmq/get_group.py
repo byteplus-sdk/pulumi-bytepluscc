@@ -67,7 +67,7 @@ class GetGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Consumer Group creation time.
+        Consumer Group creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -75,7 +75,7 @@ class GetGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Consumer Group description.
+        Consumer Group description
         """
         return pulumi.get(self, "description")
 
@@ -83,7 +83,7 @@ class GetGroupResult:
     @pulumi.getter(name="groupId")
     def group_id(self) -> builtins.str:
         """
-        Consumer Group ID.
+        Consumer Group ID
         """
         return pulumi.get(self, "group_id")
 
@@ -91,7 +91,7 @@ class GetGroupResult:
     @pulumi.getter(name="groupName")
     def group_name(self) -> builtins.str:
         """
-        Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         """
         return pulumi.get(self, "group_name")
 
@@ -107,7 +107,7 @@ class GetGroupResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        BMQ instance ID.
+        BMQ instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -115,7 +115,7 @@ class GetGroupResult:
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> builtins.str:
         """
-        User ID associated with the Consumer Group.
+        User ID of the Consumer Group owner
         """
         return pulumi.get(self, "owner_id")
 
@@ -123,7 +123,7 @@ class GetGroupResult:
     @pulumi.getter(name="ownerName")
     def owner_name(self) -> builtins.str:
         """
-        Name of the user associated with the Consumer Group.
+        Name of the Consumer Group owner
         """
         return pulumi.get(self, "owner_name")
 
@@ -131,7 +131,7 @@ class GetGroupResult:
     @pulumi.getter(name="resetInfo")
     def reset_info(self) -> 'outputs.GetGroupResetInfoResult':
         """
-        Reset consumption position information.
+        Reset consumption offset information
         """
         return pulumi.get(self, "reset_info")
 
@@ -139,7 +139,7 @@ class GetGroupResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Consumer Group status.
+        Consumer Group status
         """
         return pulumi.get(self, "status")
 
@@ -147,7 +147,7 @@ class GetGroupResult:
     @pulumi.getter(name="topicInfos")
     def topic_infos(self) -> Sequence['outputs.GetGroupTopicInfoResult']:
         """
-        Topic list.
+        Topic list
         """
         return pulumi.get(self, "topic_infos")
 

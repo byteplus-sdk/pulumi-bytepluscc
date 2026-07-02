@@ -72,14 +72,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:alb/certificate:Certificate")
 public class Certificate extends com.pulumi.resources.CustomResource {
     /**
-     * Certificate ID
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return Certificate ID
+     * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
      * 
      */
     public Output<String> certificateId() {
@@ -182,6 +182,20 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> listeners() {
         return this.listeners;
+    }
+    /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    @Export(name="oldCertificateId", refs={String.class}, tree="[0]")
+    private Output<String> oldCertificateId;
+
+    /**
+     * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    public Output<String> oldCertificateId() {
+        return this.oldCertificateId;
     }
     /**
      * Server certificate private key. Required when certificate type is Server

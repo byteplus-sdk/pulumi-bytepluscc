@@ -24,7 +24,7 @@ public final class InstanceEndpointsPublic {
      */
     private @Nullable String eipId;
     /**
-     * @return Private network Plain endpoint
+     * @return Private network Plain access point
      * 
      */
     private @Nullable String plain;
@@ -34,7 +34,7 @@ public final class InstanceEndpointsPublic {
      */
     private @Nullable Integer plainPort;
     /**
-     * @return Private network SASL authentication endpoint
+     * @return Private network SASL authentication access point
      * 
      */
     private @Nullable String sasl;
@@ -80,7 +80,7 @@ public final class InstanceEndpointsPublic {
         return Optional.ofNullable(this.eipId);
     }
     /**
-     * @return Private network Plain endpoint
+     * @return Private network Plain access point
      * 
      */
     public Optional<String> plain() {
@@ -94,7 +94,7 @@ public final class InstanceEndpointsPublic {
         return Optional.ofNullable(this.plainPort);
     }
     /**
-     * @return Private network SASL authentication endpoint
+     * @return Private network SASL authentication access point
      * 
      */
     public Optional<String> sasl() {

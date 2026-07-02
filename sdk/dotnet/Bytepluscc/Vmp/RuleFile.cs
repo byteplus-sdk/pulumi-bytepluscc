@@ -19,11 +19,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Bytepluscc = Pulumi.Bytepluscc;
+    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vMPRuleFileDemo = new Bytepluscc.Index.VmpRulefile("VMPRuleFileDemo", new()
+    ///     var vMPRuleFileDemo = new Bytepluscc.Vmp.RuleFile("VMPRuleFileDemo", new()
     ///     {
     ///         Description = "这是一个测试规则文件",
     ///         TargetWorkspaceId = "3ba7844b-e7fc-4688-a869-****",

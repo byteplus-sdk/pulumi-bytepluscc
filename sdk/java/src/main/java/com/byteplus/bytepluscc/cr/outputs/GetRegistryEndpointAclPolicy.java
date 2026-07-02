@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryEndpointAclPolicy {
     /**
-     * @return IP entry address
+     * @return IP entry address.
      * 
      */
     private String description;
     /**
-     * @return IP entry description
+     * @return IP entry description.
      * 
      */
     private String entry;
 
     private GetRegistryEndpointAclPolicy() {}
     /**
-     * @return IP entry address
+     * @return IP entry address.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return IP entry description
+     * @return IP entry description.
      * 
      */
     public String entry() {

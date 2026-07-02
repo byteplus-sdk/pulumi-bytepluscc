@@ -16,13 +16,349 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AddressBookAddressDetailListArgs',
+    'AddressBookAddressDetailListArgsDict',
+    'AddressBookTagArgs',
+    'AddressBookTagArgsDict',
+    'ControlPolicyDestPortListV1Args',
+    'ControlPolicyDestPortListV1ArgsDict',
+    'ControlPolicyDestinationCidrListV1Args',
+    'ControlPolicyDestinationCidrListV1ArgsDict',
+    'ControlPolicySourceCidrListV1Args',
+    'ControlPolicySourceCidrListV1ArgsDict',
     'DnsControlPolicyDomainListV1Args',
     'DnsControlPolicyDomainListV1ArgsDict',
     'DnsControlPolicySourceArgs',
     'DnsControlPolicySourceArgsDict',
+    'VpcFireWallAclRuleDestPortListV1Args',
+    'VpcFireWallAclRuleDestPortListV1ArgsDict',
+    'VpcFireWallAclRuleDestinationCidrListV1Args',
+    'VpcFireWallAclRuleDestinationCidrListV1ArgsDict',
+    'VpcFireWallAclRuleSourceCidrListV1Args',
+    'VpcFireWallAclRuleSourceCidrListV1ArgsDict',
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AddressBookAddressDetailListArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        """
+elif False:
+    AddressBookAddressDetailListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AddressBookAddressDetailListArgs:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        :param pulumi.Input[builtins.str] description: Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+if not MYPY:
+    class AddressBookTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value.
+        """
+elif False:
+    AddressBookTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AddressBookTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key.
+        :param pulumi.Input[builtins.str] value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ControlPolicyDestPortListV1ArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed address information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+elif False:
+    ControlPolicyDestPortListV1ArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ControlPolicyDestPortListV1Args:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed address information.
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class ControlPolicyDestinationCidrListV1ArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed address information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+elif False:
+    ControlPolicyDestinationCidrListV1ArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ControlPolicyDestinationCidrListV1Args:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed address information.
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class ControlPolicySourceCidrListV1ArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed address information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+elif False:
+    ControlPolicySourceCidrListV1ArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ControlPolicySourceCidrListV1Args:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed address information.
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
 
 if not MYPY:
     class DnsControlPolicyDomainListV1ArgsDict(TypedDict):
@@ -146,5 +482,221 @@ class DnsControlPolicySourceArgs:
     @vpc_id.setter
     def vpc_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "vpc_id", value)
+
+
+if not MYPY:
+    class VpcFireWallAclRuleDestPortListV1ArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed address information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+elif False:
+    VpcFireWallAclRuleDestPortListV1ArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpcFireWallAclRuleDestPortListV1Args:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed address information.
+        :param pulumi.Input[builtins.str] description: Description.
+        :param pulumi.Input[builtins.str] type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class VpcFireWallAclRuleDestinationCidrListV1ArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed address information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+elif False:
+    VpcFireWallAclRuleDestinationCidrListV1ArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpcFireWallAclRuleDestinationCidrListV1Args:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed address information.
+        :param pulumi.Input[builtins.str] description: Description.
+        :param pulumi.Input[builtins.str] type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class VpcFireWallAclRuleSourceCidrListV1ArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Detailed address information.
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+elif False:
+    VpcFireWallAclRuleSourceCidrListV1ArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpcFireWallAclRuleSourceCidrListV1Args:
+    def __init__(__self__, *,
+                 address: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] address: Detailed address information.
+        :param pulumi.Input[builtins.str] description: Description.
+        :param pulumi.Input[builtins.str] type: Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Detailed address information.
+        """
+        return pulumi.get(self, "address")
+
+    @address.setter
+    def address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "address", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
 
 

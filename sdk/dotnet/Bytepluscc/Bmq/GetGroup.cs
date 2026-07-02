@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class GetGroupResult
     {
         /// <summary>
-        /// Consumer Group creation time.
+        /// Consumer Group creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// Consumer Group description.
+        /// Consumer Group description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Consumer Group ID.
+        /// Consumer Group ID
         /// </summary>
         public readonly string GroupId;
         /// <summary>
-        /// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+        /// Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         /// </summary>
         public readonly string GroupName;
         /// <summary>
@@ -85,27 +85,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// BMQ instance ID.
+        /// BMQ instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// User ID associated with the Consumer Group.
+        /// User ID of the Consumer Group owner
         /// </summary>
         public readonly string OwnerId;
         /// <summary>
-        /// Name of the user associated with the Consumer Group.
+        /// Name of the Consumer Group owner
         /// </summary>
         public readonly string OwnerName;
         /// <summary>
-        /// Reset consumption position information.
+        /// Reset consumption offset information
         /// </summary>
         public readonly Outputs.GetGroupResetInfoResult ResetInfo;
         /// <summary>
-        /// Consumer Group status.
+        /// Consumer Group status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Topic list.
+        /// Topic list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupTopicInfoResult> TopicInfos;
 

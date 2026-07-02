@@ -46,12 +46,22 @@ __all__ = [
     'InstanceAddressObjectArgsDict',
     'InstanceAutoStorageScalingConfigArgs',
     'InstanceAutoStorageScalingConfigArgsDict',
+    'InstanceBackupPolicyArgs',
+    'InstanceBackupPolicyArgsDict',
+    'InstanceBackupPolicyBackupPolicyBaseArgs',
+    'InstanceBackupPolicyBackupPolicyBaseArgsDict',
+    'InstanceBackupPolicyCrossBackupPolicyArgs',
+    'InstanceBackupPolicyCrossBackupPolicyArgsDict',
     'InstanceChargeDetailArgs',
     'InstanceChargeDetailArgsDict',
     'InstanceDisasterRecoveryInstanceArgs',
     'InstanceDisasterRecoveryInstanceArgsDict',
     'InstanceEndpointArgs',
     'InstanceEndpointArgsDict',
+    'InstanceEndpointAddressArgs',
+    'InstanceEndpointAddressArgsDict',
+    'InstanceEndpointCustomRouteStrategyArgs',
+    'InstanceEndpointCustomRouteStrategyArgsDict',
     'InstanceEndpointReadOnlyNodeWeightArgs',
     'InstanceEndpointReadOnlyNodeWeightArgsDict',
     'InstanceMaintenanceWindowArgs',
@@ -1001,6 +1011,10 @@ if not MYPY:
         """
         Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
         """
+        scaling_detect_node: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+        """
         storage_threshold: NotRequired[pulumi.Input[builtins.int]]
         """
         Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
@@ -1016,15 +1030,19 @@ elif False:
 class InstanceAutoStorageScalingConfigArgs:
     def __init__(__self__, *,
                  enable_storage_auto_scale: Optional[pulumi.Input[builtins.bool]] = None,
+                 scaling_detect_node: Optional[pulumi.Input[builtins.str]] = None,
                  storage_threshold: Optional[pulumi.Input[builtins.int]] = None,
                  storage_upper_bound: Optional[pulumi.Input[builtins.int]] = None):
         """
         :param pulumi.Input[builtins.bool] enable_storage_auto_scale: Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.str] scaling_detect_node: Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
         :param pulumi.Input[builtins.int] storage_threshold: Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
         :param pulumi.Input[builtins.int] storage_upper_bound: Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
         """
         if enable_storage_auto_scale is not None:
             pulumi.set(__self__, "enable_storage_auto_scale", enable_storage_auto_scale)
+        if scaling_detect_node is not None:
+            pulumi.set(__self__, "scaling_detect_node", scaling_detect_node)
         if storage_threshold is not None:
             pulumi.set(__self__, "storage_threshold", storage_threshold)
         if storage_upper_bound is not None:
@@ -1041,6 +1059,18 @@ class InstanceAutoStorageScalingConfigArgs:
     @enable_storage_auto_scale.setter
     def enable_storage_auto_scale(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enable_storage_auto_scale", value)
+
+    @property
+    @pulumi.getter(name="scalingDetectNode")
+    def scaling_detect_node(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+        """
+        return pulumi.get(self, "scaling_detect_node")
+
+    @scaling_detect_node.setter
+    def scaling_detect_node(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "scaling_detect_node", value)
 
     @property
     @pulumi.getter(name="storageThreshold")
@@ -1065,6 +1095,742 @@ class InstanceAutoStorageScalingConfigArgs:
     @storage_upper_bound.setter
     def storage_upper_bound(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "storage_upper_bound", value)
+
+
+if not MYPY:
+    class InstanceBackupPolicyArgsDict(TypedDict):
+        available_cross_regions: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of destination regions available for cross-region backup.
+        """
+        backup_policy_base: NotRequired[pulumi.Input['InstanceBackupPolicyBackupPolicyBaseArgsDict']]
+        """
+        Basic backup policy.
+        """
+        cross_backup_policy: NotRequired[pulumi.Input['InstanceBackupPolicyCrossBackupPolicyArgsDict']]
+        """
+        Cross-region backup policy.
+        """
+elif False:
+    InstanceBackupPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceBackupPolicyArgs:
+    def __init__(__self__, *,
+                 available_cross_regions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 backup_policy_base: Optional[pulumi.Input['InstanceBackupPolicyBackupPolicyBaseArgs']] = None,
+                 cross_backup_policy: Optional[pulumi.Input['InstanceBackupPolicyCrossBackupPolicyArgs']] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] available_cross_regions: List of destination regions available for cross-region backup.
+        :param pulumi.Input['InstanceBackupPolicyBackupPolicyBaseArgs'] backup_policy_base: Basic backup policy.
+        :param pulumi.Input['InstanceBackupPolicyCrossBackupPolicyArgs'] cross_backup_policy: Cross-region backup policy.
+        """
+        if available_cross_regions is not None:
+            pulumi.set(__self__, "available_cross_regions", available_cross_regions)
+        if backup_policy_base is not None:
+            pulumi.set(__self__, "backup_policy_base", backup_policy_base)
+        if cross_backup_policy is not None:
+            pulumi.set(__self__, "cross_backup_policy", cross_backup_policy)
+
+    @property
+    @pulumi.getter(name="availableCrossRegions")
+    def available_cross_regions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of destination regions available for cross-region backup.
+        """
+        return pulumi.get(self, "available_cross_regions")
+
+    @available_cross_regions.setter
+    def available_cross_regions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "available_cross_regions", value)
+
+    @property
+    @pulumi.getter(name="backupPolicyBase")
+    def backup_policy_base(self) -> Optional[pulumi.Input['InstanceBackupPolicyBackupPolicyBaseArgs']]:
+        """
+        Basic backup policy.
+        """
+        return pulumi.get(self, "backup_policy_base")
+
+    @backup_policy_base.setter
+    def backup_policy_base(self, value: Optional[pulumi.Input['InstanceBackupPolicyBackupPolicyBaseArgs']]):
+        pulumi.set(self, "backup_policy_base", value)
+
+    @property
+    @pulumi.getter(name="crossBackupPolicy")
+    def cross_backup_policy(self) -> Optional[pulumi.Input['InstanceBackupPolicyCrossBackupPolicyArgs']]:
+        """
+        Cross-region backup policy.
+        """
+        return pulumi.get(self, "cross_backup_policy")
+
+    @cross_backup_policy.setter
+    def cross_backup_policy(self, value: Optional[pulumi.Input['InstanceBackupPolicyCrossBackupPolicyArgs']]):
+        pulumi.set(self, "cross_backup_policy", value)
+
+
+if not MYPY:
+    class InstanceBackupPolicyBackupPolicyBaseArgsDict(TypedDict):
+        binlog_backup_all_retention: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Retain all log backups before releasing the instance. Values: true: yes. false: no.
+        """
+        binlog_backup_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Enable log backup feature. Values: true: yes. false: no.
+        """
+        binlog_backup_encryption_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable encryption for log backups. Values: true: Yes. false: No.
+        """
+        binlog_file_counts_enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+        """
+        binlog_limit_count: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+        """
+        binlog_local_retention_hour: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+        """
+        binlog_space_limit_enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+        """
+        binlog_storage_percentage: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+        """
+        data_backup_all_retention: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Retain all data backups before releasing the instance. Values: true: yes. false: no.
+        """
+        data_backup_encryption_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+        """
+        data_backup_retention_day: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+        """
+        data_full_backup_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+        """
+        data_full_backup_start_utc_hour: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+        """
+        data_full_backup_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+        """
+        data_incr_backup_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+        """
+        data_keep_days_after_released: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Number of days to retain data after instance release.
+        """
+        data_keep_policy_after_released: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+        """
+        high_frequency_snapshot_backup_enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+        """
+        high_frequency_snapshot_backup_second_period: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+        """
+        hourly_incr_backup_enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+        """
+        incr_backup_hour_period: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+        """
+        keep_cross_backup_enable_after_released: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+        """
+        lock_ddl_time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+        """
+        lock_ddl_time_second: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+        """
+        log_backup_retention_day: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+        """
+        public_download_enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+        """
+        retention_policy_synced: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+        """
+elif False:
+    InstanceBackupPolicyBackupPolicyBaseArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceBackupPolicyBackupPolicyBaseArgs:
+    def __init__(__self__, *,
+                 binlog_backup_all_retention: Optional[pulumi.Input[builtins.bool]] = None,
+                 binlog_backup_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 binlog_backup_encryption_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 binlog_file_counts_enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 binlog_limit_count: Optional[pulumi.Input[builtins.int]] = None,
+                 binlog_local_retention_hour: Optional[pulumi.Input[builtins.int]] = None,
+                 binlog_space_limit_enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 binlog_storage_percentage: Optional[pulumi.Input[builtins.int]] = None,
+                 data_backup_all_retention: Optional[pulumi.Input[builtins.bool]] = None,
+                 data_backup_encryption_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 data_backup_retention_day: Optional[pulumi.Input[builtins.int]] = None,
+                 data_full_backup_periods: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 data_full_backup_start_utc_hour: Optional[pulumi.Input[builtins.int]] = None,
+                 data_full_backup_time: Optional[pulumi.Input[builtins.str]] = None,
+                 data_incr_backup_periods: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 data_keep_days_after_released: Optional[pulumi.Input[builtins.int]] = None,
+                 data_keep_policy_after_released: Optional[pulumi.Input[builtins.str]] = None,
+                 high_frequency_snapshot_backup_enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 high_frequency_snapshot_backup_second_period: Optional[pulumi.Input[builtins.int]] = None,
+                 hourly_incr_backup_enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 incr_backup_hour_period: Optional[pulumi.Input[builtins.int]] = None,
+                 keep_cross_backup_enable_after_released: Optional[pulumi.Input[builtins.bool]] = None,
+                 lock_ddl_time: Optional[pulumi.Input[builtins.int]] = None,
+                 lock_ddl_time_second: Optional[pulumi.Input[builtins.int]] = None,
+                 log_backup_retention_day: Optional[pulumi.Input[builtins.int]] = None,
+                 public_download_enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 retention_policy_synced: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.bool] binlog_backup_all_retention: Retain all log backups before releasing the instance. Values: true: yes. false: no.
+        :param pulumi.Input[builtins.bool] binlog_backup_enabled: Enable log backup feature. Values: true: yes. false: no.
+        :param pulumi.Input[builtins.bool] binlog_backup_encryption_enabled: Whether to enable encryption for log backups. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.bool] binlog_file_counts_enable: Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+        :param pulumi.Input[builtins.int] binlog_limit_count: Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+        :param pulumi.Input[builtins.int] binlog_local_retention_hour: Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+        :param pulumi.Input[builtins.bool] binlog_space_limit_enable: Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+        :param pulumi.Input[builtins.int] binlog_storage_percentage: Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+        :param pulumi.Input[builtins.bool] data_backup_all_retention: Retain all data backups before releasing the instance. Values: true: yes. false: no.
+        :param pulumi.Input[builtins.bool] data_backup_encryption_enabled: Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+        :param pulumi.Input[builtins.int] data_backup_retention_day: Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] data_full_backup_periods: Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+        :param pulumi.Input[builtins.int] data_full_backup_start_utc_hour: Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+        :param pulumi.Input[builtins.str] data_full_backup_time: Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] data_incr_backup_periods: Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+        :param pulumi.Input[builtins.int] data_keep_days_after_released: Number of days to retain data after instance release.
+        :param pulumi.Input[builtins.str] data_keep_policy_after_released: Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+        :param pulumi.Input[builtins.bool] high_frequency_snapshot_backup_enable: Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+        :param pulumi.Input[builtins.int] high_frequency_snapshot_backup_second_period: Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+        :param pulumi.Input[builtins.bool] hourly_incr_backup_enable: Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.int] incr_backup_hour_period: Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+        :param pulumi.Input[builtins.bool] keep_cross_backup_enable_after_released: Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+        :param pulumi.Input[builtins.int] lock_ddl_time: Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+        :param pulumi.Input[builtins.int] lock_ddl_time_second: Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+        :param pulumi.Input[builtins.int] log_backup_retention_day: Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+        :param pulumi.Input[builtins.bool] public_download_enable: Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.bool] retention_policy_synced: Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+        """
+        if binlog_backup_all_retention is not None:
+            pulumi.set(__self__, "binlog_backup_all_retention", binlog_backup_all_retention)
+        if binlog_backup_enabled is not None:
+            pulumi.set(__self__, "binlog_backup_enabled", binlog_backup_enabled)
+        if binlog_backup_encryption_enabled is not None:
+            pulumi.set(__self__, "binlog_backup_encryption_enabled", binlog_backup_encryption_enabled)
+        if binlog_file_counts_enable is not None:
+            pulumi.set(__self__, "binlog_file_counts_enable", binlog_file_counts_enable)
+        if binlog_limit_count is not None:
+            pulumi.set(__self__, "binlog_limit_count", binlog_limit_count)
+        if binlog_local_retention_hour is not None:
+            pulumi.set(__self__, "binlog_local_retention_hour", binlog_local_retention_hour)
+        if binlog_space_limit_enable is not None:
+            pulumi.set(__self__, "binlog_space_limit_enable", binlog_space_limit_enable)
+        if binlog_storage_percentage is not None:
+            pulumi.set(__self__, "binlog_storage_percentage", binlog_storage_percentage)
+        if data_backup_all_retention is not None:
+            pulumi.set(__self__, "data_backup_all_retention", data_backup_all_retention)
+        if data_backup_encryption_enabled is not None:
+            pulumi.set(__self__, "data_backup_encryption_enabled", data_backup_encryption_enabled)
+        if data_backup_retention_day is not None:
+            pulumi.set(__self__, "data_backup_retention_day", data_backup_retention_day)
+        if data_full_backup_periods is not None:
+            pulumi.set(__self__, "data_full_backup_periods", data_full_backup_periods)
+        if data_full_backup_start_utc_hour is not None:
+            pulumi.set(__self__, "data_full_backup_start_utc_hour", data_full_backup_start_utc_hour)
+        if data_full_backup_time is not None:
+            pulumi.set(__self__, "data_full_backup_time", data_full_backup_time)
+        if data_incr_backup_periods is not None:
+            pulumi.set(__self__, "data_incr_backup_periods", data_incr_backup_periods)
+        if data_keep_days_after_released is not None:
+            pulumi.set(__self__, "data_keep_days_after_released", data_keep_days_after_released)
+        if data_keep_policy_after_released is not None:
+            pulumi.set(__self__, "data_keep_policy_after_released", data_keep_policy_after_released)
+        if high_frequency_snapshot_backup_enable is not None:
+            pulumi.set(__self__, "high_frequency_snapshot_backup_enable", high_frequency_snapshot_backup_enable)
+        if high_frequency_snapshot_backup_second_period is not None:
+            pulumi.set(__self__, "high_frequency_snapshot_backup_second_period", high_frequency_snapshot_backup_second_period)
+        if hourly_incr_backup_enable is not None:
+            pulumi.set(__self__, "hourly_incr_backup_enable", hourly_incr_backup_enable)
+        if incr_backup_hour_period is not None:
+            pulumi.set(__self__, "incr_backup_hour_period", incr_backup_hour_period)
+        if keep_cross_backup_enable_after_released is not None:
+            pulumi.set(__self__, "keep_cross_backup_enable_after_released", keep_cross_backup_enable_after_released)
+        if lock_ddl_time is not None:
+            pulumi.set(__self__, "lock_ddl_time", lock_ddl_time)
+        if lock_ddl_time_second is not None:
+            pulumi.set(__self__, "lock_ddl_time_second", lock_ddl_time_second)
+        if log_backup_retention_day is not None:
+            pulumi.set(__self__, "log_backup_retention_day", log_backup_retention_day)
+        if public_download_enable is not None:
+            pulumi.set(__self__, "public_download_enable", public_download_enable)
+        if retention_policy_synced is not None:
+            pulumi.set(__self__, "retention_policy_synced", retention_policy_synced)
+
+    @property
+    @pulumi.getter(name="binlogBackupAllRetention")
+    def binlog_backup_all_retention(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Retain all log backups before releasing the instance. Values: true: yes. false: no.
+        """
+        return pulumi.get(self, "binlog_backup_all_retention")
+
+    @binlog_backup_all_retention.setter
+    def binlog_backup_all_retention(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "binlog_backup_all_retention", value)
+
+    @property
+    @pulumi.getter(name="binlogBackupEnabled")
+    def binlog_backup_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable log backup feature. Values: true: yes. false: no.
+        """
+        return pulumi.get(self, "binlog_backup_enabled")
+
+    @binlog_backup_enabled.setter
+    def binlog_backup_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "binlog_backup_enabled", value)
+
+    @property
+    @pulumi.getter(name="binlogBackupEncryptionEnabled")
+    def binlog_backup_encryption_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable encryption for log backups. Values: true: Yes. false: No.
+        """
+        return pulumi.get(self, "binlog_backup_encryption_enabled")
+
+    @binlog_backup_encryption_enabled.setter
+    def binlog_backup_encryption_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "binlog_backup_encryption_enabled", value)
+
+    @property
+    @pulumi.getter(name="binlogFileCountsEnable")
+    def binlog_file_counts_enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+        """
+        return pulumi.get(self, "binlog_file_counts_enable")
+
+    @binlog_file_counts_enable.setter
+    def binlog_file_counts_enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "binlog_file_counts_enable", value)
+
+    @property
+    @pulumi.getter(name="binlogLimitCount")
+    def binlog_limit_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+        """
+        return pulumi.get(self, "binlog_limit_count")
+
+    @binlog_limit_count.setter
+    def binlog_limit_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "binlog_limit_count", value)
+
+    @property
+    @pulumi.getter(name="binlogLocalRetentionHour")
+    def binlog_local_retention_hour(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+        """
+        return pulumi.get(self, "binlog_local_retention_hour")
+
+    @binlog_local_retention_hour.setter
+    def binlog_local_retention_hour(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "binlog_local_retention_hour", value)
+
+    @property
+    @pulumi.getter(name="binlogSpaceLimitEnable")
+    def binlog_space_limit_enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+        """
+        return pulumi.get(self, "binlog_space_limit_enable")
+
+    @binlog_space_limit_enable.setter
+    def binlog_space_limit_enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "binlog_space_limit_enable", value)
+
+    @property
+    @pulumi.getter(name="binlogStoragePercentage")
+    def binlog_storage_percentage(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+        """
+        return pulumi.get(self, "binlog_storage_percentage")
+
+    @binlog_storage_percentage.setter
+    def binlog_storage_percentage(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "binlog_storage_percentage", value)
+
+    @property
+    @pulumi.getter(name="dataBackupAllRetention")
+    def data_backup_all_retention(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Retain all data backups before releasing the instance. Values: true: yes. false: no.
+        """
+        return pulumi.get(self, "data_backup_all_retention")
+
+    @data_backup_all_retention.setter
+    def data_backup_all_retention(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "data_backup_all_retention", value)
+
+    @property
+    @pulumi.getter(name="dataBackupEncryptionEnabled")
+    def data_backup_encryption_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+        """
+        return pulumi.get(self, "data_backup_encryption_enabled")
+
+    @data_backup_encryption_enabled.setter
+    def data_backup_encryption_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "data_backup_encryption_enabled", value)
+
+    @property
+    @pulumi.getter(name="dataBackupRetentionDay")
+    def data_backup_retention_day(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+        """
+        return pulumi.get(self, "data_backup_retention_day")
+
+    @data_backup_retention_day.setter
+    def data_backup_retention_day(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "data_backup_retention_day", value)
+
+    @property
+    @pulumi.getter(name="dataFullBackupPeriods")
+    def data_full_backup_periods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+        """
+        return pulumi.get(self, "data_full_backup_periods")
+
+    @data_full_backup_periods.setter
+    def data_full_backup_periods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "data_full_backup_periods", value)
+
+    @property
+    @pulumi.getter(name="dataFullBackupStartUtcHour")
+    def data_full_backup_start_utc_hour(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+        """
+        return pulumi.get(self, "data_full_backup_start_utc_hour")
+
+    @data_full_backup_start_utc_hour.setter
+    def data_full_backup_start_utc_hour(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "data_full_backup_start_utc_hour", value)
+
+    @property
+    @pulumi.getter(name="dataFullBackupTime")
+    def data_full_backup_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+        """
+        return pulumi.get(self, "data_full_backup_time")
+
+    @data_full_backup_time.setter
+    def data_full_backup_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "data_full_backup_time", value)
+
+    @property
+    @pulumi.getter(name="dataIncrBackupPeriods")
+    def data_incr_backup_periods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+        """
+        return pulumi.get(self, "data_incr_backup_periods")
+
+    @data_incr_backup_periods.setter
+    def data_incr_backup_periods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "data_incr_backup_periods", value)
+
+    @property
+    @pulumi.getter(name="dataKeepDaysAfterReleased")
+    def data_keep_days_after_released(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Number of days to retain data after instance release.
+        """
+        return pulumi.get(self, "data_keep_days_after_released")
+
+    @data_keep_days_after_released.setter
+    def data_keep_days_after_released(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "data_keep_days_after_released", value)
+
+    @property
+    @pulumi.getter(name="dataKeepPolicyAfterReleased")
+    def data_keep_policy_after_released(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+        """
+        return pulumi.get(self, "data_keep_policy_after_released")
+
+    @data_keep_policy_after_released.setter
+    def data_keep_policy_after_released(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "data_keep_policy_after_released", value)
+
+    @property
+    @pulumi.getter(name="highFrequencySnapshotBackupEnable")
+    def high_frequency_snapshot_backup_enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+        """
+        return pulumi.get(self, "high_frequency_snapshot_backup_enable")
+
+    @high_frequency_snapshot_backup_enable.setter
+    def high_frequency_snapshot_backup_enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "high_frequency_snapshot_backup_enable", value)
+
+    @property
+    @pulumi.getter(name="highFrequencySnapshotBackupSecondPeriod")
+    def high_frequency_snapshot_backup_second_period(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+        """
+        return pulumi.get(self, "high_frequency_snapshot_backup_second_period")
+
+    @high_frequency_snapshot_backup_second_period.setter
+    def high_frequency_snapshot_backup_second_period(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "high_frequency_snapshot_backup_second_period", value)
+
+    @property
+    @pulumi.getter(name="hourlyIncrBackupEnable")
+    def hourly_incr_backup_enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+        """
+        return pulumi.get(self, "hourly_incr_backup_enable")
+
+    @hourly_incr_backup_enable.setter
+    def hourly_incr_backup_enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "hourly_incr_backup_enable", value)
+
+    @property
+    @pulumi.getter(name="incrBackupHourPeriod")
+    def incr_backup_hour_period(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+        """
+        return pulumi.get(self, "incr_backup_hour_period")
+
+    @incr_backup_hour_period.setter
+    def incr_backup_hour_period(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "incr_backup_hour_period", value)
+
+    @property
+    @pulumi.getter(name="keepCrossBackupEnableAfterReleased")
+    def keep_cross_backup_enable_after_released(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+        """
+        return pulumi.get(self, "keep_cross_backup_enable_after_released")
+
+    @keep_cross_backup_enable_after_released.setter
+    def keep_cross_backup_enable_after_released(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "keep_cross_backup_enable_after_released", value)
+
+    @property
+    @pulumi.getter(name="lockDdlTime")
+    def lock_ddl_time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+        """
+        return pulumi.get(self, "lock_ddl_time")
+
+    @lock_ddl_time.setter
+    def lock_ddl_time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "lock_ddl_time", value)
+
+    @property
+    @pulumi.getter(name="lockDdlTimeSecond")
+    def lock_ddl_time_second(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+        """
+        return pulumi.get(self, "lock_ddl_time_second")
+
+    @lock_ddl_time_second.setter
+    def lock_ddl_time_second(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "lock_ddl_time_second", value)
+
+    @property
+    @pulumi.getter(name="logBackupRetentionDay")
+    def log_backup_retention_day(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+        """
+        return pulumi.get(self, "log_backup_retention_day")
+
+    @log_backup_retention_day.setter
+    def log_backup_retention_day(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "log_backup_retention_day", value)
+
+    @property
+    @pulumi.getter(name="publicDownloadEnable")
+    def public_download_enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+        """
+        return pulumi.get(self, "public_download_enable")
+
+    @public_download_enable.setter
+    def public_download_enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "public_download_enable", value)
+
+    @property
+    @pulumi.getter(name="retentionPolicySynced")
+    def retention_policy_synced(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+        """
+        return pulumi.get(self, "retention_policy_synced")
+
+    @retention_policy_synced.setter
+    def retention_policy_synced(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "retention_policy_synced", value)
+
+
+if not MYPY:
+    class InstanceBackupPolicyCrossBackupPolicyArgsDict(TypedDict):
+        backup_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+        """
+        cross_backup_all_retention: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+        """
+        cross_backup_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+        """
+        log_backup_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+        """
+        retention: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+        """
+elif False:
+    InstanceBackupPolicyCrossBackupPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceBackupPolicyCrossBackupPolicyArgs:
+    def __init__(__self__, *,
+                 backup_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 cross_backup_all_retention: Optional[pulumi.Input[builtins.bool]] = None,
+                 cross_backup_region: Optional[pulumi.Input[builtins.str]] = None,
+                 log_backup_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 retention: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.bool] backup_enabled: Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+        :param pulumi.Input[builtins.bool] cross_backup_all_retention: Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+        :param pulumi.Input[builtins.str] cross_backup_region: Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+        :param pulumi.Input[builtins.bool] log_backup_enabled: Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+        :param pulumi.Input[builtins.int] retention: Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+        """
+        if backup_enabled is not None:
+            pulumi.set(__self__, "backup_enabled", backup_enabled)
+        if cross_backup_all_retention is not None:
+            pulumi.set(__self__, "cross_backup_all_retention", cross_backup_all_retention)
+        if cross_backup_region is not None:
+            pulumi.set(__self__, "cross_backup_region", cross_backup_region)
+        if log_backup_enabled is not None:
+            pulumi.set(__self__, "log_backup_enabled", log_backup_enabled)
+        if retention is not None:
+            pulumi.set(__self__, "retention", retention)
+
+    @property
+    @pulumi.getter(name="backupEnabled")
+    def backup_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+        """
+        return pulumi.get(self, "backup_enabled")
+
+    @backup_enabled.setter
+    def backup_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "backup_enabled", value)
+
+    @property
+    @pulumi.getter(name="crossBackupAllRetention")
+    def cross_backup_all_retention(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+        """
+        return pulumi.get(self, "cross_backup_all_retention")
+
+    @cross_backup_all_retention.setter
+    def cross_backup_all_retention(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "cross_backup_all_retention", value)
+
+    @property
+    @pulumi.getter(name="crossBackupRegion")
+    def cross_backup_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+        """
+        return pulumi.get(self, "cross_backup_region")
+
+    @cross_backup_region.setter
+    def cross_backup_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cross_backup_region", value)
+
+    @property
+    @pulumi.getter(name="logBackupEnabled")
+    def log_backup_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+        """
+        return pulumi.get(self, "log_backup_enabled")
+
+    @log_backup_enabled.setter
+    def log_backup_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "log_backup_enabled", value)
+
+    @property
+    @pulumi.getter
+    def retention(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+        """
+        return pulumi.get(self, "retention")
+
+    @retention.setter
+    def retention(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "retention", value)
 
 
 if not MYPY:
@@ -1452,6 +2218,7 @@ class InstanceDisasterRecoveryInstanceArgs:
 
 if not MYPY:
     class InstanceEndpointArgsDict(TypedDict):
+        addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointAddressArgsDict']]]]
         auto_add_new_nodes: NotRequired[pulumi.Input[builtins.str]]
         """
         When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
@@ -1468,6 +2235,7 @@ if not MYPY:
         """
         Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
         """
+        custom_route_strategies: NotRequired[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointCustomRouteStrategyArgsDict']]]]
         description: NotRequired[pulumi.Input[builtins.str]]
         """
         Description of the connection endpoint
@@ -1539,10 +2307,12 @@ elif False:
 @pulumi.input_type
 class InstanceEndpointArgs:
     def __init__(__self__, *,
+                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointAddressArgs']]]] = None,
                  auto_add_new_nodes: Optional[pulumi.Input[builtins.str]] = None,
                  connection_info_tags: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  connection_mode: Optional[pulumi.Input[builtins.str]] = None,
                  connection_pool_type: Optional[pulumi.Input[builtins.str]] = None,
+                 custom_route_strategies: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointCustomRouteStrategyArgs']]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enable_connection_persistent: Optional[pulumi.Input[builtins.bool]] = None,
                  enable_read_only: Optional[pulumi.Input[builtins.str]] = None,
@@ -1582,6 +2352,8 @@ class InstanceEndpointArgs:
         :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
         :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only
         """
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
         if auto_add_new_nodes is not None:
             pulumi.set(__self__, "auto_add_new_nodes", auto_add_new_nodes)
         if connection_info_tags is not None:
@@ -1590,6 +2362,8 @@ class InstanceEndpointArgs:
             pulumi.set(__self__, "connection_mode", connection_mode)
         if connection_pool_type is not None:
             pulumi.set(__self__, "connection_pool_type", connection_pool_type)
+        if custom_route_strategies is not None:
+            pulumi.set(__self__, "custom_route_strategies", custom_route_strategies)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if enable_connection_persistent is not None:
@@ -1624,6 +2398,15 @@ class InstanceEndpointArgs:
             pulumi.set(__self__, "read_only_node_weights", read_only_node_weights)
         if read_write_mode is not None:
             pulumi.set(__self__, "read_write_mode", read_write_mode)
+
+    @property
+    @pulumi.getter
+    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointAddressArgs']]]]:
+        return pulumi.get(self, "addresses")
+
+    @addresses.setter
+    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointAddressArgs']]]]):
+        pulumi.set(self, "addresses", value)
 
     @property
     @pulumi.getter(name="autoAddNewNodes")
@@ -1672,6 +2455,15 @@ class InstanceEndpointArgs:
     @connection_pool_type.setter
     def connection_pool_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "connection_pool_type", value)
+
+    @property
+    @pulumi.getter(name="customRouteStrategies")
+    def custom_route_strategies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointCustomRouteStrategyArgs']]]]:
+        return pulumi.get(self, "custom_route_strategies")
+
+    @custom_route_strategies.setter
+    def custom_route_strategies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceEndpointCustomRouteStrategyArgs']]]]):
+        pulumi.set(self, "custom_route_strategies", value)
 
     @property
     @pulumi.getter
@@ -1873,6 +2665,250 @@ class InstanceEndpointArgs:
     @read_write_mode.setter
     def read_write_mode(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "read_write_mode", value)
+
+
+if not MYPY:
+    class InstanceEndpointAddressArgsDict(TypedDict):
+        dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        false: Private network resolution (default). true: Private and public network resolution.
+        """
+        domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Connection domain name.
+        """
+        eip_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        eip_locked: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+        """
+        internet_protocol: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP protocol version. Value: IPv4.
+        """
+        ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        IP address.
+        """
+        network_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Network address type. Values: Private: private address. Public: public address.
+        """
+        port: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Port.
+        """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Subnet ID, valid only for Private addresses.
+        """
+elif False:
+    InstanceEndpointAddressArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceEndpointAddressArgs:
+    def __init__(__self__, *,
+                 dns_visibility: Optional[pulumi.Input[builtins.bool]] = None,
+                 domain: Optional[pulumi.Input[builtins.str]] = None,
+                 eip_id: Optional[pulumi.Input[builtins.str]] = None,
+                 eip_locked: Optional[pulumi.Input[builtins.bool]] = None,
+                 internet_protocol: Optional[pulumi.Input[builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 network_type: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] dns_visibility: false: Private network resolution (default). true: Private and public network resolution.
+        :param pulumi.Input[builtins.str] domain: Connection domain name.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID, valid only for Public addresses.
+        :param pulumi.Input[builtins.bool] eip_locked: Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.str] internet_protocol: IP protocol version. Value: IPv4.
+        :param pulumi.Input[builtins.str] ip_address: IP address.
+        :param pulumi.Input[builtins.str] network_type: Network address type. Values: Private: private address. Public: public address.
+        :param pulumi.Input[builtins.str] port: Port.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID, valid only for Private addresses.
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if eip_id is not None:
+            pulumi.set(__self__, "eip_id", eip_id)
+        if eip_locked is not None:
+            pulumi.set(__self__, "eip_locked", eip_locked)
+        if internet_protocol is not None:
+            pulumi.set(__self__, "internet_protocol", internet_protocol)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        false: Private network resolution (default). true: Private and public network resolution.
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @dns_visibility.setter
+    def dns_visibility(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "dns_visibility", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Connection domain name.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        EIP ID, valid only for Public addresses.
+        """
+        return pulumi.get(self, "eip_id")
+
+    @eip_id.setter
+    def eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eip_id", value)
+
+    @property
+    @pulumi.getter(name="eipLocked")
+    def eip_locked(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+        """
+        return pulumi.get(self, "eip_locked")
+
+    @eip_locked.setter
+    def eip_locked(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "eip_locked", value)
+
+    @property
+    @pulumi.getter(name="internetProtocol")
+    def internet_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP protocol version. Value: IPv4.
+        """
+        return pulumi.get(self, "internet_protocol")
+
+    @internet_protocol.setter
+    def internet_protocol(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "internet_protocol", value)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        IP address.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Network address type. Values: Private: private address. Public: public address.
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Port.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Subnet ID, valid only for Private addresses.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+if not MYPY:
+    class InstanceEndpointCustomRouteStrategyArgsDict(TypedDict):
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+        """
+        sql_keyword: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+        """
+elif False:
+    InstanceEndpointCustomRouteStrategyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceEndpointCustomRouteStrategyArgs:
+    def __init__(__self__, *,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None,
+                 sql_keyword: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] node_type: SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+        :param pulumi.Input[builtins.str] sql_keyword: Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+        """
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if sql_keyword is not None:
+            pulumi.set(__self__, "sql_keyword", sql_keyword)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter(name="sqlKeyword")
+    def sql_keyword(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+        """
+        return pulumi.get(self, "sql_keyword")
+
+    @sql_keyword.setter
+    def sql_keyword(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "sql_keyword", value)
 
 
 if not MYPY:

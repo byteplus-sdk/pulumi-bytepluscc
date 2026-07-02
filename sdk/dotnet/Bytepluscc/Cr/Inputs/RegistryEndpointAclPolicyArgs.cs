@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Inputs
     public sealed class RegistryEndpointAclPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IP entry address
+        /// IP entry address.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IP entry description
+        /// IP entry description.
         /// </summary>
         [Input("entry")]
         public Input<string>? Entry { get; set; }

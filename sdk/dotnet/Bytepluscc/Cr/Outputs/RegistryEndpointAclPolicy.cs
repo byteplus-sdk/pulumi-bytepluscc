@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class RegistryEndpointAclPolicy
     {
         /// <summary>
-        /// IP entry address
+        /// IP entry address.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// IP entry description
+        /// IP entry description.
         /// </summary>
         public readonly string? Entry;
 

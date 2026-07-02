@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your load balancing policy. Backend servers receive and process the requests.
+ * A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
  * 
  * ## Example Usage
  * 
@@ -52,14 +52,14 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
         return this.createTime;
     }
     /**
-     * Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+     * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      * 
      */
     @Export(name="crossZoneEnabled", refs={String.class}, tree="[0]")
     private Output<String> crossZoneEnabled;
 
     /**
-     * @return Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+     * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
      * 
      */
     public Output<String> crossZoneEnabled() {
@@ -80,28 +80,28 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * Health check configuration information for the server group.
+     * Server group health check configuration information.
      * 
      */
     @Export(name="healthCheck", refs={ServerGroupHealthCheck.class}, tree="[0]")
     private Output<ServerGroupHealthCheck> healthCheck;
 
     /**
-     * @return Health check configuration information for the server group.
+     * @return Server group health check configuration information.
      * 
      */
     public Output<ServerGroupHealthCheck> healthCheck() {
         return this.healthCheck;
     }
     /**
-     * IP address type of the server group. Currently, only IPv4 is supported.
+     * IP address type of the server group. Only IPv4 is supported.
      * 
      */
     @Export(name="ipAddressType", refs={String.class}, tree="[0]")
     private Output<String> ipAddressType;
 
     /**
-     * @return IP address type of the server group. Currently, only IPv4 is supported.
+     * @return IP address type of the server group. Only IPv4 is supported.
      * 
      */
     public Output<String> ipAddressType() {
@@ -142,14 +142,14 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
         return this.protocol;
     }
     /**
-     * Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+     * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      * 
      */
     @Export(name="scheduler", refs={String.class}, tree="[0]")
     private Output<String> scheduler;
 
     /**
-     * @return Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+     * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
      * 
      */
     public Output<String> scheduler() {
@@ -170,42 +170,42 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
         return this.serverCount;
     }
     /**
-     * Backend server group ID.
+     * ID of the backend server group.
      * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
-     * @return Backend server group ID.
+     * @return ID of the backend server group.
      * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * Backend server group name.
+     * Name of the backend server group.
      * 
      */
     @Export(name="serverGroupName", refs={String.class}, tree="[0]")
     private Output<String> serverGroupName;
 
     /**
-     * @return Backend server group name.
+     * @return Name of the backend server group.
      * 
      */
     public Output<String> serverGroupName() {
         return this.serverGroupName;
     }
     /**
-     * Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+     * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      * 
      */
     @Export(name="serverGroupType", refs={String.class}, tree="[0]")
     private Output<String> serverGroupType;
 
     /**
-     * @return Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+     * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
      * 
      */
     public Output<String> serverGroupType() {
@@ -218,14 +218,14 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
         return this.servers;
     }
     /**
-     * Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+     * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+     * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
      * 
      */
     public Output<String> status() {

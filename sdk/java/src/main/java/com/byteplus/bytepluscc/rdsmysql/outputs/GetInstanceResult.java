@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.rdsmysql.outputs;
 
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceAddressObject;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceAutoStorageScalingConfig;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceBackupPolicy;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceChargeDetail;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceDisasterRecoveryInstance;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceEndpoint;
@@ -78,6 +79,11 @@ public final class GetInstanceResult {
      * 
      */
     private Integer backupLogSize;
+    /**
+     * @return Instance backup policy configuration.
+     * 
+     */
+    private GetInstanceBackupPolicy backupPolicy;
     /**
      * @return Space used by slow logs in backups.
      * 
@@ -168,6 +174,11 @@ public final class GetInstanceResult {
      * 
      */
     private List<GetInstanceEndpoint> endpoints;
+    /**
+     * @return Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     * 
+     */
+    private String engineType;
     /**
      * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      * 
@@ -264,10 +275,20 @@ public final class GetInstanceResult {
      */
     private List<GetInstanceNode> nodes;
     /**
+     * @return Parameter template ID.
+     * 
+     */
+    private String parameterTemplateId;
+    /**
      * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     private Integer port;
+    /**
+     * @return Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     * 
+     */
+    private String privateIpAddress;
     /**
      * @return Project.
      * 
@@ -458,6 +479,13 @@ public final class GetInstanceResult {
         return this.backupLogSize;
     }
     /**
+     * @return Instance backup policy configuration.
+     * 
+     */
+    public GetInstanceBackupPolicy backupPolicy() {
+        return this.backupPolicy;
+    }
+    /**
      * @return Space used by slow logs in backups.
      * 
      */
@@ -582,6 +610,13 @@ public final class GetInstanceResult {
      */
     public List<GetInstanceEndpoint> endpoints() {
         return this.endpoints;
+    }
+    /**
+     * @return Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     * 
+     */
+    public String engineType() {
+        return this.engineType;
     }
     /**
      * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -717,11 +752,25 @@ public final class GetInstanceResult {
         return this.nodes;
     }
     /**
+     * @return Parameter template ID.
+     * 
+     */
+    public String parameterTemplateId() {
+        return this.parameterTemplateId;
+    }
+    /**
      * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
      */
     public Integer port() {
         return this.port;
+    }
+    /**
+     * @return Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     * 
+     */
+    public String privateIpAddress() {
+        return this.privateIpAddress;
     }
     /**
      * @return Project.
@@ -898,6 +947,7 @@ public final class GetInstanceResult {
         private Integer backupErrorLogSize;
         private Integer backupFreeQuotaSize;
         private Integer backupLogSize;
+        private GetInstanceBackupPolicy backupPolicy;
         private Integer backupSlowLogSize;
         private Double backupUse;
         private Integer basicBackupBinlogSize;
@@ -916,6 +966,7 @@ public final class GetInstanceResult {
         private String drDtsTaskStatus;
         private Integer drSecondsBehindMaster;
         private List<GetInstanceEndpoint> endpoints;
+        private String engineType;
         private Boolean globalReadOnly;
         private Boolean hasDisasterRecoveryInstances;
         private Boolean hasGreenInstance;
@@ -935,7 +986,9 @@ public final class GetInstanceResult {
         private Double nodeSpaceUsedPercentage;
         private String nodeSpec;
         private List<GetInstanceNode> nodes;
+        private String parameterTemplateId;
         private Integer port;
+        private String privateIpAddress;
         private String projectName;
         private GetInstanceProxyDetail proxyDetail;
         private Integer storageAuditLogSize;
@@ -972,6 +1025,7 @@ public final class GetInstanceResult {
     	      this.backupErrorLogSize = defaults.backupErrorLogSize;
     	      this.backupFreeQuotaSize = defaults.backupFreeQuotaSize;
     	      this.backupLogSize = defaults.backupLogSize;
+    	      this.backupPolicy = defaults.backupPolicy;
     	      this.backupSlowLogSize = defaults.backupSlowLogSize;
     	      this.backupUse = defaults.backupUse;
     	      this.basicBackupBinlogSize = defaults.basicBackupBinlogSize;
@@ -990,6 +1044,7 @@ public final class GetInstanceResult {
     	      this.drDtsTaskStatus = defaults.drDtsTaskStatus;
     	      this.drSecondsBehindMaster = defaults.drSecondsBehindMaster;
     	      this.endpoints = defaults.endpoints;
+    	      this.engineType = defaults.engineType;
     	      this.globalReadOnly = defaults.globalReadOnly;
     	      this.hasDisasterRecoveryInstances = defaults.hasDisasterRecoveryInstances;
     	      this.hasGreenInstance = defaults.hasGreenInstance;
@@ -1009,7 +1064,9 @@ public final class GetInstanceResult {
     	      this.nodeSpaceUsedPercentage = defaults.nodeSpaceUsedPercentage;
     	      this.nodeSpec = defaults.nodeSpec;
     	      this.nodes = defaults.nodes;
+    	      this.parameterTemplateId = defaults.parameterTemplateId;
     	      this.port = defaults.port;
+    	      this.privateIpAddress = defaults.privateIpAddress;
     	      this.projectName = defaults.projectName;
     	      this.proxyDetail = defaults.proxyDetail;
     	      this.storageAuditLogSize = defaults.storageAuditLogSize;
@@ -1126,6 +1183,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "backupLogSize");
             }
             this.backupLogSize = backupLogSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupPolicy(GetInstanceBackupPolicy backupPolicy) {
+            if (backupPolicy == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backupPolicy");
+            }
+            this.backupPolicy = backupPolicy;
             return this;
         }
         @CustomType.Setter
@@ -1277,6 +1342,14 @@ public final class GetInstanceResult {
         }
         public Builder endpoints(GetInstanceEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
+        }
+        @CustomType.Setter
+        public Builder engineType(String engineType) {
+            if (engineType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "engineType");
+            }
+            this.engineType = engineType;
+            return this;
         }
         @CustomType.Setter
         public Builder globalReadOnly(Boolean globalReadOnly) {
@@ -1434,11 +1507,27 @@ public final class GetInstanceResult {
             return nodes(List.of(nodes));
         }
         @CustomType.Setter
+        public Builder parameterTemplateId(String parameterTemplateId) {
+            if (parameterTemplateId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "parameterTemplateId");
+            }
+            this.parameterTemplateId = parameterTemplateId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder port(Integer port) {
             if (port == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "port");
             }
             this.port = port;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateIpAddress(String privateIpAddress) {
+            if (privateIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "privateIpAddress");
+            }
+            this.privateIpAddress = privateIpAddress;
             return this;
         }
         @CustomType.Setter
@@ -1636,6 +1725,7 @@ public final class GetInstanceResult {
             _resultValue.backupErrorLogSize = backupErrorLogSize;
             _resultValue.backupFreeQuotaSize = backupFreeQuotaSize;
             _resultValue.backupLogSize = backupLogSize;
+            _resultValue.backupPolicy = backupPolicy;
             _resultValue.backupSlowLogSize = backupSlowLogSize;
             _resultValue.backupUse = backupUse;
             _resultValue.basicBackupBinlogSize = basicBackupBinlogSize;
@@ -1654,6 +1744,7 @@ public final class GetInstanceResult {
             _resultValue.drDtsTaskStatus = drDtsTaskStatus;
             _resultValue.drSecondsBehindMaster = drSecondsBehindMaster;
             _resultValue.endpoints = endpoints;
+            _resultValue.engineType = engineType;
             _resultValue.globalReadOnly = globalReadOnly;
             _resultValue.hasDisasterRecoveryInstances = hasDisasterRecoveryInstances;
             _resultValue.hasGreenInstance = hasGreenInstance;
@@ -1673,7 +1764,9 @@ public final class GetInstanceResult {
             _resultValue.nodeSpaceUsedPercentage = nodeSpaceUsedPercentage;
             _resultValue.nodeSpec = nodeSpec;
             _resultValue.nodes = nodes;
+            _resultValue.parameterTemplateId = parameterTemplateId;
             _resultValue.port = port;
+            _resultValue.privateIpAddress = privateIpAddress;
             _resultValue.projectName = projectName;
             _resultValue.proxyDetail = proxyDetail;
             _resultValue.storageAuditLogSize = storageAuditLogSize;

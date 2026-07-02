@@ -264,20 +264,20 @@ class ParameterGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_bytepluscc as bytepluscc
 
-        redis_parameter_group_demo = bytepluscc.index.RedisParametergroup("RedisParameterGroupDemo",
-            engine_version=6.0,
-            description=用于测试的Redis 6.0自定义参数组,
+        redis_parameter_group_demo = bytepluscc.redis.ParameterGroup("RedisParameterGroupDemo",
+            engine_version="6.0",
+            description="用于测试的Redis 6.0自定义参数组",
             param_values=[
                 {
-                    value: allkeys-lru,
-                    name: maxmemory-policy,
+                    "value": "allkeys-lru",
+                    "name": "maxmemory-policy",
                 },
                 {
-                    value: 300,
-                    name: proxy-client-idle-timeout,
+                    "value": "300",
+                    "name": "proxy-client-idle-timeout",
                 },
             ],
-            name=test-redis6-param-group)
+            name="test-redis6-param-group")
         ```
 
         ## Import
@@ -307,20 +307,20 @@ class ParameterGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_bytepluscc as bytepluscc
 
-        redis_parameter_group_demo = bytepluscc.index.RedisParametergroup("RedisParameterGroupDemo",
-            engine_version=6.0,
-            description=用于测试的Redis 6.0自定义参数组,
+        redis_parameter_group_demo = bytepluscc.redis.ParameterGroup("RedisParameterGroupDemo",
+            engine_version="6.0",
+            description="用于测试的Redis 6.0自定义参数组",
             param_values=[
                 {
-                    value: allkeys-lru,
-                    name: maxmemory-policy,
+                    "value": "allkeys-lru",
+                    "name": "maxmemory-policy",
                 },
                 {
-                    value: 300,
-                    name: proxy-client-idle-timeout,
+                    "value": "300",
+                    "name": "proxy-client-idle-timeout",
                 },
             ],
-            name=test-redis6-param-group)
+            name="test-redis6-param-group")
         ```
 
         ## Import

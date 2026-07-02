@@ -31,15 +31,15 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      */
     readonly autoRenew: string;
     /**
-     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      */
     readonly billingPeriod: string;
     /**
-     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      */
     readonly billingType: string;
     /**
@@ -47,11 +47,11 @@ export interface GetInstanceResult {
      */
     readonly createdTime: string;
     /**
-     * Instance description statement
+     * Instance description
      */
     readonly description: string;
     /**
-     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      */
     readonly eipId: string;
     /**
@@ -75,11 +75,11 @@ export interface GetInstanceResult {
      */
     readonly instanceId: string;
     /**
-     * Message retention period for all topics under the instance, in hours
+     * Message retention period for all Topics under the instance, in hours
      */
     readonly messageRetention: number;
     /**
-     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      */
     readonly name: string;
     /**
@@ -87,7 +87,7 @@ export interface GetInstanceResult {
      */
     readonly partitionLimit: number;
     /**
-     * Project name to which the instance belongs
+     * Project name associated with the instance
      */
     readonly projectName: string;
     /**
@@ -99,7 +99,7 @@ export interface GetInstanceResult {
      */
     readonly resources: outputs.bmq.GetInstanceResources;
     /**
-     * List of security groups used by the instance
+     * Security group list used by the instance
      */
     readonly securityGroupIdLists: string[];
     /**
@@ -111,7 +111,7 @@ export interface GetInstanceResult {
      */
     readonly status: string;
     /**
-     * List of subnets used by the instance
+     * Subnet list used by the instance
      */
     readonly subnetIdLists: string[];
     /**
@@ -119,11 +119,11 @@ export interface GetInstanceResult {
      */
     readonly tags: outputs.bmq.GetInstanceTag[];
     /**
-     * Purchase duration for subscription instances, in months
+     * Purchase duration for yearly/monthly subscription instances, in months
      */
     readonly times: number;
     /**
-     * Maximum number of topics per instance
+     * Maximum number of Topics per instance
      */
     readonly topicLimit: number;
     /**
@@ -131,7 +131,7 @@ export interface GetInstanceResult {
      */
     readonly vpcId: string;
     /**
-     * List of availability zones where the instance is located
+     * List of availability zones for the instance
      */
     readonly zoneIdLists: string[];
 }

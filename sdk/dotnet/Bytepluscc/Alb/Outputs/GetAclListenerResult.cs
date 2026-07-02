@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetAclListenerResult
     {
         /// <summary>
-        /// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+        /// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         /// </summary>
         public readonly string AclType;
         /// <summary>

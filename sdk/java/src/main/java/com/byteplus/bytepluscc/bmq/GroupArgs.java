@@ -17,14 +17,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final GroupArgs Empty = new GroupArgs();
 
     /**
-     * Consumer Group description.
+     * Consumer Group description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Consumer Group description.
+     * @return Consumer Group description
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * @return Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -47,14 +47,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * BMQ instance ID.
+     * BMQ instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return BMQ instance ID.
+     * @return BMQ instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -62,14 +62,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Reset consumption position information.
+     * Reset consumption offset information
      * 
      */
     @Import(name="resetInfo")
     private @Nullable Output<GroupResetInfoArgs> resetInfo;
 
     /**
-     * @return Reset consumption position information.
+     * @return Reset consumption offset information
      * 
      */
     public Optional<Output<GroupResetInfoArgs>> resetInfo() {
@@ -104,7 +104,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group description.
+         * @param description Consumer Group description
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group description.
+         * @param description Consumer Group description
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+         * @param groupName Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+         * @param groupName Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId BMQ instance ID.
+         * @param instanceId BMQ instance ID
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId BMQ instance ID.
+         * @param instanceId BMQ instance ID
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo Reset consumption position information.
+         * @param resetInfo Reset consumption offset information
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo Reset consumption position information.
+         * @param resetInfo Reset consumption offset information
          * 
          * @return builder
          * 

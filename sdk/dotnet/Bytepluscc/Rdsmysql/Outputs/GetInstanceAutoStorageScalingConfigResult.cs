@@ -19,6 +19,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
         /// </summary>
         public readonly bool EnableStorageAutoScale;
         /// <summary>
+        /// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+        /// </summary>
+        public readonly string ScalingDetectNode;
+        /// <summary>
         /// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
         /// </summary>
         public readonly int StorageThreshold;
@@ -31,11 +35,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
         private GetInstanceAutoStorageScalingConfigResult(
             bool enableStorageAutoScale,
 
+            string scalingDetectNode,
+
             int storageThreshold,
 
             int storageUpperBound)
         {
             EnableStorageAutoScale = enableStorageAutoScale;
+            ScalingDetectNode = scalingDetectNode;
             StorageThreshold = storageThreshold;
             StorageUpperBound = storageUpperBound;
         }

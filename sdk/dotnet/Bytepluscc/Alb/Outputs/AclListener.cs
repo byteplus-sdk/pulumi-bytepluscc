@@ -15,14 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class AclListener
     {
         /// <summary>
-        /// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+        /// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         /// </summary>
         public readonly string? AclType;
+        /// <summary>
+        /// Listener ID
+        /// </summary>
+        public readonly string? ListenerId;
+        /// <summary>
+        /// Listener name
+        /// </summary>
+        public readonly string? ListenerName;
+        /// <summary>
+        /// Listener port
+        /// </summary>
+        public readonly int? Port;
+        /// <summary>
+        /// Listener protocol
+        /// </summary>
+        public readonly string? Protocol;
 
         [OutputConstructor]
-        private AclListener(string? aclType)
+        private AclListener(
+            string? aclType,
+
+            string? listenerId,
+
+            string? listenerName,
+
+            int? port,
+
+            string? protocol)
         {
             AclType = aclType;
+            ListenerId = listenerId;
+            ListenerName = listenerName;
+            Port = port;
+            Protocol = protocol;
         }
     }
 }

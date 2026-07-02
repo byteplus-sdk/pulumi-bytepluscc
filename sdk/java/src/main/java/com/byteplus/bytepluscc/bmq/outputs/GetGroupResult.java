@@ -14,22 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupResult {
     /**
-     * @return Consumer Group creation time.
+     * @return Consumer Group creation time
      * 
      */
     private String createdTime;
     /**
-     * @return Consumer Group description.
+     * @return Consumer Group description
      * 
      */
     private String description;
     /**
-     * @return Consumer Group ID.
+     * @return Consumer Group ID
      * 
      */
     private String groupId;
     /**
-     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * @return Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     private String groupName;
@@ -39,60 +39,60 @@ public final class GetGroupResult {
      */
     private String id;
     /**
-     * @return BMQ instance ID.
+     * @return BMQ instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return User ID associated with the Consumer Group.
+     * @return User ID of the Consumer Group owner
      * 
      */
     private String ownerId;
     /**
-     * @return Name of the user associated with the Consumer Group.
+     * @return Name of the Consumer Group owner
      * 
      */
     private String ownerName;
     /**
-     * @return Reset consumption position information.
+     * @return Reset consumption offset information
      * 
      */
     private GetGroupResetInfo resetInfo;
     /**
-     * @return Consumer Group status.
+     * @return Consumer Group status
      * 
      */
     private String status;
     /**
-     * @return Topic list.
+     * @return Topic list
      * 
      */
     private List<GetGroupTopicInfo> topicInfos;
 
     private GetGroupResult() {}
     /**
-     * @return Consumer Group creation time.
+     * @return Consumer Group creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return Consumer Group description.
+     * @return Consumer Group description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Consumer Group ID.
+     * @return Consumer Group ID
      * 
      */
     public String groupId() {
         return this.groupId;
     }
     /**
-     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * @return Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     public String groupName() {
@@ -106,42 +106,42 @@ public final class GetGroupResult {
         return this.id;
     }
     /**
-     * @return BMQ instance ID.
+     * @return BMQ instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return User ID associated with the Consumer Group.
+     * @return User ID of the Consumer Group owner
      * 
      */
     public String ownerId() {
         return this.ownerId;
     }
     /**
-     * @return Name of the user associated with the Consumer Group.
+     * @return Name of the Consumer Group owner
      * 
      */
     public String ownerName() {
         return this.ownerName;
     }
     /**
-     * @return Reset consumption position information.
+     * @return Reset consumption offset information
      * 
      */
     public GetGroupResetInfo resetInfo() {
         return this.resetInfo;
     }
     /**
-     * @return Consumer Group status.
+     * @return Consumer Group status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return Topic list.
+     * @return Topic list
      * 
      */
     public List<GetGroupTopicInfo> topicInfos() {

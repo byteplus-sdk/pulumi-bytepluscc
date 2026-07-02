@@ -305,6 +305,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
             set => _tags = value;
         }
 
+        [Input("userCidrBlocks")]
+        private InputList<string>? _userCidrBlocks;
+
+        /// <summary>
+        /// User CIDR block of the VPC.
+        /// </summary>
+        public InputList<string> UserCidrBlocks
+        {
+            get => _userCidrBlocks ?? (_userCidrBlocks = new InputList<string>());
+            set => _userCidrBlocks = value;
+        }
+
         /// <summary>
         /// Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
         /// </summary>

@@ -15,33 +15,33 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupTopicInfo {
     /**
-     * @return Topic creation time.
+     * @return Topic creation time
      * 
      */
     private @Nullable String createTime;
     /**
-     * @return Topic description.
+     * @return Topic description
      * 
      */
     private @Nullable String description;
     /**
-     * @return Number of unconsumed messages in the Topic.
+     * @return Number of unconsumed messages in the Topic
      * 
      */
     private @Nullable Integer lag;
     private @Nullable List<GroupTopicInfoPartitionInfo> partitionInfos;
     /**
-     * @return Number of Topic partitions.
+     * @return Number of Topic partitions
      * 
      */
     private @Nullable Integer partitions;
     /**
-     * @return Retention period of data in the Topic, in hours.
+     * @return Retention period of data in the Topic, in hours
      * 
      */
     private @Nullable Integer retention;
     /**
-     * @return Topic status.
+     * @return Topic status
      * 
      */
     private @Nullable String status;
@@ -51,28 +51,28 @@ public final class GroupTopicInfo {
      */
     private @Nullable String topicId;
     /**
-     * @return Topic name.
+     * @return Topic name
      * 
      */
     private @Nullable String topicName;
 
     private GroupTopicInfo() {}
     /**
-     * @return Topic creation time.
+     * @return Topic creation time
      * 
      */
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
     }
     /**
-     * @return Topic description.
+     * @return Topic description
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Number of unconsumed messages in the Topic.
+     * @return Number of unconsumed messages in the Topic
      * 
      */
     public Optional<Integer> lag() {
@@ -82,21 +82,21 @@ public final class GroupTopicInfo {
         return this.partitionInfos == null ? List.of() : this.partitionInfos;
     }
     /**
-     * @return Number of Topic partitions.
+     * @return Number of Topic partitions
      * 
      */
     public Optional<Integer> partitions() {
         return Optional.ofNullable(this.partitions);
     }
     /**
-     * @return Retention period of data in the Topic, in hours.
+     * @return Retention period of data in the Topic, in hours
      * 
      */
     public Optional<Integer> retention() {
         return Optional.ofNullable(this.retention);
     }
     /**
-     * @return Topic status.
+     * @return Topic status
      * 
      */
     public Optional<String> status() {
@@ -110,7 +110,7 @@ public final class GroupTopicInfo {
         return Optional.ofNullable(this.topicId);
     }
     /**
-     * @return Topic name.
+     * @return Topic name
      * 
      */
     public Optional<String> topicName() {

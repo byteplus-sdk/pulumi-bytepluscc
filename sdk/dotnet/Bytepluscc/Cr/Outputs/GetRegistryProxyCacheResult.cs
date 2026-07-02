@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class GetRegistryProxyCacheResult
     {
         /// <summary>
-        /// Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+        /// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         /// </summary>
         public readonly string Type;
 

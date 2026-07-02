@@ -7,27 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * A group of consumers with the same Group ID. When a Topic is consumed by multiple Consumers in the same Group, each message is delivered to only one Consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as byteplus from "@pulumi/byteplus";
- *
- * const bMQGroupDemo = new byteplus.index.BmqGroup("BMQGroupDemo", {
- *     description: "this is test group",
- *     groupName: "cBMQGroupDemo",
- *     instanceId: "bmq-4ld4vpjzd32tq1gxxxxx",
- *     resetInfo: {
- *         topicId: "5f81fcab96cb46c7955659fdxxxxx",
- *         resetBy: "OFFSET",
- *         offsetType: "LATEST",
- *         resetValue: 4,
- *         partitionId: 1,
- *     },
- * });
- * ```
+ * A group of consumers with the same Group ID. When multiple consumers in the same Group consume a Topic, each message is delivered to only one consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
  *
  * ## Import
  *
@@ -64,39 +44,39 @@ export class Group extends pulumi.CustomResource {
     }
 
     /**
-     * Consumer Group creation time.
+     * Consumer Group creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * Consumer Group description.
+     * Consumer Group description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Consumer Group ID.
+     * Consumer Group ID
      */
     public /*out*/ readonly groupId!: pulumi.Output<string>;
     /**
-     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      */
     public readonly groupName!: pulumi.Output<string>;
     /**
-     * BMQ instance ID.
+     * BMQ instance ID
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * User ID associated with the Consumer Group.
+     * User ID of the Consumer Group owner
      */
     public /*out*/ readonly ownerId!: pulumi.Output<string>;
     /**
-     * Name of the user associated with the Consumer Group.
+     * Name of the Consumer Group owner
      */
     public /*out*/ readonly ownerName!: pulumi.Output<string>;
     /**
-     * Reset consumption position information.
+     * Reset consumption offset information
      */
     public readonly resetInfo!: pulumi.Output<outputs.bmq.GroupResetInfo>;
     /**
-     * Consumer Group status.
+     * Consumer Group status
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public /*out*/ readonly topicInfos!: pulumi.Output<outputs.bmq.GroupTopicInfo[]>;
@@ -147,39 +127,39 @@ export class Group extends pulumi.CustomResource {
  */
 export interface GroupState {
     /**
-     * Consumer Group creation time.
+     * Consumer Group creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * Consumer Group description.
+     * Consumer Group description
      */
     description?: pulumi.Input<string>;
     /**
-     * Consumer Group ID.
+     * Consumer Group ID
      */
     groupId?: pulumi.Input<string>;
     /**
-     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      */
     groupName?: pulumi.Input<string>;
     /**
-     * BMQ instance ID.
+     * BMQ instance ID
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * User ID associated with the Consumer Group.
+     * User ID of the Consumer Group owner
      */
     ownerId?: pulumi.Input<string>;
     /**
-     * Name of the user associated with the Consumer Group.
+     * Name of the Consumer Group owner
      */
     ownerName?: pulumi.Input<string>;
     /**
-     * Reset consumption position information.
+     * Reset consumption offset information
      */
     resetInfo?: pulumi.Input<inputs.bmq.GroupResetInfo>;
     /**
-     * Consumer Group status.
+     * Consumer Group status
      */
     status?: pulumi.Input<string>;
     topicInfos?: pulumi.Input<pulumi.Input<inputs.bmq.GroupTopicInfo>[]>;
@@ -190,19 +170,19 @@ export interface GroupState {
  */
 export interface GroupArgs {
     /**
-     * Consumer Group description.
+     * Consumer Group description
      */
     description?: pulumi.Input<string>;
     /**
-     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
+     * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      */
     groupName?: pulumi.Input<string>;
     /**
-     * BMQ instance ID.
+     * BMQ instance ID
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * Reset consumption position information.
+     * Reset consumption offset information
      */
     resetInfo?: pulumi.Input<inputs.bmq.GroupResetInfo>;
 }

@@ -280,22 +280,6 @@ class AllowList(pulumi.CustomResource):
         """
         RabbitMQ access allowlist
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        rabbit_mq_allow_list_demo = bytepluscc.index.RabbitmqAllowlist("RabbitMQAllowListDemo",
-            allow_list_type=IPv4,
-            allow_list=192.x.0.0/24,
-            allow_list_name=ccapi-test,
-            allow_list_desc=test-desc,
-            associated_instances=[{
-                instanceId: rbtmq-a69238e***,
-            }])
-        ```
-
         ## Import
 
         ```sh
@@ -318,22 +302,6 @@ class AllowList(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         RabbitMQ access allowlist
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        rabbit_mq_allow_list_demo = bytepluscc.index.RabbitmqAllowlist("RabbitMQAllowListDemo",
-            allow_list_type=IPv4,
-            allow_list=192.x.0.0/24,
-            allow_list_name=ccapi-test,
-            allow_list_desc=test-desc,
-            associated_instances=[{
-                instanceId: rbtmq-a69238e***,
-            }])
-        ```
 
         ## Import
 

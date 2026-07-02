@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
-    /// ALB provides access control at the listener level. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance via the listener port, you can set an access control policy for the listener. You can configure access control when creating the listener or modify/reconfigure it after the listener is created.
+    /// ALB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance through the listener port, you can set an access control policy for this listener. You can configure access control when creating the listener, or modify or reconfigure access control after the listener is created
     /// 
     /// ## Example Usage
     /// 
@@ -61,31 +61,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.AclAclEntry>> AclEntries { get; private set; } = null!;
 
         /// <summary>
-        /// Number of IP entries in the access control policy group.
+        /// Number of IP entries in the access control policy group
         /// </summary>
         [Output("aclEntryCount")]
         public Output<int> AclEntryCount { get; private set; } = null!;
 
         /// <summary>
-        /// Access control policy group ID.
+        /// Access control policy group ID
         /// </summary>
         [Output("aclId")]
         public Output<string> AclId { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        /// Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
         /// </summary>
         [Output("aclName")]
         public Output<string> AclName { get; private set; } = null!;
 
         /// <summary>
-        /// Creation time of the access control policy group.
+        /// Creation time of the access control policy group
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        /// Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -94,13 +94,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.AclListener>> Listeners { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the project to which the access control policy group belongs.
+        /// Project name to which the access control policy group belongs
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
+        /// Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -109,7 +109,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.AclTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// Most recent operation time for the access control policy group.
+        /// Last operation time of the access control policy group
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -170,27 +170,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        /// Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
         /// </summary>
         [Input("aclName")]
         public Input<string>? AclName { get; set; }
 
         /// <summary>
-        /// Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        /// Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        [Input("listeners")]
-        private InputList<Inputs.AclListenerArgs>? _listeners;
-        public InputList<Inputs.AclListenerArgs> Listeners
-        {
-            get => _listeners ?? (_listeners = new InputList<Inputs.AclListenerArgs>());
-            set => _listeners = value;
-        }
-
         /// <summary>
-        /// Name of the project to which the access control policy group belongs.
+        /// Project name to which the access control policy group belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -220,31 +212,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// Number of IP entries in the access control policy group.
+        /// Number of IP entries in the access control policy group
         /// </summary>
         [Input("aclEntryCount")]
         public Input<int>? AclEntryCount { get; set; }
 
         /// <summary>
-        /// Access control policy group ID.
+        /// Access control policy group ID
         /// </summary>
         [Input("aclId")]
         public Input<string>? AclId { get; set; }
 
         /// <summary>
-        /// Name of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
+        /// Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
         /// </summary>
         [Input("aclName")]
         public Input<string>? AclName { get; set; }
 
         /// <summary>
-        /// Creation time of the access control policy group.
+        /// Creation time of the access control policy group
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// Description of the access control policy group. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+        /// Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -258,13 +250,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// Name of the project to which the access control policy group belongs.
+        /// Project name to which the access control policy group belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// Status of the access control policy group. Creating: being created. Active: available. Configuring: being configured. Deleting: being deleted.
+        /// Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -278,7 +270,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// Most recent operation time for the access control policy group.
+        /// Last operation time of the access control policy group
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

@@ -301,16 +301,16 @@ class RuleFile(pulumi.CustomResource):
         import pulumi
         import pulumi_bytepluscc as bytepluscc
 
-        v_mp_rule_file_demo = bytepluscc.index.VmpRulefile("VMPRuleFileDemo",
-            description=这是一个测试规则文件,
-            target_workspace_id=3ba7844b-e7fc-4688-a869-****,
-            content=groups:
+        v_mp_rule_file_demo = bytepluscc.vmp.RuleFile("VMPRuleFileDemo",
+            description="这是一个测试规则文件",
+            target_workspace_id="3ba7844b-e7fc-4688-a869-****",
+            content=\"\"\"groups:
         - name: example
           rules:
           - record: example_metric
-            expr: sum(up),
-            workspace_id=3ba7844b-e7fc-4688-a869-****,
-            name=test-rule-file)
+            expr: sum(up)\"\"\",
+            workspace_id="3ba7844b-e7fc-4688-a869-****",
+            name="test-rule-file")
         ```
 
         ## Import
@@ -344,16 +344,16 @@ class RuleFile(pulumi.CustomResource):
         import pulumi
         import pulumi_bytepluscc as bytepluscc
 
-        v_mp_rule_file_demo = bytepluscc.index.VmpRulefile("VMPRuleFileDemo",
-            description=这是一个测试规则文件,
-            target_workspace_id=3ba7844b-e7fc-4688-a869-****,
-            content=groups:
+        v_mp_rule_file_demo = bytepluscc.vmp.RuleFile("VMPRuleFileDemo",
+            description="这是一个测试规则文件",
+            target_workspace_id="3ba7844b-e7fc-4688-a869-****",
+            content=\"\"\"groups:
         - name: example
           rules:
           - record: example_metric
-            expr: sum(up),
-            workspace_id=3ba7844b-e7fc-4688-a869-****,
-            name=test-rule-file)
+            expr: sum(up)\"\"\",
+            workspace_id="3ba7844b-e7fc-4688-a869-****",
+            name="test-rule-file")
         ```
 
         ## Import

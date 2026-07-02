@@ -14,13 +14,13 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GroupResetInfo struct {
-	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+	// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 	OffsetType *string `pulumi:"offsetType"`
-	// Partition number.
+	// Partition number
 	PartitionId *int `pulumi:"partitionId"`
-	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+	// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 	ResetBy *string `pulumi:"resetBy"`
-	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+	// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 	ResetValue *int `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId *string `pulumi:"topicId"`
@@ -38,13 +38,13 @@ type GroupResetInfoInput interface {
 }
 
 type GroupResetInfoArgs struct {
-	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+	// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 	OffsetType pulumi.StringPtrInput `pulumi:"offsetType"`
-	// Partition number.
+	// Partition number
 	PartitionId pulumi.IntPtrInput `pulumi:"partitionId"`
-	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+	// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 	ResetBy pulumi.StringPtrInput `pulumi:"resetBy"`
-	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+	// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 	ResetValue pulumi.IntPtrInput `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
@@ -127,22 +127,22 @@ func (o GroupResetInfoOutput) ToGroupResetInfoPtrOutputWithContext(ctx context.C
 	}).(GroupResetInfoPtrOutput)
 }
 
-// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 func (o GroupResetInfoOutput) OffsetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *string { return v.OffsetType }).(pulumi.StringPtrOutput)
 }
 
-// Partition number.
+// Partition number
 func (o GroupResetInfoOutput) PartitionId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *int { return v.PartitionId }).(pulumi.IntPtrOutput)
 }
 
-// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 func (o GroupResetInfoOutput) ResetBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *string { return v.ResetBy }).(pulumi.StringPtrOutput)
 }
 
-// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 func (o GroupResetInfoOutput) ResetValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupResetInfo) *int { return v.ResetValue }).(pulumi.IntPtrOutput)
 }
@@ -176,7 +176,7 @@ func (o GroupResetInfoPtrOutput) Elem() GroupResetInfoOutput {
 	}).(GroupResetInfoOutput)
 }
 
-// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 func (o GroupResetInfoPtrOutput) OffsetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *string {
 		if v == nil {
@@ -186,7 +186,7 @@ func (o GroupResetInfoPtrOutput) OffsetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Partition number.
+// Partition number
 func (o GroupResetInfoPtrOutput) PartitionId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *int {
 		if v == nil {
@@ -196,7 +196,7 @@ func (o GroupResetInfoPtrOutput) PartitionId() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 func (o GroupResetInfoPtrOutput) ResetBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *string {
 		if v == nil {
@@ -206,7 +206,7 @@ func (o GroupResetInfoPtrOutput) ResetBy() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 func (o GroupResetInfoPtrOutput) ResetValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GroupResetInfo) *int {
 		if v == nil {
@@ -227,22 +227,22 @@ func (o GroupResetInfoPtrOutput) TopicId() pulumi.StringPtrOutput {
 }
 
 type GroupTopicInfo struct {
-	// Topic creation time.
+	// Topic creation time
 	CreateTime *string `pulumi:"createTime"`
-	// Topic description.
+	// Topic description
 	Description *string `pulumi:"description"`
-	// Number of unconsumed messages in the Topic.
+	// Number of unconsumed messages in the Topic
 	Lag            *int                          `pulumi:"lag"`
 	PartitionInfos []GroupTopicInfoPartitionInfo `pulumi:"partitionInfos"`
-	// Number of Topic partitions.
+	// Number of Topic partitions
 	Partitions *int `pulumi:"partitions"`
-	// Retention period of data in the Topic, in hours.
+	// Retention period of data in the Topic, in hours
 	Retention *int `pulumi:"retention"`
-	// Topic status.
+	// Topic status
 	Status *string `pulumi:"status"`
 	// Topic ID。
 	TopicId *string `pulumi:"topicId"`
-	// Topic name.
+	// Topic name
 	TopicName *string `pulumi:"topicName"`
 }
 
@@ -258,22 +258,22 @@ type GroupTopicInfoInput interface {
 }
 
 type GroupTopicInfoArgs struct {
-	// Topic creation time.
+	// Topic creation time
 	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
-	// Topic description.
+	// Topic description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Number of unconsumed messages in the Topic.
+	// Number of unconsumed messages in the Topic
 	Lag            pulumi.IntPtrInput                    `pulumi:"lag"`
 	PartitionInfos GroupTopicInfoPartitionInfoArrayInput `pulumi:"partitionInfos"`
-	// Number of Topic partitions.
+	// Number of Topic partitions
 	Partitions pulumi.IntPtrInput `pulumi:"partitions"`
-	// Retention period of data in the Topic, in hours.
+	// Retention period of data in the Topic, in hours
 	Retention pulumi.IntPtrInput `pulumi:"retention"`
-	// Topic status.
+	// Topic status
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Topic ID。
 	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
-	// Topic name.
+	// Topic name
 	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
 }
 
@@ -328,17 +328,17 @@ func (o GroupTopicInfoOutput) ToGroupTopicInfoOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Topic creation time.
+// Topic creation time
 func (o GroupTopicInfoOutput) CreateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
 }
 
-// Topic description.
+// Topic description
 func (o GroupTopicInfoOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Number of unconsumed messages in the Topic.
+// Number of unconsumed messages in the Topic
 func (o GroupTopicInfoOutput) Lag() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Lag }).(pulumi.IntPtrOutput)
 }
@@ -347,17 +347,17 @@ func (o GroupTopicInfoOutput) PartitionInfos() GroupTopicInfoPartitionInfoArrayO
 	return o.ApplyT(func(v GroupTopicInfo) []GroupTopicInfoPartitionInfo { return v.PartitionInfos }).(GroupTopicInfoPartitionInfoArrayOutput)
 }
 
-// Number of Topic partitions.
+// Number of Topic partitions
 func (o GroupTopicInfoOutput) Partitions() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Partitions }).(pulumi.IntPtrOutput)
 }
 
-// Retention period of data in the Topic, in hours.
+// Retention period of data in the Topic, in hours
 func (o GroupTopicInfoOutput) Retention() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Retention }).(pulumi.IntPtrOutput)
 }
 
-// Topic status.
+// Topic status
 func (o GroupTopicInfoOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -367,7 +367,7 @@ func (o GroupTopicInfoOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
-// Topic name.
+// Topic name
 func (o GroupTopicInfoOutput) TopicName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
 }
@@ -393,17 +393,17 @@ func (o GroupTopicInfoArrayOutput) Index(i pulumi.IntInput) GroupTopicInfoOutput
 }
 
 type GroupTopicInfoPartitionInfo struct {
-	// Current consumption position.
+	// Current consumption offset
 	CurrentOffset *int `pulumi:"currentOffset"`
-	// Name of the Consumer Group.
+	// Consumer Group name
 	GroupName *string `pulumi:"groupName"`
-	// Number of unconsumed messages in the partition.
+	// Number of unconsumed messages in the partition
 	Lag *int `pulumi:"lag"`
-	// Latest consumption position.
+	// Latest consumption offset
 	LatestOffset *int `pulumi:"latestOffset"`
-	// Partition number.
+	// Partition number
 	PartitionId *int `pulumi:"partitionId"`
-	// Name of the Topic subscribed by the Consumer Group.
+	// Name of the Topic subscribed by the Consumer Group
 	TopicName *string `pulumi:"topicName"`
 }
 
@@ -419,17 +419,17 @@ type GroupTopicInfoPartitionInfoInput interface {
 }
 
 type GroupTopicInfoPartitionInfoArgs struct {
-	// Current consumption position.
+	// Current consumption offset
 	CurrentOffset pulumi.IntPtrInput `pulumi:"currentOffset"`
-	// Name of the Consumer Group.
+	// Consumer Group name
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
-	// Number of unconsumed messages in the partition.
+	// Number of unconsumed messages in the partition
 	Lag pulumi.IntPtrInput `pulumi:"lag"`
-	// Latest consumption position.
+	// Latest consumption offset
 	LatestOffset pulumi.IntPtrInput `pulumi:"latestOffset"`
-	// Partition number.
+	// Partition number
 	PartitionId pulumi.IntPtrInput `pulumi:"partitionId"`
-	// Name of the Topic subscribed by the Consumer Group.
+	// Name of the Topic subscribed by the Consumer Group
 	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
 }
 
@@ -484,32 +484,32 @@ func (o GroupTopicInfoPartitionInfoOutput) ToGroupTopicInfoPartitionInfoOutputWi
 	return o
 }
 
-// Current consumption position.
+// Current consumption offset
 func (o GroupTopicInfoPartitionInfoOutput) CurrentOffset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.CurrentOffset }).(pulumi.IntPtrOutput)
 }
 
-// Name of the Consumer Group.
+// Consumer Group name
 func (o GroupTopicInfoPartitionInfoOutput) GroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *string { return v.GroupName }).(pulumi.StringPtrOutput)
 }
 
-// Number of unconsumed messages in the partition.
+// Number of unconsumed messages in the partition
 func (o GroupTopicInfoPartitionInfoOutput) Lag() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.Lag }).(pulumi.IntPtrOutput)
 }
 
-// Latest consumption position.
+// Latest consumption offset
 func (o GroupTopicInfoPartitionInfoOutput) LatestOffset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.LatestOffset }).(pulumi.IntPtrOutput)
 }
 
-// Partition number.
+// Partition number
 func (o GroupTopicInfoPartitionInfoOutput) PartitionId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.PartitionId }).(pulumi.IntPtrOutput)
 }
 
-// Name of the Topic subscribed by the Consumer Group.
+// Name of the Topic subscribed by the Consumer Group
 func (o GroupTopicInfoPartitionInfoOutput) TopicName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
 }
@@ -695,11 +695,11 @@ type InstanceEndpointsOverlay struct {
 	Address *string `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId *string `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain *string `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort *int `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl *string `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort *int `pulumi:"saslPort"`
@@ -729,11 +729,11 @@ type InstanceEndpointsOverlayArgs struct {
 	Address pulumi.StringPtrInput `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain pulumi.StringPtrInput `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort pulumi.IntPtrInput `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl pulumi.StringPtrInput `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort pulumi.IntPtrInput `pulumi:"saslPort"`
@@ -834,7 +834,7 @@ func (o InstanceEndpointsOverlayOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// Private network Plain endpoint
+// Private network Plain access point
 func (o InstanceEndpointsOverlayOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Plain }).(pulumi.StringPtrOutput)
 }
@@ -844,7 +844,7 @@ func (o InstanceEndpointsOverlayOutput) PlainPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *int { return v.PlainPort }).(pulumi.IntPtrOutput)
 }
 
-// Private network SASL authentication endpoint
+// Private network SASL authentication access point
 func (o InstanceEndpointsOverlayOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsOverlay) *string { return v.Sasl }).(pulumi.StringPtrOutput)
 }
@@ -918,7 +918,7 @@ func (o InstanceEndpointsOverlayPtrOutput) EipId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Private network Plain endpoint
+// Private network Plain access point
 func (o InstanceEndpointsOverlayPtrOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -938,7 +938,7 @@ func (o InstanceEndpointsOverlayPtrOutput) PlainPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Private network SASL authentication endpoint
+// Private network SASL authentication access point
 func (o InstanceEndpointsOverlayPtrOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsOverlay) *string {
 		if v == nil {
@@ -1003,11 +1003,11 @@ type InstanceEndpointsPublic struct {
 	Address *string `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId *string `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain *string `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort *int `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl *string `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort *int `pulumi:"saslPort"`
@@ -1037,11 +1037,11 @@ type InstanceEndpointsPublicArgs struct {
 	Address pulumi.StringPtrInput `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain pulumi.StringPtrInput `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort pulumi.IntPtrInput `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl pulumi.StringPtrInput `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort pulumi.IntPtrInput `pulumi:"saslPort"`
@@ -1142,7 +1142,7 @@ func (o InstanceEndpointsPublicOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// Private network Plain endpoint
+// Private network Plain access point
 func (o InstanceEndpointsPublicOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Plain }).(pulumi.StringPtrOutput)
 }
@@ -1152,7 +1152,7 @@ func (o InstanceEndpointsPublicOutput) PlainPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *int { return v.PlainPort }).(pulumi.IntPtrOutput)
 }
 
-// Private network SASL authentication endpoint
+// Private network SASL authentication access point
 func (o InstanceEndpointsPublicOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointsPublic) *string { return v.Sasl }).(pulumi.StringPtrOutput)
 }
@@ -1226,7 +1226,7 @@ func (o InstanceEndpointsPublicPtrOutput) EipId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Private network Plain endpoint
+// Private network Plain access point
 func (o InstanceEndpointsPublicPtrOutput) Plain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1246,7 +1246,7 @@ func (o InstanceEndpointsPublicPtrOutput) PlainPort() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Private network SASL authentication endpoint
+// Private network SASL authentication access point
 func (o InstanceEndpointsPublicPtrOutput) Sasl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEndpointsPublic) *string {
 		if v == nil {
@@ -1308,7 +1308,7 @@ func (o InstanceEndpointsPublicPtrOutput) VpcIds() pulumi.StringArrayOutput {
 
 type InstanceResourceTag struct {
 	TagKvs []InstanceResourceTagTagKv `pulumi:"tagKvs"`
-	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+	// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type *string `pulumi:"type"`
 }
 
@@ -1325,7 +1325,7 @@ type InstanceResourceTagInput interface {
 
 type InstanceResourceTagArgs struct {
 	TagKvs InstanceResourceTagTagKvArrayInput `pulumi:"tagKvs"`
-	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+	// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1384,7 +1384,7 @@ func (o InstanceResourceTagOutput) TagKvs() InstanceResourceTagTagKvArrayOutput 
 	return o.ApplyT(func(v InstanceResourceTag) []InstanceResourceTagTagKv { return v.TagKvs }).(InstanceResourceTagTagKvArrayOutput)
 }
 
-// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
 func (o InstanceResourceTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1412,7 +1412,7 @@ func (o InstanceResourceTagArrayOutput) Index(i pulumi.IntInput) InstanceResourc
 type InstanceResourceTagTagKv struct {
 	// Tag key
 	Key *string `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type *string `pulumi:"type"`
 	// Tag value
 	Value *string `pulumi:"value"`
@@ -1432,7 +1432,7 @@ type InstanceResourceTagTagKvInput interface {
 type InstanceResourceTagTagKvArgs struct {
 	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -1494,7 +1494,7 @@ func (o InstanceResourceTagTagKvOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTagTagKv) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 func (o InstanceResourceTagTagKvOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceResourceTagTagKv) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1820,7 +1820,7 @@ func (o InstanceResourcesStoragePtrOutput) Unit() pulumi.StringPtrOutput {
 type InstanceTag struct {
 	// Tag key
 	Key *string `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type *string `pulumi:"type"`
 	// Tag value
 	Value *string `pulumi:"value"`
@@ -1840,7 +1840,7 @@ type InstanceTagInput interface {
 type InstanceTagArgs struct {
 	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -1902,7 +1902,7 @@ func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 func (o InstanceTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1933,13 +1933,13 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type GetGroupResetInfo struct {
-	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+	// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 	OffsetType string `pulumi:"offsetType"`
-	// Partition number.
+	// Partition number
 	PartitionId int `pulumi:"partitionId"`
-	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+	// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 	ResetBy string `pulumi:"resetBy"`
-	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+	// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 	ResetValue int `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId string `pulumi:"topicId"`
@@ -1957,13 +1957,13 @@ type GetGroupResetInfoInput interface {
 }
 
 type GetGroupResetInfoArgs struct {
-	// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+	// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 	OffsetType pulumi.StringInput `pulumi:"offsetType"`
-	// Partition number.
+	// Partition number
 	PartitionId pulumi.IntInput `pulumi:"partitionId"`
-	// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+	// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 	ResetBy pulumi.StringInput `pulumi:"resetBy"`
-	// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+	// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 	ResetValue pulumi.IntInput `pulumi:"resetValue"`
 	// Topic ID。
 	TopicId pulumi.StringInput `pulumi:"topicId"`
@@ -1995,22 +1995,22 @@ func (o GetGroupResetInfoOutput) ToGetGroupResetInfoOutputWithContext(ctx contex
 	return o
 }
 
-// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
 func (o GetGroupResetInfoOutput) OffsetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) string { return v.OffsetType }).(pulumi.StringOutput)
 }
 
-// Partition number.
+// Partition number
 func (o GetGroupResetInfoOutput) PartitionId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) int { return v.PartitionId }).(pulumi.IntOutput)
 }
 
-// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
 func (o GetGroupResetInfoOutput) ResetBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) string { return v.ResetBy }).(pulumi.StringOutput)
 }
 
-// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
 func (o GetGroupResetInfoOutput) ResetValue() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupResetInfo) int { return v.ResetValue }).(pulumi.IntOutput)
 }
@@ -2021,23 +2021,23 @@ func (o GetGroupResetInfoOutput) TopicId() pulumi.StringOutput {
 }
 
 type GetGroupTopicInfo struct {
-	// Topic creation time.
+	// Topic creation time
 	CreateTime string `pulumi:"createTime"`
-	// Topic description.
+	// Topic description
 	Description string `pulumi:"description"`
-	// Number of unconsumed messages in the Topic.
+	// Number of unconsumed messages in the Topic
 	Lag int `pulumi:"lag"`
-	// Partition list.
+	// Partition list
 	PartitionInfos []GetGroupTopicInfoPartitionInfo `pulumi:"partitionInfos"`
-	// Number of Topic partitions.
+	// Number of Topic partitions
 	Partitions int `pulumi:"partitions"`
-	// Retention period of data in the Topic, in hours.
+	// Retention period of data in the Topic, in hours
 	Retention int `pulumi:"retention"`
-	// Topic status.
+	// Topic status
 	Status string `pulumi:"status"`
 	// Topic ID。
 	TopicId string `pulumi:"topicId"`
-	// Topic name.
+	// Topic name
 	TopicName string `pulumi:"topicName"`
 }
 
@@ -2053,23 +2053,23 @@ type GetGroupTopicInfoInput interface {
 }
 
 type GetGroupTopicInfoArgs struct {
-	// Topic creation time.
+	// Topic creation time
 	CreateTime pulumi.StringInput `pulumi:"createTime"`
-	// Topic description.
+	// Topic description
 	Description pulumi.StringInput `pulumi:"description"`
-	// Number of unconsumed messages in the Topic.
+	// Number of unconsumed messages in the Topic
 	Lag pulumi.IntInput `pulumi:"lag"`
-	// Partition list.
+	// Partition list
 	PartitionInfos GetGroupTopicInfoPartitionInfoArrayInput `pulumi:"partitionInfos"`
-	// Number of Topic partitions.
+	// Number of Topic partitions
 	Partitions pulumi.IntInput `pulumi:"partitions"`
-	// Retention period of data in the Topic, in hours.
+	// Retention period of data in the Topic, in hours
 	Retention pulumi.IntInput `pulumi:"retention"`
-	// Topic status.
+	// Topic status
 	Status pulumi.StringInput `pulumi:"status"`
 	// Topic ID。
 	TopicId pulumi.StringInput `pulumi:"topicId"`
-	// Topic name.
+	// Topic name
 	TopicName pulumi.StringInput `pulumi:"topicName"`
 }
 
@@ -2124,37 +2124,37 @@ func (o GetGroupTopicInfoOutput) ToGetGroupTopicInfoOutputWithContext(ctx contex
 	return o
 }
 
-// Topic creation time.
+// Topic creation time
 func (o GetGroupTopicInfoOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// Topic description.
+// Topic description
 func (o GetGroupTopicInfoOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Number of unconsumed messages in the Topic.
+// Number of unconsumed messages in the Topic
 func (o GetGroupTopicInfoOutput) Lag() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Lag }).(pulumi.IntOutput)
 }
 
-// Partition list.
+// Partition list
 func (o GetGroupTopicInfoOutput) PartitionInfos() GetGroupTopicInfoPartitionInfoArrayOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) []GetGroupTopicInfoPartitionInfo { return v.PartitionInfos }).(GetGroupTopicInfoPartitionInfoArrayOutput)
 }
 
-// Number of Topic partitions.
+// Number of Topic partitions
 func (o GetGroupTopicInfoOutput) Partitions() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Partitions }).(pulumi.IntOutput)
 }
 
-// Retention period of data in the Topic, in hours.
+// Retention period of data in the Topic, in hours
 func (o GetGroupTopicInfoOutput) Retention() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Retention }).(pulumi.IntOutput)
 }
 
-// Topic status.
+// Topic status
 func (o GetGroupTopicInfoOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -2164,7 +2164,7 @@ func (o GetGroupTopicInfoOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.TopicId }).(pulumi.StringOutput)
 }
 
-// Topic name.
+// Topic name
 func (o GetGroupTopicInfoOutput) TopicName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.TopicName }).(pulumi.StringOutput)
 }
@@ -2190,17 +2190,17 @@ func (o GetGroupTopicInfoArrayOutput) Index(i pulumi.IntInput) GetGroupTopicInfo
 }
 
 type GetGroupTopicInfoPartitionInfo struct {
-	// Current consumption position.
+	// Current consumption offset
 	CurrentOffset int `pulumi:"currentOffset"`
-	// Name of the Consumer Group.
+	// Consumer Group name
 	GroupName string `pulumi:"groupName"`
-	// Number of unconsumed messages in the partition.
+	// Number of unconsumed messages in the partition
 	Lag int `pulumi:"lag"`
-	// Latest consumption position.
+	// Latest consumption offset
 	LatestOffset int `pulumi:"latestOffset"`
-	// Partition number.
+	// Partition number
 	PartitionId int `pulumi:"partitionId"`
-	// Name of the Topic subscribed by the Consumer Group.
+	// Name of the Topic subscribed by the Consumer Group
 	TopicName string `pulumi:"topicName"`
 }
 
@@ -2216,17 +2216,17 @@ type GetGroupTopicInfoPartitionInfoInput interface {
 }
 
 type GetGroupTopicInfoPartitionInfoArgs struct {
-	// Current consumption position.
+	// Current consumption offset
 	CurrentOffset pulumi.IntInput `pulumi:"currentOffset"`
-	// Name of the Consumer Group.
+	// Consumer Group name
 	GroupName pulumi.StringInput `pulumi:"groupName"`
-	// Number of unconsumed messages in the partition.
+	// Number of unconsumed messages in the partition
 	Lag pulumi.IntInput `pulumi:"lag"`
-	// Latest consumption position.
+	// Latest consumption offset
 	LatestOffset pulumi.IntInput `pulumi:"latestOffset"`
-	// Partition number.
+	// Partition number
 	PartitionId pulumi.IntInput `pulumi:"partitionId"`
-	// Name of the Topic subscribed by the Consumer Group.
+	// Name of the Topic subscribed by the Consumer Group
 	TopicName pulumi.StringInput `pulumi:"topicName"`
 }
 
@@ -2281,32 +2281,32 @@ func (o GetGroupTopicInfoPartitionInfoOutput) ToGetGroupTopicInfoPartitionInfoOu
 	return o
 }
 
-// Current consumption position.
+// Current consumption offset
 func (o GetGroupTopicInfoPartitionInfoOutput) CurrentOffset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.CurrentOffset }).(pulumi.IntOutput)
 }
 
-// Name of the Consumer Group.
+// Consumer Group name
 func (o GetGroupTopicInfoPartitionInfoOutput) GroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) string { return v.GroupName }).(pulumi.StringOutput)
 }
 
-// Number of unconsumed messages in the partition.
+// Number of unconsumed messages in the partition
 func (o GetGroupTopicInfoPartitionInfoOutput) Lag() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.Lag }).(pulumi.IntOutput)
 }
 
-// Latest consumption position.
+// Latest consumption offset
 func (o GetGroupTopicInfoPartitionInfoOutput) LatestOffset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.LatestOffset }).(pulumi.IntOutput)
 }
 
-// Partition number.
+// Partition number
 func (o GetGroupTopicInfoPartitionInfoOutput) PartitionId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.PartitionId }).(pulumi.IntOutput)
 }
 
-// Name of the Topic subscribed by the Consumer Group.
+// Name of the Topic subscribed by the Consumer Group
 func (o GetGroupTopicInfoPartitionInfoOutput) TopicName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) string { return v.TopicName }).(pulumi.StringOutput)
 }
@@ -2397,11 +2397,11 @@ type GetInstanceEndpointsOverlay struct {
 	Address string `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId string `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain string `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort int `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl string `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort int `pulumi:"saslPort"`
@@ -2431,11 +2431,11 @@ type GetInstanceEndpointsOverlayArgs struct {
 	Address pulumi.StringInput `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain pulumi.StringInput `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort pulumi.IntInput `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl pulumi.StringInput `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort pulumi.IntInput `pulumi:"saslPort"`
@@ -2485,7 +2485,7 @@ func (o GetInstanceEndpointsOverlayOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// Private network Plain endpoint
+// Private network Plain access point
 func (o GetInstanceEndpointsOverlayOutput) Plain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Plain }).(pulumi.StringOutput)
 }
@@ -2495,7 +2495,7 @@ func (o GetInstanceEndpointsOverlayOutput) PlainPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) int { return v.PlainPort }).(pulumi.IntOutput)
 }
 
-// Private network SASL authentication endpoint
+// Private network SASL authentication access point
 func (o GetInstanceEndpointsOverlayOutput) Sasl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsOverlay) string { return v.Sasl }).(pulumi.StringOutput)
 }
@@ -2530,11 +2530,11 @@ type GetInstanceEndpointsPublic struct {
 	Address string `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId string `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain string `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort int `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl string `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort int `pulumi:"saslPort"`
@@ -2564,11 +2564,11 @@ type GetInstanceEndpointsPublicArgs struct {
 	Address pulumi.StringInput `pulumi:"address"`
 	// ID of the EIP bound to the instance
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// Private network Plain endpoint
+	// Private network Plain access point
 	Plain pulumi.StringInput `pulumi:"plain"`
 	// Standard endpoint port
 	PlainPort pulumi.IntInput `pulumi:"plainPort"`
-	// Private network SASL authentication endpoint
+	// Private network SASL authentication access point
 	Sasl pulumi.StringInput `pulumi:"sasl"`
 	// Authentication endpoint port
 	SaslPort pulumi.IntInput `pulumi:"saslPort"`
@@ -2618,7 +2618,7 @@ func (o GetInstanceEndpointsPublicOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// Private network Plain endpoint
+// Private network Plain access point
 func (o GetInstanceEndpointsPublicOutput) Plain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Plain }).(pulumi.StringOutput)
 }
@@ -2628,7 +2628,7 @@ func (o GetInstanceEndpointsPublicOutput) PlainPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) int { return v.PlainPort }).(pulumi.IntOutput)
 }
 
-// Private network SASL authentication endpoint
+// Private network SASL authentication access point
 func (o GetInstanceEndpointsPublicOutput) Sasl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointsPublic) string { return v.Sasl }).(pulumi.StringOutput)
 }
@@ -2661,7 +2661,7 @@ func (o GetInstanceEndpointsPublicOutput) VpcIds() pulumi.StringArrayOutput {
 type GetInstanceResourceTag struct {
 	// Tag key-value pair
 	TagKvs []GetInstanceResourceTagTagKv `pulumi:"tagKvs"`
-	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+	// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type string `pulumi:"type"`
 }
 
@@ -2679,7 +2679,7 @@ type GetInstanceResourceTagInput interface {
 type GetInstanceResourceTagArgs struct {
 	// Tag key-value pair
 	TagKvs GetInstanceResourceTagTagKvArrayInput `pulumi:"tagKvs"`
-	// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+	// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2739,7 +2739,7 @@ func (o GetInstanceResourceTagOutput) TagKvs() GetInstanceResourceTagTagKvArrayO
 	return o.ApplyT(func(v GetInstanceResourceTag) []GetInstanceResourceTagTagKv { return v.TagKvs }).(GetInstanceResourceTagTagKvArrayOutput)
 }
 
-// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+// Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
 func (o GetInstanceResourceTagOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTag) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2767,7 +2767,7 @@ func (o GetInstanceResourceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceR
 type GetInstanceResourceTagTagKv struct {
 	// Tag key
 	Key string `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type string `pulumi:"type"`
 	// Tag value
 	Value string `pulumi:"value"`
@@ -2787,7 +2787,7 @@ type GetInstanceResourceTagTagKvInput interface {
 type GetInstanceResourceTagTagKvArgs struct {
 	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type pulumi.StringInput `pulumi:"type"`
 	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
@@ -2849,7 +2849,7 @@ func (o GetInstanceResourceTagTagKvOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTagTagKv) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 func (o GetInstanceResourceTagTagKvOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceResourceTagTagKv) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2995,7 +2995,7 @@ func (o GetInstanceResourcesStorageOutput) Unit() pulumi.StringOutput {
 type GetInstanceTag struct {
 	// Tag key
 	Key string `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type string `pulumi:"type"`
 	// Tag value
 	Value string `pulumi:"value"`
@@ -3015,7 +3015,7 @@ type GetInstanceTagInput interface {
 type GetInstanceTagArgs struct {
 	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+	// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 	Type pulumi.StringInput `pulumi:"type"`
 	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
@@ -3077,7 +3077,7 @@ func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
 func (o GetInstanceTagOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Type }).(pulumi.StringOutput)
 }

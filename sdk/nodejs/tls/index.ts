@@ -15,6 +15,11 @@ export type AlarmNotifyGroup = import("./alarmNotifyGroup").AlarmNotifyGroup;
 export const AlarmNotifyGroup: typeof import("./alarmNotifyGroup").AlarmNotifyGroup = null as any;
 utilities.lazyLoad(exports, ["AlarmNotifyGroup"], () => require("./alarmNotifyGroup"));
 
+export { AlarmWebhookIntegrationTypeArgs, AlarmWebhookIntegrationTypeState } from "./alarmWebhookIntegrationType";
+export type AlarmWebhookIntegrationType = import("./alarmWebhookIntegrationType").AlarmWebhookIntegrationType;
+export const AlarmWebhookIntegrationType: typeof import("./alarmWebhookIntegrationType").AlarmWebhookIntegrationType = null as any;
+utilities.lazyLoad(exports, ["AlarmWebhookIntegrationType"], () => require("./alarmWebhookIntegrationType"));
+
 export { ConsumerGroupArgs, ConsumerGroupState } from "./consumerGroup";
 export type ConsumerGroup = import("./consumerGroup").ConsumerGroup;
 export const ConsumerGroup: typeof import("./consumerGroup").ConsumerGroup = null as any;
@@ -39,6 +44,16 @@ export { GetAlarmNotifyGroupsResult } from "./getAlarmNotifyGroups";
 export const getAlarmNotifyGroups: typeof import("./getAlarmNotifyGroups").getAlarmNotifyGroups = null as any;
 export const getAlarmNotifyGroupsOutput: typeof import("./getAlarmNotifyGroups").getAlarmNotifyGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getAlarmNotifyGroups","getAlarmNotifyGroupsOutput"], () => require("./getAlarmNotifyGroups"));
+
+export { GetAlarmWebhookIntegrationTypeArgs, GetAlarmWebhookIntegrationTypeResult, GetAlarmWebhookIntegrationTypeOutputArgs } from "./getAlarmWebhookIntegrationType";
+export const getAlarmWebhookIntegrationType: typeof import("./getAlarmWebhookIntegrationType").getAlarmWebhookIntegrationType = null as any;
+export const getAlarmWebhookIntegrationTypeOutput: typeof import("./getAlarmWebhookIntegrationType").getAlarmWebhookIntegrationTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmWebhookIntegrationType","getAlarmWebhookIntegrationTypeOutput"], () => require("./getAlarmWebhookIntegrationType"));
+
+export { GetAlarmWebhookIntegrationTypesResult } from "./getAlarmWebhookIntegrationTypes";
+export const getAlarmWebhookIntegrationTypes: typeof import("./getAlarmWebhookIntegrationTypes").getAlarmWebhookIntegrationTypes = null as any;
+export const getAlarmWebhookIntegrationTypesOutput: typeof import("./getAlarmWebhookIntegrationTypes").getAlarmWebhookIntegrationTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmWebhookIntegrationTypes","getAlarmWebhookIntegrationTypesOutput"], () => require("./getAlarmWebhookIntegrationTypes"));
 
 export { GetAlarmsResult } from "./getAlarms";
 export const getAlarms: typeof import("./getAlarms").getAlarms = null as any;
@@ -209,6 +224,8 @@ const _module = {
                 return new Alarm(name, <any>undefined, { urn })
             case "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup":
                 return new AlarmNotifyGroup(name, <any>undefined, { urn })
+            case "bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType":
+                return new AlarmWebhookIntegrationType(name, <any>undefined, { urn })
             case "bytepluscc:tls/consumerGroup:ConsumerGroup":
                 return new ConsumerGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/etl:Etl":
@@ -238,6 +255,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarm", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmNotifyGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmWebhookIntegrationType", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/etl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/host", _module)

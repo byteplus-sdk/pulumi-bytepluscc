@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class GetRegistryResult
     {
         /// <summary>
-        /// Container registry instance billing type. Currently, only the PostCharge pay-as-you-go mode is supported.
+        /// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// Time when the container registry instance was created.
+        /// Creation time of the container registry instance
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// Public endpoint information for the image repository instance
+        /// Public endpoint information for the image repository instance.
         /// </summary>
         public readonly Outputs.GetRegistryEndpointResult Endpoint;
         /// <summary>
-        /// Only applicable when the billing type is HybridCharge. Instance expiration time
+        /// Instance expiration time is only available for HybridCharge billing type
         /// </summary>
         public readonly string ExpireTime;
         /// <summary>
@@ -85,27 +85,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Standard Edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be between 3 and 30 characters.
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Specify the project to associate with the instance. Each instance can only be associated with one project
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         public readonly string Project;
         /// <summary>
-        /// ProxyCache configuration. Required when set to ProxyCache
+        /// ProxyCache configuration. Required when set as ProxyCache
         /// </summary>
         public readonly Outputs.GetRegistryProxyCacheResult ProxyCache;
         /// <summary>
-        /// Whether to set as ProxyCache instance
+        /// Set as ProxyCache instance
         /// </summary>
         public readonly bool ProxyCacheEnabled;
         /// <summary>
-        /// Only applicable when the billing type is HybridCharge. Instance auto-renewal type
+        /// Instance auto-renewal type is only available for HybridCharge billing type
         /// </summary>
         public readonly string RenewType;
         /// <summary>
-        /// Container registry instance status, composed of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to overdue payment, {Stopped, [Released]}: Pending recycle, {Stopped, [Released, Balance]}: Suspended due to overdue payment, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Error
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         public readonly Outputs.GetRegistryStatusResult Status;
         /// <summary>
@@ -113,7 +113,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryTagResult> Tags;
         /// <summary>
-        /// If not specified, a Standard Edition instance will be created by default. Enterprise: Standard Edition, Micro: Micro Edition
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         public readonly string Type;
 

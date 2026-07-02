@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleNotifyTemplate {
     /**
-     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+     * @return Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
      * 
      */
     private @Nullable String channel;
@@ -24,7 +24,7 @@ public final class RuleNotifyTemplate {
 
     private RuleNotifyTemplate() {}
     /**
-     * @return Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+     * @return Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
      * 
      */
     public Optional<String> channel() {

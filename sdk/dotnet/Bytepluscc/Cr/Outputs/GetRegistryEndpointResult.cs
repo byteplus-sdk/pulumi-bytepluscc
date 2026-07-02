@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class GetRegistryEndpointResult
     {
         /// <summary>
-        /// Public IP allowlist
+        /// Public IP allowlist list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryEndpointAclPolicyResult> AclPolicies;
         /// <summary>
-        /// Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+        /// Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        /// Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
         /// </summary>
         public readonly string Status;
 

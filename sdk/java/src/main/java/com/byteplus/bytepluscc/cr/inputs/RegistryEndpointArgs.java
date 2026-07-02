@@ -26,14 +26,14 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+     * Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+     * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -41,14 +41,14 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+     * Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+     * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
      * 
      */
     public Optional<Output<String>> status() {
@@ -95,7 +95,7 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enabled Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         * @param enabled Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enabled Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         * @param enabled Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         * @param status Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         * @param status Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
          * 
          * @return builder
          * 

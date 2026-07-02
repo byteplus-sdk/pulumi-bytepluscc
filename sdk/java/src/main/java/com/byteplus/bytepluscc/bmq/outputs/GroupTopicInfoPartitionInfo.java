@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupTopicInfoPartitionInfo {
     /**
-     * @return Current consumption position.
+     * @return Current consumption offset
      * 
      */
     private @Nullable Integer currentOffset;
     /**
-     * @return Name of the Consumer Group.
+     * @return Consumer Group name
      * 
      */
     private @Nullable String groupName;
     /**
-     * @return Number of unconsumed messages in the partition.
+     * @return Number of unconsumed messages in the partition
      * 
      */
     private @Nullable Integer lag;
     /**
-     * @return Latest consumption position.
+     * @return Latest consumption offset
      * 
      */
     private @Nullable Integer latestOffset;
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     private @Nullable Integer partitionId;
     /**
-     * @return Name of the Topic subscribed by the Consumer Group.
+     * @return Name of the Topic subscribed by the Consumer Group
      * 
      */
     private @Nullable String topicName;
 
     private GroupTopicInfoPartitionInfo() {}
     /**
-     * @return Current consumption position.
+     * @return Current consumption offset
      * 
      */
     public Optional<Integer> currentOffset() {
         return Optional.ofNullable(this.currentOffset);
     }
     /**
-     * @return Name of the Consumer Group.
+     * @return Consumer Group name
      * 
      */
     public Optional<String> groupName() {
         return Optional.ofNullable(this.groupName);
     }
     /**
-     * @return Number of unconsumed messages in the partition.
+     * @return Number of unconsumed messages in the partition
      * 
      */
     public Optional<Integer> lag() {
         return Optional.ofNullable(this.lag);
     }
     /**
-     * @return Latest consumption position.
+     * @return Latest consumption offset
      * 
      */
     public Optional<Integer> latestOffset() {
         return Optional.ofNullable(this.latestOffset);
     }
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     public Optional<Integer> partitionId() {
         return Optional.ofNullable(this.partitionId);
     }
     /**
-     * @return Name of the Topic subscribed by the Consumer Group.
+     * @return Name of the Topic subscribed by the Consumer Group
      * 
      */
     public Optional<String> topicName() {

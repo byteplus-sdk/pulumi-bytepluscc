@@ -22,14 +22,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     public static final InstanceState Empty = new InstanceState();
 
     /**
-     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<String> autoRenew;
 
     /**
-     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * @return Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      * 
      */
     public Optional<Output<String>> autoRenew() {
@@ -37,14 +37,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      * 
      */
     @Import(name="billingPeriod")
     private @Nullable Output<String> billingPeriod;
 
     /**
-     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * @return Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      * 
      */
     public Optional<Output<String>> billingPeriod() {
@@ -52,14 +52,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<String> billingType;
 
     /**
-     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * @return Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      * 
      */
     public Optional<Output<String>> billingType() {
@@ -82,14 +82,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Instance description statement
+     * Instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Instance description statement
+     * @return Instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -97,14 +97,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * @return Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -172,14 +172,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Message retention period for all topics under the instance, in hours
+     * Message retention period for all Topics under the instance, in hours
      * 
      */
     @Import(name="messageRetention")
     private @Nullable Output<Integer> messageRetention;
 
     /**
-     * @return Message retention period for all topics under the instance, in hours
+     * @return Message retention period for all Topics under the instance, in hours
      * 
      */
     public Optional<Output<Integer>> messageRetention() {
@@ -187,14 +187,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * @return Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -217,14 +217,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Project name to which the instance belongs
+     * Project name associated with the instance
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return Project name to which the instance belongs
+     * @return Project name associated with the instance
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -254,14 +254,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * List of security groups used by the instance
+     * Security group list used by the instance
      * 
      */
     @Import(name="securityGroupIdLists")
     private @Nullable Output<List<String>> securityGroupIdLists;
 
     /**
-     * @return List of security groups used by the instance
+     * @return Security group list used by the instance
      * 
      */
     public Optional<Output<List<String>>> securityGroupIdLists() {
@@ -299,14 +299,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * List of subnets used by the instance
+     * Subnet list used by the instance
      * 
      */
     @Import(name="subnetIdLists")
     private @Nullable Output<List<String>> subnetIdLists;
 
     /**
-     * @return List of subnets used by the instance
+     * @return Subnet list used by the instance
      * 
      */
     public Optional<Output<List<String>>> subnetIdLists() {
@@ -321,14 +321,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Purchase duration for subscription instances, in months
+     * Purchase duration for yearly/monthly subscription instances, in months
      * 
      */
     @Import(name="times")
     private @Nullable Output<Integer> times;
 
     /**
-     * @return Purchase duration for subscription instances, in months
+     * @return Purchase duration for yearly/monthly subscription instances, in months
      * 
      */
     public Optional<Output<Integer>> times() {
@@ -336,14 +336,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Maximum number of topics per instance
+     * Maximum number of Topics per instance
      * 
      */
     @Import(name="topicLimit")
     private @Nullable Output<Integer> topicLimit;
 
     /**
-     * @return Maximum number of topics per instance
+     * @return Maximum number of Topics per instance
      * 
      */
     public Optional<Output<Integer>> topicLimit() {
@@ -366,14 +366,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * List of availability zones where the instance is located
+     * List of availability zones for the instance
      * 
      */
     @Import(name="zoneIdLists")
     private @Nullable Output<List<String>> zoneIdLists;
 
     /**
-     * @return List of availability zones where the instance is located
+     * @return List of availability zones for the instance
      * 
      */
     public Optional<Output<List<String>>> zoneIdLists() {
@@ -429,7 +429,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+         * @param autoRenew Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+         * @param autoRenew Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingPeriod Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+         * @param billingPeriod Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingPeriod Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+         * @param billingPeriod Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+         * @param billingType Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+         * @param billingType Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Instance description statement
+         * @param description Instance description
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Instance description statement
+         * @param description Instance description
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+         * @param eipId Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+         * @param eipId Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param messageRetention Message retention period for all topics under the instance, in hours
+         * @param messageRetention Message retention period for all Topics under the instance, in hours
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param messageRetention Message retention period for all topics under the instance, in hours
+         * @param messageRetention Message retention period for all Topics under the instance, in hours
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+         * @param name Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+         * @param name Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
          * 
          * @return builder
          * 
@@ -702,7 +702,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName Project name to which the instance belongs
+         * @param projectName Project name associated with the instance
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName Project name to which the instance belongs
+         * @param projectName Project name associated with the instance
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists List of security groups used by the instance
+         * @param securityGroupIdLists Security group list used by the instance
          * 
          * @return builder
          * 
@@ -768,7 +768,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists List of security groups used by the instance
+         * @param securityGroupIdLists Security group list used by the instance
          * 
          * @return builder
          * 
@@ -778,7 +778,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists List of security groups used by the instance
+         * @param securityGroupIdLists Security group list used by the instance
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists List of subnets used by the instance
+         * @param subnetIdLists Subnet list used by the instance
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists List of subnets used by the instance
+         * @param subnetIdLists Subnet list used by the instance
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists List of subnets used by the instance
+         * @param subnetIdLists Subnet list used by the instance
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param times Purchase duration for subscription instances, in months
+         * @param times Purchase duration for yearly/monthly subscription instances, in months
          * 
          * @return builder
          * 
@@ -885,7 +885,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param times Purchase duration for subscription instances, in months
+         * @param times Purchase duration for yearly/monthly subscription instances, in months
          * 
          * @return builder
          * 
@@ -895,7 +895,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicLimit Maximum number of topics per instance
+         * @param topicLimit Maximum number of Topics per instance
          * 
          * @return builder
          * 
@@ -906,7 +906,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicLimit Maximum number of topics per instance
+         * @param topicLimit Maximum number of Topics per instance
          * 
          * @return builder
          * 
@@ -937,7 +937,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists List of availability zones where the instance is located
+         * @param zoneIdLists List of availability zones for the instance
          * 
          * @return builder
          * 
@@ -948,7 +948,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists List of availability zones where the instance is located
+         * @param zoneIdLists List of availability zones for the instance
          * 
          * @return builder
          * 
@@ -958,7 +958,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists List of availability zones where the instance is located
+         * @param zoneIdLists List of availability zones for the instance
          * 
          * @return builder
          * 

@@ -48,14 +48,14 @@ public final class InstanceEndpointsPublicArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Private network Plain endpoint
+     * Private network Plain access point
      * 
      */
     @Import(name="plain")
     private @Nullable Output<String> plain;
 
     /**
-     * @return Private network Plain endpoint
+     * @return Private network Plain access point
      * 
      */
     public Optional<Output<String>> plain() {
@@ -78,14 +78,14 @@ public final class InstanceEndpointsPublicArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Private network SASL authentication endpoint
+     * Private network SASL authentication access point
      * 
      */
     @Import(name="sasl")
     private @Nullable Output<String> sasl;
 
     /**
-     * @return Private network SASL authentication endpoint
+     * @return Private network SASL authentication access point
      * 
      */
     public Optional<Output<String>> sasl() {
@@ -243,7 +243,7 @@ public final class InstanceEndpointsPublicArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param plain Private network Plain endpoint
+         * @param plain Private network Plain access point
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class InstanceEndpointsPublicArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param plain Private network Plain endpoint
+         * @param plain Private network Plain access point
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class InstanceEndpointsPublicArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sasl Private network SASL authentication endpoint
+         * @param sasl Private network SASL authentication access point
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class InstanceEndpointsPublicArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sasl Private network SASL authentication endpoint
+         * @param sasl Private network SASL authentication access point
          * 
          * @return builder
          * 

@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetServerGroupHealthCheckResult
     {
         /// <summary>
-        /// The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+        /// Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+        /// Whether the listener enables health check. Values: on: enabled (default), off: disabled.
         /// </summary>
         public readonly string Enabled;
         /// <summary>
-        /// Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+        /// Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
         /// </summary>
         public readonly int HealthyThreshold;
         /// <summary>
-        /// HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        /// HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         /// </summary>
         public readonly string HttpCode;
         /// <summary>
-        /// HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+        /// Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
         /// </summary>
         public readonly string HttpVersion;
         /// <summary>
-        /// After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+        /// After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
         /// </summary>
         public readonly int Interval;
         /// <summary>
-        /// After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+        /// Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
         /// </summary>
         public readonly string Method;
         /// <summary>
@@ -51,15 +51,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+        /// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
         /// </summary>
         public readonly int Timeout;
         /// <summary>
-        /// Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+        /// Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
         /// </summary>
         public readonly int UnhealthyThreshold;
         /// <summary>
-        /// Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&amp;', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+        /// Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&amp;', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         /// </summary>
         public readonly string Uri;
 

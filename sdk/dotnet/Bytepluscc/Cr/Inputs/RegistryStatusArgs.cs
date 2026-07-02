@@ -17,7 +17,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Inputs
         private InputList<string>? _conditions;
 
         /// <summary>
-        /// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        /// Creating, [ Progressing ]: Creating
+        /// Running, [ Ok ]: Running
+        /// Running, [ Degraded ]: Running
+        /// Stopped, [ Balance ]: Suspended due to insufficient balance
+        /// Stopped, [ Released ]: Pending reclamation
+        /// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        /// Starting, [ Progressing ]: Starting
+        /// Deleting, [ Progressing ]: Deleting
+        /// Failed, [ Unknown ]: Abnormal
         /// </summary>
         public InputList<string> Conditions
         {
@@ -26,7 +34,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Inputs
         }
 
         /// <summary>
-        /// Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        /// Creating, [ Progressing ]: Creating
+        /// Running, [ Ok ]: Running
+        /// Running, [ Degraded ]: Running
+        /// Stopped, [ Balance ]: Suspended due to insufficient balance
+        /// Stopped, [ Released ]: Pending reclamation
+        /// Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        /// Starting, [ Progressing ]: Starting
+        /// Deleting, [ Progressing ]: Deleting
+        /// Failed, [ Unknown ]: Abnormal
         /// </summary>
         [Input("phase")]
         public Input<string>? Phase { get; set; }

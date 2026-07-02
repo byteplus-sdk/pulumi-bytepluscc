@@ -17,17 +17,17 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * @return Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      * 
      */
     private String autoRenew;
     /**
-     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * @return Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      * 
      */
     private String billingPeriod;
     /**
-     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * @return Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      * 
      */
     private String billingType;
@@ -37,12 +37,12 @@ public final class GetInstanceResult {
      */
     private String createdTime;
     /**
-     * @return Instance description statement
+     * @return Instance description
      * 
      */
     private String description;
     /**
-     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * @return Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      * 
      */
     private String eipId;
@@ -72,12 +72,12 @@ public final class GetInstanceResult {
      */
     private String instanceId;
     /**
-     * @return Message retention period for all topics under the instance, in hours
+     * @return Message retention period for all Topics under the instance, in hours
      * 
      */
     private Integer messageRetention;
     /**
-     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * @return Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     private String name;
@@ -87,7 +87,7 @@ public final class GetInstanceResult {
      */
     private Integer partitionLimit;
     /**
-     * @return Project name to which the instance belongs
+     * @return Project name associated with the instance
      * 
      */
     private String projectName;
@@ -102,7 +102,7 @@ public final class GetInstanceResult {
      */
     private GetInstanceResources resources;
     /**
-     * @return List of security groups used by the instance
+     * @return Security group list used by the instance
      * 
      */
     private List<String> securityGroupIdLists;
@@ -117,7 +117,7 @@ public final class GetInstanceResult {
      */
     private String status;
     /**
-     * @return List of subnets used by the instance
+     * @return Subnet list used by the instance
      * 
      */
     private List<String> subnetIdLists;
@@ -127,12 +127,12 @@ public final class GetInstanceResult {
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return Purchase duration for subscription instances, in months
+     * @return Purchase duration for yearly/monthly subscription instances, in months
      * 
      */
     private Integer times;
     /**
-     * @return Maximum number of topics per instance
+     * @return Maximum number of Topics per instance
      * 
      */
     private Integer topicLimit;
@@ -142,28 +142,28 @@ public final class GetInstanceResult {
      */
     private String vpcId;
     /**
-     * @return List of availability zones where the instance is located
+     * @return List of availability zones for the instance
      * 
      */
     private List<String> zoneIdLists;
 
     private GetInstanceResult() {}
     /**
-     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+     * @return Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
      * 
      */
     public String autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+     * @return Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
      * 
      */
     public String billingPeriod() {
         return this.billingPeriod;
     }
     /**
-     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+     * @return Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
      * 
      */
     public String billingType() {
@@ -177,14 +177,14 @@ public final class GetInstanceResult {
         return this.createdTime;
     }
     /**
-     * @return Instance description statement
+     * @return Instance description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+     * @return Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
      * 
      */
     public String eipId() {
@@ -226,14 +226,14 @@ public final class GetInstanceResult {
         return this.instanceId;
     }
     /**
-     * @return Message retention period for all topics under the instance, in hours
+     * @return Message retention period for all Topics under the instance, in hours
      * 
      */
     public Integer messageRetention() {
         return this.messageRetention;
     }
     /**
-     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+     * @return Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public String name() {
@@ -247,7 +247,7 @@ public final class GetInstanceResult {
         return this.partitionLimit;
     }
     /**
-     * @return Project name to which the instance belongs
+     * @return Project name associated with the instance
      * 
      */
     public String projectName() {
@@ -268,7 +268,7 @@ public final class GetInstanceResult {
         return this.resources;
     }
     /**
-     * @return List of security groups used by the instance
+     * @return Security group list used by the instance
      * 
      */
     public List<String> securityGroupIdLists() {
@@ -289,7 +289,7 @@ public final class GetInstanceResult {
         return this.status;
     }
     /**
-     * @return List of subnets used by the instance
+     * @return Subnet list used by the instance
      * 
      */
     public List<String> subnetIdLists() {
@@ -303,14 +303,14 @@ public final class GetInstanceResult {
         return this.tags;
     }
     /**
-     * @return Purchase duration for subscription instances, in months
+     * @return Purchase duration for yearly/monthly subscription instances, in months
      * 
      */
     public Integer times() {
         return this.times;
     }
     /**
-     * @return Maximum number of topics per instance
+     * @return Maximum number of Topics per instance
      * 
      */
     public Integer topicLimit() {
@@ -324,7 +324,7 @@ public final class GetInstanceResult {
         return this.vpcId;
     }
     /**
-     * @return List of availability zones where the instance is located
+     * @return List of availability zones for the instance
      * 
      */
     public List<String> zoneIdLists() {

@@ -20,7 +20,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+        /// Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

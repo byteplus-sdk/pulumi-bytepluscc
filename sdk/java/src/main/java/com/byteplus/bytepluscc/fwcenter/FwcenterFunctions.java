@@ -4,10 +4,22 @@
 package com.byteplus.bytepluscc.fwcenter;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetAddressBookArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetAddressBookPlainArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetControlPolicyArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetControlPolicyPlainArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetDnsControlPolicyArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetDnsControlPolicyPlainArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetVpcFireWallAclRuleArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetVpcFireWallAclRulePlainArgs;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetAddressBookResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetAddressBooksResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetControlPoliciesResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetControlPolicyResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetDnsControlPoliciesResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetDnsControlPolicyResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetVpcFireWallAclRuleResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetVpcFireWallAclRulesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -17,6 +29,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class FwcenterFunctions {
+    /**
+     * Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBookResult> getAddressBook(GetAddressBookArgs args) {
+        return getAddressBook(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static CompletableFuture<GetAddressBookResult> getAddressBookPlain(GetAddressBookPlainArgs args) {
+        return getAddressBookPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBookResult> getAddressBook(GetAddressBookArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getAddressBook:getAddressBook", TypeShape.of(GetAddressBookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBookResult> getAddressBook(GetAddressBookArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getAddressBook:getAddressBook", TypeShape.of(GetAddressBookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static CompletableFuture<GetAddressBookResult> getAddressBookPlain(GetAddressBookPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getAddressBook:getAddressBook", TypeShape.of(GetAddressBookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBooksResult> getAddressBooks() {
+        return getAddressBooks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static CompletableFuture<GetAddressBooksResult> getAddressBooksPlain() {
+        return getAddressBooksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBooksResult> getAddressBooks(InvokeArgs args) {
+        return getAddressBooks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static CompletableFuture<GetAddressBooksResult> getAddressBooksPlain(InvokeArgs args) {
+        return getAddressBooksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBooksResult> getAddressBooks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getAddressBooks:getAddressBooks", TypeShape.of(GetAddressBooksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static Output<GetAddressBooksResult> getAddressBooks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getAddressBooks:getAddressBooks", TypeShape.of(GetAddressBooksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::AddressBook
+     * 
+     */
+    public static CompletableFuture<GetAddressBooksResult> getAddressBooksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getAddressBooks:getAddressBooks", TypeShape.of(GetAddressBooksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPoliciesResult> getControlPolicies() {
+        return getControlPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetControlPoliciesResult> getControlPoliciesPlain() {
+        return getControlPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPoliciesResult> getControlPolicies(InvokeArgs args) {
+        return getControlPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetControlPoliciesResult> getControlPoliciesPlain(InvokeArgs args) {
+        return getControlPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPoliciesResult> getControlPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getControlPolicies:getControlPolicies", TypeShape.of(GetControlPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPoliciesResult> getControlPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getControlPolicies:getControlPolicies", TypeShape.of(GetControlPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetControlPoliciesResult> getControlPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getControlPolicies:getControlPolicies", TypeShape.of(GetControlPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPolicyResult> getControlPolicy(GetControlPolicyArgs args) {
+        return getControlPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetControlPolicyResult> getControlPolicyPlain(GetControlPolicyPlainArgs args) {
+        return getControlPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPolicyResult> getControlPolicy(GetControlPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getControlPolicy:getControlPolicy", TypeShape.of(GetControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static Output<GetControlPolicyResult> getControlPolicy(GetControlPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getControlPolicy:getControlPolicy", TypeShape.of(GetControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::ControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetControlPolicyResult> getControlPolicyPlain(GetControlPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getControlPolicy:getControlPolicy", TypeShape.of(GetControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Plural Data Source schema for Byteplus::FWCenter::DnsControlPolicy
      * 
@@ -100,5 +280,89 @@ public final class FwcenterFunctions {
      */
     public static CompletableFuture<GetDnsControlPolicyResult> getDnsControlPolicyPlain(GetDnsControlPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getDnsControlPolicy:getDnsControlPolicy", TypeShape.of(GetDnsControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRuleResult> getVpcFireWallAclRule(GetVpcFireWallAclRuleArgs args) {
+        return getVpcFireWallAclRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static CompletableFuture<GetVpcFireWallAclRuleResult> getVpcFireWallAclRulePlain(GetVpcFireWallAclRulePlainArgs args) {
+        return getVpcFireWallAclRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRuleResult> getVpcFireWallAclRule(GetVpcFireWallAclRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getVpcFireWallAclRule:getVpcFireWallAclRule", TypeShape.of(GetVpcFireWallAclRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRuleResult> getVpcFireWallAclRule(GetVpcFireWallAclRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getVpcFireWallAclRule:getVpcFireWallAclRule", TypeShape.of(GetVpcFireWallAclRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static CompletableFuture<GetVpcFireWallAclRuleResult> getVpcFireWallAclRulePlain(GetVpcFireWallAclRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getVpcFireWallAclRule:getVpcFireWallAclRule", TypeShape.of(GetVpcFireWallAclRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRulesResult> getVpcFireWallAclRules() {
+        return getVpcFireWallAclRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static CompletableFuture<GetVpcFireWallAclRulesResult> getVpcFireWallAclRulesPlain() {
+        return getVpcFireWallAclRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRulesResult> getVpcFireWallAclRules(InvokeArgs args) {
+        return getVpcFireWallAclRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static CompletableFuture<GetVpcFireWallAclRulesResult> getVpcFireWallAclRulesPlain(InvokeArgs args) {
+        return getVpcFireWallAclRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRulesResult> getVpcFireWallAclRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getVpcFireWallAclRules:getVpcFireWallAclRules", TypeShape.of(GetVpcFireWallAclRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static Output<GetVpcFireWallAclRulesResult> getVpcFireWallAclRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getVpcFireWallAclRules:getVpcFireWallAclRules", TypeShape.of(GetVpcFireWallAclRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule
+     * 
+     */
+    public static CompletableFuture<GetVpcFireWallAclRulesResult> getVpcFireWallAclRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getVpcFireWallAclRules:getVpcFireWallAclRules", TypeShape.of(GetVpcFireWallAclRulesResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class GroupTopicInfoPartitionInfo
     {
         /// <summary>
-        /// Current consumption position.
+        /// Current consumption offset
         /// </summary>
         public readonly int? CurrentOffset;
         /// <summary>
-        /// Name of the Consumer Group.
+        /// Consumer Group name
         /// </summary>
         public readonly string? GroupName;
         /// <summary>
-        /// Number of unconsumed messages in the partition.
+        /// Number of unconsumed messages in the partition
         /// </summary>
         public readonly int? Lag;
         /// <summary>
-        /// Latest consumption position.
+        /// Latest consumption offset
         /// </summary>
         public readonly int? LatestOffset;
         /// <summary>
-        /// Partition number.
+        /// Partition number
         /// </summary>
         public readonly int? PartitionId;
         /// <summary>
-        /// Name of the Topic subscribed by the Consumer Group.
+        /// Name of the Topic subscribed by the Consumer Group
         /// </summary>
         public readonly string? TopicName;
 

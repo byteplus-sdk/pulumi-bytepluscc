@@ -75,6 +75,10 @@ export interface GetInstanceResult {
      */
     readonly backupLogSize: number;
     /**
+     * Instance backup policy configuration.
+     */
+    readonly backupPolicy: outputs.rdsmysql.GetInstanceBackupPolicy;
+    /**
      * Space used by slow logs in backups.
      */
     readonly backupSlowLogSize: number;
@@ -146,6 +150,10 @@ export interface GetInstanceResult {
      * Instance connection information.
      */
     readonly endpoints: outputs.rdsmysql.GetInstanceEndpoint[];
+    /**
+     * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+     */
+    readonly engineType: string;
     /**
      * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
@@ -223,9 +231,17 @@ export interface GetInstanceResult {
      */
     readonly nodes: outputs.rdsmysql.GetInstanceNode[];
     /**
+     * Parameter template ID.
+     */
+    readonly parameterTemplateId: string;
+    /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     readonly port: number;
+    /**
+     * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+     */
+    readonly privateIpAddress: string;
     /**
      * Project.
      */

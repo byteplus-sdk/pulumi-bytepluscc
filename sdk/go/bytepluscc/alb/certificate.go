@@ -58,7 +58,7 @@ import (
 type Certificate struct {
 	pulumi.CustomResourceState
 
-	// Certificate ID
+	// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
 	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName pulumi.StringOutput `pulumi:"certificateName"`
@@ -74,6 +74,8 @@ type Certificate struct {
 	ExpiredAt pulumi.StringOutput `pulumi:"expiredAt"`
 	// List of listeners associated with the certificate
 	Listeners pulumi.StringArrayOutput `pulumi:"listeners"`
+	// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+	OldCertificateId pulumi.StringOutput `pulumi:"oldCertificateId"`
 	// Server certificate private key. Required when certificate type is Server
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// Project name
@@ -96,9 +98,6 @@ func NewCertificate(ctx *pulumi.Context,
 
 	if args.CertificateType == nil {
 		return nil, errors.New("invalid value for required argument 'CertificateType'")
-	}
-	if args.PublicKey == nil {
-		return nil, errors.New("invalid value for required argument 'PublicKey'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Certificate
@@ -123,7 +122,7 @@ func GetCertificate(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Certificate resources.
 type certificateState struct {
-	// Certificate ID
+	// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
 	CertificateId *string `pulumi:"certificateId"`
 	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName *string `pulumi:"certificateName"`
@@ -139,6 +138,8 @@ type certificateState struct {
 	ExpiredAt *string `pulumi:"expiredAt"`
 	// List of listeners associated with the certificate
 	Listeners []string `pulumi:"listeners"`
+	// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+	OldCertificateId *string `pulumi:"oldCertificateId"`
 	// Server certificate private key. Required when certificate type is Server
 	PrivateKey *string `pulumi:"privateKey"`
 	// Project name
@@ -153,7 +154,7 @@ type certificateState struct {
 }
 
 type CertificateState struct {
-	// Certificate ID
+	// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
 	CertificateId pulumi.StringPtrInput
 	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName pulumi.StringPtrInput
@@ -169,6 +170,8 @@ type CertificateState struct {
 	ExpiredAt pulumi.StringPtrInput
 	// List of listeners associated with the certificate
 	Listeners pulumi.StringArrayInput
+	// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+	OldCertificateId pulumi.StringPtrInput
 	// Server certificate private key. Required when certificate type is Server
 	PrivateKey pulumi.StringPtrInput
 	// Project name
@@ -187,35 +190,43 @@ func (CertificateState) ElementType() reflect.Type {
 }
 
 type certificateArgs struct {
+	// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+	CertificateId *string `pulumi:"certificateId"`
 	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName *string `pulumi:"certificateName"`
 	// Certificate type. Options: CA: CA certificate; Server: server certificate
 	CertificateType string `pulumi:"certificateType"`
 	// Certificate description
 	Description *string `pulumi:"description"`
+	// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+	OldCertificateId *string `pulumi:"oldCertificateId"`
 	// Server certificate private key. Required when certificate type is Server
 	PrivateKey *string `pulumi:"privateKey"`
 	// Project name
 	ProjectName *string `pulumi:"projectName"`
 	// Server certificate public key
-	PublicKey string           `pulumi:"publicKey"`
+	PublicKey *string          `pulumi:"publicKey"`
 	Tags      []CertificateTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a Certificate resource.
 type CertificateArgs struct {
+	// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+	CertificateId pulumi.StringPtrInput
 	// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
 	CertificateName pulumi.StringPtrInput
 	// Certificate type. Options: CA: CA certificate; Server: server certificate
 	CertificateType pulumi.StringInput
 	// Certificate description
 	Description pulumi.StringPtrInput
+	// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+	OldCertificateId pulumi.StringPtrInput
 	// Server certificate private key. Required when certificate type is Server
 	PrivateKey pulumi.StringPtrInput
 	// Project name
 	ProjectName pulumi.StringPtrInput
 	// Server certificate public key
-	PublicKey pulumi.StringInput
+	PublicKey pulumi.StringPtrInput
 	Tags      CertificateTagArrayInput
 }
 
@@ -306,7 +317,7 @@ func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) C
 	return o
 }
 
-// Certificate ID
+// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
 func (o CertificateOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
@@ -344,6 +355,11 @@ func (o CertificateOutput) ExpiredAt() pulumi.StringOutput {
 // List of listeners associated with the certificate
 func (o CertificateOutput) Listeners() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringArrayOutput { return v.Listeners }).(pulumi.StringArrayOutput)
+}
+
+// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+func (o CertificateOutput) OldCertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.OldCertificateId }).(pulumi.StringOutput)
 }
 
 // Server certificate private key. Required when certificate type is Server

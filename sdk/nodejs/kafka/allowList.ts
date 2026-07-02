@@ -9,28 +9,6 @@ import * as utilities from "../utilities";
 /**
  * When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@pulumi/bytepluscc";
- *
- * const kafkaAllowListDemo = new bytepluscc.index.KafkaAllowlist("KafkaAllowListDemo", {
- *     allowList: "127.0.0.2",
- *     allowListDesc: "test",
- *     allowListName: "ccapi-text",
- *     associatedInstances: [
- *         {
- *             instanceId: "kafka-cnng9x9s***",
- *         },
- *         {
- *             instanceId: "kafka-cnnghf99**",
- *         },
- *     ],
- *     applyInstanceNum: 2,
- * });
- * ```
- *
  * ## Import
  *
  * ```sh

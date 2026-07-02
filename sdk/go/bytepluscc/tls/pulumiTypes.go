@@ -1674,6 +1674,112 @@ func (o AlarmTriggerConditionArrayOutput) Index(i pulumi.IntInput) AlarmTriggerC
 	}).(AlarmTriggerConditionOutput)
 }
 
+type AlarmWebhookIntegrationTypeWebhookHeader struct {
+	// Key for custom request header
+	Key *string `pulumi:"key"`
+	// Value for custom request header
+	Value *string `pulumi:"value"`
+}
+
+// AlarmWebhookIntegrationTypeWebhookHeaderInput is an input type that accepts AlarmWebhookIntegrationTypeWebhookHeaderArgs and AlarmWebhookIntegrationTypeWebhookHeaderOutput values.
+// You can construct a concrete instance of `AlarmWebhookIntegrationTypeWebhookHeaderInput` via:
+//
+//	AlarmWebhookIntegrationTypeWebhookHeaderArgs{...}
+type AlarmWebhookIntegrationTypeWebhookHeaderInput interface {
+	pulumi.Input
+
+	ToAlarmWebhookIntegrationTypeWebhookHeaderOutput() AlarmWebhookIntegrationTypeWebhookHeaderOutput
+	ToAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(context.Context) AlarmWebhookIntegrationTypeWebhookHeaderOutput
+}
+
+type AlarmWebhookIntegrationTypeWebhookHeaderArgs struct {
+	// Key for custom request header
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Value for custom request header
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AlarmWebhookIntegrationTypeWebhookHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (i AlarmWebhookIntegrationTypeWebhookHeaderArgs) ToAlarmWebhookIntegrationTypeWebhookHeaderOutput() AlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return i.ToAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(context.Background())
+}
+
+func (i AlarmWebhookIntegrationTypeWebhookHeaderArgs) ToAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(ctx context.Context) AlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmWebhookIntegrationTypeWebhookHeaderOutput)
+}
+
+// AlarmWebhookIntegrationTypeWebhookHeaderArrayInput is an input type that accepts AlarmWebhookIntegrationTypeWebhookHeaderArray and AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput values.
+// You can construct a concrete instance of `AlarmWebhookIntegrationTypeWebhookHeaderArrayInput` via:
+//
+//	AlarmWebhookIntegrationTypeWebhookHeaderArray{ AlarmWebhookIntegrationTypeWebhookHeaderArgs{...} }
+type AlarmWebhookIntegrationTypeWebhookHeaderArrayInput interface {
+	pulumi.Input
+
+	ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput() AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput
+	ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(context.Context) AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput
+}
+
+type AlarmWebhookIntegrationTypeWebhookHeaderArray []AlarmWebhookIntegrationTypeWebhookHeaderInput
+
+func (AlarmWebhookIntegrationTypeWebhookHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (i AlarmWebhookIntegrationTypeWebhookHeaderArray) ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput() AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return i.ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmWebhookIntegrationTypeWebhookHeaderArray) ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(ctx context.Context) AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput)
+}
+
+type AlarmWebhookIntegrationTypeWebhookHeaderOutput struct{ *pulumi.OutputState }
+
+func (AlarmWebhookIntegrationTypeWebhookHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (o AlarmWebhookIntegrationTypeWebhookHeaderOutput) ToAlarmWebhookIntegrationTypeWebhookHeaderOutput() AlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return o
+}
+
+func (o AlarmWebhookIntegrationTypeWebhookHeaderOutput) ToAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(ctx context.Context) AlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return o
+}
+
+// Key for custom request header
+func (o AlarmWebhookIntegrationTypeWebhookHeaderOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmWebhookIntegrationTypeWebhookHeader) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Value for custom request header
+func (o AlarmWebhookIntegrationTypeWebhookHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmWebhookIntegrationTypeWebhookHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (o AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput() AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) ToAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(ctx context.Context) AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) Index(i pulumi.IntInput) AlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmWebhookIntegrationTypeWebhookHeader {
+		return vs[0].([]AlarmWebhookIntegrationTypeWebhookHeader)[vs[1].(int)]
+	}).(AlarmWebhookIntegrationTypeWebhookHeaderOutput)
+}
+
 type EtlTargetResource struct {
 	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
 	Alias string `pulumi:"alias"`
@@ -16907,6 +17013,112 @@ func (o GetAlarmTriggerConditionArrayOutput) Index(i pulumi.IntInput) GetAlarmTr
 	}).(GetAlarmTriggerConditionOutput)
 }
 
+type GetAlarmWebhookIntegrationTypeWebhookHeader struct {
+	// Key for custom request header
+	Key string `pulumi:"key"`
+	// Value for custom request header
+	Value string `pulumi:"value"`
+}
+
+// GetAlarmWebhookIntegrationTypeWebhookHeaderInput is an input type that accepts GetAlarmWebhookIntegrationTypeWebhookHeaderArgs and GetAlarmWebhookIntegrationTypeWebhookHeaderOutput values.
+// You can construct a concrete instance of `GetAlarmWebhookIntegrationTypeWebhookHeaderInput` via:
+//
+//	GetAlarmWebhookIntegrationTypeWebhookHeaderArgs{...}
+type GetAlarmWebhookIntegrationTypeWebhookHeaderInput interface {
+	pulumi.Input
+
+	ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutput() GetAlarmWebhookIntegrationTypeWebhookHeaderOutput
+	ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(context.Context) GetAlarmWebhookIntegrationTypeWebhookHeaderOutput
+}
+
+type GetAlarmWebhookIntegrationTypeWebhookHeaderArgs struct {
+	// Key for custom request header
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value for custom request header
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAlarmWebhookIntegrationTypeWebhookHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (i GetAlarmWebhookIntegrationTypeWebhookHeaderArgs) ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutput() GetAlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return i.ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(context.Background())
+}
+
+func (i GetAlarmWebhookIntegrationTypeWebhookHeaderArgs) ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(ctx context.Context) GetAlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmWebhookIntegrationTypeWebhookHeaderOutput)
+}
+
+// GetAlarmWebhookIntegrationTypeWebhookHeaderArrayInput is an input type that accepts GetAlarmWebhookIntegrationTypeWebhookHeaderArray and GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput values.
+// You can construct a concrete instance of `GetAlarmWebhookIntegrationTypeWebhookHeaderArrayInput` via:
+//
+//	GetAlarmWebhookIntegrationTypeWebhookHeaderArray{ GetAlarmWebhookIntegrationTypeWebhookHeaderArgs{...} }
+type GetAlarmWebhookIntegrationTypeWebhookHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput() GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput
+	ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(context.Context) GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput
+}
+
+type GetAlarmWebhookIntegrationTypeWebhookHeaderArray []GetAlarmWebhookIntegrationTypeWebhookHeaderInput
+
+func (GetAlarmWebhookIntegrationTypeWebhookHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (i GetAlarmWebhookIntegrationTypeWebhookHeaderArray) ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput() GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return i.ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmWebhookIntegrationTypeWebhookHeaderArray) ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(ctx context.Context) GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput)
+}
+
+type GetAlarmWebhookIntegrationTypeWebhookHeaderOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmWebhookIntegrationTypeWebhookHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderOutput) ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutput() GetAlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return o
+}
+
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderOutput) ToGetAlarmWebhookIntegrationTypeWebhookHeaderOutputWithContext(ctx context.Context) GetAlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return o
+}
+
+// Key for custom request header
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmWebhookIntegrationTypeWebhookHeader) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value for custom request header
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmWebhookIntegrationTypeWebhookHeader) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmWebhookIntegrationTypeWebhookHeader)(nil)).Elem()
+}
+
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput() GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) ToGetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutputWithContext(ctx context.Context) GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput {
+	return o
+}
+
+func (o GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) Index(i pulumi.IntInput) GetAlarmWebhookIntegrationTypeWebhookHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmWebhookIntegrationTypeWebhookHeader {
+		return vs[0].([]GetAlarmWebhookIntegrationTypeWebhookHeader)[vs[1].(int)]
+	}).(GetAlarmWebhookIntegrationTypeWebhookHeaderOutput)
+}
+
 type GetEtlTargetResource struct {
 	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
 	Alias string `pulumi:"alias"`
@@ -25021,6 +25233,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmRequestCyclePtrInput)(nil)).Elem(), AlarmRequestCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionInput)(nil)).Elem(), AlarmTriggerConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionArrayInput)(nil)).Elem(), AlarmTriggerConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmWebhookIntegrationTypeWebhookHeaderInput)(nil)).Elem(), AlarmWebhookIntegrationTypeWebhookHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmWebhookIntegrationTypeWebhookHeaderArrayInput)(nil)).Elem(), AlarmWebhookIntegrationTypeWebhookHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EtlTargetResourceInput)(nil)).Elem(), EtlTargetResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EtlTargetResourceArrayInput)(nil)).Elem(), EtlTargetResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleInput)(nil)).Elem(), HostGroupRuleArgs{})
@@ -25201,6 +25415,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmRequestCycleInput)(nil)).Elem(), GetAlarmRequestCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionInput)(nil)).Elem(), GetAlarmTriggerConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionArrayInput)(nil)).Elem(), GetAlarmTriggerConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmWebhookIntegrationTypeWebhookHeaderInput)(nil)).Elem(), GetAlarmWebhookIntegrationTypeWebhookHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmWebhookIntegrationTypeWebhookHeaderArrayInput)(nil)).Elem(), GetAlarmWebhookIntegrationTypeWebhookHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEtlTargetResourceInput)(nil)).Elem(), GetEtlTargetResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEtlTargetResourceArrayInput)(nil)).Elem(), GetEtlTargetResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleInput)(nil)).Elem(), GetHostGroupRuleArgs{})
@@ -25336,6 +25552,8 @@ func init() {
 	pulumi.RegisterOutputType(AlarmRequestCyclePtrOutput{})
 	pulumi.RegisterOutputType(AlarmTriggerConditionOutput{})
 	pulumi.RegisterOutputType(AlarmTriggerConditionArrayOutput{})
+	pulumi.RegisterOutputType(AlarmWebhookIntegrationTypeWebhookHeaderOutput{})
+	pulumi.RegisterOutputType(AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput{})
 	pulumi.RegisterOutputType(EtlTargetResourceOutput{})
 	pulumi.RegisterOutputType(EtlTargetResourceArrayOutput{})
 	pulumi.RegisterOutputType(HostGroupRuleOutput{})
@@ -25516,6 +25734,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmRequestCycleOutput{})
 	pulumi.RegisterOutputType(GetAlarmTriggerConditionOutput{})
 	pulumi.RegisterOutputType(GetAlarmTriggerConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmWebhookIntegrationTypeWebhookHeaderOutput{})
+	pulumi.RegisterOutputType(GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput{})
 	pulumi.RegisterOutputType(GetEtlTargetResourceOutput{})
 	pulumi.RegisterOutputType(GetEtlTargetResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetHostGroupRuleOutput{})

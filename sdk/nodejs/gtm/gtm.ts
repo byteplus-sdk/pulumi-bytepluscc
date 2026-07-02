@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -93,9 +95,17 @@ export class Gtm extends pulumi.CustomResource {
      */
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
+     * Detailed configuration of the scheduling policy for the GTM instance.
+     */
+    public /*out*/ readonly policy!: pulumi.Output<outputs.gtm.GtmPolicy>;
+    /**
      * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
      */
     public readonly policyType!: pulumi.Output<string>;
+    /**
+     * Detailed configuration of the health check for the GTM instance.
+     */
+    public /*out*/ readonly probe!: pulumi.Output<outputs.gtm.GtmProbe>;
     /**
      * Project name to which the GTM instance belongs
      */
@@ -146,7 +156,9 @@ export class Gtm extends pulumi.CustomResource {
             resourceInputs["gtmId"] = state ? state.gtmId : undefined;
             resourceInputs["lastOperator"] = state ? state.lastOperator : undefined;
             resourceInputs["owner"] = state ? state.owner : undefined;
+            resourceInputs["policy"] = state ? state.policy : undefined;
             resourceInputs["policyType"] = state ? state.policyType : undefined;
+            resourceInputs["probe"] = state ? state.probe : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["remark"] = state ? state.remark : undefined;
             resourceInputs["specName"] = state ? state.specName : undefined;
@@ -175,6 +187,8 @@ export class Gtm extends pulumi.CustomResource {
             resourceInputs["gtmId"] = undefined /*out*/;
             resourceInputs["lastOperator"] = undefined /*out*/;
             resourceInputs["owner"] = undefined /*out*/;
+            resourceInputs["policy"] = undefined /*out*/;
+            resourceInputs["probe"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["updateTime"] = undefined /*out*/;
             resourceInputs["zoneType"] = undefined /*out*/;
@@ -221,9 +235,17 @@ export interface GtmState {
      */
     owner?: pulumi.Input<string>;
     /**
+     * Detailed configuration of the scheduling policy for the GTM instance.
+     */
+    policy?: pulumi.Input<inputs.gtm.GtmPolicy>;
+    /**
      * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
      */
     policyType?: pulumi.Input<string>;
+    /**
+     * Detailed configuration of the health check for the GTM instance.
+     */
+    probe?: pulumi.Input<inputs.gtm.GtmProbe>;
     /**
      * Project name to which the GTM instance belongs
      */

@@ -42,7 +42,7 @@ public final class GetRuleResult {
      */
     private List<GetRuleCondition> conditions;
     /**
-     * @return Alert notification group ID bound to the alert policy.
+     * @return When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      * 
      */
     private List<String> contactGroupIds;
@@ -52,22 +52,22 @@ public final class GetRuleResult {
      */
     private String createdAt;
     /**
-     * @return Alert policy description.
+     * @return Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      * 
      */
     private String description;
     /**
-     * @return Dimension configuration.
+     * @return Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      * 
      */
     private GetRuleDimensionConditions dimensionConditions;
     /**
-     * @return Policy expiration time, in HH:MM format.
+     * @return End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      * 
      */
     private String effectEndAt;
     /**
-     * @return Policy start time, in HH:MM format.
+     * @return Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      * 
      */
     private String effectStartAt;
@@ -77,7 +77,7 @@ public final class GetRuleResult {
      */
     private String enableState;
     /**
-     * @return Duration required to trigger an alert, in minutes.
+     * @return Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      * 
      */
     private Integer evaluationCount;
@@ -102,7 +102,7 @@ public final class GetRuleResult {
      */
     private Boolean multipleConditions;
     /**
-     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * @return The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      * 
      */
     private String namespace;
@@ -112,7 +112,7 @@ public final class GetRuleResult {
      */
     private GetRuleNoData noData;
     /**
-     * @return Notification policy ID.
+     * @return Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      * 
      */
     private String notificationId;
@@ -127,7 +127,7 @@ public final class GetRuleResult {
      */
     private GetRuleOriginalDimensions originalDimensions;
     /**
-     * @return Project to which the alert policy belongs.
+     * @return Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      * 
      */
     private String projectName;
@@ -137,7 +137,7 @@ public final class GetRuleResult {
      */
     private GetRuleRecoveryNotify recoveryNotify;
     /**
-     * @return Availability zone ID of the cloud product.
+     * @return Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      * 
      */
     private List<String> regions;
@@ -152,7 +152,7 @@ public final class GetRuleResult {
      */
     private String ruleId;
     /**
-     * @return Alert policy name.
+     * @return Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      * 
      */
     private String ruleName;
@@ -222,7 +222,7 @@ public final class GetRuleResult {
         return this.conditions;
     }
     /**
-     * @return Alert notification group ID bound to the alert policy.
+     * @return When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      * 
      */
     public List<String> contactGroupIds() {
@@ -236,28 +236,28 @@ public final class GetRuleResult {
         return this.createdAt;
     }
     /**
-     * @return Alert policy description.
+     * @return Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Dimension configuration.
+     * @return Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      * 
      */
     public GetRuleDimensionConditions dimensionConditions() {
         return this.dimensionConditions;
     }
     /**
-     * @return Policy expiration time, in HH:MM format.
+     * @return End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      * 
      */
     public String effectEndAt() {
         return this.effectEndAt;
     }
     /**
-     * @return Policy start time, in HH:MM format.
+     * @return Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      * 
      */
     public String effectStartAt() {
@@ -271,7 +271,7 @@ public final class GetRuleResult {
         return this.enableState;
     }
     /**
-     * @return Duration required to trigger an alert, in minutes.
+     * @return Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      * 
      */
     public Integer evaluationCount() {
@@ -306,7 +306,7 @@ public final class GetRuleResult {
         return this.multipleConditions;
     }
     /**
-     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * @return The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      * 
      */
     public String namespace() {
@@ -320,7 +320,7 @@ public final class GetRuleResult {
         return this.noData;
     }
     /**
-     * @return Notification policy ID.
+     * @return Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      * 
      */
     public String notificationId() {
@@ -341,7 +341,7 @@ public final class GetRuleResult {
         return this.originalDimensions;
     }
     /**
-     * @return Project to which the alert policy belongs.
+     * @return Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      * 
      */
     public String projectName() {
@@ -355,7 +355,7 @@ public final class GetRuleResult {
         return this.recoveryNotify;
     }
     /**
-     * @return Availability zone ID of the cloud product.
+     * @return Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      * 
      */
     public List<String> regions() {
@@ -376,7 +376,7 @@ public final class GetRuleResult {
         return this.ruleId;
     }
     /**
-     * @return Alert policy name.
+     * @return Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      * 
      */
     public String ruleName() {

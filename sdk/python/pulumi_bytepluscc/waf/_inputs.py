@@ -30,6 +30,8 @@ __all__ = [
     'DomainTlsFieldsConfigArgsDict',
     'DomainTlsFieldsConfigHeadersConfigArgs',
     'DomainTlsFieldsConfigHeadersConfigArgsDict',
+    'HostGroupRelatedRuleArgs',
+    'HostGroupRelatedRuleArgsDict',
 ]
 
 MYPY = False
@@ -680,5 +682,77 @@ class DomainTlsFieldsConfigHeadersConfigArgs:
     @statistical_key_lists.setter
     def statistical_key_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "statistical_key_lists", value)
+
+
+if not MYPY:
+    class HostGroupRelatedRuleArgsDict(TypedDict):
+        rule_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Rule name.
+        """
+        rule_tag: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Rule ID.
+        """
+        rule_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+elif False:
+    HostGroupRelatedRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class HostGroupRelatedRuleArgs:
+    def __init__(__self__, *,
+                 rule_name: Optional[pulumi.Input[builtins.str]] = None,
+                 rule_tag: Optional[pulumi.Input[builtins.str]] = None,
+                 rule_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] rule_name: Rule name.
+        :param pulumi.Input[builtins.str] rule_tag: Rule ID.
+        :param pulumi.Input[builtins.str] rule_type: Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
+        if rule_tag is not None:
+            pulumi.set(__self__, "rule_tag", rule_tag)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Rule name.
+        """
+        return pulumi.get(self, "rule_name")
+
+    @rule_name.setter
+    def rule_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rule_name", value)
+
+    @property
+    @pulumi.getter(name="ruleTag")
+    def rule_tag(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Rule ID.
+        """
+        return pulumi.get(self, "rule_tag")
+
+    @rule_tag.setter
+    def rule_tag(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rule_tag", value)
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        return pulumi.get(self, "rule_type")
+
+    @rule_type.setter
+    def rule_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rule_type", value)
 
 

@@ -9,6 +9,8 @@ import com.byteplus.bytepluscc.organization.inputs.GetAccountPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetOrganizationArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetOrganizationPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetServiceControlPolicyArgs;
+import com.byteplus.bytepluscc.organization.inputs.GetServiceControlPolicyEnablerArgs;
+import com.byteplus.bytepluscc.organization.inputs.GetServiceControlPolicyEnablerPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetServiceControlPolicyPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetUnitArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetUnitPlainArgs;
@@ -17,6 +19,8 @@ import com.byteplus.bytepluscc.organization.outputs.GetAccountsResult;
 import com.byteplus.bytepluscc.organization.outputs.GetOrganizationResult;
 import com.byteplus.bytepluscc.organization.outputs.GetOrganizationsResult;
 import com.byteplus.bytepluscc.organization.outputs.GetServiceControlPoliciesResult;
+import com.byteplus.bytepluscc.organization.outputs.GetServiceControlPolicyEnablerResult;
+import com.byteplus.bytepluscc.organization.outputs.GetServiceControlPolicyEnablersResult;
 import com.byteplus.bytepluscc.organization.outputs.GetServiceControlPolicyResult;
 import com.byteplus.bytepluscc.organization.outputs.GetUnitResult;
 import com.byteplus.bytepluscc.organization.outputs.GetUnitsResult;
@@ -280,6 +284,90 @@ public final class OrganizationFunctions {
      */
     public static CompletableFuture<GetServiceControlPolicyResult> getServiceControlPolicyPlain(GetServiceControlPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:organization/getServiceControlPolicy:getServiceControlPolicy", TypeShape.of(GetServiceControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablerResult> getServiceControlPolicyEnabler(GetServiceControlPolicyEnablerArgs args) {
+        return getServiceControlPolicyEnabler(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static CompletableFuture<GetServiceControlPolicyEnablerResult> getServiceControlPolicyEnablerPlain(GetServiceControlPolicyEnablerPlainArgs args) {
+        return getServiceControlPolicyEnablerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablerResult> getServiceControlPolicyEnabler(GetServiceControlPolicyEnablerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getServiceControlPolicyEnabler:getServiceControlPolicyEnabler", TypeShape.of(GetServiceControlPolicyEnablerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablerResult> getServiceControlPolicyEnabler(GetServiceControlPolicyEnablerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getServiceControlPolicyEnabler:getServiceControlPolicyEnabler", TypeShape.of(GetServiceControlPolicyEnablerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static CompletableFuture<GetServiceControlPolicyEnablerResult> getServiceControlPolicyEnablerPlain(GetServiceControlPolicyEnablerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:organization/getServiceControlPolicyEnabler:getServiceControlPolicyEnabler", TypeShape.of(GetServiceControlPolicyEnablerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablers() {
+        return getServiceControlPolicyEnablers(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static CompletableFuture<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablersPlain() {
+        return getServiceControlPolicyEnablersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablers(InvokeArgs args) {
+        return getServiceControlPolicyEnablers(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static CompletableFuture<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablersPlain(InvokeArgs args) {
+        return getServiceControlPolicyEnablersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablers(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getServiceControlPolicyEnablers:getServiceControlPolicyEnablers", TypeShape.of(GetServiceControlPolicyEnablersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static Output<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablers(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getServiceControlPolicyEnablers:getServiceControlPolicyEnablers", TypeShape.of(GetServiceControlPolicyEnablersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::ServiceControlPolicyEnabler
+     * 
+     */
+    public static CompletableFuture<GetServiceControlPolicyEnablersResult> getServiceControlPolicyEnablersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:organization/getServiceControlPolicyEnablers:getServiceControlPolicyEnablers", TypeShape.of(GetServiceControlPolicyEnablersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::Organization::Unit

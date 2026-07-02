@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class GetGroupTopicInfoResult
     {
         /// <summary>
-        /// Topic creation time.
+        /// Topic creation time
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// Topic description.
+        /// Topic description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Number of unconsumed messages in the Topic.
+        /// Number of unconsumed messages in the Topic
         /// </summary>
         public readonly int Lag;
         /// <summary>
-        /// Partition list.
+        /// Partition list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupTopicInfoPartitionInfoResult> PartitionInfos;
         /// <summary>
-        /// Number of Topic partitions.
+        /// Number of Topic partitions
         /// </summary>
         public readonly int Partitions;
         /// <summary>
-        /// Retention period of data in the Topic, in hours.
+        /// Retention period of data in the Topic, in hours
         /// </summary>
         public readonly int Retention;
         /// <summary>
-        /// Topic status.
+        /// Topic status
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -47,7 +47,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
         /// </summary>
         public readonly string TopicId;
         /// <summary>
-        /// Topic name.
+        /// Topic name
         /// </summary>
         public readonly string TopicName;
 

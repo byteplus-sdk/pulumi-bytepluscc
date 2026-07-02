@@ -23,7 +23,7 @@ public final class GetInstanceEndpointsOverlay {
      */
     private String eipId;
     /**
-     * @return Private network Plain endpoint
+     * @return Private network Plain access point
      * 
      */
     private String plain;
@@ -33,7 +33,7 @@ public final class GetInstanceEndpointsOverlay {
      */
     private Integer plainPort;
     /**
-     * @return Private network SASL authentication endpoint
+     * @return Private network SASL authentication access point
      * 
      */
     private String sasl;
@@ -79,7 +79,7 @@ public final class GetInstanceEndpointsOverlay {
         return this.eipId;
     }
     /**
-     * @return Private network Plain endpoint
+     * @return Private network Plain access point
      * 
      */
     public String plain() {
@@ -93,7 +93,7 @@ public final class GetInstanceEndpointsOverlay {
         return this.plainPort;
     }
     /**
-     * @return Private network SASL authentication endpoint
+     * @return Private network SASL authentication access point
      * 
      */
     public String sasl() {

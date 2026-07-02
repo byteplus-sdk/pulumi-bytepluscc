@@ -33,29 +33,45 @@ export interface ProviderEndpoints {
 export namespace alb {
     export interface AclAclEntry {
         /**
-         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
+         * Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
          */
         description?: pulumi.Input<string>;
         /**
-         * IP entry address range. Only CIDR addresses are supported.
+         * IP entry address range; only CIDR addresses are supported
          */
         entry?: pulumi.Input<string>;
     }
 
     export interface AclListener {
         /**
-         * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+         * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
          */
         aclType?: pulumi.Input<string>;
+        /**
+         * Listener ID
+         */
+        listenerId?: pulumi.Input<string>;
+        /**
+         * Listener name
+         */
+        listenerName?: pulumi.Input<string>;
+        /**
+         * Listener port
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * Listener protocol
+         */
+        protocol?: pulumi.Input<string>;
     }
 
     export interface AclTag {
         /**
-         * Tag key for user tags. Length must be between 1 and 128 characters. Case sensitive. Cannot start with any combination of volc: or sys: in any case. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+         * User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
          */
         key?: pulumi.Input<string>;
         /**
-         * User tag value. Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
+         * User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
          */
         value?: pulumi.Input<string>;
     }
@@ -114,7 +130,7 @@ export namespace alb {
 
     export interface ListenerDomainExtension {
         /**
-         * Server certificate ID used by the domain name. Effective when the certificate source is cert_center.
+         * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
          */
         certCenterCertificateId?: pulumi.Input<string>;
         /**
@@ -122,11 +138,11 @@ export namespace alb {
          */
         certificateId?: pulumi.Input<string>;
         /**
-         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded via Volcano Engine Certificate Center.
+         * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
          */
         certificateSource?: pulumi.Input<string>;
         /**
-         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extension certificates (SniAutoMatch is on), Domain must be set to an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length limit: 1–128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters other than '.' can appear before or after '*'. Exact domain: an exact domain name that complies with domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain name matching is case-insensitive.
+         * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
          */
         domain?: pulumi.Input<string>;
         /**
@@ -134,7 +150,7 @@ export namespace alb {
          */
         pcaLeafCertificateId?: pulumi.Input<string>;
         /**
-         * If the instance supports automatic selection of extension certificates, that is, when SniAutoMatch is set to on, Domain is an empty string. San refers to the certificate's extension domain names, separated by commas.
+         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
          */
         san?: pulumi.Input<string>;
     }
@@ -152,11 +168,11 @@ export namespace alb {
 
     export interface ListenerTag {
         /**
-         * User tag key. Rules: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource cannot be duplicated.
+         * Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
          */
         key?: pulumi.Input<string>;
         /**
-         * User tag value. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. Allowed characters include all languages, numbers, spaces, parentheses (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
+         * The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
          */
         value?: pulumi.Input<string>;
     }
@@ -508,31 +524,31 @@ export namespace alb {
 
     export interface ServerGroupHealthCheck {
         /**
-         * The domain name for health checks must be configured as the actual address used by the backend server to provide external services. This parameter is only effective when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with a '.'. Each level of the domain name can include letters, numbers, '-', and '.' characters, but '-' cannot appear at the beginning or end of any level. Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, it defaults to empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+         * Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
          */
         domain?: pulumi.Input<string>;
         /**
-         * Whether the listener has enabled health check. Values: on: enabled (default), off: disabled.
+         * Whether the listener enables health check. Values: on: enabled (default), off: disabled.
          */
         enabled?: pulumi.Input<string>;
         /**
-         * Health check threshold. Indicates that a backend server is considered healthy if it passes the specified number of consecutive health checks. Unit: checks. Range: 2–10. Default: 3.
+         * Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
          */
         healthyThreshold?: pulumi.Input<number>;
         /**
-         * HTTP status codes indicating a successful health check. Use commas to separate multiple codes. This parameter is only available when HealthCheck.Protocol is set to HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+         * HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
          */
         httpCode?: pulumi.Input<string>;
         /**
-         * HTTP protocol version for health checks. This parameter is only available when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default when using API), HTTP1.1.
+         * Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
          */
         httpVersion?: pulumi.Input<string>;
         /**
-         * After enabling health check, the interval for performing health checks. Unit: seconds. Range: 1–300s. Default: 2.
+         * After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
          */
         interval?: pulumi.Input<number>;
         /**
-         * After enabling health check, the health check method. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Values: GET: server must support the GET method. HEAD (default): server returns only HEAD header information, which can reduce backend performance consumption, but the server must support the HEAD method.
+         * Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
          */
         method?: pulumi.Input<string>;
         /**
@@ -544,15 +560,15 @@ export namespace alb {
          */
         protocol?: pulumi.Input<string>;
         /**
-         * Health check response timeout. If the backend server does not respond correctly within the specified time, it is considered a health check failure. Unit: seconds; range: 1~60; default: 2.
+         * Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
          */
         timeout?: pulumi.Input<number>;
         /**
-         * Unhealthy threshold for health checks. If a backend server fails the specified number of consecutive health checks, it will be considered unhealthy. Unit: times. Value range: 2–10. Default: 3.
+         * Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
          */
         unhealthyThreshold?: pulumi.Input<number>;
         /**
-         * Health check path, which must be configured as the actual path provided by the backend server. This parameter is effective only when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length must be between 1 and 128 characters. If this parameter is not specified or no value is provided, the default is '/'.
+         * Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
          */
         uri?: pulumi.Input<string>;
     }
@@ -570,7 +586,7 @@ export namespace alb {
          */
         description?: pulumi.Input<string>;
         /**
-         * ID of the cloud server instance or network interface.
+         * ID of the cloud server instance or network interface card.
          */
         instanceId?: pulumi.Input<string>;
         /**
@@ -582,7 +598,7 @@ export namespace alb {
          */
         port?: pulumi.Input<number>;
         /**
-         * Enable remote IP feature. This field is valid when the backend server instance type is IP address, that is, when Type is set to ip. Values: on: enabled. off (default): disabled.
+         * Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
          */
         remoteEnabled?: pulumi.Input<string>;
         /**
@@ -590,22 +606,22 @@ export namespace alb {
          */
         serverId?: pulumi.Input<string>;
         /**
-         * Backend server instance type. ECS: cloud server instance; ENI: secondary network interface; IP: IP address (only valid for IP-type server groups).
+         * Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
          */
         type?: pulumi.Input<string>;
         /**
-         * Backend server weight.
+         * Weight of the backend server.
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface ServerGroupStickySessionConfig {
         /**
-         * Session persistence cookie name configured for the service. Only valid when session persistence is enabled and cookie rewrite is selected. Rules: Cookie name length must be 1–200 characters. The name can only contain ASCII letters and numbers, cannot include commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). When stickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is server, this parameter is required. When StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert, this parameter is invalid.
+         * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
          */
         cookie?: pulumi.Input<string>;
         /**
-         * Session persistence cookie timeout. Only effective when session persistence is enabled and cookie insertion is selected. Unit: seconds. Rules: timeout range: 1~86400; default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+         * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          */
         cookieTimeout?: pulumi.Input<number>;
         /**
@@ -613,18 +629,18 @@ export namespace alb {
          */
         stickySessionEnabled?: pulumi.Input<string>;
         /**
-         * Cookie handling method. When StickySessionConfig.StickySessionEnabled is set to on, this field is required. Values: insert: Insert a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response, and subsequent client requests carrying this Cookie are forwarded to the previously recorded backend server. server: Rewrite the Cookie. When session persistence with Cookie rewriting is enabled, after the client's first request is forwarded to the backend server, if ALB finds your custom Cookie in the response, it rewrites the original Cookie. Subsequent client requests carrying the rewritten Cookie are forwarded to the previously recorded backend server.
+         * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
          */
         stickySessionType?: pulumi.Input<string>;
     }
 
     export interface ServerGroupTag {
         /**
-         * Tag key. Duplicate tag keys are not allowed for the same resource.
+         * Tag key. Tag keys for the same resource must be unique.
          */
         key?: pulumi.Input<string>;
         /**
-         * Tag value.
+         * Tag value of the tag.
          */
         value?: pulumi.Input<string>;
     }
@@ -1640,19 +1656,19 @@ export namespace autoscaling {
 export namespace bmq {
     export interface GroupResetInfo {
         /**
-         * This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+         * If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
          */
         offsetType?: pulumi.Input<string>;
         /**
-         * Partition number.
+         * Partition number
          */
         partitionId?: pulumi.Input<number>;
         /**
-         * Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+         * Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
          */
         resetBy?: pulumi.Input<string>;
         /**
-         * Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+         * Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
          */
         resetValue?: pulumi.Input<number>;
         /**
@@ -1663,28 +1679,28 @@ export namespace bmq {
 
     export interface GroupTopicInfo {
         /**
-         * Topic creation time.
+         * Topic creation time
          */
         createTime?: pulumi.Input<string>;
         /**
-         * Topic description.
+         * Topic description
          */
         description?: pulumi.Input<string>;
         /**
-         * Number of unconsumed messages in the Topic.
+         * Number of unconsumed messages in the Topic
          */
         lag?: pulumi.Input<number>;
         partitionInfos?: pulumi.Input<pulumi.Input<inputs.bmq.GroupTopicInfoPartitionInfo>[]>;
         /**
-         * Number of Topic partitions.
+         * Number of Topic partitions
          */
         partitions?: pulumi.Input<number>;
         /**
-         * Retention period of data in the Topic, in hours.
+         * Retention period of data in the Topic, in hours
          */
         retention?: pulumi.Input<number>;
         /**
-         * Topic status.
+         * Topic status
          */
         status?: pulumi.Input<string>;
         /**
@@ -1692,34 +1708,34 @@ export namespace bmq {
          */
         topicId?: pulumi.Input<string>;
         /**
-         * Topic name.
+         * Topic name
          */
         topicName?: pulumi.Input<string>;
     }
 
     export interface GroupTopicInfoPartitionInfo {
         /**
-         * Current consumption position.
+         * Current consumption offset
          */
         currentOffset?: pulumi.Input<number>;
         /**
-         * Name of the Consumer Group.
+         * Consumer Group name
          */
         groupName?: pulumi.Input<string>;
         /**
-         * Number of unconsumed messages in the partition.
+         * Number of unconsumed messages in the partition
          */
         lag?: pulumi.Input<number>;
         /**
-         * Latest consumption position.
+         * Latest consumption offset
          */
         latestOffset?: pulumi.Input<number>;
         /**
-         * Partition number.
+         * Partition number
          */
         partitionId?: pulumi.Input<number>;
         /**
-         * Name of the Topic subscribed by the Consumer Group.
+         * Name of the Topic subscribed by the Consumer Group
          */
         topicName?: pulumi.Input<string>;
     }
@@ -1745,7 +1761,7 @@ export namespace bmq {
          */
         eipId?: pulumi.Input<string>;
         /**
-         * Private network Plain endpoint
+         * Private network Plain access point
          */
         plain?: pulumi.Input<string>;
         /**
@@ -1753,7 +1769,7 @@ export namespace bmq {
          */
         plainPort?: pulumi.Input<number>;
         /**
-         * Private network SASL authentication endpoint
+         * Private network SASL authentication access point
          */
         sasl?: pulumi.Input<string>;
         /**
@@ -1788,7 +1804,7 @@ export namespace bmq {
          */
         eipId?: pulumi.Input<string>;
         /**
-         * Private network Plain endpoint
+         * Private network Plain access point
          */
         plain?: pulumi.Input<string>;
         /**
@@ -1796,7 +1812,7 @@ export namespace bmq {
          */
         plainPort?: pulumi.Input<number>;
         /**
-         * Private network SASL authentication endpoint
+         * Private network SASL authentication access point
          */
         sasl?: pulumi.Input<string>;
         /**
@@ -1824,7 +1840,7 @@ export namespace bmq {
     export interface InstanceResourceTag {
         tagKvs?: pulumi.Input<pulumi.Input<inputs.bmq.InstanceResourceTagTagKv>[]>;
         /**
-         * Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
+         * Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type?: pulumi.Input<string>;
     }
@@ -1835,7 +1851,7 @@ export namespace bmq {
          */
         key?: pulumi.Input<string>;
         /**
-         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type?: pulumi.Input<string>;
         /**
@@ -1868,7 +1884,7 @@ export namespace bmq {
          */
         key?: pulumi.Input<string>;
         /**
-         * Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
+         * Type of instance tag. Options: CUSTOM—custom tag; SYSTEM—system tag
          */
         type?: pulumi.Input<string>;
         /**
@@ -4801,7 +4817,7 @@ export namespace cloudmonitor {
 
     export interface RuleDimensionConditionsMetaConditionMeta {
         /**
-         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          */
         comparator?: pulumi.Input<string>;
         /**
@@ -4831,7 +4847,7 @@ export namespace cloudmonitor {
 
     export interface RuleDimensionConditionsTagConditionTag {
         /**
-         * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          */
         comparator?: pulumi.Input<string>;
         /**
@@ -4896,7 +4912,7 @@ export namespace cloudmonitor {
 
     export interface RuleNotifyTemplate {
         /**
-         * Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+         * Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
          */
         channel?: pulumi.Input<string>;
         /**
@@ -4942,47 +4958,63 @@ export namespace cr {
     export interface RegistryEndpoint {
         aclPolicies?: pulumi.Input<pulumi.Input<inputs.cr.RegistryEndpointAclPolicy>[]>;
         /**
-         * Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+         * Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
          */
         enabled?: pulumi.Input<boolean>;
         /**
-         * Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+         * Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
          */
         status?: pulumi.Input<string>;
     }
 
     export interface RegistryEndpointAclPolicy {
         /**
-         * IP entry address
+         * IP entry address.
          */
         description?: pulumi.Input<string>;
         /**
-         * IP entry description
+         * IP entry description.
          */
         entry?: pulumi.Input<string>;
     }
 
     export interface RegistryProxyCache {
         /**
-         * Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+         * Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
          */
         type?: pulumi.Input<string>;
     }
 
     export interface RegistryStatus {
         /**
-         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         conditions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+         * Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          */
         phase?: pulumi.Input<string>;
     }
 
     export interface RegistryTag {
         /**
-         * Tag key
+         * Tag key values
          */
         key?: pulumi.Input<string>;
         /**
@@ -5008,6 +5040,17 @@ export namespace cr {
 }
 
 export namespace directconnect {
+    export interface ConnectionTag {
+        /**
+         * Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface DirectConnectGatewayAssociateCen {
         /**
          * ID of CEN.
@@ -7092,6 +7135,73 @@ export namespace filenas {
 }
 
 export namespace fwcenter {
+    export interface AddressBookAddressDetailList {
+        /**
+         * Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+         */
+        description?: pulumi.Input<string>;
+    }
+
+    export interface AddressBookTag {
+        /**
+         * Tag key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ControlPolicyDestPortListV1 {
+        /**
+         * Detailed address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ControlPolicyDestinationCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ControlPolicySourceCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface DnsControlPolicyDomainListV1 {
         /**
          * Specific address information.
@@ -7118,9 +7228,170 @@ export namespace fwcenter {
         vpcId?: pulumi.Input<string>;
     }
 
+    export interface VpcFireWallAclRuleDestPortListV1 {
+        /**
+         * Detailed address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface VpcFireWallAclRuleDestinationCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface VpcFireWallAclRuleSourceCidrListV1 {
+        /**
+         * Detailed address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type?: pulumi.Input<string>;
+    }
 }
 
 export namespace gtm {
+    export interface GtmPolicy {
+        /**
+         * If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
+         */
+        alarmOnly?: pulumi.Input<boolean>;
+        /**
+         * Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
+         */
+        perfMode?: pulumi.Input<string>;
+        /**
+         * Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user's geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user's geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
+         */
+        routingMode?: pulumi.Input<string>;
+        /**
+         * Statistics for addresses associated with the scheduling policy.
+         */
+        statistics?: pulumi.Input<inputs.gtm.GtmPolicyStatistics>;
+        targets?: pulumi.Input<pulumi.Input<inputs.gtm.GtmPolicyTarget>[]>;
+    }
+
+    export interface GtmPolicyStatistics {
+        /**
+         * Number of available addresses.
+         */
+        activeAddr?: pulumi.Input<number>;
+        /**
+         * Number of unavailable addresses.
+         */
+        inactiveAddr?: pulumi.Input<number>;
+    }
+
+    export interface GtmPolicyTarget {
+        /**
+         * Target address pool ID.
+         */
+        poolId?: pulumi.Input<string>;
+    }
+
+    export interface GtmProbe {
+        /**
+         * Recommended number of health check probe points.
+         */
+        advisedNodeCount?: pulumi.Input<number>;
+        /**
+         * Whether health check is disabled. true: disabled. false: enabled.
+         */
+        disable?: pulumi.Input<boolean>;
+        /**
+         * DNS record type for the health check.
+         */
+        dnsRecordType?: pulumi.Input<string>;
+        /**
+         * Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
+         */
+        failedCount?: pulumi.Input<number>;
+        /**
+         * Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        httpMethod?: pulumi.Input<string>;
+        httpUsabilityCodes?: pulumi.Input<pulumi.Input<inputs.gtm.GtmProbeHttpUsabilityCode>[]>;
+        /**
+         * Interval between each health check, in seconds.
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
+         */
+        isManualNodes?: pulumi.Input<boolean>;
+        /**
+         * List of probe nodes used for health checks.
+         */
+        nodes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingCount?: pulumi.Input<number>;
+        /**
+         * Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
+         */
+        pingLossPercent?: pulumi.Input<number>;
+        /**
+         * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
+         */
+        tcpConnTimeout?: pulumi.Input<number>;
+        /**
+         * Timeout for the health check task. Unit: seconds.
+         */
+        timeout?: pulumi.Input<number>;
+        /**
+         * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
+         */
+        url?: pulumi.Input<string>;
+    }
+
+    export interface GtmProbeHttpUsabilityCode {
+        /**
+         * List of HTTP status codes.
+         */
+        codes?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * Operator. interval: matches values within the range. include: matches specified values. exclude: matches values other than the specified ones.
+         */
+        operator?: pulumi.Input<string>;
+    }
+
     export interface PolicyStatistics {
         /**
          * Number of available addresses
@@ -9327,6 +9598,10 @@ export namespace rdsmysql {
          */
         enableStorageAutoScale?: pulumi.Input<boolean>;
         /**
+         * Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+         */
+        scalingDetectNode?: pulumi.Input<string>;
+        /**
          * Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
          */
         storageThreshold?: pulumi.Input<number>;
@@ -9334,6 +9609,155 @@ export namespace rdsmysql {
          * Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
          */
         storageUpperBound?: pulumi.Input<number>;
+    }
+
+    export interface InstanceBackupPolicy {
+        /**
+         * List of destination regions available for cross-region backup.
+         */
+        availableCrossRegions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Basic backup policy.
+         */
+        backupPolicyBase?: pulumi.Input<inputs.rdsmysql.InstanceBackupPolicyBackupPolicyBase>;
+        /**
+         * Cross-region backup policy.
+         */
+        crossBackupPolicy?: pulumi.Input<inputs.rdsmysql.InstanceBackupPolicyCrossBackupPolicy>;
+    }
+
+    export interface InstanceBackupPolicyBackupPolicyBase {
+        /**
+         * Retain all log backups before releasing the instance. Values: true: yes. false: no.
+         */
+        binlogBackupAllRetention?: pulumi.Input<boolean>;
+        /**
+         * Enable log backup feature. Values: true: yes. false: no.
+         */
+        binlogBackupEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether to enable encryption for log backups. Values: true: Yes. false: No.
+         */
+        binlogBackupEncryptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+         */
+        binlogFileCountsEnable?: pulumi.Input<boolean>;
+        /**
+         * Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+         */
+        binlogLimitCount?: pulumi.Input<number>;
+        /**
+         * Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+         */
+        binlogLocalRetentionHour?: pulumi.Input<number>;
+        /**
+         * Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+         */
+        binlogSpaceLimitEnable?: pulumi.Input<boolean>;
+        /**
+         * Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+         */
+        binlogStoragePercentage?: pulumi.Input<number>;
+        /**
+         * Retain all data backups before releasing the instance. Values: true: yes. false: no.
+         */
+        dataBackupAllRetention?: pulumi.Input<boolean>;
+        /**
+         * Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+         */
+        dataBackupEncryptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+         */
+        dataBackupRetentionDay?: pulumi.Input<number>;
+        /**
+         * Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+         */
+        dataFullBackupPeriods?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+         */
+        dataFullBackupStartUtcHour?: pulumi.Input<number>;
+        /**
+         * Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+         */
+        dataFullBackupTime?: pulumi.Input<string>;
+        /**
+         * Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+         */
+        dataIncrBackupPeriods?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Number of days to retain data after instance release.
+         */
+        dataKeepDaysAfterReleased?: pulumi.Input<number>;
+        /**
+         * Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+         */
+        dataKeepPolicyAfterReleased?: pulumi.Input<string>;
+        /**
+         * Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+         */
+        highFrequencySnapshotBackupEnable?: pulumi.Input<boolean>;
+        /**
+         * Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+         */
+        highFrequencySnapshotBackupSecondPeriod?: pulumi.Input<number>;
+        /**
+         * Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+         */
+        hourlyIncrBackupEnable?: pulumi.Input<boolean>;
+        /**
+         * Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+         */
+        incrBackupHourPeriod?: pulumi.Input<number>;
+        /**
+         * Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+         */
+        keepCrossBackupEnableAfterReleased?: pulumi.Input<boolean>;
+        /**
+         * Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+         */
+        lockDdlTime?: pulumi.Input<number>;
+        /**
+         * Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+         */
+        lockDdlTimeSecond?: pulumi.Input<number>;
+        /**
+         * Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+         */
+        logBackupRetentionDay?: pulumi.Input<number>;
+        /**
+         * Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+         */
+        publicDownloadEnable?: pulumi.Input<boolean>;
+        /**
+         * Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+         */
+        retentionPolicySynced?: pulumi.Input<boolean>;
+    }
+
+    export interface InstanceBackupPolicyCrossBackupPolicy {
+        /**
+         * Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+         */
+        backupEnabled?: pulumi.Input<boolean>;
+        /**
+         * Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+         */
+        crossBackupAllRetention?: pulumi.Input<boolean>;
+        /**
+         * Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+         */
+        crossBackupRegion?: pulumi.Input<string>;
+        /**
+         * Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+         */
+        logBackupEnabled?: pulumi.Input<boolean>;
+        /**
+         * Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+         */
+        retention?: pulumi.Input<number>;
     }
 
     export interface InstanceChargeDetail {
@@ -9415,6 +9839,7 @@ export namespace rdsmysql {
     }
 
     export interface InstanceEndpoint {
+        addresses?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceEndpointAddress>[]>;
         /**
          * When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
          */
@@ -9431,6 +9856,7 @@ export namespace rdsmysql {
          * Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
          */
         connectionPoolType?: pulumi.Input<string>;
+        customRouteStrategies?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceEndpointCustomRouteStrategy>[]>;
         /**
          * Description of the connection endpoint
          */
@@ -9496,6 +9922,56 @@ export namespace rdsmysql {
          * Read/write mode: ReadWrite: read/write. ReadOnly: read-only
          */
         readWriteMode?: pulumi.Input<string>;
+    }
+
+    export interface InstanceEndpointAddress {
+        /**
+         * false: Private network resolution (default). true: Private and public network resolution.
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * Connection domain name.
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * EIP ID, valid only for Public addresses.
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+         */
+        eipLocked?: pulumi.Input<boolean>;
+        /**
+         * IP protocol version. Value: IPv4.
+         */
+        internetProtocol?: pulumi.Input<string>;
+        /**
+         * IP address.
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * Network address type. Values: Private: private address. Public: public address.
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * Port.
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * Subnet ID, valid only for Private addresses.
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceEndpointCustomRouteStrategy {
+        /**
+         * SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+         */
+        sqlKeyword?: pulumi.Input<string>;
     }
 
     export interface InstanceEndpointReadOnlyNodeWeight {
@@ -10142,6 +10618,45 @@ export namespace redis {
         securityGroupId?: pulumi.Input<string>;
     }
 
+    export interface InstanceBackup {
+        /**
+         * Backup point ID
+         */
+        backupPointId?: pulumi.Input<string>;
+        /**
+         * Backup point name
+         */
+        backupPointName?: pulumi.Input<string>;
+        /**
+         * Backup policy
+         */
+        backupStrategy?: pulumi.Input<string>;
+        /**
+         * Backup type
+         */
+        backupType?: pulumi.Input<string>;
+        /**
+         * Backup end time
+         */
+        endTime?: pulumi.Input<string>;
+        /**
+         * Instance ID
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * Backup size (unit: Byte)
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * Backup start time
+         */
+        startTime?: pulumi.Input<string>;
+        /**
+         * Backup status
+         */
+        status?: pulumi.Input<string>;
+    }
+
     export interface InstanceBackupRestore {
         /**
          * Backup ID, used to specify which backup to use when restoring from a backup set
@@ -10736,6 +11251,17 @@ export namespace tls {
          * Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
          */
         severity?: pulumi.Input<string>;
+    }
+
+    export interface AlarmWebhookIntegrationTypeWebhookHeader {
+        /**
+         * Key for custom request header
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Value for custom request header
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface EtlTargetResource {
@@ -15615,4 +16141,18 @@ export namespace waf {
         statisticalKeyLists?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface HostGroupRelatedRule {
+        /**
+         * Rule name.
+         */
+        ruleName?: pulumi.Input<string>;
+        /**
+         * Rule ID.
+         */
+        ruleTag?: pulumi.Input<string>;
+        /**
+         * Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+         */
+        ruleType?: pulumi.Input<string>;
+    }
 }

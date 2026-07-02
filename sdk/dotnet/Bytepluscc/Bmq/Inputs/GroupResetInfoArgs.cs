@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class GroupResetInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
+        /// If the reset mode is OFFSET, this parameter is required. Specify the reference consumption position for resuming consumption. Options: EARLIEST: Reference position is the earliest offset. CURRENT: Reference position is the current offset. LATEST: Reference position is the latest offset.
         /// </summary>
         [Input("offsetType")]
         public Input<string>? OffsetType { get; set; }
 
         /// <summary>
-        /// Partition number.
+        /// Partition number
         /// </summary>
         [Input("partitionId")]
         public Input<int>? PartitionId { get; set; }
 
         /// <summary>
-        /// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
+        /// Reset mode. Options: TIMESTAMP: Reset the consumption offset based on a timestamp. Specify a past or future time to jump directly to the offset at that time and start consuming. OFFSET: Reset the consumption offset based on a specified offset, starting consumption from that offset. You can specify the offset using the offsetType parameter.
         /// </summary>
         [Input("resetBy")]
         public Input<string>? ResetBy { get; set; }
 
         /// <summary>
-        /// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
+        /// Reset value. If TIMESTAMP is selected, this value is the timestamp for resuming consumption, e.g., 1722224612000. If OFFSET is selected, this value is the relative offset from the reference offset in OffsetType, e.g., 100.
         /// </summary>
         [Input("resetValue")]
         public Input<int>? ResetValue { get; set; }

@@ -72,8 +72,12 @@ type Gtm struct {
 	LastOperator pulumi.StringOutput `pulumi:"lastOperator"`
 	// Account that created the GTM instance
 	Owner pulumi.StringOutput `pulumi:"owner"`
+	// Detailed configuration of the scheduling policy for the GTM instance.
+	Policy GtmPolicyOutput `pulumi:"policy"`
 	// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
 	PolicyType pulumi.StringOutput `pulumi:"policyType"`
+	// Detailed configuration of the health check for the GTM instance.
+	Probe GtmProbeOutput `pulumi:"probe"`
 	// Project name to which the GTM instance belongs
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// Remark information for the GTM instance
@@ -142,8 +146,12 @@ type gtmState struct {
 	LastOperator *string `pulumi:"lastOperator"`
 	// Account that created the GTM instance
 	Owner *string `pulumi:"owner"`
+	// Detailed configuration of the scheduling policy for the GTM instance.
+	Policy *GtmPolicy `pulumi:"policy"`
 	// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
 	PolicyType *string `pulumi:"policyType"`
+	// Detailed configuration of the health check for the GTM instance.
+	Probe *GtmProbe `pulumi:"probe"`
 	// Project name to which the GTM instance belongs
 	ProjectName *string `pulumi:"projectName"`
 	// Remark information for the GTM instance
@@ -177,8 +185,12 @@ type GtmState struct {
 	LastOperator pulumi.StringPtrInput
 	// Account that created the GTM instance
 	Owner pulumi.StringPtrInput
+	// Detailed configuration of the scheduling policy for the GTM instance.
+	Policy GtmPolicyPtrInput
 	// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
 	PolicyType pulumi.StringPtrInput
+	// Detailed configuration of the health check for the GTM instance.
+	Probe GtmProbePtrInput
 	// Project name to which the GTM instance belongs
 	ProjectName pulumi.StringPtrInput
 	// Remark information for the GTM instance
@@ -369,9 +381,19 @@ func (o GtmOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gtm) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
+// Detailed configuration of the scheduling policy for the GTM instance.
+func (o GtmOutput) Policy() GtmPolicyOutput {
+	return o.ApplyT(func(v *Gtm) GtmPolicyOutput { return v.Policy }).(GtmPolicyOutput)
+}
+
 // Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
 func (o GtmOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gtm) pulumi.StringOutput { return v.PolicyType }).(pulumi.StringOutput)
+}
+
+// Detailed configuration of the health check for the GTM instance.
+func (o GtmOutput) Probe() GtmProbeOutput {
+	return o.ApplyT(func(v *Gtm) GtmProbeOutput { return v.Probe }).(GtmProbeOutput)
 }
 
 // Project name to which the GTM instance belongs

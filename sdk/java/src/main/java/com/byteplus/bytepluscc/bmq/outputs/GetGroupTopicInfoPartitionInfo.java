@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupTopicInfoPartitionInfo {
     /**
-     * @return Current consumption position.
+     * @return Current consumption offset
      * 
      */
     private Integer currentOffset;
     /**
-     * @return Name of the Consumer Group.
+     * @return Consumer Group name
      * 
      */
     private String groupName;
     /**
-     * @return Number of unconsumed messages in the partition.
+     * @return Number of unconsumed messages in the partition
      * 
      */
     private Integer lag;
     /**
-     * @return Latest consumption position.
+     * @return Latest consumption offset
      * 
      */
     private Integer latestOffset;
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     private Integer partitionId;
     /**
-     * @return Name of the Topic subscribed by the Consumer Group.
+     * @return Name of the Topic subscribed by the Consumer Group
      * 
      */
     private String topicName;
 
     private GetGroupTopicInfoPartitionInfo() {}
     /**
-     * @return Current consumption position.
+     * @return Current consumption offset
      * 
      */
     public Integer currentOffset() {
         return this.currentOffset;
     }
     /**
-     * @return Name of the Consumer Group.
+     * @return Consumer Group name
      * 
      */
     public String groupName() {
         return this.groupName;
     }
     /**
-     * @return Number of unconsumed messages in the partition.
+     * @return Number of unconsumed messages in the partition
      * 
      */
     public Integer lag() {
         return this.lag;
     }
     /**
-     * @return Latest consumption position.
+     * @return Latest consumption offset
      * 
      */
     public Integer latestOffset() {
         return this.latestOffset;
     }
     /**
-     * @return Partition number.
+     * @return Partition number
      * 
      */
     public Integer partitionId() {
         return this.partitionId;
     }
     /**
-     * @return Name of the Topic subscribed by the Consumer Group.
+     * @return Name of the Topic subscribed by the Consumer Group
      * 
      */
     public String topicName() {

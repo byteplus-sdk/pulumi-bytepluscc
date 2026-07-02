@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryEndpoint {
     /**
-     * @return Public IP allowlist
+     * @return Public IP allowlist list.
      * 
      */
     private List<GetRegistryEndpointAclPolicy> aclPolicies;
     /**
-     * @return Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+     * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
      * 
      */
     private Boolean enabled;
     /**
-     * @return Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+     * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
      * 
      */
     private String status;
 
     private GetRegistryEndpoint() {}
     /**
-     * @return Public IP allowlist
+     * @return Public IP allowlist list.
      * 
      */
     public List<GetRegistryEndpointAclPolicy> aclPolicies() {
         return this.aclPolicies;
     }
     /**
-     * @return Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+     * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+     * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
      * 
      */
     public String status() {

@@ -28,7 +28,7 @@ class GetCertificateResult:
     """
     A collection of values returned by getCertificate.
     """
-    def __init__(__self__, certificate_id=None, certificate_name=None, certificate_type=None, created_time=None, description=None, domain_name=None, expired_at=None, id=None, listeners=None, private_key=None, project_name=None, public_key=None, san=None, status=None, tags=None):
+    def __init__(__self__, certificate_id=None, certificate_name=None, certificate_type=None, created_time=None, description=None, domain_name=None, expired_at=None, id=None, listeners=None, old_certificate_id=None, private_key=None, project_name=None, public_key=None, san=None, status=None, tags=None):
         if certificate_id and not isinstance(certificate_id, str):
             raise TypeError("Expected argument 'certificate_id' to be a str")
         pulumi.set(__self__, "certificate_id", certificate_id)
@@ -56,6 +56,9 @@ class GetCertificateResult:
         if listeners and not isinstance(listeners, list):
             raise TypeError("Expected argument 'listeners' to be a list")
         pulumi.set(__self__, "listeners", listeners)
+        if old_certificate_id and not isinstance(old_certificate_id, str):
+            raise TypeError("Expected argument 'old_certificate_id' to be a str")
+        pulumi.set(__self__, "old_certificate_id", old_certificate_id)
         if private_key and not isinstance(private_key, str):
             raise TypeError("Expected argument 'private_key' to be a str")
         pulumi.set(__self__, "private_key", private_key)
@@ -79,7 +82,7 @@ class GetCertificateResult:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> builtins.str:
         """
-        Certificate ID
+        Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -148,6 +151,14 @@ class GetCertificateResult:
         return pulumi.get(self, "listeners")
 
     @property
+    @pulumi.getter(name="oldCertificateId")
+    def old_certificate_id(self) -> builtins.str:
+        """
+        Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        """
+        return pulumi.get(self, "old_certificate_id")
+
+    @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> builtins.str:
         """
@@ -211,6 +222,7 @@ class AwaitableGetCertificateResult(GetCertificateResult):
             expired_at=self.expired_at,
             id=self.id,
             listeners=self.listeners,
+            old_certificate_id=self.old_certificate_id,
             private_key=self.private_key,
             project_name=self.project_name,
             public_key=self.public_key,
@@ -242,6 +254,7 @@ def get_certificate(id: Optional[builtins.str] = None,
         expired_at=pulumi.get(__ret__, 'expired_at'),
         id=pulumi.get(__ret__, 'id'),
         listeners=pulumi.get(__ret__, 'listeners'),
+        old_certificate_id=pulumi.get(__ret__, 'old_certificate_id'),
         private_key=pulumi.get(__ret__, 'private_key'),
         project_name=pulumi.get(__ret__, 'project_name'),
         public_key=pulumi.get(__ret__, 'public_key'),
@@ -270,6 +283,7 @@ def get_certificate_output(id: Optional[pulumi.Input[builtins.str]] = None,
         expired_at=pulumi.get(__response__, 'expired_at'),
         id=pulumi.get(__response__, 'id'),
         listeners=pulumi.get(__response__, 'listeners'),
+        old_certificate_id=pulumi.get(__response__, 'old_certificate_id'),
         private_key=pulumi.get(__response__, 'private_key'),
         project_name=pulumi.get(__response__, 'project_name'),
         public_key=pulumi.get(__response__, 'public_key'),

@@ -16,15 +16,48 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ConnectionTag',
     'DirectConnectGatewayAssociateCen',
     'DirectConnectGatewayAssociateEic',
     'DirectConnectGatewayTag',
     'VirtualInterfaceTag',
+    'GetConnectionTagResult',
     'GetDirectConnectGatewayAssociateCenResult',
     'GetDirectConnectGatewayAssociateEicResult',
     'GetDirectConnectGatewayTagResult',
     'GetVirtualInterfaceTagResult',
 ]
+
+@pulumi.output_type
+class ConnectionTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+        :param builtins.str value: Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class DirectConnectGatewayAssociateCen(dict):
@@ -212,6 +245,35 @@ class VirtualInterfaceTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         Tag value (Value) of the virtual interface tag. Parameter   - N   - indicates the sequence number of the tag value (Value), with a range of 1, 2, 3, …, 49, 50. N must be in continuous ascending order. Multiple tag values (Value) are separated by &. Length range: 0–256 characters. If not specified, the default is empty. Supports input in any language, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equal signs (=), plus signs (+), hyphens (-), and at signs (@). Case sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetConnectionTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+        :param builtins.str value: Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key. Cannot start with volc: or sys:. Length range: 1 ~ 128 characters
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value. Length range: 0 ~ 256 characters. If not specified, defaults to empty
         """
         return pulumi.get(self, "value")
 

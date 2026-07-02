@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
-    /// A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your load balancing policy. Backend servers receive and process the requests.
+    /// A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
     /// 
     /// ## Import
     /// 
@@ -29,7 +29,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+        /// Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         /// </summary>
         [Output("crossZoneEnabled")]
         public Output<string> CrossZoneEnabled { get; private set; } = null!;
@@ -41,13 +41,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Health check configuration information for the server group.
+        /// Server group health check configuration information.
         /// </summary>
         [Output("healthCheck")]
         public Output<Outputs.ServerGroupHealthCheck> HealthCheck { get; private set; } = null!;
 
         /// <summary>
-        /// IP address type of the server group. Currently, only IPv4 is supported.
+        /// IP address type of the server group. Only IPv4 is supported.
         /// </summary>
         [Output("ipAddressType")]
         public Output<string> IpAddressType { get; private set; } = null!;
@@ -68,7 +68,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
-        /// Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+        /// Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         /// </summary>
         [Output("scheduler")]
         public Output<string> Scheduler { get; private set; } = null!;
@@ -80,19 +80,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<int> ServerCount { get; private set; } = null!;
 
         /// <summary>
-        /// Backend server group ID.
+        /// ID of the backend server group.
         /// </summary>
         [Output("serverGroupId")]
         public Output<string> ServerGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// Backend server group name.
+        /// Name of the backend server group.
         /// </summary>
         [Output("serverGroupName")]
         public Output<string> ServerGroupName { get; private set; } = null!;
 
         /// <summary>
-        /// Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        /// Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         /// </summary>
         [Output("serverGroupType")]
         public Output<string> ServerGroupType { get; private set; } = null!;
@@ -101,7 +101,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<ImmutableArray<Outputs.ServerGroupServer>> Servers { get; private set; } = null!;
 
         /// <summary>
-        /// Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+        /// Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -175,7 +175,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class ServerGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+        /// Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         /// </summary>
         [Input("crossZoneEnabled")]
         public Input<string>? CrossZoneEnabled { get; set; }
@@ -187,13 +187,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Health check configuration information for the server group.
+        /// Server group health check configuration information.
         /// </summary>
         [Input("healthCheck")]
         public Input<Inputs.ServerGroupHealthCheckArgs>? HealthCheck { get; set; }
 
         /// <summary>
-        /// IP address type of the server group. Currently, only IPv4 is supported.
+        /// IP address type of the server group. Only IPv4 is supported.
         /// </summary>
         [Input("ipAddressType")]
         public Input<string>? IpAddressType { get; set; }
@@ -211,19 +211,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+        /// Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         /// </summary>
         [Input("scheduler")]
         public Input<string>? Scheduler { get; set; }
 
         /// <summary>
-        /// Backend server group name.
+        /// Name of the backend server group.
         /// </summary>
         [Input("serverGroupName")]
         public Input<string>? ServerGroupName { get; set; }
 
         /// <summary>
-        /// Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        /// Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         /// </summary>
         [Input("serverGroupType")]
         public Input<string>? ServerGroupType { get; set; }
@@ -237,7 +237,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+        /// Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -277,7 +277,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// Enable cross-availability zone load balancing for the server group. Options: on (default): enabled; off: disabled.
+        /// Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
         /// </summary>
         [Input("crossZoneEnabled")]
         public Input<string>? CrossZoneEnabled { get; set; }
@@ -289,13 +289,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Health check configuration information for the server group.
+        /// Server group health check configuration information.
         /// </summary>
         [Input("healthCheck")]
         public Input<Inputs.ServerGroupHealthCheckGetArgs>? HealthCheck { get; set; }
 
         /// <summary>
-        /// IP address type of the server group. Currently, only IPv4 is supported.
+        /// IP address type of the server group. Only IPv4 is supported.
         /// </summary>
         [Input("ipAddressType")]
         public Input<string>? IpAddressType { get; set; }
@@ -321,7 +321,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// Scheduling algorithm. Options: wrr: weighted round robin; wlc: weighted least connection; sh: source address hash.
+        /// Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
         /// </summary>
         [Input("scheduler")]
         public Input<string>? Scheduler { get; set; }
@@ -333,19 +333,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<int>? ServerCount { get; set; }
 
         /// <summary>
-        /// Backend server group ID.
+        /// ID of the backend server group.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// Backend server group name.
+        /// Name of the backend server group.
         /// </summary>
         [Input("serverGroupName")]
         public Input<string>? ServerGroupName { get; set; }
 
         /// <summary>
-        /// Type of backend server group. instance: server type, supports adding ECS and ENI instances as backend servers. ip: IP type, supports adding IP addresses as backend servers.
+        /// Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
         /// </summary>
         [Input("serverGroupType")]
         public Input<string>? ServerGroupType { get; set; }
@@ -359,7 +359,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// Server group status. Creating: Being created. Active: Running. Configuring: Being configured. Deleting: Being deleted.
+        /// Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

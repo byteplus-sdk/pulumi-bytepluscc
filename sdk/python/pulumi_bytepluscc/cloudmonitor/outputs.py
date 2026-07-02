@@ -324,7 +324,7 @@ class RuleDimensionConditionsMetaConditionMeta(dict):
                  key: Optional[builtins.str] = None,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str comparator: Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         :param builtins.str key: Tag key.
         :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
@@ -339,7 +339,7 @@ class RuleDimensionConditionsMetaConditionMeta(dict):
     @pulumi.getter
     def comparator(self) -> Optional[builtins.str]:
         """
-        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -413,7 +413,7 @@ class RuleDimensionConditionsTagConditionTag(dict):
                  key: Optional[builtins.str] = None,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str comparator: Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         :param builtins.str key: Tag key.
         :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
@@ -428,7 +428,7 @@ class RuleDimensionConditionsTagConditionTag(dict):
     @pulumi.getter
     def comparator(self) -> Optional[builtins.str]:
         """
-        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -661,7 +661,7 @@ class RuleNotifyTemplate(dict):
                  channel: Optional[builtins.str] = None,
                  notify_template_id: Optional[builtins.str] = None):
         """
-        :param builtins.str channel: Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        :param builtins.str channel: Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
         :param builtins.str notify_template_id: Notification template ID. Note: Each notification channel supports only one notification template ID.
         """
         if channel is not None:
@@ -673,7 +673,7 @@ class RuleNotifyTemplate(dict):
     @pulumi.getter
     def channel(self) -> Optional[builtins.str]:
         """
-        Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
         """
         return pulumi.get(self, "channel")
 
@@ -962,7 +962,7 @@ class GetRuleDimensionConditionsMetaConditionResult(dict):
         """
         :param builtins.bool all_dimensions: Whether all resources are included. true: All resources. false: Partial resources.
         :param builtins.str condition: Condition. and: All conditions met. or: Any condition met.
-        :param Sequence['GetRuleDimensionConditionsMetaConditionMetaArgs'] metas: Condition. and: All conditions met. or: Any condition met.
+        :param Sequence['GetRuleDimensionConditionsMetaConditionMetaArgs'] metas: Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
         """
         pulumi.set(__self__, "all_dimensions", all_dimensions)
         pulumi.set(__self__, "condition", condition)
@@ -988,7 +988,7 @@ class GetRuleDimensionConditionsMetaConditionResult(dict):
     @pulumi.getter
     def metas(self) -> Sequence['outputs.GetRuleDimensionConditionsMetaConditionMetaResult']:
         """
-        Condition. and: All conditions met. or: Any condition met.
+        Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
         """
         return pulumi.get(self, "metas")
 
@@ -1000,7 +1000,7 @@ class GetRuleDimensionConditionsMetaConditionMetaResult(dict):
                  key: builtins.str,
                  values: Sequence[builtins.str]):
         """
-        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str comparator: Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         :param builtins.str key: Tag key.
         :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
@@ -1012,7 +1012,7 @@ class GetRuleDimensionConditionsMetaConditionMetaResult(dict):
     @pulumi.getter
     def comparator(self) -> builtins.str:
         """
-        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -1087,7 +1087,7 @@ class GetRuleDimensionConditionsTagConditionTagResult(dict):
                  key: builtins.str,
                  values: Sequence[builtins.str]):
         """
-        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str comparator: Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         :param builtins.str key: Tag key.
         :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
@@ -1099,7 +1099,7 @@ class GetRuleDimensionConditionsTagConditionTagResult(dict):
     @pulumi.getter
     def comparator(self) -> builtins.str:
         """
-        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -1268,7 +1268,7 @@ class GetRuleNotifyTemplateResult(dict):
                  channel: builtins.str,
                  notify_template_id: builtins.str):
         """
-        :param builtins.str channel: Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        :param builtins.str channel: Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
         :param builtins.str notify_template_id: Notification template ID. Note: Each notification channel supports only one notification template ID.
         """
         pulumi.set(__self__, "channel", channel)
@@ -1278,7 +1278,7 @@ class GetRuleNotifyTemplateResult(dict):
     @pulumi.getter
     def channel(self) -> builtins.str:
         """
-        Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        Notification channels. Values: email: Email, sms: SMS, phone: Phone, lark: Lark, dingtalk: DingTalk, wecom: WeCom, slack: Slack, api: Callback URL.
         """
         return pulumi.get(self, "channel")
 

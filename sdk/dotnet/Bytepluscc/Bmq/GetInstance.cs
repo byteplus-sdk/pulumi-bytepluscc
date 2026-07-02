@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class GetInstanceResult
     {
         /// <summary>
-        /// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
+        /// Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
         /// </summary>
         public readonly string AutoRenew;
         /// <summary>
-        /// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
+        /// Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
         /// </summary>
         public readonly string BillingPeriod;
         /// <summary>
-        /// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
+        /// Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
         /// </summary>
         public readonly string BillingType;
         /// <summary>
@@ -81,11 +81,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// Instance description statement
+        /// Instance description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
+        /// Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
         /// </summary>
         public readonly string EipId;
         /// <summary>
@@ -109,11 +109,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// Message retention period for all topics under the instance, in hours
+        /// Message retention period for all Topics under the instance, in hours
         /// </summary>
         public readonly int MessageRetention;
         /// <summary>
-        /// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
+        /// Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -121,7 +121,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly int PartitionLimit;
         /// <summary>
-        /// Project name to which the instance belongs
+        /// Project name associated with the instance
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
@@ -133,7 +133,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly Outputs.GetInstanceResourcesResult Resources;
         /// <summary>
-        /// List of security groups used by the instance
+        /// Security group list used by the instance
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIdLists;
         /// <summary>
@@ -145,7 +145,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// List of subnets used by the instance
+        /// Subnet list used by the instance
         /// </summary>
         public readonly ImmutableArray<string> SubnetIdLists;
         /// <summary>
@@ -153,11 +153,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
-        /// Purchase duration for subscription instances, in months
+        /// Purchase duration for yearly/monthly subscription instances, in months
         /// </summary>
         public readonly int Times;
         /// <summary>
-        /// Maximum number of topics per instance
+        /// Maximum number of Topics per instance
         /// </summary>
         public readonly int TopicLimit;
         /// <summary>
@@ -165,7 +165,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// List of availability zones where the instance is located
+        /// List of availability zones for the instance
         /// </summary>
         public readonly ImmutableArray<string> ZoneIdLists;
 

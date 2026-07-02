@@ -148,12 +148,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class AccesskeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Secret Access Key.
-        /// </summary>
-        [Input("secretAccessKey")]
-        public Input<string>? SecretAccessKey { get; set; }
-
-        /// <summary>
         /// Key status. active means enabled, inactive means disabled.
         /// </summary>
         [Input("status")]

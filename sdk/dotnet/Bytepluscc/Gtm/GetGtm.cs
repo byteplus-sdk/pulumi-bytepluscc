@@ -101,9 +101,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
         /// </summary>
         public readonly string Owner;
         /// <summary>
+        /// Detailed configuration of the scheduling policy for the GTM instance.
+        /// </summary>
+        public readonly Outputs.GetGtmPolicyResult Policy;
+        /// <summary>
         /// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
         /// </summary>
         public readonly string PolicyType;
+        /// <summary>
+        /// Detailed configuration of the health check for the GTM instance.
+        /// </summary>
+        public readonly Outputs.GetGtmProbeResult Probe;
         /// <summary>
         /// Project name to which the GTM instance belongs
         /// </summary>
@@ -153,7 +161,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
 
             string owner,
 
+            Outputs.GetGtmPolicyResult policy,
+
             string policyType,
+
+            Outputs.GetGtmProbeResult probe,
 
             string projectName,
 
@@ -178,7 +190,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
             Id = id;
             LastOperator = lastOperator;
             Owner = owner;
+            Policy = policy;
             PolicyType = policyType;
+            Probe = probe;
             ProjectName = projectName;
             Remark = remark;
             SpecName = specName;

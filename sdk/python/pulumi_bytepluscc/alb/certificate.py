@@ -23,31 +23,40 @@ __all__ = ['CertificateArgs', 'Certificate']
 class CertificateArgs:
     def __init__(__self__, *,
                  certificate_type: pulumi.Input[builtins.str],
-                 public_key: pulumi.Input[builtins.str],
+                 certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  certificate_name: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 old_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 public_key: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateTagArgs']]]] = None):
         """
         The set of arguments for constructing a Certificate resource.
         :param pulumi.Input[builtins.str] certificate_type: Certificate type. Options: CA: CA certificate; Server: server certificate
-        :param pulumi.Input[builtins.str] public_key: Server certificate public key
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         :param pulumi.Input[builtins.str] certificate_name: Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         :param pulumi.Input[builtins.str] description: Certificate description
+        :param pulumi.Input[builtins.str] old_certificate_id: Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
         :param pulumi.Input[builtins.str] private_key: Server certificate private key. Required when certificate type is Server
         :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[builtins.str] public_key: Server certificate public key
         """
         pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "public_key", public_key)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if certificate_name is not None:
             pulumi.set(__self__, "certificate_name", certificate_name)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if old_certificate_id is not None:
+            pulumi.set(__self__, "old_certificate_id", old_certificate_id)
         if private_key is not None:
             pulumi.set(__self__, "private_key", private_key)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if public_key is not None:
+            pulumi.set(__self__, "public_key", public_key)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
 
@@ -64,16 +73,16 @@ class CertificateArgs:
         pulumi.set(self, "certificate_type", value)
 
     @property
-    @pulumi.getter(name="publicKey")
-    def public_key(self) -> pulumi.Input[builtins.str]:
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Server certificate public key
+        Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         """
-        return pulumi.get(self, "public_key")
+        return pulumi.get(self, "certificate_id")
 
-    @public_key.setter
-    def public_key(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "public_key", value)
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "certificate_id", value)
 
     @property
     @pulumi.getter(name="certificateName")
@@ -100,6 +109,18 @@ class CertificateArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="oldCertificateId")
+    def old_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        """
+        return pulumi.get(self, "old_certificate_id")
+
+    @old_certificate_id.setter
+    def old_certificate_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "old_certificate_id", value)
+
+    @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -124,6 +145,18 @@ class CertificateArgs:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="publicKey")
+    def public_key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Server certificate public key
+        """
+        return pulumi.get(self, "public_key")
+
+    @public_key.setter
+    def public_key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "public_key", value)
+
+    @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateTagArgs']]]]:
         return pulumi.get(self, "tags")
@@ -144,6 +177,7 @@ class _CertificateState:
                  domain_name: Optional[pulumi.Input[builtins.str]] = None,
                  expired_at: Optional[pulumi.Input[builtins.str]] = None,
                  listeners: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 old_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  public_key: Optional[pulumi.Input[builtins.str]] = None,
@@ -152,7 +186,7 @@ class _CertificateState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering Certificate resources.
-        :param pulumi.Input[builtins.str] certificate_id: Certificate ID
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         :param pulumi.Input[builtins.str] certificate_name: Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         :param pulumi.Input[builtins.str] certificate_type: Certificate type. Options: CA: CA certificate; Server: server certificate
         :param pulumi.Input[builtins.str] created_time: Certificate creation time
@@ -160,6 +194,7 @@ class _CertificateState:
         :param pulumi.Input[builtins.str] domain_name: Certificate domain name
         :param pulumi.Input[builtins.str] expired_at: Certificate expiration time
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] listeners: List of listeners associated with the certificate
+        :param pulumi.Input[builtins.str] old_certificate_id: Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
         :param pulumi.Input[builtins.str] private_key: Server certificate private key. Required when certificate type is Server
         :param pulumi.Input[builtins.str] project_name: Project name
         :param pulumi.Input[builtins.str] public_key: Server certificate public key
@@ -182,6 +217,8 @@ class _CertificateState:
             pulumi.set(__self__, "expired_at", expired_at)
         if listeners is not None:
             pulumi.set(__self__, "listeners", listeners)
+        if old_certificate_id is not None:
+            pulumi.set(__self__, "old_certificate_id", old_certificate_id)
         if private_key is not None:
             pulumi.set(__self__, "private_key", private_key)
         if project_name is not None:
@@ -199,7 +236,7 @@ class _CertificateState:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Certificate ID
+        Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -292,6 +329,18 @@ class _CertificateState:
         pulumi.set(self, "listeners", value)
 
     @property
+    @pulumi.getter(name="oldCertificateId")
+    def old_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        """
+        return pulumi.get(self, "old_certificate_id")
+
+    @old_certificate_id.setter
+    def old_certificate_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "old_certificate_id", value)
+
+    @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -367,9 +416,11 @@ class Certificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  certificate_name: Optional[pulumi.Input[builtins.str]] = None,
                  certificate_type: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 old_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  public_key: Optional[pulumi.Input[builtins.str]] = None,
@@ -404,9 +455,11 @@ class Certificate(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         :param pulumi.Input[builtins.str] certificate_name: Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         :param pulumi.Input[builtins.str] certificate_type: Certificate type. Options: CA: CA certificate; Server: server certificate
         :param pulumi.Input[builtins.str] description: Certificate description
+        :param pulumi.Input[builtins.str] old_certificate_id: Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
         :param pulumi.Input[builtins.str] private_key: Server certificate private key. Required when certificate type is Server
         :param pulumi.Input[builtins.str] project_name: Project name
         :param pulumi.Input[builtins.str] public_key: Server certificate public key
@@ -459,9 +512,11 @@ class Certificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  certificate_name: Optional[pulumi.Input[builtins.str]] = None,
                  certificate_type: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 old_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
                  private_key: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  public_key: Optional[pulumi.Input[builtins.str]] = None,
@@ -475,18 +530,17 @@ class Certificate(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CertificateArgs.__new__(CertificateArgs)
 
+            __props__.__dict__["certificate_id"] = certificate_id
             __props__.__dict__["certificate_name"] = certificate_name
             if certificate_type is None and not opts.urn:
                 raise TypeError("Missing required property 'certificate_type'")
             __props__.__dict__["certificate_type"] = certificate_type
             __props__.__dict__["description"] = description
+            __props__.__dict__["old_certificate_id"] = old_certificate_id
             __props__.__dict__["private_key"] = private_key
             __props__.__dict__["project_name"] = project_name
-            if public_key is None and not opts.urn:
-                raise TypeError("Missing required property 'public_key'")
             __props__.__dict__["public_key"] = public_key
             __props__.__dict__["tags"] = tags
-            __props__.__dict__["certificate_id"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["domain_name"] = None
             __props__.__dict__["expired_at"] = None
@@ -511,6 +565,7 @@ class Certificate(pulumi.CustomResource):
             domain_name: Optional[pulumi.Input[builtins.str]] = None,
             expired_at: Optional[pulumi.Input[builtins.str]] = None,
             listeners: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+            old_certificate_id: Optional[pulumi.Input[builtins.str]] = None,
             private_key: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             public_key: Optional[pulumi.Input[builtins.str]] = None,
@@ -524,7 +579,7 @@ class Certificate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] certificate_id: Certificate ID
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         :param pulumi.Input[builtins.str] certificate_name: Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         :param pulumi.Input[builtins.str] certificate_type: Certificate type. Options: CA: CA certificate; Server: server certificate
         :param pulumi.Input[builtins.str] created_time: Certificate creation time
@@ -532,6 +587,7 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] domain_name: Certificate domain name
         :param pulumi.Input[builtins.str] expired_at: Certificate expiration time
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] listeners: List of listeners associated with the certificate
+        :param pulumi.Input[builtins.str] old_certificate_id: Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
         :param pulumi.Input[builtins.str] private_key: Server certificate private key. Required when certificate type is Server
         :param pulumi.Input[builtins.str] project_name: Project name
         :param pulumi.Input[builtins.str] public_key: Server certificate public key
@@ -550,6 +606,7 @@ class Certificate(pulumi.CustomResource):
         __props__.__dict__["domain_name"] = domain_name
         __props__.__dict__["expired_at"] = expired_at
         __props__.__dict__["listeners"] = listeners
+        __props__.__dict__["old_certificate_id"] = old_certificate_id
         __props__.__dict__["private_key"] = private_key
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["public_key"] = public_key
@@ -562,7 +619,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> pulumi.Output[builtins.str]:
         """
-        Certificate ID
+        Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -621,6 +678,14 @@ class Certificate(pulumi.CustomResource):
         List of listeners associated with the certificate
         """
         return pulumi.get(self, "listeners")
+
+    @property
+    @pulumi.getter(name="oldCertificateId")
+    def old_certificate_id(self) -> pulumi.Output[builtins.str]:
+        """
+        Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        """
+        return pulumi.get(self, "old_certificate_id")
 
     @property
     @pulumi.getter(name="privateKey")

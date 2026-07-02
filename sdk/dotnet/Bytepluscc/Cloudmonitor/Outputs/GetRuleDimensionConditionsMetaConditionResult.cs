@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
         /// </summary>
         public readonly string Condition;
         /// <summary>
-        /// Condition. and: All conditions met. or: Any condition met.
+        /// Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleDimensionConditionsMetaConditionMetaResult> Metas;
 

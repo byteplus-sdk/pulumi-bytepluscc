@@ -7,10 +7,13 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .bgp_peer import *
+from .connection import *
 from .direct_connect_gateway import *
 from .gateway_route import *
 from .get_bgp_peer import *
 from .get_bgp_peers import *
+from .get_connection import *
+from .get_connections import *
 from .get_direct_connect_gateway import *
 from .get_direct_connect_gateways import *
 from .get_gateway_route import *

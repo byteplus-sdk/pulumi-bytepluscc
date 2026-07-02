@@ -11,9 +11,9 @@ import * as utilities from "../utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@pulumi/bytepluscc";
+ * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
  *
- * const vMPRuleFileDemo = new bytepluscc.index.VmpRulefile("VMPRuleFileDemo", {
+ * const vMPRuleFileDemo = new bytepluscc.vmp.RuleFile("VMPRuleFileDemo", {
  *     description: "这是一个测试规则文件",
  *     targetWorkspaceId: "3ba7844b-e7fc-4688-a869-****",
  *     content: `groups:

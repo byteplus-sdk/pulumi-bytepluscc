@@ -596,6 +596,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "directconnect/connection",
+  "fqn": "pulumi_bytepluscc.directconnect",
+  "classes": {
+   "bytepluscc:directconnect/connection:Connection": "Connection"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "directconnect/directConnectGateway",
   "fqn": "pulumi_bytepluscc.directconnect",
   "classes": {
@@ -788,10 +796,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "fwcenter/addressBook",
+  "fqn": "pulumi_bytepluscc.fwcenter",
+  "classes": {
+   "bytepluscc:fwcenter/addressBook:AddressBook": "AddressBook"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "fwcenter/controlPolicy",
+  "fqn": "pulumi_bytepluscc.fwcenter",
+  "classes": {
+   "bytepluscc:fwcenter/controlPolicy:ControlPolicy": "ControlPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "fwcenter/dnsControlPolicy",
   "fqn": "pulumi_bytepluscc.fwcenter",
   "classes": {
    "bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy": "DnsControlPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "fwcenter/vpcFireWallAclRule",
+  "fqn": "pulumi_bytepluscc.fwcenter",
+  "classes": {
+   "bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule": "VpcFireWallAclRule"
   }
  },
  {
@@ -1080,6 +1112,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.organization",
   "classes": {
    "bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy": "ServiceControlPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "organization/serviceControlPolicyEnabler",
+  "fqn": "pulumi_bytepluscc.organization",
+  "classes": {
+   "bytepluscc:organization/serviceControlPolicyEnabler:ServiceControlPolicyEnabler": "ServiceControlPolicyEnabler"
   }
  },
  {
@@ -1440,6 +1480,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup": "AlarmNotifyGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/alarmWebhookIntegrationType",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType": "AlarmWebhookIntegrationType"
   }
  },
  {
@@ -1992,6 +2040,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.waf",
   "classes": {
    "bytepluscc:waf/domain:Domain": "Domain"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "waf/hostGroup",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/hostGroup:HostGroup": "HostGroup"
   }
  }
 ]

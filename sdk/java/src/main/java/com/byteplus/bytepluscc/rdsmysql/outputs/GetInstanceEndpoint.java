@@ -3,6 +3,8 @@
 
 package com.byteplus.bytepluscc.rdsmysql.outputs;
 
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceEndpointAddress;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceEndpointCustomRouteStrategy;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceEndpointReadOnlyNodeWeight;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -14,6 +16,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstanceEndpoint {
+    /**
+     * @return Address list.
+     * 
+     */
+    private List<GetInstanceEndpointAddress> addresses;
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
      * 
@@ -34,6 +41,11 @@ public final class GetInstanceEndpoint {
      * 
      */
     private String connectionPoolType;
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * 
+     */
+    private List<GetInstanceEndpointCustomRouteStrategy> customRouteStrategies;
     /**
      * @return Description of the connection endpoint
      * 
@@ -122,6 +134,13 @@ public final class GetInstanceEndpoint {
 
     private GetInstanceEndpoint() {}
     /**
+     * @return Address list.
+     * 
+     */
+    public List<GetInstanceEndpointAddress> addresses() {
+        return this.addresses;
+    }
+    /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
      * 
      */
@@ -148,6 +167,13 @@ public final class GetInstanceEndpoint {
      */
     public String connectionPoolType() {
         return this.connectionPoolType;
+    }
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * 
+     */
+    public List<GetInstanceEndpointCustomRouteStrategy> customRouteStrategies() {
+        return this.customRouteStrategies;
     }
     /**
      * @return Description of the connection endpoint
@@ -278,10 +304,12 @@ public final class GetInstanceEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetInstanceEndpointAddress> addresses;
         private String autoAddNewNodes;
         private List<String> connectionInfoTags;
         private String connectionMode;
         private String connectionPoolType;
+        private List<GetInstanceEndpointCustomRouteStrategy> customRouteStrategies;
         private String description;
         private Boolean enableConnectionPersistent;
         private String enableReadOnly;
@@ -302,10 +330,12 @@ public final class GetInstanceEndpoint {
         public Builder() {}
         public Builder(GetInstanceEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.addresses = defaults.addresses;
     	      this.autoAddNewNodes = defaults.autoAddNewNodes;
     	      this.connectionInfoTags = defaults.connectionInfoTags;
     	      this.connectionMode = defaults.connectionMode;
     	      this.connectionPoolType = defaults.connectionPoolType;
+    	      this.customRouteStrategies = defaults.customRouteStrategies;
     	      this.description = defaults.description;
     	      this.enableConnectionPersistent = defaults.enableConnectionPersistent;
     	      this.enableReadOnly = defaults.enableReadOnly;
@@ -325,6 +355,17 @@ public final class GetInstanceEndpoint {
     	      this.readWriteMode = defaults.readWriteMode;
         }
 
+        @CustomType.Setter
+        public Builder addresses(List<GetInstanceEndpointAddress> addresses) {
+            if (addresses == null) {
+              throw new MissingRequiredPropertyException("GetInstanceEndpoint", "addresses");
+            }
+            this.addresses = addresses;
+            return this;
+        }
+        public Builder addresses(GetInstanceEndpointAddress... addresses) {
+            return addresses(List.of(addresses));
+        }
         @CustomType.Setter
         public Builder autoAddNewNodes(String autoAddNewNodes) {
             if (autoAddNewNodes == null) {
@@ -359,6 +400,17 @@ public final class GetInstanceEndpoint {
             }
             this.connectionPoolType = connectionPoolType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder customRouteStrategies(List<GetInstanceEndpointCustomRouteStrategy> customRouteStrategies) {
+            if (customRouteStrategies == null) {
+              throw new MissingRequiredPropertyException("GetInstanceEndpoint", "customRouteStrategies");
+            }
+            this.customRouteStrategies = customRouteStrategies;
+            return this;
+        }
+        public Builder customRouteStrategies(GetInstanceEndpointCustomRouteStrategy... customRouteStrategies) {
+            return customRouteStrategies(List.of(customRouteStrategies));
         }
         @CustomType.Setter
         public Builder description(String description) {
@@ -501,10 +553,12 @@ public final class GetInstanceEndpoint {
         }
         public GetInstanceEndpoint build() {
             final var _resultValue = new GetInstanceEndpoint();
+            _resultValue.addresses = addresses;
             _resultValue.autoAddNewNodes = autoAddNewNodes;
             _resultValue.connectionInfoTags = connectionInfoTags;
             _resultValue.connectionMode = connectionMode;
             _resultValue.connectionPoolType = connectionPoolType;
+            _resultValue.customRouteStrategies = customRouteStrategies;
             _resultValue.description = description;
             _resultValue.enableConnectionPersistent = enableConnectionPersistent;
             _resultValue.enableReadOnly = enableReadOnly;

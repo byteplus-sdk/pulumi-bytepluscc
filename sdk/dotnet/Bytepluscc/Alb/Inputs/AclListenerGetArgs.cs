@@ -14,10 +14,34 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class AclListenerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+        /// Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         /// </summary>
         [Input("aclType")]
         public Input<string>? AclType { get; set; }
+
+        /// <summary>
+        /// Listener ID
+        /// </summary>
+        [Input("listenerId")]
+        public Input<string>? ListenerId { get; set; }
+
+        /// <summary>
+        /// Listener name
+        /// </summary>
+        [Input("listenerName")]
+        public Input<string>? ListenerName { get; set; }
+
+        /// <summary>
+        /// Listener port
+        /// </summary>
+        [Input("port")]
+        public Input<int>? Port { get; set; }
+
+        /// <summary>
+        /// Listener protocol
+        /// </summary>
+        [Input("protocol")]
+        public Input<string>? Protocol { get; set; }
 
         public AclListenerGetArgs()
         {

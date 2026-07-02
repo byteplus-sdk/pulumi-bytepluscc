@@ -19,6 +19,21 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     public static final CertificateArgs Empty = new CertificateArgs();
 
     /**
+     * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+     * 
+     */
+    @Import(name="certificateId")
+    private @Nullable Output<String> certificateId;
+
+    /**
+     * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+     * 
+     */
+    public Optional<Output<String>> certificateId() {
+        return Optional.ofNullable(this.certificateId);
+    }
+
+    /**
      * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
@@ -64,6 +79,21 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    @Import(name="oldCertificateId")
+    private @Nullable Output<String> oldCertificateId;
+
+    /**
+     * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+     * 
+     */
+    public Optional<Output<String>> oldCertificateId() {
+        return Optional.ofNullable(this.oldCertificateId);
+    }
+
+    /**
      * Server certificate private key. Required when certificate type is Server
      * 
      */
@@ -97,15 +127,15 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
      * Server certificate public key
      * 
      */
-    @Import(name="publicKey", required=true)
-    private Output<String> publicKey;
+    @Import(name="publicKey")
+    private @Nullable Output<String> publicKey;
 
     /**
      * @return Server certificate public key
      * 
      */
-    public Output<String> publicKey() {
-        return this.publicKey;
+    public Optional<Output<String>> publicKey() {
+        return Optional.ofNullable(this.publicKey);
     }
 
     @Import(name="tags")
@@ -118,9 +148,11 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     private CertificateArgs() {}
 
     private CertificateArgs(CertificateArgs $) {
+        this.certificateId = $.certificateId;
         this.certificateName = $.certificateName;
         this.certificateType = $.certificateType;
         this.description = $.description;
+        this.oldCertificateId = $.oldCertificateId;
         this.privateKey = $.privateKey;
         this.projectName = $.projectName;
         this.publicKey = $.publicKey;
@@ -143,6 +175,27 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(CertificateArgs defaults) {
             $ = new CertificateArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param certificateId Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateId(@Nullable Output<String> certificateId) {
+            $.certificateId = certificateId;
+            return this;
+        }
+
+        /**
+         * @param certificateId Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificateId(String certificateId) {
+            return certificateId(Output.of(certificateId));
         }
 
         /**
@@ -209,6 +262,27 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param oldCertificateId Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oldCertificateId(@Nullable Output<String> oldCertificateId) {
+            $.oldCertificateId = oldCertificateId;
+            return this;
+        }
+
+        /**
+         * @param oldCertificateId Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oldCertificateId(String oldCertificateId) {
+            return oldCertificateId(Output.of(oldCertificateId));
+        }
+
+        /**
          * @param privateKey Server certificate private key. Required when certificate type is Server
          * 
          * @return builder
@@ -256,7 +330,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder publicKey(Output<String> publicKey) {
+        public Builder publicKey(@Nullable Output<String> publicKey) {
             $.publicKey = publicKey;
             return this;
         }
@@ -287,9 +361,6 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         public CertificateArgs build() {
             if ($.certificateType == null) {
                 throw new MissingRequiredPropertyException("CertificateArgs", "certificateType");
-            }
-            if ($.publicKey == null) {
-                throw new MissingRequiredPropertyException("CertificateArgs", "publicKey");
             }
             return $;
         }

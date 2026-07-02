@@ -90,14 +90,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.conditions;
     }
     /**
-     * Alert notification group ID bound to the alert policy.
+     * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      * 
      */
     @Export(name="contactGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> contactGroupIds;
 
     /**
-     * @return Alert notification group ID bound to the alert policy.
+     * @return When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
      * 
      */
     public Output<List<String>> contactGroupIds() {
@@ -118,56 +118,56 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.createdAt;
     }
     /**
-     * Alert policy description.
+     * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Alert policy description.
+     * @return Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * Dimension configuration.
+     * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      * 
      */
     @Export(name="dimensionConditions", refs={RuleDimensionConditions.class}, tree="[0]")
     private Output<RuleDimensionConditions> dimensionConditions;
 
     /**
-     * @return Dimension configuration.
+     * @return Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
      * 
      */
     public Output<RuleDimensionConditions> dimensionConditions() {
         return this.dimensionConditions;
     }
     /**
-     * Policy expiration time, in HH:MM format.
+     * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      * 
      */
     @Export(name="effectEndAt", refs={String.class}, tree="[0]")
     private Output<String> effectEndAt;
 
     /**
-     * @return Policy expiration time, in HH:MM format.
+     * @return End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
      * 
      */
     public Output<String> effectEndAt() {
         return this.effectEndAt;
     }
     /**
-     * Policy start time, in HH:MM format.
+     * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      * 
      */
     @Export(name="effectStartAt", refs={String.class}, tree="[0]")
     private Output<String> effectStartAt;
 
     /**
-     * @return Policy start time, in HH:MM format.
+     * @return Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
      * 
      */
     public Output<String> effectStartAt() {
@@ -188,14 +188,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.enableState;
     }
     /**
-     * Duration required to trigger an alert, in minutes.
+     * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      * 
      */
     @Export(name="evaluationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> evaluationCount;
 
     /**
-     * @return Duration required to trigger an alert, in minutes.
+     * @return Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
      * 
      */
     public Output<Integer> evaluationCount() {
@@ -236,14 +236,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.multipleConditions;
     }
     /**
-     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
+     * @return The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
      * 
      */
     public Output<String> namespace() {
@@ -264,14 +264,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.noData;
     }
     /**
-     * Notification policy ID.
+     * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      * 
      */
     @Export(name="notificationId", refs={String.class}, tree="[0]")
     private Output<String> notificationId;
 
     /**
-     * @return Notification policy ID.
+     * @return Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
      * 
      */
     public Output<String> notificationId() {
@@ -298,14 +298,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.originalDimensions;
     }
     /**
-     * Project to which the alert policy belongs.
+     * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return Project to which the alert policy belongs.
+     * @return Project name to which the alert policy belongs. If not specified, it defaults to the default project.
      * 
      */
     public Output<String> projectName() {
@@ -326,14 +326,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.recoveryNotify;
     }
     /**
-     * Availability zone ID of the cloud product.
+     * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      * 
      */
     @Export(name="regions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> regions;
 
     /**
-     * @return Availability zone ID of the cloud product.
+     * @return Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
      * 
      */
     public Output<List<String>> regions() {
@@ -368,14 +368,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.ruleId;
     }
     /**
-     * Alert policy name.
+     * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      * 
      */
     @Export(name="ruleName", refs={String.class}, tree="[0]")
     private Output<String> ruleName;
 
     /**
-     * @return Alert policy name.
+     * @return Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
      * 
      */
     public Output<String> ruleName() {

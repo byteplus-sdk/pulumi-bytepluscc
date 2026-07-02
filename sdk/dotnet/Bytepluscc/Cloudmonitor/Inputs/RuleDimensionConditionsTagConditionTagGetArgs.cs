@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class RuleDimensionConditionsTagConditionTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        /// Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
         /// </summary>
         [Input("comparator")]
         public Input<string>? Comparator { get; set; }

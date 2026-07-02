@@ -28,6 +28,7 @@ __all__ = [
     'AlarmQueryRequest',
     'AlarmRequestCycle',
     'AlarmTriggerCondition',
+    'AlarmWebhookIntegrationTypeWebhookHeader',
     'EtlTargetResource',
     'HostGroupRule',
     'HostGroupRuleContainerRule',
@@ -119,6 +120,7 @@ __all__ = [
     'GetAlarmQueryRequestResult',
     'GetAlarmRequestCycleResult',
     'GetAlarmTriggerConditionResult',
+    'GetAlarmWebhookIntegrationTypeWebhookHeaderResult',
     'GetEtlTargetResourceResult',
     'GetHostGroupRuleResult',
     'GetHostGroupRuleContainerRuleResult',
@@ -1236,6 +1238,37 @@ class AlarmTriggerCondition(dict):
         Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
         """
         return pulumi.get(self, "severity")
+
+
+@pulumi.output_type
+class AlarmWebhookIntegrationTypeWebhookHeader(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Key for custom request header
+        :param builtins.str value: Value for custom request header
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Key for custom request header
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Value for custom request header
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -7732,6 +7765,35 @@ class GetAlarmTriggerConditionResult(dict):
         Alert notification level, indicating the severity of the alert. Supports notice, warning, or critical, with severity increasing in that order. The default is notice.
         """
         return pulumi.get(self, "severity")
+
+
+@pulumi.output_type
+class GetAlarmWebhookIntegrationTypeWebhookHeaderResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Key for custom request header
+        :param builtins.str value: Value for custom request header
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key for custom request header
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Value for custom request header
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

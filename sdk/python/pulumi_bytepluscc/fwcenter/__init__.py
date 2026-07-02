@@ -6,8 +6,17 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .address_book import *
+from .control_policy import *
 from .dns_control_policy import *
+from .get_address_book import *
+from .get_address_books import *
+from .get_control_policies import *
+from .get_control_policy import *
 from .get_dns_control_policies import *
 from .get_dns_control_policy import *
+from .get_vpc_fire_wall_acl_rule import *
+from .get_vpc_fire_wall_acl_rules import *
+from .vpc_fire_wall_acl_rule import *
 from ._inputs import *
 from . import outputs

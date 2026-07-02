@@ -13,6 +13,563 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AddressBookAddressDetailList struct {
+	// Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+	Address *string `pulumi:"address"`
+	// Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+	Description *string `pulumi:"description"`
+}
+
+// AddressBookAddressDetailListInput is an input type that accepts AddressBookAddressDetailListArgs and AddressBookAddressDetailListOutput values.
+// You can construct a concrete instance of `AddressBookAddressDetailListInput` via:
+//
+//	AddressBookAddressDetailListArgs{...}
+type AddressBookAddressDetailListInput interface {
+	pulumi.Input
+
+	ToAddressBookAddressDetailListOutput() AddressBookAddressDetailListOutput
+	ToAddressBookAddressDetailListOutputWithContext(context.Context) AddressBookAddressDetailListOutput
+}
+
+type AddressBookAddressDetailListArgs struct {
+	// Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+}
+
+func (AddressBookAddressDetailListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (i AddressBookAddressDetailListArgs) ToAddressBookAddressDetailListOutput() AddressBookAddressDetailListOutput {
+	return i.ToAddressBookAddressDetailListOutputWithContext(context.Background())
+}
+
+func (i AddressBookAddressDetailListArgs) ToAddressBookAddressDetailListOutputWithContext(ctx context.Context) AddressBookAddressDetailListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddressBookAddressDetailListOutput)
+}
+
+// AddressBookAddressDetailListArrayInput is an input type that accepts AddressBookAddressDetailListArray and AddressBookAddressDetailListArrayOutput values.
+// You can construct a concrete instance of `AddressBookAddressDetailListArrayInput` via:
+//
+//	AddressBookAddressDetailListArray{ AddressBookAddressDetailListArgs{...} }
+type AddressBookAddressDetailListArrayInput interface {
+	pulumi.Input
+
+	ToAddressBookAddressDetailListArrayOutput() AddressBookAddressDetailListArrayOutput
+	ToAddressBookAddressDetailListArrayOutputWithContext(context.Context) AddressBookAddressDetailListArrayOutput
+}
+
+type AddressBookAddressDetailListArray []AddressBookAddressDetailListInput
+
+func (AddressBookAddressDetailListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (i AddressBookAddressDetailListArray) ToAddressBookAddressDetailListArrayOutput() AddressBookAddressDetailListArrayOutput {
+	return i.ToAddressBookAddressDetailListArrayOutputWithContext(context.Background())
+}
+
+func (i AddressBookAddressDetailListArray) ToAddressBookAddressDetailListArrayOutputWithContext(ctx context.Context) AddressBookAddressDetailListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddressBookAddressDetailListArrayOutput)
+}
+
+type AddressBookAddressDetailListOutput struct{ *pulumi.OutputState }
+
+func (AddressBookAddressDetailListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (o AddressBookAddressDetailListOutput) ToAddressBookAddressDetailListOutput() AddressBookAddressDetailListOutput {
+	return o
+}
+
+func (o AddressBookAddressDetailListOutput) ToAddressBookAddressDetailListOutputWithContext(ctx context.Context) AddressBookAddressDetailListOutput {
+	return o
+}
+
+// Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+func (o AddressBookAddressDetailListOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddressBookAddressDetailList) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+func (o AddressBookAddressDetailListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddressBookAddressDetailList) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+type AddressBookAddressDetailListArrayOutput struct{ *pulumi.OutputState }
+
+func (AddressBookAddressDetailListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (o AddressBookAddressDetailListArrayOutput) ToAddressBookAddressDetailListArrayOutput() AddressBookAddressDetailListArrayOutput {
+	return o
+}
+
+func (o AddressBookAddressDetailListArrayOutput) ToAddressBookAddressDetailListArrayOutputWithContext(ctx context.Context) AddressBookAddressDetailListArrayOutput {
+	return o
+}
+
+func (o AddressBookAddressDetailListArrayOutput) Index(i pulumi.IntInput) AddressBookAddressDetailListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddressBookAddressDetailList {
+		return vs[0].([]AddressBookAddressDetailList)[vs[1].(int)]
+	}).(AddressBookAddressDetailListOutput)
+}
+
+type AddressBookTag struct {
+	// Tag key.
+	Key *string `pulumi:"key"`
+	// Tag value.
+	Value *string `pulumi:"value"`
+}
+
+// AddressBookTagInput is an input type that accepts AddressBookTagArgs and AddressBookTagOutput values.
+// You can construct a concrete instance of `AddressBookTagInput` via:
+//
+//	AddressBookTagArgs{...}
+type AddressBookTagInput interface {
+	pulumi.Input
+
+	ToAddressBookTagOutput() AddressBookTagOutput
+	ToAddressBookTagOutputWithContext(context.Context) AddressBookTagOutput
+}
+
+type AddressBookTagArgs struct {
+	// Tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AddressBookTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddressBookTag)(nil)).Elem()
+}
+
+func (i AddressBookTagArgs) ToAddressBookTagOutput() AddressBookTagOutput {
+	return i.ToAddressBookTagOutputWithContext(context.Background())
+}
+
+func (i AddressBookTagArgs) ToAddressBookTagOutputWithContext(ctx context.Context) AddressBookTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddressBookTagOutput)
+}
+
+// AddressBookTagArrayInput is an input type that accepts AddressBookTagArray and AddressBookTagArrayOutput values.
+// You can construct a concrete instance of `AddressBookTagArrayInput` via:
+//
+//	AddressBookTagArray{ AddressBookTagArgs{...} }
+type AddressBookTagArrayInput interface {
+	pulumi.Input
+
+	ToAddressBookTagArrayOutput() AddressBookTagArrayOutput
+	ToAddressBookTagArrayOutputWithContext(context.Context) AddressBookTagArrayOutput
+}
+
+type AddressBookTagArray []AddressBookTagInput
+
+func (AddressBookTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddressBookTag)(nil)).Elem()
+}
+
+func (i AddressBookTagArray) ToAddressBookTagArrayOutput() AddressBookTagArrayOutput {
+	return i.ToAddressBookTagArrayOutputWithContext(context.Background())
+}
+
+func (i AddressBookTagArray) ToAddressBookTagArrayOutputWithContext(ctx context.Context) AddressBookTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddressBookTagArrayOutput)
+}
+
+type AddressBookTagOutput struct{ *pulumi.OutputState }
+
+func (AddressBookTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddressBookTag)(nil)).Elem()
+}
+
+func (o AddressBookTagOutput) ToAddressBookTagOutput() AddressBookTagOutput {
+	return o
+}
+
+func (o AddressBookTagOutput) ToAddressBookTagOutputWithContext(ctx context.Context) AddressBookTagOutput {
+	return o
+}
+
+// Tag key.
+func (o AddressBookTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddressBookTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value.
+func (o AddressBookTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddressBookTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AddressBookTagArrayOutput struct{ *pulumi.OutputState }
+
+func (AddressBookTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddressBookTag)(nil)).Elem()
+}
+
+func (o AddressBookTagArrayOutput) ToAddressBookTagArrayOutput() AddressBookTagArrayOutput {
+	return o
+}
+
+func (o AddressBookTagArrayOutput) ToAddressBookTagArrayOutputWithContext(ctx context.Context) AddressBookTagArrayOutput {
+	return o
+}
+
+func (o AddressBookTagArrayOutput) Index(i pulumi.IntInput) AddressBookTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddressBookTag {
+		return vs[0].([]AddressBookTag)[vs[1].(int)]
+	}).(AddressBookTagOutput)
+}
+
+type ControlPolicyDestPortListV1 struct {
+	// Detailed address information.
+	Address *string `pulumi:"address"`
+	// Description
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type *string `pulumi:"type"`
+}
+
+// ControlPolicyDestPortListV1Input is an input type that accepts ControlPolicyDestPortListV1Args and ControlPolicyDestPortListV1Output values.
+// You can construct a concrete instance of `ControlPolicyDestPortListV1Input` via:
+//
+//	ControlPolicyDestPortListV1Args{...}
+type ControlPolicyDestPortListV1Input interface {
+	pulumi.Input
+
+	ToControlPolicyDestPortListV1Output() ControlPolicyDestPortListV1Output
+	ToControlPolicyDestPortListV1OutputWithContext(context.Context) ControlPolicyDestPortListV1Output
+}
+
+type ControlPolicyDestPortListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ControlPolicyDestPortListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i ControlPolicyDestPortListV1Args) ToControlPolicyDestPortListV1Output() ControlPolicyDestPortListV1Output {
+	return i.ToControlPolicyDestPortListV1OutputWithContext(context.Background())
+}
+
+func (i ControlPolicyDestPortListV1Args) ToControlPolicyDestPortListV1OutputWithContext(ctx context.Context) ControlPolicyDestPortListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ControlPolicyDestPortListV1Output)
+}
+
+// ControlPolicyDestPortListV1ArrayInput is an input type that accepts ControlPolicyDestPortListV1Array and ControlPolicyDestPortListV1ArrayOutput values.
+// You can construct a concrete instance of `ControlPolicyDestPortListV1ArrayInput` via:
+//
+//	ControlPolicyDestPortListV1Array{ ControlPolicyDestPortListV1Args{...} }
+type ControlPolicyDestPortListV1ArrayInput interface {
+	pulumi.Input
+
+	ToControlPolicyDestPortListV1ArrayOutput() ControlPolicyDestPortListV1ArrayOutput
+	ToControlPolicyDestPortListV1ArrayOutputWithContext(context.Context) ControlPolicyDestPortListV1ArrayOutput
+}
+
+type ControlPolicyDestPortListV1Array []ControlPolicyDestPortListV1Input
+
+func (ControlPolicyDestPortListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i ControlPolicyDestPortListV1Array) ToControlPolicyDestPortListV1ArrayOutput() ControlPolicyDestPortListV1ArrayOutput {
+	return i.ToControlPolicyDestPortListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i ControlPolicyDestPortListV1Array) ToControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) ControlPolicyDestPortListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ControlPolicyDestPortListV1ArrayOutput)
+}
+
+type ControlPolicyDestPortListV1Output struct{ *pulumi.OutputState }
+
+func (ControlPolicyDestPortListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o ControlPolicyDestPortListV1Output) ToControlPolicyDestPortListV1Output() ControlPolicyDestPortListV1Output {
+	return o
+}
+
+func (o ControlPolicyDestPortListV1Output) ToControlPolicyDestPortListV1OutputWithContext(ctx context.Context) ControlPolicyDestPortListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o ControlPolicyDestPortListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicyDestPortListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description
+func (o ControlPolicyDestPortListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicyDestPortListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+func (o ControlPolicyDestPortListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicyDestPortListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ControlPolicyDestPortListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (ControlPolicyDestPortListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o ControlPolicyDestPortListV1ArrayOutput) ToControlPolicyDestPortListV1ArrayOutput() ControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o ControlPolicyDestPortListV1ArrayOutput) ToControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) ControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o ControlPolicyDestPortListV1ArrayOutput) Index(i pulumi.IntInput) ControlPolicyDestPortListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ControlPolicyDestPortListV1 {
+		return vs[0].([]ControlPolicyDestPortListV1)[vs[1].(int)]
+	}).(ControlPolicyDestPortListV1Output)
+}
+
+type ControlPolicyDestinationCidrListV1 struct {
+	// Detailed address information.
+	Address *string `pulumi:"address"`
+	// Description
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type *string `pulumi:"type"`
+}
+
+// ControlPolicyDestinationCidrListV1Input is an input type that accepts ControlPolicyDestinationCidrListV1Args and ControlPolicyDestinationCidrListV1Output values.
+// You can construct a concrete instance of `ControlPolicyDestinationCidrListV1Input` via:
+//
+//	ControlPolicyDestinationCidrListV1Args{...}
+type ControlPolicyDestinationCidrListV1Input interface {
+	pulumi.Input
+
+	ToControlPolicyDestinationCidrListV1Output() ControlPolicyDestinationCidrListV1Output
+	ToControlPolicyDestinationCidrListV1OutputWithContext(context.Context) ControlPolicyDestinationCidrListV1Output
+}
+
+type ControlPolicyDestinationCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ControlPolicyDestinationCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i ControlPolicyDestinationCidrListV1Args) ToControlPolicyDestinationCidrListV1Output() ControlPolicyDestinationCidrListV1Output {
+	return i.ToControlPolicyDestinationCidrListV1OutputWithContext(context.Background())
+}
+
+func (i ControlPolicyDestinationCidrListV1Args) ToControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) ControlPolicyDestinationCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ControlPolicyDestinationCidrListV1Output)
+}
+
+// ControlPolicyDestinationCidrListV1ArrayInput is an input type that accepts ControlPolicyDestinationCidrListV1Array and ControlPolicyDestinationCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `ControlPolicyDestinationCidrListV1ArrayInput` via:
+//
+//	ControlPolicyDestinationCidrListV1Array{ ControlPolicyDestinationCidrListV1Args{...} }
+type ControlPolicyDestinationCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToControlPolicyDestinationCidrListV1ArrayOutput() ControlPolicyDestinationCidrListV1ArrayOutput
+	ToControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Context) ControlPolicyDestinationCidrListV1ArrayOutput
+}
+
+type ControlPolicyDestinationCidrListV1Array []ControlPolicyDestinationCidrListV1Input
+
+func (ControlPolicyDestinationCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i ControlPolicyDestinationCidrListV1Array) ToControlPolicyDestinationCidrListV1ArrayOutput() ControlPolicyDestinationCidrListV1ArrayOutput {
+	return i.ToControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i ControlPolicyDestinationCidrListV1Array) ToControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) ControlPolicyDestinationCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ControlPolicyDestinationCidrListV1ArrayOutput)
+}
+
+type ControlPolicyDestinationCidrListV1Output struct{ *pulumi.OutputState }
+
+func (ControlPolicyDestinationCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o ControlPolicyDestinationCidrListV1Output) ToControlPolicyDestinationCidrListV1Output() ControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+func (o ControlPolicyDestinationCidrListV1Output) ToControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) ControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o ControlPolicyDestinationCidrListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicyDestinationCidrListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description
+func (o ControlPolicyDestinationCidrListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicyDestinationCidrListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+func (o ControlPolicyDestinationCidrListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicyDestinationCidrListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ControlPolicyDestinationCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (ControlPolicyDestinationCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o ControlPolicyDestinationCidrListV1ArrayOutput) ToControlPolicyDestinationCidrListV1ArrayOutput() ControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o ControlPolicyDestinationCidrListV1ArrayOutput) ToControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) ControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o ControlPolicyDestinationCidrListV1ArrayOutput) Index(i pulumi.IntInput) ControlPolicyDestinationCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ControlPolicyDestinationCidrListV1 {
+		return vs[0].([]ControlPolicyDestinationCidrListV1)[vs[1].(int)]
+	}).(ControlPolicyDestinationCidrListV1Output)
+}
+
+type ControlPolicySourceCidrListV1 struct {
+	// Detailed address information.
+	Address *string `pulumi:"address"`
+	// Description
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type *string `pulumi:"type"`
+}
+
+// ControlPolicySourceCidrListV1Input is an input type that accepts ControlPolicySourceCidrListV1Args and ControlPolicySourceCidrListV1Output values.
+// You can construct a concrete instance of `ControlPolicySourceCidrListV1Input` via:
+//
+//	ControlPolicySourceCidrListV1Args{...}
+type ControlPolicySourceCidrListV1Input interface {
+	pulumi.Input
+
+	ToControlPolicySourceCidrListV1Output() ControlPolicySourceCidrListV1Output
+	ToControlPolicySourceCidrListV1OutputWithContext(context.Context) ControlPolicySourceCidrListV1Output
+}
+
+type ControlPolicySourceCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ControlPolicySourceCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i ControlPolicySourceCidrListV1Args) ToControlPolicySourceCidrListV1Output() ControlPolicySourceCidrListV1Output {
+	return i.ToControlPolicySourceCidrListV1OutputWithContext(context.Background())
+}
+
+func (i ControlPolicySourceCidrListV1Args) ToControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) ControlPolicySourceCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ControlPolicySourceCidrListV1Output)
+}
+
+// ControlPolicySourceCidrListV1ArrayInput is an input type that accepts ControlPolicySourceCidrListV1Array and ControlPolicySourceCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `ControlPolicySourceCidrListV1ArrayInput` via:
+//
+//	ControlPolicySourceCidrListV1Array{ ControlPolicySourceCidrListV1Args{...} }
+type ControlPolicySourceCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToControlPolicySourceCidrListV1ArrayOutput() ControlPolicySourceCidrListV1ArrayOutput
+	ToControlPolicySourceCidrListV1ArrayOutputWithContext(context.Context) ControlPolicySourceCidrListV1ArrayOutput
+}
+
+type ControlPolicySourceCidrListV1Array []ControlPolicySourceCidrListV1Input
+
+func (ControlPolicySourceCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i ControlPolicySourceCidrListV1Array) ToControlPolicySourceCidrListV1ArrayOutput() ControlPolicySourceCidrListV1ArrayOutput {
+	return i.ToControlPolicySourceCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i ControlPolicySourceCidrListV1Array) ToControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) ControlPolicySourceCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ControlPolicySourceCidrListV1ArrayOutput)
+}
+
+type ControlPolicySourceCidrListV1Output struct{ *pulumi.OutputState }
+
+func (ControlPolicySourceCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o ControlPolicySourceCidrListV1Output) ToControlPolicySourceCidrListV1Output() ControlPolicySourceCidrListV1Output {
+	return o
+}
+
+func (o ControlPolicySourceCidrListV1Output) ToControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) ControlPolicySourceCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o ControlPolicySourceCidrListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicySourceCidrListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description
+func (o ControlPolicySourceCidrListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicySourceCidrListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+func (o ControlPolicySourceCidrListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ControlPolicySourceCidrListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ControlPolicySourceCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (ControlPolicySourceCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o ControlPolicySourceCidrListV1ArrayOutput) ToControlPolicySourceCidrListV1ArrayOutput() ControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o ControlPolicySourceCidrListV1ArrayOutput) ToControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) ControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o ControlPolicySourceCidrListV1ArrayOutput) Index(i pulumi.IntInput) ControlPolicySourceCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ControlPolicySourceCidrListV1 {
+		return vs[0].([]ControlPolicySourceCidrListV1)[vs[1].(int)]
+	}).(ControlPolicySourceCidrListV1Output)
+}
+
 type DnsControlPolicyDomainListV1 struct {
 	// Specific address information.
 	Address *string `pulumi:"address"`
@@ -232,6 +789,917 @@ func (o DnsControlPolicySourceArrayOutput) Index(i pulumi.IntInput) DnsControlPo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DnsControlPolicySource {
 		return vs[0].([]DnsControlPolicySource)[vs[1].(int)]
 	}).(DnsControlPolicySourceOutput)
+}
+
+type VpcFireWallAclRuleDestPortListV1 struct {
+	// Detailed address information.
+	Address *string `pulumi:"address"`
+	// Description.
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type *string `pulumi:"type"`
+}
+
+// VpcFireWallAclRuleDestPortListV1Input is an input type that accepts VpcFireWallAclRuleDestPortListV1Args and VpcFireWallAclRuleDestPortListV1Output values.
+// You can construct a concrete instance of `VpcFireWallAclRuleDestPortListV1Input` via:
+//
+//	VpcFireWallAclRuleDestPortListV1Args{...}
+type VpcFireWallAclRuleDestPortListV1Input interface {
+	pulumi.Input
+
+	ToVpcFireWallAclRuleDestPortListV1Output() VpcFireWallAclRuleDestPortListV1Output
+	ToVpcFireWallAclRuleDestPortListV1OutputWithContext(context.Context) VpcFireWallAclRuleDestPortListV1Output
+}
+
+type VpcFireWallAclRuleDestPortListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (VpcFireWallAclRuleDestPortListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (i VpcFireWallAclRuleDestPortListV1Args) ToVpcFireWallAclRuleDestPortListV1Output() VpcFireWallAclRuleDestPortListV1Output {
+	return i.ToVpcFireWallAclRuleDestPortListV1OutputWithContext(context.Background())
+}
+
+func (i VpcFireWallAclRuleDestPortListV1Args) ToVpcFireWallAclRuleDestPortListV1OutputWithContext(ctx context.Context) VpcFireWallAclRuleDestPortListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcFireWallAclRuleDestPortListV1Output)
+}
+
+// VpcFireWallAclRuleDestPortListV1ArrayInput is an input type that accepts VpcFireWallAclRuleDestPortListV1Array and VpcFireWallAclRuleDestPortListV1ArrayOutput values.
+// You can construct a concrete instance of `VpcFireWallAclRuleDestPortListV1ArrayInput` via:
+//
+//	VpcFireWallAclRuleDestPortListV1Array{ VpcFireWallAclRuleDestPortListV1Args{...} }
+type VpcFireWallAclRuleDestPortListV1ArrayInput interface {
+	pulumi.Input
+
+	ToVpcFireWallAclRuleDestPortListV1ArrayOutput() VpcFireWallAclRuleDestPortListV1ArrayOutput
+	ToVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(context.Context) VpcFireWallAclRuleDestPortListV1ArrayOutput
+}
+
+type VpcFireWallAclRuleDestPortListV1Array []VpcFireWallAclRuleDestPortListV1Input
+
+func (VpcFireWallAclRuleDestPortListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (i VpcFireWallAclRuleDestPortListV1Array) ToVpcFireWallAclRuleDestPortListV1ArrayOutput() VpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return i.ToVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i VpcFireWallAclRuleDestPortListV1Array) ToVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(ctx context.Context) VpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcFireWallAclRuleDestPortListV1ArrayOutput)
+}
+
+type VpcFireWallAclRuleDestPortListV1Output struct{ *pulumi.OutputState }
+
+func (VpcFireWallAclRuleDestPortListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (o VpcFireWallAclRuleDestPortListV1Output) ToVpcFireWallAclRuleDestPortListV1Output() VpcFireWallAclRuleDestPortListV1Output {
+	return o
+}
+
+func (o VpcFireWallAclRuleDestPortListV1Output) ToVpcFireWallAclRuleDestPortListV1OutputWithContext(ctx context.Context) VpcFireWallAclRuleDestPortListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o VpcFireWallAclRuleDestPortListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleDestPortListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description.
+func (o VpcFireWallAclRuleDestPortListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleDestPortListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o VpcFireWallAclRuleDestPortListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleDestPortListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type VpcFireWallAclRuleDestPortListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcFireWallAclRuleDestPortListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (o VpcFireWallAclRuleDestPortListV1ArrayOutput) ToVpcFireWallAclRuleDestPortListV1ArrayOutput() VpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o VpcFireWallAclRuleDestPortListV1ArrayOutput) ToVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(ctx context.Context) VpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o VpcFireWallAclRuleDestPortListV1ArrayOutput) Index(i pulumi.IntInput) VpcFireWallAclRuleDestPortListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcFireWallAclRuleDestPortListV1 {
+		return vs[0].([]VpcFireWallAclRuleDestPortListV1)[vs[1].(int)]
+	}).(VpcFireWallAclRuleDestPortListV1Output)
+}
+
+type VpcFireWallAclRuleDestinationCidrListV1 struct {
+	// Detailed address information.
+	Address *string `pulumi:"address"`
+	// Description.
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type *string `pulumi:"type"`
+}
+
+// VpcFireWallAclRuleDestinationCidrListV1Input is an input type that accepts VpcFireWallAclRuleDestinationCidrListV1Args and VpcFireWallAclRuleDestinationCidrListV1Output values.
+// You can construct a concrete instance of `VpcFireWallAclRuleDestinationCidrListV1Input` via:
+//
+//	VpcFireWallAclRuleDestinationCidrListV1Args{...}
+type VpcFireWallAclRuleDestinationCidrListV1Input interface {
+	pulumi.Input
+
+	ToVpcFireWallAclRuleDestinationCidrListV1Output() VpcFireWallAclRuleDestinationCidrListV1Output
+	ToVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(context.Context) VpcFireWallAclRuleDestinationCidrListV1Output
+}
+
+type VpcFireWallAclRuleDestinationCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (VpcFireWallAclRuleDestinationCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i VpcFireWallAclRuleDestinationCidrListV1Args) ToVpcFireWallAclRuleDestinationCidrListV1Output() VpcFireWallAclRuleDestinationCidrListV1Output {
+	return i.ToVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(context.Background())
+}
+
+func (i VpcFireWallAclRuleDestinationCidrListV1Args) ToVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(ctx context.Context) VpcFireWallAclRuleDestinationCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcFireWallAclRuleDestinationCidrListV1Output)
+}
+
+// VpcFireWallAclRuleDestinationCidrListV1ArrayInput is an input type that accepts VpcFireWallAclRuleDestinationCidrListV1Array and VpcFireWallAclRuleDestinationCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `VpcFireWallAclRuleDestinationCidrListV1ArrayInput` via:
+//
+//	VpcFireWallAclRuleDestinationCidrListV1Array{ VpcFireWallAclRuleDestinationCidrListV1Args{...} }
+type VpcFireWallAclRuleDestinationCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutput() VpcFireWallAclRuleDestinationCidrListV1ArrayOutput
+	ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(context.Context) VpcFireWallAclRuleDestinationCidrListV1ArrayOutput
+}
+
+type VpcFireWallAclRuleDestinationCidrListV1Array []VpcFireWallAclRuleDestinationCidrListV1Input
+
+func (VpcFireWallAclRuleDestinationCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i VpcFireWallAclRuleDestinationCidrListV1Array) ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutput() VpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return i.ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i VpcFireWallAclRuleDestinationCidrListV1Array) ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) VpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcFireWallAclRuleDestinationCidrListV1ArrayOutput)
+}
+
+type VpcFireWallAclRuleDestinationCidrListV1Output struct{ *pulumi.OutputState }
+
+func (VpcFireWallAclRuleDestinationCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o VpcFireWallAclRuleDestinationCidrListV1Output) ToVpcFireWallAclRuleDestinationCidrListV1Output() VpcFireWallAclRuleDestinationCidrListV1Output {
+	return o
+}
+
+func (o VpcFireWallAclRuleDestinationCidrListV1Output) ToVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(ctx context.Context) VpcFireWallAclRuleDestinationCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o VpcFireWallAclRuleDestinationCidrListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleDestinationCidrListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description.
+func (o VpcFireWallAclRuleDestinationCidrListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleDestinationCidrListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o VpcFireWallAclRuleDestinationCidrListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleDestinationCidrListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type VpcFireWallAclRuleDestinationCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcFireWallAclRuleDestinationCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o VpcFireWallAclRuleDestinationCidrListV1ArrayOutput) ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutput() VpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o VpcFireWallAclRuleDestinationCidrListV1ArrayOutput) ToVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) VpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o VpcFireWallAclRuleDestinationCidrListV1ArrayOutput) Index(i pulumi.IntInput) VpcFireWallAclRuleDestinationCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcFireWallAclRuleDestinationCidrListV1 {
+		return vs[0].([]VpcFireWallAclRuleDestinationCidrListV1)[vs[1].(int)]
+	}).(VpcFireWallAclRuleDestinationCidrListV1Output)
+}
+
+type VpcFireWallAclRuleSourceCidrListV1 struct {
+	// Detailed address information.
+	Address *string `pulumi:"address"`
+	// Description.
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type *string `pulumi:"type"`
+}
+
+// VpcFireWallAclRuleSourceCidrListV1Input is an input type that accepts VpcFireWallAclRuleSourceCidrListV1Args and VpcFireWallAclRuleSourceCidrListV1Output values.
+// You can construct a concrete instance of `VpcFireWallAclRuleSourceCidrListV1Input` via:
+//
+//	VpcFireWallAclRuleSourceCidrListV1Args{...}
+type VpcFireWallAclRuleSourceCidrListV1Input interface {
+	pulumi.Input
+
+	ToVpcFireWallAclRuleSourceCidrListV1Output() VpcFireWallAclRuleSourceCidrListV1Output
+	ToVpcFireWallAclRuleSourceCidrListV1OutputWithContext(context.Context) VpcFireWallAclRuleSourceCidrListV1Output
+}
+
+type VpcFireWallAclRuleSourceCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (VpcFireWallAclRuleSourceCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (i VpcFireWallAclRuleSourceCidrListV1Args) ToVpcFireWallAclRuleSourceCidrListV1Output() VpcFireWallAclRuleSourceCidrListV1Output {
+	return i.ToVpcFireWallAclRuleSourceCidrListV1OutputWithContext(context.Background())
+}
+
+func (i VpcFireWallAclRuleSourceCidrListV1Args) ToVpcFireWallAclRuleSourceCidrListV1OutputWithContext(ctx context.Context) VpcFireWallAclRuleSourceCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcFireWallAclRuleSourceCidrListV1Output)
+}
+
+// VpcFireWallAclRuleSourceCidrListV1ArrayInput is an input type that accepts VpcFireWallAclRuleSourceCidrListV1Array and VpcFireWallAclRuleSourceCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `VpcFireWallAclRuleSourceCidrListV1ArrayInput` via:
+//
+//	VpcFireWallAclRuleSourceCidrListV1Array{ VpcFireWallAclRuleSourceCidrListV1Args{...} }
+type VpcFireWallAclRuleSourceCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToVpcFireWallAclRuleSourceCidrListV1ArrayOutput() VpcFireWallAclRuleSourceCidrListV1ArrayOutput
+	ToVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(context.Context) VpcFireWallAclRuleSourceCidrListV1ArrayOutput
+}
+
+type VpcFireWallAclRuleSourceCidrListV1Array []VpcFireWallAclRuleSourceCidrListV1Input
+
+func (VpcFireWallAclRuleSourceCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (i VpcFireWallAclRuleSourceCidrListV1Array) ToVpcFireWallAclRuleSourceCidrListV1ArrayOutput() VpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return i.ToVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i VpcFireWallAclRuleSourceCidrListV1Array) ToVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(ctx context.Context) VpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcFireWallAclRuleSourceCidrListV1ArrayOutput)
+}
+
+type VpcFireWallAclRuleSourceCidrListV1Output struct{ *pulumi.OutputState }
+
+func (VpcFireWallAclRuleSourceCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (o VpcFireWallAclRuleSourceCidrListV1Output) ToVpcFireWallAclRuleSourceCidrListV1Output() VpcFireWallAclRuleSourceCidrListV1Output {
+	return o
+}
+
+func (o VpcFireWallAclRuleSourceCidrListV1Output) ToVpcFireWallAclRuleSourceCidrListV1OutputWithContext(ctx context.Context) VpcFireWallAclRuleSourceCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o VpcFireWallAclRuleSourceCidrListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleSourceCidrListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description.
+func (o VpcFireWallAclRuleSourceCidrListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleSourceCidrListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o VpcFireWallAclRuleSourceCidrListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcFireWallAclRuleSourceCidrListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type VpcFireWallAclRuleSourceCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcFireWallAclRuleSourceCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (o VpcFireWallAclRuleSourceCidrListV1ArrayOutput) ToVpcFireWallAclRuleSourceCidrListV1ArrayOutput() VpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o VpcFireWallAclRuleSourceCidrListV1ArrayOutput) ToVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(ctx context.Context) VpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o VpcFireWallAclRuleSourceCidrListV1ArrayOutput) Index(i pulumi.IntInput) VpcFireWallAclRuleSourceCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcFireWallAclRuleSourceCidrListV1 {
+		return vs[0].([]VpcFireWallAclRuleSourceCidrListV1)[vs[1].(int)]
+	}).(VpcFireWallAclRuleSourceCidrListV1Output)
+}
+
+type GetAddressBookAddressDetailList struct {
+	// Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+	Address string `pulumi:"address"`
+	// Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+	Description string `pulumi:"description"`
+	// Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
+	Type string `pulumi:"type"`
+}
+
+// GetAddressBookAddressDetailListInput is an input type that accepts GetAddressBookAddressDetailListArgs and GetAddressBookAddressDetailListOutput values.
+// You can construct a concrete instance of `GetAddressBookAddressDetailListInput` via:
+//
+//	GetAddressBookAddressDetailListArgs{...}
+type GetAddressBookAddressDetailListInput interface {
+	pulumi.Input
+
+	ToGetAddressBookAddressDetailListOutput() GetAddressBookAddressDetailListOutput
+	ToGetAddressBookAddressDetailListOutputWithContext(context.Context) GetAddressBookAddressDetailListOutput
+}
+
+type GetAddressBookAddressDetailListArgs struct {
+	// Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAddressBookAddressDetailListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (i GetAddressBookAddressDetailListArgs) ToGetAddressBookAddressDetailListOutput() GetAddressBookAddressDetailListOutput {
+	return i.ToGetAddressBookAddressDetailListOutputWithContext(context.Background())
+}
+
+func (i GetAddressBookAddressDetailListArgs) ToGetAddressBookAddressDetailListOutputWithContext(ctx context.Context) GetAddressBookAddressDetailListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddressBookAddressDetailListOutput)
+}
+
+// GetAddressBookAddressDetailListArrayInput is an input type that accepts GetAddressBookAddressDetailListArray and GetAddressBookAddressDetailListArrayOutput values.
+// You can construct a concrete instance of `GetAddressBookAddressDetailListArrayInput` via:
+//
+//	GetAddressBookAddressDetailListArray{ GetAddressBookAddressDetailListArgs{...} }
+type GetAddressBookAddressDetailListArrayInput interface {
+	pulumi.Input
+
+	ToGetAddressBookAddressDetailListArrayOutput() GetAddressBookAddressDetailListArrayOutput
+	ToGetAddressBookAddressDetailListArrayOutputWithContext(context.Context) GetAddressBookAddressDetailListArrayOutput
+}
+
+type GetAddressBookAddressDetailListArray []GetAddressBookAddressDetailListInput
+
+func (GetAddressBookAddressDetailListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (i GetAddressBookAddressDetailListArray) ToGetAddressBookAddressDetailListArrayOutput() GetAddressBookAddressDetailListArrayOutput {
+	return i.ToGetAddressBookAddressDetailListArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddressBookAddressDetailListArray) ToGetAddressBookAddressDetailListArrayOutputWithContext(ctx context.Context) GetAddressBookAddressDetailListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddressBookAddressDetailListArrayOutput)
+}
+
+type GetAddressBookAddressDetailListOutput struct{ *pulumi.OutputState }
+
+func (GetAddressBookAddressDetailListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (o GetAddressBookAddressDetailListOutput) ToGetAddressBookAddressDetailListOutput() GetAddressBookAddressDetailListOutput {
+	return o
+}
+
+func (o GetAddressBookAddressDetailListOutput) ToGetAddressBookAddressDetailListOutputWithContext(ctx context.Context) GetAddressBookAddressDetailListOutput {
+	return o
+}
+
+// Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
+func (o GetAddressBookAddressDetailListOutput) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressBookAddressDetailList) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
+func (o GetAddressBookAddressDetailListOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressBookAddressDetailList) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
+func (o GetAddressBookAddressDetailListOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressBookAddressDetailList) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAddressBookAddressDetailListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddressBookAddressDetailListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddressBookAddressDetailList)(nil)).Elem()
+}
+
+func (o GetAddressBookAddressDetailListArrayOutput) ToGetAddressBookAddressDetailListArrayOutput() GetAddressBookAddressDetailListArrayOutput {
+	return o
+}
+
+func (o GetAddressBookAddressDetailListArrayOutput) ToGetAddressBookAddressDetailListArrayOutputWithContext(ctx context.Context) GetAddressBookAddressDetailListArrayOutput {
+	return o
+}
+
+func (o GetAddressBookAddressDetailListArrayOutput) Index(i pulumi.IntInput) GetAddressBookAddressDetailListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressBookAddressDetailList {
+		return vs[0].([]GetAddressBookAddressDetailList)[vs[1].(int)]
+	}).(GetAddressBookAddressDetailListOutput)
+}
+
+type GetAddressBookTag struct {
+	// Tag key.
+	Key string `pulumi:"key"`
+	// Tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetAddressBookTagInput is an input type that accepts GetAddressBookTagArgs and GetAddressBookTagOutput values.
+// You can construct a concrete instance of `GetAddressBookTagInput` via:
+//
+//	GetAddressBookTagArgs{...}
+type GetAddressBookTagInput interface {
+	pulumi.Input
+
+	ToGetAddressBookTagOutput() GetAddressBookTagOutput
+	ToGetAddressBookTagOutputWithContext(context.Context) GetAddressBookTagOutput
+}
+
+type GetAddressBookTagArgs struct {
+	// Tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAddressBookTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddressBookTag)(nil)).Elem()
+}
+
+func (i GetAddressBookTagArgs) ToGetAddressBookTagOutput() GetAddressBookTagOutput {
+	return i.ToGetAddressBookTagOutputWithContext(context.Background())
+}
+
+func (i GetAddressBookTagArgs) ToGetAddressBookTagOutputWithContext(ctx context.Context) GetAddressBookTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddressBookTagOutput)
+}
+
+// GetAddressBookTagArrayInput is an input type that accepts GetAddressBookTagArray and GetAddressBookTagArrayOutput values.
+// You can construct a concrete instance of `GetAddressBookTagArrayInput` via:
+//
+//	GetAddressBookTagArray{ GetAddressBookTagArgs{...} }
+type GetAddressBookTagArrayInput interface {
+	pulumi.Input
+
+	ToGetAddressBookTagArrayOutput() GetAddressBookTagArrayOutput
+	ToGetAddressBookTagArrayOutputWithContext(context.Context) GetAddressBookTagArrayOutput
+}
+
+type GetAddressBookTagArray []GetAddressBookTagInput
+
+func (GetAddressBookTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddressBookTag)(nil)).Elem()
+}
+
+func (i GetAddressBookTagArray) ToGetAddressBookTagArrayOutput() GetAddressBookTagArrayOutput {
+	return i.ToGetAddressBookTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAddressBookTagArray) ToGetAddressBookTagArrayOutputWithContext(ctx context.Context) GetAddressBookTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAddressBookTagArrayOutput)
+}
+
+type GetAddressBookTagOutput struct{ *pulumi.OutputState }
+
+func (GetAddressBookTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAddressBookTag)(nil)).Elem()
+}
+
+func (o GetAddressBookTagOutput) ToGetAddressBookTagOutput() GetAddressBookTagOutput {
+	return o
+}
+
+func (o GetAddressBookTagOutput) ToGetAddressBookTagOutputWithContext(ctx context.Context) GetAddressBookTagOutput {
+	return o
+}
+
+// Tag key.
+func (o GetAddressBookTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressBookTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value.
+func (o GetAddressBookTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressBookTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAddressBookTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAddressBookTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAddressBookTag)(nil)).Elem()
+}
+
+func (o GetAddressBookTagArrayOutput) ToGetAddressBookTagArrayOutput() GetAddressBookTagArrayOutput {
+	return o
+}
+
+func (o GetAddressBookTagArrayOutput) ToGetAddressBookTagArrayOutputWithContext(ctx context.Context) GetAddressBookTagArrayOutput {
+	return o
+}
+
+func (o GetAddressBookTagArrayOutput) Index(i pulumi.IntInput) GetAddressBookTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressBookTag {
+		return vs[0].([]GetAddressBookTag)[vs[1].(int)]
+	}).(GetAddressBookTagOutput)
+}
+
+type GetControlPolicyDestPortListV1 struct {
+	// Detailed address information.
+	Address string `pulumi:"address"`
+	// Description
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type string `pulumi:"type"`
+}
+
+// GetControlPolicyDestPortListV1Input is an input type that accepts GetControlPolicyDestPortListV1Args and GetControlPolicyDestPortListV1Output values.
+// You can construct a concrete instance of `GetControlPolicyDestPortListV1Input` via:
+//
+//	GetControlPolicyDestPortListV1Args{...}
+type GetControlPolicyDestPortListV1Input interface {
+	pulumi.Input
+
+	ToGetControlPolicyDestPortListV1Output() GetControlPolicyDestPortListV1Output
+	ToGetControlPolicyDestPortListV1OutputWithContext(context.Context) GetControlPolicyDestPortListV1Output
+}
+
+type GetControlPolicyDestPortListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetControlPolicyDestPortListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i GetControlPolicyDestPortListV1Args) ToGetControlPolicyDestPortListV1Output() GetControlPolicyDestPortListV1Output {
+	return i.ToGetControlPolicyDestPortListV1OutputWithContext(context.Background())
+}
+
+func (i GetControlPolicyDestPortListV1Args) ToGetControlPolicyDestPortListV1OutputWithContext(ctx context.Context) GetControlPolicyDestPortListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetControlPolicyDestPortListV1Output)
+}
+
+// GetControlPolicyDestPortListV1ArrayInput is an input type that accepts GetControlPolicyDestPortListV1Array and GetControlPolicyDestPortListV1ArrayOutput values.
+// You can construct a concrete instance of `GetControlPolicyDestPortListV1ArrayInput` via:
+//
+//	GetControlPolicyDestPortListV1Array{ GetControlPolicyDestPortListV1Args{...} }
+type GetControlPolicyDestPortListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetControlPolicyDestPortListV1ArrayOutput() GetControlPolicyDestPortListV1ArrayOutput
+	ToGetControlPolicyDestPortListV1ArrayOutputWithContext(context.Context) GetControlPolicyDestPortListV1ArrayOutput
+}
+
+type GetControlPolicyDestPortListV1Array []GetControlPolicyDestPortListV1Input
+
+func (GetControlPolicyDestPortListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i GetControlPolicyDestPortListV1Array) ToGetControlPolicyDestPortListV1ArrayOutput() GetControlPolicyDestPortListV1ArrayOutput {
+	return i.ToGetControlPolicyDestPortListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetControlPolicyDestPortListV1Array) ToGetControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) GetControlPolicyDestPortListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetControlPolicyDestPortListV1ArrayOutput)
+}
+
+type GetControlPolicyDestPortListV1Output struct{ *pulumi.OutputState }
+
+func (GetControlPolicyDestPortListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o GetControlPolicyDestPortListV1Output) ToGetControlPolicyDestPortListV1Output() GetControlPolicyDestPortListV1Output {
+	return o
+}
+
+func (o GetControlPolicyDestPortListV1Output) ToGetControlPolicyDestPortListV1OutputWithContext(ctx context.Context) GetControlPolicyDestPortListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o GetControlPolicyDestPortListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicyDestPortListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description
+func (o GetControlPolicyDestPortListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicyDestPortListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+func (o GetControlPolicyDestPortListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicyDestPortListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetControlPolicyDestPortListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetControlPolicyDestPortListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o GetControlPolicyDestPortListV1ArrayOutput) ToGetControlPolicyDestPortListV1ArrayOutput() GetControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o GetControlPolicyDestPortListV1ArrayOutput) ToGetControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) GetControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o GetControlPolicyDestPortListV1ArrayOutput) Index(i pulumi.IntInput) GetControlPolicyDestPortListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetControlPolicyDestPortListV1 {
+		return vs[0].([]GetControlPolicyDestPortListV1)[vs[1].(int)]
+	}).(GetControlPolicyDestPortListV1Output)
+}
+
+type GetControlPolicyDestinationCidrListV1 struct {
+	// Detailed address information.
+	Address string `pulumi:"address"`
+	// Description
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type string `pulumi:"type"`
+}
+
+// GetControlPolicyDestinationCidrListV1Input is an input type that accepts GetControlPolicyDestinationCidrListV1Args and GetControlPolicyDestinationCidrListV1Output values.
+// You can construct a concrete instance of `GetControlPolicyDestinationCidrListV1Input` via:
+//
+//	GetControlPolicyDestinationCidrListV1Args{...}
+type GetControlPolicyDestinationCidrListV1Input interface {
+	pulumi.Input
+
+	ToGetControlPolicyDestinationCidrListV1Output() GetControlPolicyDestinationCidrListV1Output
+	ToGetControlPolicyDestinationCidrListV1OutputWithContext(context.Context) GetControlPolicyDestinationCidrListV1Output
+}
+
+type GetControlPolicyDestinationCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetControlPolicyDestinationCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i GetControlPolicyDestinationCidrListV1Args) ToGetControlPolicyDestinationCidrListV1Output() GetControlPolicyDestinationCidrListV1Output {
+	return i.ToGetControlPolicyDestinationCidrListV1OutputWithContext(context.Background())
+}
+
+func (i GetControlPolicyDestinationCidrListV1Args) ToGetControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) GetControlPolicyDestinationCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetControlPolicyDestinationCidrListV1Output)
+}
+
+// GetControlPolicyDestinationCidrListV1ArrayInput is an input type that accepts GetControlPolicyDestinationCidrListV1Array and GetControlPolicyDestinationCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `GetControlPolicyDestinationCidrListV1ArrayInput` via:
+//
+//	GetControlPolicyDestinationCidrListV1Array{ GetControlPolicyDestinationCidrListV1Args{...} }
+type GetControlPolicyDestinationCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetControlPolicyDestinationCidrListV1ArrayOutput() GetControlPolicyDestinationCidrListV1ArrayOutput
+	ToGetControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Context) GetControlPolicyDestinationCidrListV1ArrayOutput
+}
+
+type GetControlPolicyDestinationCidrListV1Array []GetControlPolicyDestinationCidrListV1Input
+
+func (GetControlPolicyDestinationCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i GetControlPolicyDestinationCidrListV1Array) ToGetControlPolicyDestinationCidrListV1ArrayOutput() GetControlPolicyDestinationCidrListV1ArrayOutput {
+	return i.ToGetControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetControlPolicyDestinationCidrListV1Array) ToGetControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) GetControlPolicyDestinationCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetControlPolicyDestinationCidrListV1ArrayOutput)
+}
+
+type GetControlPolicyDestinationCidrListV1Output struct{ *pulumi.OutputState }
+
+func (GetControlPolicyDestinationCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o GetControlPolicyDestinationCidrListV1Output) ToGetControlPolicyDestinationCidrListV1Output() GetControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+func (o GetControlPolicyDestinationCidrListV1Output) ToGetControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) GetControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o GetControlPolicyDestinationCidrListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicyDestinationCidrListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description
+func (o GetControlPolicyDestinationCidrListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicyDestinationCidrListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+func (o GetControlPolicyDestinationCidrListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicyDestinationCidrListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetControlPolicyDestinationCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetControlPolicyDestinationCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o GetControlPolicyDestinationCidrListV1ArrayOutput) ToGetControlPolicyDestinationCidrListV1ArrayOutput() GetControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetControlPolicyDestinationCidrListV1ArrayOutput) ToGetControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) GetControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetControlPolicyDestinationCidrListV1ArrayOutput) Index(i pulumi.IntInput) GetControlPolicyDestinationCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetControlPolicyDestinationCidrListV1 {
+		return vs[0].([]GetControlPolicyDestinationCidrListV1)[vs[1].(int)]
+	}).(GetControlPolicyDestinationCidrListV1Output)
+}
+
+type GetControlPolicySourceCidrListV1 struct {
+	// Detailed address information.
+	Address string `pulumi:"address"`
+	// Description
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type string `pulumi:"type"`
+}
+
+// GetControlPolicySourceCidrListV1Input is an input type that accepts GetControlPolicySourceCidrListV1Args and GetControlPolicySourceCidrListV1Output values.
+// You can construct a concrete instance of `GetControlPolicySourceCidrListV1Input` via:
+//
+//	GetControlPolicySourceCidrListV1Args{...}
+type GetControlPolicySourceCidrListV1Input interface {
+	pulumi.Input
+
+	ToGetControlPolicySourceCidrListV1Output() GetControlPolicySourceCidrListV1Output
+	ToGetControlPolicySourceCidrListV1OutputWithContext(context.Context) GetControlPolicySourceCidrListV1Output
+}
+
+type GetControlPolicySourceCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetControlPolicySourceCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i GetControlPolicySourceCidrListV1Args) ToGetControlPolicySourceCidrListV1Output() GetControlPolicySourceCidrListV1Output {
+	return i.ToGetControlPolicySourceCidrListV1OutputWithContext(context.Background())
+}
+
+func (i GetControlPolicySourceCidrListV1Args) ToGetControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) GetControlPolicySourceCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetControlPolicySourceCidrListV1Output)
+}
+
+// GetControlPolicySourceCidrListV1ArrayInput is an input type that accepts GetControlPolicySourceCidrListV1Array and GetControlPolicySourceCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `GetControlPolicySourceCidrListV1ArrayInput` via:
+//
+//	GetControlPolicySourceCidrListV1Array{ GetControlPolicySourceCidrListV1Args{...} }
+type GetControlPolicySourceCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetControlPolicySourceCidrListV1ArrayOutput() GetControlPolicySourceCidrListV1ArrayOutput
+	ToGetControlPolicySourceCidrListV1ArrayOutputWithContext(context.Context) GetControlPolicySourceCidrListV1ArrayOutput
+}
+
+type GetControlPolicySourceCidrListV1Array []GetControlPolicySourceCidrListV1Input
+
+func (GetControlPolicySourceCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i GetControlPolicySourceCidrListV1Array) ToGetControlPolicySourceCidrListV1ArrayOutput() GetControlPolicySourceCidrListV1ArrayOutput {
+	return i.ToGetControlPolicySourceCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetControlPolicySourceCidrListV1Array) ToGetControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) GetControlPolicySourceCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetControlPolicySourceCidrListV1ArrayOutput)
+}
+
+type GetControlPolicySourceCidrListV1Output struct{ *pulumi.OutputState }
+
+func (GetControlPolicySourceCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o GetControlPolicySourceCidrListV1Output) ToGetControlPolicySourceCidrListV1Output() GetControlPolicySourceCidrListV1Output {
+	return o
+}
+
+func (o GetControlPolicySourceCidrListV1Output) ToGetControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) GetControlPolicySourceCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o GetControlPolicySourceCidrListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicySourceCidrListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description
+func (o GetControlPolicySourceCidrListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicySourceCidrListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port
+func (o GetControlPolicySourceCidrListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlPolicySourceCidrListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetControlPolicySourceCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetControlPolicySourceCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o GetControlPolicySourceCidrListV1ArrayOutput) ToGetControlPolicySourceCidrListV1ArrayOutput() GetControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetControlPolicySourceCidrListV1ArrayOutput) ToGetControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) GetControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetControlPolicySourceCidrListV1ArrayOutput) Index(i pulumi.IntInput) GetControlPolicySourceCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetControlPolicySourceCidrListV1 {
+		return vs[0].([]GetControlPolicySourceCidrListV1)[vs[1].(int)]
+	}).(GetControlPolicySourceCidrListV1Output)
 }
 
 type GetDnsControlPolicyDomainListV1 struct {
@@ -455,21 +1923,430 @@ func (o GetDnsControlPolicySourceArrayOutput) Index(i pulumi.IntInput) GetDnsCon
 	}).(GetDnsControlPolicySourceOutput)
 }
 
+type GetVpcFireWallAclRuleDestPortListV1 struct {
+	// Detailed address information.
+	Address string `pulumi:"address"`
+	// Description.
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type string `pulumi:"type"`
+}
+
+// GetVpcFireWallAclRuleDestPortListV1Input is an input type that accepts GetVpcFireWallAclRuleDestPortListV1Args and GetVpcFireWallAclRuleDestPortListV1Output values.
+// You can construct a concrete instance of `GetVpcFireWallAclRuleDestPortListV1Input` via:
+//
+//	GetVpcFireWallAclRuleDestPortListV1Args{...}
+type GetVpcFireWallAclRuleDestPortListV1Input interface {
+	pulumi.Input
+
+	ToGetVpcFireWallAclRuleDestPortListV1Output() GetVpcFireWallAclRuleDestPortListV1Output
+	ToGetVpcFireWallAclRuleDestPortListV1OutputWithContext(context.Context) GetVpcFireWallAclRuleDestPortListV1Output
+}
+
+type GetVpcFireWallAclRuleDestPortListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetVpcFireWallAclRuleDestPortListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (i GetVpcFireWallAclRuleDestPortListV1Args) ToGetVpcFireWallAclRuleDestPortListV1Output() GetVpcFireWallAclRuleDestPortListV1Output {
+	return i.ToGetVpcFireWallAclRuleDestPortListV1OutputWithContext(context.Background())
+}
+
+func (i GetVpcFireWallAclRuleDestPortListV1Args) ToGetVpcFireWallAclRuleDestPortListV1OutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestPortListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcFireWallAclRuleDestPortListV1Output)
+}
+
+// GetVpcFireWallAclRuleDestPortListV1ArrayInput is an input type that accepts GetVpcFireWallAclRuleDestPortListV1Array and GetVpcFireWallAclRuleDestPortListV1ArrayOutput values.
+// You can construct a concrete instance of `GetVpcFireWallAclRuleDestPortListV1ArrayInput` via:
+//
+//	GetVpcFireWallAclRuleDestPortListV1Array{ GetVpcFireWallAclRuleDestPortListV1Args{...} }
+type GetVpcFireWallAclRuleDestPortListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcFireWallAclRuleDestPortListV1ArrayOutput() GetVpcFireWallAclRuleDestPortListV1ArrayOutput
+	ToGetVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(context.Context) GetVpcFireWallAclRuleDestPortListV1ArrayOutput
+}
+
+type GetVpcFireWallAclRuleDestPortListV1Array []GetVpcFireWallAclRuleDestPortListV1Input
+
+func (GetVpcFireWallAclRuleDestPortListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (i GetVpcFireWallAclRuleDestPortListV1Array) ToGetVpcFireWallAclRuleDestPortListV1ArrayOutput() GetVpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return i.ToGetVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcFireWallAclRuleDestPortListV1Array) ToGetVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcFireWallAclRuleDestPortListV1ArrayOutput)
+}
+
+type GetVpcFireWallAclRuleDestPortListV1Output struct{ *pulumi.OutputState }
+
+func (GetVpcFireWallAclRuleDestPortListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (o GetVpcFireWallAclRuleDestPortListV1Output) ToGetVpcFireWallAclRuleDestPortListV1Output() GetVpcFireWallAclRuleDestPortListV1Output {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleDestPortListV1Output) ToGetVpcFireWallAclRuleDestPortListV1OutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestPortListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o GetVpcFireWallAclRuleDestPortListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleDestPortListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description.
+func (o GetVpcFireWallAclRuleDestPortListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleDestPortListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o GetVpcFireWallAclRuleDestPortListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleDestPortListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetVpcFireWallAclRuleDestPortListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcFireWallAclRuleDestPortListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcFireWallAclRuleDestPortListV1)(nil)).Elem()
+}
+
+func (o GetVpcFireWallAclRuleDestPortListV1ArrayOutput) ToGetVpcFireWallAclRuleDestPortListV1ArrayOutput() GetVpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleDestPortListV1ArrayOutput) ToGetVpcFireWallAclRuleDestPortListV1ArrayOutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleDestPortListV1ArrayOutput) Index(i pulumi.IntInput) GetVpcFireWallAclRuleDestPortListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcFireWallAclRuleDestPortListV1 {
+		return vs[0].([]GetVpcFireWallAclRuleDestPortListV1)[vs[1].(int)]
+	}).(GetVpcFireWallAclRuleDestPortListV1Output)
+}
+
+type GetVpcFireWallAclRuleDestinationCidrListV1 struct {
+	// Detailed address information.
+	Address string `pulumi:"address"`
+	// Description.
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type string `pulumi:"type"`
+}
+
+// GetVpcFireWallAclRuleDestinationCidrListV1Input is an input type that accepts GetVpcFireWallAclRuleDestinationCidrListV1Args and GetVpcFireWallAclRuleDestinationCidrListV1Output values.
+// You can construct a concrete instance of `GetVpcFireWallAclRuleDestinationCidrListV1Input` via:
+//
+//	GetVpcFireWallAclRuleDestinationCidrListV1Args{...}
+type GetVpcFireWallAclRuleDestinationCidrListV1Input interface {
+	pulumi.Input
+
+	ToGetVpcFireWallAclRuleDestinationCidrListV1Output() GetVpcFireWallAclRuleDestinationCidrListV1Output
+	ToGetVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(context.Context) GetVpcFireWallAclRuleDestinationCidrListV1Output
+}
+
+type GetVpcFireWallAclRuleDestinationCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetVpcFireWallAclRuleDestinationCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i GetVpcFireWallAclRuleDestinationCidrListV1Args) ToGetVpcFireWallAclRuleDestinationCidrListV1Output() GetVpcFireWallAclRuleDestinationCidrListV1Output {
+	return i.ToGetVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(context.Background())
+}
+
+func (i GetVpcFireWallAclRuleDestinationCidrListV1Args) ToGetVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestinationCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcFireWallAclRuleDestinationCidrListV1Output)
+}
+
+// GetVpcFireWallAclRuleDestinationCidrListV1ArrayInput is an input type that accepts GetVpcFireWallAclRuleDestinationCidrListV1Array and GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `GetVpcFireWallAclRuleDestinationCidrListV1ArrayInput` via:
+//
+//	GetVpcFireWallAclRuleDestinationCidrListV1Array{ GetVpcFireWallAclRuleDestinationCidrListV1Args{...} }
+type GetVpcFireWallAclRuleDestinationCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput() GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput
+	ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(context.Context) GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput
+}
+
+type GetVpcFireWallAclRuleDestinationCidrListV1Array []GetVpcFireWallAclRuleDestinationCidrListV1Input
+
+func (GetVpcFireWallAclRuleDestinationCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i GetVpcFireWallAclRuleDestinationCidrListV1Array) ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput() GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return i.ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcFireWallAclRuleDestinationCidrListV1Array) ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput)
+}
+
+type GetVpcFireWallAclRuleDestinationCidrListV1Output struct{ *pulumi.OutputState }
+
+func (GetVpcFireWallAclRuleDestinationCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o GetVpcFireWallAclRuleDestinationCidrListV1Output) ToGetVpcFireWallAclRuleDestinationCidrListV1Output() GetVpcFireWallAclRuleDestinationCidrListV1Output {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleDestinationCidrListV1Output) ToGetVpcFireWallAclRuleDestinationCidrListV1OutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestinationCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o GetVpcFireWallAclRuleDestinationCidrListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleDestinationCidrListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description.
+func (o GetVpcFireWallAclRuleDestinationCidrListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleDestinationCidrListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o GetVpcFireWallAclRuleDestinationCidrListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleDestinationCidrListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcFireWallAclRuleDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput) ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput() GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput) ToGetVpcFireWallAclRuleDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput) Index(i pulumi.IntInput) GetVpcFireWallAclRuleDestinationCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcFireWallAclRuleDestinationCidrListV1 {
+		return vs[0].([]GetVpcFireWallAclRuleDestinationCidrListV1)[vs[1].(int)]
+	}).(GetVpcFireWallAclRuleDestinationCidrListV1Output)
+}
+
+type GetVpcFireWallAclRuleSourceCidrListV1 struct {
+	// Detailed address information.
+	Address string `pulumi:"address"`
+	// Description.
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type string `pulumi:"type"`
+}
+
+// GetVpcFireWallAclRuleSourceCidrListV1Input is an input type that accepts GetVpcFireWallAclRuleSourceCidrListV1Args and GetVpcFireWallAclRuleSourceCidrListV1Output values.
+// You can construct a concrete instance of `GetVpcFireWallAclRuleSourceCidrListV1Input` via:
+//
+//	GetVpcFireWallAclRuleSourceCidrListV1Args{...}
+type GetVpcFireWallAclRuleSourceCidrListV1Input interface {
+	pulumi.Input
+
+	ToGetVpcFireWallAclRuleSourceCidrListV1Output() GetVpcFireWallAclRuleSourceCidrListV1Output
+	ToGetVpcFireWallAclRuleSourceCidrListV1OutputWithContext(context.Context) GetVpcFireWallAclRuleSourceCidrListV1Output
+}
+
+type GetVpcFireWallAclRuleSourceCidrListV1Args struct {
+	// Detailed address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetVpcFireWallAclRuleSourceCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (i GetVpcFireWallAclRuleSourceCidrListV1Args) ToGetVpcFireWallAclRuleSourceCidrListV1Output() GetVpcFireWallAclRuleSourceCidrListV1Output {
+	return i.ToGetVpcFireWallAclRuleSourceCidrListV1OutputWithContext(context.Background())
+}
+
+func (i GetVpcFireWallAclRuleSourceCidrListV1Args) ToGetVpcFireWallAclRuleSourceCidrListV1OutputWithContext(ctx context.Context) GetVpcFireWallAclRuleSourceCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcFireWallAclRuleSourceCidrListV1Output)
+}
+
+// GetVpcFireWallAclRuleSourceCidrListV1ArrayInput is an input type that accepts GetVpcFireWallAclRuleSourceCidrListV1Array and GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `GetVpcFireWallAclRuleSourceCidrListV1ArrayInput` via:
+//
+//	GetVpcFireWallAclRuleSourceCidrListV1Array{ GetVpcFireWallAclRuleSourceCidrListV1Args{...} }
+type GetVpcFireWallAclRuleSourceCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutput() GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput
+	ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(context.Context) GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput
+}
+
+type GetVpcFireWallAclRuleSourceCidrListV1Array []GetVpcFireWallAclRuleSourceCidrListV1Input
+
+func (GetVpcFireWallAclRuleSourceCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (i GetVpcFireWallAclRuleSourceCidrListV1Array) ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutput() GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return i.ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcFireWallAclRuleSourceCidrListV1Array) ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(ctx context.Context) GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput)
+}
+
+type GetVpcFireWallAclRuleSourceCidrListV1Output struct{ *pulumi.OutputState }
+
+func (GetVpcFireWallAclRuleSourceCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (o GetVpcFireWallAclRuleSourceCidrListV1Output) ToGetVpcFireWallAclRuleSourceCidrListV1Output() GetVpcFireWallAclRuleSourceCidrListV1Output {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleSourceCidrListV1Output) ToGetVpcFireWallAclRuleSourceCidrListV1OutputWithContext(ctx context.Context) GetVpcFireWallAclRuleSourceCidrListV1Output {
+	return o
+}
+
+// Detailed address information.
+func (o GetVpcFireWallAclRuleSourceCidrListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleSourceCidrListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description.
+func (o GetVpcFireWallAclRuleSourceCidrListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleSourceCidrListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o GetVpcFireWallAclRuleSourceCidrListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcFireWallAclRuleSourceCidrListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcFireWallAclRuleSourceCidrListV1)(nil)).Elem()
+}
+
+func (o GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput) ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutput() GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput) ToGetVpcFireWallAclRuleSourceCidrListV1ArrayOutputWithContext(ctx context.Context) GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput) Index(i pulumi.IntInput) GetVpcFireWallAclRuleSourceCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcFireWallAclRuleSourceCidrListV1 {
+		return vs[0].([]GetVpcFireWallAclRuleSourceCidrListV1)[vs[1].(int)]
+	}).(GetVpcFireWallAclRuleSourceCidrListV1Output)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AddressBookAddressDetailListInput)(nil)).Elem(), AddressBookAddressDetailListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddressBookAddressDetailListArrayInput)(nil)).Elem(), AddressBookAddressDetailListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddressBookTagInput)(nil)).Elem(), AddressBookTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddressBookTagArrayInput)(nil)).Elem(), AddressBookTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ControlPolicyDestPortListV1Input)(nil)).Elem(), ControlPolicyDestPortListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ControlPolicyDestPortListV1ArrayInput)(nil)).Elem(), ControlPolicyDestPortListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ControlPolicyDestinationCidrListV1Input)(nil)).Elem(), ControlPolicyDestinationCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ControlPolicyDestinationCidrListV1ArrayInput)(nil)).Elem(), ControlPolicyDestinationCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ControlPolicySourceCidrListV1Input)(nil)).Elem(), ControlPolicySourceCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ControlPolicySourceCidrListV1ArrayInput)(nil)).Elem(), ControlPolicySourceCidrListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicyDomainListV1Input)(nil)).Elem(), DnsControlPolicyDomainListV1Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicyDomainListV1ArrayInput)(nil)).Elem(), DnsControlPolicyDomainListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicySourceInput)(nil)).Elem(), DnsControlPolicySourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicySourceArrayInput)(nil)).Elem(), DnsControlPolicySourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestPortListV1Input)(nil)).Elem(), VpcFireWallAclRuleDestPortListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestPortListV1ArrayInput)(nil)).Elem(), VpcFireWallAclRuleDestPortListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestinationCidrListV1Input)(nil)).Elem(), VpcFireWallAclRuleDestinationCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestinationCidrListV1ArrayInput)(nil)).Elem(), VpcFireWallAclRuleDestinationCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleSourceCidrListV1Input)(nil)).Elem(), VpcFireWallAclRuleSourceCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleSourceCidrListV1ArrayInput)(nil)).Elem(), VpcFireWallAclRuleSourceCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressBookAddressDetailListInput)(nil)).Elem(), GetAddressBookAddressDetailListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressBookAddressDetailListArrayInput)(nil)).Elem(), GetAddressBookAddressDetailListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressBookTagInput)(nil)).Elem(), GetAddressBookTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAddressBookTagArrayInput)(nil)).Elem(), GetAddressBookTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetControlPolicyDestPortListV1Input)(nil)).Elem(), GetControlPolicyDestPortListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetControlPolicyDestPortListV1ArrayInput)(nil)).Elem(), GetControlPolicyDestPortListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetControlPolicyDestinationCidrListV1Input)(nil)).Elem(), GetControlPolicyDestinationCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetControlPolicyDestinationCidrListV1ArrayInput)(nil)).Elem(), GetControlPolicyDestinationCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetControlPolicySourceCidrListV1Input)(nil)).Elem(), GetControlPolicySourceCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetControlPolicySourceCidrListV1ArrayInput)(nil)).Elem(), GetControlPolicySourceCidrListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicyDomainListV1Input)(nil)).Elem(), GetDnsControlPolicyDomainListV1Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicyDomainListV1ArrayInput)(nil)).Elem(), GetDnsControlPolicyDomainListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicySourceInput)(nil)).Elem(), GetDnsControlPolicySourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicySourceArrayInput)(nil)).Elem(), GetDnsControlPolicySourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestPortListV1Input)(nil)).Elem(), GetVpcFireWallAclRuleDestPortListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestPortListV1ArrayInput)(nil)).Elem(), GetVpcFireWallAclRuleDestPortListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestinationCidrListV1Input)(nil)).Elem(), GetVpcFireWallAclRuleDestinationCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestinationCidrListV1ArrayInput)(nil)).Elem(), GetVpcFireWallAclRuleDestinationCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleSourceCidrListV1Input)(nil)).Elem(), GetVpcFireWallAclRuleSourceCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleSourceCidrListV1ArrayInput)(nil)).Elem(), GetVpcFireWallAclRuleSourceCidrListV1Array{})
+	pulumi.RegisterOutputType(AddressBookAddressDetailListOutput{})
+	pulumi.RegisterOutputType(AddressBookAddressDetailListArrayOutput{})
+	pulumi.RegisterOutputType(AddressBookTagOutput{})
+	pulumi.RegisterOutputType(AddressBookTagArrayOutput{})
+	pulumi.RegisterOutputType(ControlPolicyDestPortListV1Output{})
+	pulumi.RegisterOutputType(ControlPolicyDestPortListV1ArrayOutput{})
+	pulumi.RegisterOutputType(ControlPolicyDestinationCidrListV1Output{})
+	pulumi.RegisterOutputType(ControlPolicyDestinationCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(ControlPolicySourceCidrListV1Output{})
+	pulumi.RegisterOutputType(ControlPolicySourceCidrListV1ArrayOutput{})
 	pulumi.RegisterOutputType(DnsControlPolicyDomainListV1Output{})
 	pulumi.RegisterOutputType(DnsControlPolicyDomainListV1ArrayOutput{})
 	pulumi.RegisterOutputType(DnsControlPolicySourceOutput{})
 	pulumi.RegisterOutputType(DnsControlPolicySourceArrayOutput{})
+	pulumi.RegisterOutputType(VpcFireWallAclRuleDestPortListV1Output{})
+	pulumi.RegisterOutputType(VpcFireWallAclRuleDestPortListV1ArrayOutput{})
+	pulumi.RegisterOutputType(VpcFireWallAclRuleDestinationCidrListV1Output{})
+	pulumi.RegisterOutputType(VpcFireWallAclRuleDestinationCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(VpcFireWallAclRuleSourceCidrListV1Output{})
+	pulumi.RegisterOutputType(VpcFireWallAclRuleSourceCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetAddressBookAddressDetailListOutput{})
+	pulumi.RegisterOutputType(GetAddressBookAddressDetailListArrayOutput{})
+	pulumi.RegisterOutputType(GetAddressBookTagOutput{})
+	pulumi.RegisterOutputType(GetAddressBookTagArrayOutput{})
+	pulumi.RegisterOutputType(GetControlPolicyDestPortListV1Output{})
+	pulumi.RegisterOutputType(GetControlPolicyDestPortListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetControlPolicyDestinationCidrListV1Output{})
+	pulumi.RegisterOutputType(GetControlPolicyDestinationCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetControlPolicySourceCidrListV1Output{})
+	pulumi.RegisterOutputType(GetControlPolicySourceCidrListV1ArrayOutput{})
 	pulumi.RegisterOutputType(GetDnsControlPolicyDomainListV1Output{})
 	pulumi.RegisterOutputType(GetDnsControlPolicyDomainListV1ArrayOutput{})
 	pulumi.RegisterOutputType(GetDnsControlPolicySourceOutput{})
 	pulumi.RegisterOutputType(GetDnsControlPolicySourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestPortListV1Output{})
+	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestPortListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestinationCidrListV1Output{})
+	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestinationCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcFireWallAclRuleSourceCidrListV1Output{})
+	pulumi.RegisterOutputType(GetVpcFireWallAclRuleSourceCidrListV1ArrayOutput{})
 }

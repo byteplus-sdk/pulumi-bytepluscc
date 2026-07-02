@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleDimensionConditionsTagConditionTag {
     /**
-     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+     * @return Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
      * 
      */
     private @Nullable String comparator;
@@ -30,7 +30,7 @@ public final class RuleDimensionConditionsTagConditionTag {
 
     private RuleDimensionConditionsTagConditionTag() {}
     /**
-     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+     * @return Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
      * 
      */
     public Optional<String> comparator() {

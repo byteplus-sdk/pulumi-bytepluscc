@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class GroupTopicInfoPartitionInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Current consumption position.
+        /// Current consumption offset
         /// </summary>
         [Input("currentOffset")]
         public Input<int>? CurrentOffset { get; set; }
 
         /// <summary>
-        /// Name of the Consumer Group.
+        /// Consumer Group name
         /// </summary>
         [Input("groupName")]
         public Input<string>? GroupName { get; set; }
 
         /// <summary>
-        /// Number of unconsumed messages in the partition.
+        /// Number of unconsumed messages in the partition
         /// </summary>
         [Input("lag")]
         public Input<int>? Lag { get; set; }
 
         /// <summary>
-        /// Latest consumption position.
+        /// Latest consumption offset
         /// </summary>
         [Input("latestOffset")]
         public Input<int>? LatestOffset { get; set; }
 
         /// <summary>
-        /// Partition number.
+        /// Partition number
         /// </summary>
         [Input("partitionId")]
         public Input<int>? PartitionId { get; set; }
 
         /// <summary>
-        /// Name of the Topic subscribed by the Consumer Group.
+        /// Name of the Topic subscribed by the Consumer Group
         /// </summary>
         [Input("topicName")]
         public Input<string>? TopicName { get; set; }

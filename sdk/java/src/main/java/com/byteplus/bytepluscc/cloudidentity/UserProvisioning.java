@@ -26,8 +26,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.bytepluscc.cloudidentityUserprovisioning;
- * import com.pulumi.bytepluscc.cloudidentityUserprovisioningArgs;
+ * import com.byteplus.bytepluscc.cloudidentity.UserProvisioning;
+ * import com.byteplus.bytepluscc.cloudidentity.UserProvisioningArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var cloudIdentityUserProvisioningDemo = new CloudidentityUserprovisioning("cloudIdentityUserProvisioningDemo", CloudidentityUserprovisioningArgs.builder()
+ *         var cloudIdentityUserProvisioningDemo = new UserProvisioning("cloudIdentityUserProvisioningDemo", UserProvisioningArgs.builder()
  *             .targetId("2103612***")
  *             .principalType("Group")
  *             .principalId("8990752****")

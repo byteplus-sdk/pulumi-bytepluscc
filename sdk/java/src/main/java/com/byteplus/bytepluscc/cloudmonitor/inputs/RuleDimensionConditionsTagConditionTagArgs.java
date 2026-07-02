@@ -17,14 +17,14 @@ public final class RuleDimensionConditionsTagConditionTagArgs extends com.pulumi
     public static final RuleDimensionConditionsTagConditionTagArgs Empty = new RuleDimensionConditionsTagConditionTagArgs();
 
     /**
-     * Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+     * Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
      * 
      */
     @Import(name="comparator")
     private @Nullable Output<String> comparator;
 
     /**
-     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+     * @return Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
      * 
      */
     public Optional<Output<String>> comparator() {
@@ -88,7 +88,7 @@ public final class RuleDimensionConditionsTagConditionTagArgs extends com.pulumi
         }
 
         /**
-         * @param comparator Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * @param comparator Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class RuleDimensionConditionsTagConditionTagArgs extends com.pulumi
         }
 
         /**
-         * @param comparator Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+         * @param comparator Comparator for tag matching. contain: Contains. not*contain: Does not contain. prefix*match: Prefix match. suffix*match: Suffix match. equal: Equals. not*equal: Does not equal. exist: Exists.
          * 
          * @return builder
          * 

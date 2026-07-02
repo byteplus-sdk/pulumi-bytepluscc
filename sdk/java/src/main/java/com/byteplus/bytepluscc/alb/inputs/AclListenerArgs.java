@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.alb.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,24 +17,88 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
     public static final AclListenerArgs Empty = new AclListenerArgs();
 
     /**
-     * Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+     * Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
-     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     public Optional<Output<String>> aclType() {
         return Optional.ofNullable(this.aclType);
     }
 
+    /**
+     * Listener ID
+     * 
+     */
+    @Import(name="listenerId")
+    private @Nullable Output<String> listenerId;
+
+    /**
+     * @return Listener ID
+     * 
+     */
+    public Optional<Output<String>> listenerId() {
+        return Optional.ofNullable(this.listenerId);
+    }
+
+    /**
+     * Listener name
+     * 
+     */
+    @Import(name="listenerName")
+    private @Nullable Output<String> listenerName;
+
+    /**
+     * @return Listener name
+     * 
+     */
+    public Optional<Output<String>> listenerName() {
+        return Optional.ofNullable(this.listenerName);
+    }
+
+    /**
+     * Listener port
+     * 
+     */
+    @Import(name="port")
+    private @Nullable Output<Integer> port;
+
+    /**
+     * @return Listener port
+     * 
+     */
+    public Optional<Output<Integer>> port() {
+        return Optional.ofNullable(this.port);
+    }
+
+    /**
+     * Listener protocol
+     * 
+     */
+    @Import(name="protocol")
+    private @Nullable Output<String> protocol;
+
+    /**
+     * @return Listener protocol
+     * 
+     */
+    public Optional<Output<String>> protocol() {
+        return Optional.ofNullable(this.protocol);
+    }
+
     private AclListenerArgs() {}
 
     private AclListenerArgs(AclListenerArgs $) {
         this.aclType = $.aclType;
+        this.listenerId = $.listenerId;
+        this.listenerName = $.listenerName;
+        this.port = $.port;
+        this.protocol = $.protocol;
     }
 
     public static Builder builder() {
@@ -55,7 +120,7 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+         * @param aclType Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
          * 
          * @return builder
          * 
@@ -66,13 +131,97 @@ public final class AclListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+         * @param aclType Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
          * 
          * @return builder
          * 
          */
         public Builder aclType(String aclType) {
             return aclType(Output.of(aclType));
+        }
+
+        /**
+         * @param listenerId Listener ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listenerId(@Nullable Output<String> listenerId) {
+            $.listenerId = listenerId;
+            return this;
+        }
+
+        /**
+         * @param listenerId Listener ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listenerId(String listenerId) {
+            return listenerId(Output.of(listenerId));
+        }
+
+        /**
+         * @param listenerName Listener name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listenerName(@Nullable Output<String> listenerName) {
+            $.listenerName = listenerName;
+            return this;
+        }
+
+        /**
+         * @param listenerName Listener name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listenerName(String listenerName) {
+            return listenerName(Output.of(listenerName));
+        }
+
+        /**
+         * @param port Listener port
+         * 
+         * @return builder
+         * 
+         */
+        public Builder port(@Nullable Output<Integer> port) {
+            $.port = port;
+            return this;
+        }
+
+        /**
+         * @param port Listener port
+         * 
+         * @return builder
+         * 
+         */
+        public Builder port(Integer port) {
+            return port(Output.of(port));
+        }
+
+        /**
+         * @param protocol Listener protocol
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(@Nullable Output<String> protocol) {
+            $.protocol = protocol;
+            return this;
+        }
+
+        /**
+         * @param protocol Listener protocol
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(String protocol) {
+            return protocol(Output.of(protocol));
         }
 
         public AclListenerArgs build() {

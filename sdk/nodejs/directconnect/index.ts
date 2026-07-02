@@ -10,6 +10,11 @@ export type BgpPeer = import("./bgpPeer").BgpPeer;
 export const BgpPeer: typeof import("./bgpPeer").BgpPeer = null as any;
 utilities.lazyLoad(exports, ["BgpPeer"], () => require("./bgpPeer"));
 
+export { ConnectionArgs, ConnectionState } from "./connection";
+export type Connection = import("./connection").Connection;
+export const Connection: typeof import("./connection").Connection = null as any;
+utilities.lazyLoad(exports, ["Connection"], () => require("./connection"));
+
 export { DirectConnectGatewayArgs, DirectConnectGatewayState } from "./directConnectGateway";
 export type DirectConnectGateway = import("./directConnectGateway").DirectConnectGateway;
 export const DirectConnectGateway: typeof import("./directConnectGateway").DirectConnectGateway = null as any;
@@ -29,6 +34,16 @@ export { GetBgpPeersResult } from "./getBgpPeers";
 export const getBgpPeers: typeof import("./getBgpPeers").getBgpPeers = null as any;
 export const getBgpPeersOutput: typeof import("./getBgpPeers").getBgpPeersOutput = null as any;
 utilities.lazyLoad(exports, ["getBgpPeers","getBgpPeersOutput"], () => require("./getBgpPeers"));
+
+export { GetConnectionArgs, GetConnectionResult, GetConnectionOutputArgs } from "./getConnection";
+export const getConnection: typeof import("./getConnection").getConnection = null as any;
+export const getConnectionOutput: typeof import("./getConnection").getConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getConnection","getConnectionOutput"], () => require("./getConnection"));
+
+export { GetConnectionsResult } from "./getConnections";
+export const getConnections: typeof import("./getConnections").getConnections = null as any;
+export const getConnectionsOutput: typeof import("./getConnections").getConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getConnections","getConnectionsOutput"], () => require("./getConnections"));
 
 export { GetDirectConnectGatewayArgs, GetDirectConnectGatewayResult, GetDirectConnectGatewayOutputArgs } from "./getDirectConnectGateway";
 export const getDirectConnectGateway: typeof import("./getDirectConnectGateway").getDirectConnectGateway = null as any;
@@ -72,6 +87,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:directconnect/bgpPeer:BgpPeer":
                 return new BgpPeer(name, <any>undefined, { urn })
+            case "bytepluscc:directconnect/connection:Connection":
+                return new Connection(name, <any>undefined, { urn })
             case "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway":
                 return new DirectConnectGateway(name, <any>undefined, { urn })
             case "bytepluscc:directconnect/gatewayRoute:GatewayRoute":
@@ -84,6 +101,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/bgpPeer", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/connection", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/directConnectGateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/gatewayRoute", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "directconnect/virtualInterface", _module)

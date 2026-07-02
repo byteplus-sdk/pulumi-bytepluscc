@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayCustomLog {
     /**
-     * @return Custom variable information
+     * @return Custom Variable Information
      * 
      */
     private List<GetGatewayCustomLogCustomVariable> customVariables;
     /**
-     * @return Request header information
+     * @return Request Header Information
      * 
      */
     private List<GetGatewayCustomLogRequestHeader> requestHeaders;
     /**
-     * @return Response header information
+     * @return Response Header Information
      * 
      */
     private List<GetGatewayCustomLogResponseHeader> responseHeaders;
 
     private GetGatewayCustomLog() {}
     /**
-     * @return Custom variable information
+     * @return Custom Variable Information
      * 
      */
     public List<GetGatewayCustomLogCustomVariable> customVariables() {
         return this.customVariables;
     }
     /**
-     * @return Request header information
+     * @return Request Header Information
      * 
      */
     public List<GetGatewayCustomLogRequestHeader> requestHeaders() {
         return this.requestHeaders;
     }
     /**
-     * @return Response header information
+     * @return Response Header Information
      * 
      */
     public List<GetGatewayCustomLogResponseHeader> responseHeaders() {

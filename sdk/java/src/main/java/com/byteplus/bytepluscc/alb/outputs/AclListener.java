@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.alb.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -12,18 +13,66 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AclListener {
     /**
-     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     private @Nullable String aclType;
+    /**
+     * @return Listener ID
+     * 
+     */
+    private @Nullable String listenerId;
+    /**
+     * @return Listener name
+     * 
+     */
+    private @Nullable String listenerName;
+    /**
+     * @return Listener port
+     * 
+     */
+    private @Nullable Integer port;
+    /**
+     * @return Listener protocol
+     * 
+     */
+    private @Nullable String protocol;
 
     private AclListener() {}
     /**
-     * @return Listener control mode for this access control policy group. white: allowlist mode; black: denylist mode
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     public Optional<String> aclType() {
         return Optional.ofNullable(this.aclType);
+    }
+    /**
+     * @return Listener ID
+     * 
+     */
+    public Optional<String> listenerId() {
+        return Optional.ofNullable(this.listenerId);
+    }
+    /**
+     * @return Listener name
+     * 
+     */
+    public Optional<String> listenerName() {
+        return Optional.ofNullable(this.listenerName);
+    }
+    /**
+     * @return Listener port
+     * 
+     */
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
+    }
+    /**
+     * @return Listener protocol
+     * 
+     */
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
 
     public static Builder builder() {
@@ -36,10 +85,18 @@ public final class AclListener {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String aclType;
+        private @Nullable String listenerId;
+        private @Nullable String listenerName;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
         public Builder() {}
         public Builder(AclListener defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aclType = defaults.aclType;
+    	      this.listenerId = defaults.listenerId;
+    	      this.listenerName = defaults.listenerName;
+    	      this.port = defaults.port;
+    	      this.protocol = defaults.protocol;
         }
 
         @CustomType.Setter
@@ -48,9 +105,37 @@ public final class AclListener {
             this.aclType = aclType;
             return this;
         }
+        @CustomType.Setter
+        public Builder listenerId(@Nullable String listenerId) {
+
+            this.listenerId = listenerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder listenerName(@Nullable String listenerName) {
+
+            this.listenerName = listenerName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder port(@Nullable Integer port) {
+
+            this.port = port;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder protocol(@Nullable String protocol) {
+
+            this.protocol = protocol;
+            return this;
+        }
         public AclListener build() {
             final var _resultValue = new AclListener();
             _resultValue.aclType = aclType;
+            _resultValue.listenerId = listenerId;
+            _resultValue.listenerName = listenerName;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
             return _resultValue;
         }
     }

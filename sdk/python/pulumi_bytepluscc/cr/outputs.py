@@ -55,8 +55,8 @@ class RegistryEndpoint(dict):
                  enabled: Optional[builtins.bool] = None,
                  status: Optional[builtins.str] = None):
         """
-        :param builtins.bool enabled: Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
-        :param builtins.str status: Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        :param builtins.bool enabled: Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
+        :param builtins.str status: Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
         """
         if acl_policies is not None:
             pulumi.set(__self__, "acl_policies", acl_policies)
@@ -74,7 +74,7 @@ class RegistryEndpoint(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.bool]:
         """
-        Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+        Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
         """
         return pulumi.get(self, "enabled")
 
@@ -82,7 +82,7 @@ class RegistryEndpoint(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
         """
         return pulumi.get(self, "status")
 
@@ -93,8 +93,8 @@ class RegistryEndpointAclPolicy(dict):
                  description: Optional[builtins.str] = None,
                  entry: Optional[builtins.str] = None):
         """
-        :param builtins.str description: IP entry address
-        :param builtins.str entry: IP entry description
+        :param builtins.str description: IP entry address.
+        :param builtins.str entry: IP entry description.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -105,7 +105,7 @@ class RegistryEndpointAclPolicy(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        IP entry address
+        IP entry address.
         """
         return pulumi.get(self, "description")
 
@@ -113,7 +113,7 @@ class RegistryEndpointAclPolicy(dict):
     @pulumi.getter
     def entry(self) -> Optional[builtins.str]:
         """
-        IP entry description
+        IP entry description.
         """
         return pulumi.get(self, "entry")
 
@@ -123,7 +123,7 @@ class RegistryProxyCache(dict):
     def __init__(__self__, *,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+        :param builtins.str type: Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -132,7 +132,7 @@ class RegistryProxyCache(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         return pulumi.get(self, "type")
 
@@ -143,8 +143,24 @@ class RegistryStatus(dict):
                  conditions: Optional[Sequence[builtins.str]] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param Sequence[builtins.str] conditions: Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
-        :param builtins.str phase: Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        :param Sequence[builtins.str] conditions: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
+        :param builtins.str phase: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -155,7 +171,15 @@ class RegistryStatus(dict):
     @pulumi.getter
     def conditions(self) -> Optional[Sequence[builtins.str]]:
         """
-        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "conditions")
 
@@ -163,7 +187,15 @@ class RegistryStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "phase")
 
@@ -174,7 +206,7 @@ class RegistryTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: Tag key
+        :param builtins.str key: Tag key values
         :param builtins.str value: List of tag values
         """
         if key is not None:
@@ -186,7 +218,7 @@ class RegistryTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        Tag key
+        Tag key values
         """
         return pulumi.get(self, "key")
 
@@ -270,9 +302,9 @@ class GetRegistryEndpointResult(dict):
                  enabled: builtins.bool,
                  status: builtins.str):
         """
-        :param Sequence['GetRegistryEndpointAclPolicyArgs'] acl_policies: Public IP allowlist
-        :param builtins.bool enabled: Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
-        :param builtins.str status: Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        :param Sequence['GetRegistryEndpointAclPolicyArgs'] acl_policies: Public IP allowlist list.
+        :param builtins.bool enabled: Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
+        :param builtins.str status: Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
         """
         pulumi.set(__self__, "acl_policies", acl_policies)
         pulumi.set(__self__, "enabled", enabled)
@@ -282,7 +314,7 @@ class GetRegistryEndpointResult(dict):
     @pulumi.getter(name="aclPolicies")
     def acl_policies(self) -> Sequence['outputs.GetRegistryEndpointAclPolicyResult']:
         """
-        Public IP allowlist
+        Public IP allowlist list.
         """
         return pulumi.get(self, "acl_policies")
 
@@ -290,7 +322,7 @@ class GetRegistryEndpointResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.bool:
         """
-        Whether to enable the public endpoint. Options: false: not enabled; true: enabled. Default is false
+        Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
         """
         return pulumi.get(self, "enabled")
 
@@ -298,7 +330,7 @@ class GetRegistryEndpointResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Current status of the public endpoint. Parameter values: Enabling: enabling; Enabled: enabled; Disabling: disabling; Updating: updating; Failed: failed; Disabled: disabled
+        Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
         """
         return pulumi.get(self, "status")
 
@@ -309,8 +341,8 @@ class GetRegistryEndpointAclPolicyResult(dict):
                  description: builtins.str,
                  entry: builtins.str):
         """
-        :param builtins.str description: IP entry address
-        :param builtins.str entry: IP entry description
+        :param builtins.str description: IP entry address.
+        :param builtins.str entry: IP entry description.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "entry", entry)
@@ -319,7 +351,7 @@ class GetRegistryEndpointAclPolicyResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        IP entry address
+        IP entry address.
         """
         return pulumi.get(self, "description")
 
@@ -327,7 +359,7 @@ class GetRegistryEndpointAclPolicyResult(dict):
     @pulumi.getter
     def entry(self) -> builtins.str:
         """
-        IP entry description
+        IP entry description.
         """
         return pulumi.get(self, "entry")
 
@@ -337,7 +369,7 @@ class GetRegistryProxyCacheResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+        :param builtins.str type: Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         pulumi.set(__self__, "type", type)
 
@@ -345,7 +377,7 @@ class GetRegistryProxyCacheResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        Instance types supported by ProxyCache. Parameter value description: DockerHub: DockerHub image repository.
+        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         return pulumi.get(self, "type")
 
@@ -356,8 +388,24 @@ class GetRegistryStatusResult(dict):
                  conditions: Sequence[builtins.str],
                  phase: builtins.str):
         """
-        :param Sequence[builtins.str] conditions: Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
-        :param builtins.str phase: Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        :param Sequence[builtins.str] conditions: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
+        :param builtins.str phase: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -366,7 +414,15 @@ class GetRegistryStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence[builtins.str]:
         """
-        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "conditions")
 
@@ -374,7 +430,15 @@ class GetRegistryStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        Creating, [ Progressing ]: Creating. Running, [ Ok ]: Running. Running, [ Degraded ]: Running. Stopped, [ Balance ]: Suspended due to overdue payment. Stopped, [ Released ]: Pending recycle. Stopped, [ Released, Balance ]: Suspended due to overdue payment. Starting, [ Progressing ]: Starting. Deleting, [ Progressing ]: Deleting. Failed, [ Unknown ]: Error.
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "phase")
 
@@ -385,7 +449,7 @@ class GetRegistryTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: Tag key
+        :param builtins.str key: Tag key values
         :param builtins.str value: List of tag values
         """
         pulumi.set(__self__, "key", key)
@@ -395,7 +459,7 @@ class GetRegistryTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        Tag key
+        Tag key values
         """
         return pulumi.get(self, "key")
 

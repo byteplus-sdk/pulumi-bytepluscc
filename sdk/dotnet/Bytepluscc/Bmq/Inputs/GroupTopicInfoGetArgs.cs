@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class GroupTopicInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Topic creation time.
+        /// Topic creation time
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// Topic description.
+        /// Topic description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Number of unconsumed messages in the Topic.
+        /// Number of unconsumed messages in the Topic
         /// </summary>
         [Input("lag")]
         public Input<int>? Lag { get; set; }
@@ -40,19 +40,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         }
 
         /// <summary>
-        /// Number of Topic partitions.
+        /// Number of Topic partitions
         /// </summary>
         [Input("partitions")]
         public Input<int>? Partitions { get; set; }
 
         /// <summary>
-        /// Retention period of data in the Topic, in hours.
+        /// Retention period of data in the Topic, in hours
         /// </summary>
         [Input("retention")]
         public Input<int>? Retention { get; set; }
 
         /// <summary>
-        /// Topic status.
+        /// Topic status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -64,7 +64,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         public Input<string>? TopicId { get; set; }
 
         /// <summary>
-        /// Topic name.
+        /// Topic name
         /// </summary>
         [Input("topicName")]
         public Input<string>? TopicName { get; set; }

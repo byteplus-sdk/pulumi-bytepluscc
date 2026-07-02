@@ -47,6 +47,10 @@ export interface GetInstanceResult {
      */
     readonly backupRestore: outputs.redis.GetInstanceBackupRestore;
     /**
+     * Backup list information for the instance
+     */
+    readonly backups: outputs.redis.GetInstanceBackup[];
+    /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
      */
     readonly blueGreenRole: string;

@@ -164,9 +164,6 @@ export class Node extends pulumi.CustomResource {
             if ((!args || args.clusterId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            if ((!args || args.nodePoolId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'nodePoolId'");
-            }
             resourceInputs["additionalContainerStorageEnabled"] = args ? args.additionalContainerStorageEnabled : undefined;
             resourceInputs["clusterId"] = args ? args.clusterId : undefined;
             resourceInputs["containerStoragePath"] = args ? args.containerStoragePath : undefined;
@@ -305,5 +302,5 @@ export interface NodeArgs {
     /**
      * Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
      */
-    nodePoolId: pulumi.Input<string>;
+    nodePoolId?: pulumi.Input<string>;
 }

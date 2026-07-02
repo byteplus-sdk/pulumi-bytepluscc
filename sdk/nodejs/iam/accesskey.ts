@@ -73,7 +73,7 @@ export class Accesskey extends pulumi.CustomResource {
     /**
      * Secret Access Key.
      */
-    public readonly secretAccessKey!: pulumi.Output<string>;
+    public /*out*/ readonly secretAccessKey!: pulumi.Output<string>;
     /**
      * The English abbreviation of the last service accessed by the API key.
      */
@@ -116,7 +116,6 @@ export class Accesskey extends pulumi.CustomResource {
             resourceInputs["userName"] = state ? state.userName : undefined;
         } else {
             const args = argsOrState as AccesskeyArgs | undefined;
-            resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
             resourceInputs["userName"] = args ? args.userName : undefined;
             resourceInputs["accessKeyId"] = undefined /*out*/;
@@ -124,6 +123,7 @@ export class Accesskey extends pulumi.CustomResource {
             resourceInputs["lastLoginDate"] = undefined /*out*/;
             resourceInputs["region"] = undefined /*out*/;
             resourceInputs["requestTime"] = undefined /*out*/;
+            resourceInputs["secretAccessKey"] = undefined /*out*/;
             resourceInputs["service"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
         }
@@ -182,10 +182,6 @@ export interface AccesskeyState {
  * The set of arguments for constructing a Accesskey resource.
  */
 export interface AccesskeyArgs {
-    /**
-     * Secret Access Key.
-     */
-    secretAccessKey?: pulumi.Input<string>;
     /**
      * Key status. active means enabled, inactive means disabled.
      */

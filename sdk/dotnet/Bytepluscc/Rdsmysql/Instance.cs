@@ -86,6 +86,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<int> BackupLogSize { get; private set; } = null!;
 
         /// <summary>
+        /// Instance backup policy configuration.
+        /// </summary>
+        [Output("backupPolicy")]
+        public Output<Outputs.InstanceBackupPolicy> BackupPolicy { get; private set; } = null!;
+
+        /// <summary>
         /// Space used by slow logs in backups.
         /// </summary>
         [Output("backupSlowLogSize")]
@@ -186,6 +192,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 
         [Output("endpoints")]
         public Output<ImmutableArray<Outputs.InstanceEndpoint>> Endpoints { get; private set; } = null!;
+
+        /// <summary>
+        /// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        /// </summary>
+        [Output("engineType")]
+        public Output<string> EngineType { get; private set; } = null!;
 
         /// <summary>
         /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -293,10 +305,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.InstanceNode>> Nodes { get; private set; } = null!;
 
         /// <summary>
+        /// Parameter template ID.
+        /// </summary>
+        [Output("parameterTemplateId")]
+        public Output<string> ParameterTemplateId { get; private set; } = null!;
+
+        /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
+
+        /// <summary>
+        /// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        /// </summary>
+        [Output("privateIpAddress")]
+        public Output<string> PrivateIpAddress { get; private set; } = null!;
 
         /// <summary>
         /// Project.
@@ -499,6 +523,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Input<string>? AutoUpgradeMinorVersion { get; set; }
 
         /// <summary>
+        /// Instance backup policy configuration.
+        /// </summary>
+        [Input("backupPolicy")]
+        public Input<Inputs.InstanceBackupPolicyArgs>? BackupPolicy { get; set; }
+
+        /// <summary>
         /// Billing method
         /// </summary>
         [Input("chargeDetail", required: true)]
@@ -533,6 +563,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
+
+        /// <summary>
+        /// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        /// </summary>
+        [Input("engineType")]
+        public Input<string>? EngineType { get; set; }
 
         /// <summary>
         /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -579,10 +615,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
+        /// Parameter template ID.
+        /// </summary>
+        [Input("parameterTemplateId")]
+        public Input<string>? ParameterTemplateId { get; set; }
+
+        /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
+
+        /// <summary>
+        /// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        /// </summary>
+        [Input("privateIpAddress")]
+        public Input<string>? PrivateIpAddress { get; set; }
 
         /// <summary>
         /// Project.
@@ -723,6 +771,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Input<int>? BackupLogSize { get; set; }
 
         /// <summary>
+        /// Instance backup policy configuration.
+        /// </summary>
+        [Input("backupPolicy")]
+        public Input<Inputs.InstanceBackupPolicyGetArgs>? BackupPolicy { get; set; }
+
+        /// <summary>
         /// Space used by slow logs in backups.
         /// </summary>
         [Input("backupSlowLogSize")]
@@ -835,6 +889,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
+        /// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
+        /// </summary>
+        [Input("engineType")]
+        public Input<string>? EngineType { get; set; }
+
+        /// <summary>
         /// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         /// </summary>
         [Input("globalReadOnly")]
@@ -945,10 +1005,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
+        /// Parameter template ID.
+        /// </summary>
+        [Input("parameterTemplateId")]
+        public Input<string>? ParameterTemplateId { get; set; }
+
+        /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
+
+        /// <summary>
+        /// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
+        /// </summary>
+        [Input("privateIpAddress")]
+        public Input<string>? PrivateIpAddress { get; set; }
 
         /// <summary>
         /// Project.

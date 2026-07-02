@@ -21,27 +21,27 @@ import (
 //
 // import (
 //
-//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc"
+//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/redis"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := bytepluscc.NewRedisParametergroup(ctx, "RedisParameterGroupDemo", &bytepluscc.RedisParametergroupArgs{
-//				EngineVersion: "6.0",
-//				Description:   "用于测试的Redis 6.0自定义参数组",
-//				ParamValues: []map[string]interface{}{
-//					map[string]interface{}{
-//						"value": "allkeys-lru",
-//						"name":  "maxmemory-policy",
+//			_, err := redis.NewParameterGroup(ctx, "RedisParameterGroupDemo", &redis.ParameterGroupArgs{
+//				EngineVersion: pulumi.String("6.0"),
+//				Description:   pulumi.String("用于测试的Redis 6.0自定义参数组"),
+//				ParamValues: redis.ParameterGroupParamValueArray{
+//					&redis.ParameterGroupParamValueArgs{
+//						Value: pulumi.String("allkeys-lru"),
+//						Name:  pulumi.String("maxmemory-policy"),
 //					},
-//					map[string]interface{}{
-//						"value": "300",
-//						"name":  "proxy-client-idle-timeout",
+//					&redis.ParameterGroupParamValueArgs{
+//						Value: pulumi.String("300"),
+//						Name:  pulumi.String("proxy-client-idle-timeout"),
 //					},
 //				},
-//				Name: "test-redis6-param-group",
+//				Name: pulumi.String("test-redis6-param-group"),
 //			})
 //			if err != nil {
 //				return err

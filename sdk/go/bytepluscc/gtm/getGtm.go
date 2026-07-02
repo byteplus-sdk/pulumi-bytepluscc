@@ -48,8 +48,12 @@ type LookupGtmResult struct {
 	LastOperator string `pulumi:"lastOperator"`
 	// Account that created the GTM instance
 	Owner string `pulumi:"owner"`
+	// Detailed configuration of the scheduling policy for the GTM instance.
+	Policy GetGtmPolicy `pulumi:"policy"`
 	// Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
 	PolicyType string `pulumi:"policyType"`
+	// Detailed configuration of the health check for the GTM instance.
+	Probe GetGtmProbe `pulumi:"probe"`
 	// Project name to which the GTM instance belongs
 	ProjectName string `pulumi:"projectName"`
 	// Remark information for the GTM instance
@@ -145,9 +149,19 @@ func (o LookupGtmResultOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmResult) string { return v.Owner }).(pulumi.StringOutput)
 }
 
+// Detailed configuration of the scheduling policy for the GTM instance.
+func (o LookupGtmResultOutput) Policy() GetGtmPolicyOutput {
+	return o.ApplyT(func(v LookupGtmResult) GetGtmPolicy { return v.Policy }).(GetGtmPolicyOutput)
+}
+
 // Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
 func (o LookupGtmResultOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGtmResult) string { return v.PolicyType }).(pulumi.StringOutput)
+}
+
+// Detailed configuration of the health check for the GTM instance.
+func (o LookupGtmResultOutput) Probe() GetGtmProbeOutput {
+	return o.ApplyT(func(v LookupGtmResult) GetGtmProbe { return v.Probe }).(GetGtmProbeOutput)
 }
 
 // Project name to which the GTM instance belongs

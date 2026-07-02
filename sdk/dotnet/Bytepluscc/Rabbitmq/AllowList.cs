@@ -13,34 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     /// <summary>
     /// RabbitMQ access allowlist
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Bytepluscc = Pulumi.Bytepluscc;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var rabbitMQAllowListDemo = new Bytepluscc.Index.RabbitmqAllowlist("RabbitMQAllowListDemo", new()
-    ///     {
-    ///         AllowListType = "IPv4",
-    ///         AllowList = "192.x.0.0/24",
-    ///         AllowListName = "ccapi-test",
-    ///         AllowListDesc = "test-desc",
-    ///         AssociatedInstances = new[]
-    ///         {
-    ///             
-    ///             {
-    ///                 { "instanceId", "rbtmq-a69238e***" },
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ```sh

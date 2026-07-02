@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryEndpointAclPolicy {
     /**
-     * @return IP entry address
+     * @return IP entry address.
      * 
      */
     private @Nullable String description;
     /**
-     * @return IP entry description
+     * @return IP entry description.
      * 
      */
     private @Nullable String entry;
 
     private RegistryEndpointAclPolicy() {}
     /**
-     * @return IP entry address
+     * @return IP entry address.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return IP entry description
+     * @return IP entry description.
      * 
      */
     public Optional<String> entry() {

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:directconnect/bgpPeer:BgpPeer":
 		r = &BgpPeer{}
+	case "bytepluscc:directconnect/connection:Connection":
+		r = &Connection{}
 	case "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway":
 		r = &DirectConnectGateway{}
 	case "bytepluscc:directconnect/gatewayRoute:GatewayRoute":
@@ -45,6 +47,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"directconnect/bgpPeer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"directconnect/connection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

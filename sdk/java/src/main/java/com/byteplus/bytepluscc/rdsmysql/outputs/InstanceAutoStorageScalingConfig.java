@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.rdsmysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,6 +18,11 @@ public final class InstanceAutoStorageScalingConfig {
      * 
      */
     private @Nullable Boolean enableStorageAutoScale;
+    /**
+     * @return Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+     * 
+     */
+    private @Nullable String scalingDetectNode;
     /**
      * @return Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
      * 
@@ -35,6 +41,13 @@ public final class InstanceAutoStorageScalingConfig {
      */
     public Optional<Boolean> enableStorageAutoScale() {
         return Optional.ofNullable(this.enableStorageAutoScale);
+    }
+    /**
+     * @return Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+     * 
+     */
+    public Optional<String> scalingDetectNode() {
+        return Optional.ofNullable(this.scalingDetectNode);
     }
     /**
      * @return Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
@@ -61,12 +74,14 @@ public final class InstanceAutoStorageScalingConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean enableStorageAutoScale;
+        private @Nullable String scalingDetectNode;
         private @Nullable Integer storageThreshold;
         private @Nullable Integer storageUpperBound;
         public Builder() {}
         public Builder(InstanceAutoStorageScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.enableStorageAutoScale = defaults.enableStorageAutoScale;
+    	      this.scalingDetectNode = defaults.scalingDetectNode;
     	      this.storageThreshold = defaults.storageThreshold;
     	      this.storageUpperBound = defaults.storageUpperBound;
         }
@@ -75,6 +90,12 @@ public final class InstanceAutoStorageScalingConfig {
         public Builder enableStorageAutoScale(@Nullable Boolean enableStorageAutoScale) {
 
             this.enableStorageAutoScale = enableStorageAutoScale;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scalingDetectNode(@Nullable String scalingDetectNode) {
+
+            this.scalingDetectNode = scalingDetectNode;
             return this;
         }
         @CustomType.Setter
@@ -92,6 +113,7 @@ public final class InstanceAutoStorageScalingConfig {
         public InstanceAutoStorageScalingConfig build() {
             final var _resultValue = new InstanceAutoStorageScalingConfig();
             _resultValue.enableStorageAutoScale = enableStorageAutoScale;
+            _resultValue.scalingDetectNode = scalingDetectNode;
             _resultValue.storageThreshold = storageThreshold;
             _resultValue.storageUpperBound = storageUpperBound;
             return _resultValue;

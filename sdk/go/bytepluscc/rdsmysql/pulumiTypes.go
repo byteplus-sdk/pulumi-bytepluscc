@@ -1635,6 +1635,8 @@ func (o InstanceAddressObjectArrayOutput) Index(i pulumi.IntInput) InstanceAddre
 type InstanceAutoStorageScalingConfig struct {
 	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale *bool `pulumi:"enableStorageAutoScale"`
+	// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+	ScalingDetectNode *string `pulumi:"scalingDetectNode"`
 	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold *int `pulumi:"storageThreshold"`
 	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
@@ -1655,6 +1657,8 @@ type InstanceAutoStorageScalingConfigInput interface {
 type InstanceAutoStorageScalingConfigArgs struct {
 	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale pulumi.BoolPtrInput `pulumi:"enableStorageAutoScale"`
+	// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+	ScalingDetectNode pulumi.StringPtrInput `pulumi:"scalingDetectNode"`
 	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold pulumi.IntPtrInput `pulumi:"storageThreshold"`
 	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
@@ -1743,6 +1747,11 @@ func (o InstanceAutoStorageScalingConfigOutput) EnableStorageAutoScale() pulumi.
 	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *bool { return v.EnableStorageAutoScale }).(pulumi.BoolPtrOutput)
 }
 
+// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+func (o InstanceAutoStorageScalingConfigOutput) ScalingDetectNode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *string { return v.ScalingDetectNode }).(pulumi.StringPtrOutput)
+}
+
 // Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 func (o InstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *int { return v.StorageThreshold }).(pulumi.IntPtrOutput)
@@ -1787,6 +1796,16 @@ func (o InstanceAutoStorageScalingConfigPtrOutput) EnableStorageAutoScale() pulu
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+func (o InstanceAutoStorageScalingConfigPtrOutput) ScalingDetectNode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScalingDetectNode
+	}).(pulumi.StringPtrOutput)
+}
+
 // Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 func (o InstanceAutoStorageScalingConfigPtrOutput) StorageThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *int {
@@ -1804,6 +1823,1025 @@ func (o InstanceAutoStorageScalingConfigPtrOutput) StorageUpperBound() pulumi.In
 			return nil
 		}
 		return v.StorageUpperBound
+	}).(pulumi.IntPtrOutput)
+}
+
+type InstanceBackupPolicy struct {
+	// List of destination regions available for cross-region backup.
+	AvailableCrossRegions []string `pulumi:"availableCrossRegions"`
+	// Basic backup policy.
+	BackupPolicyBase *InstanceBackupPolicyBackupPolicyBase `pulumi:"backupPolicyBase"`
+	// Cross-region backup policy.
+	CrossBackupPolicy *InstanceBackupPolicyCrossBackupPolicy `pulumi:"crossBackupPolicy"`
+}
+
+// InstanceBackupPolicyInput is an input type that accepts InstanceBackupPolicyArgs and InstanceBackupPolicyOutput values.
+// You can construct a concrete instance of `InstanceBackupPolicyInput` via:
+//
+//	InstanceBackupPolicyArgs{...}
+type InstanceBackupPolicyInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPolicyOutput() InstanceBackupPolicyOutput
+	ToInstanceBackupPolicyOutputWithContext(context.Context) InstanceBackupPolicyOutput
+}
+
+type InstanceBackupPolicyArgs struct {
+	// List of destination regions available for cross-region backup.
+	AvailableCrossRegions pulumi.StringArrayInput `pulumi:"availableCrossRegions"`
+	// Basic backup policy.
+	BackupPolicyBase InstanceBackupPolicyBackupPolicyBasePtrInput `pulumi:"backupPolicyBase"`
+	// Cross-region backup policy.
+	CrossBackupPolicy InstanceBackupPolicyCrossBackupPolicyPtrInput `pulumi:"crossBackupPolicy"`
+}
+
+func (InstanceBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPolicy)(nil)).Elem()
+}
+
+func (i InstanceBackupPolicyArgs) ToInstanceBackupPolicyOutput() InstanceBackupPolicyOutput {
+	return i.ToInstanceBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPolicyArgs) ToInstanceBackupPolicyOutputWithContext(ctx context.Context) InstanceBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyOutput)
+}
+
+func (i InstanceBackupPolicyArgs) ToInstanceBackupPolicyPtrOutput() InstanceBackupPolicyPtrOutput {
+	return i.ToInstanceBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPolicyArgs) ToInstanceBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyOutput).ToInstanceBackupPolicyPtrOutputWithContext(ctx)
+}
+
+// InstanceBackupPolicyPtrInput is an input type that accepts InstanceBackupPolicyArgs, InstanceBackupPolicyPtr and InstanceBackupPolicyPtrOutput values.
+// You can construct a concrete instance of `InstanceBackupPolicyPtrInput` via:
+//
+//	        InstanceBackupPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceBackupPolicyPtrInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPolicyPtrOutput() InstanceBackupPolicyPtrOutput
+	ToInstanceBackupPolicyPtrOutputWithContext(context.Context) InstanceBackupPolicyPtrOutput
+}
+
+type instanceBackupPolicyPtrType InstanceBackupPolicyArgs
+
+func InstanceBackupPolicyPtr(v *InstanceBackupPolicyArgs) InstanceBackupPolicyPtrInput {
+	return (*instanceBackupPolicyPtrType)(v)
+}
+
+func (*instanceBackupPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPolicy)(nil)).Elem()
+}
+
+func (i *instanceBackupPolicyPtrType) ToInstanceBackupPolicyPtrOutput() InstanceBackupPolicyPtrOutput {
+	return i.ToInstanceBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceBackupPolicyPtrType) ToInstanceBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyPtrOutput)
+}
+
+type InstanceBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPolicy)(nil)).Elem()
+}
+
+func (o InstanceBackupPolicyOutput) ToInstanceBackupPolicyOutput() InstanceBackupPolicyOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyOutput) ToInstanceBackupPolicyOutputWithContext(ctx context.Context) InstanceBackupPolicyOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyOutput) ToInstanceBackupPolicyPtrOutput() InstanceBackupPolicyPtrOutput {
+	return o.ToInstanceBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceBackupPolicyOutput) ToInstanceBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceBackupPolicy) *InstanceBackupPolicy {
+		return &v
+	}).(InstanceBackupPolicyPtrOutput)
+}
+
+// List of destination regions available for cross-region backup.
+func (o InstanceBackupPolicyOutput) AvailableCrossRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceBackupPolicy) []string { return v.AvailableCrossRegions }).(pulumi.StringArrayOutput)
+}
+
+// Basic backup policy.
+func (o InstanceBackupPolicyOutput) BackupPolicyBase() InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicy) *InstanceBackupPolicyBackupPolicyBase { return v.BackupPolicyBase }).(InstanceBackupPolicyBackupPolicyBasePtrOutput)
+}
+
+// Cross-region backup policy.
+func (o InstanceBackupPolicyOutput) CrossBackupPolicy() InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicy) *InstanceBackupPolicyCrossBackupPolicy { return v.CrossBackupPolicy }).(InstanceBackupPolicyCrossBackupPolicyPtrOutput)
+}
+
+type InstanceBackupPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPolicy)(nil)).Elem()
+}
+
+func (o InstanceBackupPolicyPtrOutput) ToInstanceBackupPolicyPtrOutput() InstanceBackupPolicyPtrOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyPtrOutput) ToInstanceBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyPtrOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyPtrOutput) Elem() InstanceBackupPolicyOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicy) InstanceBackupPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceBackupPolicy
+		return ret
+	}).(InstanceBackupPolicyOutput)
+}
+
+// List of destination regions available for cross-region backup.
+func (o InstanceBackupPolicyPtrOutput) AvailableCrossRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicy) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailableCrossRegions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Basic backup policy.
+func (o InstanceBackupPolicyPtrOutput) BackupPolicyBase() InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicy) *InstanceBackupPolicyBackupPolicyBase {
+		if v == nil {
+			return nil
+		}
+		return v.BackupPolicyBase
+	}).(InstanceBackupPolicyBackupPolicyBasePtrOutput)
+}
+
+// Cross-region backup policy.
+func (o InstanceBackupPolicyPtrOutput) CrossBackupPolicy() InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicy) *InstanceBackupPolicyCrossBackupPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.CrossBackupPolicy
+	}).(InstanceBackupPolicyCrossBackupPolicyPtrOutput)
+}
+
+type InstanceBackupPolicyBackupPolicyBase struct {
+	// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+	BinlogBackupAllRetention *bool `pulumi:"binlogBackupAllRetention"`
+	// Enable log backup feature. Values: true: yes. false: no.
+	BinlogBackupEnabled *bool `pulumi:"binlogBackupEnabled"`
+	// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+	BinlogBackupEncryptionEnabled *bool `pulumi:"binlogBackupEncryptionEnabled"`
+	// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+	BinlogFileCountsEnable *bool `pulumi:"binlogFileCountsEnable"`
+	// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+	BinlogLimitCount *int `pulumi:"binlogLimitCount"`
+	// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+	BinlogLocalRetentionHour *int `pulumi:"binlogLocalRetentionHour"`
+	// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+	BinlogSpaceLimitEnable *bool `pulumi:"binlogSpaceLimitEnable"`
+	// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+	BinlogStoragePercentage *int `pulumi:"binlogStoragePercentage"`
+	// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+	DataBackupAllRetention *bool `pulumi:"dataBackupAllRetention"`
+	// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+	DataBackupEncryptionEnabled *bool `pulumi:"dataBackupEncryptionEnabled"`
+	// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+	DataBackupRetentionDay *int `pulumi:"dataBackupRetentionDay"`
+	// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+	DataFullBackupPeriods []string `pulumi:"dataFullBackupPeriods"`
+	// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupStartUtcHour *int `pulumi:"dataFullBackupStartUtcHour"`
+	// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupTime *string `pulumi:"dataFullBackupTime"`
+	// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+	DataIncrBackupPeriods []string `pulumi:"dataIncrBackupPeriods"`
+	// Number of days to retain data after instance release.
+	DataKeepDaysAfterReleased *int `pulumi:"dataKeepDaysAfterReleased"`
+	// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+	DataKeepPolicyAfterReleased *string `pulumi:"dataKeepPolicyAfterReleased"`
+	// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+	HighFrequencySnapshotBackupEnable *bool `pulumi:"highFrequencySnapshotBackupEnable"`
+	// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+	HighFrequencySnapshotBackupSecondPeriod *int `pulumi:"highFrequencySnapshotBackupSecondPeriod"`
+	// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+	HourlyIncrBackupEnable *bool `pulumi:"hourlyIncrBackupEnable"`
+	// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+	IncrBackupHourPeriod *int `pulumi:"incrBackupHourPeriod"`
+	// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+	KeepCrossBackupEnableAfterReleased *bool `pulumi:"keepCrossBackupEnableAfterReleased"`
+	// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+	LockDdlTime *int `pulumi:"lockDdlTime"`
+	// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+	LockDdlTimeSecond *int `pulumi:"lockDdlTimeSecond"`
+	// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+	LogBackupRetentionDay *int `pulumi:"logBackupRetentionDay"`
+	// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+	PublicDownloadEnable *bool `pulumi:"publicDownloadEnable"`
+	// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+	RetentionPolicySynced *bool `pulumi:"retentionPolicySynced"`
+}
+
+// InstanceBackupPolicyBackupPolicyBaseInput is an input type that accepts InstanceBackupPolicyBackupPolicyBaseArgs and InstanceBackupPolicyBackupPolicyBaseOutput values.
+// You can construct a concrete instance of `InstanceBackupPolicyBackupPolicyBaseInput` via:
+//
+//	InstanceBackupPolicyBackupPolicyBaseArgs{...}
+type InstanceBackupPolicyBackupPolicyBaseInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPolicyBackupPolicyBaseOutput() InstanceBackupPolicyBackupPolicyBaseOutput
+	ToInstanceBackupPolicyBackupPolicyBaseOutputWithContext(context.Context) InstanceBackupPolicyBackupPolicyBaseOutput
+}
+
+type InstanceBackupPolicyBackupPolicyBaseArgs struct {
+	// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+	BinlogBackupAllRetention pulumi.BoolPtrInput `pulumi:"binlogBackupAllRetention"`
+	// Enable log backup feature. Values: true: yes. false: no.
+	BinlogBackupEnabled pulumi.BoolPtrInput `pulumi:"binlogBackupEnabled"`
+	// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+	BinlogBackupEncryptionEnabled pulumi.BoolPtrInput `pulumi:"binlogBackupEncryptionEnabled"`
+	// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+	BinlogFileCountsEnable pulumi.BoolPtrInput `pulumi:"binlogFileCountsEnable"`
+	// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+	BinlogLimitCount pulumi.IntPtrInput `pulumi:"binlogLimitCount"`
+	// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+	BinlogLocalRetentionHour pulumi.IntPtrInput `pulumi:"binlogLocalRetentionHour"`
+	// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+	BinlogSpaceLimitEnable pulumi.BoolPtrInput `pulumi:"binlogSpaceLimitEnable"`
+	// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+	BinlogStoragePercentage pulumi.IntPtrInput `pulumi:"binlogStoragePercentage"`
+	// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+	DataBackupAllRetention pulumi.BoolPtrInput `pulumi:"dataBackupAllRetention"`
+	// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+	DataBackupEncryptionEnabled pulumi.BoolPtrInput `pulumi:"dataBackupEncryptionEnabled"`
+	// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+	DataBackupRetentionDay pulumi.IntPtrInput `pulumi:"dataBackupRetentionDay"`
+	// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+	DataFullBackupPeriods pulumi.StringArrayInput `pulumi:"dataFullBackupPeriods"`
+	// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupStartUtcHour pulumi.IntPtrInput `pulumi:"dataFullBackupStartUtcHour"`
+	// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupTime pulumi.StringPtrInput `pulumi:"dataFullBackupTime"`
+	// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+	DataIncrBackupPeriods pulumi.StringArrayInput `pulumi:"dataIncrBackupPeriods"`
+	// Number of days to retain data after instance release.
+	DataKeepDaysAfterReleased pulumi.IntPtrInput `pulumi:"dataKeepDaysAfterReleased"`
+	// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+	DataKeepPolicyAfterReleased pulumi.StringPtrInput `pulumi:"dataKeepPolicyAfterReleased"`
+	// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+	HighFrequencySnapshotBackupEnable pulumi.BoolPtrInput `pulumi:"highFrequencySnapshotBackupEnable"`
+	// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+	HighFrequencySnapshotBackupSecondPeriod pulumi.IntPtrInput `pulumi:"highFrequencySnapshotBackupSecondPeriod"`
+	// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+	HourlyIncrBackupEnable pulumi.BoolPtrInput `pulumi:"hourlyIncrBackupEnable"`
+	// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+	IncrBackupHourPeriod pulumi.IntPtrInput `pulumi:"incrBackupHourPeriod"`
+	// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+	KeepCrossBackupEnableAfterReleased pulumi.BoolPtrInput `pulumi:"keepCrossBackupEnableAfterReleased"`
+	// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+	LockDdlTime pulumi.IntPtrInput `pulumi:"lockDdlTime"`
+	// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+	LockDdlTimeSecond pulumi.IntPtrInput `pulumi:"lockDdlTimeSecond"`
+	// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+	LogBackupRetentionDay pulumi.IntPtrInput `pulumi:"logBackupRetentionDay"`
+	// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+	PublicDownloadEnable pulumi.BoolPtrInput `pulumi:"publicDownloadEnable"`
+	// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+	RetentionPolicySynced pulumi.BoolPtrInput `pulumi:"retentionPolicySynced"`
+}
+
+func (InstanceBackupPolicyBackupPolicyBaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPolicyBackupPolicyBase)(nil)).Elem()
+}
+
+func (i InstanceBackupPolicyBackupPolicyBaseArgs) ToInstanceBackupPolicyBackupPolicyBaseOutput() InstanceBackupPolicyBackupPolicyBaseOutput {
+	return i.ToInstanceBackupPolicyBackupPolicyBaseOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPolicyBackupPolicyBaseArgs) ToInstanceBackupPolicyBackupPolicyBaseOutputWithContext(ctx context.Context) InstanceBackupPolicyBackupPolicyBaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyBackupPolicyBaseOutput)
+}
+
+func (i InstanceBackupPolicyBackupPolicyBaseArgs) ToInstanceBackupPolicyBackupPolicyBasePtrOutput() InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return i.ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPolicyBackupPolicyBaseArgs) ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(ctx context.Context) InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyBackupPolicyBaseOutput).ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(ctx)
+}
+
+// InstanceBackupPolicyBackupPolicyBasePtrInput is an input type that accepts InstanceBackupPolicyBackupPolicyBaseArgs, InstanceBackupPolicyBackupPolicyBasePtr and InstanceBackupPolicyBackupPolicyBasePtrOutput values.
+// You can construct a concrete instance of `InstanceBackupPolicyBackupPolicyBasePtrInput` via:
+//
+//	        InstanceBackupPolicyBackupPolicyBaseArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceBackupPolicyBackupPolicyBasePtrInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPolicyBackupPolicyBasePtrOutput() InstanceBackupPolicyBackupPolicyBasePtrOutput
+	ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(context.Context) InstanceBackupPolicyBackupPolicyBasePtrOutput
+}
+
+type instanceBackupPolicyBackupPolicyBasePtrType InstanceBackupPolicyBackupPolicyBaseArgs
+
+func InstanceBackupPolicyBackupPolicyBasePtr(v *InstanceBackupPolicyBackupPolicyBaseArgs) InstanceBackupPolicyBackupPolicyBasePtrInput {
+	return (*instanceBackupPolicyBackupPolicyBasePtrType)(v)
+}
+
+func (*instanceBackupPolicyBackupPolicyBasePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPolicyBackupPolicyBase)(nil)).Elem()
+}
+
+func (i *instanceBackupPolicyBackupPolicyBasePtrType) ToInstanceBackupPolicyBackupPolicyBasePtrOutput() InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return i.ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(context.Background())
+}
+
+func (i *instanceBackupPolicyBackupPolicyBasePtrType) ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(ctx context.Context) InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyBackupPolicyBasePtrOutput)
+}
+
+type InstanceBackupPolicyBackupPolicyBaseOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPolicyBackupPolicyBaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPolicyBackupPolicyBase)(nil)).Elem()
+}
+
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) ToInstanceBackupPolicyBackupPolicyBaseOutput() InstanceBackupPolicyBackupPolicyBaseOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) ToInstanceBackupPolicyBackupPolicyBaseOutputWithContext(ctx context.Context) InstanceBackupPolicyBackupPolicyBaseOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) ToInstanceBackupPolicyBackupPolicyBasePtrOutput() InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return o.ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(context.Background())
+}
+
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(ctx context.Context) InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceBackupPolicyBackupPolicyBase) *InstanceBackupPolicyBackupPolicyBase {
+		return &v
+	}).(InstanceBackupPolicyBackupPolicyBasePtrOutput)
+}
+
+// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogBackupAllRetention() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.BinlogBackupAllRetention }).(pulumi.BoolPtrOutput)
+}
+
+// Enable log backup feature. Values: true: yes. false: no.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.BinlogBackupEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogBackupEncryptionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.BinlogBackupEncryptionEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogFileCountsEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.BinlogFileCountsEnable }).(pulumi.BoolPtrOutput)
+}
+
+// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogLimitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.BinlogLimitCount }).(pulumi.IntPtrOutput)
+}
+
+// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogLocalRetentionHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.BinlogLocalRetentionHour }).(pulumi.IntPtrOutput)
+}
+
+// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogSpaceLimitEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.BinlogSpaceLimitEnable }).(pulumi.BoolPtrOutput)
+}
+
+// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) BinlogStoragePercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.BinlogStoragePercentage }).(pulumi.IntPtrOutput)
+}
+
+// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataBackupAllRetention() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.DataBackupAllRetention }).(pulumi.BoolPtrOutput)
+}
+
+// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataBackupEncryptionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.DataBackupEncryptionEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataBackupRetentionDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.DataBackupRetentionDay }).(pulumi.IntPtrOutput)
+}
+
+// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataFullBackupPeriods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) []string { return v.DataFullBackupPeriods }).(pulumi.StringArrayOutput)
+}
+
+// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataFullBackupStartUtcHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.DataFullBackupStartUtcHour }).(pulumi.IntPtrOutput)
+}
+
+// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataFullBackupTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *string { return v.DataFullBackupTime }).(pulumi.StringPtrOutput)
+}
+
+// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataIncrBackupPeriods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) []string { return v.DataIncrBackupPeriods }).(pulumi.StringArrayOutput)
+}
+
+// Number of days to retain data after instance release.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataKeepDaysAfterReleased() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.DataKeepDaysAfterReleased }).(pulumi.IntPtrOutput)
+}
+
+// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) DataKeepPolicyAfterReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *string { return v.DataKeepPolicyAfterReleased }).(pulumi.StringPtrOutput)
+}
+
+// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) HighFrequencySnapshotBackupEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.HighFrequencySnapshotBackupEnable }).(pulumi.BoolPtrOutput)
+}
+
+// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) HighFrequencySnapshotBackupSecondPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.HighFrequencySnapshotBackupSecondPeriod }).(pulumi.IntPtrOutput)
+}
+
+// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) HourlyIncrBackupEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.HourlyIncrBackupEnable }).(pulumi.BoolPtrOutput)
+}
+
+// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) IncrBackupHourPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.IncrBackupHourPeriod }).(pulumi.IntPtrOutput)
+}
+
+// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) KeepCrossBackupEnableAfterReleased() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.KeepCrossBackupEnableAfterReleased }).(pulumi.BoolPtrOutput)
+}
+
+// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) LockDdlTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.LockDdlTime }).(pulumi.IntPtrOutput)
+}
+
+// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) LockDdlTimeSecond() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.LockDdlTimeSecond }).(pulumi.IntPtrOutput)
+}
+
+// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) LogBackupRetentionDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *int { return v.LogBackupRetentionDay }).(pulumi.IntPtrOutput)
+}
+
+// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) PublicDownloadEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.PublicDownloadEnable }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBaseOutput) RetentionPolicySynced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyBackupPolicyBase) *bool { return v.RetentionPolicySynced }).(pulumi.BoolPtrOutput)
+}
+
+type InstanceBackupPolicyBackupPolicyBasePtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPolicyBackupPolicyBasePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPolicyBackupPolicyBase)(nil)).Elem()
+}
+
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) ToInstanceBackupPolicyBackupPolicyBasePtrOutput() InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) ToInstanceBackupPolicyBackupPolicyBasePtrOutputWithContext(ctx context.Context) InstanceBackupPolicyBackupPolicyBasePtrOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) Elem() InstanceBackupPolicyBackupPolicyBaseOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) InstanceBackupPolicyBackupPolicyBase {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceBackupPolicyBackupPolicyBase
+		return ret
+	}).(InstanceBackupPolicyBackupPolicyBaseOutput)
+}
+
+// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogBackupAllRetention() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogBackupAllRetention
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable log backup feature. Values: true: yes. false: no.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogBackupEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogBackupEncryptionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogBackupEncryptionEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogFileCountsEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogFileCountsEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogLimitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogLimitCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogLocalRetentionHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogLocalRetentionHour
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogSpaceLimitEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogSpaceLimitEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) BinlogStoragePercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogStoragePercentage
+	}).(pulumi.IntPtrOutput)
+}
+
+// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataBackupAllRetention() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DataBackupAllRetention
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataBackupEncryptionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DataBackupEncryptionEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataBackupRetentionDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DataBackupRetentionDay
+	}).(pulumi.IntPtrOutput)
+}
+
+// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataFullBackupPeriods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DataFullBackupPeriods
+	}).(pulumi.StringArrayOutput)
+}
+
+// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataFullBackupStartUtcHour() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DataFullBackupStartUtcHour
+	}).(pulumi.IntPtrOutput)
+}
+
+// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataFullBackupTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DataFullBackupTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataIncrBackupPeriods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DataIncrBackupPeriods
+	}).(pulumi.StringArrayOutput)
+}
+
+// Number of days to retain data after instance release.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataKeepDaysAfterReleased() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DataKeepDaysAfterReleased
+	}).(pulumi.IntPtrOutput)
+}
+
+// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) DataKeepPolicyAfterReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DataKeepPolicyAfterReleased
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) HighFrequencySnapshotBackupEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.HighFrequencySnapshotBackupEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) HighFrequencySnapshotBackupSecondPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HighFrequencySnapshotBackupSecondPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) HourlyIncrBackupEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.HourlyIncrBackupEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) IncrBackupHourPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IncrBackupHourPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) KeepCrossBackupEnableAfterReleased() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.KeepCrossBackupEnableAfterReleased
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) LockDdlTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LockDdlTime
+	}).(pulumi.IntPtrOutput)
+}
+
+// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) LockDdlTimeSecond() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LockDdlTimeSecond
+	}).(pulumi.IntPtrOutput)
+}
+
+// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) LogBackupRetentionDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LogBackupRetentionDay
+	}).(pulumi.IntPtrOutput)
+}
+
+// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) PublicDownloadEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.PublicDownloadEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+func (o InstanceBackupPolicyBackupPolicyBasePtrOutput) RetentionPolicySynced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyBackupPolicyBase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.RetentionPolicySynced
+	}).(pulumi.BoolPtrOutput)
+}
+
+type InstanceBackupPolicyCrossBackupPolicy struct {
+	// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+	BackupEnabled *bool `pulumi:"backupEnabled"`
+	// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+	CrossBackupAllRetention *bool `pulumi:"crossBackupAllRetention"`
+	// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+	CrossBackupRegion *string `pulumi:"crossBackupRegion"`
+	// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+	LogBackupEnabled *bool `pulumi:"logBackupEnabled"`
+	// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+	Retention *int `pulumi:"retention"`
+}
+
+// InstanceBackupPolicyCrossBackupPolicyInput is an input type that accepts InstanceBackupPolicyCrossBackupPolicyArgs and InstanceBackupPolicyCrossBackupPolicyOutput values.
+// You can construct a concrete instance of `InstanceBackupPolicyCrossBackupPolicyInput` via:
+//
+//	InstanceBackupPolicyCrossBackupPolicyArgs{...}
+type InstanceBackupPolicyCrossBackupPolicyInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPolicyCrossBackupPolicyOutput() InstanceBackupPolicyCrossBackupPolicyOutput
+	ToInstanceBackupPolicyCrossBackupPolicyOutputWithContext(context.Context) InstanceBackupPolicyCrossBackupPolicyOutput
+}
+
+type InstanceBackupPolicyCrossBackupPolicyArgs struct {
+	// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+	BackupEnabled pulumi.BoolPtrInput `pulumi:"backupEnabled"`
+	// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+	CrossBackupAllRetention pulumi.BoolPtrInput `pulumi:"crossBackupAllRetention"`
+	// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+	CrossBackupRegion pulumi.StringPtrInput `pulumi:"crossBackupRegion"`
+	// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+	LogBackupEnabled pulumi.BoolPtrInput `pulumi:"logBackupEnabled"`
+	// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+	Retention pulumi.IntPtrInput `pulumi:"retention"`
+}
+
+func (InstanceBackupPolicyCrossBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPolicyCrossBackupPolicy)(nil)).Elem()
+}
+
+func (i InstanceBackupPolicyCrossBackupPolicyArgs) ToInstanceBackupPolicyCrossBackupPolicyOutput() InstanceBackupPolicyCrossBackupPolicyOutput {
+	return i.ToInstanceBackupPolicyCrossBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPolicyCrossBackupPolicyArgs) ToInstanceBackupPolicyCrossBackupPolicyOutputWithContext(ctx context.Context) InstanceBackupPolicyCrossBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyCrossBackupPolicyOutput)
+}
+
+func (i InstanceBackupPolicyCrossBackupPolicyArgs) ToInstanceBackupPolicyCrossBackupPolicyPtrOutput() InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return i.ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceBackupPolicyCrossBackupPolicyArgs) ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyCrossBackupPolicyOutput).ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(ctx)
+}
+
+// InstanceBackupPolicyCrossBackupPolicyPtrInput is an input type that accepts InstanceBackupPolicyCrossBackupPolicyArgs, InstanceBackupPolicyCrossBackupPolicyPtr and InstanceBackupPolicyCrossBackupPolicyPtrOutput values.
+// You can construct a concrete instance of `InstanceBackupPolicyCrossBackupPolicyPtrInput` via:
+//
+//	        InstanceBackupPolicyCrossBackupPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceBackupPolicyCrossBackupPolicyPtrInput interface {
+	pulumi.Input
+
+	ToInstanceBackupPolicyCrossBackupPolicyPtrOutput() InstanceBackupPolicyCrossBackupPolicyPtrOutput
+	ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(context.Context) InstanceBackupPolicyCrossBackupPolicyPtrOutput
+}
+
+type instanceBackupPolicyCrossBackupPolicyPtrType InstanceBackupPolicyCrossBackupPolicyArgs
+
+func InstanceBackupPolicyCrossBackupPolicyPtr(v *InstanceBackupPolicyCrossBackupPolicyArgs) InstanceBackupPolicyCrossBackupPolicyPtrInput {
+	return (*instanceBackupPolicyCrossBackupPolicyPtrType)(v)
+}
+
+func (*instanceBackupPolicyCrossBackupPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPolicyCrossBackupPolicy)(nil)).Elem()
+}
+
+func (i *instanceBackupPolicyCrossBackupPolicyPtrType) ToInstanceBackupPolicyCrossBackupPolicyPtrOutput() InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return i.ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceBackupPolicyCrossBackupPolicyPtrType) ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceBackupPolicyCrossBackupPolicyPtrOutput)
+}
+
+type InstanceBackupPolicyCrossBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPolicyCrossBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceBackupPolicyCrossBackupPolicy)(nil)).Elem()
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) ToInstanceBackupPolicyCrossBackupPolicyOutput() InstanceBackupPolicyCrossBackupPolicyOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) ToInstanceBackupPolicyCrossBackupPolicyOutputWithContext(ctx context.Context) InstanceBackupPolicyCrossBackupPolicyOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) ToInstanceBackupPolicyCrossBackupPolicyPtrOutput() InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return o.ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceBackupPolicyCrossBackupPolicy) *InstanceBackupPolicyCrossBackupPolicy {
+		return &v
+	}).(InstanceBackupPolicyCrossBackupPolicyPtrOutput)
+}
+
+// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) BackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyCrossBackupPolicy) *bool { return v.BackupEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) CrossBackupAllRetention() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyCrossBackupPolicy) *bool { return v.CrossBackupAllRetention }).(pulumi.BoolPtrOutput)
+}
+
+// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) CrossBackupRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyCrossBackupPolicy) *string { return v.CrossBackupRegion }).(pulumi.StringPtrOutput)
+}
+
+// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) LogBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyCrossBackupPolicy) *bool { return v.LogBackupEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+func (o InstanceBackupPolicyCrossBackupPolicyOutput) Retention() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackupPolicyCrossBackupPolicy) *int { return v.Retention }).(pulumi.IntPtrOutput)
+}
+
+type InstanceBackupPolicyCrossBackupPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceBackupPolicyCrossBackupPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceBackupPolicyCrossBackupPolicy)(nil)).Elem()
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) ToInstanceBackupPolicyCrossBackupPolicyPtrOutput() InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) ToInstanceBackupPolicyCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceBackupPolicyCrossBackupPolicyPtrOutput {
+	return o
+}
+
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) Elem() InstanceBackupPolicyCrossBackupPolicyOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyCrossBackupPolicy) InstanceBackupPolicyCrossBackupPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceBackupPolicyCrossBackupPolicy
+		return ret
+	}).(InstanceBackupPolicyCrossBackupPolicyOutput)
+}
+
+// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) BackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyCrossBackupPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BackupEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) CrossBackupAllRetention() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyCrossBackupPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CrossBackupAllRetention
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) CrossBackupRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyCrossBackupPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CrossBackupRegion
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) LogBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyCrossBackupPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.LogBackupEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+func (o InstanceBackupPolicyCrossBackupPolicyPtrOutput) Retention() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceBackupPolicyCrossBackupPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Retention
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -2296,6 +3334,7 @@ func (o InstanceDisasterRecoveryInstanceArrayOutput) Index(i pulumi.IntInput) In
 }
 
 type InstanceEndpoint struct {
+	Addresses []InstanceEndpointAddress `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes *string `pulumi:"autoAddNewNodes"`
 	// Connection endpoint tag.
@@ -2303,7 +3342,8 @@ type InstanceEndpoint struct {
 	// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 	ConnectionMode *string `pulumi:"connectionMode"`
 	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-	ConnectionPoolType *string `pulumi:"connectionPoolType"`
+	ConnectionPoolType    *string                               `pulumi:"connectionPoolType"`
+	CustomRouteStrategies []InstanceEndpointCustomRouteStrategy `pulumi:"customRouteStrategies"`
 	// Description of the connection endpoint
 	Description *string `pulumi:"description"`
 	// Enable connection keep-alive. Options: true: yes. false: no
@@ -2351,6 +3391,7 @@ type InstanceEndpointInput interface {
 }
 
 type InstanceEndpointArgs struct {
+	Addresses InstanceEndpointAddressArrayInput `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes pulumi.StringPtrInput `pulumi:"autoAddNewNodes"`
 	// Connection endpoint tag.
@@ -2358,7 +3399,8 @@ type InstanceEndpointArgs struct {
 	// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 	ConnectionMode pulumi.StringPtrInput `pulumi:"connectionMode"`
 	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-	ConnectionPoolType pulumi.StringPtrInput `pulumi:"connectionPoolType"`
+	ConnectionPoolType    pulumi.StringPtrInput                         `pulumi:"connectionPoolType"`
+	CustomRouteStrategies InstanceEndpointCustomRouteStrategyArrayInput `pulumi:"customRouteStrategies"`
 	// Description of the connection endpoint
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Enable connection keep-alive. Options: true: yes. false: no
@@ -2445,6 +3487,10 @@ func (o InstanceEndpointOutput) ToInstanceEndpointOutputWithContext(ctx context.
 	return o
 }
 
+func (o InstanceEndpointOutput) Addresses() InstanceEndpointAddressArrayOutput {
+	return o.ApplyT(func(v InstanceEndpoint) []InstanceEndpointAddress { return v.Addresses }).(InstanceEndpointAddressArrayOutput)
+}
+
 // When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 func (o InstanceEndpointOutput) AutoAddNewNodes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.AutoAddNewNodes }).(pulumi.StringPtrOutput)
@@ -2463,6 +3509,10 @@ func (o InstanceEndpointOutput) ConnectionMode() pulumi.StringPtrOutput {
 // Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 func (o InstanceEndpointOutput) ConnectionPoolType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ConnectionPoolType }).(pulumi.StringPtrOutput)
+}
+
+func (o InstanceEndpointOutput) CustomRouteStrategies() InstanceEndpointCustomRouteStrategyArrayOutput {
+	return o.ApplyT(func(v InstanceEndpoint) []InstanceEndpointCustomRouteStrategy { return v.CustomRouteStrategies }).(InstanceEndpointCustomRouteStrategyArrayOutput)
 }
 
 // Description of the connection endpoint
@@ -2567,6 +3617,281 @@ func (o InstanceEndpointArrayOutput) Index(i pulumi.IntInput) InstanceEndpointOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpoint {
 		return vs[0].([]InstanceEndpoint)[vs[1].(int)]
 	}).(InstanceEndpointOutput)
+}
+
+type InstanceEndpointAddress struct {
+	// false: Private network resolution (default). true: Private and public network resolution.
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// Connection domain name.
+	Domain *string `pulumi:"domain"`
+	// EIP ID, valid only for Public addresses.
+	EipId *string `pulumi:"eipId"`
+	// Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+	EipLocked *bool `pulumi:"eipLocked"`
+	// IP protocol version. Value: IPv4.
+	InternetProtocol *string `pulumi:"internetProtocol"`
+	// IP address.
+	IpAddress *string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private address. Public: public address.
+	NetworkType *string `pulumi:"networkType"`
+	// Port.
+	Port *string `pulumi:"port"`
+	// Subnet ID, valid only for Private addresses.
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// InstanceEndpointAddressInput is an input type that accepts InstanceEndpointAddressArgs and InstanceEndpointAddressOutput values.
+// You can construct a concrete instance of `InstanceEndpointAddressInput` via:
+//
+//	InstanceEndpointAddressArgs{...}
+type InstanceEndpointAddressInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointAddressOutput() InstanceEndpointAddressOutput
+	ToInstanceEndpointAddressOutputWithContext(context.Context) InstanceEndpointAddressOutput
+}
+
+type InstanceEndpointAddressArgs struct {
+	// false: Private network resolution (default). true: Private and public network resolution.
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// Connection domain name.
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+	EipLocked pulumi.BoolPtrInput `pulumi:"eipLocked"`
+	// IP protocol version. Value: IPv4.
+	InternetProtocol pulumi.StringPtrInput `pulumi:"internetProtocol"`
+	// IP address.
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private address. Public: public address.
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// Port.
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// Subnet ID, valid only for Private addresses.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (InstanceEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i InstanceEndpointAddressArgs) ToInstanceEndpointAddressOutput() InstanceEndpointAddressOutput {
+	return i.ToInstanceEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointAddressArgs) ToInstanceEndpointAddressOutputWithContext(ctx context.Context) InstanceEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointAddressOutput)
+}
+
+// InstanceEndpointAddressArrayInput is an input type that accepts InstanceEndpointAddressArray and InstanceEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointAddressArrayInput` via:
+//
+//	InstanceEndpointAddressArray{ InstanceEndpointAddressArgs{...} }
+type InstanceEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointAddressArrayOutput() InstanceEndpointAddressArrayOutput
+	ToInstanceEndpointAddressArrayOutputWithContext(context.Context) InstanceEndpointAddressArrayOutput
+}
+
+type InstanceEndpointAddressArray []InstanceEndpointAddressInput
+
+func (InstanceEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i InstanceEndpointAddressArray) ToInstanceEndpointAddressArrayOutput() InstanceEndpointAddressArrayOutput {
+	return i.ToInstanceEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointAddressArray) ToInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) InstanceEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointAddressArrayOutput)
+}
+
+type InstanceEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o InstanceEndpointAddressOutput) ToInstanceEndpointAddressOutput() InstanceEndpointAddressOutput {
+	return o
+}
+
+func (o InstanceEndpointAddressOutput) ToInstanceEndpointAddressOutputWithContext(ctx context.Context) InstanceEndpointAddressOutput {
+	return o
+}
+
+// false: Private network resolution (default). true: Private and public network resolution.
+func (o InstanceEndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// Connection domain name.
+func (o InstanceEndpointAddressOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o InstanceEndpointAddressOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+func (o InstanceEndpointAddressOutput) EipLocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *bool { return v.EipLocked }).(pulumi.BoolPtrOutput)
+}
+
+// IP protocol version. Value: IPv4.
+func (o InstanceEndpointAddressOutput) InternetProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.InternetProtocol }).(pulumi.StringPtrOutput)
+}
+
+// IP address.
+func (o InstanceEndpointAddressOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Network address type. Values: Private: private address. Public: public address.
+func (o InstanceEndpointAddressOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// Port.
+func (o InstanceEndpointAddressOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// Subnet ID, valid only for Private addresses.
+func (o InstanceEndpointAddressOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointAddress) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type InstanceEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o InstanceEndpointAddressArrayOutput) ToInstanceEndpointAddressArrayOutput() InstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointAddressArrayOutput) ToInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) InstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointAddressArrayOutput) Index(i pulumi.IntInput) InstanceEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpointAddress {
+		return vs[0].([]InstanceEndpointAddress)[vs[1].(int)]
+	}).(InstanceEndpointAddressOutput)
+}
+
+type InstanceEndpointCustomRouteStrategy struct {
+	// SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+	NodeType *string `pulumi:"nodeType"`
+	// Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+	SqlKeyword *string `pulumi:"sqlKeyword"`
+}
+
+// InstanceEndpointCustomRouteStrategyInput is an input type that accepts InstanceEndpointCustomRouteStrategyArgs and InstanceEndpointCustomRouteStrategyOutput values.
+// You can construct a concrete instance of `InstanceEndpointCustomRouteStrategyInput` via:
+//
+//	InstanceEndpointCustomRouteStrategyArgs{...}
+type InstanceEndpointCustomRouteStrategyInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointCustomRouteStrategyOutput() InstanceEndpointCustomRouteStrategyOutput
+	ToInstanceEndpointCustomRouteStrategyOutputWithContext(context.Context) InstanceEndpointCustomRouteStrategyOutput
+}
+
+type InstanceEndpointCustomRouteStrategyArgs struct {
+	// SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+	SqlKeyword pulumi.StringPtrInput `pulumi:"sqlKeyword"`
+}
+
+func (InstanceEndpointCustomRouteStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i InstanceEndpointCustomRouteStrategyArgs) ToInstanceEndpointCustomRouteStrategyOutput() InstanceEndpointCustomRouteStrategyOutput {
+	return i.ToInstanceEndpointCustomRouteStrategyOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointCustomRouteStrategyArgs) ToInstanceEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) InstanceEndpointCustomRouteStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointCustomRouteStrategyOutput)
+}
+
+// InstanceEndpointCustomRouteStrategyArrayInput is an input type that accepts InstanceEndpointCustomRouteStrategyArray and InstanceEndpointCustomRouteStrategyArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointCustomRouteStrategyArrayInput` via:
+//
+//	InstanceEndpointCustomRouteStrategyArray{ InstanceEndpointCustomRouteStrategyArgs{...} }
+type InstanceEndpointCustomRouteStrategyArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointCustomRouteStrategyArrayOutput() InstanceEndpointCustomRouteStrategyArrayOutput
+	ToInstanceEndpointCustomRouteStrategyArrayOutputWithContext(context.Context) InstanceEndpointCustomRouteStrategyArrayOutput
+}
+
+type InstanceEndpointCustomRouteStrategyArray []InstanceEndpointCustomRouteStrategyInput
+
+func (InstanceEndpointCustomRouteStrategyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i InstanceEndpointCustomRouteStrategyArray) ToInstanceEndpointCustomRouteStrategyArrayOutput() InstanceEndpointCustomRouteStrategyArrayOutput {
+	return i.ToInstanceEndpointCustomRouteStrategyArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointCustomRouteStrategyArray) ToInstanceEndpointCustomRouteStrategyArrayOutputWithContext(ctx context.Context) InstanceEndpointCustomRouteStrategyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointCustomRouteStrategyArrayOutput)
+}
+
+type InstanceEndpointCustomRouteStrategyOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointCustomRouteStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o InstanceEndpointCustomRouteStrategyOutput) ToInstanceEndpointCustomRouteStrategyOutput() InstanceEndpointCustomRouteStrategyOutput {
+	return o
+}
+
+func (o InstanceEndpointCustomRouteStrategyOutput) ToInstanceEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) InstanceEndpointCustomRouteStrategyOutput {
+	return o
+}
+
+// SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+func (o InstanceEndpointCustomRouteStrategyOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointCustomRouteStrategy) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+func (o InstanceEndpointCustomRouteStrategyOutput) SqlKeyword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointCustomRouteStrategy) *string { return v.SqlKeyword }).(pulumi.StringPtrOutput)
+}
+
+type InstanceEndpointCustomRouteStrategyArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointCustomRouteStrategyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o InstanceEndpointCustomRouteStrategyArrayOutput) ToInstanceEndpointCustomRouteStrategyArrayOutput() InstanceEndpointCustomRouteStrategyArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointCustomRouteStrategyArrayOutput) ToInstanceEndpointCustomRouteStrategyArrayOutputWithContext(ctx context.Context) InstanceEndpointCustomRouteStrategyArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointCustomRouteStrategyArrayOutput) Index(i pulumi.IntInput) InstanceEndpointCustomRouteStrategyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpointCustomRouteStrategy {
+		return vs[0].([]InstanceEndpointCustomRouteStrategy)[vs[1].(int)]
+	}).(InstanceEndpointCustomRouteStrategyOutput)
 }
 
 type InstanceEndpointReadOnlyNodeWeight struct {
@@ -5181,6 +6506,8 @@ func (o GetInstanceAddressObjectArrayOutput) Index(i pulumi.IntInput) GetInstanc
 type GetInstanceAutoStorageScalingConfig struct {
 	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale bool `pulumi:"enableStorageAutoScale"`
+	// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+	ScalingDetectNode string `pulumi:"scalingDetectNode"`
 	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold int `pulumi:"storageThreshold"`
 	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
@@ -5201,6 +6528,8 @@ type GetInstanceAutoStorageScalingConfigInput interface {
 type GetInstanceAutoStorageScalingConfigArgs struct {
 	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale pulumi.BoolInput `pulumi:"enableStorageAutoScale"`
+	// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+	ScalingDetectNode pulumi.StringInput `pulumi:"scalingDetectNode"`
 	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold pulumi.IntInput `pulumi:"storageThreshold"`
 	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
@@ -5238,6 +6567,11 @@ func (o GetInstanceAutoStorageScalingConfigOutput) EnableStorageAutoScale() pulu
 	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) bool { return v.EnableStorageAutoScale }).(pulumi.BoolOutput)
 }
 
+// Node range for automatic scaling detection. Values: MasterNode: primary node. MasterSlaveNodes: primary and secondary nodes. AllNodes: all nodes. Note: When used as a request parameter, the default is MasterNode. For multi-node instances, MasterSlaveNodes and AllNodes have the same effect. For single-node instances, MasterNode, MasterSlaveNodes, and AllNodes have the same effect.
+func (o GetInstanceAutoStorageScalingConfigOutput) ScalingDetectNode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) string { return v.ScalingDetectNode }).(pulumi.StringOutput)
+}
+
 // Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 func (o GetInstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) int { return v.StorageThreshold }).(pulumi.IntOutput)
@@ -5246,6 +6580,450 @@ func (o GetInstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.Int
 // Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 func (o GetInstanceAutoStorageScalingConfigOutput) StorageUpperBound() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) int { return v.StorageUpperBound }).(pulumi.IntOutput)
+}
+
+type GetInstanceBackupPolicy struct {
+	// List of destination regions available for cross-region backup.
+	AvailableCrossRegions []string `pulumi:"availableCrossRegions"`
+	// Basic backup policy.
+	BackupPolicyBase GetInstanceBackupPolicyBackupPolicyBase `pulumi:"backupPolicyBase"`
+	// Cross-region backup policy.
+	CrossBackupPolicy GetInstanceBackupPolicyCrossBackupPolicy `pulumi:"crossBackupPolicy"`
+}
+
+// GetInstanceBackupPolicyInput is an input type that accepts GetInstanceBackupPolicyArgs and GetInstanceBackupPolicyOutput values.
+// You can construct a concrete instance of `GetInstanceBackupPolicyInput` via:
+//
+//	GetInstanceBackupPolicyArgs{...}
+type GetInstanceBackupPolicyInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupPolicyOutput() GetInstanceBackupPolicyOutput
+	ToGetInstanceBackupPolicyOutputWithContext(context.Context) GetInstanceBackupPolicyOutput
+}
+
+type GetInstanceBackupPolicyArgs struct {
+	// List of destination regions available for cross-region backup.
+	AvailableCrossRegions pulumi.StringArrayInput `pulumi:"availableCrossRegions"`
+	// Basic backup policy.
+	BackupPolicyBase GetInstanceBackupPolicyBackupPolicyBaseInput `pulumi:"backupPolicyBase"`
+	// Cross-region backup policy.
+	CrossBackupPolicy GetInstanceBackupPolicyCrossBackupPolicyInput `pulumi:"crossBackupPolicy"`
+}
+
+func (GetInstanceBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPolicy)(nil)).Elem()
+}
+
+func (i GetInstanceBackupPolicyArgs) ToGetInstanceBackupPolicyOutput() GetInstanceBackupPolicyOutput {
+	return i.ToGetInstanceBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupPolicyArgs) ToGetInstanceBackupPolicyOutputWithContext(ctx context.Context) GetInstanceBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupPolicyOutput)
+}
+
+type GetInstanceBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPolicy)(nil)).Elem()
+}
+
+func (o GetInstanceBackupPolicyOutput) ToGetInstanceBackupPolicyOutput() GetInstanceBackupPolicyOutput {
+	return o
+}
+
+func (o GetInstanceBackupPolicyOutput) ToGetInstanceBackupPolicyOutputWithContext(ctx context.Context) GetInstanceBackupPolicyOutput {
+	return o
+}
+
+// List of destination regions available for cross-region backup.
+func (o GetInstanceBackupPolicyOutput) AvailableCrossRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicy) []string { return v.AvailableCrossRegions }).(pulumi.StringArrayOutput)
+}
+
+// Basic backup policy.
+func (o GetInstanceBackupPolicyOutput) BackupPolicyBase() GetInstanceBackupPolicyBackupPolicyBaseOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicy) GetInstanceBackupPolicyBackupPolicyBase { return v.BackupPolicyBase }).(GetInstanceBackupPolicyBackupPolicyBaseOutput)
+}
+
+// Cross-region backup policy.
+func (o GetInstanceBackupPolicyOutput) CrossBackupPolicy() GetInstanceBackupPolicyCrossBackupPolicyOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicy) GetInstanceBackupPolicyCrossBackupPolicy { return v.CrossBackupPolicy }).(GetInstanceBackupPolicyCrossBackupPolicyOutput)
+}
+
+type GetInstanceBackupPolicyBackupPolicyBase struct {
+	// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+	BinlogBackupAllRetention bool `pulumi:"binlogBackupAllRetention"`
+	// Enable log backup feature. Values: true: yes. false: no.
+	BinlogBackupEnabled bool `pulumi:"binlogBackupEnabled"`
+	// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+	BinlogBackupEncryptionEnabled bool `pulumi:"binlogBackupEncryptionEnabled"`
+	// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+	BinlogFileCountsEnable bool `pulumi:"binlogFileCountsEnable"`
+	// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+	BinlogLimitCount int `pulumi:"binlogLimitCount"`
+	// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+	BinlogLocalRetentionHour int `pulumi:"binlogLocalRetentionHour"`
+	// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+	BinlogSpaceLimitEnable bool `pulumi:"binlogSpaceLimitEnable"`
+	// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+	BinlogStoragePercentage int `pulumi:"binlogStoragePercentage"`
+	// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+	DataBackupAllRetention bool `pulumi:"dataBackupAllRetention"`
+	// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+	DataBackupEncryptionEnabled bool `pulumi:"dataBackupEncryptionEnabled"`
+	// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+	DataBackupRetentionDay int `pulumi:"dataBackupRetentionDay"`
+	// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+	DataFullBackupPeriods []string `pulumi:"dataFullBackupPeriods"`
+	// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupStartUtcHour int `pulumi:"dataFullBackupStartUtcHour"`
+	// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupTime string `pulumi:"dataFullBackupTime"`
+	// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+	DataIncrBackupPeriods []string `pulumi:"dataIncrBackupPeriods"`
+	// Number of days to retain data after instance release.
+	DataKeepDaysAfterReleased int `pulumi:"dataKeepDaysAfterReleased"`
+	// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+	DataKeepPolicyAfterReleased string `pulumi:"dataKeepPolicyAfterReleased"`
+	// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+	HighFrequencySnapshotBackupEnable bool `pulumi:"highFrequencySnapshotBackupEnable"`
+	// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+	HighFrequencySnapshotBackupSecondPeriod int `pulumi:"highFrequencySnapshotBackupSecondPeriod"`
+	// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+	HourlyIncrBackupEnable bool `pulumi:"hourlyIncrBackupEnable"`
+	// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+	IncrBackupHourPeriod int `pulumi:"incrBackupHourPeriod"`
+	// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+	KeepCrossBackupEnableAfterReleased bool `pulumi:"keepCrossBackupEnableAfterReleased"`
+	// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+	LockDdlTime int `pulumi:"lockDdlTime"`
+	// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+	LockDdlTimeSecond int `pulumi:"lockDdlTimeSecond"`
+	// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+	LogBackupRetentionDay int `pulumi:"logBackupRetentionDay"`
+	// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+	PublicDownloadEnable bool `pulumi:"publicDownloadEnable"`
+	// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+	RetentionPolicySynced bool `pulumi:"retentionPolicySynced"`
+}
+
+// GetInstanceBackupPolicyBackupPolicyBaseInput is an input type that accepts GetInstanceBackupPolicyBackupPolicyBaseArgs and GetInstanceBackupPolicyBackupPolicyBaseOutput values.
+// You can construct a concrete instance of `GetInstanceBackupPolicyBackupPolicyBaseInput` via:
+//
+//	GetInstanceBackupPolicyBackupPolicyBaseArgs{...}
+type GetInstanceBackupPolicyBackupPolicyBaseInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupPolicyBackupPolicyBaseOutput() GetInstanceBackupPolicyBackupPolicyBaseOutput
+	ToGetInstanceBackupPolicyBackupPolicyBaseOutputWithContext(context.Context) GetInstanceBackupPolicyBackupPolicyBaseOutput
+}
+
+type GetInstanceBackupPolicyBackupPolicyBaseArgs struct {
+	// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+	BinlogBackupAllRetention pulumi.BoolInput `pulumi:"binlogBackupAllRetention"`
+	// Enable log backup feature. Values: true: yes. false: no.
+	BinlogBackupEnabled pulumi.BoolInput `pulumi:"binlogBackupEnabled"`
+	// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+	BinlogBackupEncryptionEnabled pulumi.BoolInput `pulumi:"binlogBackupEncryptionEnabled"`
+	// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+	BinlogFileCountsEnable pulumi.BoolInput `pulumi:"binlogFileCountsEnable"`
+	// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+	BinlogLimitCount pulumi.IntInput `pulumi:"binlogLimitCount"`
+	// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+	BinlogLocalRetentionHour pulumi.IntInput `pulumi:"binlogLocalRetentionHour"`
+	// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+	BinlogSpaceLimitEnable pulumi.BoolInput `pulumi:"binlogSpaceLimitEnable"`
+	// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+	BinlogStoragePercentage pulumi.IntInput `pulumi:"binlogStoragePercentage"`
+	// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+	DataBackupAllRetention pulumi.BoolInput `pulumi:"dataBackupAllRetention"`
+	// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+	DataBackupEncryptionEnabled pulumi.BoolInput `pulumi:"dataBackupEncryptionEnabled"`
+	// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+	DataBackupRetentionDay pulumi.IntInput `pulumi:"dataBackupRetentionDay"`
+	// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+	DataFullBackupPeriods pulumi.StringArrayInput `pulumi:"dataFullBackupPeriods"`
+	// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupStartUtcHour pulumi.IntInput `pulumi:"dataFullBackupStartUtcHour"`
+	// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+	DataFullBackupTime pulumi.StringInput `pulumi:"dataFullBackupTime"`
+	// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+	DataIncrBackupPeriods pulumi.StringArrayInput `pulumi:"dataIncrBackupPeriods"`
+	// Number of days to retain data after instance release.
+	DataKeepDaysAfterReleased pulumi.IntInput `pulumi:"dataKeepDaysAfterReleased"`
+	// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+	DataKeepPolicyAfterReleased pulumi.StringInput `pulumi:"dataKeepPolicyAfterReleased"`
+	// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+	HighFrequencySnapshotBackupEnable pulumi.BoolInput `pulumi:"highFrequencySnapshotBackupEnable"`
+	// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+	HighFrequencySnapshotBackupSecondPeriod pulumi.IntInput `pulumi:"highFrequencySnapshotBackupSecondPeriod"`
+	// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+	HourlyIncrBackupEnable pulumi.BoolInput `pulumi:"hourlyIncrBackupEnable"`
+	// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+	IncrBackupHourPeriod pulumi.IntInput `pulumi:"incrBackupHourPeriod"`
+	// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+	KeepCrossBackupEnableAfterReleased pulumi.BoolInput `pulumi:"keepCrossBackupEnableAfterReleased"`
+	// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+	LockDdlTime pulumi.IntInput `pulumi:"lockDdlTime"`
+	// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+	LockDdlTimeSecond pulumi.IntInput `pulumi:"lockDdlTimeSecond"`
+	// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+	LogBackupRetentionDay pulumi.IntInput `pulumi:"logBackupRetentionDay"`
+	// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+	PublicDownloadEnable pulumi.BoolInput `pulumi:"publicDownloadEnable"`
+	// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+	RetentionPolicySynced pulumi.BoolInput `pulumi:"retentionPolicySynced"`
+}
+
+func (GetInstanceBackupPolicyBackupPolicyBaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPolicyBackupPolicyBase)(nil)).Elem()
+}
+
+func (i GetInstanceBackupPolicyBackupPolicyBaseArgs) ToGetInstanceBackupPolicyBackupPolicyBaseOutput() GetInstanceBackupPolicyBackupPolicyBaseOutput {
+	return i.ToGetInstanceBackupPolicyBackupPolicyBaseOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupPolicyBackupPolicyBaseArgs) ToGetInstanceBackupPolicyBackupPolicyBaseOutputWithContext(ctx context.Context) GetInstanceBackupPolicyBackupPolicyBaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupPolicyBackupPolicyBaseOutput)
+}
+
+type GetInstanceBackupPolicyBackupPolicyBaseOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupPolicyBackupPolicyBaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPolicyBackupPolicyBase)(nil)).Elem()
+}
+
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) ToGetInstanceBackupPolicyBackupPolicyBaseOutput() GetInstanceBackupPolicyBackupPolicyBaseOutput {
+	return o
+}
+
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) ToGetInstanceBackupPolicyBackupPolicyBaseOutputWithContext(ctx context.Context) GetInstanceBackupPolicyBackupPolicyBaseOutput {
+	return o
+}
+
+// Retain all log backups before releasing the instance. Values: true: yes. false: no.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogBackupAllRetention() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.BinlogBackupAllRetention }).(pulumi.BoolOutput)
+}
+
+// Enable log backup feature. Values: true: yes. false: no.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.BinlogBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether to enable encryption for log backups. Values: true: Yes. false: No.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogBackupEncryptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.BinlogBackupEncryptionEnabled }).(pulumi.BoolOutput)
+}
+
+// Enable local Binlog retention limit. Values: true: enabled. false: disabled.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogFileCountsEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.BinlogFileCountsEnable }).(pulumi.BoolOutput)
+}
+
+// Number of local Binlog files to retain, values range from 6 to 1000. Files exceeding the retention count are automatically deleted.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogLimitCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.BinlogLimitCount }).(pulumi.IntOutput)
+}
+
+// Local Binlog retention period. Value: 0–168. Unit: hours. Local logs exceeding the retention period are automatically deleted. When set to 0, local logs are not deleted automatically.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogLocalRetentionHour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.BinlogLocalRetentionHour }).(pulumi.IntOutput)
+}
+
+// Enable automatic Binlog cleanup when storage is excessive. When total instance storage usage exceeds 80% or available space is less than 5 GiB, the system automatically deletes the oldest local Binlog files until usage drops below 80% and available space exceeds 5 GiB. true: enabled. false: disabled.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogSpaceLimitEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.BinlogSpaceLimitEnable }).(pulumi.BoolOutput)
+}
+
+// Maximum storage space usage. Can be set to 20%–50%. When exceeded, the earliest Binlog files are automatically deleted until usage falls below this threshold. Note: Local Binlog space usage = local Binlog size / total available (purchased) instance space.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) BinlogStoragePercentage() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.BinlogStoragePercentage }).(pulumi.IntOutput)
+}
+
+// Retain all data backups before releasing the instance. Values: true: yes. false: no.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataBackupAllRetention() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.DataBackupAllRetention }).(pulumi.BoolOutput)
+}
+
+// Enable encryption for data backups of local disk instances. Values: true: yes. false: no. Note: This feature is not supported for cloud disk instances.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataBackupEncryptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.DataBackupEncryptionEnabled }).(pulumi.BoolOutput)
+}
+
+// Number of days to retain data backups. Valid values: 7–3650 days. Default: 7 days.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataBackupRetentionDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.DataBackupRetentionDay }).(pulumi.IntOutput)
+}
+
+// Full backup cycle. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataFullBackupPeriods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) []string { return v.DataFullBackupPeriods }).(pulumi.StringArrayOutput)
+}
+
+// Start time of the full backup task time window (UTC). The time window is 1 hour. Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataFullBackupStartUtcHour() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.DataFullBackupStartUtcHour }).(pulumi.IntOutput)
+}
+
+// Time window for executing backup tasks, with a duration of 1 hour. Format: HH:mmZ-HH:mmZ (UTC). Note: Both DataFullBackupStartUTCHour and DataFullBackupTime can be used to specify the full backup time period for the instance. DataFullBackupStartUTCHour has higher priority. If both fields are returned, DataFullBackupStartUTCHour takes precedence.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataFullBackupTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) string { return v.DataFullBackupTime }).(pulumi.StringOutput)
+}
+
+// Incremental backup cycle for local disk instances. Values: Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday. Note: When high-frequency incremental backup is enabled (that is, when HourlyIncrBackupEnable is set to true), this field is not returned.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataIncrBackupPeriods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) []string { return v.DataIncrBackupPeriods }).(pulumi.StringArrayOutput)
+}
+
+// Number of days to retain data after instance release.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataKeepDaysAfterReleased() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.DataKeepDaysAfterReleased }).(pulumi.IntOutput)
+}
+
+// Policy for retaining instance backups after the instance is released. Values: Last: retain the last backup (default). All: retain all backups of the instance.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) DataKeepPolicyAfterReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) string { return v.DataKeepPolicyAfterReleased }).(pulumi.StringOutput)
+}
+
+// Whether high-frequency incremental snapshot backup is enabled for cloud disk instances. Values: true: Yes. false: No. Note: For local disk instances, this field returns false.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) HighFrequencySnapshotBackupEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.HighFrequencySnapshotBackupEnable }).(pulumi.BoolOutput)
+}
+
+// Frequency of high-frequency incremental snapshot backups for cloud disk instances, in seconds. Values: 3600: every 1 hour. 7200: every 2 hours. 10800: every 3 hours. 14400: every 4 hours. 19200: every 6 hours. 28800: every 8 hours. 38400: every 12 hours. Note: If the instance is a local disk instance or the high-frequency incremental snapshot backup feature for the cloud disk instance is not enabled, this field returns 0.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) HighFrequencySnapshotBackupSecondPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.HighFrequencySnapshotBackupSecondPeriod }).(pulumi.IntOutput)
+}
+
+// Whether to enable high-frequency backup for local disk instances. Values: true: Yes. false: No.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) HourlyIncrBackupEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.HourlyIncrBackupEnable }).(pulumi.BoolOutput)
+}
+
+// Frequency of high-frequency incremental backups for local disk instances. Values: 0: no high-frequency incremental backup. In this case, HourlyIncrBackupEnable is false. 2: incremental backup every 2 hours. 4: incremental backup every 4 hours. 6: incremental backup every 6 hours. 12: incremental backup every 12 hours.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) IncrBackupHourPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.IncrBackupHourPeriod }).(pulumi.IntOutput)
+}
+
+// Whether to retain cross-region backups. Values: true: Yes. false: No. Note: This feature is not supported for cloud disk instances.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) KeepCrossBackupEnableAfterReleased() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.KeepCrossBackupEnableAfterReleased }).(pulumi.BoolOutput)
+}
+
+// Maximum DDL wait time. Default value is 30, minimum is 10, maximum is 1440, in minutes.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) LockDdlTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.LockDdlTime }).(pulumi.IntOutput)
+}
+
+// Maximum DDL wait time. Default value: 1800. Minimum: 1. Maximum: 86400. Unit: seconds. Note: The backup process will block DDL. If the blocking time exceeds the specified value, the backup will stop automatically. Only MySQL 8.0 instances support this setting.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) LockDdlTimeSecond() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.LockDdlTimeSecond }).(pulumi.IntOutput)
+}
+
+// Binlog backup retention period. Value range: 7–3650 days. Default retention is 7 days. Note: This parameter is not returned when RetentionPolicySynced is set to true.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) LogBackupRetentionDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) int { return v.LogBackupRetentionDay }).(pulumi.IntOutput)
+}
+
+// Whether to allow downloading instance backup data from a public network environment. Values: true: Yes. false: No.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) PublicDownloadEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.PublicDownloadEnable }).(pulumi.BoolOutput)
+}
+
+// Whether the retention policy for log backups is the same as that for data backups. Values: true: Yes. false: No.
+func (o GetInstanceBackupPolicyBackupPolicyBaseOutput) RetentionPolicySynced() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyBackupPolicyBase) bool { return v.RetentionPolicySynced }).(pulumi.BoolOutput)
+}
+
+type GetInstanceBackupPolicyCrossBackupPolicy struct {
+	// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+	BackupEnabled bool `pulumi:"backupEnabled"`
+	// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+	CrossBackupAllRetention bool `pulumi:"crossBackupAllRetention"`
+	// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+	CrossBackupRegion string `pulumi:"crossBackupRegion"`
+	// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+	LogBackupEnabled bool `pulumi:"logBackupEnabled"`
+	// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+	Retention int `pulumi:"retention"`
+}
+
+// GetInstanceBackupPolicyCrossBackupPolicyInput is an input type that accepts GetInstanceBackupPolicyCrossBackupPolicyArgs and GetInstanceBackupPolicyCrossBackupPolicyOutput values.
+// You can construct a concrete instance of `GetInstanceBackupPolicyCrossBackupPolicyInput` via:
+//
+//	GetInstanceBackupPolicyCrossBackupPolicyArgs{...}
+type GetInstanceBackupPolicyCrossBackupPolicyInput interface {
+	pulumi.Input
+
+	ToGetInstanceBackupPolicyCrossBackupPolicyOutput() GetInstanceBackupPolicyCrossBackupPolicyOutput
+	ToGetInstanceBackupPolicyCrossBackupPolicyOutputWithContext(context.Context) GetInstanceBackupPolicyCrossBackupPolicyOutput
+}
+
+type GetInstanceBackupPolicyCrossBackupPolicyArgs struct {
+	// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+	BackupEnabled pulumi.BoolInput `pulumi:"backupEnabled"`
+	// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+	CrossBackupAllRetention pulumi.BoolInput `pulumi:"crossBackupAllRetention"`
+	// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+	CrossBackupRegion pulumi.StringInput `pulumi:"crossBackupRegion"`
+	// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+	LogBackupEnabled pulumi.BoolInput `pulumi:"logBackupEnabled"`
+	// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+	Retention pulumi.IntInput `pulumi:"retention"`
+}
+
+func (GetInstanceBackupPolicyCrossBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPolicyCrossBackupPolicy)(nil)).Elem()
+}
+
+func (i GetInstanceBackupPolicyCrossBackupPolicyArgs) ToGetInstanceBackupPolicyCrossBackupPolicyOutput() GetInstanceBackupPolicyCrossBackupPolicyOutput {
+	return i.ToGetInstanceBackupPolicyCrossBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i GetInstanceBackupPolicyCrossBackupPolicyArgs) ToGetInstanceBackupPolicyCrossBackupPolicyOutputWithContext(ctx context.Context) GetInstanceBackupPolicyCrossBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceBackupPolicyCrossBackupPolicyOutput)
+}
+
+type GetInstanceBackupPolicyCrossBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceBackupPolicyCrossBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceBackupPolicyCrossBackupPolicy)(nil)).Elem()
+}
+
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) ToGetInstanceBackupPolicyCrossBackupPolicyOutput() GetInstanceBackupPolicyCrossBackupPolicyOutput {
+	return o
+}
+
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) ToGetInstanceBackupPolicyCrossBackupPolicyOutputWithContext(ctx context.Context) GetInstanceBackupPolicyCrossBackupPolicyOutput {
+	return o
+}
+
+// Enable cross-region backup. true: enabled. false: disabled. Default value (unspecified).
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) BackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyCrossBackupPolicy) bool { return v.BackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Retain cross-region backups long-term before instance release. Values: true: yes. false: no.
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) CrossBackupAllRetention() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyCrossBackupPolicy) bool { return v.CrossBackupAllRetention }).(pulumi.BoolOutput)
+}
+
+// Destination region ID for cross-region backups. This parameter is required when BackupEnabled is true.
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) CrossBackupRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyCrossBackupPolicy) string { return v.CrossBackupRegion }).(pulumi.StringOutput)
+}
+
+// Whether to enable cross-region log backup. true: Enable. false: Disable (default). Note: Cross-region log backup can only be enabled when cross-region backup is enabled.
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) LogBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyCrossBackupPolicy) bool { return v.LogBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Cross-region backup retention days. Value range: 7–3650. Default: 7. Unit: days. Note: When CrossBackupAllRetention is set to true, this field does not need to be set.
+func (o GetInstanceBackupPolicyCrossBackupPolicyOutput) Retention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackupPolicyCrossBackupPolicy) int { return v.Retention }).(pulumi.IntOutput)
 }
 
 type GetInstanceChargeDetail struct {
@@ -5542,6 +7320,8 @@ func (o GetInstanceDisasterRecoveryInstanceArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetInstanceEndpoint struct {
+	// Address list.
+	Addresses []GetInstanceEndpointAddress `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes string `pulumi:"autoAddNewNodes"`
 	// Connection endpoint tag.
@@ -5550,6 +7330,8 @@ type GetInstanceEndpoint struct {
 	ConnectionMode string `pulumi:"connectionMode"`
 	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 	ConnectionPoolType string `pulumi:"connectionPoolType"`
+	// Custom routing and forwarding rules for connected terminals.
+	CustomRouteStrategies []GetInstanceEndpointCustomRouteStrategy `pulumi:"customRouteStrategies"`
 	// Description of the connection endpoint
 	Description string `pulumi:"description"`
 	// Enable connection keep-alive. Options: true: yes. false: no
@@ -5598,6 +7380,8 @@ type GetInstanceEndpointInput interface {
 }
 
 type GetInstanceEndpointArgs struct {
+	// Address list.
+	Addresses GetInstanceEndpointAddressArrayInput `pulumi:"addresses"`
 	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes pulumi.StringInput `pulumi:"autoAddNewNodes"`
 	// Connection endpoint tag.
@@ -5606,6 +7390,8 @@ type GetInstanceEndpointArgs struct {
 	ConnectionMode pulumi.StringInput `pulumi:"connectionMode"`
 	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 	ConnectionPoolType pulumi.StringInput `pulumi:"connectionPoolType"`
+	// Custom routing and forwarding rules for connected terminals.
+	CustomRouteStrategies GetInstanceEndpointCustomRouteStrategyArrayInput `pulumi:"customRouteStrategies"`
 	// Description of the connection endpoint
 	Description pulumi.StringInput `pulumi:"description"`
 	// Enable connection keep-alive. Options: true: yes. false: no
@@ -5693,6 +7479,11 @@ func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutputWithContext(ctx co
 	return o
 }
 
+// Address list.
+func (o GetInstanceEndpointOutput) Addresses() GetInstanceEndpointAddressArrayOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) []GetInstanceEndpointAddress { return v.Addresses }).(GetInstanceEndpointAddressArrayOutput)
+}
+
 // When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 func (o GetInstanceEndpointOutput) AutoAddNewNodes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.AutoAddNewNodes }).(pulumi.StringOutput)
@@ -5711,6 +7502,11 @@ func (o GetInstanceEndpointOutput) ConnectionMode() pulumi.StringOutput {
 // Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 func (o GetInstanceEndpointOutput) ConnectionPoolType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ConnectionPoolType }).(pulumi.StringOutput)
+}
+
+// Custom routing and forwarding rules for connected terminals.
+func (o GetInstanceEndpointOutput) CustomRouteStrategies() GetInstanceEndpointCustomRouteStrategyArrayOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) []GetInstanceEndpointCustomRouteStrategy { return v.CustomRouteStrategies }).(GetInstanceEndpointCustomRouteStrategyArrayOutput)
 }
 
 // Description of the connection endpoint
@@ -5816,6 +7612,281 @@ func (o GetInstanceEndpointArrayOutput) Index(i pulumi.IntInput) GetInstanceEndp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpoint {
 		return vs[0].([]GetInstanceEndpoint)[vs[1].(int)]
 	}).(GetInstanceEndpointOutput)
+}
+
+type GetInstanceEndpointAddress struct {
+	// false: Private network resolution (default). true: Private and public network resolution.
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// Connection domain name.
+	Domain string `pulumi:"domain"`
+	// EIP ID, valid only for Public addresses.
+	EipId string `pulumi:"eipId"`
+	// Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+	EipLocked bool `pulumi:"eipLocked"`
+	// IP protocol version. Value: IPv4.
+	InternetProtocol string `pulumi:"internetProtocol"`
+	// IP address.
+	IpAddress string `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private address. Public: public address.
+	NetworkType string `pulumi:"networkType"`
+	// Port.
+	Port string `pulumi:"port"`
+	// Subnet ID, valid only for Private addresses.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstanceEndpointAddressInput is an input type that accepts GetInstanceEndpointAddressArgs and GetInstanceEndpointAddressOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointAddressInput` via:
+//
+//	GetInstanceEndpointAddressArgs{...}
+type GetInstanceEndpointAddressInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointAddressOutput() GetInstanceEndpointAddressOutput
+	ToGetInstanceEndpointAddressOutputWithContext(context.Context) GetInstanceEndpointAddressOutput
+}
+
+type GetInstanceEndpointAddressArgs struct {
+	// false: Private network resolution (default). true: Private and public network resolution.
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// Connection domain name.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// EIP ID, valid only for Public addresses.
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+	EipLocked pulumi.BoolInput `pulumi:"eipLocked"`
+	// IP protocol version. Value: IPv4.
+	InternetProtocol pulumi.StringInput `pulumi:"internetProtocol"`
+	// IP address.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Network address type. Values: Private: private address. Public: public address.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Port.
+	Port pulumi.StringInput `pulumi:"port"`
+	// Subnet ID, valid only for Private addresses.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstanceEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointAddressArgs) ToGetInstanceEndpointAddressOutput() GetInstanceEndpointAddressOutput {
+	return i.ToGetInstanceEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointAddressArgs) ToGetInstanceEndpointAddressOutputWithContext(ctx context.Context) GetInstanceEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointAddressOutput)
+}
+
+// GetInstanceEndpointAddressArrayInput is an input type that accepts GetInstanceEndpointAddressArray and GetInstanceEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointAddressArrayInput` via:
+//
+//	GetInstanceEndpointAddressArray{ GetInstanceEndpointAddressArgs{...} }
+type GetInstanceEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointAddressArrayOutput() GetInstanceEndpointAddressArrayOutput
+	ToGetInstanceEndpointAddressArrayOutputWithContext(context.Context) GetInstanceEndpointAddressArrayOutput
+}
+
+type GetInstanceEndpointAddressArray []GetInstanceEndpointAddressInput
+
+func (GetInstanceEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointAddressArray) ToGetInstanceEndpointAddressArrayOutput() GetInstanceEndpointAddressArrayOutput {
+	return i.ToGetInstanceEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointAddressArray) ToGetInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) GetInstanceEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointAddressArrayOutput)
+}
+
+type GetInstanceEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointAddressOutput) ToGetInstanceEndpointAddressOutput() GetInstanceEndpointAddressOutput {
+	return o
+}
+
+func (o GetInstanceEndpointAddressOutput) ToGetInstanceEndpointAddressOutputWithContext(ctx context.Context) GetInstanceEndpointAddressOutput {
+	return o
+}
+
+// false: Private network resolution (default). true: Private and public network resolution.
+func (o GetInstanceEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// Connection domain name.
+func (o GetInstanceEndpointAddressOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// EIP ID, valid only for Public addresses.
+func (o GetInstanceEndpointAddressOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// Whether the EIP used by the connected terminal is suspended due to overdue payment. Values: true: Yes. false: No.
+func (o GetInstanceEndpointAddressOutput) EipLocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) bool { return v.EipLocked }).(pulumi.BoolOutput)
+}
+
+// IP protocol version. Value: IPv4.
+func (o GetInstanceEndpointAddressOutput) InternetProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.InternetProtocol }).(pulumi.StringOutput)
+}
+
+// IP address.
+func (o GetInstanceEndpointAddressOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Network address type. Values: Private: private address. Public: public address.
+func (o GetInstanceEndpointAddressOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// Port.
+func (o GetInstanceEndpointAddressOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// Subnet ID, valid only for Private addresses.
+func (o GetInstanceEndpointAddressOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetInstanceEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointAddress)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointAddressArrayOutput) ToGetInstanceEndpointAddressArrayOutput() GetInstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointAddressArrayOutput) ToGetInstanceEndpointAddressArrayOutputWithContext(ctx context.Context) GetInstanceEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpointAddress {
+		return vs[0].([]GetInstanceEndpointAddress)[vs[1].(int)]
+	}).(GetInstanceEndpointAddressOutput)
+}
+
+type GetInstanceEndpointCustomRouteStrategy struct {
+	// SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+	NodeType string `pulumi:"nodeType"`
+	// Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+	SqlKeyword string `pulumi:"sqlKeyword"`
+}
+
+// GetInstanceEndpointCustomRouteStrategyInput is an input type that accepts GetInstanceEndpointCustomRouteStrategyArgs and GetInstanceEndpointCustomRouteStrategyOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointCustomRouteStrategyInput` via:
+//
+//	GetInstanceEndpointCustomRouteStrategyArgs{...}
+type GetInstanceEndpointCustomRouteStrategyInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointCustomRouteStrategyOutput() GetInstanceEndpointCustomRouteStrategyOutput
+	ToGetInstanceEndpointCustomRouteStrategyOutputWithContext(context.Context) GetInstanceEndpointCustomRouteStrategyOutput
+}
+
+type GetInstanceEndpointCustomRouteStrategyArgs struct {
+	// SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+	SqlKeyword pulumi.StringInput `pulumi:"sqlKeyword"`
+}
+
+func (GetInstanceEndpointCustomRouteStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointCustomRouteStrategyArgs) ToGetInstanceEndpointCustomRouteStrategyOutput() GetInstanceEndpointCustomRouteStrategyOutput {
+	return i.ToGetInstanceEndpointCustomRouteStrategyOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointCustomRouteStrategyArgs) ToGetInstanceEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) GetInstanceEndpointCustomRouteStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointCustomRouteStrategyOutput)
+}
+
+// GetInstanceEndpointCustomRouteStrategyArrayInput is an input type that accepts GetInstanceEndpointCustomRouteStrategyArray and GetInstanceEndpointCustomRouteStrategyArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointCustomRouteStrategyArrayInput` via:
+//
+//	GetInstanceEndpointCustomRouteStrategyArray{ GetInstanceEndpointCustomRouteStrategyArgs{...} }
+type GetInstanceEndpointCustomRouteStrategyArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointCustomRouteStrategyArrayOutput() GetInstanceEndpointCustomRouteStrategyArrayOutput
+	ToGetInstanceEndpointCustomRouteStrategyArrayOutputWithContext(context.Context) GetInstanceEndpointCustomRouteStrategyArrayOutput
+}
+
+type GetInstanceEndpointCustomRouteStrategyArray []GetInstanceEndpointCustomRouteStrategyInput
+
+func (GetInstanceEndpointCustomRouteStrategyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointCustomRouteStrategyArray) ToGetInstanceEndpointCustomRouteStrategyArrayOutput() GetInstanceEndpointCustomRouteStrategyArrayOutput {
+	return i.ToGetInstanceEndpointCustomRouteStrategyArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointCustomRouteStrategyArray) ToGetInstanceEndpointCustomRouteStrategyArrayOutputWithContext(ctx context.Context) GetInstanceEndpointCustomRouteStrategyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointCustomRouteStrategyArrayOutput)
+}
+
+type GetInstanceEndpointCustomRouteStrategyOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointCustomRouteStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointCustomRouteStrategyOutput) ToGetInstanceEndpointCustomRouteStrategyOutput() GetInstanceEndpointCustomRouteStrategyOutput {
+	return o
+}
+
+func (o GetInstanceEndpointCustomRouteStrategyOutput) ToGetInstanceEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) GetInstanceEndpointCustomRouteStrategyOutput {
+	return o
+}
+
+// SQL forwarding rule target. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
+func (o GetInstanceEndpointCustomRouteStrategyOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointCustomRouteStrategy) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// Forwarding rule keywords. SQL keyword setting rules are as follows: Each rule can contain up to 20 keywords. Maximum length is 64 characters. Can include English letters, numbers, underscores (_), @, #, :=, and Chinese characters.
+func (o GetInstanceEndpointCustomRouteStrategyOutput) SqlKeyword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointCustomRouteStrategy) string { return v.SqlKeyword }).(pulumi.StringOutput)
+}
+
+type GetInstanceEndpointCustomRouteStrategyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointCustomRouteStrategyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointCustomRouteStrategyArrayOutput) ToGetInstanceEndpointCustomRouteStrategyArrayOutput() GetInstanceEndpointCustomRouteStrategyArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointCustomRouteStrategyArrayOutput) ToGetInstanceEndpointCustomRouteStrategyArrayOutputWithContext(ctx context.Context) GetInstanceEndpointCustomRouteStrategyArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointCustomRouteStrategyArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointCustomRouteStrategyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpointCustomRouteStrategy {
+		return vs[0].([]GetInstanceEndpointCustomRouteStrategy)[vs[1].(int)]
+	}).(GetInstanceEndpointCustomRouteStrategyOutput)
 }
 
 type GetInstanceEndpointReadOnlyNodeWeight struct {
@@ -6609,12 +8680,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAddressObjectArrayInput)(nil)).Elem(), InstanceAddressObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAutoStorageScalingConfigInput)(nil)).Elem(), InstanceAutoStorageScalingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAutoStorageScalingConfigPtrInput)(nil)).Elem(), InstanceAutoStorageScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPolicyInput)(nil)).Elem(), InstanceBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPolicyPtrInput)(nil)).Elem(), InstanceBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPolicyBackupPolicyBaseInput)(nil)).Elem(), InstanceBackupPolicyBackupPolicyBaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPolicyBackupPolicyBasePtrInput)(nil)).Elem(), InstanceBackupPolicyBackupPolicyBaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPolicyCrossBackupPolicyInput)(nil)).Elem(), InstanceBackupPolicyCrossBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceBackupPolicyCrossBackupPolicyPtrInput)(nil)).Elem(), InstanceBackupPolicyCrossBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailInput)(nil)).Elem(), InstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailPtrInput)(nil)).Elem(), InstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDisasterRecoveryInstanceInput)(nil)).Elem(), InstanceDisasterRecoveryInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDisasterRecoveryInstanceArrayInput)(nil)).Elem(), InstanceDisasterRecoveryInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointInput)(nil)).Elem(), InstanceEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointArrayInput)(nil)).Elem(), InstanceEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointAddressInput)(nil)).Elem(), InstanceEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointAddressArrayInput)(nil)).Elem(), InstanceEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointCustomRouteStrategyInput)(nil)).Elem(), InstanceEndpointCustomRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointCustomRouteStrategyArrayInput)(nil)).Elem(), InstanceEndpointCustomRouteStrategyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeightInput)(nil)).Elem(), InstanceEndpointReadOnlyNodeWeightArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), InstanceEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowInput)(nil)).Elem(), InstanceMaintenanceWindowArgs{})
@@ -6657,11 +8738,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAddressObjectInput)(nil)).Elem(), GetInstanceAddressObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAddressObjectArrayInput)(nil)).Elem(), GetInstanceAddressObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAutoStorageScalingConfigInput)(nil)).Elem(), GetInstanceAutoStorageScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupPolicyInput)(nil)).Elem(), GetInstanceBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupPolicyBackupPolicyBaseInput)(nil)).Elem(), GetInstanceBackupPolicyBackupPolicyBaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceBackupPolicyCrossBackupPolicyInput)(nil)).Elem(), GetInstanceBackupPolicyCrossBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeDetailInput)(nil)).Elem(), GetInstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDisasterRecoveryInstanceInput)(nil)).Elem(), GetInstanceDisasterRecoveryInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDisasterRecoveryInstanceArrayInput)(nil)).Elem(), GetInstanceDisasterRecoveryInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointInput)(nil)).Elem(), GetInstanceEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointArrayInput)(nil)).Elem(), GetInstanceEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointAddressInput)(nil)).Elem(), GetInstanceEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointAddressArrayInput)(nil)).Elem(), GetInstanceEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointCustomRouteStrategyInput)(nil)).Elem(), GetInstanceEndpointCustomRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointCustomRouteStrategyArrayInput)(nil)).Elem(), GetInstanceEndpointCustomRouteStrategyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetInstanceEndpointReadOnlyNodeWeightArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetInstanceEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceWindowInput)(nil)).Elem(), GetInstanceMaintenanceWindowArgs{})
@@ -6703,12 +8791,22 @@ func init() {
 	pulumi.RegisterOutputType(InstanceAddressObjectArrayOutput{})
 	pulumi.RegisterOutputType(InstanceAutoStorageScalingConfigOutput{})
 	pulumi.RegisterOutputType(InstanceAutoStorageScalingConfigPtrOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPolicyOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPolicyPtrOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPolicyBackupPolicyBaseOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPolicyBackupPolicyBasePtrOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPolicyCrossBackupPolicyOutput{})
+	pulumi.RegisterOutputType(InstanceBackupPolicyCrossBackupPolicyPtrOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailPtrOutput{})
 	pulumi.RegisterOutputType(InstanceDisasterRecoveryInstanceOutput{})
 	pulumi.RegisterOutputType(InstanceDisasterRecoveryInstanceArrayOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointArrayOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointAddressOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointCustomRouteStrategyOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointCustomRouteStrategyArrayOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointReadOnlyNodeWeightOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(InstanceMaintenanceWindowOutput{})
@@ -6751,11 +8849,18 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceAddressObjectOutput{})
 	pulumi.RegisterOutputType(GetInstanceAddressObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceAutoStorageScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupPolicyOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupPolicyBackupPolicyBaseOutput{})
+	pulumi.RegisterOutputType(GetInstanceBackupPolicyCrossBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceDisasterRecoveryInstanceOutput{})
 	pulumi.RegisterOutputType(GetInstanceDisasterRecoveryInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointAddressOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointCustomRouteStrategyOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointCustomRouteStrategyArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointReadOnlyNodeWeightOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceMaintenanceWindowOutput{})

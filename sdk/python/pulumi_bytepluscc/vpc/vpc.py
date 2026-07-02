@@ -34,6 +34,7 @@ class VpcArgs:
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  support_ipv4_gateway: Optional[pulumi.Input[builtins.bool]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['VpcTagArgs']]]] = None,
+                 user_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Vpc resource.
@@ -48,6 +49,7 @@ class VpcArgs:
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] secondary_cidr_blocks: Secondary CIDR block of the VPC.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: List of subnets in the VPC.
         :param pulumi.Input[builtins.bool] support_ipv4_gateway: Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_cidr_blocks: User CIDR block of the VPC.
         :param pulumi.Input[builtins.str] vpc_name: Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
         """
         if cidr_block is not None:
@@ -74,6 +76,8 @@ class VpcArgs:
             pulumi.set(__self__, "support_ipv4_gateway", support_ipv4_gateway)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if user_cidr_blocks is not None:
+            pulumi.set(__self__, "user_cidr_blocks", user_cidr_blocks)
         if vpc_name is not None:
             pulumi.set(__self__, "vpc_name", vpc_name)
 
@@ -217,6 +221,18 @@ class VpcArgs:
     @tags.setter
     def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcTagArgs']]]]):
         pulumi.set(self, "tags", value)
+
+    @property
+    @pulumi.getter(name="userCidrBlocks")
+    def user_cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        User CIDR block of the VPC.
+        """
+        return pulumi.get(self, "user_cidr_blocks")
+
+    @user_cidr_blocks.setter
+    def user_cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "user_cidr_blocks", value)
 
     @property
     @pulumi.getter(name="vpcName")
@@ -633,6 +649,7 @@ class Vpc(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  support_ipv4_gateway: Optional[pulumi.Input[builtins.bool]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcTagArgs', 'VpcTagArgsDict']]]]] = None,
+                 user_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -657,6 +674,7 @@ class Vpc(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] secondary_cidr_blocks: Secondary CIDR block of the VPC.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: List of subnets in the VPC.
         :param pulumi.Input[builtins.bool] support_ipv4_gateway: Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_cidr_blocks: User CIDR block of the VPC.
         :param pulumi.Input[builtins.str] vpc_name: Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
         """
         ...
@@ -701,6 +719,7 @@ class Vpc(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  support_ipv4_gateway: Optional[pulumi.Input[builtins.bool]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcTagArgs', 'VpcTagArgsDict']]]]] = None,
+                 user_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -723,6 +742,7 @@ class Vpc(pulumi.CustomResource):
             __props__.__dict__["subnet_ids"] = subnet_ids
             __props__.__dict__["support_ipv4_gateway"] = support_ipv4_gateway
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["user_cidr_blocks"] = user_cidr_blocks
             __props__.__dict__["vpc_name"] = vpc_name
             __props__.__dict__["account_id"] = None
             __props__.__dict__["associate_cens"] = None
@@ -733,7 +753,6 @@ class Vpc(pulumi.CustomResource):
             __props__.__dict__["security_group_ids"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["update_time"] = None
-            __props__.__dict__["user_cidr_blocks"] = None
             __props__.__dict__["vpc_id"] = None
         super(Vpc, __self__).__init__(
             'bytepluscc:vpc/vpc:Vpc',

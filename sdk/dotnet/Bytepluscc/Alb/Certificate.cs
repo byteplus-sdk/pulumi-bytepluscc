@@ -53,7 +53,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Certificate ID
+        /// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
@@ -99,6 +99,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         [Output("listeners")]
         public Output<ImmutableArray<string>> Listeners { get; private set; } = null!;
+
+        /// <summary>
+        /// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        /// </summary>
+        [Output("oldCertificateId")]
+        public Output<string> OldCertificateId { get; private set; } = null!;
 
         /// <summary>
         /// Server certificate private key. Required when certificate type is Server
@@ -181,6 +187,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
+        /// </summary>
+        [Input("certificateId")]
+        public Input<string>? CertificateId { get; set; }
+
+        /// <summary>
         /// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         /// </summary>
         [Input("certificateName")]
@@ -199,6 +211,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        /// </summary>
+        [Input("oldCertificateId")]
+        public Input<string>? OldCertificateId { get; set; }
+
+        /// <summary>
         /// Server certificate private key. Required when certificate type is Server
         /// </summary>
         [Input("privateKey")]
@@ -213,8 +231,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// <summary>
         /// Server certificate public key
         /// </summary>
-        [Input("publicKey", required: true)]
-        public Input<string> PublicKey { get; set; } = null!;
+        [Input("publicKey")]
+        public Input<string>? PublicKey { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.CertificateTagArgs>? _tags;
@@ -233,7 +251,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Certificate ID
+        /// Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
@@ -285,6 +303,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             get => _listeners ?? (_listeners = new InputList<string>());
             set => _listeners = value;
         }
+
+        /// <summary>
+        /// Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
+        /// </summary>
+        [Input("oldCertificateId")]
+        public Input<string>? OldCertificateId { get; set; }
 
         /// <summary>
         /// Server certificate private key. Required when certificate type is Server

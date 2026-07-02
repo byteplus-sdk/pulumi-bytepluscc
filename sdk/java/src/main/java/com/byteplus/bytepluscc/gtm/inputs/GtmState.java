@@ -3,6 +3,8 @@
 
 package com.byteplus.bytepluscc.gtm.inputs;
 
+import com.byteplus.bytepluscc.gtm.inputs.GtmPolicyArgs;
+import com.byteplus.bytepluscc.gtm.inputs.GtmProbeArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
@@ -137,6 +139,21 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Detailed configuration of the scheduling policy for the GTM instance.
+     * 
+     */
+    @Import(name="policy")
+    private @Nullable Output<GtmPolicyArgs> policy;
+
+    /**
+     * @return Detailed configuration of the scheduling policy for the GTM instance.
+     * 
+     */
+    public Optional<Output<GtmPolicyArgs>> policy() {
+        return Optional.ofNullable(this.policy);
+    }
+
+    /**
      * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
      * 
      */
@@ -149,6 +166,21 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> policyType() {
         return Optional.ofNullable(this.policyType);
+    }
+
+    /**
+     * Detailed configuration of the health check for the GTM instance.
+     * 
+     */
+    @Import(name="probe")
+    private @Nullable Output<GtmProbeArgs> probe;
+
+    /**
+     * @return Detailed configuration of the health check for the GTM instance.
+     * 
+     */
+    public Optional<Output<GtmProbeArgs>> probe() {
+        return Optional.ofNullable(this.probe);
     }
 
     /**
@@ -267,7 +299,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
         this.gtmId = $.gtmId;
         this.lastOperator = $.lastOperator;
         this.owner = $.owner;
+        this.policy = $.policy;
         this.policyType = $.policyType;
+        this.probe = $.probe;
         this.projectName = $.projectName;
         this.remark = $.remark;
         this.specName = $.specName;
@@ -464,6 +498,27 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param policy Detailed configuration of the scheduling policy for the GTM instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policy(@Nullable Output<GtmPolicyArgs> policy) {
+            $.policy = policy;
+            return this;
+        }
+
+        /**
+         * @param policy Detailed configuration of the scheduling policy for the GTM instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policy(GtmPolicyArgs policy) {
+            return policy(Output.of(policy));
+        }
+
+        /**
          * @param policyType Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
          * 
          * @return builder
@@ -482,6 +537,27 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));
+        }
+
+        /**
+         * @param probe Detailed configuration of the health check for the GTM instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder probe(@Nullable Output<GtmProbeArgs> probe) {
+            $.probe = probe;
+            return this;
+        }
+
+        /**
+         * @param probe Detailed configuration of the health check for the GTM instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder probe(GtmProbeArgs probe) {
+            return probe(Output.of(probe));
         }
 
         /**
