@@ -43,6 +43,10 @@ export interface GetResolverRuleResult {
      */
     readonly endpointId: number;
     /**
+     * TRN of the endpoint
+     */
+    readonly endpointTrn: string;
+    /**
      * IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
      */
     readonly forwardIPs: outputs.privatezone.GetResolverRuleForwardIP[];
@@ -86,6 +90,10 @@ export interface GetResolverRuleResult {
      * VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
      */
     readonly vpCs: outputs.privatezone.GetResolverRuleVpC[];
+    /**
+     * TRN of one or more VPCs associated with the domain name
+     */
+    readonly vpcTrns: string[];
     /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      */

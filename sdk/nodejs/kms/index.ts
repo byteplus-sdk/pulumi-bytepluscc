@@ -10,6 +10,16 @@ export const getKey: typeof import("./getKey").getKey = null as any;
 export const getKeyOutput: typeof import("./getKey").getKeyOutput = null as any;
 utilities.lazyLoad(exports, ["getKey","getKeyOutput"], () => require("./getKey"));
 
+export { GetKeyMaterialArgs, GetKeyMaterialResult, GetKeyMaterialOutputArgs } from "./getKeyMaterial";
+export const getKeyMaterial: typeof import("./getKeyMaterial").getKeyMaterial = null as any;
+export const getKeyMaterialOutput: typeof import("./getKeyMaterial").getKeyMaterialOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyMaterial","getKeyMaterialOutput"], () => require("./getKeyMaterial"));
+
+export { GetKeyMaterialsResult } from "./getKeyMaterials";
+export const getKeyMaterials: typeof import("./getKeyMaterials").getKeyMaterials = null as any;
+export const getKeyMaterialsOutput: typeof import("./getKeyMaterials").getKeyMaterialsOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyMaterials","getKeyMaterialsOutput"], () => require("./getKeyMaterials"));
+
 export { GetKeyRingArgs, GetKeyRingResult, GetKeyRingOutputArgs } from "./getKeyRing";
 export const getKeyRing: typeof import("./getKeyRing").getKeyRing = null as any;
 export const getKeyRingOutput: typeof import("./getKeyRing").getKeyRingOutput = null as any;
@@ -40,6 +50,11 @@ export type Key = import("./key").Key;
 export const Key: typeof import("./key").Key = null as any;
 utilities.lazyLoad(exports, ["Key"], () => require("./key"));
 
+export { KeyMaterialArgs, KeyMaterialState } from "./keyMaterial";
+export type KeyMaterial = import("./keyMaterial").KeyMaterial;
+export const KeyMaterial: typeof import("./keyMaterial").KeyMaterial = null as any;
+utilities.lazyLoad(exports, ["KeyMaterial"], () => require("./keyMaterial"));
+
 export { KeyRingArgs, KeyRingState } from "./keyRing";
 export type KeyRing = import("./keyRing").KeyRing;
 export const KeyRing: typeof import("./keyRing").KeyRing = null as any;
@@ -57,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:kms/key:Key":
                 return new Key(name, <any>undefined, { urn })
+            case "bytepluscc:kms/keyMaterial:KeyMaterial":
+                return new KeyMaterial(name, <any>undefined, { urn })
             case "bytepluscc:kms/keyRing:KeyRing":
                 return new KeyRing(name, <any>undefined, { urn })
             case "bytepluscc:kms/secret:Secret":
@@ -67,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "kms/key", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "kms/keyMaterial", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kms/keyRing", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kms/secret", _module)

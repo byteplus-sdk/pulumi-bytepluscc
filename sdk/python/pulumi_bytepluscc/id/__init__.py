@@ -6,8 +6,20 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .auth_config import *
+from .get_auth_config import *
+from .get_auth_configs import *
+from .get_permission_namespace import *
+from .get_permission_namespaces import *
 from .get_service import *
 from .get_services import *
+from .get_user_pool import *
+from .get_user_pools import *
+from .get_workload_pool import *
+from .get_workload_pools import *
+from .permission_namespace import *
 from .service import *
+from .user_pool import *
+from .workload_pool import *
 from ._inputs import *
 from . import outputs

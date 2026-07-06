@@ -36,6 +36,21 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.endpointId);
     }
 
+    /**
+     * TRN of the endpoint
+     * 
+     */
+    @Import(name="endpointTrn")
+    private @Nullable Output<String> endpointTrn;
+
+    /**
+     * @return TRN of the endpoint
+     * 
+     */
+    public Optional<Output<String>> endpointTrn() {
+        return Optional.ofNullable(this.endpointTrn);
+    }
+
     @Import(name="forwardIPs")
     private @Nullable Output<List<ResolverRuleForwardIPArgs>> forwardIPs;
 
@@ -118,6 +133,21 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * TRN of one or more VPCs associated with the domain name
+     * 
+     */
+    @Import(name="vpcTrns")
+    private @Nullable Output<List<String>> vpcTrns;
+
+    /**
+     * @return TRN of one or more VPCs associated with the domain name
+     * 
+     */
+    public Optional<Output<List<String>>> vpcTrns() {
+        return Optional.ofNullable(this.vpcTrns);
+    }
+
+    /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
@@ -136,6 +166,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     private ResolverRuleArgs(ResolverRuleArgs $) {
         this.endpointId = $.endpointId;
+        this.endpointTrn = $.endpointTrn;
         this.forwardIPs = $.forwardIPs;
         this.line = $.line;
         this.name = $.name;
@@ -143,6 +174,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         this.tags = $.tags;
         this.type = $.type;
         this.vpCs = $.vpCs;
+        this.vpcTrns = $.vpcTrns;
         this.zoneName = $.zoneName;
     }
 
@@ -183,6 +215,27 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder endpointId(Integer endpointId) {
             return endpointId(Output.of(endpointId));
+        }
+
+        /**
+         * @param endpointTrn TRN of the endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointTrn(@Nullable Output<String> endpointTrn) {
+            $.endpointTrn = endpointTrn;
+            return this;
+        }
+
+        /**
+         * @param endpointTrn TRN of the endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointTrn(String endpointTrn) {
+            return endpointTrn(Output.of(endpointTrn));
         }
 
         public Builder forwardIPs(@Nullable Output<List<ResolverRuleForwardIPArgs>> forwardIPs) {
@@ -306,6 +359,37 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder vpCs(ResolverRuleVpCArgs... vpCs) {
             return vpCs(List.of(vpCs));
+        }
+
+        /**
+         * @param vpcTrns TRN of one or more VPCs associated with the domain name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcTrns(@Nullable Output<List<String>> vpcTrns) {
+            $.vpcTrns = vpcTrns;
+            return this;
+        }
+
+        /**
+         * @param vpcTrns TRN of one or more VPCs associated with the domain name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcTrns(List<String> vpcTrns) {
+            return vpcTrns(Output.of(vpcTrns));
+        }
+
+        /**
+         * @param vpcTrns TRN of one or more VPCs associated with the domain name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcTrns(String... vpcTrns) {
+            return vpcTrns(List.of(vpcTrns));
         }
 
         /**

@@ -26051,6 +26051,84 @@
                 }
             }
         },
+        "bytepluscc:fwcenter/NatFireWallControlPolicyDestPortListV1:NatFireWallControlPolicyDestPortListV1": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Specific address information.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "description",
+                        "type"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:fwcenter/NatFireWallControlPolicyDestinationCidrListV1:NatFireWallControlPolicyDestinationCidrListV1": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Specific address information.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "description",
+                        "type"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:fwcenter/NatFireWallControlPolicySourceCidrListV1:NatFireWallControlPolicySourceCidrListV1": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Specific address information.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "description",
+                        "type"
+                    ]
+                }
+            }
+        },
         "bytepluscc:fwcenter/VpcFireWallAclRuleDestPortListV1:VpcFireWallAclRuleDestPortListV1": {
             "properties": {
                 "address": {
@@ -26301,6 +26379,87 @@
             "required": [
                 "region",
                 "vpcId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:fwcenter/getNatFireWallControlPolicyDestPortListV1:getNatFireWallControlPolicyDestPortListV1": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Specific address information.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "description",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:fwcenter/getNatFireWallControlPolicyDestinationCidrListV1:getNatFireWallControlPolicyDestinationCidrListV1": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Specific address information.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "description",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:fwcenter/getNatFireWallControlPolicySourceCidrListV1:getNatFireWallControlPolicySourceCidrListV1": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Specific address information.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "description",
+                "type"
             ],
             "language": {
                 "nodejs": {
@@ -28828,6 +28987,113 @@
                 }
             }
         },
+        "bytepluscc:id/AuthConfigApiKeyAuthConfig:AuthConfigApiKeyAuthConfig": {
+            "properties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "ApiKey Value\n"
+                },
+                "apiKeyMetadatas": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/AuthConfigApiKeyAuthConfigApiKeyMetadata:AuthConfigApiKeyAuthConfigApiKeyMetadata"
+                    }
+                },
+                "apiKeyName": {
+                    "type": "string",
+                    "description": "ApiKey Name\n"
+                },
+                "expiryTimestamp": {
+                    "type": "integer",
+                    "description": "Expiration Timestamp\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "apiKey",
+                        "apiKeyMetadatas",
+                        "apiKeyName",
+                        "expiryTimestamp"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/AuthConfigApiKeyAuthConfigApiKeyMetadata:AuthConfigApiKeyAuthConfigApiKeyMetadata": {
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "Parameter Location\n"
+                },
+                "parameterName": {
+                    "type": "string",
+                    "description": "Parameter Name\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "location",
+                        "parameterName"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/AuthConfigJwtAuthConfig:AuthConfigJwtAuthConfig": {
+            "properties": {
+                "allowedAudiences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Allowed Audience List\n"
+                },
+                "allowedClients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Allowed Client List\n"
+                },
+                "discoveryUrl": {
+                    "type": "string",
+                    "description": "JWT Discovery URL。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "allowedAudiences",
+                        "allowedClients",
+                        "discoveryUrl"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/PermissionNamespaceTag:PermissionNamespaceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag Key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag Value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:id/ServiceBackend:ServiceBackend": {
             "properties": {
                 "backendDomain": {
@@ -29095,6 +29361,181 @@
                 }
             }
         },
+        "bytepluscc:id/UserPoolBrand:UserPoolBrand": {
+            "properties": {
+                "logoUri": {
+                    "type": "string",
+                    "description": "Brand logo URL\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Brand name\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "logoUri",
+                        "name"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/UserPoolTag:UserPoolTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/WorkloadPoolTag:WorkloadPoolTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/getAuthConfigApiKeyAuthConfig:getAuthConfigApiKeyAuthConfig": {
+            "properties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "ApiKey Value\n"
+                },
+                "apiKeyMetadatas": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/getAuthConfigApiKeyAuthConfigApiKeyMetadata:getAuthConfigApiKeyAuthConfigApiKeyMetadata"
+                    },
+                    "description": "ApiKey Metadata\n"
+                },
+                "apiKeyName": {
+                    "type": "string",
+                    "description": "ApiKey Name\n"
+                },
+                "expiryTimestamp": {
+                    "type": "integer",
+                    "description": "Expiration Timestamp\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "apiKey",
+                "apiKeyMetadatas",
+                "apiKeyName",
+                "expiryTimestamp"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getAuthConfigApiKeyAuthConfigApiKeyMetadata:getAuthConfigApiKeyAuthConfigApiKeyMetadata": {
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "Parameter Location\n"
+                },
+                "parameterName": {
+                    "type": "string",
+                    "description": "Parameter Name\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "location",
+                "parameterName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getAuthConfigJwtAuthConfig:getAuthConfigJwtAuthConfig": {
+            "properties": {
+                "allowedAudiences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Allowed Audience List\n"
+                },
+                "allowedClients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Allowed Client List\n"
+                },
+                "discoveryUrl": {
+                    "type": "string",
+                    "description": "JWT Discovery URL。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allowedAudiences",
+                "allowedClients",
+                "discoveryUrl"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getPermissionNamespaceTag:getPermissionNamespaceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag Key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag Value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "bytepluscc:id/getServiceBackend:getServiceBackend": {
             "properties": {
                 "backendDomain": {
@@ -29347,6 +29788,72 @@
             }
         },
         "bytepluscc:id/getServiceTag:getServiceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getUserPoolBrand:getUserPoolBrand": {
+            "properties": {
+                "logoUri": {
+                    "type": "string",
+                    "description": "Brand logo URL\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Brand name\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "logoUri",
+                "name"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getUserPoolTag:getUserPoolTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getWorkloadPoolTag:getWorkloadPoolTag": {
             "properties": {
                 "key": {
                     "type": "string",
@@ -77247,6 +77754,485 @@
                 "type": "object"
             }
         },
+        "bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy": {
+            "description": "NAT border firewall access control policy.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.fwcenter.NatFireWallControlPolicy(\"Example\", {\n    natFirewallId: \"nfw-yepxxxxxxx4vvsxpfs\",\n    direction: \"in\",\n    action: \"accept\",\n    proto: \"TCP\",\n    source: \"0.0.0.0/0\",\n    sourceType: \"net\",\n    destination: \"0.0.0.0/0\",\n    destinationType: \"net\",\n    destPort: \"60000\",\n    destPortType: \"port\",\n    description: \"this is a test\",\n    prio: 1,\n    repeatType: \"Weekly\",\n    repeatDays: [\n        2,\n        3,\n    ],\n    repeatStartTime: \"02:00\",\n    repeatEndTime: \"04:00\",\n    startTime: 1782662400,\n    endTime: 1782921540,\n    status: true,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.fwcenter.NatFireWallControlPolicy(\"Example\",\n    nat_firewall_id=\"nfw-yepxxxxxxx4vvsxpfs\",\n    direction=\"in\",\n    action=\"accept\",\n    proto=\"TCP\",\n    source=\"0.0.0.0/0\",\n    source_type=\"net\",\n    destination=\"0.0.0.0/0\",\n    destination_type=\"net\",\n    dest_port=\"60000\",\n    dest_port_type=\"port\",\n    description=\"this is a test\",\n    prio=1,\n    repeat_type=\"Weekly\",\n    repeat_days=[\n        2,\n        3,\n    ],\n    repeat_start_time=\"02:00\",\n    repeat_end_time=\"04:00\",\n    start_time=1782662400,\n    end_time=1782921540,\n    status=True)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Fwcenter.NatFireWallControlPolicy(\"Example\", new()\n    {\n        NatFirewallId = \"nfw-yepxxxxxxx4vvsxpfs\",\n        Direction = \"in\",\n        Action = \"accept\",\n        Proto = \"TCP\",\n        Source = \"0.0.0.0/0\",\n        SourceType = \"net\",\n        Destination = \"0.0.0.0/0\",\n        DestinationType = \"net\",\n        DestPort = \"60000\",\n        DestPortType = \"port\",\n        Description = \"this is a test\",\n        Prio = 1,\n        RepeatType = \"Weekly\",\n        RepeatDays = new[]\n        {\n            2,\n            3,\n        },\n        RepeatStartTime = \"02:00\",\n        RepeatEndTime = \"04:00\",\n        StartTime = 1782662400,\n        EndTime = 1782921540,\n        Status = true,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/fwcenter\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := fwcenter.NewNatFireWallControlPolicy(ctx, \"Example\", \u0026fwcenter.NatFireWallControlPolicyArgs{\n\t\t\tNatFirewallId:   pulumi.String(\"nfw-yepxxxxxxx4vvsxpfs\"),\n\t\t\tDirection:       pulumi.String(\"in\"),\n\t\t\tAction:          pulumi.String(\"accept\"),\n\t\t\tProto:           pulumi.String(\"TCP\"),\n\t\t\tSource:          pulumi.String(\"0.0.0.0/0\"),\n\t\t\tSourceType:      pulumi.String(\"net\"),\n\t\t\tDestination:     pulumi.String(\"0.0.0.0/0\"),\n\t\t\tDestinationType: pulumi.String(\"net\"),\n\t\t\tDestPort:        pulumi.String(\"60000\"),\n\t\t\tDestPortType:    pulumi.String(\"port\"),\n\t\t\tDescription:     pulumi.String(\"this is a test\"),\n\t\t\tPrio:            pulumi.Int(1),\n\t\t\tRepeatType:      pulumi.String(\"Weekly\"),\n\t\t\tRepeatDays: pulumi.IntArray{\n\t\t\t\tpulumi.Int(2),\n\t\t\t\tpulumi.Int(3),\n\t\t\t},\n\t\t\tRepeatStartTime: pulumi.String(\"02:00\"),\n\t\t\tRepeatEndTime:   pulumi.String(\"04:00\"),\n\t\t\tStartTime:       pulumi.Int(1782662400),\n\t\t\tEndTime:         pulumi.Int(1782921540),\n\t\t\tStatus:          pulumi.Bool(true),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.fwcenter.NatFireWallControlPolicy;\nimport com.byteplus.bytepluscc.fwcenter.NatFireWallControlPolicyArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new NatFireWallControlPolicy(\"example\", NatFireWallControlPolicyArgs.builder()\n            .natFirewallId(\"nfw-yepxxxxxxx4vvsxpfs\")\n            .direction(\"in\")\n            .action(\"accept\")\n            .proto(\"TCP\")\n            .source(\"0.0.0.0/0\")\n            .sourceType(\"net\")\n            .destination(\"0.0.0.0/0\")\n            .destinationType(\"net\")\n            .destPort(\"60000\")\n            .destPortType(\"port\")\n            .description(\"this is a test\")\n            .prio(1)\n            .repeatType(\"Weekly\")\n            .repeatDays(            \n                2,\n                3)\n            .repeatStartTime(\"02:00\")\n            .repeatEndTime(\"04:00\")\n            .startTime(1782662400)\n            .endTime(1782921540)\n            .status(true)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:fwcenter:NatFireWallControlPolicy\n    name: Example\n    properties:\n      natFirewallId: nfw-yepxxxxxxx4vvsxpfs\n      direction: in\n      action: accept\n      proto: TCP\n      source: 0.0.0.0/0\n      sourceType: net\n      destination: 0.0.0.0/0\n      destinationType: net\n      destPort: '60000'\n      destPortType: port\n      description: this is a test\n      prio: 1\n      repeatType: Weekly\n      repeatDays:\n        - 2\n        - 3\n      repeatStartTime: 02:00\n      repeatEndTime: 04:00\n      startTime: 1.7826624e+09\n      endTime: 1.78292154e+09\n      status: true\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy example \"nat_firewall_id|direction|rule_id\"\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "User's unique identifier ID.\n"
+                },
+                "action": {
+                    "type": "string",
+                    "description": "Policy action. accept: allow; deny: deny; monitor: observe.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the policy.\n"
+                },
+                "destPort": {
+                    "type": "string",
+                    "description": "Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.\n"
+                },
+                "destPortGroupType": {
+                    "type": "string",
+                    "description": "Destination port book type.\n"
+                },
+                "destPortListV1s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:fwcenter/NatFireWallControlPolicyDestPortListV1:NatFireWallControlPolicyDestPortListV1"
+                    }
+                },
+                "destPortLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Destination port list.\n"
+                },
+                "destPortType": {
+                    "type": "string",
+                    "description": "Destination port type. port: port; group: port address book.\n"
+                },
+                "destination": {
+                    "type": "string",
+                    "description": "Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.\n"
+                },
+                "destinationCidrListV1s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:fwcenter/NatFireWallControlPolicyDestinationCidrListV1:NatFireWallControlPolicyDestinationCidrListV1"
+                    }
+                },
+                "destinationCidrLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Destination CIDR list.\n"
+                },
+                "destinationDomainLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Destination domain name list.\n"
+                },
+                "destinationGroupType": {
+                    "type": "string",
+                    "description": "Destination address book type.\n"
+                },
+                "destinationType": {
+                    "type": "string",
+                    "description": "Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).\n"
+                },
+                "direction": {
+                    "type": "string",
+                    "description": "Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.\n"
+                },
+                "effectStatus": {
+                    "type": "integer",
+                    "description": "Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.\n"
+                },
+                "endTime": {
+                    "type": "integer",
+                    "description": "Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n"
+                },
+                "hitCnt": {
+                    "type": "integer",
+                    "description": "Hit count, indicating the number of times this policy has been triggered.\n"
+                },
+                "isEffected": {
+                    "type": "boolean",
+                    "description": "Whether the policy is effective.\n"
+                },
+                "lastHitTime": {
+                    "type": "integer",
+                    "description": "Last hit timestamp, indicating the last time this policy was triggered.\n"
+                },
+                "natFirewallId": {
+                    "type": "string",
+                    "description": "NAT border firewall instance ID.\n"
+                },
+                "prio": {
+                    "type": "integer",
+                    "description": "Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.\n"
+                },
+                "proto": {
+                    "type": "string",
+                    "description": "Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.\n"
+                },
+                "repeatDays": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.\n"
+                },
+                "repeatEndTime": {
+                    "type": "string",
+                    "description": "Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n"
+                },
+                "repeatStartTime": {
+                    "type": "string",
+                    "description": "Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n"
+                },
+                "repeatType": {
+                    "type": "string",
+                    "description": "Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.\n"
+                },
+                "ruleId": {
+                    "type": "string",
+                    "description": "Unique ID of the access control policy.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.\n"
+                },
+                "sourceCidrListV1s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:fwcenter/NatFireWallControlPolicySourceCidrListV1:NatFireWallControlPolicySourceCidrListV1"
+                    }
+                },
+                "sourceCidrLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Source CIDR list.\n"
+                },
+                "sourceGroupType": {
+                    "type": "string",
+                    "description": "Source address book type.\n"
+                },
+                "sourceType": {
+                    "type": "string",
+                    "description": "Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).\n"
+                },
+                "startTime": {
+                    "type": "integer",
+                    "description": "Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n"
+                },
+                "status": {
+                    "type": "boolean",
+                    "description": "Policy switch status. false: off; true: on.\n"
+                },
+                "updateTime": {
+                    "type": "integer",
+                    "description": "Policy update timestamp.\n"
+                },
+                "useCount": {
+                    "type": "integer",
+                    "description": "Number of policies occupied by this policy.\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "action",
+                "description",
+                "destPort",
+                "destPortGroupType",
+                "destPortLists",
+                "destPortListV1s",
+                "destPortType",
+                "destination",
+                "destinationCidrLists",
+                "destinationCidrListV1s",
+                "destinationDomainLists",
+                "destinationGroupType",
+                "destinationType",
+                "direction",
+                "effectStatus",
+                "endTime",
+                "hitCnt",
+                "isEffected",
+                "lastHitTime",
+                "natFirewallId",
+                "prio",
+                "proto",
+                "repeatDays",
+                "repeatEndTime",
+                "repeatStartTime",
+                "repeatType",
+                "ruleId",
+                "source",
+                "sourceCidrLists",
+                "sourceCidrListV1s",
+                "sourceGroupType",
+                "sourceType",
+                "startTime",
+                "status",
+                "updateTime",
+                "useCount"
+            ],
+            "inputProperties": {
+                "action": {
+                    "type": "string",
+                    "description": "Policy action. accept: allow; deny: deny; monitor: observe.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the policy.\n"
+                },
+                "destPort": {
+                    "type": "string",
+                    "description": "Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.\n"
+                },
+                "destPortType": {
+                    "type": "string",
+                    "description": "Destination port type. port: port; group: port address book.\n"
+                },
+                "destination": {
+                    "type": "string",
+                    "description": "Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.\n"
+                },
+                "destinationType": {
+                    "type": "string",
+                    "description": "Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).\n"
+                },
+                "direction": {
+                    "type": "string",
+                    "description": "Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.\n"
+                },
+                "endTime": {
+                    "type": "integer",
+                    "description": "Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n"
+                },
+                "natFirewallId": {
+                    "type": "string",
+                    "description": "NAT border firewall instance ID.\n"
+                },
+                "prio": {
+                    "type": "integer",
+                    "description": "Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.\n"
+                },
+                "proto": {
+                    "type": "string",
+                    "description": "Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.\n"
+                },
+                "repeatDays": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.\n"
+                },
+                "repeatEndTime": {
+                    "type": "string",
+                    "description": "Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n"
+                },
+                "repeatStartTime": {
+                    "type": "string",
+                    "description": "Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n"
+                },
+                "repeatType": {
+                    "type": "string",
+                    "description": "Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.\n"
+                },
+                "sourceType": {
+                    "type": "string",
+                    "description": "Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).\n"
+                },
+                "startTime": {
+                    "type": "integer",
+                    "description": "Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n"
+                },
+                "status": {
+                    "type": "boolean",
+                    "description": "Policy switch status. false: off; true: on.\n"
+                }
+            },
+            "requiredInputs": [
+                "action",
+                "destination",
+                "destinationType",
+                "direction",
+                "natFirewallId",
+                "proto",
+                "source",
+                "sourceType"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering NatFireWallControlPolicy resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "User's unique identifier ID.\n"
+                    },
+                    "action": {
+                        "type": "string",
+                        "description": "Policy action. accept: allow; deny: deny; monitor: observe.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the policy.\n"
+                    },
+                    "destPort": {
+                        "type": "string",
+                        "description": "Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.\n"
+                    },
+                    "destPortGroupType": {
+                        "type": "string",
+                        "description": "Destination port book type.\n"
+                    },
+                    "destPortListV1s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:fwcenter/NatFireWallControlPolicyDestPortListV1:NatFireWallControlPolicyDestPortListV1"
+                        }
+                    },
+                    "destPortLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Destination port list.\n"
+                    },
+                    "destPortType": {
+                        "type": "string",
+                        "description": "Destination port type. port: port; group: port address book.\n"
+                    },
+                    "destination": {
+                        "type": "string",
+                        "description": "Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.\n"
+                    },
+                    "destinationCidrListV1s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:fwcenter/NatFireWallControlPolicyDestinationCidrListV1:NatFireWallControlPolicyDestinationCidrListV1"
+                        }
+                    },
+                    "destinationCidrLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Destination CIDR list.\n"
+                    },
+                    "destinationDomainLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Destination domain name list.\n"
+                    },
+                    "destinationGroupType": {
+                        "type": "string",
+                        "description": "Destination address book type.\n"
+                    },
+                    "destinationType": {
+                        "type": "string",
+                        "description": "Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).\n"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.\n"
+                    },
+                    "effectStatus": {
+                        "type": "integer",
+                        "description": "Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.\n"
+                    },
+                    "endTime": {
+                        "type": "integer",
+                        "description": "Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n"
+                    },
+                    "hitCnt": {
+                        "type": "integer",
+                        "description": "Hit count, indicating the number of times this policy has been triggered.\n"
+                    },
+                    "isEffected": {
+                        "type": "boolean",
+                        "description": "Whether the policy is effective.\n"
+                    },
+                    "lastHitTime": {
+                        "type": "integer",
+                        "description": "Last hit timestamp, indicating the last time this policy was triggered.\n"
+                    },
+                    "natFirewallId": {
+                        "type": "string",
+                        "description": "NAT border firewall instance ID.\n"
+                    },
+                    "prio": {
+                        "type": "integer",
+                        "description": "Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.\n"
+                    },
+                    "proto": {
+                        "type": "string",
+                        "description": "Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.\n"
+                    },
+                    "repeatDays": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.\n"
+                    },
+                    "repeatEndTime": {
+                        "type": "string",
+                        "description": "Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n"
+                    },
+                    "repeatStartTime": {
+                        "type": "string",
+                        "description": "Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n"
+                    },
+                    "repeatType": {
+                        "type": "string",
+                        "description": "Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.\n"
+                    },
+                    "ruleId": {
+                        "type": "string",
+                        "description": "Unique ID of the access control policy.\n"
+                    },
+                    "source": {
+                        "type": "string",
+                        "description": "Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.\n"
+                    },
+                    "sourceCidrListV1s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:fwcenter/NatFireWallControlPolicySourceCidrListV1:NatFireWallControlPolicySourceCidrListV1"
+                        }
+                    },
+                    "sourceCidrLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Source CIDR list.\n"
+                    },
+                    "sourceGroupType": {
+                        "type": "string",
+                        "description": "Source address book type.\n"
+                    },
+                    "sourceType": {
+                        "type": "string",
+                        "description": "Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).\n"
+                    },
+                    "startTime": {
+                        "type": "integer",
+                        "description": "Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Policy switch status. false: off; true: on.\n"
+                    },
+                    "updateTime": {
+                        "type": "integer",
+                        "description": "Policy update timestamp.\n"
+                    },
+                    "useCount": {
+                        "type": "integer",
+                        "description": "Number of policies occupied by this policy.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule": {
             "description": "VPC border firewall access control policy (ACL rule), used to define allow, block, or observe rules for traffic between VPCs.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.fwcenter.VpcFireWallAclRule(\"Example\", {\n    action: \"accept\",\n    description: \"this is a test\",\n    destPort: \"60000\",\n    destPortType: \"port\",\n    destination: \"0.0.0.0/0\",\n    destinationType: \"net\",\n    domainResolutionMode: \"\",\n    endTime: 1782662340,\n    ipType: \"v4\",\n    prio: 1,\n    proto: \"TCP\",\n    repeatDays: [\n        2,\n        3,\n    ],\n    repeatEndTime: \"04:00\",\n    repeatStartTime: \"02:00\",\n    repeatType: \"Weekly\",\n    source: \"0.0.0.0/0\",\n    sourceType: \"net\",\n    startTime: 1782403200,\n    status: true,\n    vpcFirewallId: \"vfw-yeoxxxxxx4vvsy6xj\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.fwcenter.VpcFireWallAclRule(\"Example\",\n    action=\"accept\",\n    description=\"this is a test\",\n    dest_port=\"60000\",\n    dest_port_type=\"port\",\n    destination=\"0.0.0.0/0\",\n    destination_type=\"net\",\n    domain_resolution_mode=\"\",\n    end_time=1782662340,\n    ip_type=\"v4\",\n    prio=1,\n    proto=\"TCP\",\n    repeat_days=[\n        2,\n        3,\n    ],\n    repeat_end_time=\"04:00\",\n    repeat_start_time=\"02:00\",\n    repeat_type=\"Weekly\",\n    source=\"0.0.0.0/0\",\n    source_type=\"net\",\n    start_time=1782403200,\n    status=True,\n    vpc_firewall_id=\"vfw-yeoxxxxxx4vvsy6xj\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Fwcenter.VpcFireWallAclRule(\"Example\", new()\n    {\n        Action = \"accept\",\n        Description = \"this is a test\",\n        DestPort = \"60000\",\n        DestPortType = \"port\",\n        Destination = \"0.0.0.0/0\",\n        DestinationType = \"net\",\n        DomainResolutionMode = \"\",\n        EndTime = 1782662340,\n        IpType = \"v4\",\n        Prio = 1,\n        Proto = \"TCP\",\n        RepeatDays = new[]\n        {\n            2,\n            3,\n        },\n        RepeatEndTime = \"04:00\",\n        RepeatStartTime = \"02:00\",\n        RepeatType = \"Weekly\",\n        Source = \"0.0.0.0/0\",\n        SourceType = \"net\",\n        StartTime = 1782403200,\n        Status = true,\n        VpcFirewallId = \"vfw-yeoxxxxxx4vvsy6xj\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/fwcenter\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := fwcenter.NewVpcFireWallAclRule(ctx, \"Example\", \u0026fwcenter.VpcFireWallAclRuleArgs{\n\t\t\tAction:               pulumi.String(\"accept\"),\n\t\t\tDescription:          pulumi.String(\"this is a test\"),\n\t\t\tDestPort:             pulumi.String(\"60000\"),\n\t\t\tDestPortType:         pulumi.String(\"port\"),\n\t\t\tDestination:          pulumi.String(\"0.0.0.0/0\"),\n\t\t\tDestinationType:      pulumi.String(\"net\"),\n\t\t\tDomainResolutionMode: pulumi.String(\"\"),\n\t\t\tEndTime:              pulumi.Int(1782662340),\n\t\t\tIpType:               pulumi.String(\"v4\"),\n\t\t\tPrio:                 pulumi.Int(1),\n\t\t\tProto:                pulumi.String(\"TCP\"),\n\t\t\tRepeatDays: pulumi.IntArray{\n\t\t\t\tpulumi.Int(2),\n\t\t\t\tpulumi.Int(3),\n\t\t\t},\n\t\t\tRepeatEndTime:   pulumi.String(\"04:00\"),\n\t\t\tRepeatStartTime: pulumi.String(\"02:00\"),\n\t\t\tRepeatType:      pulumi.String(\"Weekly\"),\n\t\t\tSource:          pulumi.String(\"0.0.0.0/0\"),\n\t\t\tSourceType:      pulumi.String(\"net\"),\n\t\t\tStartTime:       pulumi.Int(1782403200),\n\t\t\tStatus:          pulumi.Bool(true),\n\t\t\tVpcFirewallId:   pulumi.String(\"vfw-yeoxxxxxx4vvsy6xj\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.fwcenter.VpcFireWallAclRule;\nimport com.byteplus.bytepluscc.fwcenter.VpcFireWallAclRuleArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new VpcFireWallAclRule(\"example\", VpcFireWallAclRuleArgs.builder()\n            .action(\"accept\")\n            .description(\"this is a test\")\n            .destPort(\"60000\")\n            .destPortType(\"port\")\n            .destination(\"0.0.0.0/0\")\n            .destinationType(\"net\")\n            .domainResolutionMode(\"\")\n            .endTime(1782662340)\n            .ipType(\"v4\")\n            .prio(1)\n            .proto(\"TCP\")\n            .repeatDays(            \n                2,\n                3)\n            .repeatEndTime(\"04:00\")\n            .repeatStartTime(\"02:00\")\n            .repeatType(\"Weekly\")\n            .source(\"0.0.0.0/0\")\n            .sourceType(\"net\")\n            .startTime(1782403200)\n            .status(true)\n            .vpcFirewallId(\"vfw-yeoxxxxxx4vvsy6xj\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:fwcenter:VpcFireWallAclRule\n    name: Example\n    properties:\n      action: accept\n      description: this is a test\n      destPort: '60000'\n      destPortType: port\n      destination: 0.0.0.0/0\n      destinationType: net\n      domainResolutionMode: \"\"\n      endTime: 1.78266234e+09\n      ipType: v4\n      prio: 1\n      proto: TCP\n      repeatDays:\n        - 2\n        - 3\n      repeatEndTime: 04:00\n      repeatStartTime: 02:00\n      repeatType: Weekly\n      source: 0.0.0.0/0\n      sourceType: net\n      startTime: 1.7824032e+09\n      status: true\n      vpcFirewallId: vfw-yeoxxxxxx4vvsy6xj\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule example \"vpc_firewall_id|rule_id\"\n```\n\n",
             "properties": {
@@ -80284,6 +81270,271 @@
                 "type": "object"
             }
         },
+        "bytepluscc:id/authConfig:AuthConfig": {
+            "description": "Inbound Authentication Configuration\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  example:\n    type: bytepluscc:id:AuthConfig\n    name: Example\n    properties:\n      configName: 测试JWT认证配置\n      description: 用于测试的JWT入站认证配置\n      instanceId: example\n      jwtAuthConfig:\n        discovery_url: https://example1.com/.well-known/openid-configuration\n        allowed_audiences:\n          - api.example.com\n          - mobile.example.com\n        allowed_clients:\n          - web-client\n          - app-client\n      authType: Jwt\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/authConfig:AuthConfig example \"inbound_auth_config_id\"\n```\n\n",
+            "properties": {
+                "apiKeyAuthConfigs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/AuthConfigApiKeyAuthConfig:AuthConfigApiKeyAuthConfig"
+                    }
+                },
+                "authType": {
+                    "type": "string",
+                    "description": "Authentication Type. Only Jwt or ApiKey is allowed\n"
+                },
+                "configName": {
+                    "type": "string",
+                    "description": "Configuration Name\n"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "Creation Time\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Configuration Description\n"
+                },
+                "inboundAuthConfigId": {
+                    "type": "string",
+                    "description": "Inbound Authentication Configuration ID\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "Bound Instance ID\n"
+                },
+                "jwtAuthConfig": {
+                    "$ref": "#/types/bytepluscc:id/AuthConfigJwtAuthConfig:AuthConfigJwtAuthConfig",
+                    "description": "JWT Authentication Configuration\n"
+                },
+                "trn": {
+                    "type": "string",
+                    "description": "Resource TRN\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "Update Time\n"
+                }
+            },
+            "required": [
+                "apiKeyAuthConfigs",
+                "authType",
+                "configName",
+                "createdAt",
+                "description",
+                "inboundAuthConfigId",
+                "instanceId",
+                "jwtAuthConfig",
+                "trn",
+                "updatedAt"
+            ],
+            "inputProperties": {
+                "apiKeyAuthConfigs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/AuthConfigApiKeyAuthConfig:AuthConfigApiKeyAuthConfig"
+                    }
+                },
+                "authType": {
+                    "type": "string",
+                    "description": "Authentication Type. Only Jwt or ApiKey is allowed\n"
+                },
+                "configName": {
+                    "type": "string",
+                    "description": "Configuration Name\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Configuration Description\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "Bound Instance ID\n"
+                },
+                "jwtAuthConfig": {
+                    "$ref": "#/types/bytepluscc:id/AuthConfigJwtAuthConfig:AuthConfigJwtAuthConfig",
+                    "description": "JWT Authentication Configuration\n"
+                }
+            },
+            "requiredInputs": [
+                "authType"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AuthConfig resources.\n",
+                "properties": {
+                    "apiKeyAuthConfigs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/AuthConfigApiKeyAuthConfig:AuthConfigApiKeyAuthConfig"
+                        }
+                    },
+                    "authType": {
+                        "type": "string",
+                        "description": "Authentication Type. Only Jwt or ApiKey is allowed\n"
+                    },
+                    "configName": {
+                        "type": "string",
+                        "description": "Configuration Name\n"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Creation Time\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Configuration Description\n"
+                    },
+                    "inboundAuthConfigId": {
+                        "type": "string",
+                        "description": "Inbound Authentication Configuration ID\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "Bound Instance ID\n"
+                    },
+                    "jwtAuthConfig": {
+                        "$ref": "#/types/bytepluscc:id/AuthConfigJwtAuthConfig:AuthConfigJwtAuthConfig",
+                        "description": "JWT Authentication Configuration\n"
+                    },
+                    "trn": {
+                        "type": "string",
+                        "description": "Resource TRN\n"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Update Time\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/permissionNamespace:PermissionNamespace": {
+            "description": "ID namespace is a resource isolation unit in permissions management. It can be used to organize associated entities, projects, and tags.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.id.PermissionNamespace(\"Example\", {\n    namespaceName: \"test-namespace-full\",\n    description: \"test description\",\n    projectName: \"default\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.id.PermissionNamespace(\"Example\",\n    namespace_name=\"test-namespace-full\",\n    description=\"test description\",\n    project_name=\"default\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Id.PermissionNamespace(\"Example\", new()\n    {\n        NamespaceName = \"test-namespace-full\",\n        Description = \"test description\",\n        ProjectName = \"default\",\n        Tags = new[]\n        {\n            new Bytepluscc.Id.Inputs.PermissionNamespaceTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/id\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := id.NewPermissionNamespace(ctx, \"Example\", \u0026id.PermissionNamespaceArgs{\n\t\t\tNamespaceName: pulumi.String(\"test-namespace-full\"),\n\t\t\tDescription:   pulumi.String(\"test description\"),\n\t\t\tProjectName:   pulumi.String(\"default\"),\n\t\t\tTags: id.PermissionNamespaceTagArray{\n\t\t\t\t\u0026id.PermissionNamespaceTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.id.PermissionNamespace;\nimport com.byteplus.bytepluscc.id.PermissionNamespaceArgs;\nimport com.pulumi.bytepluscc.id.inputs.PermissionNamespaceTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new PermissionNamespace(\"example\", PermissionNamespaceArgs.builder()\n            .namespaceName(\"test-namespace-full\")\n            .description(\"test description\")\n            .projectName(\"default\")\n            .tags(PermissionNamespaceTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:id:PermissionNamespace\n    name: Example\n    properties:\n      namespaceName: test-namespace-full\n      description: test description\n      projectName: default\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/permissionNamespace:PermissionNamespace example \"namespace_name\"\n```\n\n",
+            "properties": {
+                "associates": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Associated Entities List\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Namespace Creation Time\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Namespace Description\n"
+                },
+                "namespaceId": {
+                    "type": "string",
+                    "description": "Namespace Unique ID\n"
+                },
+                "namespaceName": {
+                    "type": "string",
+                    "description": "Namespace Name\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project Associated with Namespace\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/PermissionNamespaceTag:PermissionNamespaceTag"
+                    }
+                },
+                "trn": {
+                    "type": "string",
+                    "description": "Namespace TRN\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Namespace Update Time\n"
+                }
+            },
+            "required": [
+                "associates",
+                "createTime",
+                "description",
+                "namespaceId",
+                "namespaceName",
+                "projectName",
+                "tags",
+                "trn",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Namespace Description\n"
+                },
+                "namespaceName": {
+                    "type": "string",
+                    "description": "Namespace Name\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project Associated with Namespace\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/PermissionNamespaceTag:PermissionNamespaceTag"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "namespaceName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PermissionNamespace resources.\n",
+                "properties": {
+                    "associates": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Associated Entities List\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Namespace Creation Time\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Namespace Description\n"
+                    },
+                    "namespaceId": {
+                        "type": "string",
+                        "description": "Namespace Unique ID\n"
+                    },
+                    "namespaceName": {
+                        "type": "string",
+                        "description": "Namespace Name\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project Associated with Namespace\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/PermissionNamespaceTag:PermissionNamespaceTag"
+                        }
+                    },
+                    "trn": {
+                        "type": "string",
+                        "description": "Namespace TRN\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Namespace Update Time\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:id/service:Service": {
             "description": "ID Permission Gateway Service is used to define backend service access configuration, permission space binding, and optional route rules for unified management of service access by the agent identity and permission management platform\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  iDServiceDemo:\n    type: bytepluscc:id:Service\n    name: IDServiceDemo\n    properties:\n      permissionSpaceId: fd46c764-e94e-4c94-ba69-6bfxxxxxxxx\n      backend:\n        timeout_seconds: 60\n        enable_tls: false\n        backend_port: 80\n        backend_domain: api.internal.com\n        protocol: HTTP\n      description: 测试枚举分支覆盖\n      serviceName: test-other-service\n      routes:\n        - path: /api/v1/orders\n          priority: 20\n          api_spec:\n            extractors:\n              - path: /orderId\n                isAuth: false\n                resourceType: Order\n                source: 2\n            actionType: write\n            actionValue: query\n            responseFilters:\n              - mode: 2\n                isAuth: false\n                resourceType: Order\n            identifierValue: /order/id\n            identifierType: 2\n          route_name: order-query\n          resource_type: Collection\n          method: GET\n          auth_resource_type: Order\n          path_match_type: Prefix\n      tags:\n        - value: env\n          key: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/service:Service example \"service_id\"\n```\n\n",
             "properties": {
@@ -80509,6 +81760,553 @@
                     "updatedAt": {
                         "type": "integer",
                         "description": "Update time, Unix timestamp in milliseconds\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/userPool:UserPool": {
+            "description": "The user pool is the core identity directory resource in the ID service for managing users, login methods, and identity connections\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  example:\n    type: bytepluscc:id:UserPool\n    name: Example\n    properties:\n      name: 禁用开关的用户池\n      description: 这是一个禁用开关的用户池\n      brand:\n        logo_uri: https://example.com/logo.png\n        name: 测试品牌\n      passwordSignInEnabled: false\n      smsAnonymousSignUpEnabled: false\n      emailPasswordlessSignInEnabled: false\n      selfSignUpEnabled: false\n      signInAttributes:\n        - preferred_username\n        - phone_number\n        - email\n      requiredSignUpAttributes:\n        - preferred_username\n        - phone_number\n        - email\n      projectName: default\n      signUpAutoVerificationEnabled: false\n      selfAccountRecoveryEnabled: false\n      unconfirmedUserSignInEnabled: false\n      smsPasswordlessSignInEnabled: false\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/userPool:UserPool example \"uid\"\n```\n\n",
+            "properties": {
+                "brand": {
+                    "$ref": "#/types/bytepluscc:id/UserPoolBrand:UserPoolBrand",
+                    "description": "User pool brand display configuration\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Creation time\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "User pool description\n"
+                },
+                "discoveryUrl": {
+                    "type": "string",
+                    "description": "OpenID Connect discovery URL\n"
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "User pool access domain\n"
+                },
+                "emailPasswordlessSignInEnabled": {
+                    "type": "boolean",
+                    "description": "Email passwordless login enabled\n"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "User pool enabled\n"
+                },
+                "issuerUrl": {
+                    "type": "string",
+                    "description": "Token issuer URL\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "User pool name\n"
+                },
+                "oauthLoginCallbackUrl": {
+                    "type": "string",
+                    "description": "OAuth login callback URL\n"
+                },
+                "oauthSignUpCallbackUrl": {
+                    "type": "string",
+                    "description": "OAuth registration callback URL\n"
+                },
+                "oidcLoginCallbackUrl": {
+                    "type": "string",
+                    "description": "OIDC login callback URL\n"
+                },
+                "oidcSignUpCallbackUrl": {
+                    "type": "string",
+                    "description": "OIDC registration callback URL\n"
+                },
+                "passwordSignInEnabled": {
+                    "type": "boolean",
+                    "description": "Password login enabled\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name\n"
+                },
+                "requiredSignUpAttributes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Required registration attribute list\n"
+                },
+                "samlLoginCallbackUrl": {
+                    "type": "string",
+                    "description": "SAML login callback URL\n"
+                },
+                "samlSignUpCallbackUrl": {
+                    "type": "string",
+                    "description": "SAML registration callback URL\n"
+                },
+                "selfAccountRecoveryEnabled": {
+                    "type": "boolean",
+                    "description": "Allow account self-recovery\n"
+                },
+                "selfSignUpEnabled": {
+                    "type": "boolean",
+                    "description": "Allow user self-registration\n"
+                },
+                "signInAttributes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Supported login attribute list\n"
+                },
+                "signUpAutoVerificationEnabled": {
+                    "type": "boolean",
+                    "description": "Registration auto-validation enabled\n"
+                },
+                "smsAnonymousSignUpEnabled": {
+                    "type": "boolean",
+                    "description": "SMS anonymous registration enabled\n"
+                },
+                "smsPasswordlessSignInEnabled": {
+                    "type": "boolean",
+                    "description": "SMS passwordless login enabled\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/UserPoolTag:UserPoolTag"
+                    }
+                },
+                "tokenSigningKeyUrl": {
+                    "type": "string",
+                    "description": "Token signature public key URL\n"
+                },
+                "tokenUrl": {
+                    "type": "string",
+                    "description": "Token endpoint URL\n"
+                },
+                "totalClients": {
+                    "type": "integer",
+                    "description": "Total clients in user pool\n"
+                },
+                "totalConnections": {
+                    "type": "integer",
+                    "description": "Total connections and identity providers in user pool\n"
+                },
+                "totalUsers": {
+                    "type": "integer",
+                    "description": "Total users in user pool\n"
+                },
+                "trn": {
+                    "type": "string",
+                    "description": "User pool TRN\n"
+                },
+                "uid": {
+                    "type": "string",
+                    "description": "User pool unique identifier\n"
+                },
+                "unconfirmedUserSignInEnabled": {
+                    "type": "boolean",
+                    "description": "Allow unconfirmed users to log in\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Update time\n"
+                }
+            },
+            "required": [
+                "brand",
+                "createTime",
+                "description",
+                "discoveryUrl",
+                "domain",
+                "emailPasswordlessSignInEnabled",
+                "enabled",
+                "issuerUrl",
+                "name",
+                "oauthLoginCallbackUrl",
+                "oauthSignUpCallbackUrl",
+                "oidcLoginCallbackUrl",
+                "oidcSignUpCallbackUrl",
+                "passwordSignInEnabled",
+                "projectName",
+                "requiredSignUpAttributes",
+                "samlLoginCallbackUrl",
+                "samlSignUpCallbackUrl",
+                "selfAccountRecoveryEnabled",
+                "selfSignUpEnabled",
+                "signInAttributes",
+                "signUpAutoVerificationEnabled",
+                "smsAnonymousSignUpEnabled",
+                "smsPasswordlessSignInEnabled",
+                "tags",
+                "tokenSigningKeyUrl",
+                "tokenUrl",
+                "totalClients",
+                "totalConnections",
+                "totalUsers",
+                "trn",
+                "uid",
+                "unconfirmedUserSignInEnabled",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "brand": {
+                    "$ref": "#/types/bytepluscc:id/UserPoolBrand:UserPoolBrand",
+                    "description": "User pool brand display configuration\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "User pool description\n"
+                },
+                "emailPasswordlessSignInEnabled": {
+                    "type": "boolean",
+                    "description": "Email passwordless login enabled\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "User pool name\n"
+                },
+                "passwordSignInEnabled": {
+                    "type": "boolean",
+                    "description": "Password login enabled\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name\n"
+                },
+                "requiredSignUpAttributes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Required registration attribute list\n"
+                },
+                "selfAccountRecoveryEnabled": {
+                    "type": "boolean",
+                    "description": "Allow account self-recovery\n"
+                },
+                "selfSignUpEnabled": {
+                    "type": "boolean",
+                    "description": "Allow user self-registration\n"
+                },
+                "signInAttributes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Supported login attribute list\n"
+                },
+                "signUpAutoVerificationEnabled": {
+                    "type": "boolean",
+                    "description": "Registration auto-validation enabled\n"
+                },
+                "smsAnonymousSignUpEnabled": {
+                    "type": "boolean",
+                    "description": "SMS anonymous registration enabled\n"
+                },
+                "smsPasswordlessSignInEnabled": {
+                    "type": "boolean",
+                    "description": "SMS passwordless login enabled\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/UserPoolTag:UserPoolTag"
+                    }
+                },
+                "unconfirmedUserSignInEnabled": {
+                    "type": "boolean",
+                    "description": "Allow unconfirmed users to log in\n"
+                }
+            },
+            "requiredInputs": [
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering UserPool resources.\n",
+                "properties": {
+                    "brand": {
+                        "$ref": "#/types/bytepluscc:id/UserPoolBrand:UserPoolBrand",
+                        "description": "User pool brand display configuration\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Creation time\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "User pool description\n"
+                    },
+                    "discoveryUrl": {
+                        "type": "string",
+                        "description": "OpenID Connect discovery URL\n"
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "User pool access domain\n"
+                    },
+                    "emailPasswordlessSignInEnabled": {
+                        "type": "boolean",
+                        "description": "Email passwordless login enabled\n"
+                    },
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "User pool enabled\n"
+                    },
+                    "issuerUrl": {
+                        "type": "string",
+                        "description": "Token issuer URL\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "User pool name\n"
+                    },
+                    "oauthLoginCallbackUrl": {
+                        "type": "string",
+                        "description": "OAuth login callback URL\n"
+                    },
+                    "oauthSignUpCallbackUrl": {
+                        "type": "string",
+                        "description": "OAuth registration callback URL\n"
+                    },
+                    "oidcLoginCallbackUrl": {
+                        "type": "string",
+                        "description": "OIDC login callback URL\n"
+                    },
+                    "oidcSignUpCallbackUrl": {
+                        "type": "string",
+                        "description": "OIDC registration callback URL\n"
+                    },
+                    "passwordSignInEnabled": {
+                        "type": "boolean",
+                        "description": "Password login enabled\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project name\n"
+                    },
+                    "requiredSignUpAttributes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Required registration attribute list\n"
+                    },
+                    "samlLoginCallbackUrl": {
+                        "type": "string",
+                        "description": "SAML login callback URL\n"
+                    },
+                    "samlSignUpCallbackUrl": {
+                        "type": "string",
+                        "description": "SAML registration callback URL\n"
+                    },
+                    "selfAccountRecoveryEnabled": {
+                        "type": "boolean",
+                        "description": "Allow account self-recovery\n"
+                    },
+                    "selfSignUpEnabled": {
+                        "type": "boolean",
+                        "description": "Allow user self-registration\n"
+                    },
+                    "signInAttributes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Supported login attribute list\n"
+                    },
+                    "signUpAutoVerificationEnabled": {
+                        "type": "boolean",
+                        "description": "Registration auto-validation enabled\n"
+                    },
+                    "smsAnonymousSignUpEnabled": {
+                        "type": "boolean",
+                        "description": "SMS anonymous registration enabled\n"
+                    },
+                    "smsPasswordlessSignInEnabled": {
+                        "type": "boolean",
+                        "description": "SMS passwordless login enabled\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/UserPoolTag:UserPoolTag"
+                        }
+                    },
+                    "tokenSigningKeyUrl": {
+                        "type": "string",
+                        "description": "Token signature public key URL\n"
+                    },
+                    "tokenUrl": {
+                        "type": "string",
+                        "description": "Token endpoint URL\n"
+                    },
+                    "totalClients": {
+                        "type": "integer",
+                        "description": "Total clients in user pool\n"
+                    },
+                    "totalConnections": {
+                        "type": "integer",
+                        "description": "Total connections and identity providers in user pool\n"
+                    },
+                    "totalUsers": {
+                        "type": "integer",
+                        "description": "Total users in user pool\n"
+                    },
+                    "trn": {
+                        "type": "string",
+                        "description": "User pool TRN\n"
+                    },
+                    "uid": {
+                        "type": "string",
+                        "description": "User pool unique identifier\n"
+                    },
+                    "unconfirmedUserSignInEnabled": {
+                        "type": "boolean",
+                        "description": "Allow unconfirmed users to log in\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Update time\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/workloadPool:WorkloadPool": {
+            "description": "Workload pool\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.id.WorkloadPool(\"Example\", {\n    description: \"用于测试的工作负载池\",\n    projectName: \"default\",\n    workloadPoolName: \"demo-workload-pool-full\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.id.WorkloadPool(\"Example\",\n    description=\"用于测试的工作负载池\",\n    project_name=\"default\",\n    workload_pool_name=\"demo-workload-pool-full\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Id.WorkloadPool(\"Example\", new()\n    {\n        Description = \"用于测试的工作负载池\",\n        ProjectName = \"default\",\n        WorkloadPoolName = \"demo-workload-pool-full\",\n        Tags = new[]\n        {\n            new Bytepluscc.Id.Inputs.WorkloadPoolTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/id\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := id.NewWorkloadPool(ctx, \"Example\", \u0026id.WorkloadPoolArgs{\n\t\t\tDescription:      pulumi.String(\"用于测试的工作负载池\"),\n\t\t\tProjectName:      pulumi.String(\"default\"),\n\t\t\tWorkloadPoolName: pulumi.String(\"demo-workload-pool-full\"),\n\t\t\tTags: id.WorkloadPoolTagArray{\n\t\t\t\t\u0026id.WorkloadPoolTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.id.WorkloadPool;\nimport com.byteplus.bytepluscc.id.WorkloadPoolArgs;\nimport com.pulumi.bytepluscc.id.inputs.WorkloadPoolTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new WorkloadPool(\"example\", WorkloadPoolArgs.builder()\n            .description(\"用于测试的工作负载池\")\n            .projectName(\"default\")\n            .workloadPoolName(\"demo-workload-pool-full\")\n            .tags(WorkloadPoolTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:id:WorkloadPool\n    name: Example\n    properties:\n      description: 用于测试的工作负载池\n      projectName: default\n      workloadPoolName: demo-workload-pool-full\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/workloadPool:WorkloadPool example \"workload_pool_name\"\n```\n\n",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "description": "Workload pool creation time\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Workload pool description\n"
+                },
+                "discoveryUrl": {
+                    "type": "string",
+                    "description": "OIDC discovery endpoint\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/WorkloadPoolTag:WorkloadPoolTag"
+                    }
+                },
+                "totalCredentials": {
+                    "type": "integer",
+                    "description": "Number of associated credentials\n"
+                },
+                "totalWorkloads": {
+                    "type": "integer",
+                    "description": "Number of workloads\n"
+                },
+                "trn": {
+                    "type": "string",
+                    "description": "Workload pool Trn\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "Workload pool update time\n"
+                },
+                "workloadPoolId": {
+                    "type": "string",
+                    "description": "Workload pool ID\n"
+                },
+                "workloadPoolName": {
+                    "type": "string",
+                    "description": "Workload pool name\n"
+                }
+            },
+            "required": [
+                "createdAt",
+                "description",
+                "discoveryUrl",
+                "projectName",
+                "tags",
+                "totalCredentials",
+                "totalWorkloads",
+                "trn",
+                "updatedAt",
+                "workloadPoolId",
+                "workloadPoolName"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Workload pool description\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/WorkloadPoolTag:WorkloadPoolTag"
+                    }
+                },
+                "workloadPoolName": {
+                    "type": "string",
+                    "description": "Workload pool name\n"
+                }
+            },
+            "requiredInputs": [
+                "workloadPoolName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering WorkloadPool resources.\n",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Workload pool creation time\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Workload pool description\n"
+                    },
+                    "discoveryUrl": {
+                        "type": "string",
+                        "description": "OIDC discovery endpoint\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project name\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/WorkloadPoolTag:WorkloadPoolTag"
+                        }
+                    },
+                    "totalCredentials": {
+                        "type": "integer",
+                        "description": "Number of associated credentials\n"
+                    },
+                    "totalWorkloads": {
+                        "type": "integer",
+                        "description": "Number of workloads\n"
+                    },
+                    "trn": {
+                        "type": "string",
+                        "description": "Workload pool Trn\n"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Workload pool update time\n"
+                    },
+                    "workloadPoolId": {
+                        "type": "string",
+                        "description": "Workload pool ID\n"
+                    },
+                    "workloadPoolName": {
+                        "type": "string",
+                        "description": "Workload pool name\n"
                     }
                 },
                 "type": "object"
@@ -81861,6 +83659,118 @@
                     "updatedTime": {
                         "type": "integer",
                         "description": "Key update time.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:kms/keyMaterial:KeyMaterial": {
+            "description": "Key Management Service (KMS) key material resource. Used to import user-provided (BYOK) encrypted key material into a specified master key with Origin=External. Users must obtain import parameters, encrypt the key material, and provide EncryptedKeyMaterial and ImportToken to the resource. The Provider then calls ImportKeyMaterial to complete the import.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.kms.KeyMaterial(\"Example\", {\n    keyId: \"6201a360-15a7-41d2-829d-21xxxxxx\",\n    importToken: \"UlNBXzIwJCYyOtoTrUd+IKSmIViKHi4Nm8xOn0nAwGnm9HBGDW0xce5CCBkFIfdJOCB+lrlHk36L1U6uGpsRthldrPDFDNVxxxxxxxxxxxxxx/BxL2VXqdWeqS6NKaIGh6S67EUouv4azT+5JyjrjOgj4lvZ4q22gqf4SXjbxtsYTpAtVvqXUjP02Wc2JgayPYd5m8flW7IceNqgclSSEuyJwYqaHFVW2gXWRbVAuHfN3J1iTqxOPCQmztzL/xWXnbfdsJVNqACdk66RZKjXo3MTvraQ1AEDeD6fMDgaUXKHeys7kSpXkG+umyGkxemsE/5/Us63CpGiN1HL+ECIhimR1ReVh7An5sKJyGAbBzcHR43nfm8GvKwQm5PjBE71UUXkPuTNm01DIdDekjGh4MAyy7ya5M9v2AoTt+xerMVoDC2bt8s582FBbYLbqjaJ1wHwbhaGB5F8syjTCH90y9BnzsDGK8Sg3a2dMVh64gLnwCSbCDO/p97B/pZHDrCuMcbO+62AUMMgYS80jvZMYpouPyoxzO+VZHT5U2SmVAmFCxP0aR/ZNWsXZ4fPx299/ASOv8Y6lTZX5DyBkn8tXgftGroDLHrkdSzcwluFYLk/mxOA4hK4KUx+j3As0oveAlRi9yTEJdOsNmagDHFwbi8yabGO8evLqbKsWBsy5RSdfNf+M8Hb6+Q2vQkD23qGlFNjVOF8s5iiFLm6c5rVwG7JrMp6/Dye3c9UcHYmESNNNrfrj2jcc0gMw3APXx4Qdv0neTnimtQw6HBAg+R0TwMS+FtPoGpiXIUWBukIev55TBWtrd7t1j9JDfWW237TtHaIymHsjbI/L+/838hZjM9iGydLg80dWKIYYI3M35HAzC2WGdd6wueMwj6HFzmSGxyvIsTP+LoJkzaYInZ6/8namYe9leugoF50vAFU3VbqceyvsuPlrS4s5pQfsuZhd/cjdvzXC8ooB5RxtMkXxcE9WZkbkoLCDkobiU68DP9vszYKrXMvuqcyu7UapVcAvDsh4KgomL5NuyHjAVW64NEIqiQcOvIA+knId4lBwVIKGFnvJwHkMT8jhezv04/6Kr2XCxyhVeM2/pZ8HXfaNUKzTnwBaANmOiB6SVV6RfjCYo4xgIxS269ran9ReJDfn4WxpHi1jxQZ4fI49q7rLX5JRl78zdd4Hr2jb3WXSKtpU7tlPLQ+bRmG8f2U0j4/z0kTqT0x6dPIac3xbhH5j/638roQyp+7zyyBWYObpd3bZC1xPuMLKneEMcxvmKlnNd4uGMfKLMv1XXAVs1pkGRnEd3b0pWtG1kEKmNHP+rdtTga2RMO7vF8ENfz02ygpsrW/us4GB/62i4k4a9t23tXZsxEW4fk7krV1fjoe1Wfh+0S/7TZ7s6aFLPKKcV5b2EZ+z1TyD91mtFVsYmziNK2AfLlKkGBwW8xL8aY/yvYDWKAFIAsTNnYmUfvGQryYEqV5TuMcbuvLg0V5CXlTXGd4BFk8tMf43brWfnKtQNc0jPCDgS+P3ajU9/xzeJekFz9Jmow=\",\n    encryptedKeyMaterial: \"Eg4a4+BdfqpnYAs1kPkWXFj9O2rBv/uNA8SeVKoG8Az091J/v7wELfeR5DX53IcianLlzC55kvTTc73aYPChvh4dLTHF9wWlldPvJHcIDsm+UwEE5jxxxxxxxxxxxzH81CmAP0fx8M871J9vg5YqQ==\",\n    expirationModel: \"KEY_MATERIAL_EXPIRES\",\n    validTo: 1814313600,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.kms.KeyMaterial(\"Example\",\n    key_id=\"6201a360-15a7-41d2-829d-21xxxxxx\",\n    import_token=\"UlNBXzIwJCYyOtoTrUd+IKSmIViKHi4Nm8xOn0nAwGnm9HBGDW0xce5CCBkFIfdJOCB+lrlHk36L1U6uGpsRthldrPDFDNVxxxxxxxxxxxxxx/BxL2VXqdWeqS6NKaIGh6S67EUouv4azT+5JyjrjOgj4lvZ4q22gqf4SXjbxtsYTpAtVvqXUjP02Wc2JgayPYd5m8flW7IceNqgclSSEuyJwYqaHFVW2gXWRbVAuHfN3J1iTqxOPCQmztzL/xWXnbfdsJVNqACdk66RZKjXo3MTvraQ1AEDeD6fMDgaUXKHeys7kSpXkG+umyGkxemsE/5/Us63CpGiN1HL+ECIhimR1ReVh7An5sKJyGAbBzcHR43nfm8GvKwQm5PjBE71UUXkPuTNm01DIdDekjGh4MAyy7ya5M9v2AoTt+xerMVoDC2bt8s582FBbYLbqjaJ1wHwbhaGB5F8syjTCH90y9BnzsDGK8Sg3a2dMVh64gLnwCSbCDO/p97B/pZHDrCuMcbO+62AUMMgYS80jvZMYpouPyoxzO+VZHT5U2SmVAmFCxP0aR/ZNWsXZ4fPx299/ASOv8Y6lTZX5DyBkn8tXgftGroDLHrkdSzcwluFYLk/mxOA4hK4KUx+j3As0oveAlRi9yTEJdOsNmagDHFwbi8yabGO8evLqbKsWBsy5RSdfNf+M8Hb6+Q2vQkD23qGlFNjVOF8s5iiFLm6c5rVwG7JrMp6/Dye3c9UcHYmESNNNrfrj2jcc0gMw3APXx4Qdv0neTnimtQw6HBAg+R0TwMS+FtPoGpiXIUWBukIev55TBWtrd7t1j9JDfWW237TtHaIymHsjbI/L+/838hZjM9iGydLg80dWKIYYI3M35HAzC2WGdd6wueMwj6HFzmSGxyvIsTP+LoJkzaYInZ6/8namYe9leugoF50vAFU3VbqceyvsuPlrS4s5pQfsuZhd/cjdvzXC8ooB5RxtMkXxcE9WZkbkoLCDkobiU68DP9vszYKrXMvuqcyu7UapVcAvDsh4KgomL5NuyHjAVW64NEIqiQcOvIA+knId4lBwVIKGFnvJwHkMT8jhezv04/6Kr2XCxyhVeM2/pZ8HXfaNUKzTnwBaANmOiB6SVV6RfjCYo4xgIxS269ran9ReJDfn4WxpHi1jxQZ4fI49q7rLX5JRl78zdd4Hr2jb3WXSKtpU7tlPLQ+bRmG8f2U0j4/z0kTqT0x6dPIac3xbhH5j/638roQyp+7zyyBWYObpd3bZC1xPuMLKneEMcxvmKlnNd4uGMfKLMv1XXAVs1pkGRnEd3b0pWtG1kEKmNHP+rdtTga2RMO7vF8ENfz02ygpsrW/us4GB/62i4k4a9t23tXZsxEW4fk7krV1fjoe1Wfh+0S/7TZ7s6aFLPKKcV5b2EZ+z1TyD91mtFVsYmziNK2AfLlKkGBwW8xL8aY/yvYDWKAFIAsTNnYmUfvGQryYEqV5TuMcbuvLg0V5CXlTXGd4BFk8tMf43brWfnKtQNc0jPCDgS+P3ajU9/xzeJekFz9Jmow=\",\n    encrypted_key_material=\"Eg4a4+BdfqpnYAs1kPkWXFj9O2rBv/uNA8SeVKoG8Az091J/v7wELfeR5DX53IcianLlzC55kvTTc73aYPChvh4dLTHF9wWlldPvJHcIDsm+UwEE5jxxxxxxxxxxxzH81CmAP0fx8M871J9vg5YqQ==\",\n    expiration_model=\"KEY_MATERIAL_EXPIRES\",\n    valid_to=1814313600)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Kms.KeyMaterial(\"Example\", new()\n    {\n        KeyId = \"6201a360-15a7-41d2-829d-21xxxxxx\",\n        ImportToken = \"UlNBXzIwJCYyOtoTrUd+IKSmIViKHi4Nm8xOn0nAwGnm9HBGDW0xce5CCBkFIfdJOCB+lrlHk36L1U6uGpsRthldrPDFDNVxxxxxxxxxxxxxx/BxL2VXqdWeqS6NKaIGh6S67EUouv4azT+5JyjrjOgj4lvZ4q22gqf4SXjbxtsYTpAtVvqXUjP02Wc2JgayPYd5m8flW7IceNqgclSSEuyJwYqaHFVW2gXWRbVAuHfN3J1iTqxOPCQmztzL/xWXnbfdsJVNqACdk66RZKjXo3MTvraQ1AEDeD6fMDgaUXKHeys7kSpXkG+umyGkxemsE/5/Us63CpGiN1HL+ECIhimR1ReVh7An5sKJyGAbBzcHR43nfm8GvKwQm5PjBE71UUXkPuTNm01DIdDekjGh4MAyy7ya5M9v2AoTt+xerMVoDC2bt8s582FBbYLbqjaJ1wHwbhaGB5F8syjTCH90y9BnzsDGK8Sg3a2dMVh64gLnwCSbCDO/p97B/pZHDrCuMcbO+62AUMMgYS80jvZMYpouPyoxzO+VZHT5U2SmVAmFCxP0aR/ZNWsXZ4fPx299/ASOv8Y6lTZX5DyBkn8tXgftGroDLHrkdSzcwluFYLk/mxOA4hK4KUx+j3As0oveAlRi9yTEJdOsNmagDHFwbi8yabGO8evLqbKsWBsy5RSdfNf+M8Hb6+Q2vQkD23qGlFNjVOF8s5iiFLm6c5rVwG7JrMp6/Dye3c9UcHYmESNNNrfrj2jcc0gMw3APXx4Qdv0neTnimtQw6HBAg+R0TwMS+FtPoGpiXIUWBukIev55TBWtrd7t1j9JDfWW237TtHaIymHsjbI/L+/838hZjM9iGydLg80dWKIYYI3M35HAzC2WGdd6wueMwj6HFzmSGxyvIsTP+LoJkzaYInZ6/8namYe9leugoF50vAFU3VbqceyvsuPlrS4s5pQfsuZhd/cjdvzXC8ooB5RxtMkXxcE9WZkbkoLCDkobiU68DP9vszYKrXMvuqcyu7UapVcAvDsh4KgomL5NuyHjAVW64NEIqiQcOvIA+knId4lBwVIKGFnvJwHkMT8jhezv04/6Kr2XCxyhVeM2/pZ8HXfaNUKzTnwBaANmOiB6SVV6RfjCYo4xgIxS269ran9ReJDfn4WxpHi1jxQZ4fI49q7rLX5JRl78zdd4Hr2jb3WXSKtpU7tlPLQ+bRmG8f2U0j4/z0kTqT0x6dPIac3xbhH5j/638roQyp+7zyyBWYObpd3bZC1xPuMLKneEMcxvmKlnNd4uGMfKLMv1XXAVs1pkGRnEd3b0pWtG1kEKmNHP+rdtTga2RMO7vF8ENfz02ygpsrW/us4GB/62i4k4a9t23tXZsxEW4fk7krV1fjoe1Wfh+0S/7TZ7s6aFLPKKcV5b2EZ+z1TyD91mtFVsYmziNK2AfLlKkGBwW8xL8aY/yvYDWKAFIAsTNnYmUfvGQryYEqV5TuMcbuvLg0V5CXlTXGd4BFk8tMf43brWfnKtQNc0jPCDgS+P3ajU9/xzeJekFz9Jmow=\",\n        EncryptedKeyMaterial = \"Eg4a4+BdfqpnYAs1kPkWXFj9O2rBv/uNA8SeVKoG8Az091J/v7wELfeR5DX53IcianLlzC55kvTTc73aYPChvh4dLTHF9wWlldPvJHcIDsm+UwEE5jxxxxxxxxxxxzH81CmAP0fx8M871J9vg5YqQ==\",\n        ExpirationModel = \"KEY_MATERIAL_EXPIRES\",\n        ValidTo = 1814313600,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/kms\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := kms.NewKeyMaterial(ctx, \"Example\", \u0026kms.KeyMaterialArgs{\n\t\t\tKeyId:                pulumi.String(\"6201a360-15a7-41d2-829d-21xxxxxx\"),\n\t\t\tImportToken:          pulumi.String(\"UlNBXzIwJCYyOtoTrUd+IKSmIViKHi4Nm8xOn0nAwGnm9HBGDW0xce5CCBkFIfdJOCB+lrlHk36L1U6uGpsRthldrPDFDNVxxxxxxxxxxxxxx/BxL2VXqdWeqS6NKaIGh6S67EUouv4azT+5JyjrjOgj4lvZ4q22gqf4SXjbxtsYTpAtVvqXUjP02Wc2JgayPYd5m8flW7IceNqgclSSEuyJwYqaHFVW2gXWRbVAuHfN3J1iTqxOPCQmztzL/xWXnbfdsJVNqACdk66RZKjXo3MTvraQ1AEDeD6fMDgaUXKHeys7kSpXkG+umyGkxemsE/5/Us63CpGiN1HL+ECIhimR1ReVh7An5sKJyGAbBzcHR43nfm8GvKwQm5PjBE71UUXkPuTNm01DIdDekjGh4MAyy7ya5M9v2AoTt+xerMVoDC2bt8s582FBbYLbqjaJ1wHwbhaGB5F8syjTCH90y9BnzsDGK8Sg3a2dMVh64gLnwCSbCDO/p97B/pZHDrCuMcbO+62AUMMgYS80jvZMYpouPyoxzO+VZHT5U2SmVAmFCxP0aR/ZNWsXZ4fPx299/ASOv8Y6lTZX5DyBkn8tXgftGroDLHrkdSzcwluFYLk/mxOA4hK4KUx+j3As0oveAlRi9yTEJdOsNmagDHFwbi8yabGO8evLqbKsWBsy5RSdfNf+M8Hb6+Q2vQkD23qGlFNjVOF8s5iiFLm6c5rVwG7JrMp6/Dye3c9UcHYmESNNNrfrj2jcc0gMw3APXx4Qdv0neTnimtQw6HBAg+R0TwMS+FtPoGpiXIUWBukIev55TBWtrd7t1j9JDfWW237TtHaIymHsjbI/L+/838hZjM9iGydLg80dWKIYYI3M35HAzC2WGdd6wueMwj6HFzmSGxyvIsTP+LoJkzaYInZ6/8namYe9leugoF50vAFU3VbqceyvsuPlrS4s5pQfsuZhd/cjdvzXC8ooB5RxtMkXxcE9WZkbkoLCDkobiU68DP9vszYKrXMvuqcyu7UapVcAvDsh4KgomL5NuyHjAVW64NEIqiQcOvIA+knId4lBwVIKGFnvJwHkMT8jhezv04/6Kr2XCxyhVeM2/pZ8HXfaNUKzTnwBaANmOiB6SVV6RfjCYo4xgIxS269ran9ReJDfn4WxpHi1jxQZ4fI49q7rLX5JRl78zdd4Hr2jb3WXSKtpU7tlPLQ+bRmG8f2U0j4/z0kTqT0x6dPIac3xbhH5j/638roQyp+7zyyBWYObpd3bZC1xPuMLKneEMcxvmKlnNd4uGMfKLMv1XXAVs1pkGRnEd3b0pWtG1kEKmNHP+rdtTga2RMO7vF8ENfz02ygpsrW/us4GB/62i4k4a9t23tXZsxEW4fk7krV1fjoe1Wfh+0S/7TZ7s6aFLPKKcV5b2EZ+z1TyD91mtFVsYmziNK2AfLlKkGBwW8xL8aY/yvYDWKAFIAsTNnYmUfvGQryYEqV5TuMcbuvLg0V5CXlTXGd4BFk8tMf43brWfnKtQNc0jPCDgS+P3ajU9/xzeJekFz9Jmow=\"),\n\t\t\tEncryptedKeyMaterial: pulumi.String(\"Eg4a4+BdfqpnYAs1kPkWXFj9O2rBv/uNA8SeVKoG8Az091J/v7wELfeR5DX53IcianLlzC55kvTTc73aYPChvh4dLTHF9wWlldPvJHcIDsm+UwEE5jxxxxxxxxxxxzH81CmAP0fx8M871J9vg5YqQ==\"),\n\t\t\tExpirationModel:      pulumi.String(\"KEY_MATERIAL_EXPIRES\"),\n\t\t\tValidTo:              pulumi.Int(1814313600),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.kms.KeyMaterial;\nimport com.byteplus.bytepluscc.kms.KeyMaterialArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new KeyMaterial(\"example\", KeyMaterialArgs.builder()\n            .keyId(\"6201a360-15a7-41d2-829d-21xxxxxx\")\n            .importToken(\"UlNBXzIwJCYyOtoTrUd+IKSmIViKHi4Nm8xOn0nAwGnm9HBGDW0xce5CCBkFIfdJOCB+lrlHk36L1U6uGpsRthldrPDFDNVxxxxxxxxxxxxxx/BxL2VXqdWeqS6NKaIGh6S67EUouv4azT+5JyjrjOgj4lvZ4q22gqf4SXjbxtsYTpAtVvqXUjP02Wc2JgayPYd5m8flW7IceNqgclSSEuyJwYqaHFVW2gXWRbVAuHfN3J1iTqxOPCQmztzL/xWXnbfdsJVNqACdk66RZKjXo3MTvraQ1AEDeD6fMDgaUXKHeys7kSpXkG+umyGkxemsE/5/Us63CpGiN1HL+ECIhimR1ReVh7An5sKJyGAbBzcHR43nfm8GvKwQm5PjBE71UUXkPuTNm01DIdDekjGh4MAyy7ya5M9v2AoTt+xerMVoDC2bt8s582FBbYLbqjaJ1wHwbhaGB5F8syjTCH90y9BnzsDGK8Sg3a2dMVh64gLnwCSbCDO/p97B/pZHDrCuMcbO+62AUMMgYS80jvZMYpouPyoxzO+VZHT5U2SmVAmFCxP0aR/ZNWsXZ4fPx299/ASOv8Y6lTZX5DyBkn8tXgftGroDLHrkdSzcwluFYLk/mxOA4hK4KUx+j3As0oveAlRi9yTEJdOsNmagDHFwbi8yabGO8evLqbKsWBsy5RSdfNf+M8Hb6+Q2vQkD23qGlFNjVOF8s5iiFLm6c5rVwG7JrMp6/Dye3c9UcHYmESNNNrfrj2jcc0gMw3APXx4Qdv0neTnimtQw6HBAg+R0TwMS+FtPoGpiXIUWBukIev55TBWtrd7t1j9JDfWW237TtHaIymHsjbI/L+/838hZjM9iGydLg80dWKIYYI3M35HAzC2WGdd6wueMwj6HFzmSGxyvIsTP+LoJkzaYInZ6/8namYe9leugoF50vAFU3VbqceyvsuPlrS4s5pQfsuZhd/cjdvzXC8ooB5RxtMkXxcE9WZkbkoLCDkobiU68DP9vszYKrXMvuqcyu7UapVcAvDsh4KgomL5NuyHjAVW64NEIqiQcOvIA+knId4lBwVIKGFnvJwHkMT8jhezv04/6Kr2XCxyhVeM2/pZ8HXfaNUKzTnwBaANmOiB6SVV6RfjCYo4xgIxS269ran9ReJDfn4WxpHi1jxQZ4fI49q7rLX5JRl78zdd4Hr2jb3WXSKtpU7tlPLQ+bRmG8f2U0j4/z0kTqT0x6dPIac3xbhH5j/638roQyp+7zyyBWYObpd3bZC1xPuMLKneEMcxvmKlnNd4uGMfKLMv1XXAVs1pkGRnEd3b0pWtG1kEKmNHP+rdtTga2RMO7vF8ENfz02ygpsrW/us4GB/62i4k4a9t23tXZsxEW4fk7krV1fjoe1Wfh+0S/7TZ7s6aFLPKKcV5b2EZ+z1TyD91mtFVsYmziNK2AfLlKkGBwW8xL8aY/yvYDWKAFIAsTNnYmUfvGQryYEqV5TuMcbuvLg0V5CXlTXGd4BFk8tMf43brWfnKtQNc0jPCDgS+P3ajU9/xzeJekFz9Jmow=\")\n            .encryptedKeyMaterial(\"Eg4a4+BdfqpnYAs1kPkWXFj9O2rBv/uNA8SeVKoG8Az091J/v7wELfeR5DX53IcianLlzC55kvTTc73aYPChvh4dLTHF9wWlldPvJHcIDsm+UwEE5jxxxxxxxxxxxzH81CmAP0fx8M871J9vg5YqQ==\")\n            .expirationModel(\"KEY_MATERIAL_EXPIRES\")\n            .validTo(1814313600)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:kms:KeyMaterial\n    name: Example\n    properties:\n      keyId: 6201a360-15a7-41d2-829d-21xxxxxx\n      importToken: UlNBXzIwJCYyOtoTrUd+IKSmIViKHi4Nm8xOn0nAwGnm9HBGDW0xce5CCBkFIfdJOCB+lrlHk36L1U6uGpsRthldrPDFDNVxxxxxxxxxxxxxx/BxL2VXqdWeqS6NKaIGh6S67EUouv4azT+5JyjrjOgj4lvZ4q22gqf4SXjbxtsYTpAtVvqXUjP02Wc2JgayPYd5m8flW7IceNqgclSSEuyJwYqaHFVW2gXWRbVAuHfN3J1iTqxOPCQmztzL/xWXnbfdsJVNqACdk66RZKjXo3MTvraQ1AEDeD6fMDgaUXKHeys7kSpXkG+umyGkxemsE/5/Us63CpGiN1HL+ECIhimR1ReVh7An5sKJyGAbBzcHR43nfm8GvKwQm5PjBE71UUXkPuTNm01DIdDekjGh4MAyy7ya5M9v2AoTt+xerMVoDC2bt8s582FBbYLbqjaJ1wHwbhaGB5F8syjTCH90y9BnzsDGK8Sg3a2dMVh64gLnwCSbCDO/p97B/pZHDrCuMcbO+62AUMMgYS80jvZMYpouPyoxzO+VZHT5U2SmVAmFCxP0aR/ZNWsXZ4fPx299/ASOv8Y6lTZX5DyBkn8tXgftGroDLHrkdSzcwluFYLk/mxOA4hK4KUx+j3As0oveAlRi9yTEJdOsNmagDHFwbi8yabGO8evLqbKsWBsy5RSdfNf+M8Hb6+Q2vQkD23qGlFNjVOF8s5iiFLm6c5rVwG7JrMp6/Dye3c9UcHYmESNNNrfrj2jcc0gMw3APXx4Qdv0neTnimtQw6HBAg+R0TwMS+FtPoGpiXIUWBukIev55TBWtrd7t1j9JDfWW237TtHaIymHsjbI/L+/838hZjM9iGydLg80dWKIYYI3M35HAzC2WGdd6wueMwj6HFzmSGxyvIsTP+LoJkzaYInZ6/8namYe9leugoF50vAFU3VbqceyvsuPlrS4s5pQfsuZhd/cjdvzXC8ooB5RxtMkXxcE9WZkbkoLCDkobiU68DP9vszYKrXMvuqcyu7UapVcAvDsh4KgomL5NuyHjAVW64NEIqiQcOvIA+knId4lBwVIKGFnvJwHkMT8jhezv04/6Kr2XCxyhVeM2/pZ8HXfaNUKzTnwBaANmOiB6SVV6RfjCYo4xgIxS269ran9ReJDfn4WxpHi1jxQZ4fI49q7rLX5JRl78zdd4Hr2jb3WXSKtpU7tlPLQ+bRmG8f2U0j4/z0kTqT0x6dPIac3xbhH5j/638roQyp+7zyyBWYObpd3bZC1xPuMLKneEMcxvmKlnNd4uGMfKLMv1XXAVs1pkGRnEd3b0pWtG1kEKmNHP+rdtTga2RMO7vF8ENfz02ygpsrW/us4GB/62i4k4a9t23tXZsxEW4fk7krV1fjoe1Wfh+0S/7TZ7s6aFLPKKcV5b2EZ+z1TyD91mtFVsYmziNK2AfLlKkGBwW8xL8aY/yvYDWKAFIAsTNnYmUfvGQryYEqV5TuMcbuvLg0V5CXlTXGd4BFk8tMf43brWfnKtQNc0jPCDgS+P3ajU9/xzeJekFz9Jmow=\n      encryptedKeyMaterial: Eg4a4+BdfqpnYAs1kPkWXFj9O2rBv/uNA8SeVKoG8Az091J/v7wELfeR5DX53IcianLlzC55kvTTc73aYPChvh4dLTHF9wWlldPvJHcIDsm+UwEE5jxxxxxxxxxxxzH81CmAP0fx8M871J9vg5YqQ==\n      expirationModel: KEY_MATERIAL_EXPIRES\n      validTo: 1.8143136e+09\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:kms/keyMaterial:KeyMaterial example \"key_id\"\n```\n\n",
+            "properties": {
+                "encryptedKeyMaterial": {
+                    "type": "string",
+                    "description": "The key material obtained after the user encrypts using the import public key, encoded in Base64; this value is passed directly to the ImportKeyMaterial interface.\n"
+                },
+                "expirationModel": {
+                    "type": "string",
+                    "description": "Key material expiration type. Values: KEY*MATERIAL*DOES*NOT*EXPIRE (default), KEY*MATERIAL*EXPIRES.\n"
+                },
+                "importToken": {
+                    "type": "string",
+                    "description": "The import token obtained after the user calls the interface to retrieve import parameters; this value is passed directly to the ImportKeyMaterial interface.\n"
+                },
+                "keyId": {
+                    "type": "string",
+                    "description": "Unique identifier of the target master key in UUID format; the Origin of this key must be External.\n"
+                },
+                "keyMaterialExpireTime": {
+                    "type": "string",
+                    "description": "The expiration time of the key material recorded by the server after import; if the material does not expire, this field is an empty string.\n"
+                },
+                "keyState": {
+                    "type": "string",
+                    "description": "Current status of the target master key. Values: Enable, Disable, PendingDelete, Archived, PendingImport, PendingReplicaDelete.\n"
+                },
+                "origin": {
+                    "type": "string",
+                    "description": "Source of the target master key. Values: CloudKMS, External, ExternalKeyStore. The KeyMaterial resource is only valid for keys with External origin.\n"
+                },
+                "validTo": {
+                    "type": "integer",
+                    "description": "Key material expiration time, Unix timestamp in seconds; required when the ExpirationModel parameter is set to KEY*MATERIAL*EXPIRES. Must be a time after the current moment, based on server time.\n"
+                }
+            },
+            "required": [
+                "encryptedKeyMaterial",
+                "expirationModel",
+                "importToken",
+                "keyId",
+                "keyMaterialExpireTime",
+                "keyState",
+                "origin",
+                "validTo"
+            ],
+            "inputProperties": {
+                "encryptedKeyMaterial": {
+                    "type": "string",
+                    "description": "The key material obtained after the user encrypts using the import public key, encoded in Base64; this value is passed directly to the ImportKeyMaterial interface.\n"
+                },
+                "expirationModel": {
+                    "type": "string",
+                    "description": "Key material expiration type. Values: KEY*MATERIAL*DOES*NOT*EXPIRE (default), KEY*MATERIAL*EXPIRES.\n"
+                },
+                "importToken": {
+                    "type": "string",
+                    "description": "The import token obtained after the user calls the interface to retrieve import parameters; this value is passed directly to the ImportKeyMaterial interface.\n"
+                },
+                "keyId": {
+                    "type": "string",
+                    "description": "Unique identifier of the target master key in UUID format; the Origin of this key must be External.\n"
+                },
+                "validTo": {
+                    "type": "integer",
+                    "description": "Key material expiration time, Unix timestamp in seconds; required when the ExpirationModel parameter is set to KEY*MATERIAL*EXPIRES. Must be a time after the current moment, based on server time.\n"
+                }
+            },
+            "requiredInputs": [
+                "encryptedKeyMaterial",
+                "importToken",
+                "keyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering KeyMaterial resources.\n",
+                "properties": {
+                    "encryptedKeyMaterial": {
+                        "type": "string",
+                        "description": "The key material obtained after the user encrypts using the import public key, encoded in Base64; this value is passed directly to the ImportKeyMaterial interface.\n"
+                    },
+                    "expirationModel": {
+                        "type": "string",
+                        "description": "Key material expiration type. Values: KEY*MATERIAL*DOES*NOT*EXPIRE (default), KEY*MATERIAL*EXPIRES.\n"
+                    },
+                    "importToken": {
+                        "type": "string",
+                        "description": "The import token obtained after the user calls the interface to retrieve import parameters; this value is passed directly to the ImportKeyMaterial interface.\n"
+                    },
+                    "keyId": {
+                        "type": "string",
+                        "description": "Unique identifier of the target master key in UUID format; the Origin of this key must be External.\n"
+                    },
+                    "keyMaterialExpireTime": {
+                        "type": "string",
+                        "description": "The expiration time of the key material recorded by the server after import; if the material does not expire, this field is an empty string.\n"
+                    },
+                    "keyState": {
+                        "type": "string",
+                        "description": "Current status of the target master key. Values: Enable, Disable, PendingDelete, Archived, PendingImport, PendingReplicaDelete.\n"
+                    },
+                    "origin": {
+                        "type": "string",
+                        "description": "Source of the target master key. Values: CloudKMS, External, ExternalKeyStore. The KeyMaterial resource is only valid for keys with External origin.\n"
+                    },
+                    "validTo": {
+                        "type": "integer",
+                        "description": "Key material expiration time, Unix timestamp in seconds; required when the ExpirationModel parameter is set to KEY*MATERIAL*EXPIRES. Must be a time after the current moment, based on server time.\n"
                     }
                 },
                 "type": "object"
@@ -86355,6 +88265,10 @@
                     "type": "integer",
                     "description": "Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND\n"
                 },
+                "endpointTrn": {
+                    "type": "string",
+                    "description": "TRN of the endpoint\n"
+                },
                 "forwardIPs": {
                     "type": "array",
                     "items": {
@@ -86401,6 +88315,13 @@
                         "$ref": "#/types/bytepluscc:privatezone/ResolverRuleVpC:ResolverRuleVpC"
                     }
                 },
+                "vpcTrns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "TRN of one or more VPCs associated with the domain name\n"
+                },
                 "zoneName": {
                     "type": "string",
                     "description": "Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC\n"
@@ -86410,6 +88331,7 @@
                 "createdTime",
                 "enable",
                 "endpointId",
+                "endpointTrn",
                 "forwardIPs",
                 "lastOperator",
                 "line",
@@ -86420,12 +88342,17 @@
                 "type",
                 "updatedTime",
                 "vpCs",
+                "vpcTrns",
                 "zoneName"
             ],
             "inputProperties": {
                 "endpointId": {
                     "type": "integer",
                     "description": "Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND\n"
+                },
+                "endpointTrn": {
+                    "type": "string",
+                    "description": "TRN of the endpoint\n"
                 },
                 "forwardIPs": {
                     "type": "array",
@@ -86461,6 +88388,13 @@
                         "$ref": "#/types/bytepluscc:privatezone/ResolverRuleVpC:ResolverRuleVpC"
                     }
                 },
+                "vpcTrns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "TRN of one or more VPCs associated with the domain name\n"
+                },
                 "zoneName": {
                     "type": "string",
                     "description": "Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC\n"
@@ -86484,6 +88418,10 @@
                     "endpointId": {
                         "type": "integer",
                         "description": "Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND\n"
+                    },
+                    "endpointTrn": {
+                        "type": "string",
+                        "description": "TRN of the endpoint\n"
                     },
                     "forwardIPs": {
                         "type": "array",
@@ -86530,6 +88468,13 @@
                         "items": {
                             "$ref": "#/types/bytepluscc:privatezone/ResolverRuleVpC:ResolverRuleVpC"
                         }
+                    },
+                    "vpcTrns": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "TRN of one or more VPCs associated with the domain name\n"
                     },
                     "zoneName": {
                         "type": "string",
@@ -90354,6 +92299,180 @@
                             "type": "string"
                         },
                         "description": "List of availability zones for each node in the instance.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode": {
+            "description": "Read-only node resources for RDS MySQL instances (NodeType=ReadOnly). Create, delete, or modify specifications using CreateDBNodes/DeleteDBNodes/ModifyDBNodeSpec; retrieve node details using DescribeDBInstanceHAConfig + DescribeReadOnlyNodeDelay; modify replication delay configuration using ModifyReadOnlyNodeDelayReplicationTime\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.rdsmysql.InstanceReadonlyNode(\"Example\", {\n    instanceId: \"mysql-41xxxxx4db8\",\n    nodeSpec: \"rds.mysql.d1.n.1c1g\",\n    zoneId: \"cn-beijing-a\",\n    updateEndpointIds: [\"mysql-41xxxxx4db8-cluster\"],\n    delayReplicationTime: 300,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.rdsmysql.InstanceReadonlyNode(\"Example\",\n    instance_id=\"mysql-41xxxxx4db8\",\n    node_spec=\"rds.mysql.d1.n.1c1g\",\n    zone_id=\"cn-beijing-a\",\n    update_endpoint_ids=[\"mysql-41xxxxx4db8-cluster\"],\n    delay_replication_time=300)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Rdsmysql.InstanceReadonlyNode(\"Example\", new()\n    {\n        InstanceId = \"mysql-41xxxxx4db8\",\n        NodeSpec = \"rds.mysql.d1.n.1c1g\",\n        ZoneId = \"cn-beijing-a\",\n        UpdateEndpointIds = new[]\n        {\n            \"mysql-41xxxxx4db8-cluster\",\n        },\n        DelayReplicationTime = 300,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/rdsmysql\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := rdsmysql.NewInstanceReadonlyNode(ctx, \"Example\", \u0026rdsmysql.InstanceReadonlyNodeArgs{\n\t\t\tInstanceId: pulumi.String(\"mysql-41xxxxx4db8\"),\n\t\t\tNodeSpec:   pulumi.String(\"rds.mysql.d1.n.1c1g\"),\n\t\t\tZoneId:     pulumi.String(\"cn-beijing-a\"),\n\t\t\tUpdateEndpointIds: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"mysql-41xxxxx4db8-cluster\"),\n\t\t\t},\n\t\t\tDelayReplicationTime: pulumi.Int(300),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.rdsmysql.InstanceReadonlyNode;\nimport com.byteplus.bytepluscc.rdsmysql.InstanceReadonlyNodeArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new InstanceReadonlyNode(\"example\", InstanceReadonlyNodeArgs.builder()\n            .instanceId(\"mysql-41xxxxx4db8\")\n            .nodeSpec(\"rds.mysql.d1.n.1c1g\")\n            .zoneId(\"cn-beijing-a\")\n            .updateEndpointIds(\"mysql-41xxxxx4db8-cluster\")\n            .delayReplicationTime(300)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:rdsmysql:InstanceReadonlyNode\n    name: Example\n    properties:\n      instanceId: mysql-41xxxxx4db8\n      nodeSpec: rds.mysql.d1.n.1c1g\n      zoneId: cn-beijing-a\n      updateEndpointIds:\n        - mysql-41xxxxx4db8-cluster\n      delayReplicationTime: 300\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode example \"instance_id|node_id\"\n```\n\n",
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "description": "Node creation time\n"
+                },
+                "delayReplicationTime": {
+                    "type": "integer",
+                    "description": "Read-only node replication delay in seconds. Can be modified using ModifyReadOnlyNodeDelayReplicationTime\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "RDS MySQL instance ID\n"
+                },
+                "memory": {
+                    "type": "integer",
+                    "description": "Node memory size in GiB\n"
+                },
+                "nodeId": {
+                    "type": "string",
+                    "description": "Read-only node ID\n"
+                },
+                "nodeSpec": {
+                    "type": "string",
+                    "description": "Node specification\n"
+                },
+                "nodeStatus": {
+                    "type": "string",
+                    "description": "Node status\n"
+                },
+                "nodeType": {
+                    "type": "string",
+                    "description": "Node type, fixed as ReadOnly\n"
+                },
+                "regionId": {
+                    "type": "string",
+                    "description": "Node region ID\n"
+                },
+                "syncDelay": {
+                    "type": "integer",
+                    "description": "Read-only node synchronization delay in seconds\n"
+                },
+                "updateEndpointIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of connection endpoint IDs to be synchronously updated when applying replication delay changes (optional, write-only, passed through to ModifyReadOnlyNodeDelayReplicationTime during Update)\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Node update time\n"
+                },
+                "vcpu": {
+                    "type": "integer",
+                    "description": "Node vCPU count\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "Node availability zone ID\n"
+                }
+            },
+            "required": [
+                "createTime",
+                "delayReplicationTime",
+                "instanceId",
+                "memory",
+                "nodeId",
+                "nodeSpec",
+                "nodeStatus",
+                "nodeType",
+                "regionId",
+                "syncDelay",
+                "updateEndpointIds",
+                "updateTime",
+                "vcpu",
+                "zoneId"
+            ],
+            "inputProperties": {
+                "delayReplicationTime": {
+                    "type": "integer",
+                    "description": "Read-only node replication delay in seconds. Can be modified using ModifyReadOnlyNodeDelayReplicationTime\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "RDS MySQL instance ID\n"
+                },
+                "nodeSpec": {
+                    "type": "string",
+                    "description": "Node specification\n"
+                },
+                "updateEndpointIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of connection endpoint IDs to be synchronously updated when applying replication delay changes (optional, write-only, passed through to ModifyReadOnlyNodeDelayReplicationTime during Update)\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "Node availability zone ID\n"
+                }
+            },
+            "requiredInputs": [
+                "instanceId",
+                "nodeSpec"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering InstanceReadonlyNode resources.\n",
+                "properties": {
+                    "createTime": {
+                        "type": "string",
+                        "description": "Node creation time\n"
+                    },
+                    "delayReplicationTime": {
+                        "type": "integer",
+                        "description": "Read-only node replication delay in seconds. Can be modified using ModifyReadOnlyNodeDelayReplicationTime\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "RDS MySQL instance ID\n"
+                    },
+                    "memory": {
+                        "type": "integer",
+                        "description": "Node memory size in GiB\n"
+                    },
+                    "nodeId": {
+                        "type": "string",
+                        "description": "Read-only node ID\n"
+                    },
+                    "nodeSpec": {
+                        "type": "string",
+                        "description": "Node specification\n"
+                    },
+                    "nodeStatus": {
+                        "type": "string",
+                        "description": "Node status\n"
+                    },
+                    "nodeType": {
+                        "type": "string",
+                        "description": "Node type, fixed as ReadOnly\n"
+                    },
+                    "regionId": {
+                        "type": "string",
+                        "description": "Node region ID\n"
+                    },
+                    "syncDelay": {
+                        "type": "integer",
+                        "description": "Read-only node synchronization delay in seconds\n"
+                    },
+                    "updateEndpointIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of connection endpoint IDs to be synchronously updated when applying replication delay changes (optional, write-only, passed through to ModifyReadOnlyNodeDelayReplicationTime during Update)\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Node update time\n"
+                    },
+                    "vcpu": {
+                        "type": "integer",
+                        "description": "Node vCPU count\n"
+                    },
+                    "zoneId": {
+                        "type": "string",
+                        "description": "Node availability zone ID\n"
                     }
                 },
                 "type": "object"
@@ -122148,6 +124267,268 @@
                 "type": "object"
             }
         },
+        "bytepluscc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies": {
+            "description": "Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy\n",
+            "outputs": {
+                "description": "A collection of values returned by getNatFireWallControlPolicies.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:fwcenter/getNatFireWallControlPolicy:getNatFireWallControlPolicy": {
+            "description": "Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getNatFireWallControlPolicy.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getNatFireWallControlPolicy.\n",
+                "properties": {
+                    "accountId": {
+                        "description": "User's unique identifier ID.\n",
+                        "type": "string"
+                    },
+                    "action": {
+                        "description": "Policy action. accept: allow; deny: deny; monitor: observe.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the policy.\n",
+                        "type": "string"
+                    },
+                    "destPort": {
+                        "description": "Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.\n",
+                        "type": "string"
+                    },
+                    "destPortGroupType": {
+                        "description": "Destination port book type.\n",
+                        "type": "string"
+                    },
+                    "destPortListV1s": {
+                        "description": "Destination port list (structured).\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:fwcenter/getNatFireWallControlPolicyDestPortListV1:getNatFireWallControlPolicyDestPortListV1"
+                        },
+                        "type": "array"
+                    },
+                    "destPortLists": {
+                        "description": "Destination port list.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "destPortType": {
+                        "description": "Destination port type. port: port; group: port address book.\n",
+                        "type": "string"
+                    },
+                    "destination": {
+                        "description": "Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.\n",
+                        "type": "string"
+                    },
+                    "destinationCidrListV1s": {
+                        "description": "Destination CIDR list (structured).\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:fwcenter/getNatFireWallControlPolicyDestinationCidrListV1:getNatFireWallControlPolicyDestinationCidrListV1"
+                        },
+                        "type": "array"
+                    },
+                    "destinationCidrLists": {
+                        "description": "Destination CIDR list.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "destinationDomainLists": {
+                        "description": "Destination domain name list.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "destinationGroupType": {
+                        "description": "Destination address book type.\n",
+                        "type": "string"
+                    },
+                    "destinationType": {
+                        "description": "Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).\n",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.\n",
+                        "type": "string"
+                    },
+                    "effectStatus": {
+                        "description": "Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.\n",
+                        "type": "integer"
+                    },
+                    "endTime": {
+                        "description": "Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n",
+                        "type": "integer"
+                    },
+                    "hitCnt": {
+                        "description": "Hit count, indicating the number of times this policy has been triggered.\n",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "isEffected": {
+                        "description": "Whether the policy is effective.\n",
+                        "type": "boolean"
+                    },
+                    "lastHitTime": {
+                        "description": "Last hit timestamp, indicating the last time this policy was triggered.\n",
+                        "type": "integer"
+                    },
+                    "natFirewallId": {
+                        "description": "NAT border firewall instance ID.\n",
+                        "type": "string"
+                    },
+                    "prio": {
+                        "description": "Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.\n",
+                        "type": "integer"
+                    },
+                    "proto": {
+                        "description": "Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.\n",
+                        "type": "string"
+                    },
+                    "repeatDays": {
+                        "description": "Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.\n",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "type": "array"
+                    },
+                    "repeatEndTime": {
+                        "description": "Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n",
+                        "type": "string"
+                    },
+                    "repeatStartTime": {
+                        "description": "Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.\n",
+                        "type": "string"
+                    },
+                    "repeatType": {
+                        "description": "Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.\n",
+                        "type": "string"
+                    },
+                    "ruleId": {
+                        "description": "Unique ID of the access control policy.\n",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.\n",
+                        "type": "string"
+                    },
+                    "sourceCidrListV1s": {
+                        "description": "Source CIDR list (structured).\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:fwcenter/getNatFireWallControlPolicySourceCidrListV1:getNatFireWallControlPolicySourceCidrListV1"
+                        },
+                        "type": "array"
+                    },
+                    "sourceCidrLists": {
+                        "description": "Source CIDR list.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "sourceGroupType": {
+                        "description": "Source address book type.\n",
+                        "type": "string"
+                    },
+                    "sourceType": {
+                        "description": "Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).\n",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.\n",
+                        "type": "integer"
+                    },
+                    "status": {
+                        "description": "Policy switch status. false: off; true: on.\n",
+                        "type": "boolean"
+                    },
+                    "updateTime": {
+                        "description": "Policy update timestamp.\n",
+                        "type": "integer"
+                    },
+                    "useCount": {
+                        "description": "Number of policies occupied by this policy.\n",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "action",
+                    "description",
+                    "destPort",
+                    "destPortGroupType",
+                    "destPortLists",
+                    "destPortListV1s",
+                    "destPortType",
+                    "destination",
+                    "destinationCidrLists",
+                    "destinationCidrListV1s",
+                    "destinationDomainLists",
+                    "destinationGroupType",
+                    "destinationType",
+                    "direction",
+                    "effectStatus",
+                    "endTime",
+                    "hitCnt",
+                    "id",
+                    "isEffected",
+                    "lastHitTime",
+                    "natFirewallId",
+                    "prio",
+                    "proto",
+                    "repeatDays",
+                    "repeatEndTime",
+                    "repeatStartTime",
+                    "repeatType",
+                    "ruleId",
+                    "source",
+                    "sourceCidrLists",
+                    "sourceCidrListV1s",
+                    "sourceGroupType",
+                    "sourceType",
+                    "startTime",
+                    "status",
+                    "updateTime",
+                    "useCount"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:fwcenter/getVpcFireWallAclRule:getVpcFireWallAclRule": {
             "description": "Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule\n",
             "inputs": {
@@ -124198,6 +126579,216 @@
                 "type": "object"
             }
         },
+        "bytepluscc:id/getAuthConfig:getAuthConfig": {
+            "description": "Data Source schema for Byteplus::ID::AuthConfig\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAuthConfig.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAuthConfig.\n",
+                "properties": {
+                    "apiKeyAuthConfigs": {
+                        "description": "ApiKey Authentication Configuration\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/getAuthConfigApiKeyAuthConfig:getAuthConfigApiKeyAuthConfig"
+                        },
+                        "type": "array"
+                    },
+                    "authType": {
+                        "description": "Authentication Type. Only Jwt or ApiKey is allowed\n",
+                        "type": "string"
+                    },
+                    "configName": {
+                        "description": "Configuration Name\n",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "description": "Creation Time\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Configuration Description\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "inboundAuthConfigId": {
+                        "description": "Inbound Authentication Configuration ID\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "Bound Instance ID\n",
+                        "type": "string"
+                    },
+                    "jwtAuthConfig": {
+                        "$ref": "#/types/bytepluscc:id/getAuthConfigJwtAuthConfig:getAuthConfigJwtAuthConfig",
+                        "description": "JWT Authentication Configuration\n"
+                    },
+                    "trn": {
+                        "description": "Resource TRN\n",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Update Time\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "apiKeyAuthConfigs",
+                    "authType",
+                    "configName",
+                    "createdAt",
+                    "description",
+                    "id",
+                    "inboundAuthConfigId",
+                    "instanceId",
+                    "jwtAuthConfig",
+                    "trn",
+                    "updatedAt"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getAuthConfigs:getAuthConfigs": {
+            "description": "Plural Data Source schema for Byteplus::ID::AuthConfig\n",
+            "outputs": {
+                "description": "A collection of values returned by getAuthConfigs.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getPermissionNamespace:getPermissionNamespace": {
+            "description": "Data Source schema for Byteplus::ID::PermissionNamespace\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getPermissionNamespace.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPermissionNamespace.\n",
+                "properties": {
+                    "associates": {
+                        "description": "Associated Entities List\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "createTime": {
+                        "description": "Namespace Creation Time\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Namespace Description\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "namespaceId": {
+                        "description": "Namespace Unique ID\n",
+                        "type": "string"
+                    },
+                    "namespaceName": {
+                        "description": "Namespace Name\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "Project Associated with Namespace\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "Namespace Tag List\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/getPermissionNamespaceTag:getPermissionNamespaceTag"
+                        },
+                        "type": "array"
+                    },
+                    "trn": {
+                        "description": "Namespace TRN\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Namespace Update Time\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "associates",
+                    "createTime",
+                    "description",
+                    "id",
+                    "namespaceId",
+                    "namespaceName",
+                    "projectName",
+                    "tags",
+                    "trn",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getPermissionNamespaces:getPermissionNamespaces": {
+            "description": "Plural Data Source schema for Byteplus::ID::PermissionNamespace\n",
+            "outputs": {
+                "description": "A collection of values returned by getPermissionNamespaces.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:id/getService:getService": {
             "description": "Data Source schema for Byteplus::ID::Service\n",
             "inputs": {
@@ -124327,6 +126918,349 @@
             "description": "Plural Data Source schema for Byteplus::ID::Service\n",
             "outputs": {
                 "description": "A collection of values returned by getServices.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getUserPool:getUserPool": {
+            "description": "Data Source schema for Byteplus::ID::UserPool\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getUserPool.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getUserPool.\n",
+                "properties": {
+                    "brand": {
+                        "$ref": "#/types/bytepluscc:id/getUserPoolBrand:getUserPoolBrand",
+                        "description": "User pool brand display configuration\n"
+                    },
+                    "createTime": {
+                        "description": "Creation time\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "User pool description\n",
+                        "type": "string"
+                    },
+                    "discoveryUrl": {
+                        "description": "OpenID Connect discovery URL\n",
+                        "type": "string"
+                    },
+                    "domain": {
+                        "description": "User pool access domain\n",
+                        "type": "string"
+                    },
+                    "emailPasswordlessSignInEnabled": {
+                        "description": "Email passwordless login enabled\n",
+                        "type": "boolean"
+                    },
+                    "enabled": {
+                        "description": "User pool enabled\n",
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "issuerUrl": {
+                        "description": "Token issuer URL\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "User pool name\n",
+                        "type": "string"
+                    },
+                    "oauthLoginCallbackUrl": {
+                        "description": "OAuth login callback URL\n",
+                        "type": "string"
+                    },
+                    "oauthSignUpCallbackUrl": {
+                        "description": "OAuth registration callback URL\n",
+                        "type": "string"
+                    },
+                    "oidcLoginCallbackUrl": {
+                        "description": "OIDC login callback URL\n",
+                        "type": "string"
+                    },
+                    "oidcSignUpCallbackUrl": {
+                        "description": "OIDC registration callback URL\n",
+                        "type": "string"
+                    },
+                    "passwordSignInEnabled": {
+                        "description": "Password login enabled\n",
+                        "type": "boolean"
+                    },
+                    "projectName": {
+                        "description": "Project name\n",
+                        "type": "string"
+                    },
+                    "requiredSignUpAttributes": {
+                        "description": "Required registration attribute list\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "samlLoginCallbackUrl": {
+                        "description": "SAML login callback URL\n",
+                        "type": "string"
+                    },
+                    "samlSignUpCallbackUrl": {
+                        "description": "SAML registration callback URL\n",
+                        "type": "string"
+                    },
+                    "selfAccountRecoveryEnabled": {
+                        "description": "Allow account self-recovery\n",
+                        "type": "boolean"
+                    },
+                    "selfSignUpEnabled": {
+                        "description": "Allow user self-registration\n",
+                        "type": "boolean"
+                    },
+                    "signInAttributes": {
+                        "description": "Supported login attribute list\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "signUpAutoVerificationEnabled": {
+                        "description": "Registration auto-validation enabled\n",
+                        "type": "boolean"
+                    },
+                    "smsAnonymousSignUpEnabled": {
+                        "description": "SMS anonymous registration enabled\n",
+                        "type": "boolean"
+                    },
+                    "smsPasswordlessSignInEnabled": {
+                        "description": "SMS passwordless login enabled\n",
+                        "type": "boolean"
+                    },
+                    "tags": {
+                        "description": "User pool tag list\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/getUserPoolTag:getUserPoolTag"
+                        },
+                        "type": "array"
+                    },
+                    "tokenSigningKeyUrl": {
+                        "description": "Token signature public key URL\n",
+                        "type": "string"
+                    },
+                    "tokenUrl": {
+                        "description": "Token endpoint URL\n",
+                        "type": "string"
+                    },
+                    "totalClients": {
+                        "description": "Total clients in user pool\n",
+                        "type": "integer"
+                    },
+                    "totalConnections": {
+                        "description": "Total connections and identity providers in user pool\n",
+                        "type": "integer"
+                    },
+                    "totalUsers": {
+                        "description": "Total users in user pool\n",
+                        "type": "integer"
+                    },
+                    "trn": {
+                        "description": "User pool TRN\n",
+                        "type": "string"
+                    },
+                    "uid": {
+                        "description": "User pool unique identifier\n",
+                        "type": "string"
+                    },
+                    "unconfirmedUserSignInEnabled": {
+                        "description": "Allow unconfirmed users to log in\n",
+                        "type": "boolean"
+                    },
+                    "updateTime": {
+                        "description": "Update time\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "brand",
+                    "createTime",
+                    "description",
+                    "discoveryUrl",
+                    "domain",
+                    "emailPasswordlessSignInEnabled",
+                    "enabled",
+                    "id",
+                    "issuerUrl",
+                    "name",
+                    "oauthLoginCallbackUrl",
+                    "oauthSignUpCallbackUrl",
+                    "oidcLoginCallbackUrl",
+                    "oidcSignUpCallbackUrl",
+                    "passwordSignInEnabled",
+                    "projectName",
+                    "requiredSignUpAttributes",
+                    "samlLoginCallbackUrl",
+                    "samlSignUpCallbackUrl",
+                    "selfAccountRecoveryEnabled",
+                    "selfSignUpEnabled",
+                    "signInAttributes",
+                    "signUpAutoVerificationEnabled",
+                    "smsAnonymousSignUpEnabled",
+                    "smsPasswordlessSignInEnabled",
+                    "tags",
+                    "tokenSigningKeyUrl",
+                    "tokenUrl",
+                    "totalClients",
+                    "totalConnections",
+                    "totalUsers",
+                    "trn",
+                    "uid",
+                    "unconfirmedUserSignInEnabled",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getUserPools:getUserPools": {
+            "description": "Plural Data Source schema for Byteplus::ID::UserPool\n",
+            "outputs": {
+                "description": "A collection of values returned by getUserPools.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getWorkloadPool:getWorkloadPool": {
+            "description": "Data Source schema for Byteplus::ID::WorkloadPool\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getWorkloadPool.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getWorkloadPool.\n",
+                "properties": {
+                    "createdAt": {
+                        "description": "Workload pool creation time\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Workload pool description\n",
+                        "type": "string"
+                    },
+                    "discoveryUrl": {
+                        "description": "OIDC discovery endpoint\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "Project name\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:id/getWorkloadPoolTag:getWorkloadPoolTag"
+                        },
+                        "type": "array"
+                    },
+                    "totalCredentials": {
+                        "description": "Number of associated credentials\n",
+                        "type": "integer"
+                    },
+                    "totalWorkloads": {
+                        "description": "Number of workloads\n",
+                        "type": "integer"
+                    },
+                    "trn": {
+                        "description": "Workload pool Trn\n",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Workload pool update time\n",
+                        "type": "string"
+                    },
+                    "workloadPoolId": {
+                        "description": "Workload pool ID\n",
+                        "type": "string"
+                    },
+                    "workloadPoolName": {
+                        "description": "Workload pool name\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createdAt",
+                    "description",
+                    "discoveryUrl",
+                    "id",
+                    "projectName",
+                    "tags",
+                    "totalCredentials",
+                    "totalWorkloads",
+                    "trn",
+                    "updatedAt",
+                    "workloadPoolId",
+                    "workloadPoolName"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getWorkloadPools:getWorkloadPools": {
+            "description": "Plural Data Source schema for Byteplus::ID::WorkloadPool\n",
+            "outputs": {
+                "description": "A collection of values returned by getWorkloadPools.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -125153,6 +128087,99 @@
                     "tags",
                     "trn",
                     "updatedTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:kms/getKeyMaterial:getKeyMaterial": {
+            "description": "Data Source schema for Byteplus::KMS::KeyMaterial\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getKeyMaterial.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getKeyMaterial.\n",
+                "properties": {
+                    "encryptedKeyMaterial": {
+                        "description": "The key material obtained after the user encrypts using the import public key, encoded in Base64; this value is passed directly to the ImportKeyMaterial interface.\n",
+                        "type": "string"
+                    },
+                    "expirationModel": {
+                        "description": "Key material expiration type. Values: KEY*MATERIAL*DOES*NOT*EXPIRE (default), KEY*MATERIAL*EXPIRES.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "importToken": {
+                        "description": "The import token obtained after the user calls the interface to retrieve import parameters; this value is passed directly to the ImportKeyMaterial interface.\n",
+                        "type": "string"
+                    },
+                    "keyId": {
+                        "description": "Unique identifier of the target master key in UUID format; the Origin of this key must be External.\n",
+                        "type": "string"
+                    },
+                    "keyMaterialExpireTime": {
+                        "description": "The expiration time of the key material recorded by the server after import; if the material does not expire, this field is an empty string.\n",
+                        "type": "string"
+                    },
+                    "keyState": {
+                        "description": "Current status of the target master key. Values: Enable, Disable, PendingDelete, Archived, PendingImport, PendingReplicaDelete.\n",
+                        "type": "string"
+                    },
+                    "origin": {
+                        "description": "Source of the target master key. Values: CloudKMS, External, ExternalKeyStore. The KeyMaterial resource is only valid for keys with External origin.\n",
+                        "type": "string"
+                    },
+                    "validTo": {
+                        "description": "Key material expiration time, Unix timestamp in seconds; required when the ExpirationModel parameter is set to KEY*MATERIAL*EXPIRES. Must be a time after the current moment, based on server time.\n",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "encryptedKeyMaterial",
+                    "expirationModel",
+                    "id",
+                    "importToken",
+                    "keyId",
+                    "keyMaterialExpireTime",
+                    "keyState",
+                    "origin",
+                    "validTo"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:kms/getKeyMaterials:getKeyMaterials": {
+            "description": "Plural Data Source schema for Byteplus::KMS::KeyMaterial\n",
+            "outputs": {
+                "description": "A collection of values returned by getKeyMaterials.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
                 ],
                 "type": "object"
             }
@@ -128221,6 +131248,10 @@
                         "description": "Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND\n",
                         "type": "integer"
                     },
+                    "endpointTrn": {
+                        "description": "TRN of the endpoint\n",
+                        "type": "string"
+                    },
                     "forwardIPs": {
                         "description": "IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND\n",
                         "items": {
@@ -128274,6 +131305,13 @@
                         },
                         "type": "array"
                     },
+                    "vpcTrns": {
+                        "description": "TRN of one or more VPCs associated with the domain name\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
                     "zoneName": {
                         "description": "Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC\n",
                         "type": "string"
@@ -128283,6 +131321,7 @@
                     "createdTime",
                     "enable",
                     "endpointId",
+                    "endpointTrn",
                     "forwardIPs",
                     "id",
                     "lastOperator",
@@ -128294,6 +131333,7 @@
                     "type",
                     "updatedTime",
                     "vpCs",
+                    "vpcTrns",
                     "zoneName"
                 ],
                 "type": "object"
@@ -130676,6 +133716,132 @@
                     "vpcId",
                     "zoneId",
                     "zoneIds"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceReadonlyNode:getInstanceReadonlyNode": {
+            "description": "Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getInstanceReadonlyNode.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getInstanceReadonlyNode.\n",
+                "properties": {
+                    "createTime": {
+                        "description": "Node creation time\n",
+                        "type": "string"
+                    },
+                    "delayReplicationTime": {
+                        "description": "Read-only node replication delay in seconds. Can be modified using ModifyReadOnlyNodeDelayReplicationTime\n",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "RDS MySQL instance ID\n",
+                        "type": "string"
+                    },
+                    "memory": {
+                        "description": "Node memory size in GiB\n",
+                        "type": "integer"
+                    },
+                    "nodeId": {
+                        "description": "Read-only node ID\n",
+                        "type": "string"
+                    },
+                    "nodeSpec": {
+                        "description": "Node specification\n",
+                        "type": "string"
+                    },
+                    "nodeStatus": {
+                        "description": "Node status\n",
+                        "type": "string"
+                    },
+                    "nodeType": {
+                        "description": "Node type, fixed as ReadOnly\n",
+                        "type": "string"
+                    },
+                    "regionId": {
+                        "description": "Node region ID\n",
+                        "type": "string"
+                    },
+                    "syncDelay": {
+                        "description": "Read-only node synchronization delay in seconds\n",
+                        "type": "integer"
+                    },
+                    "updateEndpointIds": {
+                        "description": "List of connection endpoint IDs to be synchronously updated when applying replication delay changes (optional, write-only, passed through to ModifyReadOnlyNodeDelayReplicationTime during Update)\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "updateTime": {
+                        "description": "Node update time\n",
+                        "type": "string"
+                    },
+                    "vcpu": {
+                        "description": "Node vCPU count\n",
+                        "type": "integer"
+                    },
+                    "zoneId": {
+                        "description": "Node availability zone ID\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createTime",
+                    "delayReplicationTime",
+                    "id",
+                    "instanceId",
+                    "memory",
+                    "nodeId",
+                    "nodeSpec",
+                    "nodeStatus",
+                    "nodeType",
+                    "regionId",
+                    "syncDelay",
+                    "updateEndpointIds",
+                    "updateTime",
+                    "vcpu",
+                    "zoneId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceReadonlyNodes:getInstanceReadonlyNodes": {
+            "description": "Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode\n",
+            "outputs": {
+                "description": "A collection of values returned by getInstanceReadonlyNodes.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
                 ],
                 "type": "object"
             }

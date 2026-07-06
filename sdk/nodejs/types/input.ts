@@ -7228,6 +7228,51 @@ export namespace fwcenter {
         vpcId?: pulumi.Input<string>;
     }
 
+    export interface NatFireWallControlPolicyDestPortListV1 {
+        /**
+         * Specific address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface NatFireWallControlPolicyDestinationCidrListV1 {
+        /**
+         * Specific address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface NatFireWallControlPolicySourceCidrListV1 {
+        /**
+         * Specific address information.
+         */
+        address?: pulumi.Input<string>;
+        /**
+         * Description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface VpcFireWallAclRuleDestPortListV1 {
         /**
          * Detailed address information.
@@ -7909,6 +7954,59 @@ export namespace iam {
 }
 
 export namespace id {
+    export interface AuthConfigApiKeyAuthConfig {
+        /**
+         * ApiKey Value
+         */
+        apiKey?: pulumi.Input<string>;
+        apiKeyMetadatas?: pulumi.Input<pulumi.Input<inputs.id.AuthConfigApiKeyAuthConfigApiKeyMetadata>[]>;
+        /**
+         * ApiKey Name
+         */
+        apiKeyName?: pulumi.Input<string>;
+        /**
+         * Expiration Timestamp
+         */
+        expiryTimestamp?: pulumi.Input<number>;
+    }
+
+    export interface AuthConfigApiKeyAuthConfigApiKeyMetadata {
+        /**
+         * Parameter Location
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Parameter Name
+         */
+        parameterName?: pulumi.Input<string>;
+    }
+
+    export interface AuthConfigJwtAuthConfig {
+        /**
+         * Allowed Audience List
+         */
+        allowedAudiences?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Allowed Client List
+         */
+        allowedClients?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * JWT Discovery URL。
+         */
+        discoveryUrl?: pulumi.Input<string>;
+    }
+
+    export interface PermissionNamespaceTag {
+        /**
+         * Tag Key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag Value
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface ServiceBackend {
         /**
          * Backend service domain name, for example api.example.com
@@ -8055,6 +8153,39 @@ export namespace id {
     }
 
     export interface ServiceTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface UserPoolBrand {
+        /**
+         * Brand logo URL
+         */
+        logoUri?: pulumi.Input<string>;
+        /**
+         * Brand name
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface UserPoolTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface WorkloadPoolTag {
         /**
          * Tag key
          */

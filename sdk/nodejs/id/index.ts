@@ -5,6 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AuthConfigArgs, AuthConfigState } from "./authConfig";
+export type AuthConfig = import("./authConfig").AuthConfig;
+export const AuthConfig: typeof import("./authConfig").AuthConfig = null as any;
+utilities.lazyLoad(exports, ["AuthConfig"], () => require("./authConfig"));
+
+export { GetAuthConfigArgs, GetAuthConfigResult, GetAuthConfigOutputArgs } from "./getAuthConfig";
+export const getAuthConfig: typeof import("./getAuthConfig").getAuthConfig = null as any;
+export const getAuthConfigOutput: typeof import("./getAuthConfig").getAuthConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getAuthConfig","getAuthConfigOutput"], () => require("./getAuthConfig"));
+
+export { GetAuthConfigsResult } from "./getAuthConfigs";
+export const getAuthConfigs: typeof import("./getAuthConfigs").getAuthConfigs = null as any;
+export const getAuthConfigsOutput: typeof import("./getAuthConfigs").getAuthConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getAuthConfigs","getAuthConfigsOutput"], () => require("./getAuthConfigs"));
+
+export { GetPermissionNamespaceArgs, GetPermissionNamespaceResult, GetPermissionNamespaceOutputArgs } from "./getPermissionNamespace";
+export const getPermissionNamespace: typeof import("./getPermissionNamespace").getPermissionNamespace = null as any;
+export const getPermissionNamespaceOutput: typeof import("./getPermissionNamespace").getPermissionNamespaceOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissionNamespace","getPermissionNamespaceOutput"], () => require("./getPermissionNamespace"));
+
+export { GetPermissionNamespacesResult } from "./getPermissionNamespaces";
+export const getPermissionNamespaces: typeof import("./getPermissionNamespaces").getPermissionNamespaces = null as any;
+export const getPermissionNamespacesOutput: typeof import("./getPermissionNamespaces").getPermissionNamespacesOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissionNamespaces","getPermissionNamespacesOutput"], () => require("./getPermissionNamespaces"));
+
 export { GetServiceArgs, GetServiceResult, GetServiceOutputArgs } from "./getService";
 export const getService: typeof import("./getService").getService = null as any;
 export const getServiceOutput: typeof import("./getService").getServiceOutput = null as any;
@@ -15,21 +40,68 @@ export const getServices: typeof import("./getServices").getServices = null as a
 export const getServicesOutput: typeof import("./getServices").getServicesOutput = null as any;
 utilities.lazyLoad(exports, ["getServices","getServicesOutput"], () => require("./getServices"));
 
+export { GetUserPoolArgs, GetUserPoolResult, GetUserPoolOutputArgs } from "./getUserPool";
+export const getUserPool: typeof import("./getUserPool").getUserPool = null as any;
+export const getUserPoolOutput: typeof import("./getUserPool").getUserPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getUserPool","getUserPoolOutput"], () => require("./getUserPool"));
+
+export { GetUserPoolsResult } from "./getUserPools";
+export const getUserPools: typeof import("./getUserPools").getUserPools = null as any;
+export const getUserPoolsOutput: typeof import("./getUserPools").getUserPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserPools","getUserPoolsOutput"], () => require("./getUserPools"));
+
+export { GetWorkloadPoolArgs, GetWorkloadPoolResult, GetWorkloadPoolOutputArgs } from "./getWorkloadPool";
+export const getWorkloadPool: typeof import("./getWorkloadPool").getWorkloadPool = null as any;
+export const getWorkloadPoolOutput: typeof import("./getWorkloadPool").getWorkloadPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkloadPool","getWorkloadPoolOutput"], () => require("./getWorkloadPool"));
+
+export { GetWorkloadPoolsResult } from "./getWorkloadPools";
+export const getWorkloadPools: typeof import("./getWorkloadPools").getWorkloadPools = null as any;
+export const getWorkloadPoolsOutput: typeof import("./getWorkloadPools").getWorkloadPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkloadPools","getWorkloadPoolsOutput"], () => require("./getWorkloadPools"));
+
+export { PermissionNamespaceArgs, PermissionNamespaceState } from "./permissionNamespace";
+export type PermissionNamespace = import("./permissionNamespace").PermissionNamespace;
+export const PermissionNamespace: typeof import("./permissionNamespace").PermissionNamespace = null as any;
+utilities.lazyLoad(exports, ["PermissionNamespace"], () => require("./permissionNamespace"));
+
 export { ServiceArgs, ServiceState } from "./service";
 export type Service = import("./service").Service;
 export const Service: typeof import("./service").Service = null as any;
 utilities.lazyLoad(exports, ["Service"], () => require("./service"));
+
+export { UserPoolArgs, UserPoolState } from "./userPool";
+export type UserPool = import("./userPool").UserPool;
+export const UserPool: typeof import("./userPool").UserPool = null as any;
+utilities.lazyLoad(exports, ["UserPool"], () => require("./userPool"));
+
+export { WorkloadPoolArgs, WorkloadPoolState } from "./workloadPool";
+export type WorkloadPool = import("./workloadPool").WorkloadPool;
+export const WorkloadPool: typeof import("./workloadPool").WorkloadPool = null as any;
+utilities.lazyLoad(exports, ["WorkloadPool"], () => require("./workloadPool"));
 
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:id/authConfig:AuthConfig":
+                return new AuthConfig(name, <any>undefined, { urn })
+            case "bytepluscc:id/permissionNamespace:PermissionNamespace":
+                return new PermissionNamespace(name, <any>undefined, { urn })
             case "bytepluscc:id/service:Service":
                 return new Service(name, <any>undefined, { urn })
+            case "bytepluscc:id/userPool:UserPool":
+                return new UserPool(name, <any>undefined, { urn })
+            case "bytepluscc:id/workloadPool:WorkloadPool":
+                return new WorkloadPool(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "id/authConfig", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "id/permissionNamespace", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "id/service", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "id/userPool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "id/workloadPool", _module)

@@ -820,6 +820,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "fwcenter/natFireWallControlPolicy",
+  "fqn": "pulumi_bytepluscc.fwcenter",
+  "classes": {
+   "bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy": "NatFireWallControlPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "fwcenter/vpcFireWallAclRule",
   "fqn": "pulumi_bytepluscc.fwcenter",
   "classes": {
@@ -948,10 +956,42 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "id/authConfig",
+  "fqn": "pulumi_bytepluscc.id",
+  "classes": {
+   "bytepluscc:id/authConfig:AuthConfig": "AuthConfig"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "id/permissionNamespace",
+  "fqn": "pulumi_bytepluscc.id",
+  "classes": {
+   "bytepluscc:id/permissionNamespace:PermissionNamespace": "PermissionNamespace"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "id/service",
   "fqn": "pulumi_bytepluscc.id",
   "classes": {
    "bytepluscc:id/service:Service": "Service"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "id/userPool",
+  "fqn": "pulumi_bytepluscc.id",
+  "classes": {
+   "bytepluscc:id/userPool:UserPool": "UserPool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "id/workloadPool",
+  "fqn": "pulumi_bytepluscc.id",
+  "classes": {
+   "bytepluscc:id/workloadPool:WorkloadPool": "WorkloadPool"
   }
  },
  {
@@ -1000,6 +1040,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.kms",
   "classes": {
    "bytepluscc:kms/key:Key": "Key"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "kms/keyMaterial",
+  "fqn": "pulumi_bytepluscc.kms",
+  "classes": {
+   "bytepluscc:kms/keyMaterial:KeyMaterial": "KeyMaterial"
   }
  },
  {
@@ -1312,6 +1360,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
    "bytepluscc:rdsmysql/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmysql/instanceReadonlyNode",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode": "InstanceReadonlyNode"
   }
  },
  {

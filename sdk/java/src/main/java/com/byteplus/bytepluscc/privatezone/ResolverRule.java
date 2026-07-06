@@ -78,6 +78,20 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
     public Output<Integer> endpointId() {
         return this.endpointId;
     }
+    /**
+     * TRN of the endpoint
+     * 
+     */
+    @Export(name="endpointTrn", refs={String.class}, tree="[0]")
+    private Output<String> endpointTrn;
+
+    /**
+     * @return TRN of the endpoint
+     * 
+     */
+    public Output<String> endpointTrn() {
+        return this.endpointTrn;
+    }
     @Export(name="forwardIPs", refs={List.class,ResolverRuleForwardIP.class}, tree="[0,1]")
     private Output<List<ResolverRuleForwardIP>> forwardIPs;
 
@@ -193,6 +207,20 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
 
     public Output<List<ResolverRuleVpC>> vpCs() {
         return this.vpCs;
+    }
+    /**
+     * TRN of one or more VPCs associated with the domain name
+     * 
+     */
+    @Export(name="vpcTrns", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> vpcTrns;
+
+    /**
+     * @return TRN of one or more VPCs associated with the domain name
+     * 
+     */
+    public Output<List<String>> vpcTrns() {
+        return this.vpcTrns;
     }
     /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC

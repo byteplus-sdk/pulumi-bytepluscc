@@ -13,6 +13,516 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AuthConfigApiKeyAuthConfig struct {
+	// ApiKey Value
+	ApiKey          *string                                    `pulumi:"apiKey"`
+	ApiKeyMetadatas []AuthConfigApiKeyAuthConfigApiKeyMetadata `pulumi:"apiKeyMetadatas"`
+	// ApiKey Name
+	ApiKeyName *string `pulumi:"apiKeyName"`
+	// Expiration Timestamp
+	ExpiryTimestamp *int `pulumi:"expiryTimestamp"`
+}
+
+// AuthConfigApiKeyAuthConfigInput is an input type that accepts AuthConfigApiKeyAuthConfigArgs and AuthConfigApiKeyAuthConfigOutput values.
+// You can construct a concrete instance of `AuthConfigApiKeyAuthConfigInput` via:
+//
+//	AuthConfigApiKeyAuthConfigArgs{...}
+type AuthConfigApiKeyAuthConfigInput interface {
+	pulumi.Input
+
+	ToAuthConfigApiKeyAuthConfigOutput() AuthConfigApiKeyAuthConfigOutput
+	ToAuthConfigApiKeyAuthConfigOutputWithContext(context.Context) AuthConfigApiKeyAuthConfigOutput
+}
+
+type AuthConfigApiKeyAuthConfigArgs struct {
+	// ApiKey Value
+	ApiKey          pulumi.StringPtrInput                              `pulumi:"apiKey"`
+	ApiKeyMetadatas AuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput `pulumi:"apiKeyMetadatas"`
+	// ApiKey Name
+	ApiKeyName pulumi.StringPtrInput `pulumi:"apiKeyName"`
+	// Expiration Timestamp
+	ExpiryTimestamp pulumi.IntPtrInput `pulumi:"expiryTimestamp"`
+}
+
+func (AuthConfigApiKeyAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (i AuthConfigApiKeyAuthConfigArgs) ToAuthConfigApiKeyAuthConfigOutput() AuthConfigApiKeyAuthConfigOutput {
+	return i.ToAuthConfigApiKeyAuthConfigOutputWithContext(context.Background())
+}
+
+func (i AuthConfigApiKeyAuthConfigArgs) ToAuthConfigApiKeyAuthConfigOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigApiKeyAuthConfigOutput)
+}
+
+// AuthConfigApiKeyAuthConfigArrayInput is an input type that accepts AuthConfigApiKeyAuthConfigArray and AuthConfigApiKeyAuthConfigArrayOutput values.
+// You can construct a concrete instance of `AuthConfigApiKeyAuthConfigArrayInput` via:
+//
+//	AuthConfigApiKeyAuthConfigArray{ AuthConfigApiKeyAuthConfigArgs{...} }
+type AuthConfigApiKeyAuthConfigArrayInput interface {
+	pulumi.Input
+
+	ToAuthConfigApiKeyAuthConfigArrayOutput() AuthConfigApiKeyAuthConfigArrayOutput
+	ToAuthConfigApiKeyAuthConfigArrayOutputWithContext(context.Context) AuthConfigApiKeyAuthConfigArrayOutput
+}
+
+type AuthConfigApiKeyAuthConfigArray []AuthConfigApiKeyAuthConfigInput
+
+func (AuthConfigApiKeyAuthConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (i AuthConfigApiKeyAuthConfigArray) ToAuthConfigApiKeyAuthConfigArrayOutput() AuthConfigApiKeyAuthConfigArrayOutput {
+	return i.ToAuthConfigApiKeyAuthConfigArrayOutputWithContext(context.Background())
+}
+
+func (i AuthConfigApiKeyAuthConfigArray) ToAuthConfigApiKeyAuthConfigArrayOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigApiKeyAuthConfigArrayOutput)
+}
+
+type AuthConfigApiKeyAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (AuthConfigApiKeyAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (o AuthConfigApiKeyAuthConfigOutput) ToAuthConfigApiKeyAuthConfigOutput() AuthConfigApiKeyAuthConfigOutput {
+	return o
+}
+
+func (o AuthConfigApiKeyAuthConfigOutput) ToAuthConfigApiKeyAuthConfigOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigOutput {
+	return o
+}
+
+// ApiKey Value
+func (o AuthConfigApiKeyAuthConfigOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuthConfigApiKeyAuthConfig) *string { return v.ApiKey }).(pulumi.StringPtrOutput)
+}
+
+func (o AuthConfigApiKeyAuthConfigOutput) ApiKeyMetadatas() AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return o.ApplyT(func(v AuthConfigApiKeyAuthConfig) []AuthConfigApiKeyAuthConfigApiKeyMetadata {
+		return v.ApiKeyMetadatas
+	}).(AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput)
+}
+
+// ApiKey Name
+func (o AuthConfigApiKeyAuthConfigOutput) ApiKeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuthConfigApiKeyAuthConfig) *string { return v.ApiKeyName }).(pulumi.StringPtrOutput)
+}
+
+// Expiration Timestamp
+func (o AuthConfigApiKeyAuthConfigOutput) ExpiryTimestamp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AuthConfigApiKeyAuthConfig) *int { return v.ExpiryTimestamp }).(pulumi.IntPtrOutput)
+}
+
+type AuthConfigApiKeyAuthConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (AuthConfigApiKeyAuthConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (o AuthConfigApiKeyAuthConfigArrayOutput) ToAuthConfigApiKeyAuthConfigArrayOutput() AuthConfigApiKeyAuthConfigArrayOutput {
+	return o
+}
+
+func (o AuthConfigApiKeyAuthConfigArrayOutput) ToAuthConfigApiKeyAuthConfigArrayOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigArrayOutput {
+	return o
+}
+
+func (o AuthConfigApiKeyAuthConfigArrayOutput) Index(i pulumi.IntInput) AuthConfigApiKeyAuthConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AuthConfigApiKeyAuthConfig {
+		return vs[0].([]AuthConfigApiKeyAuthConfig)[vs[1].(int)]
+	}).(AuthConfigApiKeyAuthConfigOutput)
+}
+
+type AuthConfigApiKeyAuthConfigApiKeyMetadata struct {
+	// Parameter Location
+	Location *string `pulumi:"location"`
+	// Parameter Name
+	ParameterName *string `pulumi:"parameterName"`
+}
+
+// AuthConfigApiKeyAuthConfigApiKeyMetadataInput is an input type that accepts AuthConfigApiKeyAuthConfigApiKeyMetadataArgs and AuthConfigApiKeyAuthConfigApiKeyMetadataOutput values.
+// You can construct a concrete instance of `AuthConfigApiKeyAuthConfigApiKeyMetadataInput` via:
+//
+//	AuthConfigApiKeyAuthConfigApiKeyMetadataArgs{...}
+type AuthConfigApiKeyAuthConfigApiKeyMetadataInput interface {
+	pulumi.Input
+
+	ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutput() AuthConfigApiKeyAuthConfigApiKeyMetadataOutput
+	ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(context.Context) AuthConfigApiKeyAuthConfigApiKeyMetadataOutput
+}
+
+type AuthConfigApiKeyAuthConfigApiKeyMetadataArgs struct {
+	// Parameter Location
+	Location pulumi.StringPtrInput `pulumi:"location"`
+	// Parameter Name
+	ParameterName pulumi.StringPtrInput `pulumi:"parameterName"`
+}
+
+func (AuthConfigApiKeyAuthConfigApiKeyMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (i AuthConfigApiKeyAuthConfigApiKeyMetadataArgs) ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutput() AuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return i.ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(context.Background())
+}
+
+func (i AuthConfigApiKeyAuthConfigApiKeyMetadataArgs) ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigApiKeyAuthConfigApiKeyMetadataOutput)
+}
+
+// AuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput is an input type that accepts AuthConfigApiKeyAuthConfigApiKeyMetadataArray and AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput values.
+// You can construct a concrete instance of `AuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput` via:
+//
+//	AuthConfigApiKeyAuthConfigApiKeyMetadataArray{ AuthConfigApiKeyAuthConfigApiKeyMetadataArgs{...} }
+type AuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput interface {
+	pulumi.Input
+
+	ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput() AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput
+	ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(context.Context) AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput
+}
+
+type AuthConfigApiKeyAuthConfigApiKeyMetadataArray []AuthConfigApiKeyAuthConfigApiKeyMetadataInput
+
+func (AuthConfigApiKeyAuthConfigApiKeyMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (i AuthConfigApiKeyAuthConfigApiKeyMetadataArray) ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput() AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return i.ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i AuthConfigApiKeyAuthConfigApiKeyMetadataArray) ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput)
+}
+
+type AuthConfigApiKeyAuthConfigApiKeyMetadataOutput struct{ *pulumi.OutputState }
+
+func (AuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutput() AuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return o
+}
+
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ToAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return o
+}
+
+// Parameter Location
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataOutput) Location() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuthConfigApiKeyAuthConfigApiKeyMetadata) *string { return v.Location }).(pulumi.StringPtrOutput)
+}
+
+// Parameter Name
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ParameterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuthConfigApiKeyAuthConfigApiKeyMetadata) *string { return v.ParameterName }).(pulumi.StringPtrOutput)
+}
+
+type AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput() AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return o
+}
+
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) ToAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(ctx context.Context) AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return o
+}
+
+func (o AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) Index(i pulumi.IntInput) AuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AuthConfigApiKeyAuthConfigApiKeyMetadata {
+		return vs[0].([]AuthConfigApiKeyAuthConfigApiKeyMetadata)[vs[1].(int)]
+	}).(AuthConfigApiKeyAuthConfigApiKeyMetadataOutput)
+}
+
+type AuthConfigJwtAuthConfig struct {
+	// Allowed Audience List
+	AllowedAudiences []string `pulumi:"allowedAudiences"`
+	// Allowed Client List
+	AllowedClients []string `pulumi:"allowedClients"`
+	// JWT Discovery URL。
+	DiscoveryUrl *string `pulumi:"discoveryUrl"`
+}
+
+// AuthConfigJwtAuthConfigInput is an input type that accepts AuthConfigJwtAuthConfigArgs and AuthConfigJwtAuthConfigOutput values.
+// You can construct a concrete instance of `AuthConfigJwtAuthConfigInput` via:
+//
+//	AuthConfigJwtAuthConfigArgs{...}
+type AuthConfigJwtAuthConfigInput interface {
+	pulumi.Input
+
+	ToAuthConfigJwtAuthConfigOutput() AuthConfigJwtAuthConfigOutput
+	ToAuthConfigJwtAuthConfigOutputWithContext(context.Context) AuthConfigJwtAuthConfigOutput
+}
+
+type AuthConfigJwtAuthConfigArgs struct {
+	// Allowed Audience List
+	AllowedAudiences pulumi.StringArrayInput `pulumi:"allowedAudiences"`
+	// Allowed Client List
+	AllowedClients pulumi.StringArrayInput `pulumi:"allowedClients"`
+	// JWT Discovery URL。
+	DiscoveryUrl pulumi.StringPtrInput `pulumi:"discoveryUrl"`
+}
+
+func (AuthConfigJwtAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthConfigJwtAuthConfig)(nil)).Elem()
+}
+
+func (i AuthConfigJwtAuthConfigArgs) ToAuthConfigJwtAuthConfigOutput() AuthConfigJwtAuthConfigOutput {
+	return i.ToAuthConfigJwtAuthConfigOutputWithContext(context.Background())
+}
+
+func (i AuthConfigJwtAuthConfigArgs) ToAuthConfigJwtAuthConfigOutputWithContext(ctx context.Context) AuthConfigJwtAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigJwtAuthConfigOutput)
+}
+
+func (i AuthConfigJwtAuthConfigArgs) ToAuthConfigJwtAuthConfigPtrOutput() AuthConfigJwtAuthConfigPtrOutput {
+	return i.ToAuthConfigJwtAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AuthConfigJwtAuthConfigArgs) ToAuthConfigJwtAuthConfigPtrOutputWithContext(ctx context.Context) AuthConfigJwtAuthConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigJwtAuthConfigOutput).ToAuthConfigJwtAuthConfigPtrOutputWithContext(ctx)
+}
+
+// AuthConfigJwtAuthConfigPtrInput is an input type that accepts AuthConfigJwtAuthConfigArgs, AuthConfigJwtAuthConfigPtr and AuthConfigJwtAuthConfigPtrOutput values.
+// You can construct a concrete instance of `AuthConfigJwtAuthConfigPtrInput` via:
+//
+//	        AuthConfigJwtAuthConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AuthConfigJwtAuthConfigPtrInput interface {
+	pulumi.Input
+
+	ToAuthConfigJwtAuthConfigPtrOutput() AuthConfigJwtAuthConfigPtrOutput
+	ToAuthConfigJwtAuthConfigPtrOutputWithContext(context.Context) AuthConfigJwtAuthConfigPtrOutput
+}
+
+type authConfigJwtAuthConfigPtrType AuthConfigJwtAuthConfigArgs
+
+func AuthConfigJwtAuthConfigPtr(v *AuthConfigJwtAuthConfigArgs) AuthConfigJwtAuthConfigPtrInput {
+	return (*authConfigJwtAuthConfigPtrType)(v)
+}
+
+func (*authConfigJwtAuthConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AuthConfigJwtAuthConfig)(nil)).Elem()
+}
+
+func (i *authConfigJwtAuthConfigPtrType) ToAuthConfigJwtAuthConfigPtrOutput() AuthConfigJwtAuthConfigPtrOutput {
+	return i.ToAuthConfigJwtAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *authConfigJwtAuthConfigPtrType) ToAuthConfigJwtAuthConfigPtrOutputWithContext(ctx context.Context) AuthConfigJwtAuthConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthConfigJwtAuthConfigPtrOutput)
+}
+
+type AuthConfigJwtAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (AuthConfigJwtAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthConfigJwtAuthConfig)(nil)).Elem()
+}
+
+func (o AuthConfigJwtAuthConfigOutput) ToAuthConfigJwtAuthConfigOutput() AuthConfigJwtAuthConfigOutput {
+	return o
+}
+
+func (o AuthConfigJwtAuthConfigOutput) ToAuthConfigJwtAuthConfigOutputWithContext(ctx context.Context) AuthConfigJwtAuthConfigOutput {
+	return o
+}
+
+func (o AuthConfigJwtAuthConfigOutput) ToAuthConfigJwtAuthConfigPtrOutput() AuthConfigJwtAuthConfigPtrOutput {
+	return o.ToAuthConfigJwtAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AuthConfigJwtAuthConfigOutput) ToAuthConfigJwtAuthConfigPtrOutputWithContext(ctx context.Context) AuthConfigJwtAuthConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AuthConfigJwtAuthConfig) *AuthConfigJwtAuthConfig {
+		return &v
+	}).(AuthConfigJwtAuthConfigPtrOutput)
+}
+
+// Allowed Audience List
+func (o AuthConfigJwtAuthConfigOutput) AllowedAudiences() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AuthConfigJwtAuthConfig) []string { return v.AllowedAudiences }).(pulumi.StringArrayOutput)
+}
+
+// Allowed Client List
+func (o AuthConfigJwtAuthConfigOutput) AllowedClients() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AuthConfigJwtAuthConfig) []string { return v.AllowedClients }).(pulumi.StringArrayOutput)
+}
+
+// JWT Discovery URL。
+func (o AuthConfigJwtAuthConfigOutput) DiscoveryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AuthConfigJwtAuthConfig) *string { return v.DiscoveryUrl }).(pulumi.StringPtrOutput)
+}
+
+type AuthConfigJwtAuthConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AuthConfigJwtAuthConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AuthConfigJwtAuthConfig)(nil)).Elem()
+}
+
+func (o AuthConfigJwtAuthConfigPtrOutput) ToAuthConfigJwtAuthConfigPtrOutput() AuthConfigJwtAuthConfigPtrOutput {
+	return o
+}
+
+func (o AuthConfigJwtAuthConfigPtrOutput) ToAuthConfigJwtAuthConfigPtrOutputWithContext(ctx context.Context) AuthConfigJwtAuthConfigPtrOutput {
+	return o
+}
+
+func (o AuthConfigJwtAuthConfigPtrOutput) Elem() AuthConfigJwtAuthConfigOutput {
+	return o.ApplyT(func(v *AuthConfigJwtAuthConfig) AuthConfigJwtAuthConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AuthConfigJwtAuthConfig
+		return ret
+	}).(AuthConfigJwtAuthConfigOutput)
+}
+
+// Allowed Audience List
+func (o AuthConfigJwtAuthConfigPtrOutput) AllowedAudiences() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthConfigJwtAuthConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedAudiences
+	}).(pulumi.StringArrayOutput)
+}
+
+// Allowed Client List
+func (o AuthConfigJwtAuthConfigPtrOutput) AllowedClients() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthConfigJwtAuthConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedClients
+	}).(pulumi.StringArrayOutput)
+}
+
+// JWT Discovery URL。
+func (o AuthConfigJwtAuthConfigPtrOutput) DiscoveryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthConfigJwtAuthConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DiscoveryUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+type PermissionNamespaceTag struct {
+	// Tag Key
+	Key *string `pulumi:"key"`
+	// Tag Value
+	Value *string `pulumi:"value"`
+}
+
+// PermissionNamespaceTagInput is an input type that accepts PermissionNamespaceTagArgs and PermissionNamespaceTagOutput values.
+// You can construct a concrete instance of `PermissionNamespaceTagInput` via:
+//
+//	PermissionNamespaceTagArgs{...}
+type PermissionNamespaceTagInput interface {
+	pulumi.Input
+
+	ToPermissionNamespaceTagOutput() PermissionNamespaceTagOutput
+	ToPermissionNamespaceTagOutputWithContext(context.Context) PermissionNamespaceTagOutput
+}
+
+type PermissionNamespaceTagArgs struct {
+	// Tag Key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (PermissionNamespaceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PermissionNamespaceTag)(nil)).Elem()
+}
+
+func (i PermissionNamespaceTagArgs) ToPermissionNamespaceTagOutput() PermissionNamespaceTagOutput {
+	return i.ToPermissionNamespaceTagOutputWithContext(context.Background())
+}
+
+func (i PermissionNamespaceTagArgs) ToPermissionNamespaceTagOutputWithContext(ctx context.Context) PermissionNamespaceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PermissionNamespaceTagOutput)
+}
+
+// PermissionNamespaceTagArrayInput is an input type that accepts PermissionNamespaceTagArray and PermissionNamespaceTagArrayOutput values.
+// You can construct a concrete instance of `PermissionNamespaceTagArrayInput` via:
+//
+//	PermissionNamespaceTagArray{ PermissionNamespaceTagArgs{...} }
+type PermissionNamespaceTagArrayInput interface {
+	pulumi.Input
+
+	ToPermissionNamespaceTagArrayOutput() PermissionNamespaceTagArrayOutput
+	ToPermissionNamespaceTagArrayOutputWithContext(context.Context) PermissionNamespaceTagArrayOutput
+}
+
+type PermissionNamespaceTagArray []PermissionNamespaceTagInput
+
+func (PermissionNamespaceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PermissionNamespaceTag)(nil)).Elem()
+}
+
+func (i PermissionNamespaceTagArray) ToPermissionNamespaceTagArrayOutput() PermissionNamespaceTagArrayOutput {
+	return i.ToPermissionNamespaceTagArrayOutputWithContext(context.Background())
+}
+
+func (i PermissionNamespaceTagArray) ToPermissionNamespaceTagArrayOutputWithContext(ctx context.Context) PermissionNamespaceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PermissionNamespaceTagArrayOutput)
+}
+
+type PermissionNamespaceTagOutput struct{ *pulumi.OutputState }
+
+func (PermissionNamespaceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PermissionNamespaceTag)(nil)).Elem()
+}
+
+func (o PermissionNamespaceTagOutput) ToPermissionNamespaceTagOutput() PermissionNamespaceTagOutput {
+	return o
+}
+
+func (o PermissionNamespaceTagOutput) ToPermissionNamespaceTagOutputWithContext(ctx context.Context) PermissionNamespaceTagOutput {
+	return o
+}
+
+// Tag Key
+func (o PermissionNamespaceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PermissionNamespaceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag Value
+func (o PermissionNamespaceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PermissionNamespaceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type PermissionNamespaceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (PermissionNamespaceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PermissionNamespaceTag)(nil)).Elem()
+}
+
+func (o PermissionNamespaceTagArrayOutput) ToPermissionNamespaceTagArrayOutput() PermissionNamespaceTagArrayOutput {
+	return o
+}
+
+func (o PermissionNamespaceTagArrayOutput) ToPermissionNamespaceTagArrayOutputWithContext(ctx context.Context) PermissionNamespaceTagArrayOutput {
+	return o
+}
+
+func (o PermissionNamespaceTagArrayOutput) Index(i pulumi.IntInput) PermissionNamespaceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PermissionNamespaceTag {
+		return vs[0].([]PermissionNamespaceTag)[vs[1].(int)]
+	}).(PermissionNamespaceTagOutput)
+}
+
 type ServiceBackend struct {
 	// Backend service domain name, for example api.example.com
 	BackendDomain string `pulumi:"backendDomain"`
@@ -1114,6 +1624,782 @@ func (o ServiceTagArrayOutput) Index(i pulumi.IntInput) ServiceTagOutput {
 	}).(ServiceTagOutput)
 }
 
+type UserPoolBrand struct {
+	// Brand logo URL
+	LogoUri *string `pulumi:"logoUri"`
+	// Brand name
+	Name *string `pulumi:"name"`
+}
+
+// UserPoolBrandInput is an input type that accepts UserPoolBrandArgs and UserPoolBrandOutput values.
+// You can construct a concrete instance of `UserPoolBrandInput` via:
+//
+//	UserPoolBrandArgs{...}
+type UserPoolBrandInput interface {
+	pulumi.Input
+
+	ToUserPoolBrandOutput() UserPoolBrandOutput
+	ToUserPoolBrandOutputWithContext(context.Context) UserPoolBrandOutput
+}
+
+type UserPoolBrandArgs struct {
+	// Brand logo URL
+	LogoUri pulumi.StringPtrInput `pulumi:"logoUri"`
+	// Brand name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (UserPoolBrandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UserPoolBrand)(nil)).Elem()
+}
+
+func (i UserPoolBrandArgs) ToUserPoolBrandOutput() UserPoolBrandOutput {
+	return i.ToUserPoolBrandOutputWithContext(context.Background())
+}
+
+func (i UserPoolBrandArgs) ToUserPoolBrandOutputWithContext(ctx context.Context) UserPoolBrandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UserPoolBrandOutput)
+}
+
+func (i UserPoolBrandArgs) ToUserPoolBrandPtrOutput() UserPoolBrandPtrOutput {
+	return i.ToUserPoolBrandPtrOutputWithContext(context.Background())
+}
+
+func (i UserPoolBrandArgs) ToUserPoolBrandPtrOutputWithContext(ctx context.Context) UserPoolBrandPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UserPoolBrandOutput).ToUserPoolBrandPtrOutputWithContext(ctx)
+}
+
+// UserPoolBrandPtrInput is an input type that accepts UserPoolBrandArgs, UserPoolBrandPtr and UserPoolBrandPtrOutput values.
+// You can construct a concrete instance of `UserPoolBrandPtrInput` via:
+//
+//	        UserPoolBrandArgs{...}
+//
+//	or:
+//
+//	        nil
+type UserPoolBrandPtrInput interface {
+	pulumi.Input
+
+	ToUserPoolBrandPtrOutput() UserPoolBrandPtrOutput
+	ToUserPoolBrandPtrOutputWithContext(context.Context) UserPoolBrandPtrOutput
+}
+
+type userPoolBrandPtrType UserPoolBrandArgs
+
+func UserPoolBrandPtr(v *UserPoolBrandArgs) UserPoolBrandPtrInput {
+	return (*userPoolBrandPtrType)(v)
+}
+
+func (*userPoolBrandPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UserPoolBrand)(nil)).Elem()
+}
+
+func (i *userPoolBrandPtrType) ToUserPoolBrandPtrOutput() UserPoolBrandPtrOutput {
+	return i.ToUserPoolBrandPtrOutputWithContext(context.Background())
+}
+
+func (i *userPoolBrandPtrType) ToUserPoolBrandPtrOutputWithContext(ctx context.Context) UserPoolBrandPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UserPoolBrandPtrOutput)
+}
+
+type UserPoolBrandOutput struct{ *pulumi.OutputState }
+
+func (UserPoolBrandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UserPoolBrand)(nil)).Elem()
+}
+
+func (o UserPoolBrandOutput) ToUserPoolBrandOutput() UserPoolBrandOutput {
+	return o
+}
+
+func (o UserPoolBrandOutput) ToUserPoolBrandOutputWithContext(ctx context.Context) UserPoolBrandOutput {
+	return o
+}
+
+func (o UserPoolBrandOutput) ToUserPoolBrandPtrOutput() UserPoolBrandPtrOutput {
+	return o.ToUserPoolBrandPtrOutputWithContext(context.Background())
+}
+
+func (o UserPoolBrandOutput) ToUserPoolBrandPtrOutputWithContext(ctx context.Context) UserPoolBrandPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UserPoolBrand) *UserPoolBrand {
+		return &v
+	}).(UserPoolBrandPtrOutput)
+}
+
+// Brand logo URL
+func (o UserPoolBrandOutput) LogoUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UserPoolBrand) *string { return v.LogoUri }).(pulumi.StringPtrOutput)
+}
+
+// Brand name
+func (o UserPoolBrandOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UserPoolBrand) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type UserPoolBrandPtrOutput struct{ *pulumi.OutputState }
+
+func (UserPoolBrandPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UserPoolBrand)(nil)).Elem()
+}
+
+func (o UserPoolBrandPtrOutput) ToUserPoolBrandPtrOutput() UserPoolBrandPtrOutput {
+	return o
+}
+
+func (o UserPoolBrandPtrOutput) ToUserPoolBrandPtrOutputWithContext(ctx context.Context) UserPoolBrandPtrOutput {
+	return o
+}
+
+func (o UserPoolBrandPtrOutput) Elem() UserPoolBrandOutput {
+	return o.ApplyT(func(v *UserPoolBrand) UserPoolBrand {
+		if v != nil {
+			return *v
+		}
+		var ret UserPoolBrand
+		return ret
+	}).(UserPoolBrandOutput)
+}
+
+// Brand logo URL
+func (o UserPoolBrandPtrOutput) LogoUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserPoolBrand) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogoUri
+	}).(pulumi.StringPtrOutput)
+}
+
+// Brand name
+func (o UserPoolBrandPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserPoolBrand) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type UserPoolTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// UserPoolTagInput is an input type that accepts UserPoolTagArgs and UserPoolTagOutput values.
+// You can construct a concrete instance of `UserPoolTagInput` via:
+//
+//	UserPoolTagArgs{...}
+type UserPoolTagInput interface {
+	pulumi.Input
+
+	ToUserPoolTagOutput() UserPoolTagOutput
+	ToUserPoolTagOutputWithContext(context.Context) UserPoolTagOutput
+}
+
+type UserPoolTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (UserPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UserPoolTag)(nil)).Elem()
+}
+
+func (i UserPoolTagArgs) ToUserPoolTagOutput() UserPoolTagOutput {
+	return i.ToUserPoolTagOutputWithContext(context.Background())
+}
+
+func (i UserPoolTagArgs) ToUserPoolTagOutputWithContext(ctx context.Context) UserPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UserPoolTagOutput)
+}
+
+// UserPoolTagArrayInput is an input type that accepts UserPoolTagArray and UserPoolTagArrayOutput values.
+// You can construct a concrete instance of `UserPoolTagArrayInput` via:
+//
+//	UserPoolTagArray{ UserPoolTagArgs{...} }
+type UserPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToUserPoolTagArrayOutput() UserPoolTagArrayOutput
+	ToUserPoolTagArrayOutputWithContext(context.Context) UserPoolTagArrayOutput
+}
+
+type UserPoolTagArray []UserPoolTagInput
+
+func (UserPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UserPoolTag)(nil)).Elem()
+}
+
+func (i UserPoolTagArray) ToUserPoolTagArrayOutput() UserPoolTagArrayOutput {
+	return i.ToUserPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i UserPoolTagArray) ToUserPoolTagArrayOutputWithContext(ctx context.Context) UserPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UserPoolTagArrayOutput)
+}
+
+type UserPoolTagOutput struct{ *pulumi.OutputState }
+
+func (UserPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UserPoolTag)(nil)).Elem()
+}
+
+func (o UserPoolTagOutput) ToUserPoolTagOutput() UserPoolTagOutput {
+	return o
+}
+
+func (o UserPoolTagOutput) ToUserPoolTagOutputWithContext(ctx context.Context) UserPoolTagOutput {
+	return o
+}
+
+// Tag key
+func (o UserPoolTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UserPoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o UserPoolTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UserPoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type UserPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (UserPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UserPoolTag)(nil)).Elem()
+}
+
+func (o UserPoolTagArrayOutput) ToUserPoolTagArrayOutput() UserPoolTagArrayOutput {
+	return o
+}
+
+func (o UserPoolTagArrayOutput) ToUserPoolTagArrayOutputWithContext(ctx context.Context) UserPoolTagArrayOutput {
+	return o
+}
+
+func (o UserPoolTagArrayOutput) Index(i pulumi.IntInput) UserPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UserPoolTag {
+		return vs[0].([]UserPoolTag)[vs[1].(int)]
+	}).(UserPoolTagOutput)
+}
+
+type WorkloadPoolTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// WorkloadPoolTagInput is an input type that accepts WorkloadPoolTagArgs and WorkloadPoolTagOutput values.
+// You can construct a concrete instance of `WorkloadPoolTagInput` via:
+//
+//	WorkloadPoolTagArgs{...}
+type WorkloadPoolTagInput interface {
+	pulumi.Input
+
+	ToWorkloadPoolTagOutput() WorkloadPoolTagOutput
+	ToWorkloadPoolTagOutputWithContext(context.Context) WorkloadPoolTagOutput
+}
+
+type WorkloadPoolTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (WorkloadPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkloadPoolTag)(nil)).Elem()
+}
+
+func (i WorkloadPoolTagArgs) ToWorkloadPoolTagOutput() WorkloadPoolTagOutput {
+	return i.ToWorkloadPoolTagOutputWithContext(context.Background())
+}
+
+func (i WorkloadPoolTagArgs) ToWorkloadPoolTagOutputWithContext(ctx context.Context) WorkloadPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkloadPoolTagOutput)
+}
+
+// WorkloadPoolTagArrayInput is an input type that accepts WorkloadPoolTagArray and WorkloadPoolTagArrayOutput values.
+// You can construct a concrete instance of `WorkloadPoolTagArrayInput` via:
+//
+//	WorkloadPoolTagArray{ WorkloadPoolTagArgs{...} }
+type WorkloadPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToWorkloadPoolTagArrayOutput() WorkloadPoolTagArrayOutput
+	ToWorkloadPoolTagArrayOutputWithContext(context.Context) WorkloadPoolTagArrayOutput
+}
+
+type WorkloadPoolTagArray []WorkloadPoolTagInput
+
+func (WorkloadPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkloadPoolTag)(nil)).Elem()
+}
+
+func (i WorkloadPoolTagArray) ToWorkloadPoolTagArrayOutput() WorkloadPoolTagArrayOutput {
+	return i.ToWorkloadPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i WorkloadPoolTagArray) ToWorkloadPoolTagArrayOutputWithContext(ctx context.Context) WorkloadPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkloadPoolTagArrayOutput)
+}
+
+type WorkloadPoolTagOutput struct{ *pulumi.OutputState }
+
+func (WorkloadPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkloadPoolTag)(nil)).Elem()
+}
+
+func (o WorkloadPoolTagOutput) ToWorkloadPoolTagOutput() WorkloadPoolTagOutput {
+	return o
+}
+
+func (o WorkloadPoolTagOutput) ToWorkloadPoolTagOutputWithContext(ctx context.Context) WorkloadPoolTagOutput {
+	return o
+}
+
+// Tag key
+func (o WorkloadPoolTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkloadPoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o WorkloadPoolTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkloadPoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type WorkloadPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkloadPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkloadPoolTag)(nil)).Elem()
+}
+
+func (o WorkloadPoolTagArrayOutput) ToWorkloadPoolTagArrayOutput() WorkloadPoolTagArrayOutput {
+	return o
+}
+
+func (o WorkloadPoolTagArrayOutput) ToWorkloadPoolTagArrayOutputWithContext(ctx context.Context) WorkloadPoolTagArrayOutput {
+	return o
+}
+
+func (o WorkloadPoolTagArrayOutput) Index(i pulumi.IntInput) WorkloadPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkloadPoolTag {
+		return vs[0].([]WorkloadPoolTag)[vs[1].(int)]
+	}).(WorkloadPoolTagOutput)
+}
+
+type GetAuthConfigApiKeyAuthConfig struct {
+	// ApiKey Value
+	ApiKey string `pulumi:"apiKey"`
+	// ApiKey Metadata
+	ApiKeyMetadatas []GetAuthConfigApiKeyAuthConfigApiKeyMetadata `pulumi:"apiKeyMetadatas"`
+	// ApiKey Name
+	ApiKeyName string `pulumi:"apiKeyName"`
+	// Expiration Timestamp
+	ExpiryTimestamp int `pulumi:"expiryTimestamp"`
+}
+
+// GetAuthConfigApiKeyAuthConfigInput is an input type that accepts GetAuthConfigApiKeyAuthConfigArgs and GetAuthConfigApiKeyAuthConfigOutput values.
+// You can construct a concrete instance of `GetAuthConfigApiKeyAuthConfigInput` via:
+//
+//	GetAuthConfigApiKeyAuthConfigArgs{...}
+type GetAuthConfigApiKeyAuthConfigInput interface {
+	pulumi.Input
+
+	ToGetAuthConfigApiKeyAuthConfigOutput() GetAuthConfigApiKeyAuthConfigOutput
+	ToGetAuthConfigApiKeyAuthConfigOutputWithContext(context.Context) GetAuthConfigApiKeyAuthConfigOutput
+}
+
+type GetAuthConfigApiKeyAuthConfigArgs struct {
+	// ApiKey Value
+	ApiKey pulumi.StringInput `pulumi:"apiKey"`
+	// ApiKey Metadata
+	ApiKeyMetadatas GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput `pulumi:"apiKeyMetadatas"`
+	// ApiKey Name
+	ApiKeyName pulumi.StringInput `pulumi:"apiKeyName"`
+	// Expiration Timestamp
+	ExpiryTimestamp pulumi.IntInput `pulumi:"expiryTimestamp"`
+}
+
+func (GetAuthConfigApiKeyAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (i GetAuthConfigApiKeyAuthConfigArgs) ToGetAuthConfigApiKeyAuthConfigOutput() GetAuthConfigApiKeyAuthConfigOutput {
+	return i.ToGetAuthConfigApiKeyAuthConfigOutputWithContext(context.Background())
+}
+
+func (i GetAuthConfigApiKeyAuthConfigArgs) ToGetAuthConfigApiKeyAuthConfigOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAuthConfigApiKeyAuthConfigOutput)
+}
+
+// GetAuthConfigApiKeyAuthConfigArrayInput is an input type that accepts GetAuthConfigApiKeyAuthConfigArray and GetAuthConfigApiKeyAuthConfigArrayOutput values.
+// You can construct a concrete instance of `GetAuthConfigApiKeyAuthConfigArrayInput` via:
+//
+//	GetAuthConfigApiKeyAuthConfigArray{ GetAuthConfigApiKeyAuthConfigArgs{...} }
+type GetAuthConfigApiKeyAuthConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAuthConfigApiKeyAuthConfigArrayOutput() GetAuthConfigApiKeyAuthConfigArrayOutput
+	ToGetAuthConfigApiKeyAuthConfigArrayOutputWithContext(context.Context) GetAuthConfigApiKeyAuthConfigArrayOutput
+}
+
+type GetAuthConfigApiKeyAuthConfigArray []GetAuthConfigApiKeyAuthConfigInput
+
+func (GetAuthConfigApiKeyAuthConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (i GetAuthConfigApiKeyAuthConfigArray) ToGetAuthConfigApiKeyAuthConfigArrayOutput() GetAuthConfigApiKeyAuthConfigArrayOutput {
+	return i.ToGetAuthConfigApiKeyAuthConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAuthConfigApiKeyAuthConfigArray) ToGetAuthConfigApiKeyAuthConfigArrayOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAuthConfigApiKeyAuthConfigArrayOutput)
+}
+
+type GetAuthConfigApiKeyAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAuthConfigApiKeyAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (o GetAuthConfigApiKeyAuthConfigOutput) ToGetAuthConfigApiKeyAuthConfigOutput() GetAuthConfigApiKeyAuthConfigOutput {
+	return o
+}
+
+func (o GetAuthConfigApiKeyAuthConfigOutput) ToGetAuthConfigApiKeyAuthConfigOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigOutput {
+	return o
+}
+
+// ApiKey Value
+func (o GetAuthConfigApiKeyAuthConfigOutput) ApiKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthConfigApiKeyAuthConfig) string { return v.ApiKey }).(pulumi.StringOutput)
+}
+
+// ApiKey Metadata
+func (o GetAuthConfigApiKeyAuthConfigOutput) ApiKeyMetadatas() GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return o.ApplyT(func(v GetAuthConfigApiKeyAuthConfig) []GetAuthConfigApiKeyAuthConfigApiKeyMetadata {
+		return v.ApiKeyMetadatas
+	}).(GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput)
+}
+
+// ApiKey Name
+func (o GetAuthConfigApiKeyAuthConfigOutput) ApiKeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthConfigApiKeyAuthConfig) string { return v.ApiKeyName }).(pulumi.StringOutput)
+}
+
+// Expiration Timestamp
+func (o GetAuthConfigApiKeyAuthConfigOutput) ExpiryTimestamp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAuthConfigApiKeyAuthConfig) int { return v.ExpiryTimestamp }).(pulumi.IntOutput)
+}
+
+type GetAuthConfigApiKeyAuthConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAuthConfigApiKeyAuthConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAuthConfigApiKeyAuthConfig)(nil)).Elem()
+}
+
+func (o GetAuthConfigApiKeyAuthConfigArrayOutput) ToGetAuthConfigApiKeyAuthConfigArrayOutput() GetAuthConfigApiKeyAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetAuthConfigApiKeyAuthConfigArrayOutput) ToGetAuthConfigApiKeyAuthConfigArrayOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetAuthConfigApiKeyAuthConfigArrayOutput) Index(i pulumi.IntInput) GetAuthConfigApiKeyAuthConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuthConfigApiKeyAuthConfig {
+		return vs[0].([]GetAuthConfigApiKeyAuthConfig)[vs[1].(int)]
+	}).(GetAuthConfigApiKeyAuthConfigOutput)
+}
+
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadata struct {
+	// Parameter Location
+	Location string `pulumi:"location"`
+	// Parameter Name
+	ParameterName string `pulumi:"parameterName"`
+}
+
+// GetAuthConfigApiKeyAuthConfigApiKeyMetadataInput is an input type that accepts GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs and GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput values.
+// You can construct a concrete instance of `GetAuthConfigApiKeyAuthConfigApiKeyMetadataInput` via:
+//
+//	GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs{...}
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadataInput interface {
+	pulumi.Input
+
+	ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput() GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput
+	ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(context.Context) GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput
+}
+
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs struct {
+	// Parameter Location
+	Location pulumi.StringInput `pulumi:"location"`
+	// Parameter Name
+	ParameterName pulumi.StringInput `pulumi:"parameterName"`
+}
+
+func (GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (i GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput() GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return i.ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(context.Background())
+}
+
+func (i GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput)
+}
+
+// GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput is an input type that accepts GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray and GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput values.
+// You can construct a concrete instance of `GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput` via:
+//
+//	GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray{ GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs{...} }
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput() GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput
+	ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(context.Context) GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput
+}
+
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray []GetAuthConfigApiKeyAuthConfigApiKeyMetadataInput
+
+func (GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (i GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput() GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return i.ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput)
+}
+
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput() GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return o
+}
+
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return o
+}
+
+// Parameter Location
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthConfigApiKeyAuthConfigApiKeyMetadata) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// Parameter Name
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput) ParameterName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthConfigApiKeyAuthConfigApiKeyMetadata) string { return v.ParameterName }).(pulumi.StringOutput)
+}
+
+type GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAuthConfigApiKeyAuthConfigApiKeyMetadata)(nil)).Elem()
+}
+
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput() GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return o
+}
+
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) ToGetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutputWithContext(ctx context.Context) GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput {
+	return o
+}
+
+func (o GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput) Index(i pulumi.IntInput) GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuthConfigApiKeyAuthConfigApiKeyMetadata {
+		return vs[0].([]GetAuthConfigApiKeyAuthConfigApiKeyMetadata)[vs[1].(int)]
+	}).(GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput)
+}
+
+type GetAuthConfigJwtAuthConfig struct {
+	// Allowed Audience List
+	AllowedAudiences []string `pulumi:"allowedAudiences"`
+	// Allowed Client List
+	AllowedClients []string `pulumi:"allowedClients"`
+	// JWT Discovery URL。
+	DiscoveryUrl string `pulumi:"discoveryUrl"`
+}
+
+// GetAuthConfigJwtAuthConfigInput is an input type that accepts GetAuthConfigJwtAuthConfigArgs and GetAuthConfigJwtAuthConfigOutput values.
+// You can construct a concrete instance of `GetAuthConfigJwtAuthConfigInput` via:
+//
+//	GetAuthConfigJwtAuthConfigArgs{...}
+type GetAuthConfigJwtAuthConfigInput interface {
+	pulumi.Input
+
+	ToGetAuthConfigJwtAuthConfigOutput() GetAuthConfigJwtAuthConfigOutput
+	ToGetAuthConfigJwtAuthConfigOutputWithContext(context.Context) GetAuthConfigJwtAuthConfigOutput
+}
+
+type GetAuthConfigJwtAuthConfigArgs struct {
+	// Allowed Audience List
+	AllowedAudiences pulumi.StringArrayInput `pulumi:"allowedAudiences"`
+	// Allowed Client List
+	AllowedClients pulumi.StringArrayInput `pulumi:"allowedClients"`
+	// JWT Discovery URL。
+	DiscoveryUrl pulumi.StringInput `pulumi:"discoveryUrl"`
+}
+
+func (GetAuthConfigJwtAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthConfigJwtAuthConfig)(nil)).Elem()
+}
+
+func (i GetAuthConfigJwtAuthConfigArgs) ToGetAuthConfigJwtAuthConfigOutput() GetAuthConfigJwtAuthConfigOutput {
+	return i.ToGetAuthConfigJwtAuthConfigOutputWithContext(context.Background())
+}
+
+func (i GetAuthConfigJwtAuthConfigArgs) ToGetAuthConfigJwtAuthConfigOutputWithContext(ctx context.Context) GetAuthConfigJwtAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAuthConfigJwtAuthConfigOutput)
+}
+
+type GetAuthConfigJwtAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAuthConfigJwtAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAuthConfigJwtAuthConfig)(nil)).Elem()
+}
+
+func (o GetAuthConfigJwtAuthConfigOutput) ToGetAuthConfigJwtAuthConfigOutput() GetAuthConfigJwtAuthConfigOutput {
+	return o
+}
+
+func (o GetAuthConfigJwtAuthConfigOutput) ToGetAuthConfigJwtAuthConfigOutputWithContext(ctx context.Context) GetAuthConfigJwtAuthConfigOutput {
+	return o
+}
+
+// Allowed Audience List
+func (o GetAuthConfigJwtAuthConfigOutput) AllowedAudiences() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAuthConfigJwtAuthConfig) []string { return v.AllowedAudiences }).(pulumi.StringArrayOutput)
+}
+
+// Allowed Client List
+func (o GetAuthConfigJwtAuthConfigOutput) AllowedClients() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAuthConfigJwtAuthConfig) []string { return v.AllowedClients }).(pulumi.StringArrayOutput)
+}
+
+// JWT Discovery URL。
+func (o GetAuthConfigJwtAuthConfigOutput) DiscoveryUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAuthConfigJwtAuthConfig) string { return v.DiscoveryUrl }).(pulumi.StringOutput)
+}
+
+type GetPermissionNamespaceTag struct {
+	// Tag Key
+	Key string `pulumi:"key"`
+	// Tag Value
+	Value string `pulumi:"value"`
+}
+
+// GetPermissionNamespaceTagInput is an input type that accepts GetPermissionNamespaceTagArgs and GetPermissionNamespaceTagOutput values.
+// You can construct a concrete instance of `GetPermissionNamespaceTagInput` via:
+//
+//	GetPermissionNamespaceTagArgs{...}
+type GetPermissionNamespaceTagInput interface {
+	pulumi.Input
+
+	ToGetPermissionNamespaceTagOutput() GetPermissionNamespaceTagOutput
+	ToGetPermissionNamespaceTagOutputWithContext(context.Context) GetPermissionNamespaceTagOutput
+}
+
+type GetPermissionNamespaceTagArgs struct {
+	// Tag Key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPermissionNamespaceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPermissionNamespaceTag)(nil)).Elem()
+}
+
+func (i GetPermissionNamespaceTagArgs) ToGetPermissionNamespaceTagOutput() GetPermissionNamespaceTagOutput {
+	return i.ToGetPermissionNamespaceTagOutputWithContext(context.Background())
+}
+
+func (i GetPermissionNamespaceTagArgs) ToGetPermissionNamespaceTagOutputWithContext(ctx context.Context) GetPermissionNamespaceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionNamespaceTagOutput)
+}
+
+// GetPermissionNamespaceTagArrayInput is an input type that accepts GetPermissionNamespaceTagArray and GetPermissionNamespaceTagArrayOutput values.
+// You can construct a concrete instance of `GetPermissionNamespaceTagArrayInput` via:
+//
+//	GetPermissionNamespaceTagArray{ GetPermissionNamespaceTagArgs{...} }
+type GetPermissionNamespaceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetPermissionNamespaceTagArrayOutput() GetPermissionNamespaceTagArrayOutput
+	ToGetPermissionNamespaceTagArrayOutputWithContext(context.Context) GetPermissionNamespaceTagArrayOutput
+}
+
+type GetPermissionNamespaceTagArray []GetPermissionNamespaceTagInput
+
+func (GetPermissionNamespaceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPermissionNamespaceTag)(nil)).Elem()
+}
+
+func (i GetPermissionNamespaceTagArray) ToGetPermissionNamespaceTagArrayOutput() GetPermissionNamespaceTagArrayOutput {
+	return i.ToGetPermissionNamespaceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetPermissionNamespaceTagArray) ToGetPermissionNamespaceTagArrayOutputWithContext(ctx context.Context) GetPermissionNamespaceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPermissionNamespaceTagArrayOutput)
+}
+
+type GetPermissionNamespaceTagOutput struct{ *pulumi.OutputState }
+
+func (GetPermissionNamespaceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPermissionNamespaceTag)(nil)).Elem()
+}
+
+func (o GetPermissionNamespaceTagOutput) ToGetPermissionNamespaceTagOutput() GetPermissionNamespaceTagOutput {
+	return o
+}
+
+func (o GetPermissionNamespaceTagOutput) ToGetPermissionNamespaceTagOutputWithContext(ctx context.Context) GetPermissionNamespaceTagOutput {
+	return o
+}
+
+// Tag Key
+func (o GetPermissionNamespaceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPermissionNamespaceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag Value
+func (o GetPermissionNamespaceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPermissionNamespaceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPermissionNamespaceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPermissionNamespaceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPermissionNamespaceTag)(nil)).Elem()
+}
+
+func (o GetPermissionNamespaceTagArrayOutput) ToGetPermissionNamespaceTagArrayOutput() GetPermissionNamespaceTagArrayOutput {
+	return o
+}
+
+func (o GetPermissionNamespaceTagArrayOutput) ToGetPermissionNamespaceTagArrayOutputWithContext(ctx context.Context) GetPermissionNamespaceTagArrayOutput {
+	return o
+}
+
+func (o GetPermissionNamespaceTagArrayOutput) Index(i pulumi.IntInput) GetPermissionNamespaceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPermissionNamespaceTag {
+		return vs[0].([]GetPermissionNamespaceTag)[vs[1].(int)]
+	}).(GetPermissionNamespaceTagOutput)
+}
+
 type GetServiceBackend struct {
 	// Backend service domain name, for example api.example.com
 	BackendDomain string `pulumi:"backendDomain"`
@@ -1966,7 +3252,288 @@ func (o GetServiceTagArrayOutput) Index(i pulumi.IntInput) GetServiceTagOutput {
 	}).(GetServiceTagOutput)
 }
 
+type GetUserPoolBrand struct {
+	// Brand logo URL
+	LogoUri string `pulumi:"logoUri"`
+	// Brand name
+	Name string `pulumi:"name"`
+}
+
+// GetUserPoolBrandInput is an input type that accepts GetUserPoolBrandArgs and GetUserPoolBrandOutput values.
+// You can construct a concrete instance of `GetUserPoolBrandInput` via:
+//
+//	GetUserPoolBrandArgs{...}
+type GetUserPoolBrandInput interface {
+	pulumi.Input
+
+	ToGetUserPoolBrandOutput() GetUserPoolBrandOutput
+	ToGetUserPoolBrandOutputWithContext(context.Context) GetUserPoolBrandOutput
+}
+
+type GetUserPoolBrandArgs struct {
+	// Brand logo URL
+	LogoUri pulumi.StringInput `pulumi:"logoUri"`
+	// Brand name
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetUserPoolBrandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserPoolBrand)(nil)).Elem()
+}
+
+func (i GetUserPoolBrandArgs) ToGetUserPoolBrandOutput() GetUserPoolBrandOutput {
+	return i.ToGetUserPoolBrandOutputWithContext(context.Background())
+}
+
+func (i GetUserPoolBrandArgs) ToGetUserPoolBrandOutputWithContext(ctx context.Context) GetUserPoolBrandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserPoolBrandOutput)
+}
+
+type GetUserPoolBrandOutput struct{ *pulumi.OutputState }
+
+func (GetUserPoolBrandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserPoolBrand)(nil)).Elem()
+}
+
+func (o GetUserPoolBrandOutput) ToGetUserPoolBrandOutput() GetUserPoolBrandOutput {
+	return o
+}
+
+func (o GetUserPoolBrandOutput) ToGetUserPoolBrandOutputWithContext(ctx context.Context) GetUserPoolBrandOutput {
+	return o
+}
+
+// Brand logo URL
+func (o GetUserPoolBrandOutput) LogoUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserPoolBrand) string { return v.LogoUri }).(pulumi.StringOutput)
+}
+
+// Brand name
+func (o GetUserPoolBrandOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserPoolBrand) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetUserPoolTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetUserPoolTagInput is an input type that accepts GetUserPoolTagArgs and GetUserPoolTagOutput values.
+// You can construct a concrete instance of `GetUserPoolTagInput` via:
+//
+//	GetUserPoolTagArgs{...}
+type GetUserPoolTagInput interface {
+	pulumi.Input
+
+	ToGetUserPoolTagOutput() GetUserPoolTagOutput
+	ToGetUserPoolTagOutputWithContext(context.Context) GetUserPoolTagOutput
+}
+
+type GetUserPoolTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetUserPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserPoolTag)(nil)).Elem()
+}
+
+func (i GetUserPoolTagArgs) ToGetUserPoolTagOutput() GetUserPoolTagOutput {
+	return i.ToGetUserPoolTagOutputWithContext(context.Background())
+}
+
+func (i GetUserPoolTagArgs) ToGetUserPoolTagOutputWithContext(ctx context.Context) GetUserPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserPoolTagOutput)
+}
+
+// GetUserPoolTagArrayInput is an input type that accepts GetUserPoolTagArray and GetUserPoolTagArrayOutput values.
+// You can construct a concrete instance of `GetUserPoolTagArrayInput` via:
+//
+//	GetUserPoolTagArray{ GetUserPoolTagArgs{...} }
+type GetUserPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToGetUserPoolTagArrayOutput() GetUserPoolTagArrayOutput
+	ToGetUserPoolTagArrayOutputWithContext(context.Context) GetUserPoolTagArrayOutput
+}
+
+type GetUserPoolTagArray []GetUserPoolTagInput
+
+func (GetUserPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserPoolTag)(nil)).Elem()
+}
+
+func (i GetUserPoolTagArray) ToGetUserPoolTagArrayOutput() GetUserPoolTagArrayOutput {
+	return i.ToGetUserPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserPoolTagArray) ToGetUserPoolTagArrayOutputWithContext(ctx context.Context) GetUserPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserPoolTagArrayOutput)
+}
+
+type GetUserPoolTagOutput struct{ *pulumi.OutputState }
+
+func (GetUserPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserPoolTag)(nil)).Elem()
+}
+
+func (o GetUserPoolTagOutput) ToGetUserPoolTagOutput() GetUserPoolTagOutput {
+	return o
+}
+
+func (o GetUserPoolTagOutput) ToGetUserPoolTagOutputWithContext(ctx context.Context) GetUserPoolTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetUserPoolTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserPoolTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetUserPoolTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserPoolTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetUserPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUserPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserPoolTag)(nil)).Elem()
+}
+
+func (o GetUserPoolTagArrayOutput) ToGetUserPoolTagArrayOutput() GetUserPoolTagArrayOutput {
+	return o
+}
+
+func (o GetUserPoolTagArrayOutput) ToGetUserPoolTagArrayOutputWithContext(ctx context.Context) GetUserPoolTagArrayOutput {
+	return o
+}
+
+func (o GetUserPoolTagArrayOutput) Index(i pulumi.IntInput) GetUserPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserPoolTag {
+		return vs[0].([]GetUserPoolTag)[vs[1].(int)]
+	}).(GetUserPoolTagOutput)
+}
+
+type GetWorkloadPoolTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetWorkloadPoolTagInput is an input type that accepts GetWorkloadPoolTagArgs and GetWorkloadPoolTagOutput values.
+// You can construct a concrete instance of `GetWorkloadPoolTagInput` via:
+//
+//	GetWorkloadPoolTagArgs{...}
+type GetWorkloadPoolTagInput interface {
+	pulumi.Input
+
+	ToGetWorkloadPoolTagOutput() GetWorkloadPoolTagOutput
+	ToGetWorkloadPoolTagOutputWithContext(context.Context) GetWorkloadPoolTagOutput
+}
+
+type GetWorkloadPoolTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetWorkloadPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkloadPoolTag)(nil)).Elem()
+}
+
+func (i GetWorkloadPoolTagArgs) ToGetWorkloadPoolTagOutput() GetWorkloadPoolTagOutput {
+	return i.ToGetWorkloadPoolTagOutputWithContext(context.Background())
+}
+
+func (i GetWorkloadPoolTagArgs) ToGetWorkloadPoolTagOutputWithContext(ctx context.Context) GetWorkloadPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkloadPoolTagOutput)
+}
+
+// GetWorkloadPoolTagArrayInput is an input type that accepts GetWorkloadPoolTagArray and GetWorkloadPoolTagArrayOutput values.
+// You can construct a concrete instance of `GetWorkloadPoolTagArrayInput` via:
+//
+//	GetWorkloadPoolTagArray{ GetWorkloadPoolTagArgs{...} }
+type GetWorkloadPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkloadPoolTagArrayOutput() GetWorkloadPoolTagArrayOutput
+	ToGetWorkloadPoolTagArrayOutputWithContext(context.Context) GetWorkloadPoolTagArrayOutput
+}
+
+type GetWorkloadPoolTagArray []GetWorkloadPoolTagInput
+
+func (GetWorkloadPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkloadPoolTag)(nil)).Elem()
+}
+
+func (i GetWorkloadPoolTagArray) ToGetWorkloadPoolTagArrayOutput() GetWorkloadPoolTagArrayOutput {
+	return i.ToGetWorkloadPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkloadPoolTagArray) ToGetWorkloadPoolTagArrayOutputWithContext(ctx context.Context) GetWorkloadPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkloadPoolTagArrayOutput)
+}
+
+type GetWorkloadPoolTagOutput struct{ *pulumi.OutputState }
+
+func (GetWorkloadPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkloadPoolTag)(nil)).Elem()
+}
+
+func (o GetWorkloadPoolTagOutput) ToGetWorkloadPoolTagOutput() GetWorkloadPoolTagOutput {
+	return o
+}
+
+func (o GetWorkloadPoolTagOutput) ToGetWorkloadPoolTagOutputWithContext(ctx context.Context) GetWorkloadPoolTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetWorkloadPoolTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkloadPoolTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetWorkloadPoolTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkloadPoolTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetWorkloadPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkloadPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkloadPoolTag)(nil)).Elem()
+}
+
+func (o GetWorkloadPoolTagArrayOutput) ToGetWorkloadPoolTagArrayOutput() GetWorkloadPoolTagArrayOutput {
+	return o
+}
+
+func (o GetWorkloadPoolTagArrayOutput) ToGetWorkloadPoolTagArrayOutputWithContext(ctx context.Context) GetWorkloadPoolTagArrayOutput {
+	return o
+}
+
+func (o GetWorkloadPoolTagArrayOutput) Index(i pulumi.IntInput) GetWorkloadPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkloadPoolTag {
+		return vs[0].([]GetWorkloadPoolTag)[vs[1].(int)]
+	}).(GetWorkloadPoolTagOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthConfigApiKeyAuthConfigInput)(nil)).Elem(), AuthConfigApiKeyAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthConfigApiKeyAuthConfigArrayInput)(nil)).Elem(), AuthConfigApiKeyAuthConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthConfigApiKeyAuthConfigApiKeyMetadataInput)(nil)).Elem(), AuthConfigApiKeyAuthConfigApiKeyMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput)(nil)).Elem(), AuthConfigApiKeyAuthConfigApiKeyMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthConfigJwtAuthConfigInput)(nil)).Elem(), AuthConfigJwtAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthConfigJwtAuthConfigPtrInput)(nil)).Elem(), AuthConfigJwtAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PermissionNamespaceTagInput)(nil)).Elem(), PermissionNamespaceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PermissionNamespaceTagArrayInput)(nil)).Elem(), PermissionNamespaceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceBackendInput)(nil)).Elem(), ServiceBackendArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceBackendPtrInput)(nil)).Elem(), ServiceBackendArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceRouteInput)(nil)).Elem(), ServiceRouteArgs{})
@@ -1981,6 +3548,19 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceRouteApiSpecResponseFilterAttributeArrayInput)(nil)).Elem(), ServiceRouteApiSpecResponseFilterAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceTagInput)(nil)).Elem(), ServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceTagArrayInput)(nil)).Elem(), ServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UserPoolBrandInput)(nil)).Elem(), UserPoolBrandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UserPoolBrandPtrInput)(nil)).Elem(), UserPoolBrandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UserPoolTagInput)(nil)).Elem(), UserPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UserPoolTagArrayInput)(nil)).Elem(), UserPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkloadPoolTagInput)(nil)).Elem(), WorkloadPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkloadPoolTagArrayInput)(nil)).Elem(), WorkloadPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAuthConfigApiKeyAuthConfigInput)(nil)).Elem(), GetAuthConfigApiKeyAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAuthConfigApiKeyAuthConfigArrayInput)(nil)).Elem(), GetAuthConfigApiKeyAuthConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAuthConfigApiKeyAuthConfigApiKeyMetadataInput)(nil)).Elem(), GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayInput)(nil)).Elem(), GetAuthConfigApiKeyAuthConfigApiKeyMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAuthConfigJwtAuthConfigInput)(nil)).Elem(), GetAuthConfigJwtAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionNamespaceTagInput)(nil)).Elem(), GetPermissionNamespaceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPermissionNamespaceTagArrayInput)(nil)).Elem(), GetPermissionNamespaceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceBackendInput)(nil)).Elem(), GetServiceBackendArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceRouteInput)(nil)).Elem(), GetServiceRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceRouteArrayInput)(nil)).Elem(), GetServiceRouteArray{})
@@ -1993,6 +3573,19 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceRouteApiSpecResponseFilterAttributeArrayInput)(nil)).Elem(), GetServiceRouteApiSpecResponseFilterAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceTagInput)(nil)).Elem(), GetServiceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceTagArrayInput)(nil)).Elem(), GetServiceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserPoolBrandInput)(nil)).Elem(), GetUserPoolBrandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserPoolTagInput)(nil)).Elem(), GetUserPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserPoolTagArrayInput)(nil)).Elem(), GetUserPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkloadPoolTagInput)(nil)).Elem(), GetWorkloadPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkloadPoolTagArrayInput)(nil)).Elem(), GetWorkloadPoolTagArray{})
+	pulumi.RegisterOutputType(AuthConfigApiKeyAuthConfigOutput{})
+	pulumi.RegisterOutputType(AuthConfigApiKeyAuthConfigArrayOutput{})
+	pulumi.RegisterOutputType(AuthConfigApiKeyAuthConfigApiKeyMetadataOutput{})
+	pulumi.RegisterOutputType(AuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput{})
+	pulumi.RegisterOutputType(AuthConfigJwtAuthConfigOutput{})
+	pulumi.RegisterOutputType(AuthConfigJwtAuthConfigPtrOutput{})
+	pulumi.RegisterOutputType(PermissionNamespaceTagOutput{})
+	pulumi.RegisterOutputType(PermissionNamespaceTagArrayOutput{})
 	pulumi.RegisterOutputType(ServiceBackendOutput{})
 	pulumi.RegisterOutputType(ServiceBackendPtrOutput{})
 	pulumi.RegisterOutputType(ServiceRouteOutput{})
@@ -2007,6 +3600,19 @@ func init() {
 	pulumi.RegisterOutputType(ServiceRouteApiSpecResponseFilterAttributeArrayOutput{})
 	pulumi.RegisterOutputType(ServiceTagOutput{})
 	pulumi.RegisterOutputType(ServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(UserPoolBrandOutput{})
+	pulumi.RegisterOutputType(UserPoolBrandPtrOutput{})
+	pulumi.RegisterOutputType(UserPoolTagOutput{})
+	pulumi.RegisterOutputType(UserPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(WorkloadPoolTagOutput{})
+	pulumi.RegisterOutputType(WorkloadPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAuthConfigApiKeyAuthConfigOutput{})
+	pulumi.RegisterOutputType(GetAuthConfigApiKeyAuthConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAuthConfigApiKeyAuthConfigApiKeyMetadataOutput{})
+	pulumi.RegisterOutputType(GetAuthConfigApiKeyAuthConfigApiKeyMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetAuthConfigJwtAuthConfigOutput{})
+	pulumi.RegisterOutputType(GetPermissionNamespaceTagOutput{})
+	pulumi.RegisterOutputType(GetPermissionNamespaceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceBackendOutput{})
 	pulumi.RegisterOutputType(GetServiceRouteOutput{})
 	pulumi.RegisterOutputType(GetServiceRouteArrayOutput{})
@@ -2019,4 +3625,9 @@ func init() {
 	pulumi.RegisterOutputType(GetServiceRouteApiSpecResponseFilterAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceTagOutput{})
 	pulumi.RegisterOutputType(GetServiceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetUserPoolBrandOutput{})
+	pulumi.RegisterOutputType(GetUserPoolTagOutput{})
+	pulumi.RegisterOutputType(GetUserPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkloadPoolTagOutput{})
+	pulumi.RegisterOutputType(GetWorkloadPoolTagArrayOutput{})
 }

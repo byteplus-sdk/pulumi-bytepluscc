@@ -40,6 +40,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         [Output("endpointId")]
         public Output<int> EndpointId { get; private set; } = null!;
 
+        /// <summary>
+        /// TRN of the endpoint
+        /// </summary>
+        [Output("endpointTrn")]
+        public Output<string> EndpointTrn { get; private set; } = null!;
+
         [Output("forwardIPs")]
         public Output<ImmutableArray<Outputs.ResolverRuleForwardIP>> ForwardIPs { get; private set; } = null!;
 
@@ -90,6 +96,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 
         [Output("vpCs")]
         public Output<ImmutableArray<Outputs.ResolverRuleVpC>> VpCs { get; private set; } = null!;
+
+        /// <summary>
+        /// TRN of one or more VPCs associated with the domain name
+        /// </summary>
+        [Output("vpcTrns")]
+        public Output<ImmutableArray<string>> VpcTrns { get; private set; } = null!;
 
         /// <summary>
         /// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
@@ -150,6 +162,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         [Input("endpointId")]
         public Input<int>? EndpointId { get; set; }
 
+        /// <summary>
+        /// TRN of the endpoint
+        /// </summary>
+        [Input("endpointTrn")]
+        public Input<string>? EndpointTrn { get; set; }
+
         [Input("forwardIPs")]
         private InputList<Inputs.ResolverRuleForwardIPArgs>? _forwardIPs;
         public InputList<Inputs.ResolverRuleForwardIPArgs> ForwardIPs
@@ -198,6 +216,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
             set => _vpCs = value;
         }
 
+        [Input("vpcTrns")]
+        private InputList<string>? _vpcTrns;
+
+        /// <summary>
+        /// TRN of one or more VPCs associated with the domain name
+        /// </summary>
+        public InputList<string> VpcTrns
+        {
+            get => _vpcTrns ?? (_vpcTrns = new InputList<string>());
+            set => _vpcTrns = value;
+        }
+
         /// <summary>
         /// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         /// </summary>
@@ -229,6 +259,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         [Input("endpointId")]
         public Input<int>? EndpointId { get; set; }
+
+        /// <summary>
+        /// TRN of the endpoint
+        /// </summary>
+        [Input("endpointTrn")]
+        public Input<string>? EndpointTrn { get; set; }
 
         [Input("forwardIPs")]
         private InputList<Inputs.ResolverRuleForwardIPGetArgs>? _forwardIPs;
@@ -294,6 +330,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         {
             get => _vpCs ?? (_vpCs = new InputList<Inputs.ResolverRuleVpCGetArgs>());
             set => _vpCs = value;
+        }
+
+        [Input("vpcTrns")]
+        private InputList<string>? _vpcTrns;
+
+        /// <summary>
+        /// TRN of one or more VPCs associated with the domain name
+        /// </summary>
+        public InputList<string> VpcTrns
+        {
+            get => _vpcTrns ?? (_vpcTrns = new InputList<string>());
+            set => _vpcTrns = value;
         }
 
         /// <summary>

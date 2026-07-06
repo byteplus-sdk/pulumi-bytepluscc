@@ -10,6 +10,8 @@ import com.byteplus.bytepluscc.fwcenter.inputs.GetControlPolicyArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetControlPolicyPlainArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetDnsControlPolicyArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetDnsControlPolicyPlainArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetNatFireWallControlPolicyArgs;
+import com.byteplus.bytepluscc.fwcenter.inputs.GetNatFireWallControlPolicyPlainArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetVpcFireWallAclRuleArgs;
 import com.byteplus.bytepluscc.fwcenter.inputs.GetVpcFireWallAclRulePlainArgs;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetAddressBookResult;
@@ -18,6 +20,8 @@ import com.byteplus.bytepluscc.fwcenter.outputs.GetControlPoliciesResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetControlPolicyResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetDnsControlPoliciesResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetDnsControlPolicyResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetNatFireWallControlPoliciesResult;
+import com.byteplus.bytepluscc.fwcenter.outputs.GetNatFireWallControlPolicyResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetVpcFireWallAclRuleResult;
 import com.byteplus.bytepluscc.fwcenter.outputs.GetVpcFireWallAclRulesResult;
 import com.pulumi.core.Output;
@@ -280,6 +284,90 @@ public final class FwcenterFunctions {
      */
     public static CompletableFuture<GetDnsControlPolicyResult> getDnsControlPolicyPlain(GetDnsControlPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getDnsControlPolicy:getDnsControlPolicy", TypeShape.of(GetDnsControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPoliciesResult> getNatFireWallControlPolicies() {
+        return getNatFireWallControlPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallControlPoliciesResult> getNatFireWallControlPoliciesPlain() {
+        return getNatFireWallControlPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPoliciesResult> getNatFireWallControlPolicies(InvokeArgs args) {
+        return getNatFireWallControlPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallControlPoliciesResult> getNatFireWallControlPoliciesPlain(InvokeArgs args) {
+        return getNatFireWallControlPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPoliciesResult> getNatFireWallControlPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies", TypeShape.of(GetNatFireWallControlPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPoliciesResult> getNatFireWallControlPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies", TypeShape.of(GetNatFireWallControlPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallControlPoliciesResult> getNatFireWallControlPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies", TypeShape.of(GetNatFireWallControlPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPolicyResult> getNatFireWallControlPolicy(GetNatFireWallControlPolicyArgs args) {
+        return getNatFireWallControlPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallControlPolicyResult> getNatFireWallControlPolicyPlain(GetNatFireWallControlPolicyPlainArgs args) {
+        return getNatFireWallControlPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPolicyResult> getNatFireWallControlPolicy(GetNatFireWallControlPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getNatFireWallControlPolicy:getNatFireWallControlPolicy", TypeShape.of(GetNatFireWallControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static Output<GetNatFireWallControlPolicyResult> getNatFireWallControlPolicy(GetNatFireWallControlPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:fwcenter/getNatFireWallControlPolicy:getNatFireWallControlPolicy", TypeShape.of(GetNatFireWallControlPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FWCenter::NatFireWallControlPolicy
+     * 
+     */
+    public static CompletableFuture<GetNatFireWallControlPolicyResult> getNatFireWallControlPolicyPlain(GetNatFireWallControlPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:fwcenter/getNatFireWallControlPolicy:getNatFireWallControlPolicy", TypeShape.of(GetNatFireWallControlPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::FWCenter::VpcFirewallAclRule

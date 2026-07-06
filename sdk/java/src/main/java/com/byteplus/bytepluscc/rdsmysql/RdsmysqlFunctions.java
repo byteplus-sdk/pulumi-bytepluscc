@@ -18,6 +18,8 @@ import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPublicAddressArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPublicAddressPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceReadonlyNodeArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceReadonlyNodePlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplateArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplatePlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListResult;
@@ -32,6 +34,8 @@ import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointPublicAddressResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointPublicAddressesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointsResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceReadonlyNodeResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceReadonlyNodesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetParameterTemplateResult;
@@ -583,6 +587,90 @@ public final class RdsmysqlFunctions {
      */
     public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodeResult> getInstanceReadonlyNode(GetInstanceReadonlyNodeArgs args) {
+        return getInstanceReadonlyNode(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static CompletableFuture<GetInstanceReadonlyNodeResult> getInstanceReadonlyNodePlain(GetInstanceReadonlyNodePlainArgs args) {
+        return getInstanceReadonlyNodePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodeResult> getInstanceReadonlyNode(GetInstanceReadonlyNodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getInstanceReadonlyNode:getInstanceReadonlyNode", TypeShape.of(GetInstanceReadonlyNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodeResult> getInstanceReadonlyNode(GetInstanceReadonlyNodeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getInstanceReadonlyNode:getInstanceReadonlyNode", TypeShape.of(GetInstanceReadonlyNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static CompletableFuture<GetInstanceReadonlyNodeResult> getInstanceReadonlyNodePlain(GetInstanceReadonlyNodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getInstanceReadonlyNode:getInstanceReadonlyNode", TypeShape.of(GetInstanceReadonlyNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodes() {
+        return getInstanceReadonlyNodes(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static CompletableFuture<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodesPlain() {
+        return getInstanceReadonlyNodesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodes(InvokeArgs args) {
+        return getInstanceReadonlyNodes(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static CompletableFuture<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodesPlain(InvokeArgs args) {
+        return getInstanceReadonlyNodesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodes(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getInstanceReadonlyNodes:getInstanceReadonlyNodes", TypeShape.of(GetInstanceReadonlyNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static Output<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodes(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getInstanceReadonlyNodes:getInstanceReadonlyNodes", TypeShape.of(GetInstanceReadonlyNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::InstanceReadonlyNode
+     * 
+     */
+    public static CompletableFuture<GetInstanceReadonlyNodesResult> getInstanceReadonlyNodesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getInstanceReadonlyNodes:getInstanceReadonlyNodes", TypeShape.of(GetInstanceReadonlyNodesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::RDSMySQL::Instance

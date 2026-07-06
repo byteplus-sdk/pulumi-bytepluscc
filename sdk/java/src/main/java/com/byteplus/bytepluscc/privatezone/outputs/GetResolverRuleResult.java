@@ -32,6 +32,11 @@ public final class GetResolverRuleResult {
      */
     private Integer endpointId;
     /**
+     * @return TRN of the endpoint
+     * 
+     */
+    private String endpointTrn;
+    /**
      * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
@@ -87,6 +92,11 @@ public final class GetResolverRuleResult {
      */
     private List<GetResolverRuleVpC> vpCs;
     /**
+     * @return TRN of one or more VPCs associated with the domain name
+     * 
+     */
+    private List<String> vpcTrns;
+    /**
      * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
@@ -113,6 +123,13 @@ public final class GetResolverRuleResult {
      */
     public Integer endpointId() {
         return this.endpointId;
+    }
+    /**
+     * @return TRN of the endpoint
+     * 
+     */
+    public String endpointTrn() {
+        return this.endpointTrn;
     }
     /**
      * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
@@ -192,6 +209,13 @@ public final class GetResolverRuleResult {
         return this.vpCs;
     }
     /**
+     * @return TRN of one or more VPCs associated with the domain name
+     * 
+     */
+    public List<String> vpcTrns() {
+        return this.vpcTrns;
+    }
+    /**
      * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
@@ -211,6 +235,7 @@ public final class GetResolverRuleResult {
         private String createdTime;
         private Boolean enable;
         private Integer endpointId;
+        private String endpointTrn;
         private List<GetResolverRuleForwardIP> forwardIPs;
         private String id;
         private String lastOperator;
@@ -222,6 +247,7 @@ public final class GetResolverRuleResult {
         private String type;
         private String updatedTime;
         private List<GetResolverRuleVpC> vpCs;
+        private List<String> vpcTrns;
         private String zoneName;
         public Builder() {}
         public Builder(GetResolverRuleResult defaults) {
@@ -229,6 +255,7 @@ public final class GetResolverRuleResult {
     	      this.createdTime = defaults.createdTime;
     	      this.enable = defaults.enable;
     	      this.endpointId = defaults.endpointId;
+    	      this.endpointTrn = defaults.endpointTrn;
     	      this.forwardIPs = defaults.forwardIPs;
     	      this.id = defaults.id;
     	      this.lastOperator = defaults.lastOperator;
@@ -240,6 +267,7 @@ public final class GetResolverRuleResult {
     	      this.type = defaults.type;
     	      this.updatedTime = defaults.updatedTime;
     	      this.vpCs = defaults.vpCs;
+    	      this.vpcTrns = defaults.vpcTrns;
     	      this.zoneName = defaults.zoneName;
         }
 
@@ -265,6 +293,14 @@ public final class GetResolverRuleResult {
               throw new MissingRequiredPropertyException("GetResolverRuleResult", "endpointId");
             }
             this.endpointId = endpointId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder endpointTrn(String endpointTrn) {
+            if (endpointTrn == null) {
+              throw new MissingRequiredPropertyException("GetResolverRuleResult", "endpointTrn");
+            }
+            this.endpointTrn = endpointTrn;
             return this;
         }
         @CustomType.Setter
@@ -365,6 +401,17 @@ public final class GetResolverRuleResult {
             return vpCs(List.of(vpCs));
         }
         @CustomType.Setter
+        public Builder vpcTrns(List<String> vpcTrns) {
+            if (vpcTrns == null) {
+              throw new MissingRequiredPropertyException("GetResolverRuleResult", "vpcTrns");
+            }
+            this.vpcTrns = vpcTrns;
+            return this;
+        }
+        public Builder vpcTrns(String... vpcTrns) {
+            return vpcTrns(List.of(vpcTrns));
+        }
+        @CustomType.Setter
         public Builder zoneName(String zoneName) {
             if (zoneName == null) {
               throw new MissingRequiredPropertyException("GetResolverRuleResult", "zoneName");
@@ -377,6 +424,7 @@ public final class GetResolverRuleResult {
             _resultValue.createdTime = createdTime;
             _resultValue.enable = enable;
             _resultValue.endpointId = endpointId;
+            _resultValue.endpointTrn = endpointTrn;
             _resultValue.forwardIPs = forwardIPs;
             _resultValue.id = id;
             _resultValue.lastOperator = lastOperator;
@@ -388,6 +436,7 @@ public final class GetResolverRuleResult {
             _resultValue.type = type;
             _resultValue.updatedTime = updatedTime;
             _resultValue.vpCs = vpCs;
+            _resultValue.vpcTrns = vpcTrns;
             _resultValue.zoneName = zoneName;
             return _resultValue;
         }

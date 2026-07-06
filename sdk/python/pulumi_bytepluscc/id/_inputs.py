@@ -16,6 +16,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AuthConfigApiKeyAuthConfigArgs',
+    'AuthConfigApiKeyAuthConfigArgsDict',
+    'AuthConfigApiKeyAuthConfigApiKeyMetadataArgs',
+    'AuthConfigApiKeyAuthConfigApiKeyMetadataArgsDict',
+    'AuthConfigJwtAuthConfigArgs',
+    'AuthConfigJwtAuthConfigArgsDict',
+    'PermissionNamespaceTagArgs',
+    'PermissionNamespaceTagArgsDict',
     'ServiceBackendArgs',
     'ServiceBackendArgsDict',
     'ServiceRouteArgs',
@@ -30,9 +38,276 @@ __all__ = [
     'ServiceRouteApiSpecResponseFilterAttributeArgsDict',
     'ServiceTagArgs',
     'ServiceTagArgsDict',
+    'UserPoolBrandArgs',
+    'UserPoolBrandArgsDict',
+    'UserPoolTagArgs',
+    'UserPoolTagArgsDict',
+    'WorkloadPoolTagArgs',
+    'WorkloadPoolTagArgsDict',
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AuthConfigApiKeyAuthConfigArgsDict(TypedDict):
+        api_key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ApiKey Value
+        """
+        api_key_metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['AuthConfigApiKeyAuthConfigApiKeyMetadataArgsDict']]]]
+        api_key_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ApiKey Name
+        """
+        expiry_timestamp: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Expiration Timestamp
+        """
+elif False:
+    AuthConfigApiKeyAuthConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AuthConfigApiKeyAuthConfigArgs:
+    def __init__(__self__, *,
+                 api_key: Optional[pulumi.Input[builtins.str]] = None,
+                 api_key_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['AuthConfigApiKeyAuthConfigApiKeyMetadataArgs']]]] = None,
+                 api_key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 expiry_timestamp: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] api_key: ApiKey Value
+        :param pulumi.Input[builtins.str] api_key_name: ApiKey Name
+        :param pulumi.Input[builtins.int] expiry_timestamp: Expiration Timestamp
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if api_key_metadatas is not None:
+            pulumi.set(__self__, "api_key_metadatas", api_key_metadatas)
+        if api_key_name is not None:
+            pulumi.set(__self__, "api_key_name", api_key_name)
+        if expiry_timestamp is not None:
+            pulumi.set(__self__, "expiry_timestamp", expiry_timestamp)
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ApiKey Value
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "api_key", value)
+
+    @property
+    @pulumi.getter(name="apiKeyMetadatas")
+    def api_key_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuthConfigApiKeyAuthConfigApiKeyMetadataArgs']]]]:
+        return pulumi.get(self, "api_key_metadatas")
+
+    @api_key_metadatas.setter
+    def api_key_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AuthConfigApiKeyAuthConfigApiKeyMetadataArgs']]]]):
+        pulumi.set(self, "api_key_metadatas", value)
+
+    @property
+    @pulumi.getter(name="apiKeyName")
+    def api_key_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ApiKey Name
+        """
+        return pulumi.get(self, "api_key_name")
+
+    @api_key_name.setter
+    def api_key_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "api_key_name", value)
+
+    @property
+    @pulumi.getter(name="expiryTimestamp")
+    def expiry_timestamp(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Expiration Timestamp
+        """
+        return pulumi.get(self, "expiry_timestamp")
+
+    @expiry_timestamp.setter
+    def expiry_timestamp(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "expiry_timestamp", value)
+
+
+if not MYPY:
+    class AuthConfigApiKeyAuthConfigApiKeyMetadataArgsDict(TypedDict):
+        location: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter Location
+        """
+        parameter_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Parameter Name
+        """
+elif False:
+    AuthConfigApiKeyAuthConfigApiKeyMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AuthConfigApiKeyAuthConfigApiKeyMetadataArgs:
+    def __init__(__self__, *,
+                 location: Optional[pulumi.Input[builtins.str]] = None,
+                 parameter_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] location: Parameter Location
+        :param pulumi.Input[builtins.str] parameter_name: Parameter Name
+        """
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if parameter_name is not None:
+            pulumi.set(__self__, "parameter_name", parameter_name)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter Location
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Parameter Name
+        """
+        return pulumi.get(self, "parameter_name")
+
+    @parameter_name.setter
+    def parameter_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "parameter_name", value)
+
+
+if not MYPY:
+    class AuthConfigJwtAuthConfigArgsDict(TypedDict):
+        allowed_audiences: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        Allowed Audience List
+        """
+        allowed_clients: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        Allowed Client List
+        """
+        discovery_url: NotRequired[pulumi.Input[builtins.str]]
+        """
+        JWT Discovery URL。
+        """
+elif False:
+    AuthConfigJwtAuthConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AuthConfigJwtAuthConfigArgs:
+    def __init__(__self__, *,
+                 allowed_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 allowed_clients: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 discovery_url: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_audiences: Allowed Audience List
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowed_clients: Allowed Client List
+        :param pulumi.Input[builtins.str] discovery_url: JWT Discovery URL。
+        """
+        if allowed_audiences is not None:
+            pulumi.set(__self__, "allowed_audiences", allowed_audiences)
+        if allowed_clients is not None:
+            pulumi.set(__self__, "allowed_clients", allowed_clients)
+        if discovery_url is not None:
+            pulumi.set(__self__, "discovery_url", discovery_url)
+
+    @property
+    @pulumi.getter(name="allowedAudiences")
+    def allowed_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Allowed Audience List
+        """
+        return pulumi.get(self, "allowed_audiences")
+
+    @allowed_audiences.setter
+    def allowed_audiences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "allowed_audiences", value)
+
+    @property
+    @pulumi.getter(name="allowedClients")
+    def allowed_clients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Allowed Client List
+        """
+        return pulumi.get(self, "allowed_clients")
+
+    @allowed_clients.setter
+    def allowed_clients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "allowed_clients", value)
+
+    @property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        JWT Discovery URL。
+        """
+        return pulumi.get(self, "discovery_url")
+
+    @discovery_url.setter
+    def discovery_url(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "discovery_url", value)
+
+
+if not MYPY:
+    class PermissionNamespaceTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag Key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag Value
+        """
+elif False:
+    PermissionNamespaceTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PermissionNamespaceTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag Key
+        :param pulumi.Input[builtins.str] value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag Value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class ServiceBackendArgsDict(TypedDict):
@@ -778,6 +1053,162 @@ elif False:
 
 @pulumi.input_type
 class ServiceTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class UserPoolBrandArgsDict(TypedDict):
+        logo_uri: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Brand logo URL
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Brand name
+        """
+elif False:
+    UserPoolBrandArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UserPoolBrandArgs:
+    def __init__(__self__, *,
+                 logo_uri: Optional[pulumi.Input[builtins.str]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] logo_uri: Brand logo URL
+        :param pulumi.Input[builtins.str] name: Brand name
+        """
+        if logo_uri is not None:
+            pulumi.set(__self__, "logo_uri", logo_uri)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="logoUri")
+    def logo_uri(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Brand logo URL
+        """
+        return pulumi.get(self, "logo_uri")
+
+    @logo_uri.setter
+    def logo_uri(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "logo_uri", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Brand name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class UserPoolTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    UserPoolTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UserPoolTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class WorkloadPoolTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag key
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Tag value
+        """
+elif False:
+    WorkloadPoolTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class WorkloadPoolTagArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):

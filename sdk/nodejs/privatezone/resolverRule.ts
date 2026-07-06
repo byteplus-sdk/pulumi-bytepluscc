@@ -55,6 +55,10 @@ export class ResolverRule extends pulumi.CustomResource {
      * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      */
     public readonly endpointId!: pulumi.Output<number>;
+    /**
+     * TRN of the endpoint
+     */
+    public readonly endpointTrn!: pulumi.Output<string>;
     public readonly forwardIPs!: pulumi.Output<outputs.privatezone.ResolverRuleForwardIP[]>;
     /**
      * Account ID of the last update to the forwarding rule
@@ -87,6 +91,10 @@ export class ResolverRule extends pulumi.CustomResource {
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     public readonly vpCs!: pulumi.Output<outputs.privatezone.ResolverRuleVpC[]>;
     /**
+     * TRN of one or more VPCs associated with the domain name
+     */
+    public readonly vpcTrns!: pulumi.Output<string[]>;
+    /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      */
     public readonly zoneName!: pulumi.Output<string>;
@@ -107,6 +115,7 @@ export class ResolverRule extends pulumi.CustomResource {
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["enable"] = state ? state.enable : undefined;
             resourceInputs["endpointId"] = state ? state.endpointId : undefined;
+            resourceInputs["endpointTrn"] = state ? state.endpointTrn : undefined;
             resourceInputs["forwardIPs"] = state ? state.forwardIPs : undefined;
             resourceInputs["lastOperator"] = state ? state.lastOperator : undefined;
             resourceInputs["line"] = state ? state.line : undefined;
@@ -117,6 +126,7 @@ export class ResolverRule extends pulumi.CustomResource {
             resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["updatedTime"] = state ? state.updatedTime : undefined;
             resourceInputs["vpCs"] = state ? state.vpCs : undefined;
+            resourceInputs["vpcTrns"] = state ? state.vpcTrns : undefined;
             resourceInputs["zoneName"] = state ? state.zoneName : undefined;
         } else {
             const args = argsOrState as ResolverRuleArgs | undefined;
@@ -127,6 +137,7 @@ export class ResolverRule extends pulumi.CustomResource {
                 throw new Error("Missing required property 'type'");
             }
             resourceInputs["endpointId"] = args ? args.endpointId : undefined;
+            resourceInputs["endpointTrn"] = args ? args.endpointTrn : undefined;
             resourceInputs["forwardIPs"] = args ? args.forwardIPs : undefined;
             resourceInputs["line"] = args ? args.line : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -134,6 +145,7 @@ export class ResolverRule extends pulumi.CustomResource {
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["vpCs"] = args ? args.vpCs : undefined;
+            resourceInputs["vpcTrns"] = args ? args.vpcTrns : undefined;
             resourceInputs["zoneName"] = args ? args.zoneName : undefined;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["enable"] = undefined /*out*/;
@@ -162,6 +174,10 @@ export interface ResolverRuleState {
      * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      */
     endpointId?: pulumi.Input<number>;
+    /**
+     * TRN of the endpoint
+     */
+    endpointTrn?: pulumi.Input<string>;
     forwardIPs?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverRuleForwardIP>[]>;
     /**
      * Account ID of the last update to the forwarding rule
@@ -194,6 +210,10 @@ export interface ResolverRuleState {
     updatedTime?: pulumi.Input<string>;
     vpCs?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverRuleVpC>[]>;
     /**
+     * TRN of one or more VPCs associated with the domain name
+     */
+    vpcTrns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      */
     zoneName?: pulumi.Input<string>;
@@ -207,6 +227,10 @@ export interface ResolverRuleArgs {
      * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      */
     endpointId?: pulumi.Input<number>;
+    /**
+     * TRN of the endpoint
+     */
+    endpointTrn?: pulumi.Input<string>;
     forwardIPs?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverRuleForwardIP>[]>;
     /**
      * Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
@@ -226,6 +250,10 @@ export interface ResolverRuleArgs {
      */
     type: pulumi.Input<string>;
     vpCs?: pulumi.Input<pulumi.Input<inputs.privatezone.ResolverRuleVpC>[]>;
+    /**
+     * TRN of one or more VPCs associated with the domain name
+     */
+    vpcTrns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      */

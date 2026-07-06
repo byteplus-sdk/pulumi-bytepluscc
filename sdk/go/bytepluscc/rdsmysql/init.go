@@ -35,6 +35,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &EndpointPublicAddress{}
 	case "bytepluscc:rdsmysql/instance:Instance":
 		r = &Instance{}
+	case "bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode":
+		r = &InstanceReadonlyNode{}
 	case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
 		r = &ParameterTemplate{}
 	default:
@@ -83,6 +85,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdsmysql/instance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdsmysql/instanceReadonlyNode",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

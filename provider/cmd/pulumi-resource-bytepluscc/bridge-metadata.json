@@ -1900,6 +1900,35 @@
                     }
                 }
             },
+            "bytepluscc_fwcenter_nat_fire_wall_control_policy": {
+                "current": "bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy",
+                "fields": {
+                    "dest_port_list": {
+                        "maxItemsOne": false
+                    },
+                    "dest_port_list_v1": {
+                        "maxItemsOne": false
+                    },
+                    "destination_cidr_list": {
+                        "maxItemsOne": false
+                    },
+                    "destination_cidr_list_v1": {
+                        "maxItemsOne": false
+                    },
+                    "destination_domain_list": {
+                        "maxItemsOne": false
+                    },
+                    "repeat_days": {
+                        "maxItemsOne": false
+                    },
+                    "source_cidr_list": {
+                        "maxItemsOne": false
+                    },
+                    "source_cidr_list_v1": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_fwcenter_vpc_fire_wall_acl_rule": {
                 "current": "bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule",
                 "fields": {
@@ -2155,6 +2184,42 @@
                     }
                 }
             },
+            "bytepluscc_id_auth_config": {
+                "current": "bytepluscc:id/authConfig:AuthConfig",
+                "fields": {
+                    "api_key_auth_configs": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "api_key_metadata": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "jwt_auth_config": {
+                        "fields": {
+                            "allowed_audiences": {
+                                "maxItemsOne": false
+                            },
+                            "allowed_clients": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_id_permission_namespace": {
+                "current": "bytepluscc:id/permissionNamespace:PermissionNamespace",
+                "fields": {
+                    "associates": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_id_service": {
                 "current": "bytepluscc:id/service:Service",
                 "fields": {
@@ -2182,6 +2247,28 @@
                             }
                         }
                     },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_user_pool": {
+                "current": "bytepluscc:id/userPool:UserPool",
+                "fields": {
+                    "required_sign_up_attributes": {
+                        "maxItemsOne": false
+                    },
+                    "sign_in_attributes": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_workload_pool": {
+                "current": "bytepluscc:id/workloadPool:WorkloadPool",
+                "fields": {
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -2258,6 +2345,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_kms_key_material": {
+                "current": "bytepluscc:kms/keyMaterial:KeyMaterial"
             },
             "bytepluscc_kms_key_ring": {
                 "current": "bytepluscc:kms/keyRing:KeyRing"
@@ -2494,6 +2584,9 @@
                         "maxItemsOne": false
                     },
                     "vp_cs": {
+                        "maxItemsOne": false
+                    },
+                    "vpc_trns": {
                         "maxItemsOne": false
                     }
                 }
@@ -2767,6 +2860,14 @@
                         "maxItemsOne": false
                     },
                     "zone_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_instance_readonly_node": {
+                "current": "bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode",
+                "fields": {
+                    "update_endpoint_ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -6888,6 +6989,43 @@
                     }
                 }
             },
+            "bytepluscc_fwcenter_nat_fire_wall_control_policies": {
+                "current": "bytepluscc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_fwcenter_nat_fire_wall_control_policy": {
+                "current": "bytepluscc:fwcenter/getNatFireWallControlPolicy:getNatFireWallControlPolicy",
+                "fields": {
+                    "dest_port_list": {
+                        "maxItemsOne": false
+                    },
+                    "dest_port_list_v1": {
+                        "maxItemsOne": false
+                    },
+                    "destination_cidr_list": {
+                        "maxItemsOne": false
+                    },
+                    "destination_cidr_list_v1": {
+                        "maxItemsOne": false
+                    },
+                    "destination_domain_list": {
+                        "maxItemsOne": false
+                    },
+                    "repeat_days": {
+                        "maxItemsOne": false
+                    },
+                    "source_cidr_list": {
+                        "maxItemsOne": false
+                    },
+                    "source_cidr_list_v1": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_fwcenter_vpc_fire_wall_acl_rule": {
                 "current": "bytepluscc:fwcenter/getVpcFireWallAclRule:getVpcFireWallAclRule",
                 "fields": {
@@ -7278,6 +7416,58 @@
                     }
                 }
             },
+            "bytepluscc_id_auth_config": {
+                "current": "bytepluscc:id/getAuthConfig:getAuthConfig",
+                "fields": {
+                    "api_key_auth_configs": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "api_key_metadata": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "jwt_auth_config": {
+                        "fields": {
+                            "allowed_audiences": {
+                                "maxItemsOne": false
+                            },
+                            "allowed_clients": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_id_auth_configs": {
+                "current": "bytepluscc:id/getAuthConfigs:getAuthConfigs",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_permission_namespace": {
+                "current": "bytepluscc:id/getPermissionNamespace:getPermissionNamespace",
+                "fields": {
+                    "associates": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_permission_namespaces": {
+                "current": "bytepluscc:id/getPermissionNamespaces:getPermissionNamespaces",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_id_service": {
                 "current": "bytepluscc:id/getService:getService",
                 "fields": {
@@ -7312,6 +7502,44 @@
             },
             "bytepluscc_id_services": {
                 "current": "bytepluscc:id/getServices:getServices",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_user_pool": {
+                "current": "bytepluscc:id/getUserPool:getUserPool",
+                "fields": {
+                    "required_sign_up_attributes": {
+                        "maxItemsOne": false
+                    },
+                    "sign_in_attributes": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_user_pools": {
+                "current": "bytepluscc:id/getUserPools:getUserPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_workload_pool": {
+                "current": "bytepluscc:id/getWorkloadPool:getWorkloadPool",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_id_workload_pools": {
+                "current": "bytepluscc:id/getWorkloadPools:getWorkloadPools",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -7426,6 +7654,17 @@
                         }
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kms_key_material": {
+                "current": "bytepluscc:kms/getKeyMaterial:getKeyMaterial"
+            },
+            "bytepluscc_kms_key_materials": {
+                "current": "bytepluscc:kms/getKeyMaterials:getKeyMaterials",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -7858,6 +8097,9 @@
                     },
                     "vp_cs": {
                         "maxItemsOne": false
+                    },
+                    "vpc_trns": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -8257,6 +8499,22 @@
                         "maxItemsOne": false
                     },
                     "zone_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_instance_readonly_node": {
+                "current": "bytepluscc:rdsmysql/getInstanceReadonlyNode:getInstanceReadonlyNode",
+                "fields": {
+                    "update_endpoint_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_instance_readonly_nodes": {
+                "current": "bytepluscc:rdsmysql/getInstanceReadonlyNodes:getInstanceReadonlyNodes",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
