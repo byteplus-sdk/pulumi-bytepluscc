@@ -17,6 +17,10 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AuthConfigApiKeyAuthConfig',
+    'AuthConfigApiKeyAuthConfigApiKeyMetadata',
+    'AuthConfigJwtAuthConfig',
+    'PermissionNamespaceTag',
     'ServiceBackend',
     'ServiceRoute',
     'ServiceRouteApiSpec',
@@ -24,6 +28,13 @@ __all__ = [
     'ServiceRouteApiSpecResponseFilter',
     'ServiceRouteApiSpecResponseFilterAttribute',
     'ServiceTag',
+    'UserPoolBrand',
+    'UserPoolTag',
+    'WorkloadPoolTag',
+    'GetAuthConfigApiKeyAuthConfigResult',
+    'GetAuthConfigApiKeyAuthConfigApiKeyMetadataResult',
+    'GetAuthConfigJwtAuthConfigResult',
+    'GetPermissionNamespaceTagResult',
     'GetServiceBackendResult',
     'GetServiceRouteResult',
     'GetServiceRouteApiSpecResult',
@@ -31,7 +42,227 @@ __all__ = [
     'GetServiceRouteApiSpecResponseFilterResult',
     'GetServiceRouteApiSpecResponseFilterAttributeResult',
     'GetServiceTagResult',
+    'GetUserPoolBrandResult',
+    'GetUserPoolTagResult',
+    'GetWorkloadPoolTagResult',
 ]
+
+@pulumi.output_type
+class AuthConfigApiKeyAuthConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiKey":
+            suggest = "api_key"
+        elif key == "apiKeyMetadatas":
+            suggest = "api_key_metadatas"
+        elif key == "apiKeyName":
+            suggest = "api_key_name"
+        elif key == "expiryTimestamp":
+            suggest = "expiry_timestamp"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AuthConfigApiKeyAuthConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AuthConfigApiKeyAuthConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AuthConfigApiKeyAuthConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_key: Optional[builtins.str] = None,
+                 api_key_metadatas: Optional[Sequence['outputs.AuthConfigApiKeyAuthConfigApiKeyMetadata']] = None,
+                 api_key_name: Optional[builtins.str] = None,
+                 expiry_timestamp: Optional[builtins.int] = None):
+        """
+        :param builtins.str api_key: ApiKey Value
+        :param builtins.str api_key_name: ApiKey Name
+        :param builtins.int expiry_timestamp: Expiration Timestamp
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if api_key_metadatas is not None:
+            pulumi.set(__self__, "api_key_metadatas", api_key_metadatas)
+        if api_key_name is not None:
+            pulumi.set(__self__, "api_key_name", api_key_name)
+        if expiry_timestamp is not None:
+            pulumi.set(__self__, "expiry_timestamp", expiry_timestamp)
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> Optional[builtins.str]:
+        """
+        ApiKey Value
+        """
+        return pulumi.get(self, "api_key")
+
+    @property
+    @pulumi.getter(name="apiKeyMetadatas")
+    def api_key_metadatas(self) -> Optional[Sequence['outputs.AuthConfigApiKeyAuthConfigApiKeyMetadata']]:
+        return pulumi.get(self, "api_key_metadatas")
+
+    @property
+    @pulumi.getter(name="apiKeyName")
+    def api_key_name(self) -> Optional[builtins.str]:
+        """
+        ApiKey Name
+        """
+        return pulumi.get(self, "api_key_name")
+
+    @property
+    @pulumi.getter(name="expiryTimestamp")
+    def expiry_timestamp(self) -> Optional[builtins.int]:
+        """
+        Expiration Timestamp
+        """
+        return pulumi.get(self, "expiry_timestamp")
+
+
+@pulumi.output_type
+class AuthConfigApiKeyAuthConfigApiKeyMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterName":
+            suggest = "parameter_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AuthConfigApiKeyAuthConfigApiKeyMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AuthConfigApiKeyAuthConfigApiKeyMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AuthConfigApiKeyAuthConfigApiKeyMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 location: Optional[builtins.str] = None,
+                 parameter_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str location: Parameter Location
+        :param builtins.str parameter_name: Parameter Name
+        """
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if parameter_name is not None:
+            pulumi.set(__self__, "parameter_name", parameter_name)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[builtins.str]:
+        """
+        Parameter Location
+        """
+        return pulumi.get(self, "location")
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> Optional[builtins.str]:
+        """
+        Parameter Name
+        """
+        return pulumi.get(self, "parameter_name")
+
+
+@pulumi.output_type
+class AuthConfigJwtAuthConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedAudiences":
+            suggest = "allowed_audiences"
+        elif key == "allowedClients":
+            suggest = "allowed_clients"
+        elif key == "discoveryUrl":
+            suggest = "discovery_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AuthConfigJwtAuthConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AuthConfigJwtAuthConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AuthConfigJwtAuthConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_audiences: Optional[Sequence[builtins.str]] = None,
+                 allowed_clients: Optional[Sequence[builtins.str]] = None,
+                 discovery_url: Optional[builtins.str] = None):
+        """
+        :param Sequence[builtins.str] allowed_audiences: Allowed Audience List
+        :param Sequence[builtins.str] allowed_clients: Allowed Client List
+        :param builtins.str discovery_url: JWT Discovery URL。
+        """
+        if allowed_audiences is not None:
+            pulumi.set(__self__, "allowed_audiences", allowed_audiences)
+        if allowed_clients is not None:
+            pulumi.set(__self__, "allowed_clients", allowed_clients)
+        if discovery_url is not None:
+            pulumi.set(__self__, "discovery_url", discovery_url)
+
+    @property
+    @pulumi.getter(name="allowedAudiences")
+    def allowed_audiences(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Allowed Audience List
+        """
+        return pulumi.get(self, "allowed_audiences")
+
+    @property
+    @pulumi.getter(name="allowedClients")
+    def allowed_clients(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Allowed Client List
+        """
+        return pulumi.get(self, "allowed_clients")
+
+    @property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> Optional[builtins.str]:
+        """
+        JWT Discovery URL。
+        """
+        return pulumi.get(self, "discovery_url")
+
+
+@pulumi.output_type
+class PermissionNamespaceTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag Key
+        :param builtins.str value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag Value
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class ServiceBackend(dict):
@@ -620,6 +851,265 @@ class ServiceTag(dict):
 
 
 @pulumi.output_type
+class UserPoolBrand(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "logoUri":
+            suggest = "logo_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UserPoolBrand. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UserPoolBrand.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UserPoolBrand.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 logo_uri: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None):
+        """
+        :param builtins.str logo_uri: Brand logo URL
+        :param builtins.str name: Brand name
+        """
+        if logo_uri is not None:
+            pulumi.set(__self__, "logo_uri", logo_uri)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="logoUri")
+    def logo_uri(self) -> Optional[builtins.str]:
+        """
+        Brand logo URL
+        """
+        return pulumi.get(self, "logo_uri")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        Brand name
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class UserPoolTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class WorkloadPoolTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAuthConfigApiKeyAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 api_key: builtins.str,
+                 api_key_metadatas: Sequence['outputs.GetAuthConfigApiKeyAuthConfigApiKeyMetadataResult'],
+                 api_key_name: builtins.str,
+                 expiry_timestamp: builtins.int):
+        """
+        :param builtins.str api_key: ApiKey Value
+        :param Sequence['GetAuthConfigApiKeyAuthConfigApiKeyMetadataArgs'] api_key_metadatas: ApiKey Metadata
+        :param builtins.str api_key_name: ApiKey Name
+        :param builtins.int expiry_timestamp: Expiration Timestamp
+        """
+        pulumi.set(__self__, "api_key", api_key)
+        pulumi.set(__self__, "api_key_metadatas", api_key_metadatas)
+        pulumi.set(__self__, "api_key_name", api_key_name)
+        pulumi.set(__self__, "expiry_timestamp", expiry_timestamp)
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> builtins.str:
+        """
+        ApiKey Value
+        """
+        return pulumi.get(self, "api_key")
+
+    @property
+    @pulumi.getter(name="apiKeyMetadatas")
+    def api_key_metadatas(self) -> Sequence['outputs.GetAuthConfigApiKeyAuthConfigApiKeyMetadataResult']:
+        """
+        ApiKey Metadata
+        """
+        return pulumi.get(self, "api_key_metadatas")
+
+    @property
+    @pulumi.getter(name="apiKeyName")
+    def api_key_name(self) -> builtins.str:
+        """
+        ApiKey Name
+        """
+        return pulumi.get(self, "api_key_name")
+
+    @property
+    @pulumi.getter(name="expiryTimestamp")
+    def expiry_timestamp(self) -> builtins.int:
+        """
+        Expiration Timestamp
+        """
+        return pulumi.get(self, "expiry_timestamp")
+
+
+@pulumi.output_type
+class GetAuthConfigApiKeyAuthConfigApiKeyMetadataResult(dict):
+    def __init__(__self__, *,
+                 location: builtins.str,
+                 parameter_name: builtins.str):
+        """
+        :param builtins.str location: Parameter Location
+        :param builtins.str parameter_name: Parameter Name
+        """
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "parameter_name", parameter_name)
+
+    @property
+    @pulumi.getter
+    def location(self) -> builtins.str:
+        """
+        Parameter Location
+        """
+        return pulumi.get(self, "location")
+
+    @property
+    @pulumi.getter(name="parameterName")
+    def parameter_name(self) -> builtins.str:
+        """
+        Parameter Name
+        """
+        return pulumi.get(self, "parameter_name")
+
+
+@pulumi.output_type
+class GetAuthConfigJwtAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 allowed_audiences: Sequence[builtins.str],
+                 allowed_clients: Sequence[builtins.str],
+                 discovery_url: builtins.str):
+        """
+        :param Sequence[builtins.str] allowed_audiences: Allowed Audience List
+        :param Sequence[builtins.str] allowed_clients: Allowed Client List
+        :param builtins.str discovery_url: JWT Discovery URL。
+        """
+        pulumi.set(__self__, "allowed_audiences", allowed_audiences)
+        pulumi.set(__self__, "allowed_clients", allowed_clients)
+        pulumi.set(__self__, "discovery_url", discovery_url)
+
+    @property
+    @pulumi.getter(name="allowedAudiences")
+    def allowed_audiences(self) -> Sequence[builtins.str]:
+        """
+        Allowed Audience List
+        """
+        return pulumi.get(self, "allowed_audiences")
+
+    @property
+    @pulumi.getter(name="allowedClients")
+    def allowed_clients(self) -> Sequence[builtins.str]:
+        """
+        Allowed Client List
+        """
+        return pulumi.get(self, "allowed_clients")
+
+    @property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> builtins.str:
+        """
+        JWT Discovery URL。
+        """
+        return pulumi.get(self, "discovery_url")
+
+
+@pulumi.output_type
+class GetPermissionNamespaceTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag Key
+        :param builtins.str value: Tag Value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag Value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetServiceBackendResult(dict):
     def __init__(__self__, *,
                  backend_domain: builtins.str,
@@ -1037,6 +1527,93 @@ class GetServiceRouteApiSpecResponseFilterAttributeResult(dict):
 
 @pulumi.output_type
 class GetServiceTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUserPoolBrandResult(dict):
+    def __init__(__self__, *,
+                 logo_uri: builtins.str,
+                 name: builtins.str):
+        """
+        :param builtins.str logo_uri: Brand logo URL
+        :param builtins.str name: Brand name
+        """
+        pulumi.set(__self__, "logo_uri", logo_uri)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="logoUri")
+    def logo_uri(self) -> builtins.str:
+        """
+        Brand logo URL
+        """
+        return pulumi.get(self, "logo_uri")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Brand name
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetUserPoolTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetWorkloadPoolTagResult(dict):
     def __init__(__self__, *,
                  key: builtins.str,
                  value: builtins.str):

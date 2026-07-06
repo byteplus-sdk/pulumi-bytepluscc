@@ -25,10 +25,13 @@ from .get_endpoint_public_address import *
 from .get_endpoint_public_addresses import *
 from .get_endpoints import *
 from .get_instance import *
+from .get_instance_readonly_node import *
+from .get_instance_readonly_nodes import *
 from .get_instances import *
 from .get_parameter_template import *
 from .get_parameter_templates import *
 from .instance import *
+from .instance_readonly_node import *
 from .parameter_template import *
 from ._inputs import *
 from . import outputs

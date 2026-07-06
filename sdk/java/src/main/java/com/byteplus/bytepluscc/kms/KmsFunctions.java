@@ -5,11 +5,15 @@ package com.byteplus.bytepluscc.kms;
 
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyArgs;
+import com.byteplus.bytepluscc.kms.inputs.GetKeyMaterialArgs;
+import com.byteplus.bytepluscc.kms.inputs.GetKeyMaterialPlainArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyPlainArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyRingArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyRingPlainArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetSecretArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetSecretPlainArgs;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyMaterialResult;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyMaterialsResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyRingResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyRingsResult;
@@ -59,6 +63,90 @@ public final class KmsFunctions {
      */
     public static CompletableFuture<GetKeyResult> getKeyPlain(GetKeyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKey:getKey", TypeShape.of(GetKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialResult> getKeyMaterial(GetKeyMaterialArgs args) {
+        return getKeyMaterial(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static CompletableFuture<GetKeyMaterialResult> getKeyMaterialPlain(GetKeyMaterialPlainArgs args) {
+        return getKeyMaterialPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialResult> getKeyMaterial(GetKeyMaterialArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyMaterial:getKeyMaterial", TypeShape.of(GetKeyMaterialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialResult> getKeyMaterial(GetKeyMaterialArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyMaterial:getKeyMaterial", TypeShape.of(GetKeyMaterialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static CompletableFuture<GetKeyMaterialResult> getKeyMaterialPlain(GetKeyMaterialPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKeyMaterial:getKeyMaterial", TypeShape.of(GetKeyMaterialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialsResult> getKeyMaterials() {
+        return getKeyMaterials(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static CompletableFuture<GetKeyMaterialsResult> getKeyMaterialsPlain() {
+        return getKeyMaterialsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialsResult> getKeyMaterials(InvokeArgs args) {
+        return getKeyMaterials(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static CompletableFuture<GetKeyMaterialsResult> getKeyMaterialsPlain(InvokeArgs args) {
+        return getKeyMaterialsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialsResult> getKeyMaterials(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyMaterials:getKeyMaterials", TypeShape.of(GetKeyMaterialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static Output<GetKeyMaterialsResult> getKeyMaterials(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyMaterials:getKeyMaterials", TypeShape.of(GetKeyMaterialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyMaterial
+     * 
+     */
+    public static CompletableFuture<GetKeyMaterialsResult> getKeyMaterialsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKeyMaterials:getKeyMaterials", TypeShape.of(GetKeyMaterialsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::KMS::KeyRing

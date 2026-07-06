@@ -100,6 +100,16 @@ export const getInstance: typeof import("./getInstance").getInstance = null as a
 export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
 utilities.lazyLoad(exports, ["getInstance","getInstanceOutput"], () => require("./getInstance"));
 
+export { GetInstanceReadonlyNodeArgs, GetInstanceReadonlyNodeResult, GetInstanceReadonlyNodeOutputArgs } from "./getInstanceReadonlyNode";
+export const getInstanceReadonlyNode: typeof import("./getInstanceReadonlyNode").getInstanceReadonlyNode = null as any;
+export const getInstanceReadonlyNodeOutput: typeof import("./getInstanceReadonlyNode").getInstanceReadonlyNodeOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceReadonlyNode","getInstanceReadonlyNodeOutput"], () => require("./getInstanceReadonlyNode"));
+
+export { GetInstanceReadonlyNodesResult } from "./getInstanceReadonlyNodes";
+export const getInstanceReadonlyNodes: typeof import("./getInstanceReadonlyNodes").getInstanceReadonlyNodes = null as any;
+export const getInstanceReadonlyNodesOutput: typeof import("./getInstanceReadonlyNodes").getInstanceReadonlyNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceReadonlyNodes","getInstanceReadonlyNodesOutput"], () => require("./getInstanceReadonlyNodes"));
+
 export { GetInstancesResult } from "./getInstances";
 export const getInstances: typeof import("./getInstances").getInstances = null as any;
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
@@ -119,6 +129,11 @@ export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { InstanceReadonlyNodeArgs, InstanceReadonlyNodeState } from "./instanceReadonlyNode";
+export type InstanceReadonlyNode = import("./instanceReadonlyNode").InstanceReadonlyNode;
+export const InstanceReadonlyNode: typeof import("./instanceReadonlyNode").InstanceReadonlyNode = null as any;
+utilities.lazyLoad(exports, ["InstanceReadonlyNode"], () => require("./instanceReadonlyNode"));
 
 export { ParameterTemplateArgs, ParameterTemplateState } from "./parameterTemplate";
 export type ParameterTemplate = import("./parameterTemplate").ParameterTemplate;
@@ -144,6 +159,8 @@ const _module = {
                 return new EndpointPublicAddress(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode":
+                return new InstanceReadonlyNode(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
                 return new ParameterTemplate(name, <any>undefined, { urn })
             default:
@@ -158,4 +175,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/dbAccount", _modul
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/endpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/endpointPublicAddress", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instanceReadonlyNode", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/parameterTemplate", _module)

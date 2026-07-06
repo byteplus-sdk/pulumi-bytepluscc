@@ -77,6 +77,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         public readonly int EndpointId;
         /// <summary>
+        /// TRN of the endpoint
+        /// </summary>
+        public readonly string EndpointTrn;
+        /// <summary>
         /// IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResolverRuleForwardIPResult> ForwardIPs;
@@ -121,6 +125,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResolverRuleVpCResult> VpCs;
         /// <summary>
+        /// TRN of one or more VPCs associated with the domain name
+        /// </summary>
+        public readonly ImmutableArray<string> VpcTrns;
+        /// <summary>
         /// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         /// </summary>
         public readonly string ZoneName;
@@ -132,6 +140,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
             bool enable,
 
             int endpointId,
+
+            string endpointTrn,
 
             ImmutableArray<Outputs.GetResolverRuleForwardIPResult> forwardIPs,
 
@@ -155,11 +165,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 
             ImmutableArray<Outputs.GetResolverRuleVpCResult> vpCs,
 
+            ImmutableArray<string> vpcTrns,
+
             string zoneName)
         {
             CreatedTime = createdTime;
             Enable = enable;
             EndpointId = endpointId;
+            EndpointTrn = endpointTrn;
             ForwardIPs = forwardIPs;
             Id = id;
             LastOperator = lastOperator;
@@ -171,6 +184,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
             Type = type;
             UpdatedTime = updatedTime;
             VpCs = vpCs;
+            VpcTrns = vpcTrns;
             ZoneName = zoneName;
         }
     }

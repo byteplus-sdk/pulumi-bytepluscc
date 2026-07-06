@@ -4,10 +4,26 @@
 package com.byteplus.bytepluscc.id;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.id.inputs.GetAuthConfigArgs;
+import com.byteplus.bytepluscc.id.inputs.GetAuthConfigPlainArgs;
+import com.byteplus.bytepluscc.id.inputs.GetPermissionNamespaceArgs;
+import com.byteplus.bytepluscc.id.inputs.GetPermissionNamespacePlainArgs;
 import com.byteplus.bytepluscc.id.inputs.GetServiceArgs;
 import com.byteplus.bytepluscc.id.inputs.GetServicePlainArgs;
+import com.byteplus.bytepluscc.id.inputs.GetUserPoolArgs;
+import com.byteplus.bytepluscc.id.inputs.GetUserPoolPlainArgs;
+import com.byteplus.bytepluscc.id.inputs.GetWorkloadPoolArgs;
+import com.byteplus.bytepluscc.id.inputs.GetWorkloadPoolPlainArgs;
+import com.byteplus.bytepluscc.id.outputs.GetAuthConfigResult;
+import com.byteplus.bytepluscc.id.outputs.GetAuthConfigsResult;
+import com.byteplus.bytepluscc.id.outputs.GetPermissionNamespaceResult;
+import com.byteplus.bytepluscc.id.outputs.GetPermissionNamespacesResult;
 import com.byteplus.bytepluscc.id.outputs.GetServiceResult;
 import com.byteplus.bytepluscc.id.outputs.GetServicesResult;
+import com.byteplus.bytepluscc.id.outputs.GetUserPoolResult;
+import com.byteplus.bytepluscc.id.outputs.GetUserPoolsResult;
+import com.byteplus.bytepluscc.id.outputs.GetWorkloadPoolResult;
+import com.byteplus.bytepluscc.id.outputs.GetWorkloadPoolsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -17,6 +33,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class IdFunctions {
+    /**
+     * Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigResult> getAuthConfig(GetAuthConfigArgs args) {
+        return getAuthConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static CompletableFuture<GetAuthConfigResult> getAuthConfigPlain(GetAuthConfigPlainArgs args) {
+        return getAuthConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigResult> getAuthConfig(GetAuthConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getAuthConfig:getAuthConfig", TypeShape.of(GetAuthConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigResult> getAuthConfig(GetAuthConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getAuthConfig:getAuthConfig", TypeShape.of(GetAuthConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static CompletableFuture<GetAuthConfigResult> getAuthConfigPlain(GetAuthConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getAuthConfig:getAuthConfig", TypeShape.of(GetAuthConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigsResult> getAuthConfigs() {
+        return getAuthConfigs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static CompletableFuture<GetAuthConfigsResult> getAuthConfigsPlain() {
+        return getAuthConfigsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigsResult> getAuthConfigs(InvokeArgs args) {
+        return getAuthConfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static CompletableFuture<GetAuthConfigsResult> getAuthConfigsPlain(InvokeArgs args) {
+        return getAuthConfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigsResult> getAuthConfigs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getAuthConfigs:getAuthConfigs", TypeShape.of(GetAuthConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static Output<GetAuthConfigsResult> getAuthConfigs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getAuthConfigs:getAuthConfigs", TypeShape.of(GetAuthConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::AuthConfig
+     * 
+     */
+    public static CompletableFuture<GetAuthConfigsResult> getAuthConfigsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getAuthConfigs:getAuthConfigs", TypeShape.of(GetAuthConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespaceResult> getPermissionNamespace(GetPermissionNamespaceArgs args) {
+        return getPermissionNamespace(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static CompletableFuture<GetPermissionNamespaceResult> getPermissionNamespacePlain(GetPermissionNamespacePlainArgs args) {
+        return getPermissionNamespacePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespaceResult> getPermissionNamespace(GetPermissionNamespaceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getPermissionNamespace:getPermissionNamespace", TypeShape.of(GetPermissionNamespaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespaceResult> getPermissionNamespace(GetPermissionNamespaceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getPermissionNamespace:getPermissionNamespace", TypeShape.of(GetPermissionNamespaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static CompletableFuture<GetPermissionNamespaceResult> getPermissionNamespacePlain(GetPermissionNamespacePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getPermissionNamespace:getPermissionNamespace", TypeShape.of(GetPermissionNamespaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespacesResult> getPermissionNamespaces() {
+        return getPermissionNamespaces(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static CompletableFuture<GetPermissionNamespacesResult> getPermissionNamespacesPlain() {
+        return getPermissionNamespacesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespacesResult> getPermissionNamespaces(InvokeArgs args) {
+        return getPermissionNamespaces(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static CompletableFuture<GetPermissionNamespacesResult> getPermissionNamespacesPlain(InvokeArgs args) {
+        return getPermissionNamespacesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespacesResult> getPermissionNamespaces(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getPermissionNamespaces:getPermissionNamespaces", TypeShape.of(GetPermissionNamespacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static Output<GetPermissionNamespacesResult> getPermissionNamespaces(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getPermissionNamespaces:getPermissionNamespaces", TypeShape.of(GetPermissionNamespacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::PermissionNamespace
+     * 
+     */
+    public static CompletableFuture<GetPermissionNamespacesResult> getPermissionNamespacesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getPermissionNamespaces:getPermissionNamespaces", TypeShape.of(GetPermissionNamespacesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::ID::Service
      * 
@@ -100,5 +284,173 @@ public final class IdFunctions {
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:id/getServices:getServices", TypeShape.of(GetServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolResult> getUserPool(GetUserPoolArgs args) {
+        return getUserPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static CompletableFuture<GetUserPoolResult> getUserPoolPlain(GetUserPoolPlainArgs args) {
+        return getUserPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolResult> getUserPool(GetUserPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getUserPool:getUserPool", TypeShape.of(GetUserPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolResult> getUserPool(GetUserPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getUserPool:getUserPool", TypeShape.of(GetUserPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static CompletableFuture<GetUserPoolResult> getUserPoolPlain(GetUserPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getUserPool:getUserPool", TypeShape.of(GetUserPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolsResult> getUserPools() {
+        return getUserPools(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static CompletableFuture<GetUserPoolsResult> getUserPoolsPlain() {
+        return getUserPoolsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolsResult> getUserPools(InvokeArgs args) {
+        return getUserPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static CompletableFuture<GetUserPoolsResult> getUserPoolsPlain(InvokeArgs args) {
+        return getUserPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolsResult> getUserPools(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getUserPools:getUserPools", TypeShape.of(GetUserPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static Output<GetUserPoolsResult> getUserPools(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getUserPools:getUserPools", TypeShape.of(GetUserPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::UserPool
+     * 
+     */
+    public static CompletableFuture<GetUserPoolsResult> getUserPoolsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getUserPools:getUserPools", TypeShape.of(GetUserPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolResult> getWorkloadPool(GetWorkloadPoolArgs args) {
+        return getWorkloadPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static CompletableFuture<GetWorkloadPoolResult> getWorkloadPoolPlain(GetWorkloadPoolPlainArgs args) {
+        return getWorkloadPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolResult> getWorkloadPool(GetWorkloadPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getWorkloadPool:getWorkloadPool", TypeShape.of(GetWorkloadPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolResult> getWorkloadPool(GetWorkloadPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getWorkloadPool:getWorkloadPool", TypeShape.of(GetWorkloadPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static CompletableFuture<GetWorkloadPoolResult> getWorkloadPoolPlain(GetWorkloadPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getWorkloadPool:getWorkloadPool", TypeShape.of(GetWorkloadPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolsResult> getWorkloadPools() {
+        return getWorkloadPools(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static CompletableFuture<GetWorkloadPoolsResult> getWorkloadPoolsPlain() {
+        return getWorkloadPoolsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolsResult> getWorkloadPools(InvokeArgs args) {
+        return getWorkloadPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static CompletableFuture<GetWorkloadPoolsResult> getWorkloadPoolsPlain(InvokeArgs args) {
+        return getWorkloadPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolsResult> getWorkloadPools(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getWorkloadPools:getWorkloadPools", TypeShape.of(GetWorkloadPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static Output<GetWorkloadPoolsResult> getWorkloadPools(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getWorkloadPools:getWorkloadPools", TypeShape.of(GetWorkloadPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::WorkloadPool
+     * 
+     */
+    public static CompletableFuture<GetWorkloadPoolsResult> getWorkloadPoolsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getWorkloadPools:getWorkloadPools", TypeShape.of(GetWorkloadPoolsResult.class), args, Utilities.withVersion(options));
     }
 }

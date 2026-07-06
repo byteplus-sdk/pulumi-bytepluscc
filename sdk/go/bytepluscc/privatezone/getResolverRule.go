@@ -36,6 +36,8 @@ type LookupResolverRuleResult struct {
 	Enable bool `pulumi:"enable"`
 	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId int `pulumi:"endpointId"`
+	// TRN of the endpoint
+	EndpointTrn string `pulumi:"endpointTrn"`
 	// IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
 	ForwardIPs []GetResolverRuleForwardIP `pulumi:"forwardIPs"`
 	// Uniquely identifies the resource.
@@ -58,6 +60,8 @@ type LookupResolverRuleResult struct {
 	UpdatedTime string `pulumi:"updatedTime"`
 	// VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
 	VpCs []GetResolverRuleVpC `pulumi:"vpCs"`
+	// TRN of one or more VPCs associated with the domain name
+	VpcTrns []string `pulumi:"vpcTrns"`
 	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName string `pulumi:"zoneName"`
 }
@@ -109,6 +113,11 @@ func (o LookupResolverRuleResultOutput) Enable() pulumi.BoolOutput {
 // Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 func (o LookupResolverRuleResultOutput) EndpointId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) int { return v.EndpointId }).(pulumi.IntOutput)
+}
+
+// TRN of the endpoint
+func (o LookupResolverRuleResultOutput) EndpointTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.EndpointTrn }).(pulumi.StringOutput)
 }
 
 // IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
@@ -164,6 +173,11 @@ func (o LookupResolverRuleResultOutput) UpdatedTime() pulumi.StringOutput {
 // VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
 func (o LookupResolverRuleResultOutput) VpCs() GetResolverRuleVpCArrayOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) []GetResolverRuleVpC { return v.VpCs }).(GetResolverRuleVpCArrayOutput)
+}
+
+// TRN of one or more VPCs associated with the domain name
+func (o LookupResolverRuleResultOutput) VpcTrns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupResolverRuleResult) []string { return v.VpcTrns }).(pulumi.StringArrayOutput)
 }
 
 // Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC

@@ -14840,6 +14840,51 @@ export namespace fwcenter {
         vpcId: string;
     }
 
+    export interface GetNatFireWallControlPolicyDestPortListV1 {
+        /**
+         * Specific address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface GetNatFireWallControlPolicyDestinationCidrListV1 {
+        /**
+         * Specific address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface GetNatFireWallControlPolicySourceCidrListV1 {
+        /**
+         * Specific address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
     export interface GetVpcFireWallAclRuleDestPortListV1 {
         /**
          * Detailed address information.
@@ -14873,6 +14918,51 @@ export namespace fwcenter {
     export interface GetVpcFireWallAclRuleSourceCidrListV1 {
         /**
          * Detailed address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface NatFireWallControlPolicyDestPortListV1 {
+        /**
+         * Specific address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface NatFireWallControlPolicyDestinationCidrListV1 {
+        /**
+         * Specific address information.
+         */
+        address: string;
+        /**
+         * Description.
+         */
+        description: string;
+        /**
+         * Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+         */
+        type: string;
+    }
+
+    export interface NatFireWallControlPolicySourceCidrListV1 {
+        /**
+         * Specific address information.
          */
         address: string;
         /**
@@ -16384,6 +16474,104 @@ export namespace iam {
 }
 
 export namespace id {
+    export interface AuthConfigApiKeyAuthConfig {
+        /**
+         * ApiKey Value
+         */
+        apiKey: string;
+        apiKeyMetadatas: outputs.id.AuthConfigApiKeyAuthConfigApiKeyMetadata[];
+        /**
+         * ApiKey Name
+         */
+        apiKeyName: string;
+        /**
+         * Expiration Timestamp
+         */
+        expiryTimestamp: number;
+    }
+
+    export interface AuthConfigApiKeyAuthConfigApiKeyMetadata {
+        /**
+         * Parameter Location
+         */
+        location: string;
+        /**
+         * Parameter Name
+         */
+        parameterName: string;
+    }
+
+    export interface AuthConfigJwtAuthConfig {
+        /**
+         * Allowed Audience List
+         */
+        allowedAudiences: string[];
+        /**
+         * Allowed Client List
+         */
+        allowedClients: string[];
+        /**
+         * JWT Discovery URL。
+         */
+        discoveryUrl: string;
+    }
+
+    export interface GetAuthConfigApiKeyAuthConfig {
+        /**
+         * ApiKey Value
+         */
+        apiKey: string;
+        /**
+         * ApiKey Metadata
+         */
+        apiKeyMetadatas: outputs.id.GetAuthConfigApiKeyAuthConfigApiKeyMetadata[];
+        /**
+         * ApiKey Name
+         */
+        apiKeyName: string;
+        /**
+         * Expiration Timestamp
+         */
+        expiryTimestamp: number;
+    }
+
+    export interface GetAuthConfigApiKeyAuthConfigApiKeyMetadata {
+        /**
+         * Parameter Location
+         */
+        location: string;
+        /**
+         * Parameter Name
+         */
+        parameterName: string;
+    }
+
+    export interface GetAuthConfigJwtAuthConfig {
+        /**
+         * Allowed Audience List
+         */
+        allowedAudiences: string[];
+        /**
+         * Allowed Client List
+         */
+        allowedClients: string[];
+        /**
+         * JWT Discovery URL。
+         */
+        discoveryUrl: string;
+    }
+
+    export interface GetPermissionNamespaceTag {
+        /**
+         * Tag Key
+         */
+        key: string;
+        /**
+         * Tag Value
+         */
+        value: string;
+    }
+
     export interface GetServiceBackend {
         /**
          * Backend service domain name, for example api.example.com
@@ -16549,6 +16737,50 @@ export namespace id {
         value: string;
     }
 
+    export interface GetUserPoolBrand {
+        /**
+         * Brand logo URL
+         */
+        logoUri: string;
+        /**
+         * Brand name
+         */
+        name: string;
+    }
+
+    export interface GetUserPoolTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetWorkloadPoolTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface PermissionNamespaceTag {
+        /**
+         * Tag Key
+         */
+        key: string;
+        /**
+         * Tag Value
+         */
+        value: string;
+    }
+
     export interface ServiceBackend {
         /**
          * Backend service domain name, for example api.example.com
@@ -16695,6 +16927,39 @@ export namespace id {
     }
 
     export interface ServiceTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface UserPoolBrand {
+        /**
+         * Brand logo URL
+         */
+        logoUri: string;
+        /**
+         * Brand name
+         */
+        name: string;
+    }
+
+    export interface UserPoolTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface WorkloadPoolTag {
         /**
          * Tag key
          */

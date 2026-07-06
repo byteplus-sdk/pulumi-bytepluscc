@@ -791,6 +791,351 @@ func (o DnsControlPolicySourceArrayOutput) Index(i pulumi.IntInput) DnsControlPo
 	}).(DnsControlPolicySourceOutput)
 }
 
+type NatFireWallControlPolicyDestPortListV1 struct {
+	// Specific address information.
+	Address *string `pulumi:"address"`
+	// Description.
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type *string `pulumi:"type"`
+}
+
+// NatFireWallControlPolicyDestPortListV1Input is an input type that accepts NatFireWallControlPolicyDestPortListV1Args and NatFireWallControlPolicyDestPortListV1Output values.
+// You can construct a concrete instance of `NatFireWallControlPolicyDestPortListV1Input` via:
+//
+//	NatFireWallControlPolicyDestPortListV1Args{...}
+type NatFireWallControlPolicyDestPortListV1Input interface {
+	pulumi.Input
+
+	ToNatFireWallControlPolicyDestPortListV1Output() NatFireWallControlPolicyDestPortListV1Output
+	ToNatFireWallControlPolicyDestPortListV1OutputWithContext(context.Context) NatFireWallControlPolicyDestPortListV1Output
+}
+
+type NatFireWallControlPolicyDestPortListV1Args struct {
+	// Specific address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (NatFireWallControlPolicyDestPortListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*NatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i NatFireWallControlPolicyDestPortListV1Args) ToNatFireWallControlPolicyDestPortListV1Output() NatFireWallControlPolicyDestPortListV1Output {
+	return i.ToNatFireWallControlPolicyDestPortListV1OutputWithContext(context.Background())
+}
+
+func (i NatFireWallControlPolicyDestPortListV1Args) ToNatFireWallControlPolicyDestPortListV1OutputWithContext(ctx context.Context) NatFireWallControlPolicyDestPortListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(NatFireWallControlPolicyDestPortListV1Output)
+}
+
+// NatFireWallControlPolicyDestPortListV1ArrayInput is an input type that accepts NatFireWallControlPolicyDestPortListV1Array and NatFireWallControlPolicyDestPortListV1ArrayOutput values.
+// You can construct a concrete instance of `NatFireWallControlPolicyDestPortListV1ArrayInput` via:
+//
+//	NatFireWallControlPolicyDestPortListV1Array{ NatFireWallControlPolicyDestPortListV1Args{...} }
+type NatFireWallControlPolicyDestPortListV1ArrayInput interface {
+	pulumi.Input
+
+	ToNatFireWallControlPolicyDestPortListV1ArrayOutput() NatFireWallControlPolicyDestPortListV1ArrayOutput
+	ToNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(context.Context) NatFireWallControlPolicyDestPortListV1ArrayOutput
+}
+
+type NatFireWallControlPolicyDestPortListV1Array []NatFireWallControlPolicyDestPortListV1Input
+
+func (NatFireWallControlPolicyDestPortListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i NatFireWallControlPolicyDestPortListV1Array) ToNatFireWallControlPolicyDestPortListV1ArrayOutput() NatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return i.ToNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i NatFireWallControlPolicyDestPortListV1Array) ToNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) NatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NatFireWallControlPolicyDestPortListV1ArrayOutput)
+}
+
+type NatFireWallControlPolicyDestPortListV1Output struct{ *pulumi.OutputState }
+
+func (NatFireWallControlPolicyDestPortListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*NatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o NatFireWallControlPolicyDestPortListV1Output) ToNatFireWallControlPolicyDestPortListV1Output() NatFireWallControlPolicyDestPortListV1Output {
+	return o
+}
+
+func (o NatFireWallControlPolicyDestPortListV1Output) ToNatFireWallControlPolicyDestPortListV1OutputWithContext(ctx context.Context) NatFireWallControlPolicyDestPortListV1Output {
+	return o
+}
+
+// Specific address information.
+func (o NatFireWallControlPolicyDestPortListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicyDestPortListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description.
+func (o NatFireWallControlPolicyDestPortListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicyDestPortListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o NatFireWallControlPolicyDestPortListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicyDestPortListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type NatFireWallControlPolicyDestPortListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (NatFireWallControlPolicyDestPortListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o NatFireWallControlPolicyDestPortListV1ArrayOutput) ToNatFireWallControlPolicyDestPortListV1ArrayOutput() NatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o NatFireWallControlPolicyDestPortListV1ArrayOutput) ToNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) NatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o NatFireWallControlPolicyDestPortListV1ArrayOutput) Index(i pulumi.IntInput) NatFireWallControlPolicyDestPortListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NatFireWallControlPolicyDestPortListV1 {
+		return vs[0].([]NatFireWallControlPolicyDestPortListV1)[vs[1].(int)]
+	}).(NatFireWallControlPolicyDestPortListV1Output)
+}
+
+type NatFireWallControlPolicyDestinationCidrListV1 struct {
+	// Specific address information.
+	Address *string `pulumi:"address"`
+	// Description.
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type *string `pulumi:"type"`
+}
+
+// NatFireWallControlPolicyDestinationCidrListV1Input is an input type that accepts NatFireWallControlPolicyDestinationCidrListV1Args and NatFireWallControlPolicyDestinationCidrListV1Output values.
+// You can construct a concrete instance of `NatFireWallControlPolicyDestinationCidrListV1Input` via:
+//
+//	NatFireWallControlPolicyDestinationCidrListV1Args{...}
+type NatFireWallControlPolicyDestinationCidrListV1Input interface {
+	pulumi.Input
+
+	ToNatFireWallControlPolicyDestinationCidrListV1Output() NatFireWallControlPolicyDestinationCidrListV1Output
+	ToNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(context.Context) NatFireWallControlPolicyDestinationCidrListV1Output
+}
+
+type NatFireWallControlPolicyDestinationCidrListV1Args struct {
+	// Specific address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (NatFireWallControlPolicyDestinationCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*NatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i NatFireWallControlPolicyDestinationCidrListV1Args) ToNatFireWallControlPolicyDestinationCidrListV1Output() NatFireWallControlPolicyDestinationCidrListV1Output {
+	return i.ToNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(context.Background())
+}
+
+func (i NatFireWallControlPolicyDestinationCidrListV1Args) ToNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) NatFireWallControlPolicyDestinationCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(NatFireWallControlPolicyDestinationCidrListV1Output)
+}
+
+// NatFireWallControlPolicyDestinationCidrListV1ArrayInput is an input type that accepts NatFireWallControlPolicyDestinationCidrListV1Array and NatFireWallControlPolicyDestinationCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `NatFireWallControlPolicyDestinationCidrListV1ArrayInput` via:
+//
+//	NatFireWallControlPolicyDestinationCidrListV1Array{ NatFireWallControlPolicyDestinationCidrListV1Args{...} }
+type NatFireWallControlPolicyDestinationCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutput() NatFireWallControlPolicyDestinationCidrListV1ArrayOutput
+	ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Context) NatFireWallControlPolicyDestinationCidrListV1ArrayOutput
+}
+
+type NatFireWallControlPolicyDestinationCidrListV1Array []NatFireWallControlPolicyDestinationCidrListV1Input
+
+func (NatFireWallControlPolicyDestinationCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i NatFireWallControlPolicyDestinationCidrListV1Array) ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutput() NatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return i.ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i NatFireWallControlPolicyDestinationCidrListV1Array) ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) NatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NatFireWallControlPolicyDestinationCidrListV1ArrayOutput)
+}
+
+type NatFireWallControlPolicyDestinationCidrListV1Output struct{ *pulumi.OutputState }
+
+func (NatFireWallControlPolicyDestinationCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*NatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o NatFireWallControlPolicyDestinationCidrListV1Output) ToNatFireWallControlPolicyDestinationCidrListV1Output() NatFireWallControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+func (o NatFireWallControlPolicyDestinationCidrListV1Output) ToNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) NatFireWallControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+// Specific address information.
+func (o NatFireWallControlPolicyDestinationCidrListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicyDestinationCidrListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description.
+func (o NatFireWallControlPolicyDestinationCidrListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicyDestinationCidrListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o NatFireWallControlPolicyDestinationCidrListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicyDestinationCidrListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type NatFireWallControlPolicyDestinationCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (NatFireWallControlPolicyDestinationCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o NatFireWallControlPolicyDestinationCidrListV1ArrayOutput) ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutput() NatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o NatFireWallControlPolicyDestinationCidrListV1ArrayOutput) ToNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) NatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o NatFireWallControlPolicyDestinationCidrListV1ArrayOutput) Index(i pulumi.IntInput) NatFireWallControlPolicyDestinationCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NatFireWallControlPolicyDestinationCidrListV1 {
+		return vs[0].([]NatFireWallControlPolicyDestinationCidrListV1)[vs[1].(int)]
+	}).(NatFireWallControlPolicyDestinationCidrListV1Output)
+}
+
+type NatFireWallControlPolicySourceCidrListV1 struct {
+	// Specific address information.
+	Address *string `pulumi:"address"`
+	// Description.
+	Description *string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type *string `pulumi:"type"`
+}
+
+// NatFireWallControlPolicySourceCidrListV1Input is an input type that accepts NatFireWallControlPolicySourceCidrListV1Args and NatFireWallControlPolicySourceCidrListV1Output values.
+// You can construct a concrete instance of `NatFireWallControlPolicySourceCidrListV1Input` via:
+//
+//	NatFireWallControlPolicySourceCidrListV1Args{...}
+type NatFireWallControlPolicySourceCidrListV1Input interface {
+	pulumi.Input
+
+	ToNatFireWallControlPolicySourceCidrListV1Output() NatFireWallControlPolicySourceCidrListV1Output
+	ToNatFireWallControlPolicySourceCidrListV1OutputWithContext(context.Context) NatFireWallControlPolicySourceCidrListV1Output
+}
+
+type NatFireWallControlPolicySourceCidrListV1Args struct {
+	// Specific address information.
+	Address pulumi.StringPtrInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (NatFireWallControlPolicySourceCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*NatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i NatFireWallControlPolicySourceCidrListV1Args) ToNatFireWallControlPolicySourceCidrListV1Output() NatFireWallControlPolicySourceCidrListV1Output {
+	return i.ToNatFireWallControlPolicySourceCidrListV1OutputWithContext(context.Background())
+}
+
+func (i NatFireWallControlPolicySourceCidrListV1Args) ToNatFireWallControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) NatFireWallControlPolicySourceCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(NatFireWallControlPolicySourceCidrListV1Output)
+}
+
+// NatFireWallControlPolicySourceCidrListV1ArrayInput is an input type that accepts NatFireWallControlPolicySourceCidrListV1Array and NatFireWallControlPolicySourceCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `NatFireWallControlPolicySourceCidrListV1ArrayInput` via:
+//
+//	NatFireWallControlPolicySourceCidrListV1Array{ NatFireWallControlPolicySourceCidrListV1Args{...} }
+type NatFireWallControlPolicySourceCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToNatFireWallControlPolicySourceCidrListV1ArrayOutput() NatFireWallControlPolicySourceCidrListV1ArrayOutput
+	ToNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(context.Context) NatFireWallControlPolicySourceCidrListV1ArrayOutput
+}
+
+type NatFireWallControlPolicySourceCidrListV1Array []NatFireWallControlPolicySourceCidrListV1Input
+
+func (NatFireWallControlPolicySourceCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i NatFireWallControlPolicySourceCidrListV1Array) ToNatFireWallControlPolicySourceCidrListV1ArrayOutput() NatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return i.ToNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i NatFireWallControlPolicySourceCidrListV1Array) ToNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) NatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NatFireWallControlPolicySourceCidrListV1ArrayOutput)
+}
+
+type NatFireWallControlPolicySourceCidrListV1Output struct{ *pulumi.OutputState }
+
+func (NatFireWallControlPolicySourceCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*NatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o NatFireWallControlPolicySourceCidrListV1Output) ToNatFireWallControlPolicySourceCidrListV1Output() NatFireWallControlPolicySourceCidrListV1Output {
+	return o
+}
+
+func (o NatFireWallControlPolicySourceCidrListV1Output) ToNatFireWallControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) NatFireWallControlPolicySourceCidrListV1Output {
+	return o
+}
+
+// Specific address information.
+func (o NatFireWallControlPolicySourceCidrListV1Output) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicySourceCidrListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
+}
+
+// Description.
+func (o NatFireWallControlPolicySourceCidrListV1Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicySourceCidrListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o NatFireWallControlPolicySourceCidrListV1Output) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NatFireWallControlPolicySourceCidrListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type NatFireWallControlPolicySourceCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (NatFireWallControlPolicySourceCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o NatFireWallControlPolicySourceCidrListV1ArrayOutput) ToNatFireWallControlPolicySourceCidrListV1ArrayOutput() NatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o NatFireWallControlPolicySourceCidrListV1ArrayOutput) ToNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) NatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o NatFireWallControlPolicySourceCidrListV1ArrayOutput) Index(i pulumi.IntInput) NatFireWallControlPolicySourceCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NatFireWallControlPolicySourceCidrListV1 {
+		return vs[0].([]NatFireWallControlPolicySourceCidrListV1)[vs[1].(int)]
+	}).(NatFireWallControlPolicySourceCidrListV1Output)
+}
+
 type VpcFireWallAclRuleDestPortListV1 struct {
 	// Detailed address information.
 	Address *string `pulumi:"address"`
@@ -1923,6 +2268,351 @@ func (o GetDnsControlPolicySourceArrayOutput) Index(i pulumi.IntInput) GetDnsCon
 	}).(GetDnsControlPolicySourceOutput)
 }
 
+type GetNatFireWallControlPolicyDestPortListV1 struct {
+	// Specific address information.
+	Address string `pulumi:"address"`
+	// Description.
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type string `pulumi:"type"`
+}
+
+// GetNatFireWallControlPolicyDestPortListV1Input is an input type that accepts GetNatFireWallControlPolicyDestPortListV1Args and GetNatFireWallControlPolicyDestPortListV1Output values.
+// You can construct a concrete instance of `GetNatFireWallControlPolicyDestPortListV1Input` via:
+//
+//	GetNatFireWallControlPolicyDestPortListV1Args{...}
+type GetNatFireWallControlPolicyDestPortListV1Input interface {
+	pulumi.Input
+
+	ToGetNatFireWallControlPolicyDestPortListV1Output() GetNatFireWallControlPolicyDestPortListV1Output
+	ToGetNatFireWallControlPolicyDestPortListV1OutputWithContext(context.Context) GetNatFireWallControlPolicyDestPortListV1Output
+}
+
+type GetNatFireWallControlPolicyDestPortListV1Args struct {
+	// Specific address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNatFireWallControlPolicyDestPortListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i GetNatFireWallControlPolicyDestPortListV1Args) ToGetNatFireWallControlPolicyDestPortListV1Output() GetNatFireWallControlPolicyDestPortListV1Output {
+	return i.ToGetNatFireWallControlPolicyDestPortListV1OutputWithContext(context.Background())
+}
+
+func (i GetNatFireWallControlPolicyDestPortListV1Args) ToGetNatFireWallControlPolicyDestPortListV1OutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestPortListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatFireWallControlPolicyDestPortListV1Output)
+}
+
+// GetNatFireWallControlPolicyDestPortListV1ArrayInput is an input type that accepts GetNatFireWallControlPolicyDestPortListV1Array and GetNatFireWallControlPolicyDestPortListV1ArrayOutput values.
+// You can construct a concrete instance of `GetNatFireWallControlPolicyDestPortListV1ArrayInput` via:
+//
+//	GetNatFireWallControlPolicyDestPortListV1Array{ GetNatFireWallControlPolicyDestPortListV1Args{...} }
+type GetNatFireWallControlPolicyDestPortListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetNatFireWallControlPolicyDestPortListV1ArrayOutput() GetNatFireWallControlPolicyDestPortListV1ArrayOutput
+	ToGetNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(context.Context) GetNatFireWallControlPolicyDestPortListV1ArrayOutput
+}
+
+type GetNatFireWallControlPolicyDestPortListV1Array []GetNatFireWallControlPolicyDestPortListV1Input
+
+func (GetNatFireWallControlPolicyDestPortListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (i GetNatFireWallControlPolicyDestPortListV1Array) ToGetNatFireWallControlPolicyDestPortListV1ArrayOutput() GetNatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return i.ToGetNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetNatFireWallControlPolicyDestPortListV1Array) ToGetNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatFireWallControlPolicyDestPortListV1ArrayOutput)
+}
+
+type GetNatFireWallControlPolicyDestPortListV1Output struct{ *pulumi.OutputState }
+
+func (GetNatFireWallControlPolicyDestPortListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o GetNatFireWallControlPolicyDestPortListV1Output) ToGetNatFireWallControlPolicyDestPortListV1Output() GetNatFireWallControlPolicyDestPortListV1Output {
+	return o
+}
+
+func (o GetNatFireWallControlPolicyDestPortListV1Output) ToGetNatFireWallControlPolicyDestPortListV1OutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestPortListV1Output {
+	return o
+}
+
+// Specific address information.
+func (o GetNatFireWallControlPolicyDestPortListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicyDestPortListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description.
+func (o GetNatFireWallControlPolicyDestPortListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicyDestPortListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o GetNatFireWallControlPolicyDestPortListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicyDestPortListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNatFireWallControlPolicyDestPortListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNatFireWallControlPolicyDestPortListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatFireWallControlPolicyDestPortListV1)(nil)).Elem()
+}
+
+func (o GetNatFireWallControlPolicyDestPortListV1ArrayOutput) ToGetNatFireWallControlPolicyDestPortListV1ArrayOutput() GetNatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o GetNatFireWallControlPolicyDestPortListV1ArrayOutput) ToGetNatFireWallControlPolicyDestPortListV1ArrayOutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestPortListV1ArrayOutput {
+	return o
+}
+
+func (o GetNatFireWallControlPolicyDestPortListV1ArrayOutput) Index(i pulumi.IntInput) GetNatFireWallControlPolicyDestPortListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNatFireWallControlPolicyDestPortListV1 {
+		return vs[0].([]GetNatFireWallControlPolicyDestPortListV1)[vs[1].(int)]
+	}).(GetNatFireWallControlPolicyDestPortListV1Output)
+}
+
+type GetNatFireWallControlPolicyDestinationCidrListV1 struct {
+	// Specific address information.
+	Address string `pulumi:"address"`
+	// Description.
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type string `pulumi:"type"`
+}
+
+// GetNatFireWallControlPolicyDestinationCidrListV1Input is an input type that accepts GetNatFireWallControlPolicyDestinationCidrListV1Args and GetNatFireWallControlPolicyDestinationCidrListV1Output values.
+// You can construct a concrete instance of `GetNatFireWallControlPolicyDestinationCidrListV1Input` via:
+//
+//	GetNatFireWallControlPolicyDestinationCidrListV1Args{...}
+type GetNatFireWallControlPolicyDestinationCidrListV1Input interface {
+	pulumi.Input
+
+	ToGetNatFireWallControlPolicyDestinationCidrListV1Output() GetNatFireWallControlPolicyDestinationCidrListV1Output
+	ToGetNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(context.Context) GetNatFireWallControlPolicyDestinationCidrListV1Output
+}
+
+type GetNatFireWallControlPolicyDestinationCidrListV1Args struct {
+	// Specific address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNatFireWallControlPolicyDestinationCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i GetNatFireWallControlPolicyDestinationCidrListV1Args) ToGetNatFireWallControlPolicyDestinationCidrListV1Output() GetNatFireWallControlPolicyDestinationCidrListV1Output {
+	return i.ToGetNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(context.Background())
+}
+
+func (i GetNatFireWallControlPolicyDestinationCidrListV1Args) ToGetNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestinationCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatFireWallControlPolicyDestinationCidrListV1Output)
+}
+
+// GetNatFireWallControlPolicyDestinationCidrListV1ArrayInput is an input type that accepts GetNatFireWallControlPolicyDestinationCidrListV1Array and GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `GetNatFireWallControlPolicyDestinationCidrListV1ArrayInput` via:
+//
+//	GetNatFireWallControlPolicyDestinationCidrListV1Array{ GetNatFireWallControlPolicyDestinationCidrListV1Args{...} }
+type GetNatFireWallControlPolicyDestinationCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput() GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput
+	ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Context) GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput
+}
+
+type GetNatFireWallControlPolicyDestinationCidrListV1Array []GetNatFireWallControlPolicyDestinationCidrListV1Input
+
+func (GetNatFireWallControlPolicyDestinationCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (i GetNatFireWallControlPolicyDestinationCidrListV1Array) ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput() GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return i.ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetNatFireWallControlPolicyDestinationCidrListV1Array) ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput)
+}
+
+type GetNatFireWallControlPolicyDestinationCidrListV1Output struct{ *pulumi.OutputState }
+
+func (GetNatFireWallControlPolicyDestinationCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o GetNatFireWallControlPolicyDestinationCidrListV1Output) ToGetNatFireWallControlPolicyDestinationCidrListV1Output() GetNatFireWallControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+func (o GetNatFireWallControlPolicyDestinationCidrListV1Output) ToGetNatFireWallControlPolicyDestinationCidrListV1OutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestinationCidrListV1Output {
+	return o
+}
+
+// Specific address information.
+func (o GetNatFireWallControlPolicyDestinationCidrListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicyDestinationCidrListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description.
+func (o GetNatFireWallControlPolicyDestinationCidrListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicyDestinationCidrListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o GetNatFireWallControlPolicyDestinationCidrListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicyDestinationCidrListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatFireWallControlPolicyDestinationCidrListV1)(nil)).Elem()
+}
+
+func (o GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput) ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput() GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput) ToGetNatFireWallControlPolicyDestinationCidrListV1ArrayOutputWithContext(ctx context.Context) GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput) Index(i pulumi.IntInput) GetNatFireWallControlPolicyDestinationCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNatFireWallControlPolicyDestinationCidrListV1 {
+		return vs[0].([]GetNatFireWallControlPolicyDestinationCidrListV1)[vs[1].(int)]
+	}).(GetNatFireWallControlPolicyDestinationCidrListV1Output)
+}
+
+type GetNatFireWallControlPolicySourceCidrListV1 struct {
+	// Specific address information.
+	Address string `pulumi:"address"`
+	// Description.
+	Description string `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type string `pulumi:"type"`
+}
+
+// GetNatFireWallControlPolicySourceCidrListV1Input is an input type that accepts GetNatFireWallControlPolicySourceCidrListV1Args and GetNatFireWallControlPolicySourceCidrListV1Output values.
+// You can construct a concrete instance of `GetNatFireWallControlPolicySourceCidrListV1Input` via:
+//
+//	GetNatFireWallControlPolicySourceCidrListV1Args{...}
+type GetNatFireWallControlPolicySourceCidrListV1Input interface {
+	pulumi.Input
+
+	ToGetNatFireWallControlPolicySourceCidrListV1Output() GetNatFireWallControlPolicySourceCidrListV1Output
+	ToGetNatFireWallControlPolicySourceCidrListV1OutputWithContext(context.Context) GetNatFireWallControlPolicySourceCidrListV1Output
+}
+
+type GetNatFireWallControlPolicySourceCidrListV1Args struct {
+	// Specific address information.
+	Address pulumi.StringInput `pulumi:"address"`
+	// Description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNatFireWallControlPolicySourceCidrListV1Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i GetNatFireWallControlPolicySourceCidrListV1Args) ToGetNatFireWallControlPolicySourceCidrListV1Output() GetNatFireWallControlPolicySourceCidrListV1Output {
+	return i.ToGetNatFireWallControlPolicySourceCidrListV1OutputWithContext(context.Background())
+}
+
+func (i GetNatFireWallControlPolicySourceCidrListV1Args) ToGetNatFireWallControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) GetNatFireWallControlPolicySourceCidrListV1Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatFireWallControlPolicySourceCidrListV1Output)
+}
+
+// GetNatFireWallControlPolicySourceCidrListV1ArrayInput is an input type that accepts GetNatFireWallControlPolicySourceCidrListV1Array and GetNatFireWallControlPolicySourceCidrListV1ArrayOutput values.
+// You can construct a concrete instance of `GetNatFireWallControlPolicySourceCidrListV1ArrayInput` via:
+//
+//	GetNatFireWallControlPolicySourceCidrListV1Array{ GetNatFireWallControlPolicySourceCidrListV1Args{...} }
+type GetNatFireWallControlPolicySourceCidrListV1ArrayInput interface {
+	pulumi.Input
+
+	ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutput() GetNatFireWallControlPolicySourceCidrListV1ArrayOutput
+	ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(context.Context) GetNatFireWallControlPolicySourceCidrListV1ArrayOutput
+}
+
+type GetNatFireWallControlPolicySourceCidrListV1Array []GetNatFireWallControlPolicySourceCidrListV1Input
+
+func (GetNatFireWallControlPolicySourceCidrListV1Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (i GetNatFireWallControlPolicySourceCidrListV1Array) ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutput() GetNatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return i.ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(context.Background())
+}
+
+func (i GetNatFireWallControlPolicySourceCidrListV1Array) ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) GetNatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNatFireWallControlPolicySourceCidrListV1ArrayOutput)
+}
+
+type GetNatFireWallControlPolicySourceCidrListV1Output struct{ *pulumi.OutputState }
+
+func (GetNatFireWallControlPolicySourceCidrListV1Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o GetNatFireWallControlPolicySourceCidrListV1Output) ToGetNatFireWallControlPolicySourceCidrListV1Output() GetNatFireWallControlPolicySourceCidrListV1Output {
+	return o
+}
+
+func (o GetNatFireWallControlPolicySourceCidrListV1Output) ToGetNatFireWallControlPolicySourceCidrListV1OutputWithContext(ctx context.Context) GetNatFireWallControlPolicySourceCidrListV1Output {
+	return o
+}
+
+// Specific address information.
+func (o GetNatFireWallControlPolicySourceCidrListV1Output) Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicySourceCidrListV1) string { return v.Address }).(pulumi.StringOutput)
+}
+
+// Description.
+func (o GetNatFireWallControlPolicySourceCidrListV1Output) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicySourceCidrListV1) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Address type. ip: IPv4; ipv6: IPv6; domain: domain name; port: port.
+func (o GetNatFireWallControlPolicySourceCidrListV1Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNatFireWallControlPolicySourceCidrListV1) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNatFireWallControlPolicySourceCidrListV1ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNatFireWallControlPolicySourceCidrListV1ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNatFireWallControlPolicySourceCidrListV1)(nil)).Elem()
+}
+
+func (o GetNatFireWallControlPolicySourceCidrListV1ArrayOutput) ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutput() GetNatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetNatFireWallControlPolicySourceCidrListV1ArrayOutput) ToGetNatFireWallControlPolicySourceCidrListV1ArrayOutputWithContext(ctx context.Context) GetNatFireWallControlPolicySourceCidrListV1ArrayOutput {
+	return o
+}
+
+func (o GetNatFireWallControlPolicySourceCidrListV1ArrayOutput) Index(i pulumi.IntInput) GetNatFireWallControlPolicySourceCidrListV1Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNatFireWallControlPolicySourceCidrListV1 {
+		return vs[0].([]GetNatFireWallControlPolicySourceCidrListV1)[vs[1].(int)]
+	}).(GetNatFireWallControlPolicySourceCidrListV1Output)
+}
+
 type GetVpcFireWallAclRuleDestPortListV1 struct {
 	// Detailed address information.
 	Address string `pulumi:"address"`
@@ -2283,6 +2973,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicyDomainListV1ArrayInput)(nil)).Elem(), DnsControlPolicyDomainListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicySourceInput)(nil)).Elem(), DnsControlPolicySourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DnsControlPolicySourceArrayInput)(nil)).Elem(), DnsControlPolicySourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NatFireWallControlPolicyDestPortListV1Input)(nil)).Elem(), NatFireWallControlPolicyDestPortListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NatFireWallControlPolicyDestPortListV1ArrayInput)(nil)).Elem(), NatFireWallControlPolicyDestPortListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NatFireWallControlPolicyDestinationCidrListV1Input)(nil)).Elem(), NatFireWallControlPolicyDestinationCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NatFireWallControlPolicyDestinationCidrListV1ArrayInput)(nil)).Elem(), NatFireWallControlPolicyDestinationCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NatFireWallControlPolicySourceCidrListV1Input)(nil)).Elem(), NatFireWallControlPolicySourceCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NatFireWallControlPolicySourceCidrListV1ArrayInput)(nil)).Elem(), NatFireWallControlPolicySourceCidrListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestPortListV1Input)(nil)).Elem(), VpcFireWallAclRuleDestPortListV1Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestPortListV1ArrayInput)(nil)).Elem(), VpcFireWallAclRuleDestPortListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcFireWallAclRuleDestinationCidrListV1Input)(nil)).Elem(), VpcFireWallAclRuleDestinationCidrListV1Args{})
@@ -2303,6 +2999,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicyDomainListV1ArrayInput)(nil)).Elem(), GetDnsControlPolicyDomainListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicySourceInput)(nil)).Elem(), GetDnsControlPolicySourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDnsControlPolicySourceArrayInput)(nil)).Elem(), GetDnsControlPolicySourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatFireWallControlPolicyDestPortListV1Input)(nil)).Elem(), GetNatFireWallControlPolicyDestPortListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatFireWallControlPolicyDestPortListV1ArrayInput)(nil)).Elem(), GetNatFireWallControlPolicyDestPortListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatFireWallControlPolicyDestinationCidrListV1Input)(nil)).Elem(), GetNatFireWallControlPolicyDestinationCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatFireWallControlPolicyDestinationCidrListV1ArrayInput)(nil)).Elem(), GetNatFireWallControlPolicyDestinationCidrListV1Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatFireWallControlPolicySourceCidrListV1Input)(nil)).Elem(), GetNatFireWallControlPolicySourceCidrListV1Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNatFireWallControlPolicySourceCidrListV1ArrayInput)(nil)).Elem(), GetNatFireWallControlPolicySourceCidrListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestPortListV1Input)(nil)).Elem(), GetVpcFireWallAclRuleDestPortListV1Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestPortListV1ArrayInput)(nil)).Elem(), GetVpcFireWallAclRuleDestPortListV1Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcFireWallAclRuleDestinationCidrListV1Input)(nil)).Elem(), GetVpcFireWallAclRuleDestinationCidrListV1Args{})
@@ -2323,6 +3025,12 @@ func init() {
 	pulumi.RegisterOutputType(DnsControlPolicyDomainListV1ArrayOutput{})
 	pulumi.RegisterOutputType(DnsControlPolicySourceOutput{})
 	pulumi.RegisterOutputType(DnsControlPolicySourceArrayOutput{})
+	pulumi.RegisterOutputType(NatFireWallControlPolicyDestPortListV1Output{})
+	pulumi.RegisterOutputType(NatFireWallControlPolicyDestPortListV1ArrayOutput{})
+	pulumi.RegisterOutputType(NatFireWallControlPolicyDestinationCidrListV1Output{})
+	pulumi.RegisterOutputType(NatFireWallControlPolicyDestinationCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(NatFireWallControlPolicySourceCidrListV1Output{})
+	pulumi.RegisterOutputType(NatFireWallControlPolicySourceCidrListV1ArrayOutput{})
 	pulumi.RegisterOutputType(VpcFireWallAclRuleDestPortListV1Output{})
 	pulumi.RegisterOutputType(VpcFireWallAclRuleDestPortListV1ArrayOutput{})
 	pulumi.RegisterOutputType(VpcFireWallAclRuleDestinationCidrListV1Output{})
@@ -2343,6 +3051,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDnsControlPolicyDomainListV1ArrayOutput{})
 	pulumi.RegisterOutputType(GetDnsControlPolicySourceOutput{})
 	pulumi.RegisterOutputType(GetDnsControlPolicySourceArrayOutput{})
+	pulumi.RegisterOutputType(GetNatFireWallControlPolicyDestPortListV1Output{})
+	pulumi.RegisterOutputType(GetNatFireWallControlPolicyDestPortListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetNatFireWallControlPolicyDestinationCidrListV1Output{})
+	pulumi.RegisterOutputType(GetNatFireWallControlPolicyDestinationCidrListV1ArrayOutput{})
+	pulumi.RegisterOutputType(GetNatFireWallControlPolicySourceCidrListV1Output{})
+	pulumi.RegisterOutputType(GetNatFireWallControlPolicySourceCidrListV1ArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestPortListV1Output{})
 	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestPortListV1ArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcFireWallAclRuleDestinationCidrListV1Output{})

@@ -27,8 +27,10 @@ type ResolverRule struct {
 	// Whether the forwarding rule is enabled. true: enabled. false: disabled
 	Enable pulumi.BoolOutput `pulumi:"enable"`
 	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-	EndpointId pulumi.IntOutput                 `pulumi:"endpointId"`
-	ForwardIPs ResolverRuleForwardIPArrayOutput `pulumi:"forwardIPs"`
+	EndpointId pulumi.IntOutput `pulumi:"endpointId"`
+	// TRN of the endpoint
+	EndpointTrn pulumi.StringOutput              `pulumi:"endpointTrn"`
+	ForwardIPs  ResolverRuleForwardIPArrayOutput `pulumi:"forwardIPs"`
 	// Account ID of the last update to the forwarding rule
 	LastOperator pulumi.StringOutput `pulumi:"lastOperator"`
 	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
@@ -45,6 +47,8 @@ type ResolverRule struct {
 	// Update time of the forwarding rule
 	UpdatedTime pulumi.StringOutput        `pulumi:"updatedTime"`
 	VpCs        ResolverRuleVpCArrayOutput `pulumi:"vpCs"`
+	// TRN of one or more VPCs associated with the domain name
+	VpcTrns pulumi.StringArrayOutput `pulumi:"vpcTrns"`
 	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName pulumi.StringOutput `pulumi:"zoneName"`
 }
@@ -90,8 +94,10 @@ type resolverRuleState struct {
 	// Whether the forwarding rule is enabled. true: enabled. false: disabled
 	Enable *bool `pulumi:"enable"`
 	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-	EndpointId *int                    `pulumi:"endpointId"`
-	ForwardIPs []ResolverRuleForwardIP `pulumi:"forwardIPs"`
+	EndpointId *int `pulumi:"endpointId"`
+	// TRN of the endpoint
+	EndpointTrn *string                 `pulumi:"endpointTrn"`
+	ForwardIPs  []ResolverRuleForwardIP `pulumi:"forwardIPs"`
 	// Account ID of the last update to the forwarding rule
 	LastOperator *string `pulumi:"lastOperator"`
 	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
@@ -108,6 +114,8 @@ type resolverRuleState struct {
 	// Update time of the forwarding rule
 	UpdatedTime *string           `pulumi:"updatedTime"`
 	VpCs        []ResolverRuleVpC `pulumi:"vpCs"`
+	// TRN of one or more VPCs associated with the domain name
+	VpcTrns []string `pulumi:"vpcTrns"`
 	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName *string `pulumi:"zoneName"`
 }
@@ -119,7 +127,9 @@ type ResolverRuleState struct {
 	Enable pulumi.BoolPtrInput
 	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId pulumi.IntPtrInput
-	ForwardIPs ResolverRuleForwardIPArrayInput
+	// TRN of the endpoint
+	EndpointTrn pulumi.StringPtrInput
+	ForwardIPs  ResolverRuleForwardIPArrayInput
 	// Account ID of the last update to the forwarding rule
 	LastOperator pulumi.StringPtrInput
 	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
@@ -136,6 +146,8 @@ type ResolverRuleState struct {
 	// Update time of the forwarding rule
 	UpdatedTime pulumi.StringPtrInput
 	VpCs        ResolverRuleVpCArrayInput
+	// TRN of one or more VPCs associated with the domain name
+	VpcTrns pulumi.StringArrayInput
 	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName pulumi.StringPtrInput
 }
@@ -146,8 +158,10 @@ func (ResolverRuleState) ElementType() reflect.Type {
 
 type resolverRuleArgs struct {
 	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-	EndpointId *int                    `pulumi:"endpointId"`
-	ForwardIPs []ResolverRuleForwardIP `pulumi:"forwardIPs"`
+	EndpointId *int `pulumi:"endpointId"`
+	// TRN of the endpoint
+	EndpointTrn *string                 `pulumi:"endpointTrn"`
+	ForwardIPs  []ResolverRuleForwardIP `pulumi:"forwardIPs"`
 	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line *string `pulumi:"line"`
 	// Name of the forwarding rule. Supports UTF-8 format
@@ -158,6 +172,8 @@ type resolverRuleArgs struct {
 	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type string            `pulumi:"type"`
 	VpCs []ResolverRuleVpC `pulumi:"vpCs"`
+	// TRN of one or more VPCs associated with the domain name
+	VpcTrns []string `pulumi:"vpcTrns"`
 	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName *string `pulumi:"zoneName"`
 }
@@ -166,7 +182,9 @@ type resolverRuleArgs struct {
 type ResolverRuleArgs struct {
 	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId pulumi.IntPtrInput
-	ForwardIPs ResolverRuleForwardIPArrayInput
+	// TRN of the endpoint
+	EndpointTrn pulumi.StringPtrInput
+	ForwardIPs  ResolverRuleForwardIPArrayInput
 	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line pulumi.StringPtrInput
 	// Name of the forwarding rule. Supports UTF-8 format
@@ -177,6 +195,8 @@ type ResolverRuleArgs struct {
 	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type pulumi.StringInput
 	VpCs ResolverRuleVpCArrayInput
+	// TRN of one or more VPCs associated with the domain name
+	VpcTrns pulumi.StringArrayInput
 	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName pulumi.StringPtrInput
 }
@@ -283,6 +303,11 @@ func (o ResolverRuleOutput) EndpointId() pulumi.IntOutput {
 	return o.ApplyT(func(v *ResolverRule) pulumi.IntOutput { return v.EndpointId }).(pulumi.IntOutput)
 }
 
+// TRN of the endpoint
+func (o ResolverRuleOutput) EndpointTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v *ResolverRule) pulumi.StringOutput { return v.EndpointTrn }).(pulumi.StringOutput)
+}
+
 func (o ResolverRuleOutput) ForwardIPs() ResolverRuleForwardIPArrayOutput {
 	return o.ApplyT(func(v *ResolverRule) ResolverRuleForwardIPArrayOutput { return v.ForwardIPs }).(ResolverRuleForwardIPArrayOutput)
 }
@@ -328,6 +353,11 @@ func (o ResolverRuleOutput) UpdatedTime() pulumi.StringOutput {
 
 func (o ResolverRuleOutput) VpCs() ResolverRuleVpCArrayOutput {
 	return o.ApplyT(func(v *ResolverRule) ResolverRuleVpCArrayOutput { return v.VpCs }).(ResolverRuleVpCArrayOutput)
+}
+
+// TRN of one or more VPCs associated with the domain name
+func (o ResolverRuleOutput) VpcTrns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ResolverRule) pulumi.StringArrayOutput { return v.VpcTrns }).(pulumi.StringArrayOutput)
 }
 
 // Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC

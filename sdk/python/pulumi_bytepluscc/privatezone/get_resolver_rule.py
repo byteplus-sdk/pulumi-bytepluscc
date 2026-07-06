@@ -28,7 +28,7 @@ class GetResolverRuleResult:
     """
     A collection of values returned by getResolverRule.
     """
-    def __init__(__self__, created_time=None, enable=None, endpoint_id=None, forward_ips=None, id=None, last_operator=None, line=None, name=None, project_name=None, rule_id=None, tags=None, type=None, updated_time=None, vp_cs=None, zone_name=None):
+    def __init__(__self__, created_time=None, enable=None, endpoint_id=None, endpoint_trn=None, forward_ips=None, id=None, last_operator=None, line=None, name=None, project_name=None, rule_id=None, tags=None, type=None, updated_time=None, vp_cs=None, vpc_trns=None, zone_name=None):
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
@@ -38,6 +38,9 @@ class GetResolverRuleResult:
         if endpoint_id and not isinstance(endpoint_id, int):
             raise TypeError("Expected argument 'endpoint_id' to be a int")
         pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_trn and not isinstance(endpoint_trn, str):
+            raise TypeError("Expected argument 'endpoint_trn' to be a str")
+        pulumi.set(__self__, "endpoint_trn", endpoint_trn)
         if forward_ips and not isinstance(forward_ips, list):
             raise TypeError("Expected argument 'forward_ips' to be a list")
         pulumi.set(__self__, "forward_ips", forward_ips)
@@ -71,6 +74,9 @@ class GetResolverRuleResult:
         if vp_cs and not isinstance(vp_cs, list):
             raise TypeError("Expected argument 'vp_cs' to be a list")
         pulumi.set(__self__, "vp_cs", vp_cs)
+        if vpc_trns and not isinstance(vpc_trns, list):
+            raise TypeError("Expected argument 'vpc_trns' to be a list")
+        pulumi.set(__self__, "vpc_trns", vpc_trns)
         if zone_name and not isinstance(zone_name, str):
             raise TypeError("Expected argument 'zone_name' to be a str")
         pulumi.set(__self__, "zone_name", zone_name)
@@ -98,6 +104,14 @@ class GetResolverRuleResult:
         Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "endpoint_id")
+
+    @property
+    @pulumi.getter(name="endpointTrn")
+    def endpoint_trn(self) -> builtins.str:
+        """
+        TRN of the endpoint
+        """
+        return pulumi.get(self, "endpoint_trn")
 
     @property
     @pulumi.getter(name="forwardIPs")
@@ -188,6 +202,14 @@ class GetResolverRuleResult:
         return pulumi.get(self, "vp_cs")
 
     @property
+    @pulumi.getter(name="vpcTrns")
+    def vpc_trns(self) -> Sequence[builtins.str]:
+        """
+        TRN of one or more VPCs associated with the domain name
+        """
+        return pulumi.get(self, "vpc_trns")
+
+    @property
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> builtins.str:
         """
@@ -205,6 +227,7 @@ class AwaitableGetResolverRuleResult(GetResolverRuleResult):
             created_time=self.created_time,
             enable=self.enable,
             endpoint_id=self.endpoint_id,
+            endpoint_trn=self.endpoint_trn,
             forward_ips=self.forward_ips,
             id=self.id,
             last_operator=self.last_operator,
@@ -216,6 +239,7 @@ class AwaitableGetResolverRuleResult(GetResolverRuleResult):
             type=self.type,
             updated_time=self.updated_time,
             vp_cs=self.vp_cs,
+            vpc_trns=self.vpc_trns,
             zone_name=self.zone_name)
 
 
@@ -236,6 +260,7 @@ def get_resolver_rule(id: Optional[builtins.str] = None,
         created_time=pulumi.get(__ret__, 'created_time'),
         enable=pulumi.get(__ret__, 'enable'),
         endpoint_id=pulumi.get(__ret__, 'endpoint_id'),
+        endpoint_trn=pulumi.get(__ret__, 'endpoint_trn'),
         forward_ips=pulumi.get(__ret__, 'forward_ips'),
         id=pulumi.get(__ret__, 'id'),
         last_operator=pulumi.get(__ret__, 'last_operator'),
@@ -247,6 +272,7 @@ def get_resolver_rule(id: Optional[builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         updated_time=pulumi.get(__ret__, 'updated_time'),
         vp_cs=pulumi.get(__ret__, 'vp_cs'),
+        vpc_trns=pulumi.get(__ret__, 'vpc_trns'),
         zone_name=pulumi.get(__ret__, 'zone_name'))
 def get_resolver_rule_output(id: Optional[pulumi.Input[builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResolverRuleResult]:
@@ -264,6 +290,7 @@ def get_resolver_rule_output(id: Optional[pulumi.Input[builtins.str]] = None,
         created_time=pulumi.get(__response__, 'created_time'),
         enable=pulumi.get(__response__, 'enable'),
         endpoint_id=pulumi.get(__response__, 'endpoint_id'),
+        endpoint_trn=pulumi.get(__response__, 'endpoint_trn'),
         forward_ips=pulumi.get(__response__, 'forward_ips'),
         id=pulumi.get(__response__, 'id'),
         last_operator=pulumi.get(__response__, 'last_operator'),
@@ -275,4 +302,5 @@ def get_resolver_rule_output(id: Optional[pulumi.Input[builtins.str]] = None,
         type=pulumi.get(__response__, 'type'),
         updated_time=pulumi.get(__response__, 'updated_time'),
         vp_cs=pulumi.get(__response__, 'vp_cs'),
+        vpc_trns=pulumi.get(__response__, 'vpc_trns'),
         zone_name=pulumi.get(__response__, 'zone_name')))

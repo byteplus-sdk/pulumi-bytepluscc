@@ -25,25 +25,31 @@ class ResolverRuleArgs:
                  name: pulumi.Input[builtins.str],
                  type: pulumi.Input[builtins.str],
                  endpoint_id: Optional[pulumi.Input[builtins.int]] = None,
+                 endpoint_trn: Optional[pulumi.Input[builtins.str]] = None,
                  forward_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleForwardIPArgs']]]] = None,
                  line: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleTagArgs']]]] = None,
                  vp_cs: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleVpCArgs']]]] = None,
+                 vpc_trns: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a ResolverRule resource.
         :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
         :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] endpoint_trn: TRN of the endpoint
         :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         :param pulumi.Input[builtins.str] project_name: Project name associated with the forwarding rule. Default is default
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_trns: TRN of one or more VPCs associated with the domain name
         :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
         if endpoint_id is not None:
             pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_trn is not None:
+            pulumi.set(__self__, "endpoint_trn", endpoint_trn)
         if forward_ips is not None:
             pulumi.set(__self__, "forward_ips", forward_ips)
         if line is not None:
@@ -54,6 +60,8 @@ class ResolverRuleArgs:
             pulumi.set(__self__, "tags", tags)
         if vp_cs is not None:
             pulumi.set(__self__, "vp_cs", vp_cs)
+        if vpc_trns is not None:
+            pulumi.set(__self__, "vpc_trns", vpc_trns)
         if zone_name is not None:
             pulumi.set(__self__, "zone_name", zone_name)
 
@@ -92,6 +100,18 @@ class ResolverRuleArgs:
     @endpoint_id.setter
     def endpoint_id(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="endpointTrn")
+    def endpoint_trn(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        TRN of the endpoint
+        """
+        return pulumi.get(self, "endpoint_trn")
+
+    @endpoint_trn.setter
+    def endpoint_trn(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "endpoint_trn", value)
 
     @property
     @pulumi.getter(name="forwardIPs")
@@ -145,6 +165,18 @@ class ResolverRuleArgs:
         pulumi.set(self, "vp_cs", value)
 
     @property
+    @pulumi.getter(name="vpcTrns")
+    def vpc_trns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        TRN of one or more VPCs associated with the domain name
+        """
+        return pulumi.get(self, "vpc_trns")
+
+    @vpc_trns.setter
+    def vpc_trns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "vpc_trns", value)
+
+    @property
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -163,6 +195,7 @@ class _ResolverRuleState:
                  created_time: Optional[pulumi.Input[builtins.str]] = None,
                  enable: Optional[pulumi.Input[builtins.bool]] = None,
                  endpoint_id: Optional[pulumi.Input[builtins.int]] = None,
+                 endpoint_trn: Optional[pulumi.Input[builtins.str]] = None,
                  forward_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleForwardIPArgs']]]] = None,
                  last_operator: Optional[pulumi.Input[builtins.str]] = None,
                  line: Optional[pulumi.Input[builtins.str]] = None,
@@ -173,12 +206,14 @@ class _ResolverRuleState:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  updated_time: Optional[pulumi.Input[builtins.str]] = None,
                  vp_cs: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleVpCArgs']]]] = None,
+                 vpc_trns: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResolverRule resources.
         :param pulumi.Input[builtins.str] created_time: Creation time of the forwarding rule
         :param pulumi.Input[builtins.bool] enable: Whether the forwarding rule is enabled. true: enabled. false: disabled
         :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] endpoint_trn: TRN of the endpoint
         :param pulumi.Input[builtins.str] last_operator: Account ID of the last update to the forwarding rule
         :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
@@ -186,6 +221,7 @@ class _ResolverRuleState:
         :param pulumi.Input[builtins.str] rule_id: Forwarding rule ID
         :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         :param pulumi.Input[builtins.str] updated_time: Update time of the forwarding rule
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_trns: TRN of one or more VPCs associated with the domain name
         :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         if created_time is not None:
@@ -194,6 +230,8 @@ class _ResolverRuleState:
             pulumi.set(__self__, "enable", enable)
         if endpoint_id is not None:
             pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_trn is not None:
+            pulumi.set(__self__, "endpoint_trn", endpoint_trn)
         if forward_ips is not None:
             pulumi.set(__self__, "forward_ips", forward_ips)
         if last_operator is not None:
@@ -214,6 +252,8 @@ class _ResolverRuleState:
             pulumi.set(__self__, "updated_time", updated_time)
         if vp_cs is not None:
             pulumi.set(__self__, "vp_cs", vp_cs)
+        if vpc_trns is not None:
+            pulumi.set(__self__, "vpc_trns", vpc_trns)
         if zone_name is not None:
             pulumi.set(__self__, "zone_name", zone_name)
 
@@ -252,6 +292,18 @@ class _ResolverRuleState:
     @endpoint_id.setter
     def endpoint_id(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="endpointTrn")
+    def endpoint_trn(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        TRN of the endpoint
+        """
+        return pulumi.get(self, "endpoint_trn")
+
+    @endpoint_trn.setter
+    def endpoint_trn(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "endpoint_trn", value)
 
     @property
     @pulumi.getter(name="forwardIPs")
@@ -365,6 +417,18 @@ class _ResolverRuleState:
         pulumi.set(self, "vp_cs", value)
 
     @property
+    @pulumi.getter(name="vpcTrns")
+    def vpc_trns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        TRN of one or more VPCs associated with the domain name
+        """
+        return pulumi.get(self, "vpc_trns")
+
+    @vpc_trns.setter
+    def vpc_trns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "vpc_trns", value)
+
+    @property
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -384,6 +448,7 @@ class ResolverRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  endpoint_id: Optional[pulumi.Input[builtins.int]] = None,
+                 endpoint_trn: Optional[pulumi.Input[builtins.str]] = None,
                  forward_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleForwardIPArgs', 'ResolverRuleForwardIPArgsDict']]]]] = None,
                  line: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
@@ -391,6 +456,7 @@ class ResolverRule(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleTagArgs', 'ResolverRuleTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vp_cs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleVpCArgs', 'ResolverRuleVpCArgsDict']]]]] = None,
+                 vpc_trns: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  zone_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -405,10 +471,12 @@ class ResolverRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] endpoint_trn: TRN of the endpoint
         :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
         :param pulumi.Input[builtins.str] project_name: Project name associated with the forwarding rule. Default is default
         :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_trns: TRN of one or more VPCs associated with the domain name
         :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         ...
@@ -442,6 +510,7 @@ class ResolverRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  endpoint_id: Optional[pulumi.Input[builtins.int]] = None,
+                 endpoint_trn: Optional[pulumi.Input[builtins.str]] = None,
                  forward_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleForwardIPArgs', 'ResolverRuleForwardIPArgsDict']]]]] = None,
                  line: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
@@ -449,6 +518,7 @@ class ResolverRule(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleTagArgs', 'ResolverRuleTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vp_cs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleVpCArgs', 'ResolverRuleVpCArgsDict']]]]] = None,
+                 vpc_trns: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  zone_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -460,6 +530,7 @@ class ResolverRule(pulumi.CustomResource):
             __props__ = ResolverRuleArgs.__new__(ResolverRuleArgs)
 
             __props__.__dict__["endpoint_id"] = endpoint_id
+            __props__.__dict__["endpoint_trn"] = endpoint_trn
             __props__.__dict__["forward_ips"] = forward_ips
             __props__.__dict__["line"] = line
             if name is None and not opts.urn:
@@ -471,6 +542,7 @@ class ResolverRule(pulumi.CustomResource):
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
             __props__.__dict__["vp_cs"] = vp_cs
+            __props__.__dict__["vpc_trns"] = vpc_trns
             __props__.__dict__["zone_name"] = zone_name
             __props__.__dict__["created_time"] = None
             __props__.__dict__["enable"] = None
@@ -490,6 +562,7 @@ class ResolverRule(pulumi.CustomResource):
             created_time: Optional[pulumi.Input[builtins.str]] = None,
             enable: Optional[pulumi.Input[builtins.bool]] = None,
             endpoint_id: Optional[pulumi.Input[builtins.int]] = None,
+            endpoint_trn: Optional[pulumi.Input[builtins.str]] = None,
             forward_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleForwardIPArgs', 'ResolverRuleForwardIPArgsDict']]]]] = None,
             last_operator: Optional[pulumi.Input[builtins.str]] = None,
             line: Optional[pulumi.Input[builtins.str]] = None,
@@ -500,6 +573,7 @@ class ResolverRule(pulumi.CustomResource):
             type: Optional[pulumi.Input[builtins.str]] = None,
             updated_time: Optional[pulumi.Input[builtins.str]] = None,
             vp_cs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleVpCArgs', 'ResolverRuleVpCArgsDict']]]]] = None,
+            vpc_trns: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             zone_name: Optional[pulumi.Input[builtins.str]] = None) -> 'ResolverRule':
         """
         Get an existing ResolverRule resource's state with the given name, id, and optional extra
@@ -511,6 +585,7 @@ class ResolverRule(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] created_time: Creation time of the forwarding rule
         :param pulumi.Input[builtins.bool] enable: Whether the forwarding rule is enabled. true: enabled. false: disabled
         :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] endpoint_trn: TRN of the endpoint
         :param pulumi.Input[builtins.str] last_operator: Account ID of the last update to the forwarding rule
         :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
@@ -518,6 +593,7 @@ class ResolverRule(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] rule_id: Forwarding rule ID
         :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         :param pulumi.Input[builtins.str] updated_time: Update time of the forwarding rule
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vpc_trns: TRN of one or more VPCs associated with the domain name
         :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -527,6 +603,7 @@ class ResolverRule(pulumi.CustomResource):
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["enable"] = enable
         __props__.__dict__["endpoint_id"] = endpoint_id
+        __props__.__dict__["endpoint_trn"] = endpoint_trn
         __props__.__dict__["forward_ips"] = forward_ips
         __props__.__dict__["last_operator"] = last_operator
         __props__.__dict__["line"] = line
@@ -537,6 +614,7 @@ class ResolverRule(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         __props__.__dict__["updated_time"] = updated_time
         __props__.__dict__["vp_cs"] = vp_cs
+        __props__.__dict__["vpc_trns"] = vpc_trns
         __props__.__dict__["zone_name"] = zone_name
         return ResolverRule(resource_name, opts=opts, __props__=__props__)
 
@@ -563,6 +641,14 @@ class ResolverRule(pulumi.CustomResource):
         Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "endpoint_id")
+
+    @property
+    @pulumi.getter(name="endpointTrn")
+    def endpoint_trn(self) -> pulumi.Output[builtins.str]:
+        """
+        TRN of the endpoint
+        """
+        return pulumi.get(self, "endpoint_trn")
 
     @property
     @pulumi.getter(name="forwardIPs")
@@ -634,6 +720,14 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="vpCs")
     def vp_cs(self) -> pulumi.Output[Sequence['outputs.ResolverRuleVpC']]:
         return pulumi.get(self, "vp_cs")
+
+    @property
+    @pulumi.getter(name="vpcTrns")
+    def vpc_trns(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        TRN of one or more VPCs associated with the domain name
+        """
+        return pulumi.get(self, "vpc_trns")
 
     @property
     @pulumi.getter(name="zoneName")
